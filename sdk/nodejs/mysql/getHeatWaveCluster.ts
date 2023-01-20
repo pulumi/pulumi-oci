@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getHeatWaveCluster(args: GetHeatWaveClusterArgs, opts?: pulumi.InvokeOptions): Promise<GetHeatWaveClusterResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Mysql/getHeatWaveCluster:getHeatWaveCluster", {
         "dbSystemId": args.dbSystemId,
     }, opts);
@@ -80,9 +78,24 @@ export interface GetHeatWaveClusterResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific HeatWave cluster resource in Oracle Cloud Infrastructure MySQL Database service.
+ *
+ * Gets information about the HeatWave cluster.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testHeatWaveCluster = oci.Mysql.getHeatWaveCluster({
+ *     dbSystemId: oci_database_db_system.test_db_system.id,
+ * });
+ * ```
+ */
 export function getHeatWaveClusterOutput(args: GetHeatWaveClusterOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetHeatWaveClusterResult> {
-    return pulumi.output(args).apply(a => getHeatWaveCluster(a, opts))
+    return pulumi.output(args).apply((a: any) => getHeatWaveCluster(a, opts))
 }
 
 /**

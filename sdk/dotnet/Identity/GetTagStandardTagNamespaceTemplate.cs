@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetTagStandardTagNamespaceTemplateResult> InvokeAsync(GetTagStandardTagNamespaceTemplateArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetTagStandardTagNamespaceTemplateResult>("oci:Identity/getTagStandardTagNamespaceTemplate:getTagStandardTagNamespaceTemplate", args ?? new GetTagStandardTagNamespaceTemplateArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetTagStandardTagNamespaceTemplateResult>("oci:Identity/getTagStandardTagNamespaceTemplate:getTagStandardTagNamespaceTemplate", args ?? new GetTagStandardTagNamespaceTemplateArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Tag Standard Tag Namespace Template resource in Oracle Cloud Infrastructure Identity service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetTagStandardTagNamespaceTemplateResult> Invoke(GetTagStandardTagNamespaceTemplateInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetTagStandardTagNamespaceTemplateResult>("oci:Identity/getTagStandardTagNamespaceTemplate:getTagStandardTagNamespaceTemplate", args ?? new GetTagStandardTagNamespaceTemplateInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetTagStandardTagNamespaceTemplateResult>("oci:Identity/getTagStandardTagNamespaceTemplate:getTagStandardTagNamespaceTemplate", args ?? new GetTagStandardTagNamespaceTemplateInvokeArgs(), options.WithDefaults());
     }
 
 

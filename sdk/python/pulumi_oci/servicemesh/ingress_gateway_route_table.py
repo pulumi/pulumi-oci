@@ -406,6 +406,7 @@ class IngressGatewayRouteTable(pulumi.CustomResource):
                 is_path_rewrite_enabled=var["ingress_gateway_route_table_route_rules_is_path_rewrite_enabled"],
                 path=var["ingress_gateway_route_table_route_rules_path"],
                 path_type=var["ingress_gateway_route_table_route_rules_path_type"],
+                request_timeout_in_ms=var["ingress_gateway_route_table_route_rules_request_timeout_in_ms"],
             )],
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -472,6 +473,7 @@ class IngressGatewayRouteTable(pulumi.CustomResource):
                 is_path_rewrite_enabled=var["ingress_gateway_route_table_route_rules_is_path_rewrite_enabled"],
                 path=var["ingress_gateway_route_table_route_rules_path"],
                 path_type=var["ingress_gateway_route_table_route_rules_path_type"],
+                request_timeout_in_ms=var["ingress_gateway_route_table_route_rules_request_timeout_in_ms"],
             )],
             defined_tags={
                 "foo-namespace.bar-key": "value",

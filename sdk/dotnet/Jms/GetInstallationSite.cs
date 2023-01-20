@@ -49,7 +49,7 @@ namespace Pulumi.Oci.Jms
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetInstallationSiteResult> InvokeAsync(GetInstallationSiteArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetInstallationSiteResult>("oci:Jms/getInstallationSite:getInstallationSite", args ?? new GetInstallationSiteArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetInstallationSiteResult>("oci:Jms/getInstallationSite:getInstallationSite", args ?? new GetInstallationSiteArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Fleet Installation Site resource in Oracle Cloud Infrastructure Jms service.
@@ -89,7 +89,7 @@ namespace Pulumi.Oci.Jms
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetInstallationSiteResult> Invoke(GetInstallationSiteInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetInstallationSiteResult>("oci:Jms/getInstallationSite:getInstallationSite", args ?? new GetInstallationSiteInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetInstallationSiteResult>("oci:Jms/getInstallationSite:getInstallationSite", args ?? new GetInstallationSiteInvokeArgs(), options.WithDefaults());
     }
 
 

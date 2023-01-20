@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCrossConnectStatus(args: GetCrossConnectStatusArgs, opts?: pulumi.InvokeOptions): Promise<GetCrossConnectStatusResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getCrossConnectStatus:getCrossConnectStatus", {
         "crossConnectId": args.crossConnectId,
     }, opts);
@@ -75,9 +72,24 @@ export interface GetCrossConnectStatusResult {
      */
     readonly lightLevelIndicator: string;
 }
-
+/**
+ * This data source provides details about a specific Cross Connect Status resource in Oracle Cloud Infrastructure Core service.
+ *
+ * Gets the status of the specified cross-connect.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCrossConnectStatus = oci.Core.getCrossConnectStatus({
+ *     crossConnectId: oci_core_cross_connect.test_cross_connect.id,
+ * });
+ * ```
+ */
 export function getCrossConnectStatusOutput(args: GetCrossConnectStatusOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCrossConnectStatusResult> {
-    return pulumi.output(args).apply(a => getCrossConnectStatus(a, opts))
+    return pulumi.output(args).apply((a: any) => getCrossConnectStatus(a, opts))
 }
 
 /**

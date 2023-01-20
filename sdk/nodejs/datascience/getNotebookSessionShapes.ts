@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNotebookSessionShapes(args: GetNotebookSessionShapesArgs, opts?: pulumi.InvokeOptions): Promise<GetNotebookSessionShapesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataScience/getNotebookSessionShapes:getNotebookSessionShapes", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -59,9 +57,24 @@ export interface GetNotebookSessionShapesResult {
      */
     readonly notebookSessionShapes: outputs.DataScience.GetNotebookSessionShapesNotebookSessionShape[];
 }
-
+/**
+ * This data source provides the list of Notebook Session Shapes in Oracle Cloud Infrastructure Data Science service.
+ *
+ * Lists the valid notebook session shapes.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testNotebookSessionShapes = oci.DataScience.getNotebookSessionShapes({
+ *     compartmentId: _var.compartment_id,
+ * });
+ * ```
+ */
 export function getNotebookSessionShapesOutput(args: GetNotebookSessionShapesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNotebookSessionShapesResult> {
-    return pulumi.output(args).apply(a => getNotebookSessionShapes(a, opts))
+    return pulumi.output(args).apply((a: any) => getNotebookSessionShapes(a, opts))
 }
 
 /**

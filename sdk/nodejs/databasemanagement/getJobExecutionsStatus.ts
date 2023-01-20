@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -28,11 +29,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getJobExecutionsStatus(args: GetJobExecutionsStatusArgs, opts?: pulumi.InvokeOptions): Promise<GetJobExecutionsStatusResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getJobExecutionsStatus:getJobExecutionsStatus", {
         "compartmentId": args.compartmentId,
         "endTime": args.endTime,
@@ -94,9 +92,30 @@ export interface GetJobExecutionsStatusResult {
     readonly name?: string;
     readonly startTime: string;
 }
-
+/**
+ * This data source provides details about a specific Job Executions Status resource in Oracle Cloud Infrastructure Database Management service.
+ *
+ * Gets the number of job executions grouped by status for a job, Managed Database, or Database Group in a specific compartment. Only one of the parameters, jobId, managedDatabaseId, or managedDatabaseGroupId should be provided.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testJobExecutionsStatus = oci.DatabaseManagement.getJobExecutionsStatus({
+ *     compartmentId: _var.compartment_id,
+ *     endTime: _var.job_executions_status_end_time,
+ *     startTime: _var.job_executions_status_start_time,
+ *     id: _var.job_executions_status_id,
+ *     managedDatabaseGroupId: oci_database_management_managed_database_group.test_managed_database_group.id,
+ *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
+ *     name: _var.job_executions_status_name,
+ * });
+ * ```
+ */
 export function getJobExecutionsStatusOutput(args: GetJobExecutionsStatusOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJobExecutionsStatusResult> {
-    return pulumi.output(args).apply(a => getJobExecutionsStatus(a, opts))
+    return pulumi.output(args).apply((a: any) => getJobExecutionsStatus(a, opts))
 }
 
 /**

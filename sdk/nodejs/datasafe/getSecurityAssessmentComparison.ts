@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSecurityAssessmentComparison(args: GetSecurityAssessmentComparisonArgs, opts?: pulumi.InvokeOptions): Promise<GetSecurityAssessmentComparisonResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getSecurityAssessmentComparison:getSecurityAssessmentComparison", {
         "comparisonSecurityAssessmentId": args.comparisonSecurityAssessmentId,
         "securityAssessmentId": args.securityAssessmentId,
@@ -75,9 +73,25 @@ export interface GetSecurityAssessmentComparisonResult {
      */
     readonly timeCreated: string;
 }
-
+/**
+ * This data source provides details about a specific Security Assessment Comparison resource in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Gets the details of the comparison report on the security assessments submitted for comparison.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSecurityAssessmentComparison = oci.DataSafe.getSecurityAssessmentComparison({
+ *     comparisonSecurityAssessmentId: oci_data_safe_security_assessment.test_security_assessment.id,
+ *     securityAssessmentId: oci_data_safe_security_assessment.test_security_assessment.id,
+ * });
+ * ```
+ */
 export function getSecurityAssessmentComparisonOutput(args: GetSecurityAssessmentComparisonOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityAssessmentComparisonResult> {
-    return pulumi.output(args).apply(a => getSecurityAssessmentComparison(a, opts))
+    return pulumi.output(args).apply((a: any) => getSecurityAssessmentComparison(a, opts))
 }
 
 /**

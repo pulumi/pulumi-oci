@@ -5,24 +5,66 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./aiPrivateEndpoint";
-export * from "./dataAsset";
-export * from "./getAiPrivateEndpoint";
-export * from "./getAiPrivateEndpoints";
-export * from "./getDetectionDataAsset";
-export * from "./getDetectionDataAssets";
-export * from "./getDetectionModel";
-export * from "./getDetectionModels";
-export * from "./getDetectionProject";
-export * from "./getDetectionProjects";
-export * from "./model";
-export * from "./project";
+export { AiPrivateEndpointArgs, AiPrivateEndpointState } from "./aiPrivateEndpoint";
+export type AiPrivateEndpoint = import("./aiPrivateEndpoint").AiPrivateEndpoint;
+export const AiPrivateEndpoint: typeof import("./aiPrivateEndpoint").AiPrivateEndpoint = null as any;
+utilities.lazyLoad(exports, ["AiPrivateEndpoint"], () => require("./aiPrivateEndpoint"));
 
-// Import resources to register:
-import { AiPrivateEndpoint } from "./aiPrivateEndpoint";
-import { DataAsset } from "./dataAsset";
-import { Model } from "./model";
-import { Project } from "./project";
+export { DataAssetArgs, DataAssetState } from "./dataAsset";
+export type DataAsset = import("./dataAsset").DataAsset;
+export const DataAsset: typeof import("./dataAsset").DataAsset = null as any;
+utilities.lazyLoad(exports, ["DataAsset"], () => require("./dataAsset"));
+
+export { GetAiPrivateEndpointArgs, GetAiPrivateEndpointResult, GetAiPrivateEndpointOutputArgs } from "./getAiPrivateEndpoint";
+export const getAiPrivateEndpoint: typeof import("./getAiPrivateEndpoint").getAiPrivateEndpoint = null as any;
+export const getAiPrivateEndpointOutput: typeof import("./getAiPrivateEndpoint").getAiPrivateEndpointOutput = null as any;
+utilities.lazyLoad(exports, ["getAiPrivateEndpoint","getAiPrivateEndpointOutput"], () => require("./getAiPrivateEndpoint"));
+
+export { GetAiPrivateEndpointsArgs, GetAiPrivateEndpointsResult, GetAiPrivateEndpointsOutputArgs } from "./getAiPrivateEndpoints";
+export const getAiPrivateEndpoints: typeof import("./getAiPrivateEndpoints").getAiPrivateEndpoints = null as any;
+export const getAiPrivateEndpointsOutput: typeof import("./getAiPrivateEndpoints").getAiPrivateEndpointsOutput = null as any;
+utilities.lazyLoad(exports, ["getAiPrivateEndpoints","getAiPrivateEndpointsOutput"], () => require("./getAiPrivateEndpoints"));
+
+export { GetDetectionDataAssetArgs, GetDetectionDataAssetResult, GetDetectionDataAssetOutputArgs } from "./getDetectionDataAsset";
+export const getDetectionDataAsset: typeof import("./getDetectionDataAsset").getDetectionDataAsset = null as any;
+export const getDetectionDataAssetOutput: typeof import("./getDetectionDataAsset").getDetectionDataAssetOutput = null as any;
+utilities.lazyLoad(exports, ["getDetectionDataAsset","getDetectionDataAssetOutput"], () => require("./getDetectionDataAsset"));
+
+export { GetDetectionDataAssetsArgs, GetDetectionDataAssetsResult, GetDetectionDataAssetsOutputArgs } from "./getDetectionDataAssets";
+export const getDetectionDataAssets: typeof import("./getDetectionDataAssets").getDetectionDataAssets = null as any;
+export const getDetectionDataAssetsOutput: typeof import("./getDetectionDataAssets").getDetectionDataAssetsOutput = null as any;
+utilities.lazyLoad(exports, ["getDetectionDataAssets","getDetectionDataAssetsOutput"], () => require("./getDetectionDataAssets"));
+
+export { GetDetectionModelArgs, GetDetectionModelResult, GetDetectionModelOutputArgs } from "./getDetectionModel";
+export const getDetectionModel: typeof import("./getDetectionModel").getDetectionModel = null as any;
+export const getDetectionModelOutput: typeof import("./getDetectionModel").getDetectionModelOutput = null as any;
+utilities.lazyLoad(exports, ["getDetectionModel","getDetectionModelOutput"], () => require("./getDetectionModel"));
+
+export { GetDetectionModelsArgs, GetDetectionModelsResult, GetDetectionModelsOutputArgs } from "./getDetectionModels";
+export const getDetectionModels: typeof import("./getDetectionModels").getDetectionModels = null as any;
+export const getDetectionModelsOutput: typeof import("./getDetectionModels").getDetectionModelsOutput = null as any;
+utilities.lazyLoad(exports, ["getDetectionModels","getDetectionModelsOutput"], () => require("./getDetectionModels"));
+
+export { GetDetectionProjectArgs, GetDetectionProjectResult, GetDetectionProjectOutputArgs } from "./getDetectionProject";
+export const getDetectionProject: typeof import("./getDetectionProject").getDetectionProject = null as any;
+export const getDetectionProjectOutput: typeof import("./getDetectionProject").getDetectionProjectOutput = null as any;
+utilities.lazyLoad(exports, ["getDetectionProject","getDetectionProjectOutput"], () => require("./getDetectionProject"));
+
+export { GetDetectionProjectsArgs, GetDetectionProjectsResult, GetDetectionProjectsOutputArgs } from "./getDetectionProjects";
+export const getDetectionProjects: typeof import("./getDetectionProjects").getDetectionProjects = null as any;
+export const getDetectionProjectsOutput: typeof import("./getDetectionProjects").getDetectionProjectsOutput = null as any;
+utilities.lazyLoad(exports, ["getDetectionProjects","getDetectionProjectsOutput"], () => require("./getDetectionProjects"));
+
+export { ModelArgs, ModelState } from "./model";
+export type Model = import("./model").Model;
+export const Model: typeof import("./model").Model = null as any;
+utilities.lazyLoad(exports, ["Model"], () => require("./model"));
+
+export { ProjectArgs, ProjectState } from "./project";
+export type Project = import("./project").Project;
+export const Project: typeof import("./project").Project = null as any;
+utilities.lazyLoad(exports, ["Project"], () => require("./project"));
+
 
 const _module = {
     version: utilities.getVersion(),

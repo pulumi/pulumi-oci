@@ -13,9 +13,22 @@ from . import outputs
 __all__ = [
     'FleetInventoryLog',
     'FleetOperationLog',
+    'GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingResult',
+    'GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisResult',
+    'GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogResult',
+    'GetFleetAdvancedFeatureConfigurationJfrRecordingResult',
+    'GetFleetAdvancedFeatureConfigurationLcmResult',
+    'GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionResult',
+    'GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingResult',
+    'GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathResult',
+    'GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarResult',
+    'GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlResult',
     'GetFleetBlocklistsFilterResult',
     'GetFleetBlocklistsItemResult',
     'GetFleetBlocklistsItemTargetResult',
+    'GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionResult',
+    'GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemResult',
+    'GetFleetCryptoAnalysisResultsFilterResult',
     'GetFleetInventoryLogResult',
     'GetFleetOperationLogResult',
     'GetFleetsFilterResult',
@@ -147,6 +160,314 @@ class FleetOperationLog(dict):
 
 
 @pulumi.output_type
+class GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingResult(dict):
+    def __init__(__self__, *,
+                 is_enabled: bool):
+        """
+        :param bool is_enabled: Lcm flag to store enabled or disabled status
+        """
+        pulumi.set(__self__, "is_enabled", is_enabled)
+
+    @property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> bool:
+        """
+        Lcm flag to store enabled or disabled status
+        """
+        return pulumi.get(self, "is_enabled")
+
+
+@pulumi.output_type
+class GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisResult(dict):
+    def __init__(__self__, *,
+                 is_enabled: bool,
+                 summarized_events_logs: Sequence['outputs.GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogResult']):
+        """
+        :param bool is_enabled: Lcm flag to store enabled or disabled status
+        :param Sequence['GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgs'] summarized_events_logs: Summarized events log for advanced feature.
+        """
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "summarized_events_logs", summarized_events_logs)
+
+    @property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> bool:
+        """
+        Lcm flag to store enabled or disabled status
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @property
+    @pulumi.getter(name="summarizedEventsLogs")
+    def summarized_events_logs(self) -> Sequence['outputs.GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogResult']:
+        """
+        Summarized events log for advanced feature.
+        """
+        return pulumi.get(self, "summarized_events_logs")
+
+
+@pulumi.output_type
+class GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogResult(dict):
+    def __init__(__self__, *,
+                 log_group_id: str,
+                 log_id: str):
+        """
+        :param str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        :param str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+        pulumi.set(__self__, "log_group_id", log_group_id)
+        pulumi.set(__self__, "log_id", log_id)
+
+    @property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        """
+        return pulumi.get(self, "log_group_id")
+
+    @property
+    @pulumi.getter(name="logId")
+    def log_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+        return pulumi.get(self, "log_id")
+
+
+@pulumi.output_type
+class GetFleetAdvancedFeatureConfigurationJfrRecordingResult(dict):
+    def __init__(__self__, *,
+                 is_enabled: bool):
+        """
+        :param bool is_enabled: Lcm flag to store enabled or disabled status
+        """
+        pulumi.set(__self__, "is_enabled", is_enabled)
+
+    @property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> bool:
+        """
+        Lcm flag to store enabled or disabled status
+        """
+        return pulumi.get(self, "is_enabled")
+
+
+@pulumi.output_type
+class GetFleetAdvancedFeatureConfigurationLcmResult(dict):
+    def __init__(__self__, *,
+                 is_enabled: bool,
+                 post_installation_actions: Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionResult']):
+        """
+        :param bool is_enabled: Lcm flag to store enabled or disabled status
+        :param Sequence['GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionArgs'] post_installation_actions: List of available post actions you can execute after the successful Java installation.
+        """
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "post_installation_actions", post_installation_actions)
+
+    @property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> bool:
+        """
+        Lcm flag to store enabled or disabled status
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @property
+    @pulumi.getter(name="postInstallationActions")
+    def post_installation_actions(self) -> Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionResult']:
+        """
+        List of available post actions you can execute after the successful Java installation.
+        """
+        return pulumi.get(self, "post_installation_actions")
+
+
+@pulumi.output_type
+class GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionResult(dict):
+    def __init__(__self__, *,
+                 disabled_tls_versions: Sequence[str],
+                 minimum_key_size_settings: Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingResult'],
+                 should_replace_certificates_operating_system: bool):
+        """
+        :param Sequence[str] disabled_tls_versions: The following post JRE installation actions are supported by the field:
+               * Disable TLS 1.0 , TLS 1.1
+        :param Sequence['GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingArgs'] minimum_key_size_settings: test
+        :param bool should_replace_certificates_operating_system: Restores JDK root certificates with the certificates that are available in the operating system. The following action is supported by the field:
+               * Replace JDK root certificates with a list provided by the operating system
+        """
+        pulumi.set(__self__, "disabled_tls_versions", disabled_tls_versions)
+        pulumi.set(__self__, "minimum_key_size_settings", minimum_key_size_settings)
+        pulumi.set(__self__, "should_replace_certificates_operating_system", should_replace_certificates_operating_system)
+
+    @property
+    @pulumi.getter(name="disabledTlsVersions")
+    def disabled_tls_versions(self) -> Sequence[str]:
+        """
+        The following post JRE installation actions are supported by the field:
+        * Disable TLS 1.0 , TLS 1.1
+        """
+        return pulumi.get(self, "disabled_tls_versions")
+
+    @property
+    @pulumi.getter(name="minimumKeySizeSettings")
+    def minimum_key_size_settings(self) -> Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingResult']:
+        """
+        test
+        """
+        return pulumi.get(self, "minimum_key_size_settings")
+
+    @property
+    @pulumi.getter(name="shouldReplaceCertificatesOperatingSystem")
+    def should_replace_certificates_operating_system(self) -> bool:
+        """
+        Restores JDK root certificates with the certificates that are available in the operating system. The following action is supported by the field:
+        * Replace JDK root certificates with a list provided by the operating system
+        """
+        return pulumi.get(self, "should_replace_certificates_operating_system")
+
+
+@pulumi.output_type
+class GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingResult(dict):
+    def __init__(__self__, *,
+                 certpaths: Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathResult'],
+                 jars: Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarResult'],
+                 tls: Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlResult']):
+        """
+        :param Sequence['GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathArgs'] certpaths: Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.certpath.disabledAlgorithms will be updated with the following supported actions:
+               * Changing minimum key length for RSA signed jars
+               * Changing minimum key length for EC
+               * Changing minimum key length for DSA
+        :param Sequence['GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarArgs'] jars: Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.jar.disabledAlgorithms will be updated with the following supported actions:
+               * Changing minimum key length for RSA signed jars
+               * Changing minimum key length for EC
+               * Changing minimum key length for DSA
+        :param Sequence['GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlArgs'] tls: Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.tls.disabledAlgorithms will be updated with the following supported actions:
+               * Changing minimum key length for Diffie-Hellman
+        """
+        pulumi.set(__self__, "certpaths", certpaths)
+        pulumi.set(__self__, "jars", jars)
+        pulumi.set(__self__, "tls", tls)
+
+    @property
+    @pulumi.getter
+    def certpaths(self) -> Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathResult']:
+        """
+        Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.certpath.disabledAlgorithms will be updated with the following supported actions:
+        * Changing minimum key length for RSA signed jars
+        * Changing minimum key length for EC
+        * Changing minimum key length for DSA
+        """
+        return pulumi.get(self, "certpaths")
+
+    @property
+    @pulumi.getter
+    def jars(self) -> Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarResult']:
+        """
+        Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.jar.disabledAlgorithms will be updated with the following supported actions:
+        * Changing minimum key length for RSA signed jars
+        * Changing minimum key length for EC
+        * Changing minimum key length for DSA
+        """
+        return pulumi.get(self, "jars")
+
+    @property
+    @pulumi.getter
+    def tls(self) -> Sequence['outputs.GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlResult']:
+        """
+        Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.tls.disabledAlgorithms will be updated with the following supported actions:
+        * Changing minimum key length for Diffie-Hellman
+        """
+        return pulumi.get(self, "tls")
+
+
+@pulumi.output_type
+class GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingCertpathResult(dict):
+    def __init__(__self__, *,
+                 key_size: int,
+                 name: str):
+        """
+        :param int key_size: Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
+        :param str name: The algorithm name.
+        """
+        pulumi.set(__self__, "key_size", key_size)
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter(name="keySize")
+    def key_size(self) -> int:
+        """
+        Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
+        """
+        return pulumi.get(self, "key_size")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The algorithm name.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingJarResult(dict):
+    def __init__(__self__, *,
+                 key_size: int,
+                 name: str):
+        """
+        :param int key_size: Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
+        :param str name: The algorithm name.
+        """
+        pulumi.set(__self__, "key_size", key_size)
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter(name="keySize")
+    def key_size(self) -> int:
+        """
+        Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
+        """
+        return pulumi.get(self, "key_size")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The algorithm name.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetFleetAdvancedFeatureConfigurationLcmPostInstallationActionMinimumKeySizeSettingTlResult(dict):
+    def __init__(__self__, *,
+                 key_size: int,
+                 name: str):
+        """
+        :param int key_size: Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
+        :param str name: The algorithm name.
+        """
+        pulumi.set(__self__, "key_size", key_size)
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter(name="keySize")
+    def key_size(self) -> int:
+        """
+        Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
+        """
+        return pulumi.get(self, "key_size")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The algorithm name.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
 class GetFleetBlocklistsFilterResult(dict):
     def __init__(__self__, *,
                  name: str,
@@ -265,6 +586,239 @@ class GetFleetBlocklistsItemTargetResult(dict):
 
 
 @pulumi.output_type
+class GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 aggregation_mode: str,
+                 bucket: str,
+                 crypto_roadmap_version: str,
+                 finding_count: int,
+                 fleet_id: str,
+                 host_name: str,
+                 id: str,
+                 managed_instance_id: str,
+                 namespace: str,
+                 non_compliant_finding_count: int,
+                 object: str,
+                 summarized_event_count: int,
+                 time_created: str,
+                 time_first_event: str,
+                 time_last_event: str,
+                 total_event_count: int,
+                 work_request_id: str):
+        """
+        :param str aggregation_mode: The aggregation mode of the crypto event analysis result.
+        :param str bucket: The Object Storage bucket name of this analysis result.
+        :param str crypto_roadmap_version: The Crypto Roadmap version used to perform the analysis.
+        :param int finding_count: Total number of findings with the analysis.
+        :param str fleet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
+        :param str host_name: The hostname of the managed instance.
+        :param str id: The OCID to identify this analysis results.
+        :param str managed_instance_id: The Fleet-unique identifier of the related managed instance.
+        :param str namespace: The Object Storage namespace of this analysis result.
+        :param int non_compliant_finding_count: Total number of non-compliant findings with the analysis. A non-compliant finding means the application won't work properly with the changes introduced by the crypto roadmap version used the the analysis.
+        :param str object: The Object Storage object name of this analysis result.
+        :param int summarized_event_count: Total number of summarized events. Summarized events are deduplicated events of interest.
+        :param str time_created: The time the result is compiled.
+        :param str time_first_event: Time of the first event in the analysis.
+        :param str time_last_event: Time of the last event in the analysis.
+        :param int total_event_count: Total number of events in the analysis.
+        :param str work_request_id: The OCID of the work request to start the analysis.
+        """
+        pulumi.set(__self__, "aggregation_mode", aggregation_mode)
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "crypto_roadmap_version", crypto_roadmap_version)
+        pulumi.set(__self__, "finding_count", finding_count)
+        pulumi.set(__self__, "fleet_id", fleet_id)
+        pulumi.set(__self__, "host_name", host_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "non_compliant_finding_count", non_compliant_finding_count)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "summarized_event_count", summarized_event_count)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_first_event", time_first_event)
+        pulumi.set(__self__, "time_last_event", time_last_event)
+        pulumi.set(__self__, "total_event_count", total_event_count)
+        pulumi.set(__self__, "work_request_id", work_request_id)
+
+    @property
+    @pulumi.getter(name="aggregationMode")
+    def aggregation_mode(self) -> str:
+        """
+        The aggregation mode of the crypto event analysis result.
+        """
+        return pulumi.get(self, "aggregation_mode")
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> str:
+        """
+        The Object Storage bucket name of this analysis result.
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter(name="cryptoRoadmapVersion")
+    def crypto_roadmap_version(self) -> str:
+        """
+        The Crypto Roadmap version used to perform the analysis.
+        """
+        return pulumi.get(self, "crypto_roadmap_version")
+
+    @property
+    @pulumi.getter(name="findingCount")
+    def finding_count(self) -> int:
+        """
+        Total number of findings with the analysis.
+        """
+        return pulumi.get(self, "finding_count")
+
+    @property
+    @pulumi.getter(name="fleetId")
+    def fleet_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
+        """
+        return pulumi.get(self, "fleet_id")
+
+    @property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> str:
+        """
+        The hostname of the managed instance.
+        """
+        return pulumi.get(self, "host_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The OCID to identify this analysis results.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="managedInstanceId")
+    def managed_instance_id(self) -> str:
+        """
+        The Fleet-unique identifier of the related managed instance.
+        """
+        return pulumi.get(self, "managed_instance_id")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> str:
+        """
+        The Object Storage namespace of this analysis result.
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter(name="nonCompliantFindingCount")
+    def non_compliant_finding_count(self) -> int:
+        """
+        Total number of non-compliant findings with the analysis. A non-compliant finding means the application won't work properly with the changes introduced by the crypto roadmap version used the the analysis.
+        """
+        return pulumi.get(self, "non_compliant_finding_count")
+
+    @property
+    @pulumi.getter
+    def object(self) -> str:
+        """
+        The Object Storage object name of this analysis result.
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter(name="summarizedEventCount")
+    def summarized_event_count(self) -> int:
+        """
+        Total number of summarized events. Summarized events are deduplicated events of interest.
+        """
+        return pulumi.get(self, "summarized_event_count")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time the result is compiled.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeFirstEvent")
+    def time_first_event(self) -> str:
+        """
+        Time of the first event in the analysis.
+        """
+        return pulumi.get(self, "time_first_event")
+
+    @property
+    @pulumi.getter(name="timeLastEvent")
+    def time_last_event(self) -> str:
+        """
+        Time of the last event in the analysis.
+        """
+        return pulumi.get(self, "time_last_event")
+
+    @property
+    @pulumi.getter(name="totalEventCount")
+    def total_event_count(self) -> int:
+        """
+        Total number of events in the analysis.
+        """
+        return pulumi.get(self, "total_event_count")
+
+    @property
+    @pulumi.getter(name="workRequestId")
+    def work_request_id(self) -> str:
+        """
+        The OCID of the work request to start the analysis.
+        """
+        return pulumi.get(self, "work_request_id")
+
+
+@pulumi.output_type
+class GetFleetCryptoAnalysisResultsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
 class GetFleetInventoryLogResult(dict):
     def __init__(__self__, *,
                  log_group_id: str,
@@ -366,6 +920,7 @@ class GetFleetsFleetCollectionItemResult(dict):
     def __init__(__self__, *,
                  approximate_application_count: int,
                  approximate_installation_count: int,
+                 approximate_java_server_count: int,
                  approximate_jre_count: int,
                  approximate_managed_instance_count: int,
                  compartment_id: str,
@@ -383,6 +938,7 @@ class GetFleetsFleetCollectionItemResult(dict):
         """
         :param int approximate_application_count: The approximate count of all unique applications in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
         :param int approximate_installation_count: The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+        :param int approximate_java_server_count: The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
         :param int approximate_jre_count: The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
         :param int approximate_managed_instance_count: The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
@@ -392,7 +948,7 @@ class GetFleetsFleetCollectionItemResult(dict):
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
         :param str id: The ID of the Fleet.
         :param Sequence['GetFleetsFleetCollectionItemInventoryLogArgs'] inventory_logs: Custom Log for inventory or operation log.
-        :param bool is_advanced_features_enabled: Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+        :param bool is_advanced_features_enabled: Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
         :param Sequence['GetFleetsFleetCollectionItemOperationLogArgs'] operation_logs: Custom Log for inventory or operation log.
         :param str state: The state of the lifecycle.
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -400,6 +956,7 @@ class GetFleetsFleetCollectionItemResult(dict):
         """
         pulumi.set(__self__, "approximate_application_count", approximate_application_count)
         pulumi.set(__self__, "approximate_installation_count", approximate_installation_count)
+        pulumi.set(__self__, "approximate_java_server_count", approximate_java_server_count)
         pulumi.set(__self__, "approximate_jre_count", approximate_jre_count)
         pulumi.set(__self__, "approximate_managed_instance_count", approximate_managed_instance_count)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -430,6 +987,14 @@ class GetFleetsFleetCollectionItemResult(dict):
         The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
         """
         return pulumi.get(self, "approximate_installation_count")
+
+    @property
+    @pulumi.getter(name="approximateJavaServerCount")
+    def approximate_java_server_count(self) -> int:
+        """
+        The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+        """
+        return pulumi.get(self, "approximate_java_server_count")
 
     @property
     @pulumi.getter(name="approximateJreCount")
@@ -507,7 +1072,7 @@ class GetFleetsFleetCollectionItemResult(dict):
     @pulumi.getter(name="isAdvancedFeaturesEnabled")
     def is_advanced_features_enabled(self) -> bool:
         """
-        Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+        Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
         """
         return pulumi.get(self, "is_advanced_features_enabled")
 
@@ -1496,6 +2061,7 @@ class GetJavaReleasesJavaReleaseCollectionResult(dict):
 @pulumi.output_type
 class GetJavaReleasesJavaReleaseCollectionItemResult(dict):
     def __init__(__self__, *,
+                 artifact_content_types: Sequence[str],
                  artifacts: Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemArtifactResult'],
                  family_details: Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemFamilyDetailResult'],
                  family_version: str,
@@ -1508,8 +2074,9 @@ class GetJavaReleasesJavaReleaseCollectionItemResult(dict):
                  release_version: str,
                  security_status: str):
         """
+        :param Sequence[str] artifact_content_types: Artifact content types for the Java version.
         :param Sequence['GetJavaReleasesJavaReleaseCollectionItemArtifactArgs'] artifacts: List of Java artifacts.
-        :param Sequence['GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArgs'] family_details: Complete information of a specific Java release family.
+        :param Sequence['GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArgs'] family_details: Metadata associated with a specific Java release family. A Java release family is typically a major version in the Java version identifier.
         :param str family_version: The version identifier for the Java family.
         :param Sequence['GetJavaReleasesJavaReleaseCollectionItemLicenseDetailArgs'] license_details: Information about a license type for Java.
         :param str license_type: Java license type.
@@ -1520,6 +2087,7 @@ class GetJavaReleasesJavaReleaseCollectionItemResult(dict):
         :param str release_version: Unique Java release version identifier
         :param str security_status: The security status of the Java version.
         """
+        pulumi.set(__self__, "artifact_content_types", artifact_content_types)
         pulumi.set(__self__, "artifacts", artifacts)
         pulumi.set(__self__, "family_details", family_details)
         pulumi.set(__self__, "family_version", family_version)
@@ -1533,6 +2101,14 @@ class GetJavaReleasesJavaReleaseCollectionItemResult(dict):
         pulumi.set(__self__, "security_status", security_status)
 
     @property
+    @pulumi.getter(name="artifactContentTypes")
+    def artifact_content_types(self) -> Sequence[str]:
+        """
+        Artifact content types for the Java version.
+        """
+        return pulumi.get(self, "artifact_content_types")
+
+    @property
     @pulumi.getter
     def artifacts(self) -> Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemArtifactResult']:
         """
@@ -1544,7 +2120,7 @@ class GetJavaReleasesJavaReleaseCollectionItemResult(dict):
     @pulumi.getter(name="familyDetails")
     def family_details(self) -> Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemFamilyDetailResult']:
         """
-        Complete information of a specific Java release family.
+        Metadata associated with a specific Java release family. A Java release family is typically a major version in the Java version identifier.
         """
         return pulumi.get(self, "family_details")
 

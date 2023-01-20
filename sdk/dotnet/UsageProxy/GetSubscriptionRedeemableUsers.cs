@@ -40,7 +40,7 @@ namespace Pulumi.Oci.UsageProxy
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetSubscriptionRedeemableUsersResult> InvokeAsync(GetSubscriptionRedeemableUsersArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetSubscriptionRedeemableUsersResult>("oci:UsageProxy/getSubscriptionRedeemableUsers:getSubscriptionRedeemableUsers", args ?? new GetSubscriptionRedeemableUsersArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetSubscriptionRedeemableUsersResult>("oci:UsageProxy/getSubscriptionRedeemableUsers:getSubscriptionRedeemableUsers", args ?? new GetSubscriptionRedeemableUsersArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Subscription Redeemable Users in Oracle Cloud Infrastructure Usage Proxy service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.UsageProxy
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetSubscriptionRedeemableUsersResult> Invoke(GetSubscriptionRedeemableUsersInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetSubscriptionRedeemableUsersResult>("oci:UsageProxy/getSubscriptionRedeemableUsers:getSubscriptionRedeemableUsers", args ?? new GetSubscriptionRedeemableUsersInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetSubscriptionRedeemableUsersResult>("oci:UsageProxy/getSubscriptionRedeemableUsers:getSubscriptionRedeemableUsers", args ?? new GetSubscriptionRedeemableUsersInvokeArgs(), options.WithDefaults());
     }
 
 

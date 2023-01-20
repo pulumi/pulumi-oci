@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -27,11 +28,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAddressLists(args: GetAddressListsArgs, opts?: pulumi.InvokeOptions): Promise<GetAddressListsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Waas/getAddressLists:getAddressLists", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -97,9 +95,29 @@ export interface GetAddressListsResult {
     readonly timeCreatedGreaterThanOrEqualTo?: string;
     readonly timeCreatedLessThan?: string;
 }
-
+/**
+ * This data source provides the list of Address Lists in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
+ *
+ * Gets a list of address lists that can be used in a WAAS policy.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAddressLists = oci.Waas.getAddressLists({
+ *     compartmentId: _var.compartment_id,
+ *     ids: _var.address_list_ids,
+ *     names: _var.address_list_names,
+ *     states: _var.address_list_states,
+ *     timeCreatedGreaterThanOrEqualTo: _var.address_list_time_created_greater_than_or_equal_to,
+ *     timeCreatedLessThan: _var.address_list_time_created_less_than,
+ * });
+ * ```
+ */
 export function getAddressListsOutput(args: GetAddressListsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAddressListsResult> {
-    return pulumi.output(args).apply(a => getAddressLists(a, opts))
+    return pulumi.output(args).apply((a: any) => getAddressLists(a, opts))
 }
 
 /**

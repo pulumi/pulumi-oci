@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getBootVolumeBackup(args: GetBootVolumeBackupArgs, opts?: pulumi.InvokeOptions): Promise<GetBootVolumeBackupResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getBootVolumeBackup:getBootVolumeBackup", {
         "bootVolumeBackupId": args.bootVolumeBackupId,
     }, opts);
@@ -121,9 +119,24 @@ export interface GetBootVolumeBackupResult {
      */
     readonly uniqueSizeInGbs: string;
 }
-
+/**
+ * This data source provides details about a specific Boot Volume Backup resource in Oracle Cloud Infrastructure Core service.
+ *
+ * Gets information for the specified boot volume backup.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testBootVolumeBackup = oci.Core.getBootVolumeBackup({
+ *     bootVolumeBackupId: oci_core_boot_volume_backup.test_boot_volume_backup.id,
+ * });
+ * ```
+ */
 export function getBootVolumeBackupOutput(args: GetBootVolumeBackupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBootVolumeBackupResult> {
-    return pulumi.output(args).apply(a => getBootVolumeBackup(a, opts))
+    return pulumi.output(args).apply((a: any) => getBootVolumeBackup(a, opts))
 }
 
 /**

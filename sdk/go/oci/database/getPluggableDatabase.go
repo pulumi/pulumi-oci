@@ -76,9 +76,11 @@ type LookupPluggableDatabaseResult struct {
 	OpenMode         string `pulumi:"openMode"`
 	PdbAdminPassword string `pulumi:"pdbAdminPassword"`
 	// The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
-	PdbName                       string `pulumi:"pdbName"`
-	PluggableDatabaseId           string `pulumi:"pluggableDatabaseId"`
-	ShouldPdbAdminAccountBeLocked bool   `pulumi:"shouldPdbAdminAccountBeLocked"`
+	PdbName             string `pulumi:"pdbName"`
+	PluggableDatabaseId string `pulumi:"pluggableDatabaseId"`
+	// The configuration of the Pluggable Database Management service.
+	PluggableDatabaseManagementConfigs []GetPluggableDatabasePluggableDatabaseManagementConfig `pulumi:"pluggableDatabaseManagementConfigs"`
+	ShouldPdbAdminAccountBeLocked      bool                                                    `pulumi:"shouldPdbAdminAccountBeLocked"`
 	// The current state of the pluggable database.
 	State             string `pulumi:"state"`
 	TdeWalletPassword string `pulumi:"tdeWalletPassword"`
@@ -182,6 +184,13 @@ func (o LookupPluggableDatabaseResultOutput) PdbName() pulumi.StringOutput {
 
 func (o LookupPluggableDatabaseResultOutput) PluggableDatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPluggableDatabaseResult) string { return v.PluggableDatabaseId }).(pulumi.StringOutput)
+}
+
+// The configuration of the Pluggable Database Management service.
+func (o LookupPluggableDatabaseResultOutput) PluggableDatabaseManagementConfigs() GetPluggableDatabasePluggableDatabaseManagementConfigArrayOutput {
+	return o.ApplyT(func(v LookupPluggableDatabaseResult) []GetPluggableDatabasePluggableDatabaseManagementConfig {
+		return v.PluggableDatabaseManagementConfigs
+	}).(GetPluggableDatabasePluggableDatabaseManagementConfigArrayOutput)
 }
 
 func (o LookupPluggableDatabaseResultOutput) ShouldPdbAdminAccountBeLocked() pulumi.BoolOutput {

@@ -54,7 +54,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAuditProfileAnalyticResult> InvokeAsync(GetAuditProfileAnalyticArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAuditProfileAnalyticResult>("oci:DataSafe/getAuditProfileAnalytic:getAuditProfileAnalytic", args ?? new GetAuditProfileAnalyticArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAuditProfileAnalyticResult>("oci:DataSafe/getAuditProfileAnalytic:getAuditProfileAnalytic", args ?? new GetAuditProfileAnalyticArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Audit Profile Analytic resource in Oracle Cloud Infrastructure Data Safe service.
@@ -99,7 +99,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAuditProfileAnalyticResult> Invoke(GetAuditProfileAnalyticInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAuditProfileAnalyticResult>("oci:DataSafe/getAuditProfileAnalytic:getAuditProfileAnalytic", args ?? new GetAuditProfileAnalyticInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAuditProfileAnalyticResult>("oci:DataSafe/getAuditProfileAnalytic:getAuditProfileAnalytic", args ?? new GetAuditProfileAnalyticInvokeArgs(), options.WithDefaults());
     }
 
 

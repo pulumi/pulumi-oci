@@ -9,7 +9,9 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.ApmSynthetics.ConfigArgs;
 import com.pulumi.oci.ApmSynthetics.inputs.ConfigState;
+import com.pulumi.oci.ApmSynthetics.outputs.ConfigAvailabilityConfiguration;
 import com.pulumi.oci.ApmSynthetics.outputs.ConfigConfiguration;
+import com.pulumi.oci.ApmSynthetics.outputs.ConfigMaintenanceWindowSchedule;
 import com.pulumi.oci.ApmSynthetics.outputs.ConfigScriptParameter;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
@@ -34,10 +36,12 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.ApmSynthetics.Config;
  * import com.pulumi.oci.ApmSynthetics.ConfigArgs;
+ * import com.pulumi.oci.ApmSynthetics.inputs.ConfigAvailabilityConfigurationArgs;
  * import com.pulumi.oci.ApmSynthetics.inputs.ConfigConfigurationArgs;
  * import com.pulumi.oci.ApmSynthetics.inputs.ConfigConfigurationDnsConfigurationArgs;
  * import com.pulumi.oci.ApmSynthetics.inputs.ConfigConfigurationNetworkConfigurationArgs;
  * import com.pulumi.oci.ApmSynthetics.inputs.ConfigConfigurationReqAuthenticationDetailsArgs;
+ * import com.pulumi.oci.ApmSynthetics.inputs.ConfigMaintenanceWindowScheduleArgs;
  * import com.pulumi.oci.ApmSynthetics.inputs.ConfigScriptParameterArgs;
  * import java.util.List;
  * import java.util.ArrayList;
@@ -58,6 +62,10 @@ import javax.annotation.Nullable;
  *             .monitorType(var_.monitor_monitor_type())
  *             .repeatIntervalInSeconds(var_.monitor_repeat_interval_in_seconds())
  *             .vantagePoints()
+ *             .availabilityConfiguration(ConfigAvailabilityConfigurationArgs.builder()
+ *                 .maxAllowedFailuresPerInterval(var_.monitor_availability_configuration_max_allowed_failures_per_interval())
+ *                 .minAllowedRunsPerInterval(var_.monitor_availability_configuration_min_allowed_runs_per_interval())
+ *                 .build())
  *             .batchIntervalInSeconds(var_.monitor_batch_interval_in_seconds())
  *             .configuration(ConfigConfigurationArgs.builder()
  *                 .configType(var_.monitor_configuration_config_type())
@@ -109,6 +117,10 @@ import javax.annotation.Nullable;
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .isRunNow(var_.monitor_is_run_now())
  *             .isRunOnce(var_.monitor_is_run_once())
+ *             .maintenanceWindowSchedule(ConfigMaintenanceWindowScheduleArgs.builder()
+ *                 .timeEnded(var_.monitor_maintenance_window_schedule_time_ended())
+ *                 .timeStarted(var_.monitor_maintenance_window_schedule_time_started())
+ *                 .build())
  *             .schedulingPolicy(var_.monitor_scheduling_policy())
  *             .scriptId(oci_apm_synthetics_script.test_script().id())
  *             .scriptParameters(ConfigScriptParameterArgs.builder()
@@ -137,7 +149,6 @@ import javax.annotation.Nullable;
 public class Config extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The APM domain ID the request is intended for.
-     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     @Export(name="apmDomainId", type=String.class, parameters={})
@@ -145,15 +156,27 @@ public class Config extends com.pulumi.resources.CustomResource {
 
     /**
      * @return (Updatable) The APM domain ID the request is intended for.
-     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     public Output<String> apmDomainId() {
         return this.apmDomainId;
     }
     /**
+     * (Updatable) Monitor availability configuration details.
+     * 
+     */
+    @Export(name="availabilityConfiguration", type=ConfigAvailabilityConfiguration.class, parameters={})
+    private Output<ConfigAvailabilityConfiguration> availabilityConfiguration;
+
+    /**
+     * @return (Updatable) Monitor availability configuration details.
+     * 
+     */
+    public Output<ConfigAvailabilityConfiguration> availabilityConfiguration() {
+        return this.availabilityConfiguration;
+    }
+    /**
      * (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
-     * ===
      * 
      */
     @Export(name="batchIntervalInSeconds", type=Integer.class, parameters={})
@@ -161,7 +184,6 @@ public class Config extends com.pulumi.resources.CustomResource {
 
     /**
      * @return (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
-     * ===
      * 
      */
     public Output<Integer> batchIntervalInSeconds() {
@@ -250,6 +272,20 @@ public class Config extends com.pulumi.resources.CustomResource {
      */
     public Output<Boolean> isRunOnce() {
         return this.isRunOnce;
+    }
+    /**
+     * (Updatable) Details used to schedule maintenance window.
+     * 
+     */
+    @Export(name="maintenanceWindowSchedule", type=ConfigMaintenanceWindowSchedule.class, parameters={})
+    private Output<ConfigMaintenanceWindowSchedule> maintenanceWindowSchedule;
+
+    /**
+     * @return (Updatable) Details used to schedule maintenance window.
+     * 
+     */
+    public Output<ConfigMaintenanceWindowSchedule> maintenanceWindowSchedule() {
+        return this.maintenanceWindowSchedule;
     }
     /**
      * Type of monitor.
@@ -392,14 +428,14 @@ public class Config extends com.pulumi.resources.CustomResource {
         return this.timeUpdated;
     }
     /**
-     * (Updatable) Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+     * (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
      * 
      */
     @Export(name="timeoutInSeconds", type=Integer.class, parameters={})
     private Output<Integer> timeoutInSeconds;
 
     /**
-     * @return (Updatable) Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+     * @return (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
      * 
      */
     public Output<Integer> timeoutInSeconds() {

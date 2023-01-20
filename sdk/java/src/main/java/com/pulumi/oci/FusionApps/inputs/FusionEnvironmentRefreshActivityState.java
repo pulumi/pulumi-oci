@@ -5,7 +5,9 @@ package com.pulumi.oci.FusionApps.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.FusionApps.inputs.FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -58,6 +60,28 @@ public final class FusionEnvironmentRefreshActivityState extends com.pulumi.reso
      */
     public Optional<Output<String>> lifecycleDetails() {
         return Optional.ofNullable(this.lifecycleDetails);
+    }
+
+    @Import(name="refreshActivityId")
+    private @Nullable Output<String> refreshActivityId;
+
+    public Optional<Output<String>> refreshActivityId() {
+        return Optional.ofNullable(this.refreshActivityId);
+    }
+
+    /**
+     * Details of refresh investigation information, each item represents a different issue.
+     * 
+     */
+    @Import(name="refreshIssueDetailsLists")
+    private @Nullable Output<List<FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs>> refreshIssueDetailsLists;
+
+    /**
+     * @return Details of refresh investigation information, each item represents a different issue.
+     * 
+     */
+    public Optional<Output<List<FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs>>> refreshIssueDetailsLists() {
+        return Optional.ofNullable(this.refreshIssueDetailsLists);
     }
 
     /**
@@ -166,21 +190,6 @@ public final class FusionEnvironmentRefreshActivityState extends com.pulumi.reso
     }
 
     /**
-     * The time the refresh activity is scheduled to start. An RFC3339 formatted datetime string.
-     * 
-     */
-    @Import(name="timeScheduledStart")
-    private @Nullable Output<String> timeScheduledStart;
-
-    /**
-     * @return The time the refresh activity is scheduled to start. An RFC3339 formatted datetime string.
-     * 
-     */
-    public Optional<Output<String>> timeScheduledStart() {
-        return Optional.ofNullable(this.timeScheduledStart);
-    }
-
-    /**
      * The time the refresh activity record was updated. An RFC3339 formatted datetime string.
      * 
      */
@@ -201,6 +210,8 @@ public final class FusionEnvironmentRefreshActivityState extends com.pulumi.reso
         this.displayName = $.displayName;
         this.fusionEnvironmentId = $.fusionEnvironmentId;
         this.lifecycleDetails = $.lifecycleDetails;
+        this.refreshActivityId = $.refreshActivityId;
+        this.refreshIssueDetailsLists = $.refreshIssueDetailsLists;
         this.serviceAvailability = $.serviceAvailability;
         this.sourceFusionEnvironmentId = $.sourceFusionEnvironmentId;
         this.state = $.state;
@@ -208,7 +219,6 @@ public final class FusionEnvironmentRefreshActivityState extends com.pulumi.reso
         this.timeExpectedFinish = $.timeExpectedFinish;
         this.timeFinished = $.timeFinished;
         this.timeOfRestorationPoint = $.timeOfRestorationPoint;
-        this.timeScheduledStart = $.timeScheduledStart;
         this.timeUpdated = $.timeUpdated;
     }
 
@@ -291,6 +301,46 @@ public final class FusionEnvironmentRefreshActivityState extends com.pulumi.reso
          */
         public Builder lifecycleDetails(String lifecycleDetails) {
             return lifecycleDetails(Output.of(lifecycleDetails));
+        }
+
+        public Builder refreshActivityId(@Nullable Output<String> refreshActivityId) {
+            $.refreshActivityId = refreshActivityId;
+            return this;
+        }
+
+        public Builder refreshActivityId(String refreshActivityId) {
+            return refreshActivityId(Output.of(refreshActivityId));
+        }
+
+        /**
+         * @param refreshIssueDetailsLists Details of refresh investigation information, each item represents a different issue.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder refreshIssueDetailsLists(@Nullable Output<List<FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs>> refreshIssueDetailsLists) {
+            $.refreshIssueDetailsLists = refreshIssueDetailsLists;
+            return this;
+        }
+
+        /**
+         * @param refreshIssueDetailsLists Details of refresh investigation information, each item represents a different issue.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder refreshIssueDetailsLists(List<FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs> refreshIssueDetailsLists) {
+            return refreshIssueDetailsLists(Output.of(refreshIssueDetailsLists));
+        }
+
+        /**
+         * @param refreshIssueDetailsLists Details of refresh investigation information, each item represents a different issue.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder refreshIssueDetailsLists(FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs... refreshIssueDetailsLists) {
+            return refreshIssueDetailsLists(List.of(refreshIssueDetailsLists));
         }
 
         /**
@@ -438,27 +488,6 @@ public final class FusionEnvironmentRefreshActivityState extends com.pulumi.reso
          */
         public Builder timeOfRestorationPoint(String timeOfRestorationPoint) {
             return timeOfRestorationPoint(Output.of(timeOfRestorationPoint));
-        }
-
-        /**
-         * @param timeScheduledStart The time the refresh activity is scheduled to start. An RFC3339 formatted datetime string.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder timeScheduledStart(@Nullable Output<String> timeScheduledStart) {
-            $.timeScheduledStart = timeScheduledStart;
-            return this;
-        }
-
-        /**
-         * @param timeScheduledStart The time the refresh activity is scheduled to start. An RFC3339 formatted datetime string.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder timeScheduledStart(String timeScheduledStart) {
-            return timeScheduledStart(Output.of(timeScheduledStart));
         }
 
         /**

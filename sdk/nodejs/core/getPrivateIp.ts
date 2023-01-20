@@ -24,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getPrivateIp(args: GetPrivateIpArgs, opts?: pulumi.InvokeOptions): Promise<GetPrivateIpResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getPrivateIp:getPrivateIp", {
         "privateIpId": args.privateIpId,
     }, opts);
@@ -106,9 +103,27 @@ export interface GetPrivateIpResult {
      */
     readonly vnicId: string;
 }
-
+/**
+ * This data source provides details about a specific Private Ip resource in Oracle Cloud Infrastructure Core service.
+ *
+ * Gets the specified private IP. You must specify the object's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+ * Alternatively, you can get the object by using
+ * [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps)
+ * with the private IP address (for example, 10.0.3.3) and subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testPrivateIp = oci.Core.getPrivateIp({
+ *     privateIpId: oci_core_private_ip.test_private_ip.id,
+ * });
+ * ```
+ */
 export function getPrivateIpOutput(args: GetPrivateIpOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPrivateIpResult> {
-    return pulumi.output(args).apply(a => getPrivateIp(a, opts))
+    return pulumi.output(args).apply((a: any) => getPrivateIp(a, opts))
 }
 
 /**

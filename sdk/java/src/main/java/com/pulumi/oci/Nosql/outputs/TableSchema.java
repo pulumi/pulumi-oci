@@ -5,6 +5,7 @@ package com.pulumi.oci.Nosql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Nosql.outputs.TableSchemaColumn;
+import com.pulumi.oci.Nosql.outputs.TableSchemaIdentity;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -19,6 +20,11 @@ public final class TableSchema {
      * 
      */
     private @Nullable List<TableSchemaColumn> columns;
+    /**
+     * @return The identity properties of a table, if any.
+     * 
+     */
+    private @Nullable List<TableSchemaIdentity> identities;
     /**
      * @return A list of column names that make up a key.
      * 
@@ -42,6 +48,13 @@ public final class TableSchema {
      */
     public List<TableSchemaColumn> columns() {
         return this.columns == null ? List.of() : this.columns;
+    }
+    /**
+     * @return The identity properties of a table, if any.
+     * 
+     */
+    public List<TableSchemaIdentity> identities() {
+        return this.identities == null ? List.of() : this.identities;
     }
     /**
      * @return A list of column names that make up a key.
@@ -75,6 +88,7 @@ public final class TableSchema {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<TableSchemaColumn> columns;
+        private @Nullable List<TableSchemaIdentity> identities;
         private @Nullable List<String> primaryKeys;
         private @Nullable List<String> shardKeys;
         private @Nullable Integer ttl;
@@ -82,6 +96,7 @@ public final class TableSchema {
         public Builder(TableSchema defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.columns = defaults.columns;
+    	      this.identities = defaults.identities;
     	      this.primaryKeys = defaults.primaryKeys;
     	      this.shardKeys = defaults.shardKeys;
     	      this.ttl = defaults.ttl;
@@ -94,6 +109,14 @@ public final class TableSchema {
         }
         public Builder columns(TableSchemaColumn... columns) {
             return columns(List.of(columns));
+        }
+        @CustomType.Setter
+        public Builder identities(@Nullable List<TableSchemaIdentity> identities) {
+            this.identities = identities;
+            return this;
+        }
+        public Builder identities(TableSchemaIdentity... identities) {
+            return identities(List.of(identities));
         }
         @CustomType.Setter
         public Builder primaryKeys(@Nullable List<String> primaryKeys) {
@@ -119,6 +142,7 @@ public final class TableSchema {
         public TableSchema build() {
             final var o = new TableSchema();
             o.columns = columns;
+            o.identities = identities;
             o.primaryKeys = primaryKeys;
             o.shardKeys = shardKeys;
             o.ttl = ttl;

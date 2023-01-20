@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCertificateVersions(args: GetCertificateVersionsArgs, opts?: pulumi.InvokeOptions): Promise<GetCertificateVersionsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CertificatesManagement/getCertificateVersions:getCertificateVersions", {
         "certificateId": args.certificateId,
         "filters": args.filters,
@@ -73,9 +71,26 @@ export interface GetCertificateVersionsResult {
      */
     readonly versionNumber?: string;
 }
-
+/**
+ * This data source provides the list of Certificate Versions in Oracle Cloud Infrastructure Certificates Management service.
+ *
+ * Lists all certificate versions for the specified certificate.
+ * Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the result set to a single item that matches the specified version number.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCertificateVersions = oci.CertificatesManagement.getCertificateVersions({
+ *     certificateId: oci_certificates_management_certificate.test_certificate.id,
+ *     versionNumber: _var.certificate_version_version_number,
+ * });
+ * ```
+ */
 export function getCertificateVersionsOutput(args: GetCertificateVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCertificateVersionsResult> {
-    return pulumi.output(args).apply(a => getCertificateVersions(a, opts))
+    return pulumi.output(args).apply((a: any) => getCertificateVersions(a, opts))
 }
 
 /**

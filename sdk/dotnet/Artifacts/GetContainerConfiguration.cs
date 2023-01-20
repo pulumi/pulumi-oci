@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Artifacts
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetContainerConfigurationResult> InvokeAsync(GetContainerConfigurationArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetContainerConfigurationResult>("oci:Artifacts/getContainerConfiguration:getContainerConfiguration", args ?? new GetContainerConfigurationArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetContainerConfigurationResult>("oci:Artifacts/getContainerConfiguration:getContainerConfiguration", args ?? new GetContainerConfigurationArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Container Configuration resource in Oracle Cloud Infrastructure Artifacts service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Artifacts
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetContainerConfigurationResult> Invoke(GetContainerConfigurationInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetContainerConfigurationResult>("oci:Artifacts/getContainerConfiguration:getContainerConfiguration", args ?? new GetContainerConfigurationInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetContainerConfigurationResult>("oci:Artifacts/getContainerConfiguration:getContainerConfiguration", args ?? new GetContainerConfigurationInvokeArgs(), options.WithDefaults());
     }
 
 

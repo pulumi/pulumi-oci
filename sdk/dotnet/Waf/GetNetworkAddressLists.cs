@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Waf
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetNetworkAddressListsResult> InvokeAsync(GetNetworkAddressListsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetNetworkAddressListsResult>("oci:Waf/getNetworkAddressLists:getNetworkAddressLists", args ?? new GetNetworkAddressListsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetNetworkAddressListsResult>("oci:Waf/getNetworkAddressLists:getNetworkAddressLists", args ?? new GetNetworkAddressListsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Network Address Lists in Oracle Cloud Infrastructure Waf service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.Waf
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetNetworkAddressListsResult> Invoke(GetNetworkAddressListsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetNetworkAddressListsResult>("oci:Waf/getNetworkAddressLists:getNetworkAddressLists", args ?? new GetNetworkAddressListsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetNetworkAddressListsResult>("oci:Waf/getNetworkAddressLists:getNetworkAddressLists", args ?? new GetNetworkAddressListsInvokeArgs(), options.WithDefaults());
     }
 
 

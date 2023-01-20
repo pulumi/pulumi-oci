@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetInternetGatewaysResult> InvokeAsync(GetInternetGatewaysArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetInternetGatewaysResult>("oci:Core/getInternetGateways:getInternetGateways", args ?? new GetInternetGatewaysArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetInternetGatewaysResult>("oci:Core/getInternetGateways:getInternetGateways", args ?? new GetInternetGatewaysArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Internet Gateways in Oracle Cloud Infrastructure Core service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetInternetGatewaysResult> Invoke(GetInternetGatewaysInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetInternetGatewaysResult>("oci:Core/getInternetGateways:getInternetGateways", args ?? new GetInternetGatewaysInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetInternetGatewaysResult>("oci:Core/getInternetGateways:getInternetGateways", args ?? new GetInternetGatewaysInvokeArgs(), options.WithDefaults());
     }
 
 

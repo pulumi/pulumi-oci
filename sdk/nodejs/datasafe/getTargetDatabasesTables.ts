@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getTargetDatabasesTables(args: GetTargetDatabasesTablesArgs, opts?: pulumi.InvokeOptions): Promise<GetTargetDatabasesTablesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getTargetDatabasesTables:getTargetDatabasesTables", {
         "filters": args.filters,
         "schemaNameContains": args.schemaNameContains,
@@ -93,9 +91,28 @@ export interface GetTargetDatabasesTablesResult {
     readonly tables: outputs.DataSafe.GetTargetDatabasesTablesTable[];
     readonly targetDatabaseId: string;
 }
-
+/**
+ * This data source provides the list of Target Databases Tables in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Returns a list of table metadata objects.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testTargetDatabasesTables = oci.DataSafe.getTargetDatabasesTables({
+ *     targetDatabaseId: oci_data_safe_target_database.test_target_database.id,
+ *     schemaNames: _var.target_databases_table_schema_name,
+ *     schemaNameContains: _var.target_databases_table_schema_name_contains,
+ *     tableNames: oci_nosql_table.test_table.name,
+ *     tableNameContains: _var.target_databases_table_table_name_contains,
+ * });
+ * ```
+ */
 export function getTargetDatabasesTablesOutput(args: GetTargetDatabasesTablesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTargetDatabasesTablesResult> {
-    return pulumi.output(args).apply(a => getTargetDatabasesTables(a, opts))
+    return pulumi.output(args).apply((a: any) => getTargetDatabasesTables(a, opts))
 }
 
 /**

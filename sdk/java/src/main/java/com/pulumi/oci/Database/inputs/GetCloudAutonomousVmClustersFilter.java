@@ -16,9 +16,17 @@ public final class GetCloudAutonomousVmClustersFilter extends com.pulumi.resourc
 
     public static final GetCloudAutonomousVmClustersFilter Empty = new GetCloudAutonomousVmClustersFilter();
 
+    /**
+     * Name of the month of the year.
+     * 
+     */
     @Import(name="name", required=true)
     private String name;
 
+    /**
+     * @return Name of the month of the year.
+     * 
+     */
     public String name() {
         return this.name;
     }
@@ -63,6 +71,12 @@ public final class GetCloudAutonomousVmClustersFilter extends com.pulumi.resourc
             $ = new GetCloudAutonomousVmClustersFilter(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param name Name of the month of the year.
+         * 
+         * @return builder
+         * 
+         */
         public Builder name(String name) {
             $.name = name;
             return this;

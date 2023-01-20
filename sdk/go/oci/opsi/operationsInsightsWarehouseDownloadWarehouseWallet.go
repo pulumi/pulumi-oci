@@ -73,6 +73,13 @@ func NewOperationsInsightsWarehouseDownloadWarehouseWallet(ctx *pulumi.Context,
 	if args.OperationsInsightsWarehouseWalletPassword == nil {
 		return nil, errors.New("invalid value for required argument 'OperationsInsightsWarehouseWalletPassword'")
 	}
+	if args.OperationsInsightsWarehouseWalletPassword != nil {
+		args.OperationsInsightsWarehouseWalletPassword = pulumi.ToSecret(args.OperationsInsightsWarehouseWalletPassword).(pulumi.StringInput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"operationsInsightsWarehouseWalletPassword",
+	})
+	opts = append(opts, secrets)
 	var resource OperationsInsightsWarehouseDownloadWarehouseWallet
 	err := ctx.RegisterResource("oci:Opsi/operationsInsightsWarehouseDownloadWarehouseWallet:OperationsInsightsWarehouseDownloadWarehouseWallet", name, args, &resource, opts...)
 	if err != nil {

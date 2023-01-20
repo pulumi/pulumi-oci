@@ -38,7 +38,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetSecurityAssessmentResult> InvokeAsync(GetSecurityAssessmentArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetSecurityAssessmentResult>("oci:DataSafe/getSecurityAssessment:getSecurityAssessment", args ?? new GetSecurityAssessmentArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetSecurityAssessmentResult>("oci:DataSafe/getSecurityAssessment:getSecurityAssessment", args ?? new GetSecurityAssessmentArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Security Assessment resource in Oracle Cloud Infrastructure Data Safe service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetSecurityAssessmentResult> Invoke(GetSecurityAssessmentInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetSecurityAssessmentResult>("oci:DataSafe/getSecurityAssessment:getSecurityAssessment", args ?? new GetSecurityAssessmentInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetSecurityAssessmentResult>("oci:DataSafe/getSecurityAssessment:getSecurityAssessment", args ?? new GetSecurityAssessmentInvokeArgs(), options.WithDefaults());
     }
 
 

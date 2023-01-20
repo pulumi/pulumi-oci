@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetVirtualCircuitBandwidthShapesResult> InvokeAsync(GetVirtualCircuitBandwidthShapesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetVirtualCircuitBandwidthShapesResult>("oci:Core/getVirtualCircuitBandwidthShapes:getVirtualCircuitBandwidthShapes", args ?? new GetVirtualCircuitBandwidthShapesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetVirtualCircuitBandwidthShapesResult>("oci:Core/getVirtualCircuitBandwidthShapes:getVirtualCircuitBandwidthShapes", args ?? new GetVirtualCircuitBandwidthShapesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Virtual Circuit Bandwidth Shapes in Oracle Cloud Infrastructure Core service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetVirtualCircuitBandwidthShapesResult> Invoke(GetVirtualCircuitBandwidthShapesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetVirtualCircuitBandwidthShapesResult>("oci:Core/getVirtualCircuitBandwidthShapes:getVirtualCircuitBandwidthShapes", args ?? new GetVirtualCircuitBandwidthShapesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetVirtualCircuitBandwidthShapesResult>("oci:Core/getVirtualCircuitBandwidthShapes:getVirtualCircuitBandwidthShapes", args ?? new GetVirtualCircuitBandwidthShapesInvokeArgs(), options.WithDefaults());
     }
 
 

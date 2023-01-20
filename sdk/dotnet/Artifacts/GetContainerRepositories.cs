@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Artifacts
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetContainerRepositoriesResult> InvokeAsync(GetContainerRepositoriesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetContainerRepositoriesResult>("oci:Artifacts/getContainerRepositories:getContainerRepositories", args ?? new GetContainerRepositoriesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetContainerRepositoriesResult>("oci:Artifacts/getContainerRepositories:getContainerRepositories", args ?? new GetContainerRepositoriesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Container Repositories in Oracle Cloud Infrastructure Artifacts service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.Artifacts
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetContainerRepositoriesResult> Invoke(GetContainerRepositoriesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetContainerRepositoriesResult>("oci:Artifacts/getContainerRepositories:getContainerRepositories", args ?? new GetContainerRepositoriesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetContainerRepositoriesResult>("oci:Artifacts/getContainerRepositories:getContainerRepositories", args ?? new GetContainerRepositoriesInvokeArgs(), options.WithDefaults());
     }
 
 

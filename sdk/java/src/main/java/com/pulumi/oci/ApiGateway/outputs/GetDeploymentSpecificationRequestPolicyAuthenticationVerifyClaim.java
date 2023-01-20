@@ -17,7 +17,7 @@ public final class GetDeploymentSpecificationRequestPolicyAuthenticationVerifyCl
      */
     private Boolean isRequired;
     /**
-     * @return Name of the claim.
+     * @return Information around the values for selector of an authentication/ routing branch.
      * 
      */
     private String key;
@@ -36,7 +36,7 @@ public final class GetDeploymentSpecificationRequestPolicyAuthenticationVerifyCl
         return this.isRequired;
     }
     /**
-     * @return Name of the claim.
+     * @return Information around the values for selector of an authentication/ routing branch.
      * 
      */
     public String key() {

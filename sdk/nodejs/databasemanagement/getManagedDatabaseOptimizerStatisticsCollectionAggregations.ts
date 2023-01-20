@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -31,11 +32,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabaseOptimizerStatisticsCollectionAggregations(args: GetManagedDatabaseOptimizerStatisticsCollectionAggregationsArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsCollectionAggregations:getManagedDatabaseOptimizerStatisticsCollectionAggregations", {
         "endTimeLessThanOrEqualTo": args.endTimeLessThanOrEqualTo,
         "filters": args.filters,
@@ -95,9 +93,33 @@ export interface GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResu
     readonly startTimeGreaterThanOrEqualTo?: string;
     readonly taskType?: string;
 }
-
+/**
+ * This data source provides the list of Managed Database Optimizer Statistics Collection Aggregations in Oracle Cloud Infrastructure Database Management service.
+ *
+ * Gets a list of the optimizer statistics collection operations per hour, grouped by task or object status for the specified Managed Database.
+ * You must specify a value for the GroupByQueryParam to determine whether the data should be grouped by task status or task object status.
+ * Optionally, you can specify a date-time range (of seven days) to obtain collection aggregations within the specified time range.
+ * If the date-time range is not specified, then the operations in the last seven days are listed.
+ * You can further filter the results by providing the optional type of TaskTypeQueryParam.
+ * If the task type if not provided, then both Auto and Manual tasks are considered for aggregation.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testManagedDatabaseOptimizerStatisticsCollectionAggregations = oci.DatabaseManagement.getManagedDatabaseOptimizerStatisticsCollectionAggregations({
+ *     groupType: _var.managed_database_optimizer_statistics_collection_aggregation_group_type,
+ *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
+ *     endTimeLessThanOrEqualTo: _var.managed_database_optimizer_statistics_collection_aggregation_end_time_less_than_or_equal_to,
+ *     startTimeGreaterThanOrEqualTo: _var.managed_database_optimizer_statistics_collection_aggregation_start_time_greater_than_or_equal_to,
+ *     taskType: _var.managed_database_optimizer_statistics_collection_aggregation_task_type,
+ * });
+ * ```
+ */
 export function getManagedDatabaseOptimizerStatisticsCollectionAggregationsOutput(args: GetManagedDatabaseOptimizerStatisticsCollectionAggregationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseOptimizerStatisticsCollectionAggregationsResult> {
-    return pulumi.output(args).apply(a => getManagedDatabaseOptimizerStatisticsCollectionAggregations(a, opts))
+    return pulumi.output(args).apply((a: any) => getManagedDatabaseOptimizerStatisticsCollectionAggregations(a, opts))
 }
 
 /**

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -28,11 +29,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getInvokeRuns(args: GetInvokeRunsArgs, opts?: pulumi.InvokeOptions): Promise<GetInvokeRunsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataFlow/getInvokeRuns:getInvokeRuns", {
         "applicationId": args.applicationId,
         "compartmentId": args.compartmentId,
@@ -116,9 +114,30 @@ export interface GetInvokeRunsResult {
     readonly state?: string;
     readonly timeCreatedGreaterThan?: string;
 }
-
+/**
+ * This data source provides the list of Invoke Runs in Oracle Cloud Infrastructure Data Flow service.
+ *
+ * Lists all runs of an application in the specified compartment.  Only one parameter other than compartmentId may also be included in a query. The query must include compartmentId. If the query does not include compartmentId, or includes compartmentId but two or more other parameters an error is returned.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testInvokeRuns = oci.DataFlow.getInvokeRuns({
+ *     compartmentId: _var.compartment_id,
+ *     applicationId: oci_dataflow_application.test_application.id,
+ *     displayName: _var.invoke_run_display_name,
+ *     displayNameStartsWith: _var.invoke_run_display_name_starts_with,
+ *     ownerPrincipalId: oci_dataflow_owner_principal.test_owner_principal.id,
+ *     state: _var.invoke_run_state,
+ *     timeCreatedGreaterThan: _var.invoke_run_time_created_greater_than,
+ * });
+ * ```
+ */
 export function getInvokeRunsOutput(args: GetInvokeRunsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInvokeRunsResult> {
-    return pulumi.output(args).apply(a => getInvokeRuns(a, opts))
+    return pulumi.output(args).apply((a: any) => getInvokeRuns(a, opts))
 }
 
 /**

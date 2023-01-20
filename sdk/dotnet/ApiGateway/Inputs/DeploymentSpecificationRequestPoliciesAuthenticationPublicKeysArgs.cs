@@ -31,7 +31,7 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         }
 
         /// <summary>
-        /// (Updatable) The duration for which the JWKS should be cached before it is fetched again.
+        /// (Updatable) The duration for which the introspect URL response should be cached before it is fetched again.
         /// </summary>
         [Input("maxCacheDurationInHours")]
         public Input<int>? MaxCacheDurationInHours { get; set; }

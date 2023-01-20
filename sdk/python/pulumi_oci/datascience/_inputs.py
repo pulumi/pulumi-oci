@@ -42,6 +42,7 @@ __all__ = [
     'GetJobsFilterArgs',
     'GetModelDeploymentShapesFilterArgs',
     'GetModelDeploymentsFilterArgs',
+    'GetModelVersionSetsFilterArgs',
     'GetModelsFilterArgs',
     'GetNotebookSessionShapesFilterArgs',
     'GetNotebookSessionsFilterArgs',
@@ -208,8 +209,8 @@ class JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs:
                  memory_in_gbs: Optional[pulumi.Input[float]] = None,
                  ocpus: Optional[pulumi.Input[float]] = None):
         """
-        :param pulumi.Input[float] memory_in_gbs: (Updatable) A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
-        :param pulumi.Input[float] ocpus: (Updatable) A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        :param pulumi.Input[float] memory_in_gbs: (Updatable) The total amount of memory available to the job run instance, in gigabytes.
+        :param pulumi.Input[float] ocpus: (Updatable) The total number of OCPUs available to the job run instance.
         """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
@@ -220,7 +221,7 @@ class JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs:
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[pulumi.Input[float]]:
         """
-        (Updatable) A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        (Updatable) The total amount of memory available to the job run instance, in gigabytes.
         """
         return pulumi.get(self, "memory_in_gbs")
 
@@ -232,7 +233,7 @@ class JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs:
     @pulumi.getter
     def ocpus(self) -> Optional[pulumi.Input[float]]:
         """
-        (Updatable) A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        (Updatable) The total number of OCPUs available to the job run instance.
         """
         return pulumi.get(self, "ocpus")
 
@@ -475,8 +476,8 @@ class JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs:
                  memory_in_gbs: Optional[pulumi.Input[float]] = None,
                  ocpus: Optional[pulumi.Input[float]] = None):
         """
-        :param pulumi.Input[float] memory_in_gbs: A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
-        :param pulumi.Input[float] ocpus: A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        :param pulumi.Input[float] memory_in_gbs: The total amount of memory available to the job run instance, in gigabytes.
+        :param pulumi.Input[float] ocpus: The total number of OCPUs available to the job run instance.
         """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
@@ -487,7 +488,7 @@ class JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs:
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[pulumi.Input[float]]:
         """
-        A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        The total amount of memory available to the job run instance, in gigabytes.
         """
         return pulumi.get(self, "memory_in_gbs")
 
@@ -499,7 +500,7 @@ class JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs:
     @pulumi.getter
     def ocpus(self) -> Optional[pulumi.Input[float]]:
         """
-        A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        The total number of OCPUs available to the job run instance.
         """
         return pulumi.get(self, "ocpus")
 
@@ -1047,8 +1048,8 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
                  memory_in_gbs: Optional[pulumi.Input[float]] = None,
                  ocpus: Optional[pulumi.Input[float]] = None):
         """
-        :param pulumi.Input[float] memory_in_gbs: (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
-        :param pulumi.Input[float] ocpus: (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+        :param pulumi.Input[float] memory_in_gbs: (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
+        :param pulumi.Input[float] ocpus: (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
         """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
@@ -1059,7 +1060,7 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[pulumi.Input[float]]:
         """
-        (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
+        (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
         """
         return pulumi.get(self, "memory_in_gbs")
 
@@ -1071,7 +1072,7 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
     @pulumi.getter
     def ocpus(self) -> Optional[pulumi.Input[float]]:
         """
-        (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+        (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
         """
         return pulumi.get(self, "ocpus")
 
@@ -1193,8 +1194,8 @@ class NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetai
                  memory_in_gbs: Optional[pulumi.Input[float]] = None,
                  ocpus: Optional[pulumi.Input[float]] = None):
         """
-        :param pulumi.Input[float] memory_in_gbs: (Updatable) A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
-        :param pulumi.Input[float] ocpus: (Updatable) A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        :param pulumi.Input[float] memory_in_gbs: (Updatable) The total amount of memory available to the notebook session instance, in gigabytes.
+        :param pulumi.Input[float] ocpus: (Updatable) The total number of OCPUs available to the notebook session instance.
         """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
@@ -1205,7 +1206,7 @@ class NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetai
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[pulumi.Input[float]]:
         """
-        (Updatable) A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        (Updatable) The total amount of memory available to the notebook session instance, in gigabytes.
         """
         return pulumi.get(self, "memory_in_gbs")
 
@@ -1217,7 +1218,7 @@ class NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetai
     @pulumi.getter
     def ocpus(self) -> Optional[pulumi.Input[float]]:
         """
-        (Updatable) A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        (Updatable) The total number of OCPUs available to the notebook session instance.
         """
         return pulumi.get(self, "ocpus")
 
@@ -1301,8 +1302,8 @@ class NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConf
                  memory_in_gbs: Optional[pulumi.Input[float]] = None,
                  ocpus: Optional[pulumi.Input[float]] = None):
         """
-        :param pulumi.Input[float] memory_in_gbs: (Updatable) A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
-        :param pulumi.Input[float] ocpus: (Updatable) A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        :param pulumi.Input[float] memory_in_gbs: (Updatable) The total amount of memory available to the notebook session instance, in gigabytes.
+        :param pulumi.Input[float] ocpus: (Updatable) The total number of OCPUs available to the notebook session instance.
         """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
@@ -1313,7 +1314,7 @@ class NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConf
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[pulumi.Input[float]]:
         """
-        (Updatable) A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        (Updatable) The total amount of memory available to the notebook session instance, in gigabytes.
         """
         return pulumi.get(self, "memory_in_gbs")
 
@@ -1325,7 +1326,7 @@ class NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConf
     @pulumi.getter
     def ocpus(self) -> Optional[pulumi.Input[float]]:
         """
-        (Updatable) A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        (Updatable) The total number of OCPUs available to the notebook session instance.
         """
         return pulumi.get(self, "ocpus")
 
@@ -1645,6 +1646,51 @@ class GetModelDeploymentsFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetModelVersionSetsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: A filter to return only resources that match the entire name given.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        A filter to return only resources that match the entire name given.
+        """
         return pulumi.get(self, "name")
 
     @name.setter

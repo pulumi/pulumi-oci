@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getComputedUsage(args: GetComputedUsageArgs, opts?: pulumi.InvokeOptions): Promise<GetComputedUsageResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OneSubsription/getComputedUsage:getComputedUsage", {
         "compartmentId": args.compartmentId,
         "computedUsageId": args.computedUsageId,
@@ -162,9 +160,26 @@ export interface GetComputedUsageResult {
      */
     readonly usageNumber: string;
 }
-
+/**
+ * This data source provides details about a specific Computed Usage resource in Oracle Cloud Infrastructure Onesubscription service.
+ *
+ * This is an API which returns Computed Usage corresponding to the id passed
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testComputedUsage = oci.OneSubsription.getComputedUsage({
+ *     compartmentId: _var.compartment_id,
+ *     computedUsageId: oci_onesubscription_computed_usage.test_computed_usage.id,
+ *     fields: _var.computed_usage_fields,
+ * });
+ * ```
+ */
 export function getComputedUsageOutput(args: GetComputedUsageOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetComputedUsageResult> {
-    return pulumi.output(args).apply(a => getComputedUsage(a, opts))
+    return pulumi.output(args).apply((a: any) => getComputedUsage(a, opts))
 }
 
 /**

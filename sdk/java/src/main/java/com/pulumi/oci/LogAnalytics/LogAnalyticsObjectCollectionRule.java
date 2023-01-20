@@ -58,10 +58,14 @@ import javax.annotation.Nullable;
  *             .description(var_.log_analytics_object_collection_rule_description())
  *             .entityId(oci_log_analytics_entity.test_entity().id())
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .logSet(var_.log_analytics_object_collection_rule_log_set())
+ *             .logSetExtRegex(var_.log_analytics_object_collection_rule_log_set_ext_regex())
+ *             .logSetKey(var_.log_analytics_object_collection_rule_log_set_key())
  *             .objectNameFilters(var_.log_analytics_object_collection_rule_object_name_filters())
  *             .overrides(var_.log_analytics_object_collection_rule_overrides())
  *             .pollSince(var_.log_analytics_object_collection_rule_poll_since())
  *             .pollTill(var_.log_analytics_object_collection_rule_poll_till())
+ *             .timezone(var_.log_analytics_object_collection_rule_timezone())
  *             .build());
  * 
  *     }
@@ -206,6 +210,48 @@ public class LogAnalyticsObjectCollectionRule extends com.pulumi.resources.Custo
         return this.logGroupId;
     }
     /**
+     * (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
+     * 
+     */
+    @Export(name="logSet", type=String.class, parameters={})
+    private Output<String> logSet;
+
+    /**
+     * @return (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
+     * 
+     */
+    public Output<String> logSet() {
+        return this.logSet;
+    }
+    /**
+     * (Updatable) The regex to be applied against given logSetKey. Regex has to be in string escaped format.
+     * 
+     */
+    @Export(name="logSetExtRegex", type=String.class, parameters={})
+    private Output<String> logSetExtRegex;
+
+    /**
+     * @return (Updatable) The regex to be applied against given logSetKey. Regex has to be in string escaped format.
+     * 
+     */
+    public Output<String> logSetExtRegex() {
+        return this.logSetExtRegex;
+    }
+    /**
+     * (Updatable) An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/&lt;namespace&gt;/b/&lt;bucketname&gt;/o/&lt;objectname&gt;).
+     * 
+     */
+    @Export(name="logSetKey", type=String.class, parameters={})
+    private Output<String> logSetKey;
+
+    /**
+     * @return (Updatable) An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/&lt;namespace&gt;/b/&lt;bucketname&gt;/o/&lt;objectname&gt;).
+     * 
+     */
+    public Output<String> logSetKey() {
+        return this.logSetKey;
+    }
+    /**
      * (Updatable) Name of the Logging Analytics Source to use for the processing.
      * 
      */
@@ -290,42 +336,42 @@ public class LogAnalyticsObjectCollectionRule extends com.pulumi.resources.Custo
         return this.osNamespace;
     }
     /**
-     * (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are - logSourceName, charEncoding. Supported matchType for override are &#34;contains&#34;.
+     * (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are: logSourceName, charEncoding, entityId. Supported matchType for override are &#34;contains&#34;.
      * 
      */
     @Export(name="overrides", type=List.class, parameters={LogAnalyticsObjectCollectionRuleOverride.class})
     private Output<List<LogAnalyticsObjectCollectionRuleOverride>> overrides;
 
     /**
-     * @return (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are - logSourceName, charEncoding. Supported matchType for override are &#34;contains&#34;.
+     * @return (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are: logSourceName, charEncoding, entityId. Supported matchType for override are &#34;contains&#34;.
      * 
      */
     public Output<List<LogAnalyticsObjectCollectionRuleOverride>> overrides() {
         return this.overrides;
     }
     /**
-     * The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
+     * The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC or HISTORIC_LIVE collection types. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
      * 
      */
     @Export(name="pollSince", type=String.class, parameters={})
     private Output<String> pollSince;
 
     /**
-     * @return The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
+     * @return The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC or HISTORIC_LIVE collection types. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
      * 
      */
     public Output<String> pollSince() {
         return this.pollSince;
     }
     /**
-     * The oldest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollTill will result in error.
+     * The newest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC collection type. When collectionType is LIVE or HISTORIC_LIVE, specifying pollTill will result in error.
      * 
      */
     @Export(name="pollTill", type=String.class, parameters={})
     private Output<String> pollTill;
 
     /**
-     * @return The oldest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollTill will result in error.
+     * @return The newest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC collection type. When collectionType is LIVE or HISTORIC_LIVE, specifying pollTill will result in error.
      * 
      */
     public Output<String> pollTill() {
@@ -372,6 +418,20 @@ public class LogAnalyticsObjectCollectionRule extends com.pulumi.resources.Custo
      */
     public Output<String> timeUpdated() {
         return this.timeUpdated;
+    }
+    /**
+     * (Updatable) Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
+     * 
+     */
+    @Export(name="timezone", type=String.class, parameters={})
+    private Output<String> timezone;
+
+    /**
+     * @return (Updatable) Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
+     * 
+     */
+    public Output<String> timezone() {
+        return this.timezone;
     }
 
     /**

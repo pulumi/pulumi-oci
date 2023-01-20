@@ -24,6 +24,12 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
             set => _definedTags = value;
         }
 
+        /// <summary>
+        /// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+        /// </summary>
+        [Input("externalId")]
+        public Input<string>? ExternalId { get; set; }
+
         [Input("freeformTags")]
         private InputMap<object>? _freeformTags;
 

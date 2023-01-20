@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -33,11 +34,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSensitiveTypes(args: GetSensitiveTypesArgs, opts?: pulumi.InvokeOptions): Promise<GetSensitiveTypesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getSensitiveTypes:getSensitiveTypes", {
         "accessLevel": args.accessLevel,
         "compartmentId": args.compartmentId,
@@ -154,9 +152,35 @@ export interface GetSensitiveTypesResult {
     readonly timeCreatedGreaterThanOrEqualTo?: string;
     readonly timeCreatedLessThan?: string;
 }
-
+/**
+ * This data source provides the list of Sensitive Types in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Gets a list of sensitive types based on the specified query parameters.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSensitiveTypes = oci.DataSafe.getSensitiveTypes({
+ *     compartmentId: _var.compartment_id,
+ *     accessLevel: _var.sensitive_type_access_level,
+ *     compartmentIdInSubtree: _var.sensitive_type_compartment_id_in_subtree,
+ *     defaultMaskingFormatId: oci_data_safe_default_masking_format.test_default_masking_format.id,
+ *     displayName: _var.sensitive_type_display_name,
+ *     entityType: _var.sensitive_type_entity_type,
+ *     parentCategoryId: oci_marketplace_category.test_category.id,
+ *     sensitiveTypeId: oci_data_safe_sensitive_type.test_sensitive_type.id,
+ *     sensitiveTypeSource: _var.sensitive_type_sensitive_type_source,
+ *     state: _var.sensitive_type_state,
+ *     timeCreatedGreaterThanOrEqualTo: _var.sensitive_type_time_created_greater_than_or_equal_to,
+ *     timeCreatedLessThan: _var.sensitive_type_time_created_less_than,
+ * });
+ * ```
+ */
 export function getSensitiveTypesOutput(args: GetSensitiveTypesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSensitiveTypesResult> {
-    return pulumi.output(args).apply(a => getSensitiveTypes(a, opts))
+    return pulumi.output(args).apply((a: any) => getSensitiveTypes(a, opts))
 }
 
 /**

@@ -18,6 +18,10 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// </summary>
         public readonly int MemoryInGbs;
         /// <summary>
+        /// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+        /// </summary>
+        public readonly int Nvmes;
+        /// <summary>
         /// The total number of OCPUs available to the node.
         /// </summary>
         public readonly int Ocpus;
@@ -26,9 +30,12 @@ namespace Pulumi.Oci.BigDataService.Outputs
         private GetBdsInstancesBdsInstanceUtilNodeShapeConfigResult(
             int memoryInGbs,
 
+            int nvmes,
+
             int ocpus)
         {
             MemoryInGbs = memoryInGbs;
+            Nvmes = nvmes;
             Ocpus = ocpus;
         }
     }

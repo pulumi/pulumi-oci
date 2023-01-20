@@ -43,7 +43,7 @@ namespace Pulumi.Oci.DatabaseTools
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDatabaseToolsPrivateEndpointsResult> InvokeAsync(GetDatabaseToolsPrivateEndpointsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDatabaseToolsPrivateEndpointsResult>("oci:DatabaseTools/getDatabaseToolsPrivateEndpoints:getDatabaseToolsPrivateEndpoints", args ?? new GetDatabaseToolsPrivateEndpointsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDatabaseToolsPrivateEndpointsResult>("oci:DatabaseTools/getDatabaseToolsPrivateEndpoints:getDatabaseToolsPrivateEndpoints", args ?? new GetDatabaseToolsPrivateEndpointsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Database Tools Private Endpoints in Oracle Cloud Infrastructure Database Tools service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.DatabaseTools
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDatabaseToolsPrivateEndpointsResult> Invoke(GetDatabaseToolsPrivateEndpointsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDatabaseToolsPrivateEndpointsResult>("oci:DatabaseTools/getDatabaseToolsPrivateEndpoints:getDatabaseToolsPrivateEndpoints", args ?? new GetDatabaseToolsPrivateEndpointsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDatabaseToolsPrivateEndpointsResult>("oci:DatabaseTools/getDatabaseToolsPrivateEndpoints:getDatabaseToolsPrivateEndpoints", args ?? new GetDatabaseToolsPrivateEndpointsInvokeArgs(), options.WithDefaults());
     }
 
 

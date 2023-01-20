@@ -26,6 +26,8 @@ func GetVmClusterRecommendedNetwork(ctx *pulumi.Context, args *GetVmClusterRecom
 type GetVmClusterRecommendedNetworkArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
+	// The list of Db server Ids to configure network.
+	DbServers []string `pulumi:"dbServers"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The user-friendly name for the VM cluster network. The name does not need to be unique.
@@ -49,7 +51,8 @@ type GetVmClusterRecommendedNetworkArgs struct {
 // A collection of values returned by getVmClusterRecommendedNetwork.
 type GetVmClusterRecommendedNetworkResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId string   `pulumi:"compartmentId"`
+	DbServers     []string `pulumi:"dbServers"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
@@ -91,6 +94,8 @@ func GetVmClusterRecommendedNetworkOutput(ctx *pulumi.Context, args GetVmCluster
 type GetVmClusterRecommendedNetworkOutputArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The list of Db server Ids to configure network.
+	DbServers pulumi.StringArrayInput `pulumi:"dbServers"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The user-friendly name for the VM cluster network. The name does not need to be unique.
@@ -133,6 +138,10 @@ func (o GetVmClusterRecommendedNetworkResultOutput) ToGetVmClusterRecommendedNet
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 func (o GetVmClusterRecommendedNetworkResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVmClusterRecommendedNetworkResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+func (o GetVmClusterRecommendedNetworkResultOutput) DbServers() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkResult) []string { return v.DbServers }).(pulumi.StringArrayOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).

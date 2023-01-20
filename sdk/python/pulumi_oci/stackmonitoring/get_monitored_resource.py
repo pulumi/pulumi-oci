@@ -22,7 +22,7 @@ class GetMonitoredResourceResult:
     """
     A collection of values returned by getMonitoredResource.
     """
-    def __init__(__self__, aliases=None, compartment_id=None, credentials=None, database_connection_details=None, defined_tags=None, display_name=None, external_resource_id=None, freeform_tags=None, host_name=None, id=None, management_agent_id=None, monitored_resource_id=None, name=None, properties=None, resource_time_zone=None, state=None, system_tags=None, tenant_id=None, time_created=None, time_updated=None, type=None):
+    def __init__(__self__, aliases=None, compartment_id=None, credentials=None, database_connection_details=None, defined_tags=None, display_name=None, external_id=None, external_resource_id=None, freeform_tags=None, host_name=None, id=None, management_agent_id=None, monitored_resource_id=None, name=None, properties=None, resource_time_zone=None, state=None, system_tags=None, tenant_id=None, time_created=None, time_updated=None, type=None):
         if aliases and not isinstance(aliases, list):
             raise TypeError("Expected argument 'aliases' to be a list")
         pulumi.set(__self__, "aliases", aliases)
@@ -41,6 +41,9 @@ class GetMonitoredResourceResult:
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
+        if external_id and not isinstance(external_id, str):
+            raise TypeError("Expected argument 'external_id' to be a str")
+        pulumi.set(__self__, "external_id", external_id)
         if external_resource_id and not isinstance(external_resource_id, str):
             raise TypeError("Expected argument 'external_resource_id' to be a str")
         pulumi.set(__self__, "external_resource_id", external_resource_id)
@@ -134,6 +137,14 @@ class GetMonitoredResourceResult:
         Monitored resource display name.
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="externalId")
+    def external_id(self) -> str:
+        """
+        External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+        """
+        return pulumi.get(self, "external_id")
 
     @property
     @pulumi.getter(name="externalResourceId")
@@ -262,6 +273,7 @@ class AwaitableGetMonitoredResourceResult(GetMonitoredResourceResult):
             database_connection_details=self.database_connection_details,
             defined_tags=self.defined_tags,
             display_name=self.display_name,
+            external_id=self.external_id,
             external_resource_id=self.external_resource_id,
             freeform_tags=self.freeform_tags,
             host_name=self.host_name,
@@ -310,6 +322,7 @@ def get_monitored_resource(monitored_resource_id: Optional[str] = None,
         database_connection_details=__ret__.database_connection_details,
         defined_tags=__ret__.defined_tags,
         display_name=__ret__.display_name,
+        external_id=__ret__.external_id,
         external_resource_id=__ret__.external_resource_id,
         freeform_tags=__ret__.freeform_tags,
         host_name=__ret__.host_name,

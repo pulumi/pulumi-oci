@@ -20,14 +20,14 @@ public final class ScheduleArgs extends com.pulumi.resources.ResourceArgs {
     public static final ScheduleArgs Empty = new ScheduleArgs();
 
     /**
-     * The tenancy of the customer
+     * The customer tenancy.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return The tenancy of the customer
+     * @return The customer tenancy.
      * 
      */
     public Output<String> compartmentId() {
@@ -50,14 +50,29 @@ public final class ScheduleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * (Updatable) The description of the schedule.
+     * 
+     */
+    @Import(name="description")
+    private @Nullable Output<String> description;
+
+    /**
+     * @return (Updatable) The description of the schedule.
+     * 
+     */
+    public Optional<Output<String>> description() {
+        return Optional.ofNullable(this.description);
+    }
+
+    /**
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Import(name="freeformTags")
     private @Nullable Output<Map<String,Object>> freeformTags;
 
     /**
-     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Optional<Output<Map<String,Object>>> freeformTags() {
@@ -65,14 +80,14 @@ public final class ScheduleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The unique name of the schedule created by the user
+     * The unique name of the user-created schedule.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return The unique name of the schedule created by the user
+     * @return The unique name of the user-created schedule.
      * 
      */
     public Optional<Output<String>> name() {
@@ -80,29 +95,44 @@ public final class ScheduleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Specifies supported output file format.
+     * 
+     */
+    @Import(name="outputFileFormat")
+    private @Nullable Output<String> outputFileFormat;
+
+    /**
+     * @return (Updatable) Specifies supported output file format.
+     * 
+     */
+    public Optional<Output<String>> outputFileFormat() {
+        return Optional.ofNullable(this.outputFileFormat);
+    }
+
+    /**
      * The query properties.
      * 
      */
-    @Import(name="queryProperties", required=true)
-    private Output<ScheduleQueryPropertiesArgs> queryProperties;
+    @Import(name="queryProperties")
+    private @Nullable Output<ScheduleQueryPropertiesArgs> queryProperties;
 
     /**
      * @return The query properties.
      * 
      */
-    public Output<ScheduleQueryPropertiesArgs> queryProperties() {
-        return this.queryProperties;
+    public Optional<Output<ScheduleQueryPropertiesArgs>> queryProperties() {
+        return Optional.ofNullable(this.queryProperties);
     }
 
     /**
-     * The location where usage/cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
+     * (Updatable) The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
      * 
      */
     @Import(name="resultLocation", required=true)
     private Output<ScheduleResultLocationArgs> resultLocation;
 
     /**
-     * @return The location where usage/cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
+     * @return (Updatable) The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
      * 
      */
     public Output<ScheduleResultLocationArgs> resultLocation() {
@@ -110,14 +140,29 @@ public final class ScheduleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 Describes the frequency of when the schedule will be run
+     * The saved report id which can also be used to generate query.
+     * 
+     */
+    @Import(name="savedReportId")
+    private @Nullable Output<String> savedReportId;
+
+    /**
+     * @return The saved report id which can also be used to generate query.
+     * 
+     */
+    public Optional<Output<String>> savedReportId() {
+        return Optional.ofNullable(this.savedReportId);
+    }
+
+    /**
+     * Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
      * 
      */
     @Import(name="scheduleRecurrences", required=true)
     private Output<String> scheduleRecurrences;
 
     /**
-     * @return In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 Describes the frequency of when the schedule will be run
+     * @return Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
      * 
      */
     public Output<String> scheduleRecurrences() {
@@ -125,14 +170,14 @@ public final class ScheduleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The date and time of the first time job execution
+     * The date and time of the first time job execution.
      * 
      */
     @Import(name="timeScheduled", required=true)
     private Output<String> timeScheduled;
 
     /**
-     * @return The date and time of the first time job execution
+     * @return The date and time of the first time job execution.
      * 
      */
     public Output<String> timeScheduled() {
@@ -144,10 +189,13 @@ public final class ScheduleArgs extends com.pulumi.resources.ResourceArgs {
     private ScheduleArgs(ScheduleArgs $) {
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
+        this.description = $.description;
         this.freeformTags = $.freeformTags;
         this.name = $.name;
+        this.outputFileFormat = $.outputFileFormat;
         this.queryProperties = $.queryProperties;
         this.resultLocation = $.resultLocation;
+        this.savedReportId = $.savedReportId;
         this.scheduleRecurrences = $.scheduleRecurrences;
         this.timeScheduled = $.timeScheduled;
     }
@@ -171,7 +219,7 @@ public final class ScheduleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId The tenancy of the customer
+         * @param compartmentId The customer tenancy.
          * 
          * @return builder
          * 
@@ -182,7 +230,7 @@ public final class ScheduleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId The tenancy of the customer
+         * @param compartmentId The customer tenancy.
          * 
          * @return builder
          * 
@@ -213,7 +261,28 @@ public final class ScheduleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+         * @param description (Updatable) The description of the schedule.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder description(@Nullable Output<String> description) {
+            $.description = description;
+            return this;
+        }
+
+        /**
+         * @param description (Updatable) The description of the schedule.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder description(String description) {
+            return description(Output.of(description));
+        }
+
+        /**
+         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 
@@ -224,7 +293,7 @@ public final class ScheduleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 
@@ -234,7 +303,7 @@ public final class ScheduleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name The unique name of the schedule created by the user
+         * @param name The unique name of the user-created schedule.
          * 
          * @return builder
          * 
@@ -245,7 +314,7 @@ public final class ScheduleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name The unique name of the schedule created by the user
+         * @param name The unique name of the user-created schedule.
          * 
          * @return builder
          * 
@@ -255,12 +324,33 @@ public final class ScheduleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param outputFileFormat (Updatable) Specifies supported output file format.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder outputFileFormat(@Nullable Output<String> outputFileFormat) {
+            $.outputFileFormat = outputFileFormat;
+            return this;
+        }
+
+        /**
+         * @param outputFileFormat (Updatable) Specifies supported output file format.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder outputFileFormat(String outputFileFormat) {
+            return outputFileFormat(Output.of(outputFileFormat));
+        }
+
+        /**
          * @param queryProperties The query properties.
          * 
          * @return builder
          * 
          */
-        public Builder queryProperties(Output<ScheduleQueryPropertiesArgs> queryProperties) {
+        public Builder queryProperties(@Nullable Output<ScheduleQueryPropertiesArgs> queryProperties) {
             $.queryProperties = queryProperties;
             return this;
         }
@@ -276,7 +366,7 @@ public final class ScheduleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param resultLocation The location where usage/cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
+         * @param resultLocation (Updatable) The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
          * 
          * @return builder
          * 
@@ -287,7 +377,7 @@ public final class ScheduleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param resultLocation The location where usage/cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
+         * @param resultLocation (Updatable) The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
          * 
          * @return builder
          * 
@@ -297,7 +387,28 @@ public final class ScheduleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param scheduleRecurrences In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 Describes the frequency of when the schedule will be run
+         * @param savedReportId The saved report id which can also be used to generate query.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder savedReportId(@Nullable Output<String> savedReportId) {
+            $.savedReportId = savedReportId;
+            return this;
+        }
+
+        /**
+         * @param savedReportId The saved report id which can also be used to generate query.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder savedReportId(String savedReportId) {
+            return savedReportId(Output.of(savedReportId));
+        }
+
+        /**
+         * @param scheduleRecurrences Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
          * 
          * @return builder
          * 
@@ -308,7 +419,7 @@ public final class ScheduleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param scheduleRecurrences In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 Describes the frequency of when the schedule will be run
+         * @param scheduleRecurrences Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
          * 
          * @return builder
          * 
@@ -318,7 +429,7 @@ public final class ScheduleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeScheduled The date and time of the first time job execution
+         * @param timeScheduled The date and time of the first time job execution.
          * 
          * @return builder
          * 
@@ -329,7 +440,7 @@ public final class ScheduleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeScheduled The date and time of the first time job execution
+         * @param timeScheduled The date and time of the first time job execution.
          * 
          * @return builder
          * 
@@ -340,7 +451,6 @@ public final class ScheduleArgs extends com.pulumi.resources.ResourceArgs {
 
         public ScheduleArgs build() {
             $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.queryProperties = Objects.requireNonNull($.queryProperties, "expected parameter 'queryProperties' to be non-null");
             $.resultLocation = Objects.requireNonNull($.resultLocation, "expected parameter 'resultLocation' to be non-null");
             $.scheduleRecurrences = Objects.requireNonNull($.scheduleRecurrences, "expected parameter 'scheduleRecurrences' to be non-null");
             $.timeScheduled = Objects.requireNonNull($.timeScheduled, "expected parameter 'timeScheduled' to be non-null");

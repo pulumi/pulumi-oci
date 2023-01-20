@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -43,11 +44,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCompartments(args: GetCompartmentsArgs, opts?: pulumi.InvokeOptions): Promise<GetCompartmentsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getCompartments:getCompartments", {
         "accessLevel": args.accessLevel,
         "compartmentId": args.compartmentId,
@@ -113,9 +111,45 @@ export interface GetCompartmentsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Compartments in Oracle Cloud Infrastructure Identity service.
+ *
+ * Lists the compartments in a specified compartment. The members of the list
+ * returned depends on the values set for several parameters.
+ *
+ * With the exception of the tenancy (root compartment), the ListCompartments operation
+ * returns only the first-level child compartments in the parent compartment specified in
+ * `compartmentId`. The list does not include any subcompartments of the child
+ * compartments (grandchildren).
+ *
+ * The parameter `accessLevel` specifies whether to return only those compartments for which the
+ * requestor has INSPECT permissions on at least one resource directly
+ * or indirectly (the resource can be in a subcompartment).
+ *
+ * The parameter `compartmentIdInSubtree` applies only when you perform ListCompartments on the
+ * tenancy (root compartment). When set to true, the entire hierarchy of compartments can be returned.
+ * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+ * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ANY.
+ *
+ * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCompartments = oci.Identity.getCompartments({
+ *     compartmentId: _var.compartment_id,
+ *     accessLevel: _var.compartment_access_level,
+ *     compartmentIdInSubtree: _var.compartment_compartment_id_in_subtree,
+ *     name: _var.compartment_name,
+ *     state: _var.compartment_state,
+ * });
+ * ```
+ */
 export function getCompartmentsOutput(args: GetCompartmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCompartmentsResult> {
-    return pulumi.output(args).apply(a => getCompartments(a, opts))
+    return pulumi.output(args).apply((a: any) => getCompartments(a, opts))
 }
 
 /**

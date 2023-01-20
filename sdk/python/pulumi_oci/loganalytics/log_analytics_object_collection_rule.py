@@ -28,11 +28,15 @@ class LogAnalyticsObjectCollectionRuleArgs:
                  description: Optional[pulumi.Input[str]] = None,
                  entity_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 log_set: Optional[pulumi.Input[str]] = None,
+                 log_set_ext_regex: Optional[pulumi.Input[str]] = None,
+                 log_set_key: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  object_name_filters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  overrides: Optional[pulumi.Input[Sequence[pulumi.Input['LogAnalyticsObjectCollectionRuleOverrideArgs']]]] = None,
                  poll_since: Optional[pulumi.Input[str]] = None,
-                 poll_till: Optional[pulumi.Input[str]] = None):
+                 poll_till: Optional[pulumi.Input[str]] = None,
+                 timezone: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a LogAnalyticsObjectCollectionRule resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
@@ -47,11 +51,15 @@ class LogAnalyticsObjectCollectionRuleArgs:
         :param pulumi.Input[str] description: (Updatable) A string that describes the details of the rule. It does not have to be unique, and can be changed. Avoid entering confidential information.
         :param pulumi.Input[str] entity_id: (Updatable) Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[str] log_set: (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
+        :param pulumi.Input[str] log_set_ext_regex: (Updatable) The regex to be applied against given logSetKey. Regex has to be in string escaped format.
+        :param pulumi.Input[str] log_set_key: (Updatable) An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
         :param pulumi.Input[str] name: A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] object_name_filters: (Updatable) When the filters are provided, only the objects matching the filters are picked up for processing. The matchType supported is exact match and accommodates wildcard "*". For more information on filters, see [Event Filters](https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm).
-        :param pulumi.Input[Sequence[pulumi.Input['LogAnalyticsObjectCollectionRuleOverrideArgs']]] overrides: (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are - logSourceName, charEncoding. Supported matchType for override are "contains".
-        :param pulumi.Input[str] poll_since: The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
-        :param pulumi.Input[str] poll_till: The oldest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollTill will result in error.
+        :param pulumi.Input[Sequence[pulumi.Input['LogAnalyticsObjectCollectionRuleOverrideArgs']]] overrides: (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are: logSourceName, charEncoding, entityId. Supported matchType for override are "contains".
+        :param pulumi.Input[str] poll_since: The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC or HISTORIC_LIVE collection types. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
+        :param pulumi.Input[str] poll_till: The newest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC collection type. When collectionType is LIVE or HISTORIC_LIVE, specifying pollTill will result in error.
+        :param pulumi.Input[str] timezone: (Updatable) Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "log_group_id", log_group_id)
@@ -71,6 +79,12 @@ class LogAnalyticsObjectCollectionRuleArgs:
             pulumi.set(__self__, "entity_id", entity_id)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if log_set is not None:
+            pulumi.set(__self__, "log_set", log_set)
+        if log_set_ext_regex is not None:
+            pulumi.set(__self__, "log_set_ext_regex", log_set_ext_regex)
+        if log_set_key is not None:
+            pulumi.set(__self__, "log_set_key", log_set_key)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if object_name_filters is not None:
@@ -81,6 +95,8 @@ class LogAnalyticsObjectCollectionRuleArgs:
             pulumi.set(__self__, "poll_since", poll_since)
         if poll_till is not None:
             pulumi.set(__self__, "poll_till", poll_till)
+        if timezone is not None:
+            pulumi.set(__self__, "timezone", timezone)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -227,6 +243,42 @@ class LogAnalyticsObjectCollectionRuleArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @property
+    @pulumi.getter(name="logSet")
+    def log_set(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
+        """
+        return pulumi.get(self, "log_set")
+
+    @log_set.setter
+    def log_set(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "log_set", value)
+
+    @property
+    @pulumi.getter(name="logSetExtRegex")
+    def log_set_ext_regex(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The regex to be applied against given logSetKey. Regex has to be in string escaped format.
+        """
+        return pulumi.get(self, "log_set_ext_regex")
+
+    @log_set_ext_regex.setter
+    def log_set_ext_regex(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "log_set_ext_regex", value)
+
+    @property
+    @pulumi.getter(name="logSetKey")
+    def log_set_key(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
+        """
+        return pulumi.get(self, "log_set_key")
+
+    @log_set_key.setter
+    def log_set_key(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "log_set_key", value)
+
+    @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
@@ -254,7 +306,7 @@ class LogAnalyticsObjectCollectionRuleArgs:
     @pulumi.getter
     def overrides(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['LogAnalyticsObjectCollectionRuleOverrideArgs']]]]:
         """
-        (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are - logSourceName, charEncoding. Supported matchType for override are "contains".
+        (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are: logSourceName, charEncoding, entityId. Supported matchType for override are "contains".
         """
         return pulumi.get(self, "overrides")
 
@@ -266,7 +318,7 @@ class LogAnalyticsObjectCollectionRuleArgs:
     @pulumi.getter(name="pollSince")
     def poll_since(self) -> Optional[pulumi.Input[str]]:
         """
-        The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
+        The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC or HISTORIC_LIVE collection types. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
         """
         return pulumi.get(self, "poll_since")
 
@@ -278,13 +330,25 @@ class LogAnalyticsObjectCollectionRuleArgs:
     @pulumi.getter(name="pollTill")
     def poll_till(self) -> Optional[pulumi.Input[str]]:
         """
-        The oldest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollTill will result in error.
+        The newest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC collection type. When collectionType is LIVE or HISTORIC_LIVE, specifying pollTill will result in error.
         """
         return pulumi.get(self, "poll_till")
 
     @poll_till.setter
     def poll_till(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "poll_till", value)
+
+    @property
+    @pulumi.getter
+    def timezone(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
+        """
+        return pulumi.get(self, "timezone")
+
+    @timezone.setter
+    def timezone(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "timezone", value)
 
 
 @pulumi.input_type
@@ -299,6 +363,9 @@ class _LogAnalyticsObjectCollectionRuleState:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  log_group_id: Optional[pulumi.Input[str]] = None,
+                 log_set: Optional[pulumi.Input[str]] = None,
+                 log_set_ext_regex: Optional[pulumi.Input[str]] = None,
+                 log_set_key: Optional[pulumi.Input[str]] = None,
                  log_source_name: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
@@ -310,7 +377,8 @@ class _LogAnalyticsObjectCollectionRuleState:
                  poll_till: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
-                 time_updated: Optional[pulumi.Input[str]] = None):
+                 time_updated: Optional[pulumi.Input[str]] = None,
+                 timezone: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering LogAnalyticsObjectCollectionRule resources.
         :param pulumi.Input[str] char_encoding: (Updatable) An optional character encoding to aid in detecting the character encoding of the contents of the objects while processing. It is recommended to set this value as ISO_8589_1 when configuring content of the objects having more numeric characters, and very few alphabets. For e.g. this applies when configuring VCN Flow Logs.
@@ -322,18 +390,22 @@ class _LogAnalyticsObjectCollectionRuleState:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A detailed status of the life cycle state.
         :param pulumi.Input[str] log_group_id: (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
+        :param pulumi.Input[str] log_set: (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
+        :param pulumi.Input[str] log_set_ext_regex: (Updatable) The regex to be applied against given logSetKey. Regex has to be in string escaped format.
+        :param pulumi.Input[str] log_set_key: (Updatable) An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
         :param pulumi.Input[str] log_source_name: (Updatable) Name of the Logging Analytics Source to use for the processing.
         :param pulumi.Input[str] name: A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
         :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] object_name_filters: (Updatable) When the filters are provided, only the objects matching the filters are picked up for processing. The matchType supported is exact match and accommodates wildcard "*". For more information on filters, see [Event Filters](https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm).
         :param pulumi.Input[str] os_bucket_name: Name of the Object Storage bucket.
         :param pulumi.Input[str] os_namespace: Object Storage namespace.
-        :param pulumi.Input[Sequence[pulumi.Input['LogAnalyticsObjectCollectionRuleOverrideArgs']]] overrides: (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are - logSourceName, charEncoding. Supported matchType for override are "contains".
-        :param pulumi.Input[str] poll_since: The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
-        :param pulumi.Input[str] poll_till: The oldest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollTill will result in error.
+        :param pulumi.Input[Sequence[pulumi.Input['LogAnalyticsObjectCollectionRuleOverrideArgs']]] overrides: (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are: logSourceName, charEncoding, entityId. Supported matchType for override are "contains".
+        :param pulumi.Input[str] poll_since: The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC or HISTORIC_LIVE collection types. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
+        :param pulumi.Input[str] poll_till: The newest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC collection type. When collectionType is LIVE or HISTORIC_LIVE, specifying pollTill will result in error.
         :param pulumi.Input[str] state: The current state of the rule.
         :param pulumi.Input[str] time_created: The time when this rule was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time when this rule was last updated. An RFC3339 formatted datetime string.
+        :param pulumi.Input[str] timezone: (Updatable) Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
         """
         if char_encoding is not None:
             pulumi.set(__self__, "char_encoding", char_encoding)
@@ -353,6 +425,12 @@ class _LogAnalyticsObjectCollectionRuleState:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if log_group_id is not None:
             pulumi.set(__self__, "log_group_id", log_group_id)
+        if log_set is not None:
+            pulumi.set(__self__, "log_set", log_set)
+        if log_set_ext_regex is not None:
+            pulumi.set(__self__, "log_set_ext_regex", log_set_ext_regex)
+        if log_set_key is not None:
+            pulumi.set(__self__, "log_set_key", log_set_key)
         if log_source_name is not None:
             pulumi.set(__self__, "log_source_name", log_source_name)
         if name is not None:
@@ -377,6 +455,8 @@ class _LogAnalyticsObjectCollectionRuleState:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
+        if timezone is not None:
+            pulumi.set(__self__, "timezone", timezone)
 
     @property
     @pulumi.getter(name="charEncoding")
@@ -487,6 +567,42 @@ class _LogAnalyticsObjectCollectionRuleState:
         pulumi.set(self, "log_group_id", value)
 
     @property
+    @pulumi.getter(name="logSet")
+    def log_set(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
+        """
+        return pulumi.get(self, "log_set")
+
+    @log_set.setter
+    def log_set(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "log_set", value)
+
+    @property
+    @pulumi.getter(name="logSetExtRegex")
+    def log_set_ext_regex(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The regex to be applied against given logSetKey. Regex has to be in string escaped format.
+        """
+        return pulumi.get(self, "log_set_ext_regex")
+
+    @log_set_ext_regex.setter
+    def log_set_ext_regex(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "log_set_ext_regex", value)
+
+    @property
+    @pulumi.getter(name="logSetKey")
+    def log_set_key(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
+        """
+        return pulumi.get(self, "log_set_key")
+
+    @log_set_key.setter
+    def log_set_key(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "log_set_key", value)
+
+    @property
     @pulumi.getter(name="logSourceName")
     def log_source_name(self) -> Optional[pulumi.Input[str]]:
         """
@@ -562,7 +678,7 @@ class _LogAnalyticsObjectCollectionRuleState:
     @pulumi.getter
     def overrides(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['LogAnalyticsObjectCollectionRuleOverrideArgs']]]]:
         """
-        (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are - logSourceName, charEncoding. Supported matchType for override are "contains".
+        (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are: logSourceName, charEncoding, entityId. Supported matchType for override are "contains".
         """
         return pulumi.get(self, "overrides")
 
@@ -574,7 +690,7 @@ class _LogAnalyticsObjectCollectionRuleState:
     @pulumi.getter(name="pollSince")
     def poll_since(self) -> Optional[pulumi.Input[str]]:
         """
-        The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
+        The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC or HISTORIC_LIVE collection types. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
         """
         return pulumi.get(self, "poll_since")
 
@@ -586,7 +702,7 @@ class _LogAnalyticsObjectCollectionRuleState:
     @pulumi.getter(name="pollTill")
     def poll_till(self) -> Optional[pulumi.Input[str]]:
         """
-        The oldest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollTill will result in error.
+        The newest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC collection type. When collectionType is LIVE or HISTORIC_LIVE, specifying pollTill will result in error.
         """
         return pulumi.get(self, "poll_till")
 
@@ -630,6 +746,18 @@ class _LogAnalyticsObjectCollectionRuleState:
     def time_updated(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "time_updated", value)
 
+    @property
+    @pulumi.getter
+    def timezone(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
+        """
+        return pulumi.get(self, "timezone")
+
+    @timezone.setter
+    def timezone(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "timezone", value)
+
 
 class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
     @overload
@@ -644,6 +772,9 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
                  entity_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  log_group_id: Optional[pulumi.Input[str]] = None,
+                 log_set: Optional[pulumi.Input[str]] = None,
+                 log_set_ext_regex: Optional[pulumi.Input[str]] = None,
+                 log_set_key: Optional[pulumi.Input[str]] = None,
                  log_source_name: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
@@ -653,6 +784,7 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
                  overrides: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['LogAnalyticsObjectCollectionRuleOverrideArgs']]]]] = None,
                  poll_since: Optional[pulumi.Input[str]] = None,
                  poll_till: Optional[pulumi.Input[str]] = None,
+                 timezone: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         This resource provides the Log Analytics Object Collection Rule resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -682,10 +814,14 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
+            log_set=var["log_analytics_object_collection_rule_log_set"],
+            log_set_ext_regex=var["log_analytics_object_collection_rule_log_set_ext_regex"],
+            log_set_key=var["log_analytics_object_collection_rule_log_set_key"],
             object_name_filters=var["log_analytics_object_collection_rule_object_name_filters"],
             overrides=var["log_analytics_object_collection_rule_overrides"],
             poll_since=var["log_analytics_object_collection_rule_poll_since"],
-            poll_till=var["log_analytics_object_collection_rule_poll_till"])
+            poll_till=var["log_analytics_object_collection_rule_poll_till"],
+            timezone=var["log_analytics_object_collection_rule_timezone"])
         ```
 
         ## Import
@@ -706,15 +842,19 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
         :param pulumi.Input[str] entity_id: (Updatable) Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] log_group_id: (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
+        :param pulumi.Input[str] log_set: (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
+        :param pulumi.Input[str] log_set_ext_regex: (Updatable) The regex to be applied against given logSetKey. Regex has to be in string escaped format.
+        :param pulumi.Input[str] log_set_key: (Updatable) An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
         :param pulumi.Input[str] log_source_name: (Updatable) Name of the Logging Analytics Source to use for the processing.
         :param pulumi.Input[str] name: A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
         :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] object_name_filters: (Updatable) When the filters are provided, only the objects matching the filters are picked up for processing. The matchType supported is exact match and accommodates wildcard "*". For more information on filters, see [Event Filters](https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm).
         :param pulumi.Input[str] os_bucket_name: Name of the Object Storage bucket.
         :param pulumi.Input[str] os_namespace: Object Storage namespace.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['LogAnalyticsObjectCollectionRuleOverrideArgs']]]] overrides: (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are - logSourceName, charEncoding. Supported matchType for override are "contains".
-        :param pulumi.Input[str] poll_since: The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
-        :param pulumi.Input[str] poll_till: The oldest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollTill will result in error.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['LogAnalyticsObjectCollectionRuleOverrideArgs']]]] overrides: (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are: logSourceName, charEncoding, entityId. Supported matchType for override are "contains".
+        :param pulumi.Input[str] poll_since: The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC or HISTORIC_LIVE collection types. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
+        :param pulumi.Input[str] poll_till: The newest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC collection type. When collectionType is LIVE or HISTORIC_LIVE, specifying pollTill will result in error.
+        :param pulumi.Input[str] timezone: (Updatable) Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
         """
         ...
     @overload
@@ -750,10 +890,14 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
+            log_set=var["log_analytics_object_collection_rule_log_set"],
+            log_set_ext_regex=var["log_analytics_object_collection_rule_log_set_ext_regex"],
+            log_set_key=var["log_analytics_object_collection_rule_log_set_key"],
             object_name_filters=var["log_analytics_object_collection_rule_object_name_filters"],
             overrides=var["log_analytics_object_collection_rule_overrides"],
             poll_since=var["log_analytics_object_collection_rule_poll_since"],
-            poll_till=var["log_analytics_object_collection_rule_poll_till"])
+            poll_till=var["log_analytics_object_collection_rule_poll_till"],
+            timezone=var["log_analytics_object_collection_rule_timezone"])
         ```
 
         ## Import
@@ -787,6 +931,9 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
                  entity_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  log_group_id: Optional[pulumi.Input[str]] = None,
+                 log_set: Optional[pulumi.Input[str]] = None,
+                 log_set_ext_regex: Optional[pulumi.Input[str]] = None,
+                 log_set_key: Optional[pulumi.Input[str]] = None,
                  log_source_name: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
@@ -796,6 +943,7 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
                  overrides: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['LogAnalyticsObjectCollectionRuleOverrideArgs']]]]] = None,
                  poll_since: Optional[pulumi.Input[str]] = None,
                  poll_till: Optional[pulumi.Input[str]] = None,
+                 timezone: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -817,6 +965,9 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
             if log_group_id is None and not opts.urn:
                 raise TypeError("Missing required property 'log_group_id'")
             __props__.__dict__["log_group_id"] = log_group_id
+            __props__.__dict__["log_set"] = log_set
+            __props__.__dict__["log_set_ext_regex"] = log_set_ext_regex
+            __props__.__dict__["log_set_key"] = log_set_key
             if log_source_name is None and not opts.urn:
                 raise TypeError("Missing required property 'log_source_name'")
             __props__.__dict__["log_source_name"] = log_source_name
@@ -834,6 +985,7 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
             __props__.__dict__["overrides"] = overrides
             __props__.__dict__["poll_since"] = poll_since
             __props__.__dict__["poll_till"] = poll_till
+            __props__.__dict__["timezone"] = timezone
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
@@ -857,6 +1009,9 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             log_group_id: Optional[pulumi.Input[str]] = None,
+            log_set: Optional[pulumi.Input[str]] = None,
+            log_set_ext_regex: Optional[pulumi.Input[str]] = None,
+            log_set_key: Optional[pulumi.Input[str]] = None,
             log_source_name: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             namespace: Optional[pulumi.Input[str]] = None,
@@ -868,7 +1023,8 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
             poll_till: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
-            time_updated: Optional[pulumi.Input[str]] = None) -> 'LogAnalyticsObjectCollectionRule':
+            time_updated: Optional[pulumi.Input[str]] = None,
+            timezone: Optional[pulumi.Input[str]] = None) -> 'LogAnalyticsObjectCollectionRule':
         """
         Get an existing LogAnalyticsObjectCollectionRule resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -885,18 +1041,22 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A detailed status of the life cycle state.
         :param pulumi.Input[str] log_group_id: (Updatable) Logging Analytics Log group OCID to associate the processed logs with.
+        :param pulumi.Input[str] log_set: (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
+        :param pulumi.Input[str] log_set_ext_regex: (Updatable) The regex to be applied against given logSetKey. Regex has to be in string escaped format.
+        :param pulumi.Input[str] log_set_key: (Updatable) An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
         :param pulumi.Input[str] log_source_name: (Updatable) Name of the Logging Analytics Source to use for the processing.
         :param pulumi.Input[str] name: A unique name given to the rule. The name must be unique within the tenancy, and cannot be modified.
         :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] object_name_filters: (Updatable) When the filters are provided, only the objects matching the filters are picked up for processing. The matchType supported is exact match and accommodates wildcard "*". For more information on filters, see [Event Filters](https://docs.oracle.com/en-us/iaas/Content/Events/Concepts/filterevents.htm).
         :param pulumi.Input[str] os_bucket_name: Name of the Object Storage bucket.
         :param pulumi.Input[str] os_namespace: Object Storage namespace.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['LogAnalyticsObjectCollectionRuleOverrideArgs']]]] overrides: (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are - logSourceName, charEncoding. Supported matchType for override are "contains".
-        :param pulumi.Input[str] poll_since: The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
-        :param pulumi.Input[str] poll_till: The oldest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollTill will result in error.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['LogAnalyticsObjectCollectionRuleOverrideArgs']]]] overrides: (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are: logSourceName, charEncoding, entityId. Supported matchType for override are "contains".
+        :param pulumi.Input[str] poll_since: The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC or HISTORIC_LIVE collection types. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
+        :param pulumi.Input[str] poll_till: The newest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC collection type. When collectionType is LIVE or HISTORIC_LIVE, specifying pollTill will result in error.
         :param pulumi.Input[str] state: The current state of the rule.
         :param pulumi.Input[str] time_created: The time when this rule was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time when this rule was last updated. An RFC3339 formatted datetime string.
+        :param pulumi.Input[str] timezone: (Updatable) Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -911,6 +1071,9 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["log_group_id"] = log_group_id
+        __props__.__dict__["log_set"] = log_set
+        __props__.__dict__["log_set_ext_regex"] = log_set_ext_regex
+        __props__.__dict__["log_set_key"] = log_set_key
         __props__.__dict__["log_source_name"] = log_source_name
         __props__.__dict__["name"] = name
         __props__.__dict__["namespace"] = namespace
@@ -923,6 +1086,7 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
         __props__.__dict__["state"] = state
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
+        __props__.__dict__["timezone"] = timezone
         return LogAnalyticsObjectCollectionRule(resource_name, opts=opts, __props__=__props__)
 
     @property
@@ -998,6 +1162,30 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
         return pulumi.get(self, "log_group_id")
 
     @property
+    @pulumi.getter(name="logSet")
+    def log_set(self) -> pulumi.Output[str]:
+        """
+        (Updatable) The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
+        """
+        return pulumi.get(self, "log_set")
+
+    @property
+    @pulumi.getter(name="logSetExtRegex")
+    def log_set_ext_regex(self) -> pulumi.Output[str]:
+        """
+        (Updatable) The regex to be applied against given logSetKey. Regex has to be in string escaped format.
+        """
+        return pulumi.get(self, "log_set_ext_regex")
+
+    @property
+    @pulumi.getter(name="logSetKey")
+    def log_set_key(self) -> pulumi.Output[str]:
+        """
+        (Updatable) An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
+        """
+        return pulumi.get(self, "log_set_key")
+
+    @property
     @pulumi.getter(name="logSourceName")
     def log_source_name(self) -> pulumi.Output[str]:
         """
@@ -1049,7 +1237,7 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
     @pulumi.getter
     def overrides(self) -> pulumi.Output[Sequence['outputs.LogAnalyticsObjectCollectionRuleOverride']]:
         """
-        (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are - logSourceName, charEncoding. Supported matchType for override are "contains".
+        (Updatable) The override is used to modify some important configuration properties for objects matching a specific pattern inside the bucket. Supported propeties for override are: logSourceName, charEncoding, entityId. Supported matchType for override are "contains".
         """
         return pulumi.get(self, "overrides")
 
@@ -1057,7 +1245,7 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
     @pulumi.getter(name="pollSince")
     def poll_since(self) -> pulumi.Output[str]:
         """
-        The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
+        The oldest time of the file in the bucket to consider for collection. Accepted values are: BEGINNING or CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC or HISTORIC_LIVE collection types. When collectionType is LIVE, specifying pollSince value other than CURRENT_TIME will result in error.
         """
         return pulumi.get(self, "poll_since")
 
@@ -1065,7 +1253,7 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
     @pulumi.getter(name="pollTill")
     def poll_till(self) -> pulumi.Output[str]:
         """
-        The oldest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. When collectionType is LIVE, specifying pollTill will result in error.
+        The newest time of the file in the bucket to consider for collection. Accepted values are: CURRENT_TIME or RFC3339 formatted datetime string. Use this for HISTORIC collection type. When collectionType is LIVE or HISTORIC_LIVE, specifying pollTill will result in error.
         """
         return pulumi.get(self, "poll_till")
 
@@ -1092,4 +1280,12 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
         The time when this rule was last updated. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter
+    def timezone(self) -> pulumi.Output[str]:
+        """
+        (Updatable) Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
+        """
+        return pulumi.get(self, "timezone")
 

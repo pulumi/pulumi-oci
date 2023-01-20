@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getTargetAlertPolicyAssociation(args: GetTargetAlertPolicyAssociationArgs, opts?: pulumi.InvokeOptions): Promise<GetTargetAlertPolicyAssociationResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getTargetAlertPolicyAssociation:getTargetAlertPolicyAssociation", {
         "targetAlertPolicyAssociationId": args.targetAlertPolicyAssociationId,
     }, opts);
@@ -99,9 +96,24 @@ export interface GetTargetAlertPolicyAssociationResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Target Alert Policy Association resource in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Gets the details of target-alert policy association by its ID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testTargetAlertPolicyAssociation = oci.DataSafe.getTargetAlertPolicyAssociation({
+ *     targetAlertPolicyAssociationId: oci_data_safe_target_alert_policy_association.test_target_alert_policy_association.id,
+ * });
+ * ```
+ */
 export function getTargetAlertPolicyAssociationOutput(args: GetTargetAlertPolicyAssociationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTargetAlertPolicyAssociationResult> {
-    return pulumi.output(args).apply(a => getTargetAlertPolicyAssociation(a, opts))
+    return pulumi.output(args).apply((a: any) => getTargetAlertPolicyAssociation(a, opts))
 }
 
 /**

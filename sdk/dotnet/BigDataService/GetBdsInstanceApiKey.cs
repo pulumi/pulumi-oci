@@ -39,7 +39,7 @@ namespace Pulumi.Oci.BigDataService
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetBdsInstanceApiKeyResult> InvokeAsync(GetBdsInstanceApiKeyArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetBdsInstanceApiKeyResult>("oci:BigDataService/getBdsInstanceApiKey:getBdsInstanceApiKey", args ?? new GetBdsInstanceApiKeyArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetBdsInstanceApiKeyResult>("oci:BigDataService/getBdsInstanceApiKey:getBdsInstanceApiKey", args ?? new GetBdsInstanceApiKeyArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Bds Instance Api Key resource in Oracle Cloud Infrastructure Big Data Service service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.BigDataService
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetBdsInstanceApiKeyResult> Invoke(GetBdsInstanceApiKeyInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetBdsInstanceApiKeyResult>("oci:BigDataService/getBdsInstanceApiKey:getBdsInstanceApiKey", args ?? new GetBdsInstanceApiKeyInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetBdsInstanceApiKeyResult>("oci:BigDataService/getBdsInstanceApiKey:getBdsInstanceApiKey", args ?? new GetBdsInstanceApiKeyInvokeArgs(), options.WithDefaults());
     }
 
 

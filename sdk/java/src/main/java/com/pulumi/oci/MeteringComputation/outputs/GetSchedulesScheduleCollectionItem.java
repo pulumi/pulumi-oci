@@ -25,12 +25,17 @@ public final class GetSchedulesScheduleCollectionItem {
      */
     private Map<String,Object> definedTags;
     /**
-     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return The description of the schedule.
+     * 
+     */
+    private String description;
+    /**
+     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return The OCID representing unique shedule
+     * @return The OCID representing a unique shedule.
      * 
      */
     private String id;
@@ -40,22 +45,32 @@ public final class GetSchedulesScheduleCollectionItem {
      */
     private String name;
     /**
+     * @return Specifies supported output file format.
+     * 
+     */
+    private String outputFileFormat;
+    /**
      * @return The query properties.
      * 
      */
     private List<GetSchedulesScheduleCollectionItemQueryProperty> queryProperties;
     /**
-     * @return The location where usage/cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
+     * @return The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
      * 
      */
     private List<GetSchedulesScheduleCollectionItemResultLocation> resultLocations;
     /**
-     * @return In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 Describes the frequency of when the schedule will be run
+     * @return The saved report id which can also be used to generate query.
+     * 
+     */
+    private String savedReportId;
+    /**
+     * @return Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
      * 
      */
     private String scheduleRecurrences;
     /**
-     * @return The lifecycle state of the schedule
+     * @return The schedule lifecycle state.
      * 
      */
     private String state;
@@ -65,12 +80,17 @@ public final class GetSchedulesScheduleCollectionItem {
      */
     private Map<String,Object> systemTags;
     /**
-     * @return The date and time of when the schedule was created
+     * @return The date and time the schedule was created.
      * 
      */
     private String timeCreated;
     /**
-     * @return The date and time of the first time job execution
+     * @return The date and time of the next job execution.
+     * 
+     */
+    private String timeNextRun;
+    /**
+     * @return The date and time of the first time job execution.
      * 
      */
     private String timeScheduled;
@@ -91,14 +111,21 @@ public final class GetSchedulesScheduleCollectionItem {
         return this.definedTags;
     }
     /**
-     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return The description of the schedule.
+     * 
+     */
+    public String description() {
+        return this.description;
+    }
+    /**
+     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
         return this.freeformTags;
     }
     /**
-     * @return The OCID representing unique shedule
+     * @return The OCID representing a unique shedule.
      * 
      */
     public String id() {
@@ -112,6 +139,13 @@ public final class GetSchedulesScheduleCollectionItem {
         return this.name;
     }
     /**
+     * @return Specifies supported output file format.
+     * 
+     */
+    public String outputFileFormat() {
+        return this.outputFileFormat;
+    }
+    /**
      * @return The query properties.
      * 
      */
@@ -119,21 +153,28 @@ public final class GetSchedulesScheduleCollectionItem {
         return this.queryProperties;
     }
     /**
-     * @return The location where usage/cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
+     * @return The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
      * 
      */
     public List<GetSchedulesScheduleCollectionItemResultLocation> resultLocations() {
         return this.resultLocations;
     }
     /**
-     * @return In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 Describes the frequency of when the schedule will be run
+     * @return The saved report id which can also be used to generate query.
+     * 
+     */
+    public String savedReportId() {
+        return this.savedReportId;
+    }
+    /**
+     * @return Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
      * 
      */
     public String scheduleRecurrences() {
         return this.scheduleRecurrences;
     }
     /**
-     * @return The lifecycle state of the schedule
+     * @return The schedule lifecycle state.
      * 
      */
     public String state() {
@@ -147,14 +188,21 @@ public final class GetSchedulesScheduleCollectionItem {
         return this.systemTags;
     }
     /**
-     * @return The date and time of when the schedule was created
+     * @return The date and time the schedule was created.
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return The date and time of the first time job execution
+     * @return The date and time of the next job execution.
+     * 
+     */
+    public String timeNextRun() {
+        return this.timeNextRun;
+    }
+    /**
+     * @return The date and time of the first time job execution.
      * 
      */
     public String timeScheduled() {
@@ -172,30 +220,38 @@ public final class GetSchedulesScheduleCollectionItem {
     public static final class Builder {
         private String compartmentId;
         private Map<String,Object> definedTags;
+        private String description;
         private Map<String,Object> freeformTags;
         private String id;
         private String name;
+        private String outputFileFormat;
         private List<GetSchedulesScheduleCollectionItemQueryProperty> queryProperties;
         private List<GetSchedulesScheduleCollectionItemResultLocation> resultLocations;
+        private String savedReportId;
         private String scheduleRecurrences;
         private String state;
         private Map<String,Object> systemTags;
         private String timeCreated;
+        private String timeNextRun;
         private String timeScheduled;
         public Builder() {}
         public Builder(GetSchedulesScheduleCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
+    	      this.description = defaults.description;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.name = defaults.name;
+    	      this.outputFileFormat = defaults.outputFileFormat;
     	      this.queryProperties = defaults.queryProperties;
     	      this.resultLocations = defaults.resultLocations;
+    	      this.savedReportId = defaults.savedReportId;
     	      this.scheduleRecurrences = defaults.scheduleRecurrences;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
+    	      this.timeNextRun = defaults.timeNextRun;
     	      this.timeScheduled = defaults.timeScheduled;
         }
 
@@ -207,6 +263,11 @@ public final class GetSchedulesScheduleCollectionItem {
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder description(String description) {
+            this.description = Objects.requireNonNull(description);
             return this;
         }
         @CustomType.Setter
@@ -225,6 +286,11 @@ public final class GetSchedulesScheduleCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder outputFileFormat(String outputFileFormat) {
+            this.outputFileFormat = Objects.requireNonNull(outputFileFormat);
+            return this;
+        }
+        @CustomType.Setter
         public Builder queryProperties(List<GetSchedulesScheduleCollectionItemQueryProperty> queryProperties) {
             this.queryProperties = Objects.requireNonNull(queryProperties);
             return this;
@@ -239,6 +305,11 @@ public final class GetSchedulesScheduleCollectionItem {
         }
         public Builder resultLocations(GetSchedulesScheduleCollectionItemResultLocation... resultLocations) {
             return resultLocations(List.of(resultLocations));
+        }
+        @CustomType.Setter
+        public Builder savedReportId(String savedReportId) {
+            this.savedReportId = Objects.requireNonNull(savedReportId);
+            return this;
         }
         @CustomType.Setter
         public Builder scheduleRecurrences(String scheduleRecurrences) {
@@ -261,6 +332,11 @@ public final class GetSchedulesScheduleCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder timeNextRun(String timeNextRun) {
+            this.timeNextRun = Objects.requireNonNull(timeNextRun);
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeScheduled(String timeScheduled) {
             this.timeScheduled = Objects.requireNonNull(timeScheduled);
             return this;
@@ -269,15 +345,19 @@ public final class GetSchedulesScheduleCollectionItem {
             final var o = new GetSchedulesScheduleCollectionItem();
             o.compartmentId = compartmentId;
             o.definedTags = definedTags;
+            o.description = description;
             o.freeformTags = freeformTags;
             o.id = id;
             o.name = name;
+            o.outputFileFormat = outputFileFormat;
             o.queryProperties = queryProperties;
             o.resultLocations = resultLocations;
+            o.savedReportId = savedReportId;
             o.scheduleRecurrences = scheduleRecurrences;
             o.state = state;
             o.systemTags = systemTags;
             o.timeCreated = timeCreated;
+            o.timeNextRun = timeNextRun;
             o.timeScheduled = timeScheduled;
             return o;
         }

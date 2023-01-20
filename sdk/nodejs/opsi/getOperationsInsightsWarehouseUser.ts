@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getOperationsInsightsWarehouseUser(args: GetOperationsInsightsWarehouseUserArgs, opts?: pulumi.InvokeOptions): Promise<GetOperationsInsightsWarehouseUserResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Opsi/getOperationsInsightsWarehouseUser:getOperationsInsightsWarehouseUser", {
         "operationsInsightsWarehouseUserId": args.operationsInsightsWarehouseUserId,
     }, opts);
@@ -107,9 +104,24 @@ export interface GetOperationsInsightsWarehouseUserResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Operations Insights Warehouse User resource in Oracle Cloud Infrastructure Opsi service.
+ *
+ * Gets details of an Operations Insights Warehouse User.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testOperationsInsightsWarehouseUser = oci.Opsi.getOperationsInsightsWarehouseUser({
+ *     operationsInsightsWarehouseUserId: oci_opsi_operations_insights_warehouse_user.test_operations_insights_warehouse_user.id,
+ * });
+ * ```
+ */
 export function getOperationsInsightsWarehouseUserOutput(args: GetOperationsInsightsWarehouseUserOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOperationsInsightsWarehouseUserResult> {
-    return pulumi.output(args).apply(a => getOperationsInsightsWarehouseUser(a, opts))
+    return pulumi.output(args).apply((a: any) => getOperationsInsightsWarehouseUser(a, opts))
 }
 
 /**

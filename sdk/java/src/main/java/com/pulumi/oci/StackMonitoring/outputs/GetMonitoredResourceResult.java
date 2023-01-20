@@ -46,6 +46,11 @@ public final class GetMonitoredResourceResult {
      * 
      */
     private String displayName;
+    /**
+     * @return External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+     * 
+     */
+    private String externalId;
     private String externalResourceId;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
@@ -156,6 +161,13 @@ public final class GetMonitoredResourceResult {
      */
     public String displayName() {
         return this.displayName;
+    }
+    /**
+     * @return External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+     * 
+     */
+    public String externalId() {
+        return this.externalId;
     }
     public String externalResourceId() {
         return this.externalResourceId;
@@ -270,6 +282,7 @@ public final class GetMonitoredResourceResult {
         private List<GetMonitoredResourceDatabaseConnectionDetail> databaseConnectionDetails;
         private Map<String,Object> definedTags;
         private String displayName;
+        private String externalId;
         private String externalResourceId;
         private Map<String,Object> freeformTags;
         private String hostName;
@@ -294,6 +307,7 @@ public final class GetMonitoredResourceResult {
     	      this.databaseConnectionDetails = defaults.databaseConnectionDetails;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
+    	      this.externalId = defaults.externalId;
     	      this.externalResourceId = defaults.externalResourceId;
     	      this.freeformTags = defaults.freeformTags;
     	      this.hostName = defaults.hostName;
@@ -348,6 +362,11 @@ public final class GetMonitoredResourceResult {
         @CustomType.Setter
         public Builder displayName(String displayName) {
             this.displayName = Objects.requireNonNull(displayName);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder externalId(String externalId) {
+            this.externalId = Objects.requireNonNull(externalId);
             return this;
         }
         @CustomType.Setter
@@ -436,6 +455,7 @@ public final class GetMonitoredResourceResult {
             o.databaseConnectionDetails = databaseConnectionDetails;
             o.definedTags = definedTags;
             o.displayName = displayName;
+            o.externalId = externalId;
             o.externalResourceId = externalResourceId;
             o.freeformTags = freeformTags;
             o.hostName = hostName;

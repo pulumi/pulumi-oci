@@ -22,11 +22,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRunLog(args: GetRunLogArgs, opts?: pulumi.InvokeOptions): Promise<GetRunLogResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataFlow/getRunLog:getRunLog", {
         "base64EncodeContent": args.base64EncodeContent,
         "name": args.name,
@@ -69,9 +66,25 @@ export interface GetRunLogResult {
     readonly name: string;
     readonly runId: string;
 }
-
+/**
+ * This data source provides details about a specific Run Log resource in Oracle Cloud Infrastructure Data Flow service.
+ *
+ * Retrieves the content of an run log.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testRunLog = oci.DataFlow.getRunLog({
+ *     name: _var.run_log_name,
+ *     runId: oci_dataflow_run.test_run.id,
+ * });
+ * ```
+ */
 export function getRunLogOutput(args: GetRunLogOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRunLogResult> {
-    return pulumi.output(args).apply(a => getRunLog(a, opts))
+    return pulumi.output(args).apply((a: any) => getRunLog(a, opts))
 }
 
 /**

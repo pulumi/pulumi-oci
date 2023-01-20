@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -36,11 +37,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getObjectVersions(args: GetObjectVersionsArgs, opts?: pulumi.InvokeOptions): Promise<GetObjectVersionsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ObjectStorage/getObjectVersions:getObjectVersions", {
         "bucket": args.bucket,
         "delimiter": args.delimiter,
@@ -119,9 +117,38 @@ export interface GetObjectVersionsResult {
     readonly start?: string;
     readonly startAfter?: string;
 }
-
+/**
+ * This data source provides the list of Object Versions in Oracle Cloud Infrastructure Object Storage service.
+ *
+ * Lists the object versions in a bucket.
+ *
+ * ListObjectVersions returns an ObjectVersionCollection containing at most 1000 object versions. To paginate through
+ * more object versions, use the returned `opc-next-page` value with the `page` request parameter.
+ *
+ * To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
+ * talk to an administrator. If you are an administrator who needs to write policies to give users access, see
+ * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testObjectVersions = oci.ObjectStorage.getObjectVersions({
+ *     bucket: _var.object_version_bucket,
+ *     namespace: _var.object_version_namespace,
+ *     delimiter: _var.object_version_delimiter,
+ *     end: _var.object_version_end,
+ *     fields: _var.object_version_fields,
+ *     prefix: _var.object_version_prefix,
+ *     start: _var.object_version_start,
+ *     startAfter: _var.object_version_start_after,
+ * });
+ * ```
+ */
 export function getObjectVersionsOutput(args: GetObjectVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetObjectVersionsResult> {
-    return pulumi.output(args).apply(a => getObjectVersions(a, opts))
+    return pulumi.output(args).apply((a: any) => getObjectVersions(a, opts))
 }
 
 /**

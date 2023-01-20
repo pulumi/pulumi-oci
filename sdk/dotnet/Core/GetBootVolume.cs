@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetBootVolumeResult> InvokeAsync(GetBootVolumeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetBootVolumeResult>("oci:Core/getBootVolume:getBootVolume", args ?? new GetBootVolumeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetBootVolumeResult>("oci:Core/getBootVolume:getBootVolume", args ?? new GetBootVolumeArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Boot Volume resource in Oracle Cloud Infrastructure Core service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetBootVolumeResult> Invoke(GetBootVolumeInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetBootVolumeResult>("oci:Core/getBootVolume:getBootVolume", args ?? new GetBootVolumeInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetBootVolumeResult>("oci:Core/getBootVolume:getBootVolume", args ?? new GetBootVolumeInvokeArgs(), options.WithDefaults());
     }
 
 

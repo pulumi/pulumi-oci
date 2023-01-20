@@ -115,6 +115,21 @@ public final class GetReportsArgs extends com.pulumi.resources.InvokeArgs {
         return Optional.ofNullable(this.state);
     }
 
+    /**
+     * An optional filter to return only resources that match the specified type.
+     * 
+     */
+    @Import(name="type")
+    private @Nullable Output<String> type;
+
+    /**
+     * @return An optional filter to return only resources that match the specified type.
+     * 
+     */
+    public Optional<Output<String>> type() {
+        return Optional.ofNullable(this.type);
+    }
+
     private GetReportsArgs() {}
 
     private GetReportsArgs(GetReportsArgs $) {
@@ -125,6 +140,7 @@ public final class GetReportsArgs extends com.pulumi.resources.InvokeArgs {
         this.filters = $.filters;
         this.reportDefinitionId = $.reportDefinitionId;
         this.state = $.state;
+        this.type = $.type;
     }
 
     public static Builder builder() {
@@ -282,6 +298,27 @@ public final class GetReportsArgs extends com.pulumi.resources.InvokeArgs {
          */
         public Builder state(String state) {
             return state(Output.of(state));
+        }
+
+        /**
+         * @param type An optional filter to return only resources that match the specified type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder type(@Nullable Output<String> type) {
+            $.type = type;
+            return this;
+        }
+
+        /**
+         * @param type An optional filter to return only resources that match the specified type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder type(String type) {
+            return type(Output.of(type));
         }
 
         public GetReportsArgs build() {

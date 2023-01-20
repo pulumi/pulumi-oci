@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -28,11 +29,8 @@ import * as utilities from "../utilities";
  */
 export function getNetworkSecurityGroups(args?: GetNetworkSecurityGroupsArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkSecurityGroupsResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getNetworkSecurityGroups:getNetworkSecurityGroups", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -101,9 +99,29 @@ export interface GetNetworkSecurityGroupsResult {
     readonly vcnId?: string;
     readonly vlanId?: string;
 }
-
+/**
+ * This data source provides the list of Network Security Groups in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists either the network security groups in the specified compartment, or those associated with the specified VLAN.
+ * You must specify either a `vlanId` or a `compartmentId`, but not both. If you specify a `vlanId`, all other parameters are ignored.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testNetworkSecurityGroups = oci.Core.getNetworkSecurityGroups({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.network_security_group_display_name,
+ *     state: _var.network_security_group_state,
+ *     vcnId: oci_core_vcn.test_vcn.id,
+ *     vlanId: oci_core_vlan.test_vlan.id,
+ * });
+ * ```
+ */
 export function getNetworkSecurityGroupsOutput(args?: GetNetworkSecurityGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkSecurityGroupsResult> {
-    return pulumi.output(args).apply(a => getNetworkSecurityGroups(a, opts))
+    return pulumi.output(args).apply((a: any) => getNetworkSecurityGroups(a, opts))
 }
 
 /**

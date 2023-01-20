@@ -39,14 +39,14 @@ public final class ApplicationState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+     * (Updatable) A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      * 
      */
     @Import(name="archiveUri")
     private @Nullable Output<String> archiveUri;
 
     /**
-     * @return (Updatable) An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+     * @return (Updatable) A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
      * 
      */
     public Optional<Output<String>> archiveUri() {
@@ -264,6 +264,21 @@ public final class ApplicationState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
+     * 
+     */
+    @Import(name="idleTimeoutInMinutes")
+    private @Nullable Output<String> idleTimeoutInMinutes;
+
+    /**
+     * @return (Updatable) The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
+     * 
+     */
+    public Optional<Output<String>> idleTimeoutInMinutes() {
+        return Optional.ofNullable(this.idleTimeoutInMinutes);
+    }
+
+    /**
      * (Updatable) The Spark language.
      * 
      */
@@ -291,6 +306,21 @@ public final class ApplicationState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> logsBucketUri() {
         return Optional.ofNullable(this.logsBucketUri);
+    }
+
+    /**
+     * (Updatable) The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
+     * 
+     */
+    @Import(name="maxDurationInMinutes")
+    private @Nullable Output<String> maxDurationInMinutes;
+
+    /**
+     * @return (Updatable) The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
+     * 
+     */
+    public Optional<Output<String>> maxDurationInMinutes() {
+        return Optional.ofNullable(this.maxDurationInMinutes);
     }
 
     /**
@@ -492,8 +522,10 @@ public final class ApplicationState extends com.pulumi.resources.ResourceArgs {
         this.executorShapeConfig = $.executorShapeConfig;
         this.fileUri = $.fileUri;
         this.freeformTags = $.freeformTags;
+        this.idleTimeoutInMinutes = $.idleTimeoutInMinutes;
         this.language = $.language;
         this.logsBucketUri = $.logsBucketUri;
+        this.maxDurationInMinutes = $.maxDurationInMinutes;
         this.metastoreId = $.metastoreId;
         this.numExecutors = $.numExecutors;
         this.ownerPrincipalId = $.ownerPrincipalId;
@@ -548,7 +580,7 @@ public final class ApplicationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param archiveUri (Updatable) An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+         * @param archiveUri (Updatable) A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
          * 
          * @return builder
          * 
@@ -559,7 +591,7 @@ public final class ApplicationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param archiveUri (Updatable) An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+         * @param archiveUri (Updatable) A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
          * 
          * @return builder
          * 
@@ -873,6 +905,27 @@ public final class ApplicationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param idleTimeoutInMinutes (Updatable) The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder idleTimeoutInMinutes(@Nullable Output<String> idleTimeoutInMinutes) {
+            $.idleTimeoutInMinutes = idleTimeoutInMinutes;
+            return this;
+        }
+
+        /**
+         * @param idleTimeoutInMinutes (Updatable) The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder idleTimeoutInMinutes(String idleTimeoutInMinutes) {
+            return idleTimeoutInMinutes(Output.of(idleTimeoutInMinutes));
+        }
+
+        /**
          * @param language (Updatable) The Spark language.
          * 
          * @return builder
@@ -912,6 +965,27 @@ public final class ApplicationState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder logsBucketUri(String logsBucketUri) {
             return logsBucketUri(Output.of(logsBucketUri));
+        }
+
+        /**
+         * @param maxDurationInMinutes (Updatable) The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maxDurationInMinutes(@Nullable Output<String> maxDurationInMinutes) {
+            $.maxDurationInMinutes = maxDurationInMinutes;
+            return this;
+        }
+
+        /**
+         * @param maxDurationInMinutes (Updatable) The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maxDurationInMinutes(String maxDurationInMinutes) {
+            return maxDurationInMinutes(Output.of(maxDurationInMinutes));
         }
 
         /**

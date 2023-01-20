@@ -755,6 +755,511 @@ func (o DatabaseInsightCredentialDetailsPtrOutput) UserName() pulumi.StringPtrOu
 	}).(pulumi.StringPtrOutput)
 }
 
+type ExadataInsightMemberVmClusterDetail struct {
+	// (Updatable) Compartment Identifier of Exadata insight
+	CompartmentId         *string                                                   `pulumi:"compartmentId"`
+	MemberDatabaseDetails []ExadataInsightMemberVmClusterDetailMemberDatabaseDetail `pulumi:"memberDatabaseDetails"`
+	OpsiPrivateEndpointId *string                                                   `pulumi:"opsiPrivateEndpointId"`
+	VmclusterId           *string                                                   `pulumi:"vmclusterId"`
+}
+
+// ExadataInsightMemberVmClusterDetailInput is an input type that accepts ExadataInsightMemberVmClusterDetailArgs and ExadataInsightMemberVmClusterDetailOutput values.
+// You can construct a concrete instance of `ExadataInsightMemberVmClusterDetailInput` via:
+//
+//	ExadataInsightMemberVmClusterDetailArgs{...}
+type ExadataInsightMemberVmClusterDetailInput interface {
+	pulumi.Input
+
+	ToExadataInsightMemberVmClusterDetailOutput() ExadataInsightMemberVmClusterDetailOutput
+	ToExadataInsightMemberVmClusterDetailOutputWithContext(context.Context) ExadataInsightMemberVmClusterDetailOutput
+}
+
+type ExadataInsightMemberVmClusterDetailArgs struct {
+	// (Updatable) Compartment Identifier of Exadata insight
+	CompartmentId         pulumi.StringPtrInput                                             `pulumi:"compartmentId"`
+	MemberDatabaseDetails ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayInput `pulumi:"memberDatabaseDetails"`
+	OpsiPrivateEndpointId pulumi.StringPtrInput                                             `pulumi:"opsiPrivateEndpointId"`
+	VmclusterId           pulumi.StringPtrInput                                             `pulumi:"vmclusterId"`
+}
+
+func (ExadataInsightMemberVmClusterDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ExadataInsightMemberVmClusterDetail)(nil)).Elem()
+}
+
+func (i ExadataInsightMemberVmClusterDetailArgs) ToExadataInsightMemberVmClusterDetailOutput() ExadataInsightMemberVmClusterDetailOutput {
+	return i.ToExadataInsightMemberVmClusterDetailOutputWithContext(context.Background())
+}
+
+func (i ExadataInsightMemberVmClusterDetailArgs) ToExadataInsightMemberVmClusterDetailOutputWithContext(ctx context.Context) ExadataInsightMemberVmClusterDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExadataInsightMemberVmClusterDetailOutput)
+}
+
+// ExadataInsightMemberVmClusterDetailArrayInput is an input type that accepts ExadataInsightMemberVmClusterDetailArray and ExadataInsightMemberVmClusterDetailArrayOutput values.
+// You can construct a concrete instance of `ExadataInsightMemberVmClusterDetailArrayInput` via:
+//
+//	ExadataInsightMemberVmClusterDetailArray{ ExadataInsightMemberVmClusterDetailArgs{...} }
+type ExadataInsightMemberVmClusterDetailArrayInput interface {
+	pulumi.Input
+
+	ToExadataInsightMemberVmClusterDetailArrayOutput() ExadataInsightMemberVmClusterDetailArrayOutput
+	ToExadataInsightMemberVmClusterDetailArrayOutputWithContext(context.Context) ExadataInsightMemberVmClusterDetailArrayOutput
+}
+
+type ExadataInsightMemberVmClusterDetailArray []ExadataInsightMemberVmClusterDetailInput
+
+func (ExadataInsightMemberVmClusterDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ExadataInsightMemberVmClusterDetail)(nil)).Elem()
+}
+
+func (i ExadataInsightMemberVmClusterDetailArray) ToExadataInsightMemberVmClusterDetailArrayOutput() ExadataInsightMemberVmClusterDetailArrayOutput {
+	return i.ToExadataInsightMemberVmClusterDetailArrayOutputWithContext(context.Background())
+}
+
+func (i ExadataInsightMemberVmClusterDetailArray) ToExadataInsightMemberVmClusterDetailArrayOutputWithContext(ctx context.Context) ExadataInsightMemberVmClusterDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExadataInsightMemberVmClusterDetailArrayOutput)
+}
+
+type ExadataInsightMemberVmClusterDetailOutput struct{ *pulumi.OutputState }
+
+func (ExadataInsightMemberVmClusterDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ExadataInsightMemberVmClusterDetail)(nil)).Elem()
+}
+
+func (o ExadataInsightMemberVmClusterDetailOutput) ToExadataInsightMemberVmClusterDetailOutput() ExadataInsightMemberVmClusterDetailOutput {
+	return o
+}
+
+func (o ExadataInsightMemberVmClusterDetailOutput) ToExadataInsightMemberVmClusterDetailOutputWithContext(ctx context.Context) ExadataInsightMemberVmClusterDetailOutput {
+	return o
+}
+
+// (Updatable) Compartment Identifier of Exadata insight
+func (o ExadataInsightMemberVmClusterDetailOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetail) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
+}
+
+func (o ExadataInsightMemberVmClusterDetailOutput) MemberDatabaseDetails() ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput {
+	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetail) []ExadataInsightMemberVmClusterDetailMemberDatabaseDetail {
+		return v.MemberDatabaseDetails
+	}).(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput)
+}
+
+func (o ExadataInsightMemberVmClusterDetailOutput) OpsiPrivateEndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetail) *string { return v.OpsiPrivateEndpointId }).(pulumi.StringPtrOutput)
+}
+
+func (o ExadataInsightMemberVmClusterDetailOutput) VmclusterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetail) *string { return v.VmclusterId }).(pulumi.StringPtrOutput)
+}
+
+type ExadataInsightMemberVmClusterDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (ExadataInsightMemberVmClusterDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ExadataInsightMemberVmClusterDetail)(nil)).Elem()
+}
+
+func (o ExadataInsightMemberVmClusterDetailArrayOutput) ToExadataInsightMemberVmClusterDetailArrayOutput() ExadataInsightMemberVmClusterDetailArrayOutput {
+	return o
+}
+
+func (o ExadataInsightMemberVmClusterDetailArrayOutput) ToExadataInsightMemberVmClusterDetailArrayOutputWithContext(ctx context.Context) ExadataInsightMemberVmClusterDetailArrayOutput {
+	return o
+}
+
+func (o ExadataInsightMemberVmClusterDetailArrayOutput) Index(i pulumi.IntInput) ExadataInsightMemberVmClusterDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ExadataInsightMemberVmClusterDetail {
+		return vs[0].([]ExadataInsightMemberVmClusterDetail)[vs[1].(int)]
+	}).(ExadataInsightMemberVmClusterDetailOutput)
+}
+
+type ExadataInsightMemberVmClusterDetailMemberDatabaseDetail struct {
+	// (Updatable) Compartment Identifier of Exadata insight
+	CompartmentId        *string                                                                   `pulumi:"compartmentId"`
+	CredentialDetails    *ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails `pulumi:"credentialDetails"`
+	DatabaseId           *string                                                                   `pulumi:"databaseId"`
+	DatabaseResourceType *string                                                                   `pulumi:"databaseResourceType"`
+	DbmPrivateEndpointId *string                                                                   `pulumi:"dbmPrivateEndpointId"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags    map[string]interface{} `pulumi:"definedTags"`
+	DeploymentType *string                `pulumi:"deploymentType"`
+	// (Updatable) Source of the Exadata system.
+	EntitySource *string `pulumi:"entitySource"`
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags          map[string]interface{} `pulumi:"freeformTags"`
+	OpsiPrivateEndpointId *string                `pulumi:"opsiPrivateEndpointId"`
+	ServiceName           *string                `pulumi:"serviceName"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+}
+
+// ExadataInsightMemberVmClusterDetailMemberDatabaseDetailInput is an input type that accepts ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs and ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput values.
+// You can construct a concrete instance of `ExadataInsightMemberVmClusterDetailMemberDatabaseDetailInput` via:
+//
+//	ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs{...}
+type ExadataInsightMemberVmClusterDetailMemberDatabaseDetailInput interface {
+	pulumi.Input
+
+	ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput() ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput
+	ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutputWithContext(context.Context) ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput
+}
+
+type ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs struct {
+	// (Updatable) Compartment Identifier of Exadata insight
+	CompartmentId        pulumi.StringPtrInput                                                            `pulumi:"compartmentId"`
+	CredentialDetails    ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrInput `pulumi:"credentialDetails"`
+	DatabaseId           pulumi.StringPtrInput                                                            `pulumi:"databaseId"`
+	DatabaseResourceType pulumi.StringPtrInput                                                            `pulumi:"databaseResourceType"`
+	DbmPrivateEndpointId pulumi.StringPtrInput                                                            `pulumi:"dbmPrivateEndpointId"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags    pulumi.MapInput       `pulumi:"definedTags"`
+	DeploymentType pulumi.StringPtrInput `pulumi:"deploymentType"`
+	// (Updatable) Source of the Exadata system.
+	EntitySource pulumi.StringPtrInput `pulumi:"entitySource"`
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags          pulumi.MapInput       `pulumi:"freeformTags"`
+	OpsiPrivateEndpointId pulumi.StringPtrInput `pulumi:"opsiPrivateEndpointId"`
+	ServiceName           pulumi.StringPtrInput `pulumi:"serviceName"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+}
+
+func (ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ExadataInsightMemberVmClusterDetailMemberDatabaseDetail)(nil)).Elem()
+}
+
+func (i ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs) ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput() ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput {
+	return i.ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutputWithContext(context.Background())
+}
+
+func (i ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs) ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutputWithContext(ctx context.Context) ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput)
+}
+
+// ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayInput is an input type that accepts ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArray and ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput values.
+// You can construct a concrete instance of `ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayInput` via:
+//
+//	ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArray{ ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs{...} }
+type ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayInput interface {
+	pulumi.Input
+
+	ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput() ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput
+	ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutputWithContext(context.Context) ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput
+}
+
+type ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArray []ExadataInsightMemberVmClusterDetailMemberDatabaseDetailInput
+
+func (ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ExadataInsightMemberVmClusterDetailMemberDatabaseDetail)(nil)).Elem()
+}
+
+func (i ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArray) ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput() ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput {
+	return i.ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutputWithContext(context.Background())
+}
+
+func (i ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArray) ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutputWithContext(ctx context.Context) ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput)
+}
+
+type ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput struct{ *pulumi.OutputState }
+
+func (ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ExadataInsightMemberVmClusterDetailMemberDatabaseDetail)(nil)).Elem()
+}
+
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput() ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput {
+	return o
+}
+
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutputWithContext(ctx context.Context) ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput {
+	return o
+}
+
+// (Updatable) Compartment Identifier of Exadata insight
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetail) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
+}
+
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) CredentialDetails() ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutput {
+	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetail) *ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails {
+		return v.CredentialDetails
+	}).(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutput)
+}
+
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) DatabaseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetail) *string { return v.DatabaseId }).(pulumi.StringPtrOutput)
+}
+
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) DatabaseResourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetail) *string { return v.DatabaseResourceType }).(pulumi.StringPtrOutput)
+}
+
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) DbmPrivateEndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetail) *string { return v.DbmPrivateEndpointId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetail) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) DeploymentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetail) *string { return v.DeploymentType }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Source of the Exadata system.
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) EntitySource() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetail) *string { return v.EntitySource }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetail) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
+}
+
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) OpsiPrivateEndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetail) *string {
+		return v.OpsiPrivateEndpointId
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) ServiceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetail) *string { return v.ServiceName }).(pulumi.StringPtrOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetail) map[string]interface{} {
+		return v.SystemTags
+	}).(pulumi.MapOutput)
+}
+
+type ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ExadataInsightMemberVmClusterDetailMemberDatabaseDetail)(nil)).Elem()
+}
+
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput) ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput() ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput {
+	return o
+}
+
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput) ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutputWithContext(ctx context.Context) ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput {
+	return o
+}
+
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput) Index(i pulumi.IntInput) ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ExadataInsightMemberVmClusterDetailMemberDatabaseDetail {
+		return vs[0].([]ExadataInsightMemberVmClusterDetailMemberDatabaseDetail)[vs[1].(int)]
+	}).(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput)
+}
+
+type ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails struct {
+	CredentialSourceName *string `pulumi:"credentialSourceName"`
+	CredentialType       string  `pulumi:"credentialType"`
+	PasswordSecretId     *string `pulumi:"passwordSecretId"`
+	Role                 *string `pulumi:"role"`
+	UserName             *string `pulumi:"userName"`
+}
+
+// ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsInput is an input type that accepts ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs and ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsOutput values.
+// You can construct a concrete instance of `ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsInput` via:
+//
+//	ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs{...}
+type ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsInput interface {
+	pulumi.Input
+
+	ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsOutput() ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsOutput
+	ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsOutputWithContext(context.Context) ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsOutput
+}
+
+type ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs struct {
+	CredentialSourceName pulumi.StringPtrInput `pulumi:"credentialSourceName"`
+	CredentialType       pulumi.StringInput    `pulumi:"credentialType"`
+	PasswordSecretId     pulumi.StringPtrInput `pulumi:"passwordSecretId"`
+	Role                 pulumi.StringPtrInput `pulumi:"role"`
+	UserName             pulumi.StringPtrInput `pulumi:"userName"`
+}
+
+func (ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails)(nil)).Elem()
+}
+
+func (i ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs) ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsOutput() ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsOutput {
+	return i.ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsOutputWithContext(context.Background())
+}
+
+func (i ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs) ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsOutputWithContext(ctx context.Context) ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsOutput)
+}
+
+func (i ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs) ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutput() ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutput {
+	return i.ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs) ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutputWithContext(ctx context.Context) ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsOutput).ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutputWithContext(ctx)
+}
+
+// ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrInput is an input type that accepts ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs, ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtr and ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutput values.
+// You can construct a concrete instance of `ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrInput` via:
+//
+//	        ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrInput interface {
+	pulumi.Input
+
+	ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutput() ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutput
+	ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutputWithContext(context.Context) ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutput
+}
+
+type exadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrType ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs
+
+func ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtr(v *ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs) ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrInput {
+	return (*exadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrType)(v)
+}
+
+func (*exadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails)(nil)).Elem()
+}
+
+func (i *exadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrType) ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutput() ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutput {
+	return i.ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *exadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrType) ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutputWithContext(ctx context.Context) ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutput)
+}
+
+type ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsOutput struct{ *pulumi.OutputState }
+
+func (ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails)(nil)).Elem()
+}
+
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsOutput) ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsOutput() ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsOutput {
+	return o
+}
+
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsOutput) ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsOutputWithContext(ctx context.Context) ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsOutput {
+	return o
+}
+
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsOutput) ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutput() ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutput {
+	return o.ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsOutput) ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutputWithContext(ctx context.Context) ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails) *ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails {
+		return &v
+	}).(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutput)
+}
+
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsOutput) CredentialSourceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails) *string {
+		return v.CredentialSourceName
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsOutput) CredentialType() pulumi.StringOutput {
+	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails) string {
+		return v.CredentialType
+	}).(pulumi.StringOutput)
+}
+
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsOutput) PasswordSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails) *string {
+		return v.PasswordSecretId
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsOutput) Role() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails) *string {
+		return v.Role
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsOutput) UserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails) *string {
+		return v.UserName
+	}).(pulumi.StringPtrOutput)
+}
+
+type ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails)(nil)).Elem()
+}
+
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutput) ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutput() ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutput {
+	return o
+}
+
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutput) ToExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutputWithContext(ctx context.Context) ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutput {
+	return o
+}
+
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutput) Elem() ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsOutput {
+	return o.ApplyT(func(v *ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails) ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails {
+		if v != nil {
+			return *v
+		}
+		var ret ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails
+		return ret
+	}).(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsOutput)
+}
+
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutput) CredentialSourceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CredentialSourceName
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutput) CredentialType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.CredentialType
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutput) PasswordSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PasswordSecretId
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutput) Role() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Role
+	}).(pulumi.StringPtrOutput)
+}
+
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutput) UserName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.UserName
+	}).(pulumi.StringPtrOutput)
+}
+
 type GetAwrHubAwrSnapshotItem struct {
 	// DatabaseId of the Source database for which AWR Data will be uploaded to AWR Hub.
 	AwrSourceDatabaseId string `pulumi:"awrSourceDatabaseId"`
@@ -2587,8 +3092,12 @@ type GetDatabaseInsightsDatabaseInsightsCollectionItem struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Unique Operations Insights PrivateEndpoint identifier
 	OpsiPrivateEndpointId string `pulumi:"opsiPrivateEndpointId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
+	ParentId string `pulumi:"parentId"`
 	// Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
 	ProcessorCount int `pulumi:"processorCount"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+	RootId string `pulumi:"rootId"`
 	// Database service name used for connection requests.
 	ServiceName string `pulumi:"serviceName"`
 	// Lifecycle states
@@ -2665,8 +3174,12 @@ type GetDatabaseInsightsDatabaseInsightsCollectionItemArgs struct {
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// Unique Operations Insights PrivateEndpoint identifier
 	OpsiPrivateEndpointId pulumi.StringInput `pulumi:"opsiPrivateEndpointId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
+	ParentId pulumi.StringInput `pulumi:"parentId"`
 	// Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
 	ProcessorCount pulumi.IntInput `pulumi:"processorCount"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+	RootId pulumi.StringInput `pulumi:"rootId"`
 	// Database service name used for connection requests.
 	ServiceName pulumi.StringInput `pulumi:"serviceName"`
 	// Lifecycle states
@@ -2874,9 +3387,19 @@ func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) OpsiPrivateEndp
 	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) string { return v.OpsiPrivateEndpointId }).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) ParentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) string { return v.ParentId }).(pulumi.StringOutput)
+}
+
 // Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
 func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) ProcessorCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) int { return v.ProcessorCount }).(pulumi.IntOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) RootId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) string { return v.RootId }).(pulumi.StringOutput)
 }
 
 // Database service name used for connection requests.
@@ -3990,6 +4513,440 @@ func (o GetEnterpriseManagerBridgesFilterArrayOutput) Index(i pulumi.IntInput) G
 	}).(GetEnterpriseManagerBridgesFilterOutput)
 }
 
+type GetExadataInsightMemberVmClusterDetail struct {
+	// Compartment identifier of the Exadata insight resource
+	CompartmentId         string                                                       `pulumi:"compartmentId"`
+	MemberDatabaseDetails []GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail `pulumi:"memberDatabaseDetails"`
+	OpsiPrivateEndpointId string                                                       `pulumi:"opsiPrivateEndpointId"`
+	VmclusterId           string                                                       `pulumi:"vmclusterId"`
+}
+
+// GetExadataInsightMemberVmClusterDetailInput is an input type that accepts GetExadataInsightMemberVmClusterDetailArgs and GetExadataInsightMemberVmClusterDetailOutput values.
+// You can construct a concrete instance of `GetExadataInsightMemberVmClusterDetailInput` via:
+//
+//	GetExadataInsightMemberVmClusterDetailArgs{...}
+type GetExadataInsightMemberVmClusterDetailInput interface {
+	pulumi.Input
+
+	ToGetExadataInsightMemberVmClusterDetailOutput() GetExadataInsightMemberVmClusterDetailOutput
+	ToGetExadataInsightMemberVmClusterDetailOutputWithContext(context.Context) GetExadataInsightMemberVmClusterDetailOutput
+}
+
+type GetExadataInsightMemberVmClusterDetailArgs struct {
+	// Compartment identifier of the Exadata insight resource
+	CompartmentId         pulumi.StringInput                                                   `pulumi:"compartmentId"`
+	MemberDatabaseDetails GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayInput `pulumi:"memberDatabaseDetails"`
+	OpsiPrivateEndpointId pulumi.StringInput                                                   `pulumi:"opsiPrivateEndpointId"`
+	VmclusterId           pulumi.StringInput                                                   `pulumi:"vmclusterId"`
+}
+
+func (GetExadataInsightMemberVmClusterDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInsightMemberVmClusterDetail)(nil)).Elem()
+}
+
+func (i GetExadataInsightMemberVmClusterDetailArgs) ToGetExadataInsightMemberVmClusterDetailOutput() GetExadataInsightMemberVmClusterDetailOutput {
+	return i.ToGetExadataInsightMemberVmClusterDetailOutputWithContext(context.Background())
+}
+
+func (i GetExadataInsightMemberVmClusterDetailArgs) ToGetExadataInsightMemberVmClusterDetailOutputWithContext(ctx context.Context) GetExadataInsightMemberVmClusterDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInsightMemberVmClusterDetailOutput)
+}
+
+// GetExadataInsightMemberVmClusterDetailArrayInput is an input type that accepts GetExadataInsightMemberVmClusterDetailArray and GetExadataInsightMemberVmClusterDetailArrayOutput values.
+// You can construct a concrete instance of `GetExadataInsightMemberVmClusterDetailArrayInput` via:
+//
+//	GetExadataInsightMemberVmClusterDetailArray{ GetExadataInsightMemberVmClusterDetailArgs{...} }
+type GetExadataInsightMemberVmClusterDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetExadataInsightMemberVmClusterDetailArrayOutput() GetExadataInsightMemberVmClusterDetailArrayOutput
+	ToGetExadataInsightMemberVmClusterDetailArrayOutputWithContext(context.Context) GetExadataInsightMemberVmClusterDetailArrayOutput
+}
+
+type GetExadataInsightMemberVmClusterDetailArray []GetExadataInsightMemberVmClusterDetailInput
+
+func (GetExadataInsightMemberVmClusterDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInsightMemberVmClusterDetail)(nil)).Elem()
+}
+
+func (i GetExadataInsightMemberVmClusterDetailArray) ToGetExadataInsightMemberVmClusterDetailArrayOutput() GetExadataInsightMemberVmClusterDetailArrayOutput {
+	return i.ToGetExadataInsightMemberVmClusterDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetExadataInsightMemberVmClusterDetailArray) ToGetExadataInsightMemberVmClusterDetailArrayOutputWithContext(ctx context.Context) GetExadataInsightMemberVmClusterDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInsightMemberVmClusterDetailArrayOutput)
+}
+
+type GetExadataInsightMemberVmClusterDetailOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInsightMemberVmClusterDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInsightMemberVmClusterDetail)(nil)).Elem()
+}
+
+func (o GetExadataInsightMemberVmClusterDetailOutput) ToGetExadataInsightMemberVmClusterDetailOutput() GetExadataInsightMemberVmClusterDetailOutput {
+	return o
+}
+
+func (o GetExadataInsightMemberVmClusterDetailOutput) ToGetExadataInsightMemberVmClusterDetailOutputWithContext(ctx context.Context) GetExadataInsightMemberVmClusterDetailOutput {
+	return o
+}
+
+// Compartment identifier of the Exadata insight resource
+func (o GetExadataInsightMemberVmClusterDetailOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetail) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+func (o GetExadataInsightMemberVmClusterDetailOutput) MemberDatabaseDetails() GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetail) []GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail {
+		return v.MemberDatabaseDetails
+	}).(GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput)
+}
+
+func (o GetExadataInsightMemberVmClusterDetailOutput) OpsiPrivateEndpointId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetail) string { return v.OpsiPrivateEndpointId }).(pulumi.StringOutput)
+}
+
+func (o GetExadataInsightMemberVmClusterDetailOutput) VmclusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetail) string { return v.VmclusterId }).(pulumi.StringOutput)
+}
+
+type GetExadataInsightMemberVmClusterDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInsightMemberVmClusterDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInsightMemberVmClusterDetail)(nil)).Elem()
+}
+
+func (o GetExadataInsightMemberVmClusterDetailArrayOutput) ToGetExadataInsightMemberVmClusterDetailArrayOutput() GetExadataInsightMemberVmClusterDetailArrayOutput {
+	return o
+}
+
+func (o GetExadataInsightMemberVmClusterDetailArrayOutput) ToGetExadataInsightMemberVmClusterDetailArrayOutputWithContext(ctx context.Context) GetExadataInsightMemberVmClusterDetailArrayOutput {
+	return o
+}
+
+func (o GetExadataInsightMemberVmClusterDetailArrayOutput) Index(i pulumi.IntInput) GetExadataInsightMemberVmClusterDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadataInsightMemberVmClusterDetail {
+		return vs[0].([]GetExadataInsightMemberVmClusterDetail)[vs[1].(int)]
+	}).(GetExadataInsightMemberVmClusterDetailOutput)
+}
+
+type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail struct {
+	// Compartment identifier of the Exadata insight resource
+	CompartmentId        string                                                                       `pulumi:"compartmentId"`
+	CredentialDetails    []GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail `pulumi:"credentialDetails"`
+	DatabaseId           string                                                                       `pulumi:"databaseId"`
+	DatabaseResourceType string                                                                       `pulumi:"databaseResourceType"`
+	DbmPrivateEndpointId string                                                                       `pulumi:"dbmPrivateEndpointId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags    map[string]interface{} `pulumi:"definedTags"`
+	DeploymentType string                 `pulumi:"deploymentType"`
+	// Source of the Exadata system.
+	EntitySource string `pulumi:"entitySource"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags          map[string]interface{} `pulumi:"freeformTags"`
+	OpsiPrivateEndpointId string                 `pulumi:"opsiPrivateEndpointId"`
+	ServiceName           string                 `pulumi:"serviceName"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+}
+
+// GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailInput is an input type that accepts GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs and GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput values.
+// You can construct a concrete instance of `GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailInput` via:
+//
+//	GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs{...}
+type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailInput interface {
+	pulumi.Input
+
+	ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput() GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput
+	ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutputWithContext(context.Context) GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput
+}
+
+type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs struct {
+	// Compartment identifier of the Exadata insight resource
+	CompartmentId        pulumi.StringInput                                                                   `pulumi:"compartmentId"`
+	CredentialDetails    GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayInput `pulumi:"credentialDetails"`
+	DatabaseId           pulumi.StringInput                                                                   `pulumi:"databaseId"`
+	DatabaseResourceType pulumi.StringInput                                                                   `pulumi:"databaseResourceType"`
+	DbmPrivateEndpointId pulumi.StringInput                                                                   `pulumi:"dbmPrivateEndpointId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags    pulumi.MapInput    `pulumi:"definedTags"`
+	DeploymentType pulumi.StringInput `pulumi:"deploymentType"`
+	// Source of the Exadata system.
+	EntitySource pulumi.StringInput `pulumi:"entitySource"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags          pulumi.MapInput    `pulumi:"freeformTags"`
+	OpsiPrivateEndpointId pulumi.StringInput `pulumi:"opsiPrivateEndpointId"`
+	ServiceName           pulumi.StringInput `pulumi:"serviceName"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+}
+
+func (GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail)(nil)).Elem()
+}
+
+func (i GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs) ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput() GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput {
+	return i.ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutputWithContext(context.Background())
+}
+
+func (i GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs) ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutputWithContext(ctx context.Context) GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput)
+}
+
+// GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayInput is an input type that accepts GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArray and GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput values.
+// You can construct a concrete instance of `GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayInput` via:
+//
+//	GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArray{ GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs{...} }
+type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput() GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput
+	ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutputWithContext(context.Context) GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput
+}
+
+type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArray []GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailInput
+
+func (GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail)(nil)).Elem()
+}
+
+func (i GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArray) ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput() GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput {
+	return i.ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArray) ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutputWithContext(ctx context.Context) GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput)
+}
+
+type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail)(nil)).Elem()
+}
+
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput() GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput {
+	return o
+}
+
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutputWithContext(ctx context.Context) GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput {
+	return o
+}
+
+// Compartment identifier of the Exadata insight resource
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) CredentialDetails() GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail) []GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail {
+		return v.CredentialDetails
+	}).(GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput)
+}
+
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) DatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail) string { return v.DatabaseId }).(pulumi.StringOutput)
+}
+
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) DatabaseResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail) string {
+		return v.DatabaseResourceType
+	}).(pulumi.StringOutput)
+}
+
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) DbmPrivateEndpointId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail) string {
+		return v.DbmPrivateEndpointId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) DeploymentType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail) string { return v.DeploymentType }).(pulumi.StringOutput)
+}
+
+// Source of the Exadata system.
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) EntitySource() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail) string { return v.EntitySource }).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
+}
+
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) OpsiPrivateEndpointId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail) string {
+		return v.OpsiPrivateEndpointId
+	}).(pulumi.StringOutput)
+}
+
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) ServiceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail) string { return v.ServiceName }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail) map[string]interface{} {
+		return v.SystemTags
+	}).(pulumi.MapOutput)
+}
+
+type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail)(nil)).Elem()
+}
+
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput) ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput() GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput {
+	return o
+}
+
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput) ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutputWithContext(ctx context.Context) GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput {
+	return o
+}
+
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput) Index(i pulumi.IntInput) GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail {
+		return vs[0].([]GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail)[vs[1].(int)]
+	}).(GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput)
+}
+
+type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail struct {
+	CredentialSourceName string `pulumi:"credentialSourceName"`
+	CredentialType       string `pulumi:"credentialType"`
+	PasswordSecretId     string `pulumi:"passwordSecretId"`
+	Role                 string `pulumi:"role"`
+	UserName             string `pulumi:"userName"`
+}
+
+// GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailInput is an input type that accepts GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArgs and GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput values.
+// You can construct a concrete instance of `GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailInput` via:
+//
+//	GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArgs{...}
+type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailInput interface {
+	pulumi.Input
+
+	ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput() GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput
+	ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutputWithContext(context.Context) GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput
+}
+
+type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArgs struct {
+	CredentialSourceName pulumi.StringInput `pulumi:"credentialSourceName"`
+	CredentialType       pulumi.StringInput `pulumi:"credentialType"`
+	PasswordSecretId     pulumi.StringInput `pulumi:"passwordSecretId"`
+	Role                 pulumi.StringInput `pulumi:"role"`
+	UserName             pulumi.StringInput `pulumi:"userName"`
+}
+
+func (GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail)(nil)).Elem()
+}
+
+func (i GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArgs) ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput() GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput {
+	return i.ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutputWithContext(context.Background())
+}
+
+func (i GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArgs) ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutputWithContext(ctx context.Context) GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput)
+}
+
+// GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayInput is an input type that accepts GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArray and GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput values.
+// You can construct a concrete instance of `GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayInput` via:
+//
+//	GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArray{ GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArgs{...} }
+type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput() GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput
+	ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutputWithContext(context.Context) GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput
+}
+
+type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArray []GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailInput
+
+func (GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail)(nil)).Elem()
+}
+
+func (i GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArray) ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput() GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput {
+	return i.ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArray) ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutputWithContext(ctx context.Context) GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput)
+}
+
+type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail)(nil)).Elem()
+}
+
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput) ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput() GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput {
+	return o
+}
+
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput) ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutputWithContext(ctx context.Context) GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput {
+	return o
+}
+
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput) CredentialSourceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail) string {
+		return v.CredentialSourceName
+	}).(pulumi.StringOutput)
+}
+
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput) CredentialType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail) string {
+		return v.CredentialType
+	}).(pulumi.StringOutput)
+}
+
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput) PasswordSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail) string {
+		return v.PasswordSecretId
+	}).(pulumi.StringOutput)
+}
+
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput) Role() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail) string {
+		return v.Role
+	}).(pulumi.StringOutput)
+}
+
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput) UserName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail) string {
+		return v.UserName
+	}).(pulumi.StringOutput)
+}
+
+type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail)(nil)).Elem()
+}
+
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput) ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput() GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput {
+	return o
+}
+
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput) ToGetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutputWithContext(ctx context.Context) GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput {
+	return o
+}
+
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput) Index(i pulumi.IntInput) GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail {
+		return vs[0].([]GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetail)[vs[1].(int)]
+	}).(GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput)
+}
+
 type GetExadataInsightsExadataInsightSummaryCollection struct {
 	Items []GetExadataInsightsExadataInsightSummaryCollectionItem `pulumi:"items"`
 }
@@ -4107,10 +5064,16 @@ type GetExadataInsightsExadataInsightSummaryCollectionItem struct {
 	EntitySource string `pulumi:"entitySource"`
 	// The user-friendly name for the Exadata system. The name does not have to be unique.
 	ExadataDisplayName string `pulumi:"exadataDisplayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+	ExadataInfraId string `pulumi:"exadataInfraId"`
+	// Oracle Cloud Infrastructure exadata infrastructure resource type
+	ExadataInfraResourceType string `pulumi:"exadataInfraResourceType"`
 	// The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
 	ExadataName string `pulumi:"exadataName"`
 	// Exadata rack type.
 	ExadataRackType string `pulumi:"exadataRackType"`
+	// The shape of the Exadata Infrastructure.
+	ExadataShape string `pulumi:"exadataShape"`
 	// Filter by one or more Exadata types. Possible value are DBMACHINE, EXACS, and EXACC.
 	ExadataType string `pulumi:"exadataType"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -4121,7 +5084,8 @@ type GetExadataInsightsExadataInsightSummaryCollectionItem struct {
 	// true if virtualization is used in the Exadata system
 	IsVirtualizedExadata bool `pulumi:"isVirtualizedExadata"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails       string                                                                       `pulumi:"lifecycleDetails"`
+	MemberVmClusterDetails []GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail `pulumi:"memberVmClusterDetails"`
 	// Lifecycle states
 	State string `pulumi:"state"`
 	// Resource Status
@@ -4166,10 +5130,16 @@ type GetExadataInsightsExadataInsightSummaryCollectionItemArgs struct {
 	EntitySource pulumi.StringInput `pulumi:"entitySource"`
 	// The user-friendly name for the Exadata system. The name does not have to be unique.
 	ExadataDisplayName pulumi.StringInput `pulumi:"exadataDisplayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+	ExadataInfraId pulumi.StringInput `pulumi:"exadataInfraId"`
+	// Oracle Cloud Infrastructure exadata infrastructure resource type
+	ExadataInfraResourceType pulumi.StringInput `pulumi:"exadataInfraResourceType"`
 	// The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
 	ExadataName pulumi.StringInput `pulumi:"exadataName"`
 	// Exadata rack type.
 	ExadataRackType pulumi.StringInput `pulumi:"exadataRackType"`
+	// The shape of the Exadata Infrastructure.
+	ExadataShape pulumi.StringInput `pulumi:"exadataShape"`
 	// Filter by one or more Exadata types. Possible value are DBMACHINE, EXACS, and EXACC.
 	ExadataType pulumi.StringInput `pulumi:"exadataType"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -4180,7 +5150,8 @@ type GetExadataInsightsExadataInsightSummaryCollectionItemArgs struct {
 	// true if virtualization is used in the Exadata system
 	IsVirtualizedExadata pulumi.BoolInput `pulumi:"isVirtualizedExadata"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails       pulumi.StringInput                                                                   `pulumi:"lifecycleDetails"`
+	MemberVmClusterDetails GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArrayInput `pulumi:"memberVmClusterDetails"`
 	// Lifecycle states
 	State pulumi.StringInput `pulumi:"state"`
 	// Resource Status
@@ -4308,6 +5279,18 @@ func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) ExadataDisp
 	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) string { return v.ExadataDisplayName }).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) ExadataInfraId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) string { return v.ExadataInfraId }).(pulumi.StringOutput)
+}
+
+// Oracle Cloud Infrastructure exadata infrastructure resource type
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) ExadataInfraResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) string {
+		return v.ExadataInfraResourceType
+	}).(pulumi.StringOutput)
+}
+
 // The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
 func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) ExadataName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) string { return v.ExadataName }).(pulumi.StringOutput)
@@ -4316,6 +5299,11 @@ func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) ExadataName
 // Exadata rack type.
 func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) ExadataRackType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) string { return v.ExadataRackType }).(pulumi.StringOutput)
+}
+
+// The shape of the Exadata Infrastructure.
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) ExadataShape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) string { return v.ExadataShape }).(pulumi.StringOutput)
 }
 
 // Filter by one or more Exadata types. Possible value are DBMACHINE, EXACS, and EXACC.
@@ -4347,6 +5335,12 @@ func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) IsVirtualiz
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) MemberVmClusterDetails() GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArrayOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) []GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail {
+		return v.MemberVmClusterDetails
+	}).(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArrayOutput)
 }
 
 // Lifecycle states
@@ -4394,6 +5388,456 @@ func (o GetExadataInsightsExadataInsightSummaryCollectionItemArrayOutput) Index(
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadataInsightsExadataInsightSummaryCollectionItem {
 		return vs[0].([]GetExadataInsightsExadataInsightSummaryCollectionItem)[vs[1].(int)]
 	}).(GetExadataInsightsExadataInsightSummaryCollectionItemOutput)
+}
+
+type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId         string                                                                                           `pulumi:"compartmentId"`
+	MemberDatabaseDetails []GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail `pulumi:"memberDatabaseDetails"`
+	OpsiPrivateEndpointId string                                                                                           `pulumi:"opsiPrivateEndpointId"`
+	VmclusterId           string                                                                                           `pulumi:"vmclusterId"`
+}
+
+// GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailInput is an input type that accepts GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArgs and GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailOutput values.
+// You can construct a concrete instance of `GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailInput` via:
+//
+//	GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArgs{...}
+type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailInput interface {
+	pulumi.Input
+
+	ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailOutput() GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailOutput
+	ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailOutputWithContext(context.Context) GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailOutput
+}
+
+type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId         pulumi.StringInput                                                                                       `pulumi:"compartmentId"`
+	MemberDatabaseDetails GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArrayInput `pulumi:"memberDatabaseDetails"`
+	OpsiPrivateEndpointId pulumi.StringInput                                                                                       `pulumi:"opsiPrivateEndpointId"`
+	VmclusterId           pulumi.StringInput                                                                                       `pulumi:"vmclusterId"`
+}
+
+func (GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail)(nil)).Elem()
+}
+
+func (i GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArgs) ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailOutput() GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailOutput {
+	return i.ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailOutputWithContext(context.Background())
+}
+
+func (i GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArgs) ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailOutputWithContext(ctx context.Context) GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailOutput)
+}
+
+// GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArrayInput is an input type that accepts GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArray and GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArrayOutput values.
+// You can construct a concrete instance of `GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArrayInput` via:
+//
+//	GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArray{ GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArgs{...} }
+type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArrayOutput() GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArrayOutput
+	ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArrayOutputWithContext(context.Context) GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArrayOutput
+}
+
+type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArray []GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailInput
+
+func (GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail)(nil)).Elem()
+}
+
+func (i GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArray) ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArrayOutput() GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArrayOutput {
+	return i.ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArray) ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArrayOutputWithContext(ctx context.Context) GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArrayOutput)
+}
+
+type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail)(nil)).Elem()
+}
+
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailOutput) ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailOutput() GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailOutput {
+	return o
+}
+
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailOutput) ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailOutputWithContext(ctx context.Context) GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailOutput) MemberDatabaseDetails() GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArrayOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail) []GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail {
+		return v.MemberDatabaseDetails
+	}).(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArrayOutput)
+}
+
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailOutput) OpsiPrivateEndpointId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail) string {
+		return v.OpsiPrivateEndpointId
+	}).(pulumi.StringOutput)
+}
+
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailOutput) VmclusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail) string {
+		return v.VmclusterId
+	}).(pulumi.StringOutput)
+}
+
+type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail)(nil)).Elem()
+}
+
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArrayOutput) ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArrayOutput() GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArrayOutput {
+	return o
+}
+
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArrayOutput) ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArrayOutputWithContext(ctx context.Context) GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArrayOutput {
+	return o
+}
+
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArrayOutput) Index(i pulumi.IntInput) GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail {
+		return vs[0].([]GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail)[vs[1].(int)]
+	}).(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailOutput)
+}
+
+type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId        string                                                                                                           `pulumi:"compartmentId"`
+	CredentialDetails    []GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail `pulumi:"credentialDetails"`
+	DatabaseId           string                                                                                                           `pulumi:"databaseId"`
+	DatabaseResourceType string                                                                                                           `pulumi:"databaseResourceType"`
+	DbmPrivateEndpointId string                                                                                                           `pulumi:"dbmPrivateEndpointId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags    map[string]interface{} `pulumi:"definedTags"`
+	DeploymentType string                 `pulumi:"deploymentType"`
+	// Source of the Exadata system.
+	EntitySource string `pulumi:"entitySource"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags          map[string]interface{} `pulumi:"freeformTags"`
+	OpsiPrivateEndpointId string                 `pulumi:"opsiPrivateEndpointId"`
+	ServiceName           string                 `pulumi:"serviceName"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+}
+
+// GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailInput is an input type that accepts GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArgs and GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput values.
+// You can construct a concrete instance of `GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailInput` via:
+//
+//	GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArgs{...}
+type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailInput interface {
+	pulumi.Input
+
+	ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput() GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput
+	ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutputWithContext(context.Context) GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput
+}
+
+type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId        pulumi.StringInput                                                                                                       `pulumi:"compartmentId"`
+	CredentialDetails    GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayInput `pulumi:"credentialDetails"`
+	DatabaseId           pulumi.StringInput                                                                                                       `pulumi:"databaseId"`
+	DatabaseResourceType pulumi.StringInput                                                                                                       `pulumi:"databaseResourceType"`
+	DbmPrivateEndpointId pulumi.StringInput                                                                                                       `pulumi:"dbmPrivateEndpointId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags    pulumi.MapInput    `pulumi:"definedTags"`
+	DeploymentType pulumi.StringInput `pulumi:"deploymentType"`
+	// Source of the Exadata system.
+	EntitySource pulumi.StringInput `pulumi:"entitySource"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags          pulumi.MapInput    `pulumi:"freeformTags"`
+	OpsiPrivateEndpointId pulumi.StringInput `pulumi:"opsiPrivateEndpointId"`
+	ServiceName           pulumi.StringInput `pulumi:"serviceName"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+}
+
+func (GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail)(nil)).Elem()
+}
+
+func (i GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArgs) ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput() GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput {
+	return i.ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutputWithContext(context.Background())
+}
+
+func (i GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArgs) ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutputWithContext(ctx context.Context) GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput)
+}
+
+// GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArrayInput is an input type that accepts GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArray and GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArrayOutput values.
+// You can construct a concrete instance of `GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArrayInput` via:
+//
+//	GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArray{ GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArgs{...} }
+type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArrayOutput() GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArrayOutput
+	ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArrayOutputWithContext(context.Context) GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArrayOutput
+}
+
+type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArray []GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailInput
+
+func (GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail)(nil)).Elem()
+}
+
+func (i GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArray) ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArrayOutput() GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArrayOutput {
+	return i.ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArray) ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArrayOutputWithContext(ctx context.Context) GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArrayOutput)
+}
+
+type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail)(nil)).Elem()
+}
+
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput) ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput() GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput {
+	return o
+}
+
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput) ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutputWithContext(ctx context.Context) GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput) CredentialDetails() GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail) []GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail {
+		return v.CredentialDetails
+	}).(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput)
+}
+
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput) DatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail) string {
+		return v.DatabaseId
+	}).(pulumi.StringOutput)
+}
+
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput) DatabaseResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail) string {
+		return v.DatabaseResourceType
+	}).(pulumi.StringOutput)
+}
+
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput) DbmPrivateEndpointId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail) string {
+		return v.DbmPrivateEndpointId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput) DeploymentType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail) string {
+		return v.DeploymentType
+	}).(pulumi.StringOutput)
+}
+
+// Source of the Exadata system.
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput) EntitySource() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail) string {
+		return v.EntitySource
+	}).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
+}
+
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput) OpsiPrivateEndpointId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail) string {
+		return v.OpsiPrivateEndpointId
+	}).(pulumi.StringOutput)
+}
+
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput) ServiceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail) string {
+		return v.ServiceName
+	}).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail) map[string]interface{} {
+		return v.SystemTags
+	}).(pulumi.MapOutput)
+}
+
+type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail)(nil)).Elem()
+}
+
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArrayOutput) ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArrayOutput() GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArrayOutput {
+	return o
+}
+
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArrayOutput) ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArrayOutputWithContext(ctx context.Context) GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArrayOutput {
+	return o
+}
+
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArrayOutput) Index(i pulumi.IntInput) GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail {
+		return vs[0].([]GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail)[vs[1].(int)]
+	}).(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput)
+}
+
+type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail struct {
+	CredentialSourceName string `pulumi:"credentialSourceName"`
+	CredentialType       string `pulumi:"credentialType"`
+	PasswordSecretId     string `pulumi:"passwordSecretId"`
+	Role                 string `pulumi:"role"`
+	UserName             string `pulumi:"userName"`
+}
+
+// GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailInput is an input type that accepts GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArgs and GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput values.
+// You can construct a concrete instance of `GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailInput` via:
+//
+//	GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArgs{...}
+type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailInput interface {
+	pulumi.Input
+
+	ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput() GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput
+	ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutputWithContext(context.Context) GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput
+}
+
+type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArgs struct {
+	CredentialSourceName pulumi.StringInput `pulumi:"credentialSourceName"`
+	CredentialType       pulumi.StringInput `pulumi:"credentialType"`
+	PasswordSecretId     pulumi.StringInput `pulumi:"passwordSecretId"`
+	Role                 pulumi.StringInput `pulumi:"role"`
+	UserName             pulumi.StringInput `pulumi:"userName"`
+}
+
+func (GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail)(nil)).Elem()
+}
+
+func (i GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArgs) ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput() GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput {
+	return i.ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutputWithContext(context.Background())
+}
+
+func (i GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArgs) ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutputWithContext(ctx context.Context) GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput)
+}
+
+// GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayInput is an input type that accepts GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArray and GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput values.
+// You can construct a concrete instance of `GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayInput` via:
+//
+//	GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArray{ GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArgs{...} }
+type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput() GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput
+	ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutputWithContext(context.Context) GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput
+}
+
+type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArray []GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailInput
+
+func (GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail)(nil)).Elem()
+}
+
+func (i GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArray) ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput() GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput {
+	return i.ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArray) ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutputWithContext(ctx context.Context) GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput)
+}
+
+type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail)(nil)).Elem()
+}
+
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput) ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput() GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput {
+	return o
+}
+
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput) ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutputWithContext(ctx context.Context) GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput {
+	return o
+}
+
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput) CredentialSourceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail) string {
+		return v.CredentialSourceName
+	}).(pulumi.StringOutput)
+}
+
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput) CredentialType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail) string {
+		return v.CredentialType
+	}).(pulumi.StringOutput)
+}
+
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput) PasswordSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail) string {
+		return v.PasswordSecretId
+	}).(pulumi.StringOutput)
+}
+
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput) Role() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail) string {
+		return v.Role
+	}).(pulumi.StringOutput)
+}
+
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput) UserName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail) string {
+		return v.UserName
+	}).(pulumi.StringOutput)
+}
+
+type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail)(nil)).Elem()
+}
+
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput) ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput() GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput {
+	return o
+}
+
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput) ToGetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutputWithContext(ctx context.Context) GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput {
+	return o
+}
+
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput) Index(i pulumi.IntInput) GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail {
+		return vs[0].([]GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetail)[vs[1].(int)]
+	}).(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput)
 }
 
 type GetExadataInsightsFilter struct {
@@ -4726,7 +6170,6 @@ type GetHostInsightsHostInsightSummaryCollectionItem struct {
 	// Source of the host entity.
 	EntitySource string `pulumi:"entitySource"`
 	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
-	// <<<<<<< ours
 	ExadataInsightId string `pulumi:"exadataInsightId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -4734,8 +6177,7 @@ type GetHostInsightsHostInsightSummaryCollectionItem struct {
 	HostDisplayName string `pulumi:"hostDisplayName"`
 	// The host name. The host name is unique amongst the hosts managed by the same management agent.
 	HostName string `pulumi:"hostName"`
-	// Filter by one or more host types. Possible value is EXTERNAL-HOST.
-	// > > > > > > > theirs
+	// Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST
 	HostType string `pulumi:"hostType"`
 	// Optional list of host insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	Id string `pulumi:"id"`
@@ -4745,7 +6187,7 @@ type GetHostInsightsHostInsightSummaryCollectionItem struct {
 	ManagementAgentId string `pulumi:"managementAgentId"`
 	// Platform name.
 	PlatformName string `pulumi:"platformName"`
-	// Filter by one or more platform types. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+	// Filter by one or more platform types. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS].
 	PlatformType string `pulumi:"platformType"`
 	// Platform version.
 	PlatformVersion string `pulumi:"platformVersion"`
@@ -4796,7 +6238,6 @@ type GetHostInsightsHostInsightSummaryCollectionItemArgs struct {
 	// Source of the host entity.
 	EntitySource pulumi.StringInput `pulumi:"entitySource"`
 	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
-	// <<<<<<< ours
 	ExadataInsightId pulumi.StringInput `pulumi:"exadataInsightId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
@@ -4804,8 +6245,7 @@ type GetHostInsightsHostInsightSummaryCollectionItemArgs struct {
 	HostDisplayName pulumi.StringInput `pulumi:"hostDisplayName"`
 	// The host name. The host name is unique amongst the hosts managed by the same management agent.
 	HostName pulumi.StringInput `pulumi:"hostName"`
-	// Filter by one or more host types. Possible value is EXTERNAL-HOST.
-	// > > > > > > > theirs
+	// Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST
 	HostType pulumi.StringInput `pulumi:"hostType"`
 	// Optional list of host insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	Id pulumi.StringInput `pulumi:"id"`
@@ -4815,7 +6255,7 @@ type GetHostInsightsHostInsightSummaryCollectionItemArgs struct {
 	ManagementAgentId pulumi.StringInput `pulumi:"managementAgentId"`
 	// Platform name.
 	PlatformName pulumi.StringInput `pulumi:"platformName"`
-	// Filter by one or more platform types. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+	// Filter by one or more platform types. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS].
 	PlatformType pulumi.StringInput `pulumi:"platformType"`
 	// Platform version.
 	PlatformVersion pulumi.StringInput `pulumi:"platformVersion"`
@@ -4939,7 +6379,6 @@ func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) EntitySource() pu
 }
 
 // [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
-// <<<<<<< ours
 func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) ExadataInsightId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) string { return v.ExadataInsightId }).(pulumi.StringOutput)
 }
@@ -4959,8 +6398,7 @@ func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) HostName() pulumi
 	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) string { return v.HostName }).(pulumi.StringOutput)
 }
 
-// Filter by one or more host types. Possible value is EXTERNAL-HOST.
-// > > > > > > > theirs
+// Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST
 func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) HostType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) string { return v.HostType }).(pulumi.StringOutput)
 }
@@ -4985,7 +6423,7 @@ func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) PlatformName() pu
 	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) string { return v.PlatformName }).(pulumi.StringOutput)
 }
 
-// Filter by one or more platform types. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+// Filter by one or more platform types. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS].
 func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) PlatformType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) string { return v.PlatformType }).(pulumi.StringOutput)
 }
@@ -5322,7 +6760,7 @@ type GetImportableComputeEntitiesItem struct {
 	EntitySource string `pulumi:"entitySource"`
 	// The host name. The host name is unique amongst the hosts managed by the same management agent.
 	HostName string `pulumi:"hostName"`
-	// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+	// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS].
 	PlatformType string `pulumi:"platformType"`
 }
 
@@ -5348,7 +6786,7 @@ type GetImportableComputeEntitiesItemArgs struct {
 	EntitySource pulumi.StringInput `pulumi:"entitySource"`
 	// The host name. The host name is unique amongst the hosts managed by the same management agent.
 	HostName pulumi.StringInput `pulumi:"hostName"`
-	// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+	// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS].
 	PlatformType pulumi.StringInput `pulumi:"platformType"`
 }
 
@@ -5428,7 +6866,7 @@ func (o GetImportableComputeEntitiesItemOutput) HostName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetImportableComputeEntitiesItem) string { return v.HostName }).(pulumi.StringOutput)
 }
 
-// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS].
 func (o GetImportableComputeEntitiesItemOutput) PlatformType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetImportableComputeEntitiesItem) string { return v.PlatformType }).(pulumi.StringOutput)
 }
@@ -5464,7 +6902,7 @@ type GetImportableComputeEntityItem struct {
 	EntitySource string `pulumi:"entitySource"`
 	// The host name. The host name is unique amongst the hosts managed by the same management agent.
 	HostName string `pulumi:"hostName"`
-	// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+	// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS].
 	PlatformType string `pulumi:"platformType"`
 }
 
@@ -5490,7 +6928,7 @@ type GetImportableComputeEntityItemArgs struct {
 	EntitySource pulumi.StringInput `pulumi:"entitySource"`
 	// The host name. The host name is unique amongst the hosts managed by the same management agent.
 	HostName pulumi.StringInput `pulumi:"hostName"`
-	// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+	// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS].
 	PlatformType pulumi.StringInput `pulumi:"platformType"`
 }
 
@@ -5570,7 +7008,7 @@ func (o GetImportableComputeEntityItemOutput) HostName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetImportableComputeEntityItem) string { return v.HostName }).(pulumi.StringOutput)
 }
 
-// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS].
 func (o GetImportableComputeEntityItemOutput) PlatformType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetImportableComputeEntityItem) string { return v.PlatformType }).(pulumi.StringOutput)
 }
@@ -7005,6 +8443,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseInsightConnectionDetailsHostArrayInput)(nil)).Elem(), DatabaseInsightConnectionDetailsHostArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseInsightCredentialDetailsInput)(nil)).Elem(), DatabaseInsightCredentialDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DatabaseInsightCredentialDetailsPtrInput)(nil)).Elem(), DatabaseInsightCredentialDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ExadataInsightMemberVmClusterDetailInput)(nil)).Elem(), ExadataInsightMemberVmClusterDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ExadataInsightMemberVmClusterDetailArrayInput)(nil)).Elem(), ExadataInsightMemberVmClusterDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ExadataInsightMemberVmClusterDetailMemberDatabaseDetailInput)(nil)).Elem(), ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayInput)(nil)).Elem(), ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsInput)(nil)).Elem(), ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrInput)(nil)).Elem(), ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAwrHubAwrSnapshotItemInput)(nil)).Elem(), GetAwrHubAwrSnapshotItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAwrHubAwrSnapshotItemArrayInput)(nil)).Elem(), GetAwrHubAwrSnapshotItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAwrHubAwrSnapshotsAwrSnapshotCollectionInput)(nil)).Elem(), GetAwrHubAwrSnapshotsAwrSnapshotCollectionArgs{})
@@ -7051,10 +8495,22 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemArrayInput)(nil)).Elem(), GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEnterpriseManagerBridgesFilterInput)(nil)).Elem(), GetEnterpriseManagerBridgesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEnterpriseManagerBridgesFilterArrayInput)(nil)).Elem(), GetEnterpriseManagerBridgesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInsightMemberVmClusterDetailInput)(nil)).Elem(), GetExadataInsightMemberVmClusterDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInsightMemberVmClusterDetailArrayInput)(nil)).Elem(), GetExadataInsightMemberVmClusterDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailInput)(nil)).Elem(), GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayInput)(nil)).Elem(), GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailInput)(nil)).Elem(), GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayInput)(nil)).Elem(), GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInsightsExadataInsightSummaryCollectionInput)(nil)).Elem(), GetExadataInsightsExadataInsightSummaryCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInsightsExadataInsightSummaryCollectionArrayInput)(nil)).Elem(), GetExadataInsightsExadataInsightSummaryCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInsightsExadataInsightSummaryCollectionItemInput)(nil)).Elem(), GetExadataInsightsExadataInsightSummaryCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInsightsExadataInsightSummaryCollectionItemArrayInput)(nil)).Elem(), GetExadataInsightsExadataInsightSummaryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailInput)(nil)).Elem(), GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArrayInput)(nil)).Elem(), GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailInput)(nil)).Elem(), GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArrayInput)(nil)).Elem(), GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailInput)(nil)).Elem(), GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayInput)(nil)).Elem(), GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInsightsFilterInput)(nil)).Elem(), GetExadataInsightsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetExadataInsightsFilterArrayInput)(nil)).Elem(), GetExadataInsightsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetHostInsightsFilterInput)(nil)).Elem(), GetHostInsightsFilterArgs{})
@@ -7097,6 +8553,12 @@ func init() {
 	pulumi.RegisterOutputType(DatabaseInsightConnectionDetailsHostArrayOutput{})
 	pulumi.RegisterOutputType(DatabaseInsightCredentialDetailsOutput{})
 	pulumi.RegisterOutputType(DatabaseInsightCredentialDetailsPtrOutput{})
+	pulumi.RegisterOutputType(ExadataInsightMemberVmClusterDetailOutput{})
+	pulumi.RegisterOutputType(ExadataInsightMemberVmClusterDetailArrayOutput{})
+	pulumi.RegisterOutputType(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput{})
+	pulumi.RegisterOutputType(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput{})
+	pulumi.RegisterOutputType(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsOutput{})
+	pulumi.RegisterOutputType(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutput{})
 	pulumi.RegisterOutputType(GetAwrHubAwrSnapshotItemOutput{})
 	pulumi.RegisterOutputType(GetAwrHubAwrSnapshotItemArrayOutput{})
 	pulumi.RegisterOutputType(GetAwrHubAwrSnapshotsAwrSnapshotCollectionOutput{})
@@ -7143,10 +8605,22 @@ func init() {
 	pulumi.RegisterOutputType(GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetEnterpriseManagerBridgesFilterOutput{})
 	pulumi.RegisterOutputType(GetEnterpriseManagerBridgesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetExadataInsightMemberVmClusterDetailOutput{})
+	pulumi.RegisterOutputType(GetExadataInsightMemberVmClusterDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput{})
+	pulumi.RegisterOutputType(GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput{})
+	pulumi.RegisterOutputType(GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetExadataInsightsExadataInsightSummaryCollectionOutput{})
 	pulumi.RegisterOutputType(GetExadataInsightsExadataInsightSummaryCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetExadataInsightsExadataInsightSummaryCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetExadataInsightsExadataInsightSummaryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailOutput{})
+	pulumi.RegisterOutputType(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput{})
+	pulumi.RegisterOutputType(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailOutput{})
+	pulumi.RegisterOutputType(GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetExadataInsightsFilterOutput{})
 	pulumi.RegisterOutputType(GetExadataInsightsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetHostInsightsFilterOutput{})

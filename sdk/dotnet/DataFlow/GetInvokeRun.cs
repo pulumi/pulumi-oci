@@ -39,7 +39,7 @@ namespace Pulumi.Oci.DataFlow
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetInvokeRunResult> InvokeAsync(GetInvokeRunArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetInvokeRunResult>("oci:DataFlow/getInvokeRun:getInvokeRun", args ?? new GetInvokeRunArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetInvokeRunResult>("oci:DataFlow/getInvokeRun:getInvokeRun", args ?? new GetInvokeRunArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Invoke Run resource in Oracle Cloud Infrastructure Data Flow service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.DataFlow
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetInvokeRunResult> Invoke(GetInvokeRunInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetInvokeRunResult>("oci:DataFlow/getInvokeRun:getInvokeRun", args ?? new GetInvokeRunInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetInvokeRunResult>("oci:DataFlow/getInvokeRun:getInvokeRun", args ?? new GetInvokeRunInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -114,7 +114,7 @@ namespace Pulumi.Oci.DataFlow
         /// </summary>
         public readonly ImmutableArray<Outputs.GetInvokeRunApplicationLogConfigResult> ApplicationLogConfigs;
         /// <summary>
-        /// An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+        /// A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         /// </summary>
         public readonly string ArchiveUri;
         /// <summary>
@@ -183,6 +183,10 @@ namespace Pulumi.Oci.DataFlow
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
+        /// </summary>
+        public readonly string IdleTimeoutInMinutes;
+        /// <summary>
         /// The Spark language.
         /// </summary>
         public readonly string Language;
@@ -194,6 +198,10 @@ namespace Pulumi.Oci.DataFlow
         /// An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         /// </summary>
         public readonly string LogsBucketUri;
+        /// <summary>
+        /// The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
+        /// </summary>
+        public readonly string MaxDurationInMinutes;
         /// <summary>
         /// The OCID of Oracle Cloud Infrastructure Hive Metastore.
         /// </summary>
@@ -314,11 +322,15 @@ namespace Pulumi.Oci.DataFlow
 
             string id,
 
+            string idleTimeoutInMinutes,
+
             string language,
 
             string lifecycleDetails,
 
             string logsBucketUri,
+
+            string maxDurationInMinutes,
 
             string metastoreId,
 
@@ -380,9 +392,11 @@ namespace Pulumi.Oci.DataFlow
             FileUri = fileUri;
             FreeformTags = freeformTags;
             Id = id;
+            IdleTimeoutInMinutes = idleTimeoutInMinutes;
             Language = language;
             LifecycleDetails = lifecycleDetails;
             LogsBucketUri = logsBucketUri;
+            MaxDurationInMinutes = maxDurationInMinutes;
             MetastoreId = metastoreId;
             NumExecutors = numExecutors;
             OpcRequestId = opcRequestId;

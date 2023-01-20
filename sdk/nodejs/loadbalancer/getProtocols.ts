@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getProtocols(args: GetProtocolsArgs, opts?: pulumi.InvokeOptions): Promise<GetProtocolsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LoadBalancer/getProtocols:getProtocols", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -59,9 +57,24 @@ export interface GetProtocolsResult {
      */
     readonly protocols: outputs.LoadBalancer.GetProtocolsProtocol[];
 }
-
+/**
+ * This data source provides the list of Load Balancer Protocols in Oracle Cloud Infrastructure Load Balancer service.
+ *
+ * Lists all supported traffic protocols.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testLoadBalancerProtocols = oci.LoadBalancer.getProtocols({
+ *     compartmentId: _var.compartment_id,
+ * });
+ * ```
+ */
 export function getProtocolsOutput(args: GetProtocolsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProtocolsResult> {
-    return pulumi.output(args).apply(a => getProtocols(a, opts))
+    return pulumi.output(args).apply((a: any) => getProtocols(a, opts))
 }
 
 /**

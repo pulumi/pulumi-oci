@@ -46,6 +46,12 @@ __all__ = [
     'AutonomousVmClusterMaintenanceWindowMonthArgs',
     'BackupDestinationAssociatedDatabaseArgs',
     'BackupDestinationMountTypeDetailsArgs',
+    'CloudAutonomousVmClusterMaintenanceWindowArgs',
+    'CloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs',
+    'CloudAutonomousVmClusterMaintenanceWindowDetailsArgs',
+    'CloudAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeekArgs',
+    'CloudAutonomousVmClusterMaintenanceWindowDetailsMonthArgs',
+    'CloudAutonomousVmClusterMaintenanceWindowMonthArgs',
     'CloudDatabaseManagementCredentialdetailsArgs',
     'CloudExadataInfrastructureCustomerContactArgs',
     'CloudExadataInfrastructureMaintenanceWindowArgs',
@@ -92,6 +98,10 @@ __all__ = [
     'DbSystemsUpgradeMaintenanceWindowArgs',
     'DbSystemsUpgradeMaintenanceWindowDaysOfWeekArgs',
     'DbSystemsUpgradeMaintenanceWindowMonthArgs',
+    'ExadataInfrastructureComputeContactArgs',
+    'ExadataInfrastructureComputeMaintenanceWindowArgs',
+    'ExadataInfrastructureComputeMaintenanceWindowDaysOfWeekArgs',
+    'ExadataInfrastructureComputeMaintenanceWindowMonthArgs',
     'ExadataInfrastructureContactArgs',
     'ExadataInfrastructureMaintenanceWindowArgs',
     'ExadataInfrastructureMaintenanceWindowDaysOfWeekArgs',
@@ -115,8 +125,14 @@ __all__ = [
     'KeyStoreTypeDetailsArgs',
     'MaintenanceRunEstimatedPatchingTimeArgs',
     'PluggableDatabaseConnectionStringArgs',
+    'PluggableDatabaseManagementsManagementConnectionStringArgs',
+    'PluggableDatabaseManagementsManagementCredentialDetailsArgs',
+    'PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfigArgs',
+    'PluggableDatabasePluggableDatabaseManagementConfigArgs',
     'PluggableDatabasesLocalCloneConnectionStringArgs',
+    'PluggableDatabasesLocalClonePluggableDatabaseManagementConfigArgs',
     'PluggableDatabasesRemoteCloneConnectionStringArgs',
+    'PluggableDatabasesRemoteClonePluggableDatabaseManagementConfigArgs',
     'VmClusterAddVirtualNetworkDataCollectionOptionArgs',
     'VmClusterAddVirtualNetworkDbServerArgs',
     'VmClusterDataCollectionOptionsArgs',
@@ -131,6 +147,7 @@ __all__ = [
     'GetAutonomousContainerPatchesFilterArgs',
     'GetAutonomousDatabaseBackupsFilterArgs',
     'GetAutonomousDatabaseDataguardAssociationsFilterArgs',
+    'GetAutonomousDatabaseRefreshableClonesFilterArgs',
     'GetAutonomousDatabasesClonesFilterArgs',
     'GetAutonomousDatabasesFilterArgs',
     'GetAutonomousDbPreviewVersionsFilterArgs',
@@ -2559,6 +2576,433 @@ class BackupDestinationMountTypeDetailsArgs:
     @nfs_servers.setter
     def nfs_servers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "nfs_servers", value)
+
+
+@pulumi.input_type
+class CloudAutonomousVmClusterMaintenanceWindowArgs:
+    def __init__(__self__, *,
+                 custom_action_timeout_in_mins: Optional[pulumi.Input[int]] = None,
+                 days_of_weeks: Optional[pulumi.Input[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs']]]] = None,
+                 hours_of_days: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+                 is_custom_action_timeout_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_monthly_patching_enabled: Optional[pulumi.Input[bool]] = None,
+                 lead_time_in_weeks: Optional[pulumi.Input[int]] = None,
+                 months: Optional[pulumi.Input[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowMonthArgs']]]] = None,
+                 patching_mode: Optional[pulumi.Input[str]] = None,
+                 preference: Optional[pulumi.Input[str]] = None,
+                 weeks_of_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None):
+        """
+        :param pulumi.Input[int] custom_action_timeout_in_mins: (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+        :param pulumi.Input[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs']]] days_of_weeks: (Updatable) Days during the week when maintenance should be performed.
+        :param pulumi.Input[Sequence[pulumi.Input[int]]] hours_of_days: (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+               * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        :param pulumi.Input[bool] is_custom_action_timeout_enabled: (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+        :param pulumi.Input[bool] is_monthly_patching_enabled: (Updatable) If true, enables the monthly patching option.
+        :param pulumi.Input[int] lead_time_in_weeks: (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+        :param pulumi.Input[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowMonthArgs']]] months: (Updatable) Months during the year when maintenance should be performed.
+        :param pulumi.Input[str] patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+        :param pulumi.Input[str] preference: (Updatable) The maintenance window scheduling preference.
+        :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+        """
+        if custom_action_timeout_in_mins is not None:
+            pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
+        if days_of_weeks is not None:
+            pulumi.set(__self__, "days_of_weeks", days_of_weeks)
+        if hours_of_days is not None:
+            pulumi.set(__self__, "hours_of_days", hours_of_days)
+        if is_custom_action_timeout_enabled is not None:
+            pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
+        if is_monthly_patching_enabled is not None:
+            pulumi.set(__self__, "is_monthly_patching_enabled", is_monthly_patching_enabled)
+        if lead_time_in_weeks is not None:
+            pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
+        if months is not None:
+            pulumi.set(__self__, "months", months)
+        if patching_mode is not None:
+            pulumi.set(__self__, "patching_mode", patching_mode)
+        if preference is not None:
+            pulumi.set(__self__, "preference", preference)
+        if weeks_of_months is not None:
+            pulumi.set(__self__, "weeks_of_months", weeks_of_months)
+
+    @property
+    @pulumi.getter(name="customActionTimeoutInMins")
+    def custom_action_timeout_in_mins(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+        """
+        return pulumi.get(self, "custom_action_timeout_in_mins")
+
+    @custom_action_timeout_in_mins.setter
+    def custom_action_timeout_in_mins(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "custom_action_timeout_in_mins", value)
+
+    @property
+    @pulumi.getter(name="daysOfWeeks")
+    def days_of_weeks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs']]]]:
+        """
+        (Updatable) Days during the week when maintenance should be performed.
+        """
+        return pulumi.get(self, "days_of_weeks")
+
+    @days_of_weeks.setter
+    def days_of_weeks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs']]]]):
+        pulumi.set(self, "days_of_weeks", value)
+
+    @property
+    @pulumi.getter(name="hoursOfDays")
+    def hours_of_days(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
+        """
+        (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        """
+        return pulumi.get(self, "hours_of_days")
+
+    @hours_of_days.setter
+    def hours_of_days(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]):
+        pulumi.set(self, "hours_of_days", value)
+
+    @property
+    @pulumi.getter(name="isCustomActionTimeoutEnabled")
+    def is_custom_action_timeout_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+        """
+        return pulumi.get(self, "is_custom_action_timeout_enabled")
+
+    @is_custom_action_timeout_enabled.setter
+    def is_custom_action_timeout_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_custom_action_timeout_enabled", value)
+
+    @property
+    @pulumi.getter(name="isMonthlyPatchingEnabled")
+    def is_monthly_patching_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, enables the monthly patching option.
+        """
+        return pulumi.get(self, "is_monthly_patching_enabled")
+
+    @is_monthly_patching_enabled.setter
+    def is_monthly_patching_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_monthly_patching_enabled", value)
+
+    @property
+    @pulumi.getter(name="leadTimeInWeeks")
+    def lead_time_in_weeks(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+        """
+        return pulumi.get(self, "lead_time_in_weeks")
+
+    @lead_time_in_weeks.setter
+    def lead_time_in_weeks(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "lead_time_in_weeks", value)
+
+    @property
+    @pulumi.getter
+    def months(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowMonthArgs']]]]:
+        """
+        (Updatable) Months during the year when maintenance should be performed.
+        """
+        return pulumi.get(self, "months")
+
+    @months.setter
+    def months(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowMonthArgs']]]]):
+        pulumi.set(self, "months", value)
+
+    @property
+    @pulumi.getter(name="patchingMode")
+    def patching_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+        """
+        return pulumi.get(self, "patching_mode")
+
+    @patching_mode.setter
+    def patching_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "patching_mode", value)
+
+    @property
+    @pulumi.getter
+    def preference(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The maintenance window scheduling preference.
+        """
+        return pulumi.get(self, "preference")
+
+    @preference.setter
+    def preference(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "preference", value)
+
+    @property
+    @pulumi.getter(name="weeksOfMonths")
+    def weeks_of_months(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
+        """
+        (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+        """
+        return pulumi.get(self, "weeks_of_months")
+
+    @weeks_of_months.setter
+    def weeks_of_months(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]):
+        pulumi.set(self, "weeks_of_months", value)
+
+
+@pulumi.input_type
+class CloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs:
+    def __init__(__self__, *,
+                 name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Name of the month of the year.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+
+@pulumi.input_type
+class CloudAutonomousVmClusterMaintenanceWindowDetailsArgs:
+    def __init__(__self__, *,
+                 preference: pulumi.Input[str],
+                 custom_action_timeout_in_mins: Optional[pulumi.Input[int]] = None,
+                 days_of_weeks: Optional[pulumi.Input[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeekArgs']]]] = None,
+                 hours_of_days: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+                 is_custom_action_timeout_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_monthly_patching_enabled: Optional[pulumi.Input[bool]] = None,
+                 lead_time_in_weeks: Optional[pulumi.Input[int]] = None,
+                 months: Optional[pulumi.Input[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowDetailsMonthArgs']]]] = None,
+                 patching_mode: Optional[pulumi.Input[str]] = None,
+                 weeks_of_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None):
+        """
+        :param pulumi.Input[str] preference: (Updatable) The maintenance window scheduling preference.
+        :param pulumi.Input[int] custom_action_timeout_in_mins: (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+        :param pulumi.Input[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeekArgs']]] days_of_weeks: (Updatable) Days during the week when maintenance should be performed.
+        :param pulumi.Input[Sequence[pulumi.Input[int]]] hours_of_days: (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+               * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        :param pulumi.Input[bool] is_custom_action_timeout_enabled: (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+        :param pulumi.Input[bool] is_monthly_patching_enabled: (Updatable) If true, enables the monthly patching option.
+        :param pulumi.Input[int] lead_time_in_weeks: (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+        :param pulumi.Input[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowDetailsMonthArgs']]] months: (Updatable) Months during the year when maintenance should be performed.
+        :param pulumi.Input[str] patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+        :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+        """
+        pulumi.set(__self__, "preference", preference)
+        if custom_action_timeout_in_mins is not None:
+            pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
+        if days_of_weeks is not None:
+            pulumi.set(__self__, "days_of_weeks", days_of_weeks)
+        if hours_of_days is not None:
+            pulumi.set(__self__, "hours_of_days", hours_of_days)
+        if is_custom_action_timeout_enabled is not None:
+            pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
+        if is_monthly_patching_enabled is not None:
+            pulumi.set(__self__, "is_monthly_patching_enabled", is_monthly_patching_enabled)
+        if lead_time_in_weeks is not None:
+            pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
+        if months is not None:
+            pulumi.set(__self__, "months", months)
+        if patching_mode is not None:
+            pulumi.set(__self__, "patching_mode", patching_mode)
+        if weeks_of_months is not None:
+            pulumi.set(__self__, "weeks_of_months", weeks_of_months)
+
+    @property
+    @pulumi.getter
+    def preference(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The maintenance window scheduling preference.
+        """
+        return pulumi.get(self, "preference")
+
+    @preference.setter
+    def preference(self, value: pulumi.Input[str]):
+        pulumi.set(self, "preference", value)
+
+    @property
+    @pulumi.getter(name="customActionTimeoutInMins")
+    def custom_action_timeout_in_mins(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+        """
+        return pulumi.get(self, "custom_action_timeout_in_mins")
+
+    @custom_action_timeout_in_mins.setter
+    def custom_action_timeout_in_mins(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "custom_action_timeout_in_mins", value)
+
+    @property
+    @pulumi.getter(name="daysOfWeeks")
+    def days_of_weeks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeekArgs']]]]:
+        """
+        (Updatable) Days during the week when maintenance should be performed.
+        """
+        return pulumi.get(self, "days_of_weeks")
+
+    @days_of_weeks.setter
+    def days_of_weeks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeekArgs']]]]):
+        pulumi.set(self, "days_of_weeks", value)
+
+    @property
+    @pulumi.getter(name="hoursOfDays")
+    def hours_of_days(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
+        """
+        (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        """
+        return pulumi.get(self, "hours_of_days")
+
+    @hours_of_days.setter
+    def hours_of_days(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]):
+        pulumi.set(self, "hours_of_days", value)
+
+    @property
+    @pulumi.getter(name="isCustomActionTimeoutEnabled")
+    def is_custom_action_timeout_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+        """
+        return pulumi.get(self, "is_custom_action_timeout_enabled")
+
+    @is_custom_action_timeout_enabled.setter
+    def is_custom_action_timeout_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_custom_action_timeout_enabled", value)
+
+    @property
+    @pulumi.getter(name="isMonthlyPatchingEnabled")
+    def is_monthly_patching_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If true, enables the monthly patching option.
+        """
+        return pulumi.get(self, "is_monthly_patching_enabled")
+
+    @is_monthly_patching_enabled.setter
+    def is_monthly_patching_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_monthly_patching_enabled", value)
+
+    @property
+    @pulumi.getter(name="leadTimeInWeeks")
+    def lead_time_in_weeks(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+        """
+        return pulumi.get(self, "lead_time_in_weeks")
+
+    @lead_time_in_weeks.setter
+    def lead_time_in_weeks(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "lead_time_in_weeks", value)
+
+    @property
+    @pulumi.getter
+    def months(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowDetailsMonthArgs']]]]:
+        """
+        (Updatable) Months during the year when maintenance should be performed.
+        """
+        return pulumi.get(self, "months")
+
+    @months.setter
+    def months(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudAutonomousVmClusterMaintenanceWindowDetailsMonthArgs']]]]):
+        pulumi.set(self, "months", value)
+
+    @property
+    @pulumi.getter(name="patchingMode")
+    def patching_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+        """
+        return pulumi.get(self, "patching_mode")
+
+    @patching_mode.setter
+    def patching_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "patching_mode", value)
+
+    @property
+    @pulumi.getter(name="weeksOfMonths")
+    def weeks_of_months(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
+        """
+        (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+        """
+        return pulumi.get(self, "weeks_of_months")
+
+    @weeks_of_months.setter
+    def weeks_of_months(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]):
+        pulumi.set(self, "weeks_of_months", value)
+
+
+@pulumi.input_type
+class CloudAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeekArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
+        """
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Name of the month of the year.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
+
+
+@pulumi.input_type
+class CloudAutonomousVmClusterMaintenanceWindowDetailsMonthArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
+        """
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Name of the month of the year.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "name", value)
+
+
+@pulumi.input_type
+class CloudAutonomousVmClusterMaintenanceWindowMonthArgs:
+    def __init__(__self__, *,
+                 name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] name: (Updatable) Name of the month of the year.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Name of the month of the year.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
 
 
 @pulumi.input_type
@@ -6308,6 +6752,308 @@ class DbSystemsUpgradeMaintenanceWindowMonthArgs:
 
 
 @pulumi.input_type
+class ExadataInfrastructureComputeContactArgs:
+    def __init__(__self__, *,
+                 email: Optional[pulumi.Input[str]] = None,
+                 is_contact_mos_validated: Optional[pulumi.Input[bool]] = None,
+                 is_primary: Optional[pulumi.Input[bool]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 phone_number: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] email: The email for the Exadata Infrastructure contact.
+        :param pulumi.Input[bool] is_contact_mos_validated: If `true`, this Exadata Infrastructure contact is a valid My Oracle Support (MOS) contact. If `false`, this Exadata Infrastructure contact is not a valid MOS contact.
+        :param pulumi.Input[bool] is_primary: If `true`, this Exadata Infrastructure contact is a primary contact. If `false`, this Exadata Infrastructure is a secondary contact.
+        :param pulumi.Input[str] name: Name of the month of the year.
+        :param pulumi.Input[str] phone_number: The phone number for the Exadata Infrastructure contact.
+        """
+        if email is not None:
+            pulumi.set(__self__, "email", email)
+        if is_contact_mos_validated is not None:
+            pulumi.set(__self__, "is_contact_mos_validated", is_contact_mos_validated)
+        if is_primary is not None:
+            pulumi.set(__self__, "is_primary", is_primary)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if phone_number is not None:
+            pulumi.set(__self__, "phone_number", phone_number)
+
+    @property
+    @pulumi.getter
+    def email(self) -> Optional[pulumi.Input[str]]:
+        """
+        The email for the Exadata Infrastructure contact.
+        """
+        return pulumi.get(self, "email")
+
+    @email.setter
+    def email(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "email", value)
+
+    @property
+    @pulumi.getter(name="isContactMosValidated")
+    def is_contact_mos_validated(self) -> Optional[pulumi.Input[bool]]:
+        """
+        If `true`, this Exadata Infrastructure contact is a valid My Oracle Support (MOS) contact. If `false`, this Exadata Infrastructure contact is not a valid MOS contact.
+        """
+        return pulumi.get(self, "is_contact_mos_validated")
+
+    @is_contact_mos_validated.setter
+    def is_contact_mos_validated(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_contact_mos_validated", value)
+
+    @property
+    @pulumi.getter(name="isPrimary")
+    def is_primary(self) -> Optional[pulumi.Input[bool]]:
+        """
+        If `true`, this Exadata Infrastructure contact is a primary contact. If `false`, this Exadata Infrastructure is a secondary contact.
+        """
+        return pulumi.get(self, "is_primary")
+
+    @is_primary.setter
+    def is_primary(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_primary", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of the month of the year.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter(name="phoneNumber")
+    def phone_number(self) -> Optional[pulumi.Input[str]]:
+        """
+        The phone number for the Exadata Infrastructure contact.
+        """
+        return pulumi.get(self, "phone_number")
+
+    @phone_number.setter
+    def phone_number(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "phone_number", value)
+
+
+@pulumi.input_type
+class ExadataInfrastructureComputeMaintenanceWindowArgs:
+    def __init__(__self__, *,
+                 custom_action_timeout_in_mins: Optional[pulumi.Input[int]] = None,
+                 days_of_weeks: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureComputeMaintenanceWindowDaysOfWeekArgs']]]] = None,
+                 hours_of_days: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None,
+                 is_custom_action_timeout_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_monthly_patching_enabled: Optional[pulumi.Input[bool]] = None,
+                 lead_time_in_weeks: Optional[pulumi.Input[int]] = None,
+                 months: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureComputeMaintenanceWindowMonthArgs']]]] = None,
+                 patching_mode: Optional[pulumi.Input[str]] = None,
+                 preference: Optional[pulumi.Input[str]] = None,
+                 weeks_of_months: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]] = None):
+        """
+        :param pulumi.Input[int] custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+        :param pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureComputeMaintenanceWindowDaysOfWeekArgs']]] days_of_weeks: Days during the week when maintenance should be performed.
+        :param pulumi.Input[Sequence[pulumi.Input[int]]] hours_of_days: The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+               * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        :param pulumi.Input[bool] is_custom_action_timeout_enabled: If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+        :param pulumi.Input[bool] is_monthly_patching_enabled: If true, enables the monthly patching option.
+        :param pulumi.Input[int] lead_time_in_weeks: Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+        :param pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureComputeMaintenanceWindowMonthArgs']]] months: Months during the year when maintenance should be performed.
+        :param pulumi.Input[str] patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+        :param pulumi.Input[str] preference: The maintenance window scheduling preference.
+        :param pulumi.Input[Sequence[pulumi.Input[int]]] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+        """
+        if custom_action_timeout_in_mins is not None:
+            pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
+        if days_of_weeks is not None:
+            pulumi.set(__self__, "days_of_weeks", days_of_weeks)
+        if hours_of_days is not None:
+            pulumi.set(__self__, "hours_of_days", hours_of_days)
+        if is_custom_action_timeout_enabled is not None:
+            pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
+        if is_monthly_patching_enabled is not None:
+            pulumi.set(__self__, "is_monthly_patching_enabled", is_monthly_patching_enabled)
+        if lead_time_in_weeks is not None:
+            pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
+        if months is not None:
+            pulumi.set(__self__, "months", months)
+        if patching_mode is not None:
+            pulumi.set(__self__, "patching_mode", patching_mode)
+        if preference is not None:
+            pulumi.set(__self__, "preference", preference)
+        if weeks_of_months is not None:
+            pulumi.set(__self__, "weeks_of_months", weeks_of_months)
+
+    @property
+    @pulumi.getter(name="customActionTimeoutInMins")
+    def custom_action_timeout_in_mins(self) -> Optional[pulumi.Input[int]]:
+        """
+        Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+        """
+        return pulumi.get(self, "custom_action_timeout_in_mins")
+
+    @custom_action_timeout_in_mins.setter
+    def custom_action_timeout_in_mins(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "custom_action_timeout_in_mins", value)
+
+    @property
+    @pulumi.getter(name="daysOfWeeks")
+    def days_of_weeks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureComputeMaintenanceWindowDaysOfWeekArgs']]]]:
+        """
+        Days during the week when maintenance should be performed.
+        """
+        return pulumi.get(self, "days_of_weeks")
+
+    @days_of_weeks.setter
+    def days_of_weeks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureComputeMaintenanceWindowDaysOfWeekArgs']]]]):
+        pulumi.set(self, "days_of_weeks", value)
+
+    @property
+    @pulumi.getter(name="hoursOfDays")
+    def hours_of_days(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
+        """
+        The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        """
+        return pulumi.get(self, "hours_of_days")
+
+    @hours_of_days.setter
+    def hours_of_days(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]):
+        pulumi.set(self, "hours_of_days", value)
+
+    @property
+    @pulumi.getter(name="isCustomActionTimeoutEnabled")
+    def is_custom_action_timeout_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+        """
+        return pulumi.get(self, "is_custom_action_timeout_enabled")
+
+    @is_custom_action_timeout_enabled.setter
+    def is_custom_action_timeout_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_custom_action_timeout_enabled", value)
+
+    @property
+    @pulumi.getter(name="isMonthlyPatchingEnabled")
+    def is_monthly_patching_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        If true, enables the monthly patching option.
+        """
+        return pulumi.get(self, "is_monthly_patching_enabled")
+
+    @is_monthly_patching_enabled.setter
+    def is_monthly_patching_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_monthly_patching_enabled", value)
+
+    @property
+    @pulumi.getter(name="leadTimeInWeeks")
+    def lead_time_in_weeks(self) -> Optional[pulumi.Input[int]]:
+        """
+        Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+        """
+        return pulumi.get(self, "lead_time_in_weeks")
+
+    @lead_time_in_weeks.setter
+    def lead_time_in_weeks(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "lead_time_in_weeks", value)
+
+    @property
+    @pulumi.getter
+    def months(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureComputeMaintenanceWindowMonthArgs']]]]:
+        """
+        Months during the year when maintenance should be performed.
+        """
+        return pulumi.get(self, "months")
+
+    @months.setter
+    def months(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureComputeMaintenanceWindowMonthArgs']]]]):
+        pulumi.set(self, "months", value)
+
+    @property
+    @pulumi.getter(name="patchingMode")
+    def patching_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+        """
+        return pulumi.get(self, "patching_mode")
+
+    @patching_mode.setter
+    def patching_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "patching_mode", value)
+
+    @property
+    @pulumi.getter
+    def preference(self) -> Optional[pulumi.Input[str]]:
+        """
+        The maintenance window scheduling preference.
+        """
+        return pulumi.get(self, "preference")
+
+    @preference.setter
+    def preference(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "preference", value)
+
+    @property
+    @pulumi.getter(name="weeksOfMonths")
+    def weeks_of_months(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]:
+        """
+        Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+        """
+        return pulumi.get(self, "weeks_of_months")
+
+    @weeks_of_months.setter
+    def weeks_of_months(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[int]]]]):
+        pulumi.set(self, "weeks_of_months", value)
+
+
+@pulumi.input_type
+class ExadataInfrastructureComputeMaintenanceWindowDaysOfWeekArgs:
+    def __init__(__self__, *,
+                 name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] name: Name of the month of the year.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of the month of the year.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+
+@pulumi.input_type
+class ExadataInfrastructureComputeMaintenanceWindowMonthArgs:
+    def __init__(__self__, *,
+                 name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] name: Name of the month of the year.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of the month of the year.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+
+@pulumi.input_type
 class ExadataInfrastructureContactArgs:
     def __init__(__self__, *,
                  email: pulumi.Input[str],
@@ -7604,6 +8350,174 @@ class PluggableDatabaseConnectionStringArgs:
 
 
 @pulumi.input_type
+class PluggableDatabaseManagementsManagementConnectionStringArgs:
+    def __init__(__self__, *,
+                 enable_pluggabledatabasemanagement: pulumi.Input[bool],
+                 all_connection_strings: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 pdb_default: Optional[pulumi.Input[str]] = None,
+                 pdb_ip_default: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[bool] enable_pluggabledatabasemanagement: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        :param pulumi.Input[Mapping[str, Any]] all_connection_strings: All connection strings to use to connect to the pluggable database.
+        :param pulumi.Input[str] pdb_default: A host name-based PDB connection string.
+        :param pulumi.Input[str] pdb_ip_default: An IP-based PDB connection string.
+        """
+        pulumi.set(__self__, "enable_pluggabledatabasemanagement", enable_pluggabledatabasemanagement)
+        if all_connection_strings is not None:
+            pulumi.set(__self__, "all_connection_strings", all_connection_strings)
+        if pdb_default is not None:
+            pulumi.set(__self__, "pdb_default", pdb_default)
+        if pdb_ip_default is not None:
+            pulumi.set(__self__, "pdb_ip_default", pdb_ip_default)
+
+    @property
+    @pulumi.getter(name="enablePluggabledatabasemanagement")
+    def enable_pluggabledatabasemanagement(self) -> pulumi.Input[bool]:
+        """
+        (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        """
+        return pulumi.get(self, "enable_pluggabledatabasemanagement")
+
+    @enable_pluggabledatabasemanagement.setter
+    def enable_pluggabledatabasemanagement(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enable_pluggabledatabasemanagement", value)
+
+    @property
+    @pulumi.getter(name="allConnectionStrings")
+    def all_connection_strings(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        All connection strings to use to connect to the pluggable database.
+        """
+        return pulumi.get(self, "all_connection_strings")
+
+    @all_connection_strings.setter
+    def all_connection_strings(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "all_connection_strings", value)
+
+    @property
+    @pulumi.getter(name="pdbDefault")
+    def pdb_default(self) -> Optional[pulumi.Input[str]]:
+        """
+        A host name-based PDB connection string.
+        """
+        return pulumi.get(self, "pdb_default")
+
+    @pdb_default.setter
+    def pdb_default(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "pdb_default", value)
+
+    @property
+    @pulumi.getter(name="pdbIpDefault")
+    def pdb_ip_default(self) -> Optional[pulumi.Input[str]]:
+        """
+        An IP-based PDB connection string.
+        """
+        return pulumi.get(self, "pdb_ip_default")
+
+    @pdb_ip_default.setter
+    def pdb_ip_default(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "pdb_ip_default", value)
+
+
+@pulumi.input_type
+class PluggableDatabaseManagementsManagementCredentialDetailsArgs:
+    def __init__(__self__, *,
+                 password_secret_id: pulumi.Input[str],
+                 user_name: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        :param pulumi.Input[str] user_name: The name of the Oracle Database user that will be used to connect to the database.
+        """
+        pulumi.set(__self__, "password_secret_id", password_secret_id)
+        pulumi.set(__self__, "user_name", user_name)
+
+    @property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> pulumi.Input[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        """
+        return pulumi.get(self, "password_secret_id")
+
+    @password_secret_id.setter
+    def password_secret_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "password_secret_id", value)
+
+    @property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> pulumi.Input[str]:
+        """
+        The name of the Oracle Database user that will be used to connect to the database.
+        """
+        return pulumi.get(self, "user_name")
+
+    @user_name.setter
+    def user_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "user_name", value)
+
+
+@pulumi.input_type
+class PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfigArgs:
+    def __init__(__self__, *,
+                 enable_pluggabledatabasemanagement: pulumi.Input[bool],
+                 management_status: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[bool] enable_pluggabledatabasemanagement: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        :param pulumi.Input[str] management_status: The status of the Pluggable Database Management service.
+        """
+        pulumi.set(__self__, "enable_pluggabledatabasemanagement", enable_pluggabledatabasemanagement)
+        if management_status is not None:
+            pulumi.set(__self__, "management_status", management_status)
+
+    @property
+    @pulumi.getter(name="enablePluggabledatabasemanagement")
+    def enable_pluggabledatabasemanagement(self) -> pulumi.Input[bool]:
+        """
+        (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        """
+        return pulumi.get(self, "enable_pluggabledatabasemanagement")
+
+    @enable_pluggabledatabasemanagement.setter
+    def enable_pluggabledatabasemanagement(self, value: pulumi.Input[bool]):
+        pulumi.set(self, "enable_pluggabledatabasemanagement", value)
+
+    @property
+    @pulumi.getter(name="managementStatus")
+    def management_status(self) -> Optional[pulumi.Input[str]]:
+        """
+        The status of the Pluggable Database Management service.
+        """
+        return pulumi.get(self, "management_status")
+
+    @management_status.setter
+    def management_status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "management_status", value)
+
+
+@pulumi.input_type
+class PluggableDatabasePluggableDatabaseManagementConfigArgs:
+    def __init__(__self__, *,
+                 management_status: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] management_status: The status of the Pluggable Database Management service.
+        """
+        if management_status is not None:
+            pulumi.set(__self__, "management_status", management_status)
+
+    @property
+    @pulumi.getter(name="managementStatus")
+    def management_status(self) -> Optional[pulumi.Input[str]]:
+        """
+        The status of the Pluggable Database Management service.
+        """
+        return pulumi.get(self, "management_status")
+
+    @management_status.setter
+    def management_status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "management_status", value)
+
+
+@pulumi.input_type
 class PluggableDatabasesLocalCloneConnectionStringArgs:
     def __init__(__self__, *,
                  all_connection_strings: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -7659,6 +8573,29 @@ class PluggableDatabasesLocalCloneConnectionStringArgs:
 
 
 @pulumi.input_type
+class PluggableDatabasesLocalClonePluggableDatabaseManagementConfigArgs:
+    def __init__(__self__, *,
+                 management_status: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] management_status: The status of the Pluggable Database Management service.
+        """
+        if management_status is not None:
+            pulumi.set(__self__, "management_status", management_status)
+
+    @property
+    @pulumi.getter(name="managementStatus")
+    def management_status(self) -> Optional[pulumi.Input[str]]:
+        """
+        The status of the Pluggable Database Management service.
+        """
+        return pulumi.get(self, "management_status")
+
+    @management_status.setter
+    def management_status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "management_status", value)
+
+
+@pulumi.input_type
 class PluggableDatabasesRemoteCloneConnectionStringArgs:
     def __init__(__self__, *,
                  all_connection_strings: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -7711,6 +8648,29 @@ class PluggableDatabasesRemoteCloneConnectionStringArgs:
     @pdb_ip_default.setter
     def pdb_ip_default(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "pdb_ip_default", value)
+
+
+@pulumi.input_type
+class PluggableDatabasesRemoteClonePluggableDatabaseManagementConfigArgs:
+    def __init__(__self__, *,
+                 management_status: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] management_status: The status of the Pluggable Database Management service.
+        """
+        if management_status is not None:
+            pulumi.set(__self__, "management_status", management_status)
+
+    @property
+    @pulumi.getter(name="managementStatus")
+    def management_status(self) -> Optional[pulumi.Input[str]]:
+        """
+        The status of the Pluggable Database Management service.
+        """
+        return pulumi.get(self, "management_status")
+
+    @management_status.setter
+    def management_status(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "management_status", value)
 
 
 @pulumi.input_type
@@ -7932,62 +8892,30 @@ class VmClusterNetworkScanArgs:
 @pulumi.input_type
 class VmClusterNetworkVmNetworkArgs:
     def __init__(__self__, *,
-                 domain_name: pulumi.Input[str],
-                 gateway: pulumi.Input[str],
-                 netmask: pulumi.Input[str],
                  network_type: pulumi.Input[str],
                  nodes: pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkVmNetworkNodeArgs']]],
-                 vlan_id: pulumi.Input[str]):
+                 domain_name: Optional[pulumi.Input[str]] = None,
+                 gateway: Optional[pulumi.Input[str]] = None,
+                 netmask: Optional[pulumi.Input[str]] = None,
+                 vlan_id: Optional[pulumi.Input[str]] = None):
         """
+        :param pulumi.Input[str] network_type: (Updatable) The network type.
+        :param pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkVmNetworkNodeArgs']]] nodes: (Updatable) The list of node details.
         :param pulumi.Input[str] domain_name: (Updatable) The network domain name.
         :param pulumi.Input[str] gateway: (Updatable) The network gateway.
         :param pulumi.Input[str] netmask: (Updatable) The network netmask.
-        :param pulumi.Input[str] network_type: (Updatable) The network type.
-        :param pulumi.Input[Sequence[pulumi.Input['VmClusterNetworkVmNetworkNodeArgs']]] nodes: (Updatable) The list of node details.
         :param pulumi.Input[str] vlan_id: (Updatable) The network VLAN ID.
         """
-        pulumi.set(__self__, "domain_name", domain_name)
-        pulumi.set(__self__, "gateway", gateway)
-        pulumi.set(__self__, "netmask", netmask)
         pulumi.set(__self__, "network_type", network_type)
         pulumi.set(__self__, "nodes", nodes)
-        pulumi.set(__self__, "vlan_id", vlan_id)
-
-    @property
-    @pulumi.getter(name="domainName")
-    def domain_name(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The network domain name.
-        """
-        return pulumi.get(self, "domain_name")
-
-    @domain_name.setter
-    def domain_name(self, value: pulumi.Input[str]):
-        pulumi.set(self, "domain_name", value)
-
-    @property
-    @pulumi.getter
-    def gateway(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The network gateway.
-        """
-        return pulumi.get(self, "gateway")
-
-    @gateway.setter
-    def gateway(self, value: pulumi.Input[str]):
-        pulumi.set(self, "gateway", value)
-
-    @property
-    @pulumi.getter
-    def netmask(self) -> pulumi.Input[str]:
-        """
-        (Updatable) The network netmask.
-        """
-        return pulumi.get(self, "netmask")
-
-    @netmask.setter
-    def netmask(self, value: pulumi.Input[str]):
-        pulumi.set(self, "netmask", value)
+        if domain_name is not None:
+            pulumi.set(__self__, "domain_name", domain_name)
+        if gateway is not None:
+            pulumi.set(__self__, "gateway", gateway)
+        if netmask is not None:
+            pulumi.set(__self__, "netmask", netmask)
+        if vlan_id is not None:
+            pulumi.set(__self__, "vlan_id", vlan_id)
 
     @property
     @pulumi.getter(name="networkType")
@@ -8014,15 +8942,51 @@ class VmClusterNetworkVmNetworkArgs:
         pulumi.set(self, "nodes", value)
 
     @property
+    @pulumi.getter(name="domainName")
+    def domain_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The network domain name.
+        """
+        return pulumi.get(self, "domain_name")
+
+    @domain_name.setter
+    def domain_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "domain_name", value)
+
+    @property
+    @pulumi.getter
+    def gateway(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The network gateway.
+        """
+        return pulumi.get(self, "gateway")
+
+    @gateway.setter
+    def gateway(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "gateway", value)
+
+    @property
+    @pulumi.getter
+    def netmask(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The network netmask.
+        """
+        return pulumi.get(self, "netmask")
+
+    @netmask.setter
+    def netmask(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "netmask", value)
+
+    @property
     @pulumi.getter(name="vlanId")
-    def vlan_id(self) -> pulumi.Input[str]:
+    def vlan_id(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) The network VLAN ID.
         """
         return pulumi.get(self, "vlan_id")
 
     @vlan_id.setter
-    def vlan_id(self, value: pulumi.Input[str]):
+    def vlan_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "vlan_id", value)
 
 
@@ -8031,16 +8995,24 @@ class VmClusterNetworkVmNetworkNodeArgs:
     def __init__(__self__, *,
                  hostname: pulumi.Input[str],
                  ip: pulumi.Input[str],
+                 db_server_id: Optional[pulumi.Input[str]] = None,
+                 state: Optional[pulumi.Input[str]] = None,
                  vip: Optional[pulumi.Input[str]] = None,
                  vip_hostname: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] hostname: (Updatable) The node host name.
         :param pulumi.Input[str] ip: (Updatable) The node IP address.
+        :param pulumi.Input[str] db_server_id: (Updatable) The Db server associated with the node.
+        :param pulumi.Input[str] state: (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
         :param pulumi.Input[str] vip: (Updatable) The node virtual IP (VIP) address.
         :param pulumi.Input[str] vip_hostname: (Updatable) The node virtual IP (VIP) host name.
         """
         pulumi.set(__self__, "hostname", hostname)
         pulumi.set(__self__, "ip", ip)
+        if db_server_id is not None:
+            pulumi.set(__self__, "db_server_id", db_server_id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
         if vip is not None:
             pulumi.set(__self__, "vip", vip)
         if vip_hostname is not None:
@@ -8069,6 +9041,30 @@ class VmClusterNetworkVmNetworkNodeArgs:
     @ip.setter
     def ip(self, value: pulumi.Input[str]):
         pulumi.set(self, "ip", value)
+
+    @property
+    @pulumi.getter(name="dbServerId")
+    def db_server_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The Db server associated with the node.
+        """
+        return pulumi.get(self, "db_server_id")
+
+    @db_server_id.setter
+    def db_server_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "db_server_id", value)
+
+    @property
+    @pulumi.getter
+    def state(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "state", value)
 
     @property
     @pulumi.getter
@@ -8381,6 +9377,45 @@ class GetAutonomousDatabaseBackupsFilterArgs:
 
 @pulumi.input_type
 class GetAutonomousDatabaseDataguardAssociationsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetAutonomousDatabaseRefreshableClonesFilterArgs:
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],
@@ -8805,6 +9840,9 @@ class GetCloudAutonomousVmClustersFilterArgs:
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
+        """
+        :param str name: Name of the month of the year.
+        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -8813,6 +9851,9 @@ class GetCloudAutonomousVmClustersFilterArgs:
     @property
     @pulumi.getter
     def name(self) -> str:
+        """
+        Name of the month of the year.
+        """
         return pulumi.get(self, "name")
 
     @name.setter

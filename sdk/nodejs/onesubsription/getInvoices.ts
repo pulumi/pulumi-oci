@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getInvoices(args: GetInvoicesArgs, opts?: pulumi.InvokeOptions): Promise<GetInvoicesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OneSubsription/getInvoices:getInvoices", {
         "arCustomerTransactionId": args.arCustomerTransactionId,
         "compartmentId": args.compartmentId,
@@ -87,9 +85,28 @@ export interface GetInvoicesResult {
     readonly timeFrom?: string;
     readonly timeTo?: string;
 }
-
+/**
+ * This data source provides the list of Invoices in Oracle Cloud Infrastructure Onesubscription service.
+ *
+ * This is a collection API which returns a list of Invoices for given filters.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testInvoices = oci.OneSubsription.getInvoices({
+ *     arCustomerTransactionId: oci_onesubscription_ar_customer_transaction.test_ar_customer_transaction.id,
+ *     compartmentId: _var.compartment_id,
+ *     fields: _var.invoice_fields,
+ *     timeFrom: _var.invoice_time_from,
+ *     timeTo: _var.invoice_time_to,
+ * });
+ * ```
+ */
 export function getInvoicesOutput(args: GetInvoicesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInvoicesResult> {
-    return pulumi.output(args).apply(a => getInvoices(a, opts))
+    return pulumi.output(args).apply((a: any) => getInvoices(a, opts))
 }
 
 /**

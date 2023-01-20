@@ -5,18 +5,46 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./getKnowledgebase";
-export * from "./getKnowledgebases";
-export * from "./getVulnerabilityAudit";
-export * from "./getVulnerabilityAuditApplicationDependencyVulnerabilities";
-export * from "./getVulnerabilityAuditApplicationDependencyVulnerability";
-export * from "./getVulnerabilityAudits";
-export * from "./knowledgeBase";
-export * from "./vulnerabilityAudit";
+export { GetKnowledgebaseArgs, GetKnowledgebaseResult, GetKnowledgebaseOutputArgs } from "./getKnowledgebase";
+export const getKnowledgebase: typeof import("./getKnowledgebase").getKnowledgebase = null as any;
+export const getKnowledgebaseOutput: typeof import("./getKnowledgebase").getKnowledgebaseOutput = null as any;
+utilities.lazyLoad(exports, ["getKnowledgebase","getKnowledgebaseOutput"], () => require("./getKnowledgebase"));
 
-// Import resources to register:
-import { KnowledgeBase } from "./knowledgeBase";
-import { VulnerabilityAudit } from "./vulnerabilityAudit";
+export { GetKnowledgebasesArgs, GetKnowledgebasesResult, GetKnowledgebasesOutputArgs } from "./getKnowledgebases";
+export const getKnowledgebases: typeof import("./getKnowledgebases").getKnowledgebases = null as any;
+export const getKnowledgebasesOutput: typeof import("./getKnowledgebases").getKnowledgebasesOutput = null as any;
+utilities.lazyLoad(exports, ["getKnowledgebases","getKnowledgebasesOutput"], () => require("./getKnowledgebases"));
+
+export { GetVulnerabilityAuditArgs, GetVulnerabilityAuditResult, GetVulnerabilityAuditOutputArgs } from "./getVulnerabilityAudit";
+export const getVulnerabilityAudit: typeof import("./getVulnerabilityAudit").getVulnerabilityAudit = null as any;
+export const getVulnerabilityAuditOutput: typeof import("./getVulnerabilityAudit").getVulnerabilityAuditOutput = null as any;
+utilities.lazyLoad(exports, ["getVulnerabilityAudit","getVulnerabilityAuditOutput"], () => require("./getVulnerabilityAudit"));
+
+export { GetVulnerabilityAuditApplicationDependencyVulnerabilitiesArgs, GetVulnerabilityAuditApplicationDependencyVulnerabilitiesResult, GetVulnerabilityAuditApplicationDependencyVulnerabilitiesOutputArgs } from "./getVulnerabilityAuditApplicationDependencyVulnerabilities";
+export const getVulnerabilityAuditApplicationDependencyVulnerabilities: typeof import("./getVulnerabilityAuditApplicationDependencyVulnerabilities").getVulnerabilityAuditApplicationDependencyVulnerabilities = null as any;
+export const getVulnerabilityAuditApplicationDependencyVulnerabilitiesOutput: typeof import("./getVulnerabilityAuditApplicationDependencyVulnerabilities").getVulnerabilityAuditApplicationDependencyVulnerabilitiesOutput = null as any;
+utilities.lazyLoad(exports, ["getVulnerabilityAuditApplicationDependencyVulnerabilities","getVulnerabilityAuditApplicationDependencyVulnerabilitiesOutput"], () => require("./getVulnerabilityAuditApplicationDependencyVulnerabilities"));
+
+export { GetVulnerabilityAuditApplicationDependencyVulnerabilityArgs, GetVulnerabilityAuditApplicationDependencyVulnerabilityResult, GetVulnerabilityAuditApplicationDependencyVulnerabilityOutputArgs } from "./getVulnerabilityAuditApplicationDependencyVulnerability";
+export const getVulnerabilityAuditApplicationDependencyVulnerability: typeof import("./getVulnerabilityAuditApplicationDependencyVulnerability").getVulnerabilityAuditApplicationDependencyVulnerability = null as any;
+export const getVulnerabilityAuditApplicationDependencyVulnerabilityOutput: typeof import("./getVulnerabilityAuditApplicationDependencyVulnerability").getVulnerabilityAuditApplicationDependencyVulnerabilityOutput = null as any;
+utilities.lazyLoad(exports, ["getVulnerabilityAuditApplicationDependencyVulnerability","getVulnerabilityAuditApplicationDependencyVulnerabilityOutput"], () => require("./getVulnerabilityAuditApplicationDependencyVulnerability"));
+
+export { GetVulnerabilityAuditsArgs, GetVulnerabilityAuditsResult, GetVulnerabilityAuditsOutputArgs } from "./getVulnerabilityAudits";
+export const getVulnerabilityAudits: typeof import("./getVulnerabilityAudits").getVulnerabilityAudits = null as any;
+export const getVulnerabilityAuditsOutput: typeof import("./getVulnerabilityAudits").getVulnerabilityAuditsOutput = null as any;
+utilities.lazyLoad(exports, ["getVulnerabilityAudits","getVulnerabilityAuditsOutput"], () => require("./getVulnerabilityAudits"));
+
+export { KnowledgeBaseArgs, KnowledgeBaseState } from "./knowledgeBase";
+export type KnowledgeBase = import("./knowledgeBase").KnowledgeBase;
+export const KnowledgeBase: typeof import("./knowledgeBase").KnowledgeBase = null as any;
+utilities.lazyLoad(exports, ["KnowledgeBase"], () => require("./knowledgeBase"));
+
+export { VulnerabilityAuditArgs, VulnerabilityAuditState } from "./vulnerabilityAudit";
+export type VulnerabilityAudit = import("./vulnerabilityAudit").VulnerabilityAudit;
+export const VulnerabilityAudit: typeof import("./vulnerabilityAudit").VulnerabilityAudit = null as any;
+utilities.lazyLoad(exports, ["VulnerabilityAudit"], () => require("./vulnerabilityAudit"));
+
 
 const _module = {
     version: utilities.getVersion(),

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -43,7 +44,6 @@ import * as utilities from "../utilities";
  *     keyStoreId: oci_database_key_store.test_key_store.id,
  *     kmsKeyId: oci_kms_key.test_key.id,
  *     maintenanceWindowDetails: {
- *         preference: _var.autonomous_container_database_maintenance_window_details_preference,
  *         customActionTimeoutInMins: _var.autonomous_container_database_maintenance_window_details_custom_action_timeout_in_mins,
  *         daysOfWeeks: [{
  *             name: _var.autonomous_container_database_maintenance_window_details_days_of_week_name,
@@ -56,6 +56,7 @@ import * as utilities from "../utilities";
  *             name: _var.autonomous_container_database_maintenance_window_details_months_name,
  *         }],
  *         patchingMode: _var.autonomous_container_database_maintenance_window_details_patching_mode,
+ *         preference: _var.autonomous_container_database_maintenance_window_details_preference,
  *         weeksOfMonths: _var.autonomous_container_database_maintenance_window_details_weeks_of_month,
  *     },
  *     peerAutonomousContainerDatabaseDisplayName: _var.autonomous_container_database_peer_autonomous_container_database_display_name,
@@ -129,7 +130,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      */
     public /*out*/ readonly availabilityDomain!: pulumi.Output<string>;
     /**
-     * Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+     * Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
      */
     public /*out*/ readonly availableCpus!: pulumi.Output<number>;
     /**
@@ -252,7 +253,7 @@ export class AutonomousContainerDatabase extends pulumi.CustomResource {
      */
     public /*out*/ readonly reclaimableCpus!: pulumi.Output<number>;
     /**
-     * The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      */
     public /*out*/ readonly role!: pulumi.Output<string>;
     /**
@@ -416,7 +417,7 @@ export interface AutonomousContainerDatabaseState {
      */
     availabilityDomain?: pulumi.Input<string>;
     /**
-     * Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+     * Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
      */
     availableCpus?: pulumi.Input<number>;
     /**
@@ -539,7 +540,7 @@ export interface AutonomousContainerDatabaseState {
      */
     reclaimableCpus?: pulumi.Input<number>;
     /**
-     * The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      */
     role?: pulumi.Input<string>;
     /**

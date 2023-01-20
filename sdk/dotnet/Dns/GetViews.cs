@@ -48,7 +48,7 @@ namespace Pulumi.Oci.Dns
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetViewsResult> InvokeAsync(GetViewsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetViewsResult>("oci:Dns/getViews:getViews", args ?? new GetViewsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetViewsResult>("oci:Dns/getViews:getViews", args ?? new GetViewsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Views in Oracle Cloud Infrastructure DNS service.
@@ -87,7 +87,7 @@ namespace Pulumi.Oci.Dns
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetViewsResult> Invoke(GetViewsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetViewsResult>("oci:Dns/getViews:getViews", args ?? new GetViewsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetViewsResult>("oci:Dns/getViews:getViews", args ?? new GetViewsInvokeArgs(), options.WithDefaults());
     }
 
 

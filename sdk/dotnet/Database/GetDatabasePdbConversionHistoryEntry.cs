@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDatabasePdbConversionHistoryEntryResult> InvokeAsync(GetDatabasePdbConversionHistoryEntryArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDatabasePdbConversionHistoryEntryResult>("oci:Database/getDatabasePdbConversionHistoryEntry:getDatabasePdbConversionHistoryEntry", args ?? new GetDatabasePdbConversionHistoryEntryArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDatabasePdbConversionHistoryEntryResult>("oci:Database/getDatabasePdbConversionHistoryEntry:getDatabasePdbConversionHistoryEntry", args ?? new GetDatabasePdbConversionHistoryEntryArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Database Pdb Conversion History Entry resource in Oracle Cloud Infrastructure Database service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDatabasePdbConversionHistoryEntryResult> Invoke(GetDatabasePdbConversionHistoryEntryInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDatabasePdbConversionHistoryEntryResult>("oci:Database/getDatabasePdbConversionHistoryEntry:getDatabasePdbConversionHistoryEntry", args ?? new GetDatabasePdbConversionHistoryEntryInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDatabasePdbConversionHistoryEntryResult>("oci:Database/getDatabasePdbConversionHistoryEntry:getDatabasePdbConversionHistoryEntry", args ?? new GetDatabasePdbConversionHistoryEntryInvokeArgs(), options.WithDefaults());
     }
 
 

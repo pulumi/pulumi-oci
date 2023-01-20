@@ -26,6 +26,10 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// Specific info about a Hadoop cluster
         /// </summary>
         public readonly ImmutableArray<Outputs.GetBdsInstancesBdsInstanceClusterDetailResult> ClusterDetails;
+        /// <summary>
+        /// Profile of the Big Data Service cluster.
+        /// </summary>
+        public readonly string ClusterProfile;
         public readonly string ClusterPublicKey;
         /// <summary>
         /// Version of the Hadoop distribution.
@@ -48,6 +52,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// A filter to return only resources that match the entire display name given.
         /// </summary>
         public readonly string DisplayName;
+        public readonly ImmutableArray<Outputs.GetBdsInstancesBdsInstanceEdgeNodeResult> EdgeNodes;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`
         /// </summary>
@@ -60,6 +65,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// Boolean flag specifying whether or not Cloud SQL should be configured.
         /// </summary>
         public readonly bool IsCloudSqlConfigured;
+        public readonly bool IsForceStopJobs;
         /// <summary>
         /// Boolean flag specifying whether or not the cluster is highly available (HA)
         /// </summary>
@@ -111,6 +117,8 @@ namespace Pulumi.Oci.BigDataService.Outputs
 
             ImmutableArray<Outputs.GetBdsInstancesBdsInstanceClusterDetailResult> clusterDetails,
 
+            string clusterProfile,
+
             string clusterPublicKey,
 
             string clusterVersion,
@@ -125,11 +133,15 @@ namespace Pulumi.Oci.BigDataService.Outputs
 
             string displayName,
 
+            ImmutableArray<Outputs.GetBdsInstancesBdsInstanceEdgeNodeResult> edgeNodes,
+
             ImmutableDictionary<string, object> freeformTags,
 
             string id,
 
             bool isCloudSqlConfigured,
+
+            bool isForceStopJobs,
 
             bool isHighAvailability,
 
@@ -161,6 +173,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
             CloudSqlDetails = cloudSqlDetails;
             ClusterAdminPassword = clusterAdminPassword;
             ClusterDetails = clusterDetails;
+            ClusterProfile = clusterProfile;
             ClusterPublicKey = clusterPublicKey;
             ClusterVersion = clusterVersion;
             CompartmentId = compartmentId;
@@ -168,9 +181,11 @@ namespace Pulumi.Oci.BigDataService.Outputs
             CreatedBy = createdBy;
             DefinedTags = definedTags;
             DisplayName = displayName;
+            EdgeNodes = edgeNodes;
             FreeformTags = freeformTags;
             Id = id;
             IsCloudSqlConfigured = isCloudSqlConfigured;
+            IsForceStopJobs = isForceStopJobs;
             IsHighAvailability = isHighAvailability;
             IsSecure = isSecure;
             KerberosRealmName = kerberosRealmName;

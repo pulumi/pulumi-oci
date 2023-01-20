@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Waas
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetProtectionRuleResult> InvokeAsync(GetProtectionRuleArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetProtectionRuleResult>("oci:Waas/getProtectionRule:getProtectionRule", args ?? new GetProtectionRuleArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetProtectionRuleResult>("oci:Waas/getProtectionRule:getProtectionRule", args ?? new GetProtectionRuleArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Protection Rule resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Waas
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetProtectionRuleResult> Invoke(GetProtectionRuleInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetProtectionRuleResult>("oci:Waas/getProtectionRule:getProtectionRule", args ?? new GetProtectionRuleInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetProtectionRuleResult>("oci:Waas/getProtectionRule:getProtectionRule", args ?? new GetProtectionRuleInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -40,7 +40,7 @@ namespace Pulumi.Oci.DataCatalog
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDataAssetResult> InvokeAsync(GetDataAssetArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDataAssetResult>("oci:DataCatalog/getDataAsset:getDataAsset", args ?? new GetDataAssetArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDataAssetResult>("oci:DataCatalog/getDataAsset:getDataAsset", args ?? new GetDataAssetArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Data Asset resource in Oracle Cloud Infrastructure Data Catalog service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.DataCatalog
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDataAssetResult> Invoke(GetDataAssetInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDataAssetResult>("oci:DataCatalog/getDataAsset:getDataAsset", args ?? new GetDataAssetInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDataAssetResult>("oci:DataCatalog/getDataAsset:getDataAsset", args ?? new GetDataAssetInvokeArgs(), options.WithDefaults());
     }
 
 

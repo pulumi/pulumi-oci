@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getPrivateEndpoints(args: GetPrivateEndpointsArgs, opts?: pulumi.InvokeOptions): Promise<GetPrivateEndpointsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataFlow/getPrivateEndpoints:getPrivateEndpoints", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -99,9 +97,28 @@ export interface GetPrivateEndpointsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Data Flow service.
+ *
+ * Lists all private endpoints in the specified compartment. The query must include compartmentId. The query may also include one other parameter. If the query does not include compartmentId, or includes compartmentId, but with two or more other parameters, an error is returned.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testPrivateEndpoints = oci.DataFlow.getPrivateEndpoints({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.private_endpoint_display_name,
+ *     displayNameStartsWith: _var.private_endpoint_display_name_starts_with,
+ *     ownerPrincipalId: _var.owner_principal_id,
+ *     state: _var.private_endpoint_state,
+ * });
+ * ```
+ */
 export function getPrivateEndpointsOutput(args: GetPrivateEndpointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPrivateEndpointsResult> {
-    return pulumi.output(args).apply(a => getPrivateEndpoints(a, opts))
+    return pulumi.output(args).apply((a: any) => getPrivateEndpoints(a, opts))
 }
 
 /**

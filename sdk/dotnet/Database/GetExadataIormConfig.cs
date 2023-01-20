@@ -47,7 +47,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetExadataIormConfigResult> InvokeAsync(GetExadataIormConfigArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetExadataIormConfigResult>("oci:Database/getExadataIormConfig:getExadataIormConfig", args ?? new GetExadataIormConfigArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetExadataIormConfigResult>("oci:Database/getExadataIormConfig:getExadataIormConfig", args ?? new GetExadataIormConfigArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Exadata Iorm Config resource in Oracle Cloud Infrastructure Database service.
@@ -85,7 +85,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetExadataIormConfigResult> Invoke(GetExadataIormConfigInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetExadataIormConfigResult>("oci:Database/getExadataIormConfig:getExadataIormConfig", args ?? new GetExadataIormConfigInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetExadataIormConfigResult>("oci:Database/getExadataIormConfig:getExadataIormConfig", args ?? new GetExadataIormConfigInvokeArgs(), options.WithDefaults());
     }
 
 

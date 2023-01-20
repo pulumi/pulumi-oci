@@ -40,7 +40,7 @@ namespace Pulumi.Oci.OneSubsription
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetSubscribedServiceResult> InvokeAsync(GetSubscribedServiceArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetSubscribedServiceResult>("oci:OneSubsription/getSubscribedService:getSubscribedService", args ?? new GetSubscribedServiceArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetSubscribedServiceResult>("oci:OneSubsription/getSubscribedService:getSubscribedService", args ?? new GetSubscribedServiceArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Subscribed Service resource in Oracle Cloud Infrastructure Onesubscription service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.OneSubsription
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetSubscribedServiceResult> Invoke(GetSubscribedServiceInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetSubscribedServiceResult>("oci:OneSubsription/getSubscribedService:getSubscribedService", args ?? new GetSubscribedServiceInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetSubscribedServiceResult>("oci:OneSubsription/getSubscribedService:getSubscribedService", args ?? new GetSubscribedServiceInvokeArgs(), options.WithDefaults());
     }
 
 

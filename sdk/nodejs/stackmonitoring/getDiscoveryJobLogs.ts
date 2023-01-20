@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDiscoveryJobLogs(args: GetDiscoveryJobLogsArgs, opts?: pulumi.InvokeOptions): Promise<GetDiscoveryJobLogsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:StackMonitoring/getDiscoveryJobLogs:getDiscoveryJobLogs", {
         "discoveryJobId": args.discoveryJobId,
         "filters": args.filters,
@@ -69,9 +67,25 @@ export interface GetDiscoveryJobLogsResult {
      */
     readonly logType?: string;
 }
-
+/**
+ * This data source provides the list of Discovery Job Logs in Oracle Cloud Infrastructure Stack Monitoring service.
+ *
+ * API to get all the logs of a Discovery Job.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDiscoveryJobLogs = oci.StackMonitoring.getDiscoveryJobLogs({
+ *     discoveryJobId: oci_stack_monitoring_discovery_job.test_discovery_job.id,
+ *     logType: _var.discovery_job_log_log_type,
+ * });
+ * ```
+ */
 export function getDiscoveryJobLogsOutput(args: GetDiscoveryJobLogsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDiscoveryJobLogsResult> {
-    return pulumi.output(args).apply(a => getDiscoveryJobLogs(a, opts))
+    return pulumi.output(args).apply((a: any) => getDiscoveryJobLogs(a, opts))
 }
 
 /**

@@ -41,7 +41,7 @@ namespace Pulumi.Oci.DataConnectivity
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetRegistryTypesResult> InvokeAsync(GetRegistryTypesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetRegistryTypesResult>("oci:DataConnectivity/getRegistryTypes:getRegistryTypes", args ?? new GetRegistryTypesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetRegistryTypesResult>("oci:DataConnectivity/getRegistryTypes:getRegistryTypes", args ?? new GetRegistryTypesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Registry Types in Oracle Cloud Infrastructure Data Connectivity service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.DataConnectivity
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetRegistryTypesResult> Invoke(GetRegistryTypesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetRegistryTypesResult>("oci:DataConnectivity/getRegistryTypes:getRegistryTypes", args ?? new GetRegistryTypesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetRegistryTypesResult>("oci:DataConnectivity/getRegistryTypes:getRegistryTypes", args ?? new GetRegistryTypesInvokeArgs(), options.WithDefaults());
     }
 
 

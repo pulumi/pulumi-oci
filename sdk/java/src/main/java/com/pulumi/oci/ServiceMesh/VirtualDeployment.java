@@ -33,9 +33,9 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.ServiceMesh.VirtualDeployment;
  * import com.pulumi.oci.ServiceMesh.VirtualDeploymentArgs;
+ * import com.pulumi.oci.ServiceMesh.inputs.VirtualDeploymentAccessLoggingArgs;
  * import com.pulumi.oci.ServiceMesh.inputs.VirtualDeploymentListenerArgs;
  * import com.pulumi.oci.ServiceMesh.inputs.VirtualDeploymentServiceDiscoveryArgs;
- * import com.pulumi.oci.ServiceMesh.inputs.VirtualDeploymentAccessLoggingArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -51,14 +51,6 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testVirtualDeployment = new VirtualDeployment(&#34;testVirtualDeployment&#34;, VirtualDeploymentArgs.builder()        
  *             .compartmentId(var_.compartment_id())
- *             .listeners(VirtualDeploymentListenerArgs.builder()
- *                 .port(var_.virtual_deployment_listeners_port())
- *                 .protocol(var_.virtual_deployment_listeners_protocol())
- *                 .build())
- *             .serviceDiscovery(VirtualDeploymentServiceDiscoveryArgs.builder()
- *                 .hostname(var_.virtual_deployment_service_discovery_hostname())
- *                 .type(var_.virtual_deployment_service_discovery_type())
- *                 .build())
  *             .virtualServiceId(oci_service_mesh_virtual_service.test_virtual_service().id())
  *             .accessLogging(VirtualDeploymentAccessLoggingArgs.builder()
  *                 .isEnabled(var_.virtual_deployment_access_logging_is_enabled())
@@ -66,6 +58,16 @@ import javax.annotation.Nullable;
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
  *             .description(var_.virtual_deployment_description())
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .listeners(VirtualDeploymentListenerArgs.builder()
+ *                 .port(var_.virtual_deployment_listeners_port())
+ *                 .protocol(var_.virtual_deployment_listeners_protocol())
+ *                 .idleTimeoutInMs(var_.virtual_deployment_listeners_idle_timeout_in_ms())
+ *                 .requestTimeoutInMs(var_.virtual_deployment_listeners_request_timeout_in_ms())
+ *                 .build())
+ *             .serviceDiscovery(VirtualDeploymentServiceDiscoveryArgs.builder()
+ *                 .type(var_.virtual_deployment_service_discovery_type())
+ *                 .hostname(var_.virtual_deployment_service_discovery_hostname())
+ *                 .build())
  *             .build());
  * 
  *     }

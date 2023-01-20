@@ -5,14 +5,26 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./getPathAnalyzerTest";
-export * from "./getPathAnalyzerTests";
-export * from "./pathAnalysi";
-export * from "./pathAnalyzerTest";
+export { GetPathAnalyzerTestArgs, GetPathAnalyzerTestResult, GetPathAnalyzerTestOutputArgs } from "./getPathAnalyzerTest";
+export const getPathAnalyzerTest: typeof import("./getPathAnalyzerTest").getPathAnalyzerTest = null as any;
+export const getPathAnalyzerTestOutput: typeof import("./getPathAnalyzerTest").getPathAnalyzerTestOutput = null as any;
+utilities.lazyLoad(exports, ["getPathAnalyzerTest","getPathAnalyzerTestOutput"], () => require("./getPathAnalyzerTest"));
 
-// Import resources to register:
-import { PathAnalysi } from "./pathAnalysi";
-import { PathAnalyzerTest } from "./pathAnalyzerTest";
+export { GetPathAnalyzerTestsArgs, GetPathAnalyzerTestsResult, GetPathAnalyzerTestsOutputArgs } from "./getPathAnalyzerTests";
+export const getPathAnalyzerTests: typeof import("./getPathAnalyzerTests").getPathAnalyzerTests = null as any;
+export const getPathAnalyzerTestsOutput: typeof import("./getPathAnalyzerTests").getPathAnalyzerTestsOutput = null as any;
+utilities.lazyLoad(exports, ["getPathAnalyzerTests","getPathAnalyzerTestsOutput"], () => require("./getPathAnalyzerTests"));
+
+export { PathAnalysiArgs, PathAnalysiState } from "./pathAnalysi";
+export type PathAnalysi = import("./pathAnalysi").PathAnalysi;
+export const PathAnalysi: typeof import("./pathAnalysi").PathAnalysi = null as any;
+utilities.lazyLoad(exports, ["PathAnalysi"], () => require("./pathAnalysi"));
+
+export { PathAnalyzerTestArgs, PathAnalyzerTestState } from "./pathAnalyzerTest";
+export type PathAnalyzerTest = import("./pathAnalyzerTest").PathAnalyzerTest;
+export const PathAnalyzerTest: typeof import("./pathAnalyzerTest").PathAnalyzerTest = null as any;
+utilities.lazyLoad(exports, ["PathAnalyzerTest"], () => require("./pathAnalyzerTest"));
+
 
 const _module = {
     version: utilities.getVersion(),

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getPublications(args: GetPublicationsArgs, opts?: pulumi.InvokeOptions): Promise<GetPublicationsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Marketplace/getPublications:getPublications", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -96,9 +94,28 @@ export interface GetPublicationsResult {
      */
     readonly publications: outputs.Marketplace.GetPublicationsPublication[];
 }
-
+/**
+ * This data source provides the list of Publications in Oracle Cloud Infrastructure Marketplace service.
+ *
+ * Lists the publications in the specified compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testPublications = oci.Marketplace.getPublications({
+ *     compartmentId: _var.compartment_id,
+ *     listingType: _var.publication_listing_type,
+ *     names: _var.publication_name,
+ *     operatingSystems: _var.publication_operating_systems,
+ *     publicationId: oci_marketplace_publication.test_publication.id,
+ * });
+ * ```
+ */
 export function getPublicationsOutput(args: GetPublicationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPublicationsResult> {
-    return pulumi.output(args).apply(a => getPublications(a, opts))
+    return pulumi.output(args).apply((a: any) => getPublications(a, opts))
 }
 
 /**

@@ -163,6 +163,10 @@ namespace Pulumi.Oci.Opsi
             var defaultOptions = new CustomResourceOptions
             {
                 Version = Utilities.Version,
+                AdditionalSecretOutputs =
+                {
+                    "connectionPassword",
+                },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -192,11 +196,21 @@ namespace Pulumi.Oci.Opsi
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
 
+        [Input("connectionPassword", required: true)]
+        private Input<string>? _connectionPassword;
+
         /// <summary>
         /// (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
         /// </summary>
-        [Input("connectionPassword", required: true)]
-        public Input<string> ConnectionPassword { get; set; } = null!;
+        public Input<string>? ConnectionPassword
+        {
+            get => _connectionPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _connectionPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
@@ -266,11 +280,21 @@ namespace Pulumi.Oci.Opsi
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
 
+        [Input("connectionPassword")]
+        private Input<string>? _connectionPassword;
+
         /// <summary>
         /// (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
         /// </summary>
-        [Input("connectionPassword")]
-        public Input<string>? ConnectionPassword { get; set; }
+        public Input<string>? ConnectionPassword
+        {
+            get => _connectionPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _connectionPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         [Input("definedTags")]
         private InputMap<object>? _definedTags;

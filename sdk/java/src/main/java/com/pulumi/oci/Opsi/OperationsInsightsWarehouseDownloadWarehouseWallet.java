@@ -11,6 +11,7 @@ import com.pulumi.oci.Opsi.OperationsInsightsWarehouseDownloadWarehouseWalletArg
 import com.pulumi.oci.Opsi.inputs.OperationsInsightsWarehouseDownloadWarehouseWalletState;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
+import java.util.List;
 import javax.annotation.Nullable;
 
 /**
@@ -121,6 +122,9 @@ public class OperationsInsightsWarehouseDownloadWarehouseWallet extends com.pulu
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
+            .additionalSecretOutputs(List.of(
+                "operationsInsightsWarehouseWalletPassword"
+            ))
             .build();
         return com.pulumi.resources.CustomResourceOptions.merge(defaultOptions, options, id);
     }

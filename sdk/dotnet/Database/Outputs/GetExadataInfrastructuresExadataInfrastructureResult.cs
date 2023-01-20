@@ -19,6 +19,14 @@ namespace Pulumi.Oci.Database.Outputs
         public readonly int ActivatedStorageCount;
         public readonly string ActivationFile;
         /// <summary>
+        /// The requested number of additional compute servers for the Exadata infrastructure.
+        /// </summary>
+        public readonly int AdditionalComputeCount;
+        /// <summary>
+        /// Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+        /// </summary>
+        public readonly string AdditionalComputeSystemModel;
+        /// <summary>
         /// The requested number of additional storage servers for the Exadata infrastructure.
         /// </summary>
         public readonly int AdditionalStorageCount;
@@ -104,6 +112,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly bool IsCpsOfflineReportEnabled;
         /// <summary>
+        /// Indicates if deployment is Multi-Rack or not.
+        /// </summary>
+        public readonly bool IsMultiRackDeployment;
+        /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
         public readonly string LifecycleDetails;
@@ -139,6 +151,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// The monthly software version of the database servers (dom0) in the Exadata infrastructure.
         /// </summary>
         public readonly string MonthlyDbServerVersion;
+        /// <summary>
+        /// The base64 encoded Multi-Rack configuration json file.
+        /// </summary>
+        public readonly string MultiRackConfigurationFile;
         /// <summary>
         /// The netmask for the control plane network.
         /// </summary>
@@ -177,6 +193,10 @@ namespace Pulumi.Oci.Database.Outputs
             int activatedStorageCount,
 
             string activationFile,
+
+            int additionalComputeCount,
+
+            string additionalComputeSystemModel,
 
             int additionalStorageCount,
 
@@ -222,6 +242,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             bool isCpsOfflineReportEnabled,
 
+            bool isMultiRackDeployment,
+
             string lifecycleDetails,
 
             string maintenanceSloStatus,
@@ -239,6 +261,8 @@ namespace Pulumi.Oci.Database.Outputs
             int memorySizeInGbs,
 
             string monthlyDbServerVersion,
+
+            string multiRackConfigurationFile,
 
             string netmask,
 
@@ -258,6 +282,8 @@ namespace Pulumi.Oci.Database.Outputs
         {
             ActivatedStorageCount = activatedStorageCount;
             ActivationFile = activationFile;
+            AdditionalComputeCount = additionalComputeCount;
+            AdditionalComputeSystemModel = additionalComputeSystemModel;
             AdditionalStorageCount = additionalStorageCount;
             AdminNetworkCidr = adminNetworkCidr;
             CloudControlPlaneServer1 = cloudControlPlaneServer1;
@@ -280,6 +306,7 @@ namespace Pulumi.Oci.Database.Outputs
             Id = id;
             InfiniBandNetworkCidr = infiniBandNetworkCidr;
             IsCpsOfflineReportEnabled = isCpsOfflineReportEnabled;
+            IsMultiRackDeployment = isMultiRackDeployment;
             LifecycleDetails = lifecycleDetails;
             MaintenanceSloStatus = maintenanceSloStatus;
             MaintenanceWindows = maintenanceWindows;
@@ -289,6 +316,7 @@ namespace Pulumi.Oci.Database.Outputs
             MaxMemoryInGbs = maxMemoryInGbs;
             MemorySizeInGbs = memorySizeInGbs;
             MonthlyDbServerVersion = monthlyDbServerVersion;
+            MultiRackConfigurationFile = multiRackConfigurationFile;
             Netmask = netmask;
             NtpServers = ntpServers;
             Shape = shape;

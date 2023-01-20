@@ -61,6 +61,15 @@ namespace Pulumi.Oci.FusionApps
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
+        [Output("refreshActivityId")]
+        public Output<string> RefreshActivityId { get; private set; } = null!;
+
+        /// <summary>
+        /// Details of refresh investigation information, each item represents a different issue.
+        /// </summary>
+        [Output("refreshIssueDetailsLists")]
+        public Output<ImmutableArray<Outputs.FusionEnvironmentRefreshActivityRefreshIssueDetailsList>> RefreshIssueDetailsLists { get; private set; } = null!;
+
         /// <summary>
         /// Service availability / impact during refresh activity execution up down
         /// </summary>
@@ -102,12 +111,6 @@ namespace Pulumi.Oci.FusionApps
         /// </summary>
         [Output("timeOfRestorationPoint")]
         public Output<string> TimeOfRestorationPoint { get; private set; } = null!;
-
-        /// <summary>
-        /// The time the refresh activity is scheduled to start. An RFC3339 formatted datetime string.
-        /// </summary>
-        [Output("timeScheduledStart")]
-        public Output<string> TimeScheduledStart { get; private set; } = null!;
 
         /// <summary>
         /// The time the refresh activity record was updated. An RFC3339 formatted datetime string.
@@ -199,6 +202,21 @@ namespace Pulumi.Oci.FusionApps
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
 
+        [Input("refreshActivityId")]
+        public Input<string>? RefreshActivityId { get; set; }
+
+        [Input("refreshIssueDetailsLists")]
+        private InputList<Inputs.FusionEnvironmentRefreshActivityRefreshIssueDetailsListGetArgs>? _refreshIssueDetailsLists;
+
+        /// <summary>
+        /// Details of refresh investigation information, each item represents a different issue.
+        /// </summary>
+        public InputList<Inputs.FusionEnvironmentRefreshActivityRefreshIssueDetailsListGetArgs> RefreshIssueDetailsLists
+        {
+            get => _refreshIssueDetailsLists ?? (_refreshIssueDetailsLists = new InputList<Inputs.FusionEnvironmentRefreshActivityRefreshIssueDetailsListGetArgs>());
+            set => _refreshIssueDetailsLists = value;
+        }
+
         /// <summary>
         /// Service availability / impact during refresh activity execution up down
         /// </summary>
@@ -240,12 +258,6 @@ namespace Pulumi.Oci.FusionApps
         /// </summary>
         [Input("timeOfRestorationPoint")]
         public Input<string>? TimeOfRestorationPoint { get; set; }
-
-        /// <summary>
-        /// The time the refresh activity is scheduled to start. An RFC3339 formatted datetime string.
-        /// </summary>
-        [Input("timeScheduledStart")]
-        public Input<string>? TimeScheduledStart { get; set; }
 
         /// <summary>
         /// The time the refresh activity record was updated. An RFC3339 formatted datetime string.

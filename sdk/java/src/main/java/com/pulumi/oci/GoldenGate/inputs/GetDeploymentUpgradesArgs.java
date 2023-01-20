@@ -18,14 +18,14 @@ public final class GetDeploymentUpgradesArgs extends com.pulumi.resources.Invoke
     public static final GetDeploymentUpgradesArgs Empty = new GetDeploymentUpgradesArgs();
 
     /**
-     * The ID of the compartment in which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      * 
      */
     public Output<String> compartmentId() {
@@ -33,14 +33,14 @@ public final class GetDeploymentUpgradesArgs extends com.pulumi.resources.Invoke
     }
 
     /**
-     * The ID of the deployment in which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
      * 
      */
     @Import(name="deploymentId")
     private @Nullable Output<String> deploymentId;
 
     /**
-     * @return The ID of the deployment in which to list resources.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
      * 
      */
     public Optional<Output<String>> deploymentId() {
@@ -113,7 +113,7 @@ public final class GetDeploymentUpgradesArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param compartmentId The ID of the compartment in which to list resources.
+         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
          * 
          * @return builder
          * 
@@ -124,7 +124,7 @@ public final class GetDeploymentUpgradesArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param compartmentId The ID of the compartment in which to list resources.
+         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
          * 
          * @return builder
          * 
@@ -134,7 +134,7 @@ public final class GetDeploymentUpgradesArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param deploymentId The ID of the deployment in which to list resources.
+         * @param deploymentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
          * 
          * @return builder
          * 
@@ -145,7 +145,7 @@ public final class GetDeploymentUpgradesArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param deploymentId The ID of the deployment in which to list resources.
+         * @param deploymentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
          * 
          * @return builder
          * 

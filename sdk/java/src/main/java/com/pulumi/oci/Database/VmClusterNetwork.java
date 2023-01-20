@@ -62,16 +62,18 @@ import javax.annotation.Nullable;
  *                 .scanListenerPortTcpSsl(var_.vm_cluster_network_scans_scan_listener_port_tcp_ssl())
  *                 .build())
  *             .vmNetworks(VmClusterNetworkVmNetworkArgs.builder()
- *                 .domainName(var_.vm_cluster_network_vm_networks_domain_name())
- *                 .gateway(var_.vm_cluster_network_vm_networks_gateway())
- *                 .netmask(var_.vm_cluster_network_vm_networks_netmask())
  *                 .networkType(var_.vm_cluster_network_vm_networks_network_type())
  *                 .nodes(VmClusterNetworkVmNetworkNodeArgs.builder()
  *                     .hostname(var_.vm_cluster_network_vm_networks_nodes_hostname())
  *                     .ip(var_.vm_cluster_network_vm_networks_nodes_ip())
+ *                     .dbServerId(oci_database_db_server.test_db_server().id())
+ *                     .state(var_.vm_cluster_network_vm_networks_nodes_state())
  *                     .vip(var_.vm_cluster_network_vm_networks_nodes_vip())
  *                     .vipHostname(var_.vm_cluster_network_vm_networks_nodes_vip_hostname())
  *                     .build())
+ *                 .domainName(oci_identity_domain.test_domain().name())
+ *                 .gateway(var_.vm_cluster_network_vm_networks_gateway())
+ *                 .netmask(var_.vm_cluster_network_vm_networks_netmask())
  *                 .vlanId(var_.vm_cluster_network_vm_networks_vlan_id())
  *                 .build())
  *             .definedTags(var_.vm_cluster_network_defined_tags())
@@ -96,6 +98,12 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:Database/vmClusterNetwork:VmClusterNetwork")
 public class VmClusterNetwork extends com.pulumi.resources.CustomResource {
+    @Export(name="action", type=String.class, parameters={})
+    private Output</* @Nullable */ String> action;
+
+    public Output<Optional<String>> action() {
+        return Codegen.optional(this.action);
+    }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -223,14 +231,14 @@ public class VmClusterNetwork extends com.pulumi.resources.CustomResource {
         return this.scans;
     }
     /**
-     * The current state of the VM cluster network.
+     * (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
      * 
      */
     @Export(name="state", type=String.class, parameters={})
     private Output<String> state;
 
     /**
-     * @return The current state of the VM cluster network.
+     * @return (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
      * 
      */
     public Output<String> state() {

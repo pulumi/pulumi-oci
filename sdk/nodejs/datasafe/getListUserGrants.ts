@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -33,11 +34,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getListUserGrants(args: GetListUserGrantsArgs, opts?: pulumi.InvokeOptions): Promise<GetListUserGrantsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getListUserGrants:getListUserGrants", {
         "depthLevel": args.depthLevel,
         "depthLevelGreaterThanOrEqualTo": args.depthLevelGreaterThanOrEqualTo,
@@ -130,9 +128,35 @@ export interface GetListUserGrantsResult {
     readonly userAssessmentId: string;
     readonly userKey: string;
 }
-
+/**
+ * This data source provides the list of List User Grants in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Gets a list of grants for a particular user in the specified user assessment. A user grant contains details such as the
+ * privilege name, type, category, and depth level. The depth level indicates how deep in the hierarchy of roles granted to
+ * roles a privilege grant is. The userKey in this operation is a system-generated identifier. Perform the operation ListUsers
+ * to get the userKey for a particular user.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testListUserGrants = oci.DataSafe.getListUserGrants({
+ *     userAssessmentId: oci_data_safe_user_assessment.test_user_assessment.id,
+ *     userKey: _var.list_user_grant_user_key,
+ *     depthLevel: _var.list_user_grant_depth_level,
+ *     depthLevelGreaterThanOrEqualTo: _var.list_user_grant_depth_level_greater_than_or_equal_to,
+ *     depthLevelLessThan: _var.list_user_grant_depth_level_less_than,
+ *     grantKey: _var.list_user_grant_grant_key,
+ *     grantName: _var.list_user_grant_grant_name,
+ *     privilegeCategory: _var.list_user_grant_privilege_category,
+ *     privilegeType: _var.list_user_grant_privilege_type,
+ * });
+ * ```
+ */
 export function getListUserGrantsOutput(args: GetListUserGrantsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetListUserGrantsResult> {
-    return pulumi.output(args).apply(a => getListUserGrants(a, opts))
+    return pulumi.output(args).apply((a: any) => getListUserGrants(a, opts))
 }
 
 /**

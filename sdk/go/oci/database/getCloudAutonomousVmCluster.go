@@ -73,14 +73,17 @@ type LookupCloudAutonomousVmClusterResult struct {
 	ClusterTimeZone string `pulumi:"clusterTimeZone"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
-	// The number of CPU cores enabled on the cloud Autonomous VM cluster.
+	// The number of CPU cores on the cloud Autonomous VM cluster.
 	CpuCoreCount int `pulumi:"cpuCoreCount"`
+	// The number of OCPU cores enabled per VM cluster node.
+	CpuCoreCountPerNode int `pulumi:"cpuCoreCountPerNode"`
 	// The total data storage allocated, in gigabytes (GB).
 	DataStorageSizeInGb float64 `pulumi:"dataStorageSizeInGb"`
 	// The total data storage allocated, in terabytes (TB).
 	DataStorageSizeInTbs float64 `pulumi:"dataStorageSizeInTbs"`
 	// The local node storage allocated in GBs.
-	DbNodeStorageSizeInGbs int `pulumi:"dbNodeStorageSizeInGbs"`
+	DbNodeStorageSizeInGbs int      `pulumi:"dbNodeStorageSizeInGbs"`
+	DbServers              []string `pulumi:"dbServers"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// User defined description of the cloud Autonomous VM cluster.
@@ -102,7 +105,10 @@ type LookupCloudAutonomousVmClusterResult struct {
 	// The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
 	LicenseModel string `pulumi:"licenseModel"`
 	// Additional information about the current lifecycle state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails         string                                               `pulumi:"lifecycleDetails"`
+	MaintenanceWindowDetails []GetCloudAutonomousVmClusterMaintenanceWindowDetail `pulumi:"maintenanceWindowDetails"`
+	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+	MaintenanceWindows []GetCloudAutonomousVmClusterMaintenanceWindow `pulumi:"maintenanceWindows"`
 	// The amount of memory (in GBs) enabled per each OCPU core.
 	MemoryPerOracleComputeUnitInGbs int `pulumi:"memoryPerOracleComputeUnitInGbs"`
 	// The memory allocated in GBs.
@@ -114,12 +120,10 @@ type LookupCloudAutonomousVmClusterResult struct {
 	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
 	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
 	NsgIds []string `pulumi:"nsgIds"`
-	// The number of CPU cores enabled on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
+	// The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
 	OcpuCount float64 `pulumi:"ocpuCount"`
 	// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
-	ReclaimableCpus        float64 `pulumi:"reclaimableCpus"`
-	RotateOrdsCertsTrigger bool    `pulumi:"rotateOrdsCertsTrigger"`
-	RotateSslCertsTrigger  bool    `pulumi:"rotateSslCertsTrigger"`
+	ReclaimableCpus float64 `pulumi:"reclaimableCpus"`
 	// The model name of the Exadata hardware running the cloud Autonomous VM cluster.
 	Shape string `pulumi:"shape"`
 	// The current state of the cloud Autonomous VM cluster.
@@ -216,9 +220,14 @@ func (o LookupCloudAutonomousVmClusterResultOutput) CompartmentId() pulumi.Strin
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The number of CPU cores enabled on the cloud Autonomous VM cluster.
+// The number of CPU cores on the cloud Autonomous VM cluster.
 func (o LookupCloudAutonomousVmClusterResultOutput) CpuCoreCount() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) int { return v.CpuCoreCount }).(pulumi.IntOutput)
+}
+
+// The number of OCPU cores enabled per VM cluster node.
+func (o LookupCloudAutonomousVmClusterResultOutput) CpuCoreCountPerNode() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) int { return v.CpuCoreCountPerNode }).(pulumi.IntOutput)
 }
 
 // The total data storage allocated, in gigabytes (GB).
@@ -234,6 +243,10 @@ func (o LookupCloudAutonomousVmClusterResultOutput) DataStorageSizeInTbs() pulum
 // The local node storage allocated in GBs.
 func (o LookupCloudAutonomousVmClusterResultOutput) DbNodeStorageSizeInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) int { return v.DbNodeStorageSizeInGbs }).(pulumi.IntOutput)
+}
+
+func (o LookupCloudAutonomousVmClusterResultOutput) DbServers() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) []string { return v.DbServers }).(pulumi.StringArrayOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -291,6 +304,19 @@ func (o LookupCloudAutonomousVmClusterResultOutput) LifecycleDetails() pulumi.St
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+func (o LookupCloudAutonomousVmClusterResultOutput) MaintenanceWindowDetails() GetCloudAutonomousVmClusterMaintenanceWindowDetailArrayOutput {
+	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) []GetCloudAutonomousVmClusterMaintenanceWindowDetail {
+		return v.MaintenanceWindowDetails
+	}).(GetCloudAutonomousVmClusterMaintenanceWindowDetailArrayOutput)
+}
+
+// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+func (o LookupCloudAutonomousVmClusterResultOutput) MaintenanceWindows() GetCloudAutonomousVmClusterMaintenanceWindowArrayOutput {
+	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) []GetCloudAutonomousVmClusterMaintenanceWindow {
+		return v.MaintenanceWindows
+	}).(GetCloudAutonomousVmClusterMaintenanceWindowArrayOutput)
+}
+
 // The amount of memory (in GBs) enabled per each OCPU core.
 func (o LookupCloudAutonomousVmClusterResultOutput) MemoryPerOracleComputeUnitInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) int { return v.MemoryPerOracleComputeUnitInGbs }).(pulumi.IntOutput)
@@ -317,7 +343,7 @@ func (o LookupCloudAutonomousVmClusterResultOutput) NsgIds() pulumi.StringArrayO
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
 
-// The number of CPU cores enabled on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
+// The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
 func (o LookupCloudAutonomousVmClusterResultOutput) OcpuCount() pulumi.Float64Output {
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) float64 { return v.OcpuCount }).(pulumi.Float64Output)
 }
@@ -325,14 +351,6 @@ func (o LookupCloudAutonomousVmClusterResultOutput) OcpuCount() pulumi.Float64Ou
 // CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
 func (o LookupCloudAutonomousVmClusterResultOutput) ReclaimableCpus() pulumi.Float64Output {
 	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) float64 { return v.ReclaimableCpus }).(pulumi.Float64Output)
-}
-
-func (o LookupCloudAutonomousVmClusterResultOutput) RotateOrdsCertsTrigger() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) bool { return v.RotateOrdsCertsTrigger }).(pulumi.BoolOutput)
-}
-
-func (o LookupCloudAutonomousVmClusterResultOutput) RotateSslCertsTrigger() pulumi.BoolOutput {
-	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) bool { return v.RotateSslCertsTrigger }).(pulumi.BoolOutput)
 }
 
 // The model name of the Exadata hardware running the cloud Autonomous VM cluster.

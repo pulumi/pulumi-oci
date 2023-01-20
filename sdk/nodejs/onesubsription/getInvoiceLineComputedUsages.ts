@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getInvoiceLineComputedUsages(args: GetInvoiceLineComputedUsagesArgs, opts?: pulumi.InvokeOptions): Promise<GetInvoiceLineComputedUsagesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OneSubsription/getInvoiceLineComputedUsages:getInvoiceLineComputedUsages", {
         "compartmentId": args.compartmentId,
         "fields": args.fields,
@@ -73,9 +71,26 @@ export interface GetInvoiceLineComputedUsagesResult {
      */
     readonly invoicelineComputedUsages: outputs.OneSubsription.GetInvoiceLineComputedUsagesInvoicelineComputedUsage[];
 }
-
+/**
+ * This data source provides the list of Invoice Line Computed Usages in Oracle Cloud Infrastructure Onesubscription service.
+ *
+ * This is a collection API which returns a list of Invoiced Computed Usages for given Invoiceline id.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testInvoiceLineComputedUsages = oci.OneSubsription.getInvoiceLineComputedUsages({
+ *     compartmentId: _var.compartment_id,
+ *     invoiceLineId: oci_onesubscription_invoice_line.test_invoice_line.id,
+ *     fields: _var.invoice_line_computed_usage_fields,
+ * });
+ * ```
+ */
 export function getInvoiceLineComputedUsagesOutput(args: GetInvoiceLineComputedUsagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInvoiceLineComputedUsagesResult> {
-    return pulumi.output(args).apply(a => getInvoiceLineComputedUsages(a, opts))
+    return pulumi.output(args).apply((a: any) => getInvoiceLineComputedUsages(a, opts))
 }
 
 /**

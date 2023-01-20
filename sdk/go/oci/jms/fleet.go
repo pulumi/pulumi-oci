@@ -80,6 +80,8 @@ type Fleet struct {
 	ApproximateApplicationCount pulumi.IntOutput `pulumi:"approximateApplicationCount"`
 	// The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
 	ApproximateInstallationCount pulumi.IntOutput `pulumi:"approximateInstallationCount"`
+	// The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+	ApproximateJavaServerCount pulumi.IntOutput `pulumi:"approximateJavaServerCount"`
 	// The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
 	ApproximateJreCount pulumi.IntOutput `pulumi:"approximateJreCount"`
 	// The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
@@ -96,7 +98,7 @@ type Fleet struct {
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) Custom Log for inventory or operation log.
 	InventoryLog FleetInventoryLogOutput `pulumi:"inventoryLog"`
-	// (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+	// (Updatable) Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
 	IsAdvancedFeaturesEnabled pulumi.BoolOutput `pulumi:"isAdvancedFeaturesEnabled"`
 	// (Updatable) Custom Log for inventory or operation log.
 	OperationLog FleetOperationLogOutput `pulumi:"operationLog"`
@@ -150,6 +152,8 @@ type fleetState struct {
 	ApproximateApplicationCount *int `pulumi:"approximateApplicationCount"`
 	// The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
 	ApproximateInstallationCount *int `pulumi:"approximateInstallationCount"`
+	// The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+	ApproximateJavaServerCount *int `pulumi:"approximateJavaServerCount"`
 	// The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
 	ApproximateJreCount *int `pulumi:"approximateJreCount"`
 	// The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
@@ -166,7 +170,7 @@ type fleetState struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) Custom Log for inventory or operation log.
 	InventoryLog *FleetInventoryLog `pulumi:"inventoryLog"`
-	// (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+	// (Updatable) Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
 	IsAdvancedFeaturesEnabled *bool `pulumi:"isAdvancedFeaturesEnabled"`
 	// (Updatable) Custom Log for inventory or operation log.
 	OperationLog *FleetOperationLog `pulumi:"operationLog"`
@@ -183,6 +187,8 @@ type FleetState struct {
 	ApproximateApplicationCount pulumi.IntPtrInput
 	// The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
 	ApproximateInstallationCount pulumi.IntPtrInput
+	// The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+	ApproximateJavaServerCount pulumi.IntPtrInput
 	// The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
 	ApproximateJreCount pulumi.IntPtrInput
 	// The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
@@ -199,7 +205,7 @@ type FleetState struct {
 	FreeformTags pulumi.MapInput
 	// (Updatable) Custom Log for inventory or operation log.
 	InventoryLog FleetInventoryLogPtrInput
-	// (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+	// (Updatable) Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
 	IsAdvancedFeaturesEnabled pulumi.BoolPtrInput
 	// (Updatable) Custom Log for inventory or operation log.
 	OperationLog FleetOperationLogPtrInput
@@ -228,7 +234,7 @@ type fleetArgs struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) Custom Log for inventory or operation log.
 	InventoryLog FleetInventoryLog `pulumi:"inventoryLog"`
-	// (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+	// (Updatable) Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
 	IsAdvancedFeaturesEnabled *bool `pulumi:"isAdvancedFeaturesEnabled"`
 	// (Updatable) Custom Log for inventory or operation log.
 	OperationLog *FleetOperationLog `pulumi:"operationLog"`
@@ -248,7 +254,7 @@ type FleetArgs struct {
 	FreeformTags pulumi.MapInput
 	// (Updatable) Custom Log for inventory or operation log.
 	InventoryLog FleetInventoryLogInput
-	// (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+	// (Updatable) Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
 	IsAdvancedFeaturesEnabled pulumi.BoolPtrInput
 	// (Updatable) Custom Log for inventory or operation log.
 	OperationLog FleetOperationLogPtrInput
@@ -351,6 +357,11 @@ func (o FleetOutput) ApproximateInstallationCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *Fleet) pulumi.IntOutput { return v.ApproximateInstallationCount }).(pulumi.IntOutput)
 }
 
+// The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+func (o FleetOutput) ApproximateJavaServerCount() pulumi.IntOutput {
+	return o.ApplyT(func(v *Fleet) pulumi.IntOutput { return v.ApproximateJavaServerCount }).(pulumi.IntOutput)
+}
+
 // The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
 func (o FleetOutput) ApproximateJreCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *Fleet) pulumi.IntOutput { return v.ApproximateJreCount }).(pulumi.IntOutput)
@@ -391,7 +402,7 @@ func (o FleetOutput) InventoryLog() FleetInventoryLogOutput {
 	return o.ApplyT(func(v *Fleet) FleetInventoryLogOutput { return v.InventoryLog }).(FleetInventoryLogOutput)
 }
 
-// (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+// (Updatable) Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
 func (o FleetOutput) IsAdvancedFeaturesEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Fleet) pulumi.BoolOutput { return v.IsAdvancedFeaturesEnabled }).(pulumi.BoolOutput)
 }

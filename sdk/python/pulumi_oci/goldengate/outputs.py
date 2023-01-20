@@ -11,22 +11,283 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'ConnectionAdditionalAttribute',
+    'ConnectionBootstrapServer',
+    'ConnectionIngressIp',
+    'DeploymentDeploymentDiagnosticData',
     'DeploymentOggData',
+    'GetConnectionAdditionalAttributeResult',
+    'GetConnectionAssignmentsConnectionAssignmentCollectionResult',
+    'GetConnectionAssignmentsConnectionAssignmentCollectionItemResult',
+    'GetConnectionAssignmentsFilterResult',
+    'GetConnectionBootstrapServerResult',
+    'GetConnectionIngressIpResult',
+    'GetConnectionsConnectionCollectionResult',
+    'GetConnectionsConnectionCollectionItemResult',
+    'GetConnectionsConnectionCollectionItemAdditionalAttributeResult',
+    'GetConnectionsConnectionCollectionItemBootstrapServerResult',
+    'GetConnectionsConnectionCollectionItemIngressIpResult',
+    'GetConnectionsFilterResult',
     'GetDatabaseRegistrationsDatabaseRegistrationCollectionResult',
     'GetDatabaseRegistrationsDatabaseRegistrationCollectionItemResult',
     'GetDatabaseRegistrationsFilterResult',
     'GetDeploymentBackupsDeploymentBackupCollectionResult',
     'GetDeploymentBackupsDeploymentBackupCollectionItemResult',
     'GetDeploymentBackupsFilterResult',
+    'GetDeploymentDeploymentDiagnosticDataResult',
     'GetDeploymentOggDataResult',
+    'GetDeploymentTypeItemResult',
+    'GetDeploymentTypesDeploymentTypeCollectionResult',
+    'GetDeploymentTypesDeploymentTypeCollectionItemResult',
+    'GetDeploymentTypesFilterResult',
     'GetDeploymentUpgradesDeploymentUpgradeCollectionResult',
     'GetDeploymentUpgradesDeploymentUpgradeCollectionItemResult',
     'GetDeploymentUpgradesFilterResult',
     'GetDeploymentsDeploymentCollectionResult',
     'GetDeploymentsDeploymentCollectionItemResult',
+    'GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataResult',
     'GetDeploymentsDeploymentCollectionItemOggDataResult',
     'GetDeploymentsFilterResult',
+    'GetMessageItemResult',
+    'GetMessagesDeploymentMessagesCollectionResult',
+    'GetMessagesDeploymentMessagesCollectionItemResult',
+    'GetMessagesFilterResult',
+    'GetTrailFileItemResult',
+    'GetTrailFilesFilterResult',
+    'GetTrailFilesTrailFileCollectionResult',
+    'GetTrailFilesTrailFileCollectionItemResult',
+    'GetTrailSequenceItemResult',
+    'GetTrailSequencesFilterResult',
+    'GetTrailSequencesTrailSequenceCollectionResult',
+    'GetTrailSequencesTrailSequenceCollectionItemResult',
 ]
+
+@pulumi.output_type
+class ConnectionAdditionalAttribute(dict):
+    def __init__(__self__, *,
+                 name: Optional[str] = None,
+                 value: Optional[str] = None):
+        """
+        :param str name: (Updatable) The name of the property entry.
+        :param str value: (Updatable) The value of the property entry.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        (Updatable) The name of the property entry.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        """
+        (Updatable) The value of the property entry.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class ConnectionBootstrapServer(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "privateIp":
+            suggest = "private_ip"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ConnectionBootstrapServer. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ConnectionBootstrapServer.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ConnectionBootstrapServer.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 host: Optional[str] = None,
+                 port: Optional[int] = None,
+                 private_ip: Optional[str] = None):
+        """
+        :param str host: (Updatable) The name or address of a host.
+        :param int port: (Updatable) The port of an endpoint usually specified for a connection.
+        :param str private_ip: (Updatable) The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+        """
+        if host is not None:
+            pulumi.set(__self__, "host", host)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if private_ip is not None:
+            pulumi.set(__self__, "private_ip", private_ip)
+
+    @property
+    @pulumi.getter
+    def host(self) -> Optional[str]:
+        """
+        (Updatable) The name or address of a host.
+        """
+        return pulumi.get(self, "host")
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[int]:
+        """
+        (Updatable) The port of an endpoint usually specified for a connection.
+        """
+        return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter(name="privateIp")
+    def private_ip(self) -> Optional[str]:
+        """
+        (Updatable) The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+        """
+        return pulumi.get(self, "private_ip")
+
+
+@pulumi.output_type
+class ConnectionIngressIp(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "ingressIp":
+            suggest = "ingress_ip"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ConnectionIngressIp. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ConnectionIngressIp.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ConnectionIngressIp.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 ingress_ip: Optional[str] = None):
+        """
+        :param str ingress_ip: A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+        """
+        if ingress_ip is not None:
+            pulumi.set(__self__, "ingress_ip", ingress_ip)
+
+    @property
+    @pulumi.getter(name="ingressIp")
+    def ingress_ip(self) -> Optional[str]:
+        """
+        A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+        """
+        return pulumi.get(self, "ingress_ip")
+
+
+@pulumi.output_type
+class DeploymentDeploymentDiagnosticData(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "diagnosticState":
+            suggest = "diagnostic_state"
+        elif key == "timeDiagnosticEnd":
+            suggest = "time_diagnostic_end"
+        elif key == "timeDiagnosticStart":
+            suggest = "time_diagnostic_start"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DeploymentDeploymentDiagnosticData. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DeploymentDeploymentDiagnosticData.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DeploymentDeploymentDiagnosticData.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 bucket: Optional[str] = None,
+                 diagnostic_state: Optional[str] = None,
+                 namespace: Optional[str] = None,
+                 object: Optional[str] = None,
+                 time_diagnostic_end: Optional[str] = None,
+                 time_diagnostic_start: Optional[str] = None):
+        """
+        :param str bucket: Name of the bucket where the object is to be uploaded in the object storage
+        :param str diagnostic_state: The state of the deployment diagnostic collection.
+        :param str namespace: Name of namespace that serves as a container for all of your buckets
+        :param str object: Name of the diagnostic collected and uploaded to object storage
+        :param str time_diagnostic_end: The time until which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        :param str time_diagnostic_start: The time from which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if diagnostic_state is not None:
+            pulumi.set(__self__, "diagnostic_state", diagnostic_state)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if object is not None:
+            pulumi.set(__self__, "object", object)
+        if time_diagnostic_end is not None:
+            pulumi.set(__self__, "time_diagnostic_end", time_diagnostic_end)
+        if time_diagnostic_start is not None:
+            pulumi.set(__self__, "time_diagnostic_start", time_diagnostic_start)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> Optional[str]:
+        """
+        Name of the bucket where the object is to be uploaded in the object storage
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter(name="diagnosticState")
+    def diagnostic_state(self) -> Optional[str]:
+        """
+        The state of the deployment diagnostic collection.
+        """
+        return pulumi.get(self, "diagnostic_state")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> Optional[str]:
+        """
+        Name of namespace that serves as a container for all of your buckets
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter
+    def object(self) -> Optional[str]:
+        """
+        Name of the diagnostic collected and uploaded to object storage
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter(name="timeDiagnosticEnd")
+    def time_diagnostic_end(self) -> Optional[str]:
+        """
+        The time until which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_diagnostic_end")
+
+    @property
+    @pulumi.getter(name="timeDiagnosticStart")
+    def time_diagnostic_start(self) -> Optional[str]:
+        """
+        The time from which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_diagnostic_start")
+
 
 @pulumi.output_type
 class DeploymentOggData(dict):
@@ -61,7 +322,7 @@ class DeploymentOggData(dict):
                  key: Optional[str] = None,
                  ogg_version: Optional[str] = None):
         """
-        :param str admin_password: (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed.
+        :param str admin_password: (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by "passwordSecretId".
         :param str admin_username: (Updatable) The GoldenGate deployment console username.
         :param str deployment_name: The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
         :param str certificate: (Updatable) A PEM-encoded SSL certificate.
@@ -82,7 +343,7 @@ class DeploymentOggData(dict):
     @pulumi.getter(name="adminPassword")
     def admin_password(self) -> str:
         """
-        (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed.
+        (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by "passwordSecretId".
         """
         return pulumi.get(self, "admin_password")
 
@@ -128,6 +389,967 @@ class DeploymentOggData(dict):
 
 
 @pulumi.output_type
+class GetConnectionAdditionalAttributeResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 value: str):
+        """
+        :param str name: The name of the property entry.
+        :param str value: The value of the property entry.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The name of the property entry.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        The value of the property entry.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetConnectionAssignmentsConnectionAssignmentCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetConnectionAssignmentsConnectionAssignmentCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetConnectionAssignmentsConnectionAssignmentCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetConnectionAssignmentsConnectionAssignmentCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 alias_name: str,
+                 compartment_id: str,
+                 connection_id: str,
+                 deployment_id: str,
+                 id: str,
+                 state: str,
+                 time_created: str,
+                 time_updated: str):
+        """
+        :param str alias_name: Credential store alias.
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param str connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection.
+        :param str deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection assignment being referenced.
+        :param str state: A filter to return only connection assignments having the 'lifecycleState' given.
+        :param str time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        :param str time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        pulumi.set(__self__, "alias_name", alias_name)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "connection_id", connection_id)
+        pulumi.set(__self__, "deployment_id", deployment_id)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="aliasName")
+    def alias_name(self) -> str:
+        """
+        Credential store alias.
+        """
+        return pulumi.get(self, "alias_name")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="connectionId")
+    def connection_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection.
+        """
+        return pulumi.get(self, "connection_id")
+
+    @property
+    @pulumi.getter(name="deploymentId")
+    def deployment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
+        """
+        return pulumi.get(self, "deployment_id")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection assignment being referenced.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only connection assignments having the 'lifecycleState' given.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetConnectionAssignmentsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: The name of the connection in the assignment (aliasName).
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The name of the connection in the assignment (aliasName).
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetConnectionBootstrapServerResult(dict):
+    def __init__(__self__, *,
+                 host: str,
+                 port: int,
+                 private_ip: str):
+        """
+        :param str host: The name or address of a host.
+        :param int port: The port of an endpoint usually specified for a connection.
+        :param str private_ip: The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+        """
+        pulumi.set(__self__, "host", host)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "private_ip", private_ip)
+
+    @property
+    @pulumi.getter
+    def host(self) -> str:
+        """
+        The name or address of a host.
+        """
+        return pulumi.get(self, "host")
+
+    @property
+    @pulumi.getter
+    def port(self) -> int:
+        """
+        The port of an endpoint usually specified for a connection.
+        """
+        return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter(name="privateIp")
+    def private_ip(self) -> str:
+        """
+        The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+        """
+        return pulumi.get(self, "private_ip")
+
+
+@pulumi.output_type
+class GetConnectionIngressIpResult(dict):
+    def __init__(__self__, *,
+                 ingress_ip: str):
+        """
+        :param str ingress_ip: A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+        """
+        pulumi.set(__self__, "ingress_ip", ingress_ip)
+
+    @property
+    @pulumi.getter(name="ingressIp")
+    def ingress_ip(self) -> str:
+        """
+        A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+        """
+        return pulumi.get(self, "ingress_ip")
+
+
+@pulumi.output_type
+class GetConnectionsConnectionCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetConnectionsConnectionCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetConnectionsConnectionCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetConnectionsConnectionCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 account_key: str,
+                 account_name: str,
+                 additional_attributes: Sequence['outputs.GetConnectionsConnectionCollectionItemAdditionalAttributeResult'],
+                 authentication_type: str,
+                 azure_tenant_id: str,
+                 bootstrap_servers: Sequence['outputs.GetConnectionsConnectionCollectionItemBootstrapServerResult'],
+                 client_id: str,
+                 client_secret: str,
+                 compartment_id: str,
+                 connection_string: str,
+                 connection_type: str,
+                 consumer_properties: str,
+                 database_id: str,
+                 database_name: str,
+                 db_system_id: str,
+                 defined_tags: Mapping[str, Any],
+                 deployment_id: str,
+                 description: str,
+                 display_name: str,
+                 endpoint: str,
+                 freeform_tags: Mapping[str, Any],
+                 host: str,
+                 id: str,
+                 ingress_ips: Sequence['outputs.GetConnectionsConnectionCollectionItemIngressIpResult'],
+                 key_id: str,
+                 key_store: str,
+                 key_store_password: str,
+                 lifecycle_details: str,
+                 nsg_ids: Sequence[str],
+                 password: str,
+                 port: int,
+                 private_ip: str,
+                 private_key_file: str,
+                 private_key_passphrase: str,
+                 producer_properties: str,
+                 public_key_fingerprint: str,
+                 region: str,
+                 sas_token: str,
+                 security_protocol: str,
+                 session_mode: str,
+                 ssl_ca: str,
+                 ssl_cert: str,
+                 ssl_crl: str,
+                 ssl_key: str,
+                 ssl_key_password: str,
+                 ssl_mode: str,
+                 state: str,
+                 stream_pool_id: str,
+                 subnet_id: str,
+                 system_tags: Mapping[str, Any],
+                 technology_type: str,
+                 tenancy_id: str,
+                 time_created: str,
+                 time_updated: str,
+                 trust_store: str,
+                 trust_store_password: str,
+                 url: str,
+                 user_id: str,
+                 username: str,
+                 vault_id: str,
+                 wallet: str):
+        """
+        :param str account_name: Sets the Azure storage account name.
+        :param Sequence['GetConnectionsConnectionCollectionItemAdditionalAttributeArgs'] additional_attributes: An array of name-value pair attribute entries. Used as additional parameters in connection string.
+        :param str authentication_type: Used authentication mechanism to access Azure Data Lake Storage.
+        :param str azure_tenant_id: Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
+        :param Sequence['GetConnectionsConnectionCollectionItemBootstrapServerArgs'] bootstrap_servers: Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
+        :param str client_id: Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param str connection_string: JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
+        :param str connection_type: The array of connection types.
+        :param str database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
+        :param str database_name: The name of the database.
+        :param str db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system being referenced.
+        :param Mapping[str, Any] defined_tags: Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
+        :param str deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+        :param str description: Metadata about this specific object.
+        :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
+        :param str endpoint: Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+        :param Mapping[str, Any] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
+        :param str host: The name or address of a host.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
+        :param Sequence['GetConnectionsConnectionCollectionItemIngressIpArgs'] ingress_ips: List of ingress IP addresses, from where the GoldenGate deployment connects to this connection's privateIp.
+        :param str key_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer "Master" key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+        :param str lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
+        :param Sequence[str] nsg_ids: An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
+        :param int port: The port of an endpoint usually specified for a connection.
+        :param str private_ip: The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+        :param str region: The name of the region. e.g.: us-ashburn-1
+        :param str security_protocol: Security protocol for PostgreSQL.
+        :param str session_mode: The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+        :param str ssl_mode: SSL mode for PostgreSQL.
+        :param str state: A filter to return only connections having the 'lifecycleState' given.
+        :param str stream_pool_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
+        :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+        :param Mapping[str, Any] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
+        :param str technology_type: The array of technology types.
+        :param str tenancy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
+        :param str time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        :param str time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        :param str url: Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081'
+        :param str user_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Object Storage. The user must have write access to the bucket they want to connect to.
+        :param str username: The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+        :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+        """
+        pulumi.set(__self__, "account_key", account_key)
+        pulumi.set(__self__, "account_name", account_name)
+        pulumi.set(__self__, "additional_attributes", additional_attributes)
+        pulumi.set(__self__, "authentication_type", authentication_type)
+        pulumi.set(__self__, "azure_tenant_id", azure_tenant_id)
+        pulumi.set(__self__, "bootstrap_servers", bootstrap_servers)
+        pulumi.set(__self__, "client_id", client_id)
+        pulumi.set(__self__, "client_secret", client_secret)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "connection_string", connection_string)
+        pulumi.set(__self__, "connection_type", connection_type)
+        pulumi.set(__self__, "consumer_properties", consumer_properties)
+        pulumi.set(__self__, "database_id", database_id)
+        pulumi.set(__self__, "database_name", database_name)
+        pulumi.set(__self__, "db_system_id", db_system_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "deployment_id", deployment_id)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "endpoint", endpoint)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "host", host)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "ingress_ips", ingress_ips)
+        pulumi.set(__self__, "key_id", key_id)
+        pulumi.set(__self__, "key_store", key_store)
+        pulumi.set(__self__, "key_store_password", key_store_password)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "nsg_ids", nsg_ids)
+        pulumi.set(__self__, "password", password)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "private_ip", private_ip)
+        pulumi.set(__self__, "private_key_file", private_key_file)
+        pulumi.set(__self__, "private_key_passphrase", private_key_passphrase)
+        pulumi.set(__self__, "producer_properties", producer_properties)
+        pulumi.set(__self__, "public_key_fingerprint", public_key_fingerprint)
+        pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "sas_token", sas_token)
+        pulumi.set(__self__, "security_protocol", security_protocol)
+        pulumi.set(__self__, "session_mode", session_mode)
+        pulumi.set(__self__, "ssl_ca", ssl_ca)
+        pulumi.set(__self__, "ssl_cert", ssl_cert)
+        pulumi.set(__self__, "ssl_crl", ssl_crl)
+        pulumi.set(__self__, "ssl_key", ssl_key)
+        pulumi.set(__self__, "ssl_key_password", ssl_key_password)
+        pulumi.set(__self__, "ssl_mode", ssl_mode)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "stream_pool_id", stream_pool_id)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "technology_type", technology_type)
+        pulumi.set(__self__, "tenancy_id", tenancy_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "trust_store", trust_store)
+        pulumi.set(__self__, "trust_store_password", trust_store_password)
+        pulumi.set(__self__, "url", url)
+        pulumi.set(__self__, "user_id", user_id)
+        pulumi.set(__self__, "username", username)
+        pulumi.set(__self__, "vault_id", vault_id)
+        pulumi.set(__self__, "wallet", wallet)
+
+    @property
+    @pulumi.getter(name="accountKey")
+    def account_key(self) -> str:
+        return pulumi.get(self, "account_key")
+
+    @property
+    @pulumi.getter(name="accountName")
+    def account_name(self) -> str:
+        """
+        Sets the Azure storage account name.
+        """
+        return pulumi.get(self, "account_name")
+
+    @property
+    @pulumi.getter(name="additionalAttributes")
+    def additional_attributes(self) -> Sequence['outputs.GetConnectionsConnectionCollectionItemAdditionalAttributeResult']:
+        """
+        An array of name-value pair attribute entries. Used as additional parameters in connection string.
+        """
+        return pulumi.get(self, "additional_attributes")
+
+    @property
+    @pulumi.getter(name="authenticationType")
+    def authentication_type(self) -> str:
+        """
+        Used authentication mechanism to access Azure Data Lake Storage.
+        """
+        return pulumi.get(self, "authentication_type")
+
+    @property
+    @pulumi.getter(name="azureTenantId")
+    def azure_tenant_id(self) -> str:
+        """
+        Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
+        """
+        return pulumi.get(self, "azure_tenant_id")
+
+    @property
+    @pulumi.getter(name="bootstrapServers")
+    def bootstrap_servers(self) -> Sequence['outputs.GetConnectionsConnectionCollectionItemBootstrapServerResult']:
+        """
+        Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
+        """
+        return pulumi.get(self, "bootstrap_servers")
+
+    @property
+    @pulumi.getter(name="clientId")
+    def client_id(self) -> str:
+        """
+        Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+        """
+        return pulumi.get(self, "client_id")
+
+    @property
+    @pulumi.getter(name="clientSecret")
+    def client_secret(self) -> str:
+        return pulumi.get(self, "client_secret")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="connectionString")
+    def connection_string(self) -> str:
+        """
+        JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
+        """
+        return pulumi.get(self, "connection_string")
+
+    @property
+    @pulumi.getter(name="connectionType")
+    def connection_type(self) -> str:
+        """
+        The array of connection types.
+        """
+        return pulumi.get(self, "connection_type")
+
+    @property
+    @pulumi.getter(name="consumerProperties")
+    def consumer_properties(self) -> str:
+        return pulumi.get(self, "consumer_properties")
+
+    @property
+    @pulumi.getter(name="databaseId")
+    def database_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
+        """
+        return pulumi.get(self, "database_id")
+
+    @property
+    @pulumi.getter(name="databaseName")
+    def database_name(self) -> str:
+        """
+        The name of the database.
+        """
+        return pulumi.get(self, "database_name")
+
+    @property
+    @pulumi.getter(name="dbSystemId")
+    def db_system_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system being referenced.
+        """
+        return pulumi.get(self, "db_system_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="deploymentId")
+    def deployment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+        """
+        return pulumi.get(self, "deployment_id")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Metadata about this specific object.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only the resources that match the entire 'displayName' given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def endpoint(self) -> str:
+        """
+        Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+        """
+        return pulumi.get(self, "endpoint")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def host(self) -> str:
+        """
+        The name or address of a host.
+        """
+        return pulumi.get(self, "host")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="ingressIps")
+    def ingress_ips(self) -> Sequence['outputs.GetConnectionsConnectionCollectionItemIngressIpResult']:
+        """
+        List of ingress IP addresses, from where the GoldenGate deployment connects to this connection's privateIp.
+        """
+        return pulumi.get(self, "ingress_ips")
+
+    @property
+    @pulumi.getter(name="keyId")
+    def key_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer "Master" key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+        """
+        return pulumi.get(self, "key_id")
+
+    @property
+    @pulumi.getter(name="keyStore")
+    def key_store(self) -> str:
+        return pulumi.get(self, "key_store")
+
+    @property
+    @pulumi.getter(name="keyStorePassword")
+    def key_store_password(self) -> str:
+        return pulumi.get(self, "key_store_password")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Sequence[str]:
+        """
+        An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @property
+    @pulumi.getter
+    def password(self) -> str:
+        return pulumi.get(self, "password")
+
+    @property
+    @pulumi.getter
+    def port(self) -> int:
+        """
+        The port of an endpoint usually specified for a connection.
+        """
+        return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter(name="privateIp")
+    def private_ip(self) -> str:
+        """
+        The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+        """
+        return pulumi.get(self, "private_ip")
+
+    @property
+    @pulumi.getter(name="privateKeyFile")
+    def private_key_file(self) -> str:
+        return pulumi.get(self, "private_key_file")
+
+    @property
+    @pulumi.getter(name="privateKeyPassphrase")
+    def private_key_passphrase(self) -> str:
+        return pulumi.get(self, "private_key_passphrase")
+
+    @property
+    @pulumi.getter(name="producerProperties")
+    def producer_properties(self) -> str:
+        return pulumi.get(self, "producer_properties")
+
+    @property
+    @pulumi.getter(name="publicKeyFingerprint")
+    def public_key_fingerprint(self) -> str:
+        return pulumi.get(self, "public_key_fingerprint")
+
+    @property
+    @pulumi.getter
+    def region(self) -> str:
+        """
+        The name of the region. e.g.: us-ashburn-1
+        """
+        return pulumi.get(self, "region")
+
+    @property
+    @pulumi.getter(name="sasToken")
+    def sas_token(self) -> str:
+        return pulumi.get(self, "sas_token")
+
+    @property
+    @pulumi.getter(name="securityProtocol")
+    def security_protocol(self) -> str:
+        """
+        Security protocol for PostgreSQL.
+        """
+        return pulumi.get(self, "security_protocol")
+
+    @property
+    @pulumi.getter(name="sessionMode")
+    def session_mode(self) -> str:
+        """
+        The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+        """
+        return pulumi.get(self, "session_mode")
+
+    @property
+    @pulumi.getter(name="sslCa")
+    def ssl_ca(self) -> str:
+        return pulumi.get(self, "ssl_ca")
+
+    @property
+    @pulumi.getter(name="sslCert")
+    def ssl_cert(self) -> str:
+        return pulumi.get(self, "ssl_cert")
+
+    @property
+    @pulumi.getter(name="sslCrl")
+    def ssl_crl(self) -> str:
+        return pulumi.get(self, "ssl_crl")
+
+    @property
+    @pulumi.getter(name="sslKey")
+    def ssl_key(self) -> str:
+        return pulumi.get(self, "ssl_key")
+
+    @property
+    @pulumi.getter(name="sslKeyPassword")
+    def ssl_key_password(self) -> str:
+        return pulumi.get(self, "ssl_key_password")
+
+    @property
+    @pulumi.getter(name="sslMode")
+    def ssl_mode(self) -> str:
+        """
+        SSL mode for PostgreSQL.
+        """
+        return pulumi.get(self, "ssl_mode")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only connections having the 'lifecycleState' given.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="streamPoolId")
+    def stream_pool_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
+        """
+        return pulumi.get(self, "stream_pool_id")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="technologyType")
+    def technology_type(self) -> str:
+        """
+        The array of technology types.
+        """
+        return pulumi.get(self, "technology_type")
+
+    @property
+    @pulumi.getter(name="tenancyId")
+    def tenancy_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
+        """
+        return pulumi.get(self, "tenancy_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @property
+    @pulumi.getter(name="trustStore")
+    def trust_store(self) -> str:
+        return pulumi.get(self, "trust_store")
+
+    @property
+    @pulumi.getter(name="trustStorePassword")
+    def trust_store_password(self) -> str:
+        return pulumi.get(self, "trust_store_password")
+
+    @property
+    @pulumi.getter
+    def url(self) -> str:
+        """
+        Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081'
+        """
+        return pulumi.get(self, "url")
+
+    @property
+    @pulumi.getter(name="userId")
+    def user_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Object Storage. The user must have write access to the bucket they want to connect to.
+        """
+        return pulumi.get(self, "user_id")
+
+    @property
+    @pulumi.getter
+    def username(self) -> str:
+        """
+        The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+        """
+        return pulumi.get(self, "username")
+
+    @property
+    @pulumi.getter(name="vaultId")
+    def vault_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+        """
+        return pulumi.get(self, "vault_id")
+
+    @property
+    @pulumi.getter
+    def wallet(self) -> str:
+        return pulumi.get(self, "wallet")
+
+
+@pulumi.output_type
+class GetConnectionsConnectionCollectionItemAdditionalAttributeResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 value: str):
+        """
+        :param str name: The name of the property entry.
+        :param str value: The value of the property entry.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The name of the property entry.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        The value of the property entry.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetConnectionsConnectionCollectionItemBootstrapServerResult(dict):
+    def __init__(__self__, *,
+                 host: str,
+                 port: int,
+                 private_ip: str):
+        """
+        :param str host: The name or address of a host.
+        :param int port: The port of an endpoint usually specified for a connection.
+        :param str private_ip: The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+        """
+        pulumi.set(__self__, "host", host)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "private_ip", private_ip)
+
+    @property
+    @pulumi.getter
+    def host(self) -> str:
+        """
+        The name or address of a host.
+        """
+        return pulumi.get(self, "host")
+
+    @property
+    @pulumi.getter
+    def port(self) -> int:
+        """
+        The port of an endpoint usually specified for a connection.
+        """
+        return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter(name="privateIp")
+    def private_ip(self) -> str:
+        """
+        The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+        """
+        return pulumi.get(self, "private_ip")
+
+
+@pulumi.output_type
+class GetConnectionsConnectionCollectionItemIngressIpResult(dict):
+    def __init__(__self__, *,
+                 ingress_ip: str):
+        """
+        :param str ingress_ip: A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+        """
+        pulumi.set(__self__, "ingress_ip", ingress_ip)
+
+    @property
+    @pulumi.getter(name="ingressIp")
+    def ingress_ip(self) -> str:
+        """
+        A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+        """
+        return pulumi.get(self, "ingress_ip")
+
+
+@pulumi.output_type
+class GetConnectionsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: The name of the property entry.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The name of the property entry.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
 class GetDatabaseRegistrationsDatabaseRegistrationCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetDatabaseRegistrationsDatabaseRegistrationCollectionItemResult']):
@@ -170,14 +1392,14 @@ class GetDatabaseRegistrationsDatabaseRegistrationCollectionItemResult(dict):
                  wallet: str):
         """
         :param str alias_name: Credential store alias.
-        :param str compartment_id: The ID of the compartment in which to list resources.
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         :param str connection_string: Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a database.
         :param str database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
-        :param Mapping[str, Any] defined_tags: Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, Any] defined_tags: Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: Metadata about this specific object.
         :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
         :param str fqdn: A three-label Fully Qualified Domain Name (FQDN) for a resource.
-        :param Mapping[str, Any] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, Any] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the databaseRegistration being referenced.
         :param str ip_address: The private IP address in the customer's VCN of the customer's endpoint, typically a database.
         :param str key_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer "Master" key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
@@ -185,10 +1407,10 @@ class GetDatabaseRegistrationsDatabaseRegistrationCollectionItemResult(dict):
         :param str rce_private_ip: A Private Endpoint IP Address created in the customer's subnet.  A customer database can expect network traffic initiated by GGS from this IP address and send network traffic to this IP address, typically in response to requests from GGS (OGG).  The customer may utilize this IP address in Security Lists or Network Security Groups (NSG) as needed.
         :param str secret_compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the the GGS Secret will be created. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this Compartment in which to create a Secret.
         :param str secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer GGS Secret being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this Secret
-        :param str session_mode: The mode of the database connection session to be established by the data client. REDIRECT - for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+        :param str session_mode: The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
         :param str state: A filter to return only the resources that match the 'lifecycleState' given.
         :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
-        :param Mapping[str, Any] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+        :param Mapping[str, Any] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param str time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str username: The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
@@ -233,7 +1455,7 @@ class GetDatabaseRegistrationsDatabaseRegistrationCollectionItemResult(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The ID of the compartment in which to list resources.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -257,7 +1479,7 @@ class GetDatabaseRegistrationsDatabaseRegistrationCollectionItemResult(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, Any]:
         """
-        Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -289,7 +1511,7 @@ class GetDatabaseRegistrationsDatabaseRegistrationCollectionItemResult(dict):
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, Any]:
         """
-        A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -358,7 +1580,7 @@ class GetDatabaseRegistrationsDatabaseRegistrationCollectionItemResult(dict):
     @pulumi.getter(name="sessionMode")
     def session_mode(self) -> str:
         """
-        The mode of the database connection session to be established by the data client. REDIRECT - for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+        The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
         """
         return pulumi.get(self, "session_mode")
 
@@ -382,7 +1604,7 @@ class GetDatabaseRegistrationsDatabaseRegistrationCollectionItemResult(dict):
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Mapping[str, Any]:
         """
-        The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+        The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         """
         return pulumi.get(self, "system_tags")
 
@@ -489,11 +1711,11 @@ class GetDeploymentBackupsDeploymentBackupCollectionItemResult(dict):
         """
         :param str backup_type: Possible Deployment backup types.
         :param str bucket: Name of the bucket where the object is to be uploaded in the object storage
-        :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str deployment_id: The ID of the deployment in which to list resources.
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param Mapping[str, Any] defined_tags: Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
+        :param str deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
         :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
-        :param Mapping[str, Any] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, Any] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
         :param bool is_automatic: True if this object is automatically created
         :param str lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
@@ -502,7 +1724,7 @@ class GetDeploymentBackupsDeploymentBackupCollectionItemResult(dict):
         :param str ogg_version: Version of OGG
         :param float size_in_bytes: The size of the backup stored in object storage (in bytes)
         :param str state: A filter to return only the resources that match the 'lifecycleState' given.
-        :param Mapping[str, Any] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+        :param Mapping[str, Any] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param str time_backup_finished: The time of the resource backup finish. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str time_of_backup: The time of the resource backup. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -549,7 +1771,7 @@ class GetDeploymentBackupsDeploymentBackupCollectionItemResult(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The ID of the compartment in which to list resources.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -557,7 +1779,7 @@ class GetDeploymentBackupsDeploymentBackupCollectionItemResult(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, Any]:
         """
-        Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -565,7 +1787,7 @@ class GetDeploymentBackupsDeploymentBackupCollectionItemResult(dict):
     @pulumi.getter(name="deploymentId")
     def deployment_id(self) -> str:
         """
-        The ID of the deployment in which to list resources.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
         """
         return pulumi.get(self, "deployment_id")
 
@@ -581,7 +1803,7 @@ class GetDeploymentBackupsDeploymentBackupCollectionItemResult(dict):
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, Any]:
         """
-        A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -653,7 +1875,7 @@ class GetDeploymentBackupsDeploymentBackupCollectionItemResult(dict):
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Mapping[str, Any]:
         """
-        The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+        The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         """
         return pulumi.get(self, "system_tags")
 
@@ -715,6 +1937,79 @@ class GetDeploymentBackupsFilterResult(dict):
     @pulumi.getter
     def regex(self) -> Optional[bool]:
         return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetDeploymentDeploymentDiagnosticDataResult(dict):
+    def __init__(__self__, *,
+                 bucket: str,
+                 diagnostic_state: str,
+                 namespace: str,
+                 object: str,
+                 time_diagnostic_end: str,
+                 time_diagnostic_start: str):
+        """
+        :param str bucket: Name of the bucket where the object is to be uploaded in the object storage
+        :param str diagnostic_state: The state of the deployment diagnostic collection.
+        :param str namespace: Name of namespace that serves as a container for all of your buckets
+        :param str object: Name of the diagnostic collected and uploaded to object storage
+        :param str time_diagnostic_end: The time until which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        :param str time_diagnostic_start: The time from which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "diagnostic_state", diagnostic_state)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "time_diagnostic_end", time_diagnostic_end)
+        pulumi.set(__self__, "time_diagnostic_start", time_diagnostic_start)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> str:
+        """
+        Name of the bucket where the object is to be uploaded in the object storage
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter(name="diagnosticState")
+    def diagnostic_state(self) -> str:
+        """
+        The state of the deployment diagnostic collection.
+        """
+        return pulumi.get(self, "diagnostic_state")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> str:
+        """
+        Name of namespace that serves as a container for all of your buckets
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter
+    def object(self) -> str:
+        """
+        Name of the diagnostic collected and uploaded to object storage
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter(name="timeDiagnosticEnd")
+    def time_diagnostic_end(self) -> str:
+        """
+        The time until which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_diagnostic_end")
+
+    @property
+    @pulumi.getter(name="timeDiagnosticStart")
+    def time_diagnostic_start(self) -> str:
+        """
+        The time from which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_diagnostic_start")
 
 
 @pulumi.output_type
@@ -783,6 +2078,197 @@ class GetDeploymentOggDataResult(dict):
 
 
 @pulumi.output_type
+class GetDeploymentTypeItemResult(dict):
+    def __init__(__self__, *,
+                 category: str,
+                 connection_types: Sequence[str],
+                 deployment_type: str,
+                 display_name: str,
+                 source_technologies: Sequence[str],
+                 target_technologies: Sequence[str]):
+        """
+        :param str category: The deployment category defines the broad separation of the deployment type into categories.  Currently the separation is 'DATA_REPLICATION' and 'STREAM_ANALYTICS'.
+        :param Sequence[str] connection_types: An array of connectionTypes.
+        :param str deployment_type: The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
+        :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
+        :param Sequence[str] source_technologies: List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
+        :param Sequence[str] target_technologies: List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
+        """
+        pulumi.set(__self__, "category", category)
+        pulumi.set(__self__, "connection_types", connection_types)
+        pulumi.set(__self__, "deployment_type", deployment_type)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "source_technologies", source_technologies)
+        pulumi.set(__self__, "target_technologies", target_technologies)
+
+    @property
+    @pulumi.getter
+    def category(self) -> str:
+        """
+        The deployment category defines the broad separation of the deployment type into categories.  Currently the separation is 'DATA_REPLICATION' and 'STREAM_ANALYTICS'.
+        """
+        return pulumi.get(self, "category")
+
+    @property
+    @pulumi.getter(name="connectionTypes")
+    def connection_types(self) -> Sequence[str]:
+        """
+        An array of connectionTypes.
+        """
+        return pulumi.get(self, "connection_types")
+
+    @property
+    @pulumi.getter(name="deploymentType")
+    def deployment_type(self) -> str:
+        """
+        The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
+        """
+        return pulumi.get(self, "deployment_type")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only the resources that match the entire 'displayName' given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="sourceTechnologies")
+    def source_technologies(self) -> Sequence[str]:
+        """
+        List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
+        """
+        return pulumi.get(self, "source_technologies")
+
+    @property
+    @pulumi.getter(name="targetTechnologies")
+    def target_technologies(self) -> Sequence[str]:
+        """
+        List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
+        """
+        return pulumi.get(self, "target_technologies")
+
+
+@pulumi.output_type
+class GetDeploymentTypesDeploymentTypeCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetDeploymentTypesDeploymentTypeCollectionItemResult']):
+        """
+        :param Sequence['GetDeploymentTypesDeploymentTypeCollectionItemArgs'] items: Array of DeploymentTypeSummary
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetDeploymentTypesDeploymentTypeCollectionItemResult']:
+        """
+        Array of DeploymentTypeSummary
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetDeploymentTypesDeploymentTypeCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 category: str,
+                 connection_types: Sequence[str],
+                 deployment_type: str,
+                 display_name: str,
+                 source_technologies: Sequence[str],
+                 target_technologies: Sequence[str]):
+        """
+        :param str category: The deployment category defines the broad separation of the deployment type into categories.  Currently the separation is 'DATA_REPLICATION' and 'STREAM_ANALYTICS'.
+        :param Sequence[str] connection_types: An array of connectionTypes.
+        :param str deployment_type: The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
+        :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
+        :param Sequence[str] source_technologies: List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
+        :param Sequence[str] target_technologies: List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
+        """
+        pulumi.set(__self__, "category", category)
+        pulumi.set(__self__, "connection_types", connection_types)
+        pulumi.set(__self__, "deployment_type", deployment_type)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "source_technologies", source_technologies)
+        pulumi.set(__self__, "target_technologies", target_technologies)
+
+    @property
+    @pulumi.getter
+    def category(self) -> str:
+        """
+        The deployment category defines the broad separation of the deployment type into categories.  Currently the separation is 'DATA_REPLICATION' and 'STREAM_ANALYTICS'.
+        """
+        return pulumi.get(self, "category")
+
+    @property
+    @pulumi.getter(name="connectionTypes")
+    def connection_types(self) -> Sequence[str]:
+        """
+        An array of connectionTypes.
+        """
+        return pulumi.get(self, "connection_types")
+
+    @property
+    @pulumi.getter(name="deploymentType")
+    def deployment_type(self) -> str:
+        """
+        The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
+        """
+        return pulumi.get(self, "deployment_type")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only the resources that match the entire 'displayName' given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="sourceTechnologies")
+    def source_technologies(self) -> Sequence[str]:
+        """
+        List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
+        """
+        return pulumi.get(self, "source_technologies")
+
+    @property
+    @pulumi.getter(name="targetTechnologies")
+    def target_technologies(self) -> Sequence[str]:
+        """
+        List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
+        """
+        return pulumi.get(self, "target_technologies")
+
+
+@pulumi.output_type
+class GetDeploymentTypesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
 class GetDeploymentUpgradesDeploymentUpgradeCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetDeploymentUpgradesDeploymentUpgradeCollectionItemResult']):
@@ -815,19 +2301,19 @@ class GetDeploymentUpgradesDeploymentUpgradeCollectionItemResult(dict):
                  time_started: str,
                  time_updated: str):
         """
-        :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param str deployment_id: The ID of the deployment in which to list resources.
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param Mapping[str, Any] defined_tags: Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
+        :param str deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
         :param str deployment_upgrade_type: The type of the deployment upgrade: MANUAL or AUTOMATIC
         :param str description: Metadata about this specific object.
         :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
-        :param Mapping[str, Any] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, Any] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment upgrade being referenced.
         :param str lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         :param str lifecycle_sub_state: Possible GGS lifecycle sub-states.
         :param str ogg_version: Version of OGG
         :param str state: A filter to return only the resources that match the 'lifecycleState' given.
-        :param Mapping[str, Any] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+        :param Mapping[str, Any] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param str time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str time_finished: The date and time the request was finished. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str time_started: The date and time the request was started. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -855,7 +2341,7 @@ class GetDeploymentUpgradesDeploymentUpgradeCollectionItemResult(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The ID of the compartment in which to list resources.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -863,7 +2349,7 @@ class GetDeploymentUpgradesDeploymentUpgradeCollectionItemResult(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, Any]:
         """
-        Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -871,7 +2357,7 @@ class GetDeploymentUpgradesDeploymentUpgradeCollectionItemResult(dict):
     @pulumi.getter(name="deploymentId")
     def deployment_id(self) -> str:
         """
-        The ID of the deployment in which to list resources.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
         """
         return pulumi.get(self, "deployment_id")
 
@@ -903,7 +2389,7 @@ class GetDeploymentUpgradesDeploymentUpgradeCollectionItemResult(dict):
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, Any]:
         """
-        A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -951,7 +2437,7 @@ class GetDeploymentUpgradesDeploymentUpgradeCollectionItemResult(dict):
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Mapping[str, Any]:
         """
-        The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+        The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         """
         return pulumi.get(self, "system_tags")
 
@@ -1034,6 +2520,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
                  cpu_core_count: int,
                  defined_tags: Mapping[str, Any],
                  deployment_backup_id: str,
+                 deployment_diagnostic_datas: Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataResult'],
                  deployment_type: str,
                  deployment_url: str,
                  description: str,
@@ -1061,16 +2548,17 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
                  time_updated: str,
                  time_upgrade_required: str):
         """
-        :param str compartment_id: The ID of the compartment in which to list resources.
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         :param int cpu_core_count: The Minimum number of OCPUs to be made available for this Deployment.
-        :param Mapping[str, Any] defined_tags: Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, Any] defined_tags: Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         :param str deployment_backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
-        :param str deployment_type: The deployment type.
+        :param Sequence['GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArgs'] deployment_diagnostic_datas: Information regarding the deployment diagnostic collection
+        :param str deployment_type: The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value OGG is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent DATABASE_ORACLE value.
         :param str deployment_url: The URL of a resource.
         :param str description: Metadata about this specific object.
         :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
         :param str fqdn: A filter to return only the resources that match the 'fqdn' given.
-        :param Mapping[str, Any] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, Any] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
         :param bool is_auto_scaling_enabled: Indicates if auto scaling is enabled for the Deployment's CPU core count.
         :param bool is_healthy: True if all of the aggregate resources are working correctly.
@@ -1080,14 +2568,14 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         :param str license_model: The Oracle license model that applies to a Deployment.
         :param str lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         :param str lifecycle_sub_state: A filter to return only the resources that match the 'lifecycleSubState' given.
-        :param Sequence[str] nsg_ids: An array of [Network Security Group](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) OCIDs used to define network access for a deployment.
+        :param Sequence[str] nsg_ids: An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
         :param Sequence['GetDeploymentsDeploymentCollectionItemOggDataArgs'] ogg_datas: Deployment Data for an OggDeployment
         :param str private_ip_address: The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
         :param str public_ip_address: The public IP address representing the access point for the Deployment.
         :param str state: A filter to return only the resources that match the 'lifecycleState' given.
         :param str storage_utilization_in_bytes: The amount of storage being utilized (in bytes)
         :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
-        :param Mapping[str, Any] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+        :param Mapping[str, Any] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param str time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str time_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str time_upgrade_required: The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -1096,6 +2584,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         pulumi.set(__self__, "cpu_core_count", cpu_core_count)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "deployment_backup_id", deployment_backup_id)
+        pulumi.set(__self__, "deployment_diagnostic_datas", deployment_diagnostic_datas)
         pulumi.set(__self__, "deployment_type", deployment_type)
         pulumi.set(__self__, "deployment_url", deployment_url)
         pulumi.set(__self__, "description", description)
@@ -1127,7 +2616,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The ID of the compartment in which to list resources.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -1143,7 +2632,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, Any]:
         """
-        Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -1156,10 +2645,18 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         return pulumi.get(self, "deployment_backup_id")
 
     @property
+    @pulumi.getter(name="deploymentDiagnosticDatas")
+    def deployment_diagnostic_datas(self) -> Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataResult']:
+        """
+        Information regarding the deployment diagnostic collection
+        """
+        return pulumi.get(self, "deployment_diagnostic_datas")
+
+    @property
     @pulumi.getter(name="deploymentType")
     def deployment_type(self) -> str:
         """
-        The deployment type.
+        The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value OGG is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent DATABASE_ORACLE value.
         """
         return pulumi.get(self, "deployment_type")
 
@@ -1199,7 +2696,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, Any]:
         """
-        A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -1279,7 +2776,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Sequence[str]:
         """
-        An array of [Network Security Group](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) OCIDs used to define network access for a deployment.
+        An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
         """
         return pulumi.get(self, "nsg_ids")
 
@@ -1335,7 +2832,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Mapping[str, Any]:
         """
-        The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+        The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         """
         return pulumi.get(self, "system_tags")
 
@@ -1362,6 +2859,79 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         The date the existing version in use will no longer be considered as usable and an upgrade will be required.  This date is typically 6 months after the version was released for use by GGS.  The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         """
         return pulumi.get(self, "time_upgrade_required")
+
+
+@pulumi.output_type
+class GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataResult(dict):
+    def __init__(__self__, *,
+                 bucket: str,
+                 diagnostic_state: str,
+                 namespace: str,
+                 object: str,
+                 time_diagnostic_end: str,
+                 time_diagnostic_start: str):
+        """
+        :param str bucket: Name of the bucket where the object is to be uploaded in the object storage
+        :param str diagnostic_state: The state of the deployment diagnostic collection.
+        :param str namespace: Name of namespace that serves as a container for all of your buckets
+        :param str object: Name of the diagnostic collected and uploaded to object storage
+        :param str time_diagnostic_end: The time until which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        :param str time_diagnostic_start: The time from which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "diagnostic_state", diagnostic_state)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "time_diagnostic_end", time_diagnostic_end)
+        pulumi.set(__self__, "time_diagnostic_start", time_diagnostic_start)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> str:
+        """
+        Name of the bucket where the object is to be uploaded in the object storage
+        """
+        return pulumi.get(self, "bucket")
+
+    @property
+    @pulumi.getter(name="diagnosticState")
+    def diagnostic_state(self) -> str:
+        """
+        The state of the deployment diagnostic collection.
+        """
+        return pulumi.get(self, "diagnostic_state")
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> str:
+        """
+        Name of namespace that serves as a container for all of your buckets
+        """
+        return pulumi.get(self, "namespace")
+
+    @property
+    @pulumi.getter
+    def object(self) -> str:
+        """
+        Name of the diagnostic collected and uploaded to object storage
+        """
+        return pulumi.get(self, "object")
+
+    @property
+    @pulumi.getter(name="timeDiagnosticEnd")
+    def time_diagnostic_end(self) -> str:
+        """
+        The time until which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_diagnostic_end")
+
+    @property
+    @pulumi.getter(name="timeDiagnosticStart")
+    def time_diagnostic_start(self) -> str:
+        """
+        The time from which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_diagnostic_start")
 
 
 @pulumi.output_type
@@ -1454,5 +3024,556 @@ class GetDeploymentsFilterResult(dict):
     @pulumi.getter
     def regex(self) -> Optional[bool]:
         return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetMessageItemResult(dict):
+    def __init__(__self__, *,
+                 deployment_message: str,
+                 deployment_message_status: str,
+                 id: str):
+        """
+        :param str deployment_message: The deployment Message in plain text with optional HTML anchor tags.
+        :param str deployment_message_status: The deployment Message Status.
+        :param str id: The deployment Message Id.
+        """
+        pulumi.set(__self__, "deployment_message", deployment_message)
+        pulumi.set(__self__, "deployment_message_status", deployment_message_status)
+        pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="deploymentMessage")
+    def deployment_message(self) -> str:
+        """
+        The deployment Message in plain text with optional HTML anchor tags.
+        """
+        return pulumi.get(self, "deployment_message")
+
+    @property
+    @pulumi.getter(name="deploymentMessageStatus")
+    def deployment_message_status(self) -> str:
+        """
+        The deployment Message Status.
+        """
+        return pulumi.get(self, "deployment_message_status")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The deployment Message Id.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetMessagesDeploymentMessagesCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetMessagesDeploymentMessagesCollectionItemResult']):
+        """
+        :param Sequence['GetMessagesDeploymentMessagesCollectionItemArgs'] items: An array of DeploymentMessages.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetMessagesDeploymentMessagesCollectionItemResult']:
+        """
+        An array of DeploymentMessages.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetMessagesDeploymentMessagesCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 deployment_message: str,
+                 deployment_message_status: str,
+                 id: str):
+        """
+        :param str deployment_message: The deployment Message in plain text with optional HTML anchor tags.
+        :param str deployment_message_status: The deployment Message Status.
+        :param str id: The deployment Message Id.
+        """
+        pulumi.set(__self__, "deployment_message", deployment_message)
+        pulumi.set(__self__, "deployment_message_status", deployment_message_status)
+        pulumi.set(__self__, "id", id)
+
+    @property
+    @pulumi.getter(name="deploymentMessage")
+    def deployment_message(self) -> str:
+        """
+        The deployment Message in plain text with optional HTML anchor tags.
+        """
+        return pulumi.get(self, "deployment_message")
+
+    @property
+    @pulumi.getter(name="deploymentMessageStatus")
+    def deployment_message_status(self) -> str:
+        """
+        The deployment Message Status.
+        """
+        return pulumi.get(self, "deployment_message_status")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The deployment Message Id.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetMessagesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetTrailFileItemResult(dict):
+    def __init__(__self__, *,
+                 consumers: Sequence[str],
+                 display_name: str,
+                 max_sequence_number: str,
+                 min_sequence_number: str,
+                 number_of_sequences: int,
+                 producer: str,
+                 size_in_bytes: float,
+                 time_last_updated: str,
+                 trail_file_id: str):
+        """
+        :param Sequence[str] consumers: array of consumer process names
+        :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
+        :param str max_sequence_number: Maximum sequence number
+        :param str min_sequence_number: Minimum sequence number
+        :param int number_of_sequences: Number of sequences for a specific trail file
+        :param str producer: Producer Process Name if any.
+        :param float size_in_bytes: The size of the backup stored in object storage (in bytes)
+        :param str time_last_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        :param str trail_file_id: A Trail File identifier
+        """
+        pulumi.set(__self__, "consumers", consumers)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "max_sequence_number", max_sequence_number)
+        pulumi.set(__self__, "min_sequence_number", min_sequence_number)
+        pulumi.set(__self__, "number_of_sequences", number_of_sequences)
+        pulumi.set(__self__, "producer", producer)
+        pulumi.set(__self__, "size_in_bytes", size_in_bytes)
+        pulumi.set(__self__, "time_last_updated", time_last_updated)
+        pulumi.set(__self__, "trail_file_id", trail_file_id)
+
+    @property
+    @pulumi.getter
+    def consumers(self) -> Sequence[str]:
+        """
+        array of consumer process names
+        """
+        return pulumi.get(self, "consumers")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only the resources that match the entire 'displayName' given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="maxSequenceNumber")
+    def max_sequence_number(self) -> str:
+        """
+        Maximum sequence number
+        """
+        return pulumi.get(self, "max_sequence_number")
+
+    @property
+    @pulumi.getter(name="minSequenceNumber")
+    def min_sequence_number(self) -> str:
+        """
+        Minimum sequence number
+        """
+        return pulumi.get(self, "min_sequence_number")
+
+    @property
+    @pulumi.getter(name="numberOfSequences")
+    def number_of_sequences(self) -> int:
+        """
+        Number of sequences for a specific trail file
+        """
+        return pulumi.get(self, "number_of_sequences")
+
+    @property
+    @pulumi.getter
+    def producer(self) -> str:
+        """
+        Producer Process Name if any.
+        """
+        return pulumi.get(self, "producer")
+
+    @property
+    @pulumi.getter(name="sizeInBytes")
+    def size_in_bytes(self) -> float:
+        """
+        The size of the backup stored in object storage (in bytes)
+        """
+        return pulumi.get(self, "size_in_bytes")
+
+    @property
+    @pulumi.getter(name="timeLastUpdated")
+    def time_last_updated(self) -> str:
+        """
+        The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_last_updated")
+
+    @property
+    @pulumi.getter(name="trailFileId")
+    def trail_file_id(self) -> str:
+        """
+        A Trail File identifier
+        """
+        return pulumi.get(self, "trail_file_id")
+
+
+@pulumi.output_type
+class GetTrailFilesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetTrailFilesTrailFileCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetTrailFilesTrailFileCollectionItemResult'],
+                 time_last_fetched: str):
+        """
+        :param Sequence['GetTrailFilesTrailFileCollectionItemArgs'] items: An array of TrailFiles.
+        :param str time_last_fetched: The time the data was last fetched from the deployment. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        pulumi.set(__self__, "items", items)
+        pulumi.set(__self__, "time_last_fetched", time_last_fetched)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetTrailFilesTrailFileCollectionItemResult']:
+        """
+        An array of TrailFiles.
+        """
+        return pulumi.get(self, "items")
+
+    @property
+    @pulumi.getter(name="timeLastFetched")
+    def time_last_fetched(self) -> str:
+        """
+        The time the data was last fetched from the deployment. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_last_fetched")
+
+
+@pulumi.output_type
+class GetTrailFilesTrailFileCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 consumers: Sequence[str],
+                 display_name: str,
+                 max_sequence_number: str,
+                 min_sequence_number: str,
+                 number_of_sequences: int,
+                 producer: str,
+                 size_in_bytes: float,
+                 time_last_updated: str,
+                 trail_file_id: str):
+        """
+        :param Sequence[str] consumers: array of consumer process names
+        :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
+        :param str max_sequence_number: Maximum sequence number
+        :param str min_sequence_number: Minimum sequence number
+        :param int number_of_sequences: Number of sequences for a specific trail file
+        :param str producer: Producer Process Name if any.
+        :param float size_in_bytes: The size of the backup stored in object storage (in bytes)
+        :param str time_last_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        :param str trail_file_id: A Trail File identifier
+        """
+        pulumi.set(__self__, "consumers", consumers)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "max_sequence_number", max_sequence_number)
+        pulumi.set(__self__, "min_sequence_number", min_sequence_number)
+        pulumi.set(__self__, "number_of_sequences", number_of_sequences)
+        pulumi.set(__self__, "producer", producer)
+        pulumi.set(__self__, "size_in_bytes", size_in_bytes)
+        pulumi.set(__self__, "time_last_updated", time_last_updated)
+        pulumi.set(__self__, "trail_file_id", trail_file_id)
+
+    @property
+    @pulumi.getter
+    def consumers(self) -> Sequence[str]:
+        """
+        array of consumer process names
+        """
+        return pulumi.get(self, "consumers")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only the resources that match the entire 'displayName' given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="maxSequenceNumber")
+    def max_sequence_number(self) -> str:
+        """
+        Maximum sequence number
+        """
+        return pulumi.get(self, "max_sequence_number")
+
+    @property
+    @pulumi.getter(name="minSequenceNumber")
+    def min_sequence_number(self) -> str:
+        """
+        Minimum sequence number
+        """
+        return pulumi.get(self, "min_sequence_number")
+
+    @property
+    @pulumi.getter(name="numberOfSequences")
+    def number_of_sequences(self) -> int:
+        """
+        Number of sequences for a specific trail file
+        """
+        return pulumi.get(self, "number_of_sequences")
+
+    @property
+    @pulumi.getter
+    def producer(self) -> str:
+        """
+        Producer Process Name if any.
+        """
+        return pulumi.get(self, "producer")
+
+    @property
+    @pulumi.getter(name="sizeInBytes")
+    def size_in_bytes(self) -> float:
+        """
+        The size of the backup stored in object storage (in bytes)
+        """
+        return pulumi.get(self, "size_in_bytes")
+
+    @property
+    @pulumi.getter(name="timeLastUpdated")
+    def time_last_updated(self) -> str:
+        """
+        The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_last_updated")
+
+    @property
+    @pulumi.getter(name="trailFileId")
+    def trail_file_id(self) -> str:
+        """
+        A Trail File identifier
+        """
+        return pulumi.get(self, "trail_file_id")
+
+
+@pulumi.output_type
+class GetTrailSequenceItemResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 sequence_id: str,
+                 size_in_bytes: float,
+                 time_last_updated: str):
+        """
+        :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
+        :param str sequence_id: Sequence Id
+        :param float size_in_bytes: The size of the backup stored in object storage (in bytes)
+        :param str time_last_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "sequence_id", sequence_id)
+        pulumi.set(__self__, "size_in_bytes", size_in_bytes)
+        pulumi.set(__self__, "time_last_updated", time_last_updated)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only the resources that match the entire 'displayName' given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="sequenceId")
+    def sequence_id(self) -> str:
+        """
+        Sequence Id
+        """
+        return pulumi.get(self, "sequence_id")
+
+    @property
+    @pulumi.getter(name="sizeInBytes")
+    def size_in_bytes(self) -> float:
+        """
+        The size of the backup stored in object storage (in bytes)
+        """
+        return pulumi.get(self, "size_in_bytes")
+
+    @property
+    @pulumi.getter(name="timeLastUpdated")
+    def time_last_updated(self) -> str:
+        """
+        The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_last_updated")
+
+
+@pulumi.output_type
+class GetTrailSequencesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetTrailSequencesTrailSequenceCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetTrailSequencesTrailSequenceCollectionItemResult'],
+                 time_last_fetched: str):
+        """
+        :param Sequence['GetTrailSequencesTrailSequenceCollectionItemArgs'] items: An array of TrailSequences.
+        :param str time_last_fetched: The time the data was last fetched from the deployment. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        pulumi.set(__self__, "items", items)
+        pulumi.set(__self__, "time_last_fetched", time_last_fetched)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetTrailSequencesTrailSequenceCollectionItemResult']:
+        """
+        An array of TrailSequences.
+        """
+        return pulumi.get(self, "items")
+
+    @property
+    @pulumi.getter(name="timeLastFetched")
+    def time_last_fetched(self) -> str:
+        """
+        The time the data was last fetched from the deployment. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_last_fetched")
+
+
+@pulumi.output_type
+class GetTrailSequencesTrailSequenceCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 sequence_id: str,
+                 size_in_bytes: float,
+                 time_last_updated: str):
+        """
+        :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
+        :param str sequence_id: Sequence Id
+        :param float size_in_bytes: The size of the backup stored in object storage (in bytes)
+        :param str time_last_updated: The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "sequence_id", sequence_id)
+        pulumi.set(__self__, "size_in_bytes", size_in_bytes)
+        pulumi.set(__self__, "time_last_updated", time_last_updated)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only the resources that match the entire 'displayName' given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="sequenceId")
+    def sequence_id(self) -> str:
+        """
+        Sequence Id
+        """
+        return pulumi.get(self, "sequence_id")
+
+    @property
+    @pulumi.getter(name="sizeInBytes")
+    def size_in_bytes(self) -> float:
+        """
+        The size of the backup stored in object storage (in bytes)
+        """
+        return pulumi.get(self, "size_in_bytes")
+
+    @property
+    @pulumi.getter(name="timeLastUpdated")
+    def time_last_updated(self) -> str:
+        """
+        The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_last_updated")
 
 

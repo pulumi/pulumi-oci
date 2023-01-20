@@ -40,7 +40,7 @@ namespace Pulumi.Oci.DatabaseMigration
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAgentsResult> InvokeAsync(GetAgentsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAgentsResult>("oci:DatabaseMigration/getAgents:getAgents", args ?? new GetAgentsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAgentsResult>("oci:DatabaseMigration/getAgents:getAgents", args ?? new GetAgentsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Agents in Oracle Cloud Infrastructure Database Migration service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.DatabaseMigration
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAgentsResult> Invoke(GetAgentsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAgentsResult>("oci:DatabaseMigration/getAgents:getAgents", args ?? new GetAgentsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAgentsResult>("oci:DatabaseMigration/getAgents:getAgents", args ?? new GetAgentsInvokeArgs(), options.WithDefaults());
     }
 
 

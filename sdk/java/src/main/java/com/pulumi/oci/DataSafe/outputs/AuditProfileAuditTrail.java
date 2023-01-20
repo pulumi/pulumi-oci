@@ -90,6 +90,11 @@ public final class AuditProfileAuditTrail {
      */
     private @Nullable String timeCreated;
     /**
+     * @return The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+     * 
+     */
+    private @Nullable String timeLastCollected;
+    /**
      * @return The date and time the audit profile was updated, in the format defined by RFC3339.
      * 
      */
@@ -212,6 +217,13 @@ public final class AuditProfileAuditTrail {
         return Optional.ofNullable(this.timeCreated);
     }
     /**
+     * @return The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+     * 
+     */
+    public Optional<String> timeLastCollected() {
+        return Optional.ofNullable(this.timeLastCollected);
+    }
+    /**
      * @return The date and time the audit profile was updated, in the format defined by RFC3339.
      * 
      */
@@ -257,6 +269,7 @@ public final class AuditProfileAuditTrail {
         private @Nullable Map<String,Object> systemTags;
         private @Nullable String targetId;
         private @Nullable String timeCreated;
+        private @Nullable String timeLastCollected;
         private @Nullable String timeUpdated;
         private @Nullable String trailLocation;
         private @Nullable String workRequestId;
@@ -278,6 +291,7 @@ public final class AuditProfileAuditTrail {
     	      this.systemTags = defaults.systemTags;
     	      this.targetId = defaults.targetId;
     	      this.timeCreated = defaults.timeCreated;
+    	      this.timeLastCollected = defaults.timeLastCollected;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.trailLocation = defaults.trailLocation;
     	      this.workRequestId = defaults.workRequestId;
@@ -359,6 +373,11 @@ public final class AuditProfileAuditTrail {
             return this;
         }
         @CustomType.Setter
+        public Builder timeLastCollected(@Nullable String timeLastCollected) {
+            this.timeLastCollected = timeLastCollected;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeUpdated(@Nullable String timeUpdated) {
             this.timeUpdated = timeUpdated;
             return this;
@@ -390,6 +409,7 @@ public final class AuditProfileAuditTrail {
             o.systemTags = systemTags;
             o.targetId = targetId;
             o.timeCreated = timeCreated;
+            o.timeLastCollected = timeLastCollected;
             o.timeUpdated = timeUpdated;
             o.trailLocation = trailLocation;
             o.workRequestId = workRequestId;

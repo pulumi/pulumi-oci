@@ -50,7 +50,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetListUserGrantsResult> InvokeAsync(GetListUserGrantsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetListUserGrantsResult>("oci:DataSafe/getListUserGrants:getListUserGrants", args ?? new GetListUserGrantsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetListUserGrantsResult>("oci:DataSafe/getListUserGrants:getListUserGrants", args ?? new GetListUserGrantsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of List User Grants in Oracle Cloud Infrastructure Data Safe service.
@@ -91,7 +91,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetListUserGrantsResult> Invoke(GetListUserGrantsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetListUserGrantsResult>("oci:DataSafe/getListUserGrants:getListUserGrants", args ?? new GetListUserGrantsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetListUserGrantsResult>("oci:DataSafe/getListUserGrants:getListUserGrants", args ?? new GetListUserGrantsInvokeArgs(), options.WithDefaults());
     }
 
 

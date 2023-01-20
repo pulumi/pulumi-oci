@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetKeyStoresResult> InvokeAsync(GetKeyStoresArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetKeyStoresResult>("oci:Database/getKeyStores:getKeyStores", args ?? new GetKeyStoresArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetKeyStoresResult>("oci:Database/getKeyStores:getKeyStores", args ?? new GetKeyStoresArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Key Stores in Oracle Cloud Infrastructure Database service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetKeyStoresResult> Invoke(GetKeyStoresInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetKeyStoresResult>("oci:Database/getKeyStores:getKeyStores", args ?? new GetKeyStoresInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetKeyStoresResult>("oci:Database/getKeyStores:getKeyStores", args ?? new GetKeyStoresInvokeArgs(), options.WithDefaults());
     }
 
 

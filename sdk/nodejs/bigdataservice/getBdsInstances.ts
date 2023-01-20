@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getBdsInstances(args: GetBdsInstancesArgs, opts?: pulumi.InvokeOptions): Promise<GetBdsInstancesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:BigDataService/getBdsInstances:getBdsInstances", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -82,9 +80,26 @@ export interface GetBdsInstancesResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Bds Instances in Oracle Cloud Infrastructure Big Data Service service.
+ *
+ * Returns a list of all Big Data Service clusters in a compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testBdsInstances = oci.BigDataService.getBdsInstances({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.bds_instance_display_name,
+ *     state: _var.bds_instance_state,
+ * });
+ * ```
+ */
 export function getBdsInstancesOutput(args: GetBdsInstancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBdsInstancesResult> {
-    return pulumi.output(args).apply(a => getBdsInstances(a, opts))
+    return pulumi.output(args).apply((a: any) => getBdsInstances(a, opts))
 }
 
 /**

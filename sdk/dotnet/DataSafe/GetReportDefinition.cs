@@ -38,7 +38,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetReportDefinitionResult> InvokeAsync(GetReportDefinitionArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetReportDefinitionResult>("oci:DataSafe/getReportDefinition:getReportDefinition", args ?? new GetReportDefinitionArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetReportDefinitionResult>("oci:DataSafe/getReportDefinition:getReportDefinition", args ?? new GetReportDefinitionArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Report Definition resource in Oracle Cloud Infrastructure Data Safe service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetReportDefinitionResult> Invoke(GetReportDefinitionInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetReportDefinitionResult>("oci:DataSafe/getReportDefinition:getReportDefinition", args ?? new GetReportDefinitionInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetReportDefinitionResult>("oci:DataSafe/getReportDefinition:getReportDefinition", args ?? new GetReportDefinitionInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -124,6 +124,10 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
+        /// The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+        /// </summary>
+        public readonly ImmutableArray<string> ComplianceStandards;
+        /// <summary>
         /// Specifies the name of a resource that provides data for the report. For example alerts, events.
         /// </summary>
         public readonly string DataSource;
@@ -159,7 +163,31 @@ namespace Pulumi.Oci.DataSafe
         /// The OCID of the parent report definition. In the case of seeded report definition, this is same as definition OCID.
         /// </summary>
         public readonly string ParentId;
+        /// <summary>
+        /// The time span of records in report to be scheduled. &lt;period-value&gt;&lt;period&gt; Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
+        /// </summary>
+        public readonly string RecordTimeSpan;
         public readonly string ReportDefinitionId;
+        /// <summary>
+        /// Schedule to generate the report periodically in the specified format: &lt;version-string&gt;;&lt;version-specific-schedule&gt;
+        /// </summary>
+        public readonly string Schedule;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the scheduled resource should be created.
+        /// </summary>
+        public readonly string ScheduledReportCompartmentId;
+        /// <summary>
+        /// Specifies the format of report to be excel or pdf
+        /// </summary>
+        public readonly string ScheduledReportMimeType;
+        /// <summary>
+        /// The name of the report to be scheduled.
+        /// </summary>
+        public readonly string ScheduledReportName;
+        /// <summary>
+        /// Specifies the limit on number of rows in report.
+        /// </summary>
+        public readonly int ScheduledReportRowLimit;
         /// <summary>
         /// Additional scim filters used to get the specific summary.
         /// </summary>
@@ -197,6 +225,8 @@ namespace Pulumi.Oci.DataSafe
 
             string compartmentId,
 
+            ImmutableArray<string> complianceStandards,
+
             string dataSource,
 
             ImmutableDictionary<string, object> definedTags,
@@ -215,7 +245,19 @@ namespace Pulumi.Oci.DataSafe
 
             string parentId,
 
+            string recordTimeSpan,
+
             string reportDefinitionId,
+
+            string schedule,
+
+            string scheduledReportCompartmentId,
+
+            string scheduledReportMimeType,
+
+            string scheduledReportName,
+
+            int scheduledReportRowLimit,
 
             string scimFilter,
 
@@ -234,6 +276,7 @@ namespace Pulumi.Oci.DataSafe
             ColumnInfos = columnInfos;
             ColumnSortings = columnSortings;
             CompartmentId = compartmentId;
+            ComplianceStandards = complianceStandards;
             DataSource = dataSource;
             DefinedTags = definedTags;
             Description = description;
@@ -243,7 +286,13 @@ namespace Pulumi.Oci.DataSafe
             Id = id;
             IsSeeded = isSeeded;
             ParentId = parentId;
+            RecordTimeSpan = recordTimeSpan;
             ReportDefinitionId = reportDefinitionId;
+            Schedule = schedule;
+            ScheduledReportCompartmentId = scheduledReportCompartmentId;
+            ScheduledReportMimeType = scheduledReportMimeType;
+            ScheduledReportName = scheduledReportName;
+            ScheduledReportRowLimit = scheduledReportRowLimit;
             ScimFilter = scimFilter;
             State = state;
             Summaries = summaries;

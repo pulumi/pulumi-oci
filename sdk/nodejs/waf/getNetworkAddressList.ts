@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNetworkAddressList(args: GetNetworkAddressListArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkAddressListResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Waf/getNetworkAddressList:getNetworkAddressList", {
         "networkAddressListId": args.networkAddressListId,
     }, opts);
@@ -100,9 +98,24 @@ export interface GetNetworkAddressListResult {
      */
     readonly vcnAddresses: outputs.Waf.GetNetworkAddressListVcnAddress[];
 }
-
+/**
+ * This data source provides details about a specific Network Address List resource in Oracle Cloud Infrastructure Waf service.
+ *
+ * Gets a NetworkAddressList by OCID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testNetworkAddressList = oci.Waf.getNetworkAddressList({
+ *     networkAddressListId: oci_waf_network_address_list.test_network_address_list.id,
+ * });
+ * ```
+ */
 export function getNetworkAddressListOutput(args: GetNetworkAddressListOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkAddressListResult> {
-    return pulumi.output(args).apply(a => getNetworkAddressList(a, opts))
+    return pulumi.output(args).apply((a: any) => getNetworkAddressList(a, opts))
 }
 
 /**

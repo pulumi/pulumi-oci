@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -17,16 +18,13 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPeerRegionForRemotePeerings = pulumi.output(oci.Core.getPeerRegionForRemotePeerings());
+ * const testPeerRegionForRemotePeerings = oci.Core.getPeerRegionForRemotePeerings({});
  * ```
  */
 export function getPeerRegionForRemotePeerings(args?: GetPeerRegionForRemotePeeringsArgs, opts?: pulumi.InvokeOptions): Promise<GetPeerRegionForRemotePeeringsResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getPeerRegionForRemotePeerings:getPeerRegionForRemotePeerings", {
         "filters": args.filters,
     }, opts);
@@ -53,9 +51,23 @@ export interface GetPeerRegionForRemotePeeringsResult {
      */
     readonly peerRegionForRemotePeerings: outputs.Core.GetPeerRegionForRemotePeeringsPeerRegionForRemotePeering[];
 }
-
+/**
+ * This data source provides the list of Peer Region For Remote Peerings in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the regions that support remote VCN peering (which is peering across regions).
+ * For more information, see [VCN Peering](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm).
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testPeerRegionForRemotePeerings = oci.Core.getPeerRegionForRemotePeerings({});
+ * ```
+ */
 export function getPeerRegionForRemotePeeringsOutput(args?: GetPeerRegionForRemotePeeringsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPeerRegionForRemotePeeringsResult> {
-    return pulumi.output(args).apply(a => getPeerRegionForRemotePeerings(a, opts))
+    return pulumi.output(args).apply((a: any) => getPeerRegionForRemotePeerings(a, opts))
 }
 
 /**

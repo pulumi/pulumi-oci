@@ -49,6 +49,18 @@ namespace Pulumi.Oci.Mysql.Inputs
         public Input<int>? PortX { get; set; }
 
         /// <summary>
+        /// The OCID of the resource that this endpoint is attached to.
+        /// </summary>
+        [Input("resourceId")]
+        public Input<string>? ResourceId { get; set; }
+
+        /// <summary>
+        /// The type of endpoint that clients and connectors can connect to.
+        /// </summary>
+        [Input("resourceType")]
+        public Input<string>? ResourceType { get; set; }
+
+        /// <summary>
         /// The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
         /// </summary>
         [Input("status")]

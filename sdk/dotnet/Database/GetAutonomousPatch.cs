@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAutonomousPatchResult> InvokeAsync(GetAutonomousPatchArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAutonomousPatchResult>("oci:Database/getAutonomousPatch:getAutonomousPatch", args ?? new GetAutonomousPatchArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAutonomousPatchResult>("oci:Database/getAutonomousPatch:getAutonomousPatch", args ?? new GetAutonomousPatchArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Autonomous Patch resource in Oracle Cloud Infrastructure Database service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAutonomousPatchResult> Invoke(GetAutonomousPatchInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAutonomousPatchResult>("oci:Database/getAutonomousPatch:getAutonomousPatch", args ?? new GetAutonomousPatchInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousPatchResult>("oci:Database/getAutonomousPatch:getAutonomousPatch", args ?? new GetAutonomousPatchInvokeArgs(), options.WithDefaults());
     }
 
 

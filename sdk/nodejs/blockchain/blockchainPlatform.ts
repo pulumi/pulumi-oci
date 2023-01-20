@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -246,7 +247,7 @@ export class BlockchainPlatform extends pulumi.CustomResource {
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["federatedUserId"] = args ? args.federatedUserId : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["idcsAccessToken"] = args ? args.idcsAccessToken : undefined;
+            resourceInputs["idcsAccessToken"] = args?.idcsAccessToken ? pulumi.secret(args.idcsAccessToken) : undefined;
             resourceInputs["isByol"] = args ? args.isByol : undefined;
             resourceInputs["loadBalancerShape"] = args ? args.loadBalancerShape : undefined;
             resourceInputs["platformRole"] = args ? args.platformRole : undefined;
@@ -267,6 +268,8 @@ export class BlockchainPlatform extends pulumi.CustomResource {
             resourceInputs["timeUpdated"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["idcsAccessToken"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(BlockchainPlatform.__pulumiType, name, resourceInputs, opts);
     }
 }

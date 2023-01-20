@@ -22,7 +22,7 @@ class GetCloudVmClusterResult:
     """
     A collection of values returned by getCloudVmCluster.
     """
-    def __init__(__self__, availability_domain=None, backup_network_nsg_ids=None, backup_subnet_id=None, cloud_exadata_infrastructure_id=None, cloud_vm_cluster_id=None, cluster_name=None, compartment_id=None, cpu_core_count=None, create_async=None, data_collection_options=None, data_storage_percentage=None, defined_tags=None, disk_redundancy=None, display_name=None, domain=None, freeform_tags=None, gi_version=None, hostname=None, id=None, iorm_config_caches=None, is_local_backup_enabled=None, is_sparse_diskgroup_enabled=None, last_update_history_entry_id=None, license_model=None, lifecycle_details=None, listener_port=None, node_count=None, nsg_ids=None, ocpu_count=None, scan_dns_name=None, scan_dns_record_id=None, scan_ip_ids=None, scan_listener_port_tcp=None, scan_listener_port_tcp_ssl=None, shape=None, ssh_public_keys=None, state=None, storage_size_in_gbs=None, subnet_id=None, system_version=None, time_created=None, time_zone=None, vip_ids=None, zone_id=None):
+    def __init__(__self__, availability_domain=None, backup_network_nsg_ids=None, backup_subnet_id=None, cloud_exadata_infrastructure_id=None, cloud_vm_cluster_id=None, cluster_name=None, compartment_id=None, cpu_core_count=None, create_async=None, data_collection_options=None, data_storage_percentage=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_servers=None, defined_tags=None, disk_redundancy=None, display_name=None, domain=None, freeform_tags=None, gi_version=None, hostname=None, id=None, iorm_config_caches=None, is_local_backup_enabled=None, is_sparse_diskgroup_enabled=None, last_update_history_entry_id=None, license_model=None, lifecycle_details=None, listener_port=None, memory_size_in_gbs=None, node_count=None, nsg_ids=None, ocpu_count=None, private_zone_id=None, scan_dns_name=None, scan_dns_record_id=None, scan_ip_ids=None, scan_listener_port_tcp=None, scan_listener_port_tcp_ssl=None, shape=None, ssh_public_keys=None, state=None, storage_size_in_gbs=None, subnet_id=None, system_version=None, time_created=None, time_zone=None, vip_ids=None, zone_id=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -56,6 +56,15 @@ class GetCloudVmClusterResult:
         if data_storage_percentage and not isinstance(data_storage_percentage, int):
             raise TypeError("Expected argument 'data_storage_percentage' to be a int")
         pulumi.set(__self__, "data_storage_percentage", data_storage_percentage)
+        if data_storage_size_in_tbs and not isinstance(data_storage_size_in_tbs, float):
+            raise TypeError("Expected argument 'data_storage_size_in_tbs' to be a float")
+        pulumi.set(__self__, "data_storage_size_in_tbs", data_storage_size_in_tbs)
+        if db_node_storage_size_in_gbs and not isinstance(db_node_storage_size_in_gbs, int):
+            raise TypeError("Expected argument 'db_node_storage_size_in_gbs' to be a int")
+        pulumi.set(__self__, "db_node_storage_size_in_gbs", db_node_storage_size_in_gbs)
+        if db_servers and not isinstance(db_servers, list):
+            raise TypeError("Expected argument 'db_servers' to be a list")
+        pulumi.set(__self__, "db_servers", db_servers)
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -101,6 +110,9 @@ class GetCloudVmClusterResult:
         if listener_port and not isinstance(listener_port, str):
             raise TypeError("Expected argument 'listener_port' to be a str")
         pulumi.set(__self__, "listener_port", listener_port)
+        if memory_size_in_gbs and not isinstance(memory_size_in_gbs, int):
+            raise TypeError("Expected argument 'memory_size_in_gbs' to be a int")
+        pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
         if node_count and not isinstance(node_count, int):
             raise TypeError("Expected argument 'node_count' to be a int")
         pulumi.set(__self__, "node_count", node_count)
@@ -110,6 +122,9 @@ class GetCloudVmClusterResult:
         if ocpu_count and not isinstance(ocpu_count, float):
             raise TypeError("Expected argument 'ocpu_count' to be a float")
         pulumi.set(__self__, "ocpu_count", ocpu_count)
+        if private_zone_id and not isinstance(private_zone_id, str):
+            raise TypeError("Expected argument 'private_zone_id' to be a str")
+        pulumi.set(__self__, "private_zone_id", private_zone_id)
         if scan_dns_name and not isinstance(scan_dns_name, str):
             raise TypeError("Expected argument 'scan_dns_name' to be a str")
         pulumi.set(__self__, "scan_dns_name", scan_dns_name)
@@ -239,6 +254,30 @@ class GetCloudVmClusterResult:
         return pulumi.get(self, "data_storage_percentage")
 
     @property
+    @pulumi.getter(name="dataStorageSizeInTbs")
+    def data_storage_size_in_tbs(self) -> float:
+        """
+        The data disk group size to be allocated in TBs.
+        """
+        return pulumi.get(self, "data_storage_size_in_tbs")
+
+    @property
+    @pulumi.getter(name="dbNodeStorageSizeInGbs")
+    def db_node_storage_size_in_gbs(self) -> int:
+        """
+        The local node storage to be allocated in GBs.
+        """
+        return pulumi.get(self, "db_node_storage_size_in_gbs")
+
+    @property
+    @pulumi.getter(name="dbServers")
+    def db_servers(self) -> Sequence[str]:
+        """
+        The list of DB servers.
+        """
+        return pulumi.get(self, "db_servers")
+
+    @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, Any]:
         """
@@ -359,6 +398,14 @@ class GetCloudVmClusterResult:
         return pulumi.get(self, "listener_port")
 
     @property
+    @pulumi.getter(name="memorySizeInGbs")
+    def memory_size_in_gbs(self) -> int:
+        """
+        The memory to be allocated in GBs.
+        """
+        return pulumi.get(self, "memory_size_in_gbs")
+
+    @property
     @pulumi.getter(name="nodeCount")
     def node_count(self) -> int:
         """
@@ -382,6 +429,11 @@ class GetCloudVmClusterResult:
         The number of OCPU cores to enable on the cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
         """
         return pulumi.get(self, "ocpu_count")
+
+    @property
+    @pulumi.getter(name="privateZoneId")
+    def private_zone_id(self) -> str:
+        return pulumi.get(self, "private_zone_id")
 
     @property
     @pulumi.getter(name="scanDnsName")
@@ -521,6 +573,9 @@ class AwaitableGetCloudVmClusterResult(GetCloudVmClusterResult):
             create_async=self.create_async,
             data_collection_options=self.data_collection_options,
             data_storage_percentage=self.data_storage_percentage,
+            data_storage_size_in_tbs=self.data_storage_size_in_tbs,
+            db_node_storage_size_in_gbs=self.db_node_storage_size_in_gbs,
+            db_servers=self.db_servers,
             defined_tags=self.defined_tags,
             disk_redundancy=self.disk_redundancy,
             display_name=self.display_name,
@@ -536,9 +591,11 @@ class AwaitableGetCloudVmClusterResult(GetCloudVmClusterResult):
             license_model=self.license_model,
             lifecycle_details=self.lifecycle_details,
             listener_port=self.listener_port,
+            memory_size_in_gbs=self.memory_size_in_gbs,
             node_count=self.node_count,
             nsg_ids=self.nsg_ids,
             ocpu_count=self.ocpu_count,
+            private_zone_id=self.private_zone_id,
             scan_dns_name=self.scan_dns_name,
             scan_dns_record_id=self.scan_dns_record_id,
             scan_ip_ids=self.scan_ip_ids,
@@ -592,6 +649,9 @@ def get_cloud_vm_cluster(cloud_vm_cluster_id: Optional[str] = None,
         create_async=__ret__.create_async,
         data_collection_options=__ret__.data_collection_options,
         data_storage_percentage=__ret__.data_storage_percentage,
+        data_storage_size_in_tbs=__ret__.data_storage_size_in_tbs,
+        db_node_storage_size_in_gbs=__ret__.db_node_storage_size_in_gbs,
+        db_servers=__ret__.db_servers,
         defined_tags=__ret__.defined_tags,
         disk_redundancy=__ret__.disk_redundancy,
         display_name=__ret__.display_name,
@@ -607,9 +667,11 @@ def get_cloud_vm_cluster(cloud_vm_cluster_id: Optional[str] = None,
         license_model=__ret__.license_model,
         lifecycle_details=__ret__.lifecycle_details,
         listener_port=__ret__.listener_port,
+        memory_size_in_gbs=__ret__.memory_size_in_gbs,
         node_count=__ret__.node_count,
         nsg_ids=__ret__.nsg_ids,
         ocpu_count=__ret__.ocpu_count,
+        private_zone_id=__ret__.private_zone_id,
         scan_dns_name=__ret__.scan_dns_name,
         scan_dns_record_id=__ret__.scan_dns_record_id,
         scan_ip_ids=__ret__.scan_ip_ids,

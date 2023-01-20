@@ -15,6 +15,9 @@ namespace Pulumi.Oci.DataSafe
         /// This data source provides the list of Masking Analytics in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// Gets consolidated masking analytics data based on the specified query parameters.
+        /// If CompartmentIdInSubtreeQueryParam is specified as true, the behaviour
+        /// is equivalent to accessLevel "ACCESSIBLE" by default.
+        /// 
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -42,12 +45,15 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetMaskingAnalyticsResult> InvokeAsync(GetMaskingAnalyticsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetMaskingAnalyticsResult>("oci:DataSafe/getMaskingAnalytics:getMaskingAnalytics", args ?? new GetMaskingAnalyticsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetMaskingAnalyticsResult>("oci:DataSafe/getMaskingAnalytics:getMaskingAnalytics", args ?? new GetMaskingAnalyticsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Masking Analytics in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// Gets consolidated masking analytics data based on the specified query parameters.
+        /// If CompartmentIdInSubtreeQueryParam is specified as true, the behaviour
+        /// is equivalent to accessLevel "ACCESSIBLE" by default.
+        /// 
         /// 
         /// {{% examples %}}
         /// ## Example Usage
@@ -75,7 +81,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetMaskingAnalyticsResult> Invoke(GetMaskingAnalyticsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetMaskingAnalyticsResult>("oci:DataSafe/getMaskingAnalytics:getMaskingAnalytics", args ?? new GetMaskingAnalyticsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetMaskingAnalyticsResult>("oci:DataSafe/getMaskingAnalytics:getMaskingAnalytics", args ?? new GetMaskingAnalyticsInvokeArgs(), options.WithDefaults());
     }
 
 

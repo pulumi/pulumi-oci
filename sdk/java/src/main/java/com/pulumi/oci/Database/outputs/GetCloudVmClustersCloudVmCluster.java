@@ -64,6 +64,21 @@ public final class GetCloudVmClustersCloudVmCluster {
      */
     private Integer dataStoragePercentage;
     /**
+     * @return The data disk group size to be allocated in TBs.
+     * 
+     */
+    private Double dataStorageSizeInTbs;
+    /**
+     * @return The local node storage to be allocated in GBs.
+     * 
+     */
+    private Integer dbNodeStorageSizeInGbs;
+    /**
+     * @return The list of DB servers.
+     * 
+     */
+    private List<String> dbServers;
+    /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
@@ -135,6 +150,11 @@ public final class GetCloudVmClustersCloudVmCluster {
      */
     private String listenerPort;
     /**
+     * @return The memory to be allocated in GBs.
+     * 
+     */
+    private Integer memorySizeInGbs;
+    /**
      * @return The number of nodes in the cloud VM cluster.
      * 
      */
@@ -150,6 +170,7 @@ public final class GetCloudVmClustersCloudVmCluster {
      * 
      */
     private Double ocpuCount;
+    private String privateZoneId;
     /**
      * @return The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
      * 
@@ -294,6 +315,27 @@ public final class GetCloudVmClustersCloudVmCluster {
         return this.dataStoragePercentage;
     }
     /**
+     * @return The data disk group size to be allocated in TBs.
+     * 
+     */
+    public Double dataStorageSizeInTbs() {
+        return this.dataStorageSizeInTbs;
+    }
+    /**
+     * @return The local node storage to be allocated in GBs.
+     * 
+     */
+    public Integer dbNodeStorageSizeInGbs() {
+        return this.dbNodeStorageSizeInGbs;
+    }
+    /**
+     * @return The list of DB servers.
+     * 
+     */
+    public List<String> dbServers() {
+        return this.dbServers;
+    }
+    /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
@@ -395,6 +437,13 @@ public final class GetCloudVmClustersCloudVmCluster {
         return this.listenerPort;
     }
     /**
+     * @return The memory to be allocated in GBs.
+     * 
+     */
+    public Integer memorySizeInGbs() {
+        return this.memorySizeInGbs;
+    }
+    /**
      * @return The number of nodes in the cloud VM cluster.
      * 
      */
@@ -415,6 +464,9 @@ public final class GetCloudVmClustersCloudVmCluster {
      */
     public Double ocpuCount() {
         return this.ocpuCount;
+    }
+    public String privateZoneId() {
+        return this.privateZoneId;
     }
     /**
      * @return The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
@@ -541,6 +593,9 @@ public final class GetCloudVmClustersCloudVmCluster {
         private Boolean createAsync;
         private List<GetCloudVmClustersCloudVmClusterDataCollectionOption> dataCollectionOptions;
         private Integer dataStoragePercentage;
+        private Double dataStorageSizeInTbs;
+        private Integer dbNodeStorageSizeInGbs;
+        private List<String> dbServers;
         private Map<String,Object> definedTags;
         private String diskRedundancy;
         private String displayName;
@@ -556,9 +611,11 @@ public final class GetCloudVmClustersCloudVmCluster {
         private String licenseModel;
         private String lifecycleDetails;
         private String listenerPort;
+        private Integer memorySizeInGbs;
         private Integer nodeCount;
         private List<String> nsgIds;
         private Double ocpuCount;
+        private String privateZoneId;
         private String scanDnsName;
         private String scanDnsRecordId;
         private List<String> scanIpIds;
@@ -587,6 +644,9 @@ public final class GetCloudVmClustersCloudVmCluster {
     	      this.createAsync = defaults.createAsync;
     	      this.dataCollectionOptions = defaults.dataCollectionOptions;
     	      this.dataStoragePercentage = defaults.dataStoragePercentage;
+    	      this.dataStorageSizeInTbs = defaults.dataStorageSizeInTbs;
+    	      this.dbNodeStorageSizeInGbs = defaults.dbNodeStorageSizeInGbs;
+    	      this.dbServers = defaults.dbServers;
     	      this.definedTags = defaults.definedTags;
     	      this.diskRedundancy = defaults.diskRedundancy;
     	      this.displayName = defaults.displayName;
@@ -602,9 +662,11 @@ public final class GetCloudVmClustersCloudVmCluster {
     	      this.licenseModel = defaults.licenseModel;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.listenerPort = defaults.listenerPort;
+    	      this.memorySizeInGbs = defaults.memorySizeInGbs;
     	      this.nodeCount = defaults.nodeCount;
     	      this.nsgIds = defaults.nsgIds;
     	      this.ocpuCount = defaults.ocpuCount;
+    	      this.privateZoneId = defaults.privateZoneId;
     	      this.scanDnsName = defaults.scanDnsName;
     	      this.scanDnsRecordId = defaults.scanDnsRecordId;
     	      this.scanIpIds = defaults.scanIpIds;
@@ -677,6 +739,24 @@ public final class GetCloudVmClustersCloudVmCluster {
         public Builder dataStoragePercentage(Integer dataStoragePercentage) {
             this.dataStoragePercentage = Objects.requireNonNull(dataStoragePercentage);
             return this;
+        }
+        @CustomType.Setter
+        public Builder dataStorageSizeInTbs(Double dataStorageSizeInTbs) {
+            this.dataStorageSizeInTbs = Objects.requireNonNull(dataStorageSizeInTbs);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder dbNodeStorageSizeInGbs(Integer dbNodeStorageSizeInGbs) {
+            this.dbNodeStorageSizeInGbs = Objects.requireNonNull(dbNodeStorageSizeInGbs);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder dbServers(List<String> dbServers) {
+            this.dbServers = Objects.requireNonNull(dbServers);
+            return this;
+        }
+        public Builder dbServers(String... dbServers) {
+            return dbServers(List.of(dbServers));
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
@@ -757,6 +837,11 @@ public final class GetCloudVmClustersCloudVmCluster {
             return this;
         }
         @CustomType.Setter
+        public Builder memorySizeInGbs(Integer memorySizeInGbs) {
+            this.memorySizeInGbs = Objects.requireNonNull(memorySizeInGbs);
+            return this;
+        }
+        @CustomType.Setter
         public Builder nodeCount(Integer nodeCount) {
             this.nodeCount = Objects.requireNonNull(nodeCount);
             return this;
@@ -772,6 +857,11 @@ public final class GetCloudVmClustersCloudVmCluster {
         @CustomType.Setter
         public Builder ocpuCount(Double ocpuCount) {
             this.ocpuCount = Objects.requireNonNull(ocpuCount);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder privateZoneId(String privateZoneId) {
+            this.privateZoneId = Objects.requireNonNull(privateZoneId);
             return this;
         }
         @CustomType.Setter
@@ -870,6 +960,9 @@ public final class GetCloudVmClustersCloudVmCluster {
             o.createAsync = createAsync;
             o.dataCollectionOptions = dataCollectionOptions;
             o.dataStoragePercentage = dataStoragePercentage;
+            o.dataStorageSizeInTbs = dataStorageSizeInTbs;
+            o.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
+            o.dbServers = dbServers;
             o.definedTags = definedTags;
             o.diskRedundancy = diskRedundancy;
             o.displayName = displayName;
@@ -885,9 +978,11 @@ public final class GetCloudVmClustersCloudVmCluster {
             o.licenseModel = licenseModel;
             o.lifecycleDetails = lifecycleDetails;
             o.listenerPort = listenerPort;
+            o.memorySizeInGbs = memorySizeInGbs;
             o.nodeCount = nodeCount;
             o.nsgIds = nsgIds;
             o.ocpuCount = ocpuCount;
+            o.privateZoneId = privateZoneId;
             o.scanDnsName = scanDnsName;
             o.scanDnsRecordId = scanDnsRecordId;
             o.scanIpIds = scanIpIds;

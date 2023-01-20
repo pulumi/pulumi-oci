@@ -41,7 +41,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetTagNamespacesResult> InvokeAsync(GetTagNamespacesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetTagNamespacesResult>("oci:Identity/getTagNamespaces:getTagNamespaces", args ?? new GetTagNamespacesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetTagNamespacesResult>("oci:Identity/getTagNamespaces:getTagNamespaces", args ?? new GetTagNamespacesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Tag Namespaces in Oracle Cloud Infrastructure Identity service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetTagNamespacesResult> Invoke(GetTagNamespacesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetTagNamespacesResult>("oci:Identity/getTagNamespaces:getTagNamespaces", args ?? new GetTagNamespacesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetTagNamespacesResult>("oci:Identity/getTagNamespaces:getTagNamespaces", args ?? new GetTagNamespacesInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Optimizer
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetProfileLevelResult> InvokeAsync(GetProfileLevelArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetProfileLevelResult>("oci:Optimizer/getProfileLevel:getProfileLevel", args ?? new GetProfileLevelArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetProfileLevelResult>("oci:Optimizer/getProfileLevel:getProfileLevel", args ?? new GetProfileLevelArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Profile Level resource in Oracle Cloud Infrastructure Optimizer service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.Optimizer
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetProfileLevelResult> Invoke(GetProfileLevelInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetProfileLevelResult>("oci:Optimizer/getProfileLevel:getProfileLevel", args ?? new GetProfileLevelInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetProfileLevelResult>("oci:Optimizer/getProfileLevel:getProfileLevel", args ?? new GetProfileLevelInvokeArgs(), options.WithDefaults());
     }
 
 

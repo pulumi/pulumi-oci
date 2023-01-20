@@ -5,147 +5,550 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./addSdmColumns";
-export * from "./alert";
-export * from "./auditArchiveRetrieval";
-export * from "./auditPolicy";
-export * from "./auditProfile";
-export * from "./auditTrail";
-export * from "./compareSecurityAssessment";
-export * from "./compareUserAssessment";
-export * from "./dataSafeConfiguration";
-export * from "./dataSafePrivateEndpoint";
-export * from "./discoveryJobsResult";
-export * from "./discoveryMod";
-export * from "./getAlert";
-export * from "./getAlertAnalytic";
-export * from "./getAlertPolicies";
-export * from "./getAlertPolicy";
-export * from "./getAlertPolicyRule";
-export * from "./getAlertPolicyRules";
-export * from "./getAlerts";
-export * from "./getAuditArchiveRetrieval";
-export * from "./getAuditArchiveRetrievals";
-export * from "./getAuditEvent";
-export * from "./getAuditEventAnalytic";
-export * from "./getAuditEvents";
-export * from "./getAuditPolicies";
-export * from "./getAuditPolicy";
-export * from "./getAuditProfile";
-export * from "./getAuditProfileAnalytic";
-export * from "./getAuditProfileAvailableAuditVolume";
-export * from "./getAuditProfileAvailableAuditVolumes";
-export * from "./getAuditProfileCollectedAuditVolume";
-export * from "./getAuditProfileCollectedAuditVolumes";
-export * from "./getAuditProfiles";
-export * from "./getAuditTrail";
-export * from "./getAuditTrailAnalytic";
-export * from "./getAuditTrails";
-export * from "./getCompatibleFormatsForDataType";
-export * from "./getCompatibleFormatsForSensitiveType";
-export * from "./getDataSafeConfiguration";
-export * from "./getDataSafePrivateEndpoint";
-export * from "./getDataSafePrivateEndpoints";
-export * from "./getDiscoveryAnalytic";
-export * from "./getDiscoveryAnalytics";
-export * from "./getDiscoveryJob";
-export * from "./getDiscoveryJobsResult";
-export * from "./getDiscoveryJobsResults";
-export * from "./getLibraryMaskingFormat";
-export * from "./getLibraryMaskingFormats";
-export * from "./getListUserGrants";
-export * from "./getMaskingAnalytic";
-export * from "./getMaskingAnalytics";
-export * from "./getMaskingPolicies";
-export * from "./getMaskingPoliciesMaskingColumn";
-export * from "./getMaskingPoliciesMaskingColumns";
-export * from "./getMaskingPolicy";
-export * from "./getMaskingReport";
-export * from "./getMaskingReportMaskedColumns";
-export * from "./getMaskingReports";
-export * from "./getMaskingReportsMaskedColumn";
-export * from "./getOnpremConnector";
-export * from "./getOnpremConnectors";
-export * from "./getReport";
-export * from "./getReportContent";
-export * from "./getReportDefinition";
-export * from "./getReportDefinitions";
-export * from "./getReports";
-export * from "./getSecurityAssessment";
-export * from "./getSecurityAssessmentComparison";
-export * from "./getSecurityAssessmentFinding";
-export * from "./getSecurityAssessmentFindings";
-export * from "./getSecurityAssessments";
-export * from "./getSensitiveDataModel";
-export * from "./getSensitiveDataModels";
-export * from "./getSensitiveDataModelsSensitiveColumn";
-export * from "./getSensitiveDataModelsSensitiveColumns";
-export * from "./getSensitiveType";
-export * from "./getSensitiveTypes";
-export * from "./getTargetAlertPolicyAssociation";
-export * from "./getTargetAlertPolicyAssociations";
-export * from "./getTargetDatabase";
-export * from "./getTargetDatabaseRole";
-export * from "./getTargetDatabaseRoles";
-export * from "./getTargetDatabases";
-export * from "./getTargetDatabasesColumns";
-export * from "./getTargetDatabasesSchemas";
-export * from "./getTargetDatabasesTables";
-export * from "./getUserAssessment";
-export * from "./getUserAssessmentComparison";
-export * from "./getUserAssessmentUserAnalytics";
-export * from "./getUserAssessmentUsers";
-export * from "./getUserAssessments";
-export * from "./libraryMasingFormat";
-export * from "./maskData";
-export * from "./maskingPoliciesMaskingColumn";
-export * from "./maskingPolicy";
-export * from "./onPremConnector";
-export * from "./reportDefinition";
-export * from "./securityAssessment";
-export * from "./sensitiveDataModel";
-export * from "./sensitiveDataModelsApplyDiscoveryJobResults";
-export * from "./sensitiveDataModelsSensitiveColumn";
-export * from "./sensitiveType";
-export * from "./setSecurityAssessmentBaseline";
-export * from "./setUserAssessmentBaseline";
-export * from "./targetAlertPolicyAssociation";
-export * from "./targetDatabase";
-export * from "./unsetSecurityAssessmentBaseline";
-export * from "./unsetUserAssessmentBaseline";
-export * from "./userAssessment";
+export { AddSdmColumnsArgs, AddSdmColumnsState } from "./addSdmColumns";
+export type AddSdmColumns = import("./addSdmColumns").AddSdmColumns;
+export const AddSdmColumns: typeof import("./addSdmColumns").AddSdmColumns = null as any;
+utilities.lazyLoad(exports, ["AddSdmColumns"], () => require("./addSdmColumns"));
 
-// Import resources to register:
-import { AddSdmColumns } from "./addSdmColumns";
-import { Alert } from "./alert";
-import { AuditArchiveRetrieval } from "./auditArchiveRetrieval";
-import { AuditPolicy } from "./auditPolicy";
-import { AuditProfile } from "./auditProfile";
-import { AuditTrail } from "./auditTrail";
-import { CompareSecurityAssessment } from "./compareSecurityAssessment";
-import { CompareUserAssessment } from "./compareUserAssessment";
-import { DataSafeConfiguration } from "./dataSafeConfiguration";
-import { DataSafePrivateEndpoint } from "./dataSafePrivateEndpoint";
-import { DiscoveryJobsResult } from "./discoveryJobsResult";
-import { DiscoveryMod } from "./discoveryMod";
-import { LibraryMasingFormat } from "./libraryMasingFormat";
-import { MaskData } from "./maskData";
-import { MaskingPoliciesMaskingColumn } from "./maskingPoliciesMaskingColumn";
-import { MaskingPolicy } from "./maskingPolicy";
-import { OnPremConnector } from "./onPremConnector";
-import { ReportDefinition } from "./reportDefinition";
-import { SecurityAssessment } from "./securityAssessment";
-import { SensitiveDataModel } from "./sensitiveDataModel";
-import { SensitiveDataModelsApplyDiscoveryJobResults } from "./sensitiveDataModelsApplyDiscoveryJobResults";
-import { SensitiveDataModelsSensitiveColumn } from "./sensitiveDataModelsSensitiveColumn";
-import { SensitiveType } from "./sensitiveType";
-import { SetSecurityAssessmentBaseline } from "./setSecurityAssessmentBaseline";
-import { SetUserAssessmentBaseline } from "./setUserAssessmentBaseline";
-import { TargetAlertPolicyAssociation } from "./targetAlertPolicyAssociation";
-import { TargetDatabase } from "./targetDatabase";
-import { UnsetSecurityAssessmentBaseline } from "./unsetSecurityAssessmentBaseline";
-import { UnsetUserAssessmentBaseline } from "./unsetUserAssessmentBaseline";
-import { UserAssessment } from "./userAssessment";
+export { AlertArgs, AlertState } from "./alert";
+export type Alert = import("./alert").Alert;
+export const Alert: typeof import("./alert").Alert = null as any;
+utilities.lazyLoad(exports, ["Alert"], () => require("./alert"));
+
+export { AuditArchiveRetrievalArgs, AuditArchiveRetrievalState } from "./auditArchiveRetrieval";
+export type AuditArchiveRetrieval = import("./auditArchiveRetrieval").AuditArchiveRetrieval;
+export const AuditArchiveRetrieval: typeof import("./auditArchiveRetrieval").AuditArchiveRetrieval = null as any;
+utilities.lazyLoad(exports, ["AuditArchiveRetrieval"], () => require("./auditArchiveRetrieval"));
+
+export { AuditPolicyArgs, AuditPolicyState } from "./auditPolicy";
+export type AuditPolicy = import("./auditPolicy").AuditPolicy;
+export const AuditPolicy: typeof import("./auditPolicy").AuditPolicy = null as any;
+utilities.lazyLoad(exports, ["AuditPolicy"], () => require("./auditPolicy"));
+
+export { AuditProfileArgs, AuditProfileState } from "./auditProfile";
+export type AuditProfile = import("./auditProfile").AuditProfile;
+export const AuditProfile: typeof import("./auditProfile").AuditProfile = null as any;
+utilities.lazyLoad(exports, ["AuditProfile"], () => require("./auditProfile"));
+
+export { AuditTrailArgs, AuditTrailState } from "./auditTrail";
+export type AuditTrail = import("./auditTrail").AuditTrail;
+export const AuditTrail: typeof import("./auditTrail").AuditTrail = null as any;
+utilities.lazyLoad(exports, ["AuditTrail"], () => require("./auditTrail"));
+
+export { CompareSecurityAssessmentArgs, CompareSecurityAssessmentState } from "./compareSecurityAssessment";
+export type CompareSecurityAssessment = import("./compareSecurityAssessment").CompareSecurityAssessment;
+export const CompareSecurityAssessment: typeof import("./compareSecurityAssessment").CompareSecurityAssessment = null as any;
+utilities.lazyLoad(exports, ["CompareSecurityAssessment"], () => require("./compareSecurityAssessment"));
+
+export { CompareUserAssessmentArgs, CompareUserAssessmentState } from "./compareUserAssessment";
+export type CompareUserAssessment = import("./compareUserAssessment").CompareUserAssessment;
+export const CompareUserAssessment: typeof import("./compareUserAssessment").CompareUserAssessment = null as any;
+utilities.lazyLoad(exports, ["CompareUserAssessment"], () => require("./compareUserAssessment"));
+
+export { DataSafeConfigurationArgs, DataSafeConfigurationState } from "./dataSafeConfiguration";
+export type DataSafeConfiguration = import("./dataSafeConfiguration").DataSafeConfiguration;
+export const DataSafeConfiguration: typeof import("./dataSafeConfiguration").DataSafeConfiguration = null as any;
+utilities.lazyLoad(exports, ["DataSafeConfiguration"], () => require("./dataSafeConfiguration"));
+
+export { DataSafePrivateEndpointArgs, DataSafePrivateEndpointState } from "./dataSafePrivateEndpoint";
+export type DataSafePrivateEndpoint = import("./dataSafePrivateEndpoint").DataSafePrivateEndpoint;
+export const DataSafePrivateEndpoint: typeof import("./dataSafePrivateEndpoint").DataSafePrivateEndpoint = null as any;
+utilities.lazyLoad(exports, ["DataSafePrivateEndpoint"], () => require("./dataSafePrivateEndpoint"));
+
+export { DiscoveryJobsResultArgs, DiscoveryJobsResultState } from "./discoveryJobsResult";
+export type DiscoveryJobsResult = import("./discoveryJobsResult").DiscoveryJobsResult;
+export const DiscoveryJobsResult: typeof import("./discoveryJobsResult").DiscoveryJobsResult = null as any;
+utilities.lazyLoad(exports, ["DiscoveryJobsResult"], () => require("./discoveryJobsResult"));
+
+export { DiscoveryModArgs, DiscoveryModState } from "./discoveryMod";
+export type DiscoveryMod = import("./discoveryMod").DiscoveryMod;
+export const DiscoveryMod: typeof import("./discoveryMod").DiscoveryMod = null as any;
+utilities.lazyLoad(exports, ["DiscoveryMod"], () => require("./discoveryMod"));
+
+export { GetAlertArgs, GetAlertResult, GetAlertOutputArgs } from "./getAlert";
+export const getAlert: typeof import("./getAlert").getAlert = null as any;
+export const getAlertOutput: typeof import("./getAlert").getAlertOutput = null as any;
+utilities.lazyLoad(exports, ["getAlert","getAlertOutput"], () => require("./getAlert"));
+
+export { GetAlertAnalyticArgs, GetAlertAnalyticResult, GetAlertAnalyticOutputArgs } from "./getAlertAnalytic";
+export const getAlertAnalytic: typeof import("./getAlertAnalytic").getAlertAnalytic = null as any;
+export const getAlertAnalyticOutput: typeof import("./getAlertAnalytic").getAlertAnalyticOutput = null as any;
+utilities.lazyLoad(exports, ["getAlertAnalytic","getAlertAnalyticOutput"], () => require("./getAlertAnalytic"));
+
+export { GetAlertPoliciesArgs, GetAlertPoliciesResult, GetAlertPoliciesOutputArgs } from "./getAlertPolicies";
+export const getAlertPolicies: typeof import("./getAlertPolicies").getAlertPolicies = null as any;
+export const getAlertPoliciesOutput: typeof import("./getAlertPolicies").getAlertPoliciesOutput = null as any;
+utilities.lazyLoad(exports, ["getAlertPolicies","getAlertPoliciesOutput"], () => require("./getAlertPolicies"));
+
+export { GetAlertPolicyArgs, GetAlertPolicyResult, GetAlertPolicyOutputArgs } from "./getAlertPolicy";
+export const getAlertPolicy: typeof import("./getAlertPolicy").getAlertPolicy = null as any;
+export const getAlertPolicyOutput: typeof import("./getAlertPolicy").getAlertPolicyOutput = null as any;
+utilities.lazyLoad(exports, ["getAlertPolicy","getAlertPolicyOutput"], () => require("./getAlertPolicy"));
+
+export { GetAlertPolicyRuleArgs, GetAlertPolicyRuleResult, GetAlertPolicyRuleOutputArgs } from "./getAlertPolicyRule";
+export const getAlertPolicyRule: typeof import("./getAlertPolicyRule").getAlertPolicyRule = null as any;
+export const getAlertPolicyRuleOutput: typeof import("./getAlertPolicyRule").getAlertPolicyRuleOutput = null as any;
+utilities.lazyLoad(exports, ["getAlertPolicyRule","getAlertPolicyRuleOutput"], () => require("./getAlertPolicyRule"));
+
+export { GetAlertPolicyRulesArgs, GetAlertPolicyRulesResult, GetAlertPolicyRulesOutputArgs } from "./getAlertPolicyRules";
+export const getAlertPolicyRules: typeof import("./getAlertPolicyRules").getAlertPolicyRules = null as any;
+export const getAlertPolicyRulesOutput: typeof import("./getAlertPolicyRules").getAlertPolicyRulesOutput = null as any;
+utilities.lazyLoad(exports, ["getAlertPolicyRules","getAlertPolicyRulesOutput"], () => require("./getAlertPolicyRules"));
+
+export { GetAlertsArgs, GetAlertsResult, GetAlertsOutputArgs } from "./getAlerts";
+export const getAlerts: typeof import("./getAlerts").getAlerts = null as any;
+export const getAlertsOutput: typeof import("./getAlerts").getAlertsOutput = null as any;
+utilities.lazyLoad(exports, ["getAlerts","getAlertsOutput"], () => require("./getAlerts"));
+
+export { GetAuditArchiveRetrievalArgs, GetAuditArchiveRetrievalResult, GetAuditArchiveRetrievalOutputArgs } from "./getAuditArchiveRetrieval";
+export const getAuditArchiveRetrieval: typeof import("./getAuditArchiveRetrieval").getAuditArchiveRetrieval = null as any;
+export const getAuditArchiveRetrievalOutput: typeof import("./getAuditArchiveRetrieval").getAuditArchiveRetrievalOutput = null as any;
+utilities.lazyLoad(exports, ["getAuditArchiveRetrieval","getAuditArchiveRetrievalOutput"], () => require("./getAuditArchiveRetrieval"));
+
+export { GetAuditArchiveRetrievalsArgs, GetAuditArchiveRetrievalsResult, GetAuditArchiveRetrievalsOutputArgs } from "./getAuditArchiveRetrievals";
+export const getAuditArchiveRetrievals: typeof import("./getAuditArchiveRetrievals").getAuditArchiveRetrievals = null as any;
+export const getAuditArchiveRetrievalsOutput: typeof import("./getAuditArchiveRetrievals").getAuditArchiveRetrievalsOutput = null as any;
+utilities.lazyLoad(exports, ["getAuditArchiveRetrievals","getAuditArchiveRetrievalsOutput"], () => require("./getAuditArchiveRetrievals"));
+
+export { GetAuditEventArgs, GetAuditEventResult, GetAuditEventOutputArgs } from "./getAuditEvent";
+export const getAuditEvent: typeof import("./getAuditEvent").getAuditEvent = null as any;
+export const getAuditEventOutput: typeof import("./getAuditEvent").getAuditEventOutput = null as any;
+utilities.lazyLoad(exports, ["getAuditEvent","getAuditEventOutput"], () => require("./getAuditEvent"));
+
+export { GetAuditEventAnalyticArgs, GetAuditEventAnalyticResult, GetAuditEventAnalyticOutputArgs } from "./getAuditEventAnalytic";
+export const getAuditEventAnalytic: typeof import("./getAuditEventAnalytic").getAuditEventAnalytic = null as any;
+export const getAuditEventAnalyticOutput: typeof import("./getAuditEventAnalytic").getAuditEventAnalyticOutput = null as any;
+utilities.lazyLoad(exports, ["getAuditEventAnalytic","getAuditEventAnalyticOutput"], () => require("./getAuditEventAnalytic"));
+
+export { GetAuditEventsArgs, GetAuditEventsResult, GetAuditEventsOutputArgs } from "./getAuditEvents";
+export const getAuditEvents: typeof import("./getAuditEvents").getAuditEvents = null as any;
+export const getAuditEventsOutput: typeof import("./getAuditEvents").getAuditEventsOutput = null as any;
+utilities.lazyLoad(exports, ["getAuditEvents","getAuditEventsOutput"], () => require("./getAuditEvents"));
+
+export { GetAuditPoliciesArgs, GetAuditPoliciesResult, GetAuditPoliciesOutputArgs } from "./getAuditPolicies";
+export const getAuditPolicies: typeof import("./getAuditPolicies").getAuditPolicies = null as any;
+export const getAuditPoliciesOutput: typeof import("./getAuditPolicies").getAuditPoliciesOutput = null as any;
+utilities.lazyLoad(exports, ["getAuditPolicies","getAuditPoliciesOutput"], () => require("./getAuditPolicies"));
+
+export { GetAuditPolicyArgs, GetAuditPolicyResult, GetAuditPolicyOutputArgs } from "./getAuditPolicy";
+export const getAuditPolicy: typeof import("./getAuditPolicy").getAuditPolicy = null as any;
+export const getAuditPolicyOutput: typeof import("./getAuditPolicy").getAuditPolicyOutput = null as any;
+utilities.lazyLoad(exports, ["getAuditPolicy","getAuditPolicyOutput"], () => require("./getAuditPolicy"));
+
+export { GetAuditProfileArgs, GetAuditProfileResult, GetAuditProfileOutputArgs } from "./getAuditProfile";
+export const getAuditProfile: typeof import("./getAuditProfile").getAuditProfile = null as any;
+export const getAuditProfileOutput: typeof import("./getAuditProfile").getAuditProfileOutput = null as any;
+utilities.lazyLoad(exports, ["getAuditProfile","getAuditProfileOutput"], () => require("./getAuditProfile"));
+
+export { GetAuditProfileAnalyticArgs, GetAuditProfileAnalyticResult, GetAuditProfileAnalyticOutputArgs } from "./getAuditProfileAnalytic";
+export const getAuditProfileAnalytic: typeof import("./getAuditProfileAnalytic").getAuditProfileAnalytic = null as any;
+export const getAuditProfileAnalyticOutput: typeof import("./getAuditProfileAnalytic").getAuditProfileAnalyticOutput = null as any;
+utilities.lazyLoad(exports, ["getAuditProfileAnalytic","getAuditProfileAnalyticOutput"], () => require("./getAuditProfileAnalytic"));
+
+export { GetAuditProfileAvailableAuditVolumeArgs, GetAuditProfileAvailableAuditVolumeResult, GetAuditProfileAvailableAuditVolumeOutputArgs } from "./getAuditProfileAvailableAuditVolume";
+export const getAuditProfileAvailableAuditVolume: typeof import("./getAuditProfileAvailableAuditVolume").getAuditProfileAvailableAuditVolume = null as any;
+export const getAuditProfileAvailableAuditVolumeOutput: typeof import("./getAuditProfileAvailableAuditVolume").getAuditProfileAvailableAuditVolumeOutput = null as any;
+utilities.lazyLoad(exports, ["getAuditProfileAvailableAuditVolume","getAuditProfileAvailableAuditVolumeOutput"], () => require("./getAuditProfileAvailableAuditVolume"));
+
+export { GetAuditProfileAvailableAuditVolumesArgs, GetAuditProfileAvailableAuditVolumesResult, GetAuditProfileAvailableAuditVolumesOutputArgs } from "./getAuditProfileAvailableAuditVolumes";
+export const getAuditProfileAvailableAuditVolumes: typeof import("./getAuditProfileAvailableAuditVolumes").getAuditProfileAvailableAuditVolumes = null as any;
+export const getAuditProfileAvailableAuditVolumesOutput: typeof import("./getAuditProfileAvailableAuditVolumes").getAuditProfileAvailableAuditVolumesOutput = null as any;
+utilities.lazyLoad(exports, ["getAuditProfileAvailableAuditVolumes","getAuditProfileAvailableAuditVolumesOutput"], () => require("./getAuditProfileAvailableAuditVolumes"));
+
+export { GetAuditProfileCollectedAuditVolumeArgs, GetAuditProfileCollectedAuditVolumeResult, GetAuditProfileCollectedAuditVolumeOutputArgs } from "./getAuditProfileCollectedAuditVolume";
+export const getAuditProfileCollectedAuditVolume: typeof import("./getAuditProfileCollectedAuditVolume").getAuditProfileCollectedAuditVolume = null as any;
+export const getAuditProfileCollectedAuditVolumeOutput: typeof import("./getAuditProfileCollectedAuditVolume").getAuditProfileCollectedAuditVolumeOutput = null as any;
+utilities.lazyLoad(exports, ["getAuditProfileCollectedAuditVolume","getAuditProfileCollectedAuditVolumeOutput"], () => require("./getAuditProfileCollectedAuditVolume"));
+
+export { GetAuditProfileCollectedAuditVolumesArgs, GetAuditProfileCollectedAuditVolumesResult, GetAuditProfileCollectedAuditVolumesOutputArgs } from "./getAuditProfileCollectedAuditVolumes";
+export const getAuditProfileCollectedAuditVolumes: typeof import("./getAuditProfileCollectedAuditVolumes").getAuditProfileCollectedAuditVolumes = null as any;
+export const getAuditProfileCollectedAuditVolumesOutput: typeof import("./getAuditProfileCollectedAuditVolumes").getAuditProfileCollectedAuditVolumesOutput = null as any;
+utilities.lazyLoad(exports, ["getAuditProfileCollectedAuditVolumes","getAuditProfileCollectedAuditVolumesOutput"], () => require("./getAuditProfileCollectedAuditVolumes"));
+
+export { GetAuditProfilesArgs, GetAuditProfilesResult, GetAuditProfilesOutputArgs } from "./getAuditProfiles";
+export const getAuditProfiles: typeof import("./getAuditProfiles").getAuditProfiles = null as any;
+export const getAuditProfilesOutput: typeof import("./getAuditProfiles").getAuditProfilesOutput = null as any;
+utilities.lazyLoad(exports, ["getAuditProfiles","getAuditProfilesOutput"], () => require("./getAuditProfiles"));
+
+export { GetAuditTrailArgs, GetAuditTrailResult, GetAuditTrailOutputArgs } from "./getAuditTrail";
+export const getAuditTrail: typeof import("./getAuditTrail").getAuditTrail = null as any;
+export const getAuditTrailOutput: typeof import("./getAuditTrail").getAuditTrailOutput = null as any;
+utilities.lazyLoad(exports, ["getAuditTrail","getAuditTrailOutput"], () => require("./getAuditTrail"));
+
+export { GetAuditTrailAnalyticArgs, GetAuditTrailAnalyticResult, GetAuditTrailAnalyticOutputArgs } from "./getAuditTrailAnalytic";
+export const getAuditTrailAnalytic: typeof import("./getAuditTrailAnalytic").getAuditTrailAnalytic = null as any;
+export const getAuditTrailAnalyticOutput: typeof import("./getAuditTrailAnalytic").getAuditTrailAnalyticOutput = null as any;
+utilities.lazyLoad(exports, ["getAuditTrailAnalytic","getAuditTrailAnalyticOutput"], () => require("./getAuditTrailAnalytic"));
+
+export { GetAuditTrailsArgs, GetAuditTrailsResult, GetAuditTrailsOutputArgs } from "./getAuditTrails";
+export const getAuditTrails: typeof import("./getAuditTrails").getAuditTrails = null as any;
+export const getAuditTrailsOutput: typeof import("./getAuditTrails").getAuditTrailsOutput = null as any;
+utilities.lazyLoad(exports, ["getAuditTrails","getAuditTrailsOutput"], () => require("./getAuditTrails"));
+
+export { GetCompatibleFormatsForDataTypeResult } from "./getCompatibleFormatsForDataType";
+export const getCompatibleFormatsForDataType: typeof import("./getCompatibleFormatsForDataType").getCompatibleFormatsForDataType = null as any;
+utilities.lazyLoad(exports, ["getCompatibleFormatsForDataType"], () => require("./getCompatibleFormatsForDataType"));
+
+export { GetCompatibleFormatsForSensitiveTypeArgs, GetCompatibleFormatsForSensitiveTypeResult, GetCompatibleFormatsForSensitiveTypeOutputArgs } from "./getCompatibleFormatsForSensitiveType";
+export const getCompatibleFormatsForSensitiveType: typeof import("./getCompatibleFormatsForSensitiveType").getCompatibleFormatsForSensitiveType = null as any;
+export const getCompatibleFormatsForSensitiveTypeOutput: typeof import("./getCompatibleFormatsForSensitiveType").getCompatibleFormatsForSensitiveTypeOutput = null as any;
+utilities.lazyLoad(exports, ["getCompatibleFormatsForSensitiveType","getCompatibleFormatsForSensitiveTypeOutput"], () => require("./getCompatibleFormatsForSensitiveType"));
+
+export { GetDataSafeConfigurationArgs, GetDataSafeConfigurationResult, GetDataSafeConfigurationOutputArgs } from "./getDataSafeConfiguration";
+export const getDataSafeConfiguration: typeof import("./getDataSafeConfiguration").getDataSafeConfiguration = null as any;
+export const getDataSafeConfigurationOutput: typeof import("./getDataSafeConfiguration").getDataSafeConfigurationOutput = null as any;
+utilities.lazyLoad(exports, ["getDataSafeConfiguration","getDataSafeConfigurationOutput"], () => require("./getDataSafeConfiguration"));
+
+export { GetDataSafePrivateEndpointArgs, GetDataSafePrivateEndpointResult, GetDataSafePrivateEndpointOutputArgs } from "./getDataSafePrivateEndpoint";
+export const getDataSafePrivateEndpoint: typeof import("./getDataSafePrivateEndpoint").getDataSafePrivateEndpoint = null as any;
+export const getDataSafePrivateEndpointOutput: typeof import("./getDataSafePrivateEndpoint").getDataSafePrivateEndpointOutput = null as any;
+utilities.lazyLoad(exports, ["getDataSafePrivateEndpoint","getDataSafePrivateEndpointOutput"], () => require("./getDataSafePrivateEndpoint"));
+
+export { GetDataSafePrivateEndpointsArgs, GetDataSafePrivateEndpointsResult, GetDataSafePrivateEndpointsOutputArgs } from "./getDataSafePrivateEndpoints";
+export const getDataSafePrivateEndpoints: typeof import("./getDataSafePrivateEndpoints").getDataSafePrivateEndpoints = null as any;
+export const getDataSafePrivateEndpointsOutput: typeof import("./getDataSafePrivateEndpoints").getDataSafePrivateEndpointsOutput = null as any;
+utilities.lazyLoad(exports, ["getDataSafePrivateEndpoints","getDataSafePrivateEndpointsOutput"], () => require("./getDataSafePrivateEndpoints"));
+
+export { GetDiscoveryAnalyticArgs, GetDiscoveryAnalyticResult, GetDiscoveryAnalyticOutputArgs } from "./getDiscoveryAnalytic";
+export const getDiscoveryAnalytic: typeof import("./getDiscoveryAnalytic").getDiscoveryAnalytic = null as any;
+export const getDiscoveryAnalyticOutput: typeof import("./getDiscoveryAnalytic").getDiscoveryAnalyticOutput = null as any;
+utilities.lazyLoad(exports, ["getDiscoveryAnalytic","getDiscoveryAnalyticOutput"], () => require("./getDiscoveryAnalytic"));
+
+export { GetDiscoveryAnalyticsArgs, GetDiscoveryAnalyticsResult, GetDiscoveryAnalyticsOutputArgs } from "./getDiscoveryAnalytics";
+export const getDiscoveryAnalytics: typeof import("./getDiscoveryAnalytics").getDiscoveryAnalytics = null as any;
+export const getDiscoveryAnalyticsOutput: typeof import("./getDiscoveryAnalytics").getDiscoveryAnalyticsOutput = null as any;
+utilities.lazyLoad(exports, ["getDiscoveryAnalytics","getDiscoveryAnalyticsOutput"], () => require("./getDiscoveryAnalytics"));
+
+export { GetDiscoveryJobArgs, GetDiscoveryJobResult, GetDiscoveryJobOutputArgs } from "./getDiscoveryJob";
+export const getDiscoveryJob: typeof import("./getDiscoveryJob").getDiscoveryJob = null as any;
+export const getDiscoveryJobOutput: typeof import("./getDiscoveryJob").getDiscoveryJobOutput = null as any;
+utilities.lazyLoad(exports, ["getDiscoveryJob","getDiscoveryJobOutput"], () => require("./getDiscoveryJob"));
+
+export { GetDiscoveryJobsResultArgs, GetDiscoveryJobsResultResult, GetDiscoveryJobsResultOutputArgs } from "./getDiscoveryJobsResult";
+export const getDiscoveryJobsResult: typeof import("./getDiscoveryJobsResult").getDiscoveryJobsResult = null as any;
+export const getDiscoveryJobsResultOutput: typeof import("./getDiscoveryJobsResult").getDiscoveryJobsResultOutput = null as any;
+utilities.lazyLoad(exports, ["getDiscoveryJobsResult","getDiscoveryJobsResultOutput"], () => require("./getDiscoveryJobsResult"));
+
+export { GetDiscoveryJobsResultsArgs, GetDiscoveryJobsResultsResult, GetDiscoveryJobsResultsOutputArgs } from "./getDiscoveryJobsResults";
+export const getDiscoveryJobsResults: typeof import("./getDiscoveryJobsResults").getDiscoveryJobsResults = null as any;
+export const getDiscoveryJobsResultsOutput: typeof import("./getDiscoveryJobsResults").getDiscoveryJobsResultsOutput = null as any;
+utilities.lazyLoad(exports, ["getDiscoveryJobsResults","getDiscoveryJobsResultsOutput"], () => require("./getDiscoveryJobsResults"));
+
+export { GetLibraryMaskingFormatArgs, GetLibraryMaskingFormatResult, GetLibraryMaskingFormatOutputArgs } from "./getLibraryMaskingFormat";
+export const getLibraryMaskingFormat: typeof import("./getLibraryMaskingFormat").getLibraryMaskingFormat = null as any;
+export const getLibraryMaskingFormatOutput: typeof import("./getLibraryMaskingFormat").getLibraryMaskingFormatOutput = null as any;
+utilities.lazyLoad(exports, ["getLibraryMaskingFormat","getLibraryMaskingFormatOutput"], () => require("./getLibraryMaskingFormat"));
+
+export { GetLibraryMaskingFormatsArgs, GetLibraryMaskingFormatsResult, GetLibraryMaskingFormatsOutputArgs } from "./getLibraryMaskingFormats";
+export const getLibraryMaskingFormats: typeof import("./getLibraryMaskingFormats").getLibraryMaskingFormats = null as any;
+export const getLibraryMaskingFormatsOutput: typeof import("./getLibraryMaskingFormats").getLibraryMaskingFormatsOutput = null as any;
+utilities.lazyLoad(exports, ["getLibraryMaskingFormats","getLibraryMaskingFormatsOutput"], () => require("./getLibraryMaskingFormats"));
+
+export { GetListUserGrantsArgs, GetListUserGrantsResult, GetListUserGrantsOutputArgs } from "./getListUserGrants";
+export const getListUserGrants: typeof import("./getListUserGrants").getListUserGrants = null as any;
+export const getListUserGrantsOutput: typeof import("./getListUserGrants").getListUserGrantsOutput = null as any;
+utilities.lazyLoad(exports, ["getListUserGrants","getListUserGrantsOutput"], () => require("./getListUserGrants"));
+
+export { GetMaskingAnalyticArgs, GetMaskingAnalyticResult, GetMaskingAnalyticOutputArgs } from "./getMaskingAnalytic";
+export const getMaskingAnalytic: typeof import("./getMaskingAnalytic").getMaskingAnalytic = null as any;
+export const getMaskingAnalyticOutput: typeof import("./getMaskingAnalytic").getMaskingAnalyticOutput = null as any;
+utilities.lazyLoad(exports, ["getMaskingAnalytic","getMaskingAnalyticOutput"], () => require("./getMaskingAnalytic"));
+
+export { GetMaskingAnalyticsArgs, GetMaskingAnalyticsResult, GetMaskingAnalyticsOutputArgs } from "./getMaskingAnalytics";
+export const getMaskingAnalytics: typeof import("./getMaskingAnalytics").getMaskingAnalytics = null as any;
+export const getMaskingAnalyticsOutput: typeof import("./getMaskingAnalytics").getMaskingAnalyticsOutput = null as any;
+utilities.lazyLoad(exports, ["getMaskingAnalytics","getMaskingAnalyticsOutput"], () => require("./getMaskingAnalytics"));
+
+export { GetMaskingPoliciesArgs, GetMaskingPoliciesResult, GetMaskingPoliciesOutputArgs } from "./getMaskingPolicies";
+export const getMaskingPolicies: typeof import("./getMaskingPolicies").getMaskingPolicies = null as any;
+export const getMaskingPoliciesOutput: typeof import("./getMaskingPolicies").getMaskingPoliciesOutput = null as any;
+utilities.lazyLoad(exports, ["getMaskingPolicies","getMaskingPoliciesOutput"], () => require("./getMaskingPolicies"));
+
+export { GetMaskingPoliciesMaskingColumnArgs, GetMaskingPoliciesMaskingColumnResult, GetMaskingPoliciesMaskingColumnOutputArgs } from "./getMaskingPoliciesMaskingColumn";
+export const getMaskingPoliciesMaskingColumn: typeof import("./getMaskingPoliciesMaskingColumn").getMaskingPoliciesMaskingColumn = null as any;
+export const getMaskingPoliciesMaskingColumnOutput: typeof import("./getMaskingPoliciesMaskingColumn").getMaskingPoliciesMaskingColumnOutput = null as any;
+utilities.lazyLoad(exports, ["getMaskingPoliciesMaskingColumn","getMaskingPoliciesMaskingColumnOutput"], () => require("./getMaskingPoliciesMaskingColumn"));
+
+export { GetMaskingPoliciesMaskingColumnsArgs, GetMaskingPoliciesMaskingColumnsResult, GetMaskingPoliciesMaskingColumnsOutputArgs } from "./getMaskingPoliciesMaskingColumns";
+export const getMaskingPoliciesMaskingColumns: typeof import("./getMaskingPoliciesMaskingColumns").getMaskingPoliciesMaskingColumns = null as any;
+export const getMaskingPoliciesMaskingColumnsOutput: typeof import("./getMaskingPoliciesMaskingColumns").getMaskingPoliciesMaskingColumnsOutput = null as any;
+utilities.lazyLoad(exports, ["getMaskingPoliciesMaskingColumns","getMaskingPoliciesMaskingColumnsOutput"], () => require("./getMaskingPoliciesMaskingColumns"));
+
+export { GetMaskingPolicyArgs, GetMaskingPolicyResult, GetMaskingPolicyOutputArgs } from "./getMaskingPolicy";
+export const getMaskingPolicy: typeof import("./getMaskingPolicy").getMaskingPolicy = null as any;
+export const getMaskingPolicyOutput: typeof import("./getMaskingPolicy").getMaskingPolicyOutput = null as any;
+utilities.lazyLoad(exports, ["getMaskingPolicy","getMaskingPolicyOutput"], () => require("./getMaskingPolicy"));
+
+export { GetMaskingReportArgs, GetMaskingReportResult, GetMaskingReportOutputArgs } from "./getMaskingReport";
+export const getMaskingReport: typeof import("./getMaskingReport").getMaskingReport = null as any;
+export const getMaskingReportOutput: typeof import("./getMaskingReport").getMaskingReportOutput = null as any;
+utilities.lazyLoad(exports, ["getMaskingReport","getMaskingReportOutput"], () => require("./getMaskingReport"));
+
+export { GetMaskingReportMaskedColumnsArgs, GetMaskingReportMaskedColumnsResult, GetMaskingReportMaskedColumnsOutputArgs } from "./getMaskingReportMaskedColumns";
+export const getMaskingReportMaskedColumns: typeof import("./getMaskingReportMaskedColumns").getMaskingReportMaskedColumns = null as any;
+export const getMaskingReportMaskedColumnsOutput: typeof import("./getMaskingReportMaskedColumns").getMaskingReportMaskedColumnsOutput = null as any;
+utilities.lazyLoad(exports, ["getMaskingReportMaskedColumns","getMaskingReportMaskedColumnsOutput"], () => require("./getMaskingReportMaskedColumns"));
+
+export { GetMaskingReportsArgs, GetMaskingReportsResult, GetMaskingReportsOutputArgs } from "./getMaskingReports";
+export const getMaskingReports: typeof import("./getMaskingReports").getMaskingReports = null as any;
+export const getMaskingReportsOutput: typeof import("./getMaskingReports").getMaskingReportsOutput = null as any;
+utilities.lazyLoad(exports, ["getMaskingReports","getMaskingReportsOutput"], () => require("./getMaskingReports"));
+
+export { GetMaskingReportsMaskedColumnArgs, GetMaskingReportsMaskedColumnResult, GetMaskingReportsMaskedColumnOutputArgs } from "./getMaskingReportsMaskedColumn";
+export const getMaskingReportsMaskedColumn: typeof import("./getMaskingReportsMaskedColumn").getMaskingReportsMaskedColumn = null as any;
+export const getMaskingReportsMaskedColumnOutput: typeof import("./getMaskingReportsMaskedColumn").getMaskingReportsMaskedColumnOutput = null as any;
+utilities.lazyLoad(exports, ["getMaskingReportsMaskedColumn","getMaskingReportsMaskedColumnOutput"], () => require("./getMaskingReportsMaskedColumn"));
+
+export { GetOnpremConnectorArgs, GetOnpremConnectorResult, GetOnpremConnectorOutputArgs } from "./getOnpremConnector";
+export const getOnpremConnector: typeof import("./getOnpremConnector").getOnpremConnector = null as any;
+export const getOnpremConnectorOutput: typeof import("./getOnpremConnector").getOnpremConnectorOutput = null as any;
+utilities.lazyLoad(exports, ["getOnpremConnector","getOnpremConnectorOutput"], () => require("./getOnpremConnector"));
+
+export { GetOnpremConnectorsArgs, GetOnpremConnectorsResult, GetOnpremConnectorsOutputArgs } from "./getOnpremConnectors";
+export const getOnpremConnectors: typeof import("./getOnpremConnectors").getOnpremConnectors = null as any;
+export const getOnpremConnectorsOutput: typeof import("./getOnpremConnectors").getOnpremConnectorsOutput = null as any;
+utilities.lazyLoad(exports, ["getOnpremConnectors","getOnpremConnectorsOutput"], () => require("./getOnpremConnectors"));
+
+export { GetReportArgs, GetReportResult, GetReportOutputArgs } from "./getReport";
+export const getReport: typeof import("./getReport").getReport = null as any;
+export const getReportOutput: typeof import("./getReport").getReportOutput = null as any;
+utilities.lazyLoad(exports, ["getReport","getReportOutput"], () => require("./getReport"));
+
+export { GetReportContentArgs, GetReportContentResult, GetReportContentOutputArgs } from "./getReportContent";
+export const getReportContent: typeof import("./getReportContent").getReportContent = null as any;
+export const getReportContentOutput: typeof import("./getReportContent").getReportContentOutput = null as any;
+utilities.lazyLoad(exports, ["getReportContent","getReportContentOutput"], () => require("./getReportContent"));
+
+export { GetReportDefinitionArgs, GetReportDefinitionResult, GetReportDefinitionOutputArgs } from "./getReportDefinition";
+export const getReportDefinition: typeof import("./getReportDefinition").getReportDefinition = null as any;
+export const getReportDefinitionOutput: typeof import("./getReportDefinition").getReportDefinitionOutput = null as any;
+utilities.lazyLoad(exports, ["getReportDefinition","getReportDefinitionOutput"], () => require("./getReportDefinition"));
+
+export { GetReportDefinitionsArgs, GetReportDefinitionsResult, GetReportDefinitionsOutputArgs } from "./getReportDefinitions";
+export const getReportDefinitions: typeof import("./getReportDefinitions").getReportDefinitions = null as any;
+export const getReportDefinitionsOutput: typeof import("./getReportDefinitions").getReportDefinitionsOutput = null as any;
+utilities.lazyLoad(exports, ["getReportDefinitions","getReportDefinitionsOutput"], () => require("./getReportDefinitions"));
+
+export { GetReportsArgs, GetReportsResult, GetReportsOutputArgs } from "./getReports";
+export const getReports: typeof import("./getReports").getReports = null as any;
+export const getReportsOutput: typeof import("./getReports").getReportsOutput = null as any;
+utilities.lazyLoad(exports, ["getReports","getReportsOutput"], () => require("./getReports"));
+
+export { GetSecurityAssessmentArgs, GetSecurityAssessmentResult, GetSecurityAssessmentOutputArgs } from "./getSecurityAssessment";
+export const getSecurityAssessment: typeof import("./getSecurityAssessment").getSecurityAssessment = null as any;
+export const getSecurityAssessmentOutput: typeof import("./getSecurityAssessment").getSecurityAssessmentOutput = null as any;
+utilities.lazyLoad(exports, ["getSecurityAssessment","getSecurityAssessmentOutput"], () => require("./getSecurityAssessment"));
+
+export { GetSecurityAssessmentComparisonArgs, GetSecurityAssessmentComparisonResult, GetSecurityAssessmentComparisonOutputArgs } from "./getSecurityAssessmentComparison";
+export const getSecurityAssessmentComparison: typeof import("./getSecurityAssessmentComparison").getSecurityAssessmentComparison = null as any;
+export const getSecurityAssessmentComparisonOutput: typeof import("./getSecurityAssessmentComparison").getSecurityAssessmentComparisonOutput = null as any;
+utilities.lazyLoad(exports, ["getSecurityAssessmentComparison","getSecurityAssessmentComparisonOutput"], () => require("./getSecurityAssessmentComparison"));
+
+export { GetSecurityAssessmentFindingArgs, GetSecurityAssessmentFindingResult, GetSecurityAssessmentFindingOutputArgs } from "./getSecurityAssessmentFinding";
+export const getSecurityAssessmentFinding: typeof import("./getSecurityAssessmentFinding").getSecurityAssessmentFinding = null as any;
+export const getSecurityAssessmentFindingOutput: typeof import("./getSecurityAssessmentFinding").getSecurityAssessmentFindingOutput = null as any;
+utilities.lazyLoad(exports, ["getSecurityAssessmentFinding","getSecurityAssessmentFindingOutput"], () => require("./getSecurityAssessmentFinding"));
+
+export { GetSecurityAssessmentFindingsArgs, GetSecurityAssessmentFindingsResult, GetSecurityAssessmentFindingsOutputArgs } from "./getSecurityAssessmentFindings";
+export const getSecurityAssessmentFindings: typeof import("./getSecurityAssessmentFindings").getSecurityAssessmentFindings = null as any;
+export const getSecurityAssessmentFindingsOutput: typeof import("./getSecurityAssessmentFindings").getSecurityAssessmentFindingsOutput = null as any;
+utilities.lazyLoad(exports, ["getSecurityAssessmentFindings","getSecurityAssessmentFindingsOutput"], () => require("./getSecurityAssessmentFindings"));
+
+export { GetSecurityAssessmentsArgs, GetSecurityAssessmentsResult, GetSecurityAssessmentsOutputArgs } from "./getSecurityAssessments";
+export const getSecurityAssessments: typeof import("./getSecurityAssessments").getSecurityAssessments = null as any;
+export const getSecurityAssessmentsOutput: typeof import("./getSecurityAssessments").getSecurityAssessmentsOutput = null as any;
+utilities.lazyLoad(exports, ["getSecurityAssessments","getSecurityAssessmentsOutput"], () => require("./getSecurityAssessments"));
+
+export { GetSensitiveDataModelArgs, GetSensitiveDataModelResult, GetSensitiveDataModelOutputArgs } from "./getSensitiveDataModel";
+export const getSensitiveDataModel: typeof import("./getSensitiveDataModel").getSensitiveDataModel = null as any;
+export const getSensitiveDataModelOutput: typeof import("./getSensitiveDataModel").getSensitiveDataModelOutput = null as any;
+utilities.lazyLoad(exports, ["getSensitiveDataModel","getSensitiveDataModelOutput"], () => require("./getSensitiveDataModel"));
+
+export { GetSensitiveDataModelsArgs, GetSensitiveDataModelsResult, GetSensitiveDataModelsOutputArgs } from "./getSensitiveDataModels";
+export const getSensitiveDataModels: typeof import("./getSensitiveDataModels").getSensitiveDataModels = null as any;
+export const getSensitiveDataModelsOutput: typeof import("./getSensitiveDataModels").getSensitiveDataModelsOutput = null as any;
+utilities.lazyLoad(exports, ["getSensitiveDataModels","getSensitiveDataModelsOutput"], () => require("./getSensitiveDataModels"));
+
+export { GetSensitiveDataModelsSensitiveColumnArgs, GetSensitiveDataModelsSensitiveColumnResult, GetSensitiveDataModelsSensitiveColumnOutputArgs } from "./getSensitiveDataModelsSensitiveColumn";
+export const getSensitiveDataModelsSensitiveColumn: typeof import("./getSensitiveDataModelsSensitiveColumn").getSensitiveDataModelsSensitiveColumn = null as any;
+export const getSensitiveDataModelsSensitiveColumnOutput: typeof import("./getSensitiveDataModelsSensitiveColumn").getSensitiveDataModelsSensitiveColumnOutput = null as any;
+utilities.lazyLoad(exports, ["getSensitiveDataModelsSensitiveColumn","getSensitiveDataModelsSensitiveColumnOutput"], () => require("./getSensitiveDataModelsSensitiveColumn"));
+
+export { GetSensitiveDataModelsSensitiveColumnsArgs, GetSensitiveDataModelsSensitiveColumnsResult, GetSensitiveDataModelsSensitiveColumnsOutputArgs } from "./getSensitiveDataModelsSensitiveColumns";
+export const getSensitiveDataModelsSensitiveColumns: typeof import("./getSensitiveDataModelsSensitiveColumns").getSensitiveDataModelsSensitiveColumns = null as any;
+export const getSensitiveDataModelsSensitiveColumnsOutput: typeof import("./getSensitiveDataModelsSensitiveColumns").getSensitiveDataModelsSensitiveColumnsOutput = null as any;
+utilities.lazyLoad(exports, ["getSensitiveDataModelsSensitiveColumns","getSensitiveDataModelsSensitiveColumnsOutput"], () => require("./getSensitiveDataModelsSensitiveColumns"));
+
+export { GetSensitiveTypeArgs, GetSensitiveTypeResult, GetSensitiveTypeOutputArgs } from "./getSensitiveType";
+export const getSensitiveType: typeof import("./getSensitiveType").getSensitiveType = null as any;
+export const getSensitiveTypeOutput: typeof import("./getSensitiveType").getSensitiveTypeOutput = null as any;
+utilities.lazyLoad(exports, ["getSensitiveType","getSensitiveTypeOutput"], () => require("./getSensitiveType"));
+
+export { GetSensitiveTypesArgs, GetSensitiveTypesResult, GetSensitiveTypesOutputArgs } from "./getSensitiveTypes";
+export const getSensitiveTypes: typeof import("./getSensitiveTypes").getSensitiveTypes = null as any;
+export const getSensitiveTypesOutput: typeof import("./getSensitiveTypes").getSensitiveTypesOutput = null as any;
+utilities.lazyLoad(exports, ["getSensitiveTypes","getSensitiveTypesOutput"], () => require("./getSensitiveTypes"));
+
+export { GetTargetAlertPolicyAssociationArgs, GetTargetAlertPolicyAssociationResult, GetTargetAlertPolicyAssociationOutputArgs } from "./getTargetAlertPolicyAssociation";
+export const getTargetAlertPolicyAssociation: typeof import("./getTargetAlertPolicyAssociation").getTargetAlertPolicyAssociation = null as any;
+export const getTargetAlertPolicyAssociationOutput: typeof import("./getTargetAlertPolicyAssociation").getTargetAlertPolicyAssociationOutput = null as any;
+utilities.lazyLoad(exports, ["getTargetAlertPolicyAssociation","getTargetAlertPolicyAssociationOutput"], () => require("./getTargetAlertPolicyAssociation"));
+
+export { GetTargetAlertPolicyAssociationsArgs, GetTargetAlertPolicyAssociationsResult, GetTargetAlertPolicyAssociationsOutputArgs } from "./getTargetAlertPolicyAssociations";
+export const getTargetAlertPolicyAssociations: typeof import("./getTargetAlertPolicyAssociations").getTargetAlertPolicyAssociations = null as any;
+export const getTargetAlertPolicyAssociationsOutput: typeof import("./getTargetAlertPolicyAssociations").getTargetAlertPolicyAssociationsOutput = null as any;
+utilities.lazyLoad(exports, ["getTargetAlertPolicyAssociations","getTargetAlertPolicyAssociationsOutput"], () => require("./getTargetAlertPolicyAssociations"));
+
+export { GetTargetDatabaseArgs, GetTargetDatabaseResult, GetTargetDatabaseOutputArgs } from "./getTargetDatabase";
+export const getTargetDatabase: typeof import("./getTargetDatabase").getTargetDatabase = null as any;
+export const getTargetDatabaseOutput: typeof import("./getTargetDatabase").getTargetDatabaseOutput = null as any;
+utilities.lazyLoad(exports, ["getTargetDatabase","getTargetDatabaseOutput"], () => require("./getTargetDatabase"));
+
+export { GetTargetDatabaseRoleArgs, GetTargetDatabaseRoleResult, GetTargetDatabaseRoleOutputArgs } from "./getTargetDatabaseRole";
+export const getTargetDatabaseRole: typeof import("./getTargetDatabaseRole").getTargetDatabaseRole = null as any;
+export const getTargetDatabaseRoleOutput: typeof import("./getTargetDatabaseRole").getTargetDatabaseRoleOutput = null as any;
+utilities.lazyLoad(exports, ["getTargetDatabaseRole","getTargetDatabaseRoleOutput"], () => require("./getTargetDatabaseRole"));
+
+export { GetTargetDatabaseRolesArgs, GetTargetDatabaseRolesResult, GetTargetDatabaseRolesOutputArgs } from "./getTargetDatabaseRoles";
+export const getTargetDatabaseRoles: typeof import("./getTargetDatabaseRoles").getTargetDatabaseRoles = null as any;
+export const getTargetDatabaseRolesOutput: typeof import("./getTargetDatabaseRoles").getTargetDatabaseRolesOutput = null as any;
+utilities.lazyLoad(exports, ["getTargetDatabaseRoles","getTargetDatabaseRolesOutput"], () => require("./getTargetDatabaseRoles"));
+
+export { GetTargetDatabasesArgs, GetTargetDatabasesResult, GetTargetDatabasesOutputArgs } from "./getTargetDatabases";
+export const getTargetDatabases: typeof import("./getTargetDatabases").getTargetDatabases = null as any;
+export const getTargetDatabasesOutput: typeof import("./getTargetDatabases").getTargetDatabasesOutput = null as any;
+utilities.lazyLoad(exports, ["getTargetDatabases","getTargetDatabasesOutput"], () => require("./getTargetDatabases"));
+
+export { GetTargetDatabasesColumnsArgs, GetTargetDatabasesColumnsResult, GetTargetDatabasesColumnsOutputArgs } from "./getTargetDatabasesColumns";
+export const getTargetDatabasesColumns: typeof import("./getTargetDatabasesColumns").getTargetDatabasesColumns = null as any;
+export const getTargetDatabasesColumnsOutput: typeof import("./getTargetDatabasesColumns").getTargetDatabasesColumnsOutput = null as any;
+utilities.lazyLoad(exports, ["getTargetDatabasesColumns","getTargetDatabasesColumnsOutput"], () => require("./getTargetDatabasesColumns"));
+
+export { GetTargetDatabasesSchemasArgs, GetTargetDatabasesSchemasResult, GetTargetDatabasesSchemasOutputArgs } from "./getTargetDatabasesSchemas";
+export const getTargetDatabasesSchemas: typeof import("./getTargetDatabasesSchemas").getTargetDatabasesSchemas = null as any;
+export const getTargetDatabasesSchemasOutput: typeof import("./getTargetDatabasesSchemas").getTargetDatabasesSchemasOutput = null as any;
+utilities.lazyLoad(exports, ["getTargetDatabasesSchemas","getTargetDatabasesSchemasOutput"], () => require("./getTargetDatabasesSchemas"));
+
+export { GetTargetDatabasesTablesArgs, GetTargetDatabasesTablesResult, GetTargetDatabasesTablesOutputArgs } from "./getTargetDatabasesTables";
+export const getTargetDatabasesTables: typeof import("./getTargetDatabasesTables").getTargetDatabasesTables = null as any;
+export const getTargetDatabasesTablesOutput: typeof import("./getTargetDatabasesTables").getTargetDatabasesTablesOutput = null as any;
+utilities.lazyLoad(exports, ["getTargetDatabasesTables","getTargetDatabasesTablesOutput"], () => require("./getTargetDatabasesTables"));
+
+export { GetUserAssessmentArgs, GetUserAssessmentResult, GetUserAssessmentOutputArgs } from "./getUserAssessment";
+export const getUserAssessment: typeof import("./getUserAssessment").getUserAssessment = null as any;
+export const getUserAssessmentOutput: typeof import("./getUserAssessment").getUserAssessmentOutput = null as any;
+utilities.lazyLoad(exports, ["getUserAssessment","getUserAssessmentOutput"], () => require("./getUserAssessment"));
+
+export { GetUserAssessmentComparisonArgs, GetUserAssessmentComparisonResult, GetUserAssessmentComparisonOutputArgs } from "./getUserAssessmentComparison";
+export const getUserAssessmentComparison: typeof import("./getUserAssessmentComparison").getUserAssessmentComparison = null as any;
+export const getUserAssessmentComparisonOutput: typeof import("./getUserAssessmentComparison").getUserAssessmentComparisonOutput = null as any;
+utilities.lazyLoad(exports, ["getUserAssessmentComparison","getUserAssessmentComparisonOutput"], () => require("./getUserAssessmentComparison"));
+
+export { GetUserAssessmentUserAnalyticsArgs, GetUserAssessmentUserAnalyticsResult, GetUserAssessmentUserAnalyticsOutputArgs } from "./getUserAssessmentUserAnalytics";
+export const getUserAssessmentUserAnalytics: typeof import("./getUserAssessmentUserAnalytics").getUserAssessmentUserAnalytics = null as any;
+export const getUserAssessmentUserAnalyticsOutput: typeof import("./getUserAssessmentUserAnalytics").getUserAssessmentUserAnalyticsOutput = null as any;
+utilities.lazyLoad(exports, ["getUserAssessmentUserAnalytics","getUserAssessmentUserAnalyticsOutput"], () => require("./getUserAssessmentUserAnalytics"));
+
+export { GetUserAssessmentUsersArgs, GetUserAssessmentUsersResult, GetUserAssessmentUsersOutputArgs } from "./getUserAssessmentUsers";
+export const getUserAssessmentUsers: typeof import("./getUserAssessmentUsers").getUserAssessmentUsers = null as any;
+export const getUserAssessmentUsersOutput: typeof import("./getUserAssessmentUsers").getUserAssessmentUsersOutput = null as any;
+utilities.lazyLoad(exports, ["getUserAssessmentUsers","getUserAssessmentUsersOutput"], () => require("./getUserAssessmentUsers"));
+
+export { GetUserAssessmentsArgs, GetUserAssessmentsResult, GetUserAssessmentsOutputArgs } from "./getUserAssessments";
+export const getUserAssessments: typeof import("./getUserAssessments").getUserAssessments = null as any;
+export const getUserAssessmentsOutput: typeof import("./getUserAssessments").getUserAssessmentsOutput = null as any;
+utilities.lazyLoad(exports, ["getUserAssessments","getUserAssessmentsOutput"], () => require("./getUserAssessments"));
+
+export { LibraryMasingFormatArgs, LibraryMasingFormatState } from "./libraryMasingFormat";
+export type LibraryMasingFormat = import("./libraryMasingFormat").LibraryMasingFormat;
+export const LibraryMasingFormat: typeof import("./libraryMasingFormat").LibraryMasingFormat = null as any;
+utilities.lazyLoad(exports, ["LibraryMasingFormat"], () => require("./libraryMasingFormat"));
+
+export { MaskDataArgs, MaskDataState } from "./maskData";
+export type MaskData = import("./maskData").MaskData;
+export const MaskData: typeof import("./maskData").MaskData = null as any;
+utilities.lazyLoad(exports, ["MaskData"], () => require("./maskData"));
+
+export { MaskingPoliciesMaskingColumnArgs, MaskingPoliciesMaskingColumnState } from "./maskingPoliciesMaskingColumn";
+export type MaskingPoliciesMaskingColumn = import("./maskingPoliciesMaskingColumn").MaskingPoliciesMaskingColumn;
+export const MaskingPoliciesMaskingColumn: typeof import("./maskingPoliciesMaskingColumn").MaskingPoliciesMaskingColumn = null as any;
+utilities.lazyLoad(exports, ["MaskingPoliciesMaskingColumn"], () => require("./maskingPoliciesMaskingColumn"));
+
+export { MaskingPolicyArgs, MaskingPolicyState } from "./maskingPolicy";
+export type MaskingPolicy = import("./maskingPolicy").MaskingPolicy;
+export const MaskingPolicy: typeof import("./maskingPolicy").MaskingPolicy = null as any;
+utilities.lazyLoad(exports, ["MaskingPolicy"], () => require("./maskingPolicy"));
+
+export { OnPremConnectorArgs, OnPremConnectorState } from "./onPremConnector";
+export type OnPremConnector = import("./onPremConnector").OnPremConnector;
+export const OnPremConnector: typeof import("./onPremConnector").OnPremConnector = null as any;
+utilities.lazyLoad(exports, ["OnPremConnector"], () => require("./onPremConnector"));
+
+export { ReportDefinitionArgs, ReportDefinitionState } from "./reportDefinition";
+export type ReportDefinition = import("./reportDefinition").ReportDefinition;
+export const ReportDefinition: typeof import("./reportDefinition").ReportDefinition = null as any;
+utilities.lazyLoad(exports, ["ReportDefinition"], () => require("./reportDefinition"));
+
+export { SecurityAssessmentArgs, SecurityAssessmentState } from "./securityAssessment";
+export type SecurityAssessment = import("./securityAssessment").SecurityAssessment;
+export const SecurityAssessment: typeof import("./securityAssessment").SecurityAssessment = null as any;
+utilities.lazyLoad(exports, ["SecurityAssessment"], () => require("./securityAssessment"));
+
+export { SensitiveDataModelArgs, SensitiveDataModelState } from "./sensitiveDataModel";
+export type SensitiveDataModel = import("./sensitiveDataModel").SensitiveDataModel;
+export const SensitiveDataModel: typeof import("./sensitiveDataModel").SensitiveDataModel = null as any;
+utilities.lazyLoad(exports, ["SensitiveDataModel"], () => require("./sensitiveDataModel"));
+
+export { SensitiveDataModelsApplyDiscoveryJobResultsArgs, SensitiveDataModelsApplyDiscoveryJobResultsState } from "./sensitiveDataModelsApplyDiscoveryJobResults";
+export type SensitiveDataModelsApplyDiscoveryJobResults = import("./sensitiveDataModelsApplyDiscoveryJobResults").SensitiveDataModelsApplyDiscoveryJobResults;
+export const SensitiveDataModelsApplyDiscoveryJobResults: typeof import("./sensitiveDataModelsApplyDiscoveryJobResults").SensitiveDataModelsApplyDiscoveryJobResults = null as any;
+utilities.lazyLoad(exports, ["SensitiveDataModelsApplyDiscoveryJobResults"], () => require("./sensitiveDataModelsApplyDiscoveryJobResults"));
+
+export { SensitiveDataModelsSensitiveColumnArgs, SensitiveDataModelsSensitiveColumnState } from "./sensitiveDataModelsSensitiveColumn";
+export type SensitiveDataModelsSensitiveColumn = import("./sensitiveDataModelsSensitiveColumn").SensitiveDataModelsSensitiveColumn;
+export const SensitiveDataModelsSensitiveColumn: typeof import("./sensitiveDataModelsSensitiveColumn").SensitiveDataModelsSensitiveColumn = null as any;
+utilities.lazyLoad(exports, ["SensitiveDataModelsSensitiveColumn"], () => require("./sensitiveDataModelsSensitiveColumn"));
+
+export { SensitiveTypeArgs, SensitiveTypeState } from "./sensitiveType";
+export type SensitiveType = import("./sensitiveType").SensitiveType;
+export const SensitiveType: typeof import("./sensitiveType").SensitiveType = null as any;
+utilities.lazyLoad(exports, ["SensitiveType"], () => require("./sensitiveType"));
+
+export { SetSecurityAssessmentBaselineArgs, SetSecurityAssessmentBaselineState } from "./setSecurityAssessmentBaseline";
+export type SetSecurityAssessmentBaseline = import("./setSecurityAssessmentBaseline").SetSecurityAssessmentBaseline;
+export const SetSecurityAssessmentBaseline: typeof import("./setSecurityAssessmentBaseline").SetSecurityAssessmentBaseline = null as any;
+utilities.lazyLoad(exports, ["SetSecurityAssessmentBaseline"], () => require("./setSecurityAssessmentBaseline"));
+
+export { SetUserAssessmentBaselineArgs, SetUserAssessmentBaselineState } from "./setUserAssessmentBaseline";
+export type SetUserAssessmentBaseline = import("./setUserAssessmentBaseline").SetUserAssessmentBaseline;
+export const SetUserAssessmentBaseline: typeof import("./setUserAssessmentBaseline").SetUserAssessmentBaseline = null as any;
+utilities.lazyLoad(exports, ["SetUserAssessmentBaseline"], () => require("./setUserAssessmentBaseline"));
+
+export { TargetAlertPolicyAssociationArgs, TargetAlertPolicyAssociationState } from "./targetAlertPolicyAssociation";
+export type TargetAlertPolicyAssociation = import("./targetAlertPolicyAssociation").TargetAlertPolicyAssociation;
+export const TargetAlertPolicyAssociation: typeof import("./targetAlertPolicyAssociation").TargetAlertPolicyAssociation = null as any;
+utilities.lazyLoad(exports, ["TargetAlertPolicyAssociation"], () => require("./targetAlertPolicyAssociation"));
+
+export { TargetDatabaseArgs, TargetDatabaseState } from "./targetDatabase";
+export type TargetDatabase = import("./targetDatabase").TargetDatabase;
+export const TargetDatabase: typeof import("./targetDatabase").TargetDatabase = null as any;
+utilities.lazyLoad(exports, ["TargetDatabase"], () => require("./targetDatabase"));
+
+export { UnsetSecurityAssessmentBaselineArgs, UnsetSecurityAssessmentBaselineState } from "./unsetSecurityAssessmentBaseline";
+export type UnsetSecurityAssessmentBaseline = import("./unsetSecurityAssessmentBaseline").UnsetSecurityAssessmentBaseline;
+export const UnsetSecurityAssessmentBaseline: typeof import("./unsetSecurityAssessmentBaseline").UnsetSecurityAssessmentBaseline = null as any;
+utilities.lazyLoad(exports, ["UnsetSecurityAssessmentBaseline"], () => require("./unsetSecurityAssessmentBaseline"));
+
+export { UnsetUserAssessmentBaselineArgs, UnsetUserAssessmentBaselineState } from "./unsetUserAssessmentBaseline";
+export type UnsetUserAssessmentBaseline = import("./unsetUserAssessmentBaseline").UnsetUserAssessmentBaseline;
+export const UnsetUserAssessmentBaseline: typeof import("./unsetUserAssessmentBaseline").UnsetUserAssessmentBaseline = null as any;
+utilities.lazyLoad(exports, ["UnsetUserAssessmentBaseline"], () => require("./unsetUserAssessmentBaseline"));
+
+export { UserAssessmentArgs, UserAssessmentState } from "./userAssessment";
+export type UserAssessment = import("./userAssessment").UserAssessment;
+export const UserAssessment: typeof import("./userAssessment").UserAssessment = null as any;
+utilities.lazyLoad(exports, ["UserAssessment"], () => require("./userAssessment"));
+
 
 const _module = {
     version: utilities.getVersion(),

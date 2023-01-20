@@ -767,14 +767,14 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
      * 
      */
     @Export(name="valuesArtifactIds", type=List.class, parameters={String.class})
-    private Output<List<String>> valuesArtifactIds;
+    private Output</* @Nullable */ List<String>> valuesArtifactIds;
 
     /**
      * @return (Updatable) List of values.yaml file artifact OCIDs.
      * 
      */
-    public Output<List<String>> valuesArtifactIds() {
-        return this.valuesArtifactIds;
+    public Output<Optional<List<String>>> valuesArtifactIds() {
+        return Codegen.optional(this.valuesArtifactIds);
     }
     /**
      * (Updatable) Specifies wait criteria for the Wait stage.

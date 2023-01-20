@@ -5,12 +5,21 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./getIntegrationInstance";
-export * from "./getIntegrationInstances";
-export * from "./integrationInstance";
+export { GetIntegrationInstanceArgs, GetIntegrationInstanceResult, GetIntegrationInstanceOutputArgs } from "./getIntegrationInstance";
+export const getIntegrationInstance: typeof import("./getIntegrationInstance").getIntegrationInstance = null as any;
+export const getIntegrationInstanceOutput: typeof import("./getIntegrationInstance").getIntegrationInstanceOutput = null as any;
+utilities.lazyLoad(exports, ["getIntegrationInstance","getIntegrationInstanceOutput"], () => require("./getIntegrationInstance"));
 
-// Import resources to register:
-import { IntegrationInstance } from "./integrationInstance";
+export { GetIntegrationInstancesArgs, GetIntegrationInstancesResult, GetIntegrationInstancesOutputArgs } from "./getIntegrationInstances";
+export const getIntegrationInstances: typeof import("./getIntegrationInstances").getIntegrationInstances = null as any;
+export const getIntegrationInstancesOutput: typeof import("./getIntegrationInstances").getIntegrationInstancesOutput = null as any;
+utilities.lazyLoad(exports, ["getIntegrationInstances","getIntegrationInstancesOutput"], () => require("./getIntegrationInstances"));
+
+export { IntegrationInstanceArgs, IntegrationInstanceState } from "./integrationInstance";
+export type IntegrationInstance = import("./integrationInstance").IntegrationInstance;
+export const IntegrationInstance: typeof import("./integrationInstance").IntegrationInstance = null as any;
+utilities.lazyLoad(exports, ["IntegrationInstance"], () => require("./integrationInstance"));
+
 
 const _module = {
     version: utilities.getVersion(),

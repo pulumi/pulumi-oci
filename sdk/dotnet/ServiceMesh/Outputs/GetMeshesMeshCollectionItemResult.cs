@@ -14,7 +14,7 @@ namespace Pulumi.Oci.ServiceMesh.Outputs
     public sealed class GetMeshesMeshCollectionItemResult
     {
         /// <summary>
-        /// A list of certificate authority resources to use for creating leaf certificates for mTLS authentication. Currently we only support one certificate authority, but this may expand in future releases.
+        /// A list of certificate authority resources to use for creating leaf certificates for mTLS authentication. Currently we only support one certificate authority, but this may expand in future releases. Request with more than one certificate authority will be rejected.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMeshesMeshCollectionItemCertificateAuthorityResult> CertificateAuthorities;
         /// <summary>

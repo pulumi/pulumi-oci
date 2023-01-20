@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -34,11 +35,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDrgAttachments(args: GetDrgAttachmentsArgs, opts?: pulumi.InvokeOptions): Promise<GetDrgAttachmentsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getDrgAttachments:getDrgAttachments", {
         "attachmentType": args.attachmentType,
         "compartmentId": args.compartmentId,
@@ -131,9 +129,36 @@ export interface GetDrgAttachmentsResult {
      */
     readonly vcnId?: string;
 }
-
+/**
+ * This data source provides the list of Drg Attachments in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the `DrgAttachment` resource for the specified compartment. You can filter the
+ * results by DRG, attached network, attachment type, DRG route table or
+ * VCN route table.
+ *
+ * The LIST API lists DRG attachments by attachment type. It will default to list VCN attachments,
+ * but you may request to list ALL attachments of ALL types.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDrgAttachments = oci.Core.getDrgAttachments({
+ *     compartmentId: _var.compartment_id,
+ *     attachmentType: _var.drg_attachment_attachment_type,
+ *     displayName: _var.drg_attachment_display_name,
+ *     drgId: oci_core_drg.test_drg.id,
+ *     drgRouteTableId: oci_core_drg_route_table.test_drg_route_table.id,
+ *     networkId: oci_core_network.test_network.id,
+ *     state: _var.drg_attachment_state,
+ *     vcnId: oci_core_vcn.test_vcn.id,
+ * });
+ * ```
+ */
 export function getDrgAttachmentsOutput(args: GetDrgAttachmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDrgAttachmentsResult> {
-    return pulumi.output(args).apply(a => getDrgAttachments(a, opts))
+    return pulumi.output(args).apply((a: any) => getDrgAttachments(a, opts))
 }
 
 /**

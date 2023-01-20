@@ -181,6 +181,10 @@ namespace Pulumi.Oci.DevOps
             var defaultOptions = new CustomResourceOptions
             {
                 Version = Utilities.Version,
+                AdditionalSecretOutputs =
+                {
+                    "appPassword",
+                },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -210,11 +214,21 @@ namespace Pulumi.Oci.DevOps
         [Input("accessToken")]
         public Input<string>? AccessToken { get; set; }
 
+        [Input("appPassword")]
+        private Input<string>? _appPassword;
+
         /// <summary>
         /// (Updatable) OCID of personal Bitbucket Cloud AppPassword saved in secret store
         /// </summary>
-        [Input("appPassword")]
-        public Input<string>? AppPassword { get; set; }
+        public Input<string>? AppPassword
+        {
+            get => _appPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _appPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// (Updatable) The Base URL of the hosted BitbucketServer.
@@ -296,11 +310,21 @@ namespace Pulumi.Oci.DevOps
         [Input("accessToken")]
         public Input<string>? AccessToken { get; set; }
 
+        [Input("appPassword")]
+        private Input<string>? _appPassword;
+
         /// <summary>
         /// (Updatable) OCID of personal Bitbucket Cloud AppPassword saved in secret store
         /// </summary>
-        [Input("appPassword")]
-        public Input<string>? AppPassword { get; set; }
+        public Input<string>? AppPassword
+        {
+            get => _appPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _appPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// (Updatable) The Base URL of the hosted BitbucketServer.

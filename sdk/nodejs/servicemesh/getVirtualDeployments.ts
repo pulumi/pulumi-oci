@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVirtualDeployments(args: GetVirtualDeploymentsArgs, opts?: pulumi.InvokeOptions): Promise<GetVirtualDeploymentsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ServiceMesh/getVirtualDeployments:getVirtualDeployments", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -98,9 +96,28 @@ export interface GetVirtualDeploymentsResult {
      */
     readonly virtualServiceId?: string;
 }
-
+/**
+ * This data source provides the list of Virtual Deployments in Oracle Cloud Infrastructure Service Mesh service.
+ *
+ * Returns a list of VirtualDeployments.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testVirtualDeployments = oci.ServiceMesh.getVirtualDeployments({
+ *     compartmentId: _var.compartment_id,
+ *     id: _var.virtual_deployment_id,
+ *     name: _var.virtual_deployment_name,
+ *     state: _var.virtual_deployment_state,
+ *     virtualServiceId: oci_service_mesh_virtual_service.test_virtual_service.id,
+ * });
+ * ```
+ */
 export function getVirtualDeploymentsOutput(args: GetVirtualDeploymentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVirtualDeploymentsResult> {
-    return pulumi.output(args).apply(a => getVirtualDeployments(a, opts))
+    return pulumi.output(args).apply((a: any) => getVirtualDeployments(a, opts))
 }
 
 /**

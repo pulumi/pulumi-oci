@@ -26,7 +26,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
         /// </summary>
         public static Task<GetObjectsResult> InvokeAsync(GetObjectsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetObjectsResult>("oci:ObjectStorage/getObjects:getObjects", args ?? new GetObjectsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetObjectsResult>("oci:ObjectStorage/getObjects:getObjects", args ?? new GetObjectsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Objects in Oracle Cloud Infrastructure Object Storage service.
@@ -43,7 +43,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
         /// </summary>
         public static Output<GetObjectsResult> Invoke(GetObjectsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetObjectsResult>("oci:ObjectStorage/getObjects:getObjects", args ?? new GetObjectsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetObjectsResult>("oci:ObjectStorage/getObjects:getObjects", args ?? new GetObjectsInvokeArgs(), options.WithDefaults());
     }
 
 

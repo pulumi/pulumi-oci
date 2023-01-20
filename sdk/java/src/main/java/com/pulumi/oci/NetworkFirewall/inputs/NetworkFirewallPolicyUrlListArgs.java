@@ -5,7 +5,9 @@ package com.pulumi.oci.NetworkFirewall.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.NetworkFirewall.inputs.NetworkFirewallPolicyUrlListUrlListValueArgs;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -15,45 +17,41 @@ public final class NetworkFirewallPolicyUrlListArgs extends com.pulumi.resources
 
     public static final NetworkFirewallPolicyUrlListArgs Empty = new NetworkFirewallPolicyUrlListArgs();
 
-    @Import(name="key", required=true)
-    private Output<String> key;
+    /**
+     * (Updatable) The identifier for the url list
+     * 
+     */
+    @Import(name="urlListName", required=true)
+    private Output<String> urlListName;
 
-    public Output<String> key() {
-        return this.key;
-    }
-
-    @Import(name="pattern")
-    private @Nullable Output<String> pattern;
-
-    public Optional<Output<String>> pattern() {
-        return Optional.ofNullable(this.pattern);
+    /**
+     * @return (Updatable) The identifier for the url list
+     * 
+     */
+    public Output<String> urlListName() {
+        return this.urlListName;
     }
 
     /**
-     * (Updatable) Type of the secrets mapped based on the policy.
-     * * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-     * * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+     * (Updatable) The list of Url Patterns.
      * 
      */
-    @Import(name="type", required=true)
-    private Output<String> type;
+    @Import(name="urlListValues")
+    private @Nullable Output<List<NetworkFirewallPolicyUrlListUrlListValueArgs>> urlListValues;
 
     /**
-     * @return (Updatable) Type of the secrets mapped based on the policy.
-     * * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-     * * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+     * @return (Updatable) The list of Url Patterns.
      * 
      */
-    public Output<String> type() {
-        return this.type;
+    public Optional<Output<List<NetworkFirewallPolicyUrlListUrlListValueArgs>>> urlListValues() {
+        return Optional.ofNullable(this.urlListValues);
     }
 
     private NetworkFirewallPolicyUrlListArgs() {}
 
     private NetworkFirewallPolicyUrlListArgs(NetworkFirewallPolicyUrlListArgs $) {
-        this.key = $.key;
-        this.pattern = $.pattern;
-        this.type = $.type;
+        this.urlListName = $.urlListName;
+        this.urlListValues = $.urlListValues;
     }
 
     public static Builder builder() {
@@ -74,52 +72,60 @@ public final class NetworkFirewallPolicyUrlListArgs extends com.pulumi.resources
             $ = new NetworkFirewallPolicyUrlListArgs(Objects.requireNonNull(defaults));
         }
 
-        public Builder key(Output<String> key) {
-            $.key = key;
-            return this;
-        }
-
-        public Builder key(String key) {
-            return key(Output.of(key));
-        }
-
-        public Builder pattern(@Nullable Output<String> pattern) {
-            $.pattern = pattern;
-            return this;
-        }
-
-        public Builder pattern(String pattern) {
-            return pattern(Output.of(pattern));
-        }
-
         /**
-         * @param type (Updatable) Type of the secrets mapped based on the policy.
-         * * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-         * * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+         * @param urlListName (Updatable) The identifier for the url list
          * 
          * @return builder
          * 
          */
-        public Builder type(Output<String> type) {
-            $.type = type;
+        public Builder urlListName(Output<String> urlListName) {
+            $.urlListName = urlListName;
             return this;
         }
 
         /**
-         * @param type (Updatable) Type of the secrets mapped based on the policy.
-         * * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-         * * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+         * @param urlListName (Updatable) The identifier for the url list
          * 
          * @return builder
          * 
          */
-        public Builder type(String type) {
-            return type(Output.of(type));
+        public Builder urlListName(String urlListName) {
+            return urlListName(Output.of(urlListName));
+        }
+
+        /**
+         * @param urlListValues (Updatable) The list of Url Patterns.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder urlListValues(@Nullable Output<List<NetworkFirewallPolicyUrlListUrlListValueArgs>> urlListValues) {
+            $.urlListValues = urlListValues;
+            return this;
+        }
+
+        /**
+         * @param urlListValues (Updatable) The list of Url Patterns.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder urlListValues(List<NetworkFirewallPolicyUrlListUrlListValueArgs> urlListValues) {
+            return urlListValues(Output.of(urlListValues));
+        }
+
+        /**
+         * @param urlListValues (Updatable) The list of Url Patterns.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder urlListValues(NetworkFirewallPolicyUrlListUrlListValueArgs... urlListValues) {
+            return urlListValues(List.of(urlListValues));
         }
 
         public NetworkFirewallPolicyUrlListArgs build() {
-            $.key = Objects.requireNonNull($.key, "expected parameter 'key' to be non-null");
-            $.type = Objects.requireNonNull($.type, "expected parameter 'type' to be non-null");
+            $.urlListName = Objects.requireNonNull($.urlListName, "expected parameter 'urlListName' to be non-null");
             return $;
         }
     }

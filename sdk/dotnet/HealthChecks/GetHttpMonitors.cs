@@ -41,7 +41,7 @@ namespace Pulumi.Oci.HealthChecks
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetHttpMonitorsResult> InvokeAsync(GetHttpMonitorsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetHttpMonitorsResult>("oci:HealthChecks/getHttpMonitors:getHttpMonitors", args ?? new GetHttpMonitorsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetHttpMonitorsResult>("oci:HealthChecks/getHttpMonitors:getHttpMonitors", args ?? new GetHttpMonitorsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Http Monitors in Oracle Cloud Infrastructure Health Checks service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.HealthChecks
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetHttpMonitorsResult> Invoke(GetHttpMonitorsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetHttpMonitorsResult>("oci:HealthChecks/getHttpMonitors:getHttpMonitors", args ?? new GetHttpMonitorsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetHttpMonitorsResult>("oci:HealthChecks/getHttpMonitors:getHttpMonitors", args ?? new GetHttpMonitorsInvokeArgs(), options.WithDefaults());
     }
 
 

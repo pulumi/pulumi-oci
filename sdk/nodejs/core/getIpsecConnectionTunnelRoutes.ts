@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getIpsecConnectionTunnelRoutes(args: GetIpsecConnectionTunnelRoutesArgs, opts?: pulumi.InvokeOptions): Promise<GetIpsecConnectionTunnelRoutesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getIpsecConnectionTunnelRoutes:getIpsecConnectionTunnelRoutes", {
         "advertiser": args.advertiser,
         "filters": args.filters,
@@ -76,9 +74,26 @@ export interface GetIpsecConnectionTunnelRoutesResult {
      */
     readonly tunnelRoutes: outputs.Core.GetIpsecConnectionTunnelRoutesTunnelRoute[];
 }
-
+/**
+ * This data source provides the list of Ipsec Connection Tunnel Routes in Oracle Cloud Infrastructure Core service.
+ *
+ * The routes advertised to the on-premises network and the routes received from the on-premises network.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testIpsecConnectionTunnelRoutes = oci.Core.getIpsecConnectionTunnelRoutes({
+ *     ipsecId: oci_core_ipsec.test_ipsec.id,
+ *     tunnelId: oci_core_tunnel.test_tunnel.id,
+ *     advertiser: _var.ipsec_connection_tunnel_route_advertiser,
+ * });
+ * ```
+ */
 export function getIpsecConnectionTunnelRoutesOutput(args: GetIpsecConnectionTunnelRoutesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIpsecConnectionTunnelRoutesResult> {
-    return pulumi.output(args).apply(a => getIpsecConnectionTunnelRoutes(a, opts))
+    return pulumi.output(args).apply((a: any) => getIpsecConnectionTunnelRoutes(a, opts))
 }
 
 /**

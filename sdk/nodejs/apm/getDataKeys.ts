@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDataKeys(args: GetDataKeysArgs, opts?: pulumi.InvokeOptions): Promise<GetDataKeysResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Apm/getDataKeys:getDataKeys", {
         "apmDomainId": args.apmDomainId,
         "dataKeyType": args.dataKeyType,
@@ -67,9 +65,26 @@ export interface GetDataKeysResult {
      */
     readonly id: string;
 }
-
+/**
+ * This data source provides the list of Data Keys in Oracle Cloud Infrastructure Apm service.
+ *
+ * Lists all Data Keys for the specified APM domain. The caller may filter the list by specifying the 'dataKeyType'
+ * query parameter.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDataKeys = oci.Apm.getDataKeys({
+ *     apmDomainId: oci_apm_apm_domain.test_apm_domain.id,
+ *     dataKeyType: _var.data_key_data_key_type,
+ * });
+ * ```
+ */
 export function getDataKeysOutput(args: GetDataKeysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDataKeysResult> {
-    return pulumi.output(args).apply(a => getDataKeys(a, opts))
+    return pulumi.output(args).apply((a: any) => getDataKeys(a, opts))
 }
 
 /**

@@ -5,12 +5,21 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./getOceInstance";
-export * from "./getOceInstances";
-export * from "./instance";
+export { GetOceInstanceArgs, GetOceInstanceResult, GetOceInstanceOutputArgs } from "./getOceInstance";
+export const getOceInstance: typeof import("./getOceInstance").getOceInstance = null as any;
+export const getOceInstanceOutput: typeof import("./getOceInstance").getOceInstanceOutput = null as any;
+utilities.lazyLoad(exports, ["getOceInstance","getOceInstanceOutput"], () => require("./getOceInstance"));
 
-// Import resources to register:
-import { Instance } from "./instance";
+export { GetOceInstancesArgs, GetOceInstancesResult, GetOceInstancesOutputArgs } from "./getOceInstances";
+export const getOceInstances: typeof import("./getOceInstances").getOceInstances = null as any;
+export const getOceInstancesOutput: typeof import("./getOceInstances").getOceInstancesOutput = null as any;
+utilities.lazyLoad(exports, ["getOceInstances","getOceInstancesOutput"], () => require("./getOceInstances"));
+
+export { InstanceArgs, InstanceState } from "./instance";
+export type Instance = import("./instance").Instance;
+export const Instance: typeof import("./instance").Instance = null as any;
+utilities.lazyLoad(exports, ["Instance"], () => require("./instance"));
+
 
 const _module = {
     version: utilities.getVersion(),

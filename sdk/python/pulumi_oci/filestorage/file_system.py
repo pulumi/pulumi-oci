@@ -31,7 +31,7 @@ class FileSystemArgs:
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My file system`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of KMS key used to encrypt the encryption keys associated with this file system. May be unset as a blank or deleted from the configuration to remove the KMS key.
-        :param pulumi.Input[str] source_snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+        :param pulumi.Input[str] source_snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -122,7 +122,7 @@ class FileSystemArgs:
     @pulumi.getter(name="sourceSnapshotId")
     def source_snapshot_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         """
         return pulumi.get(self, "source_snapshot_id")
 
@@ -141,9 +141,11 @@ class _FileSystemState:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_clone_parent: Optional[pulumi.Input[bool]] = None,
                  is_hydrated: Optional[pulumi.Input[bool]] = None,
+                 is_targetable: Optional[pulumi.Input[bool]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  metered_bytes: Optional[pulumi.Input[str]] = None,
+                 replication_target_id: Optional[pulumi.Input[str]] = None,
                  source_details: Optional[pulumi.Input[Sequence[pulumi.Input['FileSystemSourceDetailArgs']]]] = None,
                  source_snapshot_id: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
@@ -155,13 +157,15 @@ class _FileSystemState:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My file system`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_clone_parent: Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
-        :param pulumi.Input[bool] is_hydrated: Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm#hydration).
+        :param pulumi.Input[bool] is_clone_parent: Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+        :param pulumi.Input[bool] is_hydrated: Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
+        :param pulumi.Input[bool] is_targetable: Specifies whether the file system can be used as a target file system for replication. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
         :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of KMS key used to encrypt the encryption keys associated with this file system. May be unset as a blank or deleted from the configuration to remove the KMS key.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current 'lifecycleState'.
         :param pulumi.Input[str] metered_bytes: The number of bytes consumed by the file system, including any snapshots. This number reflects the metered size of the file system and is updated asynchronously with respect to updates to the file system. For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).
+        :param pulumi.Input[str] replication_target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
         :param pulumi.Input[Sequence[pulumi.Input['FileSystemSourceDetailArgs']]] source_details: Source information for the file system.
-        :param pulumi.Input[str] source_snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+        :param pulumi.Input[str] source_snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         :param pulumi.Input[str] state: The current state of the file system.
         :param pulumi.Input[str] time_created: The date and time the file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
@@ -179,12 +183,16 @@ class _FileSystemState:
             pulumi.set(__self__, "is_clone_parent", is_clone_parent)
         if is_hydrated is not None:
             pulumi.set(__self__, "is_hydrated", is_hydrated)
+        if is_targetable is not None:
+            pulumi.set(__self__, "is_targetable", is_targetable)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if metered_bytes is not None:
             pulumi.set(__self__, "metered_bytes", metered_bytes)
+        if replication_target_id is not None:
+            pulumi.set(__self__, "replication_target_id", replication_target_id)
         if source_details is not None:
             pulumi.set(__self__, "source_details", source_details)
         if source_snapshot_id is not None:
@@ -258,7 +266,7 @@ class _FileSystemState:
     @pulumi.getter(name="isCloneParent")
     def is_clone_parent(self) -> Optional[pulumi.Input[bool]]:
         """
-        Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+        Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         """
         return pulumi.get(self, "is_clone_parent")
 
@@ -270,13 +278,25 @@ class _FileSystemState:
     @pulumi.getter(name="isHydrated")
     def is_hydrated(self) -> Optional[pulumi.Input[bool]]:
         """
-        Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm#hydration).
+        Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
         """
         return pulumi.get(self, "is_hydrated")
 
     @is_hydrated.setter
     def is_hydrated(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_hydrated", value)
+
+    @property
+    @pulumi.getter(name="isTargetable")
+    def is_targetable(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Specifies whether the file system can be used as a target file system for replication. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
+        """
+        return pulumi.get(self, "is_targetable")
+
+    @is_targetable.setter
+    def is_targetable(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_targetable", value)
 
     @property
     @pulumi.getter(name="kmsKeyId")
@@ -315,6 +335,18 @@ class _FileSystemState:
         pulumi.set(self, "metered_bytes", value)
 
     @property
+    @pulumi.getter(name="replicationTargetId")
+    def replication_target_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
+        """
+        return pulumi.get(self, "replication_target_id")
+
+    @replication_target_id.setter
+    def replication_target_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "replication_target_id", value)
+
+    @property
     @pulumi.getter(name="sourceDetails")
     def source_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FileSystemSourceDetailArgs']]]]:
         """
@@ -330,7 +362,7 @@ class _FileSystemState:
     @pulumi.getter(name="sourceSnapshotId")
     def source_snapshot_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         """
         return pulumi.get(self, "source_snapshot_id")
 
@@ -404,7 +436,7 @@ class FileSystem(pulumi.CustomResource):
 
         All Oracle Cloud Infrastructure resources, including
         file systems, get an Oracle-assigned, unique ID called an Oracle
-        Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).\\
+        Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
         When you create a resource, you can find its OCID in the response.
         You can also retrieve a resource's OCID by using a List API operation on that resource
         type or by viewing the resource in the Console.
@@ -445,7 +477,7 @@ class FileSystem(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My file system`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of KMS key used to encrypt the encryption keys associated with this file system. May be unset as a blank or deleted from the configuration to remove the KMS key.
-        :param pulumi.Input[str] source_snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+        :param pulumi.Input[str] source_snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         """
         ...
     @overload
@@ -481,7 +513,7 @@ class FileSystem(pulumi.CustomResource):
 
         All Oracle Cloud Infrastructure resources, including
         file systems, get an Oracle-assigned, unique ID called an Oracle
-        Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).\\
+        Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
         When you create a resource, you can find its OCID in the response.
         You can also retrieve a resource's OCID by using a List API operation on that resource
         type or by viewing the resource in the Console.
@@ -558,8 +590,10 @@ class FileSystem(pulumi.CustomResource):
             __props__.__dict__["source_snapshot_id"] = source_snapshot_id
             __props__.__dict__["is_clone_parent"] = None
             __props__.__dict__["is_hydrated"] = None
+            __props__.__dict__["is_targetable"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["metered_bytes"] = None
+            __props__.__dict__["replication_target_id"] = None
             __props__.__dict__["source_details"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
@@ -580,9 +614,11 @@ class FileSystem(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             is_clone_parent: Optional[pulumi.Input[bool]] = None,
             is_hydrated: Optional[pulumi.Input[bool]] = None,
+            is_targetable: Optional[pulumi.Input[bool]] = None,
             kms_key_id: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             metered_bytes: Optional[pulumi.Input[str]] = None,
+            replication_target_id: Optional[pulumi.Input[str]] = None,
             source_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['FileSystemSourceDetailArgs']]]]] = None,
             source_snapshot_id: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
@@ -599,13 +635,15 @@ class FileSystem(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My file system`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_clone_parent: Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
-        :param pulumi.Input[bool] is_hydrated: Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm#hydration).
+        :param pulumi.Input[bool] is_clone_parent: Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+        :param pulumi.Input[bool] is_hydrated: Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
+        :param pulumi.Input[bool] is_targetable: Specifies whether the file system can be used as a target file system for replication. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
         :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of KMS key used to encrypt the encryption keys associated with this file system. May be unset as a blank or deleted from the configuration to remove the KMS key.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current 'lifecycleState'.
         :param pulumi.Input[str] metered_bytes: The number of bytes consumed by the file system, including any snapshots. This number reflects the metered size of the file system and is updated asynchronously with respect to updates to the file system. For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).
+        :param pulumi.Input[str] replication_target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['FileSystemSourceDetailArgs']]]] source_details: Source information for the file system.
-        :param pulumi.Input[str] source_snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+        :param pulumi.Input[str] source_snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         :param pulumi.Input[str] state: The current state of the file system.
         :param pulumi.Input[str] time_created: The date and time the file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
@@ -620,9 +658,11 @@ class FileSystem(pulumi.CustomResource):
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["is_clone_parent"] = is_clone_parent
         __props__.__dict__["is_hydrated"] = is_hydrated
+        __props__.__dict__["is_targetable"] = is_targetable
         __props__.__dict__["kms_key_id"] = kms_key_id
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["metered_bytes"] = metered_bytes
+        __props__.__dict__["replication_target_id"] = replication_target_id
         __props__.__dict__["source_details"] = source_details
         __props__.__dict__["source_snapshot_id"] = source_snapshot_id
         __props__.__dict__["state"] = state
@@ -673,7 +713,7 @@ class FileSystem(pulumi.CustomResource):
     @pulumi.getter(name="isCloneParent")
     def is_clone_parent(self) -> pulumi.Output[bool]:
         """
-        Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+        Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         """
         return pulumi.get(self, "is_clone_parent")
 
@@ -681,9 +721,17 @@ class FileSystem(pulumi.CustomResource):
     @pulumi.getter(name="isHydrated")
     def is_hydrated(self) -> pulumi.Output[bool]:
         """
-        Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm#hydration).
+        Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
         """
         return pulumi.get(self, "is_hydrated")
+
+    @property
+    @pulumi.getter(name="isTargetable")
+    def is_targetable(self) -> pulumi.Output[bool]:
+        """
+        Specifies whether the file system can be used as a target file system for replication. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
+        """
+        return pulumi.get(self, "is_targetable")
 
     @property
     @pulumi.getter(name="kmsKeyId")
@@ -710,6 +758,14 @@ class FileSystem(pulumi.CustomResource):
         return pulumi.get(self, "metered_bytes")
 
     @property
+    @pulumi.getter(name="replicationTargetId")
+    def replication_target_id(self) -> pulumi.Output[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
+        """
+        return pulumi.get(self, "replication_target_id")
+
+    @property
     @pulumi.getter(name="sourceDetails")
     def source_details(self) -> pulumi.Output[Sequence['outputs.FileSystemSourceDetail']]:
         """
@@ -721,7 +777,7 @@ class FileSystem(pulumi.CustomResource):
     @pulumi.getter(name="sourceSnapshotId")
     def source_snapshot_id(self) -> pulumi.Output[str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         """
         return pulumi.get(self, "source_snapshot_id")
 

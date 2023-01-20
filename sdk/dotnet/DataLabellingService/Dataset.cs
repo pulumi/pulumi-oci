@@ -61,7 +61,7 @@ namespace Pulumi.Oci.DataLabellingService
     ///         Description = @var.Dataset_description,
     ///         DisplayName = @var.Dataset_display_name,
     ///         FreeformTags = @var.Dataset_freeform_tags,
-    ///         InitialRecordGenerationConfiguration = ,
+    ///         InitialRecordGenerationConfiguration = null,
     ///         LabelingInstructions = @var.Dataset_labeling_instructions,
     ///     });
     /// 

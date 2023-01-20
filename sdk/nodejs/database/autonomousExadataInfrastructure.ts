@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -31,7 +32,6 @@ import * as utilities from "../utilities";
  *     },
  *     licenseModel: _var.autonomous_exadata_infrastructure_license_model,
  *     maintenanceWindowDetails: {
- *         preference: _var.autonomous_exadata_infrastructure_maintenance_window_details_preference,
  *         customActionTimeoutInMins: _var.autonomous_exadata_infrastructure_maintenance_window_details_custom_action_timeout_in_mins,
  *         daysOfWeeks: [{
  *             name: _var.autonomous_exadata_infrastructure_maintenance_window_details_days_of_week_name,
@@ -44,6 +44,7 @@ import * as utilities from "../utilities";
  *             name: _var.autonomous_exadata_infrastructure_maintenance_window_details_months_name,
  *         }],
  *         patchingMode: _var.autonomous_exadata_infrastructure_maintenance_window_details_patching_mode,
+ *         preference: _var.autonomous_exadata_infrastructure_maintenance_window_details_preference,
  *         weeksOfMonths: _var.autonomous_exadata_infrastructure_maintenance_window_details_weeks_of_month,
  *     },
  *     nsgIds: _var.autonomous_exadata_infrastructure_nsg_ids,

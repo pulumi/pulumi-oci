@@ -40,7 +40,7 @@ namespace Pulumi.Oci.VisualBuilder
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetVbInstanceApplicationsResult> InvokeAsync(GetVbInstanceApplicationsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetVbInstanceApplicationsResult>("oci:VisualBuilder/getVbInstanceApplications:getVbInstanceApplications", args ?? new GetVbInstanceApplicationsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetVbInstanceApplicationsResult>("oci:VisualBuilder/getVbInstanceApplications:getVbInstanceApplications", args ?? new GetVbInstanceApplicationsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of published and staged applications of a Visual Builder Instance in Oracle Cloud Infrastructure Visual Builder service.
@@ -71,17 +71,23 @@ namespace Pulumi.Oci.VisualBuilder
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetVbInstanceApplicationsResult> Invoke(GetVbInstanceApplicationsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetVbInstanceApplicationsResult>("oci:VisualBuilder/getVbInstanceApplications:getVbInstanceApplications", args ?? new GetVbInstanceApplicationsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetVbInstanceApplicationsResult>("oci:VisualBuilder/getVbInstanceApplications:getVbInstanceApplications", args ?? new GetVbInstanceApplicationsInvokeArgs(), options.WithDefaults());
     }
 
 
     public sealed class GetVbInstanceApplicationsArgs : global::Pulumi.InvokeArgs
     {
+        [Input("idcsOpenId")]
+        private string? _idcsOpenId;
+
         /// <summary>
         /// Encrypted IDCS Open ID token which allows access to Visual Builder REST apis
         /// </summary>
-        [Input("idcsOpenId")]
-        public string? IdcsOpenId { get; set; }
+        public string? IdcsOpenId
+        {
+            get => _idcsOpenId;
+            set => _idcsOpenId = value;
+        }
 
         /// <summary>
         /// Unique Vb Instance identifier.
@@ -97,11 +103,21 @@ namespace Pulumi.Oci.VisualBuilder
 
     public sealed class GetVbInstanceApplicationsInvokeArgs : global::Pulumi.InvokeArgs
     {
+        [Input("idcsOpenId")]
+        private Input<string>? _idcsOpenId;
+
         /// <summary>
         /// Encrypted IDCS Open ID token which allows access to Visual Builder REST apis
         /// </summary>
-        [Input("idcsOpenId")]
-        public Input<string>? IdcsOpenId { get; set; }
+        public Input<string>? IdcsOpenId
+        {
+            get => _idcsOpenId;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _idcsOpenId = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// Unique Vb Instance identifier.

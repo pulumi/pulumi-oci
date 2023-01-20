@@ -2,12 +2,14 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
  * This data source provides the list of Database Registrations in Oracle Cloud Infrastructure Golden Gate service.
  *
+ * Note: Deprecated. Use the new resource model APIs instead.
  * Lists the DatabaseRegistrations in the compartment.
  *
  * ## Example Usage
@@ -24,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDatabaseRegistrations(args: GetDatabaseRegistrationsArgs, opts?: pulumi.InvokeOptions): Promise<GetDatabaseRegistrationsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:GoldenGate/getDatabaseRegistrations:getDatabaseRegistrations", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -42,7 +41,7 @@ export function getDatabaseRegistrations(args: GetDatabaseRegistrationsArgs, opt
  */
 export interface GetDatabaseRegistrationsArgs {
     /**
-     * The ID of the compartment in which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
     compartmentId: string;
     /**
@@ -82,9 +81,27 @@ export interface GetDatabaseRegistrationsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Database Registrations in Oracle Cloud Infrastructure Golden Gate service.
+ *
+ * Note: Deprecated. Use the new resource model APIs instead.
+ * Lists the DatabaseRegistrations in the compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDatabaseRegistrations = oci.GoldenGate.getDatabaseRegistrations({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.database_registration_display_name,
+ *     state: _var.database_registration_state,
+ * });
+ * ```
+ */
 export function getDatabaseRegistrationsOutput(args: GetDatabaseRegistrationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatabaseRegistrationsResult> {
-    return pulumi.output(args).apply(a => getDatabaseRegistrations(a, opts))
+    return pulumi.output(args).apply((a: any) => getDatabaseRegistrations(a, opts))
 }
 
 /**
@@ -92,7 +109,7 @@ export function getDatabaseRegistrationsOutput(args: GetDatabaseRegistrationsOut
  */
 export interface GetDatabaseRegistrationsOutputArgs {
     /**
-     * The ID of the compartment in which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
     compartmentId: pulumi.Input<string>;
     /**

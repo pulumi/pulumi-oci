@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRepositoryPath(args: GetRepositoryPathArgs, opts?: pulumi.InvokeOptions): Promise<GetRepositoryPathResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getRepositoryPath:getRepositoryPath", {
         "displayName": args.displayName,
         "folderPath": args.folderPath,
@@ -84,9 +82,28 @@ export interface GetRepositoryPathResult {
     readonly ref?: string;
     readonly repositoryId: string;
 }
-
+/**
+ * This data source provides details about a specific Repository Path resource in Oracle Cloud Infrastructure Devops service.
+ *
+ * Retrieves a list of files and directories in a repository.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testRepositoryPath = oci.DevOps.getRepositoryPath({
+ *     repositoryId: oci_devops_repository.test_repository.id,
+ *     displayName: _var.repository_path_display_name,
+ *     folderPath: _var.repository_path_folder_path,
+ *     pathsInSubtree: _var.repository_path_paths_in_subtree,
+ *     ref: _var.repository_path_ref,
+ * });
+ * ```
+ */
 export function getRepositoryPathOutput(args: GetRepositoryPathOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoryPathResult> {
-    return pulumi.output(args).apply(a => getRepositoryPath(a, opts))
+    return pulumi.output(args).apply((a: any) => getRepositoryPath(a, opts))
 }
 
 /**

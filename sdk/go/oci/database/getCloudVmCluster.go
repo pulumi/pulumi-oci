@@ -76,6 +76,12 @@ type LookupCloudVmClusterResult struct {
 	DataCollectionOptions []GetCloudVmClusterDataCollectionOption `pulumi:"dataCollectionOptions"`
 	// The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
 	DataStoragePercentage int `pulumi:"dataStoragePercentage"`
+	// The data disk group size to be allocated in TBs.
+	DataStorageSizeInTbs float64 `pulumi:"dataStorageSizeInTbs"`
+	// The local node storage to be allocated in GBs.
+	DbNodeStorageSizeInGbs int `pulumi:"dbNodeStorageSizeInGbs"`
+	// The list of DB servers.
+	DbServers []string `pulumi:"dbServers"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The type of redundancy configured for the cloud Vm cluster. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
@@ -106,13 +112,16 @@ type LookupCloudVmClusterResult struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The port number configured for the listener on the cloud VM cluster.
 	ListenerPort string `pulumi:"listenerPort"`
+	// The memory to be allocated in GBs.
+	MemorySizeInGbs int `pulumi:"memorySizeInGbs"`
 	// The number of nodes in the cloud VM cluster.
 	NodeCount int `pulumi:"nodeCount"`
 	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
 	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
 	NsgIds []string `pulumi:"nsgIds"`
 	// The number of OCPU cores to enable on the cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
-	OcpuCount float64 `pulumi:"ocpuCount"`
+	OcpuCount     float64 `pulumi:"ocpuCount"`
+	PrivateZoneId string  `pulumi:"privateZoneId"`
 	// The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
 	ScanDnsName string `pulumi:"scanDnsName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
@@ -238,6 +247,21 @@ func (o LookupCloudVmClusterResultOutput) DataStoragePercentage() pulumi.IntOutp
 	return o.ApplyT(func(v LookupCloudVmClusterResult) int { return v.DataStoragePercentage }).(pulumi.IntOutput)
 }
 
+// The data disk group size to be allocated in TBs.
+func (o LookupCloudVmClusterResultOutput) DataStorageSizeInTbs() pulumi.Float64Output {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) float64 { return v.DataStorageSizeInTbs }).(pulumi.Float64Output)
+}
+
+// The local node storage to be allocated in GBs.
+func (o LookupCloudVmClusterResultOutput) DbNodeStorageSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) int { return v.DbNodeStorageSizeInGbs }).(pulumi.IntOutput)
+}
+
+// The list of DB servers.
+func (o LookupCloudVmClusterResultOutput) DbServers() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) []string { return v.DbServers }).(pulumi.StringArrayOutput)
+}
+
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 func (o LookupCloudVmClusterResultOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupCloudVmClusterResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
@@ -313,6 +337,11 @@ func (o LookupCloudVmClusterResultOutput) ListenerPort() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudVmClusterResult) string { return v.ListenerPort }).(pulumi.StringOutput)
 }
 
+// The memory to be allocated in GBs.
+func (o LookupCloudVmClusterResultOutput) MemorySizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) int { return v.MemorySizeInGbs }).(pulumi.IntOutput)
+}
+
 // The number of nodes in the cloud VM cluster.
 func (o LookupCloudVmClusterResultOutput) NodeCount() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupCloudVmClusterResult) int { return v.NodeCount }).(pulumi.IntOutput)
@@ -327,6 +356,10 @@ func (o LookupCloudVmClusterResultOutput) NsgIds() pulumi.StringArrayOutput {
 // The number of OCPU cores to enable on the cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
 func (o LookupCloudVmClusterResultOutput) OcpuCount() pulumi.Float64Output {
 	return o.ApplyT(func(v LookupCloudVmClusterResult) float64 { return v.OcpuCount }).(pulumi.Float64Output)
+}
+
+func (o LookupCloudVmClusterResultOutput) PrivateZoneId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) string { return v.PrivateZoneId }).(pulumi.StringOutput)
 }
 
 // The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.

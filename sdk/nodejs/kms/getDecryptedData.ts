@@ -24,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDecryptedData(args: GetDecryptedDataArgs, opts?: pulumi.InvokeOptions): Promise<GetDecryptedDataResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Kms/getDecryptedData:getDecryptedData", {
         "associatedData": args.associatedData,
         "ciphertext": args.ciphertext,
@@ -80,9 +77,27 @@ export interface GetDecryptedDataResult {
      */
     readonly plaintextChecksum: string;
 }
-
+/**
+ * The `oci.Kms.getDecryptedData` data source provides details about a specific DecryptedData
+ *
+ * Decrypts data using the given DecryptDataDetails resource.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDecryptedData = oci.Kms.getDecryptedData({
+ *     ciphertext: _var.decrypted_data_ciphertext,
+ *     cryptoEndpoint: _var.decrypted_data_crypto_endpoint,
+ *     keyId: oci_kms_key.test_key.id,
+ *     associatedData: _var.decrypted_data_associated_data,
+ * });
+ * ```
+ */
 export function getDecryptedDataOutput(args: GetDecryptedDataOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDecryptedDataResult> {
-    return pulumi.output(args).apply(a => getDecryptedData(a, opts))
+    return pulumi.output(args).apply((a: any) => getDecryptedData(a, opts))
 }
 
 /**

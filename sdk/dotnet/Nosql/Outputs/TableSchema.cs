@@ -18,6 +18,10 @@ namespace Pulumi.Oci.Nosql.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.TableSchemaColumn> Columns;
         /// <summary>
+        /// The identity properties of a table, if any.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.TableSchemaIdentity> Identities;
+        /// <summary>
         /// A list of column names that make up a key.
         /// </summary>
         public readonly ImmutableArray<string> PrimaryKeys;
@@ -34,6 +38,8 @@ namespace Pulumi.Oci.Nosql.Outputs
         private TableSchema(
             ImmutableArray<Outputs.TableSchemaColumn> columns,
 
+            ImmutableArray<Outputs.TableSchemaIdentity> identities,
+
             ImmutableArray<string> primaryKeys,
 
             ImmutableArray<string> shardKeys,
@@ -41,6 +47,7 @@ namespace Pulumi.Oci.Nosql.Outputs
             int? ttl)
         {
             Columns = columns;
+            Identities = identities;
             PrimaryKeys = primaryKeys;
             ShardKeys = shardKeys;
             Ttl = ttl;

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getResolver(args: GetResolverArgs, opts?: pulumi.InvokeOptions): Promise<GetResolverResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Dns/getResolver:getResolver", {
         "resolverId": args.resolverId,
         "scope": args.scope,
@@ -117,9 +115,27 @@ export interface GetResolverResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Resolver resource in Oracle Cloud Infrastructure DNS service.
+ *
+ * Gets information about a specific resolver. Note that attempting to get a
+ * resolver in the DELETED lifecycleState will result in a `404` response to be
+ * consistent with other operations of the API. Requires a `PRIVATE` scope query parameter.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testResolver = oci.Dns.getResolver({
+ *     resolverId: oci_dns_resolver.test_resolver.id,
+ *     scope: "PRIVATE",
+ * });
+ * ```
+ */
 export function getResolverOutput(args: GetResolverOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetResolverResult> {
-    return pulumi.output(args).apply(a => getResolver(a, opts))
+    return pulumi.output(args).apply((a: any) => getResolver(a, opts))
 }
 
 /**

@@ -56,7 +56,7 @@ type LookupMeshArgs struct {
 
 // A collection of values returned by getMesh.
 type LookupMeshResult struct {
-	// A list of certificate authority resources to use for creating leaf certificates for mTLS authentication. Currently we only support one certificate authority, but this may expand in future releases.
+	// A list of certificate authority resources to use for creating leaf certificates for mTLS authentication. Currently we only support one certificate authority, but this may expand in future releases. Request with more than one certificate authority will be rejected.
 	CertificateAuthorities []GetMeshCertificateAuthority `pulumi:"certificateAuthorities"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -123,7 +123,7 @@ func (o LookupMeshResultOutput) ToLookupMeshResultOutputWithContext(ctx context.
 	return o
 }
 
-// A list of certificate authority resources to use for creating leaf certificates for mTLS authentication. Currently we only support one certificate authority, but this may expand in future releases.
+// A list of certificate authority resources to use for creating leaf certificates for mTLS authentication. Currently we only support one certificate authority, but this may expand in future releases. Request with more than one certificate authority will be rejected.
 func (o LookupMeshResultOutput) CertificateAuthorities() GetMeshCertificateAuthorityArrayOutput {
 	return o.ApplyT(func(v LookupMeshResult) []GetMeshCertificateAuthority { return v.CertificateAuthorities }).(GetMeshCertificateAuthorityArrayOutput)
 }

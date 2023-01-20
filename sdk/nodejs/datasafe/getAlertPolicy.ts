@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAlertPolicy(args: GetAlertPolicyArgs, opts?: pulumi.InvokeOptions): Promise<GetAlertPolicyResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getAlertPolicy:getAlertPolicy", {
         "alertPolicyId": args.alertPolicyId,
     }, opts);
@@ -99,9 +96,24 @@ export interface GetAlertPolicyResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Alert Policy resource in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Gets the details of alert policy by its ID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAlertPolicy = oci.DataSafe.getAlertPolicy({
+ *     alertPolicyId: oci_data_safe_alert_policy.test_alert_policy.id,
+ * });
+ * ```
+ */
 export function getAlertPolicyOutput(args: GetAlertPolicyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAlertPolicyResult> {
-    return pulumi.output(args).apply(a => getAlertPolicy(a, opts))
+    return pulumi.output(args).apply((a: any) => getAlertPolicy(a, opts))
 }
 
 /**

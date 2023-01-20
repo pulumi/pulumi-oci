@@ -59,7 +59,7 @@ type LookupApplicationResult struct {
 	ApplicationId string `pulumi:"applicationId"`
 	// Logging details of Application logs for Data Flow Run.
 	ApplicationLogConfigs []GetApplicationApplicationLogConfig `pulumi:"applicationLogConfigs"`
-	// An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+	// A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 	ArchiveUri string `pulumi:"archiveUri"`
 	// The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "inputFile" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
 	Arguments []string `pulumi:"arguments"`
@@ -91,10 +91,14 @@ type LookupApplicationResult struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The application ID.
 	Id string `pulumi:"id"`
+	// The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
+	IdleTimeoutInMinutes string `pulumi:"idleTimeoutInMinutes"`
 	// The Spark language.
 	Language string `pulumi:"language"`
 	// An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 	LogsBucketUri string `pulumi:"logsBucketUri"`
+	// The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
+	MaxDurationInMinutes string `pulumi:"maxDurationInMinutes"`
 	// The OCID of Oracle Cloud Infrastructure Hive Metastore.
 	MetastoreId string `pulumi:"metastoreId"`
 	// The number of executor VMs requested.
@@ -168,7 +172,7 @@ func (o LookupApplicationResultOutput) ApplicationLogConfigs() GetApplicationApp
 	return o.ApplyT(func(v LookupApplicationResult) []GetApplicationApplicationLogConfig { return v.ApplicationLogConfigs }).(GetApplicationApplicationLogConfigArrayOutput)
 }
 
-// An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+// A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, “oci://path/to/a.zip,oci://path/to/b.zip“. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 func (o LookupApplicationResultOutput) ArchiveUri() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupApplicationResult) string { return v.ArchiveUri }).(pulumi.StringOutput)
 }
@@ -248,6 +252,11 @@ func (o LookupApplicationResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupApplicationResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
+func (o LookupApplicationResultOutput) IdleTimeoutInMinutes() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupApplicationResult) string { return v.IdleTimeoutInMinutes }).(pulumi.StringOutput)
+}
+
 // The Spark language.
 func (o LookupApplicationResultOutput) Language() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupApplicationResult) string { return v.Language }).(pulumi.StringOutput)
@@ -256,6 +265,11 @@ func (o LookupApplicationResultOutput) Language() pulumi.StringOutput {
 // An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 func (o LookupApplicationResultOutput) LogsBucketUri() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupApplicationResult) string { return v.LogsBucketUri }).(pulumi.StringOutput)
+}
+
+// The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
+func (o LookupApplicationResultOutput) MaxDurationInMinutes() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupApplicationResult) string { return v.MaxDurationInMinutes }).(pulumi.StringOutput)
 }
 
 // The OCID of Oracle Cloud Infrastructure Hive Metastore.

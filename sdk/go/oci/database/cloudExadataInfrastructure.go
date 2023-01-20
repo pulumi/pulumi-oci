@@ -45,7 +45,6 @@ import (
 //					"Department": pulumi.Any("Finance"),
 //				},
 //				MaintenanceWindow: &database.CloudExadataInfrastructureMaintenanceWindowArgs{
-//					Preference:                pulumi.Any(_var.Cloud_exadata_infrastructure_maintenance_window_preference),
 //					CustomActionTimeoutInMins: pulumi.Any(_var.Cloud_exadata_infrastructure_maintenance_window_custom_action_timeout_in_mins),
 //					DaysOfWeeks: database.CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArray{
 //						&database.CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs{
@@ -62,6 +61,7 @@ import (
 //						},
 //					},
 //					PatchingMode:  pulumi.Any(_var.Cloud_exadata_infrastructure_maintenance_window_patching_mode),
+//					Preference:    pulumi.Any(_var.Cloud_exadata_infrastructure_maintenance_window_preference),
 //					WeeksOfMonths: pulumi.Any(_var.Cloud_exadata_infrastructure_maintenance_window_weeks_of_month),
 //				},
 //				StorageCount: pulumi.Any(_var.Cloud_exadata_infrastructure_storage_count),
@@ -87,6 +87,10 @@ import (
 type CloudExadataInfrastructure struct {
 	pulumi.CustomResourceState
 
+	// The requested number of additional storage servers activated for the Exadata infrastructure.
+	ActivatedStorageCount pulumi.IntOutput `pulumi:"activatedStorageCount"`
+	// The requested number of additional storage servers for the Exadata infrastructure.
+	AdditionalStorageCount pulumi.IntOutput `pulumi:"additionalStorageCount"`
 	// The availability domain where the cloud Exadata infrastructure is located.
 	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
 	// The available storage can be allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
@@ -95,8 +99,14 @@ type CloudExadataInfrastructure struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) The number of compute servers for the cloud Exadata infrastructure.
 	ComputeCount pulumi.IntOutput `pulumi:"computeCount"`
+	// The total number of CPU cores allocated.
+	CpuCount pulumi.IntOutput `pulumi:"cpuCount"`
 	// (Updatable) Customer contacts.
 	CustomerContacts CloudExadataInfrastructureCustomerContactArrayOutput `pulumi:"customerContacts"`
+	// Size, in terabytes, of the DATA disk group.
+	DataStorageSizeInTbs pulumi.Float64Output `pulumi:"dataStorageSizeInTbs"`
+	// The local node storage allocated in GBs.
+	DbNodeStorageSizeInGbs pulumi.IntOutput `pulumi:"dbNodeStorageSizeInGbs"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
@@ -109,6 +119,16 @@ type CloudExadataInfrastructure struct {
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindow CloudExadataInfrastructureMaintenanceWindowOutput `pulumi:"maintenanceWindow"`
+	// The total number of CPU cores available.
+	MaxCpuCount pulumi.IntOutput `pulumi:"maxCpuCount"`
+	// The total available DATA disk group size.
+	MaxDataStorageInTbs pulumi.Float64Output `pulumi:"maxDataStorageInTbs"`
+	// The total local node storage available in GBs.
+	MaxDbNodeStorageInGbs pulumi.IntOutput `pulumi:"maxDbNodeStorageInGbs"`
+	// The total memory available in GBs.
+	MaxMemoryInGbs pulumi.IntOutput `pulumi:"maxMemoryInGbs"`
+	// The memory allocated in GBs.
+	MemorySizeInGbs pulumi.IntOutput `pulumi:"memorySizeInGbs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 	NextMaintenanceRunId pulumi.StringOutput `pulumi:"nextMaintenanceRunId"`
 	// The shape of the cloud Exadata infrastructure resource.
@@ -164,6 +184,10 @@ func GetCloudExadataInfrastructure(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering CloudExadataInfrastructure resources.
 type cloudExadataInfrastructureState struct {
+	// The requested number of additional storage servers activated for the Exadata infrastructure.
+	ActivatedStorageCount *int `pulumi:"activatedStorageCount"`
+	// The requested number of additional storage servers for the Exadata infrastructure.
+	AdditionalStorageCount *int `pulumi:"additionalStorageCount"`
 	// The availability domain where the cloud Exadata infrastructure is located.
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The available storage can be allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
@@ -172,8 +196,14 @@ type cloudExadataInfrastructureState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) The number of compute servers for the cloud Exadata infrastructure.
 	ComputeCount *int `pulumi:"computeCount"`
+	// The total number of CPU cores allocated.
+	CpuCount *int `pulumi:"cpuCount"`
 	// (Updatable) Customer contacts.
 	CustomerContacts []CloudExadataInfrastructureCustomerContact `pulumi:"customerContacts"`
+	// Size, in terabytes, of the DATA disk group.
+	DataStorageSizeInTbs *float64 `pulumi:"dataStorageSizeInTbs"`
+	// The local node storage allocated in GBs.
+	DbNodeStorageSizeInGbs *int `pulumi:"dbNodeStorageSizeInGbs"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
@@ -186,6 +216,16 @@ type cloudExadataInfrastructureState struct {
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindow *CloudExadataInfrastructureMaintenanceWindow `pulumi:"maintenanceWindow"`
+	// The total number of CPU cores available.
+	MaxCpuCount *int `pulumi:"maxCpuCount"`
+	// The total available DATA disk group size.
+	MaxDataStorageInTbs *float64 `pulumi:"maxDataStorageInTbs"`
+	// The total local node storage available in GBs.
+	MaxDbNodeStorageInGbs *int `pulumi:"maxDbNodeStorageInGbs"`
+	// The total memory available in GBs.
+	MaxMemoryInGbs *int `pulumi:"maxMemoryInGbs"`
+	// The memory allocated in GBs.
+	MemorySizeInGbs *int `pulumi:"memorySizeInGbs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 	NextMaintenanceRunId *string `pulumi:"nextMaintenanceRunId"`
 	// The shape of the cloud Exadata infrastructure resource.
@@ -201,6 +241,10 @@ type cloudExadataInfrastructureState struct {
 }
 
 type CloudExadataInfrastructureState struct {
+	// The requested number of additional storage servers activated for the Exadata infrastructure.
+	ActivatedStorageCount pulumi.IntPtrInput
+	// The requested number of additional storage servers for the Exadata infrastructure.
+	AdditionalStorageCount pulumi.IntPtrInput
 	// The availability domain where the cloud Exadata infrastructure is located.
 	AvailabilityDomain pulumi.StringPtrInput
 	// The available storage can be allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
@@ -209,8 +253,14 @@ type CloudExadataInfrastructureState struct {
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) The number of compute servers for the cloud Exadata infrastructure.
 	ComputeCount pulumi.IntPtrInput
+	// The total number of CPU cores allocated.
+	CpuCount pulumi.IntPtrInput
 	// (Updatable) Customer contacts.
 	CustomerContacts CloudExadataInfrastructureCustomerContactArrayInput
+	// Size, in terabytes, of the DATA disk group.
+	DataStorageSizeInTbs pulumi.Float64PtrInput
+	// The local node storage allocated in GBs.
+	DbNodeStorageSizeInGbs pulumi.IntPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.MapInput
 	// (Updatable) The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
@@ -223,6 +273,16 @@ type CloudExadataInfrastructureState struct {
 	LifecycleDetails pulumi.StringPtrInput
 	// (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindow CloudExadataInfrastructureMaintenanceWindowPtrInput
+	// The total number of CPU cores available.
+	MaxCpuCount pulumi.IntPtrInput
+	// The total available DATA disk group size.
+	MaxDataStorageInTbs pulumi.Float64PtrInput
+	// The total local node storage available in GBs.
+	MaxDbNodeStorageInGbs pulumi.IntPtrInput
+	// The total memory available in GBs.
+	MaxMemoryInGbs pulumi.IntPtrInput
+	// The memory allocated in GBs.
+	MemorySizeInGbs pulumi.IntPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 	NextMaintenanceRunId pulumi.StringPtrInput
 	// The shape of the cloud Exadata infrastructure resource.
@@ -375,6 +435,16 @@ func (o CloudExadataInfrastructureOutput) ToCloudExadataInfrastructureOutputWith
 	return o
 }
 
+// The requested number of additional storage servers activated for the Exadata infrastructure.
+func (o CloudExadataInfrastructureOutput) ActivatedStorageCount() pulumi.IntOutput {
+	return o.ApplyT(func(v *CloudExadataInfrastructure) pulumi.IntOutput { return v.ActivatedStorageCount }).(pulumi.IntOutput)
+}
+
+// The requested number of additional storage servers for the Exadata infrastructure.
+func (o CloudExadataInfrastructureOutput) AdditionalStorageCount() pulumi.IntOutput {
+	return o.ApplyT(func(v *CloudExadataInfrastructure) pulumi.IntOutput { return v.AdditionalStorageCount }).(pulumi.IntOutput)
+}
+
 // The availability domain where the cloud Exadata infrastructure is located.
 func (o CloudExadataInfrastructureOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudExadataInfrastructure) pulumi.StringOutput { return v.AvailabilityDomain }).(pulumi.StringOutput)
@@ -395,11 +465,26 @@ func (o CloudExadataInfrastructureOutput) ComputeCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *CloudExadataInfrastructure) pulumi.IntOutput { return v.ComputeCount }).(pulumi.IntOutput)
 }
 
+// The total number of CPU cores allocated.
+func (o CloudExadataInfrastructureOutput) CpuCount() pulumi.IntOutput {
+	return o.ApplyT(func(v *CloudExadataInfrastructure) pulumi.IntOutput { return v.CpuCount }).(pulumi.IntOutput)
+}
+
 // (Updatable) Customer contacts.
 func (o CloudExadataInfrastructureOutput) CustomerContacts() CloudExadataInfrastructureCustomerContactArrayOutput {
 	return o.ApplyT(func(v *CloudExadataInfrastructure) CloudExadataInfrastructureCustomerContactArrayOutput {
 		return v.CustomerContacts
 	}).(CloudExadataInfrastructureCustomerContactArrayOutput)
+}
+
+// Size, in terabytes, of the DATA disk group.
+func (o CloudExadataInfrastructureOutput) DataStorageSizeInTbs() pulumi.Float64Output {
+	return o.ApplyT(func(v *CloudExadataInfrastructure) pulumi.Float64Output { return v.DataStorageSizeInTbs }).(pulumi.Float64Output)
+}
+
+// The local node storage allocated in GBs.
+func (o CloudExadataInfrastructureOutput) DbNodeStorageSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v *CloudExadataInfrastructure) pulumi.IntOutput { return v.DbNodeStorageSizeInGbs }).(pulumi.IntOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -432,6 +517,31 @@ func (o CloudExadataInfrastructureOutput) MaintenanceWindow() CloudExadataInfras
 	return o.ApplyT(func(v *CloudExadataInfrastructure) CloudExadataInfrastructureMaintenanceWindowOutput {
 		return v.MaintenanceWindow
 	}).(CloudExadataInfrastructureMaintenanceWindowOutput)
+}
+
+// The total number of CPU cores available.
+func (o CloudExadataInfrastructureOutput) MaxCpuCount() pulumi.IntOutput {
+	return o.ApplyT(func(v *CloudExadataInfrastructure) pulumi.IntOutput { return v.MaxCpuCount }).(pulumi.IntOutput)
+}
+
+// The total available DATA disk group size.
+func (o CloudExadataInfrastructureOutput) MaxDataStorageInTbs() pulumi.Float64Output {
+	return o.ApplyT(func(v *CloudExadataInfrastructure) pulumi.Float64Output { return v.MaxDataStorageInTbs }).(pulumi.Float64Output)
+}
+
+// The total local node storage available in GBs.
+func (o CloudExadataInfrastructureOutput) MaxDbNodeStorageInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v *CloudExadataInfrastructure) pulumi.IntOutput { return v.MaxDbNodeStorageInGbs }).(pulumi.IntOutput)
+}
+
+// The total memory available in GBs.
+func (o CloudExadataInfrastructureOutput) MaxMemoryInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v *CloudExadataInfrastructure) pulumi.IntOutput { return v.MaxMemoryInGbs }).(pulumi.IntOutput)
+}
+
+// The memory allocated in GBs.
+func (o CloudExadataInfrastructureOutput) MemorySizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v *CloudExadataInfrastructure) pulumi.IntOutput { return v.MemorySizeInGbs }).(pulumi.IntOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.

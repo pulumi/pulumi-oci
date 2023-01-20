@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAppAccelerationPolicy(args: GetAppAccelerationPolicyArgs, opts?: pulumi.InvokeOptions): Promise<GetAppAccelerationPolicyResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Waa/getAppAccelerationPolicy:getAppAccelerationPolicy", {
         "webAppAccelerationPolicyId": args.webAppAccelerationPolicyId,
     }, opts);
@@ -96,9 +94,24 @@ export interface GetAppAccelerationPolicyResult {
     readonly timeUpdated: string;
     readonly webAppAccelerationPolicyId: string;
 }
-
+/**
+ * This data source provides details about a specific Web App Acceleration Policy resource in Oracle Cloud Infrastructure Waa service.
+ *
+ * Gets a WebAppAccelerationPolicy with the given OCID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testWebAppAccelerationPolicy = oci.Waa.getAppAccelerationPolicy({
+ *     webAppAccelerationPolicyId: oci_waa_web_app_acceleration_policy.test_web_app_acceleration_policy.id,
+ * });
+ * ```
+ */
 export function getAppAccelerationPolicyOutput(args: GetAppAccelerationPolicyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppAccelerationPolicyResult> {
-    return pulumi.output(args).apply(a => getAppAccelerationPolicy(a, opts))
+    return pulumi.output(args).apply((a: any) => getAppAccelerationPolicy(a, opts))
 }
 
 /**

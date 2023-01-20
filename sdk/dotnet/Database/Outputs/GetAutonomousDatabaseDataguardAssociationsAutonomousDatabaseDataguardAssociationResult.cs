@@ -50,7 +50,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string PeerRole;
         /// <summary>
-        /// The protection mode of this Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        /// The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         /// </summary>
         public readonly string ProtectionMode;
         /// <summary>

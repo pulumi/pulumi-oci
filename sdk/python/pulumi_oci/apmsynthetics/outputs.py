@@ -11,6 +11,7 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'ConfigAvailabilityConfiguration',
     'ConfigConfiguration',
     'ConfigConfigurationDnsConfiguration',
     'ConfigConfigurationNetworkConfiguration',
@@ -19,6 +20,7 @@ __all__ = [
     'ConfigConfigurationRequestHeader',
     'ConfigConfigurationRequestQueryParam',
     'ConfigConfigurationVerifyText',
+    'ConfigMaintenanceWindowSchedule',
     'ConfigScriptParameter',
     'ConfigScriptParameterMonitorScriptParameter',
     'DedicatedVantagePointDvpStackDetails',
@@ -33,6 +35,7 @@ __all__ = [
     'GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailResult',
     'GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapResult',
     'GetDedicatedVantagePointsFilterResult',
+    'GetMonitorAvailabilityConfigurationResult',
     'GetMonitorConfigurationResult',
     'GetMonitorConfigurationDnsConfigurationResult',
     'GetMonitorConfigurationNetworkConfigurationResult',
@@ -41,11 +44,13 @@ __all__ = [
     'GetMonitorConfigurationRequestHeaderResult',
     'GetMonitorConfigurationRequestQueryParamResult',
     'GetMonitorConfigurationVerifyTextResult',
+    'GetMonitorMaintenanceWindowScheduleResult',
     'GetMonitorScriptParameterResult',
     'GetMonitorScriptParameterMonitorScriptParameterResult',
     'GetMonitorsFilterResult',
     'GetMonitorsMonitorCollectionResult',
     'GetMonitorsMonitorCollectionItemResult',
+    'GetMonitorsMonitorCollectionItemAvailabilityConfigurationResult',
     'GetMonitorsMonitorCollectionItemConfigurationResult',
     'GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationResult',
     'GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationResult',
@@ -54,6 +59,7 @@ __all__ = [
     'GetMonitorsMonitorCollectionItemConfigurationRequestHeaderResult',
     'GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamResult',
     'GetMonitorsMonitorCollectionItemConfigurationVerifyTextResult',
+    'GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleResult',
     'GetMonitorsMonitorCollectionItemScriptParameterResult',
     'GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterResult',
     'GetResultResultDataSetResult',
@@ -73,6 +79,56 @@ __all__ = [
     'GetVantagePointsPublicVantagePointCollectionItemResult',
     'GetVantagePointsPublicVantagePointCollectionItemGeoResult',
 ]
+
+@pulumi.output_type
+class ConfigAvailabilityConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "maxAllowedFailuresPerInterval":
+            suggest = "max_allowed_failures_per_interval"
+        elif key == "minAllowedRunsPerInterval":
+            suggest = "min_allowed_runs_per_interval"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ConfigAvailabilityConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ConfigAvailabilityConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ConfigAvailabilityConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 max_allowed_failures_per_interval: Optional[int] = None,
+                 min_allowed_runs_per_interval: Optional[int] = None):
+        """
+        :param int max_allowed_failures_per_interval: (Updatable) Intervals with failed runs more than this value will be classified as UNAVAILABLE.
+        :param int min_allowed_runs_per_interval: (Updatable) Intervals with runs less than this value will be classified as UNKNOWN and excluded from the availability calculations.
+        """
+        if max_allowed_failures_per_interval is not None:
+            pulumi.set(__self__, "max_allowed_failures_per_interval", max_allowed_failures_per_interval)
+        if min_allowed_runs_per_interval is not None:
+            pulumi.set(__self__, "min_allowed_runs_per_interval", min_allowed_runs_per_interval)
+
+    @property
+    @pulumi.getter(name="maxAllowedFailuresPerInterval")
+    def max_allowed_failures_per_interval(self) -> Optional[int]:
+        """
+        (Updatable) Intervals with failed runs more than this value will be classified as UNAVAILABLE.
+        """
+        return pulumi.get(self, "max_allowed_failures_per_interval")
+
+    @property
+    @pulumi.getter(name="minAllowedRunsPerInterval")
+    def min_allowed_runs_per_interval(self) -> Optional[int]:
+        """
+        (Updatable) Intervals with runs less than this value will be classified as UNKNOWN and excluded from the availability calculations.
+        """
+        return pulumi.get(self, "min_allowed_runs_per_interval")
+
 
 @pulumi.output_type
 class ConfigConfiguration(dict):
@@ -747,6 +803,56 @@ class ConfigConfigurationVerifyText(dict):
         (Updatable) Verification text in the response.
         """
         return pulumi.get(self, "text")
+
+
+@pulumi.output_type
+class ConfigMaintenanceWindowSchedule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "timeEnded":
+            suggest = "time_ended"
+        elif key == "timeStarted":
+            suggest = "time_started"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ConfigMaintenanceWindowSchedule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ConfigMaintenanceWindowSchedule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ConfigMaintenanceWindowSchedule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 time_ended: Optional[str] = None,
+                 time_started: Optional[str] = None):
+        """
+        :param str time_ended: (Updatable) End time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+        :param str time_started: (Updatable) Start time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+        """
+        if time_ended is not None:
+            pulumi.set(__self__, "time_ended", time_ended)
+        if time_started is not None:
+            pulumi.set(__self__, "time_started", time_started)
+
+    @property
+    @pulumi.getter(name="timeEnded")
+    def time_ended(self) -> Optional[str]:
+        """
+        (Updatable) End time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+        """
+        return pulumi.get(self, "time_ended")
+
+    @property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> Optional[str]:
+        """
+        (Updatable) Start time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+        """
+        return pulumi.get(self, "time_started")
 
 
 @pulumi.output_type
@@ -1617,6 +1723,35 @@ class GetDedicatedVantagePointsFilterResult(dict):
 
 
 @pulumi.output_type
+class GetMonitorAvailabilityConfigurationResult(dict):
+    def __init__(__self__, *,
+                 max_allowed_failures_per_interval: int,
+                 min_allowed_runs_per_interval: int):
+        """
+        :param int max_allowed_failures_per_interval: Intervals with failed runs more than this value will be classified as UNAVAILABLE.
+        :param int min_allowed_runs_per_interval: Intervals with runs less than this value will be classified as UNKNOWN and excluded from the availability calculations.
+        """
+        pulumi.set(__self__, "max_allowed_failures_per_interval", max_allowed_failures_per_interval)
+        pulumi.set(__self__, "min_allowed_runs_per_interval", min_allowed_runs_per_interval)
+
+    @property
+    @pulumi.getter(name="maxAllowedFailuresPerInterval")
+    def max_allowed_failures_per_interval(self) -> int:
+        """
+        Intervals with failed runs more than this value will be classified as UNAVAILABLE.
+        """
+        return pulumi.get(self, "max_allowed_failures_per_interval")
+
+    @property
+    @pulumi.getter(name="minAllowedRunsPerInterval")
+    def min_allowed_runs_per_interval(self) -> int:
+        """
+        Intervals with runs less than this value will be classified as UNKNOWN and excluded from the availability calculations.
+        """
+        return pulumi.get(self, "min_allowed_runs_per_interval")
+
+
+@pulumi.output_type
 class GetMonitorConfigurationResult(dict):
     def __init__(__self__, *,
                  config_type: str,
@@ -2080,6 +2215,35 @@ class GetMonitorConfigurationVerifyTextResult(dict):
 
 
 @pulumi.output_type
+class GetMonitorMaintenanceWindowScheduleResult(dict):
+    def __init__(__self__, *,
+                 time_ended: str,
+                 time_started: str):
+        """
+        :param str time_ended: End time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+        :param str time_started: Start time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+        """
+        pulumi.set(__self__, "time_ended", time_ended)
+        pulumi.set(__self__, "time_started", time_started)
+
+    @property
+    @pulumi.getter(name="timeEnded")
+    def time_ended(self) -> str:
+        """
+        End time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+        """
+        return pulumi.get(self, "time_ended")
+
+    @property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> str:
+        """
+        Start time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+        """
+        return pulumi.get(self, "time_started")
+
+
+@pulumi.output_type
 class GetMonitorScriptParameterResult(dict):
     def __init__(__self__, *,
                  is_overwritten: bool,
@@ -2219,6 +2383,7 @@ class GetMonitorsMonitorCollectionResult(dict):
 class GetMonitorsMonitorCollectionItemResult(dict):
     def __init__(__self__, *,
                  apm_domain_id: str,
+                 availability_configurations: Sequence['outputs.GetMonitorsMonitorCollectionItemAvailabilityConfigurationResult'],
                  batch_interval_in_seconds: int,
                  configurations: Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationResult'],
                  defined_tags: Mapping[str, Any],
@@ -2227,6 +2392,7 @@ class GetMonitorsMonitorCollectionItemResult(dict):
                  id: str,
                  is_run_now: bool,
                  is_run_once: bool,
+                 maintenance_window_schedules: Sequence['outputs.GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleResult'],
                  monitor_type: str,
                  repeat_interval_in_seconds: int,
                  scheduling_policy: str,
@@ -2242,6 +2408,7 @@ class GetMonitorsMonitorCollectionItemResult(dict):
                  vantage_points: Sequence[str]):
         """
         :param str apm_domain_id: The APM domain ID the request is intended for.
+        :param Sequence['GetMonitorsMonitorCollectionItemAvailabilityConfigurationArgs'] availability_configurations: Monitor availability configuration details.
         :param int batch_interval_in_seconds: Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
         :param Sequence['GetMonitorsMonitorCollectionItemConfigurationArgs'] configurations: Details of monitor configuration.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -2250,6 +2417,7 @@ class GetMonitorsMonitorCollectionItemResult(dict):
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
         :param bool is_run_now: If isRunNow is enabled, then the monitor will run now.
         :param bool is_run_once: If runOnce is enabled, then the monitor will run once.
+        :param Sequence['GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArgs'] maintenance_window_schedules: Details used to schedule maintenance window.
         :param str monitor_type: A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
         :param int repeat_interval_in_seconds: Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
         :param str scheduling_policy: Scheduling policy on Vantage points.
@@ -2260,11 +2428,12 @@ class GetMonitorsMonitorCollectionItemResult(dict):
         :param str target: Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is.
         :param str time_created: The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         :param str time_updated: The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-        :param int timeout_in_seconds: Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+        :param int timeout_in_seconds: Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
         :param int vantage_point_count: Number of vantage points where monitor is running.
         :param Sequence[str] vantage_points: List of public and dedicated vantage points where the monitor is running.
         """
         pulumi.set(__self__, "apm_domain_id", apm_domain_id)
+        pulumi.set(__self__, "availability_configurations", availability_configurations)
         pulumi.set(__self__, "batch_interval_in_seconds", batch_interval_in_seconds)
         pulumi.set(__self__, "configurations", configurations)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -2273,6 +2442,7 @@ class GetMonitorsMonitorCollectionItemResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_run_now", is_run_now)
         pulumi.set(__self__, "is_run_once", is_run_once)
+        pulumi.set(__self__, "maintenance_window_schedules", maintenance_window_schedules)
         pulumi.set(__self__, "monitor_type", monitor_type)
         pulumi.set(__self__, "repeat_interval_in_seconds", repeat_interval_in_seconds)
         pulumi.set(__self__, "scheduling_policy", scheduling_policy)
@@ -2294,6 +2464,14 @@ class GetMonitorsMonitorCollectionItemResult(dict):
         The APM domain ID the request is intended for.
         """
         return pulumi.get(self, "apm_domain_id")
+
+    @property
+    @pulumi.getter(name="availabilityConfigurations")
+    def availability_configurations(self) -> Sequence['outputs.GetMonitorsMonitorCollectionItemAvailabilityConfigurationResult']:
+        """
+        Monitor availability configuration details.
+        """
+        return pulumi.get(self, "availability_configurations")
 
     @property
     @pulumi.getter(name="batchIntervalInSeconds")
@@ -2358,6 +2536,14 @@ class GetMonitorsMonitorCollectionItemResult(dict):
         If runOnce is enabled, then the monitor will run once.
         """
         return pulumi.get(self, "is_run_once")
+
+    @property
+    @pulumi.getter(name="maintenanceWindowSchedules")
+    def maintenance_window_schedules(self) -> Sequence['outputs.GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleResult']:
+        """
+        Details used to schedule maintenance window.
+        """
+        return pulumi.get(self, "maintenance_window_schedules")
 
     @property
     @pulumi.getter(name="monitorType")
@@ -2443,7 +2629,7 @@ class GetMonitorsMonitorCollectionItemResult(dict):
     @pulumi.getter(name="timeoutInSeconds")
     def timeout_in_seconds(self) -> int:
         """
-        Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+        Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
         """
         return pulumi.get(self, "timeout_in_seconds")
 
@@ -2462,6 +2648,35 @@ class GetMonitorsMonitorCollectionItemResult(dict):
         List of public and dedicated vantage points where the monitor is running.
         """
         return pulumi.get(self, "vantage_points")
+
+
+@pulumi.output_type
+class GetMonitorsMonitorCollectionItemAvailabilityConfigurationResult(dict):
+    def __init__(__self__, *,
+                 max_allowed_failures_per_interval: int,
+                 min_allowed_runs_per_interval: int):
+        """
+        :param int max_allowed_failures_per_interval: Intervals with failed runs more than this value will be classified as UNAVAILABLE.
+        :param int min_allowed_runs_per_interval: Intervals with runs less than this value will be classified as UNKNOWN and excluded from the availability calculations.
+        """
+        pulumi.set(__self__, "max_allowed_failures_per_interval", max_allowed_failures_per_interval)
+        pulumi.set(__self__, "min_allowed_runs_per_interval", min_allowed_runs_per_interval)
+
+    @property
+    @pulumi.getter(name="maxAllowedFailuresPerInterval")
+    def max_allowed_failures_per_interval(self) -> int:
+        """
+        Intervals with failed runs more than this value will be classified as UNAVAILABLE.
+        """
+        return pulumi.get(self, "max_allowed_failures_per_interval")
+
+    @property
+    @pulumi.getter(name="minAllowedRunsPerInterval")
+    def min_allowed_runs_per_interval(self) -> int:
+        """
+        Intervals with runs less than this value will be classified as UNKNOWN and excluded from the availability calculations.
+        """
+        return pulumi.get(self, "min_allowed_runs_per_interval")
 
 
 @pulumi.output_type
@@ -2925,6 +3140,35 @@ class GetMonitorsMonitorCollectionItemConfigurationVerifyTextResult(dict):
         Verification text in the response.
         """
         return pulumi.get(self, "text")
+
+
+@pulumi.output_type
+class GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleResult(dict):
+    def __init__(__self__, *,
+                 time_ended: str,
+                 time_started: str):
+        """
+        :param str time_ended: End time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+        :param str time_started: Start time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+        """
+        pulumi.set(__self__, "time_ended", time_ended)
+        pulumi.set(__self__, "time_started", time_started)
+
+    @property
+    @pulumi.getter(name="timeEnded")
+    def time_ended(self) -> str:
+        """
+        End time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+        """
+        return pulumi.get(self, "time_ended")
+
+    @property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> str:
+        """
+        Start time for the maintenance window, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
+        """
+        return pulumi.get(self, "time_started")
 
 
 @pulumi.output_type

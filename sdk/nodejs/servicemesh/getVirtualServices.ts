@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVirtualServices(args: GetVirtualServicesArgs, opts?: pulumi.InvokeOptions): Promise<GetVirtualServicesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ServiceMesh/getVirtualServices:getVirtualServices", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -98,9 +96,28 @@ export interface GetVirtualServicesResult {
      */
     readonly virtualServiceCollections: outputs.ServiceMesh.GetVirtualServicesVirtualServiceCollection[];
 }
-
+/**
+ * This data source provides the list of Virtual Services in Oracle Cloud Infrastructure Service Mesh service.
+ *
+ * Returns a list of VirtualService objects.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testVirtualServices = oci.ServiceMesh.getVirtualServices({
+ *     compartmentId: _var.compartment_id,
+ *     id: _var.virtual_service_id,
+ *     meshId: oci_service_mesh_mesh.test_mesh.id,
+ *     name: _var.virtual_service_name,
+ *     state: _var.virtual_service_state,
+ * });
+ * ```
+ */
 export function getVirtualServicesOutput(args: GetVirtualServicesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVirtualServicesResult> {
-    return pulumi.output(args).apply(a => getVirtualServices(a, opts))
+    return pulumi.output(args).apply((a: any) => getVirtualServices(a, opts))
 }
 
 /**

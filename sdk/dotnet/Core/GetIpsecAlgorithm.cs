@@ -36,7 +36,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetIpsecAlgorithmResult> InvokeAsync(InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetIpsecAlgorithmResult>("oci:Core/getIpsecAlgorithm:getIpsecAlgorithm", InvokeArgs.Empty, options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetIpsecAlgorithmResult>("oci:Core/getIpsecAlgorithm:getIpsecAlgorithm", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

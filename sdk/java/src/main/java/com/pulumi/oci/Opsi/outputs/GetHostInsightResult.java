@@ -14,7 +14,6 @@ import java.util.Objects;
 public final class GetHostInsightResult {
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     private String compartmentId;
@@ -110,7 +109,7 @@ public final class GetHostInsightResult {
      */
     private String platformName;
     /**
-     * @return Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+     * @return Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS].
      * 
      */
     private String platformType;
@@ -153,7 +152,6 @@ public final class GetHostInsightResult {
     private GetHostInsightResult() {}
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
      * 
      */
     public String compartmentId() {
@@ -289,7 +287,7 @@ public final class GetHostInsightResult {
         return this.platformName;
     }
     /**
-     * @return Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+     * @return Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS].
      * 
      */
     public String platformType() {

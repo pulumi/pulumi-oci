@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCatalog(args: GetCatalogArgs, opts?: pulumi.InvokeOptions): Promise<GetCatalogResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataCatalog/getCatalog:getCatalog", {
         "catalogId": args.catalogId,
     }, opts);
@@ -99,9 +96,24 @@ export interface GetCatalogResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Catalog resource in Oracle Cloud Infrastructure Data Catalog service.
+ *
+ * Gets a data catalog by identifier.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCatalog = oci.DataCatalog.getCatalog({
+ *     catalogId: oci_datacatalog_catalog.test_catalog.id,
+ * });
+ * ```
+ */
 export function getCatalogOutput(args: GetCatalogOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCatalogResult> {
-    return pulumi.output(args).apply(a => getCatalog(a, opts))
+    return pulumi.output(args).apply((a: any) => getCatalog(a, opts))
 }
 
 /**

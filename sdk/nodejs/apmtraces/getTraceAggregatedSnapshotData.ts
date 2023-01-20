@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getTraceAggregatedSnapshotData(args: GetTraceAggregatedSnapshotDataArgs, opts?: pulumi.InvokeOptions): Promise<GetTraceAggregatedSnapshotDataResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ApmTraces/getTraceAggregatedSnapshotData:getTraceAggregatedSnapshotData", {
         "apmDomainId": args.apmDomainId,
         "traceKey": args.traceKey,
@@ -63,9 +61,25 @@ export interface GetTraceAggregatedSnapshotDataResult {
     readonly id: string;
     readonly traceKey: string;
 }
-
+/**
+ * This data source provides details about a specific Trace Aggregated Snapshot Data resource in Oracle Cloud Infrastructure Apm Traces service.
+ *
+ * Gets the aggregated snapshot identified by trace ID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testTraceAggregatedSnapshotData = oci.ApmTraces.getTraceAggregatedSnapshotData({
+ *     apmDomainId: oci_apm_apm_domain.test_apm_domain.id,
+ *     traceKey: _var.trace_aggregated_snapshot_data_trace_key,
+ * });
+ * ```
+ */
 export function getTraceAggregatedSnapshotDataOutput(args: GetTraceAggregatedSnapshotDataOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTraceAggregatedSnapshotDataResult> {
-    return pulumi.output(args).apply(a => getTraceAggregatedSnapshotData(a, opts))
+    return pulumi.output(args).apply((a: any) => getTraceAggregatedSnapshotData(a, opts))
 }
 
 /**

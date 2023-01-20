@@ -33,9 +33,17 @@ public final class TriggerActionFilterArgs extends com.pulumi.resources.Resource
         return Optional.ofNullable(this.events);
     }
 
+    /**
+     * (Updatable) Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
+     * 
+     */
     @Import(name="exclude")
     private @Nullable Output<TriggerActionFilterExcludeArgs> exclude;
 
+    /**
+     * @return (Updatable) Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
+     * 
+     */
     public Optional<Output<TriggerActionFilterExcludeArgs>> exclude() {
         return Optional.ofNullable(this.exclude);
     }
@@ -56,14 +64,14 @@ public final class TriggerActionFilterArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
+     * (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
      * 
      */
     @Import(name="triggerSource", required=true)
     private Output<String> triggerSource;
 
     /**
-     * @return (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
+     * @return (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
      * 
      */
     public Output<String> triggerSource() {
@@ -128,11 +136,23 @@ public final class TriggerActionFilterArgs extends com.pulumi.resources.Resource
             return events(List.of(events));
         }
 
+        /**
+         * @param exclude (Updatable) Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
+         * 
+         * @return builder
+         * 
+         */
         public Builder exclude(@Nullable Output<TriggerActionFilterExcludeArgs> exclude) {
             $.exclude = exclude;
             return this;
         }
 
+        /**
+         * @param exclude (Updatable) Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
+         * 
+         * @return builder
+         * 
+         */
         public Builder exclude(TriggerActionFilterExcludeArgs exclude) {
             return exclude(Output.of(exclude));
         }
@@ -159,7 +179,7 @@ public final class TriggerActionFilterArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param triggerSource (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
+         * @param triggerSource (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
          * 
          * @return builder
          * 
@@ -170,7 +190,7 @@ public final class TriggerActionFilterArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param triggerSource (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
+         * @param triggerSource (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
          * 
          * @return builder
          * 

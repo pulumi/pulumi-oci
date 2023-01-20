@@ -36,6 +36,7 @@ import (
 //				},
 //				TargetResourceDetails: &bastion.SessionTargetResourceDetailsArgs{
 //					SessionType:                           pulumi.Any(_var.Session_target_resource_details_session_type),
+//					TargetResourceFqdn:                    pulumi.Any(_var.Session_target_resource_details_target_resource_fqdn),
 //					TargetResourceId:                      pulumi.Any(oci_bastion_target_resource.Test_target_resource.Id),
 //					TargetResourceOperatingSystemUserName: pulumi.Any(oci_identity_user.Test_user.Name),
 //					TargetResourcePort:                    pulumi.Any(_var.Session_target_resource_details_target_resource_port),

@@ -12,6 +12,7 @@ import com.pulumi.oci.Database.inputs.CloudExadataInfrastructureState;
 import com.pulumi.oci.Database.outputs.CloudExadataInfrastructureCustomerContact;
 import com.pulumi.oci.Database.outputs.CloudExadataInfrastructureMaintenanceWindow;
 import com.pulumi.oci.Utilities;
+import java.lang.Double;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -60,7 +61,6 @@ import javax.annotation.Nullable;
  *             .definedTags(var_.cloud_exadata_infrastructure_defined_tags())
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .maintenanceWindow(CloudExadataInfrastructureMaintenanceWindowArgs.builder()
- *                 .preference(var_.cloud_exadata_infrastructure_maintenance_window_preference())
  *                 .customActionTimeoutInMins(var_.cloud_exadata_infrastructure_maintenance_window_custom_action_timeout_in_mins())
  *                 .daysOfWeeks(CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs.builder()
  *                     .name(var_.cloud_exadata_infrastructure_maintenance_window_days_of_week_name())
@@ -73,6 +73,7 @@ import javax.annotation.Nullable;
  *                     .name(var_.cloud_exadata_infrastructure_maintenance_window_months_name())
  *                     .build())
  *                 .patchingMode(var_.cloud_exadata_infrastructure_maintenance_window_patching_mode())
+ *                 .preference(var_.cloud_exadata_infrastructure_maintenance_window_preference())
  *                 .weeksOfMonths(var_.cloud_exadata_infrastructure_maintenance_window_weeks_of_month())
  *                 .build())
  *             .storageCount(var_.cloud_exadata_infrastructure_storage_count())
@@ -93,6 +94,34 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:Database/cloudExadataInfrastructure:CloudExadataInfrastructure")
 public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResource {
+    /**
+     * The requested number of additional storage servers activated for the Exadata infrastructure.
+     * 
+     */
+    @Export(name="activatedStorageCount", type=Integer.class, parameters={})
+    private Output<Integer> activatedStorageCount;
+
+    /**
+     * @return The requested number of additional storage servers activated for the Exadata infrastructure.
+     * 
+     */
+    public Output<Integer> activatedStorageCount() {
+        return this.activatedStorageCount;
+    }
+    /**
+     * The requested number of additional storage servers for the Exadata infrastructure.
+     * 
+     */
+    @Export(name="additionalStorageCount", type=Integer.class, parameters={})
+    private Output<Integer> additionalStorageCount;
+
+    /**
+     * @return The requested number of additional storage servers for the Exadata infrastructure.
+     * 
+     */
+    public Output<Integer> additionalStorageCount() {
+        return this.additionalStorageCount;
+    }
     /**
      * The availability domain where the cloud Exadata infrastructure is located.
      * 
@@ -150,6 +179,20 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
         return this.computeCount;
     }
     /**
+     * The total number of CPU cores allocated.
+     * 
+     */
+    @Export(name="cpuCount", type=Integer.class, parameters={})
+    private Output<Integer> cpuCount;
+
+    /**
+     * @return The total number of CPU cores allocated.
+     * 
+     */
+    public Output<Integer> cpuCount() {
+        return this.cpuCount;
+    }
+    /**
      * (Updatable) Customer contacts.
      * 
      */
@@ -162,6 +205,34 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
      */
     public Output<List<CloudExadataInfrastructureCustomerContact>> customerContacts() {
         return this.customerContacts;
+    }
+    /**
+     * Size, in terabytes, of the DATA disk group.
+     * 
+     */
+    @Export(name="dataStorageSizeInTbs", type=Double.class, parameters={})
+    private Output<Double> dataStorageSizeInTbs;
+
+    /**
+     * @return Size, in terabytes, of the DATA disk group.
+     * 
+     */
+    public Output<Double> dataStorageSizeInTbs() {
+        return this.dataStorageSizeInTbs;
+    }
+    /**
+     * The local node storage allocated in GBs.
+     * 
+     */
+    @Export(name="dbNodeStorageSizeInGbs", type=Integer.class, parameters={})
+    private Output<Integer> dbNodeStorageSizeInGbs;
+
+    /**
+     * @return The local node storage allocated in GBs.
+     * 
+     */
+    public Output<Integer> dbNodeStorageSizeInGbs() {
+        return this.dbNodeStorageSizeInGbs;
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -246,6 +317,76 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
      */
     public Output<CloudExadataInfrastructureMaintenanceWindow> maintenanceWindow() {
         return this.maintenanceWindow;
+    }
+    /**
+     * The total number of CPU cores available.
+     * 
+     */
+    @Export(name="maxCpuCount", type=Integer.class, parameters={})
+    private Output<Integer> maxCpuCount;
+
+    /**
+     * @return The total number of CPU cores available.
+     * 
+     */
+    public Output<Integer> maxCpuCount() {
+        return this.maxCpuCount;
+    }
+    /**
+     * The total available DATA disk group size.
+     * 
+     */
+    @Export(name="maxDataStorageInTbs", type=Double.class, parameters={})
+    private Output<Double> maxDataStorageInTbs;
+
+    /**
+     * @return The total available DATA disk group size.
+     * 
+     */
+    public Output<Double> maxDataStorageInTbs() {
+        return this.maxDataStorageInTbs;
+    }
+    /**
+     * The total local node storage available in GBs.
+     * 
+     */
+    @Export(name="maxDbNodeStorageInGbs", type=Integer.class, parameters={})
+    private Output<Integer> maxDbNodeStorageInGbs;
+
+    /**
+     * @return The total local node storage available in GBs.
+     * 
+     */
+    public Output<Integer> maxDbNodeStorageInGbs() {
+        return this.maxDbNodeStorageInGbs;
+    }
+    /**
+     * The total memory available in GBs.
+     * 
+     */
+    @Export(name="maxMemoryInGbs", type=Integer.class, parameters={})
+    private Output<Integer> maxMemoryInGbs;
+
+    /**
+     * @return The total memory available in GBs.
+     * 
+     */
+    public Output<Integer> maxMemoryInGbs() {
+        return this.maxMemoryInGbs;
+    }
+    /**
+     * The memory allocated in GBs.
+     * 
+     */
+    @Export(name="memorySizeInGbs", type=Integer.class, parameters={})
+    private Output<Integer> memorySizeInGbs;
+
+    /**
+     * @return The memory allocated in GBs.
+     * 
+     */
+    public Output<Integer> memorySizeInGbs() {
+        return this.memorySizeInGbs;
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.

@@ -84,9 +84,11 @@ import javax.annotation.Nullable;
  *                 .connectorId(var_.monitored_resource_database_connector_id())
  *                 .dbId(var_.monitored_resource_database_id())
  *                 .dbUniqueName(var_.monitored_resource_database_connection_details_db_unique_name())
+ *                 .sslSecretId(oci_vault_secret.test_secret().id())
  *                 .build())
  *             .displayName(var_.monitored_resource_display_name())
  *             .externalResourceId(var_.monitored_resource_external_resource_id())
+ *             .externalId(oci_stack_monitoring_external.test_external().id())
  *             .hostName(var_.monitored_resource_host_name())
  *             .managementAgentId(oci_management_agent_management_agent.test_management_agent().id())
  *             .properties(MonitoredResourcePropertyArgs.builder()
@@ -194,6 +196,20 @@ public class MonitoredResource extends com.pulumi.resources.CustomResource {
      */
     public Output<Optional<String>> displayName() {
         return Codegen.optional(this.displayName);
+    }
+    /**
+     * External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only Oracle Cloud Infrastructure compute instance.
+     * 
+     */
+    @Export(name="externalId", type=String.class, parameters={})
+    private Output</* @Nullable */ String> externalId;
+
+    /**
+     * @return External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only Oracle Cloud Infrastructure compute instance.
+     * 
+     */
+    public Output<Optional<String>> externalId() {
+        return Codegen.optional(this.externalId);
     }
     /**
      * Generally used by DBaaS to send the Database OCID stored on the DBaaS. The same will be passed to resource service to enable Stack Monitoring Service on DBM. This will be stored in Stack Monitoring Resource Service data store as identifier for monitored resource. If this header is not set as part of the request, then an id will be generated and stored for the resource.

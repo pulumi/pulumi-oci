@@ -31,14 +31,14 @@ public final class BdsInstanceClusterDetailArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * Cloud SQL cell version
+     * Cloud SQL cell version.
      * 
      */
     @Import(name="bdCellVersion")
     private @Nullable Output<String> bdCellVersion;
 
     /**
-     * @return Cloud SQL cell version
+     * @return Cloud SQL cell version.
      * 
      */
     public Optional<Output<String>> bdCellVersion() {
@@ -61,14 +61,14 @@ public final class BdsInstanceClusterDetailArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * Big Data Manager version installed in the cluster
+     * Big Data Manager version installed in the cluster.
      * 
      */
     @Import(name="bdmVersion")
     private @Nullable Output<String> bdmVersion;
 
     /**
-     * @return Big Data Manager version installed in the cluster
+     * @return Big Data Manager version installed in the cluster.
      * 
      */
     public Optional<Output<String>> bdmVersion() {
@@ -76,14 +76,14 @@ public final class BdsInstanceClusterDetailArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * Big Data Service version installed in the cluster
+     * Big Data Service version installed in the cluster.
      * 
      */
     @Import(name="bdsVersion")
     private @Nullable Output<String> bdsVersion;
 
     /**
-     * @return Big Data Service version installed in the cluster
+     * @return Big Data Service version installed in the cluster.
      * 
      */
     public Optional<Output<String>> bdsVersion() {
@@ -91,14 +91,14 @@ public final class BdsInstanceClusterDetailArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * The URL of a Big Data Manager
+     * The URL of Big Data Manager.
      * 
      */
     @Import(name="bigDataManagerUrl")
     private @Nullable Output<String> bigDataManagerUrl;
 
     /**
-     * @return The URL of a Big Data Manager
+     * @return The URL of Big Data Manager.
      * 
      */
     public Optional<Output<String>> bigDataManagerUrl() {
@@ -106,14 +106,14 @@ public final class BdsInstanceClusterDetailArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * The URL of a Cloudera Manager
+     * The URL of Cloudera Manager
      * 
      */
     @Import(name="clouderaManagerUrl")
     private @Nullable Output<String> clouderaManagerUrl;
 
     /**
-     * @return The URL of a Cloudera Manager
+     * @return The URL of Cloudera Manager
      * 
      */
     public Optional<Output<String>> clouderaManagerUrl() {
@@ -121,14 +121,14 @@ public final class BdsInstanceClusterDetailArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * Big Data SQL version
+     * Big Data SQL version.
      * 
      */
     @Import(name="csqlCellVersion")
     private @Nullable Output<String> csqlCellVersion;
 
     /**
-     * @return Big Data SQL version
+     * @return Big Data SQL version.
      * 
      */
     public Optional<Output<String>> csqlCellVersion() {
@@ -136,14 +136,14 @@ public final class BdsInstanceClusterDetailArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * Query Server Database version
+     * Cloud SQL query server database version.
      * 
      */
     @Import(name="dbVersion")
     private @Nullable Output<String> dbVersion;
 
     /**
-     * @return Query Server Database version
+     * @return Cloud SQL query server database version.
      * 
      */
     public Optional<Output<String>> dbVersion() {
@@ -151,14 +151,14 @@ public final class BdsInstanceClusterDetailArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * The URL of a Hue Server
+     * The URL of the Hue server.
      * 
      */
     @Import(name="hueServerUrl")
     private @Nullable Output<String> hueServerUrl;
 
     /**
-     * @return The URL of a Hue Server
+     * @return The URL of the Hue server.
      * 
      */
     public Optional<Output<String>> hueServerUrl() {
@@ -196,14 +196,14 @@ public final class BdsInstanceClusterDetailArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * Oracle Linux version installed in the cluster
+     * Oracle Linux version installed in the cluster.
      * 
      */
     @Import(name="osVersion")
     private @Nullable Output<String> osVersion;
 
     /**
-     * @return Oracle Linux version installed in the cluster
+     * @return Oracle Linux version installed in the cluster.
      * 
      */
     public Optional<Output<String>> osVersion() {
@@ -226,14 +226,14 @@ public final class BdsInstanceClusterDetailArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * The time the BDS instance was automatically, or manually refreshed. An RFC3339 formatted datetime string
+     * The time the cluster was automatically or manually refreshed, shown as an RFC 3339 formatted datetime string.
      * 
      */
     @Import(name="timeRefreshed")
     private @Nullable Output<String> timeRefreshed;
 
     /**
-     * @return The time the BDS instance was automatically, or manually refreshed. An RFC3339 formatted datetime string
+     * @return The time the cluster was automatically or manually refreshed, shown as an RFC 3339 formatted datetime string.
      * 
      */
     public Optional<Output<String>> timeRefreshed() {
@@ -300,7 +300,7 @@ public final class BdsInstanceClusterDetailArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param bdCellVersion Cloud SQL cell version
+         * @param bdCellVersion Cloud SQL cell version.
          * 
          * @return builder
          * 
@@ -311,7 +311,7 @@ public final class BdsInstanceClusterDetailArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param bdCellVersion Cloud SQL cell version
+         * @param bdCellVersion Cloud SQL cell version.
          * 
          * @return builder
          * 
@@ -342,7 +342,7 @@ public final class BdsInstanceClusterDetailArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param bdmVersion Big Data Manager version installed in the cluster
+         * @param bdmVersion Big Data Manager version installed in the cluster.
          * 
          * @return builder
          * 
@@ -353,7 +353,7 @@ public final class BdsInstanceClusterDetailArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param bdmVersion Big Data Manager version installed in the cluster
+         * @param bdmVersion Big Data Manager version installed in the cluster.
          * 
          * @return builder
          * 
@@ -363,7 +363,7 @@ public final class BdsInstanceClusterDetailArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param bdsVersion Big Data Service version installed in the cluster
+         * @param bdsVersion Big Data Service version installed in the cluster.
          * 
          * @return builder
          * 
@@ -374,7 +374,7 @@ public final class BdsInstanceClusterDetailArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param bdsVersion Big Data Service version installed in the cluster
+         * @param bdsVersion Big Data Service version installed in the cluster.
          * 
          * @return builder
          * 
@@ -384,7 +384,7 @@ public final class BdsInstanceClusterDetailArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param bigDataManagerUrl The URL of a Big Data Manager
+         * @param bigDataManagerUrl The URL of Big Data Manager.
          * 
          * @return builder
          * 
@@ -395,7 +395,7 @@ public final class BdsInstanceClusterDetailArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param bigDataManagerUrl The URL of a Big Data Manager
+         * @param bigDataManagerUrl The URL of Big Data Manager.
          * 
          * @return builder
          * 
@@ -405,7 +405,7 @@ public final class BdsInstanceClusterDetailArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param clouderaManagerUrl The URL of a Cloudera Manager
+         * @param clouderaManagerUrl The URL of Cloudera Manager
          * 
          * @return builder
          * 
@@ -416,7 +416,7 @@ public final class BdsInstanceClusterDetailArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param clouderaManagerUrl The URL of a Cloudera Manager
+         * @param clouderaManagerUrl The URL of Cloudera Manager
          * 
          * @return builder
          * 
@@ -426,7 +426,7 @@ public final class BdsInstanceClusterDetailArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param csqlCellVersion Big Data SQL version
+         * @param csqlCellVersion Big Data SQL version.
          * 
          * @return builder
          * 
@@ -437,7 +437,7 @@ public final class BdsInstanceClusterDetailArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param csqlCellVersion Big Data SQL version
+         * @param csqlCellVersion Big Data SQL version.
          * 
          * @return builder
          * 
@@ -447,7 +447,7 @@ public final class BdsInstanceClusterDetailArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param dbVersion Query Server Database version
+         * @param dbVersion Cloud SQL query server database version.
          * 
          * @return builder
          * 
@@ -458,7 +458,7 @@ public final class BdsInstanceClusterDetailArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param dbVersion Query Server Database version
+         * @param dbVersion Cloud SQL query server database version.
          * 
          * @return builder
          * 
@@ -468,7 +468,7 @@ public final class BdsInstanceClusterDetailArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param hueServerUrl The URL of a Hue Server
+         * @param hueServerUrl The URL of the Hue server.
          * 
          * @return builder
          * 
@@ -479,7 +479,7 @@ public final class BdsInstanceClusterDetailArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param hueServerUrl The URL of a Hue Server
+         * @param hueServerUrl The URL of the Hue server.
          * 
          * @return builder
          * 
@@ -531,7 +531,7 @@ public final class BdsInstanceClusterDetailArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param osVersion Oracle Linux version installed in the cluster
+         * @param osVersion Oracle Linux version installed in the cluster.
          * 
          * @return builder
          * 
@@ -542,7 +542,7 @@ public final class BdsInstanceClusterDetailArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param osVersion Oracle Linux version installed in the cluster
+         * @param osVersion Oracle Linux version installed in the cluster.
          * 
          * @return builder
          * 
@@ -573,7 +573,7 @@ public final class BdsInstanceClusterDetailArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param timeRefreshed The time the BDS instance was automatically, or manually refreshed. An RFC3339 formatted datetime string
+         * @param timeRefreshed The time the cluster was automatically or manually refreshed, shown as an RFC 3339 formatted datetime string.
          * 
          * @return builder
          * 
@@ -584,7 +584,7 @@ public final class BdsInstanceClusterDetailArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param timeRefreshed The time the BDS instance was automatically, or manually refreshed. An RFC3339 formatted datetime string
+         * @param timeRefreshed The time the cluster was automatically or manually refreshed, shown as an RFC 3339 formatted datetime string.
          * 
          * @return builder
          * 

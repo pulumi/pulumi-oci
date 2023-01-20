@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRepositories(args: GetRepositoriesArgs, opts?: pulumi.InvokeOptions): Promise<GetRepositoriesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Artifacts/getRepositories:getRepositories", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -98,9 +96,28 @@ export interface GetRepositoriesResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Repositories in Oracle Cloud Infrastructure Artifacts service.
+ *
+ * Lists repositories in the specified compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testRepositories = oci.Artifacts.getRepositories({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.repository_display_name,
+ *     id: _var.repository_id,
+ *     isImmutable: _var.repository_is_immutable,
+ *     state: _var.repository_state,
+ * });
+ * ```
+ */
 export function getRepositoriesOutput(args: GetRepositoriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoriesResult> {
-    return pulumi.output(args).apply(a => getRepositories(a, opts))
+    return pulumi.output(args).apply((a: any) => getRepositories(a, opts))
 }
 
 /**

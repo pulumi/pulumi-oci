@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -34,6 +35,9 @@ import * as utilities from "../utilities";
  *         isIncidentLogsEnabled: _var.cloud_vm_cluster_data_collection_options_is_incident_logs_enabled,
  *     },
  *     dataStoragePercentage: _var.cloud_vm_cluster_data_storage_percentage,
+ *     dataStorageSizeInTbs: _var.cloud_vm_cluster_data_storage_size_in_tbs,
+ *     dbNodeStorageSizeInGbs: _var.cloud_vm_cluster_db_node_storage_size_in_gbs,
+ *     dbServers: _var.cloud_vm_cluster_db_servers,
  *     definedTags: _var.cloud_vm_cluster_defined_tags,
  *     domain: _var.cloud_vm_cluster_domain,
  *     freeformTags: {
@@ -42,8 +46,10 @@ import * as utilities from "../utilities";
  *     isLocalBackupEnabled: _var.cloud_vm_cluster_is_local_backup_enabled,
  *     isSparseDiskgroupEnabled: _var.cloud_vm_cluster_is_sparse_diskgroup_enabled,
  *     licenseModel: _var.cloud_vm_cluster_license_model,
+ *     memorySizeInGbs: _var.cloud_vm_cluster_memory_size_in_gbs,
  *     nsgIds: _var.cloud_vm_cluster_nsg_ids,
  *     ocpuCount: _var.cloud_vm_cluster_ocpu_count,
+ *     privateZoneId: oci_dns_zone.test_zone.id,
  *     scanListenerPortTcp: _var.cloud_vm_cluster_scan_listener_port_tcp,
  *     scanListenerPortTcpSsl: _var.cloud_vm_cluster_scan_listener_port_tcp_ssl,
  *     timeZone: _var.cloud_vm_cluster_time_zone,
@@ -131,6 +137,18 @@ export class CloudVmCluster extends pulumi.CustomResource {
      */
     public readonly dataStoragePercentage!: pulumi.Output<number>;
     /**
+     * (Updatable) The data disk group size to be allocated in TBs.
+     */
+    public readonly dataStorageSizeInTbs!: pulumi.Output<number>;
+    /**
+     * (Updatable) The local node storage to be allocated in GBs.
+     */
+    public readonly dbNodeStorageSizeInGbs!: pulumi.Output<number>;
+    /**
+     * The list of DB servers.
+     */
+    public readonly dbServers!: pulumi.Output<string[]>;
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
@@ -187,6 +205,10 @@ export class CloudVmCluster extends pulumi.CustomResource {
      */
     public /*out*/ readonly listenerPort!: pulumi.Output<string>;
     /**
+     * (Updatable) The memory to be allocated in GBs.
+     */
+    public readonly memorySizeInGbs!: pulumi.Output<number>;
+    /**
      * The number of nodes in the cloud VM cluster.
      */
     public /*out*/ readonly nodeCount!: pulumi.Output<number>;
@@ -199,6 +221,10 @@ export class CloudVmCluster extends pulumi.CustomResource {
      * (Updatable) The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
      */
     public readonly ocpuCount!: pulumi.Output<number>;
+    /**
+     * The private zone id in which DNS records need to be created.
+     */
+    public readonly privateZoneId!: pulumi.Output<string>;
     /**
      * The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
      */
@@ -283,6 +309,9 @@ export class CloudVmCluster extends pulumi.CustomResource {
             resourceInputs["createAsync"] = state ? state.createAsync : undefined;
             resourceInputs["dataCollectionOptions"] = state ? state.dataCollectionOptions : undefined;
             resourceInputs["dataStoragePercentage"] = state ? state.dataStoragePercentage : undefined;
+            resourceInputs["dataStorageSizeInTbs"] = state ? state.dataStorageSizeInTbs : undefined;
+            resourceInputs["dbNodeStorageSizeInGbs"] = state ? state.dbNodeStorageSizeInGbs : undefined;
+            resourceInputs["dbServers"] = state ? state.dbServers : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["diskRedundancy"] = state ? state.diskRedundancy : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
@@ -297,9 +326,11 @@ export class CloudVmCluster extends pulumi.CustomResource {
             resourceInputs["licenseModel"] = state ? state.licenseModel : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["listenerPort"] = state ? state.listenerPort : undefined;
+            resourceInputs["memorySizeInGbs"] = state ? state.memorySizeInGbs : undefined;
             resourceInputs["nodeCount"] = state ? state.nodeCount : undefined;
             resourceInputs["nsgIds"] = state ? state.nsgIds : undefined;
             resourceInputs["ocpuCount"] = state ? state.ocpuCount : undefined;
+            resourceInputs["privateZoneId"] = state ? state.privateZoneId : undefined;
             resourceInputs["scanDnsName"] = state ? state.scanDnsName : undefined;
             resourceInputs["scanDnsRecordId"] = state ? state.scanDnsRecordId : undefined;
             resourceInputs["scanIpIds"] = state ? state.scanIpIds : undefined;
@@ -353,6 +384,9 @@ export class CloudVmCluster extends pulumi.CustomResource {
             resourceInputs["createAsync"] = args ? args.createAsync : undefined;
             resourceInputs["dataCollectionOptions"] = args ? args.dataCollectionOptions : undefined;
             resourceInputs["dataStoragePercentage"] = args ? args.dataStoragePercentage : undefined;
+            resourceInputs["dataStorageSizeInTbs"] = args ? args.dataStorageSizeInTbs : undefined;
+            resourceInputs["dbNodeStorageSizeInGbs"] = args ? args.dbNodeStorageSizeInGbs : undefined;
+            resourceInputs["dbServers"] = args ? args.dbServers : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["domain"] = args ? args.domain : undefined;
@@ -362,8 +396,10 @@ export class CloudVmCluster extends pulumi.CustomResource {
             resourceInputs["isLocalBackupEnabled"] = args ? args.isLocalBackupEnabled : undefined;
             resourceInputs["isSparseDiskgroupEnabled"] = args ? args.isSparseDiskgroupEnabled : undefined;
             resourceInputs["licenseModel"] = args ? args.licenseModel : undefined;
+            resourceInputs["memorySizeInGbs"] = args ? args.memorySizeInGbs : undefined;
             resourceInputs["nsgIds"] = args ? args.nsgIds : undefined;
             resourceInputs["ocpuCount"] = args ? args.ocpuCount : undefined;
+            resourceInputs["privateZoneId"] = args ? args.privateZoneId : undefined;
             resourceInputs["scanListenerPortTcp"] = args ? args.scanListenerPortTcp : undefined;
             resourceInputs["scanListenerPortTcpSsl"] = args ? args.scanListenerPortTcpSsl : undefined;
             resourceInputs["sshPublicKeys"] = args ? args.sshPublicKeys : undefined;
@@ -441,6 +477,18 @@ export interface CloudVmClusterState {
      */
     dataStoragePercentage?: pulumi.Input<number>;
     /**
+     * (Updatable) The data disk group size to be allocated in TBs.
+     */
+    dataStorageSizeInTbs?: pulumi.Input<number>;
+    /**
+     * (Updatable) The local node storage to be allocated in GBs.
+     */
+    dbNodeStorageSizeInGbs?: pulumi.Input<number>;
+    /**
+     * The list of DB servers.
+     */
+    dbServers?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
@@ -497,6 +545,10 @@ export interface CloudVmClusterState {
      */
     listenerPort?: pulumi.Input<string>;
     /**
+     * (Updatable) The memory to be allocated in GBs.
+     */
+    memorySizeInGbs?: pulumi.Input<number>;
+    /**
      * The number of nodes in the cloud VM cluster.
      */
     nodeCount?: pulumi.Input<number>;
@@ -509,6 +561,10 @@ export interface CloudVmClusterState {
      * (Updatable) The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
      */
     ocpuCount?: pulumi.Input<number>;
+    /**
+     * The private zone id in which DNS records need to be created.
+     */
+    privateZoneId?: pulumi.Input<string>;
     /**
      * The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
      */
@@ -616,6 +672,18 @@ export interface CloudVmClusterArgs {
      */
     dataStoragePercentage?: pulumi.Input<number>;
     /**
+     * (Updatable) The data disk group size to be allocated in TBs.
+     */
+    dataStorageSizeInTbs?: pulumi.Input<number>;
+    /**
+     * (Updatable) The local node storage to be allocated in GBs.
+     */
+    dbNodeStorageSizeInGbs?: pulumi.Input<number>;
+    /**
+     * The list of DB servers.
+     */
+    dbServers?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
@@ -652,6 +720,10 @@ export interface CloudVmClusterArgs {
      */
     licenseModel?: pulumi.Input<string>;
     /**
+     * (Updatable) The memory to be allocated in GBs.
+     */
+    memorySizeInGbs?: pulumi.Input<number>;
+    /**
      * (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
      * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      */
@@ -660,6 +732,10 @@ export interface CloudVmClusterArgs {
      * (Updatable) The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
      */
     ocpuCount?: pulumi.Input<number>;
+    /**
+     * The private zone id in which DNS records need to be created.
+     */
+    privateZoneId?: pulumi.Input<string>;
     /**
      * The TCP Single Client Access Name (SCAN) port. The default port is 1521.
      */

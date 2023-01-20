@@ -1352,15 +1352,15 @@ type ScheduleQueryProperties struct {
 	DateRange ScheduleQueryPropertiesDateRange `pulumi:"dateRange"`
 	// The filter object for query usage.
 	Filter *string `pulumi:"filter"`
-	// The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.   Allowed values are: DAILY MONTHLY
+	// The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. Allowed values are: DAILY MONTHLY
 	Granularity string `pulumi:"granularity"`
 	// Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
 	GroupBies []string `pulumi:"groupBies"`
 	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy" ]
 	GroupByTags []ScheduleQueryPropertiesGroupByTag `pulumi:"groupByTags"`
-	// Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+	// Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
 	IsAggregateByTime *bool `pulumi:"isAggregateByTime"`
-	// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.  Allowed values are: USAGE COST USAGE_AND_COST
+	// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Allowed values are: USAGE COST USAGE_AND_COST
 	QueryType *string `pulumi:"queryType"`
 }
 
@@ -1382,15 +1382,15 @@ type ScheduleQueryPropertiesArgs struct {
 	DateRange ScheduleQueryPropertiesDateRangeInput `pulumi:"dateRange"`
 	// The filter object for query usage.
 	Filter pulumi.StringPtrInput `pulumi:"filter"`
-	// The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.   Allowed values are: DAILY MONTHLY
+	// The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. Allowed values are: DAILY MONTHLY
 	Granularity pulumi.StringInput `pulumi:"granularity"`
 	// Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
 	GroupBies pulumi.StringArrayInput `pulumi:"groupBies"`
 	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy" ]
 	GroupByTags ScheduleQueryPropertiesGroupByTagArrayInput `pulumi:"groupByTags"`
-	// Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+	// Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
 	IsAggregateByTime pulumi.BoolPtrInput `pulumi:"isAggregateByTime"`
-	// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.  Allowed values are: USAGE COST USAGE_AND_COST
+	// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Allowed values are: USAGE COST USAGE_AND_COST
 	QueryType pulumi.StringPtrInput `pulumi:"queryType"`
 }
 
@@ -1486,7 +1486,7 @@ func (o ScheduleQueryPropertiesOutput) Filter() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScheduleQueryProperties) *string { return v.Filter }).(pulumi.StringPtrOutput)
 }
 
-// The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.   Allowed values are: DAILY MONTHLY
+// The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. Allowed values are: DAILY MONTHLY
 func (o ScheduleQueryPropertiesOutput) Granularity() pulumi.StringOutput {
 	return o.ApplyT(func(v ScheduleQueryProperties) string { return v.Granularity }).(pulumi.StringOutput)
 }
@@ -1501,12 +1501,12 @@ func (o ScheduleQueryPropertiesOutput) GroupByTags() ScheduleQueryPropertiesGrou
 	return o.ApplyT(func(v ScheduleQueryProperties) []ScheduleQueryPropertiesGroupByTag { return v.GroupByTags }).(ScheduleQueryPropertiesGroupByTagArrayOutput)
 }
 
-// Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+// Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
 func (o ScheduleQueryPropertiesOutput) IsAggregateByTime() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ScheduleQueryProperties) *bool { return v.IsAggregateByTime }).(pulumi.BoolPtrOutput)
 }
 
-// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.  Allowed values are: USAGE COST USAGE_AND_COST
+// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Allowed values are: USAGE COST USAGE_AND_COST
 func (o ScheduleQueryPropertiesOutput) QueryType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScheduleQueryProperties) *string { return v.QueryType }).(pulumi.StringPtrOutput)
 }
@@ -1565,7 +1565,7 @@ func (o ScheduleQueryPropertiesPtrOutput) Filter() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.   Allowed values are: DAILY MONTHLY
+// The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. Allowed values are: DAILY MONTHLY
 func (o ScheduleQueryPropertiesPtrOutput) Granularity() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ScheduleQueryProperties) *string {
 		if v == nil {
@@ -1595,7 +1595,7 @@ func (o ScheduleQueryPropertiesPtrOutput) GroupByTags() ScheduleQueryPropertiesG
 	}).(ScheduleQueryPropertiesGroupByTagArrayOutput)
 }
 
-// Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+// Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
 func (o ScheduleQueryPropertiesPtrOutput) IsAggregateByTime() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *ScheduleQueryProperties) *bool {
 		if v == nil {
@@ -1605,7 +1605,7 @@ func (o ScheduleQueryPropertiesPtrOutput) IsAggregateByTime() pulumi.BoolPtrOutp
 	}).(pulumi.BoolPtrOutput)
 }
 
-// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.  Allowed values are: USAGE COST USAGE_AND_COST
+// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Allowed values are: USAGE COST USAGE_AND_COST
 func (o ScheduleQueryPropertiesPtrOutput) QueryType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ScheduleQueryProperties) *string {
 		if v == nil {
@@ -1616,7 +1616,7 @@ func (o ScheduleQueryPropertiesPtrOutput) QueryType() pulumi.StringPtrOutput {
 }
 
 type ScheduleQueryPropertiesDateRange struct {
-	// Defines whether the schedule date range is STATIC or DYNAMIC
+	// Defines whether the schedule date range is STATIC or DYNAMIC.
 	DateRangeType        string  `pulumi:"dateRangeType"`
 	DynamicDateRangeType *string `pulumi:"dynamicDateRangeType"`
 	// The usage end time.
@@ -1637,7 +1637,7 @@ type ScheduleQueryPropertiesDateRangeInput interface {
 }
 
 type ScheduleQueryPropertiesDateRangeArgs struct {
-	// Defines whether the schedule date range is STATIC or DYNAMIC
+	// Defines whether the schedule date range is STATIC or DYNAMIC.
 	DateRangeType        pulumi.StringInput    `pulumi:"dateRangeType"`
 	DynamicDateRangeType pulumi.StringPtrInput `pulumi:"dynamicDateRangeType"`
 	// The usage end time.
@@ -1723,7 +1723,7 @@ func (o ScheduleQueryPropertiesDateRangeOutput) ToScheduleQueryPropertiesDateRan
 	}).(ScheduleQueryPropertiesDateRangePtrOutput)
 }
 
-// Defines whether the schedule date range is STATIC or DYNAMIC
+// Defines whether the schedule date range is STATIC or DYNAMIC.
 func (o ScheduleQueryPropertiesDateRangeOutput) DateRangeType() pulumi.StringOutput {
 	return o.ApplyT(func(v ScheduleQueryPropertiesDateRange) string { return v.DateRangeType }).(pulumi.StringOutput)
 }
@@ -1766,7 +1766,7 @@ func (o ScheduleQueryPropertiesDateRangePtrOutput) Elem() ScheduleQueryPropertie
 	}).(ScheduleQueryPropertiesDateRangeOutput)
 }
 
-// Defines whether the schedule date range is STATIC or DYNAMIC
+// Defines whether the schedule date range is STATIC or DYNAMIC.
 func (o ScheduleQueryPropertiesDateRangePtrOutput) DateRangeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ScheduleQueryPropertiesDateRange) *string {
 		if v == nil {
@@ -1808,7 +1808,7 @@ func (o ScheduleQueryPropertiesDateRangePtrOutput) TimeUsageStarted() pulumi.Str
 type ScheduleQueryPropertiesGroupByTag struct {
 	// The tag key.
 	Key *string `pulumi:"key"`
-	// The namespace needed to determine object storage bucket.
+	// (Updatable) The namespace needed to determine the object storage bucket.
 	Namespace *string `pulumi:"namespace"`
 	// The tag value.
 	Value *string `pulumi:"value"`
@@ -1828,7 +1828,7 @@ type ScheduleQueryPropertiesGroupByTagInput interface {
 type ScheduleQueryPropertiesGroupByTagArgs struct {
 	// The tag key.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// The namespace needed to determine object storage bucket.
+	// (Updatable) The namespace needed to determine the object storage bucket.
 	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// The tag value.
 	Value pulumi.StringPtrInput `pulumi:"value"`
@@ -1890,7 +1890,7 @@ func (o ScheduleQueryPropertiesGroupByTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScheduleQueryPropertiesGroupByTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// The namespace needed to determine object storage bucket.
+// (Updatable) The namespace needed to determine the object storage bucket.
 func (o ScheduleQueryPropertiesGroupByTagOutput) Namespace() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScheduleQueryPropertiesGroupByTag) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
@@ -1921,13 +1921,13 @@ func (o ScheduleQueryPropertiesGroupByTagArrayOutput) Index(i pulumi.IntInput) S
 }
 
 type ScheduleResultLocation struct {
-	// The bucket name where usage/cost CSVs will be uploaded
+	// (Updatable) The bucket name where usage or cost CSVs will be uploaded.
 	Bucket string `pulumi:"bucket"`
-	// Defines the type of location where the usage/cost CSVs will be stored
+	// (Updatable) Defines the type of location where the usage or cost CSVs will be stored.
 	LocationType string `pulumi:"locationType"`
-	// The namespace needed to determine object storage bucket.
+	// (Updatable) The namespace needed to determine the object storage bucket.
 	Namespace string `pulumi:"namespace"`
-	// The destination Object Store Region specified by customer
+	// (Updatable) The destination Object Store Region specified by the customer.
 	Region string `pulumi:"region"`
 }
 
@@ -1943,13 +1943,13 @@ type ScheduleResultLocationInput interface {
 }
 
 type ScheduleResultLocationArgs struct {
-	// The bucket name where usage/cost CSVs will be uploaded
+	// (Updatable) The bucket name where usage or cost CSVs will be uploaded.
 	Bucket pulumi.StringInput `pulumi:"bucket"`
-	// Defines the type of location where the usage/cost CSVs will be stored
+	// (Updatable) Defines the type of location where the usage or cost CSVs will be stored.
 	LocationType pulumi.StringInput `pulumi:"locationType"`
-	// The namespace needed to determine object storage bucket.
+	// (Updatable) The namespace needed to determine the object storage bucket.
 	Namespace pulumi.StringInput `pulumi:"namespace"`
-	// The destination Object Store Region specified by customer
+	// (Updatable) The destination Object Store Region specified by the customer.
 	Region pulumi.StringInput `pulumi:"region"`
 }
 
@@ -2030,22 +2030,22 @@ func (o ScheduleResultLocationOutput) ToScheduleResultLocationPtrOutputWithConte
 	}).(ScheduleResultLocationPtrOutput)
 }
 
-// The bucket name where usage/cost CSVs will be uploaded
+// (Updatable) The bucket name where usage or cost CSVs will be uploaded.
 func (o ScheduleResultLocationOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v ScheduleResultLocation) string { return v.Bucket }).(pulumi.StringOutput)
 }
 
-// Defines the type of location where the usage/cost CSVs will be stored
+// (Updatable) Defines the type of location where the usage or cost CSVs will be stored.
 func (o ScheduleResultLocationOutput) LocationType() pulumi.StringOutput {
 	return o.ApplyT(func(v ScheduleResultLocation) string { return v.LocationType }).(pulumi.StringOutput)
 }
 
-// The namespace needed to determine object storage bucket.
+// (Updatable) The namespace needed to determine the object storage bucket.
 func (o ScheduleResultLocationOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v ScheduleResultLocation) string { return v.Namespace }).(pulumi.StringOutput)
 }
 
-// The destination Object Store Region specified by customer
+// (Updatable) The destination Object Store Region specified by the customer.
 func (o ScheduleResultLocationOutput) Region() pulumi.StringOutput {
 	return o.ApplyT(func(v ScheduleResultLocation) string { return v.Region }).(pulumi.StringOutput)
 }
@@ -2074,7 +2074,7 @@ func (o ScheduleResultLocationPtrOutput) Elem() ScheduleResultLocationOutput {
 	}).(ScheduleResultLocationOutput)
 }
 
-// The bucket name where usage/cost CSVs will be uploaded
+// (Updatable) The bucket name where usage or cost CSVs will be uploaded.
 func (o ScheduleResultLocationPtrOutput) Bucket() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ScheduleResultLocation) *string {
 		if v == nil {
@@ -2084,7 +2084,7 @@ func (o ScheduleResultLocationPtrOutput) Bucket() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// Defines the type of location where the usage/cost CSVs will be stored
+// (Updatable) Defines the type of location where the usage or cost CSVs will be stored.
 func (o ScheduleResultLocationPtrOutput) LocationType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ScheduleResultLocation) *string {
 		if v == nil {
@@ -2094,7 +2094,7 @@ func (o ScheduleResultLocationPtrOutput) LocationType() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// The namespace needed to determine object storage bucket.
+// (Updatable) The namespace needed to determine the object storage bucket.
 func (o ScheduleResultLocationPtrOutput) Namespace() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ScheduleResultLocation) *string {
 		if v == nil {
@@ -2104,7 +2104,7 @@ func (o ScheduleResultLocationPtrOutput) Namespace() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// The destination Object Store Region specified by customer
+// (Updatable) The destination Object Store Region specified by the customer.
 func (o ScheduleResultLocationPtrOutput) Region() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ScheduleResultLocation) *string {
 		if v == nil {
@@ -5472,15 +5472,15 @@ type GetScheduleQueryProperty struct {
 	DateRanges []GetScheduleQueryPropertyDateRange `pulumi:"dateRanges"`
 	// The filter object for query usage.
 	Filter string `pulumi:"filter"`
-	// The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.   Allowed values are: DAILY MONTHLY
+	// The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. Allowed values are: DAILY MONTHLY
 	Granularity string `pulumi:"granularity"`
 	// Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
 	GroupBies []string `pulumi:"groupBies"`
 	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy" ]
 	GroupByTags []GetScheduleQueryPropertyGroupByTag `pulumi:"groupByTags"`
-	// Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+	// Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
 	IsAggregateByTime bool `pulumi:"isAggregateByTime"`
-	// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.  Allowed values are: USAGE COST USAGE_AND_COST
+	// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Allowed values are: USAGE COST USAGE_AND_COST
 	QueryType string `pulumi:"queryType"`
 }
 
@@ -5502,15 +5502,15 @@ type GetScheduleQueryPropertyArgs struct {
 	DateRanges GetScheduleQueryPropertyDateRangeArrayInput `pulumi:"dateRanges"`
 	// The filter object for query usage.
 	Filter pulumi.StringInput `pulumi:"filter"`
-	// The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.   Allowed values are: DAILY MONTHLY
+	// The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. Allowed values are: DAILY MONTHLY
 	Granularity pulumi.StringInput `pulumi:"granularity"`
 	// Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
 	GroupBies pulumi.StringArrayInput `pulumi:"groupBies"`
 	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy" ]
 	GroupByTags GetScheduleQueryPropertyGroupByTagArrayInput `pulumi:"groupByTags"`
-	// Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+	// Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
 	IsAggregateByTime pulumi.BoolInput `pulumi:"isAggregateByTime"`
-	// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.  Allowed values are: USAGE COST USAGE_AND_COST
+	// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Allowed values are: USAGE COST USAGE_AND_COST
 	QueryType pulumi.StringInput `pulumi:"queryType"`
 }
 
@@ -5580,7 +5580,7 @@ func (o GetScheduleQueryPropertyOutput) Filter() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScheduleQueryProperty) string { return v.Filter }).(pulumi.StringOutput)
 }
 
-// The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.   Allowed values are: DAILY MONTHLY
+// The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. Allowed values are: DAILY MONTHLY
 func (o GetScheduleQueryPropertyOutput) Granularity() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScheduleQueryProperty) string { return v.Granularity }).(pulumi.StringOutput)
 }
@@ -5595,12 +5595,12 @@ func (o GetScheduleQueryPropertyOutput) GroupByTags() GetScheduleQueryPropertyGr
 	return o.ApplyT(func(v GetScheduleQueryProperty) []GetScheduleQueryPropertyGroupByTag { return v.GroupByTags }).(GetScheduleQueryPropertyGroupByTagArrayOutput)
 }
 
-// Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+// Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
 func (o GetScheduleQueryPropertyOutput) IsAggregateByTime() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetScheduleQueryProperty) bool { return v.IsAggregateByTime }).(pulumi.BoolOutput)
 }
 
-// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.  Allowed values are: USAGE COST USAGE_AND_COST
+// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Allowed values are: USAGE COST USAGE_AND_COST
 func (o GetScheduleQueryPropertyOutput) QueryType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScheduleQueryProperty) string { return v.QueryType }).(pulumi.StringOutput)
 }
@@ -5626,7 +5626,7 @@ func (o GetScheduleQueryPropertyArrayOutput) Index(i pulumi.IntInput) GetSchedul
 }
 
 type GetScheduleQueryPropertyDateRange struct {
-	// Defines whether the schedule date range is STATIC or DYNAMIC
+	// Defines whether the schedule date range is STATIC or DYNAMIC.
 	DateRangeType        string `pulumi:"dateRangeType"`
 	DynamicDateRangeType string `pulumi:"dynamicDateRangeType"`
 	// The usage end time.
@@ -5647,7 +5647,7 @@ type GetScheduleQueryPropertyDateRangeInput interface {
 }
 
 type GetScheduleQueryPropertyDateRangeArgs struct {
-	// Defines whether the schedule date range is STATIC or DYNAMIC
+	// Defines whether the schedule date range is STATIC or DYNAMIC.
 	DateRangeType        pulumi.StringInput `pulumi:"dateRangeType"`
 	DynamicDateRangeType pulumi.StringInput `pulumi:"dynamicDateRangeType"`
 	// The usage end time.
@@ -5707,7 +5707,7 @@ func (o GetScheduleQueryPropertyDateRangeOutput) ToGetScheduleQueryPropertyDateR
 	return o
 }
 
-// Defines whether the schedule date range is STATIC or DYNAMIC
+// Defines whether the schedule date range is STATIC or DYNAMIC.
 func (o GetScheduleQueryPropertyDateRangeOutput) DateRangeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScheduleQueryPropertyDateRange) string { return v.DateRangeType }).(pulumi.StringOutput)
 }
@@ -5749,7 +5749,7 @@ func (o GetScheduleQueryPropertyDateRangeArrayOutput) Index(i pulumi.IntInput) G
 type GetScheduleQueryPropertyGroupByTag struct {
 	// The tag key.
 	Key string `pulumi:"key"`
-	// The namespace needed to determine object storage bucket.
+	// The namespace needed to determine the object storage bucket.
 	Namespace string `pulumi:"namespace"`
 	// The tag value.
 	Value string `pulumi:"value"`
@@ -5769,7 +5769,7 @@ type GetScheduleQueryPropertyGroupByTagInput interface {
 type GetScheduleQueryPropertyGroupByTagArgs struct {
 	// The tag key.
 	Key pulumi.StringInput `pulumi:"key"`
-	// The namespace needed to determine object storage bucket.
+	// The namespace needed to determine the object storage bucket.
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// The tag value.
 	Value pulumi.StringInput `pulumi:"value"`
@@ -5831,7 +5831,7 @@ func (o GetScheduleQueryPropertyGroupByTagOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScheduleQueryPropertyGroupByTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// The namespace needed to determine object storage bucket.
+// The namespace needed to determine the object storage bucket.
 func (o GetScheduleQueryPropertyGroupByTagOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScheduleQueryPropertyGroupByTag) string { return v.Namespace }).(pulumi.StringOutput)
 }
@@ -5862,13 +5862,13 @@ func (o GetScheduleQueryPropertyGroupByTagArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type GetScheduleResultLocation struct {
-	// The bucket name where usage/cost CSVs will be uploaded
+	// The bucket name where usage or cost CSVs will be uploaded.
 	Bucket string `pulumi:"bucket"`
-	// Defines the type of location where the usage/cost CSVs will be stored
+	// Defines the type of location where the usage or cost CSVs will be stored.
 	LocationType string `pulumi:"locationType"`
-	// The namespace needed to determine object storage bucket.
+	// The namespace needed to determine the object storage bucket.
 	Namespace string `pulumi:"namespace"`
-	// The destination Object Store Region specified by customer
+	// The destination Object Store Region specified by the customer.
 	Region string `pulumi:"region"`
 }
 
@@ -5884,13 +5884,13 @@ type GetScheduleResultLocationInput interface {
 }
 
 type GetScheduleResultLocationArgs struct {
-	// The bucket name where usage/cost CSVs will be uploaded
+	// The bucket name where usage or cost CSVs will be uploaded.
 	Bucket pulumi.StringInput `pulumi:"bucket"`
-	// Defines the type of location where the usage/cost CSVs will be stored
+	// Defines the type of location where the usage or cost CSVs will be stored.
 	LocationType pulumi.StringInput `pulumi:"locationType"`
-	// The namespace needed to determine object storage bucket.
+	// The namespace needed to determine the object storage bucket.
 	Namespace pulumi.StringInput `pulumi:"namespace"`
-	// The destination Object Store Region specified by customer
+	// The destination Object Store Region specified by the customer.
 	Region pulumi.StringInput `pulumi:"region"`
 }
 
@@ -5945,22 +5945,22 @@ func (o GetScheduleResultLocationOutput) ToGetScheduleResultLocationOutputWithCo
 	return o
 }
 
-// The bucket name where usage/cost CSVs will be uploaded
+// The bucket name where usage or cost CSVs will be uploaded.
 func (o GetScheduleResultLocationOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScheduleResultLocation) string { return v.Bucket }).(pulumi.StringOutput)
 }
 
-// Defines the type of location where the usage/cost CSVs will be stored
+// Defines the type of location where the usage or cost CSVs will be stored.
 func (o GetScheduleResultLocationOutput) LocationType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScheduleResultLocation) string { return v.LocationType }).(pulumi.StringOutput)
 }
 
-// The namespace needed to determine object storage bucket.
+// The namespace needed to determine the object storage bucket.
 func (o GetScheduleResultLocationOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScheduleResultLocation) string { return v.Namespace }).(pulumi.StringOutput)
 }
 
-// The destination Object Store Region specified by customer
+// The destination Object Store Region specified by the customer.
 func (o GetScheduleResultLocationOutput) Region() pulumi.StringOutput {
 	return o.ApplyT(func(v GetScheduleResultLocation) string { return v.Region }).(pulumi.StringOutput)
 }
@@ -6537,25 +6537,33 @@ type GetSchedulesScheduleCollectionItem struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+	// The description of the schedule.
+	Description string `pulumi:"description"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The OCID representing unique shedule
+	// The OCID representing a unique shedule.
 	Id string `pulumi:"id"`
 	// Query parameter for filtering by name
 	Name string `pulumi:"name"`
+	// Specifies supported output file format.
+	OutputFileFormat string `pulumi:"outputFileFormat"`
 	// The query properties.
 	QueryProperties []GetSchedulesScheduleCollectionItemQueryProperty `pulumi:"queryProperties"`
-	// The location where usage/cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
+	// The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
 	ResultLocations []GetSchedulesScheduleCollectionItemResultLocation `pulumi:"resultLocations"`
-	// In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 Describes the frequency of when the schedule will be run
+	// The saved report id which can also be used to generate query.
+	SavedReportId string `pulumi:"savedReportId"`
+	// Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
 	ScheduleRecurrences string `pulumi:"scheduleRecurrences"`
-	// The lifecycle state of the schedule
+	// The schedule lifecycle state.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The date and time of when the schedule was created
+	// The date and time the schedule was created.
 	TimeCreated string `pulumi:"timeCreated"`
-	// The date and time of the first time job execution
+	// The date and time of the next job execution.
+	TimeNextRun string `pulumi:"timeNextRun"`
+	// The date and time of the first time job execution.
 	TimeScheduled string `pulumi:"timeScheduled"`
 }
 
@@ -6575,25 +6583,33 @@ type GetSchedulesScheduleCollectionItemArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+	// The description of the schedule.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
-	// The OCID representing unique shedule
+	// The OCID representing a unique shedule.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Query parameter for filtering by name
 	Name pulumi.StringInput `pulumi:"name"`
+	// Specifies supported output file format.
+	OutputFileFormat pulumi.StringInput `pulumi:"outputFileFormat"`
 	// The query properties.
 	QueryProperties GetSchedulesScheduleCollectionItemQueryPropertyArrayInput `pulumi:"queryProperties"`
-	// The location where usage/cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
+	// The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
 	ResultLocations GetSchedulesScheduleCollectionItemResultLocationArrayInput `pulumi:"resultLocations"`
-	// In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 Describes the frequency of when the schedule will be run
+	// The saved report id which can also be used to generate query.
+	SavedReportId pulumi.StringInput `pulumi:"savedReportId"`
+	// Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
 	ScheduleRecurrences pulumi.StringInput `pulumi:"scheduleRecurrences"`
-	// The lifecycle state of the schedule
+	// The schedule lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
-	// The date and time of when the schedule was created
+	// The date and time the schedule was created.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The date and time of the first time job execution
+	// The date and time of the next job execution.
+	TimeNextRun pulumi.StringInput `pulumi:"timeNextRun"`
+	// The date and time of the first time job execution.
 	TimeScheduled pulumi.StringInput `pulumi:"timeScheduled"`
 }
 
@@ -6658,12 +6674,17 @@ func (o GetSchedulesScheduleCollectionItemOutput) DefinedTags() pulumi.MapOutput
 	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+// The description of the schedule.
+func (o GetSchedulesScheduleCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
 func (o GetSchedulesScheduleCollectionItemOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// The OCID representing unique shedule
+// The OCID representing a unique shedule.
 func (o GetSchedulesScheduleCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -6673,6 +6694,11 @@ func (o GetSchedulesScheduleCollectionItemOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) string { return v.Name }).(pulumi.StringOutput)
 }
 
+// Specifies supported output file format.
+func (o GetSchedulesScheduleCollectionItemOutput) OutputFileFormat() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) string { return v.OutputFileFormat }).(pulumi.StringOutput)
+}
+
 // The query properties.
 func (o GetSchedulesScheduleCollectionItemOutput) QueryProperties() GetSchedulesScheduleCollectionItemQueryPropertyArrayOutput {
 	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) []GetSchedulesScheduleCollectionItemQueryProperty {
@@ -6680,19 +6706,24 @@ func (o GetSchedulesScheduleCollectionItemOutput) QueryProperties() GetSchedules
 	}).(GetSchedulesScheduleCollectionItemQueryPropertyArrayOutput)
 }
 
-// The location where usage/cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
+// The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
 func (o GetSchedulesScheduleCollectionItemOutput) ResultLocations() GetSchedulesScheduleCollectionItemResultLocationArrayOutput {
 	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) []GetSchedulesScheduleCollectionItemResultLocation {
 		return v.ResultLocations
 	}).(GetSchedulesScheduleCollectionItemResultLocationArrayOutput)
 }
 
-// In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 Describes the frequency of when the schedule will be run
+// The saved report id which can also be used to generate query.
+func (o GetSchedulesScheduleCollectionItemOutput) SavedReportId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) string { return v.SavedReportId }).(pulumi.StringOutput)
+}
+
+// Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
 func (o GetSchedulesScheduleCollectionItemOutput) ScheduleRecurrences() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) string { return v.ScheduleRecurrences }).(pulumi.StringOutput)
 }
 
-// The lifecycle state of the schedule
+// The schedule lifecycle state.
 func (o GetSchedulesScheduleCollectionItemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) string { return v.State }).(pulumi.StringOutput)
 }
@@ -6702,12 +6733,17 @@ func (o GetSchedulesScheduleCollectionItemOutput) SystemTags() pulumi.MapOutput 
 	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// The date and time of when the schedule was created
+// The date and time the schedule was created.
 func (o GetSchedulesScheduleCollectionItemOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The date and time of the first time job execution
+// The date and time of the next job execution.
+func (o GetSchedulesScheduleCollectionItemOutput) TimeNextRun() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) string { return v.TimeNextRun }).(pulumi.StringOutput)
+}
+
+// The date and time of the first time job execution.
 func (o GetSchedulesScheduleCollectionItemOutput) TimeScheduled() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) string { return v.TimeScheduled }).(pulumi.StringOutput)
 }
@@ -6739,15 +6775,15 @@ type GetSchedulesScheduleCollectionItemQueryProperty struct {
 	DateRanges []GetSchedulesScheduleCollectionItemQueryPropertyDateRange `pulumi:"dateRanges"`
 	// The filter object for query usage.
 	Filter string `pulumi:"filter"`
-	// The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.   Allowed values are: DAILY MONTHLY
+	// The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. Allowed values are: DAILY MONTHLY
 	Granularity string `pulumi:"granularity"`
 	// Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
 	GroupBies []string `pulumi:"groupBies"`
 	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy" ]
 	GroupByTags []GetSchedulesScheduleCollectionItemQueryPropertyGroupByTag `pulumi:"groupByTags"`
-	// Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+	// Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
 	IsAggregateByTime bool `pulumi:"isAggregateByTime"`
-	// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.  Allowed values are: USAGE COST USAGE_AND_COST
+	// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Allowed values are: USAGE COST USAGE_AND_COST
 	QueryType string `pulumi:"queryType"`
 }
 
@@ -6769,15 +6805,15 @@ type GetSchedulesScheduleCollectionItemQueryPropertyArgs struct {
 	DateRanges GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArrayInput `pulumi:"dateRanges"`
 	// The filter object for query usage.
 	Filter pulumi.StringInput `pulumi:"filter"`
-	// The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.   Allowed values are: DAILY MONTHLY
+	// The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. Allowed values are: DAILY MONTHLY
 	Granularity pulumi.StringInput `pulumi:"granularity"`
 	// Aggregate the result by. For example: [ "tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName" ]
 	GroupBies pulumi.StringArrayInput `pulumi:"groupBies"`
 	// GroupBy a specific tagKey. Provide the tagNamespace and tagKey in the tag object. Only supports one tag in the list. For example: [ { "namespace": "oracle", "key": "createdBy" ]
 	GroupByTags GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArrayInput `pulumi:"groupByTags"`
-	// Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+	// Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
 	IsAggregateByTime pulumi.BoolInput `pulumi:"isAggregateByTime"`
-	// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.  Allowed values are: USAGE COST USAGE_AND_COST
+	// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Allowed values are: USAGE COST USAGE_AND_COST
 	QueryType pulumi.StringInput `pulumi:"queryType"`
 }
 
@@ -6849,7 +6885,7 @@ func (o GetSchedulesScheduleCollectionItemQueryPropertyOutput) Filter() pulumi.S
 	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemQueryProperty) string { return v.Filter }).(pulumi.StringOutput)
 }
 
-// The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.   Allowed values are: DAILY MONTHLY
+// The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. Allowed values are: DAILY MONTHLY
 func (o GetSchedulesScheduleCollectionItemQueryPropertyOutput) Granularity() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemQueryProperty) string { return v.Granularity }).(pulumi.StringOutput)
 }
@@ -6866,12 +6902,12 @@ func (o GetSchedulesScheduleCollectionItemQueryPropertyOutput) GroupByTags() Get
 	}).(GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArrayOutput)
 }
 
-// Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+// Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
 func (o GetSchedulesScheduleCollectionItemQueryPropertyOutput) IsAggregateByTime() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemQueryProperty) bool { return v.IsAggregateByTime }).(pulumi.BoolOutput)
 }
 
-// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.  Allowed values are: USAGE COST USAGE_AND_COST
+// The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Allowed values are: USAGE COST USAGE_AND_COST
 func (o GetSchedulesScheduleCollectionItemQueryPropertyOutput) QueryType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemQueryProperty) string { return v.QueryType }).(pulumi.StringOutput)
 }
@@ -6897,7 +6933,7 @@ func (o GetSchedulesScheduleCollectionItemQueryPropertyArrayOutput) Index(i pulu
 }
 
 type GetSchedulesScheduleCollectionItemQueryPropertyDateRange struct {
-	// Defines whether the schedule date range is STATIC or DYNAMIC
+	// Defines whether the schedule date range is STATIC or DYNAMIC.
 	DateRangeType        string `pulumi:"dateRangeType"`
 	DynamicDateRangeType string `pulumi:"dynamicDateRangeType"`
 	// The usage end time.
@@ -6918,7 +6954,7 @@ type GetSchedulesScheduleCollectionItemQueryPropertyDateRangeInput interface {
 }
 
 type GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArgs struct {
-	// Defines whether the schedule date range is STATIC or DYNAMIC
+	// Defines whether the schedule date range is STATIC or DYNAMIC.
 	DateRangeType        pulumi.StringInput `pulumi:"dateRangeType"`
 	DynamicDateRangeType pulumi.StringInput `pulumi:"dynamicDateRangeType"`
 	// The usage end time.
@@ -6978,7 +7014,7 @@ func (o GetSchedulesScheduleCollectionItemQueryPropertyDateRangeOutput) ToGetSch
 	return o
 }
 
-// Defines whether the schedule date range is STATIC or DYNAMIC
+// Defines whether the schedule date range is STATIC or DYNAMIC.
 func (o GetSchedulesScheduleCollectionItemQueryPropertyDateRangeOutput) DateRangeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemQueryPropertyDateRange) string { return v.DateRangeType }).(pulumi.StringOutput)
 }
@@ -7020,7 +7056,7 @@ func (o GetSchedulesScheduleCollectionItemQueryPropertyDateRangeArrayOutput) Ind
 type GetSchedulesScheduleCollectionItemQueryPropertyGroupByTag struct {
 	// The tag key.
 	Key string `pulumi:"key"`
-	// The namespace needed to determine object storage bucket.
+	// The namespace needed to determine the object storage bucket.
 	Namespace string `pulumi:"namespace"`
 	// The tag value.
 	Value string `pulumi:"value"`
@@ -7040,7 +7076,7 @@ type GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagInput interface {
 type GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArgs struct {
 	// The tag key.
 	Key pulumi.StringInput `pulumi:"key"`
-	// The namespace needed to determine object storage bucket.
+	// The namespace needed to determine the object storage bucket.
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// The tag value.
 	Value pulumi.StringInput `pulumi:"value"`
@@ -7102,7 +7138,7 @@ func (o GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagOutput) Key() p
 	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemQueryPropertyGroupByTag) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// The namespace needed to determine object storage bucket.
+// The namespace needed to determine the object storage bucket.
 func (o GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemQueryPropertyGroupByTag) string { return v.Namespace }).(pulumi.StringOutput)
 }
@@ -7133,13 +7169,13 @@ func (o GetSchedulesScheduleCollectionItemQueryPropertyGroupByTagArrayOutput) In
 }
 
 type GetSchedulesScheduleCollectionItemResultLocation struct {
-	// The bucket name where usage/cost CSVs will be uploaded
+	// The bucket name where usage or cost CSVs will be uploaded.
 	Bucket string `pulumi:"bucket"`
-	// Defines the type of location where the usage/cost CSVs will be stored
+	// Defines the type of location where the usage or cost CSVs will be stored.
 	LocationType string `pulumi:"locationType"`
-	// The namespace needed to determine object storage bucket.
+	// The namespace needed to determine the object storage bucket.
 	Namespace string `pulumi:"namespace"`
-	// The destination Object Store Region specified by customer
+	// The destination Object Store Region specified by the customer.
 	Region string `pulumi:"region"`
 }
 
@@ -7155,13 +7191,13 @@ type GetSchedulesScheduleCollectionItemResultLocationInput interface {
 }
 
 type GetSchedulesScheduleCollectionItemResultLocationArgs struct {
-	// The bucket name where usage/cost CSVs will be uploaded
+	// The bucket name where usage or cost CSVs will be uploaded.
 	Bucket pulumi.StringInput `pulumi:"bucket"`
-	// Defines the type of location where the usage/cost CSVs will be stored
+	// Defines the type of location where the usage or cost CSVs will be stored.
 	LocationType pulumi.StringInput `pulumi:"locationType"`
-	// The namespace needed to determine object storage bucket.
+	// The namespace needed to determine the object storage bucket.
 	Namespace pulumi.StringInput `pulumi:"namespace"`
-	// The destination Object Store Region specified by customer
+	// The destination Object Store Region specified by the customer.
 	Region pulumi.StringInput `pulumi:"region"`
 }
 
@@ -7216,22 +7252,22 @@ func (o GetSchedulesScheduleCollectionItemResultLocationOutput) ToGetSchedulesSc
 	return o
 }
 
-// The bucket name where usage/cost CSVs will be uploaded
+// The bucket name where usage or cost CSVs will be uploaded.
 func (o GetSchedulesScheduleCollectionItemResultLocationOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemResultLocation) string { return v.Bucket }).(pulumi.StringOutput)
 }
 
-// Defines the type of location where the usage/cost CSVs will be stored
+// Defines the type of location where the usage or cost CSVs will be stored.
 func (o GetSchedulesScheduleCollectionItemResultLocationOutput) LocationType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemResultLocation) string { return v.LocationType }).(pulumi.StringOutput)
 }
 
-// The namespace needed to determine object storage bucket.
+// The namespace needed to determine the object storage bucket.
 func (o GetSchedulesScheduleCollectionItemResultLocationOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemResultLocation) string { return v.Namespace }).(pulumi.StringOutput)
 }
 
-// The destination Object Store Region specified by customer
+// The destination Object Store Region specified by the customer.
 func (o GetSchedulesScheduleCollectionItemResultLocationOutput) Region() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemResultLocation) string { return v.Region }).(pulumi.StringOutput)
 }

@@ -206,7 +206,7 @@ public final class OspGatewayFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
-     * import com.pulumi.oci.OneSubsription.inputs.GetInvoicesArgs;
+     * import com.pulumi.oci.OspGateway.inputs.GetInvoicesArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -254,7 +254,7 @@ public final class OspGatewayFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
-     * import com.pulumi.oci.OneSubsription.inputs.GetInvoicesArgs;
+     * import com.pulumi.oci.OspGateway.inputs.GetInvoicesArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -302,7 +302,7 @@ public final class OspGatewayFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
-     * import com.pulumi.oci.OneSubsription.inputs.GetInvoicesArgs;
+     * import com.pulumi.oci.OspGateway.inputs.GetInvoicesArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -350,7 +350,7 @@ public final class OspGatewayFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
-     * import com.pulumi.oci.OneSubsription.inputs.GetInvoicesArgs;
+     * import com.pulumi.oci.OspGateway.inputs.GetInvoicesArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -726,7 +726,7 @@ public final class OspGatewayFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
-     * import com.pulumi.oci.Ons.inputs.GetSubscriptionArgs;
+     * import com.pulumi.oci.OspGateway.inputs.GetSubscriptionArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -767,7 +767,7 @@ public final class OspGatewayFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
-     * import com.pulumi.oci.Ons.inputs.GetSubscriptionArgs;
+     * import com.pulumi.oci.OspGateway.inputs.GetSubscriptionArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -808,7 +808,7 @@ public final class OspGatewayFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
-     * import com.pulumi.oci.Ons.inputs.GetSubscriptionArgs;
+     * import com.pulumi.oci.OspGateway.inputs.GetSubscriptionArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -849,7 +849,7 @@ public final class OspGatewayFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
-     * import com.pulumi.oci.Ons.inputs.GetSubscriptionArgs;
+     * import com.pulumi.oci.OspGateway.inputs.GetSubscriptionArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -890,7 +890,7 @@ public final class OspGatewayFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
-     * import com.pulumi.oci.OneSubsription.inputs.GetSubscriptionsArgs;
+     * import com.pulumi.oci.OspGateway.inputs.GetSubscriptionsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -930,7 +930,7 @@ public final class OspGatewayFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
-     * import com.pulumi.oci.OneSubsription.inputs.GetSubscriptionsArgs;
+     * import com.pulumi.oci.OspGateway.inputs.GetSubscriptionsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -970,7 +970,7 @@ public final class OspGatewayFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
-     * import com.pulumi.oci.OneSubsription.inputs.GetSubscriptionsArgs;
+     * import com.pulumi.oci.OspGateway.inputs.GetSubscriptionsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -1010,7 +1010,7 @@ public final class OspGatewayFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OspGateway.OspGatewayFunctions;
-     * import com.pulumi.oci.OneSubsription.inputs.GetSubscriptionsArgs;
+     * import com.pulumi.oci.OspGateway.inputs.GetSubscriptionsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;

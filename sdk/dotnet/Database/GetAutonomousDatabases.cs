@@ -48,7 +48,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAutonomousDatabasesResult> InvokeAsync(GetAutonomousDatabasesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAutonomousDatabasesResult>("oci:Database/getAutonomousDatabases:getAutonomousDatabases", args ?? new GetAutonomousDatabasesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAutonomousDatabasesResult>("oci:Database/getAutonomousDatabases:getAutonomousDatabases", args ?? new GetAutonomousDatabasesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service.
@@ -87,7 +87,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAutonomousDatabasesResult> Invoke(GetAutonomousDatabasesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAutonomousDatabasesResult>("oci:Database/getAutonomousDatabases:getAutonomousDatabases", args ?? new GetAutonomousDatabasesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousDatabasesResult>("oci:Database/getAutonomousDatabases:getAutonomousDatabases", args ?? new GetAutonomousDatabasesInvokeArgs(), options.WithDefaults());
     }
 
 

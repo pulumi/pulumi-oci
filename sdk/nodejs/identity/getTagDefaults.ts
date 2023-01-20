@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  */
 export function getTagDefaults(args?: GetTagDefaultsArgs, opts?: pulumi.InvokeOptions): Promise<GetTagDefaultsResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getTagDefaults:getTagDefaults", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -89,9 +87,27 @@ export interface GetTagDefaultsResult {
      */
     readonly tagDefinitionId?: string;
 }
-
+/**
+ * This data source provides the list of Tag Defaults in Oracle Cloud Infrastructure Identity service.
+ *
+ * Lists the tag defaults for tag definitions in the specified compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testTagDefaults = oci.Identity.getTagDefaults({
+ *     compartmentId: _var.compartment_id,
+ *     id: _var.tag_default_id,
+ *     state: _var.tag_default_state,
+ *     tagDefinitionId: oci_identity_tag_definition.test_tag_definition.id,
+ * });
+ * ```
+ */
 export function getTagDefaultsOutput(args?: GetTagDefaultsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTagDefaultsResult> {
-    return pulumi.output(args).apply(a => getTagDefaults(a, opts))
+    return pulumi.output(args).apply((a: any) => getTagDefaults(a, opts))
 }
 
 /**

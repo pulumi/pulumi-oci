@@ -40,7 +40,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetReplicationSourcesResult> InvokeAsync(GetReplicationSourcesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetReplicationSourcesResult>("oci:ObjectStorage/getReplicationSources:getReplicationSources", args ?? new GetReplicationSourcesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetReplicationSourcesResult>("oci:ObjectStorage/getReplicationSources:getReplicationSources", args ?? new GetReplicationSourcesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Replication Sources in Oracle Cloud Infrastructure Object Storage service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetReplicationSourcesResult> Invoke(GetReplicationSourcesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetReplicationSourcesResult>("oci:ObjectStorage/getReplicationSources:getReplicationSources", args ?? new GetReplicationSourcesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetReplicationSourcesResult>("oci:ObjectStorage/getReplicationSources:getReplicationSources", args ?? new GetReplicationSourcesInvokeArgs(), options.WithDefaults());
     }
 
 

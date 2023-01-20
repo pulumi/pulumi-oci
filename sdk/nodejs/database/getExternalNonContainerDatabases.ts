@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getExternalNonContainerDatabases(args: GetExternalNonContainerDatabasesArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalNonContainerDatabasesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getExternalNonContainerDatabases:getExternalNonContainerDatabases", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -82,9 +80,26 @@ export interface GetExternalNonContainerDatabasesResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of External Non Container Databases in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets a list of the ExternalNonContainerDatabases in the specified compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testExternalNonContainerDatabases = oci.Database.getExternalNonContainerDatabases({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.external_non_container_database_display_name,
+ *     state: _var.external_non_container_database_state,
+ * });
+ * ```
+ */
 export function getExternalNonContainerDatabasesOutput(args: GetExternalNonContainerDatabasesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalNonContainerDatabasesResult> {
-    return pulumi.output(args).apply(a => getExternalNonContainerDatabases(a, opts))
+    return pulumi.output(args).apply((a: any) => getExternalNonContainerDatabases(a, opts))
 }
 
 /**

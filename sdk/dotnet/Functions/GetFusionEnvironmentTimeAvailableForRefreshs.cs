@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Functions
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetFusionEnvironmentTimeAvailableForRefreshsResult> InvokeAsync(GetFusionEnvironmentTimeAvailableForRefreshsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetFusionEnvironmentTimeAvailableForRefreshsResult>("oci:Functions/getFusionEnvironmentTimeAvailableForRefreshs:getFusionEnvironmentTimeAvailableForRefreshs", args ?? new GetFusionEnvironmentTimeAvailableForRefreshsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetFusionEnvironmentTimeAvailableForRefreshsResult>("oci:Functions/getFusionEnvironmentTimeAvailableForRefreshs:getFusionEnvironmentTimeAvailableForRefreshs", args ?? new GetFusionEnvironmentTimeAvailableForRefreshsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Fusion Environment Time Available For Refreshs in Oracle Cloud Infrastructure Fusion Apps service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Functions
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetFusionEnvironmentTimeAvailableForRefreshsResult> Invoke(GetFusionEnvironmentTimeAvailableForRefreshsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetFusionEnvironmentTimeAvailableForRefreshsResult>("oci:Functions/getFusionEnvironmentTimeAvailableForRefreshs:getFusionEnvironmentTimeAvailableForRefreshs", args ?? new GetFusionEnvironmentTimeAvailableForRefreshsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetFusionEnvironmentTimeAvailableForRefreshsResult>("oci:Functions/getFusionEnvironmentTimeAvailableForRefreshs:getFusionEnvironmentTimeAvailableForRefreshs", args ?? new GetFusionEnvironmentTimeAvailableForRefreshsInvokeArgs(), options.WithDefaults());
     }
 
 

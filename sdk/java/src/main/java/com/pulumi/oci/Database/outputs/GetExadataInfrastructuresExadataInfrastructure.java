@@ -24,6 +24,16 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
     private Integer activatedStorageCount;
     private String activationFile;
     /**
+     * @return The requested number of additional compute servers for the Exadata infrastructure.
+     * 
+     */
+    private Integer additionalComputeCount;
+    /**
+     * @return Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+     * 
+     */
+    private String additionalComputeSystemModel;
+    /**
      * @return The requested number of additional storage servers for the Exadata infrastructure.
      * 
      */
@@ -130,6 +140,11 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
      */
     private Boolean isCpsOfflineReportEnabled;
     /**
+     * @return Indicates if deployment is Multi-Rack or not.
+     * 
+     */
+    private Boolean isMultiRackDeployment;
+    /**
      * @return Additional information about the current lifecycle state.
      * 
      */
@@ -174,6 +189,11 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
      * 
      */
     private String monthlyDbServerVersion;
+    /**
+     * @return The base64 encoded Multi-Rack configuration json file.
+     * 
+     */
+    private String multiRackConfigurationFile;
     /**
      * @return The netmask for the control plane network.
      * 
@@ -225,6 +245,20 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
     }
     public String activationFile() {
         return this.activationFile;
+    }
+    /**
+     * @return The requested number of additional compute servers for the Exadata infrastructure.
+     * 
+     */
+    public Integer additionalComputeCount() {
+        return this.additionalComputeCount;
+    }
+    /**
+     * @return Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+     * 
+     */
+    public String additionalComputeSystemModel() {
+        return this.additionalComputeSystemModel;
     }
     /**
      * @return The requested number of additional storage servers for the Exadata infrastructure.
@@ -377,6 +411,13 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
         return this.isCpsOfflineReportEnabled;
     }
     /**
+     * @return Indicates if deployment is Multi-Rack or not.
+     * 
+     */
+    public Boolean isMultiRackDeployment() {
+        return this.isMultiRackDeployment;
+    }
+    /**
      * @return Additional information about the current lifecycle state.
      * 
      */
@@ -438,6 +479,13 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
      */
     public String monthlyDbServerVersion() {
         return this.monthlyDbServerVersion;
+    }
+    /**
+     * @return The base64 encoded Multi-Rack configuration json file.
+     * 
+     */
+    public String multiRackConfigurationFile() {
+        return this.multiRackConfigurationFile;
     }
     /**
      * @return The netmask for the control plane network.
@@ -507,6 +555,8 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
     public static final class Builder {
         private Integer activatedStorageCount;
         private String activationFile;
+        private Integer additionalComputeCount;
+        private String additionalComputeSystemModel;
         private Integer additionalStorageCount;
         private String adminNetworkCidr;
         private String cloudControlPlaneServer1;
@@ -529,6 +579,7 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
         private String id;
         private String infiniBandNetworkCidr;
         private Boolean isCpsOfflineReportEnabled;
+        private Boolean isMultiRackDeployment;
         private String lifecycleDetails;
         private String maintenanceSloStatus;
         private List<GetExadataInfrastructuresExadataInfrastructureMaintenanceWindow> maintenanceWindows;
@@ -538,6 +589,7 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
         private Integer maxMemoryInGbs;
         private Integer memorySizeInGbs;
         private String monthlyDbServerVersion;
+        private String multiRackConfigurationFile;
         private String netmask;
         private List<String> ntpServers;
         private String shape;
@@ -551,6 +603,8 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
     	      Objects.requireNonNull(defaults);
     	      this.activatedStorageCount = defaults.activatedStorageCount;
     	      this.activationFile = defaults.activationFile;
+    	      this.additionalComputeCount = defaults.additionalComputeCount;
+    	      this.additionalComputeSystemModel = defaults.additionalComputeSystemModel;
     	      this.additionalStorageCount = defaults.additionalStorageCount;
     	      this.adminNetworkCidr = defaults.adminNetworkCidr;
     	      this.cloudControlPlaneServer1 = defaults.cloudControlPlaneServer1;
@@ -573,6 +627,7 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
     	      this.id = defaults.id;
     	      this.infiniBandNetworkCidr = defaults.infiniBandNetworkCidr;
     	      this.isCpsOfflineReportEnabled = defaults.isCpsOfflineReportEnabled;
+    	      this.isMultiRackDeployment = defaults.isMultiRackDeployment;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.maintenanceSloStatus = defaults.maintenanceSloStatus;
     	      this.maintenanceWindows = defaults.maintenanceWindows;
@@ -582,6 +637,7 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
     	      this.maxMemoryInGbs = defaults.maxMemoryInGbs;
     	      this.memorySizeInGbs = defaults.memorySizeInGbs;
     	      this.monthlyDbServerVersion = defaults.monthlyDbServerVersion;
+    	      this.multiRackConfigurationFile = defaults.multiRackConfigurationFile;
     	      this.netmask = defaults.netmask;
     	      this.ntpServers = defaults.ntpServers;
     	      this.shape = defaults.shape;
@@ -600,6 +656,16 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
         @CustomType.Setter
         public Builder activationFile(String activationFile) {
             this.activationFile = Objects.requireNonNull(activationFile);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder additionalComputeCount(Integer additionalComputeCount) {
+            this.additionalComputeCount = Objects.requireNonNull(additionalComputeCount);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder additionalComputeSystemModel(String additionalComputeSystemModel) {
+            this.additionalComputeSystemModel = Objects.requireNonNull(additionalComputeSystemModel);
             return this;
         }
         @CustomType.Setter
@@ -719,6 +785,11 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
             return this;
         }
         @CustomType.Setter
+        public Builder isMultiRackDeployment(Boolean isMultiRackDeployment) {
+            this.isMultiRackDeployment = Objects.requireNonNull(isMultiRackDeployment);
+            return this;
+        }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = Objects.requireNonNull(lifecycleDetails);
             return this;
@@ -764,6 +835,11 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
         @CustomType.Setter
         public Builder monthlyDbServerVersion(String monthlyDbServerVersion) {
             this.monthlyDbServerVersion = Objects.requireNonNull(monthlyDbServerVersion);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder multiRackConfigurationFile(String multiRackConfigurationFile) {
+            this.multiRackConfigurationFile = Objects.requireNonNull(multiRackConfigurationFile);
             return this;
         }
         @CustomType.Setter
@@ -813,6 +889,8 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
             final var o = new GetExadataInfrastructuresExadataInfrastructure();
             o.activatedStorageCount = activatedStorageCount;
             o.activationFile = activationFile;
+            o.additionalComputeCount = additionalComputeCount;
+            o.additionalComputeSystemModel = additionalComputeSystemModel;
             o.additionalStorageCount = additionalStorageCount;
             o.adminNetworkCidr = adminNetworkCidr;
             o.cloudControlPlaneServer1 = cloudControlPlaneServer1;
@@ -835,6 +913,7 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
             o.id = id;
             o.infiniBandNetworkCidr = infiniBandNetworkCidr;
             o.isCpsOfflineReportEnabled = isCpsOfflineReportEnabled;
+            o.isMultiRackDeployment = isMultiRackDeployment;
             o.lifecycleDetails = lifecycleDetails;
             o.maintenanceSloStatus = maintenanceSloStatus;
             o.maintenanceWindows = maintenanceWindows;
@@ -844,6 +923,7 @@ public final class GetExadataInfrastructuresExadataInfrastructure {
             o.maxMemoryInGbs = maxMemoryInGbs;
             o.memorySizeInGbs = memorySizeInGbs;
             o.monthlyDbServerVersion = monthlyDbServerVersion;
+            o.multiRackConfigurationFile = multiRackConfigurationFile;
             o.netmask = netmask;
             o.ntpServers = ntpServers;
             o.shape = shape;

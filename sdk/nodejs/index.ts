@@ -5,7 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "./utilities";
 
 // Export members:
-export * from "./provider";
+export { ProviderArgs } from "./provider";
+export type Provider = import("./provider").Provider;
+export const Provider: typeof import("./provider").Provider = null as any;
+utilities.lazyLoad(exports, ["Provider"], () => require("./provider"));
+
 
 // Export sub-modules:
 import * as adm from "./adm";
@@ -27,10 +31,13 @@ import * as bigdataservice from "./bigdataservice";
 import * as blockchain from "./blockchain";
 import * as budget from "./budget";
 import * as certificatesmanagement from "./certificatesmanagement";
+import * as cloudbridge from "./cloudbridge";
 import * as cloudguard from "./cloudguard";
+import * as cloudmigrations from "./cloudmigrations";
 import * as computeinstanceagent from "./computeinstanceagent";
 import * as config from "./config";
 import * as containerengine from "./containerengine";
+import * as containerinstances from "./containerinstances";
 import * as core from "./core";
 import * as database from "./database";
 import * as databasemanagement from "./databasemanagement";
@@ -44,6 +51,7 @@ import * as datalabellingservice from "./datalabellingservice";
 import * as datasafe from "./datasafe";
 import * as datascience from "./datascience";
 import * as devops from "./devops";
+import * as disasterrecovery from "./disasterrecovery";
 import * as dns from "./dns";
 import * as email from "./email";
 import * as emwarehouse from "./emwarehouse";
@@ -67,6 +75,7 @@ import * as logging from "./logging";
 import * as managementagent from "./managementagent";
 import * as managementdashboard from "./managementdashboard";
 import * as marketplace from "./marketplace";
+import * as mediaservices from "./mediaservices";
 import * as meteringcomputation from "./meteringcomputation";
 import * as monitoring from "./monitoring";
 import * as mysql from "./mysql";
@@ -79,6 +88,7 @@ import * as ocvp from "./ocvp";
 import * as oda from "./oda";
 import * as onesubsription from "./onesubsription";
 import * as ons from "./ons";
+import * as opa from "./opa";
 import * as opensearch from "./opensearch";
 import * as operatoraccesscontrol from "./operatoraccesscontrol";
 import * as opsi from "./opsi";
@@ -89,6 +99,7 @@ import * as osubbillingschedule from "./osubbillingschedule";
 import * as osuborganizationsubscription from "./osuborganizationsubscription";
 import * as osubsubscription from "./osubsubscription";
 import * as osubusage from "./osubusage";
+import * as queue from "./queue";
 import * as resourcemanager from "./resourcemanager";
 import * as sch from "./sch";
 import * as secrets from "./secrets";
@@ -127,10 +138,13 @@ export {
     blockchain,
     budget,
     certificatesmanagement,
+    cloudbridge,
     cloudguard,
+    cloudmigrations,
     computeinstanceagent,
     config,
     containerengine,
+    containerinstances,
     core,
     database,
     databasemanagement,
@@ -144,6 +158,7 @@ export {
     datasafe,
     datascience,
     devops,
+    disasterrecovery,
     dns,
     email,
     emwarehouse,
@@ -167,6 +182,7 @@ export {
     managementagent,
     managementdashboard,
     marketplace,
+    mediaservices,
     meteringcomputation,
     monitoring,
     mysql,
@@ -179,6 +195,7 @@ export {
     oda,
     onesubsription,
     ons,
+    opa,
     opensearch,
     operatoraccesscontrol,
     opsi,
@@ -189,6 +206,7 @@ export {
     osuborganizationsubscription,
     osubsubscription,
     osubusage,
+    queue,
     resourcemanager,
     sch,
     secrets,
@@ -207,9 +225,6 @@ export {
     waas,
     waf,
 };
-
-import { Provider } from "./provider";
-
 pulumi.runtime.registerResourcePackage("oci", {
     version: utilities.getVersion(),
     constructProvider: (name: string, type: string, urn: string): pulumi.ProviderResource => {

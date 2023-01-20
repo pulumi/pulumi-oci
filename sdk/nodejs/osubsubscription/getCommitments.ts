@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCommitments(args: GetCommitmentsArgs, opts?: pulumi.InvokeOptions): Promise<GetCommitmentsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsubSubscription/getCommitments:getCommitments", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -80,9 +78,27 @@ export interface GetCommitmentsResult {
     readonly xOneGatewaySubscriptionId?: string;
     readonly xOneOriginRegion?: string;
 }
-
+/**
+ * This data source provides the list of Commitments in Oracle Cloud Infrastructure Osub Subscription service.
+ *
+ * This list API returns all commitments for a particular Subscribed Service
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCommitments = oci.OsubSubscription.getCommitments({
+ *     compartmentId: _var.compartment_id,
+ *     subscribedServiceId: oci_core_service.test_service.id,
+ *     xOneGatewaySubscriptionId: _var.commitment_x_one_gateway_subscription_id,
+ *     xOneOriginRegion: _var.commitment_x_one_origin_region,
+ * });
+ * ```
+ */
 export function getCommitmentsOutput(args: GetCommitmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCommitmentsResult> {
-    return pulumi.output(args).apply(a => getCommitments(a, opts))
+    return pulumi.output(args).apply((a: any) => getCommitments(a, opts))
 }
 
 /**

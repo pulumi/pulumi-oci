@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVlans(args: GetVlansArgs, opts?: pulumi.InvokeOptions): Promise<GetVlansResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getVlans:getVlans", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -92,9 +90,27 @@ export interface GetVlansResult {
      */
     readonly vlans: outputs.Core.GetVlansVlan[];
 }
-
+/**
+ * This data source provides the list of Vlans in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the VLANs in the specified VCN and the specified compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testVlans = oci.Core.getVlans({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.vlan_display_name,
+ *     state: _var.vlan_state,
+ *     vcnId: oci_core_vcn.test_vcn.id,
+ * });
+ * ```
+ */
 export function getVlansOutput(args: GetVlansOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVlansResult> {
-    return pulumi.output(args).apply(a => getVlans(a, opts))
+    return pulumi.output(args).apply((a: any) => getVlans(a, opts))
 }
 
 /**

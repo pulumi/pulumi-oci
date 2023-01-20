@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Adm
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetKnowledgebasesResult> InvokeAsync(GetKnowledgebasesArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetKnowledgebasesResult>("oci:Adm/getKnowledgebases:getKnowledgebases", args ?? new GetKnowledgebasesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetKnowledgebasesResult>("oci:Adm/getKnowledgebases:getKnowledgebases", args ?? new GetKnowledgebasesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Knowledge Bases in Oracle Cloud Infrastructure ADM service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.Adm
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetKnowledgebasesResult> Invoke(GetKnowledgebasesInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetKnowledgebasesResult>("oci:Adm/getKnowledgebases:getKnowledgebases", args ?? new GetKnowledgebasesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetKnowledgebasesResult>("oci:Adm/getKnowledgebases:getKnowledgebases", args ?? new GetKnowledgebasesInvokeArgs(), options.WithDefaults());
     }
 
 

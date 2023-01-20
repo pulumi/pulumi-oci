@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDkims(args: GetDkimsArgs, opts?: pulumi.InvokeOptions): Promise<GetDkimsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Email/getDkims:getDkims", {
         "emailDomainId": args.emailDomainId,
         "filters": args.filters,
@@ -88,9 +86,27 @@ export interface GetDkimsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Dkims in Oracle Cloud Infrastructure Email service.
+ *
+ * Lists DKIMs for a email domain.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDkims = oci.Email.getDkims({
+ *     emailDomainId: oci_email_email_domain.test_email_domain.id,
+ *     id: _var.dkim_id,
+ *     name: _var.dkim_name,
+ *     state: _var.dkim_state,
+ * });
+ * ```
+ */
 export function getDkimsOutput(args: GetDkimsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDkimsResult> {
-    return pulumi.output(args).apply(a => getDkims(a, opts))
+    return pulumi.output(args).apply((a: any) => getDkims(a, opts))
 }
 
 /**

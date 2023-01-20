@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSensitiveType(args: GetSensitiveTypeArgs, opts?: pulumi.InvokeOptions): Promise<GetSensitiveTypeResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getSensitiveType:getSensitiveType", {
         "sensitiveTypeId": args.sensitiveTypeId,
     }, opts);
@@ -123,9 +120,24 @@ export interface GetSensitiveTypeResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Sensitive Type resource in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Gets the details of the specified sensitive type.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSensitiveType = oci.DataSafe.getSensitiveType({
+ *     sensitiveTypeId: oci_data_safe_sensitive_type.test_sensitive_type.id,
+ * });
+ * ```
+ */
 export function getSensitiveTypeOutput(args: GetSensitiveTypeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSensitiveTypeResult> {
-    return pulumi.output(args).apply(a => getSensitiveType(a, opts))
+    return pulumi.output(args).apply((a: any) => getSensitiveType(a, opts))
 }
 
 /**

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDbManagementPrivateEndpointAssociatedDatabases(args: GetDbManagementPrivateEndpointAssociatedDatabasesArgs, opts?: pulumi.InvokeOptions): Promise<GetDbManagementPrivateEndpointAssociatedDatabasesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getDbManagementPrivateEndpointAssociatedDatabases:getDbManagementPrivateEndpointAssociatedDatabases", {
         "compartmentId": args.compartmentId,
         "dbManagementPrivateEndpointId": args.dbManagementPrivateEndpointId,
@@ -69,9 +67,25 @@ export interface GetDbManagementPrivateEndpointAssociatedDatabasesResult {
      */
     readonly id: string;
 }
-
+/**
+ * This data source provides the list of Db Management Private Endpoint Associated Databases in Oracle Cloud Infrastructure Database Management service.
+ *
+ * Gets the list of databases using a specific Database Management private endpoint.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDbManagementPrivateEndpointAssociatedDatabases = oci.DatabaseManagement.getDbManagementPrivateEndpointAssociatedDatabases({
+ *     compartmentId: _var.compartment_id,
+ *     dbManagementPrivateEndpointId: oci_database_management_db_management_private_endpoint.test_db_management_private_endpoint.id,
+ * });
+ * ```
+ */
 export function getDbManagementPrivateEndpointAssociatedDatabasesOutput(args: GetDbManagementPrivateEndpointAssociatedDatabasesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbManagementPrivateEndpointAssociatedDatabasesResult> {
-    return pulumi.output(args).apply(a => getDbManagementPrivateEndpointAssociatedDatabases(a, opts))
+    return pulumi.output(args).apply((a: any) => getDbManagementPrivateEndpointAssociatedDatabases(a, opts))
 }
 
 /**

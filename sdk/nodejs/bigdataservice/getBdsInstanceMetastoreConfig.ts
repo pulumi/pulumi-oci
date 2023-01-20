@@ -22,11 +22,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getBdsInstanceMetastoreConfig(args: GetBdsInstanceMetastoreConfigArgs, opts?: pulumi.InvokeOptions): Promise<GetBdsInstanceMetastoreConfigResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:BigDataService/getBdsInstanceMetastoreConfig:getBdsInstanceMetastoreConfig", {
         "bdsInstanceId": args.bdsInstanceId,
         "metastoreConfigId": args.metastoreConfigId,
@@ -89,9 +86,25 @@ export interface GetBdsInstanceMetastoreConfigResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Bds Instance Metastore Config resource in Oracle Cloud Infrastructure Big Data Service service.
+ *
+ * Returns the BDS Metastore configuration information for the given ID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testBdsInstanceMetastoreConfig = oci.BigDataService.getBdsInstanceMetastoreConfig({
+ *     bdsInstanceId: oci_bds_bds_instance.test_bds_instance.id,
+ *     metastoreConfigId: oci_apm_config_config.test_config.id,
+ * });
+ * ```
+ */
 export function getBdsInstanceMetastoreConfigOutput(args: GetBdsInstanceMetastoreConfigOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBdsInstanceMetastoreConfigResult> {
-    return pulumi.output(args).apply(a => getBdsInstanceMetastoreConfig(a, opts))
+    return pulumi.output(args).apply((a: any) => getBdsInstanceMetastoreConfig(a, opts))
 }
 
 /**

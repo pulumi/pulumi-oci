@@ -26,7 +26,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string AvailabilityDomain;
         /// <summary>
-        /// Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+        /// Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
         /// </summary>
         public readonly double AvailableCpus;
         /// <summary>
@@ -129,7 +129,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly double ReclaimableCpus;
         /// <summary>
-        /// The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+        /// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         /// </summary>
         public readonly string Role;
         public readonly bool RotateKeyTrigger;

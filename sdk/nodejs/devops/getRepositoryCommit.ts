@@ -22,11 +22,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRepositoryCommit(args: GetRepositoryCommitArgs, opts?: pulumi.InvokeOptions): Promise<GetRepositoryCommitResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getRepositoryCommit:getRepositoryCommit", {
         "commitId": args.commitId,
         "repositoryId": args.repositoryId,
@@ -93,9 +90,25 @@ export interface GetRepositoryCommitResult {
      */
     readonly treeId: string;
 }
-
+/**
+ * This data source provides details about a specific Repository Commit resource in Oracle Cloud Infrastructure Devops service.
+ *
+ * Retrieves a repository's commit by commit ID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testRepositoryCommit = oci.DevOps.getRepositoryCommit({
+ *     commitId: oci_devops_commit.test_commit.id,
+ *     repositoryId: oci_devops_repository.test_repository.id,
+ * });
+ * ```
+ */
 export function getRepositoryCommitOutput(args: GetRepositoryCommitOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoryCommitResult> {
-    return pulumi.output(args).apply(a => getRepositoryCommit(a, opts))
+    return pulumi.output(args).apply((a: any) => getRepositoryCommit(a, opts))
 }
 
 /**

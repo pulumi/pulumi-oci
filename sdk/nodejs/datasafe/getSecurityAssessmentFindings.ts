@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSecurityAssessmentFindings(args: GetSecurityAssessmentFindingsArgs, opts?: pulumi.InvokeOptions): Promise<GetSecurityAssessmentFindingsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getSecurityAssessmentFindings:getSecurityAssessmentFindings", {
         "accessLevel": args.accessLevel,
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
@@ -90,9 +88,28 @@ export interface GetSecurityAssessmentFindingsResult {
      */
     readonly severity?: string;
 }
-
+/**
+ * This data source provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * List all the findings from all the targets in the specified assessment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSecurityAssessmentFindings = oci.DataSafe.getSecurityAssessmentFindings({
+ *     securityAssessmentId: oci_data_safe_security_assessment.test_security_assessment.id,
+ *     accessLevel: _var.security_assessment_finding_access_level,
+ *     compartmentIdInSubtree: _var.security_assessment_finding_compartment_id_in_subtree,
+ *     findingKey: _var.security_assessment_finding_finding_key,
+ *     severity: _var.security_assessment_finding_severity,
+ * });
+ * ```
+ */
 export function getSecurityAssessmentFindingsOutput(args: GetSecurityAssessmentFindingsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityAssessmentFindingsResult> {
-    return pulumi.output(args).apply(a => getSecurityAssessmentFindings(a, opts))
+    return pulumi.output(args).apply((a: any) => getSecurityAssessmentFindings(a, opts))
 }
 
 /**

@@ -4,38 +4,39 @@
 package com.pulumi.oci.NetworkFirewall.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.NetworkFirewall.outputs.NetworkFirewallPolicyUrlListUrlListValue;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
 public final class NetworkFirewallPolicyUrlList {
-    private String key;
-    private @Nullable String pattern;
     /**
-     * @return (Updatable) Type of the secrets mapped based on the policy.
-     * * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-     * * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+     * @return (Updatable) The identifier for the url list
      * 
      */
-    private String type;
+    private String urlListName;
+    /**
+     * @return (Updatable) The list of Url Patterns.
+     * 
+     */
+    private @Nullable List<NetworkFirewallPolicyUrlListUrlListValue> urlListValues;
 
     private NetworkFirewallPolicyUrlList() {}
-    public String key() {
-        return this.key;
-    }
-    public Optional<String> pattern() {
-        return Optional.ofNullable(this.pattern);
-    }
     /**
-     * @return (Updatable) Type of the secrets mapped based on the policy.
-     * * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-     * * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+     * @return (Updatable) The identifier for the url list
      * 
      */
-    public String type() {
-        return this.type;
+    public String urlListName() {
+        return this.urlListName;
+    }
+    /**
+     * @return (Updatable) The list of Url Patterns.
+     * 
+     */
+    public List<NetworkFirewallPolicyUrlListUrlListValue> urlListValues() {
+        return this.urlListValues == null ? List.of() : this.urlListValues;
     }
 
     public static Builder builder() {
@@ -47,37 +48,32 @@ public final class NetworkFirewallPolicyUrlList {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String key;
-        private @Nullable String pattern;
-        private String type;
+        private String urlListName;
+        private @Nullable List<NetworkFirewallPolicyUrlListUrlListValue> urlListValues;
         public Builder() {}
         public Builder(NetworkFirewallPolicyUrlList defaults) {
     	      Objects.requireNonNull(defaults);
-    	      this.key = defaults.key;
-    	      this.pattern = defaults.pattern;
-    	      this.type = defaults.type;
+    	      this.urlListName = defaults.urlListName;
+    	      this.urlListValues = defaults.urlListValues;
         }
 
         @CustomType.Setter
-        public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
+        public Builder urlListName(String urlListName) {
+            this.urlListName = Objects.requireNonNull(urlListName);
             return this;
         }
         @CustomType.Setter
-        public Builder pattern(@Nullable String pattern) {
-            this.pattern = pattern;
+        public Builder urlListValues(@Nullable List<NetworkFirewallPolicyUrlListUrlListValue> urlListValues) {
+            this.urlListValues = urlListValues;
             return this;
         }
-        @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
-            return this;
+        public Builder urlListValues(NetworkFirewallPolicyUrlListUrlListValue... urlListValues) {
+            return urlListValues(List.of(urlListValues));
         }
         public NetworkFirewallPolicyUrlList build() {
             final var o = new NetworkFirewallPolicyUrlList();
-            o.key = key;
-            o.pattern = pattern;
-            o.type = type;
+            o.urlListName = urlListName;
+            o.urlListValues = urlListValues;
             return o;
         }
     }

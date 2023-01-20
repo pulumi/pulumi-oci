@@ -351,7 +351,9 @@ class _DatabaseInsightState:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  opsi_private_endpoint_id: Optional[pulumi.Input[str]] = None,
+                 parent_id: Optional[pulumi.Input[str]] = None,
                  processor_count: Optional[pulumi.Input[int]] = None,
+                 root_id: Optional[pulumi.Input[str]] = None,
                  service_name: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  status: Optional[pulumi.Input[str]] = None,
@@ -385,7 +387,9 @@ class _DatabaseInsightState:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] opsi_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
+        :param pulumi.Input[str] parent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
         :param pulumi.Input[int] processor_count: Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
+        :param pulumi.Input[str] root_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
         :param pulumi.Input[str] service_name: Database service name used for connection requests.
         :param pulumi.Input[str] state: The current state of the database.
         :param pulumi.Input[str] status: (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
@@ -443,8 +447,12 @@ class _DatabaseInsightState:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if opsi_private_endpoint_id is not None:
             pulumi.set(__self__, "opsi_private_endpoint_id", opsi_private_endpoint_id)
+        if parent_id is not None:
+            pulumi.set(__self__, "parent_id", parent_id)
         if processor_count is not None:
             pulumi.set(__self__, "processor_count", processor_count)
+        if root_id is not None:
+            pulumi.set(__self__, "root_id", root_id)
         if service_name is not None:
             pulumi.set(__self__, "service_name", service_name)
         if state is not None:
@@ -759,6 +767,18 @@ class _DatabaseInsightState:
         pulumi.set(self, "opsi_private_endpoint_id", value)
 
     @property
+    @pulumi.getter(name="parentId")
+    def parent_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
+        """
+        return pulumi.get(self, "parent_id")
+
+    @parent_id.setter
+    def parent_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "parent_id", value)
+
+    @property
     @pulumi.getter(name="processorCount")
     def processor_count(self) -> Optional[pulumi.Input[int]]:
         """
@@ -769,6 +789,18 @@ class _DatabaseInsightState:
     @processor_count.setter
     def processor_count(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "processor_count", value)
+
+    @property
+    @pulumi.getter(name="rootId")
+    def root_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+        """
+        return pulumi.get(self, "root_id")
+
+    @root_id.setter
+    def root_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "root_id", value)
 
     @property
     @pulumi.getter(name="serviceName")
@@ -988,7 +1020,9 @@ class DatabaseInsight(pulumi.CustomResource):
             __props__.__dict__["enterprise_manager_entity_name"] = None
             __props__.__dict__["enterprise_manager_entity_type"] = None
             __props__.__dict__["lifecycle_details"] = None
+            __props__.__dict__["parent_id"] = None
             __props__.__dict__["processor_count"] = None
+            __props__.__dict__["root_id"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
@@ -1028,7 +1062,9 @@ class DatabaseInsight(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             opsi_private_endpoint_id: Optional[pulumi.Input[str]] = None,
+            parent_id: Optional[pulumi.Input[str]] = None,
             processor_count: Optional[pulumi.Input[int]] = None,
+            root_id: Optional[pulumi.Input[str]] = None,
             service_name: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             status: Optional[pulumi.Input[str]] = None,
@@ -1067,7 +1103,9 @@ class DatabaseInsight(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] opsi_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
+        :param pulumi.Input[str] parent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
         :param pulumi.Input[int] processor_count: Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
+        :param pulumi.Input[str] root_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
         :param pulumi.Input[str] service_name: Database service name used for connection requests.
         :param pulumi.Input[str] state: The current state of the database.
         :param pulumi.Input[str] status: (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
@@ -1104,7 +1142,9 @@ class DatabaseInsight(pulumi.CustomResource):
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["opsi_private_endpoint_id"] = opsi_private_endpoint_id
+        __props__.__dict__["parent_id"] = parent_id
         __props__.__dict__["processor_count"] = processor_count
+        __props__.__dict__["root_id"] = root_id
         __props__.__dict__["service_name"] = service_name
         __props__.__dict__["state"] = state
         __props__.__dict__["status"] = status
@@ -1314,12 +1354,28 @@ class DatabaseInsight(pulumi.CustomResource):
         return pulumi.get(self, "opsi_private_endpoint_id")
 
     @property
+    @pulumi.getter(name="parentId")
+    def parent_id(self) -> pulumi.Output[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
+        """
+        return pulumi.get(self, "parent_id")
+
+    @property
     @pulumi.getter(name="processorCount")
     def processor_count(self) -> pulumi.Output[int]:
         """
         Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
         """
         return pulumi.get(self, "processor_count")
+
+    @property
+    @pulumi.getter(name="rootId")
+    def root_id(self) -> pulumi.Output[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+        """
+        return pulumi.get(self, "root_id")
 
     @property
     @pulumi.getter(name="serviceName")

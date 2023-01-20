@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetPluggableDatabaseResult> InvokeAsync(GetPluggableDatabaseArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetPluggableDatabaseResult>("oci:Database/getPluggableDatabase:getPluggableDatabase", args ?? new GetPluggableDatabaseArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetPluggableDatabaseResult>("oci:Database/getPluggableDatabase:getPluggableDatabase", args ?? new GetPluggableDatabaseArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Pluggable Database resource in Oracle Cloud Infrastructure Database service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetPluggableDatabaseResult> Invoke(GetPluggableDatabaseInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetPluggableDatabaseResult>("oci:Database/getPluggableDatabase:getPluggableDatabase", args ?? new GetPluggableDatabaseInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetPluggableDatabaseResult>("oci:Database/getPluggableDatabase:getPluggableDatabase", args ?? new GetPluggableDatabaseInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -145,6 +145,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string PdbName;
         public readonly string PluggableDatabaseId;
+        /// <summary>
+        /// The configuration of the Pluggable Database Management service.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetPluggableDatabasePluggableDatabaseManagementConfigResult> PluggableDatabaseManagementConfigs;
         public readonly bool ShouldPdbAdminAccountBeLocked;
         /// <summary>
         /// The current state of the pluggable database.
@@ -182,6 +186,8 @@ namespace Pulumi.Oci.Database
 
             string pluggableDatabaseId,
 
+            ImmutableArray<Outputs.GetPluggableDatabasePluggableDatabaseManagementConfigResult> pluggableDatabaseManagementConfigs,
+
             bool shouldPdbAdminAccountBeLocked,
 
             string state,
@@ -202,6 +208,7 @@ namespace Pulumi.Oci.Database
             PdbAdminPassword = pdbAdminPassword;
             PdbName = pdbName;
             PluggableDatabaseId = pluggableDatabaseId;
+            PluggableDatabaseManagementConfigs = pluggableDatabaseManagementConfigs;
             ShouldPdbAdminAccountBeLocked = shouldPdbAdminAccountBeLocked;
             State = state;
             TdeWalletPassword = tdeWalletPassword;

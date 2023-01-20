@@ -45,7 +45,7 @@ namespace Pulumi.Oci.Mysql
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetShapesResult> InvokeAsync(GetShapesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetShapesResult>("oci:Mysql/getShapes:getShapes", args ?? new GetShapesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetShapesResult>("oci:Mysql/getShapes:getShapes", args ?? new GetShapesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Shapes in Oracle Cloud Infrastructure MySQL Database service.
@@ -81,7 +81,7 @@ namespace Pulumi.Oci.Mysql
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetShapesResult> Invoke(GetShapesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetShapesResult>("oci:Mysql/getShapes:getShapes", args ?? new GetShapesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetShapesResult>("oci:Mysql/getShapes:getShapes", args ?? new GetShapesInvokeArgs(), options.WithDefaults());
     }
 
 

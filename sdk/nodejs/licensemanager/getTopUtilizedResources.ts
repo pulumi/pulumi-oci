@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getTopUtilizedResources(args: GetTopUtilizedResourcesArgs, opts?: pulumi.InvokeOptions): Promise<GetTopUtilizedResourcesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LicenseManager/getTopUtilizedResources:getTopUtilizedResources", {
         "compartmentId": args.compartmentId,
         "isCompartmentIdInSubtree": args.isCompartmentIdInSubtree,
@@ -70,9 +68,26 @@ export interface GetTopUtilizedResourcesResult {
     readonly items: outputs.LicenseManager.GetTopUtilizedResourcesItem[];
     readonly resourceUnitType?: string;
 }
-
+/**
+ * This data source provides the list of Top Utilized Resources in Oracle Cloud Infrastructure License Manager service.
+ *
+ * Retrieves the top utilized resources for a given compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testTopUtilizedResources = oci.LicenseManager.getTopUtilizedResources({
+ *     compartmentId: _var.compartment_id,
+ *     isCompartmentIdInSubtree: _var.top_utilized_resource_is_compartment_id_in_subtree,
+ *     resourceUnitType: _var.top_utilized_resource_resource_unit_type,
+ * });
+ * ```
+ */
 export function getTopUtilizedResourcesOutput(args: GetTopUtilizedResourcesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTopUtilizedResourcesResult> {
-    return pulumi.output(args).apply(a => getTopUtilizedResources(a, opts))
+    return pulumi.output(args).apply((a: any) => getTopUtilizedResources(a, opts))
 }
 
 /**

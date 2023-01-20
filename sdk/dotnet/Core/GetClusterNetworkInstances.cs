@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetClusterNetworkInstancesResult> InvokeAsync(GetClusterNetworkInstancesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetClusterNetworkInstancesResult>("oci:Core/getClusterNetworkInstances:getClusterNetworkInstances", args ?? new GetClusterNetworkInstancesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetClusterNetworkInstancesResult>("oci:Core/getClusterNetworkInstances:getClusterNetworkInstances", args ?? new GetClusterNetworkInstancesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Cluster Network Instances in Oracle Cloud Infrastructure Core service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetClusterNetworkInstancesResult> Invoke(GetClusterNetworkInstancesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetClusterNetworkInstancesResult>("oci:Core/getClusterNetworkInstances:getClusterNetworkInstances", args ?? new GetClusterNetworkInstancesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetClusterNetworkInstancesResult>("oci:Core/getClusterNetworkInstances:getClusterNetworkInstances", args ?? new GetClusterNetworkInstancesInvokeArgs(), options.WithDefaults());
     }
 
 

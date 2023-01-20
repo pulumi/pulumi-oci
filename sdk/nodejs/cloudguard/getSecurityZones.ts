@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -27,11 +28,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSecurityZones(args: GetSecurityZonesArgs, opts?: pulumi.InvokeOptions): Promise<GetSecurityZonesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CloudGuard/getSecurityZones:getSecurityZones", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -102,9 +100,29 @@ export interface GetSecurityZonesResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Security Zones in Oracle Cloud Infrastructure Cloud Guard service.
+ *
+ * Gets a list of all security zones in a compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSecurityZones = oci.CloudGuard.getSecurityZones({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.security_zone_display_name,
+ *     id: _var.security_zone_id,
+ *     isRequiredSecurityZonesInSubtree: _var.security_zone_is_required_security_zones_in_subtree,
+ *     securityRecipeId: oci_cloud_guard_security_recipe.test_security_recipe.id,
+ *     state: _var.security_zone_state,
+ * });
+ * ```
+ */
 export function getSecurityZonesOutput(args: GetSecurityZonesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityZonesResult> {
-    return pulumi.output(args).apply(a => getSecurityZones(a, opts))
+    return pulumi.output(args).apply((a: any) => getSecurityZones(a, opts))
 }
 
 /**

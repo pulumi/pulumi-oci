@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAlert(args: GetAlertArgs, opts?: pulumi.InvokeOptions): Promise<GetAlertResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getAlert:getAlert", {
         "alertId": args.alertId,
     }, opts);
@@ -135,9 +132,24 @@ export interface GetAlertResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Alert resource in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Gets the details of alert by its ID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAlert = oci.DataSafe.getAlert({
+ *     alertId: oci_data_safe_alert.test_alert.id,
+ * });
+ * ```
+ */
 export function getAlertOutput(args: GetAlertOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAlertResult> {
-    return pulumi.output(args).apply(a => getAlert(a, opts))
+    return pulumi.output(args).apply((a: any) => getAlert(a, opts))
 }
 
 /**

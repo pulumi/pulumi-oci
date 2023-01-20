@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getImportableAgentEntities(args: GetImportableAgentEntitiesArgs, opts?: pulumi.InvokeOptions): Promise<GetImportableAgentEntitiesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Opsi/getImportableAgentEntities:getImportableAgentEntities", {
         "compartmentId": args.compartmentId,
     }, opts);
@@ -60,9 +58,28 @@ export interface GetImportableAgentEntitiesResult {
      */
     readonly items: outputs.Opsi.GetImportableAgentEntitiesItem[];
 }
-
+/**
+ * This data source provides the list of Importable Agent Entities in Oracle Cloud Infrastructure Opsi service.
+ *
+ * Gets a list of agent entities available to add a new hostInsight.  An agent entity is "available"
+ * and will be shown if all the following conditions are true:
+ *    1.  The agent OCID is not already being used for an existing hostInsight.
+ *    2.  The agent availabilityStatus = 'ACTIVE'
+ *    3.  The agent lifecycleState = 'ACTIVE'
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testImportableAgentEntities = oci.Opsi.getImportableAgentEntities({
+ *     compartmentId: _var.compartment_id,
+ * });
+ * ```
+ */
 export function getImportableAgentEntitiesOutput(args: GetImportableAgentEntitiesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetImportableAgentEntitiesResult> {
-    return pulumi.output(args).apply(a => getImportableAgentEntities(a, opts))
+    return pulumi.output(args).apply((a: any) => getImportableAgentEntities(a, opts))
 }
 
 /**

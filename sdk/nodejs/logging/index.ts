@@ -5,24 +5,66 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./getLog";
-export * from "./getLogGroup";
-export * from "./getLogGroups";
-export * from "./getLogSavedSearch";
-export * from "./getLogSavedSearches";
-export * from "./getLogs";
-export * from "./getUnifiedAgentConfiguration";
-export * from "./getUnifiedAgentConfigurations";
-export * from "./log";
-export * from "./logGroup";
-export * from "./logSavedSearch";
-export * from "./unifiedAgentConfiguration";
+export { GetLogArgs, GetLogResult, GetLogOutputArgs } from "./getLog";
+export const getLog: typeof import("./getLog").getLog = null as any;
+export const getLogOutput: typeof import("./getLog").getLogOutput = null as any;
+utilities.lazyLoad(exports, ["getLog","getLogOutput"], () => require("./getLog"));
 
-// Import resources to register:
-import { Log } from "./log";
-import { LogGroup } from "./logGroup";
-import { LogSavedSearch } from "./logSavedSearch";
-import { UnifiedAgentConfiguration } from "./unifiedAgentConfiguration";
+export { GetLogGroupArgs, GetLogGroupResult, GetLogGroupOutputArgs } from "./getLogGroup";
+export const getLogGroup: typeof import("./getLogGroup").getLogGroup = null as any;
+export const getLogGroupOutput: typeof import("./getLogGroup").getLogGroupOutput = null as any;
+utilities.lazyLoad(exports, ["getLogGroup","getLogGroupOutput"], () => require("./getLogGroup"));
+
+export { GetLogGroupsArgs, GetLogGroupsResult, GetLogGroupsOutputArgs } from "./getLogGroups";
+export const getLogGroups: typeof import("./getLogGroups").getLogGroups = null as any;
+export const getLogGroupsOutput: typeof import("./getLogGroups").getLogGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getLogGroups","getLogGroupsOutput"], () => require("./getLogGroups"));
+
+export { GetLogSavedSearchArgs, GetLogSavedSearchResult, GetLogSavedSearchOutputArgs } from "./getLogSavedSearch";
+export const getLogSavedSearch: typeof import("./getLogSavedSearch").getLogSavedSearch = null as any;
+export const getLogSavedSearchOutput: typeof import("./getLogSavedSearch").getLogSavedSearchOutput = null as any;
+utilities.lazyLoad(exports, ["getLogSavedSearch","getLogSavedSearchOutput"], () => require("./getLogSavedSearch"));
+
+export { GetLogSavedSearchesArgs, GetLogSavedSearchesResult, GetLogSavedSearchesOutputArgs } from "./getLogSavedSearches";
+export const getLogSavedSearches: typeof import("./getLogSavedSearches").getLogSavedSearches = null as any;
+export const getLogSavedSearchesOutput: typeof import("./getLogSavedSearches").getLogSavedSearchesOutput = null as any;
+utilities.lazyLoad(exports, ["getLogSavedSearches","getLogSavedSearchesOutput"], () => require("./getLogSavedSearches"));
+
+export { GetLogsArgs, GetLogsResult, GetLogsOutputArgs } from "./getLogs";
+export const getLogs: typeof import("./getLogs").getLogs = null as any;
+export const getLogsOutput: typeof import("./getLogs").getLogsOutput = null as any;
+utilities.lazyLoad(exports, ["getLogs","getLogsOutput"], () => require("./getLogs"));
+
+export { GetUnifiedAgentConfigurationArgs, GetUnifiedAgentConfigurationResult, GetUnifiedAgentConfigurationOutputArgs } from "./getUnifiedAgentConfiguration";
+export const getUnifiedAgentConfiguration: typeof import("./getUnifiedAgentConfiguration").getUnifiedAgentConfiguration = null as any;
+export const getUnifiedAgentConfigurationOutput: typeof import("./getUnifiedAgentConfiguration").getUnifiedAgentConfigurationOutput = null as any;
+utilities.lazyLoad(exports, ["getUnifiedAgentConfiguration","getUnifiedAgentConfigurationOutput"], () => require("./getUnifiedAgentConfiguration"));
+
+export { GetUnifiedAgentConfigurationsArgs, GetUnifiedAgentConfigurationsResult, GetUnifiedAgentConfigurationsOutputArgs } from "./getUnifiedAgentConfigurations";
+export const getUnifiedAgentConfigurations: typeof import("./getUnifiedAgentConfigurations").getUnifiedAgentConfigurations = null as any;
+export const getUnifiedAgentConfigurationsOutput: typeof import("./getUnifiedAgentConfigurations").getUnifiedAgentConfigurationsOutput = null as any;
+utilities.lazyLoad(exports, ["getUnifiedAgentConfigurations","getUnifiedAgentConfigurationsOutput"], () => require("./getUnifiedAgentConfigurations"));
+
+export { LogArgs, LogState } from "./log";
+export type Log = import("./log").Log;
+export const Log: typeof import("./log").Log = null as any;
+utilities.lazyLoad(exports, ["Log"], () => require("./log"));
+
+export { LogGroupArgs, LogGroupState } from "./logGroup";
+export type LogGroup = import("./logGroup").LogGroup;
+export const LogGroup: typeof import("./logGroup").LogGroup = null as any;
+utilities.lazyLoad(exports, ["LogGroup"], () => require("./logGroup"));
+
+export { LogSavedSearchArgs, LogSavedSearchState } from "./logSavedSearch";
+export type LogSavedSearch = import("./logSavedSearch").LogSavedSearch;
+export const LogSavedSearch: typeof import("./logSavedSearch").LogSavedSearch = null as any;
+utilities.lazyLoad(exports, ["LogSavedSearch"], () => require("./logSavedSearch"));
+
+export { UnifiedAgentConfigurationArgs, UnifiedAgentConfigurationState } from "./unifiedAgentConfiguration";
+export type UnifiedAgentConfiguration = import("./unifiedAgentConfiguration").UnifiedAgentConfiguration;
+export const UnifiedAgentConfiguration: typeof import("./unifiedAgentConfiguration").UnifiedAgentConfiguration = null as any;
+utilities.lazyLoad(exports, ["UnifiedAgentConfiguration"], () => require("./unifiedAgentConfiguration"));
+
 
 const _module = {
     version: utilities.getVersion(),

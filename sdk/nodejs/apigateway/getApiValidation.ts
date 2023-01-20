@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getApiValidation(args: GetApiValidationArgs, opts?: pulumi.InvokeOptions): Promise<GetApiValidationResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ApiGateway/getApiValidation:getApiValidation", {
         "apiId": args.apiId,
     }, opts);
@@ -56,9 +54,24 @@ export interface GetApiValidationResult {
      */
     readonly validations: outputs.ApiGateway.GetApiValidationValidation[];
 }
-
+/**
+ * This data source provides details about a specific Api Validation resource in Oracle Cloud Infrastructure API Gateway service.
+ *
+ * Gets the API validation results.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testApiValidation = oci.ApiGateway.getApiValidation({
+ *     apiId: oci_apigateway_api.test_api.id,
+ * });
+ * ```
+ */
 export function getApiValidationOutput(args: GetApiValidationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetApiValidationResult> {
-    return pulumi.output(args).apply(a => getApiValidation(a, opts))
+    return pulumi.output(args).apply((a: any) => getApiValidation(a, opts))
 }
 
 /**

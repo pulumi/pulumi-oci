@@ -254,8 +254,10 @@ class AutonomousDatabaseWallet(pulumi.CustomResource):
             __props__.__dict__["generate_type"] = generate_type
             if password is None and not opts.urn:
                 raise TypeError("Missing required property 'password'")
-            __props__.__dict__["password"] = password
+            __props__.__dict__["password"] = None if password is None else pulumi.Output.secret(password)
             __props__.__dict__["content"] = None
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["password"])
+        opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(AutonomousDatabaseWallet, __self__).__init__(
             'oci:Database/autonomousDatabaseWallet:AutonomousDatabaseWallet',
             resource_name,

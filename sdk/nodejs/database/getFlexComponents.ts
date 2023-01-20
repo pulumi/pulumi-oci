@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFlexComponents(args: GetFlexComponentsArgs, opts?: pulumi.InvokeOptions): Promise<GetFlexComponentsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getFlexComponents:getFlexComponents", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -69,9 +67,25 @@ export interface GetFlexComponentsResult {
      */
     readonly name?: string;
 }
-
+/**
+ * This data source provides the list of Flex Components in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets a list of the flex components that can be used to launch a new DB system. The flex component determines resources to allocate to the DB system - Database Servers and Storage Servers.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testFlexComponents = oci.Database.getFlexComponents({
+ *     compartmentId: _var.compartment_id,
+ *     name: _var.flex_component_name,
+ * });
+ * ```
+ */
 export function getFlexComponentsOutput(args: GetFlexComponentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFlexComponentsResult> {
-    return pulumi.output(args).apply(a => getFlexComponents(a, opts))
+    return pulumi.output(args).apply((a: any) => getFlexComponents(a, opts))
 }
 
 /**

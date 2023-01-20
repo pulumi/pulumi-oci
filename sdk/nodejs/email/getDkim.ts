@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDkim(args: GetDkimArgs, opts?: pulumi.InvokeOptions): Promise<GetDkimResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Email/getDkim:getDkim", {
         "dkimId": args.dkimId,
     }, opts);
@@ -107,9 +104,24 @@ export interface GetDkimResult {
      */
     readonly txtRecordValue: string;
 }
-
+/**
+ * This data source provides details about a specific Dkim resource in Oracle Cloud Infrastructure Email service.
+ *
+ * Retrieves the specified DKIM.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDkim = oci.Email.getDkim({
+ *     dkimId: oci_email_dkim.test_dkim.id,
+ * });
+ * ```
+ */
 export function getDkimOutput(args: GetDkimOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDkimResult> {
-    return pulumi.output(args).apply(a => getDkim(a, opts))
+    return pulumi.output(args).apply((a: any) => getDkim(a, opts))
 }
 
 /**

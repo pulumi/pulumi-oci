@@ -73,6 +73,13 @@ func NewBdsInstancePatchAction(ctx *pulumi.Context,
 	if args.Version == nil {
 		return nil, errors.New("invalid value for required argument 'Version'")
 	}
+	if args.ClusterAdminPassword != nil {
+		args.ClusterAdminPassword = pulumi.ToSecret(args.ClusterAdminPassword).(pulumi.StringInput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"clusterAdminPassword",
+	})
+	opts = append(opts, secrets)
 	var resource BdsInstancePatchAction
 	err := ctx.RegisterResource("oci:BigDataService/bdsInstancePatchAction:BdsInstancePatchAction", name, args, &resource, opts...)
 	if err != nil {

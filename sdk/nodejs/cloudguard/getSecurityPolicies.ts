@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSecurityPolicies(args: GetSecurityPoliciesArgs, opts?: pulumi.InvokeOptions): Promise<GetSecurityPoliciesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CloudGuard/getSecurityPolicies:getSecurityPolicies", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -88,9 +86,27 @@ export interface GetSecurityPoliciesResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Security Policies in Oracle Cloud Infrastructure Cloud Guard service.
+ *
+ * Returns a list of security zone policies. Specify any compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSecurityPolicies = oci.CloudGuard.getSecurityPolicies({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.security_policy_display_name,
+ *     id: _var.security_policy_id,
+ *     state: _var.security_policy_state,
+ * });
+ * ```
+ */
 export function getSecurityPoliciesOutput(args: GetSecurityPoliciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityPoliciesResult> {
-    return pulumi.output(args).apply(a => getSecurityPolicies(a, opts))
+    return pulumi.output(args).apply((a: any) => getSecurityPolicies(a, opts))
 }
 
 /**

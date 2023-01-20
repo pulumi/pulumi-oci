@@ -38,13 +38,17 @@ namespace Pulumi.Oci.FileStorage.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+        /// Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         /// </summary>
         public readonly bool IsCloneParent;
         /// <summary>
-        /// Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm#hydration).
+        /// Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
         /// </summary>
         public readonly bool IsHydrated;
+        /// <summary>
+        /// Specifies whether the file system can be used as a target file system for replication. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
+        /// </summary>
+        public readonly bool IsTargetable;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key used to encrypt the encryption keys associated with this file system.
         /// </summary>
@@ -58,11 +62,15 @@ namespace Pulumi.Oci.FileStorage.Outputs
         /// </summary>
         public readonly string MeteredBytes;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
+        /// </summary>
+        public readonly string ReplicationTargetId;
+        /// <summary>
         /// Source information for the file system.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFileSystemsFileSystemSourceDetailResult> SourceDetails;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         /// </summary>
         public readonly string SourceSnapshotId;
         /// <summary>
@@ -92,11 +100,15 @@ namespace Pulumi.Oci.FileStorage.Outputs
 
             bool isHydrated,
 
+            bool isTargetable,
+
             string kmsKeyId,
 
             string lifecycleDetails,
 
             string meteredBytes,
+
+            string replicationTargetId,
 
             ImmutableArray<Outputs.GetFileSystemsFileSystemSourceDetailResult> sourceDetails,
 
@@ -114,9 +126,11 @@ namespace Pulumi.Oci.FileStorage.Outputs
             Id = id;
             IsCloneParent = isCloneParent;
             IsHydrated = isHydrated;
+            IsTargetable = isTargetable;
             KmsKeyId = kmsKeyId;
             LifecycleDetails = lifecycleDetails;
             MeteredBytes = meteredBytes;
+            ReplicationTargetId = replicationTargetId;
             SourceDetails = sourceDetails;
             SourceSnapshotId = sourceSnapshotId;
             State = state;

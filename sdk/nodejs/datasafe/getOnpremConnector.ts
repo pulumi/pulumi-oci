@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getOnpremConnector(args: GetOnpremConnectorArgs, opts?: pulumi.InvokeOptions): Promise<GetOnpremConnectorResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getOnpremConnector:getOnpremConnector", {
         "onPremConnectorId": args.onPremConnectorId,
     }, opts);
@@ -95,9 +92,24 @@ export interface GetOnpremConnectorResult {
      */
     readonly timeCreated: string;
 }
-
+/**
+ * This data source provides details about a specific On Prem Connector resource in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Gets the details of the specified on-premises connector.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testOnPremConnector = oci.DataSafe.getOnpremConnector({
+ *     onPremConnectorId: oci_data_safe_on_prem_connector.test_on_prem_connector.id,
+ * });
+ * ```
+ */
 export function getOnpremConnectorOutput(args: GetOnpremConnectorOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOnpremConnectorResult> {
-    return pulumi.output(args).apply(a => getOnpremConnector(a, opts))
+    return pulumi.output(args).apply((a: any) => getOnpremConnector(a, opts))
 }
 
 /**

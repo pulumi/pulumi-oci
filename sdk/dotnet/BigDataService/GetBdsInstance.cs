@@ -38,7 +38,7 @@ namespace Pulumi.Oci.BigDataService
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetBdsInstanceResult> InvokeAsync(GetBdsInstanceArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetBdsInstanceResult>("oci:BigDataService/getBdsInstance:getBdsInstance", args ?? new GetBdsInstanceArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetBdsInstanceResult>("oci:BigDataService/getBdsInstance:getBdsInstance", args ?? new GetBdsInstanceArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Bds Instance resource in Oracle Cloud Infrastructure Big Data Service service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.BigDataService
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetBdsInstanceResult> Invoke(GetBdsInstanceInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetBdsInstanceResult>("oci:BigDataService/getBdsInstance:getBdsInstance", args ?? new GetBdsInstanceInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetBdsInstanceResult>("oci:BigDataService/getBdsInstance:getBdsInstance", args ?? new GetBdsInstanceInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -117,6 +117,10 @@ namespace Pulumi.Oci.BigDataService
         /// Specific info about a Hadoop cluster
         /// </summary>
         public readonly ImmutableArray<Outputs.GetBdsInstanceClusterDetailResult> ClusterDetails;
+        /// <summary>
+        /// Profile of the Big Data Service cluster.
+        /// </summary>
+        public readonly string ClusterProfile;
         public readonly string ClusterPublicKey;
         /// <summary>
         /// Version of the Hadoop distribution.
@@ -139,6 +143,7 @@ namespace Pulumi.Oci.BigDataService
         /// The name of the node.
         /// </summary>
         public readonly string DisplayName;
+        public readonly ImmutableArray<Outputs.GetBdsInstanceEdgeNodeResult> EdgeNodes;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`
         /// </summary>
@@ -151,6 +156,7 @@ namespace Pulumi.Oci.BigDataService
         /// Boolean flag specifying whether or not Cloud SQL should be configured.
         /// </summary>
         public readonly bool IsCloudSqlConfigured;
+        public readonly bool IsForceStopJobs;
         /// <summary>
         /// Boolean flag specifying whether or not the cluster is highly available (HA)
         /// </summary>
@@ -204,6 +210,8 @@ namespace Pulumi.Oci.BigDataService
 
             ImmutableArray<Outputs.GetBdsInstanceClusterDetailResult> clusterDetails,
 
+            string clusterProfile,
+
             string clusterPublicKey,
 
             string clusterVersion,
@@ -218,11 +226,15 @@ namespace Pulumi.Oci.BigDataService
 
             string displayName,
 
+            ImmutableArray<Outputs.GetBdsInstanceEdgeNodeResult> edgeNodes,
+
             ImmutableDictionary<string, object> freeformTags,
 
             string id,
 
             bool isCloudSqlConfigured,
+
+            bool isForceStopJobs,
 
             bool isHighAvailability,
 
@@ -255,6 +267,7 @@ namespace Pulumi.Oci.BigDataService
             CloudSqlDetails = cloudSqlDetails;
             ClusterAdminPassword = clusterAdminPassword;
             ClusterDetails = clusterDetails;
+            ClusterProfile = clusterProfile;
             ClusterPublicKey = clusterPublicKey;
             ClusterVersion = clusterVersion;
             CompartmentId = compartmentId;
@@ -262,9 +275,11 @@ namespace Pulumi.Oci.BigDataService
             CreatedBy = createdBy;
             DefinedTags = definedTags;
             DisplayName = displayName;
+            EdgeNodes = edgeNodes;
             FreeformTags = freeformTags;
             Id = id;
             IsCloudSqlConfigured = isCloudSqlConfigured;
+            IsForceStopJobs = isForceStopJobs;
             IsHighAvailability = isHighAvailability;
             IsSecure = isSecure;
             KerberosRealmName = kerberosRealmName;

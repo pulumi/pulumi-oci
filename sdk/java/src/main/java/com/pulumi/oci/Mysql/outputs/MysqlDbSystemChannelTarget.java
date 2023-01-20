@@ -4,7 +4,9 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Mysql.outputs.MysqlDbSystemChannelTargetFilter;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -26,6 +28,11 @@ public final class MysqlDbSystemChannelTarget {
      * 
      */
     private @Nullable String dbSystemId;
+    /**
+     * @return Replication filter rules to be applied at the DB System Channel target.
+     * 
+     */
+    private @Nullable List<MysqlDbSystemChannelTargetFilter> filters;
     /**
      * @return The specific target identifier.
      * 
@@ -55,6 +62,13 @@ public final class MysqlDbSystemChannelTarget {
         return Optional.ofNullable(this.dbSystemId);
     }
     /**
+     * @return Replication filter rules to be applied at the DB System Channel target.
+     * 
+     */
+    public List<MysqlDbSystemChannelTargetFilter> filters() {
+        return this.filters == null ? List.of() : this.filters;
+    }
+    /**
      * @return The specific target identifier.
      * 
      */
@@ -74,6 +88,7 @@ public final class MysqlDbSystemChannelTarget {
         private @Nullable String applierUsername;
         private @Nullable String channelName;
         private @Nullable String dbSystemId;
+        private @Nullable List<MysqlDbSystemChannelTargetFilter> filters;
         private @Nullable String targetType;
         public Builder() {}
         public Builder(MysqlDbSystemChannelTarget defaults) {
@@ -81,6 +96,7 @@ public final class MysqlDbSystemChannelTarget {
     	      this.applierUsername = defaults.applierUsername;
     	      this.channelName = defaults.channelName;
     	      this.dbSystemId = defaults.dbSystemId;
+    	      this.filters = defaults.filters;
     	      this.targetType = defaults.targetType;
         }
 
@@ -100,6 +116,14 @@ public final class MysqlDbSystemChannelTarget {
             return this;
         }
         @CustomType.Setter
+        public Builder filters(@Nullable List<MysqlDbSystemChannelTargetFilter> filters) {
+            this.filters = filters;
+            return this;
+        }
+        public Builder filters(MysqlDbSystemChannelTargetFilter... filters) {
+            return filters(List.of(filters));
+        }
+        @CustomType.Setter
         public Builder targetType(@Nullable String targetType) {
             this.targetType = targetType;
             return this;
@@ -109,6 +133,7 @@ public final class MysqlDbSystemChannelTarget {
             o.applierUsername = applierUsername;
             o.channelName = channelName;
             o.dbSystemId = dbSystemId;
+            o.filters = filters;
             o.targetType = targetType;
             return o;
         }

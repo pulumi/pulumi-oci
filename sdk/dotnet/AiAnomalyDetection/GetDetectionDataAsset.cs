@@ -38,7 +38,7 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDetectionDataAssetResult> InvokeAsync(GetDetectionDataAssetArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDetectionDataAssetResult>("oci:AiAnomalyDetection/getDetectionDataAsset:getDetectionDataAsset", args ?? new GetDetectionDataAssetArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDetectionDataAssetResult>("oci:AiAnomalyDetection/getDetectionDataAsset:getDetectionDataAsset", args ?? new GetDetectionDataAssetArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Data Asset resource in Oracle Cloud Infrastructure Ai Anomaly Detection service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDetectionDataAssetResult> Invoke(GetDetectionDataAssetInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDetectionDataAssetResult>("oci:AiAnomalyDetection/getDetectionDataAsset:getDetectionDataAsset", args ?? new GetDetectionDataAssetInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDetectionDataAssetResult>("oci:AiAnomalyDetection/getDetectionDataAsset:getDetectionDataAsset", args ?? new GetDetectionDataAssetInvokeArgs(), options.WithDefaults());
     }
 
 

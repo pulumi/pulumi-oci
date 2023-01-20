@@ -13,12 +13,17 @@ __all__ = [
     'LogAnalyticsImportCustomContentChangeListArgs',
     'LogAnalyticsObjectCollectionRuleOverrideArgs',
     'LogAnalyticsPreferencesManagementItemArgs',
+    'NamespaceIngestTimeRuleActionArgs',
+    'NamespaceIngestTimeRuleConditionsArgs',
+    'NamespaceIngestTimeRuleConditionsAdditionalConditionArgs',
     'NamespaceScheduledTaskActionArgs',
     'NamespaceScheduledTaskSchedulesArgs',
     'NamespaceScheduledTaskSchedulesScheduleArgs',
     'GetLogAnalyticsEntitiesFilterArgs',
     'GetLogAnalyticsLogGroupsFilterArgs',
     'GetLogAnalyticsObjectCollectionRulesFilterArgs',
+    'GetNamespaceIngestTimeRulesFilterArgs',
+    'GetNamespaceRulesFilterArgs',
     'GetNamespaceScheduledTasksFilterArgs',
     'GetNamespacesFilterArgs',
 ]
@@ -264,6 +269,240 @@ class LogAnalyticsPreferencesManagementItemArgs:
     @value.setter
     def value(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class NamespaceIngestTimeRuleActionArgs:
+    def __init__(__self__, *,
+                 compartment_id: pulumi.Input[str],
+                 metric_name: pulumi.Input[str],
+                 namespace: pulumi.Input[str],
+                 type: pulumi.Input[str],
+                 dimensions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 resource_group: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[str] metric_name: (Updatable) The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
+        :param pulumi.Input[str] type: (Updatable) Discriminator.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] dimensions: (Updatable) Additional dimensions to publish for the extracted metric. A valid list contains the source field names whose values are to be published as dimensions. The source name itself is specified using a special macro SOURCE_NAME
+        :param pulumi.Input[str] resource_group: (Updatable) The resourceGroup of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "metric_name", metric_name)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "type", type)
+        if dimensions is not None:
+            pulumi.set(__self__, "dimensions", dimensions)
+        if resource_group is not None:
+            pulumi.set(__self__, "resource_group", resource_group)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @compartment_id.setter
+    def compartment_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter(name="metricName")
+    def metric_name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+        """
+        return pulumi.get(self, "metric_name")
+
+    @metric_name.setter
+    def metric_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "metric_name", value)
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> pulumi.Input[str]:
+        """
+        The Logging Analytics namespace used for the request.
+        """
+        return pulumi.get(self, "namespace")
+
+    @namespace.setter
+    def namespace(self, value: pulumi.Input[str]):
+        pulumi.set(self, "namespace", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Discriminator.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def dimensions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) Additional dimensions to publish for the extracted metric. A valid list contains the source field names whose values are to be published as dimensions. The source name itself is specified using a special macro SOURCE_NAME
+        """
+        return pulumi.get(self, "dimensions")
+
+    @dimensions.setter
+    def dimensions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "dimensions", value)
+
+    @property
+    @pulumi.getter(name="resourceGroup")
+    def resource_group(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The resourceGroup of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+        """
+        return pulumi.get(self, "resource_group")
+
+    @resource_group.setter
+    def resource_group(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "resource_group", value)
+
+
+@pulumi.input_type
+class NamespaceIngestTimeRuleConditionsArgs:
+    def __init__(__self__, *,
+                 field_name: pulumi.Input[str],
+                 field_operator: pulumi.Input[str],
+                 field_value: pulumi.Input[str],
+                 kind: pulumi.Input[str],
+                 additional_conditions: Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceIngestTimeRuleConditionsAdditionalConditionArgs']]]] = None):
+        """
+        :param pulumi.Input[str] field_name: (Updatable) The field name to be evaluated.
+        :param pulumi.Input[str] field_operator: (Updatable) The operator to be used for evaluating the field.
+        :param pulumi.Input[str] field_value: (Updatable) The field value to be evaluated.
+        :param pulumi.Input[str] kind: (Updatable) Discriminator.
+        :param pulumi.Input[Sequence[pulumi.Input['NamespaceIngestTimeRuleConditionsAdditionalConditionArgs']]] additional_conditions: (Updatable) Optional additional condition(s) to be evaluated.
+        """
+        pulumi.set(__self__, "field_name", field_name)
+        pulumi.set(__self__, "field_operator", field_operator)
+        pulumi.set(__self__, "field_value", field_value)
+        pulumi.set(__self__, "kind", kind)
+        if additional_conditions is not None:
+            pulumi.set(__self__, "additional_conditions", additional_conditions)
+
+    @property
+    @pulumi.getter(name="fieldName")
+    def field_name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The field name to be evaluated.
+        """
+        return pulumi.get(self, "field_name")
+
+    @field_name.setter
+    def field_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "field_name", value)
+
+    @property
+    @pulumi.getter(name="fieldOperator")
+    def field_operator(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The operator to be used for evaluating the field.
+        """
+        return pulumi.get(self, "field_operator")
+
+    @field_operator.setter
+    def field_operator(self, value: pulumi.Input[str]):
+        pulumi.set(self, "field_operator", value)
+
+    @property
+    @pulumi.getter(name="fieldValue")
+    def field_value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The field value to be evaluated.
+        """
+        return pulumi.get(self, "field_value")
+
+    @field_value.setter
+    def field_value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "field_value", value)
+
+    @property
+    @pulumi.getter
+    def kind(self) -> pulumi.Input[str]:
+        """
+        (Updatable) Discriminator.
+        """
+        return pulumi.get(self, "kind")
+
+    @kind.setter
+    def kind(self, value: pulumi.Input[str]):
+        pulumi.set(self, "kind", value)
+
+    @property
+    @pulumi.getter(name="additionalConditions")
+    def additional_conditions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceIngestTimeRuleConditionsAdditionalConditionArgs']]]]:
+        """
+        (Updatable) Optional additional condition(s) to be evaluated.
+        """
+        return pulumi.get(self, "additional_conditions")
+
+    @additional_conditions.setter
+    def additional_conditions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NamespaceIngestTimeRuleConditionsAdditionalConditionArgs']]]]):
+        pulumi.set(self, "additional_conditions", value)
+
+
+@pulumi.input_type
+class NamespaceIngestTimeRuleConditionsAdditionalConditionArgs:
+    def __init__(__self__, *,
+                 condition_field: pulumi.Input[str],
+                 condition_operator: pulumi.Input[str],
+                 condition_value: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] condition_field: (Updatable) The additional field name to be evaluated.
+        :param pulumi.Input[str] condition_operator: (Updatable) The operator to be used for evaluating the additional field.
+        :param pulumi.Input[str] condition_value: (Updatable) The additional field value to be evaluated.
+        """
+        pulumi.set(__self__, "condition_field", condition_field)
+        pulumi.set(__self__, "condition_operator", condition_operator)
+        pulumi.set(__self__, "condition_value", condition_value)
+
+    @property
+    @pulumi.getter(name="conditionField")
+    def condition_field(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The additional field name to be evaluated.
+        """
+        return pulumi.get(self, "condition_field")
+
+    @condition_field.setter
+    def condition_field(self, value: pulumi.Input[str]):
+        pulumi.set(self, "condition_field", value)
+
+    @property
+    @pulumi.getter(name="conditionOperator")
+    def condition_operator(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The operator to be used for evaluating the additional field.
+        """
+        return pulumi.get(self, "condition_operator")
+
+    @condition_operator.setter
+    def condition_operator(self, value: pulumi.Input[str]):
+        pulumi.set(self, "condition_operator", value)
+
+    @property
+    @pulumi.getter(name="conditionValue")
+    def condition_value(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The additional field value to be evaluated.
+        """
+        return pulumi.get(self, "condition_value")
+
+    @condition_value.setter
+    def condition_value(self, value: pulumi.Input[str]):
+        pulumi.set(self, "condition_value", value)
 
 
 @pulumi.input_type
@@ -606,6 +845,84 @@ class GetLogAnalyticsObjectCollectionRulesFilterArgs:
         """
         A filter to return rules only matching with this name.
         """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetNamespaceIngestTimeRulesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetNamespaceRulesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
         return pulumi.get(self, "name")
 
     @name.setter

@@ -40,7 +40,7 @@ namespace Pulumi.Oci.ManagementAgent
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetManagementAgentAvailableHistoriesResult> InvokeAsync(GetManagementAgentAvailableHistoriesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetManagementAgentAvailableHistoriesResult>("oci:ManagementAgent/getManagementAgentAvailableHistories:getManagementAgentAvailableHistories", args ?? new GetManagementAgentAvailableHistoriesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagementAgentAvailableHistoriesResult>("oci:ManagementAgent/getManagementAgentAvailableHistories:getManagementAgentAvailableHistories", args ?? new GetManagementAgentAvailableHistoriesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Management Agent Available Histories in Oracle Cloud Infrastructure Management Agent service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.ManagementAgent
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetManagementAgentAvailableHistoriesResult> Invoke(GetManagementAgentAvailableHistoriesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetManagementAgentAvailableHistoriesResult>("oci:ManagementAgent/getManagementAgentAvailableHistories:getManagementAgentAvailableHistories", args ?? new GetManagementAgentAvailableHistoriesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagementAgentAvailableHistoriesResult>("oci:ManagementAgent/getManagementAgentAvailableHistories:getManagementAgentAvailableHistories", args ?? new GetManagementAgentAvailableHistoriesInvokeArgs(), options.WithDefaults());
     }
 
 

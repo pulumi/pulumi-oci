@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRepository(args: GetRepositoryArgs, opts?: pulumi.InvokeOptions): Promise<GetRepositoryResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getRepository:getRepository", {
         "fields": args.fields,
         "repositoryId": args.repositoryId,
@@ -147,9 +145,25 @@ export interface GetRepositoryResult {
      */
     readonly triggerBuildEvents: string[];
 }
-
+/**
+ * This data source provides details about a specific Repository resource in Oracle Cloud Infrastructure Devops service.
+ *
+ * Retrieves a repository by identifier.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testRepository = oci.DevOps.getRepository({
+ *     repositoryId: oci_devops_repository.test_repository.id,
+ *     fields: _var.repository_fields,
+ * });
+ * ```
+ */
 export function getRepositoryOutput(args: GetRepositoryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoryResult> {
-    return pulumi.output(args).apply(a => getRepository(a, opts))
+    return pulumi.output(args).apply((a: any) => getRepository(a, opts))
 }
 
 /**

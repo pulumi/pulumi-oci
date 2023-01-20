@@ -21,6 +21,13 @@ public final class VmClusterNetworkState extends com.pulumi.resources.ResourceAr
 
     public static final VmClusterNetworkState Empty = new VmClusterNetworkState();
 
+    @Import(name="action")
+    private @Nullable Output<String> action;
+
+    public Optional<Output<String>> action() {
+        return Optional.ofNullable(this.action);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -157,14 +164,14 @@ public final class VmClusterNetworkState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * The current state of the VM cluster network.
+     * (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return The current state of the VM cluster network.
+     * @return (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
      * 
      */
     public Optional<Output<String>> state() {
@@ -226,6 +233,7 @@ public final class VmClusterNetworkState extends com.pulumi.resources.ResourceAr
     private VmClusterNetworkState() {}
 
     private VmClusterNetworkState(VmClusterNetworkState $) {
+        this.action = $.action;
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
@@ -258,6 +266,15 @@ public final class VmClusterNetworkState extends com.pulumi.resources.ResourceAr
 
         public Builder(VmClusterNetworkState defaults) {
             $ = new VmClusterNetworkState(Objects.requireNonNull(defaults));
+        }
+
+        public Builder action(@Nullable Output<String> action) {
+            $.action = action;
+            return this;
+        }
+
+        public Builder action(String action) {
+            return action(Output.of(action));
         }
 
         /**
@@ -480,7 +497,7 @@ public final class VmClusterNetworkState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param state The current state of the VM cluster network.
+         * @param state (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
          * 
          * @return builder
          * 
@@ -491,7 +508,7 @@ public final class VmClusterNetworkState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param state The current state of the VM cluster network.
+         * @param state (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
          * 
          * @return builder
          * 

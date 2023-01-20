@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -28,11 +29,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMaskingReportMaskedColumns(args: GetMaskingReportMaskedColumnsArgs, opts?: pulumi.InvokeOptions): Promise<GetMaskingReportMaskedColumnsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getMaskingReportMaskedColumns:getMaskingReportMaskedColumns", {
         "columnNames": args.columnNames,
         "filters": args.filters,
@@ -119,9 +117,30 @@ export interface GetMaskingReportMaskedColumnsResult {
      */
     readonly sensitiveTypeId?: string;
 }
-
+/**
+ * This data source provides the list of Masking Reports Masked Columns in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Gets a list of masked columns present in the specified masking report and based on the specified query parameters.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testMaskingReportsMaskedColumns = oci.DataSafe.getMaskingReportMaskedColumns({
+ *     maskingReportId: oci_data_safe_masking_report.test_masking_report.id,
+ *     columnNames: _var.masking_reports_masked_column_column_name,
+ *     maskingColumnGroups: _var.masking_reports_masked_column_masking_column_group,
+ *     objects: _var.masking_reports_masked_column_object,
+ *     objectTypes: _var.masking_reports_masked_column_object_type,
+ *     schemaNames: _var.masking_reports_masked_column_schema_name,
+ *     sensitiveTypeId: oci_data_safe_sensitive_type.test_sensitive_type.id,
+ * });
+ * ```
+ */
 export function getMaskingReportMaskedColumnsOutput(args: GetMaskingReportMaskedColumnsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMaskingReportMaskedColumnsResult> {
-    return pulumi.output(args).apply(a => getMaskingReportMaskedColumns(a, opts))
+    return pulumi.output(args).apply((a: any) => getMaskingReportMaskedColumns(a, opts))
 }
 
 /**

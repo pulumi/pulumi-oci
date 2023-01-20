@@ -270,6 +270,21 @@ public final class ExadataInfrastructureArgs extends com.pulumi.resources.Resour
     }
 
     /**
+     * (Updatable) Indicates if deployment is Multi-Rack or not.
+     * 
+     */
+    @Import(name="isMultiRackDeployment")
+    private @Nullable Output<Boolean> isMultiRackDeployment;
+
+    /**
+     * @return (Updatable) Indicates if deployment is Multi-Rack or not.
+     * 
+     */
+    public Optional<Output<Boolean>> isMultiRackDeployment() {
+        return Optional.ofNullable(this.isMultiRackDeployment);
+    }
+
+    /**
      * (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      * 
      */
@@ -282,6 +297,21 @@ public final class ExadataInfrastructureArgs extends com.pulumi.resources.Resour
      */
     public Optional<Output<ExadataInfrastructureMaintenanceWindowArgs>> maintenanceWindow() {
         return Optional.ofNullable(this.maintenanceWindow);
+    }
+
+    /**
+     * (Updatable) The base64 encoded Multi-Rack configuration json file.
+     * 
+     */
+    @Import(name="multiRackConfigurationFile")
+    private @Nullable Output<String> multiRackConfigurationFile;
+
+    /**
+     * @return (Updatable) The base64 encoded Multi-Rack configuration json file.
+     * 
+     */
+    public Optional<Output<String>> multiRackConfigurationFile() {
+        return Optional.ofNullable(this.multiRackConfigurationFile);
     }
 
     /**
@@ -379,7 +409,9 @@ public final class ExadataInfrastructureArgs extends com.pulumi.resources.Resour
         this.gateway = $.gateway;
         this.infiniBandNetworkCidr = $.infiniBandNetworkCidr;
         this.isCpsOfflineReportEnabled = $.isCpsOfflineReportEnabled;
+        this.isMultiRackDeployment = $.isMultiRackDeployment;
         this.maintenanceWindow = $.maintenanceWindow;
+        this.multiRackConfigurationFile = $.multiRackConfigurationFile;
         this.netmask = $.netmask;
         this.ntpServers = $.ntpServers;
         this.shape = $.shape;
@@ -771,6 +803,27 @@ public final class ExadataInfrastructureArgs extends com.pulumi.resources.Resour
         }
 
         /**
+         * @param isMultiRackDeployment (Updatable) Indicates if deployment is Multi-Rack or not.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isMultiRackDeployment(@Nullable Output<Boolean> isMultiRackDeployment) {
+            $.isMultiRackDeployment = isMultiRackDeployment;
+            return this;
+        }
+
+        /**
+         * @param isMultiRackDeployment (Updatable) Indicates if deployment is Multi-Rack or not.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isMultiRackDeployment(Boolean isMultiRackDeployment) {
+            return isMultiRackDeployment(Output.of(isMultiRackDeployment));
+        }
+
+        /**
          * @param maintenanceWindow (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
          * 
          * @return builder
@@ -789,6 +842,27 @@ public final class ExadataInfrastructureArgs extends com.pulumi.resources.Resour
          */
         public Builder maintenanceWindow(ExadataInfrastructureMaintenanceWindowArgs maintenanceWindow) {
             return maintenanceWindow(Output.of(maintenanceWindow));
+        }
+
+        /**
+         * @param multiRackConfigurationFile (Updatable) The base64 encoded Multi-Rack configuration json file.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder multiRackConfigurationFile(@Nullable Output<String> multiRackConfigurationFile) {
+            $.multiRackConfigurationFile = multiRackConfigurationFile;
+            return this;
+        }
+
+        /**
+         * @param multiRackConfigurationFile (Updatable) The base64 encoded Multi-Rack configuration json file.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder multiRackConfigurationFile(String multiRackConfigurationFile) {
+            return multiRackConfigurationFile(Output.of(multiRackConfigurationFile));
         }
 
         /**

@@ -38,7 +38,7 @@ namespace Pulumi.Oci.EmWarehouse
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetResourceUsageResult> InvokeAsync(GetResourceUsageArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetResourceUsageResult>("oci:EmWarehouse/getResourceUsage:getResourceUsage", args ?? new GetResourceUsageArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetResourceUsageResult>("oci:EmWarehouse/getResourceUsage:getResourceUsage", args ?? new GetResourceUsageArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Em Warehouse Resource Usage resource in Oracle Cloud Infrastructure Em Warehouse service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.EmWarehouse
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetResourceUsageResult> Invoke(GetResourceUsageInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetResourceUsageResult>("oci:EmWarehouse/getResourceUsage:getResourceUsage", args ?? new GetResourceUsageInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetResourceUsageResult>("oci:EmWarehouse/getResourceUsage:getResourceUsage", args ?? new GetResourceUsageInvokeArgs(), options.WithDefaults());
     }
 
 

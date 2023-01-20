@@ -38,7 +38,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDataSafePrivateEndpointResult> InvokeAsync(GetDataSafePrivateEndpointArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDataSafePrivateEndpointResult>("oci:DataSafe/getDataSafePrivateEndpoint:getDataSafePrivateEndpoint", args ?? new GetDataSafePrivateEndpointArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDataSafePrivateEndpointResult>("oci:DataSafe/getDataSafePrivateEndpoint:getDataSafePrivateEndpoint", args ?? new GetDataSafePrivateEndpointArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Data Safe Private Endpoint resource in Oracle Cloud Infrastructure Data Safe service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDataSafePrivateEndpointResult> Invoke(GetDataSafePrivateEndpointInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDataSafePrivateEndpointResult>("oci:DataSafe/getDataSafePrivateEndpoint:getDataSafePrivateEndpoint", args ?? new GetDataSafePrivateEndpointInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDataSafePrivateEndpointResult>("oci:DataSafe/getDataSafePrivateEndpoint:getDataSafePrivateEndpoint", args ?? new GetDataSafePrivateEndpointInvokeArgs(), options.WithDefaults());
     }
 
 

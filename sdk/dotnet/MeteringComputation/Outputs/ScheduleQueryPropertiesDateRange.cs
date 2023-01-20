@@ -14,7 +14,7 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
     public sealed class ScheduleQueryPropertiesDateRange
     {
         /// <summary>
-        /// Defines whether the schedule date range is STATIC or DYNAMIC
+        /// Defines whether the schedule date range is STATIC or DYNAMIC.
         /// </summary>
         public readonly string DateRangeType;
         public readonly string? DynamicDateRangeType;

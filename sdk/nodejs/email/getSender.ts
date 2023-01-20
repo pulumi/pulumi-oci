@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSender(args: GetSenderArgs, opts?: pulumi.InvokeOptions): Promise<GetSenderResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Email/getSender:getSender", {
         "senderId": args.senderId,
     }, opts);
@@ -83,9 +80,24 @@ export interface GetSenderResult {
      */
     readonly timeCreated: string;
 }
-
+/**
+ * This data source provides details about a specific Sender resource in Oracle Cloud Infrastructure Email service.
+ *
+ * Gets an approved sender for a given `senderId`.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSender = oci.Email.getSender({
+ *     senderId: oci_email_sender.test_sender.id,
+ * });
+ * ```
+ */
 export function getSenderOutput(args: GetSenderOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSenderResult> {
-    return pulumi.output(args).apply(a => getSender(a, opts))
+    return pulumi.output(args).apply((a: any) => getSender(a, opts))
 }
 
 /**

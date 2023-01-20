@@ -4,7 +4,8 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
-import java.lang.Boolean;
+import com.pulumi.oci.Database.outputs.GetCloudAutonomousVmClusterMaintenanceWindow;
+import com.pulumi.oci.Database.outputs.GetCloudAutonomousVmClusterMaintenanceWindowDetail;
 import java.lang.Double;
 import java.lang.Integer;
 import java.lang.Object;
@@ -57,10 +58,15 @@ public final class GetCloudAutonomousVmClusterResult {
      */
     private String compartmentId;
     /**
-     * @return The number of CPU cores enabled on the cloud Autonomous VM cluster.
+     * @return The number of CPU cores on the cloud Autonomous VM cluster.
      * 
      */
     private Integer cpuCoreCount;
+    /**
+     * @return The number of OCPU cores enabled per VM cluster node.
+     * 
+     */
+    private Integer cpuCoreCountPerNode;
     /**
      * @return The total data storage allocated, in gigabytes (GB).
      * 
@@ -76,6 +82,7 @@ public final class GetCloudAutonomousVmClusterResult {
      * 
      */
     private Integer dbNodeStorageSizeInGbs;
+    private List<String> dbServers;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
@@ -131,6 +138,12 @@ public final class GetCloudAutonomousVmClusterResult {
      * 
      */
     private String lifecycleDetails;
+    private List<GetCloudAutonomousVmClusterMaintenanceWindowDetail> maintenanceWindowDetails;
+    /**
+     * @return The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+     * 
+     */
+    private List<GetCloudAutonomousVmClusterMaintenanceWindow> maintenanceWindows;
     /**
      * @return The amount of memory (in GBs) enabled per each OCPU core.
      * 
@@ -158,7 +171,7 @@ public final class GetCloudAutonomousVmClusterResult {
      */
     private List<String> nsgIds;
     /**
-     * @return The number of CPU cores enabled on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
+     * @return The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
      * 
      */
     private Double ocpuCount;
@@ -167,8 +180,6 @@ public final class GetCloudAutonomousVmClusterResult {
      * 
      */
     private Double reclaimableCpus;
-    private Boolean rotateOrdsCertsTrigger;
-    private Boolean rotateSslCertsTrigger;
     /**
      * @return The model name of the Exadata hardware running the cloud Autonomous VM cluster.
      * 
@@ -261,11 +272,18 @@ public final class GetCloudAutonomousVmClusterResult {
         return this.compartmentId;
     }
     /**
-     * @return The number of CPU cores enabled on the cloud Autonomous VM cluster.
+     * @return The number of CPU cores on the cloud Autonomous VM cluster.
      * 
      */
     public Integer cpuCoreCount() {
         return this.cpuCoreCount;
+    }
+    /**
+     * @return The number of OCPU cores enabled per VM cluster node.
+     * 
+     */
+    public Integer cpuCoreCountPerNode() {
+        return this.cpuCoreCountPerNode;
     }
     /**
      * @return The total data storage allocated, in gigabytes (GB).
@@ -287,6 +305,9 @@ public final class GetCloudAutonomousVmClusterResult {
      */
     public Integer dbNodeStorageSizeInGbs() {
         return this.dbNodeStorageSizeInGbs;
+    }
+    public List<String> dbServers() {
+        return this.dbServers;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -365,6 +386,16 @@ public final class GetCloudAutonomousVmClusterResult {
     public String lifecycleDetails() {
         return this.lifecycleDetails;
     }
+    public List<GetCloudAutonomousVmClusterMaintenanceWindowDetail> maintenanceWindowDetails() {
+        return this.maintenanceWindowDetails;
+    }
+    /**
+     * @return The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+     * 
+     */
+    public List<GetCloudAutonomousVmClusterMaintenanceWindow> maintenanceWindows() {
+        return this.maintenanceWindows;
+    }
     /**
      * @return The amount of memory (in GBs) enabled per each OCPU core.
      * 
@@ -402,7 +433,7 @@ public final class GetCloudAutonomousVmClusterResult {
         return this.nsgIds;
     }
     /**
-     * @return The number of CPU cores enabled on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
+     * @return The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
      * 
      */
     public Double ocpuCount() {
@@ -414,12 +445,6 @@ public final class GetCloudAutonomousVmClusterResult {
      */
     public Double reclaimableCpus() {
         return this.reclaimableCpus;
-    }
-    public Boolean rotateOrdsCertsTrigger() {
-        return this.rotateOrdsCertsTrigger;
-    }
-    public Boolean rotateSslCertsTrigger() {
-        return this.rotateSslCertsTrigger;
     }
     /**
      * @return The model name of the Exadata hardware running the cloud Autonomous VM cluster.
@@ -483,9 +508,11 @@ public final class GetCloudAutonomousVmClusterResult {
         private String clusterTimeZone;
         private String compartmentId;
         private Integer cpuCoreCount;
+        private Integer cpuCoreCountPerNode;
         private Double dataStorageSizeInGb;
         private Double dataStorageSizeInTbs;
         private Integer dbNodeStorageSizeInGbs;
+        private List<String> dbServers;
         private Map<String,Object> definedTags;
         private String description;
         private String displayName;
@@ -497,6 +524,8 @@ public final class GetCloudAutonomousVmClusterResult {
         private String lastUpdateHistoryEntryId;
         private String licenseModel;
         private String lifecycleDetails;
+        private List<GetCloudAutonomousVmClusterMaintenanceWindowDetail> maintenanceWindowDetails;
+        private List<GetCloudAutonomousVmClusterMaintenanceWindow> maintenanceWindows;
         private Integer memoryPerOracleComputeUnitInGbs;
         private Integer memorySizeInGbs;
         private String nextMaintenanceRunId;
@@ -504,8 +533,6 @@ public final class GetCloudAutonomousVmClusterResult {
         private List<String> nsgIds;
         private Double ocpuCount;
         private Double reclaimableCpus;
-        private Boolean rotateOrdsCertsTrigger;
-        private Boolean rotateSslCertsTrigger;
         private String shape;
         private String state;
         private String subnetId;
@@ -525,9 +552,11 @@ public final class GetCloudAutonomousVmClusterResult {
     	      this.clusterTimeZone = defaults.clusterTimeZone;
     	      this.compartmentId = defaults.compartmentId;
     	      this.cpuCoreCount = defaults.cpuCoreCount;
+    	      this.cpuCoreCountPerNode = defaults.cpuCoreCountPerNode;
     	      this.dataStorageSizeInGb = defaults.dataStorageSizeInGb;
     	      this.dataStorageSizeInTbs = defaults.dataStorageSizeInTbs;
     	      this.dbNodeStorageSizeInGbs = defaults.dbNodeStorageSizeInGbs;
+    	      this.dbServers = defaults.dbServers;
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
     	      this.displayName = defaults.displayName;
@@ -539,6 +568,8 @@ public final class GetCloudAutonomousVmClusterResult {
     	      this.lastUpdateHistoryEntryId = defaults.lastUpdateHistoryEntryId;
     	      this.licenseModel = defaults.licenseModel;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.maintenanceWindowDetails = defaults.maintenanceWindowDetails;
+    	      this.maintenanceWindows = defaults.maintenanceWindows;
     	      this.memoryPerOracleComputeUnitInGbs = defaults.memoryPerOracleComputeUnitInGbs;
     	      this.memorySizeInGbs = defaults.memorySizeInGbs;
     	      this.nextMaintenanceRunId = defaults.nextMaintenanceRunId;
@@ -546,8 +577,6 @@ public final class GetCloudAutonomousVmClusterResult {
     	      this.nsgIds = defaults.nsgIds;
     	      this.ocpuCount = defaults.ocpuCount;
     	      this.reclaimableCpus = defaults.reclaimableCpus;
-    	      this.rotateOrdsCertsTrigger = defaults.rotateOrdsCertsTrigger;
-    	      this.rotateSslCertsTrigger = defaults.rotateSslCertsTrigger;
     	      this.shape = defaults.shape;
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
@@ -607,6 +636,11 @@ public final class GetCloudAutonomousVmClusterResult {
             return this;
         }
         @CustomType.Setter
+        public Builder cpuCoreCountPerNode(Integer cpuCoreCountPerNode) {
+            this.cpuCoreCountPerNode = Objects.requireNonNull(cpuCoreCountPerNode);
+            return this;
+        }
+        @CustomType.Setter
         public Builder dataStorageSizeInGb(Double dataStorageSizeInGb) {
             this.dataStorageSizeInGb = Objects.requireNonNull(dataStorageSizeInGb);
             return this;
@@ -620,6 +654,14 @@ public final class GetCloudAutonomousVmClusterResult {
         public Builder dbNodeStorageSizeInGbs(Integer dbNodeStorageSizeInGbs) {
             this.dbNodeStorageSizeInGbs = Objects.requireNonNull(dbNodeStorageSizeInGbs);
             return this;
+        }
+        @CustomType.Setter
+        public Builder dbServers(List<String> dbServers) {
+            this.dbServers = Objects.requireNonNull(dbServers);
+            return this;
+        }
+        public Builder dbServers(String... dbServers) {
+            return dbServers(List.of(dbServers));
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
@@ -677,6 +719,22 @@ public final class GetCloudAutonomousVmClusterResult {
             return this;
         }
         @CustomType.Setter
+        public Builder maintenanceWindowDetails(List<GetCloudAutonomousVmClusterMaintenanceWindowDetail> maintenanceWindowDetails) {
+            this.maintenanceWindowDetails = Objects.requireNonNull(maintenanceWindowDetails);
+            return this;
+        }
+        public Builder maintenanceWindowDetails(GetCloudAutonomousVmClusterMaintenanceWindowDetail... maintenanceWindowDetails) {
+            return maintenanceWindowDetails(List.of(maintenanceWindowDetails));
+        }
+        @CustomType.Setter
+        public Builder maintenanceWindows(List<GetCloudAutonomousVmClusterMaintenanceWindow> maintenanceWindows) {
+            this.maintenanceWindows = Objects.requireNonNull(maintenanceWindows);
+            return this;
+        }
+        public Builder maintenanceWindows(GetCloudAutonomousVmClusterMaintenanceWindow... maintenanceWindows) {
+            return maintenanceWindows(List.of(maintenanceWindows));
+        }
+        @CustomType.Setter
         public Builder memoryPerOracleComputeUnitInGbs(Integer memoryPerOracleComputeUnitInGbs) {
             this.memoryPerOracleComputeUnitInGbs = Objects.requireNonNull(memoryPerOracleComputeUnitInGbs);
             return this;
@@ -712,16 +770,6 @@ public final class GetCloudAutonomousVmClusterResult {
         @CustomType.Setter
         public Builder reclaimableCpus(Double reclaimableCpus) {
             this.reclaimableCpus = Objects.requireNonNull(reclaimableCpus);
-            return this;
-        }
-        @CustomType.Setter
-        public Builder rotateOrdsCertsTrigger(Boolean rotateOrdsCertsTrigger) {
-            this.rotateOrdsCertsTrigger = Objects.requireNonNull(rotateOrdsCertsTrigger);
-            return this;
-        }
-        @CustomType.Setter
-        public Builder rotateSslCertsTrigger(Boolean rotateSslCertsTrigger) {
-            this.rotateSslCertsTrigger = Objects.requireNonNull(rotateSslCertsTrigger);
             return this;
         }
         @CustomType.Setter
@@ -766,9 +814,11 @@ public final class GetCloudAutonomousVmClusterResult {
             o.clusterTimeZone = clusterTimeZone;
             o.compartmentId = compartmentId;
             o.cpuCoreCount = cpuCoreCount;
+            o.cpuCoreCountPerNode = cpuCoreCountPerNode;
             o.dataStorageSizeInGb = dataStorageSizeInGb;
             o.dataStorageSizeInTbs = dataStorageSizeInTbs;
             o.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
+            o.dbServers = dbServers;
             o.definedTags = definedTags;
             o.description = description;
             o.displayName = displayName;
@@ -780,6 +830,8 @@ public final class GetCloudAutonomousVmClusterResult {
             o.lastUpdateHistoryEntryId = lastUpdateHistoryEntryId;
             o.licenseModel = licenseModel;
             o.lifecycleDetails = lifecycleDetails;
+            o.maintenanceWindowDetails = maintenanceWindowDetails;
+            o.maintenanceWindows = maintenanceWindows;
             o.memoryPerOracleComputeUnitInGbs = memoryPerOracleComputeUnitInGbs;
             o.memorySizeInGbs = memorySizeInGbs;
             o.nextMaintenanceRunId = nextMaintenanceRunId;
@@ -787,8 +839,6 @@ public final class GetCloudAutonomousVmClusterResult {
             o.nsgIds = nsgIds;
             o.ocpuCount = ocpuCount;
             o.reclaimableCpus = reclaimableCpus;
-            o.rotateOrdsCertsTrigger = rotateOrdsCertsTrigger;
-            o.rotateSslCertsTrigger = rotateSslCertsTrigger;
             o.shape = shape;
             o.state = state;
             o.subnetId = subnetId;

@@ -223,9 +223,11 @@ class _FusionEnvironmentState:
                  fusion_environment_family_id: Optional[pulumi.Input[str]] = None,
                  fusion_environment_type: Optional[pulumi.Input[str]] = None,
                  idcs_domain_url: Optional[pulumi.Input[str]] = None,
+                 is_break_glass_enabled: Optional[pulumi.Input[bool]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
-                 kms_key_infos: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 kms_key_infos: Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentKmsKeyInfoArgs']]]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
+                 lockbox_id: Optional[pulumi.Input[str]] = None,
                  maintenance_policy: Optional[pulumi.Input['FusionEnvironmentMaintenancePolicyArgs']] = None,
                  public_url: Optional[pulumi.Input[str]] = None,
                  refreshes: Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentRefreshArgs']]]] = None,
@@ -251,9 +253,11 @@ class _FusionEnvironmentState:
         :param pulumi.Input[str] fusion_environment_family_id: The unique identifier (OCID) of the Fusion Environment Family that the Fusion Environment belongs to.
         :param pulumi.Input[str] fusion_environment_type: The type of environment. Valid values are Production, Test, or Development.
         :param pulumi.Input[str] idcs_domain_url: The IDCS Domain URL
+        :param pulumi.Input[bool] is_break_glass_enabled: If it's true, then the Break Glass feature is enabled
         :param pulumi.Input[str] kms_key_id: (Updatable) byok kms keyId
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] kms_key_infos: BYOK key info
+        :param pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentKmsKeyInfoArgs']]] kms_key_infos: BYOK key info
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        :param pulumi.Input[str] lockbox_id: The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
         :param pulumi.Input['FusionEnvironmentMaintenancePolicyArgs'] maintenance_policy: (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
         :param pulumi.Input[str] public_url: Public URL
         :param pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentRefreshArgs']]] refreshes: Describes a refresh of a fusion environment
@@ -290,12 +294,16 @@ class _FusionEnvironmentState:
             pulumi.set(__self__, "fusion_environment_type", fusion_environment_type)
         if idcs_domain_url is not None:
             pulumi.set(__self__, "idcs_domain_url", idcs_domain_url)
+        if is_break_glass_enabled is not None:
+            pulumi.set(__self__, "is_break_glass_enabled", is_break_glass_enabled)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
         if kms_key_infos is not None:
             pulumi.set(__self__, "kms_key_infos", kms_key_infos)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if lockbox_id is not None:
+            pulumi.set(__self__, "lockbox_id", lockbox_id)
         if maintenance_policy is not None:
             pulumi.set(__self__, "maintenance_policy", maintenance_policy)
         if public_url is not None:
@@ -464,6 +472,18 @@ class _FusionEnvironmentState:
         pulumi.set(self, "idcs_domain_url", value)
 
     @property
+    @pulumi.getter(name="isBreakGlassEnabled")
+    def is_break_glass_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        If it's true, then the Break Glass feature is enabled
+        """
+        return pulumi.get(self, "is_break_glass_enabled")
+
+    @is_break_glass_enabled.setter
+    def is_break_glass_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_break_glass_enabled", value)
+
+    @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -477,14 +497,14 @@ class _FusionEnvironmentState:
 
     @property
     @pulumi.getter(name="kmsKeyInfos")
-    def kms_key_infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+    def kms_key_infos(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentKmsKeyInfoArgs']]]]:
         """
         BYOK key info
         """
         return pulumi.get(self, "kms_key_infos")
 
     @kms_key_infos.setter
-    def kms_key_infos(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+    def kms_key_infos(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentKmsKeyInfoArgs']]]]):
         pulumi.set(self, "kms_key_infos", value)
 
     @property
@@ -498,6 +518,18 @@ class _FusionEnvironmentState:
     @lifecycle_details.setter
     def lifecycle_details(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "lifecycle_details", value)
+
+    @property
+    @pulumi.getter(name="lockboxId")
+    def lockbox_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
+        """
+        return pulumi.get(self, "lockbox_id")
+
+    @lockbox_id.setter
+    def lockbox_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "lockbox_id", value)
 
     @property
     @pulumi.getter(name="maintenancePolicy")
@@ -840,8 +872,10 @@ class FusionEnvironment(pulumi.CustomResource):
             __props__.__dict__["applied_patch_bundles"] = None
             __props__.__dict__["domain_id"] = None
             __props__.__dict__["idcs_domain_url"] = None
+            __props__.__dict__["is_break_glass_enabled"] = None
             __props__.__dict__["kms_key_infos"] = None
             __props__.__dict__["lifecycle_details"] = None
+            __props__.__dict__["lockbox_id"] = None
             __props__.__dict__["public_url"] = None
             __props__.__dict__["refreshes"] = None
             __props__.__dict__["state"] = None
@@ -873,9 +907,11 @@ class FusionEnvironment(pulumi.CustomResource):
             fusion_environment_family_id: Optional[pulumi.Input[str]] = None,
             fusion_environment_type: Optional[pulumi.Input[str]] = None,
             idcs_domain_url: Optional[pulumi.Input[str]] = None,
+            is_break_glass_enabled: Optional[pulumi.Input[bool]] = None,
             kms_key_id: Optional[pulumi.Input[str]] = None,
-            kms_key_infos: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+            kms_key_infos: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['FusionEnvironmentKmsKeyInfoArgs']]]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
+            lockbox_id: Optional[pulumi.Input[str]] = None,
             maintenance_policy: Optional[pulumi.Input[pulumi.InputType['FusionEnvironmentMaintenancePolicyArgs']]] = None,
             public_url: Optional[pulumi.Input[str]] = None,
             refreshes: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['FusionEnvironmentRefreshArgs']]]]] = None,
@@ -906,9 +942,11 @@ class FusionEnvironment(pulumi.CustomResource):
         :param pulumi.Input[str] fusion_environment_family_id: The unique identifier (OCID) of the Fusion Environment Family that the Fusion Environment belongs to.
         :param pulumi.Input[str] fusion_environment_type: The type of environment. Valid values are Production, Test, or Development.
         :param pulumi.Input[str] idcs_domain_url: The IDCS Domain URL
+        :param pulumi.Input[bool] is_break_glass_enabled: If it's true, then the Break Glass feature is enabled
         :param pulumi.Input[str] kms_key_id: (Updatable) byok kms keyId
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] kms_key_infos: BYOK key info
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['FusionEnvironmentKmsKeyInfoArgs']]]] kms_key_infos: BYOK key info
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        :param pulumi.Input[str] lockbox_id: The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
         :param pulumi.Input[pulumi.InputType['FusionEnvironmentMaintenancePolicyArgs']] maintenance_policy: (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
         :param pulumi.Input[str] public_url: Public URL
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['FusionEnvironmentRefreshArgs']]]] refreshes: Describes a refresh of a fusion environment
@@ -937,9 +975,11 @@ class FusionEnvironment(pulumi.CustomResource):
         __props__.__dict__["fusion_environment_family_id"] = fusion_environment_family_id
         __props__.__dict__["fusion_environment_type"] = fusion_environment_type
         __props__.__dict__["idcs_domain_url"] = idcs_domain_url
+        __props__.__dict__["is_break_glass_enabled"] = is_break_glass_enabled
         __props__.__dict__["kms_key_id"] = kms_key_id
         __props__.__dict__["kms_key_infos"] = kms_key_infos
         __props__.__dict__["lifecycle_details"] = lifecycle_details
+        __props__.__dict__["lockbox_id"] = lockbox_id
         __props__.__dict__["maintenance_policy"] = maintenance_policy
         __props__.__dict__["public_url"] = public_url
         __props__.__dict__["refreshes"] = refreshes
@@ -1050,6 +1090,14 @@ class FusionEnvironment(pulumi.CustomResource):
         return pulumi.get(self, "idcs_domain_url")
 
     @property
+    @pulumi.getter(name="isBreakGlassEnabled")
+    def is_break_glass_enabled(self) -> pulumi.Output[bool]:
+        """
+        If it's true, then the Break Glass feature is enabled
+        """
+        return pulumi.get(self, "is_break_glass_enabled")
+
+    @property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> pulumi.Output[str]:
         """
@@ -1059,7 +1107,7 @@ class FusionEnvironment(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="kmsKeyInfos")
-    def kms_key_infos(self) -> pulumi.Output[Sequence[str]]:
+    def kms_key_infos(self) -> pulumi.Output[Sequence['outputs.FusionEnvironmentKmsKeyInfo']]:
         """
         BYOK key info
         """
@@ -1072,6 +1120,14 @@ class FusionEnvironment(pulumi.CustomResource):
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="lockboxId")
+    def lockbox_id(self) -> pulumi.Output[str]:
+        """
+        The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
+        """
+        return pulumi.get(self, "lockbox_id")
 
     @property
     @pulumi.getter(name="maintenancePolicy")

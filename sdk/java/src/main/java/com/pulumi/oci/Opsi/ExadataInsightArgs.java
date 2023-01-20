@@ -5,9 +5,11 @@ package com.pulumi.oci.Opsi;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Opsi.inputs.ExadataInsightMemberVmClusterDetailArgs;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -52,45 +54,45 @@ public final class ExadataInsightArgs extends com.pulumi.resources.ResourceArgs 
      * OPSI Enterprise Manager Bridge OCID
      * 
      */
-    @Import(name="enterpriseManagerBridgeId", required=true)
-    private Output<String> enterpriseManagerBridgeId;
+    @Import(name="enterpriseManagerBridgeId")
+    private @Nullable Output<String> enterpriseManagerBridgeId;
 
     /**
      * @return OPSI Enterprise Manager Bridge OCID
      * 
      */
-    public Output<String> enterpriseManagerBridgeId() {
-        return this.enterpriseManagerBridgeId;
+    public Optional<Output<String>> enterpriseManagerBridgeId() {
+        return Optional.ofNullable(this.enterpriseManagerBridgeId);
     }
 
     /**
      * Enterprise Manager Entity Unique Identifier
      * 
      */
-    @Import(name="enterpriseManagerEntityIdentifier", required=true)
-    private Output<String> enterpriseManagerEntityIdentifier;
+    @Import(name="enterpriseManagerEntityIdentifier")
+    private @Nullable Output<String> enterpriseManagerEntityIdentifier;
 
     /**
      * @return Enterprise Manager Entity Unique Identifier
      * 
      */
-    public Output<String> enterpriseManagerEntityIdentifier() {
-        return this.enterpriseManagerEntityIdentifier;
+    public Optional<Output<String>> enterpriseManagerEntityIdentifier() {
+        return Optional.ofNullable(this.enterpriseManagerEntityIdentifier);
     }
 
     /**
      * Enterprise Manager Unique Identifier
      * 
      */
-    @Import(name="enterpriseManagerIdentifier", required=true)
-    private Output<String> enterpriseManagerIdentifier;
+    @Import(name="enterpriseManagerIdentifier")
+    private @Nullable Output<String> enterpriseManagerIdentifier;
 
     /**
      * @return Enterprise Manager Unique Identifier
      * 
      */
-    public Output<String> enterpriseManagerIdentifier() {
-        return this.enterpriseManagerIdentifier;
+    public Optional<Output<String>> enterpriseManagerIdentifier() {
+        return Optional.ofNullable(this.enterpriseManagerIdentifier);
     }
 
     /**
@@ -106,6 +108,13 @@ public final class ExadataInsightArgs extends com.pulumi.resources.ResourceArgs 
      */
     public Output<String> entitySource() {
         return this.entitySource;
+    }
+
+    @Import(name="exadataInfraId")
+    private @Nullable Output<String> exadataInfraId;
+
+    public Optional<Output<String>> exadataInfraId() {
+        return Optional.ofNullable(this.exadataInfraId);
     }
 
     /**
@@ -138,6 +147,13 @@ public final class ExadataInsightArgs extends com.pulumi.resources.ResourceArgs 
         return Optional.ofNullable(this.isAutoSyncEnabled);
     }
 
+    @Import(name="memberVmClusterDetails")
+    private @Nullable Output<List<ExadataInsightMemberVmClusterDetailArgs>> memberVmClusterDetails;
+
+    public Optional<Output<List<ExadataInsightMemberVmClusterDetailArgs>>> memberVmClusterDetails() {
+        return Optional.ofNullable(this.memberVmClusterDetails);
+    }
+
     /**
      * (Updatable) Status of the resource. Example: &#34;ENABLED&#34;, &#34;DISABLED&#34;. Resource can be either enabled or disabled by updating the value of status field to either &#34;ENABLED&#34; or &#34;DISABLED&#34;
      * 
@@ -162,8 +178,10 @@ public final class ExadataInsightArgs extends com.pulumi.resources.ResourceArgs 
         this.enterpriseManagerEntityIdentifier = $.enterpriseManagerEntityIdentifier;
         this.enterpriseManagerIdentifier = $.enterpriseManagerIdentifier;
         this.entitySource = $.entitySource;
+        this.exadataInfraId = $.exadataInfraId;
         this.freeformTags = $.freeformTags;
         this.isAutoSyncEnabled = $.isAutoSyncEnabled;
+        this.memberVmClusterDetails = $.memberVmClusterDetails;
         this.status = $.status;
     }
 
@@ -233,7 +251,7 @@ public final class ExadataInsightArgs extends com.pulumi.resources.ResourceArgs 
          * @return builder
          * 
          */
-        public Builder enterpriseManagerBridgeId(Output<String> enterpriseManagerBridgeId) {
+        public Builder enterpriseManagerBridgeId(@Nullable Output<String> enterpriseManagerBridgeId) {
             $.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
             return this;
         }
@@ -254,7 +272,7 @@ public final class ExadataInsightArgs extends com.pulumi.resources.ResourceArgs 
          * @return builder
          * 
          */
-        public Builder enterpriseManagerEntityIdentifier(Output<String> enterpriseManagerEntityIdentifier) {
+        public Builder enterpriseManagerEntityIdentifier(@Nullable Output<String> enterpriseManagerEntityIdentifier) {
             $.enterpriseManagerEntityIdentifier = enterpriseManagerEntityIdentifier;
             return this;
         }
@@ -275,7 +293,7 @@ public final class ExadataInsightArgs extends com.pulumi.resources.ResourceArgs 
          * @return builder
          * 
          */
-        public Builder enterpriseManagerIdentifier(Output<String> enterpriseManagerIdentifier) {
+        public Builder enterpriseManagerIdentifier(@Nullable Output<String> enterpriseManagerIdentifier) {
             $.enterpriseManagerIdentifier = enterpriseManagerIdentifier;
             return this;
         }
@@ -309,6 +327,15 @@ public final class ExadataInsightArgs extends com.pulumi.resources.ResourceArgs 
          */
         public Builder entitySource(String entitySource) {
             return entitySource(Output.of(entitySource));
+        }
+
+        public Builder exadataInfraId(@Nullable Output<String> exadataInfraId) {
+            $.exadataInfraId = exadataInfraId;
+            return this;
+        }
+
+        public Builder exadataInfraId(String exadataInfraId) {
+            return exadataInfraId(Output.of(exadataInfraId));
         }
 
         /**
@@ -353,6 +380,19 @@ public final class ExadataInsightArgs extends com.pulumi.resources.ResourceArgs 
             return isAutoSyncEnabled(Output.of(isAutoSyncEnabled));
         }
 
+        public Builder memberVmClusterDetails(@Nullable Output<List<ExadataInsightMemberVmClusterDetailArgs>> memberVmClusterDetails) {
+            $.memberVmClusterDetails = memberVmClusterDetails;
+            return this;
+        }
+
+        public Builder memberVmClusterDetails(List<ExadataInsightMemberVmClusterDetailArgs> memberVmClusterDetails) {
+            return memberVmClusterDetails(Output.of(memberVmClusterDetails));
+        }
+
+        public Builder memberVmClusterDetails(ExadataInsightMemberVmClusterDetailArgs... memberVmClusterDetails) {
+            return memberVmClusterDetails(List.of(memberVmClusterDetails));
+        }
+
         /**
          * @param status (Updatable) Status of the resource. Example: &#34;ENABLED&#34;, &#34;DISABLED&#34;. Resource can be either enabled or disabled by updating the value of status field to either &#34;ENABLED&#34; or &#34;DISABLED&#34;
          * 
@@ -376,9 +416,6 @@ public final class ExadataInsightArgs extends com.pulumi.resources.ResourceArgs 
 
         public ExadataInsightArgs build() {
             $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.enterpriseManagerBridgeId = Objects.requireNonNull($.enterpriseManagerBridgeId, "expected parameter 'enterpriseManagerBridgeId' to be non-null");
-            $.enterpriseManagerEntityIdentifier = Objects.requireNonNull($.enterpriseManagerEntityIdentifier, "expected parameter 'enterpriseManagerEntityIdentifier' to be non-null");
-            $.enterpriseManagerIdentifier = Objects.requireNonNull($.enterpriseManagerIdentifier, "expected parameter 'enterpriseManagerIdentifier' to be non-null");
             $.entitySource = Objects.requireNonNull($.entitySource, "expected parameter 'entitySource' to be non-null");
             return $;
         }

@@ -5,11 +5,8 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 export function getMigrateToNativeVcnStatus(args: GetMigrateToNativeVcnStatusArgs, opts?: pulumi.InvokeOptions): Promise<GetMigrateToNativeVcnStatusResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ContainerEngine/getMigrateToNativeVcnStatus:getMigrateToNativeVcnStatus", {
         "clusterId": args.clusterId,
     }, opts);
@@ -34,9 +31,8 @@ export interface GetMigrateToNativeVcnStatusResult {
     readonly state: string;
     readonly timeDecommissionScheduled: string;
 }
-
 export function getMigrateToNativeVcnStatusOutput(args: GetMigrateToNativeVcnStatusOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMigrateToNativeVcnStatusResult> {
-    return pulumi.output(args).apply(a => getMigrateToNativeVcnStatus(a, opts))
+    return pulumi.output(args).apply((a: any) => getMigrateToNativeVcnStatus(a, opts))
 }
 
 /**

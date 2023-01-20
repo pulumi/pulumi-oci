@@ -40,7 +40,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetManagedDatabaseUserDataAccessContainerResult> InvokeAsync(GetManagedDatabaseUserDataAccessContainerArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseUserDataAccessContainerResult>("oci:DatabaseManagement/getManagedDatabaseUserDataAccessContainer:getManagedDatabaseUserDataAccessContainer", args ?? new GetManagedDatabaseUserDataAccessContainerArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseUserDataAccessContainerResult>("oci:DatabaseManagement/getManagedDatabaseUserDataAccessContainer:getManagedDatabaseUserDataAccessContainer", args ?? new GetManagedDatabaseUserDataAccessContainerArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Managed Database User Data Access Container resource in Oracle Cloud Infrastructure Database Management service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetManagedDatabaseUserDataAccessContainerResult> Invoke(GetManagedDatabaseUserDataAccessContainerInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseUserDataAccessContainerResult>("oci:DatabaseManagement/getManagedDatabaseUserDataAccessContainer:getManagedDatabaseUserDataAccessContainer", args ?? new GetManagedDatabaseUserDataAccessContainerInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseUserDataAccessContainerResult>("oci:DatabaseManagement/getManagedDatabaseUserDataAccessContainer:getManagedDatabaseUserDataAccessContainer", args ?? new GetManagedDatabaseUserDataAccessContainerInvokeArgs(), options.WithDefaults());
     }
 
 

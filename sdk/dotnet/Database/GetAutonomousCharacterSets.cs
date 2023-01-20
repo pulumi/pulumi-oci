@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAutonomousCharacterSetsResult> InvokeAsync(GetAutonomousCharacterSetsArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAutonomousCharacterSetsResult>("oci:Database/getAutonomousCharacterSets:getAutonomousCharacterSets", args ?? new GetAutonomousCharacterSetsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAutonomousCharacterSetsResult>("oci:Database/getAutonomousCharacterSets:getAutonomousCharacterSets", args ?? new GetAutonomousCharacterSetsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Autonomous Database Character Sets in Oracle Cloud Infrastructure Database service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAutonomousCharacterSetsResult> Invoke(GetAutonomousCharacterSetsInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAutonomousCharacterSetsResult>("oci:Database/getAutonomousCharacterSets:getAutonomousCharacterSets", args ?? new GetAutonomousCharacterSetsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousCharacterSetsResult>("oci:Database/getAutonomousCharacterSets:getAutonomousCharacterSets", args ?? new GetAutonomousCharacterSetsInvokeArgs(), options.WithDefaults());
     }
 
 

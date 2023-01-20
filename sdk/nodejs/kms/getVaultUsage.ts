@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVaultUsage(args: GetVaultUsageArgs, opts?: pulumi.InvokeOptions): Promise<GetVaultUsageResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Kms/getVaultUsage:getVaultUsage", {
         "vaultId": args.vaultId,
     }, opts);
@@ -67,9 +64,24 @@ export interface GetVaultUsageResult {
     readonly softwareKeyVersionCount: number;
     readonly vaultId: string;
 }
-
+/**
+ * This data source provides details about a specific Vault Usage resource in Oracle Cloud Infrastructure Kms service.
+ *
+ * Gets the count of keys and key versions in the specified vault to calculate usage against service limits.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testVaultUsage = oci.Kms.getVaultUsage({
+ *     vaultId: oci_kms_vault.test_vault.id,
+ * });
+ * ```
+ */
 export function getVaultUsageOutput(args: GetVaultUsageOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVaultUsageResult> {
-    return pulumi.output(args).apply(a => getVaultUsage(a, opts))
+    return pulumi.output(args).apply((a: any) => getVaultUsage(a, opts))
 }
 
 /**

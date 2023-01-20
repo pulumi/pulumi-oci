@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getOperationsInsightsPrivateEndpoint(args: GetOperationsInsightsPrivateEndpointArgs, opts?: pulumi.InvokeOptions): Promise<GetOperationsInsightsPrivateEndpointResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Opsi/getOperationsInsightsPrivateEndpoint:getOperationsInsightsPrivateEndpoint", {
         "operationsInsightsPrivateEndpointId": args.operationsInsightsPrivateEndpointId,
     }, opts);
@@ -111,9 +108,24 @@ export interface GetOperationsInsightsPrivateEndpointResult {
      */
     readonly vcnId: string;
 }
-
+/**
+ * This data source provides details about a specific Operations Insights Private Endpoint resource in Oracle Cloud Infrastructure Opsi service.
+ *
+ * Gets the details of the specified private endpoint.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testOperationsInsightsPrivateEndpoint = oci.Opsi.getOperationsInsightsPrivateEndpoint({
+ *     operationsInsightsPrivateEndpointId: oci_opsi_operations_insights_private_endpoint.test_operations_insights_private_endpoint.id,
+ * });
+ * ```
+ */
 export function getOperationsInsightsPrivateEndpointOutput(args: GetOperationsInsightsPrivateEndpointOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOperationsInsightsPrivateEndpointResult> {
-    return pulumi.output(args).apply(a => getOperationsInsightsPrivateEndpoint(a, opts))
+    return pulumi.output(args).apply((a: any) => getOperationsInsightsPrivateEndpoint(a, opts))
 }
 
 /**

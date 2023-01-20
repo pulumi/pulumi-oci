@@ -79,7 +79,6 @@ import javax.annotation.Nullable;
  *             .keyStoreId(oci_database_key_store.test_key_store().id())
  *             .kmsKeyId(oci_kms_key.test_key().id())
  *             .maintenanceWindowDetails(AutonomousContainerDatabaseMaintenanceWindowDetailsArgs.builder()
- *                 .preference(var_.autonomous_container_database_maintenance_window_details_preference())
  *                 .customActionTimeoutInMins(var_.autonomous_container_database_maintenance_window_details_custom_action_timeout_in_mins())
  *                 .daysOfWeeks(AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArgs.builder()
  *                     .name(var_.autonomous_container_database_maintenance_window_details_days_of_week_name())
@@ -92,6 +91,7 @@ import javax.annotation.Nullable;
  *                     .name(var_.autonomous_container_database_maintenance_window_details_months_name())
  *                     .build())
  *                 .patchingMode(var_.autonomous_container_database_maintenance_window_details_patching_mode())
+ *                 .preference(var_.autonomous_container_database_maintenance_window_details_preference())
  *                 .weeksOfMonths(var_.autonomous_container_database_maintenance_window_details_weeks_of_month())
  *                 .build())
  *             .peerAutonomousContainerDatabaseDisplayName(var_.autonomous_container_database_peer_autonomous_container_database_display_name())
@@ -173,14 +173,14 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
         return this.availabilityDomain;
     }
     /**
-     * Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+     * Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
      * 
      */
     @Export(name="availableCpus", type=Double.class, parameters={})
     private Output<Double> availableCpus;
 
     /**
-     * @return Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+     * @return Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
      * 
      */
     public Output<Double> availableCpus() {
@@ -611,14 +611,14 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
         return this.reclaimableCpus;
     }
     /**
-     * The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      * 
      */
     @Export(name="role", type=String.class, parameters={})
     private Output<String> role;
 
     /**
-     * @return The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+     * @return The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      * 
      */
     public Output<String> role() {

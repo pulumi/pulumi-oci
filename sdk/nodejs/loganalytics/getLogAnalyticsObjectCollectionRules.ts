@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLogAnalyticsObjectCollectionRules(args: GetLogAnalyticsObjectCollectionRulesArgs, opts?: pulumi.InvokeOptions): Promise<GetLogAnalyticsObjectCollectionRulesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LogAnalytics/getLogAnalyticsObjectCollectionRules:getLogAnalyticsObjectCollectionRules", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -89,9 +87,27 @@ export interface GetLogAnalyticsObjectCollectionRulesResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Log Analytics Object Collection Rules in Oracle Cloud Infrastructure Log Analytics service.
+ *
+ * Gets list of configuration details of Object Storage based collection rules.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testLogAnalyticsObjectCollectionRules = oci.LogAnalytics.getLogAnalyticsObjectCollectionRules({
+ *     compartmentId: _var.compartment_id,
+ *     namespace: _var.log_analytics_object_collection_rule_namespace,
+ *     name: _var.log_analytics_object_collection_rule_name,
+ *     state: _var.log_analytics_object_collection_rule_state,
+ * });
+ * ```
+ */
 export function getLogAnalyticsObjectCollectionRulesOutput(args: GetLogAnalyticsObjectCollectionRulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogAnalyticsObjectCollectionRulesResult> {
-    return pulumi.output(args).apply(a => getLogAnalyticsObjectCollectionRules(a, opts))
+    return pulumi.output(args).apply((a: any) => getLogAnalyticsObjectCollectionRules(a, opts))
 }
 
 /**

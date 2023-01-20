@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getTrigger(args: GetTriggerArgs, opts?: pulumi.InvokeOptions): Promise<GetTriggerResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getTrigger:getTrigger", {
         "triggerId": args.triggerId,
     }, opts);
@@ -113,9 +111,24 @@ export interface GetTriggerResult {
      */
     readonly triggerUrl: string;
 }
-
+/**
+ * This data source provides details about a specific Trigger resource in Oracle Cloud Infrastructure Devops service.
+ *
+ * Retrieves a trigger by identifier.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testTrigger = oci.DevOps.getTrigger({
+ *     triggerId: oci_devops_trigger.test_trigger.id,
+ * });
+ * ```
+ */
 export function getTriggerOutput(args: GetTriggerOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTriggerResult> {
-    return pulumi.output(args).apply(a => getTrigger(a, opts))
+    return pulumi.output(args).apply((a: any) => getTrigger(a, opts))
 }
 
 /**

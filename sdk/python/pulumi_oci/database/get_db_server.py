@@ -22,7 +22,7 @@ class GetDbServerResult:
     """
     A collection of values returned by getDbServer.
     """
-    def __init__(__self__, compartment_id=None, cpu_core_count=None, db_node_ids=None, db_node_storage_size_in_gbs=None, db_server_id=None, db_server_patching_details=None, defined_tags=None, display_name=None, exadata_infrastructure_id=None, freeform_tags=None, id=None, lifecycle_details=None, max_cpu_count=None, max_db_node_storage_in_gbs=None, max_memory_in_gbs=None, memory_size_in_gbs=None, state=None, time_created=None, vm_cluster_ids=None):
+    def __init__(__self__, compartment_id=None, cpu_core_count=None, db_node_ids=None, db_node_storage_size_in_gbs=None, db_server_id=None, db_server_patching_details=None, defined_tags=None, display_name=None, exadata_infrastructure_id=None, freeform_tags=None, id=None, lifecycle_details=None, max_cpu_count=None, max_db_node_storage_in_gbs=None, max_memory_in_gbs=None, memory_size_in_gbs=None, shape=None, state=None, time_created=None, vm_cluster_ids=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -71,6 +71,9 @@ class GetDbServerResult:
         if memory_size_in_gbs and not isinstance(memory_size_in_gbs, int):
             raise TypeError("Expected argument 'memory_size_in_gbs' to be a int")
         pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
+        if shape and not isinstance(shape, str):
+            raise TypeError("Expected argument 'shape' to be a str")
+        pulumi.set(__self__, "shape", shape)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -208,6 +211,14 @@ class GetDbServerResult:
 
     @property
     @pulumi.getter
+    def shape(self) -> str:
+        """
+        The shape of the Db server. The shape determines the amount of CPU, storage, and memory resources available.
+        """
+        return pulumi.get(self, "shape")
+
+    @property
+    @pulumi.getter
     def state(self) -> str:
         """
         The current state of the Db server.
@@ -253,6 +264,7 @@ class AwaitableGetDbServerResult(GetDbServerResult):
             max_db_node_storage_in_gbs=self.max_db_node_storage_in_gbs,
             max_memory_in_gbs=self.max_memory_in_gbs,
             memory_size_in_gbs=self.memory_size_in_gbs,
+            shape=self.shape,
             state=self.state,
             time_created=self.time_created,
             vm_cluster_ids=self.vm_cluster_ids)
@@ -303,6 +315,7 @@ def get_db_server(db_server_id: Optional[str] = None,
         max_db_node_storage_in_gbs=__ret__.max_db_node_storage_in_gbs,
         max_memory_in_gbs=__ret__.max_memory_in_gbs,
         memory_size_in_gbs=__ret__.memory_size_in_gbs,
+        shape=__ret__.shape,
         state=__ret__.state,
         time_created=__ret__.time_created,
         vm_cluster_ids=__ret__.vm_cluster_ids)

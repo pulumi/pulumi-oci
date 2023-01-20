@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getPathRouteSets(args: GetPathRouteSetsArgs, opts?: pulumi.InvokeOptions): Promise<GetPathRouteSetsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LoadBalancer/getPathRouteSets:getPathRouteSets", {
         "filters": args.filters,
         "loadBalancerId": args.loadBalancerId,
@@ -59,9 +57,24 @@ export interface GetPathRouteSetsResult {
      */
     readonly pathRouteSets: outputs.LoadBalancer.GetPathRouteSetsPathRouteSet[];
 }
-
+/**
+ * This data source provides the list of Path Route Sets in Oracle Cloud Infrastructure Load Balancer service.
+ *
+ * Lists all path route sets associated with the specified load balancer.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testPathRouteSets = oci.LoadBalancer.getPathRouteSets({
+ *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
+ * });
+ * ```
+ */
 export function getPathRouteSetsOutput(args: GetPathRouteSetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPathRouteSetsResult> {
-    return pulumi.output(args).apply(a => getPathRouteSets(a, opts))
+    return pulumi.output(args).apply((a: any) => getPathRouteSets(a, opts))
 }
 
 /**

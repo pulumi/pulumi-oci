@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -27,11 +28,8 @@ import * as utilities from "../utilities";
  */
 export function getBuildPipelines(args?: GetBuildPipelinesArgs, opts?: pulumi.InvokeOptions): Promise<GetBuildPipelinesResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getBuildPipelines:getBuildPipelines", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -99,9 +97,28 @@ export interface GetBuildPipelinesResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Build Pipelines in Oracle Cloud Infrastructure Devops service.
+ *
+ * Returns a list of build pipelines.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testBuildPipelines = oci.DevOps.getBuildPipelines({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.build_pipeline_display_name,
+ *     id: _var.build_pipeline_id,
+ *     projectId: oci_devops_project.test_project.id,
+ *     state: _var.build_pipeline_state,
+ * });
+ * ```
+ */
 export function getBuildPipelinesOutput(args?: GetBuildPipelinesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBuildPipelinesResult> {
-    return pulumi.output(args).apply(a => getBuildPipelines(a, opts))
+    return pulumi.output(args).apply((a: any) => getBuildPipelines(a, opts))
 }
 
 /**

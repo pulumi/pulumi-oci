@@ -4,7 +4,9 @@
 package com.pulumi.oci.ApmSynthetics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorsMonitorCollectionItemAvailabilityConfiguration;
 import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorsMonitorCollectionItemConfiguration;
+import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule;
 import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorsMonitorCollectionItemScriptParameter;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -21,6 +23,11 @@ public final class GetMonitorsMonitorCollectionItem {
      * 
      */
     private String apmDomainId;
+    /**
+     * @return Monitor availability configuration details.
+     * 
+     */
+    private List<GetMonitorsMonitorCollectionItemAvailabilityConfiguration> availabilityConfigurations;
     /**
      * @return Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
      * 
@@ -61,6 +68,11 @@ public final class GetMonitorsMonitorCollectionItem {
      * 
      */
     private Boolean isRunOnce;
+    /**
+     * @return Details used to schedule maintenance window.
+     * 
+     */
+    private List<GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule> maintenanceWindowSchedules;
     /**
      * @return A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
      * 
@@ -112,7 +124,7 @@ public final class GetMonitorsMonitorCollectionItem {
      */
     private String timeUpdated;
     /**
-     * @return Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+     * @return Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
      * 
      */
     private Integer timeoutInSeconds;
@@ -134,6 +146,13 @@ public final class GetMonitorsMonitorCollectionItem {
      */
     public String apmDomainId() {
         return this.apmDomainId;
+    }
+    /**
+     * @return Monitor availability configuration details.
+     * 
+     */
+    public List<GetMonitorsMonitorCollectionItemAvailabilityConfiguration> availabilityConfigurations() {
+        return this.availabilityConfigurations;
     }
     /**
      * @return Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
@@ -190,6 +209,13 @@ public final class GetMonitorsMonitorCollectionItem {
      */
     public Boolean isRunOnce() {
         return this.isRunOnce;
+    }
+    /**
+     * @return Details used to schedule maintenance window.
+     * 
+     */
+    public List<GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule> maintenanceWindowSchedules() {
+        return this.maintenanceWindowSchedules;
     }
     /**
      * @return A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
@@ -262,7 +288,7 @@ public final class GetMonitorsMonitorCollectionItem {
         return this.timeUpdated;
     }
     /**
-     * @return Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+     * @return Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
      * 
      */
     public Integer timeoutInSeconds() {
@@ -293,6 +319,7 @@ public final class GetMonitorsMonitorCollectionItem {
     @CustomType.Builder
     public static final class Builder {
         private String apmDomainId;
+        private List<GetMonitorsMonitorCollectionItemAvailabilityConfiguration> availabilityConfigurations;
         private Integer batchIntervalInSeconds;
         private List<GetMonitorsMonitorCollectionItemConfiguration> configurations;
         private Map<String,Object> definedTags;
@@ -301,6 +328,7 @@ public final class GetMonitorsMonitorCollectionItem {
         private String id;
         private Boolean isRunNow;
         private Boolean isRunOnce;
+        private List<GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule> maintenanceWindowSchedules;
         private String monitorType;
         private Integer repeatIntervalInSeconds;
         private String schedulingPolicy;
@@ -318,6 +346,7 @@ public final class GetMonitorsMonitorCollectionItem {
         public Builder(GetMonitorsMonitorCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.apmDomainId = defaults.apmDomainId;
+    	      this.availabilityConfigurations = defaults.availabilityConfigurations;
     	      this.batchIntervalInSeconds = defaults.batchIntervalInSeconds;
     	      this.configurations = defaults.configurations;
     	      this.definedTags = defaults.definedTags;
@@ -326,6 +355,7 @@ public final class GetMonitorsMonitorCollectionItem {
     	      this.id = defaults.id;
     	      this.isRunNow = defaults.isRunNow;
     	      this.isRunOnce = defaults.isRunOnce;
+    	      this.maintenanceWindowSchedules = defaults.maintenanceWindowSchedules;
     	      this.monitorType = defaults.monitorType;
     	      this.repeatIntervalInSeconds = defaults.repeatIntervalInSeconds;
     	      this.schedulingPolicy = defaults.schedulingPolicy;
@@ -345,6 +375,14 @@ public final class GetMonitorsMonitorCollectionItem {
         public Builder apmDomainId(String apmDomainId) {
             this.apmDomainId = Objects.requireNonNull(apmDomainId);
             return this;
+        }
+        @CustomType.Setter
+        public Builder availabilityConfigurations(List<GetMonitorsMonitorCollectionItemAvailabilityConfiguration> availabilityConfigurations) {
+            this.availabilityConfigurations = Objects.requireNonNull(availabilityConfigurations);
+            return this;
+        }
+        public Builder availabilityConfigurations(GetMonitorsMonitorCollectionItemAvailabilityConfiguration... availabilityConfigurations) {
+            return availabilityConfigurations(List.of(availabilityConfigurations));
         }
         @CustomType.Setter
         public Builder batchIntervalInSeconds(Integer batchIntervalInSeconds) {
@@ -388,6 +426,14 @@ public final class GetMonitorsMonitorCollectionItem {
         public Builder isRunOnce(Boolean isRunOnce) {
             this.isRunOnce = Objects.requireNonNull(isRunOnce);
             return this;
+        }
+        @CustomType.Setter
+        public Builder maintenanceWindowSchedules(List<GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule> maintenanceWindowSchedules) {
+            this.maintenanceWindowSchedules = Objects.requireNonNull(maintenanceWindowSchedules);
+            return this;
+        }
+        public Builder maintenanceWindowSchedules(GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule... maintenanceWindowSchedules) {
+            return maintenanceWindowSchedules(List.of(maintenanceWindowSchedules));
         }
         @CustomType.Setter
         public Builder monitorType(String monitorType) {
@@ -463,6 +509,7 @@ public final class GetMonitorsMonitorCollectionItem {
         public GetMonitorsMonitorCollectionItem build() {
             final var o = new GetMonitorsMonitorCollectionItem();
             o.apmDomainId = apmDomainId;
+            o.availabilityConfigurations = availabilityConfigurations;
             o.batchIntervalInSeconds = batchIntervalInSeconds;
             o.configurations = configurations;
             o.definedTags = definedTags;
@@ -471,6 +518,7 @@ public final class GetMonitorsMonitorCollectionItem {
             o.id = id;
             o.isRunNow = isRunNow;
             o.isRunOnce = isRunOnce;
+            o.maintenanceWindowSchedules = maintenanceWindowSchedules;
             o.monitorType = monitorType;
             o.repeatIntervalInSeconds = repeatIntervalInSeconds;
             o.schedulingPolicy = schedulingPolicy;

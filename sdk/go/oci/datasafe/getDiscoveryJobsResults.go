@@ -76,8 +76,9 @@ type GetDiscoveryJobsResultsArgs struct {
 // A collection of values returned by getDiscoveryJobsResults.
 type GetDiscoveryJobsResultsResult struct {
 	// The name of the sensitive column.
-	ColumnNames    []string `pulumi:"columnNames"`
-	DiscoveryJobId string   `pulumi:"discoveryJobId"`
+	ColumnNames []string `pulumi:"columnNames"`
+	// The OCID of the discovery job.
+	DiscoveryJobId string `pulumi:"discoveryJobId"`
 	// The list of discovery_job_result_collection.
 	DiscoveryJobResultCollections []GetDiscoveryJobsResultsDiscoveryJobResultCollection `pulumi:"discoveryJobResultCollections"`
 	// The type of the discovery result. It can be one of the following three types: NEW: A new sensitive column in the target database that is not in the sensitive data model. DELETED: A column that is present in the sensitive data model but has been deleted from the target database. MODIFIED: A column that is present in the target database as well as the sensitive data model but some of its attributes have been modified.
@@ -151,6 +152,7 @@ func (o GetDiscoveryJobsResultsResultOutput) ColumnNames() pulumi.StringArrayOut
 	return o.ApplyT(func(v GetDiscoveryJobsResultsResult) []string { return v.ColumnNames }).(pulumi.StringArrayOutput)
 }
 
+// The OCID of the discovery job.
 func (o GetDiscoveryJobsResultsResultOutput) DiscoveryJobId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDiscoveryJobsResultsResult) string { return v.DiscoveryJobId }).(pulumi.StringOutput)
 }

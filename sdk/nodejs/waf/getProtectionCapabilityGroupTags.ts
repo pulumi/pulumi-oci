@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getProtectionCapabilityGroupTags(args: GetProtectionCapabilityGroupTagsArgs, opts?: pulumi.InvokeOptions): Promise<GetProtectionCapabilityGroupTagsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Waf/getProtectionCapabilityGroupTags:getProtectionCapabilityGroupTags", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -76,9 +74,26 @@ export interface GetProtectionCapabilityGroupTagsResult {
     readonly protectionCapabilityGroupTagCollections: outputs.Waf.GetProtectionCapabilityGroupTagsProtectionCapabilityGroupTagCollection[];
     readonly type?: string;
 }
-
+/**
+ * This data source provides the list of Protection Capability Group Tags in Oracle Cloud Infrastructure Waf service.
+ *
+ * Lists of available group tags filtered by query parameters.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testProtectionCapabilityGroupTags = oci.Waf.getProtectionCapabilityGroupTags({
+ *     compartmentId: _var.compartment_id,
+ *     name: _var.protection_capability_group_tag_name,
+ *     type: _var.protection_capability_group_tag_type,
+ * });
+ * ```
+ */
 export function getProtectionCapabilityGroupTagsOutput(args: GetProtectionCapabilityGroupTagsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProtectionCapabilityGroupTagsResult> {
-    return pulumi.output(args).apply(a => getProtectionCapabilityGroupTags(a, opts))
+    return pulumi.output(args).apply((a: any) => getProtectionCapabilityGroupTags(a, opts))
 }
 
 /**

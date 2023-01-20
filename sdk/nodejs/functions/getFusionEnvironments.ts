@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFusionEnvironments(args: GetFusionEnvironmentsArgs, opts?: pulumi.InvokeOptions): Promise<GetFusionEnvironmentsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Functions/getFusionEnvironments:getFusionEnvironments", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -92,9 +90,27 @@ export interface GetFusionEnvironmentsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Fusion Environments in Oracle Cloud Infrastructure Fusion Apps service.
+ *
+ * Returns a list of FusionEnvironments.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testFusionEnvironments = oci.Functions.getFusionEnvironments({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.fusion_environment_display_name,
+ *     fusionEnvironmentFamilyId: oci_fusion_apps_fusion_environment_family.test_fusion_environment_family.id,
+ *     state: _var.fusion_environment_state,
+ * });
+ * ```
+ */
 export function getFusionEnvironmentsOutput(args: GetFusionEnvironmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFusionEnvironmentsResult> {
-    return pulumi.output(args).apply(a => getFusionEnvironments(a, opts))
+    return pulumi.output(args).apply((a: any) => getFusionEnvironments(a, opts))
 }
 
 /**

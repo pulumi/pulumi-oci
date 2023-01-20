@@ -122,6 +122,12 @@ namespace Pulumi.Oci.DataSafe
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
+        /// The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+        /// </summary>
+        [Output("timeLastCollected")]
+        public Output<string> TimeLastCollected { get; private set; } = null!;
+
+        /// <summary>
         /// The date and time the audit trail was updated, in the format defined by RFC3339.
         /// </summary>
         [Output("timeUpdated")]
@@ -366,6 +372,12 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
+
+        /// <summary>
+        /// The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+        /// </summary>
+        [Input("timeLastCollected")]
+        public Input<string>? TimeLastCollected { get; set; }
 
         /// <summary>
         /// The date and time the audit trail was updated, in the format defined by RFC3339.

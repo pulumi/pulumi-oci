@@ -41,7 +41,7 @@ namespace Pulumi.Oci.OneSubsription
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetComputedUsageResult> InvokeAsync(GetComputedUsageArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetComputedUsageResult>("oci:OneSubsription/getComputedUsage:getComputedUsage", args ?? new GetComputedUsageArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetComputedUsageResult>("oci:OneSubsription/getComputedUsage:getComputedUsage", args ?? new GetComputedUsageArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Computed Usage resource in Oracle Cloud Infrastructure Onesubscription service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.OneSubsription
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetComputedUsageResult> Invoke(GetComputedUsageInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetComputedUsageResult>("oci:OneSubsription/getComputedUsage:getComputedUsage", args ?? new GetComputedUsageInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetComputedUsageResult>("oci:OneSubsription/getComputedUsage:getComputedUsage", args ?? new GetComputedUsageInvokeArgs(), options.WithDefaults());
     }
 
 

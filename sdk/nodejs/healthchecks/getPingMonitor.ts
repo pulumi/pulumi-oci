@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getPingMonitor(args: GetPingMonitorArgs, opts?: pulumi.InvokeOptions): Promise<GetPingMonitorResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:HealthChecks/getPingMonitor:getPingMonitor", {
         "monitorId": args.monitorId,
     }, opts);
@@ -107,9 +104,24 @@ export interface GetPingMonitorResult {
      */
     readonly vantagePointNames: string[];
 }
-
+/**
+ * This data source provides details about a specific Ping Monitor resource in Oracle Cloud Infrastructure Health Checks service.
+ *
+ * Gets the configuration for the specified ping monitor.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testPingMonitor = oci.HealthChecks.getPingMonitor({
+ *     monitorId: oci_apm_synthetics_monitor.test_monitor.id,
+ * });
+ * ```
+ */
 export function getPingMonitorOutput(args: GetPingMonitorOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPingMonitorResult> {
-    return pulumi.output(args).apply(a => getPingMonitor(a, opts))
+    return pulumi.output(args).apply((a: any) => getPingMonitor(a, opts))
 }
 
 /**

@@ -34,6 +34,14 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly int? PortX;
         /// <summary>
+        /// The OCID of the resource that this endpoint is attached to.
+        /// </summary>
+        public readonly string? ResourceId;
+        /// <summary>
+        /// The type of endpoint that clients and connectors can connect to.
+        /// </summary>
+        public readonly string? ResourceType;
+        /// <summary>
         /// The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
         /// </summary>
         public readonly string? Status;
@@ -54,6 +62,10 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             int? portX,
 
+            string? resourceId,
+
+            string? resourceType,
+
             string? status,
 
             string? statusDetails)
@@ -63,6 +75,8 @@ namespace Pulumi.Oci.Mysql.Outputs
             Modes = modes;
             Port = port;
             PortX = portX;
+            ResourceId = resourceId;
+            ResourceType = resourceType;
             Status = status;
             StatusDetails = statusDetails;
         }

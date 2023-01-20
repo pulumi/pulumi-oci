@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -30,11 +31,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRecommendations(args: GetRecommendationsArgs, opts?: pulumi.InvokeOptions): Promise<GetRecommendationsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Optimizer/getRecommendations:getRecommendations", {
         "categoryId": args.categoryId,
         "categoryName": args.categoryName,
@@ -130,9 +128,32 @@ export interface GetRecommendationsResult {
      */
     readonly status?: string;
 }
-
+/**
+ * This data source provides the list of Recommendations in Oracle Cloud Infrastructure Optimizer service.
+ *
+ * Lists the Cloud Advisor recommendations that are currently supported.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testRecommendations = oci.Optimizer.getRecommendations({
+ *     compartmentId: _var.compartment_id,
+ *     compartmentIdInSubtree: _var.recommendation_compartment_id_in_subtree,
+ *     categoryId: oci_optimizer_category.test_category.id,
+ *     categoryName: oci_optimizer_category.test_category.name,
+ *     childTenancyIds: _var.recommendation_child_tenancy_ids,
+ *     includeOrganization: _var.recommendation_include_organization,
+ *     name: _var.recommendation_name,
+ *     state: _var.recommendation_state,
+ *     status: _var.recommendation_status,
+ * });
+ * ```
+ */
 export function getRecommendationsOutput(args: GetRecommendationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRecommendationsResult> {
-    return pulumi.output(args).apply(a => getRecommendations(a, opts))
+    return pulumi.output(args).apply((a: any) => getRecommendations(a, opts))
 }
 
 /**

@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNetworkFirewall(args: GetNetworkFirewallArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkFirewallResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:NetworkFirewall/getNetworkFirewall:getNetworkFirewall", {
         "networkFirewallId": args.networkFirewallId,
     }, opts);
@@ -111,9 +108,24 @@ export interface GetNetworkFirewallResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Network Firewall resource in Oracle Cloud Infrastructure Network Firewall service.
+ *
+ * Gets a NetworkFirewall by identifier
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testNetworkFirewall = oci.NetworkFirewall.getNetworkFirewall({
+ *     networkFirewallId: oci_network_firewall_network_firewall.test_network_firewall.id,
+ * });
+ * ```
+ */
 export function getNetworkFirewallOutput(args: GetNetworkFirewallOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkFirewallResult> {
-    return pulumi.output(args).apply(a => getNetworkFirewall(a, opts))
+    return pulumi.output(args).apply((a: any) => getNetworkFirewall(a, opts))
 }
 
 /**

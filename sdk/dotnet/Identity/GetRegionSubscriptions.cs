@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetRegionSubscriptionsResult> InvokeAsync(GetRegionSubscriptionsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetRegionSubscriptionsResult>("oci:Identity/getRegionSubscriptions:getRegionSubscriptions", args ?? new GetRegionSubscriptionsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetRegionSubscriptionsResult>("oci:Identity/getRegionSubscriptions:getRegionSubscriptions", args ?? new GetRegionSubscriptionsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Region Subscriptions in Oracle Cloud Infrastructure Identity service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetRegionSubscriptionsResult> Invoke(GetRegionSubscriptionsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetRegionSubscriptionsResult>("oci:Identity/getRegionSubscriptions:getRegionSubscriptions", args ?? new GetRegionSubscriptionsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetRegionSubscriptionsResult>("oci:Identity/getRegionSubscriptions:getRegionSubscriptions", args ?? new GetRegionSubscriptionsInvokeArgs(), options.WithDefaults());
     }
 
 

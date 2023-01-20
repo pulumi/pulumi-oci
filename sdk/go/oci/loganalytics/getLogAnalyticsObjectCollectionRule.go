@@ -80,6 +80,12 @@ type LookupLogAnalyticsObjectCollectionRuleResult struct {
 	LogAnalyticsObjectCollectionRuleId string `pulumi:"logAnalyticsObjectCollectionRuleId"`
 	// Logging Analytics Log group OCID to associate the processed logs with.
 	LogGroupId string `pulumi:"logGroupId"`
+	// The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
+	LogSet string `pulumi:"logSet"`
+	// The regex to be applied against given logSetKey. Regex has to be in string escaped format.
+	LogSetExtRegex string `pulumi:"logSetExtRegex"`
+	// An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
+	LogSetKey string `pulumi:"logSetKey"`
 	// Name of the Logging Analytics Source to use for the processing.
 	LogSourceName string `pulumi:"logSourceName"`
 	// A unique name to the rule. The name must be unique, within the tenancy, and cannot be changed.
@@ -103,6 +109,8 @@ type LookupLogAnalyticsObjectCollectionRuleResult struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time when this rule was last updated. An RFC3339 formatted datetime string.
 	TimeUpdated string `pulumi:"timeUpdated"`
+	// Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
+	Timezone string `pulumi:"timezone"`
 }
 
 func LookupLogAnalyticsObjectCollectionRuleOutput(ctx *pulumi.Context, args LookupLogAnalyticsObjectCollectionRuleOutputArgs, opts ...pulumi.InvokeOption) LookupLogAnalyticsObjectCollectionRuleResultOutput {
@@ -201,6 +209,21 @@ func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) LogGroupId() pulumi.
 	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) string { return v.LogGroupId }).(pulumi.StringOutput)
 }
 
+// The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
+func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) LogSet() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) string { return v.LogSet }).(pulumi.StringOutput)
+}
+
+// The regex to be applied against given logSetKey. Regex has to be in string escaped format.
+func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) LogSetExtRegex() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) string { return v.LogSetExtRegex }).(pulumi.StringOutput)
+}
+
+// An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
+func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) LogSetKey() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) string { return v.LogSetKey }).(pulumi.StringOutput)
+}
+
 // Name of the Logging Analytics Source to use for the processing.
 func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) LogSourceName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) string { return v.LogSourceName }).(pulumi.StringOutput)
@@ -260,6 +283,11 @@ func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) TimeCreated() pulumi
 // The time when this rule was last updated. An RFC3339 formatted datetime string.
 func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
+func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) Timezone() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) string { return v.Timezone }).(pulumi.StringOutput)
 }
 
 func init() {

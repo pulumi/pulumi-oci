@@ -61,13 +61,13 @@ type GetSchedulesArgs struct {
 
 // A collection of values returned by getSchedules.
 type GetSchedulesResult struct {
-	// The tenancy of the customer
+	// The customer tenancy.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The filter object for query usage.
 	Filters []GetSchedulesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// The unique name of the schedule created by the user
+	// The unique name of the schedule created by the user.
 	Name *string `pulumi:"name"`
 	// The list of schedule_collection.
 	ScheduleCollections []GetSchedulesScheduleCollection `pulumi:"scheduleCollections"`
@@ -115,7 +115,7 @@ func (o GetSchedulesResultOutput) ToGetSchedulesResultOutputWithContext(ctx cont
 	return o
 }
 
-// The tenancy of the customer
+// The customer tenancy.
 func (o GetSchedulesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSchedulesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -130,7 +130,7 @@ func (o GetSchedulesResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSchedulesResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The unique name of the schedule created by the user
+// The unique name of the schedule created by the user.
 func (o GetSchedulesResultOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSchedulesResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }

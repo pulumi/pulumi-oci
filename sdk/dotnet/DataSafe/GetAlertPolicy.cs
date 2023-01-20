@@ -38,7 +38,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAlertPolicyResult> InvokeAsync(GetAlertPolicyArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAlertPolicyResult>("oci:DataSafe/getAlertPolicy:getAlertPolicy", args ?? new GetAlertPolicyArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAlertPolicyResult>("oci:DataSafe/getAlertPolicy:getAlertPolicy", args ?? new GetAlertPolicyArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Alert Policy resource in Oracle Cloud Infrastructure Data Safe service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAlertPolicyResult> Invoke(GetAlertPolicyInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAlertPolicyResult>("oci:DataSafe/getAlertPolicy:getAlertPolicy", args ?? new GetAlertPolicyInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAlertPolicyResult>("oci:DataSafe/getAlertPolicy:getAlertPolicy", args ?? new GetAlertPolicyInvokeArgs(), options.WithDefaults());
     }
 
 

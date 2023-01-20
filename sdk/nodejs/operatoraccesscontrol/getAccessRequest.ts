@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAccessRequest(args: GetAccessRequestArgs, opts?: pulumi.InvokeOptions): Promise<GetAccessRequestResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OperatorAccessControl/getAccessRequest:getAccessRequest", {
         "accessRequestId": args.accessRequestId,
     }, opts);
@@ -167,9 +164,24 @@ export interface GetAccessRequestResult {
      */
     readonly workflowIds: string[];
 }
-
+/**
+ * This data source provides details about a specific Access Request resource in Oracle Cloud Infrastructure Operator Access Control service.
+ *
+ * Gets details of an access request.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAccessRequest = oci.OperatorAccessControl.getAccessRequest({
+ *     accessRequestId: oci_operator_access_control_access_request.test_access_request.id,
+ * });
+ * ```
+ */
 export function getAccessRequestOutput(args: GetAccessRequestOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAccessRequestResult> {
-    return pulumi.output(args).apply(a => getAccessRequest(a, opts))
+    return pulumi.output(args).apply((a: any) => getAccessRequest(a, opts))
 }
 
 /**

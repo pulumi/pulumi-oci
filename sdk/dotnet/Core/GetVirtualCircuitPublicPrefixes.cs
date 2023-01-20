@@ -41,7 +41,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetVirtualCircuitPublicPrefixesResult> InvokeAsync(GetVirtualCircuitPublicPrefixesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetVirtualCircuitPublicPrefixesResult>("oci:Core/getVirtualCircuitPublicPrefixes:getVirtualCircuitPublicPrefixes", args ?? new GetVirtualCircuitPublicPrefixesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetVirtualCircuitPublicPrefixesResult>("oci:Core/getVirtualCircuitPublicPrefixes:getVirtualCircuitPublicPrefixes", args ?? new GetVirtualCircuitPublicPrefixesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Virtual Circuit Public Prefixes in Oracle Cloud Infrastructure Core service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetVirtualCircuitPublicPrefixesResult> Invoke(GetVirtualCircuitPublicPrefixesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetVirtualCircuitPublicPrefixesResult>("oci:Core/getVirtualCircuitPublicPrefixes:getVirtualCircuitPublicPrefixes", args ?? new GetVirtualCircuitPublicPrefixesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetVirtualCircuitPublicPrefixesResult>("oci:Core/getVirtualCircuitPublicPrefixes:getVirtualCircuitPublicPrefixes", args ?? new GetVirtualCircuitPublicPrefixesInvokeArgs(), options.WithDefaults());
     }
 
 

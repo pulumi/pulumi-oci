@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -29,11 +30,8 @@ import * as utilities from "../utilities";
  */
 export function getAssociations(args?: GetAssociationsArgs, opts?: pulumi.InvokeOptions): Promise<GetAssociationsResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CertificatesManagement/getAssociations:getAssociations", {
         "associatedResourceId": args.associatedResourceId,
         "associationId": args.associationId,
@@ -111,9 +109,30 @@ export interface GetAssociationsResult {
      */
     readonly name?: string;
 }
-
+/**
+ * This data source provides the list of Associations in Oracle Cloud Infrastructure Certificates Management service.
+ *
+ * Lists all associations that match the query parameters.
+ * Optionally, you can use the parameter `FilterByAssociationIdQueryParam` to limit the result set to a single item that matches the specified association.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAssociations = oci.CertificatesManagement.getAssociations({
+ *     associatedResourceId: oci_certificates_management_associated_resource.test_associated_resource.id,
+ *     associationId: oci_certificates_management_association.test_association.id,
+ *     associationType: _var.association_association_type,
+ *     certificatesResourceId: oci_certificates_management_certificates_resource.test_certificates_resource.id,
+ *     compartmentId: _var.compartment_id,
+ *     name: _var.association_name,
+ * });
+ * ```
+ */
 export function getAssociationsOutput(args?: GetAssociationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAssociationsResult> {
-    return pulumi.output(args).apply(a => getAssociations(a, opts))
+    return pulumi.output(args).apply((a: any) => getAssociations(a, opts))
 }
 
 /**

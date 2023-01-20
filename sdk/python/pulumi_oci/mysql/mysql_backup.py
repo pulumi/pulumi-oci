@@ -28,7 +28,7 @@ class MysqlBackupArgs:
         The set of arguments for constructing a MysqlBackup resource.
         :param pulumi.Input[str] db_system_id: The OCID of the DB System the Backup is associated with.
         :param pulumi.Input[str] backup_type: The type of backup.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment.
+        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment the backup exists in.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) A user-supplied description for the backup.
         :param pulumi.Input[str] display_name: (Updatable) A user-supplied display name for the backup.
@@ -79,7 +79,7 @@ class MysqlBackupArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The OCID of the compartment.
+        (Updatable) The OCID of the compartment the backup exists in.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -173,7 +173,7 @@ class _MysqlBackupState:
         Input properties used for looking up and filtering MysqlBackup resources.
         :param pulumi.Input[int] backup_size_in_gbs: The size of the backup in base-2 (IEC) gibibytes. (GiB).
         :param pulumi.Input[str] backup_type: The type of backup.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment.
+        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment the backup exists in.
         :param pulumi.Input[str] creation_type: Indicates how the backup was created: manually, automatic, or by an Operator.
         :param pulumi.Input[int] data_storage_size_in_gb: Initial size of the data volume in GiBs that will be created and attached.
         :param pulumi.Input[str] db_system_id: The OCID of the DB System the Backup is associated with.
@@ -255,7 +255,7 @@ class _MysqlBackupState:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The OCID of the compartment.
+        (Updatable) The OCID of the compartment the backup exists in.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -494,7 +494,7 @@ class MysqlBackup(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] backup_type: The type of backup.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment.
+        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment the backup exists in.
         :param pulumi.Input[str] db_system_id: The OCID of the DB System the Backup is associated with.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) A user-supplied description for the backup.
@@ -630,7 +630,7 @@ class MysqlBackup(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] backup_size_in_gbs: The size of the backup in base-2 (IEC) gibibytes. (GiB).
         :param pulumi.Input[str] backup_type: The type of backup.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment.
+        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment the backup exists in.
         :param pulumi.Input[str] creation_type: Indicates how the backup was created: manually, automatic, or by an Operator.
         :param pulumi.Input[int] data_storage_size_in_gb: Initial size of the data volume in GiBs that will be created and attached.
         :param pulumi.Input[str] db_system_id: The OCID of the DB System the Backup is associated with.
@@ -691,7 +691,7 @@ class MysqlBackup(pulumi.CustomResource):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) The OCID of the compartment.
+        (Updatable) The OCID of the compartment the backup exists in.
         """
         return pulumi.get(self, "compartment_id")
 

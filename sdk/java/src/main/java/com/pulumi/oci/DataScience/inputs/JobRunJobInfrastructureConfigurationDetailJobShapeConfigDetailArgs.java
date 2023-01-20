@@ -16,14 +16,14 @@ public final class JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetai
     public static final JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs Empty = new JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailArgs();
 
     /**
-     * A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+     * The total amount of memory available to the job run instance, in gigabytes.
      * 
      */
     @Import(name="memoryInGbs")
     private @Nullable Output<Double> memoryInGbs;
 
     /**
-     * @return A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+     * @return The total amount of memory available to the job run instance, in gigabytes.
      * 
      */
     public Optional<Output<Double>> memoryInGbs() {
@@ -31,14 +31,14 @@ public final class JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetai
     }
 
     /**
-     * A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+     * The total number of OCPUs available to the job run instance.
      * 
      */
     @Import(name="ocpus")
     private @Nullable Output<Double> ocpus;
 
     /**
-     * @return A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+     * @return The total number of OCPUs available to the job run instance.
      * 
      */
     public Optional<Output<Double>> ocpus() {
@@ -71,7 +71,7 @@ public final class JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetai
         }
 
         /**
-         * @param memoryInGbs A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+         * @param memoryInGbs The total amount of memory available to the job run instance, in gigabytes.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetai
         }
 
         /**
-         * @param memoryInGbs A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+         * @param memoryInGbs The total amount of memory available to the job run instance, in gigabytes.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetai
         }
 
         /**
-         * @param ocpus A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+         * @param ocpus The total number of OCPUs available to the job run instance.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetai
         }
 
         /**
-         * @param ocpus A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+         * @param ocpus The total number of OCPUs available to the job run instance.
          * 
          * @return builder
          * 

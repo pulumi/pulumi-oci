@@ -21,8 +21,12 @@ from .get_log_analytics_resource_categories_list import *
 from .get_log_analytics_unprocessed_data_bucket import *
 from .get_log_sets_count import *
 from .get_namespace import *
+from .get_namespace_ingest_time_rule import *
+from .get_namespace_ingest_time_rules import *
+from .get_namespace_rules import *
 from .get_namespace_scheduled_task import *
 from .get_namespace_scheduled_tasks import *
+from .get_namespace_storage_encryption_key_info import *
 from .get_namespaces import *
 from .log_analytics_entity import *
 from .log_analytics_import_custom_content import *
@@ -32,6 +36,8 @@ from .log_analytics_preferences_management import *
 from .log_analytics_resource_categories_management import *
 from .log_analytics_unprocessed_data_bucket_management import *
 from .namespace import *
+from .namespace_ingest_time_rule import *
+from .namespace_ingest_time_rules_management import *
 from .namespace_scheduled_task import *
 from ._inputs import *
 from . import outputs

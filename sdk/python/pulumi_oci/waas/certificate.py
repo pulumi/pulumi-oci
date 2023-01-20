@@ -572,7 +572,7 @@ class Certificate(pulumi.CustomResource):
             __props__.__dict__["is_trust_verification_disabled"] = is_trust_verification_disabled
             if private_key_data is None and not opts.urn:
                 raise TypeError("Missing required property 'private_key_data'")
-            __props__.__dict__["private_key_data"] = private_key_data
+            __props__.__dict__["private_key_data"] = None if private_key_data is None else pulumi.Output.secret(private_key_data)
             __props__.__dict__["extensions"] = None
             __props__.__dict__["issued_by"] = None
             __props__.__dict__["issuer_names"] = None
@@ -585,6 +585,8 @@ class Certificate(pulumi.CustomResource):
             __props__.__dict__["time_not_valid_after"] = None
             __props__.__dict__["time_not_valid_before"] = None
             __props__.__dict__["version"] = None
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["privateKeyData"])
+        opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(Certificate, __self__).__init__(
             'oci:Waas/certificate:Certificate',
             resource_name,

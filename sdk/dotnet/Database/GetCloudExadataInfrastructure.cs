@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetCloudExadataInfrastructureResult> InvokeAsync(GetCloudExadataInfrastructureArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetCloudExadataInfrastructureResult>("oci:Database/getCloudExadataInfrastructure:getCloudExadataInfrastructure", args ?? new GetCloudExadataInfrastructureArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetCloudExadataInfrastructureResult>("oci:Database/getCloudExadataInfrastructure:getCloudExadataInfrastructure", args ?? new GetCloudExadataInfrastructureArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Cloud Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetCloudExadataInfrastructureResult> Invoke(GetCloudExadataInfrastructureInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetCloudExadataInfrastructureResult>("oci:Database/getCloudExadataInfrastructure:getCloudExadataInfrastructure", args ?? new GetCloudExadataInfrastructureInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetCloudExadataInfrastructureResult>("oci:Database/getCloudExadataInfrastructure:getCloudExadataInfrastructure", args ?? new GetCloudExadataInfrastructureInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -106,6 +106,14 @@ namespace Pulumi.Oci.Database
     public sealed class GetCloudExadataInfrastructureResult
     {
         /// <summary>
+        /// The requested number of additional storage servers activated for the Exadata infrastructure.
+        /// </summary>
+        public readonly int ActivatedStorageCount;
+        /// <summary>
+        /// The requested number of additional storage servers for the Exadata infrastructure.
+        /// </summary>
+        public readonly int AdditionalStorageCount;
+        /// <summary>
         /// The name of the availability domain that the cloud Exadata infrastructure resource is located in.
         /// </summary>
         public readonly string AvailabilityDomain;
@@ -123,9 +131,21 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly int ComputeCount;
         /// <summary>
+        /// The total number of CPU cores allocated.
+        /// </summary>
+        public readonly int CpuCount;
+        /// <summary>
         /// The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure Database service resource. Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators. Up to 10 email addresses can be added to the customer contacts for a cloud Exadata infrastructure instance.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetCloudExadataInfrastructureCustomerContactResult> CustomerContacts;
+        /// <summary>
+        /// Size, in terabytes, of the DATA disk group.
+        /// </summary>
+        public readonly double DataStorageSizeInTbs;
+        /// <summary>
+        /// The local node storage allocated in GBs.
+        /// </summary>
+        public readonly int DbNodeStorageSizeInGbs;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
@@ -155,6 +175,26 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly ImmutableArray<Outputs.GetCloudExadataInfrastructureMaintenanceWindowResult> MaintenanceWindows;
         /// <summary>
+        /// The total number of CPU cores available.
+        /// </summary>
+        public readonly int MaxCpuCount;
+        /// <summary>
+        /// The total available DATA disk group size.
+        /// </summary>
+        public readonly double MaxDataStorageInTbs;
+        /// <summary>
+        /// The total local node storage available in GBs.
+        /// </summary>
+        public readonly int MaxDbNodeStorageInGbs;
+        /// <summary>
+        /// The total memory available in GBs.
+        /// </summary>
+        public readonly int MaxMemoryInGbs;
+        /// <summary>
+        /// The memory allocated in GBs.
+        /// </summary>
+        public readonly int MemorySizeInGbs;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         /// </summary>
         public readonly string NextMaintenanceRunId;
@@ -181,6 +221,10 @@ namespace Pulumi.Oci.Database
 
         [OutputConstructor]
         private GetCloudExadataInfrastructureResult(
+            int activatedStorageCount,
+
+            int additionalStorageCount,
+
             string availabilityDomain,
 
             int availableStorageSizeInGbs,
@@ -191,7 +235,13 @@ namespace Pulumi.Oci.Database
 
             int computeCount,
 
+            int cpuCount,
+
             ImmutableArray<Outputs.GetCloudExadataInfrastructureCustomerContactResult> customerContacts,
+
+            double dataStorageSizeInTbs,
+
+            int dbNodeStorageSizeInGbs,
 
             ImmutableDictionary<string, object> definedTags,
 
@@ -207,6 +257,16 @@ namespace Pulumi.Oci.Database
 
             ImmutableArray<Outputs.GetCloudExadataInfrastructureMaintenanceWindowResult> maintenanceWindows,
 
+            int maxCpuCount,
+
+            double maxDataStorageInTbs,
+
+            int maxDbNodeStorageInGbs,
+
+            int maxMemoryInGbs,
+
+            int memorySizeInGbs,
+
             string nextMaintenanceRunId,
 
             string shape,
@@ -219,12 +279,17 @@ namespace Pulumi.Oci.Database
 
             int totalStorageSizeInGbs)
         {
+            ActivatedStorageCount = activatedStorageCount;
+            AdditionalStorageCount = additionalStorageCount;
             AvailabilityDomain = availabilityDomain;
             AvailableStorageSizeInGbs = availableStorageSizeInGbs;
             CloudExadataInfrastructureId = cloudExadataInfrastructureId;
             CompartmentId = compartmentId;
             ComputeCount = computeCount;
+            CpuCount = cpuCount;
             CustomerContacts = customerContacts;
+            DataStorageSizeInTbs = dataStorageSizeInTbs;
+            DbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;
             DefinedTags = definedTags;
             DisplayName = displayName;
             FreeformTags = freeformTags;
@@ -232,6 +297,11 @@ namespace Pulumi.Oci.Database
             LastMaintenanceRunId = lastMaintenanceRunId;
             LifecycleDetails = lifecycleDetails;
             MaintenanceWindows = maintenanceWindows;
+            MaxCpuCount = maxCpuCount;
+            MaxDataStorageInTbs = maxDataStorageInTbs;
+            MaxDbNodeStorageInGbs = maxDbNodeStorageInGbs;
+            MaxMemoryInGbs = maxMemoryInGbs;
+            MemorySizeInGbs = memorySizeInGbs;
             NextMaintenanceRunId = nextMaintenanceRunId;
             Shape = shape;
             State = state;

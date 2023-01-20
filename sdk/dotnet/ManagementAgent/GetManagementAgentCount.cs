@@ -43,7 +43,7 @@ namespace Pulumi.Oci.ManagementAgent
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetManagementAgentCountResult> InvokeAsync(GetManagementAgentCountArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetManagementAgentCountResult>("oci:ManagementAgent/getManagementAgentCount:getManagementAgentCount", args ?? new GetManagementAgentCountArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagementAgentCountResult>("oci:ManagementAgent/getManagementAgentCount:getManagementAgentCount", args ?? new GetManagementAgentCountArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Management Agent Count resource in Oracle Cloud Infrastructure Management Agent service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.ManagementAgent
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetManagementAgentCountResult> Invoke(GetManagementAgentCountInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetManagementAgentCountResult>("oci:ManagementAgent/getManagementAgentCount:getManagementAgentCount", args ?? new GetManagementAgentCountInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagementAgentCountResult>("oci:ManagementAgent/getManagementAgentCount:getManagementAgentCount", args ?? new GetManagementAgentCountInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDrgs(args: GetDrgsArgs, opts?: pulumi.InvokeOptions): Promise<GetDrgsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getDrgs:getDrgs", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -62,9 +60,24 @@ export interface GetDrgsResult {
      */
     readonly id: string;
 }
-
+/**
+ * This data source provides the list of Drgs in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the DRGs in the specified compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDrgs = oci.Core.getDrgs({
+ *     compartmentId: _var.compartment_id,
+ * });
+ * ```
+ */
 export function getDrgsOutput(args: GetDrgsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDrgsResult> {
-    return pulumi.output(args).apply(a => getDrgs(a, opts))
+    return pulumi.output(args).apply((a: any) => getDrgs(a, opts))
 }
 
 /**

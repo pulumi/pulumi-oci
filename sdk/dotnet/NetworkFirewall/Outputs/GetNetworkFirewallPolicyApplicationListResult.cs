@@ -13,38 +13,17 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
     [OutputType]
     public sealed class GetNetworkFirewallPolicyApplicationListResult
     {
-        public readonly int IcmpCode;
-        public readonly int IcmpType;
-        public readonly string Key;
-        public readonly int MaximumPort;
-        public readonly int MinimumPort;
-        /// <summary>
-        /// Type of the secrets mapped based on the policy.
-        /// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-        /// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
-        /// </summary>
-        public readonly string Type;
+        public readonly string ApplicationListName;
+        public readonly ImmutableArray<Outputs.GetNetworkFirewallPolicyApplicationListApplicationValueResult> ApplicationValues;
 
         [OutputConstructor]
         private GetNetworkFirewallPolicyApplicationListResult(
-            int icmpCode,
+            string applicationListName,
 
-            int icmpType,
-
-            string key,
-
-            int maximumPort,
-
-            int minimumPort,
-
-            string type)
+            ImmutableArray<Outputs.GetNetworkFirewallPolicyApplicationListApplicationValueResult> applicationValues)
         {
-            IcmpCode = icmpCode;
-            IcmpType = icmpType;
-            Key = key;
-            MaximumPort = maximumPort;
-            MinimumPort = minimumPort;
-            Type = type;
+            ApplicationListName = applicationListName;
+            ApplicationValues = applicationValues;
         }
     }
 }

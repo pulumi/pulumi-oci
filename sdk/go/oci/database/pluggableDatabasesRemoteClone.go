@@ -14,6 +14,7 @@ import (
 // This resource provides the Pluggable Databases Remote Clone resource in Oracle Cloud Infrastructure Database service.
 //
 // Clones a pluggable database (PDB) to a different database from the source PDB. The cloned PDB will be started upon completion of the clone operation. The source PDB must be in the `READ_WRITE` openMode when performing the clone.
+// For Exadata Cloud@Customer instances, the source pluggable database (PDB) must be on the same Exadata Infrastructure as the target container database (CDB) to create a remote clone.
 //
 // ## Example Usage
 //
@@ -77,6 +78,8 @@ type PluggableDatabasesRemoteClone struct {
 	PdbName pulumi.StringOutput `pulumi:"pdbName"`
 	// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	PluggableDatabaseId pulumi.StringOutput `pulumi:"pluggableDatabaseId"`
+	// The configuration of the Pluggable Database Management service.
+	PluggableDatabaseManagementConfigs PluggableDatabasesRemoteClonePluggableDatabaseManagementConfigArrayOutput `pulumi:"pluggableDatabaseManagementConfigs"`
 	// The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
 	ShouldPdbAdminAccountBeLocked pulumi.BoolOutput `pulumi:"shouldPdbAdminAccountBeLocked"`
 	// The DB system administrator password of the source CDB.
@@ -110,6 +113,21 @@ func NewPluggableDatabasesRemoteClone(ctx *pulumi.Context,
 	if args.TargetContainerDatabaseId == nil {
 		return nil, errors.New("invalid value for required argument 'TargetContainerDatabaseId'")
 	}
+	if args.PdbAdminPassword != nil {
+		args.PdbAdminPassword = pulumi.ToSecret(args.PdbAdminPassword).(pulumi.StringPtrInput)
+	}
+	if args.SourceContainerDbAdminPassword != nil {
+		args.SourceContainerDbAdminPassword = pulumi.ToSecret(args.SourceContainerDbAdminPassword).(pulumi.StringInput)
+	}
+	if args.TargetTdeWalletPassword != nil {
+		args.TargetTdeWalletPassword = pulumi.ToSecret(args.TargetTdeWalletPassword).(pulumi.StringPtrInput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"pdbAdminPassword",
+		"sourceContainerDbAdminPassword",
+		"targetTdeWalletPassword",
+	})
+	opts = append(opts, secrets)
 	var resource PluggableDatabasesRemoteClone
 	err := ctx.RegisterResource("oci:Database/pluggableDatabasesRemoteClone:PluggableDatabasesRemoteClone", name, args, &resource, opts...)
 	if err != nil {
@@ -156,6 +174,8 @@ type pluggableDatabasesRemoteCloneState struct {
 	PdbName *string `pulumi:"pdbName"`
 	// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	PluggableDatabaseId *string `pulumi:"pluggableDatabaseId"`
+	// The configuration of the Pluggable Database Management service.
+	PluggableDatabaseManagementConfigs []PluggableDatabasesRemoteClonePluggableDatabaseManagementConfig `pulumi:"pluggableDatabaseManagementConfigs"`
 	// The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
 	ShouldPdbAdminAccountBeLocked *bool `pulumi:"shouldPdbAdminAccountBeLocked"`
 	// The DB system administrator password of the source CDB.
@@ -195,6 +215,8 @@ type PluggableDatabasesRemoteCloneState struct {
 	PdbName pulumi.StringPtrInput
 	// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	PluggableDatabaseId pulumi.StringPtrInput
+	// The configuration of the Pluggable Database Management service.
+	PluggableDatabaseManagementConfigs PluggableDatabasesRemoteClonePluggableDatabaseManagementConfigArrayInput
 	// The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
 	ShouldPdbAdminAccountBeLocked pulumi.BoolPtrInput
 	// The DB system administrator password of the source CDB.
@@ -395,6 +417,13 @@ func (o PluggableDatabasesRemoteCloneOutput) PdbName() pulumi.StringOutput {
 // The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o PluggableDatabasesRemoteCloneOutput) PluggableDatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v *PluggableDatabasesRemoteClone) pulumi.StringOutput { return v.PluggableDatabaseId }).(pulumi.StringOutput)
+}
+
+// The configuration of the Pluggable Database Management service.
+func (o PluggableDatabasesRemoteCloneOutput) PluggableDatabaseManagementConfigs() PluggableDatabasesRemoteClonePluggableDatabaseManagementConfigArrayOutput {
+	return o.ApplyT(func(v *PluggableDatabasesRemoteClone) PluggableDatabasesRemoteClonePluggableDatabaseManagementConfigArrayOutput {
+		return v.PluggableDatabaseManagementConfigs
+	}).(PluggableDatabasesRemoteClonePluggableDatabaseManagementConfigArrayOutput)
 }
 
 // The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.

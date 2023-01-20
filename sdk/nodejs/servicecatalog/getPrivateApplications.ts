@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getPrivateApplications(args: GetPrivateApplicationsArgs, opts?: pulumi.InvokeOptions): Promise<GetPrivateApplicationsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ServiceCatalog/getPrivateApplications:getPrivateApplications", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -79,9 +77,26 @@ export interface GetPrivateApplicationsResult {
     readonly privateApplicationCollections: outputs.ServiceCatalog.GetPrivateApplicationsPrivateApplicationCollection[];
     readonly privateApplicationId?: string;
 }
-
+/**
+ * This data source provides the list of Private Applications in Oracle Cloud Infrastructure Service Catalog service.
+ *
+ * Lists all the private applications in a given compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testPrivateApplications = oci.ServiceCatalog.getPrivateApplications({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.private_application_display_name,
+ *     privateApplicationId: oci_service_catalog_private_application.test_private_application.id,
+ * });
+ * ```
+ */
 export function getPrivateApplicationsOutput(args: GetPrivateApplicationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPrivateApplicationsResult> {
-    return pulumi.output(args).apply(a => getPrivateApplications(a, opts))
+    return pulumi.output(args).apply((a: any) => getPrivateApplications(a, opts))
 }
 
 /**

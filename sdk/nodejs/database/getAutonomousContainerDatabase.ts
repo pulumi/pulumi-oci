@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAutonomousContainerDatabase(args: GetAutonomousContainerDatabaseArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousContainerDatabaseResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getAutonomousContainerDatabase:getAutonomousContainerDatabase", {
         "autonomousContainerDatabaseId": args.autonomousContainerDatabaseId,
     }, opts);
@@ -60,7 +58,7 @@ export interface GetAutonomousContainerDatabaseResult {
      */
     readonly availabilityDomain: string;
     /**
-     * Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+     * Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
      */
     readonly availableCpus: number;
     /**
@@ -163,7 +161,7 @@ export interface GetAutonomousContainerDatabaseResult {
      */
     readonly reclaimableCpus: number;
     /**
-     * The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+     * The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
      */
     readonly role: string;
     readonly rotateKeyTrigger: boolean;
@@ -192,9 +190,24 @@ export interface GetAutonomousContainerDatabaseResult {
      */
     readonly vaultId: string;
 }
-
+/**
+ * This data source provides details about a specific Autonomous Container Database resource in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets information about the specified Autonomous Container Database.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAutonomousContainerDatabase = oci.Database.getAutonomousContainerDatabase({
+ *     autonomousContainerDatabaseId: oci_database_autonomous_container_database.test_autonomous_container_database.id,
+ * });
+ * ```
+ */
 export function getAutonomousContainerDatabaseOutput(args: GetAutonomousContainerDatabaseOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousContainerDatabaseResult> {
-    return pulumi.output(args).apply(a => getAutonomousContainerDatabase(a, opts))
+    return pulumi.output(args).apply((a: any) => getAutonomousContainerDatabase(a, opts))
 }
 
 /**

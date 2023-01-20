@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMonitoredInstance(args: GetMonitoredInstanceArgs, opts?: pulumi.InvokeOptions): Promise<GetMonitoredInstanceResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:AppMgmtControl/getMonitoredInstance:getMonitoredInstance", {
         "monitoredInstanceId": args.monitoredInstanceId,
     }, opts);
@@ -87,9 +84,24 @@ export interface GetMonitoredInstanceResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Monitored Instance resource in Oracle Cloud Infrastructure Appmgmt Control service.
+ *
+ * Gets a monitored instance by identifier
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testMonitoredInstance = oci.AppMgmtControl.getMonitoredInstance({
+ *     monitoredInstanceId: oci_appmgmt_control_monitored_instance.test_monitored_instance.id,
+ * });
+ * ```
+ */
 export function getMonitoredInstanceOutput(args: GetMonitoredInstanceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMonitoredInstanceResult> {
-    return pulumi.output(args).apply(a => getMonitoredInstance(a, opts))
+    return pulumi.output(args).apply((a: any) => getMonitoredInstance(a, opts))
 }
 
 /**

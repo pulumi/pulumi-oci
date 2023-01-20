@@ -40,44 +40,60 @@ import (
 //				MasterNode: &bigdataservice.BdsInstanceMasterNodeArgs{
 //					Shape:                pulumi.Any(_var.Bds_instance_nodes_shape),
 //					SubnetId:             pulumi.Any(oci_core_subnet.Test_subnet.Id),
-//					BlockVolumeSizeInGbs: pulumi.Any(_var.Bds_instance_nodes_block_volume_size_in_gbs),
 //					NumberOfNodes:        pulumi.Any(_var.Bds_instance_number_of_nodes),
+//					BlockVolumeSizeInGbs: pulumi.Any(_var.Bds_instance_nodes_block_volume_size_in_gbs),
 //					ShapeConfig: &bigdataservice.BdsInstanceMasterNodeShapeConfigArgs{
 //						MemoryInGbs: pulumi.Any(_var.Bds_instance_nodes_shape_config_memory_in_gbs),
+//						Nvmes:       pulumi.Any(_var.Bds_instance_nodes_shape_config_nvmes),
 //						Ocpus:       pulumi.Any(_var.Bds_instance_nodes_shape_config_ocpus),
 //					},
 //				},
 //				UtilNode: &bigdataservice.BdsInstanceUtilNodeArgs{
 //					Shape:                pulumi.Any(_var.Bds_instance_nodes_shape),
 //					SubnetId:             pulumi.Any(oci_core_subnet.Test_subnet.Id),
-//					BlockVolumeSizeInGbs: pulumi.Any(_var.Bds_instance_nodes_block_volume_size_in_gbs),
 //					NumberOfNodes:        pulumi.Any(_var.Bds_instance_number_of_nodes),
+//					BlockVolumeSizeInGbs: pulumi.Any(_var.Bds_instance_nodes_block_volume_size_in_gbs),
 //					ShapeConfig: &bigdataservice.BdsInstanceUtilNodeShapeConfigArgs{
 //						MemoryInGbs: pulumi.Any(_var.Bds_instance_nodes_shape_config_memory_in_gbs),
+//						Nvmes:       pulumi.Any(_var.Bds_instance_nodes_shape_config_nvmes),
 //						Ocpus:       pulumi.Any(_var.Bds_instance_nodes_shape_config_ocpus),
 //					},
 //				},
 //				WorkerNode: &bigdataservice.BdsInstanceWorkerNodeArgs{
 //					Shape:                pulumi.Any(_var.Bds_instance_nodes_shape),
 //					SubnetId:             pulumi.Any(oci_core_subnet.Test_subnet.Id),
-//					BlockVolumeSizeInGbs: pulumi.Any(_var.Bds_instance_nodes_block_volume_size_in_gbs),
 //					NumberOfNodes:        pulumi.Any(_var.Bds_instance_number_of_nodes),
+//					BlockVolumeSizeInGbs: pulumi.Any(_var.Bds_instance_nodes_block_volume_size_in_gbs),
 //					ShapeConfig: &bigdataservice.BdsInstanceWorkerNodeShapeConfigArgs{
 //						MemoryInGbs: pulumi.Any(_var.Bds_instance_nodes_shape_config_memory_in_gbs),
+//						Nvmes:       pulumi.Any(_var.Bds_instance_nodes_shape_config_nvmes),
 //						Ocpus:       pulumi.Any(_var.Bds_instance_nodes_shape_config_ocpus),
 //					},
 //				},
 //				ComputeOnlyWorkerNode: &bigdataservice.BdsInstanceComputeOnlyWorkerNodeArgs{
 //					Shape:                pulumi.Any(_var.Bds_instance_nodes_shape),
 //					SubnetId:             pulumi.Any(oci_core_subnet.Test_subnet.Id),
-//					BlockVolumeSizeInGbs: pulumi.Any(_var.Bds_instance_nodes_block_volume_size_in_gbs),
 //					NumberOfNodes:        pulumi.Any(_var.Bds_instance_number_of_nodes),
+//					BlockVolumeSizeInGbs: pulumi.Any(_var.Bds_instance_nodes_block_volume_size_in_gbs),
 //					ShapeConfig: &bigdataservice.BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs{
 //						MemoryInGbs: pulumi.Any(_var.Bds_instance_nodes_shape_config_memory_in_gbs),
+//						Nvmes:       pulumi.Any(_var.Bds_instance_nodes_shape_config_nvmes),
+//						Ocpus:       pulumi.Any(_var.Bds_instance_nodes_shape_config_ocpus),
+//					},
+//				},
+//				EdgeNode: &bigdataservice.BdsInstanceEdgeNodeArgs{
+//					Shape:                pulumi.Any(_var.Bds_instance_nodes_shape),
+//					SubnetId:             pulumi.Any(oci_core_subnet.Test_subnet.Id),
+//					NumberOfNodes:        pulumi.Any(_var.Bds_instance_number_of_nodes),
+//					BlockVolumeSizeInGbs: pulumi.Any(_var.Bds_instance_nodes_block_volume_size_in_gbs),
+//					ShapeConfig: &bigdataservice.BdsInstanceEdgeNodeShapeConfigArgs{
+//						MemoryInGbs: pulumi.Any(_var.Bds_instance_nodes_shape_config_memory_in_gbs),
+//						Nvmes:       pulumi.Any(_var.Bds_instance_nodes_shape_config_nvmes),
 //						Ocpus:       pulumi.Any(_var.Bds_instance_nodes_shape_config_ocpus),
 //					},
 //				},
 //				BootstrapScriptUrl: pulumi.Any(_var.Bds_instance_bootstrap_script_url),
+//				ClusterProfile:     pulumi.Any(_var.Bds_instance_cluster_profile),
 //				DefinedTags:        pulumi.Any(_var.Bds_instance_defined_tags),
 //				FreeformTags:       pulumi.Any(_var.Bds_instance_freeform_tags),
 //				KerberosRealmName:  pulumi.Any(_var.Bds_instance_kerberos_realm_name),
@@ -110,12 +126,14 @@ type BdsInstance struct {
 
 	// (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
 	BootstrapScriptUrl pulumi.StringOutput `pulumi:"bootstrapScriptUrl"`
-	// -(Optional) The information about added Cloud SQL capability
+	// The information about added Cloud SQL capability
 	CloudSqlDetails BdsInstanceCloudSqlDetailArrayOutput `pulumi:"cloudSqlDetails"`
-	// Base-64 encoded password for Cloudera Manager admin user
+	// Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
 	ClusterAdminPassword pulumi.StringOutput `pulumi:"clusterAdminPassword"`
 	// Specific info about a Hadoop cluster
 	ClusterDetails BdsInstanceClusterDetailArrayOutput `pulumi:"clusterDetails"`
+	// Profile of the Big Data Service cluster.
+	ClusterProfile pulumi.StringOutput `pulumi:"clusterProfile"`
 	// The SSH public key used to authenticate the cluster connection.
 	ClusterPublicKey pulumi.StringOutput `pulumi:"clusterPublicKey"`
 	// Version of the Hadoop distribution
@@ -123,16 +141,19 @@ type BdsInstance struct {
 	// (Updatable) The OCID of the compartment
 	CompartmentId         pulumi.StringOutput                       `pulumi:"compartmentId"`
 	ComputeOnlyWorkerNode BdsInstanceComputeOnlyWorkerNodePtrOutput `pulumi:"computeOnlyWorkerNode"`
-	// The user who created the BDS instance.
+	// The user who created the cluster.
 	CreatedBy pulumi.StringOutput `pulumi:"createdBy"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Name of the BDS instance
-	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	DisplayName pulumi.StringOutput          `pulumi:"displayName"`
+	EdgeNode    BdsInstanceEdgeNodePtrOutput `pulumi:"edgeNode"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
-	// -(Optional) (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
+	// (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
 	IsCloudSqlConfigured pulumi.BoolOutput `pulumi:"isCloudSqlConfigured"`
+	// (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
+	IsForceStopJobs pulumi.BoolPtrOutput `pulumi:"isForceStopJobs"`
 	// Boolean flag specifying whether or not the cluster is HA
 	IsHighAvailability pulumi.BoolOutput `pulumi:"isHighAvailability"`
 	// Boolean flag specifying whether or not the cluster should be setup as secure.
@@ -149,7 +170,7 @@ type BdsInstance struct {
 	Nodes BdsInstanceNodeArrayOutput `pulumi:"nodes"`
 	// The amount of worker nodes should be created
 	NumberOfNodes pulumi.IntOutput `pulumi:"numberOfNodes"`
-	// The state of the BDS instance
+	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The time the BDS instance was created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -197,6 +218,13 @@ func NewBdsInstance(ctx *pulumi.Context,
 	if args.WorkerNode == nil {
 		return nil, errors.New("invalid value for required argument 'WorkerNode'")
 	}
+	if args.ClusterAdminPassword != nil {
+		args.ClusterAdminPassword = pulumi.ToSecret(args.ClusterAdminPassword).(pulumi.StringInput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"clusterAdminPassword",
+	})
+	opts = append(opts, secrets)
 	var resource BdsInstance
 	err := ctx.RegisterResource("oci:BigDataService/bdsInstance:BdsInstance", name, args, &resource, opts...)
 	if err != nil {
@@ -221,12 +249,14 @@ func GetBdsInstance(ctx *pulumi.Context,
 type bdsInstanceState struct {
 	// (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
 	BootstrapScriptUrl *string `pulumi:"bootstrapScriptUrl"`
-	// -(Optional) The information about added Cloud SQL capability
+	// The information about added Cloud SQL capability
 	CloudSqlDetails []BdsInstanceCloudSqlDetail `pulumi:"cloudSqlDetails"`
-	// Base-64 encoded password for Cloudera Manager admin user
+	// Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
 	ClusterAdminPassword *string `pulumi:"clusterAdminPassword"`
 	// Specific info about a Hadoop cluster
 	ClusterDetails []BdsInstanceClusterDetail `pulumi:"clusterDetails"`
+	// Profile of the Big Data Service cluster.
+	ClusterProfile *string `pulumi:"clusterProfile"`
 	// The SSH public key used to authenticate the cluster connection.
 	ClusterPublicKey *string `pulumi:"clusterPublicKey"`
 	// Version of the Hadoop distribution
@@ -234,16 +264,19 @@ type bdsInstanceState struct {
 	// (Updatable) The OCID of the compartment
 	CompartmentId         *string                           `pulumi:"compartmentId"`
 	ComputeOnlyWorkerNode *BdsInstanceComputeOnlyWorkerNode `pulumi:"computeOnlyWorkerNode"`
-	// The user who created the BDS instance.
+	// The user who created the cluster.
 	CreatedBy *string `pulumi:"createdBy"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) Name of the BDS instance
-	DisplayName *string `pulumi:"displayName"`
+	DisplayName *string              `pulumi:"displayName"`
+	EdgeNode    *BdsInstanceEdgeNode `pulumi:"edgeNode"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// -(Optional) (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
+	// (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
 	IsCloudSqlConfigured *bool `pulumi:"isCloudSqlConfigured"`
+	// (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
+	IsForceStopJobs *bool `pulumi:"isForceStopJobs"`
 	// Boolean flag specifying whether or not the cluster is HA
 	IsHighAvailability *bool `pulumi:"isHighAvailability"`
 	// Boolean flag specifying whether or not the cluster should be setup as secure.
@@ -260,7 +293,7 @@ type bdsInstanceState struct {
 	Nodes []BdsInstanceNode `pulumi:"nodes"`
 	// The amount of worker nodes should be created
 	NumberOfNodes *int `pulumi:"numberOfNodes"`
-	// The state of the BDS instance
+	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
 	State *string `pulumi:"state"`
 	// The time the BDS instance was created. An RFC3339 formatted datetime string
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -274,12 +307,14 @@ type bdsInstanceState struct {
 type BdsInstanceState struct {
 	// (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
 	BootstrapScriptUrl pulumi.StringPtrInput
-	// -(Optional) The information about added Cloud SQL capability
+	// The information about added Cloud SQL capability
 	CloudSqlDetails BdsInstanceCloudSqlDetailArrayInput
-	// Base-64 encoded password for Cloudera Manager admin user
+	// Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
 	ClusterAdminPassword pulumi.StringPtrInput
 	// Specific info about a Hadoop cluster
 	ClusterDetails BdsInstanceClusterDetailArrayInput
+	// Profile of the Big Data Service cluster.
+	ClusterProfile pulumi.StringPtrInput
 	// The SSH public key used to authenticate the cluster connection.
 	ClusterPublicKey pulumi.StringPtrInput
 	// Version of the Hadoop distribution
@@ -287,16 +322,19 @@ type BdsInstanceState struct {
 	// (Updatable) The OCID of the compartment
 	CompartmentId         pulumi.StringPtrInput
 	ComputeOnlyWorkerNode BdsInstanceComputeOnlyWorkerNodePtrInput
-	// The user who created the BDS instance.
+	// The user who created the cluster.
 	CreatedBy pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) Name of the BDS instance
 	DisplayName pulumi.StringPtrInput
+	EdgeNode    BdsInstanceEdgeNodePtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
-	// -(Optional) (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
+	// (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
 	IsCloudSqlConfigured pulumi.BoolPtrInput
+	// (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
+	IsForceStopJobs pulumi.BoolPtrInput
 	// Boolean flag specifying whether or not the cluster is HA
 	IsHighAvailability pulumi.BoolPtrInput
 	// Boolean flag specifying whether or not the cluster should be setup as secure.
@@ -313,7 +351,7 @@ type BdsInstanceState struct {
 	Nodes BdsInstanceNodeArrayInput
 	// The amount of worker nodes should be created
 	NumberOfNodes pulumi.IntPtrInput
-	// The state of the BDS instance
+	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
 	State pulumi.StringPtrInput
 	// The time the BDS instance was created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringPtrInput
@@ -331,10 +369,12 @@ func (BdsInstanceState) ElementType() reflect.Type {
 type bdsInstanceArgs struct {
 	// (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
 	BootstrapScriptUrl *string `pulumi:"bootstrapScriptUrl"`
-	// -(Optional) The information about added Cloud SQL capability
+	// The information about added Cloud SQL capability
 	CloudSqlDetails []BdsInstanceCloudSqlDetail `pulumi:"cloudSqlDetails"`
-	// Base-64 encoded password for Cloudera Manager admin user
+	// Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
 	ClusterAdminPassword string `pulumi:"clusterAdminPassword"`
+	// Profile of the Big Data Service cluster.
+	ClusterProfile *string `pulumi:"clusterProfile"`
 	// The SSH public key used to authenticate the cluster connection.
 	ClusterPublicKey string `pulumi:"clusterPublicKey"`
 	// Version of the Hadoop distribution
@@ -345,11 +385,14 @@ type bdsInstanceArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) Name of the BDS instance
-	DisplayName string `pulumi:"displayName"`
+	DisplayName string               `pulumi:"displayName"`
+	EdgeNode    *BdsInstanceEdgeNode `pulumi:"edgeNode"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// -(Optional) (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
+	// (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
 	IsCloudSqlConfigured *bool `pulumi:"isCloudSqlConfigured"`
+	// (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
+	IsForceStopJobs *bool `pulumi:"isForceStopJobs"`
 	// Boolean flag specifying whether or not the cluster is HA
 	IsHighAvailability bool `pulumi:"isHighAvailability"`
 	// Boolean flag specifying whether or not the cluster should be setup as secure.
@@ -362,6 +405,8 @@ type bdsInstanceArgs struct {
 	MasterNode BdsInstanceMasterNode `pulumi:"masterNode"`
 	// Additional configuration of customer's network.
 	NetworkConfig *BdsInstanceNetworkConfig `pulumi:"networkConfig"`
+	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
+	State *string `pulumi:"state"`
 	// The utility node in the BDS instance
 	UtilNode   BdsInstanceUtilNode   `pulumi:"utilNode"`
 	WorkerNode BdsInstanceWorkerNode `pulumi:"workerNode"`
@@ -371,10 +416,12 @@ type bdsInstanceArgs struct {
 type BdsInstanceArgs struct {
 	// (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
 	BootstrapScriptUrl pulumi.StringPtrInput
-	// -(Optional) The information about added Cloud SQL capability
+	// The information about added Cloud SQL capability
 	CloudSqlDetails BdsInstanceCloudSqlDetailArrayInput
-	// Base-64 encoded password for Cloudera Manager admin user
+	// Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
 	ClusterAdminPassword pulumi.StringInput
+	// Profile of the Big Data Service cluster.
+	ClusterProfile pulumi.StringPtrInput
 	// The SSH public key used to authenticate the cluster connection.
 	ClusterPublicKey pulumi.StringInput
 	// Version of the Hadoop distribution
@@ -386,10 +433,13 @@ type BdsInstanceArgs struct {
 	DefinedTags pulumi.MapInput
 	// (Updatable) Name of the BDS instance
 	DisplayName pulumi.StringInput
+	EdgeNode    BdsInstanceEdgeNodePtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
-	// -(Optional) (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
+	// (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
 	IsCloudSqlConfigured pulumi.BoolPtrInput
+	// (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
+	IsForceStopJobs pulumi.BoolPtrInput
 	// Boolean flag specifying whether or not the cluster is HA
 	IsHighAvailability pulumi.BoolInput
 	// Boolean flag specifying whether or not the cluster should be setup as secure.
@@ -402,6 +452,8 @@ type BdsInstanceArgs struct {
 	MasterNode BdsInstanceMasterNodeInput
 	// Additional configuration of customer's network.
 	NetworkConfig BdsInstanceNetworkConfigPtrInput
+	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
+	State pulumi.StringPtrInput
 	// The utility node in the BDS instance
 	UtilNode   BdsInstanceUtilNodeInput
 	WorkerNode BdsInstanceWorkerNodeInput
@@ -499,12 +551,12 @@ func (o BdsInstanceOutput) BootstrapScriptUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v *BdsInstance) pulumi.StringOutput { return v.BootstrapScriptUrl }).(pulumi.StringOutput)
 }
 
-// -(Optional) The information about added Cloud SQL capability
+// The information about added Cloud SQL capability
 func (o BdsInstanceOutput) CloudSqlDetails() BdsInstanceCloudSqlDetailArrayOutput {
 	return o.ApplyT(func(v *BdsInstance) BdsInstanceCloudSqlDetailArrayOutput { return v.CloudSqlDetails }).(BdsInstanceCloudSqlDetailArrayOutput)
 }
 
-// Base-64 encoded password for Cloudera Manager admin user
+// Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
 func (o BdsInstanceOutput) ClusterAdminPassword() pulumi.StringOutput {
 	return o.ApplyT(func(v *BdsInstance) pulumi.StringOutput { return v.ClusterAdminPassword }).(pulumi.StringOutput)
 }
@@ -512,6 +564,11 @@ func (o BdsInstanceOutput) ClusterAdminPassword() pulumi.StringOutput {
 // Specific info about a Hadoop cluster
 func (o BdsInstanceOutput) ClusterDetails() BdsInstanceClusterDetailArrayOutput {
 	return o.ApplyT(func(v *BdsInstance) BdsInstanceClusterDetailArrayOutput { return v.ClusterDetails }).(BdsInstanceClusterDetailArrayOutput)
+}
+
+// Profile of the Big Data Service cluster.
+func (o BdsInstanceOutput) ClusterProfile() pulumi.StringOutput {
+	return o.ApplyT(func(v *BdsInstance) pulumi.StringOutput { return v.ClusterProfile }).(pulumi.StringOutput)
 }
 
 // The SSH public key used to authenticate the cluster connection.
@@ -533,7 +590,7 @@ func (o BdsInstanceOutput) ComputeOnlyWorkerNode() BdsInstanceComputeOnlyWorkerN
 	return o.ApplyT(func(v *BdsInstance) BdsInstanceComputeOnlyWorkerNodePtrOutput { return v.ComputeOnlyWorkerNode }).(BdsInstanceComputeOnlyWorkerNodePtrOutput)
 }
 
-// The user who created the BDS instance.
+// The user who created the cluster.
 func (o BdsInstanceOutput) CreatedBy() pulumi.StringOutput {
 	return o.ApplyT(func(v *BdsInstance) pulumi.StringOutput { return v.CreatedBy }).(pulumi.StringOutput)
 }
@@ -548,14 +605,23 @@ func (o BdsInstanceOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *BdsInstance) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+func (o BdsInstanceOutput) EdgeNode() BdsInstanceEdgeNodePtrOutput {
+	return o.ApplyT(func(v *BdsInstance) BdsInstanceEdgeNodePtrOutput { return v.EdgeNode }).(BdsInstanceEdgeNodePtrOutput)
+}
+
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 func (o BdsInstanceOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *BdsInstance) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// -(Optional) (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
+// (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
 func (o BdsInstanceOutput) IsCloudSqlConfigured() pulumi.BoolOutput {
 	return o.ApplyT(func(v *BdsInstance) pulumi.BoolOutput { return v.IsCloudSqlConfigured }).(pulumi.BoolOutput)
+}
+
+// (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
+func (o BdsInstanceOutput) IsForceStopJobs() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *BdsInstance) pulumi.BoolPtrOutput { return v.IsForceStopJobs }).(pulumi.BoolPtrOutput)
 }
 
 // Boolean flag specifying whether or not the cluster is HA
@@ -598,7 +664,7 @@ func (o BdsInstanceOutput) NumberOfNodes() pulumi.IntOutput {
 	return o.ApplyT(func(v *BdsInstance) pulumi.IntOutput { return v.NumberOfNodes }).(pulumi.IntOutput)
 }
 
-// The state of the BDS instance
+// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
 func (o BdsInstanceOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *BdsInstance) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }

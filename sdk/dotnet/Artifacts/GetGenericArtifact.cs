@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Artifacts
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetGenericArtifactResult> InvokeAsync(GetGenericArtifactArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetGenericArtifactResult>("oci:Artifacts/getGenericArtifact:getGenericArtifact", args ?? new GetGenericArtifactArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetGenericArtifactResult>("oci:Artifacts/getGenericArtifact:getGenericArtifact", args ?? new GetGenericArtifactArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Generic Artifact resource in Oracle Cloud Infrastructure Artifacts service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Artifacts
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetGenericArtifactResult> Invoke(GetGenericArtifactInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetGenericArtifactResult>("oci:Artifacts/getGenericArtifact:getGenericArtifact", args ?? new GetGenericArtifactInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetGenericArtifactResult>("oci:Artifacts/getGenericArtifact:getGenericArtifact", args ?? new GetGenericArtifactInvokeArgs(), options.WithDefaults());
     }
 
 

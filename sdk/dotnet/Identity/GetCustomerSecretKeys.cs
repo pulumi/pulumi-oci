@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetCustomerSecretKeysResult> InvokeAsync(GetCustomerSecretKeysArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetCustomerSecretKeysResult>("oci:Identity/getCustomerSecretKeys:getCustomerSecretKeys", args ?? new GetCustomerSecretKeysArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetCustomerSecretKeysResult>("oci:Identity/getCustomerSecretKeys:getCustomerSecretKeys", args ?? new GetCustomerSecretKeysArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Customer Secret Keys in Oracle Cloud Infrastructure Identity service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetCustomerSecretKeysResult> Invoke(GetCustomerSecretKeysInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetCustomerSecretKeysResult>("oci:Identity/getCustomerSecretKeys:getCustomerSecretKeys", args ?? new GetCustomerSecretKeysInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetCustomerSecretKeysResult>("oci:Identity/getCustomerSecretKeys:getCustomerSecretKeys", args ?? new GetCustomerSecretKeysInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAccessRequestHistory(args: GetAccessRequestHistoryArgs, opts?: pulumi.InvokeOptions): Promise<GetAccessRequestHistoryResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OperatorAccessControl/getAccessRequestHistory:getAccessRequestHistory", {
         "accessRequestId": args.accessRequestId,
     }, opts);
@@ -56,9 +54,24 @@ export interface GetAccessRequestHistoryResult {
      */
     readonly items: outputs.OperatorAccessControl.GetAccessRequestHistoryItem[];
 }
-
+/**
+ * This data source provides details about a specific Access Request History resource in Oracle Cloud Infrastructure Operator Access Control service.
+ *
+ * Returns a history of all status associated with the accessRequestId.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAccessRequestHistory = oci.OperatorAccessControl.getAccessRequestHistory({
+ *     accessRequestId: oci_operator_access_control_access_request.test_access_request.id,
+ * });
+ * ```
+ */
 export function getAccessRequestHistoryOutput(args: GetAccessRequestHistoryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAccessRequestHistoryResult> {
-    return pulumi.output(args).apply(a => getAccessRequestHistory(a, opts))
+    return pulumi.output(args).apply((a: any) => getAccessRequestHistory(a, opts))
 }
 
 /**

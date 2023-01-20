@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getPeer(args: GetPeerArgs, opts?: pulumi.InvokeOptions): Promise<GetPeerResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Blockchain/getPeer:getPeer", {
         "blockchainPlatformId": args.blockchainPlatformId,
         "peerId": args.peerId,
@@ -84,9 +82,25 @@ export interface GetPeerResult {
      */
     readonly state: string;
 }
-
+/**
+ * This data source provides details about a specific Peer resource in Oracle Cloud Infrastructure Blockchain service.
+ *
+ * Gets information about a peer identified by the specific id
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testPeer = oci.Blockchain.getPeer({
+ *     blockchainPlatformId: oci_blockchain_blockchain_platform.test_blockchain_platform.id,
+ *     peerId: oci_blockchain_peer.test_peer.id,
+ * });
+ * ```
+ */
 export function getPeerOutput(args: GetPeerOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPeerResult> {
-    return pulumi.output(args).apply(a => getPeer(a, opts))
+    return pulumi.output(args).apply((a: any) => getPeer(a, opts))
 }
 
 /**

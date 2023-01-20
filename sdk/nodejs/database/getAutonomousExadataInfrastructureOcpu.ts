@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAutonomousExadataInfrastructureOcpu(args: GetAutonomousExadataInfrastructureOcpuArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousExadataInfrastructureOcpuResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getAutonomousExadataInfrastructureOcpu:getAutonomousExadataInfrastructureOcpu", {
         "autonomousExadataInfrastructureId": args.autonomousExadataInfrastructureId,
     }, opts);
@@ -64,9 +62,24 @@ export interface GetAutonomousExadataInfrastructureOcpuResult {
      */
     readonly totalCpu: number;
 }
-
+/**
+ * This data source provides details about a specific Autonomous Exadata Infrastructure Ocpu resource in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets details of the available and consumed OCPUs for the specified Autonomous Exadata Infrastructure resource.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAutonomousExadataInfrastructureOcpu = oci.Database.getAutonomousExadataInfrastructureOcpu({
+ *     autonomousExadataInfrastructureId: oci_database_autonomous_exadata_infrastructure.test_autonomous_exadata_infrastructure.id,
+ * });
+ * ```
+ */
 export function getAutonomousExadataInfrastructureOcpuOutput(args: GetAutonomousExadataInfrastructureOcpuOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousExadataInfrastructureOcpuResult> {
-    return pulumi.output(args).apply(a => getAutonomousExadataInfrastructureOcpu(a, opts))
+    return pulumi.output(args).apply((a: any) => getAutonomousExadataInfrastructureOcpu(a, opts))
 }
 
 /**

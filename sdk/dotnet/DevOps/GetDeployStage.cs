@@ -38,7 +38,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDeployStageResult> InvokeAsync(GetDeployStageArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDeployStageResult>("oci:DevOps/getDeployStage:getDeployStage", args ?? new GetDeployStageArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDeployStageResult>("oci:DevOps/getDeployStage:getDeployStage", args ?? new GetDeployStageArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Deploy Stage resource in Oracle Cloud Infrastructure Devops service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDeployStageResult> Invoke(GetDeployStageInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDeployStageResult>("oci:DevOps/getDeployStage:getDeployStage", args ?? new GetDeployStageInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDeployStageResult>("oci:DevOps/getDeployStage:getDeployStage", args ?? new GetDeployStageInvokeArgs(), options.WithDefaults());
     }
 
 

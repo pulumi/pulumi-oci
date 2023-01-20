@@ -40,7 +40,7 @@ namespace Pulumi.Oci.AppMgmtControl
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetMonitoredInstancesResult> InvokeAsync(GetMonitoredInstancesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetMonitoredInstancesResult>("oci:AppMgmtControl/getMonitoredInstances:getMonitoredInstances", args ?? new GetMonitoredInstancesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetMonitoredInstancesResult>("oci:AppMgmtControl/getMonitoredInstances:getMonitoredInstances", args ?? new GetMonitoredInstancesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Monitored Instances in Oracle Cloud Infrastructure Appmgmt Control service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.AppMgmtControl
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetMonitoredInstancesResult> Invoke(GetMonitoredInstancesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetMonitoredInstancesResult>("oci:AppMgmtControl/getMonitoredInstances:getMonitoredInstances", args ?? new GetMonitoredInstancesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetMonitoredInstancesResult>("oci:AppMgmtControl/getMonitoredInstances:getMonitoredInstances", args ?? new GetMonitoredInstancesInvokeArgs(), options.WithDefaults());
     }
 
 

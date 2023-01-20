@@ -43,7 +43,7 @@ namespace Pulumi.Oci.OsubBillingSchedule
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetBillingScheduleResult> InvokeAsync(GetBillingScheduleArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetBillingScheduleResult>("oci:OsubBillingSchedule/getBillingSchedule:getBillingSchedule", args ?? new GetBillingScheduleArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetBillingScheduleResult>("oci:OsubBillingSchedule/getBillingSchedule:getBillingSchedule", args ?? new GetBillingScheduleArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Billing Schedules in Oracle Cloud Infrastructure Osub Billing Schedule service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.OsubBillingSchedule
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetBillingScheduleResult> Invoke(GetBillingScheduleInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetBillingScheduleResult>("oci:OsubBillingSchedule/getBillingSchedule:getBillingSchedule", args ?? new GetBillingScheduleInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetBillingScheduleResult>("oci:OsubBillingSchedule/getBillingSchedule:getBillingSchedule", args ?? new GetBillingScheduleInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getInstancePools(args: GetInstancePoolsArgs, opts?: pulumi.InvokeOptions): Promise<GetInstancePoolsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getInstancePools:getInstancePools", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -82,9 +80,26 @@ export interface GetInstancePoolsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Instance Pools in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the instance pools in the specified compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testInstancePools = oci.Core.getInstancePools({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.instance_pool_display_name,
+ *     state: _var.instance_pool_state,
+ * });
+ * ```
+ */
 export function getInstancePoolsOutput(args: GetInstancePoolsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstancePoolsResult> {
-    return pulumi.output(args).apply(a => getInstancePools(a, opts))
+    return pulumi.output(args).apply((a: any) => getInstancePools(a, opts))
 }
 
 /**

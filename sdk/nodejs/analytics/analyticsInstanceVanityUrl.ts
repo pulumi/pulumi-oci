@@ -133,11 +133,13 @@ export class AnalyticsInstanceVanityUrl extends pulumi.CustomResource {
             resourceInputs["caCertificate"] = args ? args.caCertificate : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["hosts"] = args ? args.hosts : undefined;
-            resourceInputs["passphrase"] = args ? args.passphrase : undefined;
-            resourceInputs["privateKey"] = args ? args.privateKey : undefined;
+            resourceInputs["passphrase"] = args?.passphrase ? pulumi.secret(args.passphrase) : undefined;
+            resourceInputs["privateKey"] = args?.privateKey ? pulumi.secret(args.privateKey) : undefined;
             resourceInputs["publicCertificate"] = args ? args.publicCertificate : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["passphrase", "privateKey"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(AnalyticsInstanceVanityUrl.__pulumiType, name, resourceInputs, opts);
     }
 }

@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSecurityPolicy(args: GetSecurityPolicyArgs, opts?: pulumi.InvokeOptions): Promise<GetSecurityPolicyResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CloudGuard/getSecurityPolicy:getSecurityPolicy", {
         "securityPolicyId": args.securityPolicyId,
     }, opts);
@@ -107,9 +104,24 @@ export interface GetSecurityPolicyResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Security Policy resource in Oracle Cloud Infrastructure Cloud Guard service.
+ *
+ * Gets a security zone policy using its identifier. When a policy is enabled in a security zone, then any action in the zone that attempts to violate that policy is denied.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSecurityPolicy = oci.CloudGuard.getSecurityPolicy({
+ *     securityPolicyId: oci_cloud_guard_security_policy.test_security_policy.id,
+ * });
+ * ```
+ */
 export function getSecurityPolicyOutput(args: GetSecurityPolicyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityPolicyResult> {
-    return pulumi.output(args).apply(a => getSecurityPolicy(a, opts))
+    return pulumi.output(args).apply((a: any) => getSecurityPolicy(a, opts))
 }
 
 /**

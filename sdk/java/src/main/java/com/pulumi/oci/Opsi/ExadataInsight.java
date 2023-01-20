@@ -9,10 +9,12 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Opsi.ExadataInsightArgs;
 import com.pulumi.oci.Opsi.inputs.ExadataInsightState;
+import com.pulumi.oci.Opsi.outputs.ExadataInsightMemberVmClusterDetail;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
 
@@ -209,6 +211,18 @@ public class ExadataInsight extends com.pulumi.resources.CustomResource {
     public Output<String> exadataDisplayName() {
         return this.exadataDisplayName;
     }
+    @Export(name="exadataInfraId", type=String.class, parameters={})
+    private Output<String> exadataInfraId;
+
+    public Output<String> exadataInfraId() {
+        return this.exadataInfraId;
+    }
+    @Export(name="exadataInfraResourceType", type=String.class, parameters={})
+    private Output<String> exadataInfraResourceType;
+
+    public Output<String> exadataInfraResourceType() {
+        return this.exadataInfraResourceType;
+    }
     /**
      * The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
      * 
@@ -236,6 +250,12 @@ public class ExadataInsight extends com.pulumi.resources.CustomResource {
      */
     public Output<String> exadataRackType() {
         return this.exadataRackType;
+    }
+    @Export(name="exadataShape", type=String.class, parameters={})
+    private Output<String> exadataShape;
+
+    public Output<String> exadataShape() {
+        return this.exadataShape;
     }
     /**
      * Operations Insights internal representation of the the Exadata system type.
@@ -306,6 +326,12 @@ public class ExadataInsight extends com.pulumi.resources.CustomResource {
      */
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    @Export(name="memberVmClusterDetails", type=List.class, parameters={ExadataInsightMemberVmClusterDetail.class})
+    private Output<List<ExadataInsightMemberVmClusterDetail>> memberVmClusterDetails;
+
+    public Output<List<ExadataInsightMemberVmClusterDetail>> memberVmClusterDetails() {
+        return this.memberVmClusterDetails;
     }
     /**
      * The current state of the Exadata insight.

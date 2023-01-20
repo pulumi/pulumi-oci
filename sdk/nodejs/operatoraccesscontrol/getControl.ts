@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getControl(args: GetControlArgs, opts?: pulumi.InvokeOptions): Promise<GetControlResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OperatorAccessControl/getControl:getControl", {
         "operatorControlId": args.operatorControlId,
     }, opts);
@@ -123,9 +120,24 @@ export interface GetControlResult {
      */
     readonly timeOfModification: string;
 }
-
+/**
+ * This data source provides details about a specific Operator Control resource in Oracle Cloud Infrastructure Operator Access Control service.
+ *
+ * Gets the Operator Control associated with the specified Operator Control ID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testOperatorControl = oci.OperatorAccessControl.getControl({
+ *     operatorControlId: oci_operator_access_control_operator_control.test_operator_control.id,
+ * });
+ * ```
+ */
 export function getControlOutput(args: GetControlOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetControlResult> {
-    return pulumi.output(args).apply(a => getControl(a, opts))
+    return pulumi.output(args).apply((a: any) => getControl(a, opts))
 }
 
 /**

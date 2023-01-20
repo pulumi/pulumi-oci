@@ -22,11 +22,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getInstancePoolLoadBalancerAttachment(args: GetInstancePoolLoadBalancerAttachmentArgs, opts?: pulumi.InvokeOptions): Promise<GetInstancePoolLoadBalancerAttachmentResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getInstancePoolLoadBalancerAttachment:getInstancePoolLoadBalancerAttachment", {
         "instancePoolId": args.instancePoolId,
         "instancePoolLoadBalancerAttachmentId": args.instancePoolLoadBalancerAttachmentId,
@@ -81,9 +78,25 @@ export interface GetInstancePoolLoadBalancerAttachmentResult {
      */
     readonly vnicSelection: string;
 }
-
+/**
+ * This data source provides details about a specific Instance Pool Load Balancer Attachment resource in Oracle Cloud Infrastructure Core service.
+ *
+ * Gets information about a load balancer that is attached to the specified instance pool.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testInstancePoolLoadBalancerAttachment = oci.Core.getInstancePoolLoadBalancerAttachment({
+ *     instancePoolId: oci_core_instance_pool.test_instance_pool.id,
+ *     instancePoolLoadBalancerAttachmentId: oci_core_instance_pool_load_balancer_attachment.test_instance_pool_load_balancer_attachment.id,
+ * });
+ * ```
+ */
 export function getInstancePoolLoadBalancerAttachmentOutput(args: GetInstancePoolLoadBalancerAttachmentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstancePoolLoadBalancerAttachmentResult> {
-    return pulumi.output(args).apply(a => getInstancePoolLoadBalancerAttachment(a, opts))
+    return pulumi.output(args).apply((a: any) => getInstancePoolLoadBalancerAttachment(a, opts))
 }
 
 /**

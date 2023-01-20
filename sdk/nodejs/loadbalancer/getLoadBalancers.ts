@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -29,11 +30,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLoadBalancers(args: GetLoadBalancersArgs, opts?: pulumi.InvokeOptions): Promise<GetLoadBalancersResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LoadBalancer/getLoadBalancers:getLoadBalancers", {
         "compartmentId": args.compartmentId,
         "detail": args.detail,
@@ -93,9 +91,31 @@ export interface GetLoadBalancersResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Load Balancers in Oracle Cloud Infrastructure Load Balancer service.
+ *
+ * Lists all load balancers in the specified compartment.
+ *
+ * ## Supported Aliases
+ *
+ * * `ociLoadBalancers`
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testLoadBalancers = oci.LoadBalancer.getLoadBalancers({
+ *     compartmentId: _var.compartment_id,
+ *     detail: _var.load_balancer_detail,
+ *     displayName: _var.load_balancer_display_name,
+ *     state: _var.load_balancer_state,
+ * });
+ * ```
+ */
 export function getLoadBalancersOutput(args: GetLoadBalancersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLoadBalancersResult> {
-    return pulumi.output(args).apply(a => getLoadBalancers(a, opts))
+    return pulumi.output(args).apply((a: any) => getLoadBalancers(a, opts))
 }
 
 /**

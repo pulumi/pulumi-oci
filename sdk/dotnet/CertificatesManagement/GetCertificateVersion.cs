@@ -39,7 +39,7 @@ namespace Pulumi.Oci.CertificatesManagement
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetCertificateVersionResult> InvokeAsync(GetCertificateVersionArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetCertificateVersionResult>("oci:CertificatesManagement/getCertificateVersion:getCertificateVersion", args ?? new GetCertificateVersionArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetCertificateVersionResult>("oci:CertificatesManagement/getCertificateVersion:getCertificateVersion", args ?? new GetCertificateVersionArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Certificate Version resource in Oracle Cloud Infrastructure Certificates Management service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.CertificatesManagement
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetCertificateVersionResult> Invoke(GetCertificateVersionInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetCertificateVersionResult>("oci:CertificatesManagement/getCertificateVersion:getCertificateVersion", args ?? new GetCertificateVersionInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetCertificateVersionResult>("oci:CertificatesManagement/getCertificateVersion:getCertificateVersion", args ?? new GetCertificateVersionInvokeArgs(), options.WithDefaults());
     }
 
 

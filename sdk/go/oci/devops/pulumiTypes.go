@@ -3412,6 +3412,8 @@ type BuildRunBuildRunSourceTriggerInfoActionFilterInclude struct {
 	FileFilters []BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter `pulumi:"fileFilters"`
 	// Branch for push event; source branch for pull requests.
 	HeadRef *string `pulumi:"headRef"`
+	// The repository name for trigger events.
+	RepositoryName *string `pulumi:"repositoryName"`
 }
 
 // BuildRunBuildRunSourceTriggerInfoActionFilterIncludeInput is an input type that accepts BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs and BuildRunBuildRunSourceTriggerInfoActionFilterIncludeOutput values.
@@ -3431,6 +3433,8 @@ type BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs struct {
 	FileFilters BuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayInput `pulumi:"fileFilters"`
 	// Branch for push event; source branch for pull requests.
 	HeadRef pulumi.StringPtrInput `pulumi:"headRef"`
+	// The repository name for trigger events.
+	RepositoryName pulumi.StringPtrInput `pulumi:"repositoryName"`
 }
 
 func (BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs) ElementType() reflect.Type {
@@ -3498,6 +3502,11 @@ func (o BuildRunBuildRunSourceTriggerInfoActionFilterIncludeOutput) FileFilters(
 // Branch for push event; source branch for pull requests.
 func (o BuildRunBuildRunSourceTriggerInfoActionFilterIncludeOutput) HeadRef() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BuildRunBuildRunSourceTriggerInfoActionFilterInclude) *string { return v.HeadRef }).(pulumi.StringPtrOutput)
+}
+
+// The repository name for trigger events.
+func (o BuildRunBuildRunSourceTriggerInfoActionFilterIncludeOutput) RepositoryName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BuildRunBuildRunSourceTriggerInfoActionFilterInclude) *string { return v.RepositoryName }).(pulumi.StringPtrOutput)
 }
 
 type BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArrayOutput struct{ *pulumi.OutputState }
@@ -8621,7 +8630,7 @@ func (o DeploymentDeployPipelineArtifactItemDeployPipelineStageArrayOutput) Inde
 }
 
 type DeploymentDeployPipelineArtifactItemDeployPipelineStageItem struct {
-	// Specifies the OCID of the stage to be redeployed.
+	// The OCID of the stage.
 	DeployStageId *string `pulumi:"deployStageId"`
 	// (Updatable) Deployment display name. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
@@ -8639,7 +8648,7 @@ type DeploymentDeployPipelineArtifactItemDeployPipelineStageItemInput interface 
 }
 
 type DeploymentDeployPipelineArtifactItemDeployPipelineStageItemArgs struct {
-	// Specifies the OCID of the stage to be redeployed.
+	// The OCID of the stage.
 	DeployStageId pulumi.StringPtrInput `pulumi:"deployStageId"`
 	// (Updatable) Deployment display name. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
@@ -8696,7 +8705,7 @@ func (o DeploymentDeployPipelineArtifactItemDeployPipelineStageItemOutput) ToDep
 	return o
 }
 
-// Specifies the OCID of the stage to be redeployed.
+// The OCID of the stage.
 func (o DeploymentDeployPipelineArtifactItemDeployPipelineStageItemOutput) DeployStageId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeploymentDeployPipelineArtifactItemDeployPipelineStageItem) *string { return v.DeployStageId }).(pulumi.StringPtrOutput)
 }
@@ -9040,7 +9049,7 @@ func (o DeploymentDeployPipelineEnvironmentItemDeployPipelineStageArrayOutput) I
 }
 
 type DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItem struct {
-	// Specifies the OCID of the stage to be redeployed.
+	// The OCID of the stage.
 	DeployStageId *string `pulumi:"deployStageId"`
 	// (Updatable) Deployment display name. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
@@ -9058,7 +9067,7 @@ type DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemInput interfa
 }
 
 type DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArgs struct {
-	// Specifies the OCID of the stage to be redeployed.
+	// The OCID of the stage.
 	DeployStageId pulumi.StringPtrInput `pulumi:"deployStageId"`
 	// (Updatable) Deployment display name. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
@@ -9115,7 +9124,7 @@ func (o DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemOutput) To
 	return o
 }
 
-// Specifies the OCID of the stage to be redeployed.
+// The OCID of the stage.
 func (o DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemOutput) DeployStageId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItem) *string { return v.DeployStageId }).(pulumi.StringPtrOutput)
 }
@@ -9143,6 +9152,260 @@ func (o DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArrayOutpu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItem {
 		return vs[0].([]DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItem)[vs[1].(int)]
 	}).(DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemOutput)
+}
+
+type DeploymentDeployStageOverrideArguments struct {
+	// List of arguments provided at the time of deployment.
+	Items []DeploymentDeployStageOverrideArgumentsItem `pulumi:"items"`
+}
+
+// DeploymentDeployStageOverrideArgumentsInput is an input type that accepts DeploymentDeployStageOverrideArgumentsArgs and DeploymentDeployStageOverrideArgumentsOutput values.
+// You can construct a concrete instance of `DeploymentDeployStageOverrideArgumentsInput` via:
+//
+//	DeploymentDeployStageOverrideArgumentsArgs{...}
+type DeploymentDeployStageOverrideArgumentsInput interface {
+	pulumi.Input
+
+	ToDeploymentDeployStageOverrideArgumentsOutput() DeploymentDeployStageOverrideArgumentsOutput
+	ToDeploymentDeployStageOverrideArgumentsOutputWithContext(context.Context) DeploymentDeployStageOverrideArgumentsOutput
+}
+
+type DeploymentDeployStageOverrideArgumentsArgs struct {
+	// List of arguments provided at the time of deployment.
+	Items DeploymentDeployStageOverrideArgumentsItemArrayInput `pulumi:"items"`
+}
+
+func (DeploymentDeployStageOverrideArgumentsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeploymentDeployStageOverrideArguments)(nil)).Elem()
+}
+
+func (i DeploymentDeployStageOverrideArgumentsArgs) ToDeploymentDeployStageOverrideArgumentsOutput() DeploymentDeployStageOverrideArgumentsOutput {
+	return i.ToDeploymentDeployStageOverrideArgumentsOutputWithContext(context.Background())
+}
+
+func (i DeploymentDeployStageOverrideArgumentsArgs) ToDeploymentDeployStageOverrideArgumentsOutputWithContext(ctx context.Context) DeploymentDeployStageOverrideArgumentsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeploymentDeployStageOverrideArgumentsOutput)
+}
+
+func (i DeploymentDeployStageOverrideArgumentsArgs) ToDeploymentDeployStageOverrideArgumentsPtrOutput() DeploymentDeployStageOverrideArgumentsPtrOutput {
+	return i.ToDeploymentDeployStageOverrideArgumentsPtrOutputWithContext(context.Background())
+}
+
+func (i DeploymentDeployStageOverrideArgumentsArgs) ToDeploymentDeployStageOverrideArgumentsPtrOutputWithContext(ctx context.Context) DeploymentDeployStageOverrideArgumentsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeploymentDeployStageOverrideArgumentsOutput).ToDeploymentDeployStageOverrideArgumentsPtrOutputWithContext(ctx)
+}
+
+// DeploymentDeployStageOverrideArgumentsPtrInput is an input type that accepts DeploymentDeployStageOverrideArgumentsArgs, DeploymentDeployStageOverrideArgumentsPtr and DeploymentDeployStageOverrideArgumentsPtrOutput values.
+// You can construct a concrete instance of `DeploymentDeployStageOverrideArgumentsPtrInput` via:
+//
+//	        DeploymentDeployStageOverrideArgumentsArgs{...}
+//
+//	or:
+//
+//	        nil
+type DeploymentDeployStageOverrideArgumentsPtrInput interface {
+	pulumi.Input
+
+	ToDeploymentDeployStageOverrideArgumentsPtrOutput() DeploymentDeployStageOverrideArgumentsPtrOutput
+	ToDeploymentDeployStageOverrideArgumentsPtrOutputWithContext(context.Context) DeploymentDeployStageOverrideArgumentsPtrOutput
+}
+
+type deploymentDeployStageOverrideArgumentsPtrType DeploymentDeployStageOverrideArgumentsArgs
+
+func DeploymentDeployStageOverrideArgumentsPtr(v *DeploymentDeployStageOverrideArgumentsArgs) DeploymentDeployStageOverrideArgumentsPtrInput {
+	return (*deploymentDeployStageOverrideArgumentsPtrType)(v)
+}
+
+func (*deploymentDeployStageOverrideArgumentsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DeploymentDeployStageOverrideArguments)(nil)).Elem()
+}
+
+func (i *deploymentDeployStageOverrideArgumentsPtrType) ToDeploymentDeployStageOverrideArgumentsPtrOutput() DeploymentDeployStageOverrideArgumentsPtrOutput {
+	return i.ToDeploymentDeployStageOverrideArgumentsPtrOutputWithContext(context.Background())
+}
+
+func (i *deploymentDeployStageOverrideArgumentsPtrType) ToDeploymentDeployStageOverrideArgumentsPtrOutputWithContext(ctx context.Context) DeploymentDeployStageOverrideArgumentsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeploymentDeployStageOverrideArgumentsPtrOutput)
+}
+
+type DeploymentDeployStageOverrideArgumentsOutput struct{ *pulumi.OutputState }
+
+func (DeploymentDeployStageOverrideArgumentsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeploymentDeployStageOverrideArguments)(nil)).Elem()
+}
+
+func (o DeploymentDeployStageOverrideArgumentsOutput) ToDeploymentDeployStageOverrideArgumentsOutput() DeploymentDeployStageOverrideArgumentsOutput {
+	return o
+}
+
+func (o DeploymentDeployStageOverrideArgumentsOutput) ToDeploymentDeployStageOverrideArgumentsOutputWithContext(ctx context.Context) DeploymentDeployStageOverrideArgumentsOutput {
+	return o
+}
+
+func (o DeploymentDeployStageOverrideArgumentsOutput) ToDeploymentDeployStageOverrideArgumentsPtrOutput() DeploymentDeployStageOverrideArgumentsPtrOutput {
+	return o.ToDeploymentDeployStageOverrideArgumentsPtrOutputWithContext(context.Background())
+}
+
+func (o DeploymentDeployStageOverrideArgumentsOutput) ToDeploymentDeployStageOverrideArgumentsPtrOutputWithContext(ctx context.Context) DeploymentDeployStageOverrideArgumentsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DeploymentDeployStageOverrideArguments) *DeploymentDeployStageOverrideArguments {
+		return &v
+	}).(DeploymentDeployStageOverrideArgumentsPtrOutput)
+}
+
+// List of arguments provided at the time of deployment.
+func (o DeploymentDeployStageOverrideArgumentsOutput) Items() DeploymentDeployStageOverrideArgumentsItemArrayOutput {
+	return o.ApplyT(func(v DeploymentDeployStageOverrideArguments) []DeploymentDeployStageOverrideArgumentsItem {
+		return v.Items
+	}).(DeploymentDeployStageOverrideArgumentsItemArrayOutput)
+}
+
+type DeploymentDeployStageOverrideArgumentsPtrOutput struct{ *pulumi.OutputState }
+
+func (DeploymentDeployStageOverrideArgumentsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DeploymentDeployStageOverrideArguments)(nil)).Elem()
+}
+
+func (o DeploymentDeployStageOverrideArgumentsPtrOutput) ToDeploymentDeployStageOverrideArgumentsPtrOutput() DeploymentDeployStageOverrideArgumentsPtrOutput {
+	return o
+}
+
+func (o DeploymentDeployStageOverrideArgumentsPtrOutput) ToDeploymentDeployStageOverrideArgumentsPtrOutputWithContext(ctx context.Context) DeploymentDeployStageOverrideArgumentsPtrOutput {
+	return o
+}
+
+func (o DeploymentDeployStageOverrideArgumentsPtrOutput) Elem() DeploymentDeployStageOverrideArgumentsOutput {
+	return o.ApplyT(func(v *DeploymentDeployStageOverrideArguments) DeploymentDeployStageOverrideArguments {
+		if v != nil {
+			return *v
+		}
+		var ret DeploymentDeployStageOverrideArguments
+		return ret
+	}).(DeploymentDeployStageOverrideArgumentsOutput)
+}
+
+// List of arguments provided at the time of deployment.
+func (o DeploymentDeployStageOverrideArgumentsPtrOutput) Items() DeploymentDeployStageOverrideArgumentsItemArrayOutput {
+	return o.ApplyT(func(v *DeploymentDeployStageOverrideArguments) []DeploymentDeployStageOverrideArgumentsItem {
+		if v == nil {
+			return nil
+		}
+		return v.Items
+	}).(DeploymentDeployStageOverrideArgumentsItemArrayOutput)
+}
+
+type DeploymentDeployStageOverrideArgumentsItem struct {
+	// The OCID of the stage.
+	DeployStageId *string `pulumi:"deployStageId"`
+	// Name of the parameter (case-sensitive).
+	Name *string `pulumi:"name"`
+	// value of the argument.
+	Value *string `pulumi:"value"`
+}
+
+// DeploymentDeployStageOverrideArgumentsItemInput is an input type that accepts DeploymentDeployStageOverrideArgumentsItemArgs and DeploymentDeployStageOverrideArgumentsItemOutput values.
+// You can construct a concrete instance of `DeploymentDeployStageOverrideArgumentsItemInput` via:
+//
+//	DeploymentDeployStageOverrideArgumentsItemArgs{...}
+type DeploymentDeployStageOverrideArgumentsItemInput interface {
+	pulumi.Input
+
+	ToDeploymentDeployStageOverrideArgumentsItemOutput() DeploymentDeployStageOverrideArgumentsItemOutput
+	ToDeploymentDeployStageOverrideArgumentsItemOutputWithContext(context.Context) DeploymentDeployStageOverrideArgumentsItemOutput
+}
+
+type DeploymentDeployStageOverrideArgumentsItemArgs struct {
+	// The OCID of the stage.
+	DeployStageId pulumi.StringPtrInput `pulumi:"deployStageId"`
+	// Name of the parameter (case-sensitive).
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// value of the argument.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (DeploymentDeployStageOverrideArgumentsItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeploymentDeployStageOverrideArgumentsItem)(nil)).Elem()
+}
+
+func (i DeploymentDeployStageOverrideArgumentsItemArgs) ToDeploymentDeployStageOverrideArgumentsItemOutput() DeploymentDeployStageOverrideArgumentsItemOutput {
+	return i.ToDeploymentDeployStageOverrideArgumentsItemOutputWithContext(context.Background())
+}
+
+func (i DeploymentDeployStageOverrideArgumentsItemArgs) ToDeploymentDeployStageOverrideArgumentsItemOutputWithContext(ctx context.Context) DeploymentDeployStageOverrideArgumentsItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeploymentDeployStageOverrideArgumentsItemOutput)
+}
+
+// DeploymentDeployStageOverrideArgumentsItemArrayInput is an input type that accepts DeploymentDeployStageOverrideArgumentsItemArray and DeploymentDeployStageOverrideArgumentsItemArrayOutput values.
+// You can construct a concrete instance of `DeploymentDeployStageOverrideArgumentsItemArrayInput` via:
+//
+//	DeploymentDeployStageOverrideArgumentsItemArray{ DeploymentDeployStageOverrideArgumentsItemArgs{...} }
+type DeploymentDeployStageOverrideArgumentsItemArrayInput interface {
+	pulumi.Input
+
+	ToDeploymentDeployStageOverrideArgumentsItemArrayOutput() DeploymentDeployStageOverrideArgumentsItemArrayOutput
+	ToDeploymentDeployStageOverrideArgumentsItemArrayOutputWithContext(context.Context) DeploymentDeployStageOverrideArgumentsItemArrayOutput
+}
+
+type DeploymentDeployStageOverrideArgumentsItemArray []DeploymentDeployStageOverrideArgumentsItemInput
+
+func (DeploymentDeployStageOverrideArgumentsItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DeploymentDeployStageOverrideArgumentsItem)(nil)).Elem()
+}
+
+func (i DeploymentDeployStageOverrideArgumentsItemArray) ToDeploymentDeployStageOverrideArgumentsItemArrayOutput() DeploymentDeployStageOverrideArgumentsItemArrayOutput {
+	return i.ToDeploymentDeployStageOverrideArgumentsItemArrayOutputWithContext(context.Background())
+}
+
+func (i DeploymentDeployStageOverrideArgumentsItemArray) ToDeploymentDeployStageOverrideArgumentsItemArrayOutputWithContext(ctx context.Context) DeploymentDeployStageOverrideArgumentsItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeploymentDeployStageOverrideArgumentsItemArrayOutput)
+}
+
+type DeploymentDeployStageOverrideArgumentsItemOutput struct{ *pulumi.OutputState }
+
+func (DeploymentDeployStageOverrideArgumentsItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeploymentDeployStageOverrideArgumentsItem)(nil)).Elem()
+}
+
+func (o DeploymentDeployStageOverrideArgumentsItemOutput) ToDeploymentDeployStageOverrideArgumentsItemOutput() DeploymentDeployStageOverrideArgumentsItemOutput {
+	return o
+}
+
+func (o DeploymentDeployStageOverrideArgumentsItemOutput) ToDeploymentDeployStageOverrideArgumentsItemOutputWithContext(ctx context.Context) DeploymentDeployStageOverrideArgumentsItemOutput {
+	return o
+}
+
+// The OCID of the stage.
+func (o DeploymentDeployStageOverrideArgumentsItemOutput) DeployStageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeploymentDeployStageOverrideArgumentsItem) *string { return v.DeployStageId }).(pulumi.StringPtrOutput)
+}
+
+// Name of the parameter (case-sensitive).
+func (o DeploymentDeployStageOverrideArgumentsItemOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeploymentDeployStageOverrideArgumentsItem) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// value of the argument.
+func (o DeploymentDeployStageOverrideArgumentsItemOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeploymentDeployStageOverrideArgumentsItem) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type DeploymentDeployStageOverrideArgumentsItemArrayOutput struct{ *pulumi.OutputState }
+
+func (DeploymentDeployStageOverrideArgumentsItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DeploymentDeployStageOverrideArgumentsItem)(nil)).Elem()
+}
+
+func (o DeploymentDeployStageOverrideArgumentsItemArrayOutput) ToDeploymentDeployStageOverrideArgumentsItemArrayOutput() DeploymentDeployStageOverrideArgumentsItemArrayOutput {
+	return o
+}
+
+func (o DeploymentDeployStageOverrideArgumentsItemArrayOutput) ToDeploymentDeployStageOverrideArgumentsItemArrayOutputWithContext(ctx context.Context) DeploymentDeployStageOverrideArgumentsItemArrayOutput {
+	return o
+}
+
+func (o DeploymentDeployStageOverrideArgumentsItemArrayOutput) Index(i pulumi.IntInput) DeploymentDeployStageOverrideArgumentsItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DeploymentDeployStageOverrideArgumentsItem {
+		return vs[0].([]DeploymentDeployStageOverrideArgumentsItem)[vs[1].(int)]
+	}).(DeploymentDeployStageOverrideArgumentsItemOutput)
 }
 
 type DeploymentDeploymentArguments struct {
@@ -10092,11 +10355,12 @@ func (o TriggerActionArrayOutput) Index(i pulumi.IntInput) TriggerActionOutput {
 
 type TriggerActionFilter struct {
 	// (Updatable) The events, for example, PUSH, PULL_REQUEST_MERGE.
-	Events  []string                    `pulumi:"events"`
+	Events []string `pulumi:"events"`
+	// (Updatable) Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
 	Exclude *TriggerActionFilterExclude `pulumi:"exclude"`
 	// (Updatable) Attributes to filter GitLab self-hosted server events.
 	Include *TriggerActionFilterInclude `pulumi:"include"`
-	// (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
+	// (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
 	TriggerSource string `pulumi:"triggerSource"`
 }
 
@@ -10113,11 +10377,12 @@ type TriggerActionFilterInput interface {
 
 type TriggerActionFilterArgs struct {
 	// (Updatable) The events, for example, PUSH, PULL_REQUEST_MERGE.
-	Events  pulumi.StringArrayInput            `pulumi:"events"`
+	Events pulumi.StringArrayInput `pulumi:"events"`
+	// (Updatable) Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
 	Exclude TriggerActionFilterExcludePtrInput `pulumi:"exclude"`
 	// (Updatable) Attributes to filter GitLab self-hosted server events.
 	Include TriggerActionFilterIncludePtrInput `pulumi:"include"`
-	// (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
+	// (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
 	TriggerSource pulumi.StringInput `pulumi:"triggerSource"`
 }
 
@@ -10203,6 +10468,7 @@ func (o TriggerActionFilterOutput) Events() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v TriggerActionFilter) []string { return v.Events }).(pulumi.StringArrayOutput)
 }
 
+// (Updatable) Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
 func (o TriggerActionFilterOutput) Exclude() TriggerActionFilterExcludePtrOutput {
 	return o.ApplyT(func(v TriggerActionFilter) *TriggerActionFilterExclude { return v.Exclude }).(TriggerActionFilterExcludePtrOutput)
 }
@@ -10212,7 +10478,7 @@ func (o TriggerActionFilterOutput) Include() TriggerActionFilterIncludePtrOutput
 	return o.ApplyT(func(v TriggerActionFilter) *TriggerActionFilterInclude { return v.Include }).(TriggerActionFilterIncludePtrOutput)
 }
 
-// (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
+// (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
 func (o TriggerActionFilterOutput) TriggerSource() pulumi.StringOutput {
 	return o.ApplyT(func(v TriggerActionFilter) string { return v.TriggerSource }).(pulumi.StringOutput)
 }
@@ -10251,6 +10517,7 @@ func (o TriggerActionFilterPtrOutput) Events() pulumi.StringArrayOutput {
 	}).(pulumi.StringArrayOutput)
 }
 
+// (Updatable) Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
 func (o TriggerActionFilterPtrOutput) Exclude() TriggerActionFilterExcludePtrOutput {
 	return o.ApplyT(func(v *TriggerActionFilter) *TriggerActionFilterExclude {
 		if v == nil {
@@ -10270,7 +10537,7 @@ func (o TriggerActionFilterPtrOutput) Include() TriggerActionFilterIncludePtrOut
 	}).(TriggerActionFilterIncludePtrOutput)
 }
 
-// (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
+// (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
 func (o TriggerActionFilterPtrOutput) TriggerSource() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *TriggerActionFilter) *string {
 		if v == nil {
@@ -10281,6 +10548,7 @@ func (o TriggerActionFilterPtrOutput) TriggerSource() pulumi.StringPtrOutput {
 }
 
 type TriggerActionFilterExclude struct {
+	// (Updatable) Attributes to support include/exclude files for triggering build runs.
 	FileFilter *TriggerActionFilterExcludeFileFilter `pulumi:"fileFilter"`
 }
 
@@ -10296,6 +10564,7 @@ type TriggerActionFilterExcludeInput interface {
 }
 
 type TriggerActionFilterExcludeArgs struct {
+	// (Updatable) Attributes to support include/exclude files for triggering build runs.
 	FileFilter TriggerActionFilterExcludeFileFilterPtrInput `pulumi:"fileFilter"`
 }
 
@@ -10376,6 +10645,7 @@ func (o TriggerActionFilterExcludeOutput) ToTriggerActionFilterExcludePtrOutputW
 	}).(TriggerActionFilterExcludePtrOutput)
 }
 
+// (Updatable) Attributes to support include/exclude files for triggering build runs.
 func (o TriggerActionFilterExcludeOutput) FileFilter() TriggerActionFilterExcludeFileFilterPtrOutput {
 	return o.ApplyT(func(v TriggerActionFilterExclude) *TriggerActionFilterExcludeFileFilter { return v.FileFilter }).(TriggerActionFilterExcludeFileFilterPtrOutput)
 }
@@ -10404,6 +10674,7 @@ func (o TriggerActionFilterExcludePtrOutput) Elem() TriggerActionFilterExcludeOu
 	}).(TriggerActionFilterExcludeOutput)
 }
 
+// (Updatable) Attributes to support include/exclude files for triggering build runs.
 func (o TriggerActionFilterExcludePtrOutput) FileFilter() TriggerActionFilterExcludeFileFilterPtrOutput {
 	return o.ApplyT(func(v *TriggerActionFilterExclude) *TriggerActionFilterExcludeFileFilter {
 		if v == nil {
@@ -10414,6 +10685,7 @@ func (o TriggerActionFilterExcludePtrOutput) FileFilter() TriggerActionFilterExc
 }
 
 type TriggerActionFilterExcludeFileFilter struct {
+	// (Updatable) The file paths/glob pattern for files.
 	FilePaths []string `pulumi:"filePaths"`
 }
 
@@ -10429,6 +10701,7 @@ type TriggerActionFilterExcludeFileFilterInput interface {
 }
 
 type TriggerActionFilterExcludeFileFilterArgs struct {
+	// (Updatable) The file paths/glob pattern for files.
 	FilePaths pulumi.StringArrayInput `pulumi:"filePaths"`
 }
 
@@ -10509,6 +10782,7 @@ func (o TriggerActionFilterExcludeFileFilterOutput) ToTriggerActionFilterExclude
 	}).(TriggerActionFilterExcludeFileFilterPtrOutput)
 }
 
+// (Updatable) The file paths/glob pattern for files.
 func (o TriggerActionFilterExcludeFileFilterOutput) FilePaths() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v TriggerActionFilterExcludeFileFilter) []string { return v.FilePaths }).(pulumi.StringArrayOutput)
 }
@@ -10537,6 +10811,7 @@ func (o TriggerActionFilterExcludeFileFilterPtrOutput) Elem() TriggerActionFilte
 	}).(TriggerActionFilterExcludeFileFilterOutput)
 }
 
+// (Updatable) The file paths/glob pattern for files.
 func (o TriggerActionFilterExcludeFileFilterPtrOutput) FilePaths() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *TriggerActionFilterExcludeFileFilter) []string {
 		if v == nil {
@@ -10548,10 +10823,13 @@ func (o TriggerActionFilterExcludeFileFilterPtrOutput) FilePaths() pulumi.String
 
 type TriggerActionFilterInclude struct {
 	// (Updatable) The target branch for pull requests; not applicable for push requests.
-	BaseRef    *string                               `pulumi:"baseRef"`
+	BaseRef *string `pulumi:"baseRef"`
+	// (Updatable) Attributes to support include/exclude files for triggering build runs.
 	FileFilter *TriggerActionFilterIncludeFileFilter `pulumi:"fileFilter"`
 	// (Updatable) Branch for push event; source branch for pull requests.
 	HeadRef *string `pulumi:"headRef"`
+	// (Updatable) The repository name for trigger events.
+	RepositoryName *string `pulumi:"repositoryName"`
 }
 
 // TriggerActionFilterIncludeInput is an input type that accepts TriggerActionFilterIncludeArgs and TriggerActionFilterIncludeOutput values.
@@ -10567,10 +10845,13 @@ type TriggerActionFilterIncludeInput interface {
 
 type TriggerActionFilterIncludeArgs struct {
 	// (Updatable) The target branch for pull requests; not applicable for push requests.
-	BaseRef    pulumi.StringPtrInput                        `pulumi:"baseRef"`
+	BaseRef pulumi.StringPtrInput `pulumi:"baseRef"`
+	// (Updatable) Attributes to support include/exclude files for triggering build runs.
 	FileFilter TriggerActionFilterIncludeFileFilterPtrInput `pulumi:"fileFilter"`
 	// (Updatable) Branch for push event; source branch for pull requests.
 	HeadRef pulumi.StringPtrInput `pulumi:"headRef"`
+	// (Updatable) The repository name for trigger events.
+	RepositoryName pulumi.StringPtrInput `pulumi:"repositoryName"`
 }
 
 func (TriggerActionFilterIncludeArgs) ElementType() reflect.Type {
@@ -10655,6 +10936,7 @@ func (o TriggerActionFilterIncludeOutput) BaseRef() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TriggerActionFilterInclude) *string { return v.BaseRef }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) Attributes to support include/exclude files for triggering build runs.
 func (o TriggerActionFilterIncludeOutput) FileFilter() TriggerActionFilterIncludeFileFilterPtrOutput {
 	return o.ApplyT(func(v TriggerActionFilterInclude) *TriggerActionFilterIncludeFileFilter { return v.FileFilter }).(TriggerActionFilterIncludeFileFilterPtrOutput)
 }
@@ -10662,6 +10944,11 @@ func (o TriggerActionFilterIncludeOutput) FileFilter() TriggerActionFilterInclud
 // (Updatable) Branch for push event; source branch for pull requests.
 func (o TriggerActionFilterIncludeOutput) HeadRef() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TriggerActionFilterInclude) *string { return v.HeadRef }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The repository name for trigger events.
+func (o TriggerActionFilterIncludeOutput) RepositoryName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TriggerActionFilterInclude) *string { return v.RepositoryName }).(pulumi.StringPtrOutput)
 }
 
 type TriggerActionFilterIncludePtrOutput struct{ *pulumi.OutputState }
@@ -10698,6 +10985,7 @@ func (o TriggerActionFilterIncludePtrOutput) BaseRef() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) Attributes to support include/exclude files for triggering build runs.
 func (o TriggerActionFilterIncludePtrOutput) FileFilter() TriggerActionFilterIncludeFileFilterPtrOutput {
 	return o.ApplyT(func(v *TriggerActionFilterInclude) *TriggerActionFilterIncludeFileFilter {
 		if v == nil {
@@ -10717,7 +11005,18 @@ func (o TriggerActionFilterIncludePtrOutput) HeadRef() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) The repository name for trigger events.
+func (o TriggerActionFilterIncludePtrOutput) RepositoryName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TriggerActionFilterInclude) *string {
+		if v == nil {
+			return nil
+		}
+		return v.RepositoryName
+	}).(pulumi.StringPtrOutput)
+}
+
 type TriggerActionFilterIncludeFileFilter struct {
+	// (Updatable) The file paths/glob pattern for files.
 	FilePaths []string `pulumi:"filePaths"`
 }
 
@@ -10733,6 +11032,7 @@ type TriggerActionFilterIncludeFileFilterInput interface {
 }
 
 type TriggerActionFilterIncludeFileFilterArgs struct {
+	// (Updatable) The file paths/glob pattern for files.
 	FilePaths pulumi.StringArrayInput `pulumi:"filePaths"`
 }
 
@@ -10813,6 +11113,7 @@ func (o TriggerActionFilterIncludeFileFilterOutput) ToTriggerActionFilterInclude
 	}).(TriggerActionFilterIncludeFileFilterPtrOutput)
 }
 
+// (Updatable) The file paths/glob pattern for files.
 func (o TriggerActionFilterIncludeFileFilterOutput) FilePaths() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v TriggerActionFilterIncludeFileFilter) []string { return v.FilePaths }).(pulumi.StringArrayOutput)
 }
@@ -10841,6 +11142,7 @@ func (o TriggerActionFilterIncludeFileFilterPtrOutput) Elem() TriggerActionFilte
 	}).(TriggerActionFilterIncludeFileFilterOutput)
 }
 
+// (Updatable) The file paths/glob pattern for files.
 func (o TriggerActionFilterIncludeFileFilterPtrOutput) FilePaths() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *TriggerActionFilterIncludeFileFilter) []string {
 		if v == nil {
@@ -15838,6 +16140,8 @@ type GetBuildRunBuildRunSourceTriggerInfoActionFilterInclude struct {
 	FileFilters []GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilter `pulumi:"fileFilters"`
 	// Branch for push event; source branch for pull requests.
 	HeadRef string `pulumi:"headRef"`
+	// The repository name for trigger events.
+	RepositoryName string `pulumi:"repositoryName"`
 }
 
 // GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeInput is an input type that accepts GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs and GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeOutput values.
@@ -15857,6 +16161,8 @@ type GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs struct {
 	FileFilters GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeFileFilterArrayInput `pulumi:"fileFilters"`
 	// Branch for push event; source branch for pull requests.
 	HeadRef pulumi.StringInput `pulumi:"headRef"`
+	// The repository name for trigger events.
+	RepositoryName pulumi.StringInput `pulumi:"repositoryName"`
 }
 
 func (GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs) ElementType() reflect.Type {
@@ -15924,6 +16230,11 @@ func (o GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeOutput) FileFilte
 // Branch for push event; source branch for pull requests.
 func (o GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeOutput) HeadRef() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBuildRunBuildRunSourceTriggerInfoActionFilterInclude) string { return v.HeadRef }).(pulumi.StringOutput)
+}
+
+// The repository name for trigger events.
+func (o GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeOutput) RepositoryName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBuildRunBuildRunSourceTriggerInfoActionFilterInclude) string { return v.RepositoryName }).(pulumi.StringOutput)
 }
 
 type GetBuildRunBuildRunSourceTriggerInfoActionFilterIncludeArrayOutput struct{ *pulumi.OutputState }
@@ -17727,7 +18038,7 @@ type GetConnectionsConnectionCollectionItem struct {
 	AccessToken string `pulumi:"accessToken"`
 	// OCID of personal Bitbucket Cloud AppPassword saved in secret store
 	AppPassword string `pulumi:"appPassword"`
-	// The Base URL of the hosted BitbucketServer.
+	// The Base URL of the hosted BitbucketServer/Visual Builder Studio server.
 	BaseUrl string `pulumi:"baseUrl"`
 	// The OCID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -17775,7 +18086,7 @@ type GetConnectionsConnectionCollectionItemArgs struct {
 	AccessToken pulumi.StringInput `pulumi:"accessToken"`
 	// OCID of personal Bitbucket Cloud AppPassword saved in secret store
 	AppPassword pulumi.StringInput `pulumi:"appPassword"`
-	// The Base URL of the hosted BitbucketServer.
+	// The Base URL of the hosted BitbucketServer/Visual Builder Studio server.
 	BaseUrl pulumi.StringInput `pulumi:"baseUrl"`
 	// The OCID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
@@ -17868,7 +18179,7 @@ func (o GetConnectionsConnectionCollectionItemOutput) AppPassword() pulumi.Strin
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.AppPassword }).(pulumi.StringOutput)
 }
 
-// The Base URL of the hosted BitbucketServer.
+// The Base URL of the hosted BitbucketServer/Visual Builder Studio server.
 func (o GetConnectionsConnectionCollectionItemOutput) BaseUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.BaseUrl }).(pulumi.StringOutput)
 }
@@ -27650,6 +27961,220 @@ func (o GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArrayOu
 	}).(GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemOutput)
 }
 
+type GetDeploymentDeployStageOverrideArgument struct {
+	// A list of stage predecessors for a stage.
+	Items []GetDeploymentDeployStageOverrideArgumentItem `pulumi:"items"`
+}
+
+// GetDeploymentDeployStageOverrideArgumentInput is an input type that accepts GetDeploymentDeployStageOverrideArgumentArgs and GetDeploymentDeployStageOverrideArgumentOutput values.
+// You can construct a concrete instance of `GetDeploymentDeployStageOverrideArgumentInput` via:
+//
+//	GetDeploymentDeployStageOverrideArgumentArgs{...}
+type GetDeploymentDeployStageOverrideArgumentInput interface {
+	pulumi.Input
+
+	ToGetDeploymentDeployStageOverrideArgumentOutput() GetDeploymentDeployStageOverrideArgumentOutput
+	ToGetDeploymentDeployStageOverrideArgumentOutputWithContext(context.Context) GetDeploymentDeployStageOverrideArgumentOutput
+}
+
+type GetDeploymentDeployStageOverrideArgumentArgs struct {
+	// A list of stage predecessors for a stage.
+	Items GetDeploymentDeployStageOverrideArgumentItemArrayInput `pulumi:"items"`
+}
+
+func (GetDeploymentDeployStageOverrideArgumentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentDeployStageOverrideArgument)(nil)).Elem()
+}
+
+func (i GetDeploymentDeployStageOverrideArgumentArgs) ToGetDeploymentDeployStageOverrideArgumentOutput() GetDeploymentDeployStageOverrideArgumentOutput {
+	return i.ToGetDeploymentDeployStageOverrideArgumentOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentDeployStageOverrideArgumentArgs) ToGetDeploymentDeployStageOverrideArgumentOutputWithContext(ctx context.Context) GetDeploymentDeployStageOverrideArgumentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentDeployStageOverrideArgumentOutput)
+}
+
+// GetDeploymentDeployStageOverrideArgumentArrayInput is an input type that accepts GetDeploymentDeployStageOverrideArgumentArray and GetDeploymentDeployStageOverrideArgumentArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentDeployStageOverrideArgumentArrayInput` via:
+//
+//	GetDeploymentDeployStageOverrideArgumentArray{ GetDeploymentDeployStageOverrideArgumentArgs{...} }
+type GetDeploymentDeployStageOverrideArgumentArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentDeployStageOverrideArgumentArrayOutput() GetDeploymentDeployStageOverrideArgumentArrayOutput
+	ToGetDeploymentDeployStageOverrideArgumentArrayOutputWithContext(context.Context) GetDeploymentDeployStageOverrideArgumentArrayOutput
+}
+
+type GetDeploymentDeployStageOverrideArgumentArray []GetDeploymentDeployStageOverrideArgumentInput
+
+func (GetDeploymentDeployStageOverrideArgumentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentDeployStageOverrideArgument)(nil)).Elem()
+}
+
+func (i GetDeploymentDeployStageOverrideArgumentArray) ToGetDeploymentDeployStageOverrideArgumentArrayOutput() GetDeploymentDeployStageOverrideArgumentArrayOutput {
+	return i.ToGetDeploymentDeployStageOverrideArgumentArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentDeployStageOverrideArgumentArray) ToGetDeploymentDeployStageOverrideArgumentArrayOutputWithContext(ctx context.Context) GetDeploymentDeployStageOverrideArgumentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentDeployStageOverrideArgumentArrayOutput)
+}
+
+type GetDeploymentDeployStageOverrideArgumentOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentDeployStageOverrideArgumentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentDeployStageOverrideArgument)(nil)).Elem()
+}
+
+func (o GetDeploymentDeployStageOverrideArgumentOutput) ToGetDeploymentDeployStageOverrideArgumentOutput() GetDeploymentDeployStageOverrideArgumentOutput {
+	return o
+}
+
+func (o GetDeploymentDeployStageOverrideArgumentOutput) ToGetDeploymentDeployStageOverrideArgumentOutputWithContext(ctx context.Context) GetDeploymentDeployStageOverrideArgumentOutput {
+	return o
+}
+
+// A list of stage predecessors for a stage.
+func (o GetDeploymentDeployStageOverrideArgumentOutput) Items() GetDeploymentDeployStageOverrideArgumentItemArrayOutput {
+	return o.ApplyT(func(v GetDeploymentDeployStageOverrideArgument) []GetDeploymentDeployStageOverrideArgumentItem {
+		return v.Items
+	}).(GetDeploymentDeployStageOverrideArgumentItemArrayOutput)
+}
+
+type GetDeploymentDeployStageOverrideArgumentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentDeployStageOverrideArgumentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentDeployStageOverrideArgument)(nil)).Elem()
+}
+
+func (o GetDeploymentDeployStageOverrideArgumentArrayOutput) ToGetDeploymentDeployStageOverrideArgumentArrayOutput() GetDeploymentDeployStageOverrideArgumentArrayOutput {
+	return o
+}
+
+func (o GetDeploymentDeployStageOverrideArgumentArrayOutput) ToGetDeploymentDeployStageOverrideArgumentArrayOutputWithContext(ctx context.Context) GetDeploymentDeployStageOverrideArgumentArrayOutput {
+	return o
+}
+
+func (o GetDeploymentDeployStageOverrideArgumentArrayOutput) Index(i pulumi.IntInput) GetDeploymentDeployStageOverrideArgumentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentDeployStageOverrideArgument {
+		return vs[0].([]GetDeploymentDeployStageOverrideArgument)[vs[1].(int)]
+	}).(GetDeploymentDeployStageOverrideArgumentOutput)
+}
+
+type GetDeploymentDeployStageOverrideArgumentItem struct {
+	// The OCID of the stage.
+	DeployStageId string `pulumi:"deployStageId"`
+	// Name of the step.
+	Name string `pulumi:"name"`
+	// value of the argument.
+	Value string `pulumi:"value"`
+}
+
+// GetDeploymentDeployStageOverrideArgumentItemInput is an input type that accepts GetDeploymentDeployStageOverrideArgumentItemArgs and GetDeploymentDeployStageOverrideArgumentItemOutput values.
+// You can construct a concrete instance of `GetDeploymentDeployStageOverrideArgumentItemInput` via:
+//
+//	GetDeploymentDeployStageOverrideArgumentItemArgs{...}
+type GetDeploymentDeployStageOverrideArgumentItemInput interface {
+	pulumi.Input
+
+	ToGetDeploymentDeployStageOverrideArgumentItemOutput() GetDeploymentDeployStageOverrideArgumentItemOutput
+	ToGetDeploymentDeployStageOverrideArgumentItemOutputWithContext(context.Context) GetDeploymentDeployStageOverrideArgumentItemOutput
+}
+
+type GetDeploymentDeployStageOverrideArgumentItemArgs struct {
+	// The OCID of the stage.
+	DeployStageId pulumi.StringInput `pulumi:"deployStageId"`
+	// Name of the step.
+	Name pulumi.StringInput `pulumi:"name"`
+	// value of the argument.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetDeploymentDeployStageOverrideArgumentItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentDeployStageOverrideArgumentItem)(nil)).Elem()
+}
+
+func (i GetDeploymentDeployStageOverrideArgumentItemArgs) ToGetDeploymentDeployStageOverrideArgumentItemOutput() GetDeploymentDeployStageOverrideArgumentItemOutput {
+	return i.ToGetDeploymentDeployStageOverrideArgumentItemOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentDeployStageOverrideArgumentItemArgs) ToGetDeploymentDeployStageOverrideArgumentItemOutputWithContext(ctx context.Context) GetDeploymentDeployStageOverrideArgumentItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentDeployStageOverrideArgumentItemOutput)
+}
+
+// GetDeploymentDeployStageOverrideArgumentItemArrayInput is an input type that accepts GetDeploymentDeployStageOverrideArgumentItemArray and GetDeploymentDeployStageOverrideArgumentItemArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentDeployStageOverrideArgumentItemArrayInput` via:
+//
+//	GetDeploymentDeployStageOverrideArgumentItemArray{ GetDeploymentDeployStageOverrideArgumentItemArgs{...} }
+type GetDeploymentDeployStageOverrideArgumentItemArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentDeployStageOverrideArgumentItemArrayOutput() GetDeploymentDeployStageOverrideArgumentItemArrayOutput
+	ToGetDeploymentDeployStageOverrideArgumentItemArrayOutputWithContext(context.Context) GetDeploymentDeployStageOverrideArgumentItemArrayOutput
+}
+
+type GetDeploymentDeployStageOverrideArgumentItemArray []GetDeploymentDeployStageOverrideArgumentItemInput
+
+func (GetDeploymentDeployStageOverrideArgumentItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentDeployStageOverrideArgumentItem)(nil)).Elem()
+}
+
+func (i GetDeploymentDeployStageOverrideArgumentItemArray) ToGetDeploymentDeployStageOverrideArgumentItemArrayOutput() GetDeploymentDeployStageOverrideArgumentItemArrayOutput {
+	return i.ToGetDeploymentDeployStageOverrideArgumentItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentDeployStageOverrideArgumentItemArray) ToGetDeploymentDeployStageOverrideArgumentItemArrayOutputWithContext(ctx context.Context) GetDeploymentDeployStageOverrideArgumentItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentDeployStageOverrideArgumentItemArrayOutput)
+}
+
+type GetDeploymentDeployStageOverrideArgumentItemOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentDeployStageOverrideArgumentItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentDeployStageOverrideArgumentItem)(nil)).Elem()
+}
+
+func (o GetDeploymentDeployStageOverrideArgumentItemOutput) ToGetDeploymentDeployStageOverrideArgumentItemOutput() GetDeploymentDeployStageOverrideArgumentItemOutput {
+	return o
+}
+
+func (o GetDeploymentDeployStageOverrideArgumentItemOutput) ToGetDeploymentDeployStageOverrideArgumentItemOutputWithContext(ctx context.Context) GetDeploymentDeployStageOverrideArgumentItemOutput {
+	return o
+}
+
+// The OCID of the stage.
+func (o GetDeploymentDeployStageOverrideArgumentItemOutput) DeployStageId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentDeployStageOverrideArgumentItem) string { return v.DeployStageId }).(pulumi.StringOutput)
+}
+
+// Name of the step.
+func (o GetDeploymentDeployStageOverrideArgumentItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentDeployStageOverrideArgumentItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// value of the argument.
+func (o GetDeploymentDeployStageOverrideArgumentItemOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentDeployStageOverrideArgumentItem) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetDeploymentDeployStageOverrideArgumentItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentDeployStageOverrideArgumentItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentDeployStageOverrideArgumentItem)(nil)).Elem()
+}
+
+func (o GetDeploymentDeployStageOverrideArgumentItemArrayOutput) ToGetDeploymentDeployStageOverrideArgumentItemArrayOutput() GetDeploymentDeployStageOverrideArgumentItemArrayOutput {
+	return o
+}
+
+func (o GetDeploymentDeployStageOverrideArgumentItemArrayOutput) ToGetDeploymentDeployStageOverrideArgumentItemArrayOutputWithContext(ctx context.Context) GetDeploymentDeployStageOverrideArgumentItemArrayOutput {
+	return o
+}
+
+func (o GetDeploymentDeployStageOverrideArgumentItemArrayOutput) Index(i pulumi.IntInput) GetDeploymentDeployStageOverrideArgumentItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentDeployStageOverrideArgumentItem {
+		return vs[0].([]GetDeploymentDeployStageOverrideArgumentItem)[vs[1].(int)]
+	}).(GetDeploymentDeployStageOverrideArgumentItemOutput)
+}
+
 type GetDeploymentDeploymentArgument struct {
 	// A list of stage predecessors for a stage.
 	Items []GetDeploymentDeploymentArgumentItem `pulumi:"items"`
@@ -28082,6 +28607,8 @@ type GetDeploymentsDeploymentCollectionItem struct {
 	DeployPipelineId string `pulumi:"deployPipelineId"`
 	// The OCID of the stage.
 	DeployStageId string `pulumi:"deployStageId"`
+	// Specifies the list of arguments to be overriden per Stage at the time of deployment.
+	DeployStageOverrideArguments []GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgument `pulumi:"deployStageOverrideArguments"`
 	// Specifies list of arguments passed along with the deployment.
 	DeploymentArguments []GetDeploymentsDeploymentCollectionItemDeploymentArgument `pulumi:"deploymentArguments"`
 	// The execution progress details of a deployment.
@@ -28107,7 +28634,8 @@ type GetDeploymentsDeploymentCollectionItem struct {
 	// Time the deployment was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeCreated string `pulumi:"timeCreated"`
 	// Time the deployment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated                string `pulumi:"timeUpdated"`
+	TriggerNewDevopsDeployment bool   `pulumi:"triggerNewDevopsDeployment"`
 }
 
 // GetDeploymentsDeploymentCollectionItemInput is an input type that accepts GetDeploymentsDeploymentCollectionItemArgs and GetDeploymentsDeploymentCollectionItemOutput values.
@@ -28136,6 +28664,8 @@ type GetDeploymentsDeploymentCollectionItemArgs struct {
 	DeployPipelineId pulumi.StringInput `pulumi:"deployPipelineId"`
 	// The OCID of the stage.
 	DeployStageId pulumi.StringInput `pulumi:"deployStageId"`
+	// Specifies the list of arguments to be overriden per Stage at the time of deployment.
+	DeployStageOverrideArguments GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentArrayInput `pulumi:"deployStageOverrideArguments"`
 	// Specifies list of arguments passed along with the deployment.
 	DeploymentArguments GetDeploymentsDeploymentCollectionItemDeploymentArgumentArrayInput `pulumi:"deploymentArguments"`
 	// The execution progress details of a deployment.
@@ -28161,7 +28691,8 @@ type GetDeploymentsDeploymentCollectionItemArgs struct {
 	// Time the deployment was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// Time the deployment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	TimeUpdated                pulumi.StringInput `pulumi:"timeUpdated"`
+	TriggerNewDevopsDeployment pulumi.BoolInput   `pulumi:"triggerNewDevopsDeployment"`
 }
 
 func (GetDeploymentsDeploymentCollectionItemArgs) ElementType() reflect.Type {
@@ -28256,6 +28787,13 @@ func (o GetDeploymentsDeploymentCollectionItemOutput) DeployStageId() pulumi.Str
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.DeployStageId }).(pulumi.StringOutput)
 }
 
+// Specifies the list of arguments to be overriden per Stage at the time of deployment.
+func (o GetDeploymentsDeploymentCollectionItemOutput) DeployStageOverrideArguments() GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentArrayOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) []GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgument {
+		return v.DeployStageOverrideArguments
+	}).(GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentArrayOutput)
+}
+
 // Specifies list of arguments passed along with the deployment.
 func (o GetDeploymentsDeploymentCollectionItemOutput) DeploymentArguments() GetDeploymentsDeploymentCollectionItemDeploymentArgumentArrayOutput {
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) []GetDeploymentsDeploymentCollectionItemDeploymentArgument {
@@ -28323,6 +28861,10 @@ func (o GetDeploymentsDeploymentCollectionItemOutput) TimeCreated() pulumi.Strin
 // Time the deployment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 func (o GetDeploymentsDeploymentCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+func (o GetDeploymentsDeploymentCollectionItemOutput) TriggerNewDevopsDeployment() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) bool { return v.TriggerNewDevopsDeployment }).(pulumi.BoolOutput)
 }
 
 type GetDeploymentsDeploymentCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -29417,6 +29959,222 @@ func (o GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeplo
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageItem {
 		return vs[0].([]GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageItem)[vs[1].(int)]
 	}).(GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageItemOutput)
+}
+
+type GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgument struct {
+	// A list of stage predecessors for a stage.
+	Items []GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItem `pulumi:"items"`
+}
+
+// GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentInput is an input type that accepts GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentArgs and GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentOutput values.
+// You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentInput` via:
+//
+//	GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentArgs{...}
+type GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentInput interface {
+	pulumi.Input
+
+	ToGetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentOutput() GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentOutput
+	ToGetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentOutputWithContext(context.Context) GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentOutput
+}
+
+type GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentArgs struct {
+	// A list of stage predecessors for a stage.
+	Items GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemArrayInput `pulumi:"items"`
+}
+
+func (GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgument)(nil)).Elem()
+}
+
+func (i GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentArgs) ToGetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentOutput() GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentOutput {
+	return i.ToGetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentArgs) ToGetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentOutput)
+}
+
+// GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentArrayInput is an input type that accepts GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentArray and GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentArrayInput` via:
+//
+//	GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentArray{ GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentArgs{...} }
+type GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentArrayOutput() GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentArrayOutput
+	ToGetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentArrayOutputWithContext(context.Context) GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentArrayOutput
+}
+
+type GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentArray []GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentInput
+
+func (GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgument)(nil)).Elem()
+}
+
+func (i GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentArray) ToGetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentArrayOutput() GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentArrayOutput {
+	return i.ToGetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentArray) ToGetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentArrayOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentArrayOutput)
+}
+
+type GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgument)(nil)).Elem()
+}
+
+func (o GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentOutput) ToGetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentOutput() GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentOutput {
+	return o
+}
+
+func (o GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentOutput) ToGetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentOutput {
+	return o
+}
+
+// A list of stage predecessors for a stage.
+func (o GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentOutput) Items() GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemArrayOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgument) []GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItem {
+		return v.Items
+	}).(GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemArrayOutput)
+}
+
+type GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgument)(nil)).Elem()
+}
+
+func (o GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentArrayOutput) ToGetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentArrayOutput() GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentArrayOutput {
+	return o
+}
+
+func (o GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentArrayOutput) ToGetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentArrayOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentArrayOutput {
+	return o
+}
+
+func (o GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentArrayOutput) Index(i pulumi.IntInput) GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgument {
+		return vs[0].([]GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgument)[vs[1].(int)]
+	}).(GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentOutput)
+}
+
+type GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItem struct {
+	// The OCID of the stage.
+	DeployStageId string `pulumi:"deployStageId"`
+	// Name of the step.
+	Name string `pulumi:"name"`
+	// value of the argument.
+	Value string `pulumi:"value"`
+}
+
+// GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemInput is an input type that accepts GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemArgs and GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemOutput values.
+// You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemInput` via:
+//
+//	GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemArgs{...}
+type GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemInput interface {
+	pulumi.Input
+
+	ToGetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemOutput() GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemOutput
+	ToGetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemOutputWithContext(context.Context) GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemOutput
+}
+
+type GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemArgs struct {
+	// The OCID of the stage.
+	DeployStageId pulumi.StringInput `pulumi:"deployStageId"`
+	// Name of the step.
+	Name pulumi.StringInput `pulumi:"name"`
+	// value of the argument.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItem)(nil)).Elem()
+}
+
+func (i GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemArgs) ToGetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemOutput() GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemOutput {
+	return i.ToGetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemArgs) ToGetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemOutput)
+}
+
+// GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemArrayInput is an input type that accepts GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemArray and GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemArrayInput` via:
+//
+//	GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemArray{ GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemArgs{...} }
+type GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemArrayOutput() GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemArrayOutput
+	ToGetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemArrayOutputWithContext(context.Context) GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemArrayOutput
+}
+
+type GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemArray []GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemInput
+
+func (GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItem)(nil)).Elem()
+}
+
+func (i GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemArray) ToGetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemArrayOutput() GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemArrayOutput {
+	return i.ToGetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemArray) ToGetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemArrayOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemArrayOutput)
+}
+
+type GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItem)(nil)).Elem()
+}
+
+func (o GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemOutput) ToGetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemOutput() GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemOutput {
+	return o
+}
+
+func (o GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemOutput) ToGetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemOutput {
+	return o
+}
+
+// The OCID of the stage.
+func (o GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemOutput) DeployStageId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItem) string {
+		return v.DeployStageId
+	}).(pulumi.StringOutput)
+}
+
+// Name of the step.
+func (o GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// value of the argument.
+func (o GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItem) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItem)(nil)).Elem()
+}
+
+func (o GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemArrayOutput) ToGetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemArrayOutput() GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemArrayOutput {
+	return o
+}
+
+func (o GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemArrayOutput) ToGetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemArrayOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemArrayOutput {
+	return o
+}
+
+func (o GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemArrayOutput) Index(i pulumi.IntInput) GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItem {
+		return vs[0].([]GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItem)[vs[1].(int)]
+	}).(GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemOutput)
 }
 
 type GetDeploymentsDeploymentCollectionItemDeploymentArgument struct {
@@ -35573,6 +36331,8 @@ type GetTriggerActionFilterInclude struct {
 	FileFilters []GetTriggerActionFilterIncludeFileFilter `pulumi:"fileFilters"`
 	// Branch for push event; source branch for pull requests.
 	HeadRef string `pulumi:"headRef"`
+	// The repository name for trigger events.
+	RepositoryName string `pulumi:"repositoryName"`
 }
 
 // GetTriggerActionFilterIncludeInput is an input type that accepts GetTriggerActionFilterIncludeArgs and GetTriggerActionFilterIncludeOutput values.
@@ -35592,6 +36352,8 @@ type GetTriggerActionFilterIncludeArgs struct {
 	FileFilters GetTriggerActionFilterIncludeFileFilterArrayInput `pulumi:"fileFilters"`
 	// Branch for push event; source branch for pull requests.
 	HeadRef pulumi.StringInput `pulumi:"headRef"`
+	// The repository name for trigger events.
+	RepositoryName pulumi.StringInput `pulumi:"repositoryName"`
 }
 
 func (GetTriggerActionFilterIncludeArgs) ElementType() reflect.Type {
@@ -35657,6 +36419,11 @@ func (o GetTriggerActionFilterIncludeOutput) FileFilters() GetTriggerActionFilte
 // Branch for push event; source branch for pull requests.
 func (o GetTriggerActionFilterIncludeOutput) HeadRef() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTriggerActionFilterInclude) string { return v.HeadRef }).(pulumi.StringOutput)
+}
+
+// The repository name for trigger events.
+func (o GetTriggerActionFilterIncludeOutput) RepositoryName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTriggerActionFilterInclude) string { return v.RepositoryName }).(pulumi.StringOutput)
 }
 
 type GetTriggerActionFilterIncludeArrayOutput struct{ *pulumi.OutputState }
@@ -36649,6 +37416,8 @@ type GetTriggersTriggerCollectionItemActionFilterInclude struct {
 	FileFilters []GetTriggersTriggerCollectionItemActionFilterIncludeFileFilter `pulumi:"fileFilters"`
 	// Branch for push event; source branch for pull requests.
 	HeadRef string `pulumi:"headRef"`
+	// The repository name for trigger events.
+	RepositoryName string `pulumi:"repositoryName"`
 }
 
 // GetTriggersTriggerCollectionItemActionFilterIncludeInput is an input type that accepts GetTriggersTriggerCollectionItemActionFilterIncludeArgs and GetTriggersTriggerCollectionItemActionFilterIncludeOutput values.
@@ -36668,6 +37437,8 @@ type GetTriggersTriggerCollectionItemActionFilterIncludeArgs struct {
 	FileFilters GetTriggersTriggerCollectionItemActionFilterIncludeFileFilterArrayInput `pulumi:"fileFilters"`
 	// Branch for push event; source branch for pull requests.
 	HeadRef pulumi.StringInput `pulumi:"headRef"`
+	// The repository name for trigger events.
+	RepositoryName pulumi.StringInput `pulumi:"repositoryName"`
 }
 
 func (GetTriggersTriggerCollectionItemActionFilterIncludeArgs) ElementType() reflect.Type {
@@ -36735,6 +37506,11 @@ func (o GetTriggersTriggerCollectionItemActionFilterIncludeOutput) FileFilters()
 // Branch for push event; source branch for pull requests.
 func (o GetTriggersTriggerCollectionItemActionFilterIncludeOutput) HeadRef() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTriggersTriggerCollectionItemActionFilterInclude) string { return v.HeadRef }).(pulumi.StringOutput)
+}
+
+// The repository name for trigger events.
+func (o GetTriggersTriggerCollectionItemActionFilterIncludeOutput) RepositoryName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTriggersTriggerCollectionItemActionFilterInclude) string { return v.RepositoryName }).(pulumi.StringOutput)
 }
 
 type GetTriggersTriggerCollectionItemActionFilterIncludeArrayOutput struct{ *pulumi.OutputState }
@@ -36992,6 +37768,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentDeployPipelineEnvironmentItemDeployPipelineStageArrayInput)(nil)).Elem(), DeploymentDeployPipelineEnvironmentItemDeployPipelineStageArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemInput)(nil)).Elem(), DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArrayInput)(nil)).Elem(), DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentDeployStageOverrideArgumentsInput)(nil)).Elem(), DeploymentDeployStageOverrideArgumentsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentDeployStageOverrideArgumentsPtrInput)(nil)).Elem(), DeploymentDeployStageOverrideArgumentsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentDeployStageOverrideArgumentsItemInput)(nil)).Elem(), DeploymentDeployStageOverrideArgumentsItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentDeployStageOverrideArgumentsItemArrayInput)(nil)).Elem(), DeploymentDeployStageOverrideArgumentsItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentDeploymentArgumentsInput)(nil)).Elem(), DeploymentDeploymentArgumentsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentDeploymentArgumentsPtrInput)(nil)).Elem(), DeploymentDeploymentArgumentsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentDeploymentArgumentsItemInput)(nil)).Elem(), DeploymentDeploymentArgumentsItemArgs{})
@@ -37294,6 +38074,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageArrayInput)(nil)).Elem(), GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemInput)(nil)).Elem(), GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArrayInput)(nil)).Elem(), GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentDeployStageOverrideArgumentInput)(nil)).Elem(), GetDeploymentDeployStageOverrideArgumentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentDeployStageOverrideArgumentArrayInput)(nil)).Elem(), GetDeploymentDeployStageOverrideArgumentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentDeployStageOverrideArgumentItemInput)(nil)).Elem(), GetDeploymentDeployStageOverrideArgumentItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentDeployStageOverrideArgumentItemArrayInput)(nil)).Elem(), GetDeploymentDeployStageOverrideArgumentItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentDeploymentArgumentInput)(nil)).Elem(), GetDeploymentDeploymentArgumentArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentDeploymentArgumentArrayInput)(nil)).Elem(), GetDeploymentDeploymentArgumentArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentDeploymentArgumentItemInput)(nil)).Elem(), GetDeploymentDeploymentArgumentItemArgs{})
@@ -37324,6 +38108,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageArrayInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageItemInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageItemArrayInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentArrayInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemArrayInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeploymentArgumentInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemDeploymentArgumentArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeploymentArgumentArrayInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemDeploymentArgumentArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeploymentArgumentItemInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemDeploymentArgumentItemArgs{})
@@ -37588,6 +38376,10 @@ func init() {
 	pulumi.RegisterOutputType(DeploymentDeployPipelineEnvironmentItemDeployPipelineStageArrayOutput{})
 	pulumi.RegisterOutputType(DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemOutput{})
 	pulumi.RegisterOutputType(DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArrayOutput{})
+	pulumi.RegisterOutputType(DeploymentDeployStageOverrideArgumentsOutput{})
+	pulumi.RegisterOutputType(DeploymentDeployStageOverrideArgumentsPtrOutput{})
+	pulumi.RegisterOutputType(DeploymentDeployStageOverrideArgumentsItemOutput{})
+	pulumi.RegisterOutputType(DeploymentDeployStageOverrideArgumentsItemArrayOutput{})
 	pulumi.RegisterOutputType(DeploymentDeploymentArgumentsOutput{})
 	pulumi.RegisterOutputType(DeploymentDeploymentArgumentsPtrOutput{})
 	pulumi.RegisterOutputType(DeploymentDeploymentArgumentsItemOutput{})
@@ -37890,6 +38682,10 @@ func init() {
 	pulumi.RegisterOutputType(GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemOutput{})
 	pulumi.RegisterOutputType(GetDeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentDeployStageOverrideArgumentOutput{})
+	pulumi.RegisterOutputType(GetDeploymentDeployStageOverrideArgumentArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentDeployStageOverrideArgumentItemOutput{})
+	pulumi.RegisterOutputType(GetDeploymentDeployStageOverrideArgumentItemArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentDeploymentArgumentOutput{})
 	pulumi.RegisterOutputType(GetDeploymentDeploymentArgumentArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentDeploymentArgumentItemOutput{})
@@ -37920,6 +38716,10 @@ func init() {
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageItemOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentItemDeployPipelineStageItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentOutput{})
+	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemOutput{})
+	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgumentItemArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemDeploymentArgumentOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemDeploymentArgumentArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemDeploymentArgumentItemOutput{})

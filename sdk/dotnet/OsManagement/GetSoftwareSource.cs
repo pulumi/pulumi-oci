@@ -39,7 +39,7 @@ namespace Pulumi.Oci.OsManagement
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetSoftwareSourceResult> InvokeAsync(GetSoftwareSourceArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetSoftwareSourceResult>("oci:OsManagement/getSoftwareSource:getSoftwareSource", args ?? new GetSoftwareSourceArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetSoftwareSourceResult>("oci:OsManagement/getSoftwareSource:getSoftwareSource", args ?? new GetSoftwareSourceArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Software Source resource in Oracle Cloud Infrastructure OS Management service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.OsManagement
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetSoftwareSourceResult> Invoke(GetSoftwareSourceInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetSoftwareSourceResult>("oci:OsManagement/getSoftwareSource:getSoftwareSource", args ?? new GetSoftwareSourceInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetSoftwareSourceResult>("oci:OsManagement/getSoftwareSource:getSoftwareSource", args ?? new GetSoftwareSourceInvokeArgs(), options.WithDefaults());
     }
 
 

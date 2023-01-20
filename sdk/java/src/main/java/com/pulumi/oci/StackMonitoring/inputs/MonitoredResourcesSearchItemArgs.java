@@ -5,8 +5,10 @@ package com.pulumi.oci.StackMonitoring.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.StackMonitoring.inputs.MonitoredResourcesSearchItemPropertyArgs;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -45,6 +47,21 @@ public final class MonitoredResourcesSearchItemArgs extends com.pulumi.resources
      */
     public Optional<Output<String>> displayName() {
         return Optional.ofNullable(this.displayName);
+    }
+
+    /**
+     * External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+     * 
+     */
+    @Import(name="externalId")
+    private @Nullable Output<String> externalId;
+
+    /**
+     * @return External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+     * 
+     */
+    public Optional<Output<String>> externalId() {
+        return Optional.ofNullable(this.externalId);
     }
 
     /**
@@ -120,6 +137,21 @@ public final class MonitoredResourcesSearchItemArgs extends com.pulumi.resources
      */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
+    }
+
+    /**
+     * List of monitored resource properties
+     * 
+     */
+    @Import(name="properties")
+    private @Nullable Output<List<MonitoredResourcesSearchItemPropertyArgs>> properties;
+
+    /**
+     * @return List of monitored resource properties
+     * 
+     */
+    public Optional<Output<List<MonitoredResourcesSearchItemPropertyArgs>>> properties() {
+        return Optional.ofNullable(this.properties);
     }
 
     /**
@@ -202,11 +234,13 @@ public final class MonitoredResourcesSearchItemArgs extends com.pulumi.resources
     private MonitoredResourcesSearchItemArgs(MonitoredResourcesSearchItemArgs $) {
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
+        this.externalId = $.externalId;
         this.freeformTags = $.freeformTags;
         this.hostName = $.hostName;
         this.id = $.id;
         this.managementAgentId = $.managementAgentId;
         this.name = $.name;
+        this.properties = $.properties;
         this.state = $.state;
         this.systemTags = $.systemTags;
         this.timeCreated = $.timeCreated;
@@ -272,6 +306,27 @@ public final class MonitoredResourcesSearchItemArgs extends com.pulumi.resources
          */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
+        }
+
+        /**
+         * @param externalId External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder externalId(@Nullable Output<String> externalId) {
+            $.externalId = externalId;
+            return this;
+        }
+
+        /**
+         * @param externalId External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder externalId(String externalId) {
+            return externalId(Output.of(externalId));
         }
 
         /**
@@ -377,6 +432,37 @@ public final class MonitoredResourcesSearchItemArgs extends com.pulumi.resources
          */
         public Builder name(String name) {
             return name(Output.of(name));
+        }
+
+        /**
+         * @param properties List of monitored resource properties
+         * 
+         * @return builder
+         * 
+         */
+        public Builder properties(@Nullable Output<List<MonitoredResourcesSearchItemPropertyArgs>> properties) {
+            $.properties = properties;
+            return this;
+        }
+
+        /**
+         * @param properties List of monitored resource properties
+         * 
+         * @return builder
+         * 
+         */
+        public Builder properties(List<MonitoredResourcesSearchItemPropertyArgs> properties) {
+            return properties(Output.of(properties));
+        }
+
+        /**
+         * @param properties List of monitored resource properties
+         * 
+         * @return builder
+         * 
+         */
+        public Builder properties(MonitoredResourcesSearchItemPropertyArgs... properties) {
+            return properties(List.of(properties));
         }
 
         /**

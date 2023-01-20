@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -11,13 +12,11 @@ import * as utilities from "../utilities";
  * Generates a recommended Cloud@Customer VM cluster network configuration.
  */
 export function getVmClusterRecommendedNetwork(args: GetVmClusterRecommendedNetworkArgs, opts?: pulumi.InvokeOptions): Promise<GetVmClusterRecommendedNetworkResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getVmClusterRecommendedNetwork:getVmClusterRecommendedNetwork", {
         "compartmentId": args.compartmentId,
+        "dbServers": args.dbServers,
         "definedTags": args.definedTags,
         "displayName": args.displayName,
         "dns": args.dns,
@@ -38,6 +37,10 @@ export interface GetVmClusterRecommendedNetworkArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     compartmentId: string;
+    /**
+     * The list of Db server Ids to configure network.
+     */
+    dbServers?: string[];
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
@@ -84,6 +87,7 @@ export interface GetVmClusterRecommendedNetworkResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     readonly compartmentId: string;
+    readonly dbServers?: string[];
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
@@ -127,9 +131,13 @@ export interface GetVmClusterRecommendedNetworkResult {
      */
     readonly vmNetworks: outputs.Database.GetVmClusterRecommendedNetworkVmNetwork[];
 }
-
+/**
+ * This data source provides details about a specific Vm Cluster Recommended Network resource in Oracle Cloud Infrastructure Database service.
+ *
+ * Generates a recommended Cloud@Customer VM cluster network configuration.
+ */
 export function getVmClusterRecommendedNetworkOutput(args: GetVmClusterRecommendedNetworkOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVmClusterRecommendedNetworkResult> {
-    return pulumi.output(args).apply(a => getVmClusterRecommendedNetwork(a, opts))
+    return pulumi.output(args).apply((a: any) => getVmClusterRecommendedNetwork(a, opts))
 }
 
 /**
@@ -140,6 +148,10 @@ export interface GetVmClusterRecommendedNetworkOutputArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     compartmentId: pulumi.Input<string>;
+    /**
+     * The list of Db server Ids to configure network.
+     */
+    dbServers?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */

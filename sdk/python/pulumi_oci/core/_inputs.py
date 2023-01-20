@@ -2418,11 +2418,10 @@ class DrgAttachmentManagementNetworkDetailsArgs:
                  ipsec_connection_id: Optional[pulumi.Input[str]] = None,
                  route_table_id: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] id: -(Required) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network attached to the DRG.
+        :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network attached to the DRG.
         :param pulumi.Input[str] type: The type can be one of these values: `IPSEC_TUNNEL`, `REMOTE_PEERING_CONNECTION`, `VCN`,`VIRTUAL_CIRCUIT`
-               * `route_table_id`(Optional)(Updatable) - The OCID of the route table the DRG attachment is using.
         :param pulumi.Input[str] ipsec_connection_id: The IPSec connection that contains the attached IPSec tunnel.
-        :param pulumi.Input[str] route_table_id: (Updatable)- The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the DRG attachment is using.
+        :param pulumi.Input[str] route_table_id: The OCID of the route table the DRG attachment is using.
         """
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "type", type)
@@ -2435,7 +2434,7 @@ class DrgAttachmentManagementNetworkDetailsArgs:
     @pulumi.getter
     def id(self) -> pulumi.Input[str]:
         """
-        -(Required) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network attached to the DRG.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network attached to the DRG.
         """
         return pulumi.get(self, "id")
 
@@ -2448,7 +2447,6 @@ class DrgAttachmentManagementNetworkDetailsArgs:
     def type(self) -> pulumi.Input[str]:
         """
         The type can be one of these values: `IPSEC_TUNNEL`, `REMOTE_PEERING_CONNECTION`, `VCN`,`VIRTUAL_CIRCUIT`
-        * `route_table_id`(Optional)(Updatable) - The OCID of the route table the DRG attachment is using.
         """
         return pulumi.get(self, "type")
 
@@ -2472,7 +2470,7 @@ class DrgAttachmentManagementNetworkDetailsArgs:
     @pulumi.getter(name="routeTableId")
     def route_table_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable)- The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the DRG attachment is using.
+        The OCID of the route table the DRG attachment is using.
         """
         return pulumi.get(self, "route_table_id")
 
@@ -2773,8 +2771,6 @@ class ImageImageSourceDetailsArgs:
         :param pulumi.Input[str] operating_system: The image's operating system.  Example: `Oracle Linux`
         :param pulumi.Input[str] operating_system_version: The image's operating system version.  Example: `7.2`
         :param pulumi.Input[str] source_image_type: The format of the image to be imported.  Only monolithic images are supported. This attribute is not used for exported Oracle images with the Oracle Cloud Infrastructure image format. Allowed values are:
-               * `QCOW2`
-               * `VMDK`
         :param pulumi.Input[str] source_uri: The Object Storage URL for the image.
         """
         pulumi.set(__self__, "source_type", source_type)
@@ -2870,8 +2866,6 @@ class ImageImageSourceDetailsArgs:
     def source_image_type(self) -> Optional[pulumi.Input[str]]:
         """
         The format of the image to be imported.  Only monolithic images are supported. This attribute is not used for exported Oracle images with the Oracle Cloud Infrastructure image format. Allowed values are:
-        * `QCOW2`
-        * `VMDK`
         """
         return pulumi.get(self, "source_image_type")
 
@@ -6888,8 +6882,6 @@ class RouteTableRouteRuleArgs:
         :param pulumi.Input[str] description: (Updatable) An optional description of your choice for the rule.
         :param pulumi.Input[str] destination: (Updatable) Conceptually, this is the range of IP addresses used for matching when routing traffic. Required if you provide a `destinationType`.
         :param pulumi.Input[str] destination_type: (Updatable) Type of destination for the rule. Required if you provide a `destination`.
-               * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
-               * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
         """
         pulumi.set(__self__, "network_entity_id", network_entity_id)
         if cidr_block is not None:
@@ -6959,8 +6951,6 @@ class RouteTableRouteRuleArgs:
     def destination_type(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Type of destination for the rule. Required if you provide a `destination`.
-        * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
-        * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
         """
         return pulumi.get(self, "destination_type")
 
@@ -7356,8 +7346,6 @@ class SecurityListIngressSecurityRuleArgs:
                * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
                * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
         :param pulumi.Input[str] source_type: (Updatable) Type of source for the rule. The default is `CIDR_BLOCK`.
-               * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
-               * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
         :param pulumi.Input[bool] stateless: (Updatable) A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if ingress traffic allows TCP destination port 80, there should be an egress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
         :param pulumi.Input['SecurityListIngressSecurityRuleTcpOptionsArgs'] tcp_options: (Updatable) Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
         :param pulumi.Input['SecurityListIngressSecurityRuleUdpOptionsArgs'] udp_options: (Updatable) Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
@@ -7432,8 +7420,6 @@ class SecurityListIngressSecurityRuleArgs:
     def source_type(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Type of source for the rule. The default is `CIDR_BLOCK`.
-        * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
-        * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
         """
         return pulumi.get(self, "source_type")
 
@@ -8244,8 +8230,6 @@ class VolumeBackupPolicyScheduleArgs:
         :param pulumi.Input[str] offset_type: (Updatable) Indicates how the offset is defined. If value is `STRUCTURED`, then `hourOfDay`, `dayOfWeek`, `dayOfMonth`, and `month` fields are used and `offsetSeconds` will be ignored in requests and users should ignore its value from the responses.
         :param pulumi.Input[str] time_zone: (Updatable) Specifies what time zone is the schedule in
                enum:
-               - `UTC`
-               - `REGIONAL_DATA_CENTER_TIME`
         """
         pulumi.set(__self__, "backup_type", backup_type)
         pulumi.set(__self__, "period", period)
@@ -8379,8 +8363,6 @@ class VolumeBackupPolicyScheduleArgs:
         """
         (Updatable) Specifies what time zone is the schedule in
         enum:
-        - `UTC`
-        - `REGIONAL_DATA_CENTER_TIME`
         """
         return pulumi.get(self, "time_zone")
 

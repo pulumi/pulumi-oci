@@ -66,6 +66,7 @@ import javax.annotation.Nullable;
  *                 .isPathRewriteEnabled(var_.ingress_gateway_route_table_route_rules_is_path_rewrite_enabled())
  *                 .path(var_.ingress_gateway_route_table_route_rules_path())
  *                 .pathType(var_.ingress_gateway_route_table_route_rules_path_type())
+ *                 .requestTimeoutInMs(var_.ingress_gateway_route_table_route_rules_request_timeout_in_ms())
  *                 .build())
  *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
  *             .description(var_.ingress_gateway_route_table_description())

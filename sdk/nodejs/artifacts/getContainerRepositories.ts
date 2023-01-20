@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -27,11 +28,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getContainerRepositories(args: GetContainerRepositoriesArgs, opts?: pulumi.InvokeOptions): Promise<GetContainerRepositoriesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Artifacts/getContainerRepositories:getContainerRepositories", {
         "compartmentId": args.compartmentId,
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
@@ -106,9 +104,29 @@ export interface GetContainerRepositoriesResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Container Repositories in Oracle Cloud Infrastructure Artifacts service.
+ *
+ * List container repositories in a compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testContainerRepositories = oci.Artifacts.getContainerRepositories({
+ *     compartmentId: _var.compartment_id,
+ *     compartmentIdInSubtree: _var.container_repository_compartment_id_in_subtree,
+ *     displayName: _var.container_repository_display_name,
+ *     isPublic: _var.container_repository_is_public,
+ *     repositoryId: oci_artifacts_repository.test_repository.id,
+ *     state: _var.container_repository_state,
+ * });
+ * ```
+ */
 export function getContainerRepositoriesOutput(args: GetContainerRepositoriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetContainerRepositoriesResult> {
-    return pulumi.output(args).apply(a => getContainerRepositories(a, opts))
+    return pulumi.output(args).apply((a: any) => getContainerRepositories(a, opts))
 }
 
 /**

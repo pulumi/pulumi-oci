@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getProductLicense(args: GetProductLicenseArgs, opts?: pulumi.InvokeOptions): Promise<GetProductLicenseResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LicenseManager/getProductLicense:getProductLicense", {
         "productLicenseId": args.productLicenseId,
     }, opts);
@@ -132,9 +130,24 @@ export interface GetProductLicenseResult {
      */
     readonly vendorName: string;
 }
-
+/**
+ * This data source provides details about a specific Product License resource in Oracle Cloud Infrastructure License Manager service.
+ *
+ * Retrieves product license details by product license ID in a given compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testProductLicense = oci.LicenseManager.getProductLicense({
+ *     productLicenseId: oci_license_manager_product_license.test_product_license.id,
+ * });
+ * ```
+ */
 export function getProductLicenseOutput(args: GetProductLicenseOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProductLicenseResult> {
-    return pulumi.output(args).apply(a => getProductLicense(a, opts))
+    return pulumi.output(args).apply((a: any) => getProductLicense(a, opts))
 }
 
 /**

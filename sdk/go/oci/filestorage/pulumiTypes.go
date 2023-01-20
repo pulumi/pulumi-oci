@@ -153,9 +153,9 @@ func (o ExportExportOptionArrayOutput) Index(i pulumi.IntInput) ExportExportOpti
 }
 
 type FileSystemSourceDetail struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
 	ParentFileSystemId *string `pulumi:"parentFileSystemId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
 	SourceSnapshotId *string `pulumi:"sourceSnapshotId"`
 }
 
@@ -171,9 +171,9 @@ type FileSystemSourceDetailInput interface {
 }
 
 type FileSystemSourceDetailArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
 	ParentFileSystemId pulumi.StringPtrInput `pulumi:"parentFileSystemId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
 	SourceSnapshotId pulumi.StringPtrInput `pulumi:"sourceSnapshotId"`
 }
 
@@ -228,12 +228,12 @@ func (o FileSystemSourceDetailOutput) ToFileSystemSourceDetailOutputWithContext(
 	return o
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
 func (o FileSystemSourceDetailOutput) ParentFileSystemId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FileSystemSourceDetail) *string { return v.ParentFileSystemId }).(pulumi.StringPtrOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
 func (o FileSystemSourceDetailOutput) SourceSnapshotId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FileSystemSourceDetail) *string { return v.SourceSnapshotId }).(pulumi.StringPtrOutput)
 }
@@ -951,19 +951,23 @@ type GetFileSystemsFileSystem struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
 	Id string `pulumi:"id"`
-	// Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+	// Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
 	IsCloneParent bool `pulumi:"isCloneParent"`
-	// Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm#hydration).
+	// Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
 	IsHydrated bool `pulumi:"isHydrated"`
+	// Specifies whether the file system can be used as a target file system for replication. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
+	IsTargetable bool `pulumi:"isTargetable"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key used to encrypt the encryption keys associated with this file system.
 	KmsKeyId string `pulumi:"kmsKeyId"`
 	// Additional information about the current 'lifecycleState'.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The number of bytes consumed by the file system, including any snapshots. This number reflects the metered size of the file system and is updated asynchronously with respect to updates to the file system. For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).
 	MeteredBytes string `pulumi:"meteredBytes"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
+	ReplicationTargetId string `pulumi:"replicationTargetId"`
 	// Source information for the file system.
 	SourceDetails []GetFileSystemsFileSystemSourceDetail `pulumi:"sourceDetails"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
 	SourceSnapshotId string `pulumi:"sourceSnapshotId"`
 	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
 	State string `pulumi:"state"`
@@ -995,19 +999,23 @@ type GetFileSystemsFileSystemArgs struct {
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
 	Id pulumi.StringInput `pulumi:"id"`
-	// Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+	// Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
 	IsCloneParent pulumi.BoolInput `pulumi:"isCloneParent"`
-	// Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm#hydration).
+	// Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
 	IsHydrated pulumi.BoolInput `pulumi:"isHydrated"`
+	// Specifies whether the file system can be used as a target file system for replication. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
+	IsTargetable pulumi.BoolInput `pulumi:"isTargetable"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key used to encrypt the encryption keys associated with this file system.
 	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
 	// Additional information about the current 'lifecycleState'.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// The number of bytes consumed by the file system, including any snapshots. This number reflects the metered size of the file system and is updated asynchronously with respect to updates to the file system. For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).
 	MeteredBytes pulumi.StringInput `pulumi:"meteredBytes"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
+	ReplicationTargetId pulumi.StringInput `pulumi:"replicationTargetId"`
 	// Source information for the file system.
 	SourceDetails GetFileSystemsFileSystemSourceDetailArrayInput `pulumi:"sourceDetails"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
 	SourceSnapshotId pulumi.StringInput `pulumi:"sourceSnapshotId"`
 	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
 	State pulumi.StringInput `pulumi:"state"`
@@ -1096,14 +1104,19 @@ func (o GetFileSystemsFileSystemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFileSystemsFileSystem) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+// Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
 func (o GetFileSystemsFileSystemOutput) IsCloneParent() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFileSystemsFileSystem) bool { return v.IsCloneParent }).(pulumi.BoolOutput)
 }
 
-// Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm#hydration).
+// Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
 func (o GetFileSystemsFileSystemOutput) IsHydrated() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetFileSystemsFileSystem) bool { return v.IsHydrated }).(pulumi.BoolOutput)
+}
+
+// Specifies whether the file system can be used as a target file system for replication. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
+func (o GetFileSystemsFileSystemOutput) IsTargetable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFileSystemsFileSystem) bool { return v.IsTargetable }).(pulumi.BoolOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key used to encrypt the encryption keys associated with this file system.
@@ -1121,12 +1134,17 @@ func (o GetFileSystemsFileSystemOutput) MeteredBytes() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFileSystemsFileSystem) string { return v.MeteredBytes }).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
+func (o GetFileSystemsFileSystemOutput) ReplicationTargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileSystemsFileSystem) string { return v.ReplicationTargetId }).(pulumi.StringOutput)
+}
+
 // Source information for the file system.
 func (o GetFileSystemsFileSystemOutput) SourceDetails() GetFileSystemsFileSystemSourceDetailArrayOutput {
 	return o.ApplyT(func(v GetFileSystemsFileSystem) []GetFileSystemsFileSystemSourceDetail { return v.SourceDetails }).(GetFileSystemsFileSystemSourceDetailArrayOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
 func (o GetFileSystemsFileSystemOutput) SourceSnapshotId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFileSystemsFileSystem) string { return v.SourceSnapshotId }).(pulumi.StringOutput)
 }
@@ -1162,9 +1180,9 @@ func (o GetFileSystemsFileSystemArrayOutput) Index(i pulumi.IntInput) GetFileSys
 }
 
 type GetFileSystemsFileSystemSourceDetail struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
 	ParentFileSystemId string `pulumi:"parentFileSystemId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
 	SourceSnapshotId string `pulumi:"sourceSnapshotId"`
 }
 
@@ -1180,9 +1198,9 @@ type GetFileSystemsFileSystemSourceDetailInput interface {
 }
 
 type GetFileSystemsFileSystemSourceDetailArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
 	ParentFileSystemId pulumi.StringInput `pulumi:"parentFileSystemId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
 	SourceSnapshotId pulumi.StringInput `pulumi:"sourceSnapshotId"`
 }
 
@@ -1237,12 +1255,12 @@ func (o GetFileSystemsFileSystemSourceDetailOutput) ToGetFileSystemsFileSystemSo
 	return o
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
 func (o GetFileSystemsFileSystemSourceDetailOutput) ParentFileSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFileSystemsFileSystemSourceDetail) string { return v.ParentFileSystemId }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
 func (o GetFileSystemsFileSystemSourceDetailOutput) SourceSnapshotId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFileSystemsFileSystemSourceDetail) string { return v.SourceSnapshotId }).(pulumi.StringOutput)
 }
@@ -1696,6 +1714,691 @@ func (o GetMountTargetsMountTargetArrayOutput) Index(i pulumi.IntInput) GetMount
 	}).(GetMountTargetsMountTargetOutput)
 }
 
+type GetReplicationTargetsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetReplicationTargetsFilterInput is an input type that accepts GetReplicationTargetsFilterArgs and GetReplicationTargetsFilterOutput values.
+// You can construct a concrete instance of `GetReplicationTargetsFilterInput` via:
+//
+//	GetReplicationTargetsFilterArgs{...}
+type GetReplicationTargetsFilterInput interface {
+	pulumi.Input
+
+	ToGetReplicationTargetsFilterOutput() GetReplicationTargetsFilterOutput
+	ToGetReplicationTargetsFilterOutputWithContext(context.Context) GetReplicationTargetsFilterOutput
+}
+
+type GetReplicationTargetsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetReplicationTargetsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicationTargetsFilter)(nil)).Elem()
+}
+
+func (i GetReplicationTargetsFilterArgs) ToGetReplicationTargetsFilterOutput() GetReplicationTargetsFilterOutput {
+	return i.ToGetReplicationTargetsFilterOutputWithContext(context.Background())
+}
+
+func (i GetReplicationTargetsFilterArgs) ToGetReplicationTargetsFilterOutputWithContext(ctx context.Context) GetReplicationTargetsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicationTargetsFilterOutput)
+}
+
+// GetReplicationTargetsFilterArrayInput is an input type that accepts GetReplicationTargetsFilterArray and GetReplicationTargetsFilterArrayOutput values.
+// You can construct a concrete instance of `GetReplicationTargetsFilterArrayInput` via:
+//
+//	GetReplicationTargetsFilterArray{ GetReplicationTargetsFilterArgs{...} }
+type GetReplicationTargetsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetReplicationTargetsFilterArrayOutput() GetReplicationTargetsFilterArrayOutput
+	ToGetReplicationTargetsFilterArrayOutputWithContext(context.Context) GetReplicationTargetsFilterArrayOutput
+}
+
+type GetReplicationTargetsFilterArray []GetReplicationTargetsFilterInput
+
+func (GetReplicationTargetsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicationTargetsFilter)(nil)).Elem()
+}
+
+func (i GetReplicationTargetsFilterArray) ToGetReplicationTargetsFilterArrayOutput() GetReplicationTargetsFilterArrayOutput {
+	return i.ToGetReplicationTargetsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetReplicationTargetsFilterArray) ToGetReplicationTargetsFilterArrayOutputWithContext(ctx context.Context) GetReplicationTargetsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicationTargetsFilterArrayOutput)
+}
+
+type GetReplicationTargetsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetReplicationTargetsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicationTargetsFilter)(nil)).Elem()
+}
+
+func (o GetReplicationTargetsFilterOutput) ToGetReplicationTargetsFilterOutput() GetReplicationTargetsFilterOutput {
+	return o
+}
+
+func (o GetReplicationTargetsFilterOutput) ToGetReplicationTargetsFilterOutputWithContext(ctx context.Context) GetReplicationTargetsFilterOutput {
+	return o
+}
+
+func (o GetReplicationTargetsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicationTargetsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetReplicationTargetsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetReplicationTargetsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetReplicationTargetsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetReplicationTargetsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetReplicationTargetsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetReplicationTargetsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicationTargetsFilter)(nil)).Elem()
+}
+
+func (o GetReplicationTargetsFilterArrayOutput) ToGetReplicationTargetsFilterArrayOutput() GetReplicationTargetsFilterArrayOutput {
+	return o
+}
+
+func (o GetReplicationTargetsFilterArrayOutput) ToGetReplicationTargetsFilterArrayOutputWithContext(ctx context.Context) GetReplicationTargetsFilterArrayOutput {
+	return o
+}
+
+func (o GetReplicationTargetsFilterArrayOutput) Index(i pulumi.IntInput) GetReplicationTargetsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReplicationTargetsFilter {
+		return vs[0].([]GetReplicationTargetsFilter)[vs[1].(int)]
+	}).(GetReplicationTargetsFilterOutput)
+}
+
+type GetReplicationTargetsReplicationTarget struct {
+	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// Percentage progress of the current replication cycle.
+	DeltaProgress string `pulumi:"deltaProgress"`
+	// The current state of the snapshot during replication operations.
+	DeltaStatus string `pulumi:"deltaStatus"`
+	// A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
+	Id string `pulumi:"id"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot snapshot which was completely applied to the target file system. Empty while the initial snapshot is being applied.
+	LastSnapshotId string `pulumi:"lastSnapshotId"`
+	// Additional information about the current `lifecycleState`.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The snapshotTime of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
+	RecoveryPointTime string `pulumi:"recoveryPointTime"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of replication.
+	ReplicationId string `pulumi:"replicationId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of source filesystem.
+	SourceId string `pulumi:"sourceId"`
+	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
+	State string `pulumi:"state"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of target filesystem.
+	TargetId string `pulumi:"targetId"`
+	// The date and time the replication target was created in target region. in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-01-04T20:01:29.100Z`
+	TimeCreated string `pulumi:"timeCreated"`
+}
+
+// GetReplicationTargetsReplicationTargetInput is an input type that accepts GetReplicationTargetsReplicationTargetArgs and GetReplicationTargetsReplicationTargetOutput values.
+// You can construct a concrete instance of `GetReplicationTargetsReplicationTargetInput` via:
+//
+//	GetReplicationTargetsReplicationTargetArgs{...}
+type GetReplicationTargetsReplicationTargetInput interface {
+	pulumi.Input
+
+	ToGetReplicationTargetsReplicationTargetOutput() GetReplicationTargetsReplicationTargetOutput
+	ToGetReplicationTargetsReplicationTargetOutputWithContext(context.Context) GetReplicationTargetsReplicationTargetOutput
+}
+
+type GetReplicationTargetsReplicationTargetArgs struct {
+	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// Percentage progress of the current replication cycle.
+	DeltaProgress pulumi.StringInput `pulumi:"deltaProgress"`
+	// The current state of the snapshot during replication operations.
+	DeltaStatus pulumi.StringInput `pulumi:"deltaStatus"`
+	// A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot snapshot which was completely applied to the target file system. Empty while the initial snapshot is being applied.
+	LastSnapshotId pulumi.StringInput `pulumi:"lastSnapshotId"`
+	// Additional information about the current `lifecycleState`.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The snapshotTime of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
+	RecoveryPointTime pulumi.StringInput `pulumi:"recoveryPointTime"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of replication.
+	ReplicationId pulumi.StringInput `pulumi:"replicationId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of source filesystem.
+	SourceId pulumi.StringInput `pulumi:"sourceId"`
+	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
+	State pulumi.StringInput `pulumi:"state"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of target filesystem.
+	TargetId pulumi.StringInput `pulumi:"targetId"`
+	// The date and time the replication target was created in target region. in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-01-04T20:01:29.100Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+}
+
+func (GetReplicationTargetsReplicationTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicationTargetsReplicationTarget)(nil)).Elem()
+}
+
+func (i GetReplicationTargetsReplicationTargetArgs) ToGetReplicationTargetsReplicationTargetOutput() GetReplicationTargetsReplicationTargetOutput {
+	return i.ToGetReplicationTargetsReplicationTargetOutputWithContext(context.Background())
+}
+
+func (i GetReplicationTargetsReplicationTargetArgs) ToGetReplicationTargetsReplicationTargetOutputWithContext(ctx context.Context) GetReplicationTargetsReplicationTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicationTargetsReplicationTargetOutput)
+}
+
+// GetReplicationTargetsReplicationTargetArrayInput is an input type that accepts GetReplicationTargetsReplicationTargetArray and GetReplicationTargetsReplicationTargetArrayOutput values.
+// You can construct a concrete instance of `GetReplicationTargetsReplicationTargetArrayInput` via:
+//
+//	GetReplicationTargetsReplicationTargetArray{ GetReplicationTargetsReplicationTargetArgs{...} }
+type GetReplicationTargetsReplicationTargetArrayInput interface {
+	pulumi.Input
+
+	ToGetReplicationTargetsReplicationTargetArrayOutput() GetReplicationTargetsReplicationTargetArrayOutput
+	ToGetReplicationTargetsReplicationTargetArrayOutputWithContext(context.Context) GetReplicationTargetsReplicationTargetArrayOutput
+}
+
+type GetReplicationTargetsReplicationTargetArray []GetReplicationTargetsReplicationTargetInput
+
+func (GetReplicationTargetsReplicationTargetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicationTargetsReplicationTarget)(nil)).Elem()
+}
+
+func (i GetReplicationTargetsReplicationTargetArray) ToGetReplicationTargetsReplicationTargetArrayOutput() GetReplicationTargetsReplicationTargetArrayOutput {
+	return i.ToGetReplicationTargetsReplicationTargetArrayOutputWithContext(context.Background())
+}
+
+func (i GetReplicationTargetsReplicationTargetArray) ToGetReplicationTargetsReplicationTargetArrayOutputWithContext(ctx context.Context) GetReplicationTargetsReplicationTargetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicationTargetsReplicationTargetArrayOutput)
+}
+
+type GetReplicationTargetsReplicationTargetOutput struct{ *pulumi.OutputState }
+
+func (GetReplicationTargetsReplicationTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicationTargetsReplicationTarget)(nil)).Elem()
+}
+
+func (o GetReplicationTargetsReplicationTargetOutput) ToGetReplicationTargetsReplicationTargetOutput() GetReplicationTargetsReplicationTargetOutput {
+	return o
+}
+
+func (o GetReplicationTargetsReplicationTargetOutput) ToGetReplicationTargetsReplicationTargetOutputWithContext(ctx context.Context) GetReplicationTargetsReplicationTargetOutput {
+	return o
+}
+
+// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
+func (o GetReplicationTargetsReplicationTargetOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicationTargetsReplicationTarget) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetReplicationTargetsReplicationTargetOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicationTargetsReplicationTarget) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetReplicationTargetsReplicationTargetOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetReplicationTargetsReplicationTarget) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// Percentage progress of the current replication cycle.
+func (o GetReplicationTargetsReplicationTargetOutput) DeltaProgress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicationTargetsReplicationTarget) string { return v.DeltaProgress }).(pulumi.StringOutput)
+}
+
+// The current state of the snapshot during replication operations.
+func (o GetReplicationTargetsReplicationTargetOutput) DeltaStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicationTargetsReplicationTarget) string { return v.DeltaStatus }).(pulumi.StringOutput)
+}
+
+// A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
+func (o GetReplicationTargetsReplicationTargetOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicationTargetsReplicationTarget) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetReplicationTargetsReplicationTargetOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetReplicationTargetsReplicationTarget) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
+func (o GetReplicationTargetsReplicationTargetOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicationTargetsReplicationTarget) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot snapshot which was completely applied to the target file system. Empty while the initial snapshot is being applied.
+func (o GetReplicationTargetsReplicationTargetOutput) LastSnapshotId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicationTargetsReplicationTarget) string { return v.LastSnapshotId }).(pulumi.StringOutput)
+}
+
+// Additional information about the current `lifecycleState`.
+func (o GetReplicationTargetsReplicationTargetOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicationTargetsReplicationTarget) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The snapshotTime of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
+func (o GetReplicationTargetsReplicationTargetOutput) RecoveryPointTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicationTargetsReplicationTarget) string { return v.RecoveryPointTime }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of replication.
+func (o GetReplicationTargetsReplicationTargetOutput) ReplicationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicationTargetsReplicationTarget) string { return v.ReplicationId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of source filesystem.
+func (o GetReplicationTargetsReplicationTargetOutput) SourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicationTargetsReplicationTarget) string { return v.SourceId }).(pulumi.StringOutput)
+}
+
+// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
+func (o GetReplicationTargetsReplicationTargetOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicationTargetsReplicationTarget) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of target filesystem.
+func (o GetReplicationTargetsReplicationTargetOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicationTargetsReplicationTarget) string { return v.TargetId }).(pulumi.StringOutput)
+}
+
+// The date and time the replication target was created in target region. in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-01-04T20:01:29.100Z`
+func (o GetReplicationTargetsReplicationTargetOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicationTargetsReplicationTarget) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+type GetReplicationTargetsReplicationTargetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetReplicationTargetsReplicationTargetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicationTargetsReplicationTarget)(nil)).Elem()
+}
+
+func (o GetReplicationTargetsReplicationTargetArrayOutput) ToGetReplicationTargetsReplicationTargetArrayOutput() GetReplicationTargetsReplicationTargetArrayOutput {
+	return o
+}
+
+func (o GetReplicationTargetsReplicationTargetArrayOutput) ToGetReplicationTargetsReplicationTargetArrayOutputWithContext(ctx context.Context) GetReplicationTargetsReplicationTargetArrayOutput {
+	return o
+}
+
+func (o GetReplicationTargetsReplicationTargetArrayOutput) Index(i pulumi.IntInput) GetReplicationTargetsReplicationTargetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReplicationTargetsReplicationTarget {
+		return vs[0].([]GetReplicationTargetsReplicationTarget)[vs[1].(int)]
+	}).(GetReplicationTargetsReplicationTargetOutput)
+}
+
+type GetReplicationsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetReplicationsFilterInput is an input type that accepts GetReplicationsFilterArgs and GetReplicationsFilterOutput values.
+// You can construct a concrete instance of `GetReplicationsFilterInput` via:
+//
+//	GetReplicationsFilterArgs{...}
+type GetReplicationsFilterInput interface {
+	pulumi.Input
+
+	ToGetReplicationsFilterOutput() GetReplicationsFilterOutput
+	ToGetReplicationsFilterOutputWithContext(context.Context) GetReplicationsFilterOutput
+}
+
+type GetReplicationsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetReplicationsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicationsFilter)(nil)).Elem()
+}
+
+func (i GetReplicationsFilterArgs) ToGetReplicationsFilterOutput() GetReplicationsFilterOutput {
+	return i.ToGetReplicationsFilterOutputWithContext(context.Background())
+}
+
+func (i GetReplicationsFilterArgs) ToGetReplicationsFilterOutputWithContext(ctx context.Context) GetReplicationsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicationsFilterOutput)
+}
+
+// GetReplicationsFilterArrayInput is an input type that accepts GetReplicationsFilterArray and GetReplicationsFilterArrayOutput values.
+// You can construct a concrete instance of `GetReplicationsFilterArrayInput` via:
+//
+//	GetReplicationsFilterArray{ GetReplicationsFilterArgs{...} }
+type GetReplicationsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetReplicationsFilterArrayOutput() GetReplicationsFilterArrayOutput
+	ToGetReplicationsFilterArrayOutputWithContext(context.Context) GetReplicationsFilterArrayOutput
+}
+
+type GetReplicationsFilterArray []GetReplicationsFilterInput
+
+func (GetReplicationsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicationsFilter)(nil)).Elem()
+}
+
+func (i GetReplicationsFilterArray) ToGetReplicationsFilterArrayOutput() GetReplicationsFilterArrayOutput {
+	return i.ToGetReplicationsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetReplicationsFilterArray) ToGetReplicationsFilterArrayOutputWithContext(ctx context.Context) GetReplicationsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicationsFilterArrayOutput)
+}
+
+type GetReplicationsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetReplicationsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicationsFilter)(nil)).Elem()
+}
+
+func (o GetReplicationsFilterOutput) ToGetReplicationsFilterOutput() GetReplicationsFilterOutput {
+	return o
+}
+
+func (o GetReplicationsFilterOutput) ToGetReplicationsFilterOutputWithContext(ctx context.Context) GetReplicationsFilterOutput {
+	return o
+}
+
+func (o GetReplicationsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicationsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetReplicationsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetReplicationsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetReplicationsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetReplicationsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetReplicationsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetReplicationsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicationsFilter)(nil)).Elem()
+}
+
+func (o GetReplicationsFilterArrayOutput) ToGetReplicationsFilterArrayOutput() GetReplicationsFilterArrayOutput {
+	return o
+}
+
+func (o GetReplicationsFilterArrayOutput) ToGetReplicationsFilterArrayOutputWithContext(ctx context.Context) GetReplicationsFilterArrayOutput {
+	return o
+}
+
+func (o GetReplicationsFilterArrayOutput) Index(i pulumi.IntInput) GetReplicationsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReplicationsFilter {
+		return vs[0].([]GetReplicationsFilter)[vs[1].(int)]
+	}).(GetReplicationsFilterOutput)
+}
+
+type GetReplicationsReplication struct {
+	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// Percentage progress of the current replication cycle.
+	DeltaProgress string `pulumi:"deltaProgress"`
+	// The current state of the snapshot during replication operations.
+	DeltaStatus string `pulumi:"deltaStatus"`
+	// A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
+	Id string `pulumi:"id"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely. Empty if the copy of the initial snapshot is not complete.
+	LastSnapshotId string `pulumi:"lastSnapshotId"`
+	// Additional information about the current 'lifecycleState'.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The [`snapshotTime`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Snapshot/snapshotTime) of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
+	RecoveryPointTime string `pulumi:"recoveryPointTime"`
+	// Duration in minutes between replication snapshots.
+	ReplicationInterval string `pulumi:"replicationInterval"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [`ReplicationTarget`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ReplicationTarget).
+	ReplicationTargetId string `pulumi:"replicationTargetId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source file system.
+	SourceId string `pulumi:"sourceId"`
+	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
+	State string `pulumi:"state"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system.
+	TargetId string `pulumi:"targetId"`
+	// The date and time the replication was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2021-01-04T20:01:29.100Z`
+	TimeCreated string `pulumi:"timeCreated"`
+}
+
+// GetReplicationsReplicationInput is an input type that accepts GetReplicationsReplicationArgs and GetReplicationsReplicationOutput values.
+// You can construct a concrete instance of `GetReplicationsReplicationInput` via:
+//
+//	GetReplicationsReplicationArgs{...}
+type GetReplicationsReplicationInput interface {
+	pulumi.Input
+
+	ToGetReplicationsReplicationOutput() GetReplicationsReplicationOutput
+	ToGetReplicationsReplicationOutputWithContext(context.Context) GetReplicationsReplicationOutput
+}
+
+type GetReplicationsReplicationArgs struct {
+	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// Percentage progress of the current replication cycle.
+	DeltaProgress pulumi.StringInput `pulumi:"deltaProgress"`
+	// The current state of the snapshot during replication operations.
+	DeltaStatus pulumi.StringInput `pulumi:"deltaStatus"`
+	// A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely. Empty if the copy of the initial snapshot is not complete.
+	LastSnapshotId pulumi.StringInput `pulumi:"lastSnapshotId"`
+	// Additional information about the current 'lifecycleState'.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The [`snapshotTime`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Snapshot/snapshotTime) of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
+	RecoveryPointTime pulumi.StringInput `pulumi:"recoveryPointTime"`
+	// Duration in minutes between replication snapshots.
+	ReplicationInterval pulumi.StringInput `pulumi:"replicationInterval"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [`ReplicationTarget`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ReplicationTarget).
+	ReplicationTargetId pulumi.StringInput `pulumi:"replicationTargetId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source file system.
+	SourceId pulumi.StringInput `pulumi:"sourceId"`
+	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
+	State pulumi.StringInput `pulumi:"state"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system.
+	TargetId pulumi.StringInput `pulumi:"targetId"`
+	// The date and time the replication was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2021-01-04T20:01:29.100Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+}
+
+func (GetReplicationsReplicationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicationsReplication)(nil)).Elem()
+}
+
+func (i GetReplicationsReplicationArgs) ToGetReplicationsReplicationOutput() GetReplicationsReplicationOutput {
+	return i.ToGetReplicationsReplicationOutputWithContext(context.Background())
+}
+
+func (i GetReplicationsReplicationArgs) ToGetReplicationsReplicationOutputWithContext(ctx context.Context) GetReplicationsReplicationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicationsReplicationOutput)
+}
+
+// GetReplicationsReplicationArrayInput is an input type that accepts GetReplicationsReplicationArray and GetReplicationsReplicationArrayOutput values.
+// You can construct a concrete instance of `GetReplicationsReplicationArrayInput` via:
+//
+//	GetReplicationsReplicationArray{ GetReplicationsReplicationArgs{...} }
+type GetReplicationsReplicationArrayInput interface {
+	pulumi.Input
+
+	ToGetReplicationsReplicationArrayOutput() GetReplicationsReplicationArrayOutput
+	ToGetReplicationsReplicationArrayOutputWithContext(context.Context) GetReplicationsReplicationArrayOutput
+}
+
+type GetReplicationsReplicationArray []GetReplicationsReplicationInput
+
+func (GetReplicationsReplicationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicationsReplication)(nil)).Elem()
+}
+
+func (i GetReplicationsReplicationArray) ToGetReplicationsReplicationArrayOutput() GetReplicationsReplicationArrayOutput {
+	return i.ToGetReplicationsReplicationArrayOutputWithContext(context.Background())
+}
+
+func (i GetReplicationsReplicationArray) ToGetReplicationsReplicationArrayOutputWithContext(ctx context.Context) GetReplicationsReplicationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetReplicationsReplicationArrayOutput)
+}
+
+type GetReplicationsReplicationOutput struct{ *pulumi.OutputState }
+
+func (GetReplicationsReplicationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetReplicationsReplication)(nil)).Elem()
+}
+
+func (o GetReplicationsReplicationOutput) ToGetReplicationsReplicationOutput() GetReplicationsReplicationOutput {
+	return o
+}
+
+func (o GetReplicationsReplicationOutput) ToGetReplicationsReplicationOutputWithContext(ctx context.Context) GetReplicationsReplicationOutput {
+	return o
+}
+
+// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
+func (o GetReplicationsReplicationOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicationsReplication) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetReplicationsReplicationOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicationsReplication) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetReplicationsReplicationOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetReplicationsReplication) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// Percentage progress of the current replication cycle.
+func (o GetReplicationsReplicationOutput) DeltaProgress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicationsReplication) string { return v.DeltaProgress }).(pulumi.StringOutput)
+}
+
+// The current state of the snapshot during replication operations.
+func (o GetReplicationsReplicationOutput) DeltaStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicationsReplication) string { return v.DeltaStatus }).(pulumi.StringOutput)
+}
+
+// A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
+func (o GetReplicationsReplicationOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicationsReplication) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetReplicationsReplicationOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetReplicationsReplication) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
+func (o GetReplicationsReplicationOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicationsReplication) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely. Empty if the copy of the initial snapshot is not complete.
+func (o GetReplicationsReplicationOutput) LastSnapshotId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicationsReplication) string { return v.LastSnapshotId }).(pulumi.StringOutput)
+}
+
+// Additional information about the current 'lifecycleState'.
+func (o GetReplicationsReplicationOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicationsReplication) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The [`snapshotTime`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Snapshot/snapshotTime) of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
+func (o GetReplicationsReplicationOutput) RecoveryPointTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicationsReplication) string { return v.RecoveryPointTime }).(pulumi.StringOutput)
+}
+
+// Duration in minutes between replication snapshots.
+func (o GetReplicationsReplicationOutput) ReplicationInterval() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicationsReplication) string { return v.ReplicationInterval }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [`ReplicationTarget`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ReplicationTarget).
+func (o GetReplicationsReplicationOutput) ReplicationTargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicationsReplication) string { return v.ReplicationTargetId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source file system.
+func (o GetReplicationsReplicationOutput) SourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicationsReplication) string { return v.SourceId }).(pulumi.StringOutput)
+}
+
+// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
+func (o GetReplicationsReplicationOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicationsReplication) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system.
+func (o GetReplicationsReplicationOutput) TargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicationsReplication) string { return v.TargetId }).(pulumi.StringOutput)
+}
+
+// The date and time the replication was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2021-01-04T20:01:29.100Z`
+func (o GetReplicationsReplicationOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetReplicationsReplication) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+type GetReplicationsReplicationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetReplicationsReplicationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetReplicationsReplication)(nil)).Elem()
+}
+
+func (o GetReplicationsReplicationArrayOutput) ToGetReplicationsReplicationArrayOutput() GetReplicationsReplicationArrayOutput {
+	return o
+}
+
+func (o GetReplicationsReplicationArrayOutput) ToGetReplicationsReplicationArrayOutputWithContext(ctx context.Context) GetReplicationsReplicationArrayOutput {
+	return o
+}
+
+func (o GetReplicationsReplicationArrayOutput) Index(i pulumi.IntInput) GetReplicationsReplicationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetReplicationsReplication {
+		return vs[0].([]GetReplicationsReplication)[vs[1].(int)]
+	}).(GetReplicationsReplicationOutput)
+}
+
 type GetSnapshotsFilter struct {
 	// Name of the snapshot. This value is immutable.
 	Name   string   `pulumi:"name"`
@@ -1814,14 +2517,21 @@ type GetSnapshotsSnapshot struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
 	Id string `pulumi:"id"`
-	// Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+	// Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
 	IsCloneSource bool `pulumi:"isCloneSource"`
-	// Additional information about the current 'lifecycleState'.
+	// Additional information about the current `lifecycleState`.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Name of the snapshot. This value is immutable.
 	Name string `pulumi:"name"`
-	// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+	// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
 	ProvenanceId string `pulumi:"provenanceId"`
+	// The date and time the snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. This value might be the same or different from `timeCreated` depending on the following factors:
+	// * If the snapshot is created in the original file system directory.
+	// * If the snapshot is cloned from a file system.
+	// * If the snapshot is replicated from a file system.
+	SnapshotTime string `pulumi:"snapshotTime"`
+	// Specifies the generation type of the snapshot.
+	SnapshotType string `pulumi:"snapshotType"`
 	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
 	State string `pulumi:"state"`
 	// The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
@@ -1848,14 +2558,21 @@ type GetSnapshotsSnapshotArgs struct {
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
 	Id pulumi.StringInput `pulumi:"id"`
-	// Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+	// Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
 	IsCloneSource pulumi.BoolInput `pulumi:"isCloneSource"`
-	// Additional information about the current 'lifecycleState'.
+	// Additional information about the current `lifecycleState`.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// Name of the snapshot. This value is immutable.
 	Name pulumi.StringInput `pulumi:"name"`
-	// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+	// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
 	ProvenanceId pulumi.StringInput `pulumi:"provenanceId"`
+	// The date and time the snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. This value might be the same or different from `timeCreated` depending on the following factors:
+	// * If the snapshot is created in the original file system directory.
+	// * If the snapshot is cloned from a file system.
+	// * If the snapshot is replicated from a file system.
+	SnapshotTime pulumi.StringInput `pulumi:"snapshotTime"`
+	// Specifies the generation type of the snapshot.
+	SnapshotType pulumi.StringInput `pulumi:"snapshotType"`
 	// Filter results by the specified lifecycle state. Must be a valid state for the resource type.
 	State pulumi.StringInput `pulumi:"state"`
 	// The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
@@ -1933,12 +2650,12 @@ func (o GetSnapshotsSnapshotOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSnapshotsSnapshot) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+// Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
 func (o GetSnapshotsSnapshotOutput) IsCloneSource() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetSnapshotsSnapshot) bool { return v.IsCloneSource }).(pulumi.BoolOutput)
 }
 
-// Additional information about the current 'lifecycleState'.
+// Additional information about the current `lifecycleState`.
 func (o GetSnapshotsSnapshotOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSnapshotsSnapshot) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
@@ -1948,9 +2665,22 @@ func (o GetSnapshotsSnapshotOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSnapshotsSnapshot) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
 func (o GetSnapshotsSnapshotOutput) ProvenanceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSnapshotsSnapshot) string { return v.ProvenanceId }).(pulumi.StringOutput)
+}
+
+// The date and time the snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. This value might be the same or different from `timeCreated` depending on the following factors:
+// * If the snapshot is created in the original file system directory.
+// * If the snapshot is cloned from a file system.
+// * If the snapshot is replicated from a file system.
+func (o GetSnapshotsSnapshotOutput) SnapshotTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSnapshotsSnapshot) string { return v.SnapshotTime }).(pulumi.StringOutput)
+}
+
+// Specifies the generation type of the snapshot.
+func (o GetSnapshotsSnapshotOutput) SnapshotType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSnapshotsSnapshot) string { return v.SnapshotType }).(pulumi.StringOutput)
 }
 
 // Filter results by the specified lifecycle state. Must be a valid state for the resource type.
@@ -2008,6 +2738,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMountTargetsFilterArrayInput)(nil)).Elem(), GetMountTargetsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMountTargetsMountTargetInput)(nil)).Elem(), GetMountTargetsMountTargetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMountTargetsMountTargetArrayInput)(nil)).Elem(), GetMountTargetsMountTargetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicationTargetsFilterInput)(nil)).Elem(), GetReplicationTargetsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicationTargetsFilterArrayInput)(nil)).Elem(), GetReplicationTargetsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicationTargetsReplicationTargetInput)(nil)).Elem(), GetReplicationTargetsReplicationTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicationTargetsReplicationTargetArrayInput)(nil)).Elem(), GetReplicationTargetsReplicationTargetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicationsFilterInput)(nil)).Elem(), GetReplicationsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicationsFilterArrayInput)(nil)).Elem(), GetReplicationsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicationsReplicationInput)(nil)).Elem(), GetReplicationsReplicationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetReplicationsReplicationArrayInput)(nil)).Elem(), GetReplicationsReplicationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSnapshotsFilterInput)(nil)).Elem(), GetSnapshotsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSnapshotsFilterArrayInput)(nil)).Elem(), GetSnapshotsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSnapshotsSnapshotInput)(nil)).Elem(), GetSnapshotsSnapshotArgs{})
@@ -2036,6 +2774,14 @@ func init() {
 	pulumi.RegisterOutputType(GetMountTargetsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetMountTargetsMountTargetOutput{})
 	pulumi.RegisterOutputType(GetMountTargetsMountTargetArrayOutput{})
+	pulumi.RegisterOutputType(GetReplicationTargetsFilterOutput{})
+	pulumi.RegisterOutputType(GetReplicationTargetsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetReplicationTargetsReplicationTargetOutput{})
+	pulumi.RegisterOutputType(GetReplicationTargetsReplicationTargetArrayOutput{})
+	pulumi.RegisterOutputType(GetReplicationsFilterOutput{})
+	pulumi.RegisterOutputType(GetReplicationsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetReplicationsReplicationOutput{})
+	pulumi.RegisterOutputType(GetReplicationsReplicationArrayOutput{})
 	pulumi.RegisterOutputType(GetSnapshotsFilterOutput{})
 	pulumi.RegisterOutputType(GetSnapshotsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetSnapshotsSnapshotOutput{})

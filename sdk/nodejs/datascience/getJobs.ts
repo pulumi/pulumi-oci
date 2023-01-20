@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -27,11 +28,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getJobs(args: GetJobsArgs, opts?: pulumi.InvokeOptions): Promise<GetJobsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataScience/getJobs:getJobs", {
         "compartmentId": args.compartmentId,
         "createdBy": args.createdBy,
@@ -108,9 +106,29 @@ export interface GetJobsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Jobs in Oracle Cloud Infrastructure Data Science service.
+ *
+ * List jobs in the specified compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testJobs = oci.DataScience.getJobs({
+ *     compartmentId: _var.compartment_id,
+ *     createdBy: _var.job_created_by,
+ *     displayName: _var.job_display_name,
+ *     id: _var.job_id,
+ *     projectId: oci_datascience_project.test_project.id,
+ *     state: _var.job_state,
+ * });
+ * ```
+ */
 export function getJobsOutput(args: GetJobsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJobsResult> {
-    return pulumi.output(args).apply(a => getJobs(a, opts))
+    return pulumi.output(args).apply((a: any) => getJobs(a, opts))
 }
 
 /**

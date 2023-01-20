@@ -39,8 +39,10 @@ type Deployment struct {
 	DeployPipelineEnvironments DeploymentDeployPipelineEnvironmentArrayOutput `pulumi:"deployPipelineEnvironments"`
 	// The OCID of a pipeline.
 	DeployPipelineId pulumi.StringOutput `pulumi:"deployPipelineId"`
-	// Specifies the OCID of the stage to be redeployed.
+	// The OCID of the stage.
 	DeployStageId pulumi.StringOutput `pulumi:"deployStageId"`
+	// Specifies the list of arguments to be overriden per Stage at the time of deployment.
+	DeployStageOverrideArguments DeploymentDeployStageOverrideArgumentsOutput `pulumi:"deployStageOverrideArguments"`
 	// Specifies list of arguments passed along with the deployment.
 	DeploymentArguments DeploymentDeploymentArgumentsOutput `pulumi:"deploymentArguments"`
 	// The execution progress details of a deployment.
@@ -65,6 +67,8 @@ type Deployment struct {
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// Time the deployment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	// A boolean specifying if a new deployment should be created on every apply. As long as this value is set to true in the config, every apply will trigger a new deployment to be created. The existing deployment resource will be replaced with the new one in the state file (deployment resources are never deleted, they persist as a store of records, but your state file will only track the latest one created with this resource block).
+	TriggerNewDevopsDeployment pulumi.BoolPtrOutput `pulumi:"triggerNewDevopsDeployment"`
 }
 
 // NewDeployment registers a new resource with the given unique name, arguments, and options.
@@ -114,8 +118,10 @@ type deploymentState struct {
 	DeployPipelineEnvironments []DeploymentDeployPipelineEnvironment `pulumi:"deployPipelineEnvironments"`
 	// The OCID of a pipeline.
 	DeployPipelineId *string `pulumi:"deployPipelineId"`
-	// Specifies the OCID of the stage to be redeployed.
+	// The OCID of the stage.
 	DeployStageId *string `pulumi:"deployStageId"`
+	// Specifies the list of arguments to be overriden per Stage at the time of deployment.
+	DeployStageOverrideArguments *DeploymentDeployStageOverrideArguments `pulumi:"deployStageOverrideArguments"`
 	// Specifies list of arguments passed along with the deployment.
 	DeploymentArguments *DeploymentDeploymentArguments `pulumi:"deploymentArguments"`
 	// The execution progress details of a deployment.
@@ -140,6 +146,8 @@ type deploymentState struct {
 	TimeCreated *string `pulumi:"timeCreated"`
 	// Time the deployment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeUpdated *string `pulumi:"timeUpdated"`
+	// A boolean specifying if a new deployment should be created on every apply. As long as this value is set to true in the config, every apply will trigger a new deployment to be created. The existing deployment resource will be replaced with the new one in the state file (deployment resources are never deleted, they persist as a store of records, but your state file will only track the latest one created with this resource block).
+	TriggerNewDevopsDeployment *bool `pulumi:"triggerNewDevopsDeployment"`
 }
 
 type DeploymentState struct {
@@ -155,8 +163,10 @@ type DeploymentState struct {
 	DeployPipelineEnvironments DeploymentDeployPipelineEnvironmentArrayInput
 	// The OCID of a pipeline.
 	DeployPipelineId pulumi.StringPtrInput
-	// Specifies the OCID of the stage to be redeployed.
+	// The OCID of the stage.
 	DeployStageId pulumi.StringPtrInput
+	// Specifies the list of arguments to be overriden per Stage at the time of deployment.
+	DeployStageOverrideArguments DeploymentDeployStageOverrideArgumentsPtrInput
 	// Specifies list of arguments passed along with the deployment.
 	DeploymentArguments DeploymentDeploymentArgumentsPtrInput
 	// The execution progress details of a deployment.
@@ -181,6 +191,8 @@ type DeploymentState struct {
 	TimeCreated pulumi.StringPtrInput
 	// Time the deployment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeUpdated pulumi.StringPtrInput
+	// A boolean specifying if a new deployment should be created on every apply. As long as this value is set to true in the config, every apply will trigger a new deployment to be created. The existing deployment resource will be replaced with the new one in the state file (deployment resources are never deleted, they persist as a store of records, but your state file will only track the latest one created with this resource block).
+	TriggerNewDevopsDeployment pulumi.BoolPtrInput
 }
 
 func (DeploymentState) ElementType() reflect.Type {
@@ -194,8 +206,10 @@ type deploymentArgs struct {
 	DeployArtifactOverrideArguments *DeploymentDeployArtifactOverrideArguments `pulumi:"deployArtifactOverrideArguments"`
 	// The OCID of a pipeline.
 	DeployPipelineId string `pulumi:"deployPipelineId"`
-	// Specifies the OCID of the stage to be redeployed.
+	// The OCID of the stage.
 	DeployStageId *string `pulumi:"deployStageId"`
+	// Specifies the list of arguments to be overriden per Stage at the time of deployment.
+	DeployStageOverrideArguments *DeploymentDeployStageOverrideArguments `pulumi:"deployStageOverrideArguments"`
 	// Specifies list of arguments passed along with the deployment.
 	DeploymentArguments *DeploymentDeploymentArguments `pulumi:"deploymentArguments"`
 	// (Updatable) Specifies type for this deployment.
@@ -206,6 +220,8 @@ type deploymentArgs struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Specifies the OCID of the previous deployment to be redeployed.
 	PreviousDeploymentId *string `pulumi:"previousDeploymentId"`
+	// A boolean specifying if a new deployment should be created on every apply. As long as this value is set to true in the config, every apply will trigger a new deployment to be created. The existing deployment resource will be replaced with the new one in the state file (deployment resources are never deleted, they persist as a store of records, but your state file will only track the latest one created with this resource block).
+	TriggerNewDevopsDeployment *bool `pulumi:"triggerNewDevopsDeployment"`
 }
 
 // The set of arguments for constructing a Deployment resource.
@@ -216,8 +232,10 @@ type DeploymentArgs struct {
 	DeployArtifactOverrideArguments DeploymentDeployArtifactOverrideArgumentsPtrInput
 	// The OCID of a pipeline.
 	DeployPipelineId pulumi.StringInput
-	// Specifies the OCID of the stage to be redeployed.
+	// The OCID of the stage.
 	DeployStageId pulumi.StringPtrInput
+	// Specifies the list of arguments to be overriden per Stage at the time of deployment.
+	DeployStageOverrideArguments DeploymentDeployStageOverrideArgumentsPtrInput
 	// Specifies list of arguments passed along with the deployment.
 	DeploymentArguments DeploymentDeploymentArgumentsPtrInput
 	// (Updatable) Specifies type for this deployment.
@@ -228,6 +246,8 @@ type DeploymentArgs struct {
 	FreeformTags pulumi.MapInput
 	// Specifies the OCID of the previous deployment to be redeployed.
 	PreviousDeploymentId pulumi.StringPtrInput
+	// A boolean specifying if a new deployment should be created on every apply. As long as this value is set to true in the config, every apply will trigger a new deployment to be created. The existing deployment resource will be replaced with the new one in the state file (deployment resources are never deleted, they persist as a store of records, but your state file will only track the latest one created with this resource block).
+	TriggerNewDevopsDeployment pulumi.BoolPtrInput
 }
 
 func (DeploymentArgs) ElementType() reflect.Type {
@@ -351,9 +371,16 @@ func (o DeploymentOutput) DeployPipelineId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.DeployPipelineId }).(pulumi.StringOutput)
 }
 
-// Specifies the OCID of the stage to be redeployed.
+// The OCID of the stage.
 func (o DeploymentOutput) DeployStageId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.DeployStageId }).(pulumi.StringOutput)
+}
+
+// Specifies the list of arguments to be overriden per Stage at the time of deployment.
+func (o DeploymentOutput) DeployStageOverrideArguments() DeploymentDeployStageOverrideArgumentsOutput {
+	return o.ApplyT(func(v *Deployment) DeploymentDeployStageOverrideArgumentsOutput {
+		return v.DeployStageOverrideArguments
+	}).(DeploymentDeployStageOverrideArgumentsOutput)
 }
 
 // Specifies list of arguments passed along with the deployment.
@@ -416,6 +443,11 @@ func (o DeploymentOutput) TimeCreated() pulumi.StringOutput {
 // Time the deployment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 func (o DeploymentOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// A boolean specifying if a new deployment should be created on every apply. As long as this value is set to true in the config, every apply will trigger a new deployment to be created. The existing deployment resource will be replaced with the new one in the state file (deployment resources are never deleted, they persist as a store of records, but your state file will only track the latest one created with this resource block).
+func (o DeploymentOutput) TriggerNewDevopsDeployment() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *Deployment) pulumi.BoolPtrOutput { return v.TriggerNewDevopsDeployment }).(pulumi.BoolPtrOutput)
 }
 
 type DeploymentArrayOutput struct{ *pulumi.OutputState }

@@ -30,6 +30,10 @@ namespace Pulumi.Oci.ServiceMesh.Outputs
         /// </summary>
         public readonly string? PathType;
         /// <summary>
+        /// (Updatable) The maximum duration in milliseconds for the target service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the target service, consider either keeping the timeout disabled or set a sufficiently high value.
+        /// </summary>
+        public readonly string? RequestTimeoutInMs;
+        /// <summary>
         /// (Updatable) Type of protocol.
         /// </summary>
         public readonly string Type;
@@ -44,12 +48,15 @@ namespace Pulumi.Oci.ServiceMesh.Outputs
 
             string? pathType,
 
+            string? requestTimeoutInMs,
+
             string type)
         {
             Destinations = destinations;
             IsGrpc = isGrpc;
             Path = path;
             PathType = pathType;
+            RequestTimeoutInMs = requestTimeoutInMs;
             Type = type;
         }
     }

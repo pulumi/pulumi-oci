@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRemotePeeringConnections(args: GetRemotePeeringConnectionsArgs, opts?: pulumi.InvokeOptions): Promise<GetRemotePeeringConnectionsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getRemotePeeringConnections:getRemotePeeringConnections", {
         "compartmentId": args.compartmentId,
         "drgId": args.drgId,
@@ -73,9 +71,26 @@ export interface GetRemotePeeringConnectionsResult {
      */
     readonly remotePeeringConnections: outputs.Core.GetRemotePeeringConnectionsRemotePeeringConnection[];
 }
-
+/**
+ * This data source provides the list of Remote Peering Connections in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the remote peering connections (RPCs) for the specified DRG and compartment
+ * (the RPC's compartment).
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testRemotePeeringConnections = oci.Core.getRemotePeeringConnections({
+ *     compartmentId: _var.compartment_id,
+ *     drgId: oci_core_drg.test_drg.id,
+ * });
+ * ```
+ */
 export function getRemotePeeringConnectionsOutput(args: GetRemotePeeringConnectionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRemotePeeringConnectionsResult> {
-    return pulumi.output(args).apply(a => getRemotePeeringConnections(a, opts))
+    return pulumi.output(args).apply((a: any) => getRemotePeeringConnections(a, opts))
 }
 
 /**

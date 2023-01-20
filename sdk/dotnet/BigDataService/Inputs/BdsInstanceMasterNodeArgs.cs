@@ -15,8 +15,8 @@ namespace Pulumi.Oci.BigDataService.Inputs
         /// <summary>
         /// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
         /// </summary>
-        [Input("blockVolumeSizeInGbs", required: true)]
-        public Input<string> BlockVolumeSizeInGbs { get; set; } = null!;
+        [Input("blockVolumeSizeInGbs")]
+        public Input<string>? BlockVolumeSizeInGbs { get; set; }
 
         /// <summary>
         /// The amount of worker nodes should be created

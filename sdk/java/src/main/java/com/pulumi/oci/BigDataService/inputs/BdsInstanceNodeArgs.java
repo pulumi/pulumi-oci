@@ -214,14 +214,14 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The state of the BDS instance
+     * (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return The state of the BDS instance
+     * @return (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
      * 
      */
     public Optional<Output<String>> state() {
@@ -581,7 +581,7 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param state The state of the BDS instance
+         * @param state (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
          * 
          * @return builder
          * 
@@ -592,7 +592,7 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param state The state of the BDS instance
+         * @param state (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
          * 
          * @return builder
          * 

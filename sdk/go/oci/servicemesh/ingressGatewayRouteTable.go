@@ -51,6 +51,7 @@ import (
 //						IsPathRewriteEnabled: pulumi.Any(_var.Ingress_gateway_route_table_route_rules_is_path_rewrite_enabled),
 //						Path:                 pulumi.Any(_var.Ingress_gateway_route_table_route_rules_path),
 //						PathType:             pulumi.Any(_var.Ingress_gateway_route_table_route_rules_path_type),
+//						RequestTimeoutInMs:   pulumi.Any(_var.Ingress_gateway_route_table_route_rules_request_timeout_in_ms),
 //					},
 //				},
 //				DefinedTags: pulumi.AnyMap{

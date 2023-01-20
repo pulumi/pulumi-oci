@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDatabaseUpgradeHistoryEntryResult> InvokeAsync(GetDatabaseUpgradeHistoryEntryArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDatabaseUpgradeHistoryEntryResult>("oci:Database/getDatabaseUpgradeHistoryEntry:getDatabaseUpgradeHistoryEntry", args ?? new GetDatabaseUpgradeHistoryEntryArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDatabaseUpgradeHistoryEntryResult>("oci:Database/getDatabaseUpgradeHistoryEntry:getDatabaseUpgradeHistoryEntry", args ?? new GetDatabaseUpgradeHistoryEntryArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Database Upgrade History Entry resource in Oracle Cloud Infrastructure Database service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDatabaseUpgradeHistoryEntryResult> Invoke(GetDatabaseUpgradeHistoryEntryInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDatabaseUpgradeHistoryEntryResult>("oci:Database/getDatabaseUpgradeHistoryEntry:getDatabaseUpgradeHistoryEntry", args ?? new GetDatabaseUpgradeHistoryEntryInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDatabaseUpgradeHistoryEntryResult>("oci:Database/getDatabaseUpgradeHistoryEntry:getDatabaseUpgradeHistoryEntry", args ?? new GetDatabaseUpgradeHistoryEntryInvokeArgs(), options.WithDefaults());
     }
 
 

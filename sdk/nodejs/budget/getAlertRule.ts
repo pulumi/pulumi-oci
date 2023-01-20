@@ -22,11 +22,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAlertRule(args: GetAlertRuleArgs, opts?: pulumi.InvokeOptions): Promise<GetAlertRuleResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Budget/getAlertRule:getAlertRule", {
         "alertRuleId": args.alertRuleId,
         "budgetId": args.budgetId,
@@ -113,9 +110,25 @@ export interface GetAlertRuleResult {
      */
     readonly version: number;
 }
-
+/**
+ * This data source provides details about a specific Alert Rule resource in Oracle Cloud Infrastructure Budget service.
+ *
+ * Gets an Alert Rule for a specified budget.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAlertRule = oci.Budget.getAlertRule({
+ *     alertRuleId: oci_budget_alert_rule.test_alert_rule.id,
+ *     budgetId: oci_budget_budget.test_budget.id,
+ * });
+ * ```
+ */
 export function getAlertRuleOutput(args: GetAlertRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAlertRuleResult> {
-    return pulumi.output(args).apply(a => getAlertRule(a, opts))
+    return pulumi.output(args).apply((a: any) => getAlertRule(a, opts))
 }
 
 /**

@@ -5,35 +5,101 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./encryptedData";
-export * from "./generatedKey";
-export * from "./getDecryptedData";
-export * from "./getEncryptedData";
-export * from "./getKey";
-export * from "./getKeyVersion";
-export * from "./getKeyVersions";
-export * from "./getKeys";
-export * from "./getReplicationStatus";
-export * from "./getVault";
-export * from "./getVaultReplicas";
-export * from "./getVaultUsage";
-export * from "./getVaults";
-export * from "./key";
-export * from "./keyVersion";
-export * from "./sign";
-export * from "./vault";
-export * from "./vaultVerification";
-export * from "./verify";
+export { EncryptedDataArgs, EncryptedDataState } from "./encryptedData";
+export type EncryptedData = import("./encryptedData").EncryptedData;
+export const EncryptedData: typeof import("./encryptedData").EncryptedData = null as any;
+utilities.lazyLoad(exports, ["EncryptedData"], () => require("./encryptedData"));
 
-// Import resources to register:
-import { EncryptedData } from "./encryptedData";
-import { GeneratedKey } from "./generatedKey";
-import { Key } from "./key";
-import { KeyVersion } from "./keyVersion";
-import { Sign } from "./sign";
-import { Vault } from "./vault";
-import { VaultVerification } from "./vaultVerification";
-import { Verify } from "./verify";
+export { GeneratedKeyArgs, GeneratedKeyState } from "./generatedKey";
+export type GeneratedKey = import("./generatedKey").GeneratedKey;
+export const GeneratedKey: typeof import("./generatedKey").GeneratedKey = null as any;
+utilities.lazyLoad(exports, ["GeneratedKey"], () => require("./generatedKey"));
+
+export { GetDecryptedDataArgs, GetDecryptedDataResult, GetDecryptedDataOutputArgs } from "./getDecryptedData";
+export const getDecryptedData: typeof import("./getDecryptedData").getDecryptedData = null as any;
+export const getDecryptedDataOutput: typeof import("./getDecryptedData").getDecryptedDataOutput = null as any;
+utilities.lazyLoad(exports, ["getDecryptedData","getDecryptedDataOutput"], () => require("./getDecryptedData"));
+
+export { GetEncryptedDataArgs, GetEncryptedDataResult, GetEncryptedDataOutputArgs } from "./getEncryptedData";
+export const getEncryptedData: typeof import("./getEncryptedData").getEncryptedData = null as any;
+export const getEncryptedDataOutput: typeof import("./getEncryptedData").getEncryptedDataOutput = null as any;
+utilities.lazyLoad(exports, ["getEncryptedData","getEncryptedDataOutput"], () => require("./getEncryptedData"));
+
+export { GetKeyArgs, GetKeyResult, GetKeyOutputArgs } from "./getKey";
+export const getKey: typeof import("./getKey").getKey = null as any;
+export const getKeyOutput: typeof import("./getKey").getKeyOutput = null as any;
+utilities.lazyLoad(exports, ["getKey","getKeyOutput"], () => require("./getKey"));
+
+export { GetKeyVersionArgs, GetKeyVersionResult, GetKeyVersionOutputArgs } from "./getKeyVersion";
+export const getKeyVersion: typeof import("./getKeyVersion").getKeyVersion = null as any;
+export const getKeyVersionOutput: typeof import("./getKeyVersion").getKeyVersionOutput = null as any;
+utilities.lazyLoad(exports, ["getKeyVersion","getKeyVersionOutput"], () => require("./getKeyVersion"));
+
+export { GetKeyVersionsArgs, GetKeyVersionsResult, GetKeyVersionsOutputArgs } from "./getKeyVersions";
+export const getKeyVersions: typeof import("./getKeyVersions").getKeyVersions = null as any;
+export const getKeyVersionsOutput: typeof import("./getKeyVersions").getKeyVersionsOutput = null as any;
+utilities.lazyLoad(exports, ["getKeyVersions","getKeyVersionsOutput"], () => require("./getKeyVersions"));
+
+export { GetKeysArgs, GetKeysResult, GetKeysOutputArgs } from "./getKeys";
+export const getKeys: typeof import("./getKeys").getKeys = null as any;
+export const getKeysOutput: typeof import("./getKeys").getKeysOutput = null as any;
+utilities.lazyLoad(exports, ["getKeys","getKeysOutput"], () => require("./getKeys"));
+
+export { GetReplicationStatusArgs, GetReplicationStatusResult, GetReplicationStatusOutputArgs } from "./getReplicationStatus";
+export const getReplicationStatus: typeof import("./getReplicationStatus").getReplicationStatus = null as any;
+export const getReplicationStatusOutput: typeof import("./getReplicationStatus").getReplicationStatusOutput = null as any;
+utilities.lazyLoad(exports, ["getReplicationStatus","getReplicationStatusOutput"], () => require("./getReplicationStatus"));
+
+export { GetVaultArgs, GetVaultResult, GetVaultOutputArgs } from "./getVault";
+export const getVault: typeof import("./getVault").getVault = null as any;
+export const getVaultOutput: typeof import("./getVault").getVaultOutput = null as any;
+utilities.lazyLoad(exports, ["getVault","getVaultOutput"], () => require("./getVault"));
+
+export { GetVaultReplicasArgs, GetVaultReplicasResult, GetVaultReplicasOutputArgs } from "./getVaultReplicas";
+export const getVaultReplicas: typeof import("./getVaultReplicas").getVaultReplicas = null as any;
+export const getVaultReplicasOutput: typeof import("./getVaultReplicas").getVaultReplicasOutput = null as any;
+utilities.lazyLoad(exports, ["getVaultReplicas","getVaultReplicasOutput"], () => require("./getVaultReplicas"));
+
+export { GetVaultUsageArgs, GetVaultUsageResult, GetVaultUsageOutputArgs } from "./getVaultUsage";
+export const getVaultUsage: typeof import("./getVaultUsage").getVaultUsage = null as any;
+export const getVaultUsageOutput: typeof import("./getVaultUsage").getVaultUsageOutput = null as any;
+utilities.lazyLoad(exports, ["getVaultUsage","getVaultUsageOutput"], () => require("./getVaultUsage"));
+
+export { GetVaultsArgs, GetVaultsResult, GetVaultsOutputArgs } from "./getVaults";
+export const getVaults: typeof import("./getVaults").getVaults = null as any;
+export const getVaultsOutput: typeof import("./getVaults").getVaultsOutput = null as any;
+utilities.lazyLoad(exports, ["getVaults","getVaultsOutput"], () => require("./getVaults"));
+
+export { KeyArgs, KeyState } from "./key";
+export type Key = import("./key").Key;
+export const Key: typeof import("./key").Key = null as any;
+utilities.lazyLoad(exports, ["Key"], () => require("./key"));
+
+export { KeyVersionArgs, KeyVersionState } from "./keyVersion";
+export type KeyVersion = import("./keyVersion").KeyVersion;
+export const KeyVersion: typeof import("./keyVersion").KeyVersion = null as any;
+utilities.lazyLoad(exports, ["KeyVersion"], () => require("./keyVersion"));
+
+export { SignArgs, SignState } from "./sign";
+export type Sign = import("./sign").Sign;
+export const Sign: typeof import("./sign").Sign = null as any;
+utilities.lazyLoad(exports, ["Sign"], () => require("./sign"));
+
+export { VaultArgs, VaultState } from "./vault";
+export type Vault = import("./vault").Vault;
+export const Vault: typeof import("./vault").Vault = null as any;
+utilities.lazyLoad(exports, ["Vault"], () => require("./vault"));
+
+export { VaultVerificationArgs, VaultVerificationState } from "./vaultVerification";
+export type VaultVerification = import("./vaultVerification").VaultVerification;
+export const VaultVerification: typeof import("./vaultVerification").VaultVerification = null as any;
+utilities.lazyLoad(exports, ["VaultVerification"], () => require("./vaultVerification"));
+
+export { VerifyArgs, VerifyState } from "./verify";
+export type Verify = import("./verify").Verify;
+export const Verify: typeof import("./verify").Verify = null as any;
+utilities.lazyLoad(exports, ["Verify"], () => require("./verify"));
+
 
 const _module = {
     version: utilities.getVersion(),

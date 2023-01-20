@@ -63,7 +63,7 @@ namespace Pulumi.Oci.OsManagement
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetManagedInstanceModuleStreamsResult> InvokeAsync(GetManagedInstanceModuleStreamsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetManagedInstanceModuleStreamsResult>("oci:OsManagement/getManagedInstanceModuleStreams:getManagedInstanceModuleStreams", args ?? new GetManagedInstanceModuleStreamsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedInstanceModuleStreamsResult>("oci:OsManagement/getManagedInstanceModuleStreams:getManagedInstanceModuleStreams", args ?? new GetManagedInstanceModuleStreamsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Managed Instance Module Streams in Oracle Cloud Infrastructure OS Management service.
@@ -117,7 +117,7 @@ namespace Pulumi.Oci.OsManagement
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetManagedInstanceModuleStreamsResult> Invoke(GetManagedInstanceModuleStreamsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetManagedInstanceModuleStreamsResult>("oci:OsManagement/getManagedInstanceModuleStreams:getManagedInstanceModuleStreams", args ?? new GetManagedInstanceModuleStreamsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstanceModuleStreamsResult>("oci:OsManagement/getManagedInstanceModuleStreams:getManagedInstanceModuleStreams", args ?? new GetManagedInstanceModuleStreamsInvokeArgs(), options.WithDefaults());
     }
 
 

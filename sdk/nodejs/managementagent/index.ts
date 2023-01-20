@@ -5,22 +5,66 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./getManagementAgent";
-export * from "./getManagementAgentAvailableHistories";
-export * from "./getManagementAgentCount";
-export * from "./getManagementAgentGetAutoUpgradableConfig";
-export * from "./getManagementAgentImages";
-export * from "./getManagementAgentInstallKey";
-export * from "./getManagementAgentInstallKeys";
-export * from "./getManagementAgentPluginCount";
-export * from "./getManagementAgentPlugins";
-export * from "./getManagementAgents";
-export * from "./managementAgent";
-export * from "./managementAgentInstallKey";
+export { GetManagementAgentArgs, GetManagementAgentResult, GetManagementAgentOutputArgs } from "./getManagementAgent";
+export const getManagementAgent: typeof import("./getManagementAgent").getManagementAgent = null as any;
+export const getManagementAgentOutput: typeof import("./getManagementAgent").getManagementAgentOutput = null as any;
+utilities.lazyLoad(exports, ["getManagementAgent","getManagementAgentOutput"], () => require("./getManagementAgent"));
 
-// Import resources to register:
-import { ManagementAgent } from "./managementAgent";
-import { ManagementAgentInstallKey } from "./managementAgentInstallKey";
+export { GetManagementAgentAvailableHistoriesArgs, GetManagementAgentAvailableHistoriesResult, GetManagementAgentAvailableHistoriesOutputArgs } from "./getManagementAgentAvailableHistories";
+export const getManagementAgentAvailableHistories: typeof import("./getManagementAgentAvailableHistories").getManagementAgentAvailableHistories = null as any;
+export const getManagementAgentAvailableHistoriesOutput: typeof import("./getManagementAgentAvailableHistories").getManagementAgentAvailableHistoriesOutput = null as any;
+utilities.lazyLoad(exports, ["getManagementAgentAvailableHistories","getManagementAgentAvailableHistoriesOutput"], () => require("./getManagementAgentAvailableHistories"));
+
+export { GetManagementAgentCountArgs, GetManagementAgentCountResult, GetManagementAgentCountOutputArgs } from "./getManagementAgentCount";
+export const getManagementAgentCount: typeof import("./getManagementAgentCount").getManagementAgentCount = null as any;
+export const getManagementAgentCountOutput: typeof import("./getManagementAgentCount").getManagementAgentCountOutput = null as any;
+utilities.lazyLoad(exports, ["getManagementAgentCount","getManagementAgentCountOutput"], () => require("./getManagementAgentCount"));
+
+export { GetManagementAgentGetAutoUpgradableConfigArgs, GetManagementAgentGetAutoUpgradableConfigResult, GetManagementAgentGetAutoUpgradableConfigOutputArgs } from "./getManagementAgentGetAutoUpgradableConfig";
+export const getManagementAgentGetAutoUpgradableConfig: typeof import("./getManagementAgentGetAutoUpgradableConfig").getManagementAgentGetAutoUpgradableConfig = null as any;
+export const getManagementAgentGetAutoUpgradableConfigOutput: typeof import("./getManagementAgentGetAutoUpgradableConfig").getManagementAgentGetAutoUpgradableConfigOutput = null as any;
+utilities.lazyLoad(exports, ["getManagementAgentGetAutoUpgradableConfig","getManagementAgentGetAutoUpgradableConfigOutput"], () => require("./getManagementAgentGetAutoUpgradableConfig"));
+
+export { GetManagementAgentImagesArgs, GetManagementAgentImagesResult, GetManagementAgentImagesOutputArgs } from "./getManagementAgentImages";
+export const getManagementAgentImages: typeof import("./getManagementAgentImages").getManagementAgentImages = null as any;
+export const getManagementAgentImagesOutput: typeof import("./getManagementAgentImages").getManagementAgentImagesOutput = null as any;
+utilities.lazyLoad(exports, ["getManagementAgentImages","getManagementAgentImagesOutput"], () => require("./getManagementAgentImages"));
+
+export { GetManagementAgentInstallKeyArgs, GetManagementAgentInstallKeyResult, GetManagementAgentInstallKeyOutputArgs } from "./getManagementAgentInstallKey";
+export const getManagementAgentInstallKey: typeof import("./getManagementAgentInstallKey").getManagementAgentInstallKey = null as any;
+export const getManagementAgentInstallKeyOutput: typeof import("./getManagementAgentInstallKey").getManagementAgentInstallKeyOutput = null as any;
+utilities.lazyLoad(exports, ["getManagementAgentInstallKey","getManagementAgentInstallKeyOutput"], () => require("./getManagementAgentInstallKey"));
+
+export { GetManagementAgentInstallKeysArgs, GetManagementAgentInstallKeysResult, GetManagementAgentInstallKeysOutputArgs } from "./getManagementAgentInstallKeys";
+export const getManagementAgentInstallKeys: typeof import("./getManagementAgentInstallKeys").getManagementAgentInstallKeys = null as any;
+export const getManagementAgentInstallKeysOutput: typeof import("./getManagementAgentInstallKeys").getManagementAgentInstallKeysOutput = null as any;
+utilities.lazyLoad(exports, ["getManagementAgentInstallKeys","getManagementAgentInstallKeysOutput"], () => require("./getManagementAgentInstallKeys"));
+
+export { GetManagementAgentPluginCountArgs, GetManagementAgentPluginCountResult, GetManagementAgentPluginCountOutputArgs } from "./getManagementAgentPluginCount";
+export const getManagementAgentPluginCount: typeof import("./getManagementAgentPluginCount").getManagementAgentPluginCount = null as any;
+export const getManagementAgentPluginCountOutput: typeof import("./getManagementAgentPluginCount").getManagementAgentPluginCountOutput = null as any;
+utilities.lazyLoad(exports, ["getManagementAgentPluginCount","getManagementAgentPluginCountOutput"], () => require("./getManagementAgentPluginCount"));
+
+export { GetManagementAgentPluginsArgs, GetManagementAgentPluginsResult, GetManagementAgentPluginsOutputArgs } from "./getManagementAgentPlugins";
+export const getManagementAgentPlugins: typeof import("./getManagementAgentPlugins").getManagementAgentPlugins = null as any;
+export const getManagementAgentPluginsOutput: typeof import("./getManagementAgentPlugins").getManagementAgentPluginsOutput = null as any;
+utilities.lazyLoad(exports, ["getManagementAgentPlugins","getManagementAgentPluginsOutput"], () => require("./getManagementAgentPlugins"));
+
+export { GetManagementAgentsArgs, GetManagementAgentsResult, GetManagementAgentsOutputArgs } from "./getManagementAgents";
+export const getManagementAgents: typeof import("./getManagementAgents").getManagementAgents = null as any;
+export const getManagementAgentsOutput: typeof import("./getManagementAgents").getManagementAgentsOutput = null as any;
+utilities.lazyLoad(exports, ["getManagementAgents","getManagementAgentsOutput"], () => require("./getManagementAgents"));
+
+export { ManagementAgentArgs, ManagementAgentState } from "./managementAgent";
+export type ManagementAgent = import("./managementAgent").ManagementAgent;
+export const ManagementAgent: typeof import("./managementAgent").ManagementAgent = null as any;
+utilities.lazyLoad(exports, ["ManagementAgent"], () => require("./managementAgent"));
+
+export { ManagementAgentInstallKeyArgs, ManagementAgentInstallKeyState } from "./managementAgentInstallKey";
+export type ManagementAgentInstallKey = import("./managementAgentInstallKey").ManagementAgentInstallKey;
+export const ManagementAgentInstallKey: typeof import("./managementAgentInstallKey").ManagementAgentInstallKey = null as any;
+utilities.lazyLoad(exports, ["ManagementAgentInstallKey"], () => require("./managementAgentInstallKey"));
+
 
 const _module = {
     version: utilities.getVersion(),

@@ -23,10 +23,13 @@ class GetVmClusterRecommendedNetworkResult:
     """
     A collection of values returned by getVmClusterRecommendedNetwork.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, display_name=None, dns=None, exadata_infrastructure_id=None, freeform_tags=None, id=None, networks=None, ntps=None, scan_listener_port_tcp=None, scan_listener_port_tcp_ssl=None, scans=None, vm_networks=None):
+    def __init__(__self__, compartment_id=None, db_servers=None, defined_tags=None, display_name=None, dns=None, exadata_infrastructure_id=None, freeform_tags=None, id=None, networks=None, ntps=None, scan_listener_port_tcp=None, scan_listener_port_tcp_ssl=None, scans=None, vm_networks=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if db_servers and not isinstance(db_servers, list):
+            raise TypeError("Expected argument 'db_servers' to be a list")
+        pulumi.set(__self__, "db_servers", db_servers)
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -71,6 +74,11 @@ class GetVmClusterRecommendedNetworkResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="dbServers")
+    def db_servers(self) -> Optional[Sequence[str]]:
+        return pulumi.get(self, "db_servers")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -170,6 +178,7 @@ class AwaitableGetVmClusterRecommendedNetworkResult(GetVmClusterRecommendedNetwo
             yield self
         return GetVmClusterRecommendedNetworkResult(
             compartment_id=self.compartment_id,
+            db_servers=self.db_servers,
             defined_tags=self.defined_tags,
             display_name=self.display_name,
             dns=self.dns,
@@ -185,6 +194,7 @@ class AwaitableGetVmClusterRecommendedNetworkResult(GetVmClusterRecommendedNetwo
 
 
 def get_vm_cluster_recommended_network(compartment_id: Optional[str] = None,
+                                       db_servers: Optional[Sequence[str]] = None,
                                        defined_tags: Optional[Mapping[str, Any]] = None,
                                        display_name: Optional[str] = None,
                                        dns: Optional[Sequence[str]] = None,
@@ -202,6 +212,7 @@ def get_vm_cluster_recommended_network(compartment_id: Optional[str] = None,
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    :param Sequence[str] db_servers: The list of Db server Ids to configure network.
     :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
     :param str display_name: The user-friendly name for the VM cluster network. The name does not need to be unique.
     :param Sequence[str] dns: The list of DNS server IP addresses. Maximum of 3 allowed.
@@ -214,6 +225,7 @@ def get_vm_cluster_recommended_network(compartment_id: Optional[str] = None,
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
+    __args__['dbServers'] = db_servers
     __args__['definedTags'] = defined_tags
     __args__['displayName'] = display_name
     __args__['dns'] = dns
@@ -228,6 +240,7 @@ def get_vm_cluster_recommended_network(compartment_id: Optional[str] = None,
 
     return AwaitableGetVmClusterRecommendedNetworkResult(
         compartment_id=__ret__.compartment_id,
+        db_servers=__ret__.db_servers,
         defined_tags=__ret__.defined_tags,
         display_name=__ret__.display_name,
         dns=__ret__.dns,
@@ -244,6 +257,7 @@ def get_vm_cluster_recommended_network(compartment_id: Optional[str] = None,
 
 @_utilities.lift_output_func(get_vm_cluster_recommended_network)
 def get_vm_cluster_recommended_network_output(compartment_id: Optional[pulumi.Input[str]] = None,
+                                              db_servers: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                               defined_tags: Optional[pulumi.Input[Optional[Mapping[str, Any]]]] = None,
                                               display_name: Optional[pulumi.Input[str]] = None,
                                               dns: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
@@ -261,6 +275,7 @@ def get_vm_cluster_recommended_network_output(compartment_id: Optional[pulumi.In
 
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+    :param Sequence[str] db_servers: The list of Db server Ids to configure network.
     :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
     :param str display_name: The user-friendly name for the VM cluster network. The name does not need to be unique.
     :param Sequence[str] dns: The list of DNS server IP addresses. Maximum of 3 allowed.

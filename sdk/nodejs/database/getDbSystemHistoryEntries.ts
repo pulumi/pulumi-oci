@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDbSystemHistoryEntries(args: GetDbSystemHistoryEntriesArgs, opts?: pulumi.InvokeOptions): Promise<GetDbSystemHistoryEntriesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getDbSystemHistoryEntries:getDbSystemHistoryEntries", {
         "dbSystemId": args.dbSystemId,
         "filters": args.filters,
@@ -59,9 +57,24 @@ export interface GetDbSystemHistoryEntriesResult {
      */
     readonly patchHistoryEntries: outputs.Database.GetDbSystemHistoryEntriesPatchHistoryEntry[];
 }
-
+/**
+ * This data source provides the list of Db System Patch History Entries in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets the history of the patch actions performed on the specified DB system.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDbSystemPatchHistoryEntries = oci.Database.getDbSystemHistoryEntries({
+ *     dbSystemId: oci_database_db_system.test_db_system.id,
+ * });
+ * ```
+ */
 export function getDbSystemHistoryEntriesOutput(args: GetDbSystemHistoryEntriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbSystemHistoryEntriesResult> {
-    return pulumi.output(args).apply(a => getDbSystemHistoryEntries(a, opts))
+    return pulumi.output(args).apply((a: any) => getDbSystemHistoryEntries(a, opts))
 }
 
 /**

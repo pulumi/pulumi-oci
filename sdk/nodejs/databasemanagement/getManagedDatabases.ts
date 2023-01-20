@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -31,11 +32,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabases(args: GetManagedDatabasesArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabasesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabases:getManagedDatabases", {
         "compartmentId": args.compartmentId,
         "deploymentType": args.deploymentType,
@@ -103,9 +101,33 @@ export interface GetManagedDatabasesResult {
      */
     readonly name?: string;
 }
-
+/**
+ * This data source provides the list of Managed Databases in Oracle Cloud Infrastructure Database Management service.
+ *
+ * Gets the Managed Database for a specific ID or the list of Managed Databases in a specific compartment.
+ * Managed Databases can be filtered based on the name parameter. Only one of the parameters, ID or name
+ * should be provided. If neither of these parameters is provided, all the Managed Databases in the compartment
+ * are listed. Managed Databases can also be filtered based on the deployment type and management option.
+ * If the deployment type is not specified or if it is `ONPREMISE`, then the management option is not
+ * considered and Managed Databases with `ADVANCED` management option are listed.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testManagedDatabases = oci.DatabaseManagement.getManagedDatabases({
+ *     compartmentId: _var.compartment_id,
+ *     deploymentType: _var.managed_database_deployment_type,
+ *     id: _var.managed_database_id,
+ *     managementOption: _var.managed_database_management_option,
+ *     name: _var.managed_database_name,
+ * });
+ * ```
+ */
 export function getManagedDatabasesOutput(args: GetManagedDatabasesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabasesResult> {
-    return pulumi.output(args).apply(a => getManagedDatabases(a, opts))
+    return pulumi.output(args).apply((a: any) => getManagedDatabases(a, opts))
 }
 
 /**

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVmClusterPatches(args: GetVmClusterPatchesArgs, opts?: pulumi.InvokeOptions): Promise<GetVmClusterPatchesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getVmClusterPatches:getVmClusterPatches", {
         "filters": args.filters,
         "vmClusterId": args.vmClusterId,
@@ -59,9 +57,24 @@ export interface GetVmClusterPatchesResult {
     readonly patches: outputs.Database.GetVmClusterPatchesPatch[];
     readonly vmClusterId: string;
 }
-
+/**
+ * This data source provides the list of Vm Cluster Patches in Oracle Cloud Infrastructure Database service.
+ *
+ * Lists the patches applicable to the specified VM cluster in an Exadata Cloud@Customer system.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testVmClusterPatches = oci.Database.getVmClusterPatches({
+ *     vmClusterId: oci_database_vm_cluster.test_vm_cluster.id,
+ * });
+ * ```
+ */
 export function getVmClusterPatchesOutput(args: GetVmClusterPatchesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVmClusterPatchesResult> {
-    return pulumi.output(args).apply(a => getVmClusterPatches(a, opts))
+    return pulumi.output(args).apply((a: any) => getVmClusterPatches(a, opts))
 }
 
 /**

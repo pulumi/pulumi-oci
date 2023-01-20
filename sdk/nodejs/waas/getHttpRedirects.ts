@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -27,11 +28,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getHttpRedirects(args: GetHttpRedirectsArgs, opts?: pulumi.InvokeOptions): Promise<GetHttpRedirectsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Waas/getHttpRedirects:getHttpRedirects", {
         "compartmentId": args.compartmentId,
         "displayNames": args.displayNames,
@@ -97,9 +95,29 @@ export interface GetHttpRedirectsResult {
     readonly timeCreatedGreaterThanOrEqualTo?: string;
     readonly timeCreatedLessThan?: string;
 }
-
+/**
+ * This data source provides the list of Http Redirects in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
+ *
+ * Gets a list of HTTP Redirects.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testHttpRedirects = oci.Waas.getHttpRedirects({
+ *     compartmentId: _var.compartment_id,
+ *     displayNames: _var.http_redirect_display_names,
+ *     ids: _var.http_redirect_ids,
+ *     states: _var.http_redirect_states,
+ *     timeCreatedGreaterThanOrEqualTo: _var.http_redirect_time_created_greater_than_or_equal_to,
+ *     timeCreatedLessThan: _var.http_redirect_time_created_less_than,
+ * });
+ * ```
+ */
 export function getHttpRedirectsOutput(args: GetHttpRedirectsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetHttpRedirectsResult> {
-    return pulumi.output(args).apply(a => getHttpRedirects(a, opts))
+    return pulumi.output(args).apply((a: any) => getHttpRedirects(a, opts))
 }
 
 /**

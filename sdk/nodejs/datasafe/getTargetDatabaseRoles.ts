@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getTargetDatabaseRoles(args: GetTargetDatabaseRolesArgs, opts?: pulumi.InvokeOptions): Promise<GetTargetDatabaseRolesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getTargetDatabaseRoles:getTargetDatabaseRoles", {
         "authenticationType": args.authenticationType,
         "filters": args.filters,
@@ -96,9 +94,28 @@ export interface GetTargetDatabaseRolesResult {
     readonly roles: outputs.DataSafe.GetTargetDatabaseRolesRole[];
     readonly targetDatabaseId: string;
 }
-
+/**
+ * This data source provides the list of Target Database Roles in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Returns a list of role metadata objects.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testTargetDatabaseRoles = oci.DataSafe.getTargetDatabaseRoles({
+ *     targetDatabaseId: oci_data_safe_target_database.test_target_database.id,
+ *     authenticationType: _var.target_database_role_authentication_type,
+ *     isOracleMaintained: _var.target_database_role_is_oracle_maintained,
+ *     roleNames: _var.target_database_role_role_name,
+ *     roleNameContains: _var.target_database_role_role_name_contains,
+ * });
+ * ```
+ */
 export function getTargetDatabaseRolesOutput(args: GetTargetDatabaseRolesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTargetDatabaseRolesResult> {
-    return pulumi.output(args).apply(a => getTargetDatabaseRoles(a, opts))
+    return pulumi.output(args).apply((a: any) => getTargetDatabaseRoles(a, opts))
 }
 
 /**

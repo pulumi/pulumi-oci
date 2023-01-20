@@ -40,7 +40,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetManagedDatabaseUserProxiedForUsersResult> InvokeAsync(GetManagedDatabaseUserProxiedForUsersArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseUserProxiedForUsersResult>("oci:DatabaseManagement/getManagedDatabaseUserProxiedForUsers:getManagedDatabaseUserProxiedForUsers", args ?? new GetManagedDatabaseUserProxiedForUsersArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseUserProxiedForUsersResult>("oci:DatabaseManagement/getManagedDatabaseUserProxiedForUsers:getManagedDatabaseUserProxiedForUsers", args ?? new GetManagedDatabaseUserProxiedForUsersArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Managed Database User Proxied For Users in Oracle Cloud Infrastructure Database Management service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetManagedDatabaseUserProxiedForUsersResult> Invoke(GetManagedDatabaseUserProxiedForUsersInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseUserProxiedForUsersResult>("oci:DatabaseManagement/getManagedDatabaseUserProxiedForUsers:getManagedDatabaseUserProxiedForUsers", args ?? new GetManagedDatabaseUserProxiedForUsersInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseUserProxiedForUsersResult>("oci:DatabaseManagement/getManagedDatabaseUserProxiedForUsers:getManagedDatabaseUserProxiedForUsers", args ?? new GetManagedDatabaseUserProxiedForUsersInvokeArgs(), options.WithDefaults());
     }
 
 

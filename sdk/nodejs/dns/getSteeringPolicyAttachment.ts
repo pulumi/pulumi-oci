@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSteeringPolicyAttachment(args: GetSteeringPolicyAttachmentArgs, opts?: pulumi.InvokeOptions): Promise<GetSteeringPolicyAttachmentResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Dns/getSteeringPolicyAttachment:getSteeringPolicyAttachment", {
         "steeringPolicyAttachmentId": args.steeringPolicyAttachmentId,
     }, opts);
@@ -87,9 +84,24 @@ export interface GetSteeringPolicyAttachmentResult {
      */
     readonly zoneId: string;
 }
-
+/**
+ * This data source provides details about a specific Steering Policy Attachment resource in Oracle Cloud Infrastructure DNS service.
+ *
+ * Gets information about the specified steering policy attachment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSteeringPolicyAttachment = oci.Dns.getSteeringPolicyAttachment({
+ *     steeringPolicyAttachmentId: oci_dns_steering_policy_attachment.test_steering_policy_attachment.id,
+ * });
+ * ```
+ */
 export function getSteeringPolicyAttachmentOutput(args: GetSteeringPolicyAttachmentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSteeringPolicyAttachmentResult> {
-    return pulumi.output(args).apply(a => getSteeringPolicyAttachment(a, opts))
+    return pulumi.output(args).apply((a: any) => getSteeringPolicyAttachment(a, opts))
 }
 
 /**

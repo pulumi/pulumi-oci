@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -31,11 +32,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getBucketSummaries(args: GetBucketSummariesArgs, opts?: pulumi.InvokeOptions): Promise<GetBucketSummariesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ObjectStorage/getBucketSummaries:getBucketSummaries", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -80,9 +78,33 @@ export interface GetBucketSummariesResult {
      */
     readonly namespace: string;
 }
-
+/**
+ * This data source provides the list of Buckets in Oracle Cloud Infrastructure Object Storage service.
+ *
+ * Gets a list of all BucketSummary items in a compartment. A BucketSummary contains only summary fields for the bucket
+ * and does not contain fields like the user-defined metadata.
+ *
+ * ListBuckets returns a BucketSummary containing at most 1000 buckets. To paginate through more buckets, use the returned
+ * `opc-next-page` value with the `page` request parameter.
+ *
+ * To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
+ * talk to an administrator. If you are an administrator who needs to write policies to give users access, see
+ * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testBuckets = oci.ObjectStorage.getBucketSummaries({
+ *     compartmentId: _var.compartment_id,
+ *     namespace: _var.bucket_namespace,
+ * });
+ * ```
+ */
 export function getBucketSummariesOutput(args: GetBucketSummariesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBucketSummariesResult> {
-    return pulumi.output(args).apply(a => getBucketSummaries(a, opts))
+    return pulumi.output(args).apply((a: any) => getBucketSummaries(a, opts))
 }
 
 /**

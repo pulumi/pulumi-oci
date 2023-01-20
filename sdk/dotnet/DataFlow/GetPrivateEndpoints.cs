@@ -43,7 +43,7 @@ namespace Pulumi.Oci.DataFlow
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetPrivateEndpointsResult> InvokeAsync(GetPrivateEndpointsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetPrivateEndpointsResult>("oci:DataFlow/getPrivateEndpoints:getPrivateEndpoints", args ?? new GetPrivateEndpointsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetPrivateEndpointsResult>("oci:DataFlow/getPrivateEndpoints:getPrivateEndpoints", args ?? new GetPrivateEndpointsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Data Flow service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.DataFlow
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetPrivateEndpointsResult> Invoke(GetPrivateEndpointsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetPrivateEndpointsResult>("oci:DataFlow/getPrivateEndpoints:getPrivateEndpoints", args ?? new GetPrivateEndpointsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetPrivateEndpointsResult>("oci:DataFlow/getPrivateEndpoints:getPrivateEndpoints", args ?? new GetPrivateEndpointsInvokeArgs(), options.WithDefaults());
     }
 
 

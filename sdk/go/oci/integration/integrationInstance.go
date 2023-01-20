@@ -155,6 +155,13 @@ func NewIntegrationInstance(ctx *pulumi.Context,
 	if args.MessagePacks == nil {
 		return nil, errors.New("invalid value for required argument 'MessagePacks'")
 	}
+	if args.IdcsAt != nil {
+		args.IdcsAt = pulumi.ToSecret(args.IdcsAt).(pulumi.StringPtrInput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"idcsAt",
+	})
+	opts = append(opts, secrets)
 	var resource IntegrationInstance
 	err := ctx.RegisterResource("oci:Integration/integrationInstance:IntegrationInstance", name, args, &resource, opts...)
 	if err != nil {

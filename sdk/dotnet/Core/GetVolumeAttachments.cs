@@ -46,7 +46,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetVolumeAttachmentsResult> InvokeAsync(GetVolumeAttachmentsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetVolumeAttachmentsResult>("oci:Core/getVolumeAttachments:getVolumeAttachments", args ?? new GetVolumeAttachmentsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetVolumeAttachmentsResult>("oci:Core/getVolumeAttachments:getVolumeAttachments", args ?? new GetVolumeAttachmentsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Volume Attachments in Oracle Cloud Infrastructure Core service.
@@ -83,7 +83,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetVolumeAttachmentsResult> Invoke(GetVolumeAttachmentsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetVolumeAttachmentsResult>("oci:Core/getVolumeAttachments:getVolumeAttachments", args ?? new GetVolumeAttachmentsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetVolumeAttachmentsResult>("oci:Core/getVolumeAttachments:getVolumeAttachments", args ?? new GetVolumeAttachmentsInvokeArgs(), options.WithDefaults());
     }
 
 

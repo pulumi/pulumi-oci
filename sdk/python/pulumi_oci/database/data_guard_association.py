@@ -1500,7 +1500,7 @@ class DataGuardAssociation(pulumi.CustomResource):
             __props__.__dict__["data_collection_options"] = data_collection_options
             if database_admin_password is None and not opts.urn:
                 raise TypeError("Missing required property 'database_admin_password'")
-            __props__.__dict__["database_admin_password"] = database_admin_password
+            __props__.__dict__["database_admin_password"] = None if database_admin_password is None else pulumi.Output.secret(database_admin_password)
             __props__.__dict__["database_defined_tags"] = database_defined_tags
             __props__.__dict__["database_freeform_tags"] = database_freeform_tags
             if database_id is None and not opts.urn:
@@ -1544,6 +1544,8 @@ class DataGuardAssociation(pulumi.CustomResource):
             __props__.__dict__["role"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["databaseAdminPassword"])
+        opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(DataGuardAssociation, __self__).__init__(
             'oci:Database/dataGuardAssociation:DataGuardAssociation',
             resource_name,
@@ -1845,7 +1847,7 @@ class DataGuardAssociation(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="isActiveDataGuardEnabled")
-    def is_active_data_guard_enabled(self) -> pulumi.Output[bool]:
+    def is_active_data_guard_enabled(self) -> pulumi.Output[Optional[bool]]:
         """
         (Updatable) True if active Data Guard is enabled.
         """

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSecretbundleVersions(args: GetSecretbundleVersionsArgs, opts?: pulumi.InvokeOptions): Promise<GetSecretbundleVersionsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Secrets/getSecretbundleVersions:getSecretbundleVersions", {
         "filters": args.filters,
         "secretId": args.secretId,
@@ -62,9 +60,24 @@ export interface GetSecretbundleVersionsResult {
      */
     readonly secretId: string;
 }
-
+/**
+ * This data source provides the list of Secretbundle Versions in Oracle Cloud Infrastructure Secrets service.
+ *
+ * Lists all secret bundle versions for the specified secret.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSecretbundleVersions = oci.Secrets.getSecretbundleVersions({
+ *     secretId: oci_vault_secret.test_secret.id,
+ * });
+ * ```
+ */
 export function getSecretbundleVersionsOutput(args: GetSecretbundleVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecretbundleVersionsResult> {
-    return pulumi.output(args).apply(a => getSecretbundleVersions(a, opts))
+    return pulumi.output(args).apply((a: any) => getSecretbundleVersions(a, opts))
 }
 
 /**

@@ -7,9 +7,16 @@ import com.pulumi.core.annotations.CustomType;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class VirtualDeploymentListener {
+    /**
+     * @return (Updatable) The maximum duration in milliseconds for which the request&#39;s stream may be idle. The value 0 (zero) indicates that the timeout is disabled.
+     * 
+     */
+    private @Nullable String idleTimeoutInMs;
     /**
      * @return (Updatable) Port in which virtual deployment is running.
      * 
@@ -20,8 +27,20 @@ public final class VirtualDeploymentListener {
      * 
      */
     private String protocol;
+    /**
+     * @return (Updatable) The maximum duration in milliseconds for the deployed service to respond to an incoming request through the listener.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP/HTTP2 listeners, and disabled (no timeout) for the GRPC listeners. The value 0 (zero) indicates that the timeout is disabled.  The timeout cannot be configured for the TCP and TLS_PASSTHROUGH listeners.  For streaming responses from the deployed service, consider either keeping the timeout disabled or set a sufficiently high value.
+     * 
+     */
+    private @Nullable String requestTimeoutInMs;
 
     private VirtualDeploymentListener() {}
+    /**
+     * @return (Updatable) The maximum duration in milliseconds for which the request&#39;s stream may be idle. The value 0 (zero) indicates that the timeout is disabled.
+     * 
+     */
+    public Optional<String> idleTimeoutInMs() {
+        return Optional.ofNullable(this.idleTimeoutInMs);
+    }
     /**
      * @return (Updatable) Port in which virtual deployment is running.
      * 
@@ -36,6 +55,13 @@ public final class VirtualDeploymentListener {
     public String protocol() {
         return this.protocol;
     }
+    /**
+     * @return (Updatable) The maximum duration in milliseconds for the deployed service to respond to an incoming request through the listener.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP/HTTP2 listeners, and disabled (no timeout) for the GRPC listeners. The value 0 (zero) indicates that the timeout is disabled.  The timeout cannot be configured for the TCP and TLS_PASSTHROUGH listeners.  For streaming responses from the deployed service, consider either keeping the timeout disabled or set a sufficiently high value.
+     * 
+     */
+    public Optional<String> requestTimeoutInMs() {
+        return Optional.ofNullable(this.requestTimeoutInMs);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -46,15 +72,24 @@ public final class VirtualDeploymentListener {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String idleTimeoutInMs;
         private Integer port;
         private String protocol;
+        private @Nullable String requestTimeoutInMs;
         public Builder() {}
         public Builder(VirtualDeploymentListener defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.idleTimeoutInMs = defaults.idleTimeoutInMs;
     	      this.port = defaults.port;
     	      this.protocol = defaults.protocol;
+    	      this.requestTimeoutInMs = defaults.requestTimeoutInMs;
         }
 
+        @CustomType.Setter
+        public Builder idleTimeoutInMs(@Nullable String idleTimeoutInMs) {
+            this.idleTimeoutInMs = idleTimeoutInMs;
+            return this;
+        }
         @CustomType.Setter
         public Builder port(Integer port) {
             this.port = Objects.requireNonNull(port);
@@ -65,10 +100,17 @@ public final class VirtualDeploymentListener {
             this.protocol = Objects.requireNonNull(protocol);
             return this;
         }
+        @CustomType.Setter
+        public Builder requestTimeoutInMs(@Nullable String requestTimeoutInMs) {
+            this.requestTimeoutInMs = requestTimeoutInMs;
+            return this;
+        }
         public VirtualDeploymentListener build() {
             final var o = new VirtualDeploymentListener();
+            o.idleTimeoutInMs = idleTimeoutInMs;
             o.port = port;
             o.protocol = protocol;
+            o.requestTimeoutInMs = requestTimeoutInMs;
             return o;
         }
     }

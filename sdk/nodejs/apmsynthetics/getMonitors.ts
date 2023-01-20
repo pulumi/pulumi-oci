@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -19,6 +20,8 @@ import * as utilities from "../utilities";
  * const testMonitors = oci.ApmSynthetics.getMonitors({
  *     apmDomainId: oci_apm_synthetics_apm_domain.test_apm_domain.id,
  *     displayName: _var.monitor_display_name,
+ *     isMaintenanceWindowActive: _var.monitor_is_maintenance_window_active,
+ *     isMaintenanceWindowSet: _var.monitor_is_maintenance_window_set,
  *     monitorType: _var.monitor_monitor_type,
  *     scriptId: oci_apm_synthetics_script.test_script.id,
  *     status: _var.monitor_status,
@@ -27,15 +30,14 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMonitors(args: GetMonitorsArgs, opts?: pulumi.InvokeOptions): Promise<GetMonitorsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ApmSynthetics/getMonitors:getMonitors", {
         "apmDomainId": args.apmDomainId,
         "displayName": args.displayName,
         "filters": args.filters,
+        "isMaintenanceWindowActive": args.isMaintenanceWindowActive,
+        "isMaintenanceWindowSet": args.isMaintenanceWindowSet,
         "monitorType": args.monitorType,
         "scriptId": args.scriptId,
         "status": args.status,
@@ -56,6 +58,14 @@ export interface GetMonitorsArgs {
      */
     displayName?: string;
     filters?: inputs.ApmSynthetics.GetMonitorsFilter[];
+    /**
+     * A filter to return the monitors whose maintenance window is currently active.
+     */
+    isMaintenanceWindowActive?: boolean;
+    /**
+     * A filter to return the monitors whose maintenance window is set.
+     */
+    isMaintenanceWindowSet?: boolean;
     /**
      * A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
      */
@@ -88,6 +98,8 @@ export interface GetMonitorsResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    readonly isMaintenanceWindowActive?: boolean;
+    readonly isMaintenanceWindowSet?: boolean;
     /**
      * The list of monitor_collection.
      */
@@ -106,9 +118,31 @@ export interface GetMonitorsResult {
     readonly status?: string;
     readonly vantagePoint?: string;
 }
-
+/**
+ * This data source provides the list of Monitors in Oracle Cloud Infrastructure Apm Synthetics service.
+ *
+ * Returns a list of monitors.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testMonitors = oci.ApmSynthetics.getMonitors({
+ *     apmDomainId: oci_apm_synthetics_apm_domain.test_apm_domain.id,
+ *     displayName: _var.monitor_display_name,
+ *     isMaintenanceWindowActive: _var.monitor_is_maintenance_window_active,
+ *     isMaintenanceWindowSet: _var.monitor_is_maintenance_window_set,
+ *     monitorType: _var.monitor_monitor_type,
+ *     scriptId: oci_apm_synthetics_script.test_script.id,
+ *     status: _var.monitor_status,
+ *     vantagePoint: _var.monitor_vantage_point,
+ * });
+ * ```
+ */
 export function getMonitorsOutput(args: GetMonitorsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMonitorsResult> {
-    return pulumi.output(args).apply(a => getMonitors(a, opts))
+    return pulumi.output(args).apply((a: any) => getMonitors(a, opts))
 }
 
 /**
@@ -124,6 +158,14 @@ export interface GetMonitorsOutputArgs {
      */
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.ApmSynthetics.GetMonitorsFilterArgs>[]>;
+    /**
+     * A filter to return the monitors whose maintenance window is currently active.
+     */
+    isMaintenanceWindowActive?: pulumi.Input<boolean>;
+    /**
+     * A filter to return the monitors whose maintenance window is set.
+     */
+    isMaintenanceWindowSet?: pulumi.Input<boolean>;
     /**
      * A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
      */

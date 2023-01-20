@@ -1428,6 +1428,20 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.timestamp;
     }
     /**
+     * Clone from latest available backup timestamp.
+     * 
+     */
+    @Export(name="useLatestAvailableBackupTimeStamp", type=Boolean.class, parameters={})
+    private Output<Boolean> useLatestAvailableBackupTimeStamp;
+
+    /**
+     * @return Clone from latest available backup timestamp.
+     * 
+     */
+    public Output<Boolean> useLatestAvailableBackupTimeStamp() {
+        return this.useLatestAvailableBackupTimeStamp;
+    }
+    /**
      * The amount of storage that has been used, in terabytes.
      * 
      */
@@ -1502,6 +1516,9 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
+            .additionalSecretOutputs(List.of(
+                "adminPassword"
+            ))
             .build();
         return com.pulumi.resources.CustomResourceOptions.merge(defaultOptions, options, id);
     }

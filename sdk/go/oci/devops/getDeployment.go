@@ -70,6 +70,8 @@ type LookupDeploymentResult struct {
 	DeployPipelineId string `pulumi:"deployPipelineId"`
 	// The OCID of the stage.
 	DeployStageId string `pulumi:"deployStageId"`
+	// Specifies the list of arguments to be overriden per Stage at the time of deployment.
+	DeployStageOverrideArguments []GetDeploymentDeployStageOverrideArgument `pulumi:"deployStageOverrideArguments"`
 	// Specifies list of arguments passed along with the deployment.
 	DeploymentArguments []GetDeploymentDeploymentArgument `pulumi:"deploymentArguments"`
 	// The execution progress details of a deployment.
@@ -96,7 +98,8 @@ type LookupDeploymentResult struct {
 	// Time the deployment was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeCreated string `pulumi:"timeCreated"`
 	// Time the deployment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated                string `pulumi:"timeUpdated"`
+	TriggerNewDevopsDeployment bool   `pulumi:"triggerNewDevopsDeployment"`
 }
 
 func LookupDeploymentOutput(ctx *pulumi.Context, args LookupDeploymentOutputArgs, opts ...pulumi.InvokeOption) LookupDeploymentResultOutput {
@@ -176,6 +179,13 @@ func (o LookupDeploymentResultOutput) DeployStageId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) string { return v.DeployStageId }).(pulumi.StringOutput)
 }
 
+// Specifies the list of arguments to be overriden per Stage at the time of deployment.
+func (o LookupDeploymentResultOutput) DeployStageOverrideArguments() GetDeploymentDeployStageOverrideArgumentArrayOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) []GetDeploymentDeployStageOverrideArgument {
+		return v.DeployStageOverrideArguments
+	}).(GetDeploymentDeployStageOverrideArgumentArrayOutput)
+}
+
 // Specifies list of arguments passed along with the deployment.
 func (o LookupDeploymentResultOutput) DeploymentArguments() GetDeploymentDeploymentArgumentArrayOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) []GetDeploymentDeploymentArgument { return v.DeploymentArguments }).(GetDeploymentDeploymentArgumentArrayOutput)
@@ -245,6 +255,10 @@ func (o LookupDeploymentResultOutput) TimeCreated() pulumi.StringOutput {
 // Time the deployment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 func (o LookupDeploymentResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+func (o LookupDeploymentResultOutput) TriggerNewDevopsDeployment() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) bool { return v.TriggerNewDevopsDeployment }).(pulumi.BoolOutput)
 }
 
 func init() {

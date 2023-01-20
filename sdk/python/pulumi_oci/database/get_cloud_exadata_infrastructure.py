@@ -22,7 +22,13 @@ class GetCloudExadataInfrastructureResult:
     """
     A collection of values returned by getCloudExadataInfrastructure.
     """
-    def __init__(__self__, availability_domain=None, available_storage_size_in_gbs=None, cloud_exadata_infrastructure_id=None, compartment_id=None, compute_count=None, customer_contacts=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, last_maintenance_run_id=None, lifecycle_details=None, maintenance_windows=None, next_maintenance_run_id=None, shape=None, state=None, storage_count=None, time_created=None, total_storage_size_in_gbs=None):
+    def __init__(__self__, activated_storage_count=None, additional_storage_count=None, availability_domain=None, available_storage_size_in_gbs=None, cloud_exadata_infrastructure_id=None, compartment_id=None, compute_count=None, cpu_count=None, customer_contacts=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, last_maintenance_run_id=None, lifecycle_details=None, maintenance_windows=None, max_cpu_count=None, max_data_storage_in_tbs=None, max_db_node_storage_in_gbs=None, max_memory_in_gbs=None, memory_size_in_gbs=None, next_maintenance_run_id=None, shape=None, state=None, storage_count=None, time_created=None, total_storage_size_in_gbs=None):
+        if activated_storage_count and not isinstance(activated_storage_count, int):
+            raise TypeError("Expected argument 'activated_storage_count' to be a int")
+        pulumi.set(__self__, "activated_storage_count", activated_storage_count)
+        if additional_storage_count and not isinstance(additional_storage_count, int):
+            raise TypeError("Expected argument 'additional_storage_count' to be a int")
+        pulumi.set(__self__, "additional_storage_count", additional_storage_count)
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -38,9 +44,18 @@ class GetCloudExadataInfrastructureResult:
         if compute_count and not isinstance(compute_count, int):
             raise TypeError("Expected argument 'compute_count' to be a int")
         pulumi.set(__self__, "compute_count", compute_count)
+        if cpu_count and not isinstance(cpu_count, int):
+            raise TypeError("Expected argument 'cpu_count' to be a int")
+        pulumi.set(__self__, "cpu_count", cpu_count)
         if customer_contacts and not isinstance(customer_contacts, list):
             raise TypeError("Expected argument 'customer_contacts' to be a list")
         pulumi.set(__self__, "customer_contacts", customer_contacts)
+        if data_storage_size_in_tbs and not isinstance(data_storage_size_in_tbs, float):
+            raise TypeError("Expected argument 'data_storage_size_in_tbs' to be a float")
+        pulumi.set(__self__, "data_storage_size_in_tbs", data_storage_size_in_tbs)
+        if db_node_storage_size_in_gbs and not isinstance(db_node_storage_size_in_gbs, int):
+            raise TypeError("Expected argument 'db_node_storage_size_in_gbs' to be a int")
+        pulumi.set(__self__, "db_node_storage_size_in_gbs", db_node_storage_size_in_gbs)
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -62,6 +77,21 @@ class GetCloudExadataInfrastructureResult:
         if maintenance_windows and not isinstance(maintenance_windows, list):
             raise TypeError("Expected argument 'maintenance_windows' to be a list")
         pulumi.set(__self__, "maintenance_windows", maintenance_windows)
+        if max_cpu_count and not isinstance(max_cpu_count, int):
+            raise TypeError("Expected argument 'max_cpu_count' to be a int")
+        pulumi.set(__self__, "max_cpu_count", max_cpu_count)
+        if max_data_storage_in_tbs and not isinstance(max_data_storage_in_tbs, float):
+            raise TypeError("Expected argument 'max_data_storage_in_tbs' to be a float")
+        pulumi.set(__self__, "max_data_storage_in_tbs", max_data_storage_in_tbs)
+        if max_db_node_storage_in_gbs and not isinstance(max_db_node_storage_in_gbs, int):
+            raise TypeError("Expected argument 'max_db_node_storage_in_gbs' to be a int")
+        pulumi.set(__self__, "max_db_node_storage_in_gbs", max_db_node_storage_in_gbs)
+        if max_memory_in_gbs and not isinstance(max_memory_in_gbs, int):
+            raise TypeError("Expected argument 'max_memory_in_gbs' to be a int")
+        pulumi.set(__self__, "max_memory_in_gbs", max_memory_in_gbs)
+        if memory_size_in_gbs and not isinstance(memory_size_in_gbs, int):
+            raise TypeError("Expected argument 'memory_size_in_gbs' to be a int")
+        pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
         if next_maintenance_run_id and not isinstance(next_maintenance_run_id, str):
             raise TypeError("Expected argument 'next_maintenance_run_id' to be a str")
         pulumi.set(__self__, "next_maintenance_run_id", next_maintenance_run_id)
@@ -80,6 +110,22 @@ class GetCloudExadataInfrastructureResult:
         if total_storage_size_in_gbs and not isinstance(total_storage_size_in_gbs, int):
             raise TypeError("Expected argument 'total_storage_size_in_gbs' to be a int")
         pulumi.set(__self__, "total_storage_size_in_gbs", total_storage_size_in_gbs)
+
+    @property
+    @pulumi.getter(name="activatedStorageCount")
+    def activated_storage_count(self) -> int:
+        """
+        The requested number of additional storage servers activated for the Exadata infrastructure.
+        """
+        return pulumi.get(self, "activated_storage_count")
+
+    @property
+    @pulumi.getter(name="additionalStorageCount")
+    def additional_storage_count(self) -> int:
+        """
+        The requested number of additional storage servers for the Exadata infrastructure.
+        """
+        return pulumi.get(self, "additional_storage_count")
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -119,12 +165,36 @@ class GetCloudExadataInfrastructureResult:
         return pulumi.get(self, "compute_count")
 
     @property
+    @pulumi.getter(name="cpuCount")
+    def cpu_count(self) -> int:
+        """
+        The total number of CPU cores allocated.
+        """
+        return pulumi.get(self, "cpu_count")
+
+    @property
     @pulumi.getter(name="customerContacts")
     def customer_contacts(self) -> Sequence['outputs.GetCloudExadataInfrastructureCustomerContactResult']:
         """
         The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure Database service resource. Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators. Up to 10 email addresses can be added to the customer contacts for a cloud Exadata infrastructure instance.
         """
         return pulumi.get(self, "customer_contacts")
+
+    @property
+    @pulumi.getter(name="dataStorageSizeInTbs")
+    def data_storage_size_in_tbs(self) -> float:
+        """
+        Size, in terabytes, of the DATA disk group.
+        """
+        return pulumi.get(self, "data_storage_size_in_tbs")
+
+    @property
+    @pulumi.getter(name="dbNodeStorageSizeInGbs")
+    def db_node_storage_size_in_gbs(self) -> int:
+        """
+        The local node storage allocated in GBs.
+        """
+        return pulumi.get(self, "db_node_storage_size_in_gbs")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -183,6 +253,46 @@ class GetCloudExadataInfrastructureResult:
         return pulumi.get(self, "maintenance_windows")
 
     @property
+    @pulumi.getter(name="maxCpuCount")
+    def max_cpu_count(self) -> int:
+        """
+        The total number of CPU cores available.
+        """
+        return pulumi.get(self, "max_cpu_count")
+
+    @property
+    @pulumi.getter(name="maxDataStorageInTbs")
+    def max_data_storage_in_tbs(self) -> float:
+        """
+        The total available DATA disk group size.
+        """
+        return pulumi.get(self, "max_data_storage_in_tbs")
+
+    @property
+    @pulumi.getter(name="maxDbNodeStorageInGbs")
+    def max_db_node_storage_in_gbs(self) -> int:
+        """
+        The total local node storage available in GBs.
+        """
+        return pulumi.get(self, "max_db_node_storage_in_gbs")
+
+    @property
+    @pulumi.getter(name="maxMemoryInGbs")
+    def max_memory_in_gbs(self) -> int:
+        """
+        The total memory available in GBs.
+        """
+        return pulumi.get(self, "max_memory_in_gbs")
+
+    @property
+    @pulumi.getter(name="memorySizeInGbs")
+    def memory_size_in_gbs(self) -> int:
+        """
+        The memory allocated in GBs.
+        """
+        return pulumi.get(self, "memory_size_in_gbs")
+
+    @property
     @pulumi.getter(name="nextMaintenanceRunId")
     def next_maintenance_run_id(self) -> str:
         """
@@ -237,12 +347,17 @@ class AwaitableGetCloudExadataInfrastructureResult(GetCloudExadataInfrastructure
         if False:
             yield self
         return GetCloudExadataInfrastructureResult(
+            activated_storage_count=self.activated_storage_count,
+            additional_storage_count=self.additional_storage_count,
             availability_domain=self.availability_domain,
             available_storage_size_in_gbs=self.available_storage_size_in_gbs,
             cloud_exadata_infrastructure_id=self.cloud_exadata_infrastructure_id,
             compartment_id=self.compartment_id,
             compute_count=self.compute_count,
+            cpu_count=self.cpu_count,
             customer_contacts=self.customer_contacts,
+            data_storage_size_in_tbs=self.data_storage_size_in_tbs,
+            db_node_storage_size_in_gbs=self.db_node_storage_size_in_gbs,
             defined_tags=self.defined_tags,
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
@@ -250,6 +365,11 @@ class AwaitableGetCloudExadataInfrastructureResult(GetCloudExadataInfrastructure
             last_maintenance_run_id=self.last_maintenance_run_id,
             lifecycle_details=self.lifecycle_details,
             maintenance_windows=self.maintenance_windows,
+            max_cpu_count=self.max_cpu_count,
+            max_data_storage_in_tbs=self.max_data_storage_in_tbs,
+            max_db_node_storage_in_gbs=self.max_db_node_storage_in_gbs,
+            max_memory_in_gbs=self.max_memory_in_gbs,
+            memory_size_in_gbs=self.memory_size_in_gbs,
             next_maintenance_run_id=self.next_maintenance_run_id,
             shape=self.shape,
             state=self.state,
@@ -283,12 +403,17 @@ def get_cloud_exadata_infrastructure(cloud_exadata_infrastructure_id: Optional[s
     __ret__ = pulumi.runtime.invoke('oci:Database/getCloudExadataInfrastructure:getCloudExadataInfrastructure', __args__, opts=opts, typ=GetCloudExadataInfrastructureResult).value
 
     return AwaitableGetCloudExadataInfrastructureResult(
+        activated_storage_count=__ret__.activated_storage_count,
+        additional_storage_count=__ret__.additional_storage_count,
         availability_domain=__ret__.availability_domain,
         available_storage_size_in_gbs=__ret__.available_storage_size_in_gbs,
         cloud_exadata_infrastructure_id=__ret__.cloud_exadata_infrastructure_id,
         compartment_id=__ret__.compartment_id,
         compute_count=__ret__.compute_count,
+        cpu_count=__ret__.cpu_count,
         customer_contacts=__ret__.customer_contacts,
+        data_storage_size_in_tbs=__ret__.data_storage_size_in_tbs,
+        db_node_storage_size_in_gbs=__ret__.db_node_storage_size_in_gbs,
         defined_tags=__ret__.defined_tags,
         display_name=__ret__.display_name,
         freeform_tags=__ret__.freeform_tags,
@@ -296,6 +421,11 @@ def get_cloud_exadata_infrastructure(cloud_exadata_infrastructure_id: Optional[s
         last_maintenance_run_id=__ret__.last_maintenance_run_id,
         lifecycle_details=__ret__.lifecycle_details,
         maintenance_windows=__ret__.maintenance_windows,
+        max_cpu_count=__ret__.max_cpu_count,
+        max_data_storage_in_tbs=__ret__.max_data_storage_in_tbs,
+        max_db_node_storage_in_gbs=__ret__.max_db_node_storage_in_gbs,
+        max_memory_in_gbs=__ret__.max_memory_in_gbs,
+        memory_size_in_gbs=__ret__.memory_size_in_gbs,
         next_maintenance_run_id=__ret__.next_maintenance_run_id,
         shape=__ret__.shape,
         state=__ret__.state,

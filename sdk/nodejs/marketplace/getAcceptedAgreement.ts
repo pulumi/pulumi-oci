@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAcceptedAgreement(args: GetAcceptedAgreementArgs, opts?: pulumi.InvokeOptions): Promise<GetAcceptedAgreementResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Marketplace/getAcceptedAgreement:getAcceptedAgreement", {
         "acceptedAgreementId": args.acceptedAgreementId,
     }, opts);
@@ -84,9 +81,24 @@ export interface GetAcceptedAgreementResult {
      */
     readonly timeAccepted: string;
 }
-
+/**
+ * This data source provides details about a specific Accepted Agreement resource in Oracle Cloud Infrastructure Marketplace service.
+ *
+ * Gets the details of a specific, previously accepted terms of use agreement.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAcceptedAgreement = oci.Marketplace.getAcceptedAgreement({
+ *     acceptedAgreementId: oci_marketplace_accepted_agreement.test_accepted_agreement.id,
+ * });
+ * ```
+ */
 export function getAcceptedAgreementOutput(args: GetAcceptedAgreementOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAcceptedAgreementResult> {
-    return pulumi.output(args).apply(a => getAcceptedAgreement(a, opts))
+    return pulumi.output(args).apply((a: any) => getAcceptedAgreement(a, opts))
 }
 
 /**

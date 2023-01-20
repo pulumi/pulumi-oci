@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDedicatedVmHostInstances(args: GetDedicatedVmHostInstancesArgs, opts?: pulumi.InvokeOptions): Promise<GetDedicatedVmHostInstancesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getDedicatedVmHostInstances:getDedicatedVmHostInstances", {
         "availabilityDomain": args.availabilityDomain,
         "compartmentId": args.compartmentId,
@@ -79,9 +77,26 @@ export interface GetDedicatedVmHostInstancesResult {
      */
     readonly id: string;
 }
-
+/**
+ * This data source provides the list of Dedicated Vm Hosts Instances in Oracle Cloud Infrastructure Core service.
+ *
+ * Returns the list of instances on the dedicated virtual machine hosts that match the specified criteria.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDedicatedVmHostsInstances = oci.Core.getDedicatedVmHostInstances({
+ *     compartmentId: _var.compartment_id,
+ *     dedicatedVmHostId: oci_core_dedicated_vm_host.test_dedicated_vm_host.id,
+ *     availabilityDomain: _var.dedicated_vm_hosts_instance_availability_domain,
+ * });
+ * ```
+ */
 export function getDedicatedVmHostInstancesOutput(args: GetDedicatedVmHostInstancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDedicatedVmHostInstancesResult> {
-    return pulumi.output(args).apply(a => getDedicatedVmHostInstances(a, opts))
+    return pulumi.output(args).apply((a: any) => getDedicatedVmHostInstances(a, opts))
 }
 
 /**

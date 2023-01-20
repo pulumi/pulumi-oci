@@ -186,6 +186,10 @@ namespace Pulumi.Oci.Waas
             var defaultOptions = new CustomResourceOptions
             {
                 Version = Utilities.Version,
+                AdditionalSecretOutputs =
+                {
+                    "privateKeyData",
+                },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -257,11 +261,21 @@ namespace Pulumi.Oci.Waas
         [Input("isTrustVerificationDisabled")]
         public Input<bool>? IsTrustVerificationDisabled { get; set; }
 
+        [Input("privateKeyData", required: true)]
+        private Input<string>? _privateKeyData;
+
         /// <summary>
         /// The private key of the SSL certificate.
         /// </summary>
-        [Input("privateKeyData", required: true)]
-        public Input<string> PrivateKeyData { get; set; } = null!;
+        public Input<string>? PrivateKeyData
+        {
+            get => _privateKeyData;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _privateKeyData = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         public CertificateArgs()
         {
@@ -346,11 +360,21 @@ namespace Pulumi.Oci.Waas
             set => _issuerNames = value;
         }
 
+        [Input("privateKeyData")]
+        private Input<string>? _privateKeyData;
+
         /// <summary>
         /// The private key of the SSL certificate.
         /// </summary>
-        [Input("privateKeyData")]
-        public Input<string>? PrivateKeyData { get; set; }
+        public Input<string>? PrivateKeyData
+        {
+            get => _privateKeyData;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _privateKeyData = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         [Input("publicKeyInfos")]
         private InputList<Inputs.CertificatePublicKeyInfoGetArgs>? _publicKeyInfos;

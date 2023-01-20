@@ -10,6 +10,11 @@ import java.util.Objects;
 @CustomType
 public final class GetVmClusterNetworksVmClusterNetworkVmNetworkNode {
     /**
+     * @return The Db server associated with the node.
+     * 
+     */
+    private String dbServerId;
+    /**
      * @return The node host name.
      * 
      */
@@ -19,6 +24,11 @@ public final class GetVmClusterNetworksVmClusterNetworkVmNetworkNode {
      * 
      */
     private String ip;
+    /**
+     * @return A filter to return only resources that match the given lifecycle state exactly.
+     * 
+     */
+    private String state;
     /**
      * @return The node virtual IP (VIP) address.
      * 
@@ -32,6 +42,13 @@ public final class GetVmClusterNetworksVmClusterNetworkVmNetworkNode {
 
     private GetVmClusterNetworksVmClusterNetworkVmNetworkNode() {}
     /**
+     * @return The Db server associated with the node.
+     * 
+     */
+    public String dbServerId() {
+        return this.dbServerId;
+    }
+    /**
      * @return The node host name.
      * 
      */
@@ -44,6 +61,13 @@ public final class GetVmClusterNetworksVmClusterNetworkVmNetworkNode {
      */
     public String ip() {
         return this.ip;
+    }
+    /**
+     * @return A filter to return only resources that match the given lifecycle state exactly.
+     * 
+     */
+    public String state() {
+        return this.state;
     }
     /**
      * @return The node virtual IP (VIP) address.
@@ -69,19 +93,28 @@ public final class GetVmClusterNetworksVmClusterNetworkVmNetworkNode {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String dbServerId;
         private String hostname;
         private String ip;
+        private String state;
         private String vip;
         private String vipHostname;
         public Builder() {}
         public Builder(GetVmClusterNetworksVmClusterNetworkVmNetworkNode defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.dbServerId = defaults.dbServerId;
     	      this.hostname = defaults.hostname;
     	      this.ip = defaults.ip;
+    	      this.state = defaults.state;
     	      this.vip = defaults.vip;
     	      this.vipHostname = defaults.vipHostname;
         }
 
+        @CustomType.Setter
+        public Builder dbServerId(String dbServerId) {
+            this.dbServerId = Objects.requireNonNull(dbServerId);
+            return this;
+        }
         @CustomType.Setter
         public Builder hostname(String hostname) {
             this.hostname = Objects.requireNonNull(hostname);
@@ -90,6 +123,11 @@ public final class GetVmClusterNetworksVmClusterNetworkVmNetworkNode {
         @CustomType.Setter
         public Builder ip(String ip) {
             this.ip = Objects.requireNonNull(ip);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder state(String state) {
+            this.state = Objects.requireNonNull(state);
             return this;
         }
         @CustomType.Setter
@@ -104,8 +142,10 @@ public final class GetVmClusterNetworksVmClusterNetworkVmNetworkNode {
         }
         public GetVmClusterNetworksVmClusterNetworkVmNetworkNode build() {
             final var o = new GetVmClusterNetworksVmClusterNetworkVmNetworkNode();
+            o.dbServerId = dbServerId;
             o.hostname = hostname;
             o.ip = ip;
+            o.state = state;
             o.vip = vip;
             o.vipHostname = vipHostname;
             return o;

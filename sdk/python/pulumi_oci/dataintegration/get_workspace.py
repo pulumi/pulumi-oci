@@ -21,7 +21,7 @@ class GetWorkspaceResult:
     """
     A collection of values returned by getWorkspace.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, dns_server_ip=None, dns_server_zone=None, freeform_tags=None, id=None, is_force_operation=None, is_private_network_enabled=None, quiesce_timeout=None, state=None, state_message=None, subnet_id=None, time_created=None, time_updated=None, vcn_id=None, workspace_id=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, dns_server_ip=None, dns_server_zone=None, endpoint_compartment_id=None, endpoint_id=None, endpoint_name=None, freeform_tags=None, id=None, is_force_operation=None, is_private_network_enabled=None, quiesce_timeout=None, registry_compartment_id=None, registry_id=None, registry_name=None, state=None, state_message=None, subnet_id=None, time_created=None, time_updated=None, vcn_id=None, workspace_id=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -40,6 +40,15 @@ class GetWorkspaceResult:
         if dns_server_zone and not isinstance(dns_server_zone, str):
             raise TypeError("Expected argument 'dns_server_zone' to be a str")
         pulumi.set(__self__, "dns_server_zone", dns_server_zone)
+        if endpoint_compartment_id and not isinstance(endpoint_compartment_id, str):
+            raise TypeError("Expected argument 'endpoint_compartment_id' to be a str")
+        pulumi.set(__self__, "endpoint_compartment_id", endpoint_compartment_id)
+        if endpoint_id and not isinstance(endpoint_id, str):
+            raise TypeError("Expected argument 'endpoint_id' to be a str")
+        pulumi.set(__self__, "endpoint_id", endpoint_id)
+        if endpoint_name and not isinstance(endpoint_name, str):
+            raise TypeError("Expected argument 'endpoint_name' to be a str")
+        pulumi.set(__self__, "endpoint_name", endpoint_name)
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -55,6 +64,15 @@ class GetWorkspaceResult:
         if quiesce_timeout and not isinstance(quiesce_timeout, int):
             raise TypeError("Expected argument 'quiesce_timeout' to be a int")
         pulumi.set(__self__, "quiesce_timeout", quiesce_timeout)
+        if registry_compartment_id and not isinstance(registry_compartment_id, str):
+            raise TypeError("Expected argument 'registry_compartment_id' to be a str")
+        pulumi.set(__self__, "registry_compartment_id", registry_compartment_id)
+        if registry_id and not isinstance(registry_id, str):
+            raise TypeError("Expected argument 'registry_id' to be a str")
+        pulumi.set(__self__, "registry_id", registry_id)
+        if registry_name and not isinstance(registry_name, str):
+            raise TypeError("Expected argument 'registry_name' to be a str")
+        pulumi.set(__self__, "registry_name", registry_name)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -126,6 +144,27 @@ class GetWorkspaceResult:
         return pulumi.get(self, "dns_server_zone")
 
     @property
+    @pulumi.getter(name="endpointCompartmentId")
+    def endpoint_compartment_id(self) -> str:
+        return pulumi.get(self, "endpoint_compartment_id")
+
+    @property
+    @pulumi.getter(name="endpointId")
+    def endpoint_id(self) -> str:
+        """
+        DCMS endpoint associated with the container/workspace. Returns null if there is none.
+        """
+        return pulumi.get(self, "endpoint_id")
+
+    @property
+    @pulumi.getter(name="endpointName")
+    def endpoint_name(self) -> str:
+        """
+        Name of the private endpoint associated with the container/workspace. Returns null if there is none.
+        """
+        return pulumi.get(self, "endpoint_name")
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, Any]:
         """
@@ -158,6 +197,24 @@ class GetWorkspaceResult:
     @pulumi.getter(name="quiesceTimeout")
     def quiesce_timeout(self) -> int:
         return pulumi.get(self, "quiesce_timeout")
+
+    @property
+    @pulumi.getter(name="registryCompartmentId")
+    def registry_compartment_id(self) -> str:
+        return pulumi.get(self, "registry_compartment_id")
+
+    @property
+    @pulumi.getter(name="registryId")
+    def registry_id(self) -> str:
+        """
+        DCMS registry associated with the container/workspace. Returns null if there is none.
+        """
+        return pulumi.get(self, "registry_id")
+
+    @property
+    @pulumi.getter(name="registryName")
+    def registry_name(self) -> str:
+        return pulumi.get(self, "registry_name")
 
     @property
     @pulumi.getter
@@ -225,11 +282,17 @@ class AwaitableGetWorkspaceResult(GetWorkspaceResult):
             display_name=self.display_name,
             dns_server_ip=self.dns_server_ip,
             dns_server_zone=self.dns_server_zone,
+            endpoint_compartment_id=self.endpoint_compartment_id,
+            endpoint_id=self.endpoint_id,
+            endpoint_name=self.endpoint_name,
             freeform_tags=self.freeform_tags,
             id=self.id,
             is_force_operation=self.is_force_operation,
             is_private_network_enabled=self.is_private_network_enabled,
             quiesce_timeout=self.quiesce_timeout,
+            registry_compartment_id=self.registry_compartment_id,
+            registry_id=self.registry_id,
+            registry_name=self.registry_name,
             state=self.state,
             state_message=self.state_message,
             subnet_id=self.subnet_id,
@@ -270,11 +333,17 @@ def get_workspace(workspace_id: Optional[str] = None,
         display_name=__ret__.display_name,
         dns_server_ip=__ret__.dns_server_ip,
         dns_server_zone=__ret__.dns_server_zone,
+        endpoint_compartment_id=__ret__.endpoint_compartment_id,
+        endpoint_id=__ret__.endpoint_id,
+        endpoint_name=__ret__.endpoint_name,
         freeform_tags=__ret__.freeform_tags,
         id=__ret__.id,
         is_force_operation=__ret__.is_force_operation,
         is_private_network_enabled=__ret__.is_private_network_enabled,
         quiesce_timeout=__ret__.quiesce_timeout,
+        registry_compartment_id=__ret__.registry_compartment_id,
+        registry_id=__ret__.registry_id,
+        registry_name=__ret__.registry_name,
         state=__ret__.state,
         state_message=__ret__.state_message,
         subnet_id=__ret__.subnet_id,

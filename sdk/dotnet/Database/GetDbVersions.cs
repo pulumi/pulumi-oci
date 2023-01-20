@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDbVersionsResult> InvokeAsync(GetDbVersionsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDbVersionsResult>("oci:Database/getDbVersions:getDbVersions", args ?? new GetDbVersionsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDbVersionsResult>("oci:Database/getDbVersions:getDbVersions", args ?? new GetDbVersionsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Db Versions in Oracle Cloud Infrastructure Database service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDbVersionsResult> Invoke(GetDbVersionsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDbVersionsResult>("oci:Database/getDbVersions:getDbVersions", args ?? new GetDbVersionsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDbVersionsResult>("oci:Database/getDbVersions:getDbVersions", args ?? new GetDbVersionsInvokeArgs(), options.WithDefaults());
     }
 
 

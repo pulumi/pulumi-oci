@@ -23,6 +23,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "oci:DataIntegration/workspace:Workspace":
 		r = &Workspace{}
+	case "oci:DataIntegration/workspaceFolder:WorkspaceFolder":
+		r = &WorkspaceFolder{}
+	case "oci:DataIntegration/workspaceProject:WorkspaceProject":
+		r = &WorkspaceProject{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -39,6 +43,16 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"DataIntegration/workspace",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataIntegration/workspaceFolder",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataIntegration/workspaceProject",
 		&module{version},
 	)
 }

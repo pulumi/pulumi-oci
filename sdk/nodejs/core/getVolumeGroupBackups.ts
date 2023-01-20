@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVolumeGroupBackups(args: GetVolumeGroupBackupsArgs, opts?: pulumi.InvokeOptions): Promise<GetVolumeGroupBackupsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getVolumeGroupBackups:getVolumeGroupBackups", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -83,9 +81,27 @@ export interface GetVolumeGroupBackupsResult {
      */
     readonly volumeGroupId?: string;
 }
-
+/**
+ * This data source provides the list of Volume Group Backups in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the volume group backups in the specified compartment. You can filter the results by volume group.
+ * For more information, see [Volume Groups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testVolumeGroupBackups = oci.Core.getVolumeGroupBackups({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.volume_group_backup_display_name,
+ *     volumeGroupId: oci_core_volume_group.test_volume_group.id,
+ * });
+ * ```
+ */
 export function getVolumeGroupBackupsOutput(args: GetVolumeGroupBackupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVolumeGroupBackupsResult> {
-    return pulumi.output(args).apply(a => getVolumeGroupBackups(a, opts))
+    return pulumi.output(args).apply((a: any) => getVolumeGroupBackups(a, opts))
 }
 
 /**

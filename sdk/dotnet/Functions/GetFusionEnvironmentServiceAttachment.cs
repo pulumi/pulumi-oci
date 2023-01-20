@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Functions
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetFusionEnvironmentServiceAttachmentResult> InvokeAsync(GetFusionEnvironmentServiceAttachmentArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetFusionEnvironmentServiceAttachmentResult>("oci:Functions/getFusionEnvironmentServiceAttachment:getFusionEnvironmentServiceAttachment", args ?? new GetFusionEnvironmentServiceAttachmentArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetFusionEnvironmentServiceAttachmentResult>("oci:Functions/getFusionEnvironmentServiceAttachment:getFusionEnvironmentServiceAttachment", args ?? new GetFusionEnvironmentServiceAttachmentArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Fusion Environment Service Attachment resource in Oracle Cloud Infrastructure Fusion Apps service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Functions
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetFusionEnvironmentServiceAttachmentResult> Invoke(GetFusionEnvironmentServiceAttachmentInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetFusionEnvironmentServiceAttachmentResult>("oci:Functions/getFusionEnvironmentServiceAttachment:getFusionEnvironmentServiceAttachment", args ?? new GetFusionEnvironmentServiceAttachmentInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetFusionEnvironmentServiceAttachmentResult>("oci:Functions/getFusionEnvironmentServiceAttachment:getFusionEnvironmentServiceAttachment", args ?? new GetFusionEnvironmentServiceAttachmentInvokeArgs(), options.WithDefaults());
     }
 
 

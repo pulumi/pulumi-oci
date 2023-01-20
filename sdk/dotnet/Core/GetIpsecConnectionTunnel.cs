@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetIpsecConnectionTunnelResult> InvokeAsync(GetIpsecConnectionTunnelArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetIpsecConnectionTunnelResult>("oci:Core/getIpsecConnectionTunnel:getIpsecConnectionTunnel", args ?? new GetIpsecConnectionTunnelArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetIpsecConnectionTunnelResult>("oci:Core/getIpsecConnectionTunnel:getIpsecConnectionTunnel", args ?? new GetIpsecConnectionTunnelArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Ip Sec Connection Tunnel resource in Oracle Cloud Infrastructure Core service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetIpsecConnectionTunnelResult> Invoke(GetIpsecConnectionTunnelInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetIpsecConnectionTunnelResult>("oci:Core/getIpsecConnectionTunnel:getIpsecConnectionTunnel", args ?? new GetIpsecConnectionTunnelInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetIpsecConnectionTunnelResult>("oci:Core/getIpsecConnectionTunnel:getIpsecConnectionTunnel", args ?? new GetIpsecConnectionTunnelInvokeArgs(), options.WithDefaults());
     }
 
 

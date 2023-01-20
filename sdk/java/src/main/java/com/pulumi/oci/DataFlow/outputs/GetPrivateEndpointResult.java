@@ -4,6 +4,7 @@
 package com.pulumi.oci.DataFlow.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.DataFlow.outputs.GetPrivateEndpointScanDetail;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -74,6 +75,11 @@ public final class GetPrivateEndpointResult {
      */
     private String ownerUserName;
     private String privateEndpointId;
+    /**
+     * @return An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: &#34;scan1.oracle.com&#34;, port: &#34;1521&#34;}, { fqdn: &#34;scan2.oracle.com&#34;, port: &#34;1521&#34; } ]
+     * 
+     */
+    private List<GetPrivateEndpointScanDetail> scanDetails;
     /**
      * @return The current state of this private endpoint.
      * 
@@ -184,6 +190,13 @@ public final class GetPrivateEndpointResult {
         return this.privateEndpointId;
     }
     /**
+     * @return An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: &#34;scan1.oracle.com&#34;, port: &#34;1521&#34;}, { fqdn: &#34;scan2.oracle.com&#34;, port: &#34;1521&#34; } ]
+     * 
+     */
+    public List<GetPrivateEndpointScanDetail> scanDetails() {
+        return this.scanDetails;
+    }
+    /**
      * @return The current state of this private endpoint.
      * 
      */
@@ -234,6 +247,7 @@ public final class GetPrivateEndpointResult {
         private String ownerPrincipalId;
         private String ownerUserName;
         private String privateEndpointId;
+        private List<GetPrivateEndpointScanDetail> scanDetails;
         private String state;
         private String subnetId;
         private String timeCreated;
@@ -254,6 +268,7 @@ public final class GetPrivateEndpointResult {
     	      this.ownerPrincipalId = defaults.ownerPrincipalId;
     	      this.ownerUserName = defaults.ownerUserName;
     	      this.privateEndpointId = defaults.privateEndpointId;
+    	      this.scanDetails = defaults.scanDetails;
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
     	      this.timeCreated = defaults.timeCreated;
@@ -332,6 +347,14 @@ public final class GetPrivateEndpointResult {
             return this;
         }
         @CustomType.Setter
+        public Builder scanDetails(List<GetPrivateEndpointScanDetail> scanDetails) {
+            this.scanDetails = Objects.requireNonNull(scanDetails);
+            return this;
+        }
+        public Builder scanDetails(GetPrivateEndpointScanDetail... scanDetails) {
+            return scanDetails(List.of(scanDetails));
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
@@ -366,6 +389,7 @@ public final class GetPrivateEndpointResult {
             o.ownerPrincipalId = ownerPrincipalId;
             o.ownerUserName = ownerUserName;
             o.privateEndpointId = privateEndpointId;
+            o.scanDetails = scanDetails;
             o.state = state;
             o.subnetId = subnetId;
             o.timeCreated = timeCreated;

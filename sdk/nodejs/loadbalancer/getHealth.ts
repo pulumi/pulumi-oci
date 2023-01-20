@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getHealth(args: GetHealthArgs, opts?: pulumi.InvokeOptions): Promise<GetHealthResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LoadBalancer/getHealth:getHealth", {
         "loadBalancerId": args.loadBalancerId,
     }, opts);
@@ -79,9 +76,24 @@ export interface GetHealthResult {
      */
     readonly warningStateBackendSetNames: string[];
 }
-
+/**
+ * This data source provides details about a specific Load Balancer Health resource in Oracle Cloud Infrastructure Load Balancer service.
+ *
+ * Gets the health status for the specified load balancer.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testLoadBalancerHealth = oci.LoadBalancer.getHealth({
+ *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
+ * });
+ * ```
+ */
 export function getHealthOutput(args: GetHealthOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetHealthResult> {
-    return pulumi.output(args).apply(a => getHealth(a, opts))
+    return pulumi.output(args).apply((a: any) => getHealth(a, opts))
 }
 
 /**

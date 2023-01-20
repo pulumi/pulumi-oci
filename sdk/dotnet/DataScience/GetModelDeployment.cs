@@ -38,7 +38,7 @@ namespace Pulumi.Oci.DataScience
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetModelDeploymentResult> InvokeAsync(GetModelDeploymentArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetModelDeploymentResult>("oci:DataScience/getModelDeployment:getModelDeployment", args ?? new GetModelDeploymentArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetModelDeploymentResult>("oci:DataScience/getModelDeployment:getModelDeployment", args ?? new GetModelDeploymentArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Model Deployment resource in Oracle Cloud Infrastructure Datascience service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.DataScience
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetModelDeploymentResult> Invoke(GetModelDeploymentInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetModelDeploymentResult>("oci:DataScience/getModelDeployment:getModelDeployment", args ?? new GetModelDeploymentInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetModelDeploymentResult>("oci:DataScience/getModelDeployment:getModelDeployment", args ?? new GetModelDeploymentInvokeArgs(), options.WithDefaults());
     }
 
 

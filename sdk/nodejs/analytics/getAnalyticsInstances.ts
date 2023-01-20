@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAnalyticsInstances(args: GetAnalyticsInstancesArgs, opts?: pulumi.InvokeOptions): Promise<GetAnalyticsInstancesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Analytics/getAnalyticsInstances:getAnalyticsInstances", {
         "capacityType": args.capacityType,
         "compartmentId": args.compartmentId,
@@ -102,9 +100,28 @@ export interface GetAnalyticsInstancesResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Analytics Instances in Oracle Cloud Infrastructure Analytics service.
+ *
+ * List Analytics instances.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAnalyticsInstances = oci.Analytics.getAnalyticsInstances({
+ *     compartmentId: _var.compartment_id,
+ *     capacityType: _var.analytics_instance_capacity_type,
+ *     featureSet: _var.analytics_instance_feature_set,
+ *     name: _var.analytics_instance_name,
+ *     state: _var.analytics_instance_state,
+ * });
+ * ```
+ */
 export function getAnalyticsInstancesOutput(args: GetAnalyticsInstancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAnalyticsInstancesResult> {
-    return pulumi.output(args).apply(a => getAnalyticsInstances(a, opts))
+    return pulumi.output(args).apply((a: any) => getAnalyticsInstances(a, opts))
 }
 
 /**

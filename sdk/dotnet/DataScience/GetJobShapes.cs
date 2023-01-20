@@ -38,7 +38,7 @@ namespace Pulumi.Oci.DataScience
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetJobShapesResult> InvokeAsync(GetJobShapesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetJobShapesResult>("oci:DataScience/getJobShapes:getJobShapes", args ?? new GetJobShapesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetJobShapesResult>("oci:DataScience/getJobShapes:getJobShapes", args ?? new GetJobShapesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Job Shapes in Oracle Cloud Infrastructure Data Science service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.DataScience
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetJobShapesResult> Invoke(GetJobShapesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetJobShapesResult>("oci:DataScience/getJobShapes:getJobShapes", args ?? new GetJobShapesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetJobShapesResult>("oci:DataScience/getJobShapes:getJobShapes", args ?? new GetJobShapesInvokeArgs(), options.WithDefaults());
     }
 
 

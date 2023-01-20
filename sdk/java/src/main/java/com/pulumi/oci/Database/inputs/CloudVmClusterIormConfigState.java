@@ -78,14 +78,14 @@ public final class CloudVmClusterIormConfigState extends com.pulumi.resources.Re
     }
 
     /**
-     * The current state of IORM configuration for the Cloud Vm Cluster.
+     * The current state of IORM configuration for the Exadata DB system.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return The current state of IORM configuration for the Cloud Vm Cluster.
+     * @return The current state of IORM configuration for the Exadata DB system.
      * 
      */
     public Optional<Output<String>> state() {
@@ -215,7 +215,7 @@ public final class CloudVmClusterIormConfigState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param state The current state of IORM configuration for the Cloud Vm Cluster.
+         * @param state The current state of IORM configuration for the Exadata DB system.
          * 
          * @return builder
          * 
@@ -226,7 +226,7 @@ public final class CloudVmClusterIormConfigState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param state The current state of IORM configuration for the Cloud Vm Cluster.
+         * @param state The current state of IORM configuration for the Exadata DB system.
          * 
          * @return builder
          * 

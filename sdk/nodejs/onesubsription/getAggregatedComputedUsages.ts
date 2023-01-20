@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -11,11 +12,8 @@ import * as utilities from "../utilities";
  * This is a collection API which returns a list of aggregated computed usage details (there can be multiple Parent Products under a given SubID each of which is represented under Subscription Service Line # in SPM).
  */
 export function getAggregatedComputedUsages(args: GetAggregatedComputedUsagesArgs, opts?: pulumi.InvokeOptions): Promise<GetAggregatedComputedUsagesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OneSubsription/getAggregatedComputedUsages:getAggregatedComputedUsages", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -84,9 +82,13 @@ export interface GetAggregatedComputedUsagesResult {
     readonly timeFrom: string;
     readonly timeTo: string;
 }
-
+/**
+ * This data source provides the list of Aggregated Computed Usages in Oracle Cloud Infrastructure Onesubscription service.
+ *
+ * This is a collection API which returns a list of aggregated computed usage details (there can be multiple Parent Products under a given SubID each of which is represented under Subscription Service Line # in SPM).
+ */
 export function getAggregatedComputedUsagesOutput(args: GetAggregatedComputedUsagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAggregatedComputedUsagesResult> {
-    return pulumi.output(args).apply(a => getAggregatedComputedUsages(a, opts))
+    return pulumi.output(args).apply((a: any) => getAggregatedComputedUsages(a, opts))
 }
 
 /**

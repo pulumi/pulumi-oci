@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCommitment(args: GetCommitmentArgs, opts?: pulumi.InvokeOptions): Promise<GetCommitmentResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OneSubsription/getCommitment:getCommitment", {
         "commitmentId": args.commitmentId,
     }, opts);
@@ -79,9 +76,24 @@ export interface GetCommitmentResult {
      */
     readonly usedAmount: string;
 }
-
+/**
+ * This data source provides details about a specific Commitment resource in Oracle Cloud Infrastructure Onesubscription service.
+ *
+ * This API returns the commitment details corresponding to the id provided
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCommitment = oci.OneSubsription.getCommitment({
+ *     commitmentId: oci_onesubscription_commitment.test_commitment.id,
+ * });
+ * ```
+ */
 export function getCommitmentOutput(args: GetCommitmentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCommitmentResult> {
-    return pulumi.output(args).apply(a => getCommitment(a, opts))
+    return pulumi.output(args).apply((a: any) => getCommitment(a, opts))
 }
 
 /**

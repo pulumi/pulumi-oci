@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Limits
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetLimitDefinitionsResult> InvokeAsync(GetLimitDefinitionsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetLimitDefinitionsResult>("oci:Limits/getLimitDefinitions:getLimitDefinitions", args ?? new GetLimitDefinitionsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetLimitDefinitionsResult>("oci:Limits/getLimitDefinitions:getLimitDefinitions", args ?? new GetLimitDefinitionsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Limit Definitions in Oracle Cloud Infrastructure Limits service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.Limits
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetLimitDefinitionsResult> Invoke(GetLimitDefinitionsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetLimitDefinitionsResult>("oci:Limits/getLimitDefinitions:getLimitDefinitions", args ?? new GetLimitDefinitionsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetLimitDefinitionsResult>("oci:Limits/getLimitDefinitions:getLimitDefinitions", args ?? new GetLimitDefinitionsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -54,12 +54,28 @@ public final class BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs exte
         return Optional.ofNullable(this.headRef);
     }
 
+    /**
+     * The repository name for trigger events.
+     * 
+     */
+    @Import(name="repositoryName")
+    private @Nullable Output<String> repositoryName;
+
+    /**
+     * @return The repository name for trigger events.
+     * 
+     */
+    public Optional<Output<String>> repositoryName() {
+        return Optional.ofNullable(this.repositoryName);
+    }
+
     private BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs() {}
 
     private BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs(BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs $) {
         this.baseRef = $.baseRef;
         this.fileFilters = $.fileFilters;
         this.headRef = $.headRef;
+        this.repositoryName = $.repositoryName;
     }
 
     public static Builder builder() {
@@ -133,6 +149,27 @@ public final class BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs exte
          */
         public Builder headRef(String headRef) {
             return headRef(Output.of(headRef));
+        }
+
+        /**
+         * @param repositoryName The repository name for trigger events.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder repositoryName(@Nullable Output<String> repositoryName) {
+            $.repositoryName = repositoryName;
+            return this;
+        }
+
+        /**
+         * @param repositoryName The repository name for trigger events.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder repositoryName(String repositoryName) {
+            return repositoryName(Output.of(repositoryName));
         }
 
         public BuildRunBuildRunSourceTriggerInfoActionFilterIncludeArgs build() {

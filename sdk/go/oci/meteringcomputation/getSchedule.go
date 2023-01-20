@@ -56,30 +56,38 @@ type LookupScheduleArgs struct {
 
 // A collection of values returned by getSchedule.
 type LookupScheduleResult struct {
-	// The tenancy of the customer
+	// The customer tenancy.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+	// The description of the schedule.
+	Description string `pulumi:"description"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The OCID representing unique shedule
+	// The OCID representing a unique shedule.
 	Id string `pulumi:"id"`
-	// The unique name of the schedule created by the user
+	// The unique name of the schedule created by the user.
 	Name string `pulumi:"name"`
+	// Specifies supported output file format.
+	OutputFileFormat string `pulumi:"outputFileFormat"`
 	// The query properties.
 	QueryProperties []GetScheduleQueryProperty `pulumi:"queryProperties"`
-	// The location where usage/cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
+	// The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
 	ResultLocations []GetScheduleResultLocation `pulumi:"resultLocations"`
-	ScheduleId      string                      `pulumi:"scheduleId"`
-	// In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 Describes the frequency of when the schedule will be run
+	// The saved report id which can also be used to generate query.
+	SavedReportId string `pulumi:"savedReportId"`
+	ScheduleId    string `pulumi:"scheduleId"`
+	// Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
 	ScheduleRecurrences string `pulumi:"scheduleRecurrences"`
-	// The lifecycle state of the schedule
+	// The schedule lifecycle state.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The date and time of when the schedule was created
+	// The date and time the schedule was created.
 	TimeCreated string `pulumi:"timeCreated"`
-	// The date and time of the first time job execution
+	// The date and time of the next job execution.
+	TimeNextRun string `pulumi:"timeNextRun"`
+	// The date and time of the first time job execution.
 	TimeScheduled string `pulumi:"timeScheduled"`
 }
 
@@ -121,7 +129,7 @@ func (o LookupScheduleResultOutput) ToLookupScheduleResultOutputWithContext(ctx 
 	return o
 }
 
-// The tenancy of the customer
+// The customer tenancy.
 func (o LookupScheduleResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScheduleResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -131,19 +139,29 @@ func (o LookupScheduleResultOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupScheduleResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+// The description of the schedule.
+func (o LookupScheduleResultOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupScheduleResult) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
 func (o LookupScheduleResultOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupScheduleResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// The OCID representing unique shedule
+// The OCID representing a unique shedule.
 func (o LookupScheduleResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScheduleResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The unique name of the schedule created by the user
+// The unique name of the schedule created by the user.
 func (o LookupScheduleResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScheduleResult) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Specifies supported output file format.
+func (o LookupScheduleResultOutput) OutputFileFormat() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupScheduleResult) string { return v.OutputFileFormat }).(pulumi.StringOutput)
 }
 
 // The query properties.
@@ -151,21 +169,26 @@ func (o LookupScheduleResultOutput) QueryProperties() GetScheduleQueryPropertyAr
 	return o.ApplyT(func(v LookupScheduleResult) []GetScheduleQueryProperty { return v.QueryProperties }).(GetScheduleQueryPropertyArrayOutput)
 }
 
-// The location where usage/cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
+// The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
 func (o LookupScheduleResultOutput) ResultLocations() GetScheduleResultLocationArrayOutput {
 	return o.ApplyT(func(v LookupScheduleResult) []GetScheduleResultLocation { return v.ResultLocations }).(GetScheduleResultLocationArrayOutput)
+}
+
+// The saved report id which can also be used to generate query.
+func (o LookupScheduleResultOutput) SavedReportId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupScheduleResult) string { return v.SavedReportId }).(pulumi.StringOutput)
 }
 
 func (o LookupScheduleResultOutput) ScheduleId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScheduleResult) string { return v.ScheduleId }).(pulumi.StringOutput)
 }
 
-// In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 Describes the frequency of when the schedule will be run
+// Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
 func (o LookupScheduleResultOutput) ScheduleRecurrences() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScheduleResult) string { return v.ScheduleRecurrences }).(pulumi.StringOutput)
 }
 
-// The lifecycle state of the schedule
+// The schedule lifecycle state.
 func (o LookupScheduleResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScheduleResult) string { return v.State }).(pulumi.StringOutput)
 }
@@ -175,12 +198,17 @@ func (o LookupScheduleResultOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupScheduleResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// The date and time of when the schedule was created
+// The date and time the schedule was created.
 func (o LookupScheduleResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScheduleResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The date and time of the first time job execution
+// The date and time of the next job execution.
+func (o LookupScheduleResultOutput) TimeNextRun() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupScheduleResult) string { return v.TimeNextRun }).(pulumi.StringOutput)
+}
+
+// The date and time of the first time job execution.
 func (o LookupScheduleResultOutput) TimeScheduled() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupScheduleResult) string { return v.TimeScheduled }).(pulumi.StringOutput)
 }

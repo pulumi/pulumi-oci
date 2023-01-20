@@ -12,7 +12,7 @@ namespace Pulumi.Oci.DataIntegration
     /// <summary>
     /// This resource provides the Workspace resource in Oracle Cloud Infrastructure Data Integration service.
     /// 
-    /// Creates a new Data Integration workspace ready for performing data integration tasks.
+    /// Creates a new Data Integration workspace ready for performing data integration tasks. To retrieve the OCID for the new workspace, use the opc-work-request-id returned by this API and call the [GetWorkRequest](https://docs.cloud.oracle.com/iaas/api/#/en/data-integration/latest/WorkRequest/GetWorkRequest) API.
     /// 
     /// ## Example Usage
     /// 
@@ -34,11 +34,17 @@ namespace Pulumi.Oci.DataIntegration
     ///         Description = @var.Workspace_description,
     ///         DnsServerIp = @var.Workspace_dns_server_ip,
     ///         DnsServerZone = @var.Workspace_dns_server_zone,
+    ///         EndpointCompartmentId = oci_identity_compartment.Test_compartment.Id,
+    ///         EndpointId = oci_dataintegration_endpoint.Test_endpoint.Id,
+    ///         EndpointName = @var.Workspace_endpoint_name,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
     ///         },
     ///         IsPrivateNetworkEnabled = @var.Workspace_is_private_network_enabled,
+    ///         RegistryCompartmentId = oci_identity_compartment.Test_compartment.Id,
+    ///         RegistryId = oci_data_connectivity_registry.Test_registry.Id,
+    ///         RegistryName = oci_data_connectivity_registry.Test_registry.Name,
     ///         SubnetId = oci_core_subnet.Test_subnet.Id,
     ///         VcnId = oci_core_vcn.Test_vcn.Id,
     ///     });
@@ -94,6 +100,24 @@ namespace Pulumi.Oci.DataIntegration
         public Output<string> DnsServerZone { get; private set; } = null!;
 
         /// <summary>
+        /// DCMS PRivate Endpoint Compartment Identifier
+        /// </summary>
+        [Output("endpointCompartmentId")]
+        public Output<string> EndpointCompartmentId { get; private set; } = null!;
+
+        /// <summary>
+        /// DCMS Private Endpoint ID associated with workspace if the pvt networking is enabled
+        /// </summary>
+        [Output("endpointId")]
+        public Output<string> EndpointId { get; private set; } = null!;
+
+        /// <summary>
+        /// DCMS Private Endpoint Name
+        /// </summary>
+        [Output("endpointName")]
+        public Output<string> EndpointName { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
@@ -109,7 +133,25 @@ namespace Pulumi.Oci.DataIntegration
         public Output<bool> IsPrivateNetworkEnabled { get; private set; } = null!;
 
         [Output("quiesceTimeout")]
-        public Output<int?> QuiesceTimeout { get; private set; } = null!;
+        public Output<int> QuiesceTimeout { get; private set; } = null!;
+
+        /// <summary>
+        /// DCMS Data Asset Registry Compartment Identifier
+        /// </summary>
+        [Output("registryCompartmentId")]
+        public Output<string> RegistryCompartmentId { get; private set; } = null!;
+
+        /// <summary>
+        /// DCMS Data Asset Registry ID to which the workspace is associated
+        /// </summary>
+        [Output("registryId")]
+        public Output<string> RegistryId { get; private set; } = null!;
+
+        /// <summary>
+        /// DCMS Data Asset Registry display name
+        /// </summary>
+        [Output("registryName")]
+        public Output<string> RegistryName { get; private set; } = null!;
 
         /// <summary>
         /// Lifecycle states for workspaces in Data Integration Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn't available FAILED   - The resource is in a failed state due to validation or other errors STARTING - The resource is being started and may not be usable until becomes ACTIVE again STOPPING - The resource is in the process of Stopping and may not be usable until it Stops or fails STOPPED  - The resource is in Stopped state due to stop operation.
@@ -235,6 +277,24 @@ namespace Pulumi.Oci.DataIntegration
         [Input("dnsServerZone")]
         public Input<string>? DnsServerZone { get; set; }
 
+        /// <summary>
+        /// DCMS PRivate Endpoint Compartment Identifier
+        /// </summary>
+        [Input("endpointCompartmentId")]
+        public Input<string>? EndpointCompartmentId { get; set; }
+
+        /// <summary>
+        /// DCMS Private Endpoint ID associated with workspace if the pvt networking is enabled
+        /// </summary>
+        [Input("endpointId")]
+        public Input<string>? EndpointId { get; set; }
+
+        /// <summary>
+        /// DCMS Private Endpoint Name
+        /// </summary>
+        [Input("endpointName")]
+        public Input<string>? EndpointName { get; set; }
+
         [Input("freeformTags")]
         private InputMap<object>? _freeformTags;
 
@@ -258,6 +318,24 @@ namespace Pulumi.Oci.DataIntegration
 
         [Input("quiesceTimeout")]
         public Input<int>? QuiesceTimeout { get; set; }
+
+        /// <summary>
+        /// DCMS Data Asset Registry Compartment Identifier
+        /// </summary>
+        [Input("registryCompartmentId")]
+        public Input<string>? RegistryCompartmentId { get; set; }
+
+        /// <summary>
+        /// DCMS Data Asset Registry ID to which the workspace is associated
+        /// </summary>
+        [Input("registryId")]
+        public Input<string>? RegistryId { get; set; }
+
+        /// <summary>
+        /// DCMS Data Asset Registry display name
+        /// </summary>
+        [Input("registryName")]
+        public Input<string>? RegistryName { get; set; }
 
         /// <summary>
         /// The OCID of the subnet for customer connected databases.
@@ -321,6 +399,24 @@ namespace Pulumi.Oci.DataIntegration
         [Input("dnsServerZone")]
         public Input<string>? DnsServerZone { get; set; }
 
+        /// <summary>
+        /// DCMS PRivate Endpoint Compartment Identifier
+        /// </summary>
+        [Input("endpointCompartmentId")]
+        public Input<string>? EndpointCompartmentId { get; set; }
+
+        /// <summary>
+        /// DCMS Private Endpoint ID associated with workspace if the pvt networking is enabled
+        /// </summary>
+        [Input("endpointId")]
+        public Input<string>? EndpointId { get; set; }
+
+        /// <summary>
+        /// DCMS Private Endpoint Name
+        /// </summary>
+        [Input("endpointName")]
+        public Input<string>? EndpointName { get; set; }
+
         [Input("freeformTags")]
         private InputMap<object>? _freeformTags;
 
@@ -344,6 +440,24 @@ namespace Pulumi.Oci.DataIntegration
 
         [Input("quiesceTimeout")]
         public Input<int>? QuiesceTimeout { get; set; }
+
+        /// <summary>
+        /// DCMS Data Asset Registry Compartment Identifier
+        /// </summary>
+        [Input("registryCompartmentId")]
+        public Input<string>? RegistryCompartmentId { get; set; }
+
+        /// <summary>
+        /// DCMS Data Asset Registry ID to which the workspace is associated
+        /// </summary>
+        [Input("registryId")]
+        public Input<string>? RegistryId { get; set; }
+
+        /// <summary>
+        /// DCMS Data Asset Registry display name
+        /// </summary>
+        [Input("registryName")]
+        public Input<string>? RegistryName { get; set; }
 
         /// <summary>
         /// Lifecycle states for workspaces in Data Integration Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn't available FAILED   - The resource is in a failed state due to validation or other errors STARTING - The resource is being started and may not be usable until becomes ACTIVE again STOPPING - The resource is in the process of Stopping and may not be usable until it Stops or fails STOPPED  - The resource is in Stopped state due to stop operation.

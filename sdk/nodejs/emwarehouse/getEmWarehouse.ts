@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getEmWarehouse(args: GetEmWarehouseArgs, opts?: pulumi.InvokeOptions): Promise<GetEmWarehouseResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:EmWarehouse/getEmWarehouse:getEmWarehouse", {
         "emWarehouseId": args.emWarehouseId,
     }, opts);
@@ -111,9 +108,24 @@ export interface GetEmWarehouseResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Em Warehouse resource in Oracle Cloud Infrastructure Em Warehouse service.
+ *
+ * Gets a EmWarehouse by identifier
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testEmWarehouse = oci.EmWarehouse.getEmWarehouse({
+ *     emWarehouseId: oci_em_warehouse_em_warehouse.test_em_warehouse.id,
+ * });
+ * ```
+ */
 export function getEmWarehouseOutput(args: GetEmWarehouseOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEmWarehouseResult> {
-    return pulumi.output(args).apply(a => getEmWarehouse(a, opts))
+    return pulumi.output(args).apply((a: any) => getEmWarehouse(a, opts))
 }
 
 /**

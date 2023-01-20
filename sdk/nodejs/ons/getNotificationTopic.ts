@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNotificationTopic(args: GetNotificationTopicArgs, opts?: pulumi.InvokeOptions): Promise<GetNotificationTopicResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Ons/getNotificationTopic:getNotificationTopic", {
         "topicId": args.topicId,
     }, opts);
@@ -91,9 +88,24 @@ export interface GetNotificationTopicResult {
      */
     readonly topicId: string;
 }
-
+/**
+ * This data source provides details about a specific Notification Topic resource in Oracle Cloud Infrastructure Notifications service.
+ *
+ * Gets the specified topic's configuration information.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testNotificationTopic = oci.Ons.getNotificationTopic({
+ *     topicId: oci_ons_notification_topic.test_notification_topic.id,
+ * });
+ * ```
+ */
 export function getNotificationTopicOutput(args: GetNotificationTopicOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNotificationTopicResult> {
-    return pulumi.output(args).apply(a => getNotificationTopic(a, opts))
+    return pulumi.output(args).apply((a: any) => getNotificationTopic(a, opts))
 }
 
 /**

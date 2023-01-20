@@ -55,7 +55,7 @@ namespace Pulumi.Oci.OsManagement
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetSoftwareSourceStreamProfileResult> InvokeAsync(GetSoftwareSourceStreamProfileArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetSoftwareSourceStreamProfileResult>("oci:OsManagement/getSoftwareSourceStreamProfile:getSoftwareSourceStreamProfile", args ?? new GetSoftwareSourceStreamProfileArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetSoftwareSourceStreamProfileResult>("oci:OsManagement/getSoftwareSourceStreamProfile:getSoftwareSourceStreamProfile", args ?? new GetSoftwareSourceStreamProfileArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Software Source Stream Profiles in Oracle Cloud Infrastructure OS Management service.
@@ -101,7 +101,7 @@ namespace Pulumi.Oci.OsManagement
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetSoftwareSourceStreamProfileResult> Invoke(GetSoftwareSourceStreamProfileInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetSoftwareSourceStreamProfileResult>("oci:OsManagement/getSoftwareSourceStreamProfile:getSoftwareSourceStreamProfile", args ?? new GetSoftwareSourceStreamProfileInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetSoftwareSourceStreamProfileResult>("oci:OsManagement/getSoftwareSourceStreamProfile:getSoftwareSourceStreamProfile", args ?? new GetSoftwareSourceStreamProfileInvokeArgs(), options.WithDefaults());
     }
 
 

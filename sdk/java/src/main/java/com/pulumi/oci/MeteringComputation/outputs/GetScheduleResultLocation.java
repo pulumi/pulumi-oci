@@ -10,50 +10,50 @@ import java.util.Objects;
 @CustomType
 public final class GetScheduleResultLocation {
     /**
-     * @return The bucket name where usage/cost CSVs will be uploaded
+     * @return The bucket name where usage or cost CSVs will be uploaded.
      * 
      */
     private String bucket;
     /**
-     * @return Defines the type of location where the usage/cost CSVs will be stored
+     * @return Defines the type of location where the usage or cost CSVs will be stored.
      * 
      */
     private String locationType;
     /**
-     * @return The namespace needed to determine object storage bucket.
+     * @return The namespace needed to determine the object storage bucket.
      * 
      */
     private String namespace;
     /**
-     * @return The destination Object Store Region specified by customer
+     * @return The destination Object Store Region specified by the customer.
      * 
      */
     private String region;
 
     private GetScheduleResultLocation() {}
     /**
-     * @return The bucket name where usage/cost CSVs will be uploaded
+     * @return The bucket name where usage or cost CSVs will be uploaded.
      * 
      */
     public String bucket() {
         return this.bucket;
     }
     /**
-     * @return Defines the type of location where the usage/cost CSVs will be stored
+     * @return Defines the type of location where the usage or cost CSVs will be stored.
      * 
      */
     public String locationType() {
         return this.locationType;
     }
     /**
-     * @return The namespace needed to determine object storage bucket.
+     * @return The namespace needed to determine the object storage bucket.
      * 
      */
     public String namespace() {
         return this.namespace;
     }
     /**
-     * @return The destination Object Store Region specified by customer
+     * @return The destination Object Store Region specified by the customer.
      * 
      */
     public String region() {

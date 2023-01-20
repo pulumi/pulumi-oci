@@ -5,18 +5,31 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./fusionEnvironment";
-export * from "./fusionEnvironmentAdminUser";
-export * from "./fusionEnvironmentDataMaskingActivity";
-export * from "./fusionEnvironmentFamily";
-export * from "./fusionEnvironmentRefreshActivity";
+export { FusionEnvironmentArgs, FusionEnvironmentState } from "./fusionEnvironment";
+export type FusionEnvironment = import("./fusionEnvironment").FusionEnvironment;
+export const FusionEnvironment: typeof import("./fusionEnvironment").FusionEnvironment = null as any;
+utilities.lazyLoad(exports, ["FusionEnvironment"], () => require("./fusionEnvironment"));
 
-// Import resources to register:
-import { FusionEnvironment } from "./fusionEnvironment";
-import { FusionEnvironmentAdminUser } from "./fusionEnvironmentAdminUser";
-import { FusionEnvironmentDataMaskingActivity } from "./fusionEnvironmentDataMaskingActivity";
-import { FusionEnvironmentFamily } from "./fusionEnvironmentFamily";
-import { FusionEnvironmentRefreshActivity } from "./fusionEnvironmentRefreshActivity";
+export { FusionEnvironmentAdminUserArgs, FusionEnvironmentAdminUserState } from "./fusionEnvironmentAdminUser";
+export type FusionEnvironmentAdminUser = import("./fusionEnvironmentAdminUser").FusionEnvironmentAdminUser;
+export const FusionEnvironmentAdminUser: typeof import("./fusionEnvironmentAdminUser").FusionEnvironmentAdminUser = null as any;
+utilities.lazyLoad(exports, ["FusionEnvironmentAdminUser"], () => require("./fusionEnvironmentAdminUser"));
+
+export { FusionEnvironmentDataMaskingActivityArgs, FusionEnvironmentDataMaskingActivityState } from "./fusionEnvironmentDataMaskingActivity";
+export type FusionEnvironmentDataMaskingActivity = import("./fusionEnvironmentDataMaskingActivity").FusionEnvironmentDataMaskingActivity;
+export const FusionEnvironmentDataMaskingActivity: typeof import("./fusionEnvironmentDataMaskingActivity").FusionEnvironmentDataMaskingActivity = null as any;
+utilities.lazyLoad(exports, ["FusionEnvironmentDataMaskingActivity"], () => require("./fusionEnvironmentDataMaskingActivity"));
+
+export { FusionEnvironmentFamilyArgs, FusionEnvironmentFamilyState } from "./fusionEnvironmentFamily";
+export type FusionEnvironmentFamily = import("./fusionEnvironmentFamily").FusionEnvironmentFamily;
+export const FusionEnvironmentFamily: typeof import("./fusionEnvironmentFamily").FusionEnvironmentFamily = null as any;
+utilities.lazyLoad(exports, ["FusionEnvironmentFamily"], () => require("./fusionEnvironmentFamily"));
+
+export { FusionEnvironmentRefreshActivityArgs, FusionEnvironmentRefreshActivityState } from "./fusionEnvironmentRefreshActivity";
+export type FusionEnvironmentRefreshActivity = import("./fusionEnvironmentRefreshActivity").FusionEnvironmentRefreshActivity;
+export const FusionEnvironmentRefreshActivity: typeof import("./fusionEnvironmentRefreshActivity").FusionEnvironmentRefreshActivity = null as any;
+utilities.lazyLoad(exports, ["FusionEnvironmentRefreshActivity"], () => require("./fusionEnvironmentRefreshActivity"));
+
 
 const _module = {
     version: utilities.getVersion(),

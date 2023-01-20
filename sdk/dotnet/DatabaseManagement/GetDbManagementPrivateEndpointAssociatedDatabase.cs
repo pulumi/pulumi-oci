@@ -39,7 +39,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDbManagementPrivateEndpointAssociatedDatabaseResult> InvokeAsync(GetDbManagementPrivateEndpointAssociatedDatabaseArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDbManagementPrivateEndpointAssociatedDatabaseResult>("oci:DatabaseManagement/getDbManagementPrivateEndpointAssociatedDatabase:getDbManagementPrivateEndpointAssociatedDatabase", args ?? new GetDbManagementPrivateEndpointAssociatedDatabaseArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDbManagementPrivateEndpointAssociatedDatabaseResult>("oci:DatabaseManagement/getDbManagementPrivateEndpointAssociatedDatabase:getDbManagementPrivateEndpointAssociatedDatabase", args ?? new GetDbManagementPrivateEndpointAssociatedDatabaseArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Db Management Private Endpoint Associated Database resource in Oracle Cloud Infrastructure Database Management service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDbManagementPrivateEndpointAssociatedDatabaseResult> Invoke(GetDbManagementPrivateEndpointAssociatedDatabaseInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDbManagementPrivateEndpointAssociatedDatabaseResult>("oci:DatabaseManagement/getDbManagementPrivateEndpointAssociatedDatabase:getDbManagementPrivateEndpointAssociatedDatabase", args ?? new GetDbManagementPrivateEndpointAssociatedDatabaseInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDbManagementPrivateEndpointAssociatedDatabaseResult>("oci:DatabaseManagement/getDbManagementPrivateEndpointAssociatedDatabase:getDbManagementPrivateEndpointAssociatedDatabase", args ?? new GetDbManagementPrivateEndpointAssociatedDatabaseInvokeArgs(), options.WithDefaults());
     }
 
 

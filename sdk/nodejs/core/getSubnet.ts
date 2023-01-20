@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSubnet(args: GetSubnetArgs, opts?: pulumi.InvokeOptions): Promise<GetSubnetResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getSubnet:getSubnet", {
         "subnetId": args.subnetId,
     }, opts);
@@ -135,9 +132,24 @@ export interface GetSubnetResult {
      */
     readonly virtualRouterMac: string;
 }
-
+/**
+ * This data source provides details about a specific Subnet resource in Oracle Cloud Infrastructure Core service.
+ *
+ * Gets the specified subnet's information.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSubnet = oci.Core.getSubnet({
+ *     subnetId: oci_core_subnet.test_subnet.id,
+ * });
+ * ```
+ */
 export function getSubnetOutput(args: GetSubnetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSubnetResult> {
-    return pulumi.output(args).apply(a => getSubnet(a, opts))
+    return pulumi.output(args).apply((a: any) => getSubnet(a, opts))
 }
 
 /**

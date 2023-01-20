@@ -30,9 +30,6 @@ public final class GetManagedDatabasesDatabaseParameterItem {
     private String constraint;
     /**
      * @return The ID of the database container to which the data pertains. Possible values include:
-     * * `0`: This value is used for data that pertain to the entire CDB. This value is also used for data in non-CDBs.
-     * * `1`: This value is used for data that pertain to only the root container.
-     * * `n`: Where n is the applicable container ID for the data.
      * 
      */
     private Double containerId;
@@ -159,9 +156,6 @@ public final class GetManagedDatabasesDatabaseParameterItem {
     }
     /**
      * @return The ID of the database container to which the data pertains. Possible values include:
-     * * `0`: This value is used for data that pertain to the entire CDB. This value is also used for data in non-CDBs.
-     * * `1`: This value is used for data that pertain to only the root container.
-     * * `n`: Where n is the applicable container ID for the data.
      * 
      */
     public Double containerId() {

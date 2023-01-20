@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -50,11 +51,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getUserAssessmentUserAnalytics(args: GetUserAssessmentUserAnalyticsArgs, opts?: pulumi.InvokeOptions): Promise<GetUserAssessmentUserAnalyticsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getUserAssessmentUserAnalytics:getUserAssessmentUserAnalytics", {
         "accessLevel": args.accessLevel,
         "accountStatus": args.accountStatus,
@@ -171,9 +169,52 @@ export interface GetUserAssessmentUserAnalyticsResult {
     readonly userKey?: string;
     readonly userName?: string;
 }
-
+/**
+ * This data source provides the list of User Assessment User Analytics in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Gets a list of aggregated user details from the specified user assessment. This provides information about the overall state
+ * of database user security.  For example, the user details include how many users have the DBA role and how many users are in
+ * the critical category. This data is especially useful content for dashboards or to support analytics.
+ *
+ * When you perform the ListUserAnalytics operation, if the parameter compartmentIdInSubtree is set to "true," and if the
+ * parameter accessLevel is set to ACCESSIBLE, then the operation returns compartments in which the requestor has INSPECT
+ * permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
+ * root compartment. If the requestor does not have access to at least one subcompartment of the compartment specified by
+ * compartmentId, then "Not Authorized" is returned.
+ *
+ * The parameter compartmentIdInSubtree applies when you perform ListUserAnalytics on the compartmentId passed and when it is
+ * set to true, the entire hierarchy of compartments can be returned.
+ *
+ * To use ListUserAnalytics to get a full list of all compartments and subcompartments in the tenancy from the root compartment,
+ * set the parameter compartmentIdInSubtree to true and accessLevel to ACCESSIBLE.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testUserAssessmentUserAnalytics = oci.DataSafe.getUserAssessmentUserAnalytics({
+ *     userAssessmentId: oci_data_safe_user_assessment.test_user_assessment.id,
+ *     accessLevel: _var.user_assessment_user_analytic_access_level,
+ *     accountStatus: _var.user_assessment_user_analytic_account_status,
+ *     authenticationType: _var.user_assessment_user_analytic_authentication_type,
+ *     compartmentIdInSubtree: _var.user_assessment_user_analytic_compartment_id_in_subtree,
+ *     targetId: oci_cloud_guard_target.test_target.id,
+ *     timeLastLoginGreaterThanOrEqualTo: _var.user_assessment_user_analytic_time_last_login_greater_than_or_equal_to,
+ *     timeLastLoginLessThan: _var.user_assessment_user_analytic_time_last_login_less_than,
+ *     timePasswordLastChangedGreaterThanOrEqualTo: _var.user_assessment_user_analytic_time_password_last_changed_greater_than_or_equal_to,
+ *     timePasswordLastChangedLessThan: _var.user_assessment_user_analytic_time_password_last_changed_less_than,
+ *     timeUserCreatedGreaterThanOrEqualTo: _var.user_assessment_user_analytic_time_user_created_greater_than_or_equal_to,
+ *     timeUserCreatedLessThan: _var.user_assessment_user_analytic_time_user_created_less_than,
+ *     userCategory: _var.user_assessment_user_analytic_user_category,
+ *     userKey: _var.user_assessment_user_analytic_user_key,
+ *     userName: oci_identity_user.test_user.name,
+ * });
+ * ```
+ */
 export function getUserAssessmentUserAnalyticsOutput(args: GetUserAssessmentUserAnalyticsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUserAssessmentUserAnalyticsResult> {
-    return pulumi.output(args).apply(a => getUserAssessmentUserAnalytics(a, opts))
+    return pulumi.output(args).apply((a: any) => getUserAssessmentUserAnalytics(a, opts))
 }
 
 /**

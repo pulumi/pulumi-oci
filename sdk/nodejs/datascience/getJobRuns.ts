@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -27,11 +28,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getJobRuns(args: GetJobRunsArgs, opts?: pulumi.InvokeOptions): Promise<GetJobRunsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataScience/getJobRuns:getJobRuns", {
         "compartmentId": args.compartmentId,
         "createdBy": args.createdBy,
@@ -108,9 +106,29 @@ export interface GetJobRunsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Job Runs in Oracle Cloud Infrastructure Data Science service.
+ *
+ * List out job runs.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testJobRuns = oci.DataScience.getJobRuns({
+ *     compartmentId: _var.compartment_id,
+ *     createdBy: _var.job_run_created_by,
+ *     displayName: _var.job_run_display_name,
+ *     id: _var.job_run_id,
+ *     jobId: oci_datascience_job.test_job.id,
+ *     state: _var.job_run_state,
+ * });
+ * ```
+ */
 export function getJobRunsOutput(args: GetJobRunsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJobRunsResult> {
-    return pulumi.output(args).apply(a => getJobRuns(a, opts))
+    return pulumi.output(args).apply((a: any) => getJobRuns(a, opts))
 }
 
 /**

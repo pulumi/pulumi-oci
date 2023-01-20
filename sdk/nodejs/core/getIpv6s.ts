@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -32,11 +33,8 @@ import * as utilities from "../utilities";
  */
 export function getIpv6s(args?: GetIpv6sArgs, opts?: pulumi.InvokeOptions): Promise<GetIpv6sResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getIpv6s:getIpv6s", {
         "filters": args.filters,
         "ipAddress": args.ipAddress,
@@ -90,9 +88,33 @@ export interface GetIpv6sResult {
      */
     readonly vnicId?: string;
 }
-
+/**
+ * This data source provides the list of Ipv6s in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the [IPv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/) objects based
+ * on one of these filters:
+ *
+ *   * Subnet OCID.
+ *   * VNIC OCID.
+ *   * Both IPv6 address and subnet OCID: This lets you get an `Ipv6` object based on its private
+ *       IPv6 address (for example, 2001:0db8:0123:1111:abcd:ef01:2345:6789) and not its OCID. For comparison,
+ *       [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Ipv6/GetIpv6) requires the OCID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testIpv6s = oci.Core.getIpv6s({
+ *     ipAddress: _var.ipv6_ip_address,
+ *     subnetId: oci_core_subnet.test_subnet.id,
+ *     vnicId: oci_core_vnic_attachment.test_vnic_attachment.id,
+ * });
+ * ```
+ */
 export function getIpv6sOutput(args?: GetIpv6sOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIpv6sResult> {
-    return pulumi.output(args).apply(a => getIpv6s(a, opts))
+    return pulumi.output(args).apply((a: any) => getIpv6s(a, opts))
 }
 
 /**

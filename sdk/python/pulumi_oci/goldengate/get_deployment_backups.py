@@ -139,8 +139,8 @@ def get_deployment_backups(compartment_id: Optional[str] = None,
     ```
 
 
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str deployment_id: The ID of the deployment in which to list resources.
+    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+    :param str deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
     :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
     :param str state: A filter to return only the resources that match the 'lifecycleState' given.
     """
@@ -188,8 +188,8 @@ def get_deployment_backups_output(compartment_id: Optional[pulumi.Input[str]] = 
     ```
 
 
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param str deployment_id: The ID of the deployment in which to list resources.
+    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+    :param str deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
     :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
     :param str state: A filter to return only the resources that match the 'lifecycleState' given.
     """

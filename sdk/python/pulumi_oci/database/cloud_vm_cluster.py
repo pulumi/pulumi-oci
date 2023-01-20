@@ -30,14 +30,19 @@ class CloudVmClusterArgs:
                  create_async: Optional[pulumi.Input[bool]] = None,
                  data_collection_options: Optional[pulumi.Input['CloudVmClusterDataCollectionOptionsArgs']] = None,
                  data_storage_percentage: Optional[pulumi.Input[int]] = None,
+                 data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
+                 db_node_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
+                 db_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  domain: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_local_backup_enabled: Optional[pulumi.Input[bool]] = None,
                  is_sparse_diskgroup_enabled: Optional[pulumi.Input[bool]] = None,
                  license_model: Optional[pulumi.Input[str]] = None,
+                 memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  ocpu_count: Optional[pulumi.Input[float]] = None,
+                 private_zone_id: Optional[pulumi.Input[str]] = None,
                  scan_listener_port_tcp: Optional[pulumi.Input[int]] = None,
                  scan_listener_port_tcp_ssl: Optional[pulumi.Input[int]] = None,
                  time_zone: Optional[pulumi.Input[str]] = None):
@@ -63,15 +68,20 @@ class CloudVmClusterArgs:
         :param pulumi.Input[str] cluster_name: The cluster name for cloud VM cluster. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
         :param pulumi.Input['CloudVmClusterDataCollectionOptionsArgs'] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[int] data_storage_percentage: The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+        :param pulumi.Input[float] data_storage_size_in_tbs: (Updatable) The data disk group size to be allocated in TBs.
+        :param pulumi.Input[int] db_node_storage_size_in_gbs: (Updatable) The local node storage to be allocated in GBs.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] db_servers: The list of DB servers.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] domain: A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted. Applies to Exadata Cloud Service instances only.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_local_backup_enabled: If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
         :param pulumi.Input[bool] is_sparse_diskgroup_enabled: If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to the cloud VM cluster. The default is BRING_YOUR_OWN_LICENSE.
+        :param pulumi.Input[int] memory_size_in_gbs: (Updatable) The memory to be allocated in GBs.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[float] ocpu_count: (Updatable) The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
+        :param pulumi.Input[str] private_zone_id: The private zone id in which DNS records need to be created.
         :param pulumi.Input[int] scan_listener_port_tcp: The TCP Single Client Access Name (SCAN) port. The default port is 1521.
         :param pulumi.Input[int] scan_listener_port_tcp_ssl: The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
         :param pulumi.Input[str] time_zone: The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
@@ -95,6 +105,12 @@ class CloudVmClusterArgs:
             pulumi.set(__self__, "data_collection_options", data_collection_options)
         if data_storage_percentage is not None:
             pulumi.set(__self__, "data_storage_percentage", data_storage_percentage)
+        if data_storage_size_in_tbs is not None:
+            pulumi.set(__self__, "data_storage_size_in_tbs", data_storage_size_in_tbs)
+        if db_node_storage_size_in_gbs is not None:
+            pulumi.set(__self__, "db_node_storage_size_in_gbs", db_node_storage_size_in_gbs)
+        if db_servers is not None:
+            pulumi.set(__self__, "db_servers", db_servers)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if domain is not None:
@@ -107,10 +123,14 @@ class CloudVmClusterArgs:
             pulumi.set(__self__, "is_sparse_diskgroup_enabled", is_sparse_diskgroup_enabled)
         if license_model is not None:
             pulumi.set(__self__, "license_model", license_model)
+        if memory_size_in_gbs is not None:
+            pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
         if nsg_ids is not None:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if ocpu_count is not None:
             pulumi.set(__self__, "ocpu_count", ocpu_count)
+        if private_zone_id is not None:
+            pulumi.set(__self__, "private_zone_id", private_zone_id)
         if scan_listener_port_tcp is not None:
             pulumi.set(__self__, "scan_listener_port_tcp", scan_listener_port_tcp)
         if scan_listener_port_tcp_ssl is not None:
@@ -291,6 +311,42 @@ class CloudVmClusterArgs:
         pulumi.set(self, "data_storage_percentage", value)
 
     @property
+    @pulumi.getter(name="dataStorageSizeInTbs")
+    def data_storage_size_in_tbs(self) -> Optional[pulumi.Input[float]]:
+        """
+        (Updatable) The data disk group size to be allocated in TBs.
+        """
+        return pulumi.get(self, "data_storage_size_in_tbs")
+
+    @data_storage_size_in_tbs.setter
+    def data_storage_size_in_tbs(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "data_storage_size_in_tbs", value)
+
+    @property
+    @pulumi.getter(name="dbNodeStorageSizeInGbs")
+    def db_node_storage_size_in_gbs(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The local node storage to be allocated in GBs.
+        """
+        return pulumi.get(self, "db_node_storage_size_in_gbs")
+
+    @db_node_storage_size_in_gbs.setter
+    def db_node_storage_size_in_gbs(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "db_node_storage_size_in_gbs", value)
+
+    @property
+    @pulumi.getter(name="dbServers")
+    def db_servers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        The list of DB servers.
+        """
+        return pulumi.get(self, "db_servers")
+
+    @db_servers.setter
+    def db_servers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "db_servers", value)
+
+    @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
@@ -363,6 +419,18 @@ class CloudVmClusterArgs:
         pulumi.set(self, "license_model", value)
 
     @property
+    @pulumi.getter(name="memorySizeInGbs")
+    def memory_size_in_gbs(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The memory to be allocated in GBs.
+        """
+        return pulumi.get(self, "memory_size_in_gbs")
+
+    @memory_size_in_gbs.setter
+    def memory_size_in_gbs(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "memory_size_in_gbs", value)
+
+    @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
@@ -386,6 +454,18 @@ class CloudVmClusterArgs:
     @ocpu_count.setter
     def ocpu_count(self, value: Optional[pulumi.Input[float]]):
         pulumi.set(self, "ocpu_count", value)
+
+    @property
+    @pulumi.getter(name="privateZoneId")
+    def private_zone_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The private zone id in which DNS records need to be created.
+        """
+        return pulumi.get(self, "private_zone_id")
+
+    @private_zone_id.setter
+    def private_zone_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "private_zone_id", value)
 
     @property
     @pulumi.getter(name="scanListenerPortTcp")
@@ -437,6 +517,9 @@ class _CloudVmClusterState:
                  create_async: Optional[pulumi.Input[bool]] = None,
                  data_collection_options: Optional[pulumi.Input['CloudVmClusterDataCollectionOptionsArgs']] = None,
                  data_storage_percentage: Optional[pulumi.Input[int]] = None,
+                 data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
+                 db_node_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
+                 db_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  disk_redundancy: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
@@ -451,9 +534,11 @@ class _CloudVmClusterState:
                  license_model: Optional[pulumi.Input[str]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  listener_port: Optional[pulumi.Input[str]] = None,
+                 memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
                  node_count: Optional[pulumi.Input[int]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  ocpu_count: Optional[pulumi.Input[float]] = None,
+                 private_zone_id: Optional[pulumi.Input[str]] = None,
                  scan_dns_name: Optional[pulumi.Input[str]] = None,
                  scan_dns_record_id: Optional[pulumi.Input[str]] = None,
                  scan_ip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -487,6 +572,9 @@ class _CloudVmClusterState:
                * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
         :param pulumi.Input['CloudVmClusterDataCollectionOptionsArgs'] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[int] data_storage_percentage: The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+        :param pulumi.Input[float] data_storage_size_in_tbs: (Updatable) The data disk group size to be allocated in TBs.
+        :param pulumi.Input[int] db_node_storage_size_in_gbs: (Updatable) The local node storage to be allocated in GBs.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] db_servers: The list of DB servers.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] disk_redundancy: The type of redundancy configured for the cloud Vm cluster. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the cloud VM cluster. The name does not need to be unique.
@@ -501,10 +589,12 @@ class _CloudVmClusterState:
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to the cloud VM cluster. The default is BRING_YOUR_OWN_LICENSE.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[str] listener_port: The port number configured for the listener on the cloud VM cluster.
+        :param pulumi.Input[int] memory_size_in_gbs: (Updatable) The memory to be allocated in GBs.
         :param pulumi.Input[int] node_count: The number of nodes in the cloud VM cluster.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[float] ocpu_count: (Updatable) The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
+        :param pulumi.Input[str] private_zone_id: The private zone id in which DNS records need to be created.
         :param pulumi.Input[str] scan_dns_name: The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
         :param pulumi.Input[str] scan_dns_record_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] scan_ip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the cloud VM cluster. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
@@ -541,6 +631,12 @@ class _CloudVmClusterState:
             pulumi.set(__self__, "data_collection_options", data_collection_options)
         if data_storage_percentage is not None:
             pulumi.set(__self__, "data_storage_percentage", data_storage_percentage)
+        if data_storage_size_in_tbs is not None:
+            pulumi.set(__self__, "data_storage_size_in_tbs", data_storage_size_in_tbs)
+        if db_node_storage_size_in_gbs is not None:
+            pulumi.set(__self__, "db_node_storage_size_in_gbs", db_node_storage_size_in_gbs)
+        if db_servers is not None:
+            pulumi.set(__self__, "db_servers", db_servers)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if disk_redundancy is not None:
@@ -569,12 +665,16 @@ class _CloudVmClusterState:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if listener_port is not None:
             pulumi.set(__self__, "listener_port", listener_port)
+        if memory_size_in_gbs is not None:
+            pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
         if node_count is not None:
             pulumi.set(__self__, "node_count", node_count)
         if nsg_ids is not None:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if ocpu_count is not None:
             pulumi.set(__self__, "ocpu_count", ocpu_count)
+        if private_zone_id is not None:
+            pulumi.set(__self__, "private_zone_id", private_zone_id)
         if scan_dns_name is not None:
             pulumi.set(__self__, "scan_dns_name", scan_dns_name)
         if scan_dns_record_id is not None:
@@ -729,6 +829,42 @@ class _CloudVmClusterState:
     @data_storage_percentage.setter
     def data_storage_percentage(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "data_storage_percentage", value)
+
+    @property
+    @pulumi.getter(name="dataStorageSizeInTbs")
+    def data_storage_size_in_tbs(self) -> Optional[pulumi.Input[float]]:
+        """
+        (Updatable) The data disk group size to be allocated in TBs.
+        """
+        return pulumi.get(self, "data_storage_size_in_tbs")
+
+    @data_storage_size_in_tbs.setter
+    def data_storage_size_in_tbs(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "data_storage_size_in_tbs", value)
+
+    @property
+    @pulumi.getter(name="dbNodeStorageSizeInGbs")
+    def db_node_storage_size_in_gbs(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The local node storage to be allocated in GBs.
+        """
+        return pulumi.get(self, "db_node_storage_size_in_gbs")
+
+    @db_node_storage_size_in_gbs.setter
+    def db_node_storage_size_in_gbs(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "db_node_storage_size_in_gbs", value)
+
+    @property
+    @pulumi.getter(name="dbServers")
+    def db_servers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        The list of DB servers.
+        """
+        return pulumi.get(self, "db_servers")
+
+    @db_servers.setter
+    def db_servers(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "db_servers", value)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -899,6 +1035,18 @@ class _CloudVmClusterState:
         pulumi.set(self, "listener_port", value)
 
     @property
+    @pulumi.getter(name="memorySizeInGbs")
+    def memory_size_in_gbs(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The memory to be allocated in GBs.
+        """
+        return pulumi.get(self, "memory_size_in_gbs")
+
+    @memory_size_in_gbs.setter
+    def memory_size_in_gbs(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "memory_size_in_gbs", value)
+
+    @property
     @pulumi.getter(name="nodeCount")
     def node_count(self) -> Optional[pulumi.Input[int]]:
         """
@@ -934,6 +1082,18 @@ class _CloudVmClusterState:
     @ocpu_count.setter
     def ocpu_count(self, value: Optional[pulumi.Input[float]]):
         pulumi.set(self, "ocpu_count", value)
+
+    @property
+    @pulumi.getter(name="privateZoneId")
+    def private_zone_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The private zone id in which DNS records need to be created.
+        """
+        return pulumi.get(self, "private_zone_id")
+
+    @private_zone_id.setter
+    def private_zone_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "private_zone_id", value)
 
     @property
     @pulumi.getter(name="scanDnsName")
@@ -1130,6 +1290,9 @@ class CloudVmCluster(pulumi.CustomResource):
                  create_async: Optional[pulumi.Input[bool]] = None,
                  data_collection_options: Optional[pulumi.Input[pulumi.InputType['CloudVmClusterDataCollectionOptionsArgs']]] = None,
                  data_storage_percentage: Optional[pulumi.Input[int]] = None,
+                 data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
+                 db_node_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
+                 db_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  domain: Optional[pulumi.Input[str]] = None,
@@ -1139,8 +1302,10 @@ class CloudVmCluster(pulumi.CustomResource):
                  is_local_backup_enabled: Optional[pulumi.Input[bool]] = None,
                  is_sparse_diskgroup_enabled: Optional[pulumi.Input[bool]] = None,
                  license_model: Optional[pulumi.Input[str]] = None,
+                 memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  ocpu_count: Optional[pulumi.Input[float]] = None,
+                 private_zone_id: Optional[pulumi.Input[str]] = None,
                  scan_listener_port_tcp: Optional[pulumi.Input[int]] = None,
                  scan_listener_port_tcp_ssl: Optional[pulumi.Input[int]] = None,
                  ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -1176,6 +1341,9 @@ class CloudVmCluster(pulumi.CustomResource):
                 is_incident_logs_enabled=var["cloud_vm_cluster_data_collection_options_is_incident_logs_enabled"],
             ),
             data_storage_percentage=var["cloud_vm_cluster_data_storage_percentage"],
+            data_storage_size_in_tbs=var["cloud_vm_cluster_data_storage_size_in_tbs"],
+            db_node_storage_size_in_gbs=var["cloud_vm_cluster_db_node_storage_size_in_gbs"],
+            db_servers=var["cloud_vm_cluster_db_servers"],
             defined_tags=var["cloud_vm_cluster_defined_tags"],
             domain=var["cloud_vm_cluster_domain"],
             freeform_tags={
@@ -1184,8 +1352,10 @@ class CloudVmCluster(pulumi.CustomResource):
             is_local_backup_enabled=var["cloud_vm_cluster_is_local_backup_enabled"],
             is_sparse_diskgroup_enabled=var["cloud_vm_cluster_is_sparse_diskgroup_enabled"],
             license_model=var["cloud_vm_cluster_license_model"],
+            memory_size_in_gbs=var["cloud_vm_cluster_memory_size_in_gbs"],
             nsg_ids=var["cloud_vm_cluster_nsg_ids"],
             ocpu_count=var["cloud_vm_cluster_ocpu_count"],
+            private_zone_id=oci_dns_zone["test_zone"]["id"],
             scan_listener_port_tcp=var["cloud_vm_cluster_scan_listener_port_tcp"],
             scan_listener_port_tcp_ssl=var["cloud_vm_cluster_scan_listener_port_tcp_ssl"],
             time_zone=var["cloud_vm_cluster_time_zone"])
@@ -1216,6 +1386,9 @@ class CloudVmCluster(pulumi.CustomResource):
                * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
         :param pulumi.Input[pulumi.InputType['CloudVmClusterDataCollectionOptionsArgs']] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[int] data_storage_percentage: The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+        :param pulumi.Input[float] data_storage_size_in_tbs: (Updatable) The data disk group size to be allocated in TBs.
+        :param pulumi.Input[int] db_node_storage_size_in_gbs: (Updatable) The local node storage to be allocated in GBs.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] db_servers: The list of DB servers.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the cloud VM cluster. The name does not need to be unique.
         :param pulumi.Input[str] domain: A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted. Applies to Exadata Cloud Service instances only.
@@ -1225,9 +1398,11 @@ class CloudVmCluster(pulumi.CustomResource):
         :param pulumi.Input[bool] is_local_backup_enabled: If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
         :param pulumi.Input[bool] is_sparse_diskgroup_enabled: If true, the sparse disk group is configured for the cloud VM cluster. If false, the sparse disk group is not created.
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to the cloud VM cluster. The default is BRING_YOUR_OWN_LICENSE.
+        :param pulumi.Input[int] memory_size_in_gbs: (Updatable) The memory to be allocated in GBs.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[float] ocpu_count: (Updatable) The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
+        :param pulumi.Input[str] private_zone_id: The private zone id in which DNS records need to be created.
         :param pulumi.Input[int] scan_listener_port_tcp: The TCP Single Client Access Name (SCAN) port. The default port is 1521.
         :param pulumi.Input[int] scan_listener_port_tcp_ssl: The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ssh_public_keys: (Updatable) The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
@@ -1269,6 +1444,9 @@ class CloudVmCluster(pulumi.CustomResource):
                 is_incident_logs_enabled=var["cloud_vm_cluster_data_collection_options_is_incident_logs_enabled"],
             ),
             data_storage_percentage=var["cloud_vm_cluster_data_storage_percentage"],
+            data_storage_size_in_tbs=var["cloud_vm_cluster_data_storage_size_in_tbs"],
+            db_node_storage_size_in_gbs=var["cloud_vm_cluster_db_node_storage_size_in_gbs"],
+            db_servers=var["cloud_vm_cluster_db_servers"],
             defined_tags=var["cloud_vm_cluster_defined_tags"],
             domain=var["cloud_vm_cluster_domain"],
             freeform_tags={
@@ -1277,8 +1455,10 @@ class CloudVmCluster(pulumi.CustomResource):
             is_local_backup_enabled=var["cloud_vm_cluster_is_local_backup_enabled"],
             is_sparse_diskgroup_enabled=var["cloud_vm_cluster_is_sparse_diskgroup_enabled"],
             license_model=var["cloud_vm_cluster_license_model"],
+            memory_size_in_gbs=var["cloud_vm_cluster_memory_size_in_gbs"],
             nsg_ids=var["cloud_vm_cluster_nsg_ids"],
             ocpu_count=var["cloud_vm_cluster_ocpu_count"],
+            private_zone_id=oci_dns_zone["test_zone"]["id"],
             scan_listener_port_tcp=var["cloud_vm_cluster_scan_listener_port_tcp"],
             scan_listener_port_tcp_ssl=var["cloud_vm_cluster_scan_listener_port_tcp_ssl"],
             time_zone=var["cloud_vm_cluster_time_zone"])
@@ -1316,6 +1496,9 @@ class CloudVmCluster(pulumi.CustomResource):
                  create_async: Optional[pulumi.Input[bool]] = None,
                  data_collection_options: Optional[pulumi.Input[pulumi.InputType['CloudVmClusterDataCollectionOptionsArgs']]] = None,
                  data_storage_percentage: Optional[pulumi.Input[int]] = None,
+                 data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
+                 db_node_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
+                 db_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  domain: Optional[pulumi.Input[str]] = None,
@@ -1325,8 +1508,10 @@ class CloudVmCluster(pulumi.CustomResource):
                  is_local_backup_enabled: Optional[pulumi.Input[bool]] = None,
                  is_sparse_diskgroup_enabled: Optional[pulumi.Input[bool]] = None,
                  license_model: Optional[pulumi.Input[str]] = None,
+                 memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  ocpu_count: Optional[pulumi.Input[float]] = None,
+                 private_zone_id: Optional[pulumi.Input[str]] = None,
                  scan_listener_port_tcp: Optional[pulumi.Input[int]] = None,
                  scan_listener_port_tcp_ssl: Optional[pulumi.Input[int]] = None,
                  ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -1358,6 +1543,9 @@ class CloudVmCluster(pulumi.CustomResource):
             __props__.__dict__["create_async"] = create_async
             __props__.__dict__["data_collection_options"] = data_collection_options
             __props__.__dict__["data_storage_percentage"] = data_storage_percentage
+            __props__.__dict__["data_storage_size_in_tbs"] = data_storage_size_in_tbs
+            __props__.__dict__["db_node_storage_size_in_gbs"] = db_node_storage_size_in_gbs
+            __props__.__dict__["db_servers"] = db_servers
             __props__.__dict__["defined_tags"] = defined_tags
             if display_name is None and not opts.urn:
                 raise TypeError("Missing required property 'display_name'")
@@ -1373,8 +1561,10 @@ class CloudVmCluster(pulumi.CustomResource):
             __props__.__dict__["is_local_backup_enabled"] = is_local_backup_enabled
             __props__.__dict__["is_sparse_diskgroup_enabled"] = is_sparse_diskgroup_enabled
             __props__.__dict__["license_model"] = license_model
+            __props__.__dict__["memory_size_in_gbs"] = memory_size_in_gbs
             __props__.__dict__["nsg_ids"] = nsg_ids
             __props__.__dict__["ocpu_count"] = ocpu_count
+            __props__.__dict__["private_zone_id"] = private_zone_id
             __props__.__dict__["scan_listener_port_tcp"] = scan_listener_port_tcp
             __props__.__dict__["scan_listener_port_tcp_ssl"] = scan_listener_port_tcp_ssl
             if ssh_public_keys is None and not opts.urn:
@@ -1421,6 +1611,9 @@ class CloudVmCluster(pulumi.CustomResource):
             create_async: Optional[pulumi.Input[bool]] = None,
             data_collection_options: Optional[pulumi.Input[pulumi.InputType['CloudVmClusterDataCollectionOptionsArgs']]] = None,
             data_storage_percentage: Optional[pulumi.Input[int]] = None,
+            data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
+            db_node_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
+            db_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             disk_redundancy: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
@@ -1435,9 +1628,11 @@ class CloudVmCluster(pulumi.CustomResource):
             license_model: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             listener_port: Optional[pulumi.Input[str]] = None,
+            memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
             node_count: Optional[pulumi.Input[int]] = None,
             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             ocpu_count: Optional[pulumi.Input[float]] = None,
+            private_zone_id: Optional[pulumi.Input[str]] = None,
             scan_dns_name: Optional[pulumi.Input[str]] = None,
             scan_dns_record_id: Optional[pulumi.Input[str]] = None,
             scan_ip_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -1476,6 +1671,9 @@ class CloudVmCluster(pulumi.CustomResource):
                * Exadata.Full2.368 - Specify a multiple of 8, from 0 to 368.
         :param pulumi.Input[pulumi.InputType['CloudVmClusterDataCollectionOptionsArgs']] data_collection_options: (Updatable) Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[int] data_storage_percentage: The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+        :param pulumi.Input[float] data_storage_size_in_tbs: (Updatable) The data disk group size to be allocated in TBs.
+        :param pulumi.Input[int] db_node_storage_size_in_gbs: (Updatable) The local node storage to be allocated in GBs.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] db_servers: The list of DB servers.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] disk_redundancy: The type of redundancy configured for the cloud Vm cluster. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the cloud VM cluster. The name does not need to be unique.
@@ -1490,10 +1688,12 @@ class CloudVmCluster(pulumi.CustomResource):
         :param pulumi.Input[str] license_model: (Updatable) The Oracle license model that applies to the cloud VM cluster. The default is BRING_YOUR_OWN_LICENSE.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[str] listener_port: The port number configured for the listener on the cloud VM cluster.
+        :param pulumi.Input[int] memory_size_in_gbs: (Updatable) The memory to be allocated in GBs.
         :param pulumi.Input[int] node_count: The number of nodes in the cloud VM cluster.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
         :param pulumi.Input[float] ocpu_count: (Updatable) The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
+        :param pulumi.Input[str] private_zone_id: The private zone id in which DNS records need to be created.
         :param pulumi.Input[str] scan_dns_name: The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
         :param pulumi.Input[str] scan_dns_record_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] scan_ip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the cloud VM cluster. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
@@ -1524,6 +1724,9 @@ class CloudVmCluster(pulumi.CustomResource):
         __props__.__dict__["create_async"] = create_async
         __props__.__dict__["data_collection_options"] = data_collection_options
         __props__.__dict__["data_storage_percentage"] = data_storage_percentage
+        __props__.__dict__["data_storage_size_in_tbs"] = data_storage_size_in_tbs
+        __props__.__dict__["db_node_storage_size_in_gbs"] = db_node_storage_size_in_gbs
+        __props__.__dict__["db_servers"] = db_servers
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["disk_redundancy"] = disk_redundancy
         __props__.__dict__["display_name"] = display_name
@@ -1538,9 +1741,11 @@ class CloudVmCluster(pulumi.CustomResource):
         __props__.__dict__["license_model"] = license_model
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["listener_port"] = listener_port
+        __props__.__dict__["memory_size_in_gbs"] = memory_size_in_gbs
         __props__.__dict__["node_count"] = node_count
         __props__.__dict__["nsg_ids"] = nsg_ids
         __props__.__dict__["ocpu_count"] = ocpu_count
+        __props__.__dict__["private_zone_id"] = private_zone_id
         __props__.__dict__["scan_dns_name"] = scan_dns_name
         __props__.__dict__["scan_dns_record_id"] = scan_dns_record_id
         __props__.__dict__["scan_ip_ids"] = scan_ip_ids
@@ -1641,6 +1846,30 @@ class CloudVmCluster(pulumi.CustomResource):
         The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
         """
         return pulumi.get(self, "data_storage_percentage")
+
+    @property
+    @pulumi.getter(name="dataStorageSizeInTbs")
+    def data_storage_size_in_tbs(self) -> pulumi.Output[float]:
+        """
+        (Updatable) The data disk group size to be allocated in TBs.
+        """
+        return pulumi.get(self, "data_storage_size_in_tbs")
+
+    @property
+    @pulumi.getter(name="dbNodeStorageSizeInGbs")
+    def db_node_storage_size_in_gbs(self) -> pulumi.Output[int]:
+        """
+        (Updatable) The local node storage to be allocated in GBs.
+        """
+        return pulumi.get(self, "db_node_storage_size_in_gbs")
+
+    @property
+    @pulumi.getter(name="dbServers")
+    def db_servers(self) -> pulumi.Output[Sequence[str]]:
+        """
+        The list of DB servers.
+        """
+        return pulumi.get(self, "db_servers")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -1755,6 +1984,14 @@ class CloudVmCluster(pulumi.CustomResource):
         return pulumi.get(self, "listener_port")
 
     @property
+    @pulumi.getter(name="memorySizeInGbs")
+    def memory_size_in_gbs(self) -> pulumi.Output[int]:
+        """
+        (Updatable) The memory to be allocated in GBs.
+        """
+        return pulumi.get(self, "memory_size_in_gbs")
+
+    @property
     @pulumi.getter(name="nodeCount")
     def node_count(self) -> pulumi.Output[int]:
         """
@@ -1778,6 +2015,14 @@ class CloudVmCluster(pulumi.CustomResource):
         (Updatable) The number of OCPU cores to enable for a cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
         """
         return pulumi.get(self, "ocpu_count")
+
+    @property
+    @pulumi.getter(name="privateZoneId")
+    def private_zone_id(self) -> pulumi.Output[str]:
+        """
+        The private zone id in which DNS records need to be created.
+        """
+        return pulumi.get(self, "private_zone_id")
 
     @property
     @pulumi.getter(name="scanDnsName")

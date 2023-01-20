@@ -27,9 +27,6 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         public readonly string Constraint;
         /// <summary>
         /// The ID of the database container to which the data pertains. Possible values include:
-        /// * `0`: This value is used for data that pertain to the entire CDB. This value is also used for data in non-CDBs.
-        /// * `1`: This value is used for data that pertain to only the root container.
-        /// * `n`: Where n is the applicable container ID for the data.
         /// </summary>
         public readonly double ContainerId;
         /// <summary>

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVmClusters(args: GetVmClustersArgs, opts?: pulumi.InvokeOptions): Promise<GetVmClustersResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getVmClusters:getVmClusters", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -93,9 +91,28 @@ export interface GetVmClustersResult {
      */
     readonly vmClusters: outputs.Database.GetVmClustersVmCluster[];
 }
-
+/**
+ * This data source provides the list of Vm Clusters in Oracle Cloud Infrastructure Database service.
+ *
+ * Lists the VM clusters in the specified compartment. Applies to Exadata Cloud@Customer instances only.
+ * To list the cloud VM clusters in an Exadata Cloud Service instance, use the [ListCloudVmClusters ](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/ListCloudVmClusters) operation.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testVmClusters = oci.Database.getVmClusters({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.vm_cluster_display_name,
+ *     exadataInfrastructureId: oci_database_exadata_infrastructure.test_exadata_infrastructure.id,
+ *     state: _var.vm_cluster_state,
+ * });
+ * ```
+ */
 export function getVmClustersOutput(args: GetVmClustersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVmClustersResult> {
-    return pulumi.output(args).apply(a => getVmClusters(a, opts))
+    return pulumi.output(args).apply((a: any) => getVmClusters(a, opts))
 }
 
 /**

@@ -98,6 +98,17 @@ func NewAnalyticsInstanceVanityUrl(ctx *pulumi.Context,
 	if args.PublicCertificate == nil {
 		return nil, errors.New("invalid value for required argument 'PublicCertificate'")
 	}
+	if args.Passphrase != nil {
+		args.Passphrase = pulumi.ToSecret(args.Passphrase).(pulumi.StringPtrInput)
+	}
+	if args.PrivateKey != nil {
+		args.PrivateKey = pulumi.ToSecret(args.PrivateKey).(pulumi.StringInput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"passphrase",
+		"privateKey",
+	})
+	opts = append(opts, secrets)
 	var resource AnalyticsInstanceVanityUrl
 	err := ctx.RegisterResource("oci:Analytics/analyticsInstanceVanityUrl:AnalyticsInstanceVanityUrl", name, args, &resource, opts...)
 	if err != nil {

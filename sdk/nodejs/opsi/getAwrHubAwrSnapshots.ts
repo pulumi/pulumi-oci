@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAwrHubAwrSnapshots(args: GetAwrHubAwrSnapshotsArgs, opts?: pulumi.InvokeOptions): Promise<GetAwrHubAwrSnapshotsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Opsi/getAwrHubAwrSnapshots:getAwrHubAwrSnapshots", {
         "awrHubId": args.awrHubId,
         "awrSourceDatabaseIdentifier": args.awrSourceDatabaseIdentifier,
@@ -81,9 +79,28 @@ export interface GetAwrHubAwrSnapshotsResult {
     readonly timeGreaterThanOrEqualTo?: string;
     readonly timeLessThanOrEqualTo?: string;
 }
-
+/**
+ * This data source provides the list of Awr Hub Awr Snapshots in Oracle Cloud Infrastructure Opsi service.
+ *
+ * Lists AWR snapshots for the specified source database in the AWR hub. The difference between the timeGreaterThanOrEqualTo and timeLessThanOrEqualTo should not exceed an elapsed range of 1 day.
+ * The timeGreaterThanOrEqualTo & timeLessThanOrEqualTo params are optional. If these params are not provided, by default last 1 day snapshots will be returned.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAwrHubAwrSnapshots = oci.Opsi.getAwrHubAwrSnapshots({
+ *     awrHubId: oci_opsi_awr_hub.test_awr_hub.id,
+ *     awrSourceDatabaseIdentifier: _var.awr_hub_awr_snapshot_awr_source_database_identifier,
+ *     timeGreaterThanOrEqualTo: _var.awr_hub_awr_snapshot_time_greater_than_or_equal_to,
+ *     timeLessThanOrEqualTo: _var.awr_hub_awr_snapshot_time_less_than_or_equal_to,
+ * });
+ * ```
+ */
 export function getAwrHubAwrSnapshotsOutput(args: GetAwrHubAwrSnapshotsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAwrHubAwrSnapshotsResult> {
-    return pulumi.output(args).apply(a => getAwrHubAwrSnapshots(a, opts))
+    return pulumi.output(args).apply((a: any) => getAwrHubAwrSnapshots(a, opts))
 }
 
 /**

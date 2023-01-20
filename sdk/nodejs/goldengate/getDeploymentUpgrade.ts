@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDeploymentUpgrade(args: GetDeploymentUpgradeArgs, opts?: pulumi.InvokeOptions): Promise<GetDeploymentUpgradeResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:GoldenGate/getDeploymentUpgrade:getDeploymentUpgrade", {
         "deploymentUpgradeId": args.deploymentUpgradeId,
     }, opts);
@@ -50,7 +47,7 @@ export interface GetDeploymentUpgradeResult {
      */
     readonly compartmentId: string;
     /**
-     * Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+     * Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
      */
     readonly definedTags: {[key: string]: any};
     /**
@@ -71,7 +68,7 @@ export interface GetDeploymentUpgradeResult {
      */
     readonly displayName: string;
     /**
-     * A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     * A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
      */
     readonly freeformTags: {[key: string]: any};
     /**
@@ -95,7 +92,7 @@ export interface GetDeploymentUpgradeResult {
      */
     readonly state: string;
     /**
-     * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+     * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      */
     readonly systemTags: {[key: string]: any};
     /**
@@ -115,9 +112,24 @@ export interface GetDeploymentUpgradeResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Deployment Upgrade resource in Oracle Cloud Infrastructure Golden Gate service.
+ *
+ * Retrieves a deployment upgrade.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDeploymentUpgrade = oci.GoldenGate.getDeploymentUpgrade({
+ *     deploymentUpgradeId: oci_golden_gate_deployment_upgrade.test_deployment_upgrade.id,
+ * });
+ * ```
+ */
 export function getDeploymentUpgradeOutput(args: GetDeploymentUpgradeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDeploymentUpgradeResult> {
-    return pulumi.output(args).apply(a => getDeploymentUpgrade(a, opts))
+    return pulumi.output(args).apply((a: any) => getDeploymentUpgrade(a, opts))
 }
 
 /**

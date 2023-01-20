@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getBootVolumeBackups(args: GetBootVolumeBackupsArgs, opts?: pulumi.InvokeOptions): Promise<GetBootVolumeBackupsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getBootVolumeBackups:getBootVolumeBackups", {
         "bootVolumeId": args.bootVolumeId,
         "compartmentId": args.compartmentId,
@@ -102,9 +100,28 @@ export interface GetBootVolumeBackupsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Boot Volume Backups in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the boot volume backups in the specified compartment. You can filter the results by boot volume.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testBootVolumeBackups = oci.Core.getBootVolumeBackups({
+ *     compartmentId: _var.compartment_id,
+ *     bootVolumeId: oci_core_boot_volume.test_boot_volume.id,
+ *     displayName: _var.boot_volume_backup_display_name,
+ *     sourceBootVolumeBackupId: oci_core_boot_volume_backup.test_boot_volume_backup.id,
+ *     state: _var.boot_volume_backup_state,
+ * });
+ * ```
+ */
 export function getBootVolumeBackupsOutput(args: GetBootVolumeBackupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBootVolumeBackupsResult> {
-    return pulumi.output(args).apply(a => getBootVolumeBackups(a, opts))
+    return pulumi.output(args).apply((a: any) => getBootVolumeBackups(a, opts))
 }
 
 /**

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVolumeGroups(args: GetVolumeGroupsArgs, opts?: pulumi.InvokeOptions): Promise<GetVolumeGroupsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getVolumeGroups:getVolumeGroups", {
         "availabilityDomain": args.availabilityDomain,
         "compartmentId": args.compartmentId,
@@ -93,9 +91,28 @@ export interface GetVolumeGroupsResult {
      */
     readonly volumeGroups: outputs.Core.GetVolumeGroupsVolumeGroup[];
 }
-
+/**
+ * This data source provides the list of Volume Groups in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the volume groups in the specified compartment and availability domain.
+ * For more information, see [Volume Groups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testVolumeGroups = oci.Core.getVolumeGroups({
+ *     compartmentId: _var.compartment_id,
+ *     availabilityDomain: _var.volume_group_availability_domain,
+ *     displayName: _var.volume_group_display_name,
+ *     state: _var.volume_group_state,
+ * });
+ * ```
+ */
 export function getVolumeGroupsOutput(args: GetVolumeGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVolumeGroupsResult> {
-    return pulumi.output(args).apply(a => getVolumeGroups(a, opts))
+    return pulumi.output(args).apply((a: any) => getVolumeGroups(a, opts))
 }
 
 /**

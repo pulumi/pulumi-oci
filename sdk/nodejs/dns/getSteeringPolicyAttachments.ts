@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -31,11 +32,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSteeringPolicyAttachments(args: GetSteeringPolicyAttachmentsArgs, opts?: pulumi.InvokeOptions): Promise<GetSteeringPolicyAttachmentsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Dns/getSteeringPolicyAttachments:getSteeringPolicyAttachments", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -136,9 +134,33 @@ export interface GetSteeringPolicyAttachmentsResult {
      */
     readonly zoneId?: string;
 }
-
+/**
+ * This data source provides the list of Steering Policy Attachments in Oracle Cloud Infrastructure DNS service.
+ *
+ * Lists the steering policy attachments in the specified compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSteeringPolicyAttachments = oci.Dns.getSteeringPolicyAttachments({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.steering_policy_attachment_display_name,
+ *     domain: _var.steering_policy_attachment_domain,
+ *     domainContains: _var.steering_policy_attachment_domain_contains,
+ *     id: _var.steering_policy_attachment_id,
+ *     state: _var.steering_policy_attachment_state,
+ *     steeringPolicyId: oci_dns_steering_policy.test_steering_policy.id,
+ *     timeCreatedGreaterThanOrEqualTo: _var.steering_policy_attachment_time_created_greater_than_or_equal_to,
+ *     timeCreatedLessThan: _var.steering_policy_attachment_time_created_less_than,
+ *     zoneId: oci_dns_zone.test_zone.id,
+ * });
+ * ```
+ */
 export function getSteeringPolicyAttachmentsOutput(args: GetSteeringPolicyAttachmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSteeringPolicyAttachmentsResult> {
-    return pulumi.output(args).apply(a => getSteeringPolicyAttachments(a, opts))
+    return pulumi.output(args).apply((a: any) => getSteeringPolicyAttachments(a, opts))
 }
 
 /**

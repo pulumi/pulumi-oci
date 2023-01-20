@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -27,11 +28,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getModelDeployments(args: GetModelDeploymentsArgs, opts?: pulumi.InvokeOptions): Promise<GetModelDeploymentsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataScience/getModelDeployments:getModelDeployments", {
         "compartmentId": args.compartmentId,
         "createdBy": args.createdBy,
@@ -108,9 +106,29 @@ export interface GetModelDeploymentsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Model Deployments in Oracle Cloud Infrastructure Datascience service.
+ *
+ * Lists all model deployments in the specified compartment. Only one parameter other than compartmentId may also be included in a query. The query must include compartmentId. If the query does not include compartmentId, or includes compartmentId but two or more other parameters an error is returned.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testModelDeployments = oci.DataScience.getModelDeployments({
+ *     compartmentId: _var.compartment_id,
+ *     createdBy: _var.model_deployment_created_by,
+ *     displayName: _var.model_deployment_display_name,
+ *     id: _var.model_deployment_id,
+ *     projectId: oci_datascience_project.test_project.id,
+ *     state: _var.model_deployment_state,
+ * });
+ * ```
+ */
 export function getModelDeploymentsOutput(args: GetModelDeploymentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetModelDeploymentsResult> {
-    return pulumi.output(args).apply(a => getModelDeployments(a, opts))
+    return pulumi.output(args).apply((a: any) => getModelDeployments(a, opts))
 }
 
 /**

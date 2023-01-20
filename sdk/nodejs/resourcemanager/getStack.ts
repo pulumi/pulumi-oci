@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getStack(args: GetStackArgs, opts?: pulumi.InvokeOptions): Promise<GetStackResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ResourceManager/getStack:getStack", {
         "stackId": args.stackId,
     }, opts);
@@ -82,9 +80,24 @@ export interface GetStackResult {
     readonly timeCreated: string;
     readonly variables: {[key: string]: any};
 }
-
+/**
+ * This data source provides details about a specific Stack resource in Oracle Cloud Infrastructure Resource Manager service.
+ *
+ * Gets a stack using the stack ID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testStack = oci.ResourceManager.getStack({
+ *     stackId: oci_resourcemanager_stack.test_stack.id,
+ * });
+ * ```
+ */
 export function getStackOutput(args: GetStackOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetStackResult> {
-    return pulumi.output(args).apply(a => getStack(a, opts))
+    return pulumi.output(args).apply((a: any) => getStack(a, opts))
 }
 
 /**

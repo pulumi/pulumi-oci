@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCategory(args: GetCategoryArgs, opts?: pulumi.InvokeOptions): Promise<GetCategoryResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Optimizer/getCategory:getCategory", {
         "categoryId": args.categoryId,
     }, opts);
@@ -96,9 +94,24 @@ export interface GetCategoryResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Category resource in Oracle Cloud Infrastructure Optimizer service.
+ *
+ * Gets the category that corresponds to the specified OCID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCategory = oci.Optimizer.getCategory({
+ *     categoryId: oci_optimizer_category.test_category.id,
+ * });
+ * ```
+ */
 export function getCategoryOutput(args: GetCategoryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCategoryResult> {
-    return pulumi.output(args).apply(a => getCategory(a, opts))
+    return pulumi.output(args).apply((a: any) => getCategory(a, opts))
 }
 
 /**

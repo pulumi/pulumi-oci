@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCloudGuardConfiguration(args: GetCloudGuardConfigurationArgs, opts?: pulumi.InvokeOptions): Promise<GetCloudGuardConfigurationResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CloudGuard/getCloudGuardConfiguration:getCloudGuardConfiguration", {
         "compartmentId": args.compartmentId,
     }, opts);
@@ -60,9 +57,24 @@ export interface GetCloudGuardConfigurationResult {
      */
     readonly status: string;
 }
-
+/**
+ * This data source provides details about a specific Cloud Guard Configuration resource in Oracle Cloud Infrastructure Cloud Guard service.
+ *
+ * GET Cloud Guard Configuration Details for a Tenancy.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCloudGuardConfiguration = oci.CloudGuard.getCloudGuardConfiguration({
+ *     compartmentId: _var.compartment_id,
+ * });
+ * ```
+ */
 export function getCloudGuardConfigurationOutput(args: GetCloudGuardConfigurationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudGuardConfigurationResult> {
-    return pulumi.output(args).apply(a => getCloudGuardConfiguration(a, opts))
+    return pulumi.output(args).apply((a: any) => getCloudGuardConfiguration(a, opts))
 }
 
 /**

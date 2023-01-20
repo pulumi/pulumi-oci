@@ -52,7 +52,7 @@ namespace Pulumi.Oci.ManagementAgent
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetManagementAgentsResult> InvokeAsync(GetManagementAgentsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetManagementAgentsResult>("oci:ManagementAgent/getManagementAgents:getManagementAgents", args ?? new GetManagementAgentsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagementAgentsResult>("oci:ManagementAgent/getManagementAgents:getManagementAgents", args ?? new GetManagementAgentsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Management Agents in Oracle Cloud Infrastructure Management Agent service.
@@ -95,7 +95,7 @@ namespace Pulumi.Oci.ManagementAgent
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetManagementAgentsResult> Invoke(GetManagementAgentsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetManagementAgentsResult>("oci:ManagementAgent/getManagementAgents:getManagementAgents", args ?? new GetManagementAgentsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagementAgentsResult>("oci:ManagementAgent/getManagementAgents:getManagementAgents", args ?? new GetManagementAgentsInvokeArgs(), options.WithDefaults());
     }
 
 

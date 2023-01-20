@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSchedule(args: GetScheduleArgs, opts?: pulumi.InvokeOptions): Promise<GetScheduleResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:MeteringComputation/getSchedule:getSchedule", {
         "scheduleId": args.scheduleId,
     }, opts);
@@ -47,7 +45,7 @@ export interface GetScheduleArgs {
  */
 export interface GetScheduleResult {
     /**
-     * The tenancy of the customer
+     * The customer tenancy.
      */
     readonly compartmentId: string;
     /**
@@ -55,32 +53,44 @@ export interface GetScheduleResult {
      */
     readonly definedTags: {[key: string]: any};
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+     * The description of the schedule.
+     */
+    readonly description: string;
+    /**
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
      */
     readonly freeformTags: {[key: string]: any};
     /**
-     * The OCID representing unique shedule
+     * The OCID representing a unique shedule.
      */
     readonly id: string;
     /**
-     * The unique name of the schedule created by the user
+     * The unique name of the schedule created by the user.
      */
     readonly name: string;
+    /**
+     * Specifies supported output file format.
+     */
+    readonly outputFileFormat: string;
     /**
      * The query properties.
      */
     readonly queryProperties: outputs.MeteringComputation.GetScheduleQueryProperty[];
     /**
-     * The location where usage/cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
+     * The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
      */
     readonly resultLocations: outputs.MeteringComputation.GetScheduleResultLocation[];
+    /**
+     * The saved report id which can also be used to generate query.
+     */
+    readonly savedReportId: string;
     readonly scheduleId: string;
     /**
-     * In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 Describes the frequency of when the schedule will be run
+     * Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
      */
     readonly scheduleRecurrences: string;
     /**
-     * The lifecycle state of the schedule
+     * The schedule lifecycle state.
      */
     readonly state: string;
     /**
@@ -88,17 +98,36 @@ export interface GetScheduleResult {
      */
     readonly systemTags: {[key: string]: any};
     /**
-     * The date and time of when the schedule was created
+     * The date and time the schedule was created.
      */
     readonly timeCreated: string;
     /**
-     * The date and time of the first time job execution
+     * The date and time of the next job execution.
+     */
+    readonly timeNextRun: string;
+    /**
+     * The date and time of the first time job execution.
      */
     readonly timeScheduled: string;
 }
-
+/**
+ * This data source provides details about a specific Schedule resource in Oracle Cloud Infrastructure Metering Computation service.
+ *
+ * Returns the saved schedule.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSchedule = oci.MeteringComputation.getSchedule({
+ *     scheduleId: oci_metering_computation_schedule.test_schedule.id,
+ * });
+ * ```
+ */
 export function getScheduleOutput(args: GetScheduleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetScheduleResult> {
-    return pulumi.output(args).apply(a => getSchedule(a, opts))
+    return pulumi.output(args).apply((a: any) => getSchedule(a, opts))
 }
 
 /**

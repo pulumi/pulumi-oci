@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDeployments(args: GetDeploymentsArgs, opts?: pulumi.InvokeOptions): Promise<GetDeploymentsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ApiGateway/getDeployments:getDeployments", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -92,9 +90,27 @@ export interface GetDeploymentsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Deployments in Oracle Cloud Infrastructure API Gateway service.
+ *
+ * Returns a list of deployments.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDeployments = oci.ApiGateway.getDeployments({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.deployment_display_name,
+ *     gatewayId: oci_apigateway_gateway.test_gateway.id,
+ *     state: _var.deployment_state,
+ * });
+ * ```
+ */
 export function getDeploymentsOutput(args: GetDeploymentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDeploymentsResult> {
-    return pulumi.output(args).apply(a => getDeployments(a, opts))
+    return pulumi.output(args).apply((a: any) => getDeployments(a, opts))
 }
 
 /**

@@ -5,6 +5,7 @@ package com.pulumi.oci.DataFlow.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.DataFlow.inputs.PrivateEndpointScanDetailArgs;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -185,6 +186,21 @@ public final class PrivateEndpointState extends com.pulumi.resources.ResourceArg
     }
 
     /**
+     * (Updatable) An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: &#34;scan1.oracle.com&#34;, port: &#34;1521&#34;}, { fqdn: &#34;scan2.oracle.com&#34;, port: &#34;1521&#34; } ]
+     * 
+     */
+    @Import(name="scanDetails")
+    private @Nullable Output<List<PrivateEndpointScanDetailArgs>> scanDetails;
+
+    /**
+     * @return (Updatable) An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: &#34;scan1.oracle.com&#34;, port: &#34;1521&#34;}, { fqdn: &#34;scan2.oracle.com&#34;, port: &#34;1521&#34; } ]
+     * 
+     */
+    public Optional<Output<List<PrivateEndpointScanDetailArgs>>> scanDetails() {
+        return Optional.ofNullable(this.scanDetails);
+    }
+
+    /**
      * The current state of this private endpoint.
      * 
      */
@@ -258,6 +274,7 @@ public final class PrivateEndpointState extends com.pulumi.resources.ResourceArg
         this.nsgIds = $.nsgIds;
         this.ownerPrincipalId = $.ownerPrincipalId;
         this.ownerUserName = $.ownerUserName;
+        this.scanDetails = $.scanDetails;
         this.state = $.state;
         this.subnetId = $.subnetId;
         this.timeCreated = $.timeCreated;
@@ -531,6 +548,37 @@ public final class PrivateEndpointState extends com.pulumi.resources.ResourceArg
          */
         public Builder ownerUserName(String ownerUserName) {
             return ownerUserName(Output.of(ownerUserName));
+        }
+
+        /**
+         * @param scanDetails (Updatable) An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: &#34;scan1.oracle.com&#34;, port: &#34;1521&#34;}, { fqdn: &#34;scan2.oracle.com&#34;, port: &#34;1521&#34; } ]
+         * 
+         * @return builder
+         * 
+         */
+        public Builder scanDetails(@Nullable Output<List<PrivateEndpointScanDetailArgs>> scanDetails) {
+            $.scanDetails = scanDetails;
+            return this;
+        }
+
+        /**
+         * @param scanDetails (Updatable) An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: &#34;scan1.oracle.com&#34;, port: &#34;1521&#34;}, { fqdn: &#34;scan2.oracle.com&#34;, port: &#34;1521&#34; } ]
+         * 
+         * @return builder
+         * 
+         */
+        public Builder scanDetails(List<PrivateEndpointScanDetailArgs> scanDetails) {
+            return scanDetails(Output.of(scanDetails));
+        }
+
+        /**
+         * @param scanDetails (Updatable) An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: &#34;scan1.oracle.com&#34;, port: &#34;1521&#34;}, { fqdn: &#34;scan2.oracle.com&#34;, port: &#34;1521&#34; } ]
+         * 
+         * @return builder
+         * 
+         */
+        public Builder scanDetails(PrivateEndpointScanDetailArgs... scanDetails) {
+            return scanDetails(List.of(scanDetails));
         }
 
         /**

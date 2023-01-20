@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Vault
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetSecretVersionResult> InvokeAsync(GetSecretVersionArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetSecretVersionResult>("oci:Vault/getSecretVersion:getSecretVersion", args ?? new GetSecretVersionArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetSecretVersionResult>("oci:Vault/getSecretVersion:getSecretVersion", args ?? new GetSecretVersionArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Secret Version resource in Oracle Cloud Infrastructure Vault service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Vault
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetSecretVersionResult> Invoke(GetSecretVersionInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetSecretVersionResult>("oci:Vault/getSecretVersion:getSecretVersion", args ?? new GetSecretVersionInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetSecretVersionResult>("oci:Vault/getSecretVersion:getSecretVersion", args ?? new GetSecretVersionInvokeArgs(), options.WithDefaults());
     }
 
 

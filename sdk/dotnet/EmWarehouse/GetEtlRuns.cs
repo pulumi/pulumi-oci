@@ -40,7 +40,7 @@ namespace Pulumi.Oci.EmWarehouse
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetEtlRunsResult> InvokeAsync(GetEtlRunsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetEtlRunsResult>("oci:EmWarehouse/getEtlRuns:getEtlRuns", args ?? new GetEtlRunsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetEtlRunsResult>("oci:EmWarehouse/getEtlRuns:getEtlRuns", args ?? new GetEtlRunsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Em Warehouse Etl Runs in Oracle Cloud Infrastructure Em Warehouse service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.EmWarehouse
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetEtlRunsResult> Invoke(GetEtlRunsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetEtlRunsResult>("oci:EmWarehouse/getEtlRuns:getEtlRuns", args ?? new GetEtlRunsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetEtlRunsResult>("oci:EmWarehouse/getEtlRuns:getEtlRuns", args ?? new GetEtlRunsInvokeArgs(), options.WithDefaults());
     }
 
 

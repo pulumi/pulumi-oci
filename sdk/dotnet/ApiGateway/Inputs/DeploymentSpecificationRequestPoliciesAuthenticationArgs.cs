@@ -24,6 +24,18 @@ namespace Pulumi.Oci.ApiGateway.Inputs
             set => _audiences = value;
         }
 
+        [Input("cacheKeys")]
+        private InputList<string>? _cacheKeys;
+
+        /// <summary>
+        /// (Updatable) A list of keys from "parameters" attribute value whose values will be added to the cache key.
+        /// </summary>
+        public InputList<string> CacheKeys
+        {
+            get => _cacheKeys ?? (_cacheKeys = new InputList<string>());
+            set => _cacheKeys = value;
+        }
+
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
         /// </summary>
@@ -54,6 +66,18 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         [Input("maxClockSkewInSeconds")]
         public Input<double>? MaxClockSkewInSeconds { get; set; }
 
+        [Input("parameters")]
+        private InputMap<object>? _parameters;
+
+        /// <summary>
+        /// (Updatable)
+        /// </summary>
+        public InputMap<object> Parameters
+        {
+            get => _parameters ?? (_parameters = new InputMap<object>());
+            set => _parameters = value;
+        }
+
         /// <summary>
         /// (Updatable) A set of Public Keys that will be used to verify the JWT signature.
         /// </summary>
@@ -83,6 +107,18 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Policy for defining behaviour on validation failure.
+        /// </summary>
+        [Input("validationFailurePolicy")]
+        public Input<Inputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyArgs>? ValidationFailurePolicy { get; set; }
+
+        /// <summary>
+        /// (Updatable) Authentication Policies for the Token Authentication types.
+        /// </summary>
+        [Input("validationPolicy")]
+        public Input<Inputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyArgs>? ValidationPolicy { get; set; }
 
         [Input("verifyClaims")]
         private InputList<Inputs.DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaimArgs>? _verifyClaims;

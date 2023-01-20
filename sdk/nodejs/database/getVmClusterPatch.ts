@@ -22,11 +22,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVmClusterPatch(args: GetVmClusterPatchArgs, opts?: pulumi.InvokeOptions): Promise<GetVmClusterPatchResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getVmClusterPatch:getVmClusterPatch", {
         "patchId": args.patchId,
         "vmClusterId": args.vmClusterId,
@@ -86,9 +83,25 @@ export interface GetVmClusterPatchResult {
     readonly version: string;
     readonly vmClusterId: string;
 }
-
+/**
+ * This data source provides details about a specific Vm Cluster Patch resource in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets information about a specified patch package.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testVmClusterPatch = oci.Database.getVmClusterPatch({
+ *     patchId: oci_database_patch.test_patch.id,
+ *     vmClusterId: oci_database_vm_cluster.test_vm_cluster.id,
+ * });
+ * ```
+ */
 export function getVmClusterPatchOutput(args: GetVmClusterPatchOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVmClusterPatchResult> {
-    return pulumi.output(args).apply(a => getVmClusterPatch(a, opts))
+    return pulumi.output(args).apply((a: any) => getVmClusterPatch(a, opts))
 }
 
 /**

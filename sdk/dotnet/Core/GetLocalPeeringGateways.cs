@@ -41,7 +41,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetLocalPeeringGatewaysResult> InvokeAsync(GetLocalPeeringGatewaysArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetLocalPeeringGatewaysResult>("oci:Core/getLocalPeeringGateways:getLocalPeeringGateways", args ?? new GetLocalPeeringGatewaysArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetLocalPeeringGatewaysResult>("oci:Core/getLocalPeeringGateways:getLocalPeeringGateways", args ?? new GetLocalPeeringGatewaysArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Local Peering Gateways in Oracle Cloud Infrastructure Core service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetLocalPeeringGatewaysResult> Invoke(GetLocalPeeringGatewaysInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetLocalPeeringGatewaysResult>("oci:Core/getLocalPeeringGateways:getLocalPeeringGateways", args ?? new GetLocalPeeringGatewaysInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetLocalPeeringGatewaysResult>("oci:Core/getLocalPeeringGateways:getLocalPeeringGateways", args ?? new GetLocalPeeringGatewaysInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -16,7 +16,7 @@ namespace Pulumi.Oci.ServiceMesh.Outputs
         /// <summary>
         /// (Updatable) The hostname of the virtual deployments.
         /// </summary>
-        public readonly string Hostname;
+        public readonly string? Hostname;
         /// <summary>
         /// (Updatable) Type of service discovery.
         /// </summary>
@@ -24,7 +24,7 @@ namespace Pulumi.Oci.ServiceMesh.Outputs
 
         [OutputConstructor]
         private VirtualDeploymentServiceDiscovery(
-            string hostname,
+            string? hostname,
 
             string type)
         {

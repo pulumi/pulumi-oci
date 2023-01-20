@@ -110,6 +110,51 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * DCMS PRivate Endpoint Compartment Identifier
+     * 
+     */
+    @Import(name="endpointCompartmentId")
+    private @Nullable Output<String> endpointCompartmentId;
+
+    /**
+     * @return DCMS PRivate Endpoint Compartment Identifier
+     * 
+     */
+    public Optional<Output<String>> endpointCompartmentId() {
+        return Optional.ofNullable(this.endpointCompartmentId);
+    }
+
+    /**
+     * DCMS Private Endpoint ID associated with workspace if the pvt networking is enabled
+     * 
+     */
+    @Import(name="endpointId")
+    private @Nullable Output<String> endpointId;
+
+    /**
+     * @return DCMS Private Endpoint ID associated with workspace if the pvt networking is enabled
+     * 
+     */
+    public Optional<Output<String>> endpointId() {
+        return Optional.ofNullable(this.endpointId);
+    }
+
+    /**
+     * DCMS Private Endpoint Name
+     * 
+     */
+    @Import(name="endpointName")
+    private @Nullable Output<String> endpointName;
+
+    /**
+     * @return DCMS Private Endpoint Name
+     * 
+     */
+    public Optional<Output<String>> endpointName() {
+        return Optional.ofNullable(this.endpointName);
+    }
+
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -151,6 +196,51 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
     public Optional<Output<Integer>> quiesceTimeout() {
         return Optional.ofNullable(this.quiesceTimeout);
+    }
+
+    /**
+     * DCMS Data Asset Registry Compartment Identifier
+     * 
+     */
+    @Import(name="registryCompartmentId")
+    private @Nullable Output<String> registryCompartmentId;
+
+    /**
+     * @return DCMS Data Asset Registry Compartment Identifier
+     * 
+     */
+    public Optional<Output<String>> registryCompartmentId() {
+        return Optional.ofNullable(this.registryCompartmentId);
+    }
+
+    /**
+     * DCMS Data Asset Registry ID to which the workspace is associated
+     * 
+     */
+    @Import(name="registryId")
+    private @Nullable Output<String> registryId;
+
+    /**
+     * @return DCMS Data Asset Registry ID to which the workspace is associated
+     * 
+     */
+    public Optional<Output<String>> registryId() {
+        return Optional.ofNullable(this.registryId);
+    }
+
+    /**
+     * DCMS Data Asset Registry display name
+     * 
+     */
+    @Import(name="registryName")
+    private @Nullable Output<String> registryName;
+
+    /**
+     * @return DCMS Data Asset Registry display name
+     * 
+     */
+    public Optional<Output<String>> registryName() {
+        return Optional.ofNullable(this.registryName);
     }
 
     /**
@@ -252,10 +342,16 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
         this.displayName = $.displayName;
         this.dnsServerIp = $.dnsServerIp;
         this.dnsServerZone = $.dnsServerZone;
+        this.endpointCompartmentId = $.endpointCompartmentId;
+        this.endpointId = $.endpointId;
+        this.endpointName = $.endpointName;
         this.freeformTags = $.freeformTags;
         this.isForceOperation = $.isForceOperation;
         this.isPrivateNetworkEnabled = $.isPrivateNetworkEnabled;
         this.quiesceTimeout = $.quiesceTimeout;
+        this.registryCompartmentId = $.registryCompartmentId;
+        this.registryId = $.registryId;
+        this.registryName = $.registryName;
         this.state = $.state;
         this.stateMessage = $.stateMessage;
         this.subnetId = $.subnetId;
@@ -409,6 +505,69 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param endpointCompartmentId DCMS PRivate Endpoint Compartment Identifier
+         * 
+         * @return builder
+         * 
+         */
+        public Builder endpointCompartmentId(@Nullable Output<String> endpointCompartmentId) {
+            $.endpointCompartmentId = endpointCompartmentId;
+            return this;
+        }
+
+        /**
+         * @param endpointCompartmentId DCMS PRivate Endpoint Compartment Identifier
+         * 
+         * @return builder
+         * 
+         */
+        public Builder endpointCompartmentId(String endpointCompartmentId) {
+            return endpointCompartmentId(Output.of(endpointCompartmentId));
+        }
+
+        /**
+         * @param endpointId DCMS Private Endpoint ID associated with workspace if the pvt networking is enabled
+         * 
+         * @return builder
+         * 
+         */
+        public Builder endpointId(@Nullable Output<String> endpointId) {
+            $.endpointId = endpointId;
+            return this;
+        }
+
+        /**
+         * @param endpointId DCMS Private Endpoint ID associated with workspace if the pvt networking is enabled
+         * 
+         * @return builder
+         * 
+         */
+        public Builder endpointId(String endpointId) {
+            return endpointId(Output.of(endpointId));
+        }
+
+        /**
+         * @param endpointName DCMS Private Endpoint Name
+         * 
+         * @return builder
+         * 
+         */
+        public Builder endpointName(@Nullable Output<String> endpointName) {
+            $.endpointName = endpointName;
+            return this;
+        }
+
+        /**
+         * @param endpointName DCMS Private Endpoint Name
+         * 
+         * @return builder
+         * 
+         */
+        public Builder endpointName(String endpointName) {
+            return endpointName(Output.of(endpointName));
+        }
+
+        /**
          * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
          * 
          * @return builder
@@ -466,6 +625,69 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         public Builder quiesceTimeout(Integer quiesceTimeout) {
             return quiesceTimeout(Output.of(quiesceTimeout));
+        }
+
+        /**
+         * @param registryCompartmentId DCMS Data Asset Registry Compartment Identifier
+         * 
+         * @return builder
+         * 
+         */
+        public Builder registryCompartmentId(@Nullable Output<String> registryCompartmentId) {
+            $.registryCompartmentId = registryCompartmentId;
+            return this;
+        }
+
+        /**
+         * @param registryCompartmentId DCMS Data Asset Registry Compartment Identifier
+         * 
+         * @return builder
+         * 
+         */
+        public Builder registryCompartmentId(String registryCompartmentId) {
+            return registryCompartmentId(Output.of(registryCompartmentId));
+        }
+
+        /**
+         * @param registryId DCMS Data Asset Registry ID to which the workspace is associated
+         * 
+         * @return builder
+         * 
+         */
+        public Builder registryId(@Nullable Output<String> registryId) {
+            $.registryId = registryId;
+            return this;
+        }
+
+        /**
+         * @param registryId DCMS Data Asset Registry ID to which the workspace is associated
+         * 
+         * @return builder
+         * 
+         */
+        public Builder registryId(String registryId) {
+            return registryId(Output.of(registryId));
+        }
+
+        /**
+         * @param registryName DCMS Data Asset Registry display name
+         * 
+         * @return builder
+         * 
+         */
+        public Builder registryName(@Nullable Output<String> registryName) {
+            $.registryName = registryName;
+            return this;
+        }
+
+        /**
+         * @param registryName DCMS Data Asset Registry display name
+         * 
+         * @return builder
+         * 
+         */
+        public Builder registryName(String registryName) {
+            return registryName(Output.of(registryName));
         }
 
         /**

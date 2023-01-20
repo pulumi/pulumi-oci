@@ -38,7 +38,7 @@ namespace Pulumi.Oci.FileStorage
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetSnapshotResult> InvokeAsync(GetSnapshotArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetSnapshotResult>("oci:FileStorage/getSnapshot:getSnapshot", args ?? new GetSnapshotArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetSnapshotResult>("oci:FileStorage/getSnapshot:getSnapshot", args ?? new GetSnapshotArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Snapshot resource in Oracle Cloud Infrastructure File Storage service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.FileStorage
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetSnapshotResult> Invoke(GetSnapshotInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetSnapshotResult>("oci:FileStorage/getSnapshot:getSnapshot", args ?? new GetSnapshotInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetSnapshotResult>("oci:FileStorage/getSnapshot:getSnapshot", args ?? new GetSnapshotInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -120,11 +120,11 @@ namespace Pulumi.Oci.FileStorage
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+        /// Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         /// </summary>
         public readonly bool IsCloneSource;
         /// <summary>
-        /// Additional information about the current 'lifecycleState'.
+        /// Additional information about the current `lifecycleState`.
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
@@ -132,10 +132,21 @@ namespace Pulumi.Oci.FileStorage
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+        /// An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         /// </summary>
         public readonly string ProvenanceId;
         public readonly string SnapshotId;
+        /// <summary>
+        /// The date and time the snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. This value might be the same or different from `timeCreated` depending on the following factors:
+        /// * If the snapshot is created in the original file system directory.
+        /// * If the snapshot is cloned from a file system.
+        /// * If the snapshot is replicated from a file system.
+        /// </summary>
+        public readonly string SnapshotTime;
+        /// <summary>
+        /// Specifies the generation type of the snapshot.
+        /// </summary>
+        public readonly string SnapshotType;
         /// <summary>
         /// The current state of the snapshot.
         /// </summary>
@@ -165,6 +176,10 @@ namespace Pulumi.Oci.FileStorage
 
             string snapshotId,
 
+            string snapshotTime,
+
+            string snapshotType,
+
             string state,
 
             string timeCreated)
@@ -178,6 +193,8 @@ namespace Pulumi.Oci.FileStorage
             Name = name;
             ProvenanceId = provenanceId;
             SnapshotId = snapshotId;
+            SnapshotTime = snapshotTime;
+            SnapshotType = snapshotType;
             State = state;
             TimeCreated = timeCreated;
         }

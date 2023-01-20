@@ -32,7 +32,7 @@ public final class ScheduleQueryProperties {
      */
     private @Nullable String filter;
     /**
-     * @return The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.   Allowed values are: DAILY MONTHLY
+     * @return The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. Allowed values are: DAILY MONTHLY
      * 
      */
     private String granularity;
@@ -47,12 +47,12 @@ public final class ScheduleQueryProperties {
      */
     private @Nullable List<ScheduleQueryPropertiesGroupByTag> groupByTags;
     /**
-     * @return Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+     * @return Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
      * 
      */
     private @Nullable Boolean isAggregateByTime;
     /**
-     * @return The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.  Allowed values are: USAGE COST USAGE_AND_COST
+     * @return The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Allowed values are: USAGE COST USAGE_AND_COST
      * 
      */
     private @Nullable String queryType;
@@ -80,7 +80,7 @@ public final class ScheduleQueryProperties {
         return Optional.ofNullable(this.filter);
     }
     /**
-     * @return The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation.   Allowed values are: DAILY MONTHLY
+     * @return The usage granularity. DAILY - Daily data aggregation. MONTHLY - Monthly data aggregation. Allowed values are: DAILY MONTHLY
      * 
      */
     public String granularity() {
@@ -101,14 +101,14 @@ public final class ScheduleQueryProperties {
         return this.groupByTags == null ? List.of() : this.groupByTags;
     }
     /**
-     * @return Specifies whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+     * @return Specifies whether aggregated by time. If isAggregateByTime is true, all usage or cost over the query time period will be added up.
      * 
      */
     public Optional<Boolean> isAggregateByTime() {
         return Optional.ofNullable(this.isAggregateByTime);
     }
     /**
-     * @return The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data.  Allowed values are: USAGE COST USAGE_AND_COST
+     * @return The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost - Query the cost/billing data. Allowed values are: USAGE COST USAGE_AND_COST
      * 
      */
     public Optional<String> queryType() {

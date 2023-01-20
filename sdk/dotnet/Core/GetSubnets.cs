@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetSubnetsResult> InvokeAsync(GetSubnetsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetSubnetsResult>("oci:Core/getSubnets:getSubnets", args ?? new GetSubnetsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetSubnetsResult>("oci:Core/getSubnets:getSubnets", args ?? new GetSubnetsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Subnets in Oracle Cloud Infrastructure Core service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetSubnetsResult> Invoke(GetSubnetsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetSubnetsResult>("oci:Core/getSubnets:getSubnets", args ?? new GetSubnetsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetSubnetsResult>("oci:Core/getSubnets:getSubnets", args ?? new GetSubnetsInvokeArgs(), options.WithDefaults());
     }
 
 

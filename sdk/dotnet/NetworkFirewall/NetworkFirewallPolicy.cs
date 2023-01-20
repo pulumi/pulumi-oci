@@ -26,7 +26,7 @@ namespace Pulumi.Oci.NetworkFirewall
     public partial class NetworkFirewallPolicy : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) Map defining application lists of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
+        /// (Updatable) Lists of the application of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
         /// </summary>
         [Output("applicationLists")]
         public Output<ImmutableArray<Outputs.NetworkFirewallPolicyApplicationList>> ApplicationLists { get; private set; } = null!;
@@ -68,7 +68,7 @@ namespace Pulumi.Oci.NetworkFirewall
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Map defining IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
+        /// (Updatable) List of IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
         /// </summary>
         [Output("ipAddressLists")]
         public Output<ImmutableArray<Outputs.NetworkFirewallPolicyIpAddressList>> IpAddressLists { get; private set; } = null!;
@@ -177,7 +177,7 @@ namespace Pulumi.Oci.NetworkFirewall
         private InputList<Inputs.NetworkFirewallPolicyApplicationListArgs>? _applicationLists;
 
         /// <summary>
-        /// (Updatable) Map defining application lists of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
+        /// (Updatable) Lists of the application of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
         /// </summary>
         public InputList<Inputs.NetworkFirewallPolicyApplicationListArgs> ApplicationLists
         {
@@ -249,7 +249,7 @@ namespace Pulumi.Oci.NetworkFirewall
         private InputList<Inputs.NetworkFirewallPolicyIpAddressListArgs>? _ipAddressLists;
 
         /// <summary>
-        /// (Updatable) Map defining IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
+        /// (Updatable) List of IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
         /// </summary>
         public InputList<Inputs.NetworkFirewallPolicyIpAddressListArgs> IpAddressLists
         {
@@ -305,7 +305,7 @@ namespace Pulumi.Oci.NetworkFirewall
         private InputList<Inputs.NetworkFirewallPolicyApplicationListGetArgs>? _applicationLists;
 
         /// <summary>
-        /// (Updatable) Map defining application lists of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
+        /// (Updatable) Lists of the application of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
         /// </summary>
         public InputList<Inputs.NetworkFirewallPolicyApplicationListGetArgs> ApplicationLists
         {
@@ -377,7 +377,7 @@ namespace Pulumi.Oci.NetworkFirewall
         private InputList<Inputs.NetworkFirewallPolicyIpAddressListGetArgs>? _ipAddressLists;
 
         /// <summary>
-        /// (Updatable) Map defining IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
+        /// (Updatable) List of IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
         /// </summary>
         public InputList<Inputs.NetworkFirewallPolicyIpAddressListGetArgs> IpAddressLists
         {

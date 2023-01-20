@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getQueryQuickPicks(args: GetQueryQuickPicksArgs, opts?: pulumi.InvokeOptions): Promise<GetQueryQuickPicksResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ApmTraces/getQueryQuickPicks:getQueryQuickPicks", {
         "apmDomainId": args.apmDomainId,
         "filters": args.filters,
@@ -60,9 +58,25 @@ export interface GetQueryQuickPicksResult {
      */
     readonly quickPicks: outputs.ApmTraces.GetQueryQuickPicksQuickPick[];
 }
-
+/**
+ * This data source provides the list of Query Quick Picks in Oracle Cloud Infrastructure Apm Traces service.
+ *
+ * Returns a list of predefined Quick Pick queries intended to assist the user
+ * to choose a query to run.  There is no sorting applied on the results.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testQueryQuickPicks = oci.ApmTraces.getQueryQuickPicks({
+ *     apmDomainId: oci_apm_apm_domain.test_apm_domain.id,
+ * });
+ * ```
+ */
 export function getQueryQuickPicksOutput(args: GetQueryQuickPicksOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetQueryQuickPicksResult> {
-    return pulumi.output(args).apply(a => getQueryQuickPicks(a, opts))
+    return pulumi.output(args).apply((a: any) => getQueryQuickPicks(a, opts))
 }
 
 /**

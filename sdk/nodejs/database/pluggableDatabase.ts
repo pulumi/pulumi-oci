@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -107,6 +108,10 @@ export class PluggableDatabase extends pulumi.CustomResource {
      */
     public readonly pdbName!: pulumi.Output<string>;
     /**
+     * The configuration of the Pluggable Database Management service.
+     */
+    public /*out*/ readonly pluggableDatabaseManagementConfigs!: pulumi.Output<outputs.Database.PluggableDatabasePluggableDatabaseManagementConfig[]>;
+    /**
      * The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
      */
     public readonly shouldPdbAdminAccountBeLocked!: pulumi.Output<boolean>;
@@ -146,6 +151,7 @@ export class PluggableDatabase extends pulumi.CustomResource {
             resourceInputs["openMode"] = state ? state.openMode : undefined;
             resourceInputs["pdbAdminPassword"] = state ? state.pdbAdminPassword : undefined;
             resourceInputs["pdbName"] = state ? state.pdbName : undefined;
+            resourceInputs["pluggableDatabaseManagementConfigs"] = state ? state.pluggableDatabaseManagementConfigs : undefined;
             resourceInputs["shouldPdbAdminAccountBeLocked"] = state ? state.shouldPdbAdminAccountBeLocked : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["tdeWalletPassword"] = state ? state.tdeWalletPassword : undefined;
@@ -161,19 +167,22 @@ export class PluggableDatabase extends pulumi.CustomResource {
             resourceInputs["containerDatabaseId"] = args ? args.containerDatabaseId : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["pdbAdminPassword"] = args ? args.pdbAdminPassword : undefined;
+            resourceInputs["pdbAdminPassword"] = args?.pdbAdminPassword ? pulumi.secret(args.pdbAdminPassword) : undefined;
             resourceInputs["pdbName"] = args ? args.pdbName : undefined;
             resourceInputs["shouldPdbAdminAccountBeLocked"] = args ? args.shouldPdbAdminAccountBeLocked : undefined;
-            resourceInputs["tdeWalletPassword"] = args ? args.tdeWalletPassword : undefined;
+            resourceInputs["tdeWalletPassword"] = args?.tdeWalletPassword ? pulumi.secret(args.tdeWalletPassword) : undefined;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["connectionStrings"] = undefined /*out*/;
             resourceInputs["isRestricted"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["openMode"] = undefined /*out*/;
+            resourceInputs["pluggableDatabaseManagementConfigs"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["pdbAdminPassword", "tdeWalletPassword"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(PluggableDatabase.__pulumiType, name, resourceInputs, opts);
     }
 }
@@ -222,6 +231,10 @@ export interface PluggableDatabaseState {
      * The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
      */
     pdbName?: pulumi.Input<string>;
+    /**
+     * The configuration of the Pluggable Database Management service.
+     */
+    pluggableDatabaseManagementConfigs?: pulumi.Input<pulumi.Input<inputs.Database.PluggableDatabasePluggableDatabaseManagementConfig>[]>;
     /**
      * The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
      */

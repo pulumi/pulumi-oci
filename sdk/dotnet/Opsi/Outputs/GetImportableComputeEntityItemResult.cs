@@ -34,7 +34,7 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// </summary>
         public readonly string HostName;
         /// <summary>
-        /// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+        /// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS].
         /// </summary>
         public readonly string PlatformType;
 

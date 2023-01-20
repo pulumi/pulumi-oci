@@ -46,7 +46,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetManagedDatabaseAlertLogCountResult> InvokeAsync(GetManagedDatabaseAlertLogCountArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseAlertLogCountResult>("oci:DatabaseManagement/getManagedDatabaseAlertLogCount:getManagedDatabaseAlertLogCount", args ?? new GetManagedDatabaseAlertLogCountArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseAlertLogCountResult>("oci:DatabaseManagement/getManagedDatabaseAlertLogCount:getManagedDatabaseAlertLogCount", args ?? new GetManagedDatabaseAlertLogCountArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Managed Database Alert Log Count resource in Oracle Cloud Infrastructure Database Management service.
@@ -83,7 +83,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetManagedDatabaseAlertLogCountResult> Invoke(GetManagedDatabaseAlertLogCountInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseAlertLogCountResult>("oci:DatabaseManagement/getManagedDatabaseAlertLogCount:getManagedDatabaseAlertLogCount", args ?? new GetManagedDatabaseAlertLogCountInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseAlertLogCountResult>("oci:DatabaseManagement/getManagedDatabaseAlertLogCount:getManagedDatabaseAlertLogCount", args ?? new GetManagedDatabaseAlertLogCountInvokeArgs(), options.WithDefaults());
     }
 
 

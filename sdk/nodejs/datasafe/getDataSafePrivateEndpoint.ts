@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDataSafePrivateEndpoint(args: GetDataSafePrivateEndpointArgs, opts?: pulumi.InvokeOptions): Promise<GetDataSafePrivateEndpointResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getDataSafePrivateEndpoint:getDataSafePrivateEndpoint", {
         "dataSafePrivateEndpointId": args.dataSafePrivateEndpointId,
     }, opts);
@@ -107,9 +104,24 @@ export interface GetDataSafePrivateEndpointResult {
      */
     readonly vcnId: string;
 }
-
+/**
+ * This data source provides details about a specific Data Safe Private Endpoint resource in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Gets the details of the specified Data Safe private endpoint.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDataSafePrivateEndpoint = oci.DataSafe.getDataSafePrivateEndpoint({
+ *     dataSafePrivateEndpointId: oci_data_safe_data_safe_private_endpoint.test_data_safe_private_endpoint.id,
+ * });
+ * ```
+ */
 export function getDataSafePrivateEndpointOutput(args: GetDataSafePrivateEndpointOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDataSafePrivateEndpointResult> {
-    return pulumi.output(args).apply(a => getDataSafePrivateEndpoint(a, opts))
+    return pulumi.output(args).apply((a: any) => getDataSafePrivateEndpoint(a, opts))
 }
 
 /**

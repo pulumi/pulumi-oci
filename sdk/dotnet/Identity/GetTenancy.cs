@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetTenancyResult> InvokeAsync(GetTenancyArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetTenancyResult>("oci:Identity/getTenancy:getTenancy", args ?? new GetTenancyArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetTenancyResult>("oci:Identity/getTenancy:getTenancy", args ?? new GetTenancyArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Tenancy resource in Oracle Cloud Infrastructure Identity service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetTenancyResult> Invoke(GetTenancyInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetTenancyResult>("oci:Identity/getTenancy:getTenancy", args ?? new GetTenancyInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetTenancyResult>("oci:Identity/getTenancy:getTenancy", args ?? new GetTenancyInvokeArgs(), options.WithDefaults());
     }
 
 

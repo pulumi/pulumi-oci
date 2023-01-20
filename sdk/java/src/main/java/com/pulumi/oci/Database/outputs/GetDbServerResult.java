@@ -91,6 +91,11 @@ public final class GetDbServerResult {
      */
     private Integer memorySizeInGbs;
     /**
+     * @return The shape of the Db server. The shape determines the amount of CPU, storage, and memory resources available.
+     * 
+     */
+    private String shape;
+    /**
      * @return The current state of the Db server.
      * 
      */
@@ -216,6 +221,13 @@ public final class GetDbServerResult {
         return this.memorySizeInGbs;
     }
     /**
+     * @return The shape of the Db server. The shape determines the amount of CPU, storage, and memory resources available.
+     * 
+     */
+    public String shape() {
+        return this.shape;
+    }
+    /**
      * @return The current state of the Db server.
      * 
      */
@@ -262,6 +274,7 @@ public final class GetDbServerResult {
         private Integer maxDbNodeStorageInGbs;
         private Integer maxMemoryInGbs;
         private Integer memorySizeInGbs;
+        private String shape;
         private String state;
         private String timeCreated;
         private List<String> vmClusterIds;
@@ -284,6 +297,7 @@ public final class GetDbServerResult {
     	      this.maxDbNodeStorageInGbs = defaults.maxDbNodeStorageInGbs;
     	      this.maxMemoryInGbs = defaults.maxMemoryInGbs;
     	      this.memorySizeInGbs = defaults.memorySizeInGbs;
+    	      this.shape = defaults.shape;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
     	      this.vmClusterIds = defaults.vmClusterIds;
@@ -376,6 +390,11 @@ public final class GetDbServerResult {
             return this;
         }
         @CustomType.Setter
+        public Builder shape(String shape) {
+            this.shape = Objects.requireNonNull(shape);
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             this.state = Objects.requireNonNull(state);
             return this;
@@ -411,6 +430,7 @@ public final class GetDbServerResult {
             o.maxDbNodeStorageInGbs = maxDbNodeStorageInGbs;
             o.maxMemoryInGbs = maxMemoryInGbs;
             o.memorySizeInGbs = memorySizeInGbs;
+            o.shape = shape;
             o.state = state;
             o.timeCreated = timeCreated;
             o.vmClusterIds = vmClusterIds;

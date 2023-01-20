@@ -152,15 +152,15 @@ type SessionTargetResourceDetails struct {
 	SessionType string `pulumi:"sessionType"`
 	// The display name of the target Compute instance that the session connects to.
 	TargetResourceDisplayName *string `pulumi:"targetResourceDisplayName"`
-	// The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to. It's optional depends on the type of session you want to create.
-	// * (Required) For MANAGED_SSH session type, we can only use targetResourceId to create session.
-	// * (Optional) For PORT_FORWARDING session type, you must either use targetResourceId or target_resource_private_ip_address
+	// The Fully Qualified Domain Name of the target resource that the session connects to.
+	TargetResourceFqdn *string `pulumi:"targetResourceFqdn"`
+	// The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
 	TargetResourceId *string `pulumi:"targetResourceId"`
 	// The name of the user on the target resource operating system that the session uses for the connection.
 	TargetResourceOperatingSystemUserName *string `pulumi:"targetResourceOperatingSystemUserName"`
 	// The port number to connect to on the target resource.
 	TargetResourcePort *int `pulumi:"targetResourcePort"`
-	// The private IP address of the target resource that the session connects to. For PORT_FORWARDING session type, you must either use targetResourceId or target_resource_private_ip_address
+	// The private IP address of the target resource that the session connects to.
 	TargetResourcePrivateIpAddress *string `pulumi:"targetResourcePrivateIpAddress"`
 }
 
@@ -180,15 +180,15 @@ type SessionTargetResourceDetailsArgs struct {
 	SessionType pulumi.StringInput `pulumi:"sessionType"`
 	// The display name of the target Compute instance that the session connects to.
 	TargetResourceDisplayName pulumi.StringPtrInput `pulumi:"targetResourceDisplayName"`
-	// The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to. It's optional depends on the type of session you want to create.
-	// * (Required) For MANAGED_SSH session type, we can only use targetResourceId to create session.
-	// * (Optional) For PORT_FORWARDING session type, you must either use targetResourceId or target_resource_private_ip_address
+	// The Fully Qualified Domain Name of the target resource that the session connects to.
+	TargetResourceFqdn pulumi.StringPtrInput `pulumi:"targetResourceFqdn"`
+	// The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
 	TargetResourceId pulumi.StringPtrInput `pulumi:"targetResourceId"`
 	// The name of the user on the target resource operating system that the session uses for the connection.
 	TargetResourceOperatingSystemUserName pulumi.StringPtrInput `pulumi:"targetResourceOperatingSystemUserName"`
 	// The port number to connect to on the target resource.
 	TargetResourcePort pulumi.IntPtrInput `pulumi:"targetResourcePort"`
-	// The private IP address of the target resource that the session connects to. For PORT_FORWARDING session type, you must either use targetResourceId or target_resource_private_ip_address
+	// The private IP address of the target resource that the session connects to.
 	TargetResourcePrivateIpAddress pulumi.StringPtrInput `pulumi:"targetResourcePrivateIpAddress"`
 }
 
@@ -279,9 +279,12 @@ func (o SessionTargetResourceDetailsOutput) TargetResourceDisplayName() pulumi.S
 	return o.ApplyT(func(v SessionTargetResourceDetails) *string { return v.TargetResourceDisplayName }).(pulumi.StringPtrOutput)
 }
 
-// The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to. It's optional depends on the type of session you want to create.
-// * (Required) For MANAGED_SSH session type, we can only use targetResourceId to create session.
-// * (Optional) For PORT_FORWARDING session type, you must either use targetResourceId or target_resource_private_ip_address
+// The Fully Qualified Domain Name of the target resource that the session connects to.
+func (o SessionTargetResourceDetailsOutput) TargetResourceFqdn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SessionTargetResourceDetails) *string { return v.TargetResourceFqdn }).(pulumi.StringPtrOutput)
+}
+
+// The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
 func (o SessionTargetResourceDetailsOutput) TargetResourceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SessionTargetResourceDetails) *string { return v.TargetResourceId }).(pulumi.StringPtrOutput)
 }
@@ -296,7 +299,7 @@ func (o SessionTargetResourceDetailsOutput) TargetResourcePort() pulumi.IntPtrOu
 	return o.ApplyT(func(v SessionTargetResourceDetails) *int { return v.TargetResourcePort }).(pulumi.IntPtrOutput)
 }
 
-// The private IP address of the target resource that the session connects to. For PORT_FORWARDING session type, you must either use targetResourceId or target_resource_private_ip_address
+// The private IP address of the target resource that the session connects to.
 func (o SessionTargetResourceDetailsOutput) TargetResourcePrivateIpAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SessionTargetResourceDetails) *string { return v.TargetResourcePrivateIpAddress }).(pulumi.StringPtrOutput)
 }
@@ -345,9 +348,17 @@ func (o SessionTargetResourceDetailsPtrOutput) TargetResourceDisplayName() pulum
 	}).(pulumi.StringPtrOutput)
 }
 
-// The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to. It's optional depends on the type of session you want to create.
-// * (Required) For MANAGED_SSH session type, we can only use targetResourceId to create session.
-// * (Optional) For PORT_FORWARDING session type, you must either use targetResourceId or target_resource_private_ip_address
+// The Fully Qualified Domain Name of the target resource that the session connects to.
+func (o SessionTargetResourceDetailsPtrOutput) TargetResourceFqdn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SessionTargetResourceDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TargetResourceFqdn
+	}).(pulumi.StringPtrOutput)
+}
+
+// The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
 func (o SessionTargetResourceDetailsPtrOutput) TargetResourceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *SessionTargetResourceDetails) *string {
 		if v == nil {
@@ -377,7 +388,7 @@ func (o SessionTargetResourceDetailsPtrOutput) TargetResourcePort() pulumi.IntPt
 	}).(pulumi.IntPtrOutput)
 }
 
-// The private IP address of the target resource that the session connects to. For PORT_FORWARDING session type, you must either use targetResourceId or target_resource_private_ip_address
+// The private IP address of the target resource that the session connects to.
 func (o SessionTargetResourceDetailsPtrOutput) TargetResourcePrivateIpAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *SessionTargetResourceDetails) *string {
 		if v == nil {
@@ -396,6 +407,8 @@ type GetBastionsBastion struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
+	DnsProxyStatus string `pulumi:"dnsProxyStatus"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The unique identifier (OCID) of the bastion, which can't be changed after creation.
@@ -448,6 +461,8 @@ type GetBastionsBastionArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
+	DnsProxyStatus pulumi.StringInput `pulumi:"dnsProxyStatus"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The unique identifier (OCID) of the bastion, which can't be changed after creation.
@@ -549,6 +564,11 @@ func (o GetBastionsBastionOutput) CompartmentId() pulumi.StringOutput {
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 func (o GetBastionsBastionOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetBastionsBastion) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
+func (o GetBastionsBastionOutput) DnsProxyStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBastionsBastion) string { return v.DnsProxyStatus }).(pulumi.StringOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -853,10 +873,12 @@ func (o GetSessionKeyDetailArrayOutput) Index(i pulumi.IntInput) GetSessionKeyDe
 }
 
 type GetSessionTargetResourceDetail struct {
-	// The Bastion service recognizes two types of sessions, managed SSH sessions and SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
+	// The Bastion service recognizes three types of sessions, managed SSH sessions, SSH port forwarding sessions, and Dynamic SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
 	SessionType string `pulumi:"sessionType"`
 	// The display name of the target Compute instance that the session connects to.
 	TargetResourceDisplayName string `pulumi:"targetResourceDisplayName"`
+	// The Fully Qualified Domain Name of the target resource that the session connects to.
+	TargetResourceFqdn string `pulumi:"targetResourceFqdn"`
 	// The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
 	TargetResourceId string `pulumi:"targetResourceId"`
 	// The name of the user on the target resource operating system that the session uses for the connection.
@@ -879,10 +901,12 @@ type GetSessionTargetResourceDetailInput interface {
 }
 
 type GetSessionTargetResourceDetailArgs struct {
-	// The Bastion service recognizes two types of sessions, managed SSH sessions and SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
+	// The Bastion service recognizes three types of sessions, managed SSH sessions, SSH port forwarding sessions, and Dynamic SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
 	SessionType pulumi.StringInput `pulumi:"sessionType"`
 	// The display name of the target Compute instance that the session connects to.
 	TargetResourceDisplayName pulumi.StringInput `pulumi:"targetResourceDisplayName"`
+	// The Fully Qualified Domain Name of the target resource that the session connects to.
+	TargetResourceFqdn pulumi.StringInput `pulumi:"targetResourceFqdn"`
 	// The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
 	TargetResourceId pulumi.StringInput `pulumi:"targetResourceId"`
 	// The name of the user on the target resource operating system that the session uses for the connection.
@@ -944,7 +968,7 @@ func (o GetSessionTargetResourceDetailOutput) ToGetSessionTargetResourceDetailOu
 	return o
 }
 
-// The Bastion service recognizes two types of sessions, managed SSH sessions and SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
+// The Bastion service recognizes three types of sessions, managed SSH sessions, SSH port forwarding sessions, and Dynamic SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
 func (o GetSessionTargetResourceDetailOutput) SessionType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSessionTargetResourceDetail) string { return v.SessionType }).(pulumi.StringOutput)
 }
@@ -952,6 +976,11 @@ func (o GetSessionTargetResourceDetailOutput) SessionType() pulumi.StringOutput 
 // The display name of the target Compute instance that the session connects to.
 func (o GetSessionTargetResourceDetailOutput) TargetResourceDisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSessionTargetResourceDetail) string { return v.TargetResourceDisplayName }).(pulumi.StringOutput)
+}
+
+// The Fully Qualified Domain Name of the target resource that the session connects to.
+func (o GetSessionTargetResourceDetailOutput) TargetResourceFqdn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSessionTargetResourceDetail) string { return v.TargetResourceFqdn }).(pulumi.StringOutput)
 }
 
 // The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
@@ -1421,10 +1450,12 @@ func (o GetSessionsSessionKeyDetailArrayOutput) Index(i pulumi.IntInput) GetSess
 }
 
 type GetSessionsSessionTargetResourceDetail struct {
-	// The Bastion service recognizes two types of sessions, managed SSH sessions and SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
+	// The Bastion service recognizes three types of sessions, managed SSH sessions, SSH port forwarding sessions, and Dynamic SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
 	SessionType string `pulumi:"sessionType"`
 	// The display name of the target Compute instance that the session connects to.
 	TargetResourceDisplayName string `pulumi:"targetResourceDisplayName"`
+	// The Fully Qualified Domain Name of the target resource that the session connects to.
+	TargetResourceFqdn string `pulumi:"targetResourceFqdn"`
 	// The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
 	TargetResourceId string `pulumi:"targetResourceId"`
 	// The name of the user on the target resource operating system that the session uses for the connection.
@@ -1447,10 +1478,12 @@ type GetSessionsSessionTargetResourceDetailInput interface {
 }
 
 type GetSessionsSessionTargetResourceDetailArgs struct {
-	// The Bastion service recognizes two types of sessions, managed SSH sessions and SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
+	// The Bastion service recognizes three types of sessions, managed SSH sessions, SSH port forwarding sessions, and Dynamic SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
 	SessionType pulumi.StringInput `pulumi:"sessionType"`
 	// The display name of the target Compute instance that the session connects to.
 	TargetResourceDisplayName pulumi.StringInput `pulumi:"targetResourceDisplayName"`
+	// The Fully Qualified Domain Name of the target resource that the session connects to.
+	TargetResourceFqdn pulumi.StringInput `pulumi:"targetResourceFqdn"`
 	// The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
 	TargetResourceId pulumi.StringInput `pulumi:"targetResourceId"`
 	// The name of the user on the target resource operating system that the session uses for the connection.
@@ -1512,7 +1545,7 @@ func (o GetSessionsSessionTargetResourceDetailOutput) ToGetSessionsSessionTarget
 	return o
 }
 
-// The Bastion service recognizes two types of sessions, managed SSH sessions and SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
+// The Bastion service recognizes three types of sessions, managed SSH sessions, SSH port forwarding sessions, and Dynamic SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
 func (o GetSessionsSessionTargetResourceDetailOutput) SessionType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSessionsSessionTargetResourceDetail) string { return v.SessionType }).(pulumi.StringOutput)
 }
@@ -1520,6 +1553,11 @@ func (o GetSessionsSessionTargetResourceDetailOutput) SessionType() pulumi.Strin
 // The display name of the target Compute instance that the session connects to.
 func (o GetSessionsSessionTargetResourceDetailOutput) TargetResourceDisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSessionsSessionTargetResourceDetail) string { return v.TargetResourceDisplayName }).(pulumi.StringOutput)
+}
+
+// The Fully Qualified Domain Name of the target resource that the session connects to.
+func (o GetSessionsSessionTargetResourceDetailOutput) TargetResourceFqdn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSessionsSessionTargetResourceDetail) string { return v.TargetResourceFqdn }).(pulumi.StringOutput)
 }
 
 // The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.

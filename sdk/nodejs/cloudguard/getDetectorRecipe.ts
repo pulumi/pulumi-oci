@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDetectorRecipe(args: GetDetectorRecipeArgs, opts?: pulumi.InvokeOptions): Promise<GetDetectorRecipeResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CloudGuard/getDetectorRecipe:getDetectorRecipe", {
         "detectorRecipeId": args.detectorRecipeId,
     }, opts);
@@ -112,9 +110,24 @@ export interface GetDetectorRecipeResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Detector Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
+ *
+ * Returns a DetectorRecipe identified by detectorRecipeId
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDetectorRecipe = oci.CloudGuard.getDetectorRecipe({
+ *     detectorRecipeId: oci_cloud_guard_detector_recipe.test_detector_recipe.id,
+ * });
+ * ```
+ */
 export function getDetectorRecipeOutput(args: GetDetectorRecipeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDetectorRecipeResult> {
-    return pulumi.output(args).apply(a => getDetectorRecipe(a, opts))
+    return pulumi.output(args).apply((a: any) => getDetectorRecipe(a, opts))
 }
 
 /**

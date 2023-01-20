@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDedicatedVmHostInstanceShapesResult> InvokeAsync(GetDedicatedVmHostInstanceShapesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDedicatedVmHostInstanceShapesResult>("oci:Core/getDedicatedVmHostInstanceShapes:getDedicatedVmHostInstanceShapes", args ?? new GetDedicatedVmHostInstanceShapesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDedicatedVmHostInstanceShapesResult>("oci:Core/getDedicatedVmHostInstanceShapes:getDedicatedVmHostInstanceShapes", args ?? new GetDedicatedVmHostInstanceShapesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Dedicated Vm Host Instance Shapes in Oracle Cloud Infrastructure Core service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDedicatedVmHostInstanceShapesResult> Invoke(GetDedicatedVmHostInstanceShapesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDedicatedVmHostInstanceShapesResult>("oci:Core/getDedicatedVmHostInstanceShapes:getDedicatedVmHostInstanceShapes", args ?? new GetDedicatedVmHostInstanceShapesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDedicatedVmHostInstanceShapesResult>("oci:Core/getDedicatedVmHostInstanceShapes:getDedicatedVmHostInstanceShapes", args ?? new GetDedicatedVmHostInstanceShapesInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -56,7 +56,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetUserAssessmentUsersResult> InvokeAsync(GetUserAssessmentUsersArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetUserAssessmentUsersResult>("oci:DataSafe/getUserAssessmentUsers:getUserAssessmentUsers", args ?? new GetUserAssessmentUsersArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetUserAssessmentUsersResult>("oci:DataSafe/getUserAssessmentUsers:getUserAssessmentUsers", args ?? new GetUserAssessmentUsersArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of User Assessment Users in Oracle Cloud Infrastructure Data Safe service.
@@ -103,7 +103,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetUserAssessmentUsersResult> Invoke(GetUserAssessmentUsersInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetUserAssessmentUsersResult>("oci:DataSafe/getUserAssessmentUsers:getUserAssessmentUsers", args ?? new GetUserAssessmentUsersInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetUserAssessmentUsersResult>("oci:DataSafe/getUserAssessmentUsers:getUserAssessmentUsers", args ?? new GetUserAssessmentUsersInvokeArgs(), options.WithDefaults());
     }
 
 

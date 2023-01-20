@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getScheduledRuns(args: GetScheduledRunsArgs, opts?: pulumi.InvokeOptions): Promise<GetScheduledRunsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:MeteringComputation/getScheduledRuns:getScheduledRuns", {
         "filters": args.filters,
         "scheduleId": args.scheduleId,
@@ -62,9 +60,24 @@ export interface GetScheduledRunsResult {
      */
     readonly scheduledRunCollections: outputs.MeteringComputation.GetScheduledRunsScheduledRunCollection[];
 }
-
+/**
+ * This data source provides the list of Scheduled Runs in Oracle Cloud Infrastructure Metering Computation service.
+ *
+ * Returns schedule history list.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testScheduledRuns = oci.MeteringComputation.getScheduledRuns({
+ *     scheduleId: oci_metering_computation_schedule.test_schedule.id,
+ * });
+ * ```
+ */
 export function getScheduledRunsOutput(args: GetScheduledRunsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetScheduledRunsResult> {
-    return pulumi.output(args).apply(a => getScheduledRuns(a, opts))
+    return pulumi.output(args).apply((a: any) => getScheduledRuns(a, opts))
 }
 
 /**

@@ -13,11 +13,19 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetCloudAutonomousVmClustersFilter {
+    /**
+     * @return Name of the month of the year.
+     * 
+     */
     private String name;
     private @Nullable Boolean regex;
     private List<String> values;
 
     private GetCloudAutonomousVmClustersFilter() {}
+    /**
+     * @return Name of the month of the year.
+     * 
+     */
     public String name() {
         return this.name;
     }

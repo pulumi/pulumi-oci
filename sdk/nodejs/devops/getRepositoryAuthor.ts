@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRepositoryAuthor(args: GetRepositoryAuthorArgs, opts?: pulumi.InvokeOptions): Promise<GetRepositoryAuthorResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getRepositoryAuthor:getRepositoryAuthor", {
         "refName": args.refName,
         "repositoryId": args.repositoryId,
@@ -63,9 +61,25 @@ export interface GetRepositoryAuthorResult {
     readonly refName?: string;
     readonly repositoryId: string;
 }
-
+/**
+ * This data source provides details about a specific Repository Author resource in Oracle Cloud Infrastructure Devops service.
+ *
+ * Retrieve a list of all the authors.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testRepositoryAuthor = oci.DevOps.getRepositoryAuthor({
+ *     repositoryId: oci_devops_repository.test_repository.id,
+ *     refName: _var.repository_author_ref_name,
+ * });
+ * ```
+ */
 export function getRepositoryAuthorOutput(args: GetRepositoryAuthorOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoryAuthorResult> {
-    return pulumi.output(args).apply(a => getRepositoryAuthor(a, opts))
+    return pulumi.output(args).apply((a: any) => getRepositoryAuthor(a, opts))
 }
 
 /**

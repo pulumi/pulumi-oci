@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -27,11 +28,8 @@ import * as utilities from "../utilities";
  */
 export function getDeployPipelines(args?: GetDeployPipelinesArgs, opts?: pulumi.InvokeOptions): Promise<GetDeployPipelinesResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getDeployPipelines:getDeployPipelines", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -99,9 +97,28 @@ export interface GetDeployPipelinesResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Deploy Pipelines in Oracle Cloud Infrastructure Devops service.
+ *
+ * Returns a list of deployment pipelines.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDeployPipelines = oci.DevOps.getDeployPipelines({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.deploy_pipeline_display_name,
+ *     id: _var.deploy_pipeline_id,
+ *     projectId: oci_devops_project.test_project.id,
+ *     state: _var.deploy_pipeline_state,
+ * });
+ * ```
+ */
 export function getDeployPipelinesOutput(args?: GetDeployPipelinesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDeployPipelinesResult> {
-    return pulumi.output(args).apply(a => getDeployPipelines(a, opts))
+    return pulumi.output(args).apply((a: any) => getDeployPipelines(a, opts))
 }
 
 /**

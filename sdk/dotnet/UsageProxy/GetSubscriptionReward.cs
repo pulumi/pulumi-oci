@@ -40,7 +40,7 @@ namespace Pulumi.Oci.UsageProxy
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetSubscriptionRewardResult> InvokeAsync(GetSubscriptionRewardArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetSubscriptionRewardResult>("oci:UsageProxy/getSubscriptionReward:getSubscriptionReward", args ?? new GetSubscriptionRewardArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetSubscriptionRewardResult>("oci:UsageProxy/getSubscriptionReward:getSubscriptionReward", args ?? new GetSubscriptionRewardArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Subscription Reward resource in Oracle Cloud Infrastructure Usage Proxy service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.UsageProxy
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetSubscriptionRewardResult> Invoke(GetSubscriptionRewardInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetSubscriptionRewardResult>("oci:UsageProxy/getSubscriptionReward:getSubscriptionReward", args ?? new GetSubscriptionRewardInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetSubscriptionRewardResult>("oci:UsageProxy/getSubscriptionReward:getSubscriptionReward", args ?? new GetSubscriptionRewardInvokeArgs(), options.WithDefaults());
     }
 
 

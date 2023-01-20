@@ -107,8 +107,12 @@ type LookupDatabaseInsightResult struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
 	OpsiPrivateEndpointId string `pulumi:"opsiPrivateEndpointId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
+	ParentId string `pulumi:"parentId"`
 	// Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
 	ProcessorCount int `pulumi:"processorCount"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+	RootId string `pulumi:"rootId"`
 	// Database service name used for connection requests.
 	ServiceName string `pulumi:"serviceName"`
 	// The current state of the database.
@@ -295,9 +299,19 @@ func (o LookupDatabaseInsightResultOutput) OpsiPrivateEndpointId() pulumi.String
 	return o.ApplyT(func(v LookupDatabaseInsightResult) string { return v.OpsiPrivateEndpointId }).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
+func (o LookupDatabaseInsightResultOutput) ParentId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDatabaseInsightResult) string { return v.ParentId }).(pulumi.StringOutput)
+}
+
 // Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
 func (o LookupDatabaseInsightResultOutput) ProcessorCount() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupDatabaseInsightResult) int { return v.ProcessorCount }).(pulumi.IntOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+func (o LookupDatabaseInsightResultOutput) RootId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDatabaseInsightResult) string { return v.RootId }).(pulumi.StringOutput)
 }
 
 // Database service name used for connection requests.

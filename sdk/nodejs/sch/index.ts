@@ -5,12 +5,21 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./connector";
-export * from "./getServiceConnector";
-export * from "./getServiceConnectors";
+export { ConnectorArgs, ConnectorState } from "./connector";
+export type Connector = import("./connector").Connector;
+export const Connector: typeof import("./connector").Connector = null as any;
+utilities.lazyLoad(exports, ["Connector"], () => require("./connector"));
 
-// Import resources to register:
-import { Connector } from "./connector";
+export { GetServiceConnectorArgs, GetServiceConnectorResult, GetServiceConnectorOutputArgs } from "./getServiceConnector";
+export const getServiceConnector: typeof import("./getServiceConnector").getServiceConnector = null as any;
+export const getServiceConnectorOutput: typeof import("./getServiceConnector").getServiceConnectorOutput = null as any;
+utilities.lazyLoad(exports, ["getServiceConnector","getServiceConnectorOutput"], () => require("./getServiceConnector"));
+
+export { GetServiceConnectorsArgs, GetServiceConnectorsResult, GetServiceConnectorsOutputArgs } from "./getServiceConnectors";
+export const getServiceConnectors: typeof import("./getServiceConnectors").getServiceConnectors = null as any;
+export const getServiceConnectorsOutput: typeof import("./getServiceConnectors").getServiceConnectorsOutput = null as any;
+utilities.lazyLoad(exports, ["getServiceConnectors","getServiceConnectorsOutput"], () => require("./getServiceConnectors"));
+
 
 const _module = {
     version: utilities.getVersion(),

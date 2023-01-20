@@ -36,7 +36,7 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
-     * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryJobArgs;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetDiscoveryJobArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -75,7 +75,7 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
-     * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryJobArgs;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetDiscoveryJobArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -114,7 +114,7 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
-     * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryJobArgs;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetDiscoveryJobArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -153,7 +153,7 @@ public final class StackMonitoringFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.StackMonitoring.StackMonitoringFunctions;
-     * import com.pulumi.oci.DataSafe.inputs.GetDiscoveryJobArgs;
+     * import com.pulumi.oci.StackMonitoring.inputs.GetDiscoveryJobArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;

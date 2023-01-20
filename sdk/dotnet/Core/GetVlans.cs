@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetVlansResult> InvokeAsync(GetVlansArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetVlansResult>("oci:Core/getVlans:getVlans", args ?? new GetVlansArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetVlansResult>("oci:Core/getVlans:getVlans", args ?? new GetVlansArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Vlans in Oracle Cloud Infrastructure Core service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetVlansResult> Invoke(GetVlansInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetVlansResult>("oci:Core/getVlans:getVlans", args ?? new GetVlansInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetVlansResult>("oci:Core/getVlans:getVlans", args ?? new GetVlansInvokeArgs(), options.WithDefaults());
     }
 
 

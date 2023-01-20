@@ -22,13 +22,16 @@ class GetScheduleResult:
     """
     A collection of values returned by getSchedule.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, freeform_tags=None, id=None, name=None, query_properties=None, result_locations=None, schedule_id=None, schedule_recurrences=None, state=None, system_tags=None, time_created=None, time_scheduled=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, freeform_tags=None, id=None, name=None, output_file_format=None, query_properties=None, result_locations=None, saved_report_id=None, schedule_id=None, schedule_recurrences=None, state=None, system_tags=None, time_created=None, time_next_run=None, time_scheduled=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
+        if description and not isinstance(description, str):
+            raise TypeError("Expected argument 'description' to be a str")
+        pulumi.set(__self__, "description", description)
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -38,12 +41,18 @@ class GetScheduleResult:
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
         pulumi.set(__self__, "name", name)
+        if output_file_format and not isinstance(output_file_format, str):
+            raise TypeError("Expected argument 'output_file_format' to be a str")
+        pulumi.set(__self__, "output_file_format", output_file_format)
         if query_properties and not isinstance(query_properties, list):
             raise TypeError("Expected argument 'query_properties' to be a list")
         pulumi.set(__self__, "query_properties", query_properties)
         if result_locations and not isinstance(result_locations, list):
             raise TypeError("Expected argument 'result_locations' to be a list")
         pulumi.set(__self__, "result_locations", result_locations)
+        if saved_report_id and not isinstance(saved_report_id, str):
+            raise TypeError("Expected argument 'saved_report_id' to be a str")
+        pulumi.set(__self__, "saved_report_id", saved_report_id)
         if schedule_id and not isinstance(schedule_id, str):
             raise TypeError("Expected argument 'schedule_id' to be a str")
         pulumi.set(__self__, "schedule_id", schedule_id)
@@ -59,6 +68,9 @@ class GetScheduleResult:
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
+        if time_next_run and not isinstance(time_next_run, str):
+            raise TypeError("Expected argument 'time_next_run' to be a str")
+        pulumi.set(__self__, "time_next_run", time_next_run)
         if time_scheduled and not isinstance(time_scheduled, str):
             raise TypeError("Expected argument 'time_scheduled' to be a str")
         pulumi.set(__self__, "time_scheduled", time_scheduled)
@@ -67,7 +79,7 @@ class GetScheduleResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The tenancy of the customer
+        The customer tenancy.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -80,10 +92,18 @@ class GetScheduleResult:
         return pulumi.get(self, "defined_tags")
 
     @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        The description of the schedule.
+        """
+        return pulumi.get(self, "description")
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, Any]:
         """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -91,7 +111,7 @@ class GetScheduleResult:
     @pulumi.getter
     def id(self) -> str:
         """
-        The OCID representing unique shedule
+        The OCID representing a unique shedule.
         """
         return pulumi.get(self, "id")
 
@@ -99,9 +119,17 @@ class GetScheduleResult:
     @pulumi.getter
     def name(self) -> str:
         """
-        The unique name of the schedule created by the user
+        The unique name of the schedule created by the user.
         """
         return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="outputFileFormat")
+    def output_file_format(self) -> str:
+        """
+        Specifies supported output file format.
+        """
+        return pulumi.get(self, "output_file_format")
 
     @property
     @pulumi.getter(name="queryProperties")
@@ -115,9 +143,17 @@ class GetScheduleResult:
     @pulumi.getter(name="resultLocations")
     def result_locations(self) -> Sequence['outputs.GetScheduleResultLocationResult']:
         """
-        The location where usage/cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
+        The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
         """
         return pulumi.get(self, "result_locations")
+
+    @property
+    @pulumi.getter(name="savedReportId")
+    def saved_report_id(self) -> str:
+        """
+        The saved report id which can also be used to generate query.
+        """
+        return pulumi.get(self, "saved_report_id")
 
     @property
     @pulumi.getter(name="scheduleId")
@@ -128,7 +164,7 @@ class GetScheduleResult:
     @pulumi.getter(name="scheduleRecurrences")
     def schedule_recurrences(self) -> str:
         """
-        In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 Describes the frequency of when the schedule will be run
+        Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
         """
         return pulumi.get(self, "schedule_recurrences")
 
@@ -136,7 +172,7 @@ class GetScheduleResult:
     @pulumi.getter
     def state(self) -> str:
         """
-        The lifecycle state of the schedule
+        The schedule lifecycle state.
         """
         return pulumi.get(self, "state")
 
@@ -152,15 +188,23 @@ class GetScheduleResult:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The date and time of when the schedule was created
+        The date and time the schedule was created.
         """
         return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeNextRun")
+    def time_next_run(self) -> str:
+        """
+        The date and time of the next job execution.
+        """
+        return pulumi.get(self, "time_next_run")
 
     @property
     @pulumi.getter(name="timeScheduled")
     def time_scheduled(self) -> str:
         """
-        The date and time of the first time job execution
+        The date and time of the first time job execution.
         """
         return pulumi.get(self, "time_scheduled")
 
@@ -173,16 +217,20 @@ class AwaitableGetScheduleResult(GetScheduleResult):
         return GetScheduleResult(
             compartment_id=self.compartment_id,
             defined_tags=self.defined_tags,
+            description=self.description,
             freeform_tags=self.freeform_tags,
             id=self.id,
             name=self.name,
+            output_file_format=self.output_file_format,
             query_properties=self.query_properties,
             result_locations=self.result_locations,
+            saved_report_id=self.saved_report_id,
             schedule_id=self.schedule_id,
             schedule_recurrences=self.schedule_recurrences,
             state=self.state,
             system_tags=self.system_tags,
             time_created=self.time_created,
+            time_next_run=self.time_next_run,
             time_scheduled=self.time_scheduled)
 
 
@@ -213,16 +261,20 @@ def get_schedule(schedule_id: Optional[str] = None,
     return AwaitableGetScheduleResult(
         compartment_id=__ret__.compartment_id,
         defined_tags=__ret__.defined_tags,
+        description=__ret__.description,
         freeform_tags=__ret__.freeform_tags,
         id=__ret__.id,
         name=__ret__.name,
+        output_file_format=__ret__.output_file_format,
         query_properties=__ret__.query_properties,
         result_locations=__ret__.result_locations,
+        saved_report_id=__ret__.saved_report_id,
         schedule_id=__ret__.schedule_id,
         schedule_recurrences=__ret__.schedule_recurrences,
         state=__ret__.state,
         system_tags=__ret__.system_tags,
         time_created=__ret__.time_created,
+        time_next_run=__ret__.time_next_run,
         time_scheduled=__ret__.time_scheduled)
 
 

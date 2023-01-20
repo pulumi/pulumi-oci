@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -30,11 +31,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCpeDeviceShape(args: GetCpeDeviceShapeArgs, opts?: pulumi.InvokeOptions): Promise<GetCpeDeviceShapeResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getCpeDeviceShape:getCpeDeviceShape", {
         "cpeDeviceShapeId": args.cpeDeviceShapeId,
     }, opts);
@@ -78,9 +76,32 @@ export interface GetCpeDeviceShapeResult {
      */
     readonly template: string;
 }
-
+/**
+ * This data source provides details about a specific Cpe Device Shape resource in Oracle Cloud Infrastructure Core service.
+ *
+ * Gets the detailed information about the specified CPE device type. This might include a set of questions
+ * that are specific to the particular CPE device type. The customer must supply answers to those questions
+ * (see [UpdateTunnelCpeDeviceConfig](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/UpdateTunnelCpeDeviceConfig)).
+ * The service merges the answers with a template of other information for the CPE device type. The following
+ * operations return the merged content:
+ *
+ *   * [GetCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Cpe/GetCpeDeviceConfigContent)
+ *   * [GetIpsecCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnection/GetIpsecCpeDeviceConfigContent)
+ *   * [GetTunnelCpeDeviceConfigContent](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/TunnelCpeDeviceConfig/GetTunnelCpeDeviceConfigContent)
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCpeDeviceShape = oci.Core.getCpeDeviceShape({
+ *     cpeDeviceShapeId: oci_core_cpe_device_shape.test_cpe_device_shape.id,
+ * });
+ * ```
+ */
 export function getCpeDeviceShapeOutput(args: GetCpeDeviceShapeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCpeDeviceShapeResult> {
-    return pulumi.output(args).apply(a => getCpeDeviceShape(a, opts))
+    return pulumi.output(args).apply((a: any) => getCpeDeviceShape(a, opts))
 }
 
 /**

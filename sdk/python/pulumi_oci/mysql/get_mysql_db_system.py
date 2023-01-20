@@ -355,7 +355,7 @@ class GetMysqlDbSystemResult:
     @pulumi.getter
     def maintenances(self) -> Sequence['outputs.GetMysqlDbSystemMaintenanceResult']:
         """
-        The Maintenance Policy for the DB System.
+        The Maintenance Policy for the DB System or Read Replica that this model is included in.
         """
         return pulumi.get(self, "maintenances")
 

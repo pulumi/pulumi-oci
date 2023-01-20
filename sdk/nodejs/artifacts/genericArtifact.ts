@@ -26,7 +26,11 @@ import * as utilities from "../utilities";
  *
  * ## Import
  *
- * Import is not supported for this resource.
+ * GenericArtifacts can be imported using the `id`, e.g.
+ *
+ * ```sh
+ *  $ pulumi import oci:Artifacts/genericArtifact:GenericArtifact test_generic_artifact "generic/artifacts/{artifactId}"
+ * ```
  */
 export class GenericArtifact extends pulumi.CustomResource {
     /**

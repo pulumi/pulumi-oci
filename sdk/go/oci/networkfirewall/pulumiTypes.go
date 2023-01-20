@@ -11,15 +11,10 @@ import (
 )
 
 type NetworkFirewallPolicyApplicationList struct {
-	IcmpCode    *int   `pulumi:"icmpCode"`
-	IcmpType    *int   `pulumi:"icmpType"`
-	Key         string `pulumi:"key"`
-	MaximumPort *int   `pulumi:"maximumPort"`
-	MinimumPort *int   `pulumi:"minimumPort"`
-	// (Updatable) Type of the secrets mapped based on the policy.
-	// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-	// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
-	Type string `pulumi:"type"`
+	// (Updatable) The key is the identifier by which the application list is referenced.
+	ApplicationListName string `pulumi:"applicationListName"`
+	// (Updatable) Details about the application
+	ApplicationValues []NetworkFirewallPolicyApplicationListApplicationValue `pulumi:"applicationValues"`
 }
 
 // NetworkFirewallPolicyApplicationListInput is an input type that accepts NetworkFirewallPolicyApplicationListArgs and NetworkFirewallPolicyApplicationListOutput values.
@@ -34,15 +29,10 @@ type NetworkFirewallPolicyApplicationListInput interface {
 }
 
 type NetworkFirewallPolicyApplicationListArgs struct {
-	IcmpCode    pulumi.IntPtrInput `pulumi:"icmpCode"`
-	IcmpType    pulumi.IntPtrInput `pulumi:"icmpType"`
-	Key         pulumi.StringInput `pulumi:"key"`
-	MaximumPort pulumi.IntPtrInput `pulumi:"maximumPort"`
-	MinimumPort pulumi.IntPtrInput `pulumi:"minimumPort"`
-	// (Updatable) Type of the secrets mapped based on the policy.
-	// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-	// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
-	Type pulumi.StringInput `pulumi:"type"`
+	// (Updatable) The key is the identifier by which the application list is referenced.
+	ApplicationListName pulumi.StringInput `pulumi:"applicationListName"`
+	// (Updatable) Details about the application
+	ApplicationValues NetworkFirewallPolicyApplicationListApplicationValueArrayInput `pulumi:"applicationValues"`
 }
 
 func (NetworkFirewallPolicyApplicationListArgs) ElementType() reflect.Type {
@@ -96,31 +86,16 @@ func (o NetworkFirewallPolicyApplicationListOutput) ToNetworkFirewallPolicyAppli
 	return o
 }
 
-func (o NetworkFirewallPolicyApplicationListOutput) IcmpCode() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v NetworkFirewallPolicyApplicationList) *int { return v.IcmpCode }).(pulumi.IntPtrOutput)
+// (Updatable) The key is the identifier by which the application list is referenced.
+func (o NetworkFirewallPolicyApplicationListOutput) ApplicationListName() pulumi.StringOutput {
+	return o.ApplyT(func(v NetworkFirewallPolicyApplicationList) string { return v.ApplicationListName }).(pulumi.StringOutput)
 }
 
-func (o NetworkFirewallPolicyApplicationListOutput) IcmpType() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v NetworkFirewallPolicyApplicationList) *int { return v.IcmpType }).(pulumi.IntPtrOutput)
-}
-
-func (o NetworkFirewallPolicyApplicationListOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v NetworkFirewallPolicyApplicationList) string { return v.Key }).(pulumi.StringOutput)
-}
-
-func (o NetworkFirewallPolicyApplicationListOutput) MaximumPort() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v NetworkFirewallPolicyApplicationList) *int { return v.MaximumPort }).(pulumi.IntPtrOutput)
-}
-
-func (o NetworkFirewallPolicyApplicationListOutput) MinimumPort() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v NetworkFirewallPolicyApplicationList) *int { return v.MinimumPort }).(pulumi.IntPtrOutput)
-}
-
-// (Updatable) Type of the secrets mapped based on the policy.
-// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
-func (o NetworkFirewallPolicyApplicationListOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v NetworkFirewallPolicyApplicationList) string { return v.Type }).(pulumi.StringOutput)
+// (Updatable) Details about the application
+func (o NetworkFirewallPolicyApplicationListOutput) ApplicationValues() NetworkFirewallPolicyApplicationListApplicationValueArrayOutput {
+	return o.ApplyT(func(v NetworkFirewallPolicyApplicationList) []NetworkFirewallPolicyApplicationListApplicationValue {
+		return v.ApplicationValues
+	}).(NetworkFirewallPolicyApplicationListApplicationValueArrayOutput)
 }
 
 type NetworkFirewallPolicyApplicationListArrayOutput struct{ *pulumi.OutputState }
@@ -143,6 +118,139 @@ func (o NetworkFirewallPolicyApplicationListArrayOutput) Index(i pulumi.IntInput
 	}).(NetworkFirewallPolicyApplicationListOutput)
 }
 
+type NetworkFirewallPolicyApplicationListApplicationValue struct {
+	// (Updatable) Used when you select ICMP. 0-Net unreachable, 1-Host unreachable, 2-Protocol unreachable, 3-Port unreachable
+	IcmpCode *int `pulumi:"icmpCode"`
+	// (Updatable)  Used when you select ICMP. 0-Echo reply, 3-Destination unreachable, 5-Redirect, 8-Echo
+	IcmpType *int `pulumi:"icmpType"`
+	// (Updatable) Used when you select TCP or UDP. Enter a port number.
+	MaximumPort *int `pulumi:"maximumPort"`
+	// (Updatable) Used when you select TCP or UDP. Enter a port number.
+	MinimumPort *int `pulumi:"minimumPort"`
+	// (Updatable) Type of the url lists based on the policy
+	Type string `pulumi:"type"`
+}
+
+// NetworkFirewallPolicyApplicationListApplicationValueInput is an input type that accepts NetworkFirewallPolicyApplicationListApplicationValueArgs and NetworkFirewallPolicyApplicationListApplicationValueOutput values.
+// You can construct a concrete instance of `NetworkFirewallPolicyApplicationListApplicationValueInput` via:
+//
+//	NetworkFirewallPolicyApplicationListApplicationValueArgs{...}
+type NetworkFirewallPolicyApplicationListApplicationValueInput interface {
+	pulumi.Input
+
+	ToNetworkFirewallPolicyApplicationListApplicationValueOutput() NetworkFirewallPolicyApplicationListApplicationValueOutput
+	ToNetworkFirewallPolicyApplicationListApplicationValueOutputWithContext(context.Context) NetworkFirewallPolicyApplicationListApplicationValueOutput
+}
+
+type NetworkFirewallPolicyApplicationListApplicationValueArgs struct {
+	// (Updatable) Used when you select ICMP. 0-Net unreachable, 1-Host unreachable, 2-Protocol unreachable, 3-Port unreachable
+	IcmpCode pulumi.IntPtrInput `pulumi:"icmpCode"`
+	// (Updatable)  Used when you select ICMP. 0-Echo reply, 3-Destination unreachable, 5-Redirect, 8-Echo
+	IcmpType pulumi.IntPtrInput `pulumi:"icmpType"`
+	// (Updatable) Used when you select TCP or UDP. Enter a port number.
+	MaximumPort pulumi.IntPtrInput `pulumi:"maximumPort"`
+	// (Updatable) Used when you select TCP or UDP. Enter a port number.
+	MinimumPort pulumi.IntPtrInput `pulumi:"minimumPort"`
+	// (Updatable) Type of the url lists based on the policy
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (NetworkFirewallPolicyApplicationListApplicationValueArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NetworkFirewallPolicyApplicationListApplicationValue)(nil)).Elem()
+}
+
+func (i NetworkFirewallPolicyApplicationListApplicationValueArgs) ToNetworkFirewallPolicyApplicationListApplicationValueOutput() NetworkFirewallPolicyApplicationListApplicationValueOutput {
+	return i.ToNetworkFirewallPolicyApplicationListApplicationValueOutputWithContext(context.Background())
+}
+
+func (i NetworkFirewallPolicyApplicationListApplicationValueArgs) ToNetworkFirewallPolicyApplicationListApplicationValueOutputWithContext(ctx context.Context) NetworkFirewallPolicyApplicationListApplicationValueOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyApplicationListApplicationValueOutput)
+}
+
+// NetworkFirewallPolicyApplicationListApplicationValueArrayInput is an input type that accepts NetworkFirewallPolicyApplicationListApplicationValueArray and NetworkFirewallPolicyApplicationListApplicationValueArrayOutput values.
+// You can construct a concrete instance of `NetworkFirewallPolicyApplicationListApplicationValueArrayInput` via:
+//
+//	NetworkFirewallPolicyApplicationListApplicationValueArray{ NetworkFirewallPolicyApplicationListApplicationValueArgs{...} }
+type NetworkFirewallPolicyApplicationListApplicationValueArrayInput interface {
+	pulumi.Input
+
+	ToNetworkFirewallPolicyApplicationListApplicationValueArrayOutput() NetworkFirewallPolicyApplicationListApplicationValueArrayOutput
+	ToNetworkFirewallPolicyApplicationListApplicationValueArrayOutputWithContext(context.Context) NetworkFirewallPolicyApplicationListApplicationValueArrayOutput
+}
+
+type NetworkFirewallPolicyApplicationListApplicationValueArray []NetworkFirewallPolicyApplicationListApplicationValueInput
+
+func (NetworkFirewallPolicyApplicationListApplicationValueArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NetworkFirewallPolicyApplicationListApplicationValue)(nil)).Elem()
+}
+
+func (i NetworkFirewallPolicyApplicationListApplicationValueArray) ToNetworkFirewallPolicyApplicationListApplicationValueArrayOutput() NetworkFirewallPolicyApplicationListApplicationValueArrayOutput {
+	return i.ToNetworkFirewallPolicyApplicationListApplicationValueArrayOutputWithContext(context.Background())
+}
+
+func (i NetworkFirewallPolicyApplicationListApplicationValueArray) ToNetworkFirewallPolicyApplicationListApplicationValueArrayOutputWithContext(ctx context.Context) NetworkFirewallPolicyApplicationListApplicationValueArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyApplicationListApplicationValueArrayOutput)
+}
+
+type NetworkFirewallPolicyApplicationListApplicationValueOutput struct{ *pulumi.OutputState }
+
+func (NetworkFirewallPolicyApplicationListApplicationValueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NetworkFirewallPolicyApplicationListApplicationValue)(nil)).Elem()
+}
+
+func (o NetworkFirewallPolicyApplicationListApplicationValueOutput) ToNetworkFirewallPolicyApplicationListApplicationValueOutput() NetworkFirewallPolicyApplicationListApplicationValueOutput {
+	return o
+}
+
+func (o NetworkFirewallPolicyApplicationListApplicationValueOutput) ToNetworkFirewallPolicyApplicationListApplicationValueOutputWithContext(ctx context.Context) NetworkFirewallPolicyApplicationListApplicationValueOutput {
+	return o
+}
+
+// (Updatable) Used when you select ICMP. 0-Net unreachable, 1-Host unreachable, 2-Protocol unreachable, 3-Port unreachable
+func (o NetworkFirewallPolicyApplicationListApplicationValueOutput) IcmpCode() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v NetworkFirewallPolicyApplicationListApplicationValue) *int { return v.IcmpCode }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable)  Used when you select ICMP. 0-Echo reply, 3-Destination unreachable, 5-Redirect, 8-Echo
+func (o NetworkFirewallPolicyApplicationListApplicationValueOutput) IcmpType() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v NetworkFirewallPolicyApplicationListApplicationValue) *int { return v.IcmpType }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Used when you select TCP or UDP. Enter a port number.
+func (o NetworkFirewallPolicyApplicationListApplicationValueOutput) MaximumPort() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v NetworkFirewallPolicyApplicationListApplicationValue) *int { return v.MaximumPort }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Used when you select TCP or UDP. Enter a port number.
+func (o NetworkFirewallPolicyApplicationListApplicationValueOutput) MinimumPort() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v NetworkFirewallPolicyApplicationListApplicationValue) *int { return v.MinimumPort }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Type of the url lists based on the policy
+func (o NetworkFirewallPolicyApplicationListApplicationValueOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v NetworkFirewallPolicyApplicationListApplicationValue) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type NetworkFirewallPolicyApplicationListApplicationValueArrayOutput struct{ *pulumi.OutputState }
+
+func (NetworkFirewallPolicyApplicationListApplicationValueArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NetworkFirewallPolicyApplicationListApplicationValue)(nil)).Elem()
+}
+
+func (o NetworkFirewallPolicyApplicationListApplicationValueArrayOutput) ToNetworkFirewallPolicyApplicationListApplicationValueArrayOutput() NetworkFirewallPolicyApplicationListApplicationValueArrayOutput {
+	return o
+}
+
+func (o NetworkFirewallPolicyApplicationListApplicationValueArrayOutput) ToNetworkFirewallPolicyApplicationListApplicationValueArrayOutputWithContext(ctx context.Context) NetworkFirewallPolicyApplicationListApplicationValueArrayOutput {
+	return o
+}
+
+func (o NetworkFirewallPolicyApplicationListApplicationValueArrayOutput) Index(i pulumi.IntInput) NetworkFirewallPolicyApplicationListApplicationValueOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NetworkFirewallPolicyApplicationListApplicationValue {
+		return vs[0].([]NetworkFirewallPolicyApplicationListApplicationValue)[vs[1].(int)]
+	}).(NetworkFirewallPolicyApplicationListApplicationValueOutput)
+}
+
 type NetworkFirewallPolicyDecryptionProfile struct {
 	// (Updatable) Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
 	AreCertificateExtensionsRestricted *bool `pulumi:"areCertificateExtensionsRestricted"`
@@ -161,11 +269,10 @@ type NetworkFirewallPolicyDecryptionProfile struct {
 	// (Updatable) Whether to block sessions if SSL version is not supported.
 	IsUnsupportedVersionBlocked *bool `pulumi:"isUnsupportedVersionBlocked"`
 	// (Updatable) Whether to block sessions if server's certificate is issued by an untrusted certificate authority (CA).
-	IsUntrustedIssuerBlocked *bool  `pulumi:"isUntrustedIssuerBlocked"`
-	Key                      string `pulumi:"key"`
-	// (Updatable) Type of the secrets mapped based on the policy.
-	// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-	// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+	IsUntrustedIssuerBlocked *bool `pulumi:"isUntrustedIssuerBlocked"`
+	// Source of the secrets, where the secrets are stored.
+	Key string `pulumi:"key"`
+	// (Updatable) Type of the url lists based on the policy
 	Type string `pulumi:"type"`
 }
 
@@ -199,10 +306,9 @@ type NetworkFirewallPolicyDecryptionProfileArgs struct {
 	IsUnsupportedVersionBlocked pulumi.BoolPtrInput `pulumi:"isUnsupportedVersionBlocked"`
 	// (Updatable) Whether to block sessions if server's certificate is issued by an untrusted certificate authority (CA).
 	IsUntrustedIssuerBlocked pulumi.BoolPtrInput `pulumi:"isUntrustedIssuerBlocked"`
-	Key                      pulumi.StringInput  `pulumi:"key"`
-	// (Updatable) Type of the secrets mapped based on the policy.
-	// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-	// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+	// Source of the secrets, where the secrets are stored.
+	Key pulumi.StringInput `pulumi:"key"`
+	// (Updatable) Type of the url lists based on the policy
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -302,13 +408,12 @@ func (o NetworkFirewallPolicyDecryptionProfileOutput) IsUntrustedIssuerBlocked()
 	return o.ApplyT(func(v NetworkFirewallPolicyDecryptionProfile) *bool { return v.IsUntrustedIssuerBlocked }).(pulumi.BoolPtrOutput)
 }
 
+// Source of the secrets, where the secrets are stored.
 func (o NetworkFirewallPolicyDecryptionProfileOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v NetworkFirewallPolicyDecryptionProfile) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// (Updatable) Type of the secrets mapped based on the policy.
-// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+// (Updatable) Type of the url lists based on the policy
 func (o NetworkFirewallPolicyDecryptionProfileOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v NetworkFirewallPolicyDecryptionProfile) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -542,7 +647,9 @@ func (o NetworkFirewallPolicyDecryptionRuleConditionOutput) Sources() pulumi.Str
 }
 
 type NetworkFirewallPolicyIpAddressList struct {
-	IpAddressListName   string   `pulumi:"ipAddressListName"`
+	// (Updatable) The identifier by which the IP address list is referenced.
+	IpAddressListName string `pulumi:"ipAddressListName"`
+	// (Updatable) List of IP address lists of the policy.
 	IpAddressListValues []string `pulumi:"ipAddressListValues"`
 }
 
@@ -558,7 +665,9 @@ type NetworkFirewallPolicyIpAddressListInput interface {
 }
 
 type NetworkFirewallPolicyIpAddressListArgs struct {
-	IpAddressListName   pulumi.StringInput      `pulumi:"ipAddressListName"`
+	// (Updatable) The identifier by which the IP address list is referenced.
+	IpAddressListName pulumi.StringInput `pulumi:"ipAddressListName"`
+	// (Updatable) List of IP address lists of the policy.
 	IpAddressListValues pulumi.StringArrayInput `pulumi:"ipAddressListValues"`
 }
 
@@ -613,10 +722,12 @@ func (o NetworkFirewallPolicyIpAddressListOutput) ToNetworkFirewallPolicyIpAddre
 	return o
 }
 
+// (Updatable) The identifier by which the IP address list is referenced.
 func (o NetworkFirewallPolicyIpAddressListOutput) IpAddressListName() pulumi.StringOutput {
 	return o.ApplyT(func(v NetworkFirewallPolicyIpAddressList) string { return v.IpAddressListName }).(pulumi.StringOutput)
 }
 
+// (Updatable) List of IP address lists of the policy.
 func (o NetworkFirewallPolicyIpAddressListOutput) IpAddressListValues() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v NetworkFirewallPolicyIpAddressList) []string { return v.IpAddressListValues }).(pulumi.StringArrayOutput)
 }
@@ -642,10 +753,9 @@ func (o NetworkFirewallPolicyIpAddressListArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type NetworkFirewallPolicyMappedSecret struct {
+	// Source of the secrets, where the secrets are stored.
 	Key string `pulumi:"key"`
-	// (Updatable) Type of the secrets mapped based on the policy.
-	// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-	// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+	// (Updatable) Type of the url lists based on the policy
 	Type string `pulumi:"type"`
 	// (Updatable) OCID for the Vault Secret to be used.
 	VaultSecretId *string `pulumi:"vaultSecretId"`
@@ -665,10 +775,9 @@ type NetworkFirewallPolicyMappedSecretInput interface {
 }
 
 type NetworkFirewallPolicyMappedSecretArgs struct {
+	// Source of the secrets, where the secrets are stored.
 	Key pulumi.StringInput `pulumi:"key"`
-	// (Updatable) Type of the secrets mapped based on the policy.
-	// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-	// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+	// (Updatable) Type of the url lists based on the policy
 	Type pulumi.StringInput `pulumi:"type"`
 	// (Updatable) OCID for the Vault Secret to be used.
 	VaultSecretId pulumi.StringPtrInput `pulumi:"vaultSecretId"`
@@ -727,13 +836,12 @@ func (o NetworkFirewallPolicyMappedSecretOutput) ToNetworkFirewallPolicyMappedSe
 	return o
 }
 
+// Source of the secrets, where the secrets are stored.
 func (o NetworkFirewallPolicyMappedSecretOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v NetworkFirewallPolicyMappedSecret) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// (Updatable) Type of the secrets mapped based on the policy.
-// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+// (Updatable) Type of the url lists based on the policy
 func (o NetworkFirewallPolicyMappedSecretOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v NetworkFirewallPolicyMappedSecret) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -992,12 +1100,10 @@ func (o NetworkFirewallPolicySecurityRuleConditionOutput) Urls() pulumi.StringAr
 }
 
 type NetworkFirewallPolicyUrlList struct {
-	Key     string  `pulumi:"key"`
-	Pattern *string `pulumi:"pattern"`
-	// (Updatable) Type of the secrets mapped based on the policy.
-	// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-	// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
-	Type string `pulumi:"type"`
+	// (Updatable) The identifier for the url list
+	UrlListName string `pulumi:"urlListName"`
+	// (Updatable) The list of Url Patterns.
+	UrlListValues []NetworkFirewallPolicyUrlListUrlListValue `pulumi:"urlListValues"`
 }
 
 // NetworkFirewallPolicyUrlListInput is an input type that accepts NetworkFirewallPolicyUrlListArgs and NetworkFirewallPolicyUrlListOutput values.
@@ -1012,12 +1118,10 @@ type NetworkFirewallPolicyUrlListInput interface {
 }
 
 type NetworkFirewallPolicyUrlListArgs struct {
-	Key     pulumi.StringInput    `pulumi:"key"`
-	Pattern pulumi.StringPtrInput `pulumi:"pattern"`
-	// (Updatable) Type of the secrets mapped based on the policy.
-	// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-	// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
-	Type pulumi.StringInput `pulumi:"type"`
+	// (Updatable) The identifier for the url list
+	UrlListName pulumi.StringInput `pulumi:"urlListName"`
+	// (Updatable) The list of Url Patterns.
+	UrlListValues NetworkFirewallPolicyUrlListUrlListValueArrayInput `pulumi:"urlListValues"`
 }
 
 func (NetworkFirewallPolicyUrlListArgs) ElementType() reflect.Type {
@@ -1071,19 +1175,16 @@ func (o NetworkFirewallPolicyUrlListOutput) ToNetworkFirewallPolicyUrlListOutput
 	return o
 }
 
-func (o NetworkFirewallPolicyUrlListOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v NetworkFirewallPolicyUrlList) string { return v.Key }).(pulumi.StringOutput)
+// (Updatable) The identifier for the url list
+func (o NetworkFirewallPolicyUrlListOutput) UrlListName() pulumi.StringOutput {
+	return o.ApplyT(func(v NetworkFirewallPolicyUrlList) string { return v.UrlListName }).(pulumi.StringOutput)
 }
 
-func (o NetworkFirewallPolicyUrlListOutput) Pattern() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v NetworkFirewallPolicyUrlList) *string { return v.Pattern }).(pulumi.StringPtrOutput)
-}
-
-// (Updatable) Type of the secrets mapped based on the policy.
-// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
-func (o NetworkFirewallPolicyUrlListOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v NetworkFirewallPolicyUrlList) string { return v.Type }).(pulumi.StringOutput)
+// (Updatable) The list of Url Patterns.
+func (o NetworkFirewallPolicyUrlListOutput) UrlListValues() NetworkFirewallPolicyUrlListUrlListValueArrayOutput {
+	return o.ApplyT(func(v NetworkFirewallPolicyUrlList) []NetworkFirewallPolicyUrlListUrlListValue {
+		return v.UrlListValues
+	}).(NetworkFirewallPolicyUrlListUrlListValueArrayOutput)
 }
 
 type NetworkFirewallPolicyUrlListArrayOutput struct{ *pulumi.OutputState }
@@ -1104,6 +1205,112 @@ func (o NetworkFirewallPolicyUrlListArrayOutput) Index(i pulumi.IntInput) Networ
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NetworkFirewallPolicyUrlList {
 		return vs[0].([]NetworkFirewallPolicyUrlList)[vs[1].(int)]
 	}).(NetworkFirewallPolicyUrlListOutput)
+}
+
+type NetworkFirewallPolicyUrlListUrlListValue struct {
+	// (Updatable) URL lists to allow or deny traffic to a group of URLs. You can include a maximum of 25 URLs in each list.
+	Pattern *string `pulumi:"pattern"`
+	// (Updatable) Type of the url lists based on the policy
+	Type string `pulumi:"type"`
+}
+
+// NetworkFirewallPolicyUrlListUrlListValueInput is an input type that accepts NetworkFirewallPolicyUrlListUrlListValueArgs and NetworkFirewallPolicyUrlListUrlListValueOutput values.
+// You can construct a concrete instance of `NetworkFirewallPolicyUrlListUrlListValueInput` via:
+//
+//	NetworkFirewallPolicyUrlListUrlListValueArgs{...}
+type NetworkFirewallPolicyUrlListUrlListValueInput interface {
+	pulumi.Input
+
+	ToNetworkFirewallPolicyUrlListUrlListValueOutput() NetworkFirewallPolicyUrlListUrlListValueOutput
+	ToNetworkFirewallPolicyUrlListUrlListValueOutputWithContext(context.Context) NetworkFirewallPolicyUrlListUrlListValueOutput
+}
+
+type NetworkFirewallPolicyUrlListUrlListValueArgs struct {
+	// (Updatable) URL lists to allow or deny traffic to a group of URLs. You can include a maximum of 25 URLs in each list.
+	Pattern pulumi.StringPtrInput `pulumi:"pattern"`
+	// (Updatable) Type of the url lists based on the policy
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (NetworkFirewallPolicyUrlListUrlListValueArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NetworkFirewallPolicyUrlListUrlListValue)(nil)).Elem()
+}
+
+func (i NetworkFirewallPolicyUrlListUrlListValueArgs) ToNetworkFirewallPolicyUrlListUrlListValueOutput() NetworkFirewallPolicyUrlListUrlListValueOutput {
+	return i.ToNetworkFirewallPolicyUrlListUrlListValueOutputWithContext(context.Background())
+}
+
+func (i NetworkFirewallPolicyUrlListUrlListValueArgs) ToNetworkFirewallPolicyUrlListUrlListValueOutputWithContext(ctx context.Context) NetworkFirewallPolicyUrlListUrlListValueOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyUrlListUrlListValueOutput)
+}
+
+// NetworkFirewallPolicyUrlListUrlListValueArrayInput is an input type that accepts NetworkFirewallPolicyUrlListUrlListValueArray and NetworkFirewallPolicyUrlListUrlListValueArrayOutput values.
+// You can construct a concrete instance of `NetworkFirewallPolicyUrlListUrlListValueArrayInput` via:
+//
+//	NetworkFirewallPolicyUrlListUrlListValueArray{ NetworkFirewallPolicyUrlListUrlListValueArgs{...} }
+type NetworkFirewallPolicyUrlListUrlListValueArrayInput interface {
+	pulumi.Input
+
+	ToNetworkFirewallPolicyUrlListUrlListValueArrayOutput() NetworkFirewallPolicyUrlListUrlListValueArrayOutput
+	ToNetworkFirewallPolicyUrlListUrlListValueArrayOutputWithContext(context.Context) NetworkFirewallPolicyUrlListUrlListValueArrayOutput
+}
+
+type NetworkFirewallPolicyUrlListUrlListValueArray []NetworkFirewallPolicyUrlListUrlListValueInput
+
+func (NetworkFirewallPolicyUrlListUrlListValueArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NetworkFirewallPolicyUrlListUrlListValue)(nil)).Elem()
+}
+
+func (i NetworkFirewallPolicyUrlListUrlListValueArray) ToNetworkFirewallPolicyUrlListUrlListValueArrayOutput() NetworkFirewallPolicyUrlListUrlListValueArrayOutput {
+	return i.ToNetworkFirewallPolicyUrlListUrlListValueArrayOutputWithContext(context.Background())
+}
+
+func (i NetworkFirewallPolicyUrlListUrlListValueArray) ToNetworkFirewallPolicyUrlListUrlListValueArrayOutputWithContext(ctx context.Context) NetworkFirewallPolicyUrlListUrlListValueArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NetworkFirewallPolicyUrlListUrlListValueArrayOutput)
+}
+
+type NetworkFirewallPolicyUrlListUrlListValueOutput struct{ *pulumi.OutputState }
+
+func (NetworkFirewallPolicyUrlListUrlListValueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NetworkFirewallPolicyUrlListUrlListValue)(nil)).Elem()
+}
+
+func (o NetworkFirewallPolicyUrlListUrlListValueOutput) ToNetworkFirewallPolicyUrlListUrlListValueOutput() NetworkFirewallPolicyUrlListUrlListValueOutput {
+	return o
+}
+
+func (o NetworkFirewallPolicyUrlListUrlListValueOutput) ToNetworkFirewallPolicyUrlListUrlListValueOutputWithContext(ctx context.Context) NetworkFirewallPolicyUrlListUrlListValueOutput {
+	return o
+}
+
+// (Updatable) URL lists to allow or deny traffic to a group of URLs. You can include a maximum of 25 URLs in each list.
+func (o NetworkFirewallPolicyUrlListUrlListValueOutput) Pattern() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NetworkFirewallPolicyUrlListUrlListValue) *string { return v.Pattern }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Type of the url lists based on the policy
+func (o NetworkFirewallPolicyUrlListUrlListValueOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v NetworkFirewallPolicyUrlListUrlListValue) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type NetworkFirewallPolicyUrlListUrlListValueArrayOutput struct{ *pulumi.OutputState }
+
+func (NetworkFirewallPolicyUrlListUrlListValueArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NetworkFirewallPolicyUrlListUrlListValue)(nil)).Elem()
+}
+
+func (o NetworkFirewallPolicyUrlListUrlListValueArrayOutput) ToNetworkFirewallPolicyUrlListUrlListValueArrayOutput() NetworkFirewallPolicyUrlListUrlListValueArrayOutput {
+	return o
+}
+
+func (o NetworkFirewallPolicyUrlListUrlListValueArrayOutput) ToNetworkFirewallPolicyUrlListUrlListValueArrayOutputWithContext(ctx context.Context) NetworkFirewallPolicyUrlListUrlListValueArrayOutput {
+	return o
+}
+
+func (o NetworkFirewallPolicyUrlListUrlListValueArrayOutput) Index(i pulumi.IntInput) NetworkFirewallPolicyUrlListUrlListValueOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NetworkFirewallPolicyUrlListUrlListValue {
+		return vs[0].([]NetworkFirewallPolicyUrlListUrlListValue)[vs[1].(int)]
+	}).(NetworkFirewallPolicyUrlListUrlListValueOutput)
 }
 
 type GetNetworkFirewallPoliciesFilter struct {
@@ -1594,15 +1801,8 @@ func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemArra
 }
 
 type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationList struct {
-	IcmpCode    int    `pulumi:"icmpCode"`
-	IcmpType    int    `pulumi:"icmpType"`
-	Key         string `pulumi:"key"`
-	MaximumPort int    `pulumi:"maximumPort"`
-	MinimumPort int    `pulumi:"minimumPort"`
-	// Type of the secrets mapped based on the policy.
-	// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-	// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
-	Type string `pulumi:"type"`
+	ApplicationListName string                                                                                                `pulumi:"applicationListName"`
+	ApplicationValues   []GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValue `pulumi:"applicationValues"`
 }
 
 // GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListInput is an input type that accepts GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListArgs and GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListOutput values.
@@ -1617,15 +1817,8 @@ type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplica
 }
 
 type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListArgs struct {
-	IcmpCode    pulumi.IntInput    `pulumi:"icmpCode"`
-	IcmpType    pulumi.IntInput    `pulumi:"icmpType"`
-	Key         pulumi.StringInput `pulumi:"key"`
-	MaximumPort pulumi.IntInput    `pulumi:"maximumPort"`
-	MinimumPort pulumi.IntInput    `pulumi:"minimumPort"`
-	// Type of the secrets mapped based on the policy.
-	// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-	// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
-	Type pulumi.StringInput `pulumi:"type"`
+	ApplicationListName pulumi.StringInput                                                                                            `pulumi:"applicationListName"`
+	ApplicationValues   GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArrayInput `pulumi:"applicationValues"`
 }
 
 func (GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListArgs) ElementType() reflect.Type {
@@ -1679,43 +1872,16 @@ func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemAppl
 	return o
 }
 
-func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListOutput) IcmpCode() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationList) int {
-		return v.IcmpCode
-	}).(pulumi.IntOutput)
-}
-
-func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListOutput) IcmpType() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationList) int {
-		return v.IcmpType
-	}).(pulumi.IntOutput)
-}
-
-func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListOutput) Key() pulumi.StringOutput {
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListOutput) ApplicationListName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationList) string {
-		return v.Key
+		return v.ApplicationListName
 	}).(pulumi.StringOutput)
 }
 
-func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListOutput) MaximumPort() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationList) int {
-		return v.MaximumPort
-	}).(pulumi.IntOutput)
-}
-
-func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListOutput) MinimumPort() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationList) int {
-		return v.MinimumPort
-	}).(pulumi.IntOutput)
-}
-
-// Type of the secrets mapped based on the policy.
-// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
-func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationList) string {
-		return v.Type
-	}).(pulumi.StringOutput)
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListOutput) ApplicationValues() GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArrayOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationList) []GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValue {
+		return v.ApplicationValues
+	}).(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArrayOutput)
 }
 
 type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListArrayOutput struct{ *pulumi.OutputState }
@@ -1736,6 +1902,137 @@ func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemAppl
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationList {
 		return vs[0].([]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationList)[vs[1].(int)]
 	}).(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListOutput)
+}
+
+type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValue struct {
+	IcmpCode    int `pulumi:"icmpCode"`
+	IcmpType    int `pulumi:"icmpType"`
+	MaximumPort int `pulumi:"maximumPort"`
+	MinimumPort int `pulumi:"minimumPort"`
+	// Type of the secrets mapped based on the policy.
+	Type string `pulumi:"type"`
+}
+
+// GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueInput is an input type that accepts GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArgs and GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueOutput values.
+// You can construct a concrete instance of `GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueInput` via:
+//
+//	GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArgs{...}
+type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueInput interface {
+	pulumi.Input
+
+	ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueOutput() GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueOutput
+	ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueOutputWithContext(context.Context) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueOutput
+}
+
+type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArgs struct {
+	IcmpCode    pulumi.IntInput `pulumi:"icmpCode"`
+	IcmpType    pulumi.IntInput `pulumi:"icmpType"`
+	MaximumPort pulumi.IntInput `pulumi:"maximumPort"`
+	MinimumPort pulumi.IntInput `pulumi:"minimumPort"`
+	// Type of the secrets mapped based on the policy.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValue)(nil)).Elem()
+}
+
+func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArgs) ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueOutput() GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueOutput {
+	return i.ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueOutputWithContext(context.Background())
+}
+
+func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArgs) ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueOutputWithContext(ctx context.Context) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueOutput)
+}
+
+// GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArrayInput is an input type that accepts GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArray and GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArrayOutput values.
+// You can construct a concrete instance of `GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArrayInput` via:
+//
+//	GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArray{ GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArgs{...} }
+type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArrayInput interface {
+	pulumi.Input
+
+	ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArrayOutput() GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArrayOutput
+	ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArrayOutputWithContext(context.Context) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArrayOutput
+}
+
+type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArray []GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueInput
+
+func (GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValue)(nil)).Elem()
+}
+
+func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArray) ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArrayOutput() GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArrayOutput {
+	return i.ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArrayOutputWithContext(context.Background())
+}
+
+func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArray) ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArrayOutputWithContext(ctx context.Context) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArrayOutput)
+}
+
+type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValue)(nil)).Elem()
+}
+
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueOutput) ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueOutput() GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueOutput) ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueOutputWithContext(ctx context.Context) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueOutput) IcmpCode() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValue) int {
+		return v.IcmpCode
+	}).(pulumi.IntOutput)
+}
+
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueOutput) IcmpType() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValue) int {
+		return v.IcmpType
+	}).(pulumi.IntOutput)
+}
+
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueOutput) MaximumPort() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValue) int {
+		return v.MaximumPort
+	}).(pulumi.IntOutput)
+}
+
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueOutput) MinimumPort() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValue) int {
+		return v.MinimumPort
+	}).(pulumi.IntOutput)
+}
+
+// Type of the secrets mapped based on the policy.
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValue) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValue)(nil)).Elem()
+}
+
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArrayOutput) ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArrayOutput() GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArrayOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArrayOutput) ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArrayOutputWithContext(ctx context.Context) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArrayOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArrayOutput) Index(i pulumi.IntInput) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValue {
+		return vs[0].([]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValue)[vs[1].(int)]
+	}).(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueOutput)
 }
 
 type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfile struct {
@@ -1759,8 +2056,6 @@ type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecrypt
 	IsUntrustedIssuerBlocked bool   `pulumi:"isUntrustedIssuerBlocked"`
 	Key                      string `pulumi:"key"`
 	// Type of the secrets mapped based on the policy.
-	// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-	// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
 	Type string `pulumi:"type"`
 }
 
@@ -1796,8 +2091,6 @@ type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecrypt
 	IsUntrustedIssuerBlocked pulumi.BoolInput   `pulumi:"isUntrustedIssuerBlocked"`
 	Key                      pulumi.StringInput `pulumi:"key"`
 	// Type of the secrets mapped based on the policy.
-	// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-	// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -1922,8 +2215,6 @@ func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecr
 }
 
 // Type of the secrets mapped based on the policy.
-// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
 func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfileOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfile) string {
 		return v.Type
@@ -2322,8 +2613,6 @@ func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemIpAd
 type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecret struct {
 	Key string `pulumi:"key"`
 	// Type of the secrets mapped based on the policy.
-	// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-	// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
 	Type string `pulumi:"type"`
 	// OCID for the Vault Secret to be used.
 	VaultSecretId string `pulumi:"vaultSecretId"`
@@ -2345,8 +2634,6 @@ type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedS
 type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecretArgs struct {
 	Key pulumi.StringInput `pulumi:"key"`
 	// Type of the secrets mapped based on the policy.
-	// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-	// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
 	Type pulumi.StringInput `pulumi:"type"`
 	// OCID for the Vault Secret to be used.
 	VaultSecretId pulumi.StringInput `pulumi:"vaultSecretId"`
@@ -2412,8 +2699,6 @@ func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMapp
 }
 
 // Type of the secrets mapped based on the policy.
-// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
 func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecretOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMappedSecret) string {
 		return v.Type
@@ -2737,12 +3022,8 @@ func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecu
 }
 
 type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlList struct {
-	Key     string `pulumi:"key"`
-	Pattern string `pulumi:"pattern"`
-	// Type of the secrets mapped based on the policy.
-	// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-	// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
-	Type string `pulumi:"type"`
+	UrlListName   string                                                                                    `pulumi:"urlListName"`
+	UrlListValues []GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValue `pulumi:"urlListValues"`
 }
 
 // GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListInput is an input type that accepts GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListArgs and GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListOutput values.
@@ -2757,12 +3038,8 @@ type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlList
 }
 
 type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListArgs struct {
-	Key     pulumi.StringInput `pulumi:"key"`
-	Pattern pulumi.StringInput `pulumi:"pattern"`
-	// Type of the secrets mapped based on the policy.
-	// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-	// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
-	Type pulumi.StringInput `pulumi:"type"`
+	UrlListName   pulumi.StringInput                                                                                `pulumi:"urlListName"`
+	UrlListValues GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArrayInput `pulumi:"urlListValues"`
 }
 
 func (GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListArgs) ElementType() reflect.Type {
@@ -2816,25 +3093,16 @@ func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlL
 	return o
 }
 
-func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListOutput) Key() pulumi.StringOutput {
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListOutput) UrlListName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlList) string {
-		return v.Key
+		return v.UrlListName
 	}).(pulumi.StringOutput)
 }
 
-func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListOutput) Pattern() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlList) string {
-		return v.Pattern
-	}).(pulumi.StringOutput)
-}
-
-// Type of the secrets mapped based on the policy.
-// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
-func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlList) string {
-		return v.Type
-	}).(pulumi.StringOutput)
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListOutput) UrlListValues() GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArrayOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlList) []GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValue {
+		return v.UrlListValues
+	}).(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArrayOutput)
 }
 
 type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListArrayOutput struct{ *pulumi.OutputState }
@@ -2857,16 +3125,116 @@ func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlL
 	}).(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListOutput)
 }
 
-type GetNetworkFirewallPolicyApplicationList struct {
-	IcmpCode    int    `pulumi:"icmpCode"`
-	IcmpType    int    `pulumi:"icmpType"`
-	Key         string `pulumi:"key"`
-	MaximumPort int    `pulumi:"maximumPort"`
-	MinimumPort int    `pulumi:"minimumPort"`
+type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValue struct {
+	Pattern string `pulumi:"pattern"`
 	// Type of the secrets mapped based on the policy.
-	// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-	// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
 	Type string `pulumi:"type"`
+}
+
+// GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueInput is an input type that accepts GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArgs and GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueOutput values.
+// You can construct a concrete instance of `GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueInput` via:
+//
+//	GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArgs{...}
+type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueInput interface {
+	pulumi.Input
+
+	ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueOutput() GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueOutput
+	ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueOutputWithContext(context.Context) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueOutput
+}
+
+type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArgs struct {
+	Pattern pulumi.StringInput `pulumi:"pattern"`
+	// Type of the secrets mapped based on the policy.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValue)(nil)).Elem()
+}
+
+func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArgs) ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueOutput() GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueOutput {
+	return i.ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueOutputWithContext(context.Background())
+}
+
+func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArgs) ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueOutputWithContext(ctx context.Context) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueOutput)
+}
+
+// GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArrayInput is an input type that accepts GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArray and GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArrayOutput values.
+// You can construct a concrete instance of `GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArrayInput` via:
+//
+//	GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArray{ GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArgs{...} }
+type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArrayInput interface {
+	pulumi.Input
+
+	ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArrayOutput() GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArrayOutput
+	ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArrayOutputWithContext(context.Context) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArrayOutput
+}
+
+type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArray []GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueInput
+
+func (GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValue)(nil)).Elem()
+}
+
+func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArray) ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArrayOutput() GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArrayOutput {
+	return i.ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArrayOutputWithContext(context.Background())
+}
+
+func (i GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArray) ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArrayOutputWithContext(ctx context.Context) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArrayOutput)
+}
+
+type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValue)(nil)).Elem()
+}
+
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueOutput) ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueOutput() GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueOutput) ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueOutputWithContext(ctx context.Context) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueOutput) Pattern() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValue) string {
+		return v.Pattern
+	}).(pulumi.StringOutput)
+}
+
+// Type of the secrets mapped based on the policy.
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValue) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValue)(nil)).Elem()
+}
+
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArrayOutput) ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArrayOutput() GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArrayOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArrayOutput) ToGetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArrayOutputWithContext(ctx context.Context) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArrayOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArrayOutput) Index(i pulumi.IntInput) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValue {
+		return vs[0].([]GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValue)[vs[1].(int)]
+	}).(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueOutput)
+}
+
+type GetNetworkFirewallPolicyApplicationList struct {
+	ApplicationListName string                                                    `pulumi:"applicationListName"`
+	ApplicationValues   []GetNetworkFirewallPolicyApplicationListApplicationValue `pulumi:"applicationValues"`
 }
 
 // GetNetworkFirewallPolicyApplicationListInput is an input type that accepts GetNetworkFirewallPolicyApplicationListArgs and GetNetworkFirewallPolicyApplicationListOutput values.
@@ -2881,15 +3249,8 @@ type GetNetworkFirewallPolicyApplicationListInput interface {
 }
 
 type GetNetworkFirewallPolicyApplicationListArgs struct {
-	IcmpCode    pulumi.IntInput    `pulumi:"icmpCode"`
-	IcmpType    pulumi.IntInput    `pulumi:"icmpType"`
-	Key         pulumi.StringInput `pulumi:"key"`
-	MaximumPort pulumi.IntInput    `pulumi:"maximumPort"`
-	MinimumPort pulumi.IntInput    `pulumi:"minimumPort"`
-	// Type of the secrets mapped based on the policy.
-	// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-	// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
-	Type pulumi.StringInput `pulumi:"type"`
+	ApplicationListName pulumi.StringInput                                                `pulumi:"applicationListName"`
+	ApplicationValues   GetNetworkFirewallPolicyApplicationListApplicationValueArrayInput `pulumi:"applicationValues"`
 }
 
 func (GetNetworkFirewallPolicyApplicationListArgs) ElementType() reflect.Type {
@@ -2943,31 +3304,14 @@ func (o GetNetworkFirewallPolicyApplicationListOutput) ToGetNetworkFirewallPolic
 	return o
 }
 
-func (o GetNetworkFirewallPolicyApplicationListOutput) IcmpCode() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNetworkFirewallPolicyApplicationList) int { return v.IcmpCode }).(pulumi.IntOutput)
+func (o GetNetworkFirewallPolicyApplicationListOutput) ApplicationListName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyApplicationList) string { return v.ApplicationListName }).(pulumi.StringOutput)
 }
 
-func (o GetNetworkFirewallPolicyApplicationListOutput) IcmpType() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNetworkFirewallPolicyApplicationList) int { return v.IcmpType }).(pulumi.IntOutput)
-}
-
-func (o GetNetworkFirewallPolicyApplicationListOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNetworkFirewallPolicyApplicationList) string { return v.Key }).(pulumi.StringOutput)
-}
-
-func (o GetNetworkFirewallPolicyApplicationListOutput) MaximumPort() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNetworkFirewallPolicyApplicationList) int { return v.MaximumPort }).(pulumi.IntOutput)
-}
-
-func (o GetNetworkFirewallPolicyApplicationListOutput) MinimumPort() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNetworkFirewallPolicyApplicationList) int { return v.MinimumPort }).(pulumi.IntOutput)
-}
-
-// Type of the secrets mapped based on the policy.
-// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
-func (o GetNetworkFirewallPolicyApplicationListOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNetworkFirewallPolicyApplicationList) string { return v.Type }).(pulumi.StringOutput)
+func (o GetNetworkFirewallPolicyApplicationListOutput) ApplicationValues() GetNetworkFirewallPolicyApplicationListApplicationValueArrayOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyApplicationList) []GetNetworkFirewallPolicyApplicationListApplicationValue {
+		return v.ApplicationValues
+	}).(GetNetworkFirewallPolicyApplicationListApplicationValueArrayOutput)
 }
 
 type GetNetworkFirewallPolicyApplicationListArrayOutput struct{ *pulumi.OutputState }
@@ -2988,6 +3332,127 @@ func (o GetNetworkFirewallPolicyApplicationListArrayOutput) Index(i pulumi.IntIn
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkFirewallPolicyApplicationList {
 		return vs[0].([]GetNetworkFirewallPolicyApplicationList)[vs[1].(int)]
 	}).(GetNetworkFirewallPolicyApplicationListOutput)
+}
+
+type GetNetworkFirewallPolicyApplicationListApplicationValue struct {
+	IcmpCode    int `pulumi:"icmpCode"`
+	IcmpType    int `pulumi:"icmpType"`
+	MaximumPort int `pulumi:"maximumPort"`
+	MinimumPort int `pulumi:"minimumPort"`
+	// Type of the secrets mapped based on the policy.
+	Type string `pulumi:"type"`
+}
+
+// GetNetworkFirewallPolicyApplicationListApplicationValueInput is an input type that accepts GetNetworkFirewallPolicyApplicationListApplicationValueArgs and GetNetworkFirewallPolicyApplicationListApplicationValueOutput values.
+// You can construct a concrete instance of `GetNetworkFirewallPolicyApplicationListApplicationValueInput` via:
+//
+//	GetNetworkFirewallPolicyApplicationListApplicationValueArgs{...}
+type GetNetworkFirewallPolicyApplicationListApplicationValueInput interface {
+	pulumi.Input
+
+	ToGetNetworkFirewallPolicyApplicationListApplicationValueOutput() GetNetworkFirewallPolicyApplicationListApplicationValueOutput
+	ToGetNetworkFirewallPolicyApplicationListApplicationValueOutputWithContext(context.Context) GetNetworkFirewallPolicyApplicationListApplicationValueOutput
+}
+
+type GetNetworkFirewallPolicyApplicationListApplicationValueArgs struct {
+	IcmpCode    pulumi.IntInput `pulumi:"icmpCode"`
+	IcmpType    pulumi.IntInput `pulumi:"icmpType"`
+	MaximumPort pulumi.IntInput `pulumi:"maximumPort"`
+	MinimumPort pulumi.IntInput `pulumi:"minimumPort"`
+	// Type of the secrets mapped based on the policy.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetNetworkFirewallPolicyApplicationListApplicationValueArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkFirewallPolicyApplicationListApplicationValue)(nil)).Elem()
+}
+
+func (i GetNetworkFirewallPolicyApplicationListApplicationValueArgs) ToGetNetworkFirewallPolicyApplicationListApplicationValueOutput() GetNetworkFirewallPolicyApplicationListApplicationValueOutput {
+	return i.ToGetNetworkFirewallPolicyApplicationListApplicationValueOutputWithContext(context.Background())
+}
+
+func (i GetNetworkFirewallPolicyApplicationListApplicationValueArgs) ToGetNetworkFirewallPolicyApplicationListApplicationValueOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyApplicationListApplicationValueOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicyApplicationListApplicationValueOutput)
+}
+
+// GetNetworkFirewallPolicyApplicationListApplicationValueArrayInput is an input type that accepts GetNetworkFirewallPolicyApplicationListApplicationValueArray and GetNetworkFirewallPolicyApplicationListApplicationValueArrayOutput values.
+// You can construct a concrete instance of `GetNetworkFirewallPolicyApplicationListApplicationValueArrayInput` via:
+//
+//	GetNetworkFirewallPolicyApplicationListApplicationValueArray{ GetNetworkFirewallPolicyApplicationListApplicationValueArgs{...} }
+type GetNetworkFirewallPolicyApplicationListApplicationValueArrayInput interface {
+	pulumi.Input
+
+	ToGetNetworkFirewallPolicyApplicationListApplicationValueArrayOutput() GetNetworkFirewallPolicyApplicationListApplicationValueArrayOutput
+	ToGetNetworkFirewallPolicyApplicationListApplicationValueArrayOutputWithContext(context.Context) GetNetworkFirewallPolicyApplicationListApplicationValueArrayOutput
+}
+
+type GetNetworkFirewallPolicyApplicationListApplicationValueArray []GetNetworkFirewallPolicyApplicationListApplicationValueInput
+
+func (GetNetworkFirewallPolicyApplicationListApplicationValueArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkFirewallPolicyApplicationListApplicationValue)(nil)).Elem()
+}
+
+func (i GetNetworkFirewallPolicyApplicationListApplicationValueArray) ToGetNetworkFirewallPolicyApplicationListApplicationValueArrayOutput() GetNetworkFirewallPolicyApplicationListApplicationValueArrayOutput {
+	return i.ToGetNetworkFirewallPolicyApplicationListApplicationValueArrayOutputWithContext(context.Background())
+}
+
+func (i GetNetworkFirewallPolicyApplicationListApplicationValueArray) ToGetNetworkFirewallPolicyApplicationListApplicationValueArrayOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyApplicationListApplicationValueArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicyApplicationListApplicationValueArrayOutput)
+}
+
+type GetNetworkFirewallPolicyApplicationListApplicationValueOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkFirewallPolicyApplicationListApplicationValueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkFirewallPolicyApplicationListApplicationValue)(nil)).Elem()
+}
+
+func (o GetNetworkFirewallPolicyApplicationListApplicationValueOutput) ToGetNetworkFirewallPolicyApplicationListApplicationValueOutput() GetNetworkFirewallPolicyApplicationListApplicationValueOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPolicyApplicationListApplicationValueOutput) ToGetNetworkFirewallPolicyApplicationListApplicationValueOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyApplicationListApplicationValueOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPolicyApplicationListApplicationValueOutput) IcmpCode() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyApplicationListApplicationValue) int { return v.IcmpCode }).(pulumi.IntOutput)
+}
+
+func (o GetNetworkFirewallPolicyApplicationListApplicationValueOutput) IcmpType() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyApplicationListApplicationValue) int { return v.IcmpType }).(pulumi.IntOutput)
+}
+
+func (o GetNetworkFirewallPolicyApplicationListApplicationValueOutput) MaximumPort() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyApplicationListApplicationValue) int { return v.MaximumPort }).(pulumi.IntOutput)
+}
+
+func (o GetNetworkFirewallPolicyApplicationListApplicationValueOutput) MinimumPort() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyApplicationListApplicationValue) int { return v.MinimumPort }).(pulumi.IntOutput)
+}
+
+// Type of the secrets mapped based on the policy.
+func (o GetNetworkFirewallPolicyApplicationListApplicationValueOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyApplicationListApplicationValue) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetNetworkFirewallPolicyApplicationListApplicationValueArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkFirewallPolicyApplicationListApplicationValueArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkFirewallPolicyApplicationListApplicationValue)(nil)).Elem()
+}
+
+func (o GetNetworkFirewallPolicyApplicationListApplicationValueArrayOutput) ToGetNetworkFirewallPolicyApplicationListApplicationValueArrayOutput() GetNetworkFirewallPolicyApplicationListApplicationValueArrayOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPolicyApplicationListApplicationValueArrayOutput) ToGetNetworkFirewallPolicyApplicationListApplicationValueArrayOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyApplicationListApplicationValueArrayOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPolicyApplicationListApplicationValueArrayOutput) Index(i pulumi.IntInput) GetNetworkFirewallPolicyApplicationListApplicationValueOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkFirewallPolicyApplicationListApplicationValue {
+		return vs[0].([]GetNetworkFirewallPolicyApplicationListApplicationValue)[vs[1].(int)]
+	}).(GetNetworkFirewallPolicyApplicationListApplicationValueOutput)
 }
 
 type GetNetworkFirewallPolicyDecryptionProfile struct {
@@ -3011,8 +3476,6 @@ type GetNetworkFirewallPolicyDecryptionProfile struct {
 	IsUntrustedIssuerBlocked bool   `pulumi:"isUntrustedIssuerBlocked"`
 	Key                      string `pulumi:"key"`
 	// Type of the secrets mapped based on the policy.
-	// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-	// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
 	Type string `pulumi:"type"`
 }
 
@@ -3048,8 +3511,6 @@ type GetNetworkFirewallPolicyDecryptionProfileArgs struct {
 	IsUntrustedIssuerBlocked pulumi.BoolInput   `pulumi:"isUntrustedIssuerBlocked"`
 	Key                      pulumi.StringInput `pulumi:"key"`
 	// Type of the secrets mapped based on the policy.
-	// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-	// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -3154,8 +3615,6 @@ func (o GetNetworkFirewallPolicyDecryptionProfileOutput) Key() pulumi.StringOutp
 }
 
 // Type of the secrets mapped based on the policy.
-// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
 func (o GetNetworkFirewallPolicyDecryptionProfileOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkFirewallPolicyDecryptionProfile) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -3536,8 +3995,6 @@ func (o GetNetworkFirewallPolicyIpAddressListArrayOutput) Index(i pulumi.IntInpu
 type GetNetworkFirewallPolicyMappedSecret struct {
 	Key string `pulumi:"key"`
 	// Type of the secrets mapped based on the policy.
-	// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-	// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
 	Type string `pulumi:"type"`
 	// OCID for the Vault Secret to be used.
 	VaultSecretId string `pulumi:"vaultSecretId"`
@@ -3559,8 +4016,6 @@ type GetNetworkFirewallPolicyMappedSecretInput interface {
 type GetNetworkFirewallPolicyMappedSecretArgs struct {
 	Key pulumi.StringInput `pulumi:"key"`
 	// Type of the secrets mapped based on the policy.
-	// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-	// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
 	Type pulumi.StringInput `pulumi:"type"`
 	// OCID for the Vault Secret to be used.
 	VaultSecretId pulumi.StringInput `pulumi:"vaultSecretId"`
@@ -3624,8 +4079,6 @@ func (o GetNetworkFirewallPolicyMappedSecretOutput) Key() pulumi.StringOutput {
 }
 
 // Type of the secrets mapped based on the policy.
-// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
 func (o GetNetworkFirewallPolicyMappedSecretOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkFirewallPolicyMappedSecret) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -3929,12 +4382,8 @@ func (o GetNetworkFirewallPolicySecurityRuleConditionArrayOutput) Index(i pulumi
 }
 
 type GetNetworkFirewallPolicyUrlList struct {
-	Key     string `pulumi:"key"`
-	Pattern string `pulumi:"pattern"`
-	// Type of the secrets mapped based on the policy.
-	// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-	// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
-	Type string `pulumi:"type"`
+	UrlListName   string                                        `pulumi:"urlListName"`
+	UrlListValues []GetNetworkFirewallPolicyUrlListUrlListValue `pulumi:"urlListValues"`
 }
 
 // GetNetworkFirewallPolicyUrlListInput is an input type that accepts GetNetworkFirewallPolicyUrlListArgs and GetNetworkFirewallPolicyUrlListOutput values.
@@ -3949,12 +4398,8 @@ type GetNetworkFirewallPolicyUrlListInput interface {
 }
 
 type GetNetworkFirewallPolicyUrlListArgs struct {
-	Key     pulumi.StringInput `pulumi:"key"`
-	Pattern pulumi.StringInput `pulumi:"pattern"`
-	// Type of the secrets mapped based on the policy.
-	// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-	// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
-	Type pulumi.StringInput `pulumi:"type"`
+	UrlListName   pulumi.StringInput                                    `pulumi:"urlListName"`
+	UrlListValues GetNetworkFirewallPolicyUrlListUrlListValueArrayInput `pulumi:"urlListValues"`
 }
 
 func (GetNetworkFirewallPolicyUrlListArgs) ElementType() reflect.Type {
@@ -4008,19 +4453,14 @@ func (o GetNetworkFirewallPolicyUrlListOutput) ToGetNetworkFirewallPolicyUrlList
 	return o
 }
 
-func (o GetNetworkFirewallPolicyUrlListOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNetworkFirewallPolicyUrlList) string { return v.Key }).(pulumi.StringOutput)
+func (o GetNetworkFirewallPolicyUrlListOutput) UrlListName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyUrlList) string { return v.UrlListName }).(pulumi.StringOutput)
 }
 
-func (o GetNetworkFirewallPolicyUrlListOutput) Pattern() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNetworkFirewallPolicyUrlList) string { return v.Pattern }).(pulumi.StringOutput)
-}
-
-// Type of the secrets mapped based on the policy.
-// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
-func (o GetNetworkFirewallPolicyUrlListOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNetworkFirewallPolicyUrlList) string { return v.Type }).(pulumi.StringOutput)
+func (o GetNetworkFirewallPolicyUrlListOutput) UrlListValues() GetNetworkFirewallPolicyUrlListUrlListValueArrayOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyUrlList) []GetNetworkFirewallPolicyUrlListUrlListValue {
+		return v.UrlListValues
+	}).(GetNetworkFirewallPolicyUrlListUrlListValueArrayOutput)
 }
 
 type GetNetworkFirewallPolicyUrlListArrayOutput struct{ *pulumi.OutputState }
@@ -4041,6 +4481,109 @@ func (o GetNetworkFirewallPolicyUrlListArrayOutput) Index(i pulumi.IntInput) Get
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkFirewallPolicyUrlList {
 		return vs[0].([]GetNetworkFirewallPolicyUrlList)[vs[1].(int)]
 	}).(GetNetworkFirewallPolicyUrlListOutput)
+}
+
+type GetNetworkFirewallPolicyUrlListUrlListValue struct {
+	Pattern string `pulumi:"pattern"`
+	// Type of the secrets mapped based on the policy.
+	Type string `pulumi:"type"`
+}
+
+// GetNetworkFirewallPolicyUrlListUrlListValueInput is an input type that accepts GetNetworkFirewallPolicyUrlListUrlListValueArgs and GetNetworkFirewallPolicyUrlListUrlListValueOutput values.
+// You can construct a concrete instance of `GetNetworkFirewallPolicyUrlListUrlListValueInput` via:
+//
+//	GetNetworkFirewallPolicyUrlListUrlListValueArgs{...}
+type GetNetworkFirewallPolicyUrlListUrlListValueInput interface {
+	pulumi.Input
+
+	ToGetNetworkFirewallPolicyUrlListUrlListValueOutput() GetNetworkFirewallPolicyUrlListUrlListValueOutput
+	ToGetNetworkFirewallPolicyUrlListUrlListValueOutputWithContext(context.Context) GetNetworkFirewallPolicyUrlListUrlListValueOutput
+}
+
+type GetNetworkFirewallPolicyUrlListUrlListValueArgs struct {
+	Pattern pulumi.StringInput `pulumi:"pattern"`
+	// Type of the secrets mapped based on the policy.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetNetworkFirewallPolicyUrlListUrlListValueArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkFirewallPolicyUrlListUrlListValue)(nil)).Elem()
+}
+
+func (i GetNetworkFirewallPolicyUrlListUrlListValueArgs) ToGetNetworkFirewallPolicyUrlListUrlListValueOutput() GetNetworkFirewallPolicyUrlListUrlListValueOutput {
+	return i.ToGetNetworkFirewallPolicyUrlListUrlListValueOutputWithContext(context.Background())
+}
+
+func (i GetNetworkFirewallPolicyUrlListUrlListValueArgs) ToGetNetworkFirewallPolicyUrlListUrlListValueOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyUrlListUrlListValueOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicyUrlListUrlListValueOutput)
+}
+
+// GetNetworkFirewallPolicyUrlListUrlListValueArrayInput is an input type that accepts GetNetworkFirewallPolicyUrlListUrlListValueArray and GetNetworkFirewallPolicyUrlListUrlListValueArrayOutput values.
+// You can construct a concrete instance of `GetNetworkFirewallPolicyUrlListUrlListValueArrayInput` via:
+//
+//	GetNetworkFirewallPolicyUrlListUrlListValueArray{ GetNetworkFirewallPolicyUrlListUrlListValueArgs{...} }
+type GetNetworkFirewallPolicyUrlListUrlListValueArrayInput interface {
+	pulumi.Input
+
+	ToGetNetworkFirewallPolicyUrlListUrlListValueArrayOutput() GetNetworkFirewallPolicyUrlListUrlListValueArrayOutput
+	ToGetNetworkFirewallPolicyUrlListUrlListValueArrayOutputWithContext(context.Context) GetNetworkFirewallPolicyUrlListUrlListValueArrayOutput
+}
+
+type GetNetworkFirewallPolicyUrlListUrlListValueArray []GetNetworkFirewallPolicyUrlListUrlListValueInput
+
+func (GetNetworkFirewallPolicyUrlListUrlListValueArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkFirewallPolicyUrlListUrlListValue)(nil)).Elem()
+}
+
+func (i GetNetworkFirewallPolicyUrlListUrlListValueArray) ToGetNetworkFirewallPolicyUrlListUrlListValueArrayOutput() GetNetworkFirewallPolicyUrlListUrlListValueArrayOutput {
+	return i.ToGetNetworkFirewallPolicyUrlListUrlListValueArrayOutputWithContext(context.Background())
+}
+
+func (i GetNetworkFirewallPolicyUrlListUrlListValueArray) ToGetNetworkFirewallPolicyUrlListUrlListValueArrayOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyUrlListUrlListValueArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNetworkFirewallPolicyUrlListUrlListValueArrayOutput)
+}
+
+type GetNetworkFirewallPolicyUrlListUrlListValueOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkFirewallPolicyUrlListUrlListValueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNetworkFirewallPolicyUrlListUrlListValue)(nil)).Elem()
+}
+
+func (o GetNetworkFirewallPolicyUrlListUrlListValueOutput) ToGetNetworkFirewallPolicyUrlListUrlListValueOutput() GetNetworkFirewallPolicyUrlListUrlListValueOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPolicyUrlListUrlListValueOutput) ToGetNetworkFirewallPolicyUrlListUrlListValueOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyUrlListUrlListValueOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPolicyUrlListUrlListValueOutput) Pattern() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyUrlListUrlListValue) string { return v.Pattern }).(pulumi.StringOutput)
+}
+
+// Type of the secrets mapped based on the policy.
+func (o GetNetworkFirewallPolicyUrlListUrlListValueOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPolicyUrlListUrlListValue) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetNetworkFirewallPolicyUrlListUrlListValueArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNetworkFirewallPolicyUrlListUrlListValueArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNetworkFirewallPolicyUrlListUrlListValue)(nil)).Elem()
+}
+
+func (o GetNetworkFirewallPolicyUrlListUrlListValueArrayOutput) ToGetNetworkFirewallPolicyUrlListUrlListValueArrayOutput() GetNetworkFirewallPolicyUrlListUrlListValueArrayOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPolicyUrlListUrlListValueArrayOutput) ToGetNetworkFirewallPolicyUrlListUrlListValueArrayOutputWithContext(ctx context.Context) GetNetworkFirewallPolicyUrlListUrlListValueArrayOutput {
+	return o
+}
+
+func (o GetNetworkFirewallPolicyUrlListUrlListValueArrayOutput) Index(i pulumi.IntInput) GetNetworkFirewallPolicyUrlListUrlListValueOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNetworkFirewallPolicyUrlListUrlListValue {
+		return vs[0].([]GetNetworkFirewallPolicyUrlListUrlListValue)[vs[1].(int)]
+	}).(GetNetworkFirewallPolicyUrlListUrlListValueOutput)
 }
 
 type GetNetworkFirewallsFilter struct {
@@ -4480,6 +5023,8 @@ func (o GetNetworkFirewallsNetworkFirewallCollectionItemArrayOutput) Index(i pul
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*NetworkFirewallPolicyApplicationListInput)(nil)).Elem(), NetworkFirewallPolicyApplicationListArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NetworkFirewallPolicyApplicationListArrayInput)(nil)).Elem(), NetworkFirewallPolicyApplicationListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NetworkFirewallPolicyApplicationListApplicationValueInput)(nil)).Elem(), NetworkFirewallPolicyApplicationListApplicationValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NetworkFirewallPolicyApplicationListApplicationValueArrayInput)(nil)).Elem(), NetworkFirewallPolicyApplicationListApplicationValueArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NetworkFirewallPolicyDecryptionProfileInput)(nil)).Elem(), NetworkFirewallPolicyDecryptionProfileArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NetworkFirewallPolicyDecryptionProfileArrayInput)(nil)).Elem(), NetworkFirewallPolicyDecryptionProfileArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NetworkFirewallPolicyDecryptionRuleInput)(nil)).Elem(), NetworkFirewallPolicyDecryptionRuleArgs{})
@@ -4494,6 +5039,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*NetworkFirewallPolicySecurityRuleConditionInput)(nil)).Elem(), NetworkFirewallPolicySecurityRuleConditionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NetworkFirewallPolicyUrlListInput)(nil)).Elem(), NetworkFirewallPolicyUrlListArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NetworkFirewallPolicyUrlListArrayInput)(nil)).Elem(), NetworkFirewallPolicyUrlListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NetworkFirewallPolicyUrlListUrlListValueInput)(nil)).Elem(), NetworkFirewallPolicyUrlListUrlListValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NetworkFirewallPolicyUrlListUrlListValueArrayInput)(nil)).Elem(), NetworkFirewallPolicyUrlListUrlListValueArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPoliciesFilterInput)(nil)).Elem(), GetNetworkFirewallPoliciesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPoliciesFilterArrayInput)(nil)).Elem(), GetNetworkFirewallPoliciesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionInput)(nil)).Elem(), GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionArgs{})
@@ -4502,6 +5049,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemArrayInput)(nil)).Elem(), GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListInput)(nil)).Elem(), GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListArrayInput)(nil)).Elem(), GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueInput)(nil)).Elem(), GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArrayInput)(nil)).Elem(), GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfileInput)(nil)).Elem(), GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfileArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfileArrayInput)(nil)).Elem(), GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfileArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleInput)(nil)).Elem(), GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleArgs{})
@@ -4518,8 +5067,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleConditionArrayInput)(nil)).Elem(), GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleConditionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListInput)(nil)).Elem(), GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListArrayInput)(nil)).Elem(), GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueInput)(nil)).Elem(), GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArrayInput)(nil)).Elem(), GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicyApplicationListInput)(nil)).Elem(), GetNetworkFirewallPolicyApplicationListArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicyApplicationListArrayInput)(nil)).Elem(), GetNetworkFirewallPolicyApplicationListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicyApplicationListApplicationValueInput)(nil)).Elem(), GetNetworkFirewallPolicyApplicationListApplicationValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicyApplicationListApplicationValueArrayInput)(nil)).Elem(), GetNetworkFirewallPolicyApplicationListApplicationValueArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicyDecryptionProfileInput)(nil)).Elem(), GetNetworkFirewallPolicyDecryptionProfileArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicyDecryptionProfileArrayInput)(nil)).Elem(), GetNetworkFirewallPolicyDecryptionProfileArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicyDecryptionRuleInput)(nil)).Elem(), GetNetworkFirewallPolicyDecryptionRuleArgs{})
@@ -4536,6 +5089,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicySecurityRuleConditionArrayInput)(nil)).Elem(), GetNetworkFirewallPolicySecurityRuleConditionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicyUrlListInput)(nil)).Elem(), GetNetworkFirewallPolicyUrlListArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicyUrlListArrayInput)(nil)).Elem(), GetNetworkFirewallPolicyUrlListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicyUrlListUrlListValueInput)(nil)).Elem(), GetNetworkFirewallPolicyUrlListUrlListValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallPolicyUrlListUrlListValueArrayInput)(nil)).Elem(), GetNetworkFirewallPolicyUrlListUrlListValueArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallsFilterInput)(nil)).Elem(), GetNetworkFirewallsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallsFilterArrayInput)(nil)).Elem(), GetNetworkFirewallsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallsNetworkFirewallCollectionInput)(nil)).Elem(), GetNetworkFirewallsNetworkFirewallCollectionArgs{})
@@ -4544,6 +5099,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNetworkFirewallsNetworkFirewallCollectionItemArrayInput)(nil)).Elem(), GetNetworkFirewallsNetworkFirewallCollectionItemArray{})
 	pulumi.RegisterOutputType(NetworkFirewallPolicyApplicationListOutput{})
 	pulumi.RegisterOutputType(NetworkFirewallPolicyApplicationListArrayOutput{})
+	pulumi.RegisterOutputType(NetworkFirewallPolicyApplicationListApplicationValueOutput{})
+	pulumi.RegisterOutputType(NetworkFirewallPolicyApplicationListApplicationValueArrayOutput{})
 	pulumi.RegisterOutputType(NetworkFirewallPolicyDecryptionProfileOutput{})
 	pulumi.RegisterOutputType(NetworkFirewallPolicyDecryptionProfileArrayOutput{})
 	pulumi.RegisterOutputType(NetworkFirewallPolicyDecryptionRuleOutput{})
@@ -4558,6 +5115,8 @@ func init() {
 	pulumi.RegisterOutputType(NetworkFirewallPolicySecurityRuleConditionOutput{})
 	pulumi.RegisterOutputType(NetworkFirewallPolicyUrlListOutput{})
 	pulumi.RegisterOutputType(NetworkFirewallPolicyUrlListArrayOutput{})
+	pulumi.RegisterOutputType(NetworkFirewallPolicyUrlListUrlListValueOutput{})
+	pulumi.RegisterOutputType(NetworkFirewallPolicyUrlListUrlListValueArrayOutput{})
 	pulumi.RegisterOutputType(GetNetworkFirewallPoliciesFilterOutput{})
 	pulumi.RegisterOutputType(GetNetworkFirewallPoliciesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionOutput{})
@@ -4566,6 +5125,8 @@ func init() {
 	pulumi.RegisterOutputType(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListOutput{})
 	pulumi.RegisterOutputType(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListArrayOutput{})
+	pulumi.RegisterOutputType(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueOutput{})
+	pulumi.RegisterOutputType(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueArrayOutput{})
 	pulumi.RegisterOutputType(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfileOutput{})
 	pulumi.RegisterOutputType(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfileArrayOutput{})
 	pulumi.RegisterOutputType(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleOutput{})
@@ -4582,8 +5143,12 @@ func init() {
 	pulumi.RegisterOutputType(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleConditionArrayOutput{})
 	pulumi.RegisterOutputType(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListOutput{})
 	pulumi.RegisterOutputType(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListArrayOutput{})
+	pulumi.RegisterOutputType(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueOutput{})
+	pulumi.RegisterOutputType(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueArrayOutput{})
 	pulumi.RegisterOutputType(GetNetworkFirewallPolicyApplicationListOutput{})
 	pulumi.RegisterOutputType(GetNetworkFirewallPolicyApplicationListArrayOutput{})
+	pulumi.RegisterOutputType(GetNetworkFirewallPolicyApplicationListApplicationValueOutput{})
+	pulumi.RegisterOutputType(GetNetworkFirewallPolicyApplicationListApplicationValueArrayOutput{})
 	pulumi.RegisterOutputType(GetNetworkFirewallPolicyDecryptionProfileOutput{})
 	pulumi.RegisterOutputType(GetNetworkFirewallPolicyDecryptionProfileArrayOutput{})
 	pulumi.RegisterOutputType(GetNetworkFirewallPolicyDecryptionRuleOutput{})
@@ -4600,6 +5165,8 @@ func init() {
 	pulumi.RegisterOutputType(GetNetworkFirewallPolicySecurityRuleConditionArrayOutput{})
 	pulumi.RegisterOutputType(GetNetworkFirewallPolicyUrlListOutput{})
 	pulumi.RegisterOutputType(GetNetworkFirewallPolicyUrlListArrayOutput{})
+	pulumi.RegisterOutputType(GetNetworkFirewallPolicyUrlListUrlListValueOutput{})
+	pulumi.RegisterOutputType(GetNetworkFirewallPolicyUrlListUrlListValueArrayOutput{})
 	pulumi.RegisterOutputType(GetNetworkFirewallsFilterOutput{})
 	pulumi.RegisterOutputType(GetNetworkFirewallsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetNetworkFirewallsNetworkFirewallCollectionOutput{})

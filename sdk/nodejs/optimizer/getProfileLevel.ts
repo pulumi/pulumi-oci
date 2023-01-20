@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getProfileLevel(args: GetProfileLevelArgs, opts?: pulumi.InvokeOptions): Promise<GetProfileLevelResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Optimizer/getProfileLevel:getProfileLevel", {
         "compartmentId": args.compartmentId,
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
@@ -83,9 +81,27 @@ export interface GetProfileLevelResult {
      */
     readonly recommendationName?: string;
 }
-
+/**
+ * This data source provides details about a specific Profile Level resource in Oracle Cloud Infrastructure Optimizer service.
+ *
+ * Lists the existing profile levels.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testProfileLevel = oci.Optimizer.getProfileLevel({
+ *     compartmentId: _var.compartment_id,
+ *     compartmentIdInSubtree: _var.profile_level_compartment_id_in_subtree,
+ *     name: _var.profile_level_name,
+ *     recommendationName: oci_optimizer_recommendation.test_recommendation.name,
+ * });
+ * ```
+ */
 export function getProfileLevelOutput(args: GetProfileLevelOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProfileLevelResult> {
-    return pulumi.output(args).apply(a => getProfileLevel(a, opts))
+    return pulumi.output(args).apply((a: any) => getProfileLevel(a, opts))
 }
 
 /**

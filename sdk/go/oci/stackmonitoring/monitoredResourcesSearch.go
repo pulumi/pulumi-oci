@@ -31,6 +31,9 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := StackMonitoring.NewMonitoredResourcesSearch(ctx, "testMonitoredResourcesSearch", &StackMonitoring.MonitoredResourcesSearchArgs{
 //				CompartmentId:                   pulumi.Any(_var.Compartment_id),
+//				ExcludeFields:                   pulumi.Any(_var.Monitored_resources_search_exclude_fields),
+//				ExternalId:                      pulumi.Any(oci_stack_monitoring_external.Test_external.Id),
+//				Fields:                          pulumi.Any(_var.Monitored_resources_search_fields),
 //				HostName:                        pulumi.Any(_var.Monitored_resources_search_host_name),
 //				HostNameContains:                pulumi.Any(_var.Monitored_resources_search_host_name_contains),
 //				ManagementAgentId:               pulumi.Any(oci_management_agent_management_agent.Test_management_agent.Id),
@@ -67,6 +70,12 @@ type MonitoredResourcesSearch struct {
 
 	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	// Partial response refers to an optimization technique offered by the RESTful web APIs, to return all the information except the fields requested to be excluded (excludeFields) by the client. In this mechanism, the client sends the exclude field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to exlude and to return and should be a query string parameter called "excludeFields" of an array type, provide the values as enums, and use collectionFormat.
+	ExcludeFields pulumi.StringArrayOutput `pulumi:"excludeFields"`
+	// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+	ExternalId pulumi.StringPtrOutput `pulumi:"externalId"`
+	// Partial response refers to an optimization technique offered by the RESTful web APIs, to return only the information (fields) required by the client. In this mechanism, the client sends the required field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to return and should be a query string parameter called "fields" of an array type, provide the values as enums, and use collectionFormat.
+	Fields pulumi.StringArrayOutput `pulumi:"fields"`
 	// A filter to return resources with host name match
 	HostName pulumi.StringPtrOutput `pulumi:"hostName"`
 	// A filter to return resources with host name pattern
@@ -131,6 +140,12 @@ func GetMonitoredResourcesSearch(ctx *pulumi.Context,
 type monitoredResourcesSearchState struct {
 	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
 	CompartmentId *string `pulumi:"compartmentId"`
+	// Partial response refers to an optimization technique offered by the RESTful web APIs, to return all the information except the fields requested to be excluded (excludeFields) by the client. In this mechanism, the client sends the exclude field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to exlude and to return and should be a query string parameter called "excludeFields" of an array type, provide the values as enums, and use collectionFormat.
+	ExcludeFields []string `pulumi:"excludeFields"`
+	// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+	ExternalId *string `pulumi:"externalId"`
+	// Partial response refers to an optimization technique offered by the RESTful web APIs, to return only the information (fields) required by the client. In this mechanism, the client sends the required field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to return and should be a query string parameter called "fields" of an array type, provide the values as enums, and use collectionFormat.
+	Fields []string `pulumi:"fields"`
 	// A filter to return resources with host name match
 	HostName *string `pulumi:"hostName"`
 	// A filter to return resources with host name pattern
@@ -164,6 +179,12 @@ type monitoredResourcesSearchState struct {
 type MonitoredResourcesSearchState struct {
 	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
 	CompartmentId pulumi.StringPtrInput
+	// Partial response refers to an optimization technique offered by the RESTful web APIs, to return all the information except the fields requested to be excluded (excludeFields) by the client. In this mechanism, the client sends the exclude field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to exlude and to return and should be a query string parameter called "excludeFields" of an array type, provide the values as enums, and use collectionFormat.
+	ExcludeFields pulumi.StringArrayInput
+	// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+	ExternalId pulumi.StringPtrInput
+	// Partial response refers to an optimization technique offered by the RESTful web APIs, to return only the information (fields) required by the client. In this mechanism, the client sends the required field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to return and should be a query string parameter called "fields" of an array type, provide the values as enums, and use collectionFormat.
+	Fields pulumi.StringArrayInput
 	// A filter to return resources with host name match
 	HostName pulumi.StringPtrInput
 	// A filter to return resources with host name pattern
@@ -201,6 +222,12 @@ func (MonitoredResourcesSearchState) ElementType() reflect.Type {
 type monitoredResourcesSearchArgs struct {
 	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
 	CompartmentId string `pulumi:"compartmentId"`
+	// Partial response refers to an optimization technique offered by the RESTful web APIs, to return all the information except the fields requested to be excluded (excludeFields) by the client. In this mechanism, the client sends the exclude field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to exlude and to return and should be a query string parameter called "excludeFields" of an array type, provide the values as enums, and use collectionFormat.
+	ExcludeFields []string `pulumi:"excludeFields"`
+	// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+	ExternalId *string `pulumi:"externalId"`
+	// Partial response refers to an optimization technique offered by the RESTful web APIs, to return only the information (fields) required by the client. In this mechanism, the client sends the required field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to return and should be a query string parameter called "fields" of an array type, provide the values as enums, and use collectionFormat.
+	Fields []string `pulumi:"fields"`
 	// A filter to return resources with host name match
 	HostName *string `pulumi:"hostName"`
 	// A filter to return resources with host name pattern
@@ -233,6 +260,12 @@ type monitoredResourcesSearchArgs struct {
 type MonitoredResourcesSearchArgs struct {
 	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
 	CompartmentId pulumi.StringInput
+	// Partial response refers to an optimization technique offered by the RESTful web APIs, to return all the information except the fields requested to be excluded (excludeFields) by the client. In this mechanism, the client sends the exclude field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to exlude and to return and should be a query string parameter called "excludeFields" of an array type, provide the values as enums, and use collectionFormat.
+	ExcludeFields pulumi.StringArrayInput
+	// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+	ExternalId pulumi.StringPtrInput
+	// Partial response refers to an optimization technique offered by the RESTful web APIs, to return only the information (fields) required by the client. In this mechanism, the client sends the required field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to return and should be a query string parameter called "fields" of an array type, provide the values as enums, and use collectionFormat.
+	Fields pulumi.StringArrayInput
 	// A filter to return resources with host name match
 	HostName pulumi.StringPtrInput
 	// A filter to return resources with host name pattern
@@ -351,6 +384,21 @@ func (o MonitoredResourcesSearchOutput) ToMonitoredResourcesSearchOutputWithCont
 // Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
 func (o MonitoredResourcesSearchOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *MonitoredResourcesSearch) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Partial response refers to an optimization technique offered by the RESTful web APIs, to return all the information except the fields requested to be excluded (excludeFields) by the client. In this mechanism, the client sends the exclude field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to exlude and to return and should be a query string parameter called "excludeFields" of an array type, provide the values as enums, and use collectionFormat.
+func (o MonitoredResourcesSearchOutput) ExcludeFields() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *MonitoredResourcesSearch) pulumi.StringArrayOutput { return v.ExcludeFields }).(pulumi.StringArrayOutput)
+}
+
+// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+func (o MonitoredResourcesSearchOutput) ExternalId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MonitoredResourcesSearch) pulumi.StringPtrOutput { return v.ExternalId }).(pulumi.StringPtrOutput)
+}
+
+// Partial response refers to an optimization technique offered by the RESTful web APIs, to return only the information (fields) required by the client. In this mechanism, the client sends the required field names as the query parameters for an API to the server, and the server trims down the default response content by removing the fields that are not required by the client. The parameter controls which fields to return and should be a query string parameter called "fields" of an array type, provide the values as enums, and use collectionFormat.
+func (o MonitoredResourcesSearchOutput) Fields() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *MonitoredResourcesSearch) pulumi.StringArrayOutput { return v.Fields }).(pulumi.StringArrayOutput)
 }
 
 // A filter to return resources with host name match

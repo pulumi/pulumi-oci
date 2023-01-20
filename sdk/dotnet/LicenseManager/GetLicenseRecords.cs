@@ -38,7 +38,7 @@ namespace Pulumi.Oci.LicenseManager
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetLicenseRecordsResult> InvokeAsync(GetLicenseRecordsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetLicenseRecordsResult>("oci:LicenseManager/getLicenseRecords:getLicenseRecords", args ?? new GetLicenseRecordsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetLicenseRecordsResult>("oci:LicenseManager/getLicenseRecords:getLicenseRecords", args ?? new GetLicenseRecordsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of License Records in Oracle Cloud Infrastructure License Manager service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.LicenseManager
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetLicenseRecordsResult> Invoke(GetLicenseRecordsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetLicenseRecordsResult>("oci:LicenseManager/getLicenseRecords:getLicenseRecords", args ?? new GetLicenseRecordsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetLicenseRecordsResult>("oci:LicenseManager/getLicenseRecords:getLicenseRecords", args ?? new GetLicenseRecordsInvokeArgs(), options.WithDefaults());
     }
 
 

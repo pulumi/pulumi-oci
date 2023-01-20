@@ -5,21 +5,56 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./blockchainPlatform";
-export * from "./getBlockchainPlatform";
-export * from "./getBlockchainPlatformPatches";
-export * from "./getBlockchainPlatforms";
-export * from "./getOsn";
-export * from "./getOsns";
-export * from "./getPeer";
-export * from "./getPeers";
-export * from "./osn";
-export * from "./peer";
+export { BlockchainPlatformArgs, BlockchainPlatformState } from "./blockchainPlatform";
+export type BlockchainPlatform = import("./blockchainPlatform").BlockchainPlatform;
+export const BlockchainPlatform: typeof import("./blockchainPlatform").BlockchainPlatform = null as any;
+utilities.lazyLoad(exports, ["BlockchainPlatform"], () => require("./blockchainPlatform"));
 
-// Import resources to register:
-import { BlockchainPlatform } from "./blockchainPlatform";
-import { Osn } from "./osn";
-import { Peer } from "./peer";
+export { GetBlockchainPlatformArgs, GetBlockchainPlatformResult, GetBlockchainPlatformOutputArgs } from "./getBlockchainPlatform";
+export const getBlockchainPlatform: typeof import("./getBlockchainPlatform").getBlockchainPlatform = null as any;
+export const getBlockchainPlatformOutput: typeof import("./getBlockchainPlatform").getBlockchainPlatformOutput = null as any;
+utilities.lazyLoad(exports, ["getBlockchainPlatform","getBlockchainPlatformOutput"], () => require("./getBlockchainPlatform"));
+
+export { GetBlockchainPlatformPatchesArgs, GetBlockchainPlatformPatchesResult, GetBlockchainPlatformPatchesOutputArgs } from "./getBlockchainPlatformPatches";
+export const getBlockchainPlatformPatches: typeof import("./getBlockchainPlatformPatches").getBlockchainPlatformPatches = null as any;
+export const getBlockchainPlatformPatchesOutput: typeof import("./getBlockchainPlatformPatches").getBlockchainPlatformPatchesOutput = null as any;
+utilities.lazyLoad(exports, ["getBlockchainPlatformPatches","getBlockchainPlatformPatchesOutput"], () => require("./getBlockchainPlatformPatches"));
+
+export { GetBlockchainPlatformsArgs, GetBlockchainPlatformsResult, GetBlockchainPlatformsOutputArgs } from "./getBlockchainPlatforms";
+export const getBlockchainPlatforms: typeof import("./getBlockchainPlatforms").getBlockchainPlatforms = null as any;
+export const getBlockchainPlatformsOutput: typeof import("./getBlockchainPlatforms").getBlockchainPlatformsOutput = null as any;
+utilities.lazyLoad(exports, ["getBlockchainPlatforms","getBlockchainPlatformsOutput"], () => require("./getBlockchainPlatforms"));
+
+export { GetOsnArgs, GetOsnResult, GetOsnOutputArgs } from "./getOsn";
+export const getOsn: typeof import("./getOsn").getOsn = null as any;
+export const getOsnOutput: typeof import("./getOsn").getOsnOutput = null as any;
+utilities.lazyLoad(exports, ["getOsn","getOsnOutput"], () => require("./getOsn"));
+
+export { GetOsnsArgs, GetOsnsResult, GetOsnsOutputArgs } from "./getOsns";
+export const getOsns: typeof import("./getOsns").getOsns = null as any;
+export const getOsnsOutput: typeof import("./getOsns").getOsnsOutput = null as any;
+utilities.lazyLoad(exports, ["getOsns","getOsnsOutput"], () => require("./getOsns"));
+
+export { GetPeerArgs, GetPeerResult, GetPeerOutputArgs } from "./getPeer";
+export const getPeer: typeof import("./getPeer").getPeer = null as any;
+export const getPeerOutput: typeof import("./getPeer").getPeerOutput = null as any;
+utilities.lazyLoad(exports, ["getPeer","getPeerOutput"], () => require("./getPeer"));
+
+export { GetPeersArgs, GetPeersResult, GetPeersOutputArgs } from "./getPeers";
+export const getPeers: typeof import("./getPeers").getPeers = null as any;
+export const getPeersOutput: typeof import("./getPeers").getPeersOutput = null as any;
+utilities.lazyLoad(exports, ["getPeers","getPeersOutput"], () => require("./getPeers"));
+
+export { OsnArgs, OsnState } from "./osn";
+export type Osn = import("./osn").Osn;
+export const Osn: typeof import("./osn").Osn = null as any;
+utilities.lazyLoad(exports, ["Osn"], () => require("./osn"));
+
+export { PeerArgs, PeerState } from "./peer";
+export type Peer = import("./peer").Peer;
+export const Peer: typeof import("./peer").Peer = null as any;
+utilities.lazyLoad(exports, ["Peer"], () => require("./peer"));
+
 
 const _module = {
     version: utilities.getVersion(),

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -188,7 +189,7 @@ export class VbInstance extends pulumi.CustomResource {
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["idcsOpenId"] = args ? args.idcsOpenId : undefined;
+            resourceInputs["idcsOpenId"] = args?.idcsOpenId ? pulumi.secret(args.idcsOpenId) : undefined;
             resourceInputs["isVisualBuilderEnabled"] = args ? args.isVisualBuilderEnabled : undefined;
             resourceInputs["nodeCount"] = args ? args.nodeCount : undefined;
             resourceInputs["instanceUrl"] = undefined /*out*/;
@@ -199,6 +200,8 @@ export class VbInstance extends pulumi.CustomResource {
             resourceInputs["timeUpdated"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["idcsOpenId"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(VbInstance.__pulumiType, name, resourceInputs, opts);
     }
 }

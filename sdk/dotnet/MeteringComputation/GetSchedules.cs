@@ -40,7 +40,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetSchedulesResult> InvokeAsync(GetSchedulesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetSchedulesResult>("oci:MeteringComputation/getSchedules:getSchedules", args ?? new GetSchedulesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetSchedulesResult>("oci:MeteringComputation/getSchedules:getSchedules", args ?? new GetSchedulesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Schedules in Oracle Cloud Infrastructure Metering Computation service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetSchedulesResult> Invoke(GetSchedulesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetSchedulesResult>("oci:MeteringComputation/getSchedules:getSchedules", args ?? new GetSchedulesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetSchedulesResult>("oci:MeteringComputation/getSchedules:getSchedules", args ?? new GetSchedulesInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -144,7 +144,7 @@ namespace Pulumi.Oci.MeteringComputation
     public sealed class GetSchedulesResult
     {
         /// <summary>
-        /// The tenancy of the customer
+        /// The customer tenancy.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -156,7 +156,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The unique name of the schedule created by the user
+        /// The unique name of the schedule created by the user.
         /// </summary>
         public readonly string? Name;
         /// <summary>

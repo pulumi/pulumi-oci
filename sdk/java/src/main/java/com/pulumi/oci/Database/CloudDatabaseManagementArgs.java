@@ -58,8 +58,6 @@ public final class CloudDatabaseManagementArgs extends com.pulumi.resources.Reso
     /**
      * (Updatable) Specifies database management type
      * enum:
-     * - `BASIC`
-     * - `ADVANCED`
      * 
      */
     @Import(name="managementType", required=true)
@@ -68,8 +66,6 @@ public final class CloudDatabaseManagementArgs extends com.pulumi.resources.Reso
     /**
      * @return (Updatable) Specifies database management type
      * enum:
-     * - `BASIC`
-     * - `ADVANCED`
      * 
      */
     public Output<String> managementType() {
@@ -253,8 +249,6 @@ public final class CloudDatabaseManagementArgs extends com.pulumi.resources.Reso
         /**
          * @param managementType (Updatable) Specifies database management type
          * enum:
-         * - `BASIC`
-         * - `ADVANCED`
          * 
          * @return builder
          * 
@@ -267,8 +261,6 @@ public final class CloudDatabaseManagementArgs extends com.pulumi.resources.Reso
         /**
          * @param managementType (Updatable) Specifies database management type
          * enum:
-         * - `BASIC`
-         * - `ADVANCED`
          * 
          * @return builder
          * 

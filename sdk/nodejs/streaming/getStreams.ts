@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -30,11 +31,8 @@ import * as utilities from "../utilities";
  */
 export function getStreams(args?: GetStreamsArgs, opts?: pulumi.InvokeOptions): Promise<GetStreamsResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Streaming/getStreams:getStreams", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -102,9 +100,31 @@ export interface GetStreamsResult {
      */
     readonly streams: outputs.Streaming.GetStreamsStream[];
 }
-
+/**
+ * This data source provides the list of Streams in Oracle Cloud Infrastructure Streaming service.
+ *
+ * Lists the streams in the given compartment id.
+ * If the compartment id is specified, it will list streams in the compartment, regardless of their stream pool.
+ * If the stream pool id is specified, the action will be scoped to that stream pool.
+ * The compartment id and stream pool id cannot be specified at the same time.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testStreams = oci.Streaming.getStreams({
+ *     compartmentId: _var.compartment_id,
+ *     id: _var.stream_id,
+ *     name: _var.stream_name,
+ *     state: _var.stream_state,
+ *     streamPoolId: oci_streaming_stream_pool.test_stream_pool.id,
+ * });
+ * ```
+ */
 export function getStreamsOutput(args?: GetStreamsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetStreamsResult> {
-    return pulumi.output(args).apply(a => getStreams(a, opts))
+    return pulumi.output(args).apply((a: any) => getStreams(a, opts))
 }
 
 /**

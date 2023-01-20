@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetInstanceDevicesResult> InvokeAsync(GetInstanceDevicesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetInstanceDevicesResult>("oci:Core/getInstanceDevices:getInstanceDevices", args ?? new GetInstanceDevicesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetInstanceDevicesResult>("oci:Core/getInstanceDevices:getInstanceDevices", args ?? new GetInstanceDevicesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Instance Devices in Oracle Cloud Infrastructure Core service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetInstanceDevicesResult> Invoke(GetInstanceDevicesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetInstanceDevicesResult>("oci:Core/getInstanceDevices:getInstanceDevices", args ?? new GetInstanceDevicesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetInstanceDevicesResult>("oci:Core/getInstanceDevices:getInstanceDevices", args ?? new GetInstanceDevicesInvokeArgs(), options.WithDefaults());
     }
 
 

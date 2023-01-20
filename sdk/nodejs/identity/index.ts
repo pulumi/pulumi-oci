@@ -5,99 +5,341 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./apiKey";
-export * from "./authToken";
-export * from "./authenticationPolicy";
-export * from "./compartment";
-export * from "./customerSecretKey";
-export * from "./dbCredential";
-export * from "./domain";
-export * from "./domainReplicationToRegion";
-export * from "./dynamicGroup";
-export * from "./getAllowedDomainLicenseTypes";
-export * from "./getApiKeys";
-export * from "./getAuthTokens";
-export * from "./getAuthenticationPolicy";
-export * from "./getAvailabilityDomain";
-export * from "./getAvailabilityDomains";
-export * from "./getCompartment";
-export * from "./getCompartments";
-export * from "./getCostTrackingTags";
-export * from "./getCustomerSecretKeys";
-export * from "./getDbCredentials";
-export * from "./getDomain";
-export * from "./getDomains";
-export * from "./getDynamicGroups";
-export * from "./getFaultDomains";
-export * from "./getGroup";
-export * from "./getGroups";
-export * from "./getIamWorkRequest";
-export * from "./getIamWorkRequestErrors";
-export * from "./getIamWorkRequestLogs";
-export * from "./getIamWorkRequests";
-export * from "./getIdentityProviderGroups";
-export * from "./getIdentityProviders";
-export * from "./getIdpGroupMappings";
-export * from "./getNetworkSource";
-export * from "./getNetworkSources";
-export * from "./getPolicies";
-export * from "./getRegionSubscriptions";
-export * from "./getRegions";
-export * from "./getSmtpCredentials";
-export * from "./getSwiftPasswords";
-export * from "./getTag";
-export * from "./getTagDefault";
-export * from "./getTagDefaults";
-export * from "./getTagNamespaces";
-export * from "./getTagStandardTagNamespaceTemplate";
-export * from "./getTagStandardTagNamespaceTemplates";
-export * from "./getTags";
-export * from "./getTenancy";
-export * from "./getUiPassword";
-export * from "./getUser";
-export * from "./getUserGroupMemberships";
-export * from "./getUsers";
-export * from "./group";
-export * from "./identityProvider";
-export * from "./idpGroupMapping";
-export * from "./importStandardTagsManagement";
-export * from "./networkSource";
-export * from "./policy";
-export * from "./smtpCredential";
-export * from "./swiftPassword";
-export * from "./tag";
-export * from "./tagDefault";
-export * from "./tagNamespace";
-export * from "./uiPassword";
-export * from "./user";
-export * from "./userCapabilitiesManagement";
-export * from "./userGroupMembership";
+export { ApiKeyArgs, ApiKeyState } from "./apiKey";
+export type ApiKey = import("./apiKey").ApiKey;
+export const ApiKey: typeof import("./apiKey").ApiKey = null as any;
+utilities.lazyLoad(exports, ["ApiKey"], () => require("./apiKey"));
 
-// Import resources to register:
-import { ApiKey } from "./apiKey";
-import { AuthToken } from "./authToken";
-import { AuthenticationPolicy } from "./authenticationPolicy";
-import { Compartment } from "./compartment";
-import { CustomerSecretKey } from "./customerSecretKey";
-import { DbCredential } from "./dbCredential";
-import { Domain } from "./domain";
-import { DomainReplicationToRegion } from "./domainReplicationToRegion";
-import { DynamicGroup } from "./dynamicGroup";
-import { Group } from "./group";
-import { IdentityProvider } from "./identityProvider";
-import { IdpGroupMapping } from "./idpGroupMapping";
-import { ImportStandardTagsManagement } from "./importStandardTagsManagement";
-import { NetworkSource } from "./networkSource";
-import { Policy } from "./policy";
-import { SmtpCredential } from "./smtpCredential";
-import { SwiftPassword } from "./swiftPassword";
-import { Tag } from "./tag";
-import { TagDefault } from "./tagDefault";
-import { TagNamespace } from "./tagNamespace";
-import { UiPassword } from "./uiPassword";
-import { User } from "./user";
-import { UserCapabilitiesManagement } from "./userCapabilitiesManagement";
-import { UserGroupMembership } from "./userGroupMembership";
+export { AuthTokenArgs, AuthTokenState } from "./authToken";
+export type AuthToken = import("./authToken").AuthToken;
+export const AuthToken: typeof import("./authToken").AuthToken = null as any;
+utilities.lazyLoad(exports, ["AuthToken"], () => require("./authToken"));
+
+export { AuthenticationPolicyArgs, AuthenticationPolicyState } from "./authenticationPolicy";
+export type AuthenticationPolicy = import("./authenticationPolicy").AuthenticationPolicy;
+export const AuthenticationPolicy: typeof import("./authenticationPolicy").AuthenticationPolicy = null as any;
+utilities.lazyLoad(exports, ["AuthenticationPolicy"], () => require("./authenticationPolicy"));
+
+export { CompartmentArgs, CompartmentState } from "./compartment";
+export type Compartment = import("./compartment").Compartment;
+export const Compartment: typeof import("./compartment").Compartment = null as any;
+utilities.lazyLoad(exports, ["Compartment"], () => require("./compartment"));
+
+export { CustomerSecretKeyArgs, CustomerSecretKeyState } from "./customerSecretKey";
+export type CustomerSecretKey = import("./customerSecretKey").CustomerSecretKey;
+export const CustomerSecretKey: typeof import("./customerSecretKey").CustomerSecretKey = null as any;
+utilities.lazyLoad(exports, ["CustomerSecretKey"], () => require("./customerSecretKey"));
+
+export { DbCredentialArgs, DbCredentialState } from "./dbCredential";
+export type DbCredential = import("./dbCredential").DbCredential;
+export const DbCredential: typeof import("./dbCredential").DbCredential = null as any;
+utilities.lazyLoad(exports, ["DbCredential"], () => require("./dbCredential"));
+
+export { DomainArgs, DomainState } from "./domain";
+export type Domain = import("./domain").Domain;
+export const Domain: typeof import("./domain").Domain = null as any;
+utilities.lazyLoad(exports, ["Domain"], () => require("./domain"));
+
+export { DomainReplicationToRegionArgs, DomainReplicationToRegionState } from "./domainReplicationToRegion";
+export type DomainReplicationToRegion = import("./domainReplicationToRegion").DomainReplicationToRegion;
+export const DomainReplicationToRegion: typeof import("./domainReplicationToRegion").DomainReplicationToRegion = null as any;
+utilities.lazyLoad(exports, ["DomainReplicationToRegion"], () => require("./domainReplicationToRegion"));
+
+export { DynamicGroupArgs, DynamicGroupState } from "./dynamicGroup";
+export type DynamicGroup = import("./dynamicGroup").DynamicGroup;
+export const DynamicGroup: typeof import("./dynamicGroup").DynamicGroup = null as any;
+utilities.lazyLoad(exports, ["DynamicGroup"], () => require("./dynamicGroup"));
+
+export { GetAllowedDomainLicenseTypesArgs, GetAllowedDomainLicenseTypesResult, GetAllowedDomainLicenseTypesOutputArgs } from "./getAllowedDomainLicenseTypes";
+export const getAllowedDomainLicenseTypes: typeof import("./getAllowedDomainLicenseTypes").getAllowedDomainLicenseTypes = null as any;
+export const getAllowedDomainLicenseTypesOutput: typeof import("./getAllowedDomainLicenseTypes").getAllowedDomainLicenseTypesOutput = null as any;
+utilities.lazyLoad(exports, ["getAllowedDomainLicenseTypes","getAllowedDomainLicenseTypesOutput"], () => require("./getAllowedDomainLicenseTypes"));
+
+export { GetApiKeysArgs, GetApiKeysResult, GetApiKeysOutputArgs } from "./getApiKeys";
+export const getApiKeys: typeof import("./getApiKeys").getApiKeys = null as any;
+export const getApiKeysOutput: typeof import("./getApiKeys").getApiKeysOutput = null as any;
+utilities.lazyLoad(exports, ["getApiKeys","getApiKeysOutput"], () => require("./getApiKeys"));
+
+export { GetAuthTokensArgs, GetAuthTokensResult, GetAuthTokensOutputArgs } from "./getAuthTokens";
+export const getAuthTokens: typeof import("./getAuthTokens").getAuthTokens = null as any;
+export const getAuthTokensOutput: typeof import("./getAuthTokens").getAuthTokensOutput = null as any;
+utilities.lazyLoad(exports, ["getAuthTokens","getAuthTokensOutput"], () => require("./getAuthTokens"));
+
+export { GetAuthenticationPolicyArgs, GetAuthenticationPolicyResult, GetAuthenticationPolicyOutputArgs } from "./getAuthenticationPolicy";
+export const getAuthenticationPolicy: typeof import("./getAuthenticationPolicy").getAuthenticationPolicy = null as any;
+export const getAuthenticationPolicyOutput: typeof import("./getAuthenticationPolicy").getAuthenticationPolicyOutput = null as any;
+utilities.lazyLoad(exports, ["getAuthenticationPolicy","getAuthenticationPolicyOutput"], () => require("./getAuthenticationPolicy"));
+
+export { GetAvailabilityDomainArgs, GetAvailabilityDomainResult, GetAvailabilityDomainOutputArgs } from "./getAvailabilityDomain";
+export const getAvailabilityDomain: typeof import("./getAvailabilityDomain").getAvailabilityDomain = null as any;
+export const getAvailabilityDomainOutput: typeof import("./getAvailabilityDomain").getAvailabilityDomainOutput = null as any;
+utilities.lazyLoad(exports, ["getAvailabilityDomain","getAvailabilityDomainOutput"], () => require("./getAvailabilityDomain"));
+
+export { GetAvailabilityDomainsArgs, GetAvailabilityDomainsResult, GetAvailabilityDomainsOutputArgs } from "./getAvailabilityDomains";
+export const getAvailabilityDomains: typeof import("./getAvailabilityDomains").getAvailabilityDomains = null as any;
+export const getAvailabilityDomainsOutput: typeof import("./getAvailabilityDomains").getAvailabilityDomainsOutput = null as any;
+utilities.lazyLoad(exports, ["getAvailabilityDomains","getAvailabilityDomainsOutput"], () => require("./getAvailabilityDomains"));
+
+export { GetCompartmentArgs, GetCompartmentResult, GetCompartmentOutputArgs } from "./getCompartment";
+export const getCompartment: typeof import("./getCompartment").getCompartment = null as any;
+export const getCompartmentOutput: typeof import("./getCompartment").getCompartmentOutput = null as any;
+utilities.lazyLoad(exports, ["getCompartment","getCompartmentOutput"], () => require("./getCompartment"));
+
+export { GetCompartmentsArgs, GetCompartmentsResult, GetCompartmentsOutputArgs } from "./getCompartments";
+export const getCompartments: typeof import("./getCompartments").getCompartments = null as any;
+export const getCompartmentsOutput: typeof import("./getCompartments").getCompartmentsOutput = null as any;
+utilities.lazyLoad(exports, ["getCompartments","getCompartmentsOutput"], () => require("./getCompartments"));
+
+export { GetCostTrackingTagsArgs, GetCostTrackingTagsResult, GetCostTrackingTagsOutputArgs } from "./getCostTrackingTags";
+export const getCostTrackingTags: typeof import("./getCostTrackingTags").getCostTrackingTags = null as any;
+export const getCostTrackingTagsOutput: typeof import("./getCostTrackingTags").getCostTrackingTagsOutput = null as any;
+utilities.lazyLoad(exports, ["getCostTrackingTags","getCostTrackingTagsOutput"], () => require("./getCostTrackingTags"));
+
+export { GetCustomerSecretKeysArgs, GetCustomerSecretKeysResult, GetCustomerSecretKeysOutputArgs } from "./getCustomerSecretKeys";
+export const getCustomerSecretKeys: typeof import("./getCustomerSecretKeys").getCustomerSecretKeys = null as any;
+export const getCustomerSecretKeysOutput: typeof import("./getCustomerSecretKeys").getCustomerSecretKeysOutput = null as any;
+utilities.lazyLoad(exports, ["getCustomerSecretKeys","getCustomerSecretKeysOutput"], () => require("./getCustomerSecretKeys"));
+
+export { GetDbCredentialsArgs, GetDbCredentialsResult, GetDbCredentialsOutputArgs } from "./getDbCredentials";
+export const getDbCredentials: typeof import("./getDbCredentials").getDbCredentials = null as any;
+export const getDbCredentialsOutput: typeof import("./getDbCredentials").getDbCredentialsOutput = null as any;
+utilities.lazyLoad(exports, ["getDbCredentials","getDbCredentialsOutput"], () => require("./getDbCredentials"));
+
+export { GetDomainArgs, GetDomainResult, GetDomainOutputArgs } from "./getDomain";
+export const getDomain: typeof import("./getDomain").getDomain = null as any;
+export const getDomainOutput: typeof import("./getDomain").getDomainOutput = null as any;
+utilities.lazyLoad(exports, ["getDomain","getDomainOutput"], () => require("./getDomain"));
+
+export { GetDomainsArgs, GetDomainsResult, GetDomainsOutputArgs } from "./getDomains";
+export const getDomains: typeof import("./getDomains").getDomains = null as any;
+export const getDomainsOutput: typeof import("./getDomains").getDomainsOutput = null as any;
+utilities.lazyLoad(exports, ["getDomains","getDomainsOutput"], () => require("./getDomains"));
+
+export { GetDynamicGroupsArgs, GetDynamicGroupsResult, GetDynamicGroupsOutputArgs } from "./getDynamicGroups";
+export const getDynamicGroups: typeof import("./getDynamicGroups").getDynamicGroups = null as any;
+export const getDynamicGroupsOutput: typeof import("./getDynamicGroups").getDynamicGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getDynamicGroups","getDynamicGroupsOutput"], () => require("./getDynamicGroups"));
+
+export { GetFaultDomainsArgs, GetFaultDomainsResult, GetFaultDomainsOutputArgs } from "./getFaultDomains";
+export const getFaultDomains: typeof import("./getFaultDomains").getFaultDomains = null as any;
+export const getFaultDomainsOutput: typeof import("./getFaultDomains").getFaultDomainsOutput = null as any;
+utilities.lazyLoad(exports, ["getFaultDomains","getFaultDomainsOutput"], () => require("./getFaultDomains"));
+
+export { GetGroupArgs, GetGroupResult, GetGroupOutputArgs } from "./getGroup";
+export const getGroup: typeof import("./getGroup").getGroup = null as any;
+export const getGroupOutput: typeof import("./getGroup").getGroupOutput = null as any;
+utilities.lazyLoad(exports, ["getGroup","getGroupOutput"], () => require("./getGroup"));
+
+export { GetGroupsArgs, GetGroupsResult, GetGroupsOutputArgs } from "./getGroups";
+export const getGroups: typeof import("./getGroups").getGroups = null as any;
+export const getGroupsOutput: typeof import("./getGroups").getGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getGroups","getGroupsOutput"], () => require("./getGroups"));
+
+export { GetIamWorkRequestArgs, GetIamWorkRequestResult, GetIamWorkRequestOutputArgs } from "./getIamWorkRequest";
+export const getIamWorkRequest: typeof import("./getIamWorkRequest").getIamWorkRequest = null as any;
+export const getIamWorkRequestOutput: typeof import("./getIamWorkRequest").getIamWorkRequestOutput = null as any;
+utilities.lazyLoad(exports, ["getIamWorkRequest","getIamWorkRequestOutput"], () => require("./getIamWorkRequest"));
+
+export { GetIamWorkRequestErrorsArgs, GetIamWorkRequestErrorsResult, GetIamWorkRequestErrorsOutputArgs } from "./getIamWorkRequestErrors";
+export const getIamWorkRequestErrors: typeof import("./getIamWorkRequestErrors").getIamWorkRequestErrors = null as any;
+export const getIamWorkRequestErrorsOutput: typeof import("./getIamWorkRequestErrors").getIamWorkRequestErrorsOutput = null as any;
+utilities.lazyLoad(exports, ["getIamWorkRequestErrors","getIamWorkRequestErrorsOutput"], () => require("./getIamWorkRequestErrors"));
+
+export { GetIamWorkRequestLogsArgs, GetIamWorkRequestLogsResult, GetIamWorkRequestLogsOutputArgs } from "./getIamWorkRequestLogs";
+export const getIamWorkRequestLogs: typeof import("./getIamWorkRequestLogs").getIamWorkRequestLogs = null as any;
+export const getIamWorkRequestLogsOutput: typeof import("./getIamWorkRequestLogs").getIamWorkRequestLogsOutput = null as any;
+utilities.lazyLoad(exports, ["getIamWorkRequestLogs","getIamWorkRequestLogsOutput"], () => require("./getIamWorkRequestLogs"));
+
+export { GetIamWorkRequestsArgs, GetIamWorkRequestsResult, GetIamWorkRequestsOutputArgs } from "./getIamWorkRequests";
+export const getIamWorkRequests: typeof import("./getIamWorkRequests").getIamWorkRequests = null as any;
+export const getIamWorkRequestsOutput: typeof import("./getIamWorkRequests").getIamWorkRequestsOutput = null as any;
+utilities.lazyLoad(exports, ["getIamWorkRequests","getIamWorkRequestsOutput"], () => require("./getIamWorkRequests"));
+
+export { GetIdentityProviderGroupsArgs, GetIdentityProviderGroupsResult, GetIdentityProviderGroupsOutputArgs } from "./getIdentityProviderGroups";
+export const getIdentityProviderGroups: typeof import("./getIdentityProviderGroups").getIdentityProviderGroups = null as any;
+export const getIdentityProviderGroupsOutput: typeof import("./getIdentityProviderGroups").getIdentityProviderGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getIdentityProviderGroups","getIdentityProviderGroupsOutput"], () => require("./getIdentityProviderGroups"));
+
+export { GetIdentityProvidersArgs, GetIdentityProvidersResult, GetIdentityProvidersOutputArgs } from "./getIdentityProviders";
+export const getIdentityProviders: typeof import("./getIdentityProviders").getIdentityProviders = null as any;
+export const getIdentityProvidersOutput: typeof import("./getIdentityProviders").getIdentityProvidersOutput = null as any;
+utilities.lazyLoad(exports, ["getIdentityProviders","getIdentityProvidersOutput"], () => require("./getIdentityProviders"));
+
+export { GetIdpGroupMappingsArgs, GetIdpGroupMappingsResult, GetIdpGroupMappingsOutputArgs } from "./getIdpGroupMappings";
+export const getIdpGroupMappings: typeof import("./getIdpGroupMappings").getIdpGroupMappings = null as any;
+export const getIdpGroupMappingsOutput: typeof import("./getIdpGroupMappings").getIdpGroupMappingsOutput = null as any;
+utilities.lazyLoad(exports, ["getIdpGroupMappings","getIdpGroupMappingsOutput"], () => require("./getIdpGroupMappings"));
+
+export { GetNetworkSourceArgs, GetNetworkSourceResult, GetNetworkSourceOutputArgs } from "./getNetworkSource";
+export const getNetworkSource: typeof import("./getNetworkSource").getNetworkSource = null as any;
+export const getNetworkSourceOutput: typeof import("./getNetworkSource").getNetworkSourceOutput = null as any;
+utilities.lazyLoad(exports, ["getNetworkSource","getNetworkSourceOutput"], () => require("./getNetworkSource"));
+
+export { GetNetworkSourcesArgs, GetNetworkSourcesResult, GetNetworkSourcesOutputArgs } from "./getNetworkSources";
+export const getNetworkSources: typeof import("./getNetworkSources").getNetworkSources = null as any;
+export const getNetworkSourcesOutput: typeof import("./getNetworkSources").getNetworkSourcesOutput = null as any;
+utilities.lazyLoad(exports, ["getNetworkSources","getNetworkSourcesOutput"], () => require("./getNetworkSources"));
+
+export { GetPoliciesArgs, GetPoliciesResult, GetPoliciesOutputArgs } from "./getPolicies";
+export const getPolicies: typeof import("./getPolicies").getPolicies = null as any;
+export const getPoliciesOutput: typeof import("./getPolicies").getPoliciesOutput = null as any;
+utilities.lazyLoad(exports, ["getPolicies","getPoliciesOutput"], () => require("./getPolicies"));
+
+export { GetRegionSubscriptionsArgs, GetRegionSubscriptionsResult, GetRegionSubscriptionsOutputArgs } from "./getRegionSubscriptions";
+export const getRegionSubscriptions: typeof import("./getRegionSubscriptions").getRegionSubscriptions = null as any;
+export const getRegionSubscriptionsOutput: typeof import("./getRegionSubscriptions").getRegionSubscriptionsOutput = null as any;
+utilities.lazyLoad(exports, ["getRegionSubscriptions","getRegionSubscriptionsOutput"], () => require("./getRegionSubscriptions"));
+
+export { GetRegionsArgs, GetRegionsResult, GetRegionsOutputArgs } from "./getRegions";
+export const getRegions: typeof import("./getRegions").getRegions = null as any;
+export const getRegionsOutput: typeof import("./getRegions").getRegionsOutput = null as any;
+utilities.lazyLoad(exports, ["getRegions","getRegionsOutput"], () => require("./getRegions"));
+
+export { GetSmtpCredentialsArgs, GetSmtpCredentialsResult, GetSmtpCredentialsOutputArgs } from "./getSmtpCredentials";
+export const getSmtpCredentials: typeof import("./getSmtpCredentials").getSmtpCredentials = null as any;
+export const getSmtpCredentialsOutput: typeof import("./getSmtpCredentials").getSmtpCredentialsOutput = null as any;
+utilities.lazyLoad(exports, ["getSmtpCredentials","getSmtpCredentialsOutput"], () => require("./getSmtpCredentials"));
+
+export { GetSwiftPasswordsArgs, GetSwiftPasswordsResult, GetSwiftPasswordsOutputArgs } from "./getSwiftPasswords";
+export const getSwiftPasswords: typeof import("./getSwiftPasswords").getSwiftPasswords = null as any;
+export const getSwiftPasswordsOutput: typeof import("./getSwiftPasswords").getSwiftPasswordsOutput = null as any;
+utilities.lazyLoad(exports, ["getSwiftPasswords","getSwiftPasswordsOutput"], () => require("./getSwiftPasswords"));
+
+export { GetTagArgs, GetTagResult, GetTagOutputArgs } from "./getTag";
+export const getTag: typeof import("./getTag").getTag = null as any;
+export const getTagOutput: typeof import("./getTag").getTagOutput = null as any;
+utilities.lazyLoad(exports, ["getTag","getTagOutput"], () => require("./getTag"));
+
+export { GetTagDefaultArgs, GetTagDefaultResult, GetTagDefaultOutputArgs } from "./getTagDefault";
+export const getTagDefault: typeof import("./getTagDefault").getTagDefault = null as any;
+export const getTagDefaultOutput: typeof import("./getTagDefault").getTagDefaultOutput = null as any;
+utilities.lazyLoad(exports, ["getTagDefault","getTagDefaultOutput"], () => require("./getTagDefault"));
+
+export { GetTagDefaultsArgs, GetTagDefaultsResult, GetTagDefaultsOutputArgs } from "./getTagDefaults";
+export const getTagDefaults: typeof import("./getTagDefaults").getTagDefaults = null as any;
+export const getTagDefaultsOutput: typeof import("./getTagDefaults").getTagDefaultsOutput = null as any;
+utilities.lazyLoad(exports, ["getTagDefaults","getTagDefaultsOutput"], () => require("./getTagDefaults"));
+
+export { GetTagNamespacesArgs, GetTagNamespacesResult, GetTagNamespacesOutputArgs } from "./getTagNamespaces";
+export const getTagNamespaces: typeof import("./getTagNamespaces").getTagNamespaces = null as any;
+export const getTagNamespacesOutput: typeof import("./getTagNamespaces").getTagNamespacesOutput = null as any;
+utilities.lazyLoad(exports, ["getTagNamespaces","getTagNamespacesOutput"], () => require("./getTagNamespaces"));
+
+export { GetTagStandardTagNamespaceTemplateArgs, GetTagStandardTagNamespaceTemplateResult, GetTagStandardTagNamespaceTemplateOutputArgs } from "./getTagStandardTagNamespaceTemplate";
+export const getTagStandardTagNamespaceTemplate: typeof import("./getTagStandardTagNamespaceTemplate").getTagStandardTagNamespaceTemplate = null as any;
+export const getTagStandardTagNamespaceTemplateOutput: typeof import("./getTagStandardTagNamespaceTemplate").getTagStandardTagNamespaceTemplateOutput = null as any;
+utilities.lazyLoad(exports, ["getTagStandardTagNamespaceTemplate","getTagStandardTagNamespaceTemplateOutput"], () => require("./getTagStandardTagNamespaceTemplate"));
+
+export { GetTagStandardTagNamespaceTemplatesArgs, GetTagStandardTagNamespaceTemplatesResult, GetTagStandardTagNamespaceTemplatesOutputArgs } from "./getTagStandardTagNamespaceTemplates";
+export const getTagStandardTagNamespaceTemplates: typeof import("./getTagStandardTagNamespaceTemplates").getTagStandardTagNamespaceTemplates = null as any;
+export const getTagStandardTagNamespaceTemplatesOutput: typeof import("./getTagStandardTagNamespaceTemplates").getTagStandardTagNamespaceTemplatesOutput = null as any;
+utilities.lazyLoad(exports, ["getTagStandardTagNamespaceTemplates","getTagStandardTagNamespaceTemplatesOutput"], () => require("./getTagStandardTagNamespaceTemplates"));
+
+export { GetTagsArgs, GetTagsResult, GetTagsOutputArgs } from "./getTags";
+export const getTags: typeof import("./getTags").getTags = null as any;
+export const getTagsOutput: typeof import("./getTags").getTagsOutput = null as any;
+utilities.lazyLoad(exports, ["getTags","getTagsOutput"], () => require("./getTags"));
+
+export { GetTenancyArgs, GetTenancyResult, GetTenancyOutputArgs } from "./getTenancy";
+export const getTenancy: typeof import("./getTenancy").getTenancy = null as any;
+export const getTenancyOutput: typeof import("./getTenancy").getTenancyOutput = null as any;
+utilities.lazyLoad(exports, ["getTenancy","getTenancyOutput"], () => require("./getTenancy"));
+
+export { GetUiPasswordArgs, GetUiPasswordResult, GetUiPasswordOutputArgs } from "./getUiPassword";
+export const getUiPassword: typeof import("./getUiPassword").getUiPassword = null as any;
+export const getUiPasswordOutput: typeof import("./getUiPassword").getUiPasswordOutput = null as any;
+utilities.lazyLoad(exports, ["getUiPassword","getUiPasswordOutput"], () => require("./getUiPassword"));
+
+export { GetUserArgs, GetUserResult, GetUserOutputArgs } from "./getUser";
+export const getUser: typeof import("./getUser").getUser = null as any;
+export const getUserOutput: typeof import("./getUser").getUserOutput = null as any;
+utilities.lazyLoad(exports, ["getUser","getUserOutput"], () => require("./getUser"));
+
+export { GetUserGroupMembershipsArgs, GetUserGroupMembershipsResult, GetUserGroupMembershipsOutputArgs } from "./getUserGroupMemberships";
+export const getUserGroupMemberships: typeof import("./getUserGroupMemberships").getUserGroupMemberships = null as any;
+export const getUserGroupMembershipsOutput: typeof import("./getUserGroupMemberships").getUserGroupMembershipsOutput = null as any;
+utilities.lazyLoad(exports, ["getUserGroupMemberships","getUserGroupMembershipsOutput"], () => require("./getUserGroupMemberships"));
+
+export { GetUsersArgs, GetUsersResult, GetUsersOutputArgs } from "./getUsers";
+export const getUsers: typeof import("./getUsers").getUsers = null as any;
+export const getUsersOutput: typeof import("./getUsers").getUsersOutput = null as any;
+utilities.lazyLoad(exports, ["getUsers","getUsersOutput"], () => require("./getUsers"));
+
+export { GroupArgs, GroupState } from "./group";
+export type Group = import("./group").Group;
+export const Group: typeof import("./group").Group = null as any;
+utilities.lazyLoad(exports, ["Group"], () => require("./group"));
+
+export { IdentityProviderArgs, IdentityProviderState } from "./identityProvider";
+export type IdentityProvider = import("./identityProvider").IdentityProvider;
+export const IdentityProvider: typeof import("./identityProvider").IdentityProvider = null as any;
+utilities.lazyLoad(exports, ["IdentityProvider"], () => require("./identityProvider"));
+
+export { IdpGroupMappingArgs, IdpGroupMappingState } from "./idpGroupMapping";
+export type IdpGroupMapping = import("./idpGroupMapping").IdpGroupMapping;
+export const IdpGroupMapping: typeof import("./idpGroupMapping").IdpGroupMapping = null as any;
+utilities.lazyLoad(exports, ["IdpGroupMapping"], () => require("./idpGroupMapping"));
+
+export { ImportStandardTagsManagementArgs, ImportStandardTagsManagementState } from "./importStandardTagsManagement";
+export type ImportStandardTagsManagement = import("./importStandardTagsManagement").ImportStandardTagsManagement;
+export const ImportStandardTagsManagement: typeof import("./importStandardTagsManagement").ImportStandardTagsManagement = null as any;
+utilities.lazyLoad(exports, ["ImportStandardTagsManagement"], () => require("./importStandardTagsManagement"));
+
+export { NetworkSourceArgs, NetworkSourceState } from "./networkSource";
+export type NetworkSource = import("./networkSource").NetworkSource;
+export const NetworkSource: typeof import("./networkSource").NetworkSource = null as any;
+utilities.lazyLoad(exports, ["NetworkSource"], () => require("./networkSource"));
+
+export { PolicyArgs, PolicyState } from "./policy";
+export type Policy = import("./policy").Policy;
+export const Policy: typeof import("./policy").Policy = null as any;
+utilities.lazyLoad(exports, ["Policy"], () => require("./policy"));
+
+export { SmtpCredentialArgs, SmtpCredentialState } from "./smtpCredential";
+export type SmtpCredential = import("./smtpCredential").SmtpCredential;
+export const SmtpCredential: typeof import("./smtpCredential").SmtpCredential = null as any;
+utilities.lazyLoad(exports, ["SmtpCredential"], () => require("./smtpCredential"));
+
+export { SwiftPasswordArgs, SwiftPasswordState } from "./swiftPassword";
+export type SwiftPassword = import("./swiftPassword").SwiftPassword;
+export const SwiftPassword: typeof import("./swiftPassword").SwiftPassword = null as any;
+utilities.lazyLoad(exports, ["SwiftPassword"], () => require("./swiftPassword"));
+
+export { TagArgs, TagState } from "./tag";
+export type Tag = import("./tag").Tag;
+export const Tag: typeof import("./tag").Tag = null as any;
+utilities.lazyLoad(exports, ["Tag"], () => require("./tag"));
+
+export { TagDefaultArgs, TagDefaultState } from "./tagDefault";
+export type TagDefault = import("./tagDefault").TagDefault;
+export const TagDefault: typeof import("./tagDefault").TagDefault = null as any;
+utilities.lazyLoad(exports, ["TagDefault"], () => require("./tagDefault"));
+
+export { TagNamespaceArgs, TagNamespaceState } from "./tagNamespace";
+export type TagNamespace = import("./tagNamespace").TagNamespace;
+export const TagNamespace: typeof import("./tagNamespace").TagNamespace = null as any;
+utilities.lazyLoad(exports, ["TagNamespace"], () => require("./tagNamespace"));
+
+export { UiPasswordArgs, UiPasswordState } from "./uiPassword";
+export type UiPassword = import("./uiPassword").UiPassword;
+export const UiPassword: typeof import("./uiPassword").UiPassword = null as any;
+utilities.lazyLoad(exports, ["UiPassword"], () => require("./uiPassword"));
+
+export { UserArgs, UserState } from "./user";
+export type User = import("./user").User;
+export const User: typeof import("./user").User = null as any;
+utilities.lazyLoad(exports, ["User"], () => require("./user"));
+
+export { UserCapabilitiesManagementArgs, UserCapabilitiesManagementState } from "./userCapabilitiesManagement";
+export type UserCapabilitiesManagement = import("./userCapabilitiesManagement").UserCapabilitiesManagement;
+export const UserCapabilitiesManagement: typeof import("./userCapabilitiesManagement").UserCapabilitiesManagement = null as any;
+utilities.lazyLoad(exports, ["UserCapabilitiesManagement"], () => require("./userCapabilitiesManagement"));
+
+export { UserGroupMembershipArgs, UserGroupMembershipState } from "./userGroupMembership";
+export type UserGroupMembership = import("./userGroupMembership").UserGroupMembership;
+export const UserGroupMembership: typeof import("./userGroupMembership").UserGroupMembership = null as any;
+utilities.lazyLoad(exports, ["UserGroupMembership"], () => require("./userGroupMembership"));
+
 
 const _module = {
     version: utilities.getVersion(),

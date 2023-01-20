@@ -15,17 +15,14 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testCertificate = oci_apigateway_certificate_test_certificate.id.apply(id => oci.ApiGateway.getCertificate({
- *     certificateId: id,
- * }));
+ * const testCertificate = oci.ApiGateway.getCertificate({
+ *     certificateId: oci_apigateway_certificate.test_certificate.id,
+ * });
  * ```
  */
 export function getCertificate(args: GetCertificateArgs, opts?: pulumi.InvokeOptions): Promise<GetCertificateResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ApiGateway/getCertificate:getCertificate", {
         "certificateId": args.certificateId,
     }, opts);
@@ -100,9 +97,24 @@ export interface GetCertificateResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Certificate resource in Oracle Cloud Infrastructure API Gateway service.
+ *
+ * Gets a certificate by identifier.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCertificate = oci.ApiGateway.getCertificate({
+ *     certificateId: oci_apigateway_certificate.test_certificate.id,
+ * });
+ * ```
+ */
 export function getCertificateOutput(args: GetCertificateOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCertificateResult> {
-    return pulumi.output(args).apply(a => getCertificate(a, opts))
+    return pulumi.output(args).apply((a: any) => getCertificate(a, opts))
 }
 
 /**

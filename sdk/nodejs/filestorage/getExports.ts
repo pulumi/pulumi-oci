@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -29,11 +30,8 @@ import * as utilities from "../utilities";
  */
 export function getExports(args?: GetExportsArgs, opts?: pulumi.InvokeOptions): Promise<GetExportsResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:FileStorage/getExports:getExports", {
         "compartmentId": args.compartmentId,
         "exportSetId": args.exportSetId,
@@ -98,9 +96,30 @@ export interface GetExportsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Exports in Oracle Cloud Infrastructure File Storage service.
+ *
+ * Lists export resources by compartment, file system, or export
+ * set. You must specify an export set ID, a file system ID, and
+ * / or a compartment ID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testExports = oci.FileStorage.getExports({
+ *     compartmentId: _var.compartment_id,
+ *     exportSetId: oci_file_storage_export_set.test_export_set.id,
+ *     fileSystemId: oci_file_storage_file_system.test_file_system.id,
+ *     id: _var.export_id,
+ *     state: _var.export_state,
+ * });
+ * ```
+ */
 export function getExportsOutput(args?: GetExportsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExportsResult> {
-    return pulumi.output(args).apply(a => getExports(a, opts))
+    return pulumi.output(args).apply((a: any) => getExports(a, opts))
 }
 
 /**

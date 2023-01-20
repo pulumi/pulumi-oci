@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -28,11 +29,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVcns(args: GetVcnsArgs, opts?: pulumi.InvokeOptions): Promise<GetVcnsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getVcns:getVcns", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -86,9 +84,30 @@ export interface GetVcnsResult {
      */
     readonly virtualNetworks: outputs.Core.GetVcnsVirtualNetwork[];
 }
-
+/**
+ * This data source provides the list of Vcns in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the virtual cloud networks (VCNs) in the specified compartment.
+ *
+ * ## Supported Aliases
+ *
+ * * `oci.Core.getVirtualNetworks`
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testVcns = oci.Core.getVcns({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.vcn_display_name,
+ *     state: _var.vcn_state,
+ * });
+ * ```
+ */
 export function getVcnsOutput(args: GetVcnsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVcnsResult> {
-    return pulumi.output(args).apply(a => getVcns(a, opts))
+    return pulumi.output(args).apply((a: any) => getVcns(a, opts))
 }
 
 /**

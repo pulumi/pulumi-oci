@@ -12,10 +12,10 @@ namespace Pulumi.Oci.DataSafe
     public static class GetSecurityAssessmentFinding
     {
         public static Task<GetSecurityAssessmentFindingResult> InvokeAsync(GetSecurityAssessmentFindingArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetSecurityAssessmentFindingResult>("oci:DataSafe/getSecurityAssessmentFinding:getSecurityAssessmentFinding", args ?? new GetSecurityAssessmentFindingArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetSecurityAssessmentFindingResult>("oci:DataSafe/getSecurityAssessmentFinding:getSecurityAssessmentFinding", args ?? new GetSecurityAssessmentFindingArgs(), options.WithDefaults());
 
         public static Output<GetSecurityAssessmentFindingResult> Invoke(GetSecurityAssessmentFindingInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetSecurityAssessmentFindingResult>("oci:DataSafe/getSecurityAssessmentFinding:getSecurityAssessmentFinding", args ?? new GetSecurityAssessmentFindingInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetSecurityAssessmentFindingResult>("oci:DataSafe/getSecurityAssessmentFinding:getSecurityAssessmentFinding", args ?? new GetSecurityAssessmentFindingInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVlan(args: GetVlanArgs, opts?: pulumi.InvokeOptions): Promise<GetVlanResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getVlan:getVlan", {
         "vlanId": args.vlanId,
     }, opts);
@@ -99,9 +96,24 @@ export interface GetVlanResult {
      */
     readonly vlanTag: number;
 }
-
+/**
+ * This data source provides details about a specific Vlan resource in Oracle Cloud Infrastructure Core service.
+ *
+ * Gets the specified VLAN's information.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testVlan = oci.Core.getVlan({
+ *     vlanId: oci_core_vlan.test_vlan.id,
+ * });
+ * ```
+ */
 export function getVlanOutput(args: GetVlanOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVlanResult> {
-    return pulumi.output(args).apply(a => getVlan(a, opts))
+    return pulumi.output(args).apply((a: any) => getVlan(a, opts))
 }
 
 /**

@@ -17,7 +17,7 @@ public final class BdsInstanceMasterNode {
      * @return The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
      * 
      */
-    private String blockVolumeSizeInGbs;
+    private @Nullable String blockVolumeSizeInGbs;
     /**
      * @return The amount of worker nodes should be created
      * 
@@ -44,8 +44,8 @@ public final class BdsInstanceMasterNode {
      * @return The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
      * 
      */
-    public String blockVolumeSizeInGbs() {
-        return this.blockVolumeSizeInGbs;
+    public Optional<String> blockVolumeSizeInGbs() {
+        return Optional.ofNullable(this.blockVolumeSizeInGbs);
     }
     /**
      * @return The amount of worker nodes should be created
@@ -85,7 +85,7 @@ public final class BdsInstanceMasterNode {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String blockVolumeSizeInGbs;
+        private @Nullable String blockVolumeSizeInGbs;
         private Integer numberOfNodes;
         private String shape;
         private @Nullable BdsInstanceMasterNodeShapeConfig shapeConfig;
@@ -101,8 +101,8 @@ public final class BdsInstanceMasterNode {
         }
 
         @CustomType.Setter
-        public Builder blockVolumeSizeInGbs(String blockVolumeSizeInGbs) {
-            this.blockVolumeSizeInGbs = Objects.requireNonNull(blockVolumeSizeInGbs);
+        public Builder blockVolumeSizeInGbs(@Nullable String blockVolumeSizeInGbs) {
+            this.blockVolumeSizeInGbs = blockVolumeSizeInGbs;
             return this;
         }
         @CustomType.Setter

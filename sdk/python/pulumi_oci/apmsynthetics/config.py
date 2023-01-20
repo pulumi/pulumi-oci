@@ -21,12 +21,14 @@ class ConfigArgs:
                  monitor_type: pulumi.Input[str],
                  repeat_interval_in_seconds: pulumi.Input[int],
                  vantage_points: pulumi.Input[Sequence[pulumi.Input[str]]],
+                 availability_configuration: Optional[pulumi.Input['ConfigAvailabilityConfigurationArgs']] = None,
                  batch_interval_in_seconds: Optional[pulumi.Input[int]] = None,
                  configuration: Optional[pulumi.Input['ConfigConfigurationArgs']] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_run_now: Optional[pulumi.Input[bool]] = None,
                  is_run_once: Optional[pulumi.Input[bool]] = None,
+                 maintenance_window_schedule: Optional[pulumi.Input['ConfigMaintenanceWindowScheduleArgs']] = None,
                  scheduling_policy: Optional[pulumi.Input[str]] = None,
                  script_id: Optional[pulumi.Input[str]] = None,
                  script_name: Optional[pulumi.Input[str]] = None,
@@ -36,32 +38,34 @@ class ConfigArgs:
                  timeout_in_seconds: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a Config resource.
-        :param pulumi.Input[str] apm_domain_id: (Updatable) The APM domain ID the request is intended for. 
-               <<<<<<< ours
+        :param pulumi.Input[str] apm_domain_id: (Updatable) The APM domain ID the request is intended for.
         :param pulumi.Input[str] display_name: (Updatable) Unique name that can be edited. The name should not contain any confidential information.
         :param pulumi.Input[str] monitor_type: Type of monitor.
         :param pulumi.Input[int] repeat_interval_in_seconds: (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] vantage_points: (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points.
+        :param pulumi.Input['ConfigAvailabilityConfigurationArgs'] availability_configuration: (Updatable) Monitor availability configuration details.
         :param pulumi.Input[int] batch_interval_in_seconds: (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
-               =======
         :param pulumi.Input['ConfigConfigurationArgs'] configuration: (Updatable) Details of monitor configuration.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_run_now: (Updatable) If isRunNow is enabled, then the monitor will run now.
         :param pulumi.Input[bool] is_run_once: (Updatable) If runOnce is enabled, then the monitor will run once.
+        :param pulumi.Input['ConfigMaintenanceWindowScheduleArgs'] maintenance_window_schedule: (Updatable) Details used to schedule maintenance window.
         :param pulumi.Input[str] scheduling_policy: (Updatable) Scheduling policy on Vantage points.
         :param pulumi.Input[str] script_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
         :param pulumi.Input[str] script_name: Name of the script.
         :param pulumi.Input[Sequence[pulumi.Input['ConfigScriptParameterArgs']]] script_parameters: (Updatable) List of script parameters in the monitor. This is valid only for SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null. Example: `[{"paramName": "userid", "paramValue":"testuser"}]`
         :param pulumi.Input[str] status: (Updatable) Enables or disables the monitor.
         :param pulumi.Input[str] target: (Updatable) Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is.
-        :param pulumi.Input[int] timeout_in_seconds: (Updatable) Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+        :param pulumi.Input[int] timeout_in_seconds: (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
         """
         pulumi.set(__self__, "apm_domain_id", apm_domain_id)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "monitor_type", monitor_type)
         pulumi.set(__self__, "repeat_interval_in_seconds", repeat_interval_in_seconds)
         pulumi.set(__self__, "vantage_points", vantage_points)
+        if availability_configuration is not None:
+            pulumi.set(__self__, "availability_configuration", availability_configuration)
         if batch_interval_in_seconds is not None:
             pulumi.set(__self__, "batch_interval_in_seconds", batch_interval_in_seconds)
         if configuration is not None:
@@ -74,6 +78,8 @@ class ConfigArgs:
             pulumi.set(__self__, "is_run_now", is_run_now)
         if is_run_once is not None:
             pulumi.set(__self__, "is_run_once", is_run_once)
+        if maintenance_window_schedule is not None:
+            pulumi.set(__self__, "maintenance_window_schedule", maintenance_window_schedule)
         if scheduling_policy is not None:
             pulumi.set(__self__, "scheduling_policy", scheduling_policy)
         if script_id is not None:
@@ -93,8 +99,7 @@ class ConfigArgs:
     @pulumi.getter(name="apmDomainId")
     def apm_domain_id(self) -> pulumi.Input[str]:
         """
-        (Updatable) The APM domain ID the request is intended for. 
-        <<<<<<< ours
+        (Updatable) The APM domain ID the request is intended for.
         """
         return pulumi.get(self, "apm_domain_id")
 
@@ -151,11 +156,22 @@ class ConfigArgs:
         pulumi.set(self, "vantage_points", value)
 
     @property
+    @pulumi.getter(name="availabilityConfiguration")
+    def availability_configuration(self) -> Optional[pulumi.Input['ConfigAvailabilityConfigurationArgs']]:
+        """
+        (Updatable) Monitor availability configuration details.
+        """
+        return pulumi.get(self, "availability_configuration")
+
+    @availability_configuration.setter
+    def availability_configuration(self, value: Optional[pulumi.Input['ConfigAvailabilityConfigurationArgs']]):
+        pulumi.set(self, "availability_configuration", value)
+
+    @property
     @pulumi.getter(name="batchIntervalInSeconds")
     def batch_interval_in_seconds(self) -> Optional[pulumi.Input[int]]:
         """
         (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
-        =======
         """
         return pulumi.get(self, "batch_interval_in_seconds")
 
@@ -222,6 +238,18 @@ class ConfigArgs:
     @is_run_once.setter
     def is_run_once(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_run_once", value)
+
+    @property
+    @pulumi.getter(name="maintenanceWindowSchedule")
+    def maintenance_window_schedule(self) -> Optional[pulumi.Input['ConfigMaintenanceWindowScheduleArgs']]:
+        """
+        (Updatable) Details used to schedule maintenance window.
+        """
+        return pulumi.get(self, "maintenance_window_schedule")
+
+    @maintenance_window_schedule.setter
+    def maintenance_window_schedule(self, value: Optional[pulumi.Input['ConfigMaintenanceWindowScheduleArgs']]):
+        pulumi.set(self, "maintenance_window_schedule", value)
 
     @property
     @pulumi.getter(name="schedulingPolicy")
@@ -299,7 +327,7 @@ class ConfigArgs:
     @pulumi.getter(name="timeoutInSeconds")
     def timeout_in_seconds(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+        (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
         """
         return pulumi.get(self, "timeout_in_seconds")
 
@@ -312,6 +340,7 @@ class ConfigArgs:
 class _ConfigState:
     def __init__(__self__, *,
                  apm_domain_id: Optional[pulumi.Input[str]] = None,
+                 availability_configuration: Optional[pulumi.Input['ConfigAvailabilityConfigurationArgs']] = None,
                  batch_interval_in_seconds: Optional[pulumi.Input[int]] = None,
                  configuration: Optional[pulumi.Input['ConfigConfigurationArgs']] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -319,6 +348,7 @@ class _ConfigState:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_run_now: Optional[pulumi.Input[bool]] = None,
                  is_run_once: Optional[pulumi.Input[bool]] = None,
+                 maintenance_window_schedule: Optional[pulumi.Input['ConfigMaintenanceWindowScheduleArgs']] = None,
                  monitor_type: Optional[pulumi.Input[str]] = None,
                  repeat_interval_in_seconds: Optional[pulumi.Input[int]] = None,
                  scheduling_policy: Optional[pulumi.Input[str]] = None,
@@ -334,16 +364,16 @@ class _ConfigState:
                  vantage_points: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         Input properties used for looking up and filtering Config resources.
-        :param pulumi.Input[str] apm_domain_id: (Updatable) The APM domain ID the request is intended for. 
-               <<<<<<< ours
+        :param pulumi.Input[str] apm_domain_id: (Updatable) The APM domain ID the request is intended for.
+        :param pulumi.Input['ConfigAvailabilityConfigurationArgs'] availability_configuration: (Updatable) Monitor availability configuration details.
         :param pulumi.Input[int] batch_interval_in_seconds: (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
-               =======
         :param pulumi.Input['ConfigConfigurationArgs'] configuration: (Updatable) Details of monitor configuration.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Unique name that can be edited. The name should not contain any confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_run_now: (Updatable) If isRunNow is enabled, then the monitor will run now.
         :param pulumi.Input[bool] is_run_once: (Updatable) If runOnce is enabled, then the monitor will run once.
+        :param pulumi.Input['ConfigMaintenanceWindowScheduleArgs'] maintenance_window_schedule: (Updatable) Details used to schedule maintenance window.
         :param pulumi.Input[str] monitor_type: Type of monitor.
         :param pulumi.Input[int] repeat_interval_in_seconds: (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
         :param pulumi.Input[str] scheduling_policy: (Updatable) Scheduling policy on Vantage points.
@@ -354,12 +384,14 @@ class _ConfigState:
         :param pulumi.Input[str] target: (Updatable) Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is.
         :param pulumi.Input[str] time_created: The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         :param pulumi.Input[str] time_updated: The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-        :param pulumi.Input[int] timeout_in_seconds: (Updatable) Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+        :param pulumi.Input[int] timeout_in_seconds: (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
         :param pulumi.Input[int] vantage_point_count: Number of vantage points where monitor is running.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] vantage_points: (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points.
         """
         if apm_domain_id is not None:
             pulumi.set(__self__, "apm_domain_id", apm_domain_id)
+        if availability_configuration is not None:
+            pulumi.set(__self__, "availability_configuration", availability_configuration)
         if batch_interval_in_seconds is not None:
             pulumi.set(__self__, "batch_interval_in_seconds", batch_interval_in_seconds)
         if configuration is not None:
@@ -374,6 +406,8 @@ class _ConfigState:
             pulumi.set(__self__, "is_run_now", is_run_now)
         if is_run_once is not None:
             pulumi.set(__self__, "is_run_once", is_run_once)
+        if maintenance_window_schedule is not None:
+            pulumi.set(__self__, "maintenance_window_schedule", maintenance_window_schedule)
         if monitor_type is not None:
             pulumi.set(__self__, "monitor_type", monitor_type)
         if repeat_interval_in_seconds is not None:
@@ -405,8 +439,7 @@ class _ConfigState:
     @pulumi.getter(name="apmDomainId")
     def apm_domain_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The APM domain ID the request is intended for. 
-        <<<<<<< ours
+        (Updatable) The APM domain ID the request is intended for.
         """
         return pulumi.get(self, "apm_domain_id")
 
@@ -415,11 +448,22 @@ class _ConfigState:
         pulumi.set(self, "apm_domain_id", value)
 
     @property
+    @pulumi.getter(name="availabilityConfiguration")
+    def availability_configuration(self) -> Optional[pulumi.Input['ConfigAvailabilityConfigurationArgs']]:
+        """
+        (Updatable) Monitor availability configuration details.
+        """
+        return pulumi.get(self, "availability_configuration")
+
+    @availability_configuration.setter
+    def availability_configuration(self, value: Optional[pulumi.Input['ConfigAvailabilityConfigurationArgs']]):
+        pulumi.set(self, "availability_configuration", value)
+
+    @property
     @pulumi.getter(name="batchIntervalInSeconds")
     def batch_interval_in_seconds(self) -> Optional[pulumi.Input[int]]:
         """
         (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
-        =======
         """
         return pulumi.get(self, "batch_interval_in_seconds")
 
@@ -498,6 +542,18 @@ class _ConfigState:
     @is_run_once.setter
     def is_run_once(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_run_once", value)
+
+    @property
+    @pulumi.getter(name="maintenanceWindowSchedule")
+    def maintenance_window_schedule(self) -> Optional[pulumi.Input['ConfigMaintenanceWindowScheduleArgs']]:
+        """
+        (Updatable) Details used to schedule maintenance window.
+        """
+        return pulumi.get(self, "maintenance_window_schedule")
+
+    @maintenance_window_schedule.setter
+    def maintenance_window_schedule(self, value: Optional[pulumi.Input['ConfigMaintenanceWindowScheduleArgs']]):
+        pulumi.set(self, "maintenance_window_schedule", value)
 
     @property
     @pulumi.getter(name="monitorType")
@@ -623,7 +679,7 @@ class _ConfigState:
     @pulumi.getter(name="timeoutInSeconds")
     def timeout_in_seconds(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+        (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
         """
         return pulumi.get(self, "timeout_in_seconds")
 
@@ -662,6 +718,7 @@ class Config(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  apm_domain_id: Optional[pulumi.Input[str]] = None,
+                 availability_configuration: Optional[pulumi.Input[pulumi.InputType['ConfigAvailabilityConfigurationArgs']]] = None,
                  batch_interval_in_seconds: Optional[pulumi.Input[int]] = None,
                  configuration: Optional[pulumi.Input[pulumi.InputType['ConfigConfigurationArgs']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -669,6 +726,7 @@ class Config(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_run_now: Optional[pulumi.Input[bool]] = None,
                  is_run_once: Optional[pulumi.Input[bool]] = None,
+                 maintenance_window_schedule: Optional[pulumi.Input[pulumi.InputType['ConfigMaintenanceWindowScheduleArgs']]] = None,
                  monitor_type: Optional[pulumi.Input[str]] = None,
                  repeat_interval_in_seconds: Optional[pulumi.Input[int]] = None,
                  scheduling_policy: Optional[pulumi.Input[str]] = None,
@@ -697,6 +755,10 @@ class Config(pulumi.CustomResource):
             monitor_type=var["monitor_monitor_type"],
             repeat_interval_in_seconds=var["monitor_repeat_interval_in_seconds"],
             vantage_points=[],
+            availability_configuration=oci.apm_synthetics.ConfigAvailabilityConfigurationArgs(
+                max_allowed_failures_per_interval=var["monitor_availability_configuration_max_allowed_failures_per_interval"],
+                min_allowed_runs_per_interval=var["monitor_availability_configuration_min_allowed_runs_per_interval"],
+            ),
             batch_interval_in_seconds=var["monitor_batch_interval_in_seconds"],
             configuration=oci.apm_synthetics.ConfigConfigurationArgs(
                 config_type=var["monitor_configuration_config_type"],
@@ -752,6 +814,10 @@ class Config(pulumi.CustomResource):
             },
             is_run_now=var["monitor_is_run_now"],
             is_run_once=var["monitor_is_run_once"],
+            maintenance_window_schedule=oci.apm_synthetics.ConfigMaintenanceWindowScheduleArgs(
+                time_ended=var["monitor_maintenance_window_schedule_time_ended"],
+                time_started=var["monitor_maintenance_window_schedule_time_started"],
+            ),
             scheduling_policy=var["monitor_scheduling_policy"],
             script_id=oci_apm_synthetics_script["test_script"]["id"],
             script_parameters=[oci.apm_synthetics.ConfigScriptParameterArgs(
@@ -773,16 +839,16 @@ class Config(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] apm_domain_id: (Updatable) The APM domain ID the request is intended for. 
-               <<<<<<< ours
+        :param pulumi.Input[str] apm_domain_id: (Updatable) The APM domain ID the request is intended for.
+        :param pulumi.Input[pulumi.InputType['ConfigAvailabilityConfigurationArgs']] availability_configuration: (Updatable) Monitor availability configuration details.
         :param pulumi.Input[int] batch_interval_in_seconds: (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
-               =======
         :param pulumi.Input[pulumi.InputType['ConfigConfigurationArgs']] configuration: (Updatable) Details of monitor configuration.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Unique name that can be edited. The name should not contain any confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_run_now: (Updatable) If isRunNow is enabled, then the monitor will run now.
         :param pulumi.Input[bool] is_run_once: (Updatable) If runOnce is enabled, then the monitor will run once.
+        :param pulumi.Input[pulumi.InputType['ConfigMaintenanceWindowScheduleArgs']] maintenance_window_schedule: (Updatable) Details used to schedule maintenance window.
         :param pulumi.Input[str] monitor_type: Type of monitor.
         :param pulumi.Input[int] repeat_interval_in_seconds: (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
         :param pulumi.Input[str] scheduling_policy: (Updatable) Scheduling policy on Vantage points.
@@ -791,7 +857,7 @@ class Config(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConfigScriptParameterArgs']]]] script_parameters: (Updatable) List of script parameters in the monitor. This is valid only for SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null. Example: `[{"paramName": "userid", "paramValue":"testuser"}]`
         :param pulumi.Input[str] status: (Updatable) Enables or disables the monitor.
         :param pulumi.Input[str] target: (Updatable) Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is.
-        :param pulumi.Input[int] timeout_in_seconds: (Updatable) Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+        :param pulumi.Input[int] timeout_in_seconds: (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] vantage_points: (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points.
         """
         ...
@@ -817,6 +883,10 @@ class Config(pulumi.CustomResource):
             monitor_type=var["monitor_monitor_type"],
             repeat_interval_in_seconds=var["monitor_repeat_interval_in_seconds"],
             vantage_points=[],
+            availability_configuration=oci.apm_synthetics.ConfigAvailabilityConfigurationArgs(
+                max_allowed_failures_per_interval=var["monitor_availability_configuration_max_allowed_failures_per_interval"],
+                min_allowed_runs_per_interval=var["monitor_availability_configuration_min_allowed_runs_per_interval"],
+            ),
             batch_interval_in_seconds=var["monitor_batch_interval_in_seconds"],
             configuration=oci.apm_synthetics.ConfigConfigurationArgs(
                 config_type=var["monitor_configuration_config_type"],
@@ -872,6 +942,10 @@ class Config(pulumi.CustomResource):
             },
             is_run_now=var["monitor_is_run_now"],
             is_run_once=var["monitor_is_run_once"],
+            maintenance_window_schedule=oci.apm_synthetics.ConfigMaintenanceWindowScheduleArgs(
+                time_ended=var["monitor_maintenance_window_schedule_time_ended"],
+                time_started=var["monitor_maintenance_window_schedule_time_started"],
+            ),
             scheduling_policy=var["monitor_scheduling_policy"],
             script_id=oci_apm_synthetics_script["test_script"]["id"],
             script_parameters=[oci.apm_synthetics.ConfigScriptParameterArgs(
@@ -907,6 +981,7 @@ class Config(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  apm_domain_id: Optional[pulumi.Input[str]] = None,
+                 availability_configuration: Optional[pulumi.Input[pulumi.InputType['ConfigAvailabilityConfigurationArgs']]] = None,
                  batch_interval_in_seconds: Optional[pulumi.Input[int]] = None,
                  configuration: Optional[pulumi.Input[pulumi.InputType['ConfigConfigurationArgs']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -914,6 +989,7 @@ class Config(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_run_now: Optional[pulumi.Input[bool]] = None,
                  is_run_once: Optional[pulumi.Input[bool]] = None,
+                 maintenance_window_schedule: Optional[pulumi.Input[pulumi.InputType['ConfigMaintenanceWindowScheduleArgs']]] = None,
                  monitor_type: Optional[pulumi.Input[str]] = None,
                  repeat_interval_in_seconds: Optional[pulumi.Input[int]] = None,
                  scheduling_policy: Optional[pulumi.Input[str]] = None,
@@ -936,6 +1012,7 @@ class Config(pulumi.CustomResource):
             if apm_domain_id is None and not opts.urn:
                 raise TypeError("Missing required property 'apm_domain_id'")
             __props__.__dict__["apm_domain_id"] = apm_domain_id
+            __props__.__dict__["availability_configuration"] = availability_configuration
             __props__.__dict__["batch_interval_in_seconds"] = batch_interval_in_seconds
             __props__.__dict__["configuration"] = configuration
             __props__.__dict__["defined_tags"] = defined_tags
@@ -945,6 +1022,7 @@ class Config(pulumi.CustomResource):
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["is_run_now"] = is_run_now
             __props__.__dict__["is_run_once"] = is_run_once
+            __props__.__dict__["maintenance_window_schedule"] = maintenance_window_schedule
             if monitor_type is None and not opts.urn:
                 raise TypeError("Missing required property 'monitor_type'")
             __props__.__dict__["monitor_type"] = monitor_type
@@ -975,6 +1053,7 @@ class Config(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             apm_domain_id: Optional[pulumi.Input[str]] = None,
+            availability_configuration: Optional[pulumi.Input[pulumi.InputType['ConfigAvailabilityConfigurationArgs']]] = None,
             batch_interval_in_seconds: Optional[pulumi.Input[int]] = None,
             configuration: Optional[pulumi.Input[pulumi.InputType['ConfigConfigurationArgs']]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -982,6 +1061,7 @@ class Config(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             is_run_now: Optional[pulumi.Input[bool]] = None,
             is_run_once: Optional[pulumi.Input[bool]] = None,
+            maintenance_window_schedule: Optional[pulumi.Input[pulumi.InputType['ConfigMaintenanceWindowScheduleArgs']]] = None,
             monitor_type: Optional[pulumi.Input[str]] = None,
             repeat_interval_in_seconds: Optional[pulumi.Input[int]] = None,
             scheduling_policy: Optional[pulumi.Input[str]] = None,
@@ -1002,16 +1082,16 @@ class Config(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] apm_domain_id: (Updatable) The APM domain ID the request is intended for. 
-               <<<<<<< ours
+        :param pulumi.Input[str] apm_domain_id: (Updatable) The APM domain ID the request is intended for.
+        :param pulumi.Input[pulumi.InputType['ConfigAvailabilityConfigurationArgs']] availability_configuration: (Updatable) Monitor availability configuration details.
         :param pulumi.Input[int] batch_interval_in_seconds: (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
-               =======
         :param pulumi.Input[pulumi.InputType['ConfigConfigurationArgs']] configuration: (Updatable) Details of monitor configuration.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Unique name that can be edited. The name should not contain any confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_run_now: (Updatable) If isRunNow is enabled, then the monitor will run now.
         :param pulumi.Input[bool] is_run_once: (Updatable) If runOnce is enabled, then the monitor will run once.
+        :param pulumi.Input[pulumi.InputType['ConfigMaintenanceWindowScheduleArgs']] maintenance_window_schedule: (Updatable) Details used to schedule maintenance window.
         :param pulumi.Input[str] monitor_type: Type of monitor.
         :param pulumi.Input[int] repeat_interval_in_seconds: (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
         :param pulumi.Input[str] scheduling_policy: (Updatable) Scheduling policy on Vantage points.
@@ -1022,7 +1102,7 @@ class Config(pulumi.CustomResource):
         :param pulumi.Input[str] target: (Updatable) Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is.
         :param pulumi.Input[str] time_created: The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         :param pulumi.Input[str] time_updated: The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
-        :param pulumi.Input[int] timeout_in_seconds: (Updatable) Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+        :param pulumi.Input[int] timeout_in_seconds: (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
         :param pulumi.Input[int] vantage_point_count: Number of vantage points where monitor is running.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] vantage_points: (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points.
         """
@@ -1031,6 +1111,7 @@ class Config(pulumi.CustomResource):
         __props__ = _ConfigState.__new__(_ConfigState)
 
         __props__.__dict__["apm_domain_id"] = apm_domain_id
+        __props__.__dict__["availability_configuration"] = availability_configuration
         __props__.__dict__["batch_interval_in_seconds"] = batch_interval_in_seconds
         __props__.__dict__["configuration"] = configuration
         __props__.__dict__["defined_tags"] = defined_tags
@@ -1038,6 +1119,7 @@ class Config(pulumi.CustomResource):
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["is_run_now"] = is_run_now
         __props__.__dict__["is_run_once"] = is_run_once
+        __props__.__dict__["maintenance_window_schedule"] = maintenance_window_schedule
         __props__.__dict__["monitor_type"] = monitor_type
         __props__.__dict__["repeat_interval_in_seconds"] = repeat_interval_in_seconds
         __props__.__dict__["scheduling_policy"] = scheduling_policy
@@ -1057,17 +1139,23 @@ class Config(pulumi.CustomResource):
     @pulumi.getter(name="apmDomainId")
     def apm_domain_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) The APM domain ID the request is intended for. 
-        <<<<<<< ours
+        (Updatable) The APM domain ID the request is intended for.
         """
         return pulumi.get(self, "apm_domain_id")
+
+    @property
+    @pulumi.getter(name="availabilityConfiguration")
+    def availability_configuration(self) -> pulumi.Output['outputs.ConfigAvailabilityConfiguration']:
+        """
+        (Updatable) Monitor availability configuration details.
+        """
+        return pulumi.get(self, "availability_configuration")
 
     @property
     @pulumi.getter(name="batchIntervalInSeconds")
     def batch_interval_in_seconds(self) -> pulumi.Output[int]:
         """
         (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
-        =======
         """
         return pulumi.get(self, "batch_interval_in_seconds")
 
@@ -1118,6 +1206,14 @@ class Config(pulumi.CustomResource):
         (Updatable) If runOnce is enabled, then the monitor will run once.
         """
         return pulumi.get(self, "is_run_once")
+
+    @property
+    @pulumi.getter(name="maintenanceWindowSchedule")
+    def maintenance_window_schedule(self) -> pulumi.Output['outputs.ConfigMaintenanceWindowSchedule']:
+        """
+        (Updatable) Details used to schedule maintenance window.
+        """
+        return pulumi.get(self, "maintenance_window_schedule")
 
     @property
     @pulumi.getter(name="monitorType")
@@ -1203,7 +1299,7 @@ class Config(pulumi.CustomResource):
     @pulumi.getter(name="timeoutInSeconds")
     def timeout_in_seconds(self) -> pulumi.Output[int]:
         """
-        (Updatable) Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+        (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
         """
         return pulumi.get(self, "timeout_in_seconds")
 

@@ -33,6 +33,11 @@ public final class GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectio
      */
     private String pathType;
     /**
+     * @return The maximum duration in milliseconds for the target service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when &#39;isGrpc&#39; is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the target service, consider either keeping the timeout disabled or set a sufficiently high value.
+     * 
+     */
+    private String requestTimeoutInMs;
+    /**
      * @return Type of protocol.
      * 
      */
@@ -68,6 +73,13 @@ public final class GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectio
         return this.pathType;
     }
     /**
+     * @return The maximum duration in milliseconds for the target service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when &#39;isGrpc&#39; is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the target service, consider either keeping the timeout disabled or set a sufficiently high value.
+     * 
+     */
+    public String requestTimeoutInMs() {
+        return this.requestTimeoutInMs;
+    }
+    /**
      * @return Type of protocol.
      * 
      */
@@ -88,6 +100,7 @@ public final class GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectio
         private Boolean isGrpc;
         private String path;
         private String pathType;
+        private String requestTimeoutInMs;
         private String type;
         public Builder() {}
         public Builder(GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRule defaults) {
@@ -96,6 +109,7 @@ public final class GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectio
     	      this.isGrpc = defaults.isGrpc;
     	      this.path = defaults.path;
     	      this.pathType = defaults.pathType;
+    	      this.requestTimeoutInMs = defaults.requestTimeoutInMs;
     	      this.type = defaults.type;
         }
 
@@ -123,6 +137,11 @@ public final class GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectio
             return this;
         }
         @CustomType.Setter
+        public Builder requestTimeoutInMs(String requestTimeoutInMs) {
+            this.requestTimeoutInMs = Objects.requireNonNull(requestTimeoutInMs);
+            return this;
+        }
+        @CustomType.Setter
         public Builder type(String type) {
             this.type = Objects.requireNonNull(type);
             return this;
@@ -133,6 +152,7 @@ public final class GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectio
             o.isGrpc = isGrpc;
             o.path = path;
             o.pathType = pathType;
+            o.requestTimeoutInMs = requestTimeoutInMs;
             o.type = type;
             return o;
         }

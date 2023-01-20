@@ -5,16 +5,36 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./bastion";
-export * from "./getBastion";
-export * from "./getBastions";
-export * from "./getSession";
-export * from "./getSessions";
-export * from "./session";
+export { BastionArgs, BastionState } from "./bastion";
+export type Bastion = import("./bastion").Bastion;
+export const Bastion: typeof import("./bastion").Bastion = null as any;
+utilities.lazyLoad(exports, ["Bastion"], () => require("./bastion"));
 
-// Import resources to register:
-import { Bastion } from "./bastion";
-import { Session } from "./session";
+export { GetBastionArgs, GetBastionResult, GetBastionOutputArgs } from "./getBastion";
+export const getBastion: typeof import("./getBastion").getBastion = null as any;
+export const getBastionOutput: typeof import("./getBastion").getBastionOutput = null as any;
+utilities.lazyLoad(exports, ["getBastion","getBastionOutput"], () => require("./getBastion"));
+
+export { GetBastionsArgs, GetBastionsResult, GetBastionsOutputArgs } from "./getBastions";
+export const getBastions: typeof import("./getBastions").getBastions = null as any;
+export const getBastionsOutput: typeof import("./getBastions").getBastionsOutput = null as any;
+utilities.lazyLoad(exports, ["getBastions","getBastionsOutput"], () => require("./getBastions"));
+
+export { GetSessionArgs, GetSessionResult, GetSessionOutputArgs } from "./getSession";
+export const getSession: typeof import("./getSession").getSession = null as any;
+export const getSessionOutput: typeof import("./getSession").getSessionOutput = null as any;
+utilities.lazyLoad(exports, ["getSession","getSessionOutput"], () => require("./getSession"));
+
+export { GetSessionsArgs, GetSessionsResult, GetSessionsOutputArgs } from "./getSessions";
+export const getSessions: typeof import("./getSessions").getSessions = null as any;
+export const getSessionsOutput: typeof import("./getSessions").getSessionsOutput = null as any;
+utilities.lazyLoad(exports, ["getSessions","getSessionsOutput"], () => require("./getSessions"));
+
+export { SessionArgs, SessionState } from "./session";
+export type Session = import("./session").Session;
+export const Session: typeof import("./session").Session = null as any;
+utilities.lazyLoad(exports, ["Session"], () => require("./session"));
+
 
 const _module = {
     version: utilities.getVersion(),

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRegistryFolder(args: GetRegistryFolderArgs, opts?: pulumi.InvokeOptions): Promise<GetRegistryFolderResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataConnectivity/getRegistryFolder:getRegistryFolder", {
         "folderKey": args.folderKey,
         "registryId": args.registryId,
@@ -96,9 +94,25 @@ export interface GetRegistryFolderResult {
     readonly parentReves: outputs.DataConnectivity.GetRegistryFolderParentRef[];
     readonly registryId: string;
 }
-
+/**
+ * This data source provides details about a specific Registry Folder resource in Oracle Cloud Infrastructure Data Connectivity service.
+ *
+ * Retrieves the folder details using the specified identifier.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testRegistryFolder = oci.DataConnectivity.getRegistryFolder({
+ *     folderKey: _var.registry_folder_folder_key,
+ *     registryId: oci_data_connectivity_registry.test_registry.id,
+ * });
+ * ```
+ */
 export function getRegistryFolderOutput(args: GetRegistryFolderOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRegistryFolderResult> {
-    return pulumi.output(args).apply(a => getRegistryFolder(a, opts))
+    return pulumi.output(args).apply((a: any) => getRegistryFolder(a, opts))
 }
 
 /**

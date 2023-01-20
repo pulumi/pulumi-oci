@@ -174,6 +174,10 @@ namespace Pulumi.Oci.DataCatalog
             var defaultOptions = new CustomResourceOptions
             {
                 Version = Utilities.Version,
+                AdditionalSecretOutputs =
+                {
+                    "encProperties",
+                },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -230,7 +234,11 @@ namespace Pulumi.Oci.DataCatalog
         public InputMap<object> EncProperties
         {
             get => _encProperties ?? (_encProperties = new InputMap<object>());
-            set => _encProperties = value;
+            set
+            {
+                var emptySecret = Output.CreateSecret(ImmutableDictionary.Create<string, object>());
+                _encProperties = Output.All(value, emptySecret).Apply(v => v[0]);
+            }
         }
 
         /// <summary>
@@ -304,7 +312,11 @@ namespace Pulumi.Oci.DataCatalog
         public InputMap<object> EncProperties
         {
             get => _encProperties ?? (_encProperties = new InputMap<object>());
-            set => _encProperties = value;
+            set
+            {
+                var emptySecret = Output.CreateSecret(ImmutableDictionary.Create<string, object>());
+                _encProperties = Output.All(value, emptySecret).Apply(v => v[0]);
+            }
         }
 
         /// <summary>

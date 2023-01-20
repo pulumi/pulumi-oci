@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Blockchain
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetBlockchainPlatformResult> InvokeAsync(GetBlockchainPlatformArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetBlockchainPlatformResult>("oci:Blockchain/getBlockchainPlatform:getBlockchainPlatform", args ?? new GetBlockchainPlatformArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetBlockchainPlatformResult>("oci:Blockchain/getBlockchainPlatform:getBlockchainPlatform", args ?? new GetBlockchainPlatformArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Blockchain Platform resource in Oracle Cloud Infrastructure Blockchain service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Blockchain
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetBlockchainPlatformResult> Invoke(GetBlockchainPlatformInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetBlockchainPlatformResult>("oci:Blockchain/getBlockchainPlatform:getBlockchainPlatform", args ?? new GetBlockchainPlatformInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetBlockchainPlatformResult>("oci:Blockchain/getBlockchainPlatform:getBlockchainPlatform", args ?? new GetBlockchainPlatformInvokeArgs(), options.WithDefaults());
     }
 
 

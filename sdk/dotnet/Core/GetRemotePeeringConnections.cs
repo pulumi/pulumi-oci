@@ -41,7 +41,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetRemotePeeringConnectionsResult> InvokeAsync(GetRemotePeeringConnectionsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetRemotePeeringConnectionsResult>("oci:Core/getRemotePeeringConnections:getRemotePeeringConnections", args ?? new GetRemotePeeringConnectionsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetRemotePeeringConnectionsResult>("oci:Core/getRemotePeeringConnections:getRemotePeeringConnections", args ?? new GetRemotePeeringConnectionsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Remote Peering Connections in Oracle Cloud Infrastructure Core service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetRemotePeeringConnectionsResult> Invoke(GetRemotePeeringConnectionsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetRemotePeeringConnectionsResult>("oci:Core/getRemotePeeringConnections:getRemotePeeringConnections", args ?? new GetRemotePeeringConnectionsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetRemotePeeringConnectionsResult>("oci:Core/getRemotePeeringConnections:getRemotePeeringConnections", args ?? new GetRemotePeeringConnectionsInvokeArgs(), options.WithDefaults());
     }
 
 

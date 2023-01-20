@@ -60,12 +60,14 @@ type LookupDeploymentResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// The Minimum number of OCPUs to be made available for this Deployment.
 	CpuCoreCount int `pulumi:"cpuCoreCount"`
-	// Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
 	DeploymentBackupId string `pulumi:"deploymentBackupId"`
-	DeploymentId       string `pulumi:"deploymentId"`
-	// The deployment type.
+	// Information regarding the deployment diagnostic collection
+	DeploymentDiagnosticDatas []GetDeploymentDeploymentDiagnosticData `pulumi:"deploymentDiagnosticDatas"`
+	DeploymentId              string                                  `pulumi:"deploymentId"`
+	// The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value OGG is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent DATABASE_ORACLE value.
 	DeploymentType string `pulumi:"deploymentType"`
 	// The URL of a resource.
 	DeploymentUrl string `pulumi:"deploymentUrl"`
@@ -75,7 +77,7 @@ type LookupDeploymentResult struct {
 	DisplayName string `pulumi:"displayName"`
 	// A three-label Fully Qualified Domain Name (FQDN) for a resource.
 	Fqdn string `pulumi:"fqdn"`
-	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
 	Id string `pulumi:"id"`
@@ -95,7 +97,7 @@ type LookupDeploymentResult struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Possible GGS lifecycle sub-states.
 	LifecycleSubState string `pulumi:"lifecycleSubState"`
-	// An array of [Network Security Group](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) OCIDs used to define network access for a deployment.
+	// An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
 	NsgIds []string `pulumi:"nsgIds"`
 	// Deployment Data for an OggDeployment
 	OggDatas []GetDeploymentOggData `pulumi:"oggDatas"`
@@ -109,7 +111,7 @@ type LookupDeploymentResult struct {
 	StorageUtilizationInBytes string `pulumi:"storageUtilizationInBytes"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
 	SubnetId string `pulumi:"subnetId"`
-	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeCreated string `pulumi:"timeCreated"`
@@ -167,7 +169,7 @@ func (o LookupDeploymentResultOutput) CpuCoreCount() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) int { return v.CpuCoreCount }).(pulumi.IntOutput)
 }
 
-// Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+// Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
 func (o LookupDeploymentResultOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
@@ -177,11 +179,18 @@ func (o LookupDeploymentResultOutput) DeploymentBackupId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) string { return v.DeploymentBackupId }).(pulumi.StringOutput)
 }
 
+// Information regarding the deployment diagnostic collection
+func (o LookupDeploymentResultOutput) DeploymentDiagnosticDatas() GetDeploymentDeploymentDiagnosticDataArrayOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) []GetDeploymentDeploymentDiagnosticData {
+		return v.DeploymentDiagnosticDatas
+	}).(GetDeploymentDeploymentDiagnosticDataArrayOutput)
+}
+
 func (o LookupDeploymentResultOutput) DeploymentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) string { return v.DeploymentId }).(pulumi.StringOutput)
 }
 
-// The deployment type.
+// The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value OGG is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent DATABASE_ORACLE value.
 func (o LookupDeploymentResultOutput) DeploymentType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) string { return v.DeploymentType }).(pulumi.StringOutput)
 }
@@ -206,7 +215,7 @@ func (o LookupDeploymentResultOutput) Fqdn() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) string { return v.Fqdn }).(pulumi.StringOutput)
 }
 
-// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 func (o LookupDeploymentResultOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
@@ -256,7 +265,7 @@ func (o LookupDeploymentResultOutput) LifecycleSubState() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) string { return v.LifecycleSubState }).(pulumi.StringOutput)
 }
 
-// An array of [Network Security Group](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) OCIDs used to define network access for a deployment.
+// An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
 func (o LookupDeploymentResultOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
@@ -291,7 +300,7 @@ func (o LookupDeploymentResultOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) string { return v.SubnetId }).(pulumi.StringOutput)
 }
 
-// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 func (o LookupDeploymentResultOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }

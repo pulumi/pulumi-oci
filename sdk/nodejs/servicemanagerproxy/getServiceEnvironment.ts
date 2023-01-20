@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getServiceEnvironment(args: GetServiceEnvironmentArgs, opts?: pulumi.InvokeOptions): Promise<GetServiceEnvironmentResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ServiceManagerProxy/getServiceEnvironment:getServiceEnvironment", {
         "compartmentId": args.compartmentId,
         "serviceEnvironmentId": args.serviceEnvironmentId,
@@ -82,9 +80,25 @@ export interface GetServiceEnvironmentResult {
      */
     readonly subscriptionId: string;
 }
-
+/**
+ * This data source provides details about a specific Service Environment resource in Oracle Cloud Infrastructure Service Manager Proxy service.
+ *
+ * Get the detailed information for a specific service environment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testServiceEnvironment = oci.ServiceManagerProxy.getServiceEnvironment({
+ *     compartmentId: _var.compartment_id,
+ *     serviceEnvironmentId: oci_service_manager_proxy_service_environment.test_service_environment.id,
+ * });
+ * ```
+ */
 export function getServiceEnvironmentOutput(args: GetServiceEnvironmentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetServiceEnvironmentResult> {
-    return pulumi.output(args).apply(a => getServiceEnvironment(a, opts))
+    return pulumi.output(args).apply((a: any) => getServiceEnvironment(a, opts))
 }
 
 /**

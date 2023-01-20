@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Opsi
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAwrHubAwrSnapshotResult> InvokeAsync(GetAwrHubAwrSnapshotArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAwrHubAwrSnapshotResult>("oci:Opsi/getAwrHubAwrSnapshot:getAwrHubAwrSnapshot", args ?? new GetAwrHubAwrSnapshotArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAwrHubAwrSnapshotResult>("oci:Opsi/getAwrHubAwrSnapshot:getAwrHubAwrSnapshot", args ?? new GetAwrHubAwrSnapshotArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Awr Hub Awr Snapshot resource in Oracle Cloud Infrastructure Opsi service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.Opsi
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAwrHubAwrSnapshotResult> Invoke(GetAwrHubAwrSnapshotInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAwrHubAwrSnapshotResult>("oci:Opsi/getAwrHubAwrSnapshot:getAwrHubAwrSnapshot", args ?? new GetAwrHubAwrSnapshotInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAwrHubAwrSnapshotResult>("oci:Opsi/getAwrHubAwrSnapshot:getAwrHubAwrSnapshot", args ?? new GetAwrHubAwrSnapshotInvokeArgs(), options.WithDefaults());
     }
 
 

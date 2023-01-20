@@ -38,7 +38,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetHostnamesResult> InvokeAsync(GetHostnamesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetHostnamesResult>("oci:LoadBalancer/getHostnames:getHostnames", args ?? new GetHostnamesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetHostnamesResult>("oci:LoadBalancer/getHostnames:getHostnames", args ?? new GetHostnamesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Hostnames in Oracle Cloud Infrastructure Load Balancer service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetHostnamesResult> Invoke(GetHostnamesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetHostnamesResult>("oci:LoadBalancer/getHostnames:getHostnames", args ?? new GetHostnamesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetHostnamesResult>("oci:LoadBalancer/getHostnames:getHostnames", args ?? new GetHostnamesInvokeArgs(), options.WithDefaults());
     }
 
 

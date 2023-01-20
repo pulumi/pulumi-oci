@@ -31,6 +31,7 @@ from .db_node_console_connection import *
 from .db_system import *
 from .db_systems_upgrade import *
 from .exadata_infrastructure import *
+from .exadata_infrastructure_compute import *
 from .exadata_infrastructure_storage import *
 from .exadata_iorm_config import *
 from .external_container_database import *
@@ -57,6 +58,7 @@ from .get_autonomous_database_backups import *
 from .get_autonomous_database_dataguard_association import *
 from .get_autonomous_database_dataguard_associations import *
 from .get_autonomous_database_instance_wallet_management import *
+from .get_autonomous_database_refreshable_clones import *
 from .get_autonomous_database_regional_wallet_management import *
 from .get_autonomous_database_wallet import *
 from .get_autonomous_databases import *
@@ -113,6 +115,7 @@ from .get_db_systems_upgrade_history_entry import *
 from .get_db_versions import *
 from .get_exadata_infrastructure import *
 from .get_exadata_infrastructure_download_config_file import *
+from .get_exadata_infrastructure_un_allocated_resource import *
 from .get_exadata_infrastructures import *
 from .get_exadata_iorm_config import *
 from .get_external_container_database import *
@@ -151,6 +154,7 @@ from .get_vm_clusters import *
 from .key_store import *
 from .maintenance_run import *
 from .pluggable_database import *
+from .pluggable_database_managements_management import *
 from .pluggable_databases_local_clone import *
 from .pluggable_databases_remote_clone import *
 from .vm_cluster import *

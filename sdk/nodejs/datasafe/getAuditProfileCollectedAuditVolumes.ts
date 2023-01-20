@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAuditProfileCollectedAuditVolumes(args: GetAuditProfileCollectedAuditVolumesArgs, opts?: pulumi.InvokeOptions): Promise<GetAuditProfileCollectedAuditVolumesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getAuditProfileCollectedAuditVolumes:getAuditProfileCollectedAuditVolumes", {
         "auditProfileId": args.auditProfileId,
         "filters": args.filters,
@@ -83,9 +81,27 @@ export interface GetAuditProfileCollectedAuditVolumesResult {
     readonly monthInConsiderationLessThan?: string;
     readonly workRequestId: string;
 }
-
+/**
+ * This data source provides the list of Audit Profile Collected Audit Volumes in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Gets a list of all collected audit volume data points.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAuditProfileCollectedAuditVolumes = oci.DataSafe.getAuditProfileCollectedAuditVolumes({
+ *     auditProfileId: oci_data_safe_audit_profile.test_audit_profile.id,
+ *     workRequestId: oci_containerengine_work_request.test_work_request.id,
+ *     monthInConsiderationGreaterThan: _var.audit_profile_collected_audit_volume_month_in_consideration_greater_than,
+ *     monthInConsiderationLessThan: _var.audit_profile_collected_audit_volume_month_in_consideration_less_than,
+ * });
+ * ```
+ */
 export function getAuditProfileCollectedAuditVolumesOutput(args: GetAuditProfileCollectedAuditVolumesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuditProfileCollectedAuditVolumesResult> {
-    return pulumi.output(args).apply(a => getAuditProfileCollectedAuditVolumes(a, opts))
+    return pulumi.output(args).apply((a: any) => getAuditProfileCollectedAuditVolumes(a, opts))
 }
 
 /**

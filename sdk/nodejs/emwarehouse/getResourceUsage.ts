@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getResourceUsage(args: GetResourceUsageArgs, opts?: pulumi.InvokeOptions): Promise<GetResourceUsageResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:EmWarehouse/getResourceUsage:getResourceUsage", {
         "emWarehouseId": args.emWarehouseId,
     }, opts);
@@ -72,9 +70,24 @@ export interface GetResourceUsageResult {
      */
     readonly targetsCount: number;
 }
-
+/**
+ * This data source provides details about a specific Em Warehouse Resource Usage resource in Oracle Cloud Infrastructure Em Warehouse service.
+ *
+ * Gets a EmWarehouseResourceUsage by identifier
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testEmWarehouseResourceUsage = oci.EmWarehouse.getResourceUsage({
+ *     emWarehouseId: oci_em_warehouse_em_warehouse.test_em_warehouse.id,
+ * });
+ * ```
+ */
 export function getResourceUsageOutput(args: GetResourceUsageOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetResourceUsageResult> {
-    return pulumi.output(args).apply(a => getResourceUsage(a, opts))
+    return pulumi.output(args).apply((a: any) => getResourceUsage(a, opts))
 }
 
 /**

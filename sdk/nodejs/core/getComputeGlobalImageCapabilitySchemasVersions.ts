@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getComputeGlobalImageCapabilitySchemasVersions(args: GetComputeGlobalImageCapabilitySchemasVersionsArgs, opts?: pulumi.InvokeOptions): Promise<GetComputeGlobalImageCapabilitySchemasVersionsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getComputeGlobalImageCapabilitySchemasVersions:getComputeGlobalImageCapabilitySchemasVersions", {
         "computeGlobalImageCapabilitySchemaId": args.computeGlobalImageCapabilitySchemaId,
         "displayName": args.displayName,
@@ -72,9 +70,25 @@ export interface GetComputeGlobalImageCapabilitySchemasVersionsResult {
      */
     readonly id: string;
 }
-
+/**
+ * This data source provides the list of Compute Global Image Capability Schemas Versions in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists Compute Global Image Capability Schema versions in the specified compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testComputeGlobalImageCapabilitySchemasVersions = oci.Core.getComputeGlobalImageCapabilitySchemasVersions({
+ *     computeGlobalImageCapabilitySchemaId: oci_core_compute_global_image_capability_schema.test_compute_global_image_capability_schema.id,
+ *     displayName: _var.compute_global_image_capability_schemas_version_display_name,
+ * });
+ * ```
+ */
 export function getComputeGlobalImageCapabilitySchemasVersionsOutput(args: GetComputeGlobalImageCapabilitySchemasVersionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetComputeGlobalImageCapabilitySchemasVersionsResult> {
-    return pulumi.output(args).apply(a => getComputeGlobalImageCapabilitySchemasVersions(a, opts))
+    return pulumi.output(args).apply((a: any) => getComputeGlobalImageCapabilitySchemasVersions(a, opts))
 }
 
 /**

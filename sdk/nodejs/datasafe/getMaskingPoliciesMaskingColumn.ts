@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMaskingPoliciesMaskingColumn(args: GetMaskingPoliciesMaskingColumnArgs, opts?: pulumi.InvokeOptions): Promise<GetMaskingPoliciesMaskingColumnResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getMaskingPoliciesMaskingColumn:getMaskingPoliciesMaskingColumn", {
         "maskingColumnKey": args.maskingColumnKey,
         "maskingPolicyId": args.maskingPolicyId,
@@ -119,9 +117,25 @@ export interface GetMaskingPoliciesMaskingColumnResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Masking Policies Masking Column resource in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Gets the details of the specified masking column.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testMaskingPoliciesMaskingColumn = oci.DataSafe.getMaskingPoliciesMaskingColumn({
+ *     maskingColumnKey: _var.masking_policies_masking_column_masking_column_key,
+ *     maskingPolicyId: oci_data_safe_masking_policy.test_masking_policy.id,
+ * });
+ * ```
+ */
 export function getMaskingPoliciesMaskingColumnOutput(args: GetMaskingPoliciesMaskingColumnOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMaskingPoliciesMaskingColumnResult> {
-    return pulumi.output(args).apply(a => getMaskingPoliciesMaskingColumn(a, opts))
+    return pulumi.output(args).apply((a: any) => getMaskingPoliciesMaskingColumn(a, opts))
 }
 
 /**

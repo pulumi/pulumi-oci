@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  */
 export function getJavaFamilies(args?: GetJavaFamiliesArgs, opts?: pulumi.InvokeOptions): Promise<GetJavaFamiliesResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Jms/getJavaFamilies:getJavaFamilies", {
         "displayName": args.displayName,
         "familyVersion": args.familyVersion,
@@ -74,9 +72,26 @@ export interface GetJavaFamiliesResult {
      */
     readonly javaFamilyCollections: outputs.Jms.GetJavaFamiliesJavaFamilyCollection[];
 }
-
+/**
+ * This data source provides the list of Java Families in Oracle Cloud Infrastructure Jms service.
+ *
+ * Returns a list of the Java release family information.
+ * A Java release family is typically a major version in the Java version identifier.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testJavaFamilies = oci.Jms.getJavaFamilies({
+ *     displayName: _var.java_family_display_name,
+ *     familyVersion: _var.java_family_family_version,
+ * });
+ * ```
+ */
 export function getJavaFamiliesOutput(args?: GetJavaFamiliesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJavaFamiliesResult> {
-    return pulumi.output(args).apply(a => getJavaFamilies(a, opts))
+    return pulumi.output(args).apply((a: any) => getJavaFamilies(a, opts))
 }
 
 /**

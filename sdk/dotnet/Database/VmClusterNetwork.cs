@@ -44,9 +44,6 @@ namespace Pulumi.Oci.Database
     ///         {
     ///             new Oci.Database.Inputs.VmClusterNetworkVmNetworkArgs
     ///             {
-    ///                 DomainName = @var.Vm_cluster_network_vm_networks_domain_name,
-    ///                 Gateway = @var.Vm_cluster_network_vm_networks_gateway,
-    ///                 Netmask = @var.Vm_cluster_network_vm_networks_netmask,
     ///                 NetworkType = @var.Vm_cluster_network_vm_networks_network_type,
     ///                 Nodes = new[]
     ///                 {
@@ -54,10 +51,15 @@ namespace Pulumi.Oci.Database
     ///                     {
     ///                         Hostname = @var.Vm_cluster_network_vm_networks_nodes_hostname,
     ///                         Ip = @var.Vm_cluster_network_vm_networks_nodes_ip,
+    ///                         DbServerId = oci_database_db_server.Test_db_server.Id,
+    ///                         State = @var.Vm_cluster_network_vm_networks_nodes_state,
     ///                         Vip = @var.Vm_cluster_network_vm_networks_nodes_vip,
     ///                         VipHostname = @var.Vm_cluster_network_vm_networks_nodes_vip_hostname,
     ///                     },
     ///                 },
+    ///                 DomainName = oci_identity_domain.Test_domain.Name,
+    ///                 Gateway = @var.Vm_cluster_network_vm_networks_gateway,
+    ///                 Netmask = @var.Vm_cluster_network_vm_networks_netmask,
     ///                 VlanId = @var.Vm_cluster_network_vm_networks_vlan_id,
     ///             },
     ///         },
@@ -85,6 +87,9 @@ namespace Pulumi.Oci.Database
     [OciResourceType("oci:Database/vmClusterNetwork:VmClusterNetwork")]
     public partial class VmClusterNetwork : global::Pulumi.CustomResource
     {
+        [Output("action")]
+        public Output<string?> Action { get; private set; } = null!;
+
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
@@ -140,7 +145,7 @@ namespace Pulumi.Oci.Database
         public Output<ImmutableArray<Outputs.VmClusterNetworkScan>> Scans { get; private set; } = null!;
 
         /// <summary>
-        /// The current state of the VM cluster network.
+        /// (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
@@ -212,6 +217,9 @@ namespace Pulumi.Oci.Database
 
     public sealed class VmClusterNetworkArgs : global::Pulumi.ResourceArgs
     {
+        [Input("action")]
+        public Input<string>? Action { get; set; }
+
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
@@ -313,6 +321,9 @@ namespace Pulumi.Oci.Database
 
     public sealed class VmClusterNetworkState : global::Pulumi.ResourceArgs
     {
+        [Input("action")]
+        public Input<string>? Action { get; set; }
+
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
@@ -398,7 +409,7 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
-        /// The current state of the VM cluster network.
+        /// (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }

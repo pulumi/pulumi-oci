@@ -154,8 +154,6 @@ public final class VolumeBackupPolicyScheduleArgs extends com.pulumi.resources.R
     /**
      * (Updatable) Specifies what time zone is the schedule in
      * enum:
-     * - `UTC`
-     * - `REGIONAL_DATA_CENTER_TIME`
      * 
      */
     @Import(name="timeZone")
@@ -164,8 +162,6 @@ public final class VolumeBackupPolicyScheduleArgs extends com.pulumi.resources.R
     /**
      * @return (Updatable) Specifies what time zone is the schedule in
      * enum:
-     * - `UTC`
-     * - `REGIONAL_DATA_CENTER_TIME`
      * 
      */
     public Optional<Output<String>> timeZone() {
@@ -397,8 +393,6 @@ public final class VolumeBackupPolicyScheduleArgs extends com.pulumi.resources.R
         /**
          * @param timeZone (Updatable) Specifies what time zone is the schedule in
          * enum:
-         * - `UTC`
-         * - `REGIONAL_DATA_CENTER_TIME`
          * 
          * @return builder
          * 
@@ -411,8 +405,6 @@ public final class VolumeBackupPolicyScheduleArgs extends com.pulumi.resources.R
         /**
          * @param timeZone (Updatable) Specifies what time zone is the schedule in
          * enum:
-         * - `UTC`
-         * - `REGIONAL_DATA_CENTER_TIME`
          * 
          * @return builder
          * 

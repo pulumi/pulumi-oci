@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getServices(args: GetServicesArgs, opts?: pulumi.InvokeOptions): Promise<GetServicesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Limits/getServices:getServices", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -60,9 +58,25 @@ export interface GetServicesResult {
      */
     readonly services: outputs.Limits.GetServicesService[];
 }
-
+/**
+ * This data source provides the list of Services in Oracle Cloud Infrastructure Limits service.
+ *
+ * Returns the list of supported services.
+ * This includes the programmatic service name, along with the friendly service name.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testServices = oci.Limits.getServices({
+ *     compartmentId: _var.tenancy_ocid,
+ * });
+ * ```
+ */
 export function getServicesOutput(args: GetServicesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetServicesResult> {
-    return pulumi.output(args).apply(a => getServices(a, opts))
+    return pulumi.output(args).apply((a: any) => getServices(a, opts))
 }
 
 /**

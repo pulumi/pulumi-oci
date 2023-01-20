@@ -71,8 +71,6 @@ type LookupVtapResult struct {
 	// The VTAP's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
 	Id string `pulumi:"id"`
 	// Used to start or stop a `Vtap` resource.
-	// * `TRUE` directs the VTAP to start mirroring traffic.
-	// * `FALSE` (Default) directs the VTAP to stop mirroring traffic.
 	IsVtapEnabled bool `pulumi:"isVtapEnabled"`
 	// The VTAP's current running state.
 	LifecycleStateDetails string `pulumi:"lifecycleStateDetails"`
@@ -179,8 +177,6 @@ func (o LookupVtapResultOutput) Id() pulumi.StringOutput {
 }
 
 // Used to start or stop a `Vtap` resource.
-// * `TRUE` directs the VTAP to start mirroring traffic.
-// * `FALSE` (Default) directs the VTAP to stop mirroring traffic.
 func (o LookupVtapResultOutput) IsVtapEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupVtapResult) bool { return v.IsVtapEnabled }).(pulumi.BoolOutput)
 }

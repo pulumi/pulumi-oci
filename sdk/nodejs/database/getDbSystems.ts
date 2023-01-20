@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -30,11 +31,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDbSystems(args: GetDbSystemsArgs, opts?: pulumi.InvokeOptions): Promise<GetDbSystemsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getDbSystems:getDbSystems", {
         "availabilityDomain": args.availabilityDomain,
         "backupId": args.backupId,
@@ -103,9 +101,32 @@ export interface GetDbSystemsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Db Systems in Oracle Cloud Infrastructure Database service.
+ *
+ * Lists the DB systems in the specified compartment. You can specify a `backupId` to list only the DB systems that support creating a database using this backup in this compartment.
+ *
+ * **Note:** Deprecated for Exadata Cloud Service systems. Use the [new resource model APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model) instead.
+ *
+ * For Exadata Cloud Service instances, support for this API will end on May 15th, 2021. See [Switching an Exadata DB System to the New Resource Model and APIs](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem_topic-resource_model_conversion.htm) for details on converting existing Exadata DB systems to the new resource model.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDbSystems = oci.Database.getDbSystems({
+ *     compartmentId: _var.compartment_id,
+ *     availabilityDomain: _var.db_system_availability_domain,
+ *     backupId: oci_database_backup.test_backup.id,
+ *     displayName: _var.db_system_display_name,
+ *     state: _var.db_system_state,
+ * });
+ * ```
+ */
 export function getDbSystemsOutput(args: GetDbSystemsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbSystemsResult> {
-    return pulumi.output(args).apply(a => getDbSystems(a, opts))
+    return pulumi.output(args).apply((a: any) => getDbSystems(a, opts))
 }
 
 /**

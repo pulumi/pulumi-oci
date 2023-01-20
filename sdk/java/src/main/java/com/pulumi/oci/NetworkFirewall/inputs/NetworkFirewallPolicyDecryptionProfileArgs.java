@@ -151,26 +151,30 @@ public final class NetworkFirewallPolicyDecryptionProfileArgs extends com.pulumi
         return Optional.ofNullable(this.isUntrustedIssuerBlocked);
     }
 
+    /**
+     * Source of the secrets, where the secrets are stored.
+     * 
+     */
     @Import(name="key", required=true)
     private Output<String> key;
 
+    /**
+     * @return Source of the secrets, where the secrets are stored.
+     * 
+     */
     public Output<String> key() {
         return this.key;
     }
 
     /**
-     * (Updatable) Type of the secrets mapped based on the policy.
-     * * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-     * * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+     * (Updatable) Type of the url lists based on the policy
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return (Updatable) Type of the secrets mapped based on the policy.
-     * * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-     * * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+     * @return (Updatable) Type of the url lists based on the policy
      * 
      */
     public Output<String> type() {
@@ -400,19 +404,29 @@ public final class NetworkFirewallPolicyDecryptionProfileArgs extends com.pulumi
             return isUntrustedIssuerBlocked(Output.of(isUntrustedIssuerBlocked));
         }
 
+        /**
+         * @param key Source of the secrets, where the secrets are stored.
+         * 
+         * @return builder
+         * 
+         */
         public Builder key(Output<String> key) {
             $.key = key;
             return this;
         }
 
+        /**
+         * @param key Source of the secrets, where the secrets are stored.
+         * 
+         * @return builder
+         * 
+         */
         public Builder key(String key) {
             return key(Output.of(key));
         }
 
         /**
-         * @param type (Updatable) Type of the secrets mapped based on the policy.
-         * * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-         * * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+         * @param type (Updatable) Type of the url lists based on the policy
          * 
          * @return builder
          * 
@@ -423,9 +437,7 @@ public final class NetworkFirewallPolicyDecryptionProfileArgs extends com.pulumi
         }
 
         /**
-         * @param type (Updatable) Type of the secrets mapped based on the policy.
-         * * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-         * * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+         * @param type (Updatable) Type of the url lists based on the policy
          * 
          * @return builder
          * 

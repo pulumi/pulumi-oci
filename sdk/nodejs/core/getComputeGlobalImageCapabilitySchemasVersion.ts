@@ -22,11 +22,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getComputeGlobalImageCapabilitySchemasVersion(args: GetComputeGlobalImageCapabilitySchemasVersionArgs, opts?: pulumi.InvokeOptions): Promise<GetComputeGlobalImageCapabilitySchemasVersionResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getComputeGlobalImageCapabilitySchemasVersion:getComputeGlobalImageCapabilitySchemasVersion", {
         "computeGlobalImageCapabilitySchemaId": args.computeGlobalImageCapabilitySchemaId,
         "computeGlobalImageCapabilitySchemaVersionName": args.computeGlobalImageCapabilitySchemaVersionName,
@@ -77,9 +74,25 @@ export interface GetComputeGlobalImageCapabilitySchemasVersionResult {
      */
     readonly timeCreated: string;
 }
-
+/**
+ * This data source provides details about a specific Compute Global Image Capability Schemas Version resource in Oracle Cloud Infrastructure Core service.
+ *
+ * Gets the specified Compute Global Image Capability Schema Version
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testComputeGlobalImageCapabilitySchemasVersion = oci.Core.getComputeGlobalImageCapabilitySchemasVersion({
+ *     computeGlobalImageCapabilitySchemaId: oci_core_compute_global_image_capability_schema.test_compute_global_image_capability_schema.id,
+ *     computeGlobalImageCapabilitySchemaVersionName: _var.compute_global_image_capability_schemas_version_compute_global_image_capability_schema_version_name,
+ * });
+ * ```
+ */
 export function getComputeGlobalImageCapabilitySchemasVersionOutput(args: GetComputeGlobalImageCapabilitySchemasVersionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetComputeGlobalImageCapabilitySchemasVersionResult> {
-    return pulumi.output(args).apply(a => getComputeGlobalImageCapabilitySchemasVersion(a, opts))
+    return pulumi.output(args).apply((a: any) => getComputeGlobalImageCapabilitySchemasVersion(a, opts))
 }
 
 /**

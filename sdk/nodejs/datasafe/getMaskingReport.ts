@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMaskingReport(args: GetMaskingReportArgs, opts?: pulumi.InvokeOptions): Promise<GetMaskingReportResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getMaskingReport:getMaskingReport", {
         "maskingReportId": args.maskingReportId,
     }, opts);
@@ -63,9 +60,17 @@ export interface GetMaskingReportResult {
      */
     readonly maskingWorkRequestId: string;
     /**
+     * The current state of the masking report.
+     */
+    readonly state: string;
+    /**
      * The OCID of the target database masked.
      */
     readonly targetId: string;
+    /**
+     * The date and time the masking report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     */
+    readonly timeCreated: string;
     /**
      * The date and time data masking finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
      */
@@ -95,9 +100,24 @@ export interface GetMaskingReportResult {
      */
     readonly totalMaskedValues: string;
 }
-
+/**
+ * This data source provides details about a specific Masking Report resource in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Gets the details of the specified masking report.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testMaskingReport = oci.DataSafe.getMaskingReport({
+ *     maskingReportId: oci_data_safe_masking_report.test_masking_report.id,
+ * });
+ * ```
+ */
 export function getMaskingReportOutput(args: GetMaskingReportOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMaskingReportResult> {
-    return pulumi.output(args).apply(a => getMaskingReport(a, opts))
+    return pulumi.output(args).apply((a: any) => getMaskingReport(a, opts))
 }
 
 /**

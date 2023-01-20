@@ -85,8 +85,6 @@ public final class SecurityListIngressSecurityRuleArgs extends com.pulumi.resour
 
     /**
      * (Updatable) Type of source for the rule. The default is `CIDR_BLOCK`.
-     * * `CIDR_BLOCK`: If the rule&#39;s `source` is an IP address range in CIDR notation.
-     * * `SERVICE_CIDR_BLOCK`: If the rule&#39;s `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
      * 
      */
     @Import(name="sourceType")
@@ -94,8 +92,6 @@ public final class SecurityListIngressSecurityRuleArgs extends com.pulumi.resour
 
     /**
      * @return (Updatable) Type of source for the rule. The default is `CIDR_BLOCK`.
-     * * `CIDR_BLOCK`: If the rule&#39;s `source` is an IP address range in CIDR notation.
-     * * `SERVICE_CIDR_BLOCK`: If the rule&#39;s `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
      * 
      */
     public Optional<Output<String>> sourceType() {
@@ -268,8 +264,6 @@ public final class SecurityListIngressSecurityRuleArgs extends com.pulumi.resour
 
         /**
          * @param sourceType (Updatable) Type of source for the rule. The default is `CIDR_BLOCK`.
-         * * `CIDR_BLOCK`: If the rule&#39;s `source` is an IP address range in CIDR notation.
-         * * `SERVICE_CIDR_BLOCK`: If the rule&#39;s `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
          * 
          * @return builder
          * 
@@ -281,8 +275,6 @@ public final class SecurityListIngressSecurityRuleArgs extends com.pulumi.resour
 
         /**
          * @param sourceType (Updatable) Type of source for the rule. The default is `CIDR_BLOCK`.
-         * * `CIDR_BLOCK`: If the rule&#39;s `source` is an IP address range in CIDR notation.
-         * * `SERVICE_CIDR_BLOCK`: If the rule&#39;s `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
          * 
          * @return builder
          * 

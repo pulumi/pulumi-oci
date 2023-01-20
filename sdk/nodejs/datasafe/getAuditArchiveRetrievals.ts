@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -29,11 +30,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAuditArchiveRetrievals(args: GetAuditArchiveRetrievalsArgs, opts?: pulumi.InvokeOptions): Promise<GetAuditArchiveRetrievalsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getAuditArchiveRetrievals:getAuditArchiveRetrievals", {
         "accessLevel": args.accessLevel,
         "auditArchiveRetrievalId": args.auditArchiveRetrievalId,
@@ -123,9 +121,31 @@ export interface GetAuditArchiveRetrievalsResult {
      */
     readonly timeOfExpiry?: string;
 }
-
+/**
+ * This data source provides the list of Audit Archive Retrievals in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Returns the list of audit archive retrieval.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAuditArchiveRetrievals = oci.DataSafe.getAuditArchiveRetrievals({
+ *     compartmentId: _var.compartment_id,
+ *     accessLevel: _var.audit_archive_retrieval_access_level,
+ *     auditArchiveRetrievalId: oci_data_safe_audit_archive_retrieval.test_audit_archive_retrieval.id,
+ *     compartmentIdInSubtree: _var.audit_archive_retrieval_compartment_id_in_subtree,
+ *     displayName: _var.audit_archive_retrieval_display_name,
+ *     state: _var.audit_archive_retrieval_state,
+ *     targetId: oci_cloud_guard_target.test_target.id,
+ *     timeOfExpiry: _var.audit_archive_retrieval_time_of_expiry,
+ * });
+ * ```
+ */
 export function getAuditArchiveRetrievalsOutput(args: GetAuditArchiveRetrievalsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuditArchiveRetrievalsResult> {
-    return pulumi.output(args).apply(a => getAuditArchiveRetrievals(a, opts))
+    return pulumi.output(args).apply((a: any) => getAuditArchiveRetrievals(a, opts))
 }
 
 /**

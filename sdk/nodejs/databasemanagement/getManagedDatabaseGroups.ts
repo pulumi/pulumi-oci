@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -28,11 +29,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabaseGroups(args: GetManagedDatabaseGroupsArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseGroupsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabaseGroups:getManagedDatabaseGroups", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -91,9 +89,30 @@ export interface GetManagedDatabaseGroupsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Managed Database Groups in Oracle Cloud Infrastructure Database Management service.
+ *
+ * Gets the Managed Database Group for a specific ID or the list of Managed Database Groups in
+ * a specific compartment. Managed Database Groups can also be filtered based on the name parameter.
+ * Only one of the parameters, ID or name should be provided. If none of these parameters is provided,
+ * all the Managed Database Groups in the compartment are listed.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testManagedDatabaseGroups = oci.DatabaseManagement.getManagedDatabaseGroups({
+ *     compartmentId: _var.compartment_id,
+ *     id: _var.managed_database_group_id,
+ *     name: _var.managed_database_group_name,
+ *     state: _var.managed_database_group_state,
+ * });
+ * ```
+ */
 export function getManagedDatabaseGroupsOutput(args: GetManagedDatabaseGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseGroupsResult> {
-    return pulumi.output(args).apply(a => getManagedDatabaseGroups(a, opts))
+    return pulumi.output(args).apply((a: any) => getManagedDatabaseGroups(a, opts))
 }
 
 /**

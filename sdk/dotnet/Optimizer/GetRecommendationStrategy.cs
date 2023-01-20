@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Optimizer
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetRecommendationStrategyResult> InvokeAsync(GetRecommendationStrategyArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetRecommendationStrategyResult>("oci:Optimizer/getRecommendationStrategy:getRecommendationStrategy", args ?? new GetRecommendationStrategyArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetRecommendationStrategyResult>("oci:Optimizer/getRecommendationStrategy:getRecommendationStrategy", args ?? new GetRecommendationStrategyArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Recommendation Strategy resource in Oracle Cloud Infrastructure Optimizer service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.Optimizer
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetRecommendationStrategyResult> Invoke(GetRecommendationStrategyInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetRecommendationStrategyResult>("oci:Optimizer/getRecommendationStrategy:getRecommendationStrategy", args ?? new GetRecommendationStrategyInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetRecommendationStrategyResult>("oci:Optimizer/getRecommendationStrategy:getRecommendationStrategy", args ?? new GetRecommendationStrategyInvokeArgs(), options.WithDefaults());
     }
 
 

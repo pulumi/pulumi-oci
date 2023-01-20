@@ -64,6 +64,21 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
      */
     private String logGroupId;
     /**
+     * @return The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
+     * 
+     */
+    private String logSet;
+    /**
+     * @return The regex to be applied against given logSetKey. Regex has to be in string escaped format.
+     * 
+     */
+    private String logSetExtRegex;
+    /**
+     * @return An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/&lt;namespace&gt;/b/&lt;bucketname&gt;/o/&lt;objectname&gt;).
+     * 
+     */
+    private String logSetKey;
+    /**
      * @return Name of the Logging Analytics Source to use for the processing.
      * 
      */
@@ -123,6 +138,11 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
      * 
      */
     private String timeUpdated;
+    /**
+     * @return Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
+     * 
+     */
+    private String timezone;
 
     private GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem() {}
     /**
@@ -194,6 +214,27 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
      */
     public String logGroupId() {
         return this.logGroupId;
+    }
+    /**
+     * @return The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
+     * 
+     */
+    public String logSet() {
+        return this.logSet;
+    }
+    /**
+     * @return The regex to be applied against given logSetKey. Regex has to be in string escaped format.
+     * 
+     */
+    public String logSetExtRegex() {
+        return this.logSetExtRegex;
+    }
+    /**
+     * @return An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/&lt;namespace&gt;/b/&lt;bucketname&gt;/o/&lt;objectname&gt;).
+     * 
+     */
+    public String logSetKey() {
+        return this.logSetKey;
     }
     /**
      * @return Name of the Logging Analytics Source to use for the processing.
@@ -279,6 +320,13 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
     public String timeUpdated() {
         return this.timeUpdated;
     }
+    /**
+     * @return Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
+     * 
+     */
+    public String timezone() {
+        return this.timezone;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -299,6 +347,9 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
         private String id;
         private String lifecycleDetails;
         private String logGroupId;
+        private String logSet;
+        private String logSetExtRegex;
+        private String logSetKey;
         private String logSourceName;
         private String name;
         private String namespace;
@@ -311,6 +362,7 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
         private String state;
         private String timeCreated;
         private String timeUpdated;
+        private String timezone;
         public Builder() {}
         public Builder(GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -324,6 +376,9 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.logGroupId = defaults.logGroupId;
+    	      this.logSet = defaults.logSet;
+    	      this.logSetExtRegex = defaults.logSetExtRegex;
+    	      this.logSetKey = defaults.logSetKey;
     	      this.logSourceName = defaults.logSourceName;
     	      this.name = defaults.name;
     	      this.namespace = defaults.namespace;
@@ -336,6 +391,7 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
+    	      this.timezone = defaults.timezone;
         }
 
         @CustomType.Setter
@@ -386,6 +442,21 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
         @CustomType.Setter
         public Builder logGroupId(String logGroupId) {
             this.logGroupId = Objects.requireNonNull(logGroupId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder logSet(String logSet) {
+            this.logSet = Objects.requireNonNull(logSet);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder logSetExtRegex(String logSetExtRegex) {
+            this.logSetExtRegex = Objects.requireNonNull(logSetExtRegex);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder logSetKey(String logSetKey) {
+            this.logSetKey = Objects.requireNonNull(logSetKey);
             return this;
         }
         @CustomType.Setter
@@ -454,6 +525,11 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        @CustomType.Setter
+        public Builder timezone(String timezone) {
+            this.timezone = Objects.requireNonNull(timezone);
+            return this;
+        }
         public GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem build() {
             final var o = new GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem();
             o.charEncoding = charEncoding;
@@ -466,6 +542,9 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
             o.id = id;
             o.lifecycleDetails = lifecycleDetails;
             o.logGroupId = logGroupId;
+            o.logSet = logSet;
+            o.logSetExtRegex = logSetExtRegex;
+            o.logSetKey = logSetKey;
             o.logSourceName = logSourceName;
             o.name = name;
             o.namespace = namespace;
@@ -478,6 +557,7 @@ public final class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollect
             o.state = state;
             o.timeCreated = timeCreated;
             o.timeUpdated = timeUpdated;
+            o.timezone = timezone;
             return o;
         }
     }

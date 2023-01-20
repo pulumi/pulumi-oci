@@ -15,6 +15,14 @@ import com.pulumi.oci.FileStorage.inputs.GetFileSystemsArgs;
 import com.pulumi.oci.FileStorage.inputs.GetFileSystemsPlainArgs;
 import com.pulumi.oci.FileStorage.inputs.GetMountTargetsArgs;
 import com.pulumi.oci.FileStorage.inputs.GetMountTargetsPlainArgs;
+import com.pulumi.oci.FileStorage.inputs.GetReplicationArgs;
+import com.pulumi.oci.FileStorage.inputs.GetReplicationPlainArgs;
+import com.pulumi.oci.FileStorage.inputs.GetReplicationTargetArgs;
+import com.pulumi.oci.FileStorage.inputs.GetReplicationTargetPlainArgs;
+import com.pulumi.oci.FileStorage.inputs.GetReplicationTargetsArgs;
+import com.pulumi.oci.FileStorage.inputs.GetReplicationTargetsPlainArgs;
+import com.pulumi.oci.FileStorage.inputs.GetReplicationsArgs;
+import com.pulumi.oci.FileStorage.inputs.GetReplicationsPlainArgs;
 import com.pulumi.oci.FileStorage.inputs.GetSnapshotArgs;
 import com.pulumi.oci.FileStorage.inputs.GetSnapshotPlainArgs;
 import com.pulumi.oci.FileStorage.inputs.GetSnapshotsArgs;
@@ -23,6 +31,10 @@ import com.pulumi.oci.FileStorage.outputs.GetExportSetsResult;
 import com.pulumi.oci.FileStorage.outputs.GetExportsResult;
 import com.pulumi.oci.FileStorage.outputs.GetFileSystemsResult;
 import com.pulumi.oci.FileStorage.outputs.GetMountTargetsResult;
+import com.pulumi.oci.FileStorage.outputs.GetReplicationResult;
+import com.pulumi.oci.FileStorage.outputs.GetReplicationTargetResult;
+import com.pulumi.oci.FileStorage.outputs.GetReplicationTargetsResult;
+import com.pulumi.oci.FileStorage.outputs.GetReplicationsResult;
 import com.pulumi.oci.FileStorage.outputs.GetSnapshotResult;
 import com.pulumi.oci.FileStorage.outputs.GetSnapshotsResult;
 import com.pulumi.oci.Utilities;
@@ -826,6 +838,666 @@ public final class FileStorageFunctions {
      */
     public static CompletableFuture<GetMountTargetsResult> getMountTargetsPlain(GetMountTargetsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:FileStorage/getMountTargets:getMountTargets", TypeShape.of(GetMountTargetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Replication resource in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Gets the specified replication&#39;s information.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetReplicationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReplication = FileStorageFunctions.getReplication(GetReplicationArgs.builder()
+     *             .replicationId(oci_file_storage_replication.test_replication().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetReplicationResult> getReplication(GetReplicationArgs args) {
+        return getReplication(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Replication resource in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Gets the specified replication&#39;s information.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetReplicationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReplication = FileStorageFunctions.getReplication(GetReplicationArgs.builder()
+     *             .replicationId(oci_file_storage_replication.test_replication().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetReplicationResult> getReplicationPlain(GetReplicationPlainArgs args) {
+        return getReplicationPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Replication resource in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Gets the specified replication&#39;s information.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetReplicationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReplication = FileStorageFunctions.getReplication(GetReplicationArgs.builder()
+     *             .replicationId(oci_file_storage_replication.test_replication().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetReplicationResult> getReplication(GetReplicationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:FileStorage/getReplication:getReplication", TypeShape.of(GetReplicationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Replication resource in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Gets the specified replication&#39;s information.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetReplicationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReplication = FileStorageFunctions.getReplication(GetReplicationArgs.builder()
+     *             .replicationId(oci_file_storage_replication.test_replication().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetReplicationResult> getReplicationPlain(GetReplicationPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:FileStorage/getReplication:getReplication", TypeShape.of(GetReplicationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Replication Target resource in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Gets the specified replication target&#39;s information.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetReplicationTargetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReplicationTarget = FileStorageFunctions.getReplicationTarget(GetReplicationTargetArgs.builder()
+     *             .replicationTargetId(oci_file_storage_replication_target.test_replication_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetReplicationTargetResult> getReplicationTarget(GetReplicationTargetArgs args) {
+        return getReplicationTarget(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Replication Target resource in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Gets the specified replication target&#39;s information.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetReplicationTargetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReplicationTarget = FileStorageFunctions.getReplicationTarget(GetReplicationTargetArgs.builder()
+     *             .replicationTargetId(oci_file_storage_replication_target.test_replication_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetReplicationTargetResult> getReplicationTargetPlain(GetReplicationTargetPlainArgs args) {
+        return getReplicationTargetPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Replication Target resource in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Gets the specified replication target&#39;s information.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetReplicationTargetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReplicationTarget = FileStorageFunctions.getReplicationTarget(GetReplicationTargetArgs.builder()
+     *             .replicationTargetId(oci_file_storage_replication_target.test_replication_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetReplicationTargetResult> getReplicationTarget(GetReplicationTargetArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:FileStorage/getReplicationTarget:getReplicationTarget", TypeShape.of(GetReplicationTargetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Replication Target resource in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Gets the specified replication target&#39;s information.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetReplicationTargetArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReplicationTarget = FileStorageFunctions.getReplicationTarget(GetReplicationTargetArgs.builder()
+     *             .replicationTargetId(oci_file_storage_replication_target.test_replication_target().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetReplicationTargetResult> getReplicationTargetPlain(GetReplicationTargetPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:FileStorage/getReplicationTarget:getReplicationTarget", TypeShape.of(GetReplicationTargetResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Replication Targets in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Lists the replication target resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetReplicationTargetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReplicationTargets = FileStorageFunctions.getReplicationTargets(GetReplicationTargetsArgs.builder()
+     *             .availabilityDomain(var_.replication_target_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.replication_target_display_name())
+     *             .id(var_.replication_target_id())
+     *             .state(var_.replication_target_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetReplicationTargetsResult> getReplicationTargets(GetReplicationTargetsArgs args) {
+        return getReplicationTargets(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Replication Targets in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Lists the replication target resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetReplicationTargetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReplicationTargets = FileStorageFunctions.getReplicationTargets(GetReplicationTargetsArgs.builder()
+     *             .availabilityDomain(var_.replication_target_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.replication_target_display_name())
+     *             .id(var_.replication_target_id())
+     *             .state(var_.replication_target_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetReplicationTargetsResult> getReplicationTargetsPlain(GetReplicationTargetsPlainArgs args) {
+        return getReplicationTargetsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Replication Targets in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Lists the replication target resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetReplicationTargetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReplicationTargets = FileStorageFunctions.getReplicationTargets(GetReplicationTargetsArgs.builder()
+     *             .availabilityDomain(var_.replication_target_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.replication_target_display_name())
+     *             .id(var_.replication_target_id())
+     *             .state(var_.replication_target_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetReplicationTargetsResult> getReplicationTargets(GetReplicationTargetsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:FileStorage/getReplicationTargets:getReplicationTargets", TypeShape.of(GetReplicationTargetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Replication Targets in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Lists the replication target resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetReplicationTargetsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReplicationTargets = FileStorageFunctions.getReplicationTargets(GetReplicationTargetsArgs.builder()
+     *             .availabilityDomain(var_.replication_target_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.replication_target_display_name())
+     *             .id(var_.replication_target_id())
+     *             .state(var_.replication_target_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetReplicationTargetsResult> getReplicationTargetsPlain(GetReplicationTargetsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:FileStorage/getReplicationTargets:getReplicationTargets", TypeShape.of(GetReplicationTargetsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Replications in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Lists the replication resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetReplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReplications = FileStorageFunctions.getReplications(GetReplicationsArgs.builder()
+     *             .availabilityDomain(var_.replication_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.replication_display_name())
+     *             .fileSystemId(oci_file_storage_file_system.test_file_system().id())
+     *             .id(var_.replication_id())
+     *             .state(var_.replication_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetReplicationsResult> getReplications(GetReplicationsArgs args) {
+        return getReplications(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Replications in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Lists the replication resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetReplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReplications = FileStorageFunctions.getReplications(GetReplicationsArgs.builder()
+     *             .availabilityDomain(var_.replication_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.replication_display_name())
+     *             .fileSystemId(oci_file_storage_file_system.test_file_system().id())
+     *             .id(var_.replication_id())
+     *             .state(var_.replication_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetReplicationsResult> getReplicationsPlain(GetReplicationsPlainArgs args) {
+        return getReplicationsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Replications in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Lists the replication resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetReplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReplications = FileStorageFunctions.getReplications(GetReplicationsArgs.builder()
+     *             .availabilityDomain(var_.replication_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.replication_display_name())
+     *             .fileSystemId(oci_file_storage_file_system.test_file_system().id())
+     *             .id(var_.replication_id())
+     *             .state(var_.replication_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetReplicationsResult> getReplications(GetReplicationsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:FileStorage/getReplications:getReplications", TypeShape.of(GetReplicationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Replications in Oracle Cloud Infrastructure File Storage service.
+     * 
+     * Lists the replication resources in the specified compartment.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.FileStorage.FileStorageFunctions;
+     * import com.pulumi.oci.FileStorage.inputs.GetReplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testReplications = FileStorageFunctions.getReplications(GetReplicationsArgs.builder()
+     *             .availabilityDomain(var_.replication_availability_domain())
+     *             .compartmentId(var_.compartment_id())
+     *             .displayName(var_.replication_display_name())
+     *             .fileSystemId(oci_file_storage_file_system.test_file_system().id())
+     *             .id(var_.replication_id())
+     *             .state(var_.replication_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetReplicationsResult> getReplicationsPlain(GetReplicationsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:FileStorage/getReplications:getReplications", TypeShape.of(GetReplicationsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Snapshot resource in Oracle Cloud Infrastructure File Storage service.

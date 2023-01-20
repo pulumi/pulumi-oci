@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDbNodeConsoleConnections(args: GetDbNodeConsoleConnectionsArgs, opts?: pulumi.InvokeOptions): Promise<GetDbNodeConsoleConnectionsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getDbNodeConsoleConnections:getDbNodeConsoleConnections", {
         "dbNodeId": args.dbNodeId,
         "filters": args.filters,
@@ -62,9 +60,24 @@ export interface GetDbNodeConsoleConnectionsResult {
      */
     readonly id: string;
 }
-
+/**
+ * This data source provides the list of Db Node Console Connections in Oracle Cloud Infrastructure Database service.
+ *
+ * Lists the console connections for the specified database node.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDbNodeConsoleConnections = oci.Database.getDbNodeConsoleConnections({
+ *     dbNodeId: oci_database_db_node.test_db_node.id,
+ * });
+ * ```
+ */
 export function getDbNodeConsoleConnectionsOutput(args: GetDbNodeConsoleConnectionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbNodeConsoleConnectionsResult> {
-    return pulumi.output(args).apply(a => getDbNodeConsoleConnections(a, opts))
+    return pulumi.output(args).apply((a: any) => getDbNodeConsoleConnections(a, opts))
 }
 
 /**

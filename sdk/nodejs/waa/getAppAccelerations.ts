@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAppAccelerations(args: GetAppAccelerationsArgs, opts?: pulumi.InvokeOptions): Promise<GetAppAccelerationsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Waa/getAppAccelerations:getAppAccelerations", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -98,9 +96,28 @@ export interface GetAppAccelerationsResult {
      */
     readonly webAppAccelerationPolicyId?: string;
 }
-
+/**
+ * This data source provides the list of Web App Accelerations in Oracle Cloud Infrastructure Waa service.
+ *
+ * Gets a list of all WebAppAccelerations in a compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testWebAppAccelerations = oci.Waa.getAppAccelerations({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.web_app_acceleration_display_name,
+ *     id: _var.web_app_acceleration_id,
+ *     states: _var.web_app_acceleration_state,
+ *     webAppAccelerationPolicyId: oci_waa_web_app_acceleration_policy.test_web_app_acceleration_policy.id,
+ * });
+ * ```
+ */
 export function getAppAccelerationsOutput(args: GetAppAccelerationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppAccelerationsResult> {
-    return pulumi.output(args).apply(a => getAppAccelerations(a, opts))
+    return pulumi.output(args).apply((a: any) => getAppAccelerations(a, opts))
 }
 
 /**

@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Mysql
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAnalyticsClusterResult> InvokeAsync(GetAnalyticsClusterArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAnalyticsClusterResult>("oci:Mysql/getAnalyticsCluster:getAnalyticsCluster", args ?? new GetAnalyticsClusterArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAnalyticsClusterResult>("oci:Mysql/getAnalyticsCluster:getAnalyticsCluster", args ?? new GetAnalyticsClusterArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Analytics Cluster resource in Oracle Cloud Infrastructure MySQL Database service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Mysql
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAnalyticsClusterResult> Invoke(GetAnalyticsClusterInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAnalyticsClusterResult>("oci:Mysql/getAnalyticsCluster:getAnalyticsCluster", args ?? new GetAnalyticsClusterInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAnalyticsClusterResult>("oci:Mysql/getAnalyticsCluster:getAnalyticsCluster", args ?? new GetAnalyticsClusterInvokeArgs(), options.WithDefaults());
     }
 
 

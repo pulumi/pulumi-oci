@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -18,14 +19,6 @@ import * as utilities from "../utilities";
  *
  * const testVirtualDeployment = new oci.servicemesh.VirtualDeployment("testVirtualDeployment", {
  *     compartmentId: _var.compartment_id,
- *     listeners: [{
- *         port: _var.virtual_deployment_listeners_port,
- *         protocol: _var.virtual_deployment_listeners_protocol,
- *     }],
- *     serviceDiscovery: {
- *         hostname: _var.virtual_deployment_service_discovery_hostname,
- *         type: _var.virtual_deployment_service_discovery_type,
- *     },
  *     virtualServiceId: oci_service_mesh_virtual_service.test_virtual_service.id,
  *     accessLogging: {
  *         isEnabled: _var.virtual_deployment_access_logging_is_enabled,
@@ -36,6 +29,16 @@ import * as utilities from "../utilities";
  *     description: _var.virtual_deployment_description,
  *     freeformTags: {
  *         "bar-key": "value",
+ *     },
+ *     listeners: [{
+ *         port: _var.virtual_deployment_listeners_port,
+ *         protocol: _var.virtual_deployment_listeners_protocol,
+ *         idleTimeoutInMs: _var.virtual_deployment_listeners_idle_timeout_in_ms,
+ *         requestTimeoutInMs: _var.virtual_deployment_listeners_request_timeout_in_ms,
+ *     }],
+ *     serviceDiscovery: {
+ *         type: _var.virtual_deployment_service_discovery_type,
+ *         hostname: _var.virtual_deployment_service_discovery_hostname,
  *     },
  * });
  * ```
@@ -165,12 +168,6 @@ export class VirtualDeployment extends pulumi.CustomResource {
             if ((!args || args.compartmentId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
-            if ((!args || args.listeners === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'listeners'");
-            }
-            if ((!args || args.serviceDiscovery === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'serviceDiscovery'");
-            }
             if ((!args || args.virtualServiceId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'virtualServiceId'");
             }
@@ -283,7 +280,7 @@ export interface VirtualDeploymentArgs {
     /**
      * (Updatable) The listeners for the virtual deployment.
      */
-    listeners: pulumi.Input<pulumi.Input<inputs.ServiceMesh.VirtualDeploymentListener>[]>;
+    listeners?: pulumi.Input<pulumi.Input<inputs.ServiceMesh.VirtualDeploymentListener>[]>;
     /**
      * A user-friendly name. The name must be unique within the same virtual service and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
      */
@@ -291,7 +288,7 @@ export interface VirtualDeploymentArgs {
     /**
      * (Updatable) Service Discovery configuration for virtual deployments.
      */
-    serviceDiscovery: pulumi.Input<inputs.ServiceMesh.VirtualDeploymentServiceDiscovery>;
+    serviceDiscovery?: pulumi.Input<inputs.ServiceMesh.VirtualDeploymentServiceDiscovery>;
     /**
      * The OCID of the service mesh in which this access policy is created.
      */

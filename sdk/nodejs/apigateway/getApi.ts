@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getApi(args: GetApiArgs, opts?: pulumi.InvokeOptions): Promise<GetApiResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ApiGateway/getApi:getApi", {
         "apiId": args.apiId,
     }, opts);
@@ -100,9 +98,24 @@ export interface GetApiResult {
      */
     readonly validationResults: outputs.ApiGateway.GetApiValidationResult[];
 }
-
+/**
+ * This data source provides details about a specific Api resource in Oracle Cloud Infrastructure API Gateway service.
+ *
+ * Gets an API by identifier.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testApi = oci.ApiGateway.getApi({
+ *     apiId: oci_apigateway_api.test_api.id,
+ * });
+ * ```
+ */
 export function getApiOutput(args: GetApiOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetApiResult> {
-    return pulumi.output(args).apply(a => getApi(a, opts))
+    return pulumi.output(args).apply((a: any) => getApi(a, opts))
 }
 
 /**

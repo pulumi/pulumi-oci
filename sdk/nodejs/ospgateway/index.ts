@@ -5,16 +5,41 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./getInvoice";
-export * from "./getInvoices";
-export * from "./getInvoicesInvoiceLine";
-export * from "./getInvoicesInvoiceLines";
-export * from "./getSubscription";
-export * from "./getSubscriptions";
-export * from "./subscription";
+export { GetInvoiceArgs, GetInvoiceResult, GetInvoiceOutputArgs } from "./getInvoice";
+export const getInvoice: typeof import("./getInvoice").getInvoice = null as any;
+export const getInvoiceOutput: typeof import("./getInvoice").getInvoiceOutput = null as any;
+utilities.lazyLoad(exports, ["getInvoice","getInvoiceOutput"], () => require("./getInvoice"));
 
-// Import resources to register:
-import { Subscription } from "./subscription";
+export { GetInvoicesArgs, GetInvoicesResult, GetInvoicesOutputArgs } from "./getInvoices";
+export const getInvoices: typeof import("./getInvoices").getInvoices = null as any;
+export const getInvoicesOutput: typeof import("./getInvoices").getInvoicesOutput = null as any;
+utilities.lazyLoad(exports, ["getInvoices","getInvoicesOutput"], () => require("./getInvoices"));
+
+export { GetInvoicesInvoiceLineArgs, GetInvoicesInvoiceLineResult, GetInvoicesInvoiceLineOutputArgs } from "./getInvoicesInvoiceLine";
+export const getInvoicesInvoiceLine: typeof import("./getInvoicesInvoiceLine").getInvoicesInvoiceLine = null as any;
+export const getInvoicesInvoiceLineOutput: typeof import("./getInvoicesInvoiceLine").getInvoicesInvoiceLineOutput = null as any;
+utilities.lazyLoad(exports, ["getInvoicesInvoiceLine","getInvoicesInvoiceLineOutput"], () => require("./getInvoicesInvoiceLine"));
+
+export { GetInvoicesInvoiceLinesArgs, GetInvoicesInvoiceLinesResult, GetInvoicesInvoiceLinesOutputArgs } from "./getInvoicesInvoiceLines";
+export const getInvoicesInvoiceLines: typeof import("./getInvoicesInvoiceLines").getInvoicesInvoiceLines = null as any;
+export const getInvoicesInvoiceLinesOutput: typeof import("./getInvoicesInvoiceLines").getInvoicesInvoiceLinesOutput = null as any;
+utilities.lazyLoad(exports, ["getInvoicesInvoiceLines","getInvoicesInvoiceLinesOutput"], () => require("./getInvoicesInvoiceLines"));
+
+export { GetSubscriptionArgs, GetSubscriptionResult, GetSubscriptionOutputArgs } from "./getSubscription";
+export const getSubscription: typeof import("./getSubscription").getSubscription = null as any;
+export const getSubscriptionOutput: typeof import("./getSubscription").getSubscriptionOutput = null as any;
+utilities.lazyLoad(exports, ["getSubscription","getSubscriptionOutput"], () => require("./getSubscription"));
+
+export { GetSubscriptionsArgs, GetSubscriptionsResult, GetSubscriptionsOutputArgs } from "./getSubscriptions";
+export const getSubscriptions: typeof import("./getSubscriptions").getSubscriptions = null as any;
+export const getSubscriptionsOutput: typeof import("./getSubscriptions").getSubscriptionsOutput = null as any;
+utilities.lazyLoad(exports, ["getSubscriptions","getSubscriptionsOutput"], () => require("./getSubscriptions"));
+
+export { SubscriptionArgs, SubscriptionState } from "./subscription";
+export type Subscription = import("./subscription").Subscription;
+export const Subscription: typeof import("./subscription").Subscription = null as any;
+utilities.lazyLoad(exports, ["Subscription"], () => require("./subscription"));
+
 
 const _module = {
     version: utilities.getVersion(),

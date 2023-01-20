@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getQuotas(args: GetQuotasArgs, opts?: pulumi.InvokeOptions): Promise<GetQuotasResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Limits/getQuotas:getQuotas", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -82,9 +80,26 @@ export interface GetQuotasResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Quotas in Oracle Cloud Infrastructure Limits service.
+ *
+ * Lists all quotas on resources from the given compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testQuotas = oci.Limits.getQuotas({
+ *     compartmentId: _var.tenancy_ocid,
+ *     name: _var.quota_name,
+ *     state: _var.quota_state,
+ * });
+ * ```
+ */
 export function getQuotasOutput(args: GetQuotasOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetQuotasResult> {
-    return pulumi.output(args).apply(a => getQuotas(a, opts))
+    return pulumi.output(args).apply((a: any) => getQuotas(a, opts))
 }
 
 /**

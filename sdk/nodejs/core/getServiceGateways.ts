@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getServiceGateways(args: GetServiceGatewaysArgs, opts?: pulumi.InvokeOptions): Promise<GetServiceGatewaysResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getServiceGateways:getServiceGateways", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -83,9 +81,27 @@ export interface GetServiceGatewaysResult {
      */
     readonly vcnId?: string;
 }
-
+/**
+ * This data source provides the list of Service Gateways in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the service gateways in the specified compartment. You may optionally specify a VCN OCID
+ * to filter the results by VCN.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testServiceGateways = oci.Core.getServiceGateways({
+ *     compartmentId: _var.compartment_id,
+ *     state: _var.service_gateway_state,
+ *     vcnId: oci_core_vcn.test_vcn.id,
+ * });
+ * ```
+ */
 export function getServiceGatewaysOutput(args: GetServiceGatewaysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetServiceGatewaysResult> {
-    return pulumi.output(args).apply(a => getServiceGateways(a, opts))
+    return pulumi.output(args).apply((a: any) => getServiceGateways(a, opts))
 }
 
 /**

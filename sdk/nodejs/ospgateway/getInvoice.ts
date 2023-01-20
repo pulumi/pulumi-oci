@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getInvoice(args: GetInvoiceArgs, opts?: pulumi.InvokeOptions): Promise<GetInvoiceResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OspGateway/getInvoice:getInvoice", {
         "compartmentId": args.compartmentId,
         "internalInvoiceId": args.internalInvoiceId,
@@ -165,9 +163,26 @@ export interface GetInvoiceResult {
      */
     readonly timeInvoiceDue: string;
 }
-
+/**
+ * This data source provides details about a specific Invoice resource in Oracle Cloud Infrastructure Osp Gateway service.
+ *
+ * Returns an invoice by invoice id
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testInvoice = oci.OspGateway.getInvoice({
+ *     compartmentId: _var.compartment_id,
+ *     internalInvoiceId: oci_osp_gateway_invoice.test_invoice.id,
+ *     ospHomeRegion: _var.invoice_osp_home_region,
+ * });
+ * ```
+ */
 export function getInvoiceOutput(args: GetInvoiceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInvoiceResult> {
-    return pulumi.output(args).apply(a => getInvoice(a, opts))
+    return pulumi.output(args).apply((a: any) => getInvoice(a, opts))
 }
 
 /**

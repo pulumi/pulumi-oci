@@ -12,11 +12,21 @@ namespace Pulumi.Oci.GoldenGate.Inputs
 
     public sealed class DeploymentOggDataGetArgs : global::Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed.
-        /// </summary>
         [Input("adminPassword", required: true)]
-        public Input<string> AdminPassword { get; set; } = null!;
+        private Input<string>? _adminPassword;
+
+        /// <summary>
+        /// (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by "passwordSecretId".
+        /// </summary>
+        public Input<string>? AdminPassword
+        {
+            get => _adminPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _adminPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// (Updatable) The GoldenGate deployment console username.

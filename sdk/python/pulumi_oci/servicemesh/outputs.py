@@ -781,6 +781,8 @@ class IngressGatewayRouteTableRouteRule(dict):
             suggest = "is_path_rewrite_enabled"
         elif key == "pathType":
             suggest = "path_type"
+        elif key == "requestTimeoutInMs":
+            suggest = "request_timeout_in_ms"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in IngressGatewayRouteTableRouteRule. Access the value via the '{suggest}' property getter instead.")
@@ -801,7 +803,8 @@ class IngressGatewayRouteTableRouteRule(dict):
                  is_host_rewrite_enabled: Optional[bool] = None,
                  is_path_rewrite_enabled: Optional[bool] = None,
                  path: Optional[str] = None,
-                 path_type: Optional[str] = None):
+                 path_type: Optional[str] = None,
+                 request_timeout_in_ms: Optional[str] = None):
         """
         :param Sequence['IngressGatewayRouteTableRouteRuleDestinationArgs'] destinations: (Updatable) The destination of the request.
         :param str type: (Updatable) Type of protocol.
@@ -811,6 +814,7 @@ class IngressGatewayRouteTableRouteRule(dict):
         :param bool is_path_rewrite_enabled: (Updatable) If true, the matched path prefix will be rewritten to '/' before being directed to the target virtual deployment.
         :param str path: (Updatable) Route to match
         :param str path_type: (Updatable) Match type for the route
+        :param str request_timeout_in_ms: (Updatable) The maximum duration in milliseconds for the upstream service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the upstream service, consider either keeping the timeout disabled or set a sufficiently high value.
         """
         pulumi.set(__self__, "destinations", destinations)
         pulumi.set(__self__, "type", type)
@@ -826,6 +830,8 @@ class IngressGatewayRouteTableRouteRule(dict):
             pulumi.set(__self__, "path", path)
         if path_type is not None:
             pulumi.set(__self__, "path_type", path_type)
+        if request_timeout_in_ms is not None:
+            pulumi.set(__self__, "request_timeout_in_ms", request_timeout_in_ms)
 
     @property
     @pulumi.getter
@@ -890,6 +896,14 @@ class IngressGatewayRouteTableRouteRule(dict):
         (Updatable) Match type for the route
         """
         return pulumi.get(self, "path_type")
+
+    @property
+    @pulumi.getter(name="requestTimeoutInMs")
+    def request_timeout_in_ms(self) -> Optional[str]:
+        """
+        (Updatable) The maximum duration in milliseconds for the upstream service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the upstream service, consider either keeping the timeout disabled or set a sufficiently high value.
+        """
+        return pulumi.get(self, "request_timeout_in_ms")
 
 
 @pulumi.output_type
@@ -1055,15 +1069,42 @@ class VirtualDeploymentAccessLogging(dict):
 
 @pulumi.output_type
 class VirtualDeploymentListener(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "idleTimeoutInMs":
+            suggest = "idle_timeout_in_ms"
+        elif key == "requestTimeoutInMs":
+            suggest = "request_timeout_in_ms"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in VirtualDeploymentListener. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        VirtualDeploymentListener.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        VirtualDeploymentListener.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
                  port: int,
-                 protocol: str):
+                 protocol: str,
+                 idle_timeout_in_ms: Optional[str] = None,
+                 request_timeout_in_ms: Optional[str] = None):
         """
         :param int port: (Updatable) Port in which virtual deployment is running.
         :param str protocol: (Updatable) Type of protocol used in virtual deployment.
+        :param str idle_timeout_in_ms: (Updatable) The maximum duration in milliseconds for which the request's stream may be idle. The value 0 (zero) indicates that the timeout is disabled.
+        :param str request_timeout_in_ms: (Updatable) The maximum duration in milliseconds for the deployed service to respond to an incoming request through the listener.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP/HTTP2 listeners, and disabled (no timeout) for the GRPC listeners. The value 0 (zero) indicates that the timeout is disabled.  The timeout cannot be configured for the TCP and TLS_PASSTHROUGH listeners.  For streaming responses from the deployed service, consider either keeping the timeout disabled or set a sufficiently high value.
         """
         pulumi.set(__self__, "port", port)
         pulumi.set(__self__, "protocol", protocol)
+        if idle_timeout_in_ms is not None:
+            pulumi.set(__self__, "idle_timeout_in_ms", idle_timeout_in_ms)
+        if request_timeout_in_ms is not None:
+            pulumi.set(__self__, "request_timeout_in_ms", request_timeout_in_ms)
 
     @property
     @pulumi.getter
@@ -1081,26 +1122,35 @@ class VirtualDeploymentListener(dict):
         """
         return pulumi.get(self, "protocol")
 
+    @property
+    @pulumi.getter(name="idleTimeoutInMs")
+    def idle_timeout_in_ms(self) -> Optional[str]:
+        """
+        (Updatable) The maximum duration in milliseconds for which the request's stream may be idle. The value 0 (zero) indicates that the timeout is disabled.
+        """
+        return pulumi.get(self, "idle_timeout_in_ms")
+
+    @property
+    @pulumi.getter(name="requestTimeoutInMs")
+    def request_timeout_in_ms(self) -> Optional[str]:
+        """
+        (Updatable) The maximum duration in milliseconds for the deployed service to respond to an incoming request through the listener.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP/HTTP2 listeners, and disabled (no timeout) for the GRPC listeners. The value 0 (zero) indicates that the timeout is disabled.  The timeout cannot be configured for the TCP and TLS_PASSTHROUGH listeners.  For streaming responses from the deployed service, consider either keeping the timeout disabled or set a sufficiently high value.
+        """
+        return pulumi.get(self, "request_timeout_in_ms")
+
 
 @pulumi.output_type
 class VirtualDeploymentServiceDiscovery(dict):
     def __init__(__self__, *,
-                 hostname: str,
-                 type: str):
+                 type: str,
+                 hostname: Optional[str] = None):
         """
-        :param str hostname: (Updatable) The hostname of the virtual deployments.
         :param str type: (Updatable) Type of service discovery.
+        :param str hostname: (Updatable) The hostname of the virtual deployments.
         """
-        pulumi.set(__self__, "hostname", hostname)
         pulumi.set(__self__, "type", type)
-
-    @property
-    @pulumi.getter
-    def hostname(self) -> str:
-        """
-        (Updatable) The hostname of the virtual deployments.
-        """
-        return pulumi.get(self, "hostname")
+        if hostname is not None:
+            pulumi.set(__self__, "hostname", hostname)
 
     @property
     @pulumi.getter
@@ -1109,6 +1159,14 @@ class VirtualDeploymentServiceDiscovery(dict):
         (Updatable) Type of service discovery.
         """
         return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def hostname(self) -> Optional[str]:
+        """
+        (Updatable) The hostname of the virtual deployments.
+        """
+        return pulumi.get(self, "hostname")
 
 
 @pulumi.output_type
@@ -1199,6 +1257,8 @@ class VirtualServiceRouteTableRouteRule(dict):
             suggest = "is_grpc"
         elif key == "pathType":
             suggest = "path_type"
+        elif key == "requestTimeoutInMs":
+            suggest = "request_timeout_in_ms"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in VirtualServiceRouteTableRouteRule. Access the value via the '{suggest}' property getter instead.")
@@ -1216,13 +1276,15 @@ class VirtualServiceRouteTableRouteRule(dict):
                  type: str,
                  is_grpc: Optional[bool] = None,
                  path: Optional[str] = None,
-                 path_type: Optional[str] = None):
+                 path_type: Optional[str] = None,
+                 request_timeout_in_ms: Optional[str] = None):
         """
         :param Sequence['VirtualServiceRouteTableRouteRuleDestinationArgs'] destinations: (Updatable) The destination of the request.
         :param str type: (Updatable) Type of protocol.
         :param bool is_grpc: (Updatable) If true, the rule will check that the content-type header has a application/grpc or one of the various application/grpc+ values.
         :param str path: (Updatable) Route to match
         :param str path_type: (Updatable) Match type for the route
+        :param str request_timeout_in_ms: (Updatable) The maximum duration in milliseconds for the target service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the target service, consider either keeping the timeout disabled or set a sufficiently high value.
         """
         pulumi.set(__self__, "destinations", destinations)
         pulumi.set(__self__, "type", type)
@@ -1232,6 +1294,8 @@ class VirtualServiceRouteTableRouteRule(dict):
             pulumi.set(__self__, "path", path)
         if path_type is not None:
             pulumi.set(__self__, "path_type", path_type)
+        if request_timeout_in_ms is not None:
+            pulumi.set(__self__, "request_timeout_in_ms", request_timeout_in_ms)
 
     @property
     @pulumi.getter
@@ -1272,6 +1336,14 @@ class VirtualServiceRouteTableRouteRule(dict):
         (Updatable) Match type for the route
         """
         return pulumi.get(self, "path_type")
+
+    @property
+    @pulumi.getter(name="requestTimeoutInMs")
+    def request_timeout_in_ms(self) -> Optional[str]:
+        """
+        (Updatable) The maximum duration in milliseconds for the target service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the target service, consider either keeping the timeout disabled or set a sufficiently high value.
+        """
+        return pulumi.get(self, "request_timeout_in_ms")
 
 
 @pulumi.output_type
@@ -2229,6 +2301,7 @@ class GetIngressGatewayRouteTableRouteRuleResult(dict):
                  is_path_rewrite_enabled: bool,
                  path: str,
                  path_type: str,
+                 request_timeout_in_ms: str,
                  type: str):
         """
         :param Sequence['GetIngressGatewayRouteTableRouteRuleDestinationArgs'] destinations: The destination of the request.
@@ -2238,6 +2311,7 @@ class GetIngressGatewayRouteTableRouteRuleResult(dict):
         :param bool is_path_rewrite_enabled: If true, the matched path prefix will be rewritten to '/' before being directed to the target virtual deployment.
         :param str path: Route to match
         :param str path_type: Match type for the route
+        :param str request_timeout_in_ms: The maximum duration in milliseconds for the upstream service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the upstream service, consider either keeping the timeout disabled or set a sufficiently high value.
         :param str type: Type of protocol.
         """
         pulumi.set(__self__, "destinations", destinations)
@@ -2247,6 +2321,7 @@ class GetIngressGatewayRouteTableRouteRuleResult(dict):
         pulumi.set(__self__, "is_path_rewrite_enabled", is_path_rewrite_enabled)
         pulumi.set(__self__, "path", path)
         pulumi.set(__self__, "path_type", path_type)
+        pulumi.set(__self__, "request_timeout_in_ms", request_timeout_in_ms)
         pulumi.set(__self__, "type", type)
 
     @property
@@ -2304,6 +2379,14 @@ class GetIngressGatewayRouteTableRouteRuleResult(dict):
         Match type for the route
         """
         return pulumi.get(self, "path_type")
+
+    @property
+    @pulumi.getter(name="requestTimeoutInMs")
+    def request_timeout_in_ms(self) -> str:
+        """
+        The maximum duration in milliseconds for the upstream service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the upstream service, consider either keeping the timeout disabled or set a sufficiently high value.
+        """
+        return pulumi.get(self, "request_timeout_in_ms")
 
     @property
     @pulumi.getter
@@ -2599,6 +2682,7 @@ class GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRul
                  is_path_rewrite_enabled: bool,
                  path: str,
                  path_type: str,
+                 request_timeout_in_ms: str,
                  type: str):
         """
         :param Sequence['GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleDestinationArgs'] destinations: The destination of the request.
@@ -2608,6 +2692,7 @@ class GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRul
         :param bool is_path_rewrite_enabled: If true, the matched path prefix will be rewritten to '/' before being directed to the target virtual deployment.
         :param str path: Route to match
         :param str path_type: Match type for the route
+        :param str request_timeout_in_ms: The maximum duration in milliseconds for the upstream service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the upstream service, consider either keeping the timeout disabled or set a sufficiently high value.
         :param str type: Type of protocol.
         """
         pulumi.set(__self__, "destinations", destinations)
@@ -2617,6 +2702,7 @@ class GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRul
         pulumi.set(__self__, "is_path_rewrite_enabled", is_path_rewrite_enabled)
         pulumi.set(__self__, "path", path)
         pulumi.set(__self__, "path_type", path_type)
+        pulumi.set(__self__, "request_timeout_in_ms", request_timeout_in_ms)
         pulumi.set(__self__, "type", type)
 
     @property
@@ -2674,6 +2760,14 @@ class GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRul
         Match type for the route
         """
         return pulumi.get(self, "path_type")
+
+    @property
+    @pulumi.getter(name="requestTimeoutInMs")
+    def request_timeout_in_ms(self) -> str:
+        """
+        The maximum duration in milliseconds for the upstream service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the upstream service, consider either keeping the timeout disabled or set a sufficiently high value.
+        """
+        return pulumi.get(self, "request_timeout_in_ms")
 
     @property
     @pulumi.getter
@@ -3338,7 +3432,7 @@ class GetMeshesMeshCollectionItemResult(dict):
                  time_created: str,
                  time_updated: str):
         """
-        :param Sequence['GetMeshesMeshCollectionItemCertificateAuthorityArgs'] certificate_authorities: A list of certificate authority resources to use for creating leaf certificates for mTLS authentication. Currently we only support one certificate authority, but this may expand in future releases.
+        :param Sequence['GetMeshesMeshCollectionItemCertificateAuthorityArgs'] certificate_authorities: A list of certificate authority resources to use for creating leaf certificates for mTLS authentication. Currently we only support one certificate authority, but this may expand in future releases. Request with more than one certificate authority will be rejected.
         :param str compartment_id: The ID of the compartment in which to list resources.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
@@ -3370,7 +3464,7 @@ class GetMeshesMeshCollectionItemResult(dict):
     @pulumi.getter(name="certificateAuthorities")
     def certificate_authorities(self) -> Sequence['outputs.GetMeshesMeshCollectionItemCertificateAuthorityResult']:
         """
-        A list of certificate authority resources to use for creating leaf certificates for mTLS authentication. Currently we only support one certificate authority, but this may expand in future releases.
+        A list of certificate authority resources to use for creating leaf certificates for mTLS authentication. Currently we only support one certificate authority, but this may expand in future releases. Request with more than one certificate authority will be rejected.
         """
         return pulumi.get(self, "certificate_authorities")
 
@@ -3528,14 +3622,28 @@ class GetVirtualDeploymentAccessLoggingResult(dict):
 @pulumi.output_type
 class GetVirtualDeploymentListenerResult(dict):
     def __init__(__self__, *,
+                 idle_timeout_in_ms: str,
                  port: int,
-                 protocol: str):
+                 protocol: str,
+                 request_timeout_in_ms: str):
         """
+        :param str idle_timeout_in_ms: The maximum duration in milliseconds for which the request's stream may be idle. The value 0 (zero) indicates that the timeout is disabled.
         :param int port: Port in which virtual deployment is running.
         :param str protocol: Type of protocol used in virtual deployment.
+        :param str request_timeout_in_ms: The maximum duration in milliseconds for the deployed service to respond to an incoming request through the listener.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP/HTTP2 listeners, and disabled (no timeout) for the GRPC listeners. The value 0 (zero) indicates that the timeout is disabled.  The timeout cannot be configured for the TCP and TLS_PASSTHROUGH listeners.  For streaming responses from the deployed service, consider either keeping the timeout disabled or set a sufficiently high value.
         """
+        pulumi.set(__self__, "idle_timeout_in_ms", idle_timeout_in_ms)
         pulumi.set(__self__, "port", port)
         pulumi.set(__self__, "protocol", protocol)
+        pulumi.set(__self__, "request_timeout_in_ms", request_timeout_in_ms)
+
+    @property
+    @pulumi.getter(name="idleTimeoutInMs")
+    def idle_timeout_in_ms(self) -> str:
+        """
+        The maximum duration in milliseconds for which the request's stream may be idle. The value 0 (zero) indicates that the timeout is disabled.
+        """
+        return pulumi.get(self, "idle_timeout_in_ms")
 
     @property
     @pulumi.getter
@@ -3552,6 +3660,14 @@ class GetVirtualDeploymentListenerResult(dict):
         Type of protocol used in virtual deployment.
         """
         return pulumi.get(self, "protocol")
+
+    @property
+    @pulumi.getter(name="requestTimeoutInMs")
+    def request_timeout_in_ms(self) -> str:
+        """
+        The maximum duration in milliseconds for the deployed service to respond to an incoming request through the listener.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP/HTTP2 listeners, and disabled (no timeout) for the GRPC listeners. The value 0 (zero) indicates that the timeout is disabled.  The timeout cannot be configured for the TCP and TLS_PASSTHROUGH listeners.  For streaming responses from the deployed service, consider either keeping the timeout disabled or set a sufficiently high value.
+        """
+        return pulumi.get(self, "request_timeout_in_ms")
 
 
 @pulumi.output_type
@@ -3821,14 +3937,28 @@ class GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingResult(di
 @pulumi.output_type
 class GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerResult(dict):
     def __init__(__self__, *,
+                 idle_timeout_in_ms: str,
                  port: int,
-                 protocol: str):
+                 protocol: str,
+                 request_timeout_in_ms: str):
         """
+        :param str idle_timeout_in_ms: The maximum duration in milliseconds for which the request's stream may be idle. The value 0 (zero) indicates that the timeout is disabled.
         :param int port: Port in which virtual deployment is running.
         :param str protocol: Type of protocol used in virtual deployment.
+        :param str request_timeout_in_ms: The maximum duration in milliseconds for the deployed service to respond to an incoming request through the listener.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP/HTTP2 listeners, and disabled (no timeout) for the GRPC listeners. The value 0 (zero) indicates that the timeout is disabled.  The timeout cannot be configured for the TCP and TLS_PASSTHROUGH listeners.  For streaming responses from the deployed service, consider either keeping the timeout disabled or set a sufficiently high value.
         """
+        pulumi.set(__self__, "idle_timeout_in_ms", idle_timeout_in_ms)
         pulumi.set(__self__, "port", port)
         pulumi.set(__self__, "protocol", protocol)
+        pulumi.set(__self__, "request_timeout_in_ms", request_timeout_in_ms)
+
+    @property
+    @pulumi.getter(name="idleTimeoutInMs")
+    def idle_timeout_in_ms(self) -> str:
+        """
+        The maximum duration in milliseconds for which the request's stream may be idle. The value 0 (zero) indicates that the timeout is disabled.
+        """
+        return pulumi.get(self, "idle_timeout_in_ms")
 
     @property
     @pulumi.getter
@@ -3845,6 +3975,14 @@ class GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerResult(dict):
         Type of protocol used in virtual deployment.
         """
         return pulumi.get(self, "protocol")
+
+    @property
+    @pulumi.getter(name="requestTimeoutInMs")
+    def request_timeout_in_ms(self) -> str:
+        """
+        The maximum duration in milliseconds for the deployed service to respond to an incoming request through the listener.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP/HTTP2 listeners, and disabled (no timeout) for the GRPC listeners. The value 0 (zero) indicates that the timeout is disabled.  The timeout cannot be configured for the TCP and TLS_PASSTHROUGH listeners.  For streaming responses from the deployed service, consider either keeping the timeout disabled or set a sufficiently high value.
+        """
+        return pulumi.get(self, "request_timeout_in_ms")
 
 
 @pulumi.output_type
@@ -3941,18 +4079,21 @@ class GetVirtualServiceRouteTableRouteRuleResult(dict):
                  is_grpc: bool,
                  path: str,
                  path_type: str,
+                 request_timeout_in_ms: str,
                  type: str):
         """
         :param Sequence['GetVirtualServiceRouteTableRouteRuleDestinationArgs'] destinations: The destination of the request.
         :param bool is_grpc: If true, the rule will check that the content-type header has a application/grpc or one of the various application/grpc+ values.
         :param str path: Route to match
         :param str path_type: Match type for the route
+        :param str request_timeout_in_ms: The maximum duration in milliseconds for the target service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the target service, consider either keeping the timeout disabled or set a sufficiently high value.
         :param str type: Type of protocol.
         """
         pulumi.set(__self__, "destinations", destinations)
         pulumi.set(__self__, "is_grpc", is_grpc)
         pulumi.set(__self__, "path", path)
         pulumi.set(__self__, "path_type", path_type)
+        pulumi.set(__self__, "request_timeout_in_ms", request_timeout_in_ms)
         pulumi.set(__self__, "type", type)
 
     @property
@@ -3986,6 +4127,14 @@ class GetVirtualServiceRouteTableRouteRuleResult(dict):
         Match type for the route
         """
         return pulumi.get(self, "path_type")
+
+    @property
+    @pulumi.getter(name="requestTimeoutInMs")
+    def request_timeout_in_ms(self) -> str:
+        """
+        The maximum duration in milliseconds for the target service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the target service, consider either keeping the timeout disabled or set a sufficiently high value.
+        """
+        return pulumi.get(self, "request_timeout_in_ms")
 
     @property
     @pulumi.getter
@@ -4249,18 +4398,21 @@ class GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRul
                  is_grpc: bool,
                  path: str,
                  path_type: str,
+                 request_timeout_in_ms: str,
                  type: str):
         """
         :param Sequence['GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleDestinationArgs'] destinations: The destination of the request.
         :param bool is_grpc: If true, the rule will check that the content-type header has a application/grpc or one of the various application/grpc+ values.
         :param str path: Route to match
         :param str path_type: Match type for the route
+        :param str request_timeout_in_ms: The maximum duration in milliseconds for the target service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the target service, consider either keeping the timeout disabled or set a sufficiently high value.
         :param str type: Type of protocol.
         """
         pulumi.set(__self__, "destinations", destinations)
         pulumi.set(__self__, "is_grpc", is_grpc)
         pulumi.set(__self__, "path", path)
         pulumi.set(__self__, "path_type", path_type)
+        pulumi.set(__self__, "request_timeout_in_ms", request_timeout_in_ms)
         pulumi.set(__self__, "type", type)
 
     @property
@@ -4294,6 +4446,14 @@ class GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRul
         Match type for the route
         """
         return pulumi.get(self, "path_type")
+
+    @property
+    @pulumi.getter(name="requestTimeoutInMs")
+    def request_timeout_in_ms(self) -> str:
+        """
+        The maximum duration in milliseconds for the target service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the target service, consider either keeping the timeout disabled or set a sufficiently high value.
+        """
+        return pulumi.get(self, "request_timeout_in_ms")
 
     @property
     @pulumi.getter

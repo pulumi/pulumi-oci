@@ -44,7 +44,7 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAccessRequestsResult> InvokeAsync(GetAccessRequestsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAccessRequestsResult>("oci:OperatorAccessControl/getAccessRequests:getAccessRequests", args ?? new GetAccessRequestsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAccessRequestsResult>("oci:OperatorAccessControl/getAccessRequests:getAccessRequests", args ?? new GetAccessRequestsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Access Requests in Oracle Cloud Infrastructure Operator Access Control service.
@@ -79,7 +79,7 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAccessRequestsResult> Invoke(GetAccessRequestsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAccessRequestsResult>("oci:OperatorAccessControl/getAccessRequests:getAccessRequests", args ?? new GetAccessRequestsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAccessRequestsResult>("oci:OperatorAccessControl/getAccessRequests:getAccessRequests", args ?? new GetAccessRequestsInvokeArgs(), options.WithDefaults());
     }
 
 

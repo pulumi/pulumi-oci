@@ -41,7 +41,7 @@ namespace Pulumi.Oci.ApmSynthetics
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetScriptsResult> InvokeAsync(GetScriptsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetScriptsResult>("oci:ApmSynthetics/getScripts:getScripts", args ?? new GetScriptsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetScriptsResult>("oci:ApmSynthetics/getScripts:getScripts", args ?? new GetScriptsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Scripts in Oracle Cloud Infrastructure Apm Synthetics service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.ApmSynthetics
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetScriptsResult> Invoke(GetScriptsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetScriptsResult>("oci:ApmSynthetics/getScripts:getScripts", args ?? new GetScriptsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetScriptsResult>("oci:ApmSynthetics/getScripts:getScripts", args ?? new GetScriptsInvokeArgs(), options.WithDefaults());
     }
 
 

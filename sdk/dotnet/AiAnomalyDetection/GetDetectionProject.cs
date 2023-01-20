@@ -38,7 +38,7 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDetectionProjectResult> InvokeAsync(GetDetectionProjectArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDetectionProjectResult>("oci:AiAnomalyDetection/getDetectionProject:getDetectionProject", args ?? new GetDetectionProjectArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDetectionProjectResult>("oci:AiAnomalyDetection/getDetectionProject:getDetectionProject", args ?? new GetDetectionProjectArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Project resource in Oracle Cloud Infrastructure Ai Anomaly Detection service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDetectionProjectResult> Invoke(GetDetectionProjectInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDetectionProjectResult>("oci:AiAnomalyDetection/getDetectionProject:getDetectionProject", args ?? new GetDetectionProjectInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDetectionProjectResult>("oci:AiAnomalyDetection/getDetectionProject:getDetectionProject", args ?? new GetDetectionProjectInvokeArgs(), options.WithDefaults());
     }
 
 

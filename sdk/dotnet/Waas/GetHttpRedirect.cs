@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Waas
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetHttpRedirectResult> InvokeAsync(GetHttpRedirectArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetHttpRedirectResult>("oci:Waas/getHttpRedirect:getHttpRedirect", args ?? new GetHttpRedirectArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetHttpRedirectResult>("oci:Waas/getHttpRedirect:getHttpRedirect", args ?? new GetHttpRedirectArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Http Redirect resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Waas
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetHttpRedirectResult> Invoke(GetHttpRedirectInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetHttpRedirectResult>("oci:Waas/getHttpRedirect:getHttpRedirect", args ?? new GetHttpRedirectInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetHttpRedirectResult>("oci:Waas/getHttpRedirect:getHttpRedirect", args ?? new GetHttpRedirectInvokeArgs(), options.WithDefaults());
     }
 
 

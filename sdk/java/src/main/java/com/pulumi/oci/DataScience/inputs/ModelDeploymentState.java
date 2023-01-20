@@ -185,14 +185,14 @@ public final class ModelDeploymentState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * The state of the model deployment.
+     * (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return The state of the model deployment.
+     * @return (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
      * 
      */
     public Optional<Output<String>> state() {
@@ -482,7 +482,7 @@ public final class ModelDeploymentState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param state The state of the model deployment.
+         * @param state (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
          * 
          * @return builder
          * 
@@ -493,7 +493,7 @@ public final class ModelDeploymentState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param state The state of the model deployment.
+         * @param state (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
          * 
          * @return builder
          * 

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVolumeGroupReplica(args: GetVolumeGroupReplicaArgs, opts?: pulumi.InvokeOptions): Promise<GetVolumeGroupReplicaResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getVolumeGroupReplica:getVolumeGroupReplica", {
         "volumeGroupReplicaId": args.volumeGroupReplicaId,
     }, opts);
@@ -96,9 +94,24 @@ export interface GetVolumeGroupReplicaResult {
     readonly volumeGroupId: string;
     readonly volumeGroupReplicaId: string;
 }
-
+/**
+ * This data source provides details about a specific Volume Group Replica resource in Oracle Cloud Infrastructure Core service.
+ *
+ * Gets information for the specified volume group replica.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testVolumeGroupReplica = oci.Core.getVolumeGroupReplica({
+ *     volumeGroupReplicaId: oci_core_volume_group_replica.test_volume_group_replica.id,
+ * });
+ * ```
+ */
 export function getVolumeGroupReplicaOutput(args: GetVolumeGroupReplicaOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVolumeGroupReplicaResult> {
-    return pulumi.output(args).apply(a => getVolumeGroupReplica(a, opts))
+    return pulumi.output(args).apply((a: any) => getVolumeGroupReplica(a, opts))
 }
 
 /**

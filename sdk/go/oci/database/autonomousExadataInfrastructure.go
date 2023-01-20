@@ -44,7 +44,6 @@ import (
 //				},
 //				LicenseModel: pulumi.Any(_var.Autonomous_exadata_infrastructure_license_model),
 //				MaintenanceWindowDetails: &database.AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs{
-//					Preference:                pulumi.Any(_var.Autonomous_exadata_infrastructure_maintenance_window_details_preference),
 //					CustomActionTimeoutInMins: pulumi.Any(_var.Autonomous_exadata_infrastructure_maintenance_window_details_custom_action_timeout_in_mins),
 //					DaysOfWeeks: database.AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArray{
 //						&database.AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekArgs{
@@ -61,6 +60,7 @@ import (
 //						},
 //					},
 //					PatchingMode:  pulumi.Any(_var.Autonomous_exadata_infrastructure_maintenance_window_details_patching_mode),
+//					Preference:    pulumi.Any(_var.Autonomous_exadata_infrastructure_maintenance_window_details_preference),
 //					WeeksOfMonths: pulumi.Any(_var.Autonomous_exadata_infrastructure_maintenance_window_details_weeks_of_month),
 //				},
 //				NsgIds: pulumi.Any(_var.Autonomous_exadata_infrastructure_nsg_ids),

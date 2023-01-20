@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetFlexComponentsResult> InvokeAsync(GetFlexComponentsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetFlexComponentsResult>("oci:Database/getFlexComponents:getFlexComponents", args ?? new GetFlexComponentsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetFlexComponentsResult>("oci:Database/getFlexComponents:getFlexComponents", args ?? new GetFlexComponentsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Flex Components in Oracle Cloud Infrastructure Database service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetFlexComponentsResult> Invoke(GetFlexComponentsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetFlexComponentsResult>("oci:Database/getFlexComponents:getFlexComponents", args ?? new GetFlexComponentsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetFlexComponentsResult>("oci:Database/getFlexComponents:getFlexComponents", args ?? new GetFlexComponentsInvokeArgs(), options.WithDefaults());
     }
 
 

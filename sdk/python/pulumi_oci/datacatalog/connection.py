@@ -555,7 +555,7 @@ class Connection(pulumi.CustomResource):
             if display_name is None and not opts.urn:
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
-            __props__.__dict__["enc_properties"] = enc_properties
+            __props__.__dict__["enc_properties"] = None if enc_properties is None else pulumi.Output.secret(enc_properties)
             __props__.__dict__["is_default"] = is_default
             if properties is None and not opts.urn:
                 raise TypeError("Missing required property 'properties'")
@@ -572,6 +572,8 @@ class Connection(pulumi.CustomResource):
             __props__.__dict__["time_updated"] = None
             __props__.__dict__["updated_by_id"] = None
             __props__.__dict__["uri"] = None
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["encProperties"])
+        opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(Connection, __self__).__init__(
             'oci:DataCatalog/connection:Connection',
             resource_name,

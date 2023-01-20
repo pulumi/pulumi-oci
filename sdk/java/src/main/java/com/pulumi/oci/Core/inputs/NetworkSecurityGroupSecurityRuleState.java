@@ -160,9 +160,6 @@ public final class NetworkSecurityGroupSecurityRuleState extends com.pulumi.reso
 
     /**
      * Type of source for the rule. Required if `direction` = `INGRESS`.
-     * * `CIDR_BLOCK`: If the rule&#39;s `source` is an IP address range in CIDR notation.
-     * * `SERVICE_CIDR_BLOCK`: If the rule&#39;s `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
-     * * `NETWORK_SECURITY_GROUP`: If the rule&#39;s `source` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
      * 
      */
     @Import(name="sourceType")
@@ -170,9 +167,6 @@ public final class NetworkSecurityGroupSecurityRuleState extends com.pulumi.reso
 
     /**
      * @return Type of source for the rule. Required if `direction` = `INGRESS`.
-     * * `CIDR_BLOCK`: If the rule&#39;s `source` is an IP address range in CIDR notation.
-     * * `SERVICE_CIDR_BLOCK`: If the rule&#39;s `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
-     * * `NETWORK_SECURITY_GROUP`: If the rule&#39;s `source` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
      * 
      */
     public Optional<Output<String>> sourceType() {
@@ -471,9 +465,6 @@ public final class NetworkSecurityGroupSecurityRuleState extends com.pulumi.reso
 
         /**
          * @param sourceType Type of source for the rule. Required if `direction` = `INGRESS`.
-         * * `CIDR_BLOCK`: If the rule&#39;s `source` is an IP address range in CIDR notation.
-         * * `SERVICE_CIDR_BLOCK`: If the rule&#39;s `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
-         * * `NETWORK_SECURITY_GROUP`: If the rule&#39;s `source` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
          * 
          * @return builder
          * 
@@ -485,9 +476,6 @@ public final class NetworkSecurityGroupSecurityRuleState extends com.pulumi.reso
 
         /**
          * @param sourceType Type of source for the rule. Required if `direction` = `INGRESS`.
-         * * `CIDR_BLOCK`: If the rule&#39;s `source` is an IP address range in CIDR notation.
-         * * `SERVICE_CIDR_BLOCK`: If the rule&#39;s `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
-         * * `NETWORK_SECURITY_GROUP`: If the rule&#39;s `source` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
          * 
          * @return builder
          * 

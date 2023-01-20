@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetCostTrackingTagsResult> InvokeAsync(GetCostTrackingTagsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetCostTrackingTagsResult>("oci:Identity/getCostTrackingTags:getCostTrackingTags", args ?? new GetCostTrackingTagsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetCostTrackingTagsResult>("oci:Identity/getCostTrackingTags:getCostTrackingTags", args ?? new GetCostTrackingTagsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Cost Tracking Tags in Oracle Cloud Infrastructure Identity service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetCostTrackingTagsResult> Invoke(GetCostTrackingTagsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetCostTrackingTagsResult>("oci:Identity/getCostTrackingTags:getCostTrackingTags", args ?? new GetCostTrackingTagsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetCostTrackingTagsResult>("oci:Identity/getCostTrackingTags:getCostTrackingTags", args ?? new GetCostTrackingTagsInvokeArgs(), options.WithDefaults());
     }
 
 

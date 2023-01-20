@@ -39,7 +39,7 @@ namespace Pulumi.Oci.ContainerEngine
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetWorkRequestLogEntriesResult> InvokeAsync(GetWorkRequestLogEntriesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetWorkRequestLogEntriesResult>("oci:ContainerEngine/getWorkRequestLogEntries:getWorkRequestLogEntries", args ?? new GetWorkRequestLogEntriesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetWorkRequestLogEntriesResult>("oci:ContainerEngine/getWorkRequestLogEntries:getWorkRequestLogEntries", args ?? new GetWorkRequestLogEntriesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Work Request Log Entries in Oracle Cloud Infrastructure Container Engine service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.ContainerEngine
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetWorkRequestLogEntriesResult> Invoke(GetWorkRequestLogEntriesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetWorkRequestLogEntriesResult>("oci:ContainerEngine/getWorkRequestLogEntries:getWorkRequestLogEntries", args ?? new GetWorkRequestLogEntriesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetWorkRequestLogEntriesResult>("oci:ContainerEngine/getWorkRequestLogEntries:getWorkRequestLogEntries", args ?? new GetWorkRequestLogEntriesInvokeArgs(), options.WithDefaults());
     }
 
 

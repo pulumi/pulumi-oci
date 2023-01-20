@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -188,7 +189,7 @@ export class Certificate extends pulumi.CustomResource {
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["isTrustVerificationDisabled"] = args ? args.isTrustVerificationDisabled : undefined;
-            resourceInputs["privateKeyData"] = args ? args.privateKeyData : undefined;
+            resourceInputs["privateKeyData"] = args?.privateKeyData ? pulumi.secret(args.privateKeyData) : undefined;
             resourceInputs["extensions"] = undefined /*out*/;
             resourceInputs["issuedBy"] = undefined /*out*/;
             resourceInputs["issuerNames"] = undefined /*out*/;
@@ -203,6 +204,8 @@ export class Certificate extends pulumi.CustomResource {
             resourceInputs["version"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["privateKeyData"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(Certificate.__pulumiType, name, resourceInputs, opts);
     }
 }

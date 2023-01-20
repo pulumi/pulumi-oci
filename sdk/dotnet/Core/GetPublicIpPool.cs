@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetPublicIpPoolResult> InvokeAsync(GetPublicIpPoolArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetPublicIpPoolResult>("oci:Core/getPublicIpPool:getPublicIpPool", args ?? new GetPublicIpPoolArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetPublicIpPoolResult>("oci:Core/getPublicIpPool:getPublicIpPool", args ?? new GetPublicIpPoolArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Public Ip Pool resource in Oracle Cloud Infrastructure Core service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetPublicIpPoolResult> Invoke(GetPublicIpPoolInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetPublicIpPoolResult>("oci:Core/getPublicIpPool:getPublicIpPool", args ?? new GetPublicIpPoolInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetPublicIpPoolResult>("oci:Core/getPublicIpPool:getPublicIpPool", args ?? new GetPublicIpPoolInvokeArgs(), options.WithDefaults());
     }
 
 

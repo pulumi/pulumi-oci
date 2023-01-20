@@ -25,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getConsoleHistoryData(args: GetConsoleHistoryDataArgs, opts?: pulumi.InvokeOptions): Promise<GetConsoleHistoryDataResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getConsoleHistoryData:getConsoleHistoryData", {
         "consoleHistoryId": args.consoleHistoryId,
         "length": args.length,
@@ -71,9 +68,28 @@ export interface GetConsoleHistoryDataResult {
     readonly length?: number;
     readonly offset?: number;
 }
-
+/**
+ * This data source provides details about a specific Console History Content resource in Oracle Cloud Infrastructure Core service.
+ *
+ * Gets the actual console history data (not the metadata).
+ * See [CaptureConsoleHistory](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ConsoleHistory/CaptureConsoleHistory)
+ * for details about using the console history operations.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testConsoleHistoryData = oci.Core.getConsoleHistoryData({
+ *     consoleHistoryId: oci_core_console_history.test_console_history.id,
+ *     length: _var.console_history_content_length,
+ *     offset: _var.console_history_content_offset,
+ * });
+ * ```
+ */
 export function getConsoleHistoryDataOutput(args: GetConsoleHistoryDataOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetConsoleHistoryDataResult> {
-    return pulumi.output(args).apply(a => getConsoleHistoryData(a, opts))
+    return pulumi.output(args).apply((a: any) => getConsoleHistoryData(a, opts))
 }
 
 /**

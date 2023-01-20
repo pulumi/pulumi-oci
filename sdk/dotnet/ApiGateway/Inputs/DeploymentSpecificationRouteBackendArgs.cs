@@ -12,6 +12,18 @@ namespace Pulumi.Oci.ApiGateway.Inputs
 
     public sealed class DeploymentSpecificationRouteBackendArgs : global::Pulumi.ResourceArgs
     {
+        [Input("allowedPostLogoutUris")]
+        private InputList<string>? _allowedPostLogoutUris;
+
+        /// <summary>
+        /// (Updatable)
+        /// </summary>
+        public InputList<string> AllowedPostLogoutUris
+        {
+            get => _allowedPostLogoutUris ?? (_allowedPostLogoutUris = new InputList<string>());
+            set => _allowedPostLogoutUris = value;
+        }
+
         /// <summary>
         /// (Updatable) The body of the stock response from the mock backend.
         /// </summary>
@@ -49,10 +61,34 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public Input<bool>? IsSslVerifyDisabled { get; set; }
 
         /// <summary>
+        /// (Updatable) Defines a state that should be shared on redirecting to postLogout URL.
+        /// </summary>
+        [Input("postLogoutState")]
+        public Input<string>? PostLogoutState { get; set; }
+
+        /// <summary>
         /// (Updatable) Defines a timeout for reading a response from the proxied server.
         /// </summary>
         [Input("readTimeoutInSeconds")]
         public Input<double>? ReadTimeoutInSeconds { get; set; }
+
+        [Input("routingBackends")]
+        private InputList<Inputs.DeploymentSpecificationRouteBackendRoutingBackendArgs>? _routingBackends;
+
+        /// <summary>
+        /// (Updatable) List of backends to chose from for Dynamic Routing.
+        /// </summary>
+        public InputList<Inputs.DeploymentSpecificationRouteBackendRoutingBackendArgs> RoutingBackends
+        {
+            get => _routingBackends ?? (_routingBackends = new InputList<Inputs.DeploymentSpecificationRouteBackendRoutingBackendArgs>());
+            set => _routingBackends = value;
+        }
+
+        /// <summary>
+        /// (Updatable) Information around selector used for branching among routes/ authentication servers while dynamic routing/ authentication.
+        /// </summary>
+        [Input("selectionSource")]
+        public Input<Inputs.DeploymentSpecificationRouteBackendSelectionSourceArgs>? SelectionSource { get; set; }
 
         /// <summary>
         /// (Updatable) Defines a timeout for transmitting a request to the proxied server.

@@ -39,7 +39,7 @@ namespace Pulumi.Oci.GoldenGate
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDeploymentBackupResult> InvokeAsync(GetDeploymentBackupArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDeploymentBackupResult>("oci:GoldenGate/getDeploymentBackup:getDeploymentBackup", args ?? new GetDeploymentBackupArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDeploymentBackupResult>("oci:GoldenGate/getDeploymentBackup:getDeploymentBackup", args ?? new GetDeploymentBackupArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Deployment Backup resource in Oracle Cloud Infrastructure Golden Gate service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.GoldenGate
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDeploymentBackupResult> Invoke(GetDeploymentBackupInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDeploymentBackupResult>("oci:GoldenGate/getDeploymentBackup:getDeploymentBackup", args ?? new GetDeploymentBackupInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDeploymentBackupResult>("oci:GoldenGate/getDeploymentBackup:getDeploymentBackup", args ?? new GetDeploymentBackupInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -118,7 +118,7 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        /// Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         public readonly string DeploymentBackupId;
@@ -131,7 +131,7 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
@@ -167,7 +167,7 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public readonly string State;
         /// <summary>
-        /// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+        /// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>

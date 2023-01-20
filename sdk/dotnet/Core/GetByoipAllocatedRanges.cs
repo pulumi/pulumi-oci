@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetByoipAllocatedRangesResult> InvokeAsync(GetByoipAllocatedRangesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetByoipAllocatedRangesResult>("oci:Core/getByoipAllocatedRanges:getByoipAllocatedRanges", args ?? new GetByoipAllocatedRangesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetByoipAllocatedRangesResult>("oci:Core/getByoipAllocatedRanges:getByoipAllocatedRanges", args ?? new GetByoipAllocatedRangesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Byoip Allocated Ranges in Oracle Cloud Infrastructure Core service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetByoipAllocatedRangesResult> Invoke(GetByoipAllocatedRangesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetByoipAllocatedRangesResult>("oci:Core/getByoipAllocatedRanges:getByoipAllocatedRanges", args ?? new GetByoipAllocatedRangesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetByoipAllocatedRangesResult>("oci:Core/getByoipAllocatedRanges:getByoipAllocatedRanges", args ?? new GetByoipAllocatedRangesInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -54,11 +54,21 @@ namespace Pulumi.Oci.ApmSynthetics.Inputs
         [Input("authUserName")]
         public Input<string>? AuthUserName { get; set; }
 
+        [Input("authUserPassword")]
+        private Input<string>? _authUserPassword;
+
         /// <summary>
         /// (Updatable) User password for authentication.
         /// </summary>
-        [Input("authUserPassword")]
-        public Input<string>? AuthUserPassword { get; set; }
+        public Input<string>? AuthUserPassword
+        {
+            get => _authUserPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _authUserPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// (Updatable) Request http oauth scheme.

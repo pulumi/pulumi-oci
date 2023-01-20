@@ -17,11 +17,18 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// (Updatable) The target branch for pull requests; not applicable for push requests.
         /// </summary>
         public readonly string? BaseRef;
+        /// <summary>
+        /// (Updatable) Attributes to support include/exclude files for triggering build runs.
+        /// </summary>
         public readonly Outputs.TriggerActionFilterIncludeFileFilter? FileFilter;
         /// <summary>
         /// (Updatable) Branch for push event; source branch for pull requests.
         /// </summary>
         public readonly string? HeadRef;
+        /// <summary>
+        /// (Updatable) The repository name for trigger events.
+        /// </summary>
+        public readonly string? RepositoryName;
 
         [OutputConstructor]
         private TriggerActionFilterInclude(
@@ -29,11 +36,14 @@ namespace Pulumi.Oci.DevOps.Outputs
 
             Outputs.TriggerActionFilterIncludeFileFilter? fileFilter,
 
-            string? headRef)
+            string? headRef,
+
+            string? repositoryName)
         {
             BaseRef = baseRef;
             FileFilter = fileFilter;
             HeadRef = headRef;
+            RepositoryName = repositoryName;
         }
     }
 }

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAgents(args: GetAgentsArgs, opts?: pulumi.InvokeOptions): Promise<GetAgentsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseMigration/getAgents:getAgents", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -82,9 +80,26 @@ export interface GetAgentsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Agents in Oracle Cloud Infrastructure Database Migration service.
+ *
+ * Display the name of all the existing ODMS Agents in the server.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAgents = oci.DatabaseMigration.getAgents({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.agent_display_name,
+ *     state: _var.agent_state,
+ * });
+ * ```
+ */
 export function getAgentsOutput(args: GetAgentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAgentsResult> {
-    return pulumi.output(args).apply(a => getAgents(a, opts))
+    return pulumi.output(args).apply((a: any) => getAgents(a, opts))
 }
 
 /**

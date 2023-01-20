@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -37,11 +38,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSensitiveDataModelsSensitiveColumns(args: GetSensitiveDataModelsSensitiveColumnsArgs, opts?: pulumi.InvokeOptions): Promise<GetSensitiveDataModelsSensitiveColumnsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getSensitiveDataModelsSensitiveColumns:getSensitiveDataModelsSensitiveColumns", {
         "columnGroup": args.columnGroup,
         "columnNames": args.columnNames,
@@ -191,9 +189,39 @@ export interface GetSensitiveDataModelsSensitiveColumnsResult {
     readonly timeUpdatedGreaterThanOrEqualTo?: string;
     readonly timeUpdatedLessThan?: string;
 }
-
+/**
+ * This data source provides the list of Sensitive Data Models Sensitive Columns in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Gets a list of sensitive columns present in the specified sensitive data model based on the specified query parameters.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSensitiveDataModelsSensitiveColumns = oci.DataSafe.getSensitiveDataModelsSensitiveColumns({
+ *     sensitiveDataModelId: oci_data_safe_sensitive_data_model.test_sensitive_data_model.id,
+ *     columnGroup: _var.sensitive_data_models_sensitive_column_column_group,
+ *     columnNames: _var.sensitive_data_models_sensitive_column_column_name,
+ *     dataTypes: _var.sensitive_data_models_sensitive_column_data_type,
+ *     objects: _var.sensitive_data_models_sensitive_column_object,
+ *     objectTypes: _var.sensitive_data_models_sensitive_column_object_type,
+ *     parentColumnKeys: _var.sensitive_data_models_sensitive_column_parent_column_key,
+ *     relationTypes: _var.sensitive_data_models_sensitive_column_relation_type,
+ *     schemaNames: _var.sensitive_data_models_sensitive_column_schema_name,
+ *     sensitiveColumnLifecycleState: _var.sensitive_data_models_sensitive_column_sensitive_column_lifecycle_state,
+ *     sensitiveTypeIds: oci_data_safe_sensitive_type.test_sensitive_type.id,
+ *     statuses: _var.sensitive_data_models_sensitive_column_status,
+ *     timeCreatedGreaterThanOrEqualTo: _var.sensitive_data_models_sensitive_column_time_created_greater_than_or_equal_to,
+ *     timeCreatedLessThan: _var.sensitive_data_models_sensitive_column_time_created_less_than,
+ *     timeUpdatedGreaterThanOrEqualTo: _var.sensitive_data_models_sensitive_column_time_updated_greater_than_or_equal_to,
+ *     timeUpdatedLessThan: _var.sensitive_data_models_sensitive_column_time_updated_less_than,
+ * });
+ * ```
+ */
 export function getSensitiveDataModelsSensitiveColumnsOutput(args: GetSensitiveDataModelsSensitiveColumnsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSensitiveDataModelsSensitiveColumnsResult> {
-    return pulumi.output(args).apply(a => getSensitiveDataModelsSensitiveColumns(a, opts))
+    return pulumi.output(args).apply((a: any) => getSensitiveDataModelsSensitiveColumns(a, opts))
 }
 
 /**

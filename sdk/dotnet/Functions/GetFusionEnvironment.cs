@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Functions
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetFusionEnvironmentResult> InvokeAsync(GetFusionEnvironmentArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetFusionEnvironmentResult>("oci:Functions/getFusionEnvironment:getFusionEnvironment", args ?? new GetFusionEnvironmentArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetFusionEnvironmentResult>("oci:Functions/getFusionEnvironment:getFusionEnvironment", args ?? new GetFusionEnvironmentArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Fusion Environment resource in Oracle Cloud Infrastructure Fusion Apps service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Functions
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetFusionEnvironmentResult> Invoke(GetFusionEnvironmentInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetFusionEnvironmentResult>("oci:Functions/getFusionEnvironment:getFusionEnvironment", args ?? new GetFusionEnvironmentInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetFusionEnvironmentResult>("oci:Functions/getFusionEnvironment:getFusionEnvironment", args ?? new GetFusionEnvironmentInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -154,17 +154,25 @@ namespace Pulumi.Oci.Functions
         /// </summary>
         public readonly string IdcsDomainUrl;
         /// <summary>
+        /// If it's true, then the Break Glass feature is enabled
+        /// </summary>
+        public readonly bool IsBreakGlassEnabled;
+        /// <summary>
         /// BYOK key id
         /// </summary>
         public readonly string KmsKeyId;
         /// <summary>
         /// BYOK key info
         /// </summary>
-        public readonly ImmutableArray<string> KmsKeyInfos;
+        public readonly ImmutableArray<Outputs.GetFusionEnvironmentKmsKeyInfoResult> KmsKeyInfos;
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         public readonly string LifecycleDetails;
+        /// <summary>
+        /// The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
+        /// </summary>
+        public readonly string LockboxId;
         /// <summary>
         /// The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
         /// </summary>
@@ -240,11 +248,15 @@ namespace Pulumi.Oci.Functions
 
             string idcsDomainUrl,
 
+            bool isBreakGlassEnabled,
+
             string kmsKeyId,
 
-            ImmutableArray<string> kmsKeyInfos,
+            ImmutableArray<Outputs.GetFusionEnvironmentKmsKeyInfoResult> kmsKeyInfos,
 
             string lifecycleDetails,
+
+            string lockboxId,
 
             ImmutableArray<Outputs.GetFusionEnvironmentMaintenancePolicyResult> maintenancePolicies,
 
@@ -282,9 +294,11 @@ namespace Pulumi.Oci.Functions
             FusionEnvironmentType = fusionEnvironmentType;
             Id = id;
             IdcsDomainUrl = idcsDomainUrl;
+            IsBreakGlassEnabled = isBreakGlassEnabled;
             KmsKeyId = kmsKeyId;
             KmsKeyInfos = kmsKeyInfos;
             LifecycleDetails = lifecycleDetails;
+            LockboxId = lockboxId;
             MaintenancePolicies = maintenancePolicies;
             PublicUrl = publicUrl;
             Refreshes = refreshes;

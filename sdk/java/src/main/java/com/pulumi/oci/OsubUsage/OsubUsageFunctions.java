@@ -69,7 +69,7 @@ public final class OsubUsageFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsubUsage.OsubUsageFunctions;
-     * import com.pulumi.oci.OneSubsription.inputs.GetComputedUsageArgs;
+     * import com.pulumi.oci.OsubUsage.inputs.GetComputedUsageArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -111,7 +111,7 @@ public final class OsubUsageFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsubUsage.OsubUsageFunctions;
-     * import com.pulumi.oci.OneSubsription.inputs.GetComputedUsageArgs;
+     * import com.pulumi.oci.OsubUsage.inputs.GetComputedUsageArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -153,7 +153,7 @@ public final class OsubUsageFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsubUsage.OsubUsageFunctions;
-     * import com.pulumi.oci.OneSubsription.inputs.GetComputedUsageArgs;
+     * import com.pulumi.oci.OsubUsage.inputs.GetComputedUsageArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -195,7 +195,7 @@ public final class OsubUsageFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.OsubUsage.OsubUsageFunctions;
-     * import com.pulumi.oci.OneSubsription.inputs.GetComputedUsageArgs;
+     * import com.pulumi.oci.OsubUsage.inputs.GetComputedUsageArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;

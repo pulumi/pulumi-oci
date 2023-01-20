@@ -23,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVmClusterNetworkDownloadConfigFile(args: GetVmClusterNetworkDownloadConfigFileArgs, opts?: pulumi.InvokeOptions): Promise<GetVmClusterNetworkDownloadConfigFileResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getVmClusterNetworkDownloadConfigFile:getVmClusterNetworkDownloadConfigFile", {
         "base64EncodeContent": args.base64EncodeContent,
         "exadataInfrastructureId": args.exadataInfrastructureId,
@@ -66,9 +63,26 @@ export interface GetVmClusterNetworkDownloadConfigFileResult {
     readonly id: string;
     readonly vmClusterNetworkId: string;
 }
-
+/**
+ * This data source provides details about a specific Vm Cluster Network Download Config File resource in Oracle Cloud Infrastructure Database service.
+ *
+ * Downloads the configuration file for the specified VM cluster network. Applies to Exadata Cloud@Customer instances only.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testVmClusterNetworkDownloadConfigFile = oci.Database.getVmClusterNetworkDownloadConfigFile({
+ *     exadataInfrastructureId: oci_database_exadata_infrastructure.test_exadata_infrastructure.id,
+ *     vmClusterNetworkId: oci_database_vm_cluster_network.test_vm_cluster_network.id,
+ *     base64EncodeContent: false,
+ * });
+ * ```
+ */
 export function getVmClusterNetworkDownloadConfigFileOutput(args: GetVmClusterNetworkDownloadConfigFileOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVmClusterNetworkDownloadConfigFileResult> {
-    return pulumi.output(args).apply(a => getVmClusterNetworkDownloadConfigFile(a, opts))
+    return pulumi.output(args).apply((a: any) => getVmClusterNetworkDownloadConfigFile(a, opts))
 }
 
 /**

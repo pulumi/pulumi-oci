@@ -5,7 +5,9 @@ package com.pulumi.oci.Database;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import java.lang.Boolean;
+import com.pulumi.oci.Database.inputs.CloudAutonomousVmClusterMaintenanceWindowDetailsArgs;
+import java.lang.Double;
+import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -18,6 +20,21 @@ import javax.annotation.Nullable;
 public final class CloudAutonomousVmClusterArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final CloudAutonomousVmClusterArgs Empty = new CloudAutonomousVmClusterArgs();
+
+    /**
+     * The data disk group size to be allocated for Autonomous Databases, in TBs.
+     * 
+     */
+    @Import(name="autonomousDataStorageSizeInTbs")
+    private @Nullable Output<Double> autonomousDataStorageSizeInTbs;
+
+    /**
+     * @return The data disk group size to be allocated for Autonomous Databases, in TBs.
+     * 
+     */
+    public Optional<Output<Double>> autonomousDataStorageSizeInTbs() {
+        return Optional.ofNullable(this.autonomousDataStorageSizeInTbs);
+    }
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure.
@@ -62,6 +79,36 @@ public final class CloudAutonomousVmClusterArgs extends com.pulumi.resources.Res
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
+    }
+
+    /**
+     * The number of OCPU cores to be enabled per VM cluster node.
+     * 
+     */
+    @Import(name="cpuCoreCountPerNode")
+    private @Nullable Output<Integer> cpuCoreCountPerNode;
+
+    /**
+     * @return The number of OCPU cores to be enabled per VM cluster node.
+     * 
+     */
+    public Optional<Output<Integer>> cpuCoreCountPerNode() {
+        return Optional.ofNullable(this.cpuCoreCountPerNode);
+    }
+
+    /**
+     * The list of database servers.
+     * 
+     */
+    @Import(name="dbServers")
+    private @Nullable Output<List<String>> dbServers;
+
+    /**
+     * @return The list of database servers.
+     * 
+     */
+    public Optional<Output<List<String>>> dbServers() {
+        return Optional.ofNullable(this.dbServers);
     }
 
     /**
@@ -140,6 +187,36 @@ public final class CloudAutonomousVmClusterArgs extends com.pulumi.resources.Res
     }
 
     /**
+     * (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+     * 
+     */
+    @Import(name="maintenanceWindowDetails")
+    private @Nullable Output<CloudAutonomousVmClusterMaintenanceWindowDetailsArgs> maintenanceWindowDetails;
+
+    /**
+     * @return (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+     * 
+     */
+    public Optional<Output<CloudAutonomousVmClusterMaintenanceWindowDetailsArgs>> maintenanceWindowDetails() {
+        return Optional.ofNullable(this.maintenanceWindowDetails);
+    }
+
+    /**
+     * The amount of memory (in GBs) to be enabled per each OCPU core.
+     * 
+     */
+    @Import(name="memoryPerOracleComputeUnitInGbs")
+    private @Nullable Output<Integer> memoryPerOracleComputeUnitInGbs;
+
+    /**
+     * @return The amount of memory (in GBs) to be enabled per each OCPU core.
+     * 
+     */
+    public Optional<Output<Integer>> memoryPerOracleComputeUnitInGbs() {
+        return Optional.ofNullable(this.memoryPerOracleComputeUnitInGbs);
+    }
+
+    /**
      * (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
      * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      * 
@@ -154,20 +231,6 @@ public final class CloudAutonomousVmClusterArgs extends com.pulumi.resources.Res
      */
     public Optional<Output<List<String>>> nsgIds() {
         return Optional.ofNullable(this.nsgIds);
-    }
-
-    @Import(name="rotateOrdsCertsTrigger")
-    private @Nullable Output<Boolean> rotateOrdsCertsTrigger;
-
-    public Optional<Output<Boolean>> rotateOrdsCertsTrigger() {
-        return Optional.ofNullable(this.rotateOrdsCertsTrigger);
-    }
-
-    @Import(name="rotateSslCertsTrigger")
-    private @Nullable Output<Boolean> rotateSslCertsTrigger;
-
-    public Optional<Output<Boolean>> rotateSslCertsTrigger() {
-        return Optional.ofNullable(this.rotateSslCertsTrigger);
     }
 
     /**
@@ -185,21 +248,56 @@ public final class CloudAutonomousVmClusterArgs extends com.pulumi.resources.Res
         return this.subnetId;
     }
 
+    /**
+     * The last date and time that the cloud Autonomous VM cluster was updated.
+     * 
+     */
+    @Import(name="timeUpdated")
+    private @Nullable Output<String> timeUpdated;
+
+    /**
+     * @return The last date and time that the cloud Autonomous VM cluster was updated.
+     * 
+     */
+    public Optional<Output<String>> timeUpdated() {
+        return Optional.ofNullable(this.timeUpdated);
+    }
+
+    /**
+     * The total number of Autonomous Container Databases that can be created.
+     * 
+     */
+    @Import(name="totalContainerDatabases")
+    private @Nullable Output<Integer> totalContainerDatabases;
+
+    /**
+     * @return The total number of Autonomous Container Databases that can be created.
+     * 
+     */
+    public Optional<Output<Integer>> totalContainerDatabases() {
+        return Optional.ofNullable(this.totalContainerDatabases);
+    }
+
     private CloudAutonomousVmClusterArgs() {}
 
     private CloudAutonomousVmClusterArgs(CloudAutonomousVmClusterArgs $) {
+        this.autonomousDataStorageSizeInTbs = $.autonomousDataStorageSizeInTbs;
         this.cloudExadataInfrastructureId = $.cloudExadataInfrastructureId;
         this.clusterTimeZone = $.clusterTimeZone;
         this.compartmentId = $.compartmentId;
+        this.cpuCoreCountPerNode = $.cpuCoreCountPerNode;
+        this.dbServers = $.dbServers;
         this.definedTags = $.definedTags;
         this.description = $.description;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.licenseModel = $.licenseModel;
+        this.maintenanceWindowDetails = $.maintenanceWindowDetails;
+        this.memoryPerOracleComputeUnitInGbs = $.memoryPerOracleComputeUnitInGbs;
         this.nsgIds = $.nsgIds;
-        this.rotateOrdsCertsTrigger = $.rotateOrdsCertsTrigger;
-        this.rotateSslCertsTrigger = $.rotateSslCertsTrigger;
         this.subnetId = $.subnetId;
+        this.timeUpdated = $.timeUpdated;
+        this.totalContainerDatabases = $.totalContainerDatabases;
     }
 
     public static Builder builder() {
@@ -218,6 +316,27 @@ public final class CloudAutonomousVmClusterArgs extends com.pulumi.resources.Res
 
         public Builder(CloudAutonomousVmClusterArgs defaults) {
             $ = new CloudAutonomousVmClusterArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param autonomousDataStorageSizeInTbs The data disk group size to be allocated for Autonomous Databases, in TBs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder autonomousDataStorageSizeInTbs(@Nullable Output<Double> autonomousDataStorageSizeInTbs) {
+            $.autonomousDataStorageSizeInTbs = autonomousDataStorageSizeInTbs;
+            return this;
+        }
+
+        /**
+         * @param autonomousDataStorageSizeInTbs The data disk group size to be allocated for Autonomous Databases, in TBs.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder autonomousDataStorageSizeInTbs(Double autonomousDataStorageSizeInTbs) {
+            return autonomousDataStorageSizeInTbs(Output.of(autonomousDataStorageSizeInTbs));
         }
 
         /**
@@ -281,6 +400,58 @@ public final class CloudAutonomousVmClusterArgs extends com.pulumi.resources.Res
          */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
+        }
+
+        /**
+         * @param cpuCoreCountPerNode The number of OCPU cores to be enabled per VM cluster node.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder cpuCoreCountPerNode(@Nullable Output<Integer> cpuCoreCountPerNode) {
+            $.cpuCoreCountPerNode = cpuCoreCountPerNode;
+            return this;
+        }
+
+        /**
+         * @param cpuCoreCountPerNode The number of OCPU cores to be enabled per VM cluster node.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder cpuCoreCountPerNode(Integer cpuCoreCountPerNode) {
+            return cpuCoreCountPerNode(Output.of(cpuCoreCountPerNode));
+        }
+
+        /**
+         * @param dbServers The list of database servers.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbServers(@Nullable Output<List<String>> dbServers) {
+            $.dbServers = dbServers;
+            return this;
+        }
+
+        /**
+         * @param dbServers The list of database servers.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbServers(List<String> dbServers) {
+            return dbServers(Output.of(dbServers));
+        }
+
+        /**
+         * @param dbServers The list of database servers.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbServers(String... dbServers) {
+            return dbServers(List.of(dbServers));
         }
 
         /**
@@ -389,6 +560,48 @@ public final class CloudAutonomousVmClusterArgs extends com.pulumi.resources.Res
         }
 
         /**
+         * @param maintenanceWindowDetails (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maintenanceWindowDetails(@Nullable Output<CloudAutonomousVmClusterMaintenanceWindowDetailsArgs> maintenanceWindowDetails) {
+            $.maintenanceWindowDetails = maintenanceWindowDetails;
+            return this;
+        }
+
+        /**
+         * @param maintenanceWindowDetails (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maintenanceWindowDetails(CloudAutonomousVmClusterMaintenanceWindowDetailsArgs maintenanceWindowDetails) {
+            return maintenanceWindowDetails(Output.of(maintenanceWindowDetails));
+        }
+
+        /**
+         * @param memoryPerOracleComputeUnitInGbs The amount of memory (in GBs) to be enabled per each OCPU core.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder memoryPerOracleComputeUnitInGbs(@Nullable Output<Integer> memoryPerOracleComputeUnitInGbs) {
+            $.memoryPerOracleComputeUnitInGbs = memoryPerOracleComputeUnitInGbs;
+            return this;
+        }
+
+        /**
+         * @param memoryPerOracleComputeUnitInGbs The amount of memory (in GBs) to be enabled per each OCPU core.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder memoryPerOracleComputeUnitInGbs(Integer memoryPerOracleComputeUnitInGbs) {
+            return memoryPerOracleComputeUnitInGbs(Output.of(memoryPerOracleComputeUnitInGbs));
+        }
+
+        /**
          * @param nsgIds (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
          * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
          * 
@@ -422,24 +635,6 @@ public final class CloudAutonomousVmClusterArgs extends com.pulumi.resources.Res
             return nsgIds(List.of(nsgIds));
         }
 
-        public Builder rotateOrdsCertsTrigger(@Nullable Output<Boolean> rotateOrdsCertsTrigger) {
-            $.rotateOrdsCertsTrigger = rotateOrdsCertsTrigger;
-            return this;
-        }
-
-        public Builder rotateOrdsCertsTrigger(Boolean rotateOrdsCertsTrigger) {
-            return rotateOrdsCertsTrigger(Output.of(rotateOrdsCertsTrigger));
-        }
-
-        public Builder rotateSslCertsTrigger(@Nullable Output<Boolean> rotateSslCertsTrigger) {
-            $.rotateSslCertsTrigger = rotateSslCertsTrigger;
-            return this;
-        }
-
-        public Builder rotateSslCertsTrigger(Boolean rotateSslCertsTrigger) {
-            return rotateSslCertsTrigger(Output.of(rotateSslCertsTrigger));
-        }
-
         /**
          * @param subnetId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
          * 
@@ -459,6 +654,48 @@ public final class CloudAutonomousVmClusterArgs extends com.pulumi.resources.Res
          */
         public Builder subnetId(String subnetId) {
             return subnetId(Output.of(subnetId));
+        }
+
+        /**
+         * @param timeUpdated The last date and time that the cloud Autonomous VM cluster was updated.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeUpdated(@Nullable Output<String> timeUpdated) {
+            $.timeUpdated = timeUpdated;
+            return this;
+        }
+
+        /**
+         * @param timeUpdated The last date and time that the cloud Autonomous VM cluster was updated.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeUpdated(String timeUpdated) {
+            return timeUpdated(Output.of(timeUpdated));
+        }
+
+        /**
+         * @param totalContainerDatabases The total number of Autonomous Container Databases that can be created.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder totalContainerDatabases(@Nullable Output<Integer> totalContainerDatabases) {
+            $.totalContainerDatabases = totalContainerDatabases;
+            return this;
+        }
+
+        /**
+         * @param totalContainerDatabases The total number of Autonomous Container Databases that can be created.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder totalContainerDatabases(Integer totalContainerDatabases) {
+            return totalContainerDatabases(Output.of(totalContainerDatabases));
         }
 
         public CloudAutonomousVmClusterArgs build() {

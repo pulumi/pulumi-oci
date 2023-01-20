@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Functions
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetFusionEnvironmentStatusResult> InvokeAsync(GetFusionEnvironmentStatusArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetFusionEnvironmentStatusResult>("oci:Functions/getFusionEnvironmentStatus:getFusionEnvironmentStatus", args ?? new GetFusionEnvironmentStatusArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetFusionEnvironmentStatusResult>("oci:Functions/getFusionEnvironmentStatus:getFusionEnvironmentStatus", args ?? new GetFusionEnvironmentStatusArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Fusion Environment Status resource in Oracle Cloud Infrastructure Fusion Apps service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Functions
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetFusionEnvironmentStatusResult> Invoke(GetFusionEnvironmentStatusInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetFusionEnvironmentStatusResult>("oci:Functions/getFusionEnvironmentStatus:getFusionEnvironmentStatus", args ?? new GetFusionEnvironmentStatusInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetFusionEnvironmentStatusResult>("oci:Functions/getFusionEnvironmentStatus:getFusionEnvironmentStatus", args ?? new GetFusionEnvironmentStatusInvokeArgs(), options.WithDefaults());
     }
 
 

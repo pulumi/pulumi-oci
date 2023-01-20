@@ -23,9 +23,12 @@ public final class SessionTargetResourceDetails {
      */
     private @Nullable String targetResourceDisplayName;
     /**
-     * @return The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to. It&#39;s optional depends on the type of session you want to create.
-     * * (Required) For MANAGED_SSH session type, we can only use target_resource_id to create session.
-     * * (Optional) For PORT_FORWARDING session type, you must either use target_resource_id or target_resource_private_ip_address
+     * @return The Fully Qualified Domain Name of the target resource that the session connects to.
+     * 
+     */
+    private @Nullable String targetResourceFqdn;
+    /**
+     * @return The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
      * 
      */
     private @Nullable String targetResourceId;
@@ -40,7 +43,7 @@ public final class SessionTargetResourceDetails {
      */
     private @Nullable Integer targetResourcePort;
     /**
-     * @return The private IP address of the target resource that the session connects to. For PORT_FORWARDING session type, you must either use target_resource_id or target_resource_private_ip_address
+     * @return The private IP address of the target resource that the session connects to.
      * 
      */
     private @Nullable String targetResourcePrivateIpAddress;
@@ -61,9 +64,14 @@ public final class SessionTargetResourceDetails {
         return Optional.ofNullable(this.targetResourceDisplayName);
     }
     /**
-     * @return The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to. It&#39;s optional depends on the type of session you want to create.
-     * * (Required) For MANAGED_SSH session type, we can only use target_resource_id to create session.
-     * * (Optional) For PORT_FORWARDING session type, you must either use target_resource_id or target_resource_private_ip_address
+     * @return The Fully Qualified Domain Name of the target resource that the session connects to.
+     * 
+     */
+    public Optional<String> targetResourceFqdn() {
+        return Optional.ofNullable(this.targetResourceFqdn);
+    }
+    /**
+     * @return The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
      * 
      */
     public Optional<String> targetResourceId() {
@@ -84,7 +92,7 @@ public final class SessionTargetResourceDetails {
         return Optional.ofNullable(this.targetResourcePort);
     }
     /**
-     * @return The private IP address of the target resource that the session connects to. For PORT_FORWARDING session type, you must either use target_resource_id or target_resource_private_ip_address
+     * @return The private IP address of the target resource that the session connects to.
      * 
      */
     public Optional<String> targetResourcePrivateIpAddress() {
@@ -102,6 +110,7 @@ public final class SessionTargetResourceDetails {
     public static final class Builder {
         private String sessionType;
         private @Nullable String targetResourceDisplayName;
+        private @Nullable String targetResourceFqdn;
         private @Nullable String targetResourceId;
         private @Nullable String targetResourceOperatingSystemUserName;
         private @Nullable Integer targetResourcePort;
@@ -111,6 +120,7 @@ public final class SessionTargetResourceDetails {
     	      Objects.requireNonNull(defaults);
     	      this.sessionType = defaults.sessionType;
     	      this.targetResourceDisplayName = defaults.targetResourceDisplayName;
+    	      this.targetResourceFqdn = defaults.targetResourceFqdn;
     	      this.targetResourceId = defaults.targetResourceId;
     	      this.targetResourceOperatingSystemUserName = defaults.targetResourceOperatingSystemUserName;
     	      this.targetResourcePort = defaults.targetResourcePort;
@@ -125,6 +135,11 @@ public final class SessionTargetResourceDetails {
         @CustomType.Setter
         public Builder targetResourceDisplayName(@Nullable String targetResourceDisplayName) {
             this.targetResourceDisplayName = targetResourceDisplayName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder targetResourceFqdn(@Nullable String targetResourceFqdn) {
+            this.targetResourceFqdn = targetResourceFqdn;
             return this;
         }
         @CustomType.Setter
@@ -151,6 +166,7 @@ public final class SessionTargetResourceDetails {
             final var o = new SessionTargetResourceDetails();
             o.sessionType = sessionType;
             o.targetResourceDisplayName = targetResourceDisplayName;
+            o.targetResourceFqdn = targetResourceFqdn;
             o.targetResourceId = targetResourceId;
             o.targetResourceOperatingSystemUserName = targetResourceOperatingSystemUserName;
             o.targetResourcePort = targetResourcePort;

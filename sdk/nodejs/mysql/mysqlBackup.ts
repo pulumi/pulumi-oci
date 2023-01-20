@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -76,7 +77,7 @@ export class MysqlBackup extends pulumi.CustomResource {
      */
     public readonly backupType!: pulumi.Output<string>;
     /**
-     * (Updatable) The OCID of the compartment.
+     * (Updatable) The OCID of the compartment the backup exists in.
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -213,7 +214,7 @@ export interface MysqlBackupState {
      */
     backupType?: pulumi.Input<string>;
     /**
-     * (Updatable) The OCID of the compartment.
+     * (Updatable) The OCID of the compartment the backup exists in.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -287,7 +288,7 @@ export interface MysqlBackupArgs {
      */
     backupType?: pulumi.Input<string>;
     /**
-     * (Updatable) The OCID of the compartment.
+     * (Updatable) The OCID of the compartment the backup exists in.
      */
     compartmentId?: pulumi.Input<string>;
     /**

@@ -45,6 +45,8 @@ type PrivateEndpoint struct {
 	OwnerPrincipalId pulumi.StringOutput `pulumi:"ownerPrincipalId"`
 	// The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
 	OwnerUserName pulumi.StringOutput `pulumi:"ownerUserName"`
+	// (Updatable) An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: "scan1.oracle.com", port: "1521"}, { fqdn: "scan2.oracle.com", port: "1521" } ]
+	ScanDetails PrivateEndpointScanDetailArrayOutput `pulumi:"scanDetails"`
 	// The current state of this private endpoint.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The OCID of a subnet.
@@ -115,6 +117,8 @@ type privateEndpointState struct {
 	OwnerPrincipalId *string `pulumi:"ownerPrincipalId"`
 	// The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
 	OwnerUserName *string `pulumi:"ownerUserName"`
+	// (Updatable) An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: "scan1.oracle.com", port: "1521"}, { fqdn: "scan2.oracle.com", port: "1521" } ]
+	ScanDetails []PrivateEndpointScanDetail `pulumi:"scanDetails"`
 	// The current state of this private endpoint.
 	State *string `pulumi:"state"`
 	// The OCID of a subnet.
@@ -148,6 +152,8 @@ type PrivateEndpointState struct {
 	OwnerPrincipalId pulumi.StringPtrInput
 	// The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
 	OwnerUserName pulumi.StringPtrInput
+	// (Updatable) An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: "scan1.oracle.com", port: "1521"}, { fqdn: "scan2.oracle.com", port: "1521" } ]
+	ScanDetails PrivateEndpointScanDetailArrayInput
 	// The current state of this private endpoint.
 	State pulumi.StringPtrInput
 	// The OCID of a subnet.
@@ -179,6 +185,8 @@ type privateEndpointArgs struct {
 	MaxHostCount *int `pulumi:"maxHostCount"`
 	// (Updatable) An array of network security group OCIDs.
 	NsgIds []string `pulumi:"nsgIds"`
+	// (Updatable) An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: "scan1.oracle.com", port: "1521"}, { fqdn: "scan2.oracle.com", port: "1521" } ]
+	ScanDetails []PrivateEndpointScanDetail `pulumi:"scanDetails"`
 	// The OCID of a subnet.
 	SubnetId string `pulumi:"subnetId"`
 }
@@ -201,6 +209,8 @@ type PrivateEndpointArgs struct {
 	MaxHostCount pulumi.IntPtrInput
 	// (Updatable) An array of network security group OCIDs.
 	NsgIds pulumi.StringArrayInput
+	// (Updatable) An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: "scan1.oracle.com", port: "1521"}, { fqdn: "scan2.oracle.com", port: "1521" } ]
+	ScanDetails PrivateEndpointScanDetailArrayInput
 	// The OCID of a subnet.
 	SubnetId pulumi.StringInput
 }
@@ -345,6 +355,11 @@ func (o PrivateEndpointOutput) OwnerPrincipalId() pulumi.StringOutput {
 // The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
 func (o PrivateEndpointOutput) OwnerUserName() pulumi.StringOutput {
 	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringOutput { return v.OwnerUserName }).(pulumi.StringOutput)
+}
+
+// (Updatable) An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: "scan1.oracle.com", port: "1521"}, { fqdn: "scan2.oracle.com", port: "1521" } ]
+func (o PrivateEndpointOutput) ScanDetails() PrivateEndpointScanDetailArrayOutput {
+	return o.ApplyT(func(v *PrivateEndpoint) PrivateEndpointScanDetailArrayOutput { return v.ScanDetails }).(PrivateEndpointScanDetailArrayOutput)
 }
 
 // The current state of this private endpoint.

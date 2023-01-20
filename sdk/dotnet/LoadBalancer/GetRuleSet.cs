@@ -39,7 +39,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetRuleSetResult> InvokeAsync(GetRuleSetArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetRuleSetResult>("oci:LoadBalancer/getRuleSet:getRuleSet", args ?? new GetRuleSetArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetRuleSetResult>("oci:LoadBalancer/getRuleSet:getRuleSet", args ?? new GetRuleSetArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Rule Set resource in Oracle Cloud Infrastructure Load Balancer service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetRuleSetResult> Invoke(GetRuleSetInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetRuleSetResult>("oci:LoadBalancer/getRuleSet:getRuleSet", args ?? new GetRuleSetInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetRuleSetResult>("oci:LoadBalancer/getRuleSet:getRuleSet", args ?? new GetRuleSetInvokeArgs(), options.WithDefaults());
     }
 
 

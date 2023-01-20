@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -21,25 +22,25 @@ import * as utilities from "../utilities";
  *     createdBy: _var.model_created_by,
  *     displayName: _var.model_display_name,
  *     id: _var.model_id,
+ *     modelVersionSetName: oci_datascience_model_version_set.test_model_version_set.name,
  *     projectId: oci_datascience_project.test_project.id,
  *     state: _var.model_state,
  * });
  * ```
  */
 export function getModels(args: GetModelsArgs, opts?: pulumi.InvokeOptions): Promise<GetModelsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataScience/getModels:getModels", {
         "compartmentId": args.compartmentId,
         "createdBy": args.createdBy,
         "displayName": args.displayName,
         "filters": args.filters,
         "id": args.id,
+        "modelVersionSetName": args.modelVersionSetName,
         "projectId": args.projectId,
         "state": args.state,
+        "versionLabel": args.versionLabel,
     }, opts);
 }
 
@@ -64,6 +65,7 @@ export interface GetModelsArgs {
      * <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
      */
     id?: string;
+    modelVersionSetName: string;
     /**
      * <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
      */
@@ -72,6 +74,7 @@ export interface GetModelsArgs {
      * <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
      */
     state?: string;
+    versionLabel: string;
 }
 
 /**
@@ -95,6 +98,7 @@ export interface GetModelsResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
      */
     readonly id?: string;
+    readonly modelVersionSetName: string;
     /**
      * The list of models.
      */
@@ -107,10 +111,32 @@ export interface GetModelsResult {
      * The state of the model.
      */
     readonly state?: string;
+    readonly versionLabel: string;
 }
-
+/**
+ * This data source provides the list of Models in Oracle Cloud Infrastructure Data Science service.
+ *
+ * Lists models in the specified compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testModels = oci.DataScience.getModels({
+ *     compartmentId: _var.compartment_id,
+ *     createdBy: _var.model_created_by,
+ *     displayName: _var.model_display_name,
+ *     id: _var.model_id,
+ *     modelVersionSetName: oci_datascience_model_version_set.test_model_version_set.name,
+ *     projectId: oci_datascience_project.test_project.id,
+ *     state: _var.model_state,
+ * });
+ * ```
+ */
 export function getModelsOutput(args: GetModelsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetModelsResult> {
-    return pulumi.output(args).apply(a => getModels(a, opts))
+    return pulumi.output(args).apply((a: any) => getModels(a, opts))
 }
 
 /**
@@ -134,6 +160,7 @@ export interface GetModelsOutputArgs {
      * <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
      */
     id?: pulumi.Input<string>;
+    modelVersionSetName: pulumi.Input<string>;
     /**
      * <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
      */
@@ -142,4 +169,5 @@ export interface GetModelsOutputArgs {
      * <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
      */
     state?: pulumi.Input<string>;
+    versionLabel: pulumi.Input<string>;
 }

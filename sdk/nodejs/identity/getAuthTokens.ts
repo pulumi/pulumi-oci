@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAuthTokens(args: GetAuthTokensArgs, opts?: pulumi.InvokeOptions): Promise<GetAuthTokensResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getAuthTokens:getAuthTokens", {
         "filters": args.filters,
         "userId": args.userId,
@@ -63,9 +61,25 @@ export interface GetAuthTokensResult {
      */
     readonly userId: string;
 }
-
+/**
+ * This data source provides the list of Auth Tokens in Oracle Cloud Infrastructure Identity service.
+ *
+ * Lists the auth tokens for the specified user. The returned object contains the token's OCID, but not
+ * the token itself. The actual token is returned only upon creation.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAuthTokens = oci.Identity.getAuthTokens({
+ *     userId: oci_identity_user.test_user.id,
+ * });
+ * ```
+ */
 export function getAuthTokensOutput(args: GetAuthTokensOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuthTokensResult> {
-    return pulumi.output(args).apply(a => getAuthTokens(a, opts))
+    return pulumi.output(args).apply((a: any) => getAuthTokens(a, opts))
 }
 
 /**

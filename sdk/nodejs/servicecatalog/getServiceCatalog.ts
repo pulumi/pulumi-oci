@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getServiceCatalog(args: GetServiceCatalogArgs, opts?: pulumi.InvokeOptions): Promise<GetServiceCatalogResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ServiceCatalog/getServiceCatalog:getServiceCatalog", {
         "serviceCatalogId": args.serviceCatalogId,
     }, opts);
@@ -79,9 +76,24 @@ export interface GetServiceCatalogResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Service Catalog resource in Oracle Cloud Infrastructure Service Catalog service.
+ *
+ * Gets detailed information about the service catalog including name, compartmentId
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testServiceCatalog = oci.ServiceCatalog.getServiceCatalog({
+ *     serviceCatalogId: oci_service_catalog_service_catalog.test_service_catalog.id,
+ * });
+ * ```
+ */
 export function getServiceCatalogOutput(args: GetServiceCatalogOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetServiceCatalogResult> {
-    return pulumi.output(args).apply(a => getServiceCatalog(a, opts))
+    return pulumi.output(args).apply((a: any) => getServiceCatalog(a, opts))
 }
 
 /**

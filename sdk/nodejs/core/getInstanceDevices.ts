@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getInstanceDevices(args: GetInstanceDevicesArgs, opts?: pulumi.InvokeOptions): Promise<GetInstanceDevicesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getInstanceDevices:getInstanceDevices", {
         "filters": args.filters,
         "instanceId": args.instanceId,
@@ -79,9 +77,26 @@ export interface GetInstanceDevicesResult {
      */
     readonly name?: string;
 }
-
+/**
+ * This data source provides the list of Instance Devices in Oracle Cloud Infrastructure Core service.
+ *
+ * Gets a list of all the devices for given instance. You can optionally filter results by device availability.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testInstanceDevices = oci.Core.getInstanceDevices({
+ *     instanceId: oci_core_instance.test_instance.id,
+ *     isAvailable: _var.instance_device_is_available,
+ *     name: _var.instance_device_name,
+ * });
+ * ```
+ */
 export function getInstanceDevicesOutput(args: GetInstanceDevicesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInstanceDevicesResult> {
-    return pulumi.output(args).apply(a => getInstanceDevices(a, opts))
+    return pulumi.output(args).apply((a: any) => getInstanceDevices(a, opts))
 }
 
 /**

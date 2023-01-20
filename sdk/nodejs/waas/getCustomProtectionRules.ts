@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -27,11 +28,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCustomProtectionRules(args: GetCustomProtectionRulesArgs, opts?: pulumi.InvokeOptions): Promise<GetCustomProtectionRulesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Waas/getCustomProtectionRules:getCustomProtectionRules", {
         "compartmentId": args.compartmentId,
         "displayNames": args.displayNames,
@@ -97,9 +95,29 @@ export interface GetCustomProtectionRulesResult {
     readonly timeCreatedGreaterThanOrEqualTo?: string;
     readonly timeCreatedLessThan?: string;
 }
-
+/**
+ * This data source provides the list of Custom Protection Rules in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
+ *
+ * Gets a list of custom protection rules for the specified Web Application Firewall.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCustomProtectionRules = oci.Waas.getCustomProtectionRules({
+ *     compartmentId: _var.compartment_id,
+ *     displayNames: _var.custom_protection_rule_display_names,
+ *     ids: _var.custom_protection_rule_ids,
+ *     states: _var.custom_protection_rule_states,
+ *     timeCreatedGreaterThanOrEqualTo: _var.custom_protection_rule_time_created_greater_than_or_equal_to,
+ *     timeCreatedLessThan: _var.custom_protection_rule_time_created_less_than,
+ * });
+ * ```
+ */
 export function getCustomProtectionRulesOutput(args: GetCustomProtectionRulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCustomProtectionRulesResult> {
-    return pulumi.output(args).apply(a => getCustomProtectionRules(a, opts))
+    return pulumi.output(args).apply((a: any) => getCustomProtectionRules(a, opts))
 }
 
 /**

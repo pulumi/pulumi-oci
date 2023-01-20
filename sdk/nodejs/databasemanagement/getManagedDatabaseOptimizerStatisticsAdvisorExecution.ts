@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabaseOptimizerStatisticsAdvisorExecution(args: GetManagedDatabaseOptimizerStatisticsAdvisorExecutionArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabaseOptimizerStatisticsAdvisorExecution:getManagedDatabaseOptimizerStatisticsAdvisorExecution", {
         "executionName": args.executionName,
         "managedDatabaseId": args.managedDatabaseId,
@@ -105,9 +103,27 @@ export interface GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult {
      */
     readonly timeStart: string;
 }
-
+/**
+ * This data source provides details about a specific Managed Database Optimizer Statistics Advisor Execution resource in Oracle Cloud Infrastructure Database Management service.
+ *
+ * Gets a comprehensive report of the Optimizer Statistics Advisor execution, which includes details of the
+ * Managed Database, findings, recommendations, rationale, and examples.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testManagedDatabaseOptimizerStatisticsAdvisorExecution = oci.DatabaseManagement.getManagedDatabaseOptimizerStatisticsAdvisorExecution({
+ *     executionName: _var.managed_database_optimizer_statistics_advisor_execution_execution_name,
+ *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
+ *     taskName: _var.managed_database_optimizer_statistics_advisor_execution_task_name,
+ * });
+ * ```
+ */
 export function getManagedDatabaseOptimizerStatisticsAdvisorExecutionOutput(args: GetManagedDatabaseOptimizerStatisticsAdvisorExecutionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseOptimizerStatisticsAdvisorExecutionResult> {
-    return pulumi.output(args).apply(a => getManagedDatabaseOptimizerStatisticsAdvisorExecution(a, opts))
+    return pulumi.output(args).apply((a: any) => getManagedDatabaseOptimizerStatisticsAdvisorExecution(a, opts))
 }
 
 /**

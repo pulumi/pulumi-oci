@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAppCatalogSubscriptionsResult> InvokeAsync(GetAppCatalogSubscriptionsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppCatalogSubscriptionsResult>("oci:Core/getAppCatalogSubscriptions:getAppCatalogSubscriptions", args ?? new GetAppCatalogSubscriptionsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppCatalogSubscriptionsResult>("oci:Core/getAppCatalogSubscriptions:getAppCatalogSubscriptions", args ?? new GetAppCatalogSubscriptionsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of App Catalog Subscriptions in Oracle Cloud Infrastructure Core service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAppCatalogSubscriptionsResult> Invoke(GetAppCatalogSubscriptionsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppCatalogSubscriptionsResult>("oci:Core/getAppCatalogSubscriptions:getAppCatalogSubscriptions", args ?? new GetAppCatalogSubscriptionsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppCatalogSubscriptionsResult>("oci:Core/getAppCatalogSubscriptions:getAppCatalogSubscriptions", args ?? new GetAppCatalogSubscriptionsInvokeArgs(), options.WithDefaults());
     }
 
 

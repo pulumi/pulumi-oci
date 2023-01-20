@@ -478,7 +478,7 @@ class AutoScalingConfiguration(pulumi.CustomResource):
             __props__.__dict__["bds_instance_id"] = bds_instance_id
             if cluster_admin_password is None and not opts.urn:
                 raise TypeError("Missing required property 'cluster_admin_password'")
-            __props__.__dict__["cluster_admin_password"] = cluster_admin_password
+            __props__.__dict__["cluster_admin_password"] = None if cluster_admin_password is None else pulumi.Output.secret(cluster_admin_password)
             __props__.__dict__["display_name"] = display_name
             if is_enabled is None and not opts.urn:
                 raise TypeError("Missing required property 'is_enabled'")
@@ -491,6 +491,8 @@ class AutoScalingConfiguration(pulumi.CustomResource):
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["clusterAdminPassword"])
+        opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(AutoScalingConfiguration, __self__).__init__(
             'oci:BigDataService/autoScalingConfiguration:AutoScalingConfiguration',
             resource_name,

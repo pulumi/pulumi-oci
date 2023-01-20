@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNodePools(args: GetNodePoolsArgs, opts?: pulumi.InvokeOptions): Promise<GetNodePoolsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ContainerEngine/getNodePools:getNodePools", {
         "clusterId": args.clusterId,
         "compartmentId": args.compartmentId,
@@ -92,9 +90,27 @@ export interface GetNodePoolsResult {
      */
     readonly states?: string[];
 }
-
+/**
+ * This data source provides the list of Node Pools in Oracle Cloud Infrastructure Container Engine service.
+ *
+ * List all the node pools in a compartment, and optionally filter by cluster.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testNodePools = oci.ContainerEngine.getNodePools({
+ *     compartmentId: _var.compartment_id,
+ *     clusterId: oci_containerengine_cluster.test_cluster.id,
+ *     name: _var.node_pool_name,
+ *     states: _var.node_pool_state,
+ * });
+ * ```
+ */
 export function getNodePoolsOutput(args: GetNodePoolsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNodePoolsResult> {
-    return pulumi.output(args).apply(a => getNodePools(a, opts))
+    return pulumi.output(args).apply((a: any) => getNodePools(a, opts))
 }
 
 /**

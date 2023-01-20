@@ -46,7 +46,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult> InvokeAsync(GetManagedDatabaseSqlTuningAdvisorTasksFindingsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult>("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksFindings:getManagedDatabaseSqlTuningAdvisorTasksFindings", args ?? new GetManagedDatabaseSqlTuningAdvisorTasksFindingsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult>("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksFindings:getManagedDatabaseSqlTuningAdvisorTasksFindings", args ?? new GetManagedDatabaseSqlTuningAdvisorTasksFindingsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Managed Database Sql Tuning Advisor Tasks Findings in Oracle Cloud Infrastructure Database Management service.
@@ -83,7 +83,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult> Invoke(GetManagedDatabaseSqlTuningAdvisorTasksFindingsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult>("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksFindings:getManagedDatabaseSqlTuningAdvisorTasksFindings", args ?? new GetManagedDatabaseSqlTuningAdvisorTasksFindingsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseSqlTuningAdvisorTasksFindingsResult>("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksFindings:getManagedDatabaseSqlTuningAdvisorTasksFindings", args ?? new GetManagedDatabaseSqlTuningAdvisorTasksFindingsInvokeArgs(), options.WithDefaults());
     }
 
 

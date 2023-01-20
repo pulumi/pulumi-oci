@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDbServersResult> InvokeAsync(GetDbServersArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDbServersResult>("oci:Database/getDbServers:getDbServers", args ?? new GetDbServersArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDbServersResult>("oci:Database/getDbServers:getDbServers", args ?? new GetDbServersArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Db Servers in Oracle Cloud Infrastructure Database service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDbServersResult> Invoke(GetDbServersInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDbServersResult>("oci:Database/getDbServers:getDbServers", args ?? new GetDbServersInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDbServersResult>("oci:Database/getDbServers:getDbServers", args ?? new GetDbServersInvokeArgs(), options.WithDefaults());
     }
 
 

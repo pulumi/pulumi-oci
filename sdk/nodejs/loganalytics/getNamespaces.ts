@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNamespaces(args: GetNamespacesArgs, opts?: pulumi.InvokeOptions): Promise<GetNamespacesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LogAnalytics/getNamespaces:getNamespaces", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -63,9 +61,25 @@ export interface GetNamespacesResult {
      */
     readonly namespaceCollections: outputs.LogAnalytics.GetNamespacesNamespaceCollection[];
 }
-
+/**
+ * This data source provides the list of Namespaces in Oracle Cloud Infrastructure Log Analytics service.
+ *
+ * Given a tenancy OCID, this API returns the namespace of the tenancy if it is valid and subscribed to the region.  The
+ * result also indicates if the tenancy is onboarded with Logging Analytics.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testNamespaces = oci.LogAnalytics.getNamespaces({
+ *     compartmentId: _var.compartment_id,
+ * });
+ * ```
+ */
 export function getNamespacesOutput(args: GetNamespacesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNamespacesResult> {
-    return pulumi.output(args).apply(a => getNamespaces(a, opts))
+    return pulumi.output(args).apply((a: any) => getNamespaces(a, opts))
 }
 
 /**

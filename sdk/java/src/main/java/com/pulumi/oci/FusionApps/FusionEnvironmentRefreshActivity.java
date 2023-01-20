@@ -9,8 +9,10 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.FusionApps.FusionEnvironmentRefreshActivityArgs;
 import com.pulumi.oci.FusionApps.inputs.FusionEnvironmentRefreshActivityState;
+import com.pulumi.oci.FusionApps.outputs.FusionEnvironmentRefreshActivityRefreshIssueDetailsList;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
+import java.util.List;
 import javax.annotation.Nullable;
 
 /**
@@ -101,6 +103,26 @@ public class FusionEnvironmentRefreshActivity extends com.pulumi.resources.Custo
      */
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    @Export(name="refreshActivityId", type=String.class, parameters={})
+    private Output<String> refreshActivityId;
+
+    public Output<String> refreshActivityId() {
+        return this.refreshActivityId;
+    }
+    /**
+     * Details of refresh investigation information, each item represents a different issue.
+     * 
+     */
+    @Export(name="refreshIssueDetailsLists", type=List.class, parameters={FusionEnvironmentRefreshActivityRefreshIssueDetailsList.class})
+    private Output<List<FusionEnvironmentRefreshActivityRefreshIssueDetailsList>> refreshIssueDetailsLists;
+
+    /**
+     * @return Details of refresh investigation information, each item represents a different issue.
+     * 
+     */
+    public Output<List<FusionEnvironmentRefreshActivityRefreshIssueDetailsList>> refreshIssueDetailsLists() {
+        return this.refreshIssueDetailsLists;
     }
     /**
      * Service availability / impact during refresh activity execution up down
@@ -199,20 +221,6 @@ public class FusionEnvironmentRefreshActivity extends com.pulumi.resources.Custo
      */
     public Output<String> timeOfRestorationPoint() {
         return this.timeOfRestorationPoint;
-    }
-    /**
-     * The time the refresh activity is scheduled to start. An RFC3339 formatted datetime string.
-     * 
-     */
-    @Export(name="timeScheduledStart", type=String.class, parameters={})
-    private Output<String> timeScheduledStart;
-
-    /**
-     * @return The time the refresh activity is scheduled to start. An RFC3339 formatted datetime string.
-     * 
-     */
-    public Output<String> timeScheduledStart() {
-        return this.timeScheduledStart;
     }
     /**
      * The time the refresh activity record was updated. An RFC3339 formatted datetime string.

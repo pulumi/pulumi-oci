@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetExadataInfrastructureDownloadConfigFileResult> InvokeAsync(GetExadataInfrastructureDownloadConfigFileArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetExadataInfrastructureDownloadConfigFileResult>("oci:Database/getExadataInfrastructureDownloadConfigFile:getExadataInfrastructureDownloadConfigFile", args ?? new GetExadataInfrastructureDownloadConfigFileArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetExadataInfrastructureDownloadConfigFileResult>("oci:Database/getExadataInfrastructureDownloadConfigFile:getExadataInfrastructureDownloadConfigFile", args ?? new GetExadataInfrastructureDownloadConfigFileArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Exadata Infrastructure Download Config File resource in Oracle Cloud Infrastructure Database service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetExadataInfrastructureDownloadConfigFileResult> Invoke(GetExadataInfrastructureDownloadConfigFileInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetExadataInfrastructureDownloadConfigFileResult>("oci:Database/getExadataInfrastructureDownloadConfigFile:getExadataInfrastructureDownloadConfigFile", args ?? new GetExadataInfrastructureDownloadConfigFileInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetExadataInfrastructureDownloadConfigFileResult>("oci:Database/getExadataInfrastructureDownloadConfigFile:getExadataInfrastructureDownloadConfigFile", args ?? new GetExadataInfrastructureDownloadConfigFileInvokeArgs(), options.WithDefaults());
     }
 
 

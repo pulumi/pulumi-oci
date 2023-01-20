@@ -47,7 +47,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetTargetAlertPolicyAssociationsResult> InvokeAsync(GetTargetAlertPolicyAssociationsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetTargetAlertPolicyAssociationsResult>("oci:DataSafe/getTargetAlertPolicyAssociations:getTargetAlertPolicyAssociations", args ?? new GetTargetAlertPolicyAssociationsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetTargetAlertPolicyAssociationsResult>("oci:DataSafe/getTargetAlertPolicyAssociations:getTargetAlertPolicyAssociations", args ?? new GetTargetAlertPolicyAssociationsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Target Alert Policy Associations in Oracle Cloud Infrastructure Data Safe service.
@@ -85,7 +85,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetTargetAlertPolicyAssociationsResult> Invoke(GetTargetAlertPolicyAssociationsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetTargetAlertPolicyAssociationsResult>("oci:DataSafe/getTargetAlertPolicyAssociations:getTargetAlertPolicyAssociations", args ?? new GetTargetAlertPolicyAssociationsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetTargetAlertPolicyAssociationsResult>("oci:DataSafe/getTargetAlertPolicyAssociations:getTargetAlertPolicyAssociations", args ?? new GetTargetAlertPolicyAssociationsInvokeArgs(), options.WithDefaults());
     }
 
 

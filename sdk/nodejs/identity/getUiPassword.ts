@@ -22,11 +22,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getUiPassword(args: GetUiPasswordArgs, opts?: pulumi.InvokeOptions): Promise<GetUiPasswordResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getUiPassword:getUiPassword", {
         "userId": args.userId,
     }, opts);
@@ -62,9 +59,25 @@ export interface GetUiPasswordResult {
      */
     readonly userId: string;
 }
-
+/**
+ * This data source provides details about a specific Ui Password resource in Oracle Cloud Infrastructure Identity service.
+ *
+ * Gets the specified user's console password information. The returned object contains the user's OCID,
+ * but not the password itself. The actual password is returned only when created or reset.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testUiPassword = oci.Identity.getUiPassword({
+ *     userId: oci_identity_user.test_user.id,
+ * });
+ * ```
+ */
 export function getUiPasswordOutput(args: GetUiPasswordOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUiPasswordResult> {
-    return pulumi.output(args).apply(a => getUiPassword(a, opts))
+    return pulumi.output(args).apply((a: any) => getUiPassword(a, opts))
 }
 
 /**

@@ -54,7 +54,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly int MaxStorageCount;
         /// <summary>
-        /// The maximum number of database nodes available for this shape.
+        /// The maximum number of compute servers available for this shape.
         /// </summary>
         public readonly int MaximumNodeCount;
         /// <summary>
@@ -82,7 +82,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly int MinimumCoreCount;
         /// <summary>
-        /// The minimum number of database nodes available for this shape.
+        /// The minimum number of compute servers available for this shape.
         /// </summary>
         public readonly int MinimumNodeCount;
         /// <summary>
@@ -98,7 +98,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string ShapeFamily;
         /// <summary>
-        /// The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are `AMD` and `INTEL`.
+        /// The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are `AMD` , `INTEL` or `INTEL_FLEX_X9`.
         /// </summary>
         public readonly string ShapeType;
 

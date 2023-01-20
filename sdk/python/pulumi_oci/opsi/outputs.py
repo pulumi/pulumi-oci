@@ -15,6 +15,9 @@ __all__ = [
     'DatabaseInsightConnectionDetails',
     'DatabaseInsightConnectionDetailsHost',
     'DatabaseInsightCredentialDetails',
+    'ExadataInsightMemberVmClusterDetail',
+    'ExadataInsightMemberVmClusterDetailMemberDatabaseDetail',
+    'ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails',
     'GetAwrHubAwrSnapshotItemResult',
     'GetAwrHubAwrSnapshotsAwrSnapshotCollectionResult',
     'GetAwrHubAwrSnapshotsAwrSnapshotCollectionItemResult',
@@ -38,8 +41,14 @@ __all__ = [
     'GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionResult',
     'GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemResult',
     'GetEnterpriseManagerBridgesFilterResult',
+    'GetExadataInsightMemberVmClusterDetailResult',
+    'GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailResult',
+    'GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailResult',
     'GetExadataInsightsExadataInsightSummaryCollectionResult',
     'GetExadataInsightsExadataInsightSummaryCollectionItemResult',
+    'GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailResult',
+    'GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailResult',
+    'GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailResult',
     'GetExadataInsightsFilterResult',
     'GetHostInsightsFilterResult',
     'GetHostInsightsHostInsightSummaryCollectionResult',
@@ -369,6 +378,301 @@ class DatabaseInsightCredentialDetails(dict):
         """
         database user name.
         """
+        return pulumi.get(self, "user_name")
+
+
+@pulumi.output_type
+class ExadataInsightMemberVmClusterDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "compartmentId":
+            suggest = "compartment_id"
+        elif key == "memberDatabaseDetails":
+            suggest = "member_database_details"
+        elif key == "opsiPrivateEndpointId":
+            suggest = "opsi_private_endpoint_id"
+        elif key == "vmclusterId":
+            suggest = "vmcluster_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ExadataInsightMemberVmClusterDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ExadataInsightMemberVmClusterDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ExadataInsightMemberVmClusterDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 compartment_id: Optional[str] = None,
+                 member_database_details: Optional[Sequence['outputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetail']] = None,
+                 opsi_private_endpoint_id: Optional[str] = None,
+                 vmcluster_id: Optional[str] = None):
+        """
+        :param str compartment_id: (Updatable) Compartment Identifier of Exadata insight
+        """
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if member_database_details is not None:
+            pulumi.set(__self__, "member_database_details", member_database_details)
+        if opsi_private_endpoint_id is not None:
+            pulumi.set(__self__, "opsi_private_endpoint_id", opsi_private_endpoint_id)
+        if vmcluster_id is not None:
+            pulumi.set(__self__, "vmcluster_id", vmcluster_id)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[str]:
+        """
+        (Updatable) Compartment Identifier of Exadata insight
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="memberDatabaseDetails")
+    def member_database_details(self) -> Optional[Sequence['outputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetail']]:
+        return pulumi.get(self, "member_database_details")
+
+    @property
+    @pulumi.getter(name="opsiPrivateEndpointId")
+    def opsi_private_endpoint_id(self) -> Optional[str]:
+        return pulumi.get(self, "opsi_private_endpoint_id")
+
+    @property
+    @pulumi.getter(name="vmclusterId")
+    def vmcluster_id(self) -> Optional[str]:
+        return pulumi.get(self, "vmcluster_id")
+
+
+@pulumi.output_type
+class ExadataInsightMemberVmClusterDetailMemberDatabaseDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "compartmentId":
+            suggest = "compartment_id"
+        elif key == "credentialDetails":
+            suggest = "credential_details"
+        elif key == "databaseId":
+            suggest = "database_id"
+        elif key == "databaseResourceType":
+            suggest = "database_resource_type"
+        elif key == "dbmPrivateEndpointId":
+            suggest = "dbm_private_endpoint_id"
+        elif key == "definedTags":
+            suggest = "defined_tags"
+        elif key == "deploymentType":
+            suggest = "deployment_type"
+        elif key == "entitySource":
+            suggest = "entity_source"
+        elif key == "freeformTags":
+            suggest = "freeform_tags"
+        elif key == "opsiPrivateEndpointId":
+            suggest = "opsi_private_endpoint_id"
+        elif key == "serviceName":
+            suggest = "service_name"
+        elif key == "systemTags":
+            suggest = "system_tags"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ExadataInsightMemberVmClusterDetailMemberDatabaseDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ExadataInsightMemberVmClusterDetailMemberDatabaseDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ExadataInsightMemberVmClusterDetailMemberDatabaseDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 compartment_id: Optional[str] = None,
+                 credential_details: Optional['outputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails'] = None,
+                 database_id: Optional[str] = None,
+                 database_resource_type: Optional[str] = None,
+                 dbm_private_endpoint_id: Optional[str] = None,
+                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 deployment_type: Optional[str] = None,
+                 entity_source: Optional[str] = None,
+                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 opsi_private_endpoint_id: Optional[str] = None,
+                 service_name: Optional[str] = None,
+                 system_tags: Optional[Mapping[str, Any]] = None):
+        """
+        :param str compartment_id: (Updatable) Compartment Identifier of Exadata insight
+        :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param str entity_source: (Updatable) Source of the Exadata system.
+        :param Mapping[str, Any] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if credential_details is not None:
+            pulumi.set(__self__, "credential_details", credential_details)
+        if database_id is not None:
+            pulumi.set(__self__, "database_id", database_id)
+        if database_resource_type is not None:
+            pulumi.set(__self__, "database_resource_type", database_resource_type)
+        if dbm_private_endpoint_id is not None:
+            pulumi.set(__self__, "dbm_private_endpoint_id", dbm_private_endpoint_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if deployment_type is not None:
+            pulumi.set(__self__, "deployment_type", deployment_type)
+        if entity_source is not None:
+            pulumi.set(__self__, "entity_source", entity_source)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if opsi_private_endpoint_id is not None:
+            pulumi.set(__self__, "opsi_private_endpoint_id", opsi_private_endpoint_id)
+        if service_name is not None:
+            pulumi.set(__self__, "service_name", service_name)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[str]:
+        """
+        (Updatable) Compartment Identifier of Exadata insight
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="credentialDetails")
+    def credential_details(self) -> Optional['outputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails']:
+        return pulumi.get(self, "credential_details")
+
+    @property
+    @pulumi.getter(name="databaseId")
+    def database_id(self) -> Optional[str]:
+        return pulumi.get(self, "database_id")
+
+    @property
+    @pulumi.getter(name="databaseResourceType")
+    def database_resource_type(self) -> Optional[str]:
+        return pulumi.get(self, "database_resource_type")
+
+    @property
+    @pulumi.getter(name="dbmPrivateEndpointId")
+    def dbm_private_endpoint_id(self) -> Optional[str]:
+        return pulumi.get(self, "dbm_private_endpoint_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Optional[Mapping[str, Any]]:
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="deploymentType")
+    def deployment_type(self) -> Optional[str]:
+        return pulumi.get(self, "deployment_type")
+
+    @property
+    @pulumi.getter(name="entitySource")
+    def entity_source(self) -> Optional[str]:
+        """
+        (Updatable) Source of the Exadata system.
+        """
+        return pulumi.get(self, "entity_source")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
+        """
+        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="opsiPrivateEndpointId")
+    def opsi_private_endpoint_id(self) -> Optional[str]:
+        return pulumi.get(self, "opsi_private_endpoint_id")
+
+    @property
+    @pulumi.getter(name="serviceName")
+    def service_name(self) -> Optional[str]:
+        return pulumi.get(self, "service_name")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[Mapping[str, Any]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+
+@pulumi.output_type
+class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "credentialType":
+            suggest = "credential_type"
+        elif key == "credentialSourceName":
+            suggest = "credential_source_name"
+        elif key == "passwordSecretId":
+            suggest = "password_secret_id"
+        elif key == "userName":
+            suggest = "user_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 credential_type: str,
+                 credential_source_name: Optional[str] = None,
+                 password_secret_id: Optional[str] = None,
+                 role: Optional[str] = None,
+                 user_name: Optional[str] = None):
+        pulumi.set(__self__, "credential_type", credential_type)
+        if credential_source_name is not None:
+            pulumi.set(__self__, "credential_source_name", credential_source_name)
+        if password_secret_id is not None:
+            pulumi.set(__self__, "password_secret_id", password_secret_id)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
+        if user_name is not None:
+            pulumi.set(__self__, "user_name", user_name)
+
+    @property
+    @pulumi.getter(name="credentialType")
+    def credential_type(self) -> str:
+        return pulumi.get(self, "credential_type")
+
+    @property
+    @pulumi.getter(name="credentialSourceName")
+    def credential_source_name(self) -> Optional[str]:
+        return pulumi.get(self, "credential_source_name")
+
+    @property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> Optional[str]:
+        return pulumi.get(self, "password_secret_id")
+
+    @property
+    @pulumi.getter
+    def role(self) -> Optional[str]:
+        return pulumi.get(self, "role")
+
+    @property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> Optional[str]:
         return pulumi.get(self, "user_name")
 
 
@@ -1154,7 +1458,9 @@ class GetDatabaseInsightsDatabaseInsightsCollectionItemResult(dict):
                  id: str,
                  lifecycle_details: str,
                  opsi_private_endpoint_id: str,
+                 parent_id: str,
                  processor_count: int,
+                 root_id: str,
                  service_name: str,
                  state: str,
                  status: str,
@@ -1186,7 +1492,9 @@ class GetDatabaseInsightsDatabaseInsightsCollectionItemResult(dict):
         :param str id: Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param str opsi_private_endpoint_id: Unique Operations Insights PrivateEndpoint identifier
+        :param str parent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
         :param int processor_count: Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
+        :param str root_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
         :param str service_name: Database service name used for connection requests.
         :param str state: Lifecycle states
         :param str status: Resource Status
@@ -1220,7 +1528,9 @@ class GetDatabaseInsightsDatabaseInsightsCollectionItemResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "opsi_private_endpoint_id", opsi_private_endpoint_id)
+        pulumi.set(__self__, "parent_id", parent_id)
         pulumi.set(__self__, "processor_count", processor_count)
+        pulumi.set(__self__, "root_id", root_id)
         pulumi.set(__self__, "service_name", service_name)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "status", status)
@@ -1431,12 +1741,28 @@ class GetDatabaseInsightsDatabaseInsightsCollectionItemResult(dict):
         return pulumi.get(self, "opsi_private_endpoint_id")
 
     @property
+    @pulumi.getter(name="parentId")
+    def parent_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
+        """
+        return pulumi.get(self, "parent_id")
+
+    @property
     @pulumi.getter(name="processorCount")
     def processor_count(self) -> int:
         """
         Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
         """
         return pulumi.get(self, "processor_count")
+
+    @property
+    @pulumi.getter(name="rootId")
+    def root_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+        """
+        return pulumi.get(self, "root_id")
 
     @property
     @pulumi.getter(name="serviceName")
@@ -1930,6 +2256,196 @@ class GetEnterpriseManagerBridgesFilterResult(dict):
 
 
 @pulumi.output_type
+class GetExadataInsightMemberVmClusterDetailResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 member_database_details: Sequence['outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailResult'],
+                 opsi_private_endpoint_id: str,
+                 vmcluster_id: str):
+        """
+        :param str compartment_id: Compartment identifier of the Exadata insight resource
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "member_database_details", member_database_details)
+        pulumi.set(__self__, "opsi_private_endpoint_id", opsi_private_endpoint_id)
+        pulumi.set(__self__, "vmcluster_id", vmcluster_id)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        Compartment identifier of the Exadata insight resource
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="memberDatabaseDetails")
+    def member_database_details(self) -> Sequence['outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailResult']:
+        return pulumi.get(self, "member_database_details")
+
+    @property
+    @pulumi.getter(name="opsiPrivateEndpointId")
+    def opsi_private_endpoint_id(self) -> str:
+        return pulumi.get(self, "opsi_private_endpoint_id")
+
+    @property
+    @pulumi.getter(name="vmclusterId")
+    def vmcluster_id(self) -> str:
+        return pulumi.get(self, "vmcluster_id")
+
+
+@pulumi.output_type
+class GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 credential_details: Sequence['outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailResult'],
+                 database_id: str,
+                 database_resource_type: str,
+                 dbm_private_endpoint_id: str,
+                 defined_tags: Mapping[str, Any],
+                 deployment_type: str,
+                 entity_source: str,
+                 freeform_tags: Mapping[str, Any],
+                 opsi_private_endpoint_id: str,
+                 service_name: str,
+                 system_tags: Mapping[str, Any]):
+        """
+        :param str compartment_id: Compartment identifier of the Exadata insight resource
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param str entity_source: Source of the Exadata system.
+        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "credential_details", credential_details)
+        pulumi.set(__self__, "database_id", database_id)
+        pulumi.set(__self__, "database_resource_type", database_resource_type)
+        pulumi.set(__self__, "dbm_private_endpoint_id", dbm_private_endpoint_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "deployment_type", deployment_type)
+        pulumi.set(__self__, "entity_source", entity_source)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "opsi_private_endpoint_id", opsi_private_endpoint_id)
+        pulumi.set(__self__, "service_name", service_name)
+        pulumi.set(__self__, "system_tags", system_tags)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        Compartment identifier of the Exadata insight resource
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="credentialDetails")
+    def credential_details(self) -> Sequence['outputs.GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailResult']:
+        return pulumi.get(self, "credential_details")
+
+    @property
+    @pulumi.getter(name="databaseId")
+    def database_id(self) -> str:
+        return pulumi.get(self, "database_id")
+
+    @property
+    @pulumi.getter(name="databaseResourceType")
+    def database_resource_type(self) -> str:
+        return pulumi.get(self, "database_resource_type")
+
+    @property
+    @pulumi.getter(name="dbmPrivateEndpointId")
+    def dbm_private_endpoint_id(self) -> str:
+        return pulumi.get(self, "dbm_private_endpoint_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="deploymentType")
+    def deployment_type(self) -> str:
+        return pulumi.get(self, "deployment_type")
+
+    @property
+    @pulumi.getter(name="entitySource")
+    def entity_source(self) -> str:
+        """
+        Source of the Exadata system.
+        """
+        return pulumi.get(self, "entity_source")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="opsiPrivateEndpointId")
+    def opsi_private_endpoint_id(self) -> str:
+        return pulumi.get(self, "opsi_private_endpoint_id")
+
+    @property
+    @pulumi.getter(name="serviceName")
+    def service_name(self) -> str:
+        return pulumi.get(self, "service_name")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+
+@pulumi.output_type
+class GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailResult(dict):
+    def __init__(__self__, *,
+                 credential_source_name: str,
+                 credential_type: str,
+                 password_secret_id: str,
+                 role: str,
+                 user_name: str):
+        pulumi.set(__self__, "credential_source_name", credential_source_name)
+        pulumi.set(__self__, "credential_type", credential_type)
+        pulumi.set(__self__, "password_secret_id", password_secret_id)
+        pulumi.set(__self__, "role", role)
+        pulumi.set(__self__, "user_name", user_name)
+
+    @property
+    @pulumi.getter(name="credentialSourceName")
+    def credential_source_name(self) -> str:
+        return pulumi.get(self, "credential_source_name")
+
+    @property
+    @pulumi.getter(name="credentialType")
+    def credential_type(self) -> str:
+        return pulumi.get(self, "credential_type")
+
+    @property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> str:
+        return pulumi.get(self, "password_secret_id")
+
+    @property
+    @pulumi.getter
+    def role(self) -> str:
+        return pulumi.get(self, "role")
+
+    @property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> str:
+        return pulumi.get(self, "user_name")
+
+
+@pulumi.output_type
 class GetExadataInsightsExadataInsightSummaryCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetExadataInsightsExadataInsightSummaryCollectionItemResult']):
@@ -1954,14 +2470,18 @@ class GetExadataInsightsExadataInsightSummaryCollectionItemResult(dict):
                  enterprise_manager_identifier: str,
                  entity_source: str,
                  exadata_display_name: str,
+                 exadata_infra_id: str,
+                 exadata_infra_resource_type: str,
                  exadata_name: str,
                  exadata_rack_type: str,
+                 exadata_shape: str,
                  exadata_type: str,
                  freeform_tags: Mapping[str, Any],
                  id: str,
                  is_auto_sync_enabled: bool,
                  is_virtualized_exadata: bool,
                  lifecycle_details: str,
+                 member_vm_cluster_details: Sequence['outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailResult'],
                  state: str,
                  status: str,
                  system_tags: Mapping[str, Any],
@@ -1978,8 +2498,11 @@ class GetExadataInsightsExadataInsightSummaryCollectionItemResult(dict):
         :param str enterprise_manager_identifier: Enterprise Manager Unique Identifier
         :param str entity_source: Source of the Exadata system.
         :param str exadata_display_name: The user-friendly name for the Exadata system. The name does not have to be unique.
+        :param str exadata_infra_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+        :param str exadata_infra_resource_type: Oracle Cloud Infrastructure exadata infrastructure resource type
         :param str exadata_name: The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
         :param str exadata_rack_type: Exadata rack type.
+        :param str exadata_shape: The shape of the Exadata Infrastructure.
         :param str exadata_type: Filter by one or more Exadata types. Possible value are DBMACHINE, EXACS, and EXACC.
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: Optional list of Exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -2001,14 +2524,18 @@ class GetExadataInsightsExadataInsightSummaryCollectionItemResult(dict):
         pulumi.set(__self__, "enterprise_manager_identifier", enterprise_manager_identifier)
         pulumi.set(__self__, "entity_source", entity_source)
         pulumi.set(__self__, "exadata_display_name", exadata_display_name)
+        pulumi.set(__self__, "exadata_infra_id", exadata_infra_id)
+        pulumi.set(__self__, "exadata_infra_resource_type", exadata_infra_resource_type)
         pulumi.set(__self__, "exadata_name", exadata_name)
         pulumi.set(__self__, "exadata_rack_type", exadata_rack_type)
+        pulumi.set(__self__, "exadata_shape", exadata_shape)
         pulumi.set(__self__, "exadata_type", exadata_type)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_auto_sync_enabled", is_auto_sync_enabled)
         pulumi.set(__self__, "is_virtualized_exadata", is_virtualized_exadata)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "member_vm_cluster_details", member_vm_cluster_details)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "status", status)
         pulumi.set(__self__, "system_tags", system_tags)
@@ -2096,6 +2623,22 @@ class GetExadataInsightsExadataInsightSummaryCollectionItemResult(dict):
         return pulumi.get(self, "exadata_display_name")
 
     @property
+    @pulumi.getter(name="exadataInfraId")
+    def exadata_infra_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+        """
+        return pulumi.get(self, "exadata_infra_id")
+
+    @property
+    @pulumi.getter(name="exadataInfraResourceType")
+    def exadata_infra_resource_type(self) -> str:
+        """
+        Oracle Cloud Infrastructure exadata infrastructure resource type
+        """
+        return pulumi.get(self, "exadata_infra_resource_type")
+
+    @property
     @pulumi.getter(name="exadataName")
     def exadata_name(self) -> str:
         """
@@ -2110,6 +2653,14 @@ class GetExadataInsightsExadataInsightSummaryCollectionItemResult(dict):
         Exadata rack type.
         """
         return pulumi.get(self, "exadata_rack_type")
+
+    @property
+    @pulumi.getter(name="exadataShape")
+    def exadata_shape(self) -> str:
+        """
+        The shape of the Exadata Infrastructure.
+        """
+        return pulumi.get(self, "exadata_shape")
 
     @property
     @pulumi.getter(name="exadataType")
@@ -2157,6 +2708,11 @@ class GetExadataInsightsExadataInsightSummaryCollectionItemResult(dict):
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter(name="memberVmClusterDetails")
+    def member_vm_cluster_details(self) -> Sequence['outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailResult']:
+        return pulumi.get(self, "member_vm_cluster_details")
+
+    @property
     @pulumi.getter
     def state(self) -> str:
         """
@@ -2195,6 +2751,196 @@ class GetExadataInsightsExadataInsightSummaryCollectionItemResult(dict):
         The time the Exadata insight was updated. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 member_database_details: Sequence['outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailResult'],
+                 opsi_private_endpoint_id: str,
+                 vmcluster_id: str):
+        """
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "member_database_details", member_database_details)
+        pulumi.set(__self__, "opsi_private_endpoint_id", opsi_private_endpoint_id)
+        pulumi.set(__self__, "vmcluster_id", vmcluster_id)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="memberDatabaseDetails")
+    def member_database_details(self) -> Sequence['outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailResult']:
+        return pulumi.get(self, "member_database_details")
+
+    @property
+    @pulumi.getter(name="opsiPrivateEndpointId")
+    def opsi_private_endpoint_id(self) -> str:
+        return pulumi.get(self, "opsi_private_endpoint_id")
+
+    @property
+    @pulumi.getter(name="vmclusterId")
+    def vmcluster_id(self) -> str:
+        return pulumi.get(self, "vmcluster_id")
+
+
+@pulumi.output_type
+class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 credential_details: Sequence['outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailResult'],
+                 database_id: str,
+                 database_resource_type: str,
+                 dbm_private_endpoint_id: str,
+                 defined_tags: Mapping[str, Any],
+                 deployment_type: str,
+                 entity_source: str,
+                 freeform_tags: Mapping[str, Any],
+                 opsi_private_endpoint_id: str,
+                 service_name: str,
+                 system_tags: Mapping[str, Any]):
+        """
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param str entity_source: Source of the Exadata system.
+        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "credential_details", credential_details)
+        pulumi.set(__self__, "database_id", database_id)
+        pulumi.set(__self__, "database_resource_type", database_resource_type)
+        pulumi.set(__self__, "dbm_private_endpoint_id", dbm_private_endpoint_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "deployment_type", deployment_type)
+        pulumi.set(__self__, "entity_source", entity_source)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "opsi_private_endpoint_id", opsi_private_endpoint_id)
+        pulumi.set(__self__, "service_name", service_name)
+        pulumi.set(__self__, "system_tags", system_tags)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="credentialDetails")
+    def credential_details(self) -> Sequence['outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailResult']:
+        return pulumi.get(self, "credential_details")
+
+    @property
+    @pulumi.getter(name="databaseId")
+    def database_id(self) -> str:
+        return pulumi.get(self, "database_id")
+
+    @property
+    @pulumi.getter(name="databaseResourceType")
+    def database_resource_type(self) -> str:
+        return pulumi.get(self, "database_resource_type")
+
+    @property
+    @pulumi.getter(name="dbmPrivateEndpointId")
+    def dbm_private_endpoint_id(self) -> str:
+        return pulumi.get(self, "dbm_private_endpoint_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="deploymentType")
+    def deployment_type(self) -> str:
+        return pulumi.get(self, "deployment_type")
+
+    @property
+    @pulumi.getter(name="entitySource")
+    def entity_source(self) -> str:
+        """
+        Source of the Exadata system.
+        """
+        return pulumi.get(self, "entity_source")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="opsiPrivateEndpointId")
+    def opsi_private_endpoint_id(self) -> str:
+        return pulumi.get(self, "opsi_private_endpoint_id")
+
+    @property
+    @pulumi.getter(name="serviceName")
+    def service_name(self) -> str:
+        return pulumi.get(self, "service_name")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+
+@pulumi.output_type
+class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailCredentialDetailResult(dict):
+    def __init__(__self__, *,
+                 credential_source_name: str,
+                 credential_type: str,
+                 password_secret_id: str,
+                 role: str,
+                 user_name: str):
+        pulumi.set(__self__, "credential_source_name", credential_source_name)
+        pulumi.set(__self__, "credential_type", credential_type)
+        pulumi.set(__self__, "password_secret_id", password_secret_id)
+        pulumi.set(__self__, "role", role)
+        pulumi.set(__self__, "user_name", user_name)
+
+    @property
+    @pulumi.getter(name="credentialSourceName")
+    def credential_source_name(self) -> str:
+        return pulumi.get(self, "credential_source_name")
+
+    @property
+    @pulumi.getter(name="credentialType")
+    def credential_type(self) -> str:
+        return pulumi.get(self, "credential_type")
+
+    @property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> str:
+        return pulumi.get(self, "password_secret_id")
+
+    @property
+    @pulumi.getter
+    def role(self) -> str:
+        return pulumi.get(self, "role")
+
+    @property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> str:
+        return pulumi.get(self, "user_name")
 
 
 @pulumi.output_type
@@ -2304,18 +3050,16 @@ class GetHostInsightsHostInsightSummaryCollectionItemResult(dict):
         :param str enterprise_manager_entity_type: Enterprise Manager Entity Type
         :param str enterprise_manager_identifier: Enterprise Manager Unique Identifier
         :param str entity_source: Source of the host entity.
-        :param str exadata_insight_id: [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource. 
-               <<<<<<< ours
+        :param str exadata_insight_id: [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str host_display_name: The user-friendly name for the host. The name does not have to be unique.
         :param str host_name: The host name. The host name is unique amongst the hosts managed by the same management agent.
-        :param str host_type: Filter by one or more host types. Possible value is EXTERNAL-HOST.
-               >>>>>>> theirs
+        :param str host_type: Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST
         :param str id: Optional list of host insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param str management_agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
         :param str platform_name: Platform name.
-        :param str platform_type: Filter by one or more platform types. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+        :param str platform_type: Filter by one or more platform types. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS].
         :param str platform_version: Platform version.
         :param int processor_count: Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
         :param str state: Lifecycle states
@@ -2436,8 +3180,7 @@ class GetHostInsightsHostInsightSummaryCollectionItemResult(dict):
     @pulumi.getter(name="exadataInsightId")
     def exadata_insight_id(self) -> str:
         """
-        [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource. 
-        <<<<<<< ours
+        [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
         """
         return pulumi.get(self, "exadata_insight_id")
 
@@ -2469,8 +3212,7 @@ class GetHostInsightsHostInsightSummaryCollectionItemResult(dict):
     @pulumi.getter(name="hostType")
     def host_type(self) -> str:
         """
-        Filter by one or more host types. Possible value is EXTERNAL-HOST.
-        >>>>>>> theirs
+        Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST
         """
         return pulumi.get(self, "host_type")
 
@@ -2510,7 +3252,7 @@ class GetHostInsightsHostInsightSummaryCollectionItemResult(dict):
     @pulumi.getter(name="platformType")
     def platform_type(self) -> str:
         """
-        Filter by one or more platform types. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+        Filter by one or more platform types. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS].
         """
         return pulumi.get(self, "platform_type")
 
@@ -2710,7 +3452,7 @@ class GetImportableComputeEntitiesItemResult(dict):
         :param str compute_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
         :param str entity_source: Source of the importable agent entity.
         :param str host_name: The host name. The host name is unique amongst the hosts managed by the same management agent.
-        :param str platform_type: Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+        :param str platform_type: Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS].
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "compute_display_name", compute_display_name)
@@ -2763,7 +3505,7 @@ class GetImportableComputeEntitiesItemResult(dict):
     @pulumi.getter(name="platformType")
     def platform_type(self) -> str:
         """
-        Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+        Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS].
         """
         return pulumi.get(self, "platform_type")
 
@@ -2783,7 +3525,7 @@ class GetImportableComputeEntityItemResult(dict):
         :param str compute_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
         :param str entity_source: Source of the importable agent entity.
         :param str host_name: The host name. The host name is unique amongst the hosts managed by the same management agent.
-        :param str platform_type: Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+        :param str platform_type: Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS].
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "compute_display_name", compute_display_name)
@@ -2836,7 +3578,7 @@ class GetImportableComputeEntityItemResult(dict):
     @pulumi.getter(name="platformType")
     def platform_type(self) -> str:
         """
-        Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+        Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS].
         """
         return pulumi.get(self, "platform_type")
 

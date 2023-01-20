@@ -296,7 +296,11 @@ class GenericArtifact(pulumi.CustomResource):
 
         ## Import
 
-        Import is not supported for this resource.
+        GenericArtifacts can be imported using the `id`, e.g.
+
+        ```sh
+         $ pulumi import oci:Artifacts/genericArtifact:GenericArtifact test_generic_artifact "generic/artifacts/{artifactId}"
+        ```
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -331,7 +335,11 @@ class GenericArtifact(pulumi.CustomResource):
 
         ## Import
 
-        Import is not supported for this resource.
+        GenericArtifacts can be imported using the `id`, e.g.
+
+        ```sh
+         $ pulumi import oci:Artifacts/genericArtifact:GenericArtifact test_generic_artifact "generic/artifacts/{artifactId}"
+        ```
 
         :param str resource_name: The name of the resource.
         :param GenericArtifactArgs args: The arguments to use to populate this resource's properties.

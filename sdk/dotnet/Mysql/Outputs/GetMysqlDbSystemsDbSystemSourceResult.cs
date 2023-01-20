@@ -29,6 +29,7 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// The specific source identifier.
         /// </summary>
         public readonly string SourceType;
+        public readonly string SourceUrl;
 
         [OutputConstructor]
         private GetMysqlDbSystemsDbSystemSourceResult(
@@ -38,12 +39,15 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             string recoveryPoint,
 
-            string sourceType)
+            string sourceType,
+
+            string sourceUrl)
         {
             BackupId = backupId;
             DbSystemId = dbSystemId;
             RecoveryPoint = recoveryPoint;
             SourceType = sourceType;
+            SourceUrl = sourceUrl;
         }
     }
 }

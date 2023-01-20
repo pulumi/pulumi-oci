@@ -67,7 +67,7 @@ namespace Pulumi.Oci.OsManagement
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetManagedInstanceStreamProfileResult> InvokeAsync(GetManagedInstanceStreamProfileArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetManagedInstanceStreamProfileResult>("oci:OsManagement/getManagedInstanceStreamProfile:getManagedInstanceStreamProfile", args ?? new GetManagedInstanceStreamProfileArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedInstanceStreamProfileResult>("oci:OsManagement/getManagedInstanceStreamProfile:getManagedInstanceStreamProfile", args ?? new GetManagedInstanceStreamProfileArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Managed Instance Stream Profiles in Oracle Cloud Infrastructure OS Management service.
@@ -125,7 +125,7 @@ namespace Pulumi.Oci.OsManagement
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetManagedInstanceStreamProfileResult> Invoke(GetManagedInstanceStreamProfileInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetManagedInstanceStreamProfileResult>("oci:OsManagement/getManagedInstanceStreamProfile:getManagedInstanceStreamProfile", args ?? new GetManagedInstanceStreamProfileInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedInstanceStreamProfileResult>("oci:OsManagement/getManagedInstanceStreamProfile:getManagedInstanceStreamProfile", args ?? new GetManagedInstanceStreamProfileInvokeArgs(), options.WithDefaults());
     }
 
 

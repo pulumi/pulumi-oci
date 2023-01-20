@@ -1562,6 +1562,8 @@ type IngressGatewayRouteTableRouteRule struct {
 	Path *string `pulumi:"path"`
 	// (Updatable) Match type for the route
 	PathType *string `pulumi:"pathType"`
+	// (Updatable) The maximum duration in milliseconds for the upstream service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the upstream service, consider either keeping the timeout disabled or set a sufficiently high value.
+	RequestTimeoutInMs *string `pulumi:"requestTimeoutInMs"`
 	// (Updatable) Type of protocol.
 	Type string `pulumi:"type"`
 }
@@ -1592,6 +1594,8 @@ type IngressGatewayRouteTableRouteRuleArgs struct {
 	Path pulumi.StringPtrInput `pulumi:"path"`
 	// (Updatable) Match type for the route
 	PathType pulumi.StringPtrInput `pulumi:"pathType"`
+	// (Updatable) The maximum duration in milliseconds for the upstream service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the upstream service, consider either keeping the timeout disabled or set a sufficiently high value.
+	RequestTimeoutInMs pulumi.StringPtrInput `pulumi:"requestTimeoutInMs"`
 	// (Updatable) Type of protocol.
 	Type pulumi.StringInput `pulumi:"type"`
 }
@@ -1684,6 +1688,11 @@ func (o IngressGatewayRouteTableRouteRuleOutput) Path() pulumi.StringPtrOutput {
 // (Updatable) Match type for the route
 func (o IngressGatewayRouteTableRouteRuleOutput) PathType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v IngressGatewayRouteTableRouteRule) *string { return v.PathType }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The maximum duration in milliseconds for the upstream service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the upstream service, consider either keeping the timeout disabled or set a sufficiently high value.
+func (o IngressGatewayRouteTableRouteRuleOutput) RequestTimeoutInMs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IngressGatewayRouteTableRouteRule) *string { return v.RequestTimeoutInMs }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Type of protocol.
@@ -2354,10 +2363,14 @@ func (o VirtualDeploymentAccessLoggingPtrOutput) IsEnabled() pulumi.BoolPtrOutpu
 }
 
 type VirtualDeploymentListener struct {
+	// (Updatable) The maximum duration in milliseconds for which the request's stream may be idle. The value 0 (zero) indicates that the timeout is disabled.
+	IdleTimeoutInMs *string `pulumi:"idleTimeoutInMs"`
 	// (Updatable) Port in which virtual deployment is running.
 	Port int `pulumi:"port"`
 	// (Updatable) Type of protocol used in virtual deployment.
 	Protocol string `pulumi:"protocol"`
+	// (Updatable) The maximum duration in milliseconds for the deployed service to respond to an incoming request through the listener.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP/HTTP2 listeners, and disabled (no timeout) for the GRPC listeners. The value 0 (zero) indicates that the timeout is disabled.  The timeout cannot be configured for the TCP and TLS_PASSTHROUGH listeners.  For streaming responses from the deployed service, consider either keeping the timeout disabled or set a sufficiently high value.
+	RequestTimeoutInMs *string `pulumi:"requestTimeoutInMs"`
 }
 
 // VirtualDeploymentListenerInput is an input type that accepts VirtualDeploymentListenerArgs and VirtualDeploymentListenerOutput values.
@@ -2372,10 +2385,14 @@ type VirtualDeploymentListenerInput interface {
 }
 
 type VirtualDeploymentListenerArgs struct {
+	// (Updatable) The maximum duration in milliseconds for which the request's stream may be idle. The value 0 (zero) indicates that the timeout is disabled.
+	IdleTimeoutInMs pulumi.StringPtrInput `pulumi:"idleTimeoutInMs"`
 	// (Updatable) Port in which virtual deployment is running.
 	Port pulumi.IntInput `pulumi:"port"`
 	// (Updatable) Type of protocol used in virtual deployment.
 	Protocol pulumi.StringInput `pulumi:"protocol"`
+	// (Updatable) The maximum duration in milliseconds for the deployed service to respond to an incoming request through the listener.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP/HTTP2 listeners, and disabled (no timeout) for the GRPC listeners. The value 0 (zero) indicates that the timeout is disabled.  The timeout cannot be configured for the TCP and TLS_PASSTHROUGH listeners.  For streaming responses from the deployed service, consider either keeping the timeout disabled or set a sufficiently high value.
+	RequestTimeoutInMs pulumi.StringPtrInput `pulumi:"requestTimeoutInMs"`
 }
 
 func (VirtualDeploymentListenerArgs) ElementType() reflect.Type {
@@ -2429,6 +2446,11 @@ func (o VirtualDeploymentListenerOutput) ToVirtualDeploymentListenerOutputWithCo
 	return o
 }
 
+// (Updatable) The maximum duration in milliseconds for which the request's stream may be idle. The value 0 (zero) indicates that the timeout is disabled.
+func (o VirtualDeploymentListenerOutput) IdleTimeoutInMs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VirtualDeploymentListener) *string { return v.IdleTimeoutInMs }).(pulumi.StringPtrOutput)
+}
+
 // (Updatable) Port in which virtual deployment is running.
 func (o VirtualDeploymentListenerOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v VirtualDeploymentListener) int { return v.Port }).(pulumi.IntOutput)
@@ -2437,6 +2459,11 @@ func (o VirtualDeploymentListenerOutput) Port() pulumi.IntOutput {
 // (Updatable) Type of protocol used in virtual deployment.
 func (o VirtualDeploymentListenerOutput) Protocol() pulumi.StringOutput {
 	return o.ApplyT(func(v VirtualDeploymentListener) string { return v.Protocol }).(pulumi.StringOutput)
+}
+
+// (Updatable) The maximum duration in milliseconds for the deployed service to respond to an incoming request through the listener.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP/HTTP2 listeners, and disabled (no timeout) for the GRPC listeners. The value 0 (zero) indicates that the timeout is disabled.  The timeout cannot be configured for the TCP and TLS_PASSTHROUGH listeners.  For streaming responses from the deployed service, consider either keeping the timeout disabled or set a sufficiently high value.
+func (o VirtualDeploymentListenerOutput) RequestTimeoutInMs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VirtualDeploymentListener) *string { return v.RequestTimeoutInMs }).(pulumi.StringPtrOutput)
 }
 
 type VirtualDeploymentListenerArrayOutput struct{ *pulumi.OutputState }
@@ -2461,7 +2488,7 @@ func (o VirtualDeploymentListenerArrayOutput) Index(i pulumi.IntInput) VirtualDe
 
 type VirtualDeploymentServiceDiscovery struct {
 	// (Updatable) The hostname of the virtual deployments.
-	Hostname string `pulumi:"hostname"`
+	Hostname *string `pulumi:"hostname"`
 	// (Updatable) Type of service discovery.
 	Type string `pulumi:"type"`
 }
@@ -2479,7 +2506,7 @@ type VirtualDeploymentServiceDiscoveryInput interface {
 
 type VirtualDeploymentServiceDiscoveryArgs struct {
 	// (Updatable) The hostname of the virtual deployments.
-	Hostname pulumi.StringInput `pulumi:"hostname"`
+	Hostname pulumi.StringPtrInput `pulumi:"hostname"`
 	// (Updatable) Type of service discovery.
 	Type pulumi.StringInput `pulumi:"type"`
 }
@@ -2562,8 +2589,8 @@ func (o VirtualDeploymentServiceDiscoveryOutput) ToVirtualDeploymentServiceDisco
 }
 
 // (Updatable) The hostname of the virtual deployments.
-func (o VirtualDeploymentServiceDiscoveryOutput) Hostname() pulumi.StringOutput {
-	return o.ApplyT(func(v VirtualDeploymentServiceDiscovery) string { return v.Hostname }).(pulumi.StringOutput)
+func (o VirtualDeploymentServiceDiscoveryOutput) Hostname() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VirtualDeploymentServiceDiscovery) *string { return v.Hostname }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Type of service discovery.
@@ -2601,7 +2628,7 @@ func (o VirtualDeploymentServiceDiscoveryPtrOutput) Hostname() pulumi.StringPtrO
 		if v == nil {
 			return nil
 		}
-		return &v.Hostname
+		return v.Hostname
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -2936,6 +2963,8 @@ type VirtualServiceRouteTableRouteRule struct {
 	Path *string `pulumi:"path"`
 	// (Updatable) Match type for the route
 	PathType *string `pulumi:"pathType"`
+	// (Updatable) The maximum duration in milliseconds for the target service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the target service, consider either keeping the timeout disabled or set a sufficiently high value.
+	RequestTimeoutInMs *string `pulumi:"requestTimeoutInMs"`
 	// (Updatable) Type of protocol.
 	Type string `pulumi:"type"`
 }
@@ -2960,6 +2989,8 @@ type VirtualServiceRouteTableRouteRuleArgs struct {
 	Path pulumi.StringPtrInput `pulumi:"path"`
 	// (Updatable) Match type for the route
 	PathType pulumi.StringPtrInput `pulumi:"pathType"`
+	// (Updatable) The maximum duration in milliseconds for the target service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the target service, consider either keeping the timeout disabled or set a sufficiently high value.
+	RequestTimeoutInMs pulumi.StringPtrInput `pulumi:"requestTimeoutInMs"`
 	// (Updatable) Type of protocol.
 	Type pulumi.StringInput `pulumi:"type"`
 }
@@ -3035,6 +3066,11 @@ func (o VirtualServiceRouteTableRouteRuleOutput) Path() pulumi.StringPtrOutput {
 // (Updatable) Match type for the route
 func (o VirtualServiceRouteTableRouteRuleOutput) PathType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v VirtualServiceRouteTableRouteRule) *string { return v.PathType }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The maximum duration in milliseconds for the target service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the target service, consider either keeping the timeout disabled or set a sufficiently high value.
+func (o VirtualServiceRouteTableRouteRuleOutput) RequestTimeoutInMs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VirtualServiceRouteTableRouteRule) *string { return v.RequestTimeoutInMs }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Type of protocol.
@@ -5332,6 +5368,8 @@ type GetIngressGatewayRouteTableRouteRule struct {
 	Path string `pulumi:"path"`
 	// Match type for the route
 	PathType string `pulumi:"pathType"`
+	// The maximum duration in milliseconds for the upstream service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the upstream service, consider either keeping the timeout disabled or set a sufficiently high value.
+	RequestTimeoutInMs string `pulumi:"requestTimeoutInMs"`
 	// Type of protocol.
 	Type string `pulumi:"type"`
 }
@@ -5362,6 +5400,8 @@ type GetIngressGatewayRouteTableRouteRuleArgs struct {
 	Path pulumi.StringInput `pulumi:"path"`
 	// Match type for the route
 	PathType pulumi.StringInput `pulumi:"pathType"`
+	// The maximum duration in milliseconds for the upstream service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the upstream service, consider either keeping the timeout disabled or set a sufficiently high value.
+	RequestTimeoutInMs pulumi.StringInput `pulumi:"requestTimeoutInMs"`
 	// Type of protocol.
 	Type pulumi.StringInput `pulumi:"type"`
 }
@@ -5454,6 +5494,11 @@ func (o GetIngressGatewayRouteTableRouteRuleOutput) Path() pulumi.StringOutput {
 // Match type for the route
 func (o GetIngressGatewayRouteTableRouteRuleOutput) PathType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIngressGatewayRouteTableRouteRule) string { return v.PathType }).(pulumi.StringOutput)
+}
+
+// The maximum duration in milliseconds for the upstream service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the upstream service, consider either keeping the timeout disabled or set a sufficiently high value.
+func (o GetIngressGatewayRouteTableRouteRuleOutput) RequestTimeoutInMs() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIngressGatewayRouteTableRouteRule) string { return v.RequestTimeoutInMs }).(pulumi.StringOutput)
 }
 
 // Type of protocol.
@@ -6156,6 +6201,8 @@ type GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRule
 	Path string `pulumi:"path"`
 	// Match type for the route
 	PathType string `pulumi:"pathType"`
+	// The maximum duration in milliseconds for the upstream service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the upstream service, consider either keeping the timeout disabled or set a sufficiently high value.
+	RequestTimeoutInMs string `pulumi:"requestTimeoutInMs"`
 	// Type of protocol.
 	Type string `pulumi:"type"`
 }
@@ -6186,6 +6233,8 @@ type GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRule
 	Path pulumi.StringInput `pulumi:"path"`
 	// Match type for the route
 	PathType pulumi.StringInput `pulumi:"pathType"`
+	// The maximum duration in milliseconds for the upstream service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the upstream service, consider either keeping the timeout disabled or set a sufficiently high value.
+	RequestTimeoutInMs pulumi.StringInput `pulumi:"requestTimeoutInMs"`
 	// Type of protocol.
 	Type pulumi.StringInput `pulumi:"type"`
 }
@@ -6287,6 +6336,13 @@ func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteR
 func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleOutput) PathType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRule) string {
 		return v.PathType
+	}).(pulumi.StringOutput)
+}
+
+// The maximum duration in milliseconds for the upstream service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the upstream service, consider either keeping the timeout disabled or set a sufficiently high value.
+func (o GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleOutput) RequestTimeoutInMs() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRule) string {
+		return v.RequestTimeoutInMs
 	}).(pulumi.StringOutput)
 }
 
@@ -8285,7 +8341,7 @@ func (o GetMeshesMeshCollectionArrayOutput) Index(i pulumi.IntInput) GetMeshesMe
 }
 
 type GetMeshesMeshCollectionItem struct {
-	// A list of certificate authority resources to use for creating leaf certificates for mTLS authentication. Currently we only support one certificate authority, but this may expand in future releases.
+	// A list of certificate authority resources to use for creating leaf certificates for mTLS authentication. Currently we only support one certificate authority, but this may expand in future releases. Request with more than one certificate authority will be rejected.
 	CertificateAuthorities []GetMeshesMeshCollectionItemCertificateAuthority `pulumi:"certificateAuthorities"`
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -8325,7 +8381,7 @@ type GetMeshesMeshCollectionItemInput interface {
 }
 
 type GetMeshesMeshCollectionItemArgs struct {
-	// A list of certificate authority resources to use for creating leaf certificates for mTLS authentication. Currently we only support one certificate authority, but this may expand in future releases.
+	// A list of certificate authority resources to use for creating leaf certificates for mTLS authentication. Currently we only support one certificate authority, but this may expand in future releases. Request with more than one certificate authority will be rejected.
 	CertificateAuthorities GetMeshesMeshCollectionItemCertificateAuthorityArrayInput `pulumi:"certificateAuthorities"`
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
@@ -8404,7 +8460,7 @@ func (o GetMeshesMeshCollectionItemOutput) ToGetMeshesMeshCollectionItemOutputWi
 	return o
 }
 
-// A list of certificate authority resources to use for creating leaf certificates for mTLS authentication. Currently we only support one certificate authority, but this may expand in future releases.
+// A list of certificate authority resources to use for creating leaf certificates for mTLS authentication. Currently we only support one certificate authority, but this may expand in future releases. Request with more than one certificate authority will be rejected.
 func (o GetMeshesMeshCollectionItemOutput) CertificateAuthorities() GetMeshesMeshCollectionItemCertificateAuthorityArrayOutput {
 	return o.ApplyT(func(v GetMeshesMeshCollectionItem) []GetMeshesMeshCollectionItemCertificateAuthority {
 		return v.CertificateAuthorities
@@ -8783,10 +8839,14 @@ func (o GetVirtualDeploymentAccessLoggingArrayOutput) Index(i pulumi.IntInput) G
 }
 
 type GetVirtualDeploymentListener struct {
+	// The maximum duration in milliseconds for which the request's stream may be idle. The value 0 (zero) indicates that the timeout is disabled.
+	IdleTimeoutInMs string `pulumi:"idleTimeoutInMs"`
 	// Port in which virtual deployment is running.
 	Port int `pulumi:"port"`
 	// Type of protocol used in virtual deployment.
 	Protocol string `pulumi:"protocol"`
+	// The maximum duration in milliseconds for the deployed service to respond to an incoming request through the listener.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP/HTTP2 listeners, and disabled (no timeout) for the GRPC listeners. The value 0 (zero) indicates that the timeout is disabled.  The timeout cannot be configured for the TCP and TLS_PASSTHROUGH listeners.  For streaming responses from the deployed service, consider either keeping the timeout disabled or set a sufficiently high value.
+	RequestTimeoutInMs string `pulumi:"requestTimeoutInMs"`
 }
 
 // GetVirtualDeploymentListenerInput is an input type that accepts GetVirtualDeploymentListenerArgs and GetVirtualDeploymentListenerOutput values.
@@ -8801,10 +8861,14 @@ type GetVirtualDeploymentListenerInput interface {
 }
 
 type GetVirtualDeploymentListenerArgs struct {
+	// The maximum duration in milliseconds for which the request's stream may be idle. The value 0 (zero) indicates that the timeout is disabled.
+	IdleTimeoutInMs pulumi.StringInput `pulumi:"idleTimeoutInMs"`
 	// Port in which virtual deployment is running.
 	Port pulumi.IntInput `pulumi:"port"`
 	// Type of protocol used in virtual deployment.
 	Protocol pulumi.StringInput `pulumi:"protocol"`
+	// The maximum duration in milliseconds for the deployed service to respond to an incoming request through the listener.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP/HTTP2 listeners, and disabled (no timeout) for the GRPC listeners. The value 0 (zero) indicates that the timeout is disabled.  The timeout cannot be configured for the TCP and TLS_PASSTHROUGH listeners.  For streaming responses from the deployed service, consider either keeping the timeout disabled or set a sufficiently high value.
+	RequestTimeoutInMs pulumi.StringInput `pulumi:"requestTimeoutInMs"`
 }
 
 func (GetVirtualDeploymentListenerArgs) ElementType() reflect.Type {
@@ -8858,6 +8922,11 @@ func (o GetVirtualDeploymentListenerOutput) ToGetVirtualDeploymentListenerOutput
 	return o
 }
 
+// The maximum duration in milliseconds for which the request's stream may be idle. The value 0 (zero) indicates that the timeout is disabled.
+func (o GetVirtualDeploymentListenerOutput) IdleTimeoutInMs() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualDeploymentListener) string { return v.IdleTimeoutInMs }).(pulumi.StringOutput)
+}
+
 // Port in which virtual deployment is running.
 func (o GetVirtualDeploymentListenerOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v GetVirtualDeploymentListener) int { return v.Port }).(pulumi.IntOutput)
@@ -8866,6 +8935,11 @@ func (o GetVirtualDeploymentListenerOutput) Port() pulumi.IntOutput {
 // Type of protocol used in virtual deployment.
 func (o GetVirtualDeploymentListenerOutput) Protocol() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVirtualDeploymentListener) string { return v.Protocol }).(pulumi.StringOutput)
+}
+
+// The maximum duration in milliseconds for the deployed service to respond to an incoming request through the listener.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP/HTTP2 listeners, and disabled (no timeout) for the GRPC listeners. The value 0 (zero) indicates that the timeout is disabled.  The timeout cannot be configured for the TCP and TLS_PASSTHROUGH listeners.  For streaming responses from the deployed service, consider either keeping the timeout disabled or set a sufficiently high value.
+func (o GetVirtualDeploymentListenerOutput) RequestTimeoutInMs() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualDeploymentListener) string { return v.RequestTimeoutInMs }).(pulumi.StringOutput)
 }
 
 type GetVirtualDeploymentListenerArrayOutput struct{ *pulumi.OutputState }
@@ -9532,10 +9606,14 @@ func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingArrayOu
 }
 
 type GetVirtualDeploymentsVirtualDeploymentCollectionItemListener struct {
+	// The maximum duration in milliseconds for which the request's stream may be idle. The value 0 (zero) indicates that the timeout is disabled.
+	IdleTimeoutInMs string `pulumi:"idleTimeoutInMs"`
 	// Port in which virtual deployment is running.
 	Port int `pulumi:"port"`
 	// Type of protocol used in virtual deployment.
 	Protocol string `pulumi:"protocol"`
+	// The maximum duration in milliseconds for the deployed service to respond to an incoming request through the listener.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP/HTTP2 listeners, and disabled (no timeout) for the GRPC listeners. The value 0 (zero) indicates that the timeout is disabled.  The timeout cannot be configured for the TCP and TLS_PASSTHROUGH listeners.  For streaming responses from the deployed service, consider either keeping the timeout disabled or set a sufficiently high value.
+	RequestTimeoutInMs string `pulumi:"requestTimeoutInMs"`
 }
 
 // GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerInput is an input type that accepts GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerArgs and GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerOutput values.
@@ -9550,10 +9628,14 @@ type GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerInput interface
 }
 
 type GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerArgs struct {
+	// The maximum duration in milliseconds for which the request's stream may be idle. The value 0 (zero) indicates that the timeout is disabled.
+	IdleTimeoutInMs pulumi.StringInput `pulumi:"idleTimeoutInMs"`
 	// Port in which virtual deployment is running.
 	Port pulumi.IntInput `pulumi:"port"`
 	// Type of protocol used in virtual deployment.
 	Protocol pulumi.StringInput `pulumi:"protocol"`
+	// The maximum duration in milliseconds for the deployed service to respond to an incoming request through the listener.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP/HTTP2 listeners, and disabled (no timeout) for the GRPC listeners. The value 0 (zero) indicates that the timeout is disabled.  The timeout cannot be configured for the TCP and TLS_PASSTHROUGH listeners.  For streaming responses from the deployed service, consider either keeping the timeout disabled or set a sufficiently high value.
+	RequestTimeoutInMs pulumi.StringInput `pulumi:"requestTimeoutInMs"`
 }
 
 func (GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerArgs) ElementType() reflect.Type {
@@ -9607,6 +9689,11 @@ func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerOutput) ToGe
 	return o
 }
 
+// The maximum duration in milliseconds for which the request's stream may be idle. The value 0 (zero) indicates that the timeout is disabled.
+func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerOutput) IdleTimeoutInMs() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualDeploymentsVirtualDeploymentCollectionItemListener) string { return v.IdleTimeoutInMs }).(pulumi.StringOutput)
+}
+
 // Port in which virtual deployment is running.
 func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v GetVirtualDeploymentsVirtualDeploymentCollectionItemListener) int { return v.Port }).(pulumi.IntOutput)
@@ -9615,6 +9702,13 @@ func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerOutput) Port
 // Type of protocol used in virtual deployment.
 func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerOutput) Protocol() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVirtualDeploymentsVirtualDeploymentCollectionItemListener) string { return v.Protocol }).(pulumi.StringOutput)
+}
+
+// The maximum duration in milliseconds for the deployed service to respond to an incoming request through the listener.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP/HTTP2 listeners, and disabled (no timeout) for the GRPC listeners. The value 0 (zero) indicates that the timeout is disabled.  The timeout cannot be configured for the TCP and TLS_PASSTHROUGH listeners.  For streaming responses from the deployed service, consider either keeping the timeout disabled or set a sufficiently high value.
+func (o GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerOutput) RequestTimeoutInMs() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualDeploymentsVirtualDeploymentCollectionItemListener) string {
+		return v.RequestTimeoutInMs
+	}).(pulumi.StringOutput)
 }
 
 type GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerArrayOutput struct{ *pulumi.OutputState }
@@ -9964,6 +10058,8 @@ type GetVirtualServiceRouteTableRouteRule struct {
 	Path string `pulumi:"path"`
 	// Match type for the route
 	PathType string `pulumi:"pathType"`
+	// The maximum duration in milliseconds for the target service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the target service, consider either keeping the timeout disabled or set a sufficiently high value.
+	RequestTimeoutInMs string `pulumi:"requestTimeoutInMs"`
 	// Type of protocol.
 	Type string `pulumi:"type"`
 }
@@ -9988,6 +10084,8 @@ type GetVirtualServiceRouteTableRouteRuleArgs struct {
 	Path pulumi.StringInput `pulumi:"path"`
 	// Match type for the route
 	PathType pulumi.StringInput `pulumi:"pathType"`
+	// The maximum duration in milliseconds for the target service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the target service, consider either keeping the timeout disabled or set a sufficiently high value.
+	RequestTimeoutInMs pulumi.StringInput `pulumi:"requestTimeoutInMs"`
 	// Type of protocol.
 	Type pulumi.StringInput `pulumi:"type"`
 }
@@ -10063,6 +10161,11 @@ func (o GetVirtualServiceRouteTableRouteRuleOutput) Path() pulumi.StringOutput {
 // Match type for the route
 func (o GetVirtualServiceRouteTableRouteRuleOutput) PathType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVirtualServiceRouteTableRouteRule) string { return v.PathType }).(pulumi.StringOutput)
+}
+
+// The maximum duration in milliseconds for the target service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the target service, consider either keeping the timeout disabled or set a sufficiently high value.
+func (o GetVirtualServiceRouteTableRouteRuleOutput) RequestTimeoutInMs() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualServiceRouteTableRouteRule) string { return v.RequestTimeoutInMs }).(pulumi.StringOutput)
 }
 
 // Type of protocol.
@@ -10653,6 +10756,8 @@ type GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRule
 	Path string `pulumi:"path"`
 	// Match type for the route
 	PathType string `pulumi:"pathType"`
+	// The maximum duration in milliseconds for the target service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the target service, consider either keeping the timeout disabled or set a sufficiently high value.
+	RequestTimeoutInMs string `pulumi:"requestTimeoutInMs"`
 	// Type of protocol.
 	Type string `pulumi:"type"`
 }
@@ -10677,6 +10782,8 @@ type GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRule
 	Path pulumi.StringInput `pulumi:"path"`
 	// Match type for the route
 	PathType pulumi.StringInput `pulumi:"pathType"`
+	// The maximum duration in milliseconds for the target service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the target service, consider either keeping the timeout disabled or set a sufficiently high value.
+	RequestTimeoutInMs pulumi.StringInput `pulumi:"requestTimeoutInMs"`
 	// Type of protocol.
 	Type pulumi.StringInput `pulumi:"type"`
 }
@@ -10757,6 +10864,13 @@ func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteR
 func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleOutput) PathType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRule) string {
 		return v.PathType
+	}).(pulumi.StringOutput)
+}
+
+// The maximum duration in milliseconds for the target service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when 'isGrpc' is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the target service, consider either keeping the timeout disabled or set a sufficiently high value.
+func (o GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleOutput) RequestTimeoutInMs() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRule) string {
+		return v.RequestTimeoutInMs
 	}).(pulumi.StringOutput)
 }
 

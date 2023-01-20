@@ -22,11 +22,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getComputeImageCapabilitySchema(args: GetComputeImageCapabilitySchemaArgs, opts?: pulumi.InvokeOptions): Promise<GetComputeImageCapabilitySchemaResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getComputeImageCapabilitySchema:getComputeImageCapabilitySchema", {
         "computeImageCapabilitySchemaId": args.computeImageCapabilitySchemaId,
         "isMergeEnabled": args.isMergeEnabled,
@@ -94,9 +91,25 @@ export interface GetComputeImageCapabilitySchemaResult {
      */
     readonly timeCreated: string;
 }
-
+/**
+ * This data source provides details about a specific Compute Image Capability Schema resource in Oracle Cloud Infrastructure Core service.
+ *
+ * Gets the specified Compute Image Capability Schema
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testComputeImageCapabilitySchema = oci.Core.getComputeImageCapabilitySchema({
+ *     computeImageCapabilitySchemaId: oci_core_compute_image_capability_schema.test_compute_image_capability_schema.id,
+ *     isMergeEnabled: _var.compute_image_capability_schema_is_merge_enabled,
+ * });
+ * ```
+ */
 export function getComputeImageCapabilitySchemaOutput(args: GetComputeImageCapabilitySchemaOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetComputeImageCapabilitySchemaResult> {
-    return pulumi.output(args).apply(a => getComputeImageCapabilitySchema(a, opts))
+    return pulumi.output(args).apply((a: any) => getComputeImageCapabilitySchema(a, opts))
 }
 
 /**

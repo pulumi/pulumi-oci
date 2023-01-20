@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNatGateway(args: GetNatGatewayArgs, opts?: pulumi.InvokeOptions): Promise<GetNatGatewayResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getNatGateway:getNatGateway", {
         "natGatewayId": args.natGatewayId,
     }, opts);
@@ -95,9 +92,24 @@ export interface GetNatGatewayResult {
      */
     readonly vcnId: string;
 }
-
+/**
+ * This data source provides details about a specific Nat Gateway resource in Oracle Cloud Infrastructure Core service.
+ *
+ * Gets the specified NAT gateway's information.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testNatGateway = oci.Core.getNatGateway({
+ *     natGatewayId: oci_core_nat_gateway.test_nat_gateway.id,
+ * });
+ * ```
+ */
 export function getNatGatewayOutput(args: GetNatGatewayOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNatGatewayResult> {
-    return pulumi.output(args).apply(a => getNatGateway(a, opts))
+    return pulumi.output(args).apply((a: any) => getNatGateway(a, opts))
 }
 
 /**

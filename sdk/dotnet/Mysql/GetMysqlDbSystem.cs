@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Mysql
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetMysqlDbSystemResult> InvokeAsync(GetMysqlDbSystemArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetMysqlDbSystemResult>("oci:Mysql/getMysqlDbSystem:getMysqlDbSystem", args ?? new GetMysqlDbSystemArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetMysqlDbSystemResult>("oci:Mysql/getMysqlDbSystem:getMysqlDbSystem", args ?? new GetMysqlDbSystemArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Mysql Db System resource in Oracle Cloud Infrastructure MySQL Database service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Mysql
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetMysqlDbSystemResult> Invoke(GetMysqlDbSystemInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetMysqlDbSystemResult>("oci:Mysql/getMysqlDbSystem:getMysqlDbSystem", args ?? new GetMysqlDbSystemInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetMysqlDbSystemResult>("oci:Mysql/getMysqlDbSystem:getMysqlDbSystem", args ?? new GetMysqlDbSystemInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -206,7 +206,7 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// The Maintenance Policy for the DB System.
+        /// The Maintenance Policy for the DB System or Read Replica that this model is included in.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMysqlDbSystemMaintenanceResult> Maintenances;
         /// <summary>

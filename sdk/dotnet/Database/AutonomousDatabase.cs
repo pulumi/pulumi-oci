@@ -619,6 +619,12 @@ namespace Pulumi.Oci.Database
         public Output<string> Timestamp { get; private set; } = null!;
 
         /// <summary>
+        /// Clone from latest available backup timestamp.
+        /// </summary>
+        [Output("useLatestAvailableBackupTimeStamp")]
+        public Output<bool> UseLatestAvailableBackupTimeStamp { get; private set; } = null!;
+
+        /// <summary>
         /// The amount of storage that has been used, in terabytes.
         /// </summary>
         [Output("usedDataStorageSizeInTbs")]
@@ -659,6 +665,10 @@ namespace Pulumi.Oci.Database
             var defaultOptions = new CustomResourceOptions
             {
                 Version = Utilities.Version,
+                AdditionalSecretOutputs =
+                {
+                    "adminPassword",
+                },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -682,11 +692,21 @@ namespace Pulumi.Oci.Database
 
     public sealed class AutonomousDatabaseArgs : global::Pulumi.ResourceArgs
     {
+        [Input("adminPassword")]
+        private Input<string>? _adminPassword;
+
         /// <summary>
         /// (Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing. The password is mandatory if source value is "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "DATABASE" or "NONE".
         /// </summary>
-        [Input("adminPassword")]
-        public Input<string>? AdminPassword { get; set; }
+        public Input<string>? AdminPassword
+        {
+            get => _adminPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _adminPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// (Updatable) This field will be null if the Autonomous Database is not Data Guard enabled or Access Control is disabled. It's value would be `TRUE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses primary IP access control list (ACL) for standby. It's value would be `FALSE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses different IP access control list (ACL) for standby compared to primary.
@@ -1048,6 +1068,12 @@ namespace Pulumi.Oci.Database
         public Input<string>? Timestamp { get; set; }
 
         /// <summary>
+        /// Clone from latest available backup timestamp.
+        /// </summary>
+        [Input("useLatestAvailableBackupTimeStamp")]
+        public Input<bool>? UseLatestAvailableBackupTimeStamp { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         /// </summary>
         [Input("vaultId")]
@@ -1079,11 +1105,21 @@ namespace Pulumi.Oci.Database
         [Input("actualUsedDataStorageSizeInTbs")]
         public Input<double>? ActualUsedDataStorageSizeInTbs { get; set; }
 
+        [Input("adminPassword")]
+        private Input<string>? _adminPassword;
+
         /// <summary>
         /// (Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing. The password is mandatory if source value is "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "DATABASE" or "NONE".
         /// </summary>
-        [Input("adminPassword")]
-        public Input<string>? AdminPassword { get; set; }
+        public Input<string>? AdminPassword
+        {
+            get => _adminPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _adminPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// The amount of storage currently allocated for the database tables and billed for, rounded up. When auto-scaling is not enabled, this value is equal to the `dataStorageSizeInTBs` value. You can compare this value to the `actualUsedDataStorageSizeInTBs` value to determine if a manual shrink operation is appropriate for your allocated storage.
@@ -1773,6 +1809,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("timestamp")]
         public Input<string>? Timestamp { get; set; }
+
+        /// <summary>
+        /// Clone from latest available backup timestamp.
+        /// </summary>
+        [Input("useLatestAvailableBackupTimeStamp")]
+        public Input<bool>? UseLatestAvailableBackupTimeStamp { get; set; }
 
         /// <summary>
         /// The amount of storage that has been used, in terabytes.

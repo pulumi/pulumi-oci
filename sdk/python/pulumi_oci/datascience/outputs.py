@@ -85,6 +85,8 @@ __all__ = [
     'GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationResult',
     'GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult',
     'GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyResult',
+    'GetModelVersionSetsFilterResult',
+    'GetModelVersionSetsModelVersionSetResult',
     'GetModelsFilterResult',
     'GetModelsModelResult',
     'GetModelsModelCustomMetadataListResult',
@@ -300,8 +302,8 @@ class JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails(dict):
                  memory_in_gbs: Optional[float] = None,
                  ocpus: Optional[float] = None):
         """
-        :param float memory_in_gbs: (Updatable) A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
-        :param float ocpus: (Updatable) A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        :param float memory_in_gbs: (Updatable) The total amount of memory available to the job run instance, in gigabytes.
+        :param float ocpus: (Updatable) The total number of OCPUs available to the job run instance.
         """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
@@ -312,7 +314,7 @@ class JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails(dict):
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[float]:
         """
-        (Updatable) A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        (Updatable) The total amount of memory available to the job run instance, in gigabytes.
         """
         return pulumi.get(self, "memory_in_gbs")
 
@@ -320,7 +322,7 @@ class JobJobInfrastructureConfigurationDetailsJobShapeConfigDetails(dict):
     @pulumi.getter
     def ocpus(self) -> Optional[float]:
         """
-        (Updatable) A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        (Updatable) The total number of OCPUs available to the job run instance.
         """
         return pulumi.get(self, "ocpus")
 
@@ -595,8 +597,8 @@ class JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail(dict):
                  memory_in_gbs: Optional[float] = None,
                  ocpus: Optional[float] = None):
         """
-        :param float memory_in_gbs: A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
-        :param float ocpus: A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        :param float memory_in_gbs: The total amount of memory available to the job run instance, in gigabytes.
+        :param float ocpus: The total number of OCPUs available to the job run instance.
         """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
@@ -607,7 +609,7 @@ class JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail(dict):
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[float]:
         """
-        A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        The total amount of memory available to the job run instance, in gigabytes.
         """
         return pulumi.get(self, "memory_in_gbs")
 
@@ -615,7 +617,7 @@ class JobRunJobInfrastructureConfigurationDetailJobShapeConfigDetail(dict):
     @pulumi.getter
     def ocpus(self) -> Optional[float]:
         """
-        A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        The total number of OCPUs available to the job run instance.
         """
         return pulumi.get(self, "ocpus")
 
@@ -1205,8 +1207,8 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
                  memory_in_gbs: Optional[float] = None,
                  ocpus: Optional[float] = None):
         """
-        :param float memory_in_gbs: (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
-        :param float ocpus: (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+        :param float memory_in_gbs: (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
+        :param float ocpus: (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
         """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
@@ -1217,7 +1219,7 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[float]:
         """
-        (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
+        (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
         """
         return pulumi.get(self, "memory_in_gbs")
 
@@ -1225,7 +1227,7 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
     @pulumi.getter
     def ocpus(self) -> Optional[float]:
         """
-        (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+        (Updatable) A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
         """
         return pulumi.get(self, "ocpus")
 
@@ -1376,8 +1378,8 @@ class NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetai
                  memory_in_gbs: Optional[float] = None,
                  ocpus: Optional[float] = None):
         """
-        :param float memory_in_gbs: (Updatable) A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
-        :param float ocpus: (Updatable) A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        :param float memory_in_gbs: (Updatable) The total amount of memory available to the notebook session instance, in gigabytes.
+        :param float ocpus: (Updatable) The total number of OCPUs available to the notebook session instance.
         """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
@@ -1388,7 +1390,7 @@ class NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetai
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[float]:
         """
-        (Updatable) A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        (Updatable) The total amount of memory available to the notebook session instance, in gigabytes.
         """
         return pulumi.get(self, "memory_in_gbs")
 
@@ -1396,7 +1398,7 @@ class NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetai
     @pulumi.getter
     def ocpus(self) -> Optional[float]:
         """
-        (Updatable) A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        (Updatable) The total number of OCPUs available to the notebook session instance.
         """
         return pulumi.get(self, "ocpus")
 
@@ -1498,8 +1500,8 @@ class NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConf
                  memory_in_gbs: Optional[float] = None,
                  ocpus: Optional[float] = None):
         """
-        :param float memory_in_gbs: (Updatable) A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
-        :param float ocpus: (Updatable) A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        :param float memory_in_gbs: (Updatable) The total amount of memory available to the notebook session instance, in gigabytes.
+        :param float ocpus: (Updatable) The total number of OCPUs available to the notebook session instance.
         """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
@@ -1510,7 +1512,7 @@ class NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConf
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[float]:
         """
-        (Updatable) A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        (Updatable) The total amount of memory available to the notebook session instance, in gigabytes.
         """
         return pulumi.get(self, "memory_in_gbs")
 
@@ -1518,7 +1520,7 @@ class NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConf
     @pulumi.getter
     def ocpus(self) -> Optional[float]:
         """
-        (Updatable) A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        (Updatable) The total number of OCPUs available to the notebook session instance.
         """
         return pulumi.get(self, "ocpus")
 
@@ -1852,8 +1854,8 @@ class GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetailResult(dict)
                  memory_in_gbs: float,
                  ocpus: float):
         """
-        :param float memory_in_gbs: A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
-        :param float ocpus: A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        :param float memory_in_gbs: The total amount of memory available to the job run instance, in gigabytes.
+        :param float ocpus: The total number of OCPUs available to the job run instance.
         """
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "ocpus", ocpus)
@@ -1862,7 +1864,7 @@ class GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetailResult(dict)
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> float:
         """
-        A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        The total amount of memory available to the job run instance, in gigabytes.
         """
         return pulumi.get(self, "memory_in_gbs")
 
@@ -1870,7 +1872,7 @@ class GetJobJobInfrastructureConfigurationDetailJobShapeConfigDetailResult(dict)
     @pulumi.getter
     def ocpus(self) -> float:
         """
-        A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        The total number of OCPUs available to the job run instance.
         """
         return pulumi.get(self, "ocpus")
 
@@ -2045,8 +2047,8 @@ class GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailResult(di
                  memory_in_gbs: float,
                  ocpus: float):
         """
-        :param float memory_in_gbs: A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
-        :param float ocpus: A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        :param float memory_in_gbs: The total amount of memory available to the job run instance, in gigabytes.
+        :param float ocpus: The total number of OCPUs available to the job run instance.
         """
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "ocpus", ocpus)
@@ -2055,7 +2057,7 @@ class GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailResult(di
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> float:
         """
-        A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        The total amount of memory available to the job run instance, in gigabytes.
         """
         return pulumi.get(self, "memory_in_gbs")
 
@@ -2063,7 +2065,7 @@ class GetJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailResult(di
     @pulumi.getter
     def ocpus(self) -> float:
         """
-        A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        The total number of OCPUs available to the job run instance.
         """
         return pulumi.get(self, "ocpus")
 
@@ -2495,8 +2497,8 @@ class GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailRe
                  memory_in_gbs: float,
                  ocpus: float):
         """
-        :param float memory_in_gbs: A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
-        :param float ocpus: A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        :param float memory_in_gbs: The total amount of memory available to the job run instance, in gigabytes.
+        :param float ocpus: The total number of OCPUs available to the job run instance.
         """
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "ocpus", ocpus)
@@ -2505,7 +2507,7 @@ class GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailRe
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> float:
         """
-        A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        The total amount of memory available to the job run instance, in gigabytes.
         """
         return pulumi.get(self, "memory_in_gbs")
 
@@ -2513,7 +2515,7 @@ class GetJobRunsJobRunJobInfrastructureConfigurationDetailJobShapeConfigDetailRe
     @pulumi.getter
     def ocpus(self) -> float:
         """
-        A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        The total number of OCPUs available to the job run instance.
         """
         return pulumi.get(self, "ocpus")
 
@@ -3038,8 +3040,8 @@ class GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetailResult(d
                  memory_in_gbs: float,
                  ocpus: float):
         """
-        :param float memory_in_gbs: A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
-        :param float ocpus: A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        :param float memory_in_gbs: The total amount of memory available to the job run instance, in gigabytes.
+        :param float ocpus: The total number of OCPUs available to the job run instance.
         """
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "ocpus", ocpus)
@@ -3048,7 +3050,7 @@ class GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetailResult(d
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> float:
         """
-        A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        The total amount of memory available to the job run instance, in gigabytes.
         """
         return pulumi.get(self, "memory_in_gbs")
 
@@ -3056,7 +3058,7 @@ class GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetailResult(d
     @pulumi.getter
     def ocpus(self) -> float:
         """
-        A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        The total number of OCPUs available to the job run instance.
         """
         return pulumi.get(self, "ocpus")
 
@@ -3440,8 +3442,8 @@ class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDeta
                  memory_in_gbs: float,
                  ocpus: float):
         """
-        :param float memory_in_gbs: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
-        :param float ocpus: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+        :param float memory_in_gbs: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
+        :param float ocpus: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
         """
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "ocpus", ocpus)
@@ -3450,7 +3452,7 @@ class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDeta
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> float:
         """
-        A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
+        A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
         """
         return pulumi.get(self, "memory_in_gbs")
 
@@ -3458,7 +3460,7 @@ class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDeta
     @pulumi.getter
     def ocpus(self) -> float:
         """
-        A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+        A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
         """
         return pulumi.get(self, "ocpus")
 
@@ -3966,8 +3968,8 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelC
                  memory_in_gbs: float,
                  ocpus: float):
         """
-        :param float memory_in_gbs: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
-        :param float ocpus: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+        :param float memory_in_gbs: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
+        :param float ocpus: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
         """
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "ocpus", ocpus)
@@ -3976,7 +3978,7 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelC
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> float:
         """
-        A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 and 512 GB and VM.Optimized3.Flex memory range is between 6 and 256 GB.
+        A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
         """
         return pulumi.get(self, "memory_in_gbs")
 
@@ -3984,7 +3986,7 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelC
     @pulumi.getter
     def ocpus(self) -> float:
         """
-        A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 and 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+        A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
         """
         return pulumi.get(self, "ocpus")
 
@@ -4016,6 +4018,167 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelC
         The type of scaling policy.
         """
         return pulumi.get(self, "policy_type")
+
+
+@pulumi.output_type
+class GetModelVersionSetsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: A filter to return only resources that match the entire name given.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        A filter to return only resources that match the entire name given.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetModelVersionSetsModelVersionSetResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: str,
+                 created_by: str,
+                 defined_tags: Mapping[str, Any],
+                 description: str,
+                 freeform_tags: Mapping[str, Any],
+                 id: str,
+                 name: str,
+                 project_id: str,
+                 state: str,
+                 time_created: str,
+                 time_updated: str):
+        """
+        :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param str created_by: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param str description: A short description of the model version set.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param str id: <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
+        :param str name: A filter to return only resources that match the entire name given.
+        :param str project_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
+        :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
+        :param str time_created: The date and time that the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
+        :param str time_updated: The date and time that the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "project_id", project_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> str:
+        """
+        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
+        """
+        return pulumi.get(self, "created_by")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        A short description of the model version set.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        A filter to return only resources that match the entire name given.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="projectId")
+    def project_id(self) -> str:
+        """
+        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
+        """
+        return pulumi.get(self, "project_id")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time that the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The date and time that the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
+        """
+        return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type
@@ -4431,8 +4594,8 @@ class GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDet
                  memory_in_gbs: float,
                  ocpus: float):
         """
-        :param float memory_in_gbs: A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
-        :param float ocpus: A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        :param float memory_in_gbs: The total amount of memory available to the notebook session instance, in gigabytes.
+        :param float ocpus: The total number of OCPUs available to the notebook session instance.
         """
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "ocpus", ocpus)
@@ -4441,7 +4604,7 @@ class GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDet
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> float:
         """
-        A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        The total amount of memory available to the notebook session instance, in gigabytes.
         """
         return pulumi.get(self, "memory_in_gbs")
 
@@ -4449,7 +4612,7 @@ class GetNotebookSessionNotebookSessionConfigDetailNotebookSessionShapeConfigDet
     @pulumi.getter
     def ocpus(self) -> float:
         """
-        A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        The total number of OCPUs available to the notebook session instance.
         """
         return pulumi.get(self, "ocpus")
 
@@ -4511,8 +4674,8 @@ class GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeCo
                  memory_in_gbs: float,
                  ocpus: float):
         """
-        :param float memory_in_gbs: A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
-        :param float ocpus: A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        :param float memory_in_gbs: The total amount of memory available to the notebook session instance, in gigabytes.
+        :param float ocpus: The total number of OCPUs available to the notebook session instance.
         """
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "ocpus", ocpus)
@@ -4521,7 +4684,7 @@ class GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeCo
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> float:
         """
-        A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        The total amount of memory available to the notebook session instance, in gigabytes.
         """
         return pulumi.get(self, "memory_in_gbs")
 
@@ -4529,7 +4692,7 @@ class GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeCo
     @pulumi.getter
     def ocpus(self) -> float:
         """
-        A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        The total number of OCPUs available to the notebook session instance.
         """
         return pulumi.get(self, "ocpus")
 
@@ -4928,8 +5091,8 @@ class GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessi
                  memory_in_gbs: float,
                  ocpus: float):
         """
-        :param float memory_in_gbs: A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
-        :param float ocpus: A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        :param float memory_in_gbs: The total amount of memory available to the notebook session instance, in gigabytes.
+        :param float ocpus: The total number of OCPUs available to the notebook session instance.
         """
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "ocpus", ocpus)
@@ -4938,7 +5101,7 @@ class GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessi
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> float:
         """
-        A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        The total amount of memory available to the notebook session instance, in gigabytes.
         """
         return pulumi.get(self, "memory_in_gbs")
 
@@ -4946,7 +5109,7 @@ class GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailNotebookSessi
     @pulumi.getter
     def ocpus(self) -> float:
         """
-        A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        The total number of OCPUs available to the notebook session instance.
         """
         return pulumi.get(self, "ocpus")
 
@@ -5008,8 +5171,8 @@ class GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebo
                  memory_in_gbs: float,
                  ocpus: float):
         """
-        :param float memory_in_gbs: A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
-        :param float ocpus: A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        :param float memory_in_gbs: The total amount of memory available to the notebook session instance, in gigabytes.
+        :param float ocpus: The total number of OCPUs available to the notebook session instance.
         """
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "ocpus", ocpus)
@@ -5018,7 +5181,7 @@ class GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebo
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> float:
         """
-        A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        The total amount of memory available to the notebook session instance, in gigabytes.
         """
         return pulumi.get(self, "memory_in_gbs")
 
@@ -5026,7 +5189,7 @@ class GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebo
     @pulumi.getter
     def ocpus(self) -> float:
         """
-        A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        The total number of OCPUs available to the notebook session instance.
         """
         return pulumi.get(self, "ocpus")
 

@@ -12,6 +12,7 @@ from . import outputs
 
 __all__ = [
     'NetworkFirewallPolicyApplicationList',
+    'NetworkFirewallPolicyApplicationListApplicationValue',
     'NetworkFirewallPolicyDecryptionProfile',
     'NetworkFirewallPolicyDecryptionRule',
     'NetworkFirewallPolicyDecryptionRuleCondition',
@@ -20,10 +21,12 @@ __all__ = [
     'NetworkFirewallPolicySecurityRule',
     'NetworkFirewallPolicySecurityRuleCondition',
     'NetworkFirewallPolicyUrlList',
+    'NetworkFirewallPolicyUrlListUrlListValue',
     'GetNetworkFirewallPoliciesFilterResult',
     'GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionResult',
     'GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemResult',
     'GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListResult',
+    'GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueResult',
     'GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionProfileResult',
     'GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleResult',
     'GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryptionRuleConditionResult',
@@ -32,7 +35,9 @@ __all__ = [
     'GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleResult',
     'GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecurityRuleConditionResult',
     'GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListResult',
+    'GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueResult',
     'GetNetworkFirewallPolicyApplicationListResult',
+    'GetNetworkFirewallPolicyApplicationListApplicationValueResult',
     'GetNetworkFirewallPolicyDecryptionProfileResult',
     'GetNetworkFirewallPolicyDecryptionRuleResult',
     'GetNetworkFirewallPolicyDecryptionRuleConditionResult',
@@ -41,6 +46,7 @@ __all__ = [
     'GetNetworkFirewallPolicySecurityRuleResult',
     'GetNetworkFirewallPolicySecurityRuleConditionResult',
     'GetNetworkFirewallPolicyUrlListResult',
+    'GetNetworkFirewallPolicyUrlListUrlListValueResult',
     'GetNetworkFirewallsFilterResult',
     'GetNetworkFirewallsNetworkFirewallCollectionResult',
     'GetNetworkFirewallsNetworkFirewallCollectionItemResult',
@@ -51,14 +57,10 @@ class NetworkFirewallPolicyApplicationList(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "icmpCode":
-            suggest = "icmp_code"
-        elif key == "icmpType":
-            suggest = "icmp_type"
-        elif key == "maximumPort":
-            suggest = "maximum_port"
-        elif key == "minimumPort":
-            suggest = "minimum_port"
+        if key == "applicationListName":
+            suggest = "application_list_name"
+        elif key == "applicationValues":
+            suggest = "application_values"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in NetworkFirewallPolicyApplicationList. Access the value via the '{suggest}' property getter instead.")
@@ -72,18 +74,71 @@ class NetworkFirewallPolicyApplicationList(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 key: str,
+                 application_list_name: str,
+                 application_values: Optional[Sequence['outputs.NetworkFirewallPolicyApplicationListApplicationValue']] = None):
+        """
+        :param str application_list_name: (Updatable) The key is the identifier by which the application list is referenced.
+        :param Sequence['NetworkFirewallPolicyApplicationListApplicationValueArgs'] application_values: (Updatable) Details about the application
+        """
+        pulumi.set(__self__, "application_list_name", application_list_name)
+        if application_values is not None:
+            pulumi.set(__self__, "application_values", application_values)
+
+    @property
+    @pulumi.getter(name="applicationListName")
+    def application_list_name(self) -> str:
+        """
+        (Updatable) The key is the identifier by which the application list is referenced.
+        """
+        return pulumi.get(self, "application_list_name")
+
+    @property
+    @pulumi.getter(name="applicationValues")
+    def application_values(self) -> Optional[Sequence['outputs.NetworkFirewallPolicyApplicationListApplicationValue']]:
+        """
+        (Updatable) Details about the application
+        """
+        return pulumi.get(self, "application_values")
+
+
+@pulumi.output_type
+class NetworkFirewallPolicyApplicationListApplicationValue(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "icmpCode":
+            suggest = "icmp_code"
+        elif key == "icmpType":
+            suggest = "icmp_type"
+        elif key == "maximumPort":
+            suggest = "maximum_port"
+        elif key == "minimumPort":
+            suggest = "minimum_port"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NetworkFirewallPolicyApplicationListApplicationValue. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NetworkFirewallPolicyApplicationListApplicationValue.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NetworkFirewallPolicyApplicationListApplicationValue.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
                  type: str,
                  icmp_code: Optional[int] = None,
                  icmp_type: Optional[int] = None,
                  maximum_port: Optional[int] = None,
                  minimum_port: Optional[int] = None):
         """
-        :param str type: (Updatable) Type of the secrets mapped based on the policy.
-               * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-               * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+        :param str type: (Updatable) Type of the url lists based on the policy
+        :param int icmp_code: (Updatable) Used when you select ICMP. 0-Net unreachable, 1-Host unreachable, 2-Protocol unreachable, 3-Port unreachable
+        :param int icmp_type: (Updatable)  Used when you select ICMP. 0-Echo reply, 3-Destination unreachable, 5-Redirect, 8-Echo
+        :param int maximum_port: (Updatable) Used when you select TCP or UDP. Enter a port number.
+        :param int minimum_port: (Updatable) Used when you select TCP or UDP. Enter a port number.
         """
-        pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "type", type)
         if icmp_code is not None:
             pulumi.set(__self__, "icmp_code", icmp_code)
@@ -96,37 +151,42 @@ class NetworkFirewallPolicyApplicationList(dict):
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        return pulumi.get(self, "key")
-
-    @property
-    @pulumi.getter
     def type(self) -> str:
         """
-        (Updatable) Type of the secrets mapped based on the policy.
-        * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-        * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+        (Updatable) Type of the url lists based on the policy
         """
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter(name="icmpCode")
     def icmp_code(self) -> Optional[int]:
+        """
+        (Updatable) Used when you select ICMP. 0-Net unreachable, 1-Host unreachable, 2-Protocol unreachable, 3-Port unreachable
+        """
         return pulumi.get(self, "icmp_code")
 
     @property
     @pulumi.getter(name="icmpType")
     def icmp_type(self) -> Optional[int]:
+        """
+        (Updatable)  Used when you select ICMP. 0-Echo reply, 3-Destination unreachable, 5-Redirect, 8-Echo
+        """
         return pulumi.get(self, "icmp_type")
 
     @property
     @pulumi.getter(name="maximumPort")
     def maximum_port(self) -> Optional[int]:
+        """
+        (Updatable) Used when you select TCP or UDP. Enter a port number.
+        """
         return pulumi.get(self, "maximum_port")
 
     @property
     @pulumi.getter(name="minimumPort")
     def minimum_port(self) -> Optional[int]:
+        """
+        (Updatable) Used when you select TCP or UDP. Enter a port number.
+        """
         return pulumi.get(self, "minimum_port")
 
 
@@ -178,9 +238,8 @@ class NetworkFirewallPolicyDecryptionProfile(dict):
                  is_unsupported_version_blocked: Optional[bool] = None,
                  is_untrusted_issuer_blocked: Optional[bool] = None):
         """
-        :param str type: (Updatable) Type of the secrets mapped based on the policy.
-               * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-               * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+        :param str key: Source of the secrets, where the secrets are stored.
+        :param str type: (Updatable) Type of the url lists based on the policy
         :param bool are_certificate_extensions_restricted: (Updatable) Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
         :param bool is_auto_include_alt_name: (Updatable) Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
         :param bool is_expired_certificate_blocked: (Updatable) Whether to block sessions if server's certificate is expired.
@@ -215,15 +274,16 @@ class NetworkFirewallPolicyDecryptionProfile(dict):
     @property
     @pulumi.getter
     def key(self) -> str:
+        """
+        Source of the secrets, where the secrets are stored.
+        """
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
     def type(self) -> str:
         """
-        (Updatable) Type of the secrets mapped based on the policy.
-        * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-        * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+        (Updatable) Type of the url lists based on the policy
         """
         return pulumi.get(self, "type")
 
@@ -444,6 +504,10 @@ class NetworkFirewallPolicyIpAddressList(dict):
     def __init__(__self__, *,
                  ip_address_list_name: str,
                  ip_address_list_values: Optional[Sequence[str]] = None):
+        """
+        :param str ip_address_list_name: (Updatable) The identifier by which the IP address list is referenced.
+        :param Sequence[str] ip_address_list_values: (Updatable) List of IP address lists of the policy.
+        """
         pulumi.set(__self__, "ip_address_list_name", ip_address_list_name)
         if ip_address_list_values is not None:
             pulumi.set(__self__, "ip_address_list_values", ip_address_list_values)
@@ -451,11 +515,17 @@ class NetworkFirewallPolicyIpAddressList(dict):
     @property
     @pulumi.getter(name="ipAddressListName")
     def ip_address_list_name(self) -> str:
+        """
+        (Updatable) The identifier by which the IP address list is referenced.
+        """
         return pulumi.get(self, "ip_address_list_name")
 
     @property
     @pulumi.getter(name="ipAddressListValues")
     def ip_address_list_values(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) List of IP address lists of the policy.
+        """
         return pulumi.get(self, "ip_address_list_values")
 
 
@@ -486,9 +556,8 @@ class NetworkFirewallPolicyMappedSecret(dict):
                  vault_secret_id: Optional[str] = None,
                  version_number: Optional[int] = None):
         """
-        :param str type: (Updatable) Type of the secrets mapped based on the policy.
-               * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-               * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+        :param str key: Source of the secrets, where the secrets are stored.
+        :param str type: (Updatable) Type of the url lists based on the policy
         :param str vault_secret_id: (Updatable) OCID for the Vault Secret to be used.
         :param int version_number: (Updatable) Version number of the secret to be used.
         """
@@ -502,15 +571,16 @@ class NetworkFirewallPolicyMappedSecret(dict):
     @property
     @pulumi.getter
     def key(self) -> str:
+        """
+        Source of the secrets, where the secrets are stored.
+        """
         return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
     def type(self) -> str:
         """
-        (Updatable) Type of the secrets mapped based on the policy.
-        * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-        * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+        (Updatable) Type of the url lists based on the policy
         """
         return pulumi.get(self, "type")
 
@@ -652,38 +722,80 @@ class NetworkFirewallPolicySecurityRuleCondition(dict):
 
 @pulumi.output_type
 class NetworkFirewallPolicyUrlList(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "urlListName":
+            suggest = "url_list_name"
+        elif key == "urlListValues":
+            suggest = "url_list_values"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NetworkFirewallPolicyUrlList. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NetworkFirewallPolicyUrlList.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NetworkFirewallPolicyUrlList.__key_warning(key)
+        return super().get(key, default)
+
     def __init__(__self__, *,
-                 key: str,
+                 url_list_name: str,
+                 url_list_values: Optional[Sequence['outputs.NetworkFirewallPolicyUrlListUrlListValue']] = None):
+        """
+        :param str url_list_name: (Updatable) The identifier for the url list
+        :param Sequence['NetworkFirewallPolicyUrlListUrlListValueArgs'] url_list_values: (Updatable) The list of Url Patterns.
+        """
+        pulumi.set(__self__, "url_list_name", url_list_name)
+        if url_list_values is not None:
+            pulumi.set(__self__, "url_list_values", url_list_values)
+
+    @property
+    @pulumi.getter(name="urlListName")
+    def url_list_name(self) -> str:
+        """
+        (Updatable) The identifier for the url list
+        """
+        return pulumi.get(self, "url_list_name")
+
+    @property
+    @pulumi.getter(name="urlListValues")
+    def url_list_values(self) -> Optional[Sequence['outputs.NetworkFirewallPolicyUrlListUrlListValue']]:
+        """
+        (Updatable) The list of Url Patterns.
+        """
+        return pulumi.get(self, "url_list_values")
+
+
+@pulumi.output_type
+class NetworkFirewallPolicyUrlListUrlListValue(dict):
+    def __init__(__self__, *,
                  type: str,
                  pattern: Optional[str] = None):
         """
-        :param str type: (Updatable) Type of the secrets mapped based on the policy.
-               * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-               * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+        :param str type: (Updatable) Type of the url lists based on the policy
+        :param str pattern: (Updatable) URL lists to allow or deny traffic to a group of URLs. You can include a maximum of 25 URLs in each list.
         """
-        pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "type", type)
         if pattern is not None:
             pulumi.set(__self__, "pattern", pattern)
 
     @property
     @pulumi.getter
-    def key(self) -> str:
-        return pulumi.get(self, "key")
-
-    @property
-    @pulumi.getter
     def type(self) -> str:
         """
-        (Updatable) Type of the secrets mapped based on the policy.
-        * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-        * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+        (Updatable) Type of the url lists based on the policy
         """
         return pulumi.get(self, "type")
 
     @property
     @pulumi.getter
     def pattern(self) -> Optional[str]:
+        """
+        (Updatable) URL lists to allow or deny traffic to a group of URLs. You can include a maximum of 25 URLs in each list.
+        """
         return pulumi.get(self, "pattern")
 
 
@@ -940,20 +1052,35 @@ class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemResult
 @pulumi.output_type
 class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListResult(dict):
     def __init__(__self__, *,
+                 application_list_name: str,
+                 application_values: Sequence['outputs.GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueResult']):
+        pulumi.set(__self__, "application_list_name", application_list_name)
+        pulumi.set(__self__, "application_values", application_values)
+
+    @property
+    @pulumi.getter(name="applicationListName")
+    def application_list_name(self) -> str:
+        return pulumi.get(self, "application_list_name")
+
+    @property
+    @pulumi.getter(name="applicationValues")
+    def application_values(self) -> Sequence['outputs.GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueResult']:
+        return pulumi.get(self, "application_values")
+
+
+@pulumi.output_type
+class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValueResult(dict):
+    def __init__(__self__, *,
                  icmp_code: int,
                  icmp_type: int,
-                 key: str,
                  maximum_port: int,
                  minimum_port: int,
                  type: str):
         """
         :param str type: Type of the secrets mapped based on the policy.
-               * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-               * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
         """
         pulumi.set(__self__, "icmp_code", icmp_code)
         pulumi.set(__self__, "icmp_type", icmp_type)
-        pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "maximum_port", maximum_port)
         pulumi.set(__self__, "minimum_port", minimum_port)
         pulumi.set(__self__, "type", type)
@@ -967,11 +1094,6 @@ class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplic
     @pulumi.getter(name="icmpType")
     def icmp_type(self) -> int:
         return pulumi.get(self, "icmp_type")
-
-    @property
-    @pulumi.getter
-    def key(self) -> str:
-        return pulumi.get(self, "key")
 
     @property
     @pulumi.getter(name="maximumPort")
@@ -988,8 +1110,6 @@ class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplic
     def type(self) -> str:
         """
         Type of the secrets mapped based on the policy.
-        * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-        * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
         """
         return pulumi.get(self, "type")
 
@@ -1019,8 +1139,6 @@ class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryp
         :param bool is_unsupported_version_blocked: Whether to block sessions if SSL version is not supported.
         :param bool is_untrusted_issuer_blocked: Whether to block sessions if server's certificate is issued by an untrusted certificate authority (CA).
         :param str type: Type of the secrets mapped based on the policy.
-               * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-               * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
         """
         pulumi.set(__self__, "are_certificate_extensions_restricted", are_certificate_extensions_restricted)
         pulumi.set(__self__, "is_auto_include_alt_name", is_auto_include_alt_name)
@@ -1116,8 +1234,6 @@ class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemDecryp
     def type(self) -> str:
         """
         Type of the secrets mapped based on the policy.
-        * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-        * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
         """
         return pulumi.get(self, "type")
 
@@ -1249,8 +1365,6 @@ class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMapped
                  version_number: int):
         """
         :param str type: Type of the secrets mapped based on the policy.
-               * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-               * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
         :param str vault_secret_id: OCID for the Vault Secret to be used.
         :param int version_number: Version number of the secret to be used.
         """
@@ -1269,8 +1383,6 @@ class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemMapped
     def type(self) -> str:
         """
         Type of the secrets mapped based on the policy.
-        * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-        * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
         """
         return pulumi.get(self, "type")
 
@@ -1408,22 +1520,32 @@ class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemSecuri
 @pulumi.output_type
 class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListResult(dict):
     def __init__(__self__, *,
-                 key: str,
+                 url_list_name: str,
+                 url_list_values: Sequence['outputs.GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueResult']):
+        pulumi.set(__self__, "url_list_name", url_list_name)
+        pulumi.set(__self__, "url_list_values", url_list_values)
+
+    @property
+    @pulumi.getter(name="urlListName")
+    def url_list_name(self) -> str:
+        return pulumi.get(self, "url_list_name")
+
+    @property
+    @pulumi.getter(name="urlListValues")
+    def url_list_values(self) -> Sequence['outputs.GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueResult']:
+        return pulumi.get(self, "url_list_values")
+
+
+@pulumi.output_type
+class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlListUrlListValueResult(dict):
+    def __init__(__self__, *,
                  pattern: str,
                  type: str):
         """
         :param str type: Type of the secrets mapped based on the policy.
-               * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-               * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
         """
-        pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "pattern", pattern)
         pulumi.set(__self__, "type", type)
-
-    @property
-    @pulumi.getter
-    def key(self) -> str:
-        return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
@@ -1435,8 +1557,6 @@ class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlLis
     def type(self) -> str:
         """
         Type of the secrets mapped based on the policy.
-        * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-        * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
         """
         return pulumi.get(self, "type")
 
@@ -1444,20 +1564,35 @@ class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemUrlLis
 @pulumi.output_type
 class GetNetworkFirewallPolicyApplicationListResult(dict):
     def __init__(__self__, *,
+                 application_list_name: str,
+                 application_values: Sequence['outputs.GetNetworkFirewallPolicyApplicationListApplicationValueResult']):
+        pulumi.set(__self__, "application_list_name", application_list_name)
+        pulumi.set(__self__, "application_values", application_values)
+
+    @property
+    @pulumi.getter(name="applicationListName")
+    def application_list_name(self) -> str:
+        return pulumi.get(self, "application_list_name")
+
+    @property
+    @pulumi.getter(name="applicationValues")
+    def application_values(self) -> Sequence['outputs.GetNetworkFirewallPolicyApplicationListApplicationValueResult']:
+        return pulumi.get(self, "application_values")
+
+
+@pulumi.output_type
+class GetNetworkFirewallPolicyApplicationListApplicationValueResult(dict):
+    def __init__(__self__, *,
                  icmp_code: int,
                  icmp_type: int,
-                 key: str,
                  maximum_port: int,
                  minimum_port: int,
                  type: str):
         """
         :param str type: Type of the secrets mapped based on the policy.
-               * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-               * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
         """
         pulumi.set(__self__, "icmp_code", icmp_code)
         pulumi.set(__self__, "icmp_type", icmp_type)
-        pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "maximum_port", maximum_port)
         pulumi.set(__self__, "minimum_port", minimum_port)
         pulumi.set(__self__, "type", type)
@@ -1471,11 +1606,6 @@ class GetNetworkFirewallPolicyApplicationListResult(dict):
     @pulumi.getter(name="icmpType")
     def icmp_type(self) -> int:
         return pulumi.get(self, "icmp_type")
-
-    @property
-    @pulumi.getter
-    def key(self) -> str:
-        return pulumi.get(self, "key")
 
     @property
     @pulumi.getter(name="maximumPort")
@@ -1492,8 +1622,6 @@ class GetNetworkFirewallPolicyApplicationListResult(dict):
     def type(self) -> str:
         """
         Type of the secrets mapped based on the policy.
-        * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-        * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
         """
         return pulumi.get(self, "type")
 
@@ -1523,8 +1651,6 @@ class GetNetworkFirewallPolicyDecryptionProfileResult(dict):
         :param bool is_unsupported_version_blocked: Whether to block sessions if SSL version is not supported.
         :param bool is_untrusted_issuer_blocked: Whether to block sessions if server's certificate is issued by an untrusted certificate authority (CA).
         :param str type: Type of the secrets mapped based on the policy.
-               * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-               * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
         """
         pulumi.set(__self__, "are_certificate_extensions_restricted", are_certificate_extensions_restricted)
         pulumi.set(__self__, "is_auto_include_alt_name", is_auto_include_alt_name)
@@ -1620,8 +1746,6 @@ class GetNetworkFirewallPolicyDecryptionProfileResult(dict):
     def type(self) -> str:
         """
         Type of the secrets mapped based on the policy.
-        * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-        * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
         """
         return pulumi.get(self, "type")
 
@@ -1753,8 +1877,6 @@ class GetNetworkFirewallPolicyMappedSecretResult(dict):
                  version_number: int):
         """
         :param str type: Type of the secrets mapped based on the policy.
-               * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-               * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
         :param str vault_secret_id: OCID for the Vault Secret to be used.
         :param int version_number: Version number of the secret to be used.
         """
@@ -1773,8 +1895,6 @@ class GetNetworkFirewallPolicyMappedSecretResult(dict):
     def type(self) -> str:
         """
         Type of the secrets mapped based on the policy.
-        * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-        * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
         """
         return pulumi.get(self, "type")
 
@@ -1912,22 +2032,32 @@ class GetNetworkFirewallPolicySecurityRuleConditionResult(dict):
 @pulumi.output_type
 class GetNetworkFirewallPolicyUrlListResult(dict):
     def __init__(__self__, *,
-                 key: str,
+                 url_list_name: str,
+                 url_list_values: Sequence['outputs.GetNetworkFirewallPolicyUrlListUrlListValueResult']):
+        pulumi.set(__self__, "url_list_name", url_list_name)
+        pulumi.set(__self__, "url_list_values", url_list_values)
+
+    @property
+    @pulumi.getter(name="urlListName")
+    def url_list_name(self) -> str:
+        return pulumi.get(self, "url_list_name")
+
+    @property
+    @pulumi.getter(name="urlListValues")
+    def url_list_values(self) -> Sequence['outputs.GetNetworkFirewallPolicyUrlListUrlListValueResult']:
+        return pulumi.get(self, "url_list_values")
+
+
+@pulumi.output_type
+class GetNetworkFirewallPolicyUrlListUrlListValueResult(dict):
+    def __init__(__self__, *,
                  pattern: str,
                  type: str):
         """
         :param str type: Type of the secrets mapped based on the policy.
-               * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-               * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
         """
-        pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "pattern", pattern)
         pulumi.set(__self__, "type", type)
-
-    @property
-    @pulumi.getter
-    def key(self) -> str:
-        return pulumi.get(self, "key")
 
     @property
     @pulumi.getter
@@ -1939,8 +2069,6 @@ class GetNetworkFirewallPolicyUrlListResult(dict):
     def type(self) -> str:
         """
         Type of the secrets mapped based on the policy.
-        * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-        * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
         """
         return pulumi.get(self, "type")
 

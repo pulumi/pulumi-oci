@@ -40,7 +40,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetManagedDatabasesUserProxyUserResult> InvokeAsync(GetManagedDatabasesUserProxyUserArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabasesUserProxyUserResult>("oci:DatabaseManagement/getManagedDatabasesUserProxyUser:getManagedDatabasesUserProxyUser", args ?? new GetManagedDatabasesUserProxyUserArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabasesUserProxyUserResult>("oci:DatabaseManagement/getManagedDatabasesUserProxyUser:getManagedDatabasesUserProxyUser", args ?? new GetManagedDatabasesUserProxyUserArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Managed Databases User Proxy User resource in Oracle Cloud Infrastructure Database Management service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetManagedDatabasesUserProxyUserResult> Invoke(GetManagedDatabasesUserProxyUserInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetManagedDatabasesUserProxyUserResult>("oci:DatabaseManagement/getManagedDatabasesUserProxyUser:getManagedDatabasesUserProxyUser", args ?? new GetManagedDatabasesUserProxyUserInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabasesUserProxyUserResult>("oci:DatabaseManagement/getManagedDatabasesUserProxyUser:getManagedDatabasesUserProxyUser", args ?? new GetManagedDatabasesUserProxyUserInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -86,7 +86,7 @@ namespace Pulumi.Oci.Core
         public Output<string> DrgRouteTableId { get; private set; } = null!;
 
         /// <summary>
-        /// - The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
         /// </summary>
         [Output("exportDrgRouteDistributionId")]
         public Output<string> ExportDrgRouteDistributionId { get; private set; } = null!;
@@ -122,7 +122,7 @@ namespace Pulumi.Oci.Core
         public Output<bool?> RemoveExportDrgRouteDistributionTrigger { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable)- The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the DRG attachment is using.
+        /// The OCID of the route table the DRG attachment is using.
         /// </summary>
         [Output("routeTableId")]
         public Output<string> RouteTableId { get; private set; } = null!;
@@ -234,7 +234,7 @@ namespace Pulumi.Oci.Core
         public Input<string>? DrgRouteTableId { get; set; }
 
         /// <summary>
-        /// - The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
         /// </summary>
         [Input("exportDrgRouteDistributionId")]
         public Input<string>? ExportDrgRouteDistributionId { get; set; }
@@ -270,7 +270,7 @@ namespace Pulumi.Oci.Core
         public Input<bool>? RemoveExportDrgRouteDistributionTrigger { get; set; }
 
         /// <summary>
-        /// (Updatable)- The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the DRG attachment is using.
+        /// The OCID of the route table the DRG attachment is using.
         /// </summary>
         [Input("routeTableId")]
         public Input<string>? RouteTableId { get; set; }
@@ -332,7 +332,7 @@ namespace Pulumi.Oci.Core
         public Input<string>? DrgRouteTableId { get; set; }
 
         /// <summary>
-        /// - The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
         /// </summary>
         [Input("exportDrgRouteDistributionId")]
         public Input<string>? ExportDrgRouteDistributionId { get; set; }
@@ -374,7 +374,7 @@ namespace Pulumi.Oci.Core
         public Input<bool>? RemoveExportDrgRouteDistributionTrigger { get; set; }
 
         /// <summary>
-        /// (Updatable)- The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the DRG attachment is using.
+        /// The OCID of the route table the DRG attachment is using.
         /// </summary>
         [Input("routeTableId")]
         public Input<string>? RouteTableId { get; set; }

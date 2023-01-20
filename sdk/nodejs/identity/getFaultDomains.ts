@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFaultDomains(args: GetFaultDomainsArgs, opts?: pulumi.InvokeOptions): Promise<GetFaultDomainsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getFaultDomains:getFaultDomains", {
         "availabilityDomain": args.availabilityDomain,
         "compartmentId": args.compartmentId,
@@ -74,9 +72,27 @@ export interface GetFaultDomainsResult {
      */
     readonly id: string;
 }
-
+/**
+ * This data source provides the list of Fault Domains in Oracle Cloud Infrastructure Identity service.
+ *
+ * Lists the Fault Domains in your tenancy. Specify the OCID of either the tenancy or another
+ * of your compartments as the value for the compartment ID (remember that the tenancy is simply the root compartment).
+ * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testFaultDomains = oci.Identity.getFaultDomains({
+ *     availabilityDomain: _var.fault_domain_availability_domain,
+ *     compartmentId: _var.compartment_id,
+ * });
+ * ```
+ */
 export function getFaultDomainsOutput(args: GetFaultDomainsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFaultDomainsResult> {
-    return pulumi.output(args).apply(a => getFaultDomains(a, opts))
+    return pulumi.output(args).apply((a: any) => getFaultDomains(a, opts))
 }
 
 /**

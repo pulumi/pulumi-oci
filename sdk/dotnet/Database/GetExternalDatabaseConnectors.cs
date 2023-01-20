@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetExternalDatabaseConnectorsResult> InvokeAsync(GetExternalDatabaseConnectorsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetExternalDatabaseConnectorsResult>("oci:Database/getExternalDatabaseConnectors:getExternalDatabaseConnectors", args ?? new GetExternalDatabaseConnectorsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetExternalDatabaseConnectorsResult>("oci:Database/getExternalDatabaseConnectors:getExternalDatabaseConnectors", args ?? new GetExternalDatabaseConnectorsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of External Database Connectors in Oracle Cloud Infrastructure Database service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetExternalDatabaseConnectorsResult> Invoke(GetExternalDatabaseConnectorsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetExternalDatabaseConnectorsResult>("oci:Database/getExternalDatabaseConnectors:getExternalDatabaseConnectors", args ?? new GetExternalDatabaseConnectorsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetExternalDatabaseConnectorsResult>("oci:Database/getExternalDatabaseConnectors:getExternalDatabaseConnectors", args ?? new GetExternalDatabaseConnectorsInvokeArgs(), options.WithDefaults());
     }
 
 

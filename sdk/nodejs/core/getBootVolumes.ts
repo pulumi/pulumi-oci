@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  */
 export function getBootVolumes(args?: GetBootVolumesArgs, opts?: pulumi.InvokeOptions): Promise<GetBootVolumesResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getBootVolumes:getBootVolumes", {
         "availabilityDomain": args.availabilityDomain,
         "compartmentId": args.compartmentId,
@@ -83,9 +81,26 @@ export interface GetBootVolumesResult {
      */
     readonly volumeGroupId?: string;
 }
-
+/**
+ * This data source provides the list of Boot Volumes in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the boot volumes in the specified compartment and availability domain.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testBootVolumes = oci.Core.getBootVolumes({
+ *     availabilityDomain: _var.boot_volume_availability_domain,
+ *     compartmentId: _var.compartment_id,
+ *     volumeGroupId: oci_core_volume_group.test_volume_group.id,
+ * });
+ * ```
+ */
 export function getBootVolumesOutput(args?: GetBootVolumesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBootVolumesResult> {
-    return pulumi.output(args).apply(a => getBootVolumes(a, opts))
+    return pulumi.output(args).apply((a: any) => getBootVolumes(a, opts))
 }
 
 /**

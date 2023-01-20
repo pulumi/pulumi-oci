@@ -23,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFastConnectProviderServiceKey(args: GetFastConnectProviderServiceKeyArgs, opts?: pulumi.InvokeOptions): Promise<GetFastConnectProviderServiceKeyResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getFastConnectProviderServiceKey:getFastConnectProviderServiceKey", {
         "providerServiceId": args.providerServiceId,
         "providerServiceKeyName": args.providerServiceKeyName,
@@ -71,9 +68,26 @@ export interface GetFastConnectProviderServiceKeyResult {
     readonly providerServiceId: string;
     readonly providerServiceKeyName: string;
 }
-
+/**
+ * This data source provides details about a specific Fast Connect Provider Service Key resource in Oracle Cloud Infrastructure Core service.
+ *
+ * Gets the specified provider service key's information. Use this operation to validate a
+ * provider service key. An invalid key returns a 404 error.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testFastConnectProviderServiceKey = oci.Core.getFastConnectProviderServiceKey({
+ *     providerServiceId: data.oci_core_fast_connect_provider_services.test_fast_connect_provider_services.fast_connect_provider_services[0].id,
+ *     providerServiceKeyName: _var.fast_connect_provider_service_key_provider_service_key_name,
+ * });
+ * ```
+ */
 export function getFastConnectProviderServiceKeyOutput(args: GetFastConnectProviderServiceKeyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFastConnectProviderServiceKeyResult> {
-    return pulumi.output(args).apply(a => getFastConnectProviderServiceKey(a, opts))
+    return pulumi.output(args).apply((a: any) => getFastConnectProviderServiceKey(a, opts))
 }
 
 /**

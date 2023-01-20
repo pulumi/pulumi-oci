@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  */
 export function getServiceCatalogAssociations(args?: GetServiceCatalogAssociationsArgs, opts?: pulumi.InvokeOptions): Promise<GetServiceCatalogAssociationsResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ServiceCatalog/getServiceCatalogAssociations:getServiceCatalogAssociations", {
         "entityId": args.entityId,
         "entityType": args.entityType,
@@ -90,9 +88,27 @@ export interface GetServiceCatalogAssociationsResult {
      */
     readonly serviceCatalogId?: string;
 }
-
+/**
+ * This data source provides the list of Service Catalog Associations in Oracle Cloud Infrastructure Service Catalog service.
+ *
+ * Lists all the resource associations for a specific service catalog.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testServiceCatalogAssociations = oci.ServiceCatalog.getServiceCatalogAssociations({
+ *     entityId: oci_service_catalog_entity.test_entity.id,
+ *     entityType: _var.service_catalog_association_entity_type,
+ *     serviceCatalogAssociationId: oci_service_catalog_service_catalog_association.test_service_catalog_association.id,
+ *     serviceCatalogId: oci_service_catalog_service_catalog.test_service_catalog.id,
+ * });
+ * ```
+ */
 export function getServiceCatalogAssociationsOutput(args?: GetServiceCatalogAssociationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetServiceCatalogAssociationsResult> {
-    return pulumi.output(args).apply(a => getServiceCatalogAssociations(a, opts))
+    return pulumi.output(args).apply((a: any) => getServiceCatalogAssociations(a, opts))
 }
 
 /**

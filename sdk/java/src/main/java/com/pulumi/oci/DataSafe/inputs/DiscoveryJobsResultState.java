@@ -93,9 +93,25 @@ public final class DiscoveryJobsResultState extends com.pulumi.resources.Resourc
         return Optional.ofNullable(this.dbDefinedChildColumnKeys);
     }
 
+    /**
+     * The OCID of the discovery job.
+     * 
+     * @deprecated
+     * The &#39;oci_data_safe_discovery_jobs_result&#39; resource has been deprecated. It is no longer supported.
+     * 
+     */
+    @Deprecated /* The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported. */
     @Import(name="discoveryJobId")
     private @Nullable Output<String> discoveryJobId;
 
+    /**
+     * @return The OCID of the discovery job.
+     * 
+     * @deprecated
+     * The &#39;oci_data_safe_discovery_jobs_result&#39; resource has been deprecated. It is no longer supported.
+     * 
+     */
+    @Deprecated /* The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported. */
     public Optional<Output<String>> discoveryJobId() {
         return Optional.ofNullable(this.discoveryJobId);
     }
@@ -103,14 +119,22 @@ public final class DiscoveryJobsResultState extends com.pulumi.resources.Resourc
     /**
      * The type of the discovery result. It can be one of the following three types: NEW: A new sensitive column in the target database that is not in the sensitive data model. DELETED: A column that is present in the sensitive data model but has been deleted from the target database. MODIFIED: A column that is present in the target database as well as the sensitive data model but some of its attributes have been modified.
      * 
+     * @deprecated
+     * The &#39;oci_data_safe_discovery_jobs_result&#39; resource has been deprecated. It is no longer supported.
+     * 
      */
+    @Deprecated /* The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported. */
     @Import(name="discoveryType")
     private @Nullable Output<String> discoveryType;
 
     /**
      * @return The type of the discovery result. It can be one of the following three types: NEW: A new sensitive column in the target database that is not in the sensitive data model. DELETED: A column that is present in the sensitive data model but has been deleted from the target database. MODIFIED: A column that is present in the target database as well as the sensitive data model but some of its attributes have been modified.
      * 
+     * @deprecated
+     * The &#39;oci_data_safe_discovery_jobs_result&#39; resource has been deprecated. It is no longer supported.
+     * 
      */
+    @Deprecated /* The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported. */
     public Optional<Output<String>> discoveryType() {
         return Optional.ofNullable(this.discoveryType);
     }
@@ -148,14 +172,22 @@ public final class DiscoveryJobsResultState extends com.pulumi.resources.Resourc
     /**
      * The unique key that identifies the discovery result.
      * 
+     * @deprecated
+     * The &#39;oci_data_safe_discovery_jobs_result&#39; resource has been deprecated. It is no longer supported.
+     * 
      */
+    @Deprecated /* The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported. */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
      * @return The unique key that identifies the discovery result.
      * 
+     * @deprecated
+     * The &#39;oci_data_safe_discovery_jobs_result&#39; resource has been deprecated. It is no longer supported.
+     * 
      */
+    @Deprecated /* The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported. */
     public Optional<Output<String>> key() {
         return Optional.ofNullable(this.key);
     }
@@ -478,11 +510,31 @@ public final class DiscoveryJobsResultState extends com.pulumi.resources.Resourc
             return dbDefinedChildColumnKeys(List.of(dbDefinedChildColumnKeys));
         }
 
+        /**
+         * @param discoveryJobId The OCID of the discovery job.
+         * 
+         * @return builder
+         * 
+         * @deprecated
+         * The &#39;oci_data_safe_discovery_jobs_result&#39; resource has been deprecated. It is no longer supported.
+         * 
+         */
+        @Deprecated /* The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported. */
         public Builder discoveryJobId(@Nullable Output<String> discoveryJobId) {
             $.discoveryJobId = discoveryJobId;
             return this;
         }
 
+        /**
+         * @param discoveryJobId The OCID of the discovery job.
+         * 
+         * @return builder
+         * 
+         * @deprecated
+         * The &#39;oci_data_safe_discovery_jobs_result&#39; resource has been deprecated. It is no longer supported.
+         * 
+         */
+        @Deprecated /* The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported. */
         public Builder discoveryJobId(String discoveryJobId) {
             return discoveryJobId(Output.of(discoveryJobId));
         }
@@ -492,7 +544,11 @@ public final class DiscoveryJobsResultState extends com.pulumi.resources.Resourc
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;oci_data_safe_discovery_jobs_result&#39; resource has been deprecated. It is no longer supported.
+         * 
          */
+        @Deprecated /* The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported. */
         public Builder discoveryType(@Nullable Output<String> discoveryType) {
             $.discoveryType = discoveryType;
             return this;
@@ -503,7 +559,11 @@ public final class DiscoveryJobsResultState extends com.pulumi.resources.Resourc
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;oci_data_safe_discovery_jobs_result&#39; resource has been deprecated. It is no longer supported.
+         * 
          */
+        @Deprecated /* The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported. */
         public Builder discoveryType(String discoveryType) {
             return discoveryType(Output.of(discoveryType));
         }
@@ -555,7 +615,11 @@ public final class DiscoveryJobsResultState extends com.pulumi.resources.Resourc
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;oci_data_safe_discovery_jobs_result&#39; resource has been deprecated. It is no longer supported.
+         * 
          */
+        @Deprecated /* The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported. */
         public Builder key(@Nullable Output<String> key) {
             $.key = key;
             return this;
@@ -566,7 +630,11 @@ public final class DiscoveryJobsResultState extends com.pulumi.resources.Resourc
          * 
          * @return builder
          * 
+         * @deprecated
+         * The &#39;oci_data_safe_discovery_jobs_result&#39; resource has been deprecated. It is no longer supported.
+         * 
          */
+        @Deprecated /* The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported. */
         public Builder key(String key) {
             return key(Output.of(key));
         }

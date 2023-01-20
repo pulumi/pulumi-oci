@@ -169,7 +169,7 @@ class GetDatabaseSoftwareImageResult:
     @pulumi.getter(name="includedPatchesSummary")
     def included_patches_summary(self) -> str:
         """
-        The patches included in the image and the version of the image
+        The patches included in the image and the version of the image.
         """
         return pulumi.get(self, "included_patches_summary")
 

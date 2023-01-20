@@ -11,11 +11,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testPublicIpPoolCapacity = new oci.Core.PublicIpPoolCapacity("test_public_ip_pool_capacity", {
- *     byoipId: var_byoip_id,
- *     cidrBlock: var_cidr_block,
- *     //Required
- *     publicIpPoolId: var_public_ip_pool_id,
+ * const testPublicIpPoolCapacity = new oci.core.PublicIpPoolCapacity("testPublicIpPoolCapacity", {
+ *     byoipId: _var.byoip_id,
+ *     cidrBlock: _var.cidr_block,
+ *     publicIpPoolId: _var.public_ip_pool_id,
  * });
  * ```
  *

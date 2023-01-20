@@ -244,6 +244,10 @@ namespace Pulumi.Oci.Blockchain
             var defaultOptions = new CustomResourceOptions
             {
                 Version = Utilities.Version,
+                AdditionalSecretOutputs =
+                {
+                    "idcsAccessToken",
+                },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -327,11 +331,21 @@ namespace Pulumi.Oci.Blockchain
             set => _freeformTags = value;
         }
 
+        [Input("idcsAccessToken", required: true)]
+        private Input<string>? _idcsAccessToken;
+
         /// <summary>
         /// IDCS access token with Identity Domain Administrator role
         /// </summary>
-        [Input("idcsAccessToken", required: true)]
-        public Input<string> IdcsAccessToken { get; set; } = null!;
+        public Input<string>? IdcsAccessToken
+        {
+            get => _idcsAccessToken;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _idcsAccessToken = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// Bring your own license
@@ -467,11 +481,21 @@ namespace Pulumi.Oci.Blockchain
             set => _hostOcpuUtilizationInfos = value;
         }
 
+        [Input("idcsAccessToken")]
+        private Input<string>? _idcsAccessToken;
+
         /// <summary>
         /// IDCS access token with Identity Domain Administrator role
         /// </summary>
-        [Input("idcsAccessToken")]
-        public Input<string>? IdcsAccessToken { get; set; }
+        public Input<string>? IdcsAccessToken
+        {
+            get => _idcsAccessToken;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _idcsAccessToken = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// Bring your own license

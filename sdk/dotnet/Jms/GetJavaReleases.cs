@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Jms
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetJavaReleasesResult> InvokeAsync(GetJavaReleasesArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetJavaReleasesResult>("oci:Jms/getJavaReleases:getJavaReleases", args ?? new GetJavaReleasesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetJavaReleasesResult>("oci:Jms/getJavaReleases:getJavaReleases", args ?? new GetJavaReleasesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Java Releases in Oracle Cloud Infrastructure Jms service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.Jms
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetJavaReleasesResult> Invoke(GetJavaReleasesInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetJavaReleasesResult>("oci:Jms/getJavaReleases:getJavaReleases", args ?? new GetJavaReleasesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetJavaReleasesResult>("oci:Jms/getJavaReleases:getJavaReleases", args ?? new GetJavaReleasesInvokeArgs(), options.WithDefaults());
     }
 
 

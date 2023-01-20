@@ -99,6 +99,13 @@ func NewFusionEnvironmentAdminUser(ctx *pulumi.Context,
 	if args.Username == nil {
 		return nil, errors.New("invalid value for required argument 'Username'")
 	}
+	if args.Password != nil {
+		args.Password = pulumi.ToSecret(args.Password).(pulumi.StringInput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"password",
+	})
+	opts = append(opts, secrets)
 	var resource FusionEnvironmentAdminUser
 	err := ctx.RegisterResource("oci:FusionApps/fusionEnvironmentAdminUser:FusionEnvironmentAdminUser", name, args, &resource, opts...)
 	if err != nil {

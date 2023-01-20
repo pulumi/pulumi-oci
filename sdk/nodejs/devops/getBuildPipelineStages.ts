@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -27,11 +28,8 @@ import * as utilities from "../utilities";
  */
 export function getBuildPipelineStages(args?: GetBuildPipelineStagesArgs, opts?: pulumi.InvokeOptions): Promise<GetBuildPipelineStagesResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getBuildPipelineStages:getBuildPipelineStages", {
         "buildPipelineId": args.buildPipelineId,
         "compartmentId": args.compartmentId,
@@ -99,9 +97,28 @@ export interface GetBuildPipelineStagesResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Build Pipeline Stages in Oracle Cloud Infrastructure Devops service.
+ *
+ * Returns a list of all stages in a compartment or build pipeline.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testBuildPipelineStages = oci.DevOps.getBuildPipelineStages({
+ *     buildPipelineId: oci_devops_build_pipeline.test_build_pipeline.id,
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.build_pipeline_stage_display_name,
+ *     id: _var.build_pipeline_stage_id,
+ *     state: _var.build_pipeline_stage_state,
+ * });
+ * ```
+ */
 export function getBuildPipelineStagesOutput(args?: GetBuildPipelineStagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBuildPipelineStagesResult> {
-    return pulumi.output(args).apply(a => getBuildPipelineStages(a, opts))
+    return pulumi.output(args).apply((a: any) => getBuildPipelineStages(a, opts))
 }
 
 /**

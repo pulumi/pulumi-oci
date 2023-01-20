@@ -6763,9 +6763,6 @@ class GetManagedDatabasesDatabaseParameterItemResult(dict):
         :param str category: The parameter category.
         :param str constraint: Applicable in case of Oracle Real Application Clusters (Oracle RAC) databases. A `UNIQUE` parameter is one which is unique to each Oracle Real Application Clusters (Oracle RAC) instance. For example, the parameter `INSTANCE_NUMBER` must have different values in each instance. An `IDENTICAL` parameter must have the same value for every instance. For example, the parameter `DB_BLOCK_SIZE` must have the same value in all instances.
         :param float container_id: The ID of the database container to which the data pertains. Possible values include:
-               * `0`: This value is used for data that pertain to the entire CDB. This value is also used for data in non-CDBs.
-               * `1`: This value is used for data that pertain to only the root container.
-               * `n`: Where n is the applicable container ID for the data.
         :param str description: The description of the parameter.
         :param str display_value: The parameter value in a user-friendly format. For example, if the `value` property shows the value 262144 for a big integer parameter, then the `displayValue` property will show the value 256K.
         :param bool is_adjusted: Indicates whether Oracle adjusted the input value to a more suitable value.
@@ -6842,9 +6839,6 @@ class GetManagedDatabasesDatabaseParameterItemResult(dict):
     def container_id(self) -> float:
         """
         The ID of the database container to which the data pertains. Possible values include:
-        * `0`: This value is used for data that pertain to the entire CDB. This value is also used for data in non-CDBs.
-        * `1`: This value is used for data that pertain to only the root container.
-        * `n`: Where n is the applicable container ID for the data.
         """
         return pulumi.get(self, "container_id")
 
@@ -7137,9 +7131,6 @@ class GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemResul
         :param str category: The parameter category.
         :param str constraint: Applicable in case of Oracle Real Application Clusters (Oracle RAC) databases. A `UNIQUE` parameter is one which is unique to each Oracle Real Application Clusters (Oracle RAC) instance. For example, the parameter `INSTANCE_NUMBER` must have different values in each instance. An `IDENTICAL` parameter must have the same value for every instance. For example, the parameter `DB_BLOCK_SIZE` must have the same value in all instances.
         :param float container_id: The ID of the database container to which the data pertains. Possible values include:
-               * `0`: This value is used for data that pertain to the entire CDB. This value is also used for data in non-CDBs.
-               * `1`: This value is used for data that pertain to only the root container.
-               * `n`: Where n is the applicable container ID for the data.
         :param str description: The description of the parameter.
         :param str display_value: The parameter value in a user-friendly format. For example, if the `value` property shows the value 262144 for a big integer parameter, then the `displayValue` property will show the value 256K.
         :param bool is_adjusted: Indicates whether Oracle adjusted the input value to a more suitable value.
@@ -7216,9 +7207,6 @@ class GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemResul
     def container_id(self) -> float:
         """
         The ID of the database container to which the data pertains. Possible values include:
-        * `0`: This value is used for data that pertain to the entire CDB. This value is also used for data in non-CDBs.
-        * `1`: This value is used for data that pertain to only the root container.
-        * `n`: Where n is the applicable container ID for the data.
         """
         return pulumi.get(self, "container_id")
 

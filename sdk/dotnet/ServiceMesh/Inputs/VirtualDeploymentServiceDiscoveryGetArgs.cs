@@ -15,8 +15,8 @@ namespace Pulumi.Oci.ServiceMesh.Inputs
         /// <summary>
         /// (Updatable) The hostname of the virtual deployments.
         /// </summary>
-        [Input("hostname", required: true)]
-        public Input<string> Hostname { get; set; } = null!;
+        [Input("hostname")]
+        public Input<string>? Hostname { get; set; }
 
         /// <summary>
         /// (Updatable) Type of service discovery.

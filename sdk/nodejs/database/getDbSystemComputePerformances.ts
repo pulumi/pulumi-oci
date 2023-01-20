@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  */
 export function getDbSystemComputePerformances(args?: GetDbSystemComputePerformancesArgs, opts?: pulumi.InvokeOptions): Promise<GetDbSystemComputePerformancesResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getDbSystemComputePerformances:getDbSystemComputePerformances", {
         "dbSystemShape": args.dbSystemShape,
         "filters": args.filters,
@@ -60,9 +58,24 @@ export interface GetDbSystemComputePerformancesResult {
      */
     readonly id: string;
 }
-
+/**
+ * This data source provides the list of Db System Compute Performances in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets a list of expected compute performance parameters for a virtual machine DB system based on system configuration.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDbSystemComputePerformances = oci.Database.getDbSystemComputePerformances({
+ *     dbSystemShape: _var.db_system_compute_performance_db_system_shape,
+ * });
+ * ```
+ */
 export function getDbSystemComputePerformancesOutput(args?: GetDbSystemComputePerformancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbSystemComputePerformancesResult> {
-    return pulumi.output(args).apply(a => getDbSystemComputePerformances(a, opts))
+    return pulumi.output(args).apply((a: any) => getDbSystemComputePerformances(a, opts))
 }
 
 /**

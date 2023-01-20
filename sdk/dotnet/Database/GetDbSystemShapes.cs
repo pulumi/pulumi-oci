@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDbSystemShapesResult> InvokeAsync(GetDbSystemShapesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDbSystemShapesResult>("oci:Database/getDbSystemShapes:getDbSystemShapes", args ?? new GetDbSystemShapesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDbSystemShapesResult>("oci:Database/getDbSystemShapes:getDbSystemShapes", args ?? new GetDbSystemShapesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Db System Shapes in Oracle Cloud Infrastructure Database service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDbSystemShapesResult> Invoke(GetDbSystemShapesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDbSystemShapesResult>("oci:Database/getDbSystemShapes:getDbSystemShapes", args ?? new GetDbSystemShapesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDbSystemShapesResult>("oci:Database/getDbSystemShapes:getDbSystemShapes", args ?? new GetDbSystemShapesInvokeArgs(), options.WithDefaults());
     }
 
 

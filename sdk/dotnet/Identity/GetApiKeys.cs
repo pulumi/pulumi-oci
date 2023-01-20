@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetApiKeysResult> InvokeAsync(GetApiKeysArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetApiKeysResult>("oci:Identity/getApiKeys:getApiKeys", args ?? new GetApiKeysArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetApiKeysResult>("oci:Identity/getApiKeys:getApiKeys", args ?? new GetApiKeysArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Api Keys in Oracle Cloud Infrastructure Identity service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetApiKeysResult> Invoke(GetApiKeysInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetApiKeysResult>("oci:Identity/getApiKeys:getApiKeys", args ?? new GetApiKeysInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetApiKeysResult>("oci:Identity/getApiKeys:getApiKeys", args ?? new GetApiKeysInvokeArgs(), options.WithDefaults());
     }
 
 

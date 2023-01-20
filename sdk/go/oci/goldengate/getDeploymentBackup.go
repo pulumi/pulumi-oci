@@ -62,14 +62,14 @@ type LookupDeploymentBackupResult struct {
 	Bucket string `pulumi:"bucket"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags        map[string]interface{} `pulumi:"definedTags"`
 	DeploymentBackupId string                 `pulumi:"deploymentBackupId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
 	DeploymentId string `pulumi:"deploymentId"`
 	// An object's Display Name.
 	DisplayName string `pulumi:"displayName"`
-	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
 	Id string `pulumi:"id"`
@@ -87,7 +87,7 @@ type LookupDeploymentBackupResult struct {
 	SizeInBytes float64 `pulumi:"sizeInBytes"`
 	// Possible lifecycle states.
 	State string `pulumi:"state"`
-	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time of the resource backup finish. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeBackupFinished string `pulumi:"timeBackupFinished"`
@@ -152,7 +152,7 @@ func (o LookupDeploymentBackupResultOutput) CompartmentId() pulumi.StringOutput 
 	return o.ApplyT(func(v LookupDeploymentBackupResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+// Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
 func (o LookupDeploymentBackupResultOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupDeploymentBackupResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
@@ -171,7 +171,7 @@ func (o LookupDeploymentBackupResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentBackupResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 func (o LookupDeploymentBackupResultOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupDeploymentBackupResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
@@ -216,7 +216,7 @@ func (o LookupDeploymentBackupResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentBackupResult) string { return v.State }).(pulumi.StringOutput)
 }
 
-// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 func (o LookupDeploymentBackupResultOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupDeploymentBackupResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }

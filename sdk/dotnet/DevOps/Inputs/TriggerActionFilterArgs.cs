@@ -24,6 +24,9 @@ namespace Pulumi.Oci.DevOps.Inputs
             set => _events = value;
         }
 
+        /// <summary>
+        /// (Updatable) Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
+        /// </summary>
         [Input("exclude")]
         public Input<Inputs.TriggerActionFilterExcludeArgs>? Exclude { get; set; }
 
@@ -34,7 +37,7 @@ namespace Pulumi.Oci.DevOps.Inputs
         public Input<Inputs.TriggerActionFilterIncludeArgs>? Include { get; set; }
 
         /// <summary>
-        /// (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
+        /// (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
         /// </summary>
         [Input("triggerSource", required: true)]
         public Input<string> TriggerSource { get; set; } = null!;

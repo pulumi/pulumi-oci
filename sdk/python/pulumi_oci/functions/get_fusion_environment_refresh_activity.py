@@ -8,6 +8,7 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetFusionEnvironmentRefreshActivityResult',
@@ -21,7 +22,7 @@ class GetFusionEnvironmentRefreshActivityResult:
     """
     A collection of values returned by getFusionEnvironmentRefreshActivity.
     """
-    def __init__(__self__, display_name=None, fusion_environment_id=None, id=None, lifecycle_details=None, refresh_activity_id=None, service_availability=None, source_fusion_environment_id=None, state=None, time_accepted=None, time_expected_finish=None, time_finished=None, time_of_restoration_point=None, time_scheduled_start=None, time_updated=None):
+    def __init__(__self__, display_name=None, fusion_environment_id=None, id=None, lifecycle_details=None, refresh_activity_id=None, refresh_issue_details_lists=None, service_availability=None, source_fusion_environment_id=None, state=None, time_accepted=None, time_expected_finish=None, time_finished=None, time_of_restoration_point=None, time_updated=None):
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
@@ -37,6 +38,9 @@ class GetFusionEnvironmentRefreshActivityResult:
         if refresh_activity_id and not isinstance(refresh_activity_id, str):
             raise TypeError("Expected argument 'refresh_activity_id' to be a str")
         pulumi.set(__self__, "refresh_activity_id", refresh_activity_id)
+        if refresh_issue_details_lists and not isinstance(refresh_issue_details_lists, list):
+            raise TypeError("Expected argument 'refresh_issue_details_lists' to be a list")
+        pulumi.set(__self__, "refresh_issue_details_lists", refresh_issue_details_lists)
         if service_availability and not isinstance(service_availability, str):
             raise TypeError("Expected argument 'service_availability' to be a str")
         pulumi.set(__self__, "service_availability", service_availability)
@@ -58,9 +62,6 @@ class GetFusionEnvironmentRefreshActivityResult:
         if time_of_restoration_point and not isinstance(time_of_restoration_point, str):
             raise TypeError("Expected argument 'time_of_restoration_point' to be a str")
         pulumi.set(__self__, "time_of_restoration_point", time_of_restoration_point)
-        if time_scheduled_start and not isinstance(time_scheduled_start, str):
-            raise TypeError("Expected argument 'time_scheduled_start' to be a str")
-        pulumi.set(__self__, "time_scheduled_start", time_scheduled_start)
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
@@ -98,6 +99,14 @@ class GetFusionEnvironmentRefreshActivityResult:
     @pulumi.getter(name="refreshActivityId")
     def refresh_activity_id(self) -> str:
         return pulumi.get(self, "refresh_activity_id")
+
+    @property
+    @pulumi.getter(name="refreshIssueDetailsLists")
+    def refresh_issue_details_lists(self) -> Sequence['outputs.GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListResult']:
+        """
+        Details of refresh investigation information, each item represents a different issue.
+        """
+        return pulumi.get(self, "refresh_issue_details_lists")
 
     @property
     @pulumi.getter(name="serviceAvailability")
@@ -156,14 +165,6 @@ class GetFusionEnvironmentRefreshActivityResult:
         return pulumi.get(self, "time_of_restoration_point")
 
     @property
-    @pulumi.getter(name="timeScheduledStart")
-    def time_scheduled_start(self) -> str:
-        """
-        The time the refresh activity is scheduled to start. An RFC3339 formatted datetime string.
-        """
-        return pulumi.get(self, "time_scheduled_start")
-
-    @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
@@ -183,6 +184,7 @@ class AwaitableGetFusionEnvironmentRefreshActivityResult(GetFusionEnvironmentRef
             id=self.id,
             lifecycle_details=self.lifecycle_details,
             refresh_activity_id=self.refresh_activity_id,
+            refresh_issue_details_lists=self.refresh_issue_details_lists,
             service_availability=self.service_availability,
             source_fusion_environment_id=self.source_fusion_environment_id,
             state=self.state,
@@ -190,7 +192,6 @@ class AwaitableGetFusionEnvironmentRefreshActivityResult(GetFusionEnvironmentRef
             time_expected_finish=self.time_expected_finish,
             time_finished=self.time_finished,
             time_of_restoration_point=self.time_of_restoration_point,
-            time_scheduled_start=self.time_scheduled_start,
             time_updated=self.time_updated)
 
 
@@ -228,6 +229,7 @@ def get_fusion_environment_refresh_activity(fusion_environment_id: Optional[str]
         id=__ret__.id,
         lifecycle_details=__ret__.lifecycle_details,
         refresh_activity_id=__ret__.refresh_activity_id,
+        refresh_issue_details_lists=__ret__.refresh_issue_details_lists,
         service_availability=__ret__.service_availability,
         source_fusion_environment_id=__ret__.source_fusion_environment_id,
         state=__ret__.state,
@@ -235,7 +237,6 @@ def get_fusion_environment_refresh_activity(fusion_environment_id: Optional[str]
         time_expected_finish=__ret__.time_expected_finish,
         time_finished=__ret__.time_finished,
         time_of_restoration_point=__ret__.time_of_restoration_point,
-        time_scheduled_start=__ret__.time_scheduled_start,
         time_updated=__ret__.time_updated)
 
 

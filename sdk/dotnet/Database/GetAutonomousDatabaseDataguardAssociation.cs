@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAutonomousDatabaseDataguardAssociationResult> InvokeAsync(GetAutonomousDatabaseDataguardAssociationArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAutonomousDatabaseDataguardAssociationResult>("oci:Database/getAutonomousDatabaseDataguardAssociation:getAutonomousDatabaseDataguardAssociation", args ?? new GetAutonomousDatabaseDataguardAssociationArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAutonomousDatabaseDataguardAssociationResult>("oci:Database/getAutonomousDatabaseDataguardAssociation:getAutonomousDatabaseDataguardAssociation", args ?? new GetAutonomousDatabaseDataguardAssociationArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Autonomous Database Dataguard Association resource in Oracle Cloud Infrastructure Database service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAutonomousDatabaseDataguardAssociationResult> Invoke(GetAutonomousDatabaseDataguardAssociationInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAutonomousDatabaseDataguardAssociationResult>("oci:Database/getAutonomousDatabaseDataguardAssociation:getAutonomousDatabaseDataguardAssociation", args ?? new GetAutonomousDatabaseDataguardAssociationInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousDatabaseDataguardAssociationResult>("oci:Database/getAutonomousDatabaseDataguardAssociation:getAutonomousDatabaseDataguardAssociation", args ?? new GetAutonomousDatabaseDataguardAssociationInvokeArgs(), options.WithDefaults());
     }
 
 

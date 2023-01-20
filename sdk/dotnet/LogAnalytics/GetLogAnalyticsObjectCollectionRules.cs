@@ -41,7 +41,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetLogAnalyticsObjectCollectionRulesResult> InvokeAsync(GetLogAnalyticsObjectCollectionRulesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetLogAnalyticsObjectCollectionRulesResult>("oci:LogAnalytics/getLogAnalyticsObjectCollectionRules:getLogAnalyticsObjectCollectionRules", args ?? new GetLogAnalyticsObjectCollectionRulesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetLogAnalyticsObjectCollectionRulesResult>("oci:LogAnalytics/getLogAnalyticsObjectCollectionRules:getLogAnalyticsObjectCollectionRules", args ?? new GetLogAnalyticsObjectCollectionRulesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Log Analytics Object Collection Rules in Oracle Cloud Infrastructure Log Analytics service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetLogAnalyticsObjectCollectionRulesResult> Invoke(GetLogAnalyticsObjectCollectionRulesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsObjectCollectionRulesResult>("oci:LogAnalytics/getLogAnalyticsObjectCollectionRules:getLogAnalyticsObjectCollectionRules", args ?? new GetLogAnalyticsObjectCollectionRulesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsObjectCollectionRulesResult>("oci:LogAnalytics/getLogAnalyticsObjectCollectionRules:getLogAnalyticsObjectCollectionRules", args ?? new GetLogAnalyticsObjectCollectionRulesInvokeArgs(), options.WithDefaults());
     }
 
 

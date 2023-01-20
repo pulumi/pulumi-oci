@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLetterOfAuthority(args: GetLetterOfAuthorityArgs, opts?: pulumi.InvokeOptions): Promise<GetLetterOfAuthorityResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getLetterOfAuthority:getLetterOfAuthority", {
         "crossConnectId": args.crossConnectId,
     }, opts);
@@ -78,9 +75,24 @@ export interface GetLetterOfAuthorityResult {
      */
     readonly timeIssued: string;
 }
-
+/**
+ * This data source provides details about a specific Letter Of Authority resource in Oracle Cloud Infrastructure Core service.
+ *
+ * Gets the Letter of Authority for the specified cross-connect.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testLetterOfAuthority = oci.Core.getLetterOfAuthority({
+ *     crossConnectId: oci_core_cross_connect.test_cross_connect.id,
+ * });
+ * ```
+ */
 export function getLetterOfAuthorityOutput(args: GetLetterOfAuthorityOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLetterOfAuthorityResult> {
-    return pulumi.output(args).apply(a => getLetterOfAuthority(a, opts))
+    return pulumi.output(args).apply((a: any) => getLetterOfAuthority(a, opts))
 }
 
 /**

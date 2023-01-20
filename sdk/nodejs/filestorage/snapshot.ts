@@ -76,11 +76,11 @@ export class Snapshot extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+     * Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      */
     public /*out*/ readonly isCloneSource!: pulumi.Output<boolean>;
     /**
-     * Additional information about the current 'lifecycleState'.
+     * Additional information about the current `lifecycleState`.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
@@ -88,9 +88,20 @@ export class Snapshot extends pulumi.CustomResource {
      */
     public readonly name!: pulumi.Output<string>;
     /**
-     * An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+     * An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      */
     public /*out*/ readonly provenanceId!: pulumi.Output<string>;
+    /**
+     * The date and time the snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. This value might be the same or different from `timeCreated` depending on the following factors:
+     * * If the snapshot is created in the original file system directory.
+     * * If the snapshot is cloned from a file system.
+     * * If the snapshot is replicated from a file system.
+     */
+    public /*out*/ readonly snapshotTime!: pulumi.Output<string>;
+    /**
+     * Specifies the generation type of the snapshot.
+     */
+    public /*out*/ readonly snapshotType!: pulumi.Output<string>;
     /**
      * The current state of the snapshot.
      */
@@ -120,6 +131,8 @@ export class Snapshot extends pulumi.CustomResource {
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["name"] = state ? state.name : undefined;
             resourceInputs["provenanceId"] = state ? state.provenanceId : undefined;
+            resourceInputs["snapshotTime"] = state ? state.snapshotTime : undefined;
+            resourceInputs["snapshotType"] = state ? state.snapshotType : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
         } else {
@@ -134,6 +147,8 @@ export class Snapshot extends pulumi.CustomResource {
             resourceInputs["isCloneSource"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["provenanceId"] = undefined /*out*/;
+            resourceInputs["snapshotTime"] = undefined /*out*/;
+            resourceInputs["snapshotType"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
         }
@@ -159,11 +174,11 @@ export interface SnapshotState {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+     * Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      */
     isCloneSource?: pulumi.Input<boolean>;
     /**
-     * Additional information about the current 'lifecycleState'.
+     * Additional information about the current `lifecycleState`.
      */
     lifecycleDetails?: pulumi.Input<string>;
     /**
@@ -171,9 +186,20 @@ export interface SnapshotState {
      */
     name?: pulumi.Input<string>;
     /**
-     * An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+     * An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      */
     provenanceId?: pulumi.Input<string>;
+    /**
+     * The date and time the snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. This value might be the same or different from `timeCreated` depending on the following factors:
+     * * If the snapshot is created in the original file system directory.
+     * * If the snapshot is cloned from a file system.
+     * * If the snapshot is replicated from a file system.
+     */
+    snapshotTime?: pulumi.Input<string>;
+    /**
+     * Specifies the generation type of the snapshot.
+     */
+    snapshotType?: pulumi.Input<string>;
     /**
      * The current state of the snapshot.
      */

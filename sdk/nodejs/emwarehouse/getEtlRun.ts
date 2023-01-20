@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getEtlRun(args: GetEtlRunArgs, opts?: pulumi.InvokeOptions): Promise<GetEtlRunResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:EmWarehouse/getEtlRun:getEtlRun", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -76,9 +74,26 @@ export interface GetEtlRunResult {
      */
     readonly items: outputs.EmWarehouse.GetEtlRunItem[];
 }
-
+/**
+ * This data source provides details about a specific Em Warehouse Etl Run resource in Oracle Cloud Infrastructure Em Warehouse service.
+ *
+ * Gets a list of runs of an EmWarehouseResource by identifier
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testEmWarehouseEtlRun = oci.EmWarehouse.getEtlRun({
+ *     emWarehouseId: oci_em_warehouse_em_warehouse.test_em_warehouse.id,
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.em_warehouse_etl_run_display_name,
+ * });
+ * ```
+ */
 export function getEtlRunOutput(args: GetEtlRunOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEtlRunResult> {
-    return pulumi.output(args).apply(a => getEtlRun(a, opts))
+    return pulumi.output(args).apply((a: any) => getEtlRun(a, opts))
 }
 
 /**

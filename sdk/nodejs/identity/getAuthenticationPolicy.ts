@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAuthenticationPolicy(args: GetAuthenticationPolicyArgs, opts?: pulumi.InvokeOptions): Promise<GetAuthenticationPolicyResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getAuthenticationPolicy:getAuthenticationPolicy", {
         "compartmentId": args.compartmentId,
     }, opts);
@@ -61,9 +59,25 @@ export interface GetAuthenticationPolicyResult {
      */
     readonly passwordPolicies: outputs.Identity.GetAuthenticationPolicyPasswordPolicy[];
 }
-
+/**
+ * This data source provides details about a specific Authentication Policy resource in Oracle Cloud Infrastructure Identity service.
+ *
+ * Gets the authentication policy for the given tenancy. You must specify your tenant’s OCID as the value for
+ * the compartment ID (remember that the tenancy is simply the root compartment).
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAuthenticationPolicy = oci.Identity.getAuthenticationPolicy({
+ *     compartmentId: _var.tenancy_ocid,
+ * });
+ * ```
+ */
 export function getAuthenticationPolicyOutput(args: GetAuthenticationPolicyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuthenticationPolicyResult> {
-    return pulumi.output(args).apply(a => getAuthenticationPolicy(a, opts))
+    return pulumi.output(args).apply((a: any) => getAuthenticationPolicy(a, opts))
 }
 
 /**

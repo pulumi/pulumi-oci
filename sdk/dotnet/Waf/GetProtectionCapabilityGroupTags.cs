@@ -41,7 +41,7 @@ namespace Pulumi.Oci.Waf
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetProtectionCapabilityGroupTagsResult> InvokeAsync(GetProtectionCapabilityGroupTagsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetProtectionCapabilityGroupTagsResult>("oci:Waf/getProtectionCapabilityGroupTags:getProtectionCapabilityGroupTags", args ?? new GetProtectionCapabilityGroupTagsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetProtectionCapabilityGroupTagsResult>("oci:Waf/getProtectionCapabilityGroupTags:getProtectionCapabilityGroupTags", args ?? new GetProtectionCapabilityGroupTagsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Protection Capability Group Tags in Oracle Cloud Infrastructure Waf service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.Waf
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetProtectionCapabilityGroupTagsResult> Invoke(GetProtectionCapabilityGroupTagsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetProtectionCapabilityGroupTagsResult>("oci:Waf/getProtectionCapabilityGroupTags:getProtectionCapabilityGroupTags", args ?? new GetProtectionCapabilityGroupTagsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetProtectionCapabilityGroupTagsResult>("oci:Waf/getProtectionCapabilityGroupTags:getProtectionCapabilityGroupTags", args ?? new GetProtectionCapabilityGroupTagsInvokeArgs(), options.WithDefaults());
     }
 
 

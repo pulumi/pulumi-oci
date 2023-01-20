@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -27,11 +28,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNotebookSessions(args: GetNotebookSessionsArgs, opts?: pulumi.InvokeOptions): Promise<GetNotebookSessionsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataScience/getNotebookSessions:getNotebookSessions", {
         "compartmentId": args.compartmentId,
         "createdBy": args.createdBy,
@@ -108,9 +106,29 @@ export interface GetNotebookSessionsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Notebook Sessions in Oracle Cloud Infrastructure Data Science service.
+ *
+ * Lists the notebook sessions in the specified compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testNotebookSessions = oci.DataScience.getNotebookSessions({
+ *     compartmentId: _var.compartment_id,
+ *     createdBy: _var.notebook_session_created_by,
+ *     displayName: _var.notebook_session_display_name,
+ *     id: _var.notebook_session_id,
+ *     projectId: oci_datascience_project.test_project.id,
+ *     state: _var.notebook_session_state,
+ * });
+ * ```
+ */
 export function getNotebookSessionsOutput(args: GetNotebookSessionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNotebookSessionsResult> {
-    return pulumi.output(args).apply(a => getNotebookSessions(a, opts))
+    return pulumi.output(args).apply((a: any) => getNotebookSessions(a, opts))
 }
 
 /**

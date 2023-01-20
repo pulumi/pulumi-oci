@@ -44,7 +44,6 @@ namespace Pulumi.Oci.Database
     ///         },
     ///         MaintenanceWindow = new Oci.Database.Inputs.CloudExadataInfrastructureMaintenanceWindowArgs
     ///         {
-    ///             Preference = @var.Cloud_exadata_infrastructure_maintenance_window_preference,
     ///             CustomActionTimeoutInMins = @var.Cloud_exadata_infrastructure_maintenance_window_custom_action_timeout_in_mins,
     ///             DaysOfWeeks = new[]
     ///             {
@@ -65,6 +64,7 @@ namespace Pulumi.Oci.Database
     ///                 },
     ///             },
     ///             PatchingMode = @var.Cloud_exadata_infrastructure_maintenance_window_patching_mode,
+    ///             Preference = @var.Cloud_exadata_infrastructure_maintenance_window_preference,
     ///             WeeksOfMonths = @var.Cloud_exadata_infrastructure_maintenance_window_weeks_of_month,
     ///         },
     ///         StorageCount = @var.Cloud_exadata_infrastructure_storage_count,
@@ -84,6 +84,18 @@ namespace Pulumi.Oci.Database
     [OciResourceType("oci:Database/cloudExadataInfrastructure:CloudExadataInfrastructure")]
     public partial class CloudExadataInfrastructure : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// The requested number of additional storage servers activated for the Exadata infrastructure.
+        /// </summary>
+        [Output("activatedStorageCount")]
+        public Output<int> ActivatedStorageCount { get; private set; } = null!;
+
+        /// <summary>
+        /// The requested number of additional storage servers for the Exadata infrastructure.
+        /// </summary>
+        [Output("additionalStorageCount")]
+        public Output<int> AdditionalStorageCount { get; private set; } = null!;
+
         /// <summary>
         /// The availability domain where the cloud Exadata infrastructure is located.
         /// </summary>
@@ -109,10 +121,28 @@ namespace Pulumi.Oci.Database
         public Output<int> ComputeCount { get; private set; } = null!;
 
         /// <summary>
+        /// The total number of CPU cores allocated.
+        /// </summary>
+        [Output("cpuCount")]
+        public Output<int> CpuCount { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Customer contacts.
         /// </summary>
         [Output("customerContacts")]
         public Output<ImmutableArray<Outputs.CloudExadataInfrastructureCustomerContact>> CustomerContacts { get; private set; } = null!;
+
+        /// <summary>
+        /// Size, in terabytes, of the DATA disk group.
+        /// </summary>
+        [Output("dataStorageSizeInTbs")]
+        public Output<double> DataStorageSizeInTbs { get; private set; } = null!;
+
+        /// <summary>
+        /// The local node storage allocated in GBs.
+        /// </summary>
+        [Output("dbNodeStorageSizeInGbs")]
+        public Output<int> DbNodeStorageSizeInGbs { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -149,6 +179,36 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("maintenanceWindow")]
         public Output<Outputs.CloudExadataInfrastructureMaintenanceWindow> MaintenanceWindow { get; private set; } = null!;
+
+        /// <summary>
+        /// The total number of CPU cores available.
+        /// </summary>
+        [Output("maxCpuCount")]
+        public Output<int> MaxCpuCount { get; private set; } = null!;
+
+        /// <summary>
+        /// The total available DATA disk group size.
+        /// </summary>
+        [Output("maxDataStorageInTbs")]
+        public Output<double> MaxDataStorageInTbs { get; private set; } = null!;
+
+        /// <summary>
+        /// The total local node storage available in GBs.
+        /// </summary>
+        [Output("maxDbNodeStorageInGbs")]
+        public Output<int> MaxDbNodeStorageInGbs { get; private set; } = null!;
+
+        /// <summary>
+        /// The total memory available in GBs.
+        /// </summary>
+        [Output("maxMemoryInGbs")]
+        public Output<int> MaxMemoryInGbs { get; private set; } = null!;
+
+        /// <summary>
+        /// The memory allocated in GBs.
+        /// </summary>
+        [Output("memorySizeInGbs")]
+        public Output<int> MemorySizeInGbs { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
@@ -319,6 +379,18 @@ namespace Pulumi.Oci.Database
     public sealed class CloudExadataInfrastructureState : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// The requested number of additional storage servers activated for the Exadata infrastructure.
+        /// </summary>
+        [Input("activatedStorageCount")]
+        public Input<int>? ActivatedStorageCount { get; set; }
+
+        /// <summary>
+        /// The requested number of additional storage servers for the Exadata infrastructure.
+        /// </summary>
+        [Input("additionalStorageCount")]
+        public Input<int>? AdditionalStorageCount { get; set; }
+
+        /// <summary>
         /// The availability domain where the cloud Exadata infrastructure is located.
         /// </summary>
         [Input("availabilityDomain")]
@@ -342,6 +414,12 @@ namespace Pulumi.Oci.Database
         [Input("computeCount")]
         public Input<int>? ComputeCount { get; set; }
 
+        /// <summary>
+        /// The total number of CPU cores allocated.
+        /// </summary>
+        [Input("cpuCount")]
+        public Input<int>? CpuCount { get; set; }
+
         [Input("customerContacts")]
         private InputList<Inputs.CloudExadataInfrastructureCustomerContactGetArgs>? _customerContacts;
 
@@ -353,6 +431,18 @@ namespace Pulumi.Oci.Database
             get => _customerContacts ?? (_customerContacts = new InputList<Inputs.CloudExadataInfrastructureCustomerContactGetArgs>());
             set => _customerContacts = value;
         }
+
+        /// <summary>
+        /// Size, in terabytes, of the DATA disk group.
+        /// </summary>
+        [Input("dataStorageSizeInTbs")]
+        public Input<double>? DataStorageSizeInTbs { get; set; }
+
+        /// <summary>
+        /// The local node storage allocated in GBs.
+        /// </summary>
+        [Input("dbNodeStorageSizeInGbs")]
+        public Input<int>? DbNodeStorageSizeInGbs { get; set; }
 
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
@@ -401,6 +491,36 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("maintenanceWindow")]
         public Input<Inputs.CloudExadataInfrastructureMaintenanceWindowGetArgs>? MaintenanceWindow { get; set; }
+
+        /// <summary>
+        /// The total number of CPU cores available.
+        /// </summary>
+        [Input("maxCpuCount")]
+        public Input<int>? MaxCpuCount { get; set; }
+
+        /// <summary>
+        /// The total available DATA disk group size.
+        /// </summary>
+        [Input("maxDataStorageInTbs")]
+        public Input<double>? MaxDataStorageInTbs { get; set; }
+
+        /// <summary>
+        /// The total local node storage available in GBs.
+        /// </summary>
+        [Input("maxDbNodeStorageInGbs")]
+        public Input<int>? MaxDbNodeStorageInGbs { get; set; }
+
+        /// <summary>
+        /// The total memory available in GBs.
+        /// </summary>
+        [Input("maxMemoryInGbs")]
+        public Input<int>? MaxMemoryInGbs { get; set; }
+
+        /// <summary>
+        /// The memory allocated in GBs.
+        /// </summary>
+        [Input("memorySizeInGbs")]
+        public Input<int>? MemorySizeInGbs { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.

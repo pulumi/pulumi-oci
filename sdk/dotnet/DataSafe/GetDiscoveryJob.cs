@@ -38,7 +38,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDiscoveryJobResult> InvokeAsync(GetDiscoveryJobArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDiscoveryJobResult>("oci:DataSafe/getDiscoveryJob:getDiscoveryJob", args ?? new GetDiscoveryJobArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDiscoveryJobResult>("oci:DataSafe/getDiscoveryJob:getDiscoveryJob", args ?? new GetDiscoveryJobArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Discovery Job resource in Oracle Cloud Infrastructure Data Safe service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDiscoveryJobResult> Invoke(GetDiscoveryJobInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDiscoveryJobResult>("oci:DataSafe/getDiscoveryJob:getDiscoveryJob", args ?? new GetDiscoveryJobInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDiscoveryJobResult>("oci:DataSafe/getDiscoveryJob:getDiscoveryJob", args ?? new GetDiscoveryJobInvokeArgs(), options.WithDefaults());
     }
 
 

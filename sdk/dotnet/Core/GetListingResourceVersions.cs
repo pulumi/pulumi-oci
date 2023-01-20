@@ -12,10 +12,10 @@ namespace Pulumi.Oci.Core
     public static class GetListingResourceVersions
     {
         public static Task<GetListingResourceVersionsResult> InvokeAsync(GetListingResourceVersionsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetListingResourceVersionsResult>("oci:Core/getListingResourceVersions:getListingResourceVersions", args ?? new GetListingResourceVersionsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetListingResourceVersionsResult>("oci:Core/getListingResourceVersions:getListingResourceVersions", args ?? new GetListingResourceVersionsArgs(), options.WithDefaults());
 
         public static Output<GetListingResourceVersionsResult> Invoke(GetListingResourceVersionsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetListingResourceVersionsResult>("oci:Core/getListingResourceVersions:getListingResourceVersions", args ?? new GetListingResourceVersionsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetListingResourceVersionsResult>("oci:Core/getListingResourceVersions:getListingResourceVersions", args ?? new GetListingResourceVersionsInvokeArgs(), options.WithDefaults());
     }
 
 

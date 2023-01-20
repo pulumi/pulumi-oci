@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDbHomePatchHistoryEntries(args: GetDbHomePatchHistoryEntriesArgs, opts?: pulumi.InvokeOptions): Promise<GetDbHomePatchHistoryEntriesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getDbHomePatchHistoryEntries:getDbHomePatchHistoryEntries", {
         "dbHomeId": args.dbHomeId,
         "filters": args.filters,
@@ -59,9 +57,24 @@ export interface GetDbHomePatchHistoryEntriesResult {
      */
     readonly patchHistoryEntries: outputs.Database.GetDbHomePatchHistoryEntriesPatchHistoryEntry[];
 }
-
+/**
+ * This data source provides the list of Db Home Patch History Entries in Oracle Cloud Infrastructure Database service.
+ *
+ * Lists the history of patch operations on the specified Database Home.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDbHomePatchHistoryEntries = oci.Database.getDbHomePatchHistoryEntries({
+ *     dbHomeId: oci_database_db_home.test_db_home.id,
+ * });
+ * ```
+ */
 export function getDbHomePatchHistoryEntriesOutput(args: GetDbHomePatchHistoryEntriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbHomePatchHistoryEntriesResult> {
-    return pulumi.output(args).apply(a => getDbHomePatchHistoryEntries(a, opts))
+    return pulumi.output(args).apply((a: any) => getDbHomePatchHistoryEntries(a, opts))
 }
 
 /**

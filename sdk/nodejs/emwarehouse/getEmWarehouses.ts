@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -27,11 +28,8 @@ import * as utilities from "../utilities";
  */
 export function getEmWarehouses(args?: GetEmWarehousesArgs, opts?: pulumi.InvokeOptions): Promise<GetEmWarehousesResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:EmWarehouse/getEmWarehouses:getEmWarehouses", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -99,9 +97,28 @@ export interface GetEmWarehousesResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Em Warehouses in Oracle Cloud Infrastructure Em Warehouse service.
+ *
+ * Returns a list of EmWarehouses.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testEmWarehouses = oci.EmWarehouse.getEmWarehouses({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.em_warehouse_display_name,
+ *     id: _var.em_warehouse_id,
+ *     operationsInsightsWarehouseId: oci_opsi_operations_insights_warehouse.test_operations_insights_warehouse.id,
+ *     state: _var.em_warehouse_state,
+ * });
+ * ```
+ */
 export function getEmWarehousesOutput(args?: GetEmWarehousesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEmWarehousesResult> {
-    return pulumi.output(args).apply(a => getEmWarehouses(a, opts))
+    return pulumi.output(args).apply((a: any) => getEmWarehouses(a, opts))
 }
 
 /**

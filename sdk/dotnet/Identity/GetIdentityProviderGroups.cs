@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetIdentityProviderGroupsResult> InvokeAsync(GetIdentityProviderGroupsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetIdentityProviderGroupsResult>("oci:Identity/getIdentityProviderGroups:getIdentityProviderGroups", args ?? new GetIdentityProviderGroupsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetIdentityProviderGroupsResult>("oci:Identity/getIdentityProviderGroups:getIdentityProviderGroups", args ?? new GetIdentityProviderGroupsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Identity Provider Groups in Oracle Cloud Infrastructure Identity service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetIdentityProviderGroupsResult> Invoke(GetIdentityProviderGroupsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetIdentityProviderGroupsResult>("oci:Identity/getIdentityProviderGroups:getIdentityProviderGroups", args ?? new GetIdentityProviderGroupsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetIdentityProviderGroupsResult>("oci:Identity/getIdentityProviderGroups:getIdentityProviderGroups", args ?? new GetIdentityProviderGroupsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Marketplace
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetListingTaxesResult> InvokeAsync(GetListingTaxesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetListingTaxesResult>("oci:Marketplace/getListingTaxes:getListingTaxes", args ?? new GetListingTaxesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetListingTaxesResult>("oci:Marketplace/getListingTaxes:getListingTaxes", args ?? new GetListingTaxesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Listing Taxes in Oracle Cloud Infrastructure Marketplace service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Marketplace
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetListingTaxesResult> Invoke(GetListingTaxesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetListingTaxesResult>("oci:Marketplace/getListingTaxes:getListingTaxes", args ?? new GetListingTaxesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetListingTaxesResult>("oci:Marketplace/getListingTaxes:getListingTaxes", args ?? new GetListingTaxesInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Bastion
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetBastionsResult> InvokeAsync(GetBastionsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetBastionsResult>("oci:Bastion/getBastions:getBastions", args ?? new GetBastionsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetBastionsResult>("oci:Bastion/getBastions:getBastions", args ?? new GetBastionsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Bastions in Oracle Cloud Infrastructure Bastion service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.Bastion
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetBastionsResult> Invoke(GetBastionsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetBastionsResult>("oci:Bastion/getBastions:getBastions", args ?? new GetBastionsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetBastionsResult>("oci:Bastion/getBastions:getBastions", args ?? new GetBastionsInvokeArgs(), options.WithDefaults());
     }
 
 

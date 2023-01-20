@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Waas
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAddressListsResult> InvokeAsync(GetAddressListsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAddressListsResult>("oci:Waas/getAddressLists:getAddressLists", args ?? new GetAddressListsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAddressListsResult>("oci:Waas/getAddressLists:getAddressLists", args ?? new GetAddressListsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Address Lists in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.Waas
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAddressListsResult> Invoke(GetAddressListsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAddressListsResult>("oci:Waas/getAddressLists:getAddressLists", args ?? new GetAddressListsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAddressListsResult>("oci:Waas/getAddressLists:getAddressLists", args ?? new GetAddressListsInvokeArgs(), options.WithDefaults());
     }
 
 

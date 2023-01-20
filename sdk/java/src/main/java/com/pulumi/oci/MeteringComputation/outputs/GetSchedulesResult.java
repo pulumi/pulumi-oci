@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetSchedulesResult {
     /**
-     * @return The tenancy of the customer
+     * @return The customer tenancy.
      * 
      */
     private String compartmentId;
@@ -30,7 +30,7 @@ public final class GetSchedulesResult {
      */
     private String id;
     /**
-     * @return The unique name of the schedule created by the user
+     * @return The unique name of the schedule created by the user.
      * 
      */
     private @Nullable String name;
@@ -42,7 +42,7 @@ public final class GetSchedulesResult {
 
     private GetSchedulesResult() {}
     /**
-     * @return The tenancy of the customer
+     * @return The customer tenancy.
      * 
      */
     public String compartmentId() {
@@ -63,7 +63,7 @@ public final class GetSchedulesResult {
         return this.id;
     }
     /**
-     * @return The unique name of the schedule created by the user
+     * @return The unique name of the schedule created by the user.
      * 
      */
     public Optional<String> name() {

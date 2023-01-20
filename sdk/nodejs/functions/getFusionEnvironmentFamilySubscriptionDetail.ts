@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFusionEnvironmentFamilySubscriptionDetail(args: GetFusionEnvironmentFamilySubscriptionDetailArgs, opts?: pulumi.InvokeOptions): Promise<GetFusionEnvironmentFamilySubscriptionDetailResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Functions/getFusionEnvironmentFamilySubscriptionDetail:getFusionEnvironmentFamilySubscriptionDetail", {
         "fusionEnvironmentFamilyId": args.fusionEnvironmentFamilyId,
     }, opts);
@@ -56,9 +54,24 @@ export interface GetFusionEnvironmentFamilySubscriptionDetailResult {
      */
     readonly subscriptions: outputs.Functions.GetFusionEnvironmentFamilySubscriptionDetailSubscription[];
 }
-
+/**
+ * This data source provides details about a specific Fusion Environment Family Subscription Detail resource in Oracle Cloud Infrastructure Fusion Apps service.
+ *
+ * Gets the subscription details of an fusion environment family.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testFusionEnvironmentFamilySubscriptionDetail = oci.Functions.getFusionEnvironmentFamilySubscriptionDetail({
+ *     fusionEnvironmentFamilyId: oci_fusion_apps_fusion_environment_family.test_fusion_environment_family.id,
+ * });
+ * ```
+ */
 export function getFusionEnvironmentFamilySubscriptionDetailOutput(args: GetFusionEnvironmentFamilySubscriptionDetailOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFusionEnvironmentFamilySubscriptionDetailResult> {
-    return pulumi.output(args).apply(a => getFusionEnvironmentFamilySubscriptionDetail(a, opts))
+    return pulumi.output(args).apply((a: any) => getFusionEnvironmentFamilySubscriptionDetail(a, opts))
 }
 
 /**

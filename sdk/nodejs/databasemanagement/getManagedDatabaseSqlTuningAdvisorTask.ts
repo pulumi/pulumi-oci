@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabaseSqlTuningAdvisorTask(args: GetManagedDatabaseSqlTuningAdvisorTaskArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseSqlTuningAdvisorTaskResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTask:getManagedDatabaseSqlTuningAdvisorTask", {
         "managedDatabaseId": args.managedDatabaseId,
         "name": args.name,
@@ -87,9 +85,28 @@ export interface GetManagedDatabaseSqlTuningAdvisorTaskResult {
     readonly timeGreaterThanOrEqualTo?: string;
     readonly timeLessThanOrEqualTo?: string;
 }
-
+/**
+ * This data source provides details about a specific Managed Database Sql Tuning Advisor Task resource in Oracle Cloud Infrastructure Database Management service.
+ *
+ * Lists the SQL Tuning Advisor tasks for the specified Managed Database.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testManagedDatabaseSqlTuningAdvisorTask = oci.DatabaseManagement.getManagedDatabaseSqlTuningAdvisorTask({
+ *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
+ *     name: _var.managed_database_sql_tuning_advisor_task_name,
+ *     status: _var.managed_database_sql_tuning_advisor_task_status,
+ *     timeGreaterThanOrEqualTo: _var.managed_database_sql_tuning_advisor_task_time_greater_than_or_equal_to,
+ *     timeLessThanOrEqualTo: _var.managed_database_sql_tuning_advisor_task_time_less_than_or_equal_to,
+ * });
+ * ```
+ */
 export function getManagedDatabaseSqlTuningAdvisorTaskOutput(args: GetManagedDatabaseSqlTuningAdvisorTaskOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseSqlTuningAdvisorTaskResult> {
-    return pulumi.output(args).apply(a => getManagedDatabaseSqlTuningAdvisorTask(a, opts))
+    return pulumi.output(args).apply((a: any) => getManagedDatabaseSqlTuningAdvisorTask(a, opts))
 }
 
 /**

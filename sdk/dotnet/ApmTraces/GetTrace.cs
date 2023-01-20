@@ -40,7 +40,7 @@ namespace Pulumi.Oci.ApmTraces
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetTraceResult> InvokeAsync(GetTraceArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetTraceResult>("oci:ApmTraces/getTrace:getTrace", args ?? new GetTraceArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetTraceResult>("oci:ApmTraces/getTrace:getTrace", args ?? new GetTraceArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Trace resource in Oracle Cloud Infrastructure Apm Traces service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.ApmTraces
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetTraceResult> Invoke(GetTraceInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetTraceResult>("oci:ApmTraces/getTrace:getTrace", args ?? new GetTraceInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetTraceResult>("oci:ApmTraces/getTrace:getTrace", args ?? new GetTraceInvokeArgs(), options.WithDefaults());
     }
 
 

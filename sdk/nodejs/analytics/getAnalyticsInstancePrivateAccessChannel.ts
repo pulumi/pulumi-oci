@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAnalyticsInstancePrivateAccessChannel(args: GetAnalyticsInstancePrivateAccessChannelArgs, opts?: pulumi.InvokeOptions): Promise<GetAnalyticsInstancePrivateAccessChannelResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Analytics/getAnalyticsInstancePrivateAccessChannel:getAnalyticsInstancePrivateAccessChannel", {
         "analyticsInstanceId": args.analyticsInstanceId,
         "privateAccessChannelKey": args.privateAccessChannelKey,
@@ -92,9 +90,25 @@ export interface GetAnalyticsInstancePrivateAccessChannelResult {
      */
     readonly vcnId: string;
 }
-
+/**
+ * This data source provides details about a specific Analytics Instance Private Access Channel resource in Oracle Cloud Infrastructure Analytics service.
+ *
+ * Retrieve private access channel in the specified Analytics Instance.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAnalyticsInstancePrivateAccessChannel = oci.Analytics.getAnalyticsInstancePrivateAccessChannel({
+ *     analyticsInstanceId: oci_analytics_analytics_instance.test_analytics_instance.id,
+ *     privateAccessChannelKey: _var.analytics_instance_private_access_channel_private_access_channel_key,
+ * });
+ * ```
+ */
 export function getAnalyticsInstancePrivateAccessChannelOutput(args: GetAnalyticsInstancePrivateAccessChannelOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAnalyticsInstancePrivateAccessChannelResult> {
-    return pulumi.output(args).apply(a => getAnalyticsInstancePrivateAccessChannel(a, opts))
+    return pulumi.output(args).apply((a: any) => getAnalyticsInstancePrivateAccessChannel(a, opts))
 }
 
 /**

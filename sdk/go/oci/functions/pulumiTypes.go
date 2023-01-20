@@ -4709,6 +4709,136 @@ func (o GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArrayOutput)
 	}).(GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusOutput)
 }
 
+type GetFusionEnvironmentKmsKeyInfo struct {
+	ActiveKeyId              string `pulumi:"activeKeyId"`
+	ActiveKeyVersion         string `pulumi:"activeKeyVersion"`
+	CurrentKeyLifecycleState string `pulumi:"currentKeyLifecycleState"`
+	ScheduledKeyId           string `pulumi:"scheduledKeyId"`
+	ScheduledKeyStatus       string `pulumi:"scheduledKeyStatus"`
+	ScheduledKeyVersion      string `pulumi:"scheduledKeyVersion"`
+	ScheduledLifecycleState  string `pulumi:"scheduledLifecycleState"`
+}
+
+// GetFusionEnvironmentKmsKeyInfoInput is an input type that accepts GetFusionEnvironmentKmsKeyInfoArgs and GetFusionEnvironmentKmsKeyInfoOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentKmsKeyInfoInput` via:
+//
+//	GetFusionEnvironmentKmsKeyInfoArgs{...}
+type GetFusionEnvironmentKmsKeyInfoInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentKmsKeyInfoOutput() GetFusionEnvironmentKmsKeyInfoOutput
+	ToGetFusionEnvironmentKmsKeyInfoOutputWithContext(context.Context) GetFusionEnvironmentKmsKeyInfoOutput
+}
+
+type GetFusionEnvironmentKmsKeyInfoArgs struct {
+	ActiveKeyId              pulumi.StringInput `pulumi:"activeKeyId"`
+	ActiveKeyVersion         pulumi.StringInput `pulumi:"activeKeyVersion"`
+	CurrentKeyLifecycleState pulumi.StringInput `pulumi:"currentKeyLifecycleState"`
+	ScheduledKeyId           pulumi.StringInput `pulumi:"scheduledKeyId"`
+	ScheduledKeyStatus       pulumi.StringInput `pulumi:"scheduledKeyStatus"`
+	ScheduledKeyVersion      pulumi.StringInput `pulumi:"scheduledKeyVersion"`
+	ScheduledLifecycleState  pulumi.StringInput `pulumi:"scheduledLifecycleState"`
+}
+
+func (GetFusionEnvironmentKmsKeyInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentKmsKeyInfo)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentKmsKeyInfoArgs) ToGetFusionEnvironmentKmsKeyInfoOutput() GetFusionEnvironmentKmsKeyInfoOutput {
+	return i.ToGetFusionEnvironmentKmsKeyInfoOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentKmsKeyInfoArgs) ToGetFusionEnvironmentKmsKeyInfoOutputWithContext(ctx context.Context) GetFusionEnvironmentKmsKeyInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentKmsKeyInfoOutput)
+}
+
+// GetFusionEnvironmentKmsKeyInfoArrayInput is an input type that accepts GetFusionEnvironmentKmsKeyInfoArray and GetFusionEnvironmentKmsKeyInfoArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentKmsKeyInfoArrayInput` via:
+//
+//	GetFusionEnvironmentKmsKeyInfoArray{ GetFusionEnvironmentKmsKeyInfoArgs{...} }
+type GetFusionEnvironmentKmsKeyInfoArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentKmsKeyInfoArrayOutput() GetFusionEnvironmentKmsKeyInfoArrayOutput
+	ToGetFusionEnvironmentKmsKeyInfoArrayOutputWithContext(context.Context) GetFusionEnvironmentKmsKeyInfoArrayOutput
+}
+
+type GetFusionEnvironmentKmsKeyInfoArray []GetFusionEnvironmentKmsKeyInfoInput
+
+func (GetFusionEnvironmentKmsKeyInfoArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentKmsKeyInfo)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentKmsKeyInfoArray) ToGetFusionEnvironmentKmsKeyInfoArrayOutput() GetFusionEnvironmentKmsKeyInfoArrayOutput {
+	return i.ToGetFusionEnvironmentKmsKeyInfoArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentKmsKeyInfoArray) ToGetFusionEnvironmentKmsKeyInfoArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentKmsKeyInfoArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentKmsKeyInfoArrayOutput)
+}
+
+type GetFusionEnvironmentKmsKeyInfoOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentKmsKeyInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentKmsKeyInfo)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentKmsKeyInfoOutput) ToGetFusionEnvironmentKmsKeyInfoOutput() GetFusionEnvironmentKmsKeyInfoOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentKmsKeyInfoOutput) ToGetFusionEnvironmentKmsKeyInfoOutputWithContext(ctx context.Context) GetFusionEnvironmentKmsKeyInfoOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentKmsKeyInfoOutput) ActiveKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentKmsKeyInfo) string { return v.ActiveKeyId }).(pulumi.StringOutput)
+}
+
+func (o GetFusionEnvironmentKmsKeyInfoOutput) ActiveKeyVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentKmsKeyInfo) string { return v.ActiveKeyVersion }).(pulumi.StringOutput)
+}
+
+func (o GetFusionEnvironmentKmsKeyInfoOutput) CurrentKeyLifecycleState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentKmsKeyInfo) string { return v.CurrentKeyLifecycleState }).(pulumi.StringOutput)
+}
+
+func (o GetFusionEnvironmentKmsKeyInfoOutput) ScheduledKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentKmsKeyInfo) string { return v.ScheduledKeyId }).(pulumi.StringOutput)
+}
+
+func (o GetFusionEnvironmentKmsKeyInfoOutput) ScheduledKeyStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentKmsKeyInfo) string { return v.ScheduledKeyStatus }).(pulumi.StringOutput)
+}
+
+func (o GetFusionEnvironmentKmsKeyInfoOutput) ScheduledKeyVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentKmsKeyInfo) string { return v.ScheduledKeyVersion }).(pulumi.StringOutput)
+}
+
+func (o GetFusionEnvironmentKmsKeyInfoOutput) ScheduledLifecycleState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentKmsKeyInfo) string { return v.ScheduledLifecycleState }).(pulumi.StringOutput)
+}
+
+type GetFusionEnvironmentKmsKeyInfoArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentKmsKeyInfoArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentKmsKeyInfo)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentKmsKeyInfoArrayOutput) ToGetFusionEnvironmentKmsKeyInfoArrayOutput() GetFusionEnvironmentKmsKeyInfoArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentKmsKeyInfoArrayOutput) ToGetFusionEnvironmentKmsKeyInfoArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentKmsKeyInfoArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentKmsKeyInfoArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentKmsKeyInfoOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentKmsKeyInfo {
+		return vs[0].([]GetFusionEnvironmentKmsKeyInfo)[vs[1].(int)]
+	}).(GetFusionEnvironmentKmsKeyInfoOutput)
+}
+
 type GetFusionEnvironmentMaintenancePolicy struct {
 	// User choice to upgrade both production and non-production environments at the same time. Overrides the Fusion environment family setting.
 	EnvironmentMaintenanceOverride string `pulumi:"environmentMaintenanceOverride"`
@@ -5259,7 +5389,10 @@ type GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem struct {
 	// The unique identifier (OCID) of the refresh activity. Can't be changed after creation.
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	LifecycleDetails  string `pulumi:"lifecycleDetails"`
+	RefreshActivityId string `pulumi:"refreshActivityId"`
+	// Details of refresh investigation information, each item represents a different issue.
+	RefreshIssueDetailsLists []GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsList `pulumi:"refreshIssueDetailsLists"`
 	// Service availability / impact during refresh activity execution up down
 	ServiceAvailability string `pulumi:"serviceAvailability"`
 	// The OCID of the Fusion environment that is the source environment for the refresh.
@@ -5274,8 +5407,6 @@ type GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem struct {
 	TimeFinished string `pulumi:"timeFinished"`
 	// The date and time of the most recent source environment backup used for the environment refresh.
 	TimeOfRestorationPoint string `pulumi:"timeOfRestorationPoint"`
-	// The time the refresh activity is scheduled to start. An RFC3339 formatted datetime string.
-	TimeScheduledStart string `pulumi:"timeScheduledStart"`
 	// The time the refresh activity record was updated. An RFC3339 formatted datetime string.
 	TimeUpdated string `pulumi:"timeUpdated"`
 }
@@ -5299,7 +5430,10 @@ type GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArgs stru
 	// The unique identifier (OCID) of the refresh activity. Can't be changed after creation.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	LifecycleDetails  pulumi.StringInput `pulumi:"lifecycleDetails"`
+	RefreshActivityId pulumi.StringInput `pulumi:"refreshActivityId"`
+	// Details of refresh investigation information, each item represents a different issue.
+	RefreshIssueDetailsLists GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArrayInput `pulumi:"refreshIssueDetailsLists"`
 	// Service availability / impact during refresh activity execution up down
 	ServiceAvailability pulumi.StringInput `pulumi:"serviceAvailability"`
 	// The OCID of the Fusion environment that is the source environment for the refresh.
@@ -5314,8 +5448,6 @@ type GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArgs stru
 	TimeFinished pulumi.StringInput `pulumi:"timeFinished"`
 	// The date and time of the most recent source environment backup used for the environment refresh.
 	TimeOfRestorationPoint pulumi.StringInput `pulumi:"timeOfRestorationPoint"`
-	// The time the refresh activity is scheduled to start. An RFC3339 formatted datetime string.
-	TimeScheduledStart pulumi.StringInput `pulumi:"timeScheduledStart"`
 	// The time the refresh activity record was updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 }
@@ -5397,6 +5529,19 @@ func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput
 	}).(pulumi.StringOutput)
 }
 
+func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) RefreshActivityId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem) string {
+		return v.RefreshActivityId
+	}).(pulumi.StringOutput)
+}
+
+// Details of refresh investigation information, each item represents a different issue.
+func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) RefreshIssueDetailsLists() GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArrayOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem) []GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsList {
+		return v.RefreshIssueDetailsLists
+	}).(GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArrayOutput)
+}
+
 // Service availability / impact during refresh activity execution up down
 func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) ServiceAvailability() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem) string {
@@ -5444,13 +5589,6 @@ func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput
 	}).(pulumi.StringOutput)
 }
 
-// The time the refresh activity is scheduled to start. An RFC3339 formatted datetime string.
-func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) TimeScheduledStart() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem) string {
-		return v.TimeScheduledStart
-	}).(pulumi.StringOutput)
-}
-
 // The time the refresh activity record was updated. An RFC3339 formatted datetime string.
 func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem) string {
@@ -5476,6 +5614,202 @@ func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArrayO
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem {
 		return vs[0].([]GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItem)[vs[1].(int)]
 	}).(GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput)
+}
+
+type GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsList struct {
+	// Detail reasons of refresh failure or validation failure that needs to be shown to customer.
+	RefreshIssues string `pulumi:"refreshIssues"`
+}
+
+// GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListInput is an input type that accepts GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArgs and GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListInput` via:
+//
+//	GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArgs{...}
+type GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListOutput() GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListOutput
+	ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListOutputWithContext(context.Context) GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListOutput
+}
+
+type GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArgs struct {
+	// Detail reasons of refresh failure or validation failure that needs to be shown to customer.
+	RefreshIssues pulumi.StringInput `pulumi:"refreshIssues"`
+}
+
+func (GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsList)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArgs) ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListOutput() GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListOutput {
+	return i.ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArgs) ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListOutputWithContext(ctx context.Context) GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListOutput)
+}
+
+// GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArrayInput is an input type that accepts GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArray and GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArrayInput` via:
+//
+//	GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArray{ GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArgs{...} }
+type GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArrayOutput() GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArrayOutput
+	ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArrayOutputWithContext(context.Context) GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArrayOutput
+}
+
+type GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArray []GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListInput
+
+func (GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsList)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArray) ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArrayOutput() GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArrayOutput {
+	return i.ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArray) ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArrayOutput)
+}
+
+type GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsList)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListOutput) ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListOutput() GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListOutput) ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListOutputWithContext(ctx context.Context) GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListOutput {
+	return o
+}
+
+// Detail reasons of refresh failure or validation failure that needs to be shown to customer.
+func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListOutput) RefreshIssues() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsList) string {
+		return v.RefreshIssues
+	}).(pulumi.StringOutput)
+}
+
+type GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsList)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArrayOutput) ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArrayOutput() GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArrayOutput) ToGetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsList {
+		return vs[0].([]GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsList)[vs[1].(int)]
+	}).(GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListOutput)
+}
+
+type GetFusionEnvironmentRefreshActivityRefreshIssueDetailsList struct {
+	// Detail reasons of refresh failure or validation failure that needs to be shown to customer.
+	RefreshIssues string `pulumi:"refreshIssues"`
+}
+
+// GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListInput is an input type that accepts GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs and GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListInput` via:
+//
+//	GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs{...}
+type GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentRefreshActivityRefreshIssueDetailsListOutput() GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListOutput
+	ToGetFusionEnvironmentRefreshActivityRefreshIssueDetailsListOutputWithContext(context.Context) GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListOutput
+}
+
+type GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs struct {
+	// Detail reasons of refresh failure or validation failure that needs to be shown to customer.
+	RefreshIssues pulumi.StringInput `pulumi:"refreshIssues"`
+}
+
+func (GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentRefreshActivityRefreshIssueDetailsList)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs) ToGetFusionEnvironmentRefreshActivityRefreshIssueDetailsListOutput() GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListOutput {
+	return i.ToGetFusionEnvironmentRefreshActivityRefreshIssueDetailsListOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs) ToGetFusionEnvironmentRefreshActivityRefreshIssueDetailsListOutputWithContext(ctx context.Context) GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListOutput)
+}
+
+// GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayInput is an input type that accepts GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArray and GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayInput` via:
+//
+//	GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArray{ GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs{...} }
+type GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayOutput() GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayOutput
+	ToGetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayOutputWithContext(context.Context) GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayOutput
+}
+
+type GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArray []GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListInput
+
+func (GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentRefreshActivityRefreshIssueDetailsList)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArray) ToGetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayOutput() GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayOutput {
+	return i.ToGetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArray) ToGetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayOutput)
+}
+
+type GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentRefreshActivityRefreshIssueDetailsList)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListOutput) ToGetFusionEnvironmentRefreshActivityRefreshIssueDetailsListOutput() GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListOutput) ToGetFusionEnvironmentRefreshActivityRefreshIssueDetailsListOutputWithContext(ctx context.Context) GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListOutput {
+	return o
+}
+
+// Detail reasons of refresh failure or validation failure that needs to be shown to customer.
+func (o GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListOutput) RefreshIssues() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentRefreshActivityRefreshIssueDetailsList) string { return v.RefreshIssues }).(pulumi.StringOutput)
+}
+
+type GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentRefreshActivityRefreshIssueDetailsList)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayOutput) ToGetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayOutput() GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayOutput) ToGetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentRefreshActivityRefreshIssueDetailsList {
+		return vs[0].([]GetFusionEnvironmentRefreshActivityRefreshIssueDetailsList)[vs[1].(int)]
+	}).(GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListOutput)
 }
 
 type GetFusionEnvironmentRule struct {
@@ -7553,12 +7887,16 @@ type GetFusionEnvironmentsFusionEnvironmentCollectionItem struct {
 	Id string `pulumi:"id"`
 	// The IDCS Domain URL
 	IdcsDomainUrl string `pulumi:"idcsDomainUrl"`
+	// If it's true, then the Break Glass feature is enabled
+	IsBreakGlassEnabled bool `pulumi:"isBreakGlassEnabled"`
 	// BYOK key id
 	KmsKeyId string `pulumi:"kmsKeyId"`
 	// BYOK key info
-	KmsKeyInfos []string `pulumi:"kmsKeyInfos"`
+	KmsKeyInfos []GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo `pulumi:"kmsKeyInfos"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
+	LockboxId string `pulumi:"lockboxId"`
 	// The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
 	MaintenancePolicies []GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicy `pulumi:"maintenancePolicies"`
 	// Public URL
@@ -7620,12 +7958,16 @@ type GetFusionEnvironmentsFusionEnvironmentCollectionItemArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// The IDCS Domain URL
 	IdcsDomainUrl pulumi.StringInput `pulumi:"idcsDomainUrl"`
+	// If it's true, then the Break Glass feature is enabled
+	IsBreakGlassEnabled pulumi.BoolInput `pulumi:"isBreakGlassEnabled"`
 	// BYOK key id
 	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
 	// BYOK key info
-	KmsKeyInfos pulumi.StringArrayInput `pulumi:"kmsKeyInfos"`
+	KmsKeyInfos GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArrayInput `pulumi:"kmsKeyInfos"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
+	LockboxId pulumi.StringInput `pulumi:"lockboxId"`
 	// The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
 	MaintenancePolicies GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArrayInput `pulumi:"maintenancePolicies"`
 	// Public URL
@@ -7775,19 +8117,31 @@ func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) IdcsDomainUr
 	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) string { return v.IdcsDomainUrl }).(pulumi.StringOutput)
 }
 
+// If it's true, then the Break Glass feature is enabled
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) IsBreakGlassEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) bool { return v.IsBreakGlassEnabled }).(pulumi.BoolOutput)
+}
+
 // BYOK key id
 func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) KmsKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) string { return v.KmsKeyId }).(pulumi.StringOutput)
 }
 
 // BYOK key info
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) KmsKeyInfos() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) []string { return v.KmsKeyInfos }).(pulumi.StringArrayOutput)
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) KmsKeyInfos() GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArrayOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) []GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo {
+		return v.KmsKeyInfos
+	}).(GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArrayOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The lockbox Id of this fusion environment. If there's no lockbox id, this field will be null
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) LockboxId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) string { return v.LockboxId }).(pulumi.StringOutput)
 }
 
 // The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
@@ -7997,6 +8351,146 @@ func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironm
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail {
 		return vs[0].([]GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail)[vs[1].(int)]
 	}).(GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutput)
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo struct {
+	ActiveKeyId              string `pulumi:"activeKeyId"`
+	ActiveKeyVersion         string `pulumi:"activeKeyVersion"`
+	CurrentKeyLifecycleState string `pulumi:"currentKeyLifecycleState"`
+	ScheduledKeyId           string `pulumi:"scheduledKeyId"`
+	ScheduledKeyStatus       string `pulumi:"scheduledKeyStatus"`
+	ScheduledKeyVersion      string `pulumi:"scheduledKeyVersion"`
+	ScheduledLifecycleState  string `pulumi:"scheduledLifecycleState"`
+}
+
+// GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoInput is an input type that accepts GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArgs and GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoInput` via:
+//
+//	GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArgs{...}
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutput
+	ToGetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutputWithContext(context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutput
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArgs struct {
+	ActiveKeyId              pulumi.StringInput `pulumi:"activeKeyId"`
+	ActiveKeyVersion         pulumi.StringInput `pulumi:"activeKeyVersion"`
+	CurrentKeyLifecycleState pulumi.StringInput `pulumi:"currentKeyLifecycleState"`
+	ScheduledKeyId           pulumi.StringInput `pulumi:"scheduledKeyId"`
+	ScheduledKeyStatus       pulumi.StringInput `pulumi:"scheduledKeyStatus"`
+	ScheduledKeyVersion      pulumi.StringInput `pulumi:"scheduledKeyVersion"`
+	ScheduledLifecycleState  pulumi.StringInput `pulumi:"scheduledLifecycleState"`
+}
+
+func (GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArgs) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutput {
+	return i.ToGetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArgs) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutput)
+}
+
+// GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArrayInput is an input type that accepts GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArray and GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArrayOutput values.
+// You can construct a concrete instance of `GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArrayInput` via:
+//
+//	GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArray{ GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArgs{...} }
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArrayInput interface {
+	pulumi.Input
+
+	ToGetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArrayOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArrayOutput
+	ToGetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArrayOutputWithContext(context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArrayOutput
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArray []GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoInput
+
+func (GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo)(nil)).Elem()
+}
+
+func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArray) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArrayOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArrayOutput {
+	return i.ToGetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArrayOutputWithContext(context.Background())
+}
+
+func (i GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArray) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArrayOutput)
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutput) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutput) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutput) ActiveKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo) string { return v.ActiveKeyId }).(pulumi.StringOutput)
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutput) ActiveKeyVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo) string {
+		return v.ActiveKeyVersion
+	}).(pulumi.StringOutput)
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutput) CurrentKeyLifecycleState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo) string {
+		return v.CurrentKeyLifecycleState
+	}).(pulumi.StringOutput)
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutput) ScheduledKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo) string { return v.ScheduledKeyId }).(pulumi.StringOutput)
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutput) ScheduledKeyStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo) string {
+		return v.ScheduledKeyStatus
+	}).(pulumi.StringOutput)
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutput) ScheduledKeyVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo) string {
+		return v.ScheduledKeyVersion
+	}).(pulumi.StringOutput)
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutput) ScheduledLifecycleState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo) string {
+		return v.ScheduledLifecycleState
+	}).(pulumi.StringOutput)
+}
+
+type GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo)(nil)).Elem()
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArrayOutput) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArrayOutput() GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArrayOutput) ToGetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArrayOutputWithContext(ctx context.Context) GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArrayOutput {
+	return o
+}
+
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArrayOutput) Index(i pulumi.IntInput) GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo {
+		return vs[0].([]GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfo)[vs[1].(int)]
+	}).(GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutput)
 }
 
 type GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicy struct {
@@ -8650,6 +9144,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArrayInput)(nil)).Elem(), GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusInput)(nil)).Elem(), GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArrayInput)(nil)).Elem(), GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentKmsKeyInfoInput)(nil)).Elem(), GetFusionEnvironmentKmsKeyInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentKmsKeyInfoArrayInput)(nil)).Elem(), GetFusionEnvironmentKmsKeyInfoArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentMaintenancePolicyInput)(nil)).Elem(), GetFusionEnvironmentMaintenancePolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentMaintenancePolicyArrayInput)(nil)).Elem(), GetFusionEnvironmentMaintenancePolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeInput)(nil)).Elem(), GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeArgs{})
@@ -8662,6 +9158,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArrayInput)(nil)).Elem(), GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemInput)(nil)).Elem(), GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArrayInput)(nil)).Elem(), GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListInput)(nil)).Elem(), GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArrayInput)(nil)).Elem(), GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListInput)(nil)).Elem(), GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayInput)(nil)).Elem(), GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentRuleInput)(nil)).Elem(), GetFusionEnvironmentRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentRuleArrayInput)(nil)).Elem(), GetFusionEnvironmentRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentRuleConditionInput)(nil)).Elem(), GetFusionEnvironmentRuleConditionArgs{})
@@ -8698,6 +9198,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItemArrayInput)(nil)).Elem(), GetFusionEnvironmentsFusionEnvironmentCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailInput)(nil)).Elem(), GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArrayInput)(nil)).Elem(), GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoInput)(nil)).Elem(), GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArrayInput)(nil)).Elem(), GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyInput)(nil)).Elem(), GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArrayInput)(nil)).Elem(), GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeInput)(nil)).Elem(), GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeArgs{})
@@ -8784,6 +9286,8 @@ func init() {
 	pulumi.RegisterOutputType(GetFusionEnvironmentFamilySubscriptionDetailSubscriptionArrayOutput{})
 	pulumi.RegisterOutputType(GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusOutput{})
 	pulumi.RegisterOutputType(GetFusionEnvironmentFamilySubscriptionDetailSubscriptionSkusArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentKmsKeyInfoOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentKmsKeyInfoArrayOutput{})
 	pulumi.RegisterOutputType(GetFusionEnvironmentMaintenancePolicyOutput{})
 	pulumi.RegisterOutputType(GetFusionEnvironmentMaintenancePolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimeOutput{})
@@ -8796,6 +9300,10 @@ func init() {
 	pulumi.RegisterOutputType(GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentRefreshActivitiesRefreshActivityCollectionItemRefreshIssueDetailsListArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayOutput{})
 	pulumi.RegisterOutputType(GetFusionEnvironmentRuleOutput{})
 	pulumi.RegisterOutputType(GetFusionEnvironmentRuleArrayOutput{})
 	pulumi.RegisterOutputType(GetFusionEnvironmentRuleConditionOutput{})
@@ -8832,6 +9340,8 @@ func init() {
 	pulumi.RegisterOutputType(GetFusionEnvironmentsFusionEnvironmentCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailOutput{})
 	pulumi.RegisterOutputType(GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoOutput{})
+	pulumi.RegisterOutputType(GetFusionEnvironmentsFusionEnvironmentCollectionItemKmsKeyInfoArrayOutput{})
 	pulumi.RegisterOutputType(GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyOutput{})
 	pulumi.RegisterOutputType(GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetFusionEnvironmentsFusionEnvironmentCollectionItemMaintenancePolicyQuarterlyUpgradeBeginTimeOutput{})

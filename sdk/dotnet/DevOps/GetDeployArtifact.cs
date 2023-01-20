@@ -38,7 +38,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDeployArtifactResult> InvokeAsync(GetDeployArtifactArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDeployArtifactResult>("oci:DevOps/getDeployArtifact:getDeployArtifact", args ?? new GetDeployArtifactArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDeployArtifactResult>("oci:DevOps/getDeployArtifact:getDeployArtifact", args ?? new GetDeployArtifactArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Deploy Artifact resource in Oracle Cloud Infrastructure Devops service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDeployArtifactResult> Invoke(GetDeployArtifactInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDeployArtifactResult>("oci:DevOps/getDeployArtifact:getDeployArtifact", args ?? new GetDeployArtifactInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDeployArtifactResult>("oci:DevOps/getDeployArtifact:getDeployArtifact", args ?? new GetDeployArtifactInvokeArgs(), options.WithDefaults());
     }
 
 

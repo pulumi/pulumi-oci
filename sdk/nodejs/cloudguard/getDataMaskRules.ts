@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -29,11 +30,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDataMaskRules(args: GetDataMaskRulesArgs, opts?: pulumi.InvokeOptions): Promise<GetDataMaskRulesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CloudGuard/getDataMaskRules:getDataMaskRules", {
         "accessLevel": args.accessLevel,
         "compartmentId": args.compartmentId,
@@ -123,9 +121,31 @@ export interface GetDataMaskRulesResult {
     readonly targetId?: string;
     readonly targetType?: string;
 }
-
+/**
+ * This data source provides the list of Data Mask Rules in Oracle Cloud Infrastructure Cloud Guard service.
+ *
+ * Returns a list of all Data Mask Rules in the root 'compartmentId' passed.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDataMaskRules = oci.CloudGuard.getDataMaskRules({
+ *     compartmentId: _var.compartment_id,
+ *     accessLevel: _var.data_mask_rule_access_level,
+ *     dataMaskRuleStatus: _var.data_mask_rule_data_mask_rule_status,
+ *     displayName: _var.data_mask_rule_display_name,
+ *     iamGroupId: oci_identity_group.test_group.id,
+ *     state: _var.data_mask_rule_state,
+ *     targetId: oci_cloud_guard_target.test_target.id,
+ *     targetType: _var.data_mask_rule_target_type,
+ * });
+ * ```
+ */
 export function getDataMaskRulesOutput(args: GetDataMaskRulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDataMaskRulesResult> {
-    return pulumi.output(args).apply(a => getDataMaskRules(a, opts))
+    return pulumi.output(args).apply((a: any) => getDataMaskRules(a, opts))
 }
 
 /**

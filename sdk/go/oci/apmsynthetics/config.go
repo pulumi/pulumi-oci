@@ -35,7 +35,11 @@ import (
 //				MonitorType:             pulumi.Any(_var.Monitor_monitor_type),
 //				RepeatIntervalInSeconds: pulumi.Any(_var.Monitor_repeat_interval_in_seconds),
 //				VantagePoints:           pulumi.StringArray{},
-//				BatchIntervalInSeconds:  pulumi.Any(_var.Monitor_batch_interval_in_seconds),
+//				AvailabilityConfiguration: &apmsynthetics.ConfigAvailabilityConfigurationArgs{
+//					MaxAllowedFailuresPerInterval: pulumi.Any(_var.Monitor_availability_configuration_max_allowed_failures_per_interval),
+//					MinAllowedRunsPerInterval:     pulumi.Any(_var.Monitor_availability_configuration_min_allowed_runs_per_interval),
+//				},
+//				BatchIntervalInSeconds: pulumi.Any(_var.Monitor_batch_interval_in_seconds),
 //				Configuration: &apmsynthetics.ConfigConfigurationArgs{
 //					ConfigType: pulumi.Any(_var.Monitor_configuration_config_type),
 //					DnsConfiguration: &apmsynthetics.ConfigConfigurationDnsConfigurationArgs{
@@ -96,8 +100,12 @@ import (
 //				FreeformTags: pulumi.AnyMap{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				IsRunNow:         pulumi.Any(_var.Monitor_is_run_now),
-//				IsRunOnce:        pulumi.Any(_var.Monitor_is_run_once),
+//				IsRunNow:  pulumi.Any(_var.Monitor_is_run_now),
+//				IsRunOnce: pulumi.Any(_var.Monitor_is_run_once),
+//				MaintenanceWindowSchedule: &apmsynthetics.ConfigMaintenanceWindowScheduleArgs{
+//					TimeEnded:   pulumi.Any(_var.Monitor_maintenance_window_schedule_time_ended),
+//					TimeStarted: pulumi.Any(_var.Monitor_maintenance_window_schedule_time_started),
+//				},
 //				SchedulingPolicy: pulumi.Any(_var.Monitor_scheduling_policy),
 //				ScriptId:         pulumi.Any(oci_apm_synthetics_script.Test_script.Id),
 //				ScriptParameters: apmsynthetics.ConfigScriptParameterArray{
@@ -132,10 +140,10 @@ type Config struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) The APM domain ID the request is intended for.
-	// <<<<<<< ours
 	ApmDomainId pulumi.StringOutput `pulumi:"apmDomainId"`
+	// (Updatable) Monitor availability configuration details.
+	AvailabilityConfiguration ConfigAvailabilityConfigurationOutput `pulumi:"availabilityConfiguration"`
 	// (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
-	// ===
 	BatchIntervalInSeconds pulumi.IntOutput `pulumi:"batchIntervalInSeconds"`
 	// (Updatable) Details of monitor configuration.
 	Configuration ConfigConfigurationOutput `pulumi:"configuration"`
@@ -149,6 +157,8 @@ type Config struct {
 	IsRunNow pulumi.BoolOutput `pulumi:"isRunNow"`
 	// (Updatable) If runOnce is enabled, then the monitor will run once.
 	IsRunOnce pulumi.BoolOutput `pulumi:"isRunOnce"`
+	// (Updatable) Details used to schedule maintenance window.
+	MaintenanceWindowSchedule ConfigMaintenanceWindowScheduleOutput `pulumi:"maintenanceWindowSchedule"`
 	// Type of monitor.
 	MonitorType pulumi.StringOutput `pulumi:"monitorType"`
 	// (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
@@ -169,7 +179,7 @@ type Config struct {
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
-	// (Updatable) Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+	// (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
 	TimeoutInSeconds pulumi.IntOutput `pulumi:"timeoutInSeconds"`
 	// Number of vantage points where monitor is running.
 	VantagePointCount pulumi.IntOutput `pulumi:"vantagePointCount"`
@@ -222,10 +232,10 @@ func GetConfig(ctx *pulumi.Context,
 // Input properties used for looking up and filtering Config resources.
 type configState struct {
 	// (Updatable) The APM domain ID the request is intended for.
-	// <<<<<<< ours
 	ApmDomainId *string `pulumi:"apmDomainId"`
+	// (Updatable) Monitor availability configuration details.
+	AvailabilityConfiguration *ConfigAvailabilityConfiguration `pulumi:"availabilityConfiguration"`
 	// (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
-	// ===
 	BatchIntervalInSeconds *int `pulumi:"batchIntervalInSeconds"`
 	// (Updatable) Details of monitor configuration.
 	Configuration *ConfigConfiguration `pulumi:"configuration"`
@@ -239,6 +249,8 @@ type configState struct {
 	IsRunNow *bool `pulumi:"isRunNow"`
 	// (Updatable) If runOnce is enabled, then the monitor will run once.
 	IsRunOnce *bool `pulumi:"isRunOnce"`
+	// (Updatable) Details used to schedule maintenance window.
+	MaintenanceWindowSchedule *ConfigMaintenanceWindowSchedule `pulumi:"maintenanceWindowSchedule"`
 	// Type of monitor.
 	MonitorType *string `pulumi:"monitorType"`
 	// (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
@@ -259,7 +271,7 @@ type configState struct {
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
 	TimeUpdated *string `pulumi:"timeUpdated"`
-	// (Updatable) Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+	// (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
 	TimeoutInSeconds *int `pulumi:"timeoutInSeconds"`
 	// Number of vantage points where monitor is running.
 	VantagePointCount *int `pulumi:"vantagePointCount"`
@@ -269,10 +281,10 @@ type configState struct {
 
 type ConfigState struct {
 	// (Updatable) The APM domain ID the request is intended for.
-	// <<<<<<< ours
 	ApmDomainId pulumi.StringPtrInput
+	// (Updatable) Monitor availability configuration details.
+	AvailabilityConfiguration ConfigAvailabilityConfigurationPtrInput
 	// (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
-	// ===
 	BatchIntervalInSeconds pulumi.IntPtrInput
 	// (Updatable) Details of monitor configuration.
 	Configuration ConfigConfigurationPtrInput
@@ -286,6 +298,8 @@ type ConfigState struct {
 	IsRunNow pulumi.BoolPtrInput
 	// (Updatable) If runOnce is enabled, then the monitor will run once.
 	IsRunOnce pulumi.BoolPtrInput
+	// (Updatable) Details used to schedule maintenance window.
+	MaintenanceWindowSchedule ConfigMaintenanceWindowSchedulePtrInput
 	// Type of monitor.
 	MonitorType pulumi.StringPtrInput
 	// (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
@@ -306,7 +320,7 @@ type ConfigState struct {
 	TimeCreated pulumi.StringPtrInput
 	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
 	TimeUpdated pulumi.StringPtrInput
-	// (Updatable) Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+	// (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
 	TimeoutInSeconds pulumi.IntPtrInput
 	// Number of vantage points where monitor is running.
 	VantagePointCount pulumi.IntPtrInput
@@ -320,10 +334,10 @@ func (ConfigState) ElementType() reflect.Type {
 
 type configArgs struct {
 	// (Updatable) The APM domain ID the request is intended for.
-	// <<<<<<< ours
 	ApmDomainId string `pulumi:"apmDomainId"`
+	// (Updatable) Monitor availability configuration details.
+	AvailabilityConfiguration *ConfigAvailabilityConfiguration `pulumi:"availabilityConfiguration"`
 	// (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
-	// ===
 	BatchIntervalInSeconds *int `pulumi:"batchIntervalInSeconds"`
 	// (Updatable) Details of monitor configuration.
 	Configuration *ConfigConfiguration `pulumi:"configuration"`
@@ -337,6 +351,8 @@ type configArgs struct {
 	IsRunNow *bool `pulumi:"isRunNow"`
 	// (Updatable) If runOnce is enabled, then the monitor will run once.
 	IsRunOnce *bool `pulumi:"isRunOnce"`
+	// (Updatable) Details used to schedule maintenance window.
+	MaintenanceWindowSchedule *ConfigMaintenanceWindowSchedule `pulumi:"maintenanceWindowSchedule"`
 	// Type of monitor.
 	MonitorType string `pulumi:"monitorType"`
 	// (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
@@ -353,7 +369,7 @@ type configArgs struct {
 	Status *string `pulumi:"status"`
 	// (Updatable) Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is.
 	Target *string `pulumi:"target"`
-	// (Updatable) Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+	// (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
 	TimeoutInSeconds *int `pulumi:"timeoutInSeconds"`
 	// (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points.
 	VantagePoints []string `pulumi:"vantagePoints"`
@@ -362,10 +378,10 @@ type configArgs struct {
 // The set of arguments for constructing a Config resource.
 type ConfigArgs struct {
 	// (Updatable) The APM domain ID the request is intended for.
-	// <<<<<<< ours
 	ApmDomainId pulumi.StringInput
+	// (Updatable) Monitor availability configuration details.
+	AvailabilityConfiguration ConfigAvailabilityConfigurationPtrInput
 	// (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
-	// ===
 	BatchIntervalInSeconds pulumi.IntPtrInput
 	// (Updatable) Details of monitor configuration.
 	Configuration ConfigConfigurationPtrInput
@@ -379,6 +395,8 @@ type ConfigArgs struct {
 	IsRunNow pulumi.BoolPtrInput
 	// (Updatable) If runOnce is enabled, then the monitor will run once.
 	IsRunOnce pulumi.BoolPtrInput
+	// (Updatable) Details used to schedule maintenance window.
+	MaintenanceWindowSchedule ConfigMaintenanceWindowSchedulePtrInput
 	// Type of monitor.
 	MonitorType pulumi.StringInput
 	// (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
@@ -395,7 +413,7 @@ type ConfigArgs struct {
 	Status pulumi.StringPtrInput
 	// (Updatable) Specify the endpoint on which to run the monitor. For BROWSER and REST monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is.
 	Target pulumi.StringPtrInput
-	// (Updatable) Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+	// (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
 	TimeoutInSeconds pulumi.IntPtrInput
 	// (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points.
 	VantagePoints pulumi.StringArrayInput
@@ -489,13 +507,16 @@ func (o ConfigOutput) ToConfigOutputWithContext(ctx context.Context) ConfigOutpu
 }
 
 // (Updatable) The APM domain ID the request is intended for.
-// <<<<<<< ours
 func (o ConfigOutput) ApmDomainId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.ApmDomainId }).(pulumi.StringOutput)
 }
 
+// (Updatable) Monitor availability configuration details.
+func (o ConfigOutput) AvailabilityConfiguration() ConfigAvailabilityConfigurationOutput {
+	return o.ApplyT(func(v *Config) ConfigAvailabilityConfigurationOutput { return v.AvailabilityConfiguration }).(ConfigAvailabilityConfigurationOutput)
+}
+
 // (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
-// ===
 func (o ConfigOutput) BatchIntervalInSeconds() pulumi.IntOutput {
 	return o.ApplyT(func(v *Config) pulumi.IntOutput { return v.BatchIntervalInSeconds }).(pulumi.IntOutput)
 }
@@ -528,6 +549,11 @@ func (o ConfigOutput) IsRunNow() pulumi.BoolOutput {
 // (Updatable) If runOnce is enabled, then the monitor will run once.
 func (o ConfigOutput) IsRunOnce() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Config) pulumi.BoolOutput { return v.IsRunOnce }).(pulumi.BoolOutput)
+}
+
+// (Updatable) Details used to schedule maintenance window.
+func (o ConfigOutput) MaintenanceWindowSchedule() ConfigMaintenanceWindowScheduleOutput {
+	return o.ApplyT(func(v *Config) ConfigMaintenanceWindowScheduleOutput { return v.MaintenanceWindowSchedule }).(ConfigMaintenanceWindowScheduleOutput)
 }
 
 // Type of monitor.
@@ -580,7 +606,7 @@ func (o ConfigOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// (Updatable) Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+// (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
 func (o ConfigOutput) TimeoutInSeconds() pulumi.IntOutput {
 	return o.ApplyT(func(v *Config) pulumi.IntOutput { return v.TimeoutInSeconds }).(pulumi.IntOutput)
 }

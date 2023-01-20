@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRepositoryDiff(args: GetRepositoryDiffArgs, opts?: pulumi.InvokeOptions): Promise<GetRepositoryDiffResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getRepositoryDiff:getRepositoryDiff", {
         "baseVersion": args.baseVersion,
         "filePath": args.filePath,
@@ -112,9 +110,28 @@ export interface GetRepositoryDiffResult {
     readonly repositoryId: string;
     readonly targetVersion: string;
 }
-
+/**
+ * This data source provides details about a specific Repository Diff resource in Oracle Cloud Infrastructure Devops service.
+ *
+ * Gets the line-by-line difference between file on different commits. This API will be deprecated on Wed, 29 Mar 2023 01:00:00 GMT as it does not get recognized when filePath has '/'. This will be replaced by "/repositories/{repositoryId}/file/diffs"
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testRepositoryDiff = oci.DevOps.getRepositoryDiff({
+ *     baseVersion: _var.repository_diff_base_version,
+ *     filePath: _var.repository_diff_file_path,
+ *     repositoryId: oci_devops_repository.test_repository.id,
+ *     targetVersion: _var.repository_diff_target_version,
+ *     isComparisonFromMergeBase: _var.repository_diff_is_comparison_from_merge_base,
+ * });
+ * ```
+ */
 export function getRepositoryDiffOutput(args: GetRepositoryDiffOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoryDiffResult> {
-    return pulumi.output(args).apply(a => getRepositoryDiff(a, opts))
+    return pulumi.output(args).apply((a: any) => getRepositoryDiff(a, opts))
 }
 
 /**

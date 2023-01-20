@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Analytics
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAnalyticsInstancePrivateAccessChannelResult> InvokeAsync(GetAnalyticsInstancePrivateAccessChannelArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAnalyticsInstancePrivateAccessChannelResult>("oci:Analytics/getAnalyticsInstancePrivateAccessChannel:getAnalyticsInstancePrivateAccessChannel", args ?? new GetAnalyticsInstancePrivateAccessChannelArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAnalyticsInstancePrivateAccessChannelResult>("oci:Analytics/getAnalyticsInstancePrivateAccessChannel:getAnalyticsInstancePrivateAccessChannel", args ?? new GetAnalyticsInstancePrivateAccessChannelArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Analytics Instance Private Access Channel resource in Oracle Cloud Infrastructure Analytics service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Analytics
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAnalyticsInstancePrivateAccessChannelResult> Invoke(GetAnalyticsInstancePrivateAccessChannelInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAnalyticsInstancePrivateAccessChannelResult>("oci:Analytics/getAnalyticsInstancePrivateAccessChannel:getAnalyticsInstancePrivateAccessChannel", args ?? new GetAnalyticsInstancePrivateAccessChannelInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAnalyticsInstancePrivateAccessChannelResult>("oci:Analytics/getAnalyticsInstancePrivateAccessChannel:getAnalyticsInstancePrivateAccessChannel", args ?? new GetAnalyticsInstancePrivateAccessChannelInvokeArgs(), options.WithDefaults());
     }
 
 

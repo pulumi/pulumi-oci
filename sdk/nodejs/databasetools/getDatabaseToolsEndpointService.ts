@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDatabaseToolsEndpointService(args: GetDatabaseToolsEndpointServiceArgs, opts?: pulumi.InvokeOptions): Promise<GetDatabaseToolsEndpointServiceResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseTools/getDatabaseToolsEndpointService:getDatabaseToolsEndpointService", {
         "databaseToolsEndpointServiceId": args.databaseToolsEndpointServiceId,
     }, opts);
@@ -95,9 +92,24 @@ export interface GetDatabaseToolsEndpointServiceResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Database Tools Endpoint Service resource in Oracle Cloud Infrastructure Database Tools service.
+ *
+ * Gets details for the specified Database Tools endpoint service.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDatabaseToolsEndpointService = oci.DatabaseTools.getDatabaseToolsEndpointService({
+ *     databaseToolsEndpointServiceId: oci_database_tools_database_tools_endpoint_service.test_database_tools_endpoint_service.id,
+ * });
+ * ```
+ */
 export function getDatabaseToolsEndpointServiceOutput(args: GetDatabaseToolsEndpointServiceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatabaseToolsEndpointServiceResult> {
-    return pulumi.output(args).apply(a => getDatabaseToolsEndpointService(a, opts))
+    return pulumi.output(args).apply((a: any) => getDatabaseToolsEndpointService(a, opts))
 }
 
 /**

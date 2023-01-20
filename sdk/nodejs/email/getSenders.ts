@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSenders(args: GetSendersArgs, opts?: pulumi.InvokeOptions): Promise<GetSendersResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Email/getSenders:getSenders", {
         "compartmentId": args.compartmentId,
         "domain": args.domain,
@@ -89,9 +87,27 @@ export interface GetSendersResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Senders in Oracle Cloud Infrastructure Email service.
+ *
+ * Gets a collection of approved sender email addresses and sender IDs.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSenders = oci.Email.getSenders({
+ *     compartmentId: _var.compartment_id,
+ *     domain: _var.sender_domain,
+ *     emailAddress: _var.sender_email_address,
+ *     state: _var.sender_state,
+ * });
+ * ```
+ */
 export function getSendersOutput(args: GetSendersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSendersResult> {
-    return pulumi.output(args).apply(a => getSenders(a, opts))
+    return pulumi.output(args).apply((a: any) => getSenders(a, opts))
 }
 
 /**

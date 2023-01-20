@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetIpsecConnectionsResult> InvokeAsync(GetIpsecConnectionsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetIpsecConnectionsResult>("oci:Core/getIpsecConnections:getIpsecConnections", args ?? new GetIpsecConnectionsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetIpsecConnectionsResult>("oci:Core/getIpsecConnections:getIpsecConnections", args ?? new GetIpsecConnectionsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Ip Sec Connections in Oracle Cloud Infrastructure Core service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetIpsecConnectionsResult> Invoke(GetIpsecConnectionsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetIpsecConnectionsResult>("oci:Core/getIpsecConnections:getIpsecConnections", args ?? new GetIpsecConnectionsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetIpsecConnectionsResult>("oci:Core/getIpsecConnections:getIpsecConnections", args ?? new GetIpsecConnectionsInvokeArgs(), options.WithDefaults());
     }
 
 

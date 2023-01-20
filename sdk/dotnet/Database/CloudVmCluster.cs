@@ -43,6 +43,9 @@ namespace Pulumi.Oci.Database
     ///             IsIncidentLogsEnabled = @var.Cloud_vm_cluster_data_collection_options_is_incident_logs_enabled,
     ///         },
     ///         DataStoragePercentage = @var.Cloud_vm_cluster_data_storage_percentage,
+    ///         DataStorageSizeInTbs = @var.Cloud_vm_cluster_data_storage_size_in_tbs,
+    ///         DbNodeStorageSizeInGbs = @var.Cloud_vm_cluster_db_node_storage_size_in_gbs,
+    ///         DbServers = @var.Cloud_vm_cluster_db_servers,
     ///         DefinedTags = @var.Cloud_vm_cluster_defined_tags,
     ///         Domain = @var.Cloud_vm_cluster_domain,
     ///         FreeformTags = 
@@ -52,8 +55,10 @@ namespace Pulumi.Oci.Database
     ///         IsLocalBackupEnabled = @var.Cloud_vm_cluster_is_local_backup_enabled,
     ///         IsSparseDiskgroupEnabled = @var.Cloud_vm_cluster_is_sparse_diskgroup_enabled,
     ///         LicenseModel = @var.Cloud_vm_cluster_license_model,
+    ///         MemorySizeInGbs = @var.Cloud_vm_cluster_memory_size_in_gbs,
     ///         NsgIds = @var.Cloud_vm_cluster_nsg_ids,
     ///         OcpuCount = @var.Cloud_vm_cluster_ocpu_count,
+    ///         PrivateZoneId = oci_dns_zone.Test_zone.Id,
     ///         ScanListenerPortTcp = @var.Cloud_vm_cluster_scan_listener_port_tcp,
     ///         ScanListenerPortTcpSsl = @var.Cloud_vm_cluster_scan_listener_port_tcp_ssl,
     ///         TimeZone = @var.Cloud_vm_cluster_time_zone,
@@ -136,6 +141,24 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("dataStoragePercentage")]
         public Output<int> DataStoragePercentage { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The data disk group size to be allocated in TBs.
+        /// </summary>
+        [Output("dataStorageSizeInTbs")]
+        public Output<double> DataStorageSizeInTbs { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The local node storage to be allocated in GBs.
+        /// </summary>
+        [Output("dbNodeStorageSizeInGbs")]
+        public Output<int> DbNodeStorageSizeInGbs { get; private set; } = null!;
+
+        /// <summary>
+        /// The list of DB servers.
+        /// </summary>
+        [Output("dbServers")]
+        public Output<ImmutableArray<string>> DbServers { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -222,6 +245,12 @@ namespace Pulumi.Oci.Database
         public Output<string> ListenerPort { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) The memory to be allocated in GBs.
+        /// </summary>
+        [Output("memorySizeInGbs")]
+        public Output<int> MemorySizeInGbs { get; private set; } = null!;
+
+        /// <summary>
         /// The number of nodes in the cloud VM cluster.
         /// </summary>
         [Output("nodeCount")]
@@ -239,6 +268,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("ocpuCount")]
         public Output<double> OcpuCount { get; private set; } = null!;
+
+        /// <summary>
+        /// The private zone id in which DNS records need to be created.
+        /// </summary>
+        [Output("privateZoneId")]
+        public Output<string> PrivateZoneId { get; private set; } = null!;
 
         /// <summary>
         /// The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
@@ -440,6 +475,30 @@ namespace Pulumi.Oci.Database
         [Input("dataStoragePercentage")]
         public Input<int>? DataStoragePercentage { get; set; }
 
+        /// <summary>
+        /// (Updatable) The data disk group size to be allocated in TBs.
+        /// </summary>
+        [Input("dataStorageSizeInTbs")]
+        public Input<double>? DataStorageSizeInTbs { get; set; }
+
+        /// <summary>
+        /// (Updatable) The local node storage to be allocated in GBs.
+        /// </summary>
+        [Input("dbNodeStorageSizeInGbs")]
+        public Input<int>? DbNodeStorageSizeInGbs { get; set; }
+
+        [Input("dbServers")]
+        private InputList<string>? _dbServers;
+
+        /// <summary>
+        /// The list of DB servers.
+        /// </summary>
+        public InputList<string> DbServers
+        {
+            get => _dbServers ?? (_dbServers = new InputList<string>());
+            set => _dbServers = value;
+        }
+
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
 
@@ -506,6 +565,12 @@ namespace Pulumi.Oci.Database
         [Input("licenseModel")]
         public Input<string>? LicenseModel { get; set; }
 
+        /// <summary>
+        /// (Updatable) The memory to be allocated in GBs.
+        /// </summary>
+        [Input("memorySizeInGbs")]
+        public Input<int>? MemorySizeInGbs { get; set; }
+
         [Input("nsgIds")]
         private InputList<string>? _nsgIds;
 
@@ -524,6 +589,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("ocpuCount")]
         public Input<double>? OcpuCount { get; set; }
+
+        /// <summary>
+        /// The private zone id in which DNS records need to be created.
+        /// </summary>
+        [Input("privateZoneId")]
+        public Input<string>? PrivateZoneId { get; set; }
 
         /// <summary>
         /// The TCP Single Client Access Name (SCAN) port. The default port is 1521.
@@ -639,6 +710,30 @@ namespace Pulumi.Oci.Database
         [Input("dataStoragePercentage")]
         public Input<int>? DataStoragePercentage { get; set; }
 
+        /// <summary>
+        /// (Updatable) The data disk group size to be allocated in TBs.
+        /// </summary>
+        [Input("dataStorageSizeInTbs")]
+        public Input<double>? DataStorageSizeInTbs { get; set; }
+
+        /// <summary>
+        /// (Updatable) The local node storage to be allocated in GBs.
+        /// </summary>
+        [Input("dbNodeStorageSizeInGbs")]
+        public Input<int>? DbNodeStorageSizeInGbs { get; set; }
+
+        [Input("dbServers")]
+        private InputList<string>? _dbServers;
+
+        /// <summary>
+        /// The list of DB servers.
+        /// </summary>
+        public InputList<string> DbServers
+        {
+            get => _dbServers ?? (_dbServers = new InputList<string>());
+            set => _dbServers = value;
+        }
+
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
 
@@ -742,6 +837,12 @@ namespace Pulumi.Oci.Database
         public Input<string>? ListenerPort { get; set; }
 
         /// <summary>
+        /// (Updatable) The memory to be allocated in GBs.
+        /// </summary>
+        [Input("memorySizeInGbs")]
+        public Input<int>? MemorySizeInGbs { get; set; }
+
+        /// <summary>
         /// The number of nodes in the cloud VM cluster.
         /// </summary>
         [Input("nodeCount")]
@@ -765,6 +866,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("ocpuCount")]
         public Input<double>? OcpuCount { get; set; }
+
+        /// <summary>
+        /// The private zone id in which DNS records need to be created.
+        /// </summary>
+        [Input("privateZoneId")]
+        public Input<string>? PrivateZoneId { get; set; }
 
         /// <summary>
         /// The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.

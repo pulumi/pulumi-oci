@@ -26,6 +26,9 @@ namespace Pulumi.Oci.Database.Outputs
         /// Information about Oracle APEX Application Development.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousDatabasesAutonomousDatabaseApexDetailResult> ApexDetails;
+        /// <summary>
+        /// This field will be null if the Autonomous Database is not Data Guard enabled or Access Control is disabled. It's value would be `TRUE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses primary IP access control list (ACL) for standby. It's value would be `FALSE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses different IP access control list (ACL) for standby compared to primary.
+        /// </summary>
         public readonly bool ArePrimaryWhitelistedIpsUsed;
         /// <summary>
         /// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -63,7 +66,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousDatabasesAutonomousDatabaseConnectionUrlResult> ConnectionUrls;
         /// <summary>
-        /// The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+        /// The number of OCPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
         /// </summary>
         public readonly int CpuCoreCount;
         /// <summary>
@@ -374,6 +377,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string TimeUntilReconnectCloneEnabled;
         public readonly string Timestamp;
+        public readonly bool UseLatestAvailableBackupTimeStamp;
         /// <summary>
         /// The amount of storage that has been used, in terabytes.
         /// </summary>
@@ -587,6 +591,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string timestamp,
 
+            bool useLatestAvailableBackupTimeStamp,
+
             int usedDataStorageSizeInTbs,
 
             string vaultId,
@@ -692,6 +698,7 @@ namespace Pulumi.Oci.Database.Outputs
             TimeReclamationOfFreeAutonomousDatabase = timeReclamationOfFreeAutonomousDatabase;
             TimeUntilReconnectCloneEnabled = timeUntilReconnectCloneEnabled;
             Timestamp = timestamp;
+            UseLatestAvailableBackupTimeStamp = useLatestAvailableBackupTimeStamp;
             UsedDataStorageSizeInTbs = usedDataStorageSizeInTbs;
             VaultId = vaultId;
             WhitelistedIps = whitelistedIps;

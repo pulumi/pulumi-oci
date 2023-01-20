@@ -37,7 +37,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetServicesResult> InvokeAsync(GetServicesArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetServicesResult>("oci:Core/getServices:getServices", args ?? new GetServicesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetServicesResult>("oci:Core/getServices:getServices", args ?? new GetServicesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Services in Oracle Cloud Infrastructure Core service.
@@ -65,7 +65,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetServicesResult> Invoke(GetServicesInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetServicesResult>("oci:Core/getServices:getServices", args ?? new GetServicesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetServicesResult>("oci:Core/getServices:getServices", args ?? new GetServicesInvokeArgs(), options.WithDefaults());
     }
 
 

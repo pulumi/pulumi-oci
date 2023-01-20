@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLimitDefinitions(args: GetLimitDefinitionsArgs, opts?: pulumi.InvokeOptions): Promise<GetLimitDefinitionsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Limits/getLimitDefinitions:getLimitDefinitions", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -81,9 +79,28 @@ export interface GetLimitDefinitionsResult {
      */
     readonly serviceName?: string;
 }
-
+/**
+ * This data source provides the list of Limit Definitions in Oracle Cloud Infrastructure Limits service.
+ *
+ * Includes a list of resource limits that are currently supported.
+ * If the 'areQuotasSupported' property is true, you can create quota policies on top of this limit at the
+ * compartment level.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testLimitDefinitions = oci.Limits.getLimitDefinitions({
+ *     compartmentId: _var.tenancy_ocid,
+ *     name: _var.limit_definition_name,
+ *     serviceName: oci_limits_service.test_service.name,
+ * });
+ * ```
+ */
 export function getLimitDefinitionsOutput(args: GetLimitDefinitionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLimitDefinitionsResult> {
-    return pulumi.output(args).apply(a => getLimitDefinitions(a, opts))
+    return pulumi.output(args).apply((a: any) => getLimitDefinitions(a, opts))
 }
 
 /**

@@ -17,14 +17,14 @@ public final class GetDeploymentBackupsPlainArgs extends com.pulumi.resources.In
     public static final GetDeploymentBackupsPlainArgs Empty = new GetDeploymentBackupsPlainArgs();
 
     /**
-     * The ID of the compartment in which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      * 
      */
     @Import(name="compartmentId", required=true)
     private String compartmentId;
 
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      * 
      */
     public String compartmentId() {
@@ -32,14 +32,14 @@ public final class GetDeploymentBackupsPlainArgs extends com.pulumi.resources.In
     }
 
     /**
-     * The ID of the deployment in which to list resources.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
      * 
      */
     @Import(name="deploymentId")
     private @Nullable String deploymentId;
 
     /**
-     * @return The ID of the deployment in which to list resources.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
      * 
      */
     public Optional<String> deploymentId() {
@@ -112,7 +112,7 @@ public final class GetDeploymentBackupsPlainArgs extends com.pulumi.resources.In
         }
 
         /**
-         * @param compartmentId The ID of the compartment in which to list resources.
+         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
          * 
          * @return builder
          * 
@@ -123,7 +123,7 @@ public final class GetDeploymentBackupsPlainArgs extends com.pulumi.resources.In
         }
 
         /**
-         * @param deploymentId The ID of the deployment in which to list resources.
+         * @param deploymentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
          * 
          * @return builder
          * 

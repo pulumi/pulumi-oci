@@ -23,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDataAsset(args: GetDataAssetArgs, opts?: pulumi.InvokeOptions): Promise<GetDataAssetResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataCatalog/getDataAsset:getDataAsset", {
         "catalogId": args.catalogId,
         "dataAssetKey": args.dataAssetKey,
@@ -117,9 +114,26 @@ export interface GetDataAssetResult {
      */
     readonly uri: string;
 }
-
+/**
+ * This data source provides details about a specific Data Asset resource in Oracle Cloud Infrastructure Data Catalog service.
+ *
+ * Gets a specific data asset for the given key within a data catalog.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDataAsset = oci.DataCatalog.getDataAsset({
+ *     catalogId: oci_datacatalog_catalog.test_catalog.id,
+ *     dataAssetKey: _var.data_asset_data_asset_key,
+ *     fields: _var.data_asset_fields,
+ * });
+ * ```
+ */
 export function getDataAssetOutput(args: GetDataAssetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDataAssetResult> {
-    return pulumi.output(args).apply(a => getDataAsset(a, opts))
+    return pulumi.output(args).apply((a: any) => getDataAsset(a, opts))
 }
 
 /**

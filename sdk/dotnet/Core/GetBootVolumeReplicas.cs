@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetBootVolumeReplicasResult> InvokeAsync(GetBootVolumeReplicasArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetBootVolumeReplicasResult>("oci:Core/getBootVolumeReplicas:getBootVolumeReplicas", args ?? new GetBootVolumeReplicasArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetBootVolumeReplicasResult>("oci:Core/getBootVolumeReplicas:getBootVolumeReplicas", args ?? new GetBootVolumeReplicasArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Boot Volume Replicas in Oracle Cloud Infrastructure Core service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetBootVolumeReplicasResult> Invoke(GetBootVolumeReplicasInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetBootVolumeReplicasResult>("oci:Core/getBootVolumeReplicas:getBootVolumeReplicas", args ?? new GetBootVolumeReplicasInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetBootVolumeReplicasResult>("oci:Core/getBootVolumeReplicas:getBootVolumeReplicas", args ?? new GetBootVolumeReplicasInvokeArgs(), options.WithDefaults());
     }
 
 

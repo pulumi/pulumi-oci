@@ -3191,13 +3191,19 @@ func (o AutoScalingConfigurationPolicyRuleMetricThresholdOutput) Value() pulumi.
 
 type BdsInstanceCloudSqlDetail struct {
 	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
-	BlockVolumeSizeInGbs string `pulumi:"blockVolumeSizeInGbs"`
+	BlockVolumeSizeInGbs *string `pulumi:"blockVolumeSizeInGbs"`
 	// IP address of the node
 	IpAddress *string `pulumi:"ipAddress"`
 	// Boolean flag specifying whether or not are Kerberos principals mapped to database users.
 	IsKerberosMappedToDatabaseUsers *bool `pulumi:"isKerberosMappedToDatabaseUsers"`
 	// Details about Kerberos principals
 	KerberosDetails []BdsInstanceCloudSqlDetailKerberosDetail `pulumi:"kerberosDetails"`
+	// The total amount of memory available to the node, in gigabytes
+	MemoryInGbs *int `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes *int `pulumi:"nvmes"`
+	// The total number of OCPUs available to the node.
+	Ocpus *int `pulumi:"ocpus"`
 	// Shape of the node
 	Shape string `pulumi:"shape"`
 }
@@ -3215,13 +3221,19 @@ type BdsInstanceCloudSqlDetailInput interface {
 
 type BdsInstanceCloudSqlDetailArgs struct {
 	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
-	BlockVolumeSizeInGbs pulumi.StringInput `pulumi:"blockVolumeSizeInGbs"`
+	BlockVolumeSizeInGbs pulumi.StringPtrInput `pulumi:"blockVolumeSizeInGbs"`
 	// IP address of the node
 	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
 	// Boolean flag specifying whether or not are Kerberos principals mapped to database users.
 	IsKerberosMappedToDatabaseUsers pulumi.BoolPtrInput `pulumi:"isKerberosMappedToDatabaseUsers"`
 	// Details about Kerberos principals
 	KerberosDetails BdsInstanceCloudSqlDetailKerberosDetailArrayInput `pulumi:"kerberosDetails"`
+	// The total amount of memory available to the node, in gigabytes
+	MemoryInGbs pulumi.IntPtrInput `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes pulumi.IntPtrInput `pulumi:"nvmes"`
+	// The total number of OCPUs available to the node.
+	Ocpus pulumi.IntPtrInput `pulumi:"ocpus"`
 	// Shape of the node
 	Shape pulumi.StringInput `pulumi:"shape"`
 }
@@ -3278,8 +3290,8 @@ func (o BdsInstanceCloudSqlDetailOutput) ToBdsInstanceCloudSqlDetailOutputWithCo
 }
 
 // The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
-func (o BdsInstanceCloudSqlDetailOutput) BlockVolumeSizeInGbs() pulumi.StringOutput {
-	return o.ApplyT(func(v BdsInstanceCloudSqlDetail) string { return v.BlockVolumeSizeInGbs }).(pulumi.StringOutput)
+func (o BdsInstanceCloudSqlDetailOutput) BlockVolumeSizeInGbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsInstanceCloudSqlDetail) *string { return v.BlockVolumeSizeInGbs }).(pulumi.StringPtrOutput)
 }
 
 // IP address of the node
@@ -3295,6 +3307,21 @@ func (o BdsInstanceCloudSqlDetailOutput) IsKerberosMappedToDatabaseUsers() pulum
 // Details about Kerberos principals
 func (o BdsInstanceCloudSqlDetailOutput) KerberosDetails() BdsInstanceCloudSqlDetailKerberosDetailArrayOutput {
 	return o.ApplyT(func(v BdsInstanceCloudSqlDetail) []BdsInstanceCloudSqlDetailKerberosDetail { return v.KerberosDetails }).(BdsInstanceCloudSqlDetailKerberosDetailArrayOutput)
+}
+
+// The total amount of memory available to the node, in gigabytes
+func (o BdsInstanceCloudSqlDetailOutput) MemoryInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BdsInstanceCloudSqlDetail) *int { return v.MemoryInGbs }).(pulumi.IntPtrOutput)
+}
+
+// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+func (o BdsInstanceCloudSqlDetailOutput) Nvmes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BdsInstanceCloudSqlDetail) *int { return v.Nvmes }).(pulumi.IntPtrOutput)
+}
+
+// The total number of OCPUs available to the node.
+func (o BdsInstanceCloudSqlDetailOutput) Ocpus() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BdsInstanceCloudSqlDetail) *int { return v.Ocpus }).(pulumi.IntPtrOutput)
 }
 
 // Shape of the node
@@ -3431,33 +3458,33 @@ func (o BdsInstanceCloudSqlDetailKerberosDetailArrayOutput) Index(i pulumi.IntIn
 type BdsInstanceClusterDetail struct {
 	// The URL of Ambari
 	AmbariUrl *string `pulumi:"ambariUrl"`
-	// Cloud SQL cell version
+	// Cloud SQL cell version.
 	BdCellVersion *string `pulumi:"bdCellVersion"`
 	// BDA version installed in the cluster
 	BdaVersion *string `pulumi:"bdaVersion"`
-	// Big Data Manager version installed in the cluster
+	// Big Data Manager version installed in the cluster.
 	BdmVersion *string `pulumi:"bdmVersion"`
-	// Big Data Service version installed in the cluster
+	// Big Data Service version installed in the cluster.
 	BdsVersion *string `pulumi:"bdsVersion"`
-	// The URL of a Big Data Manager
+	// The URL of Big Data Manager.
 	BigDataManagerUrl *string `pulumi:"bigDataManagerUrl"`
-	// The URL of a Cloudera Manager
+	// The URL of Cloudera Manager
 	ClouderaManagerUrl *string `pulumi:"clouderaManagerUrl"`
-	// Big Data SQL version
+	// Big Data SQL version.
 	CsqlCellVersion *string `pulumi:"csqlCellVersion"`
-	// Query Server Database version
+	// Cloud SQL query server database version.
 	DbVersion *string `pulumi:"dbVersion"`
-	// The URL of a Hue Server
+	// The URL of the Hue server.
 	HueServerUrl *string `pulumi:"hueServerUrl"`
 	// The URL of the Jupyterhub.
 	JupyterHubUrl *string `pulumi:"jupyterHubUrl"`
 	// Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
 	OdhVersion *string `pulumi:"odhVersion"`
-	// Oracle Linux version installed in the cluster
+	// Oracle Linux version installed in the cluster.
 	OsVersion *string `pulumi:"osVersion"`
 	// The time the BDS instance was created. An RFC3339 formatted datetime string
 	TimeCreated *string `pulumi:"timeCreated"`
-	// The time the BDS instance was automatically, or manually refreshed. An RFC3339 formatted datetime string
+	// The time the cluster was automatically or manually refreshed, shown as an RFC 3339 formatted datetime string.
 	TimeRefreshed *string `pulumi:"timeRefreshed"`
 }
 
@@ -3475,33 +3502,33 @@ type BdsInstanceClusterDetailInput interface {
 type BdsInstanceClusterDetailArgs struct {
 	// The URL of Ambari
 	AmbariUrl pulumi.StringPtrInput `pulumi:"ambariUrl"`
-	// Cloud SQL cell version
+	// Cloud SQL cell version.
 	BdCellVersion pulumi.StringPtrInput `pulumi:"bdCellVersion"`
 	// BDA version installed in the cluster
 	BdaVersion pulumi.StringPtrInput `pulumi:"bdaVersion"`
-	// Big Data Manager version installed in the cluster
+	// Big Data Manager version installed in the cluster.
 	BdmVersion pulumi.StringPtrInput `pulumi:"bdmVersion"`
-	// Big Data Service version installed in the cluster
+	// Big Data Service version installed in the cluster.
 	BdsVersion pulumi.StringPtrInput `pulumi:"bdsVersion"`
-	// The URL of a Big Data Manager
+	// The URL of Big Data Manager.
 	BigDataManagerUrl pulumi.StringPtrInput `pulumi:"bigDataManagerUrl"`
-	// The URL of a Cloudera Manager
+	// The URL of Cloudera Manager
 	ClouderaManagerUrl pulumi.StringPtrInput `pulumi:"clouderaManagerUrl"`
-	// Big Data SQL version
+	// Big Data SQL version.
 	CsqlCellVersion pulumi.StringPtrInput `pulumi:"csqlCellVersion"`
-	// Query Server Database version
+	// Cloud SQL query server database version.
 	DbVersion pulumi.StringPtrInput `pulumi:"dbVersion"`
-	// The URL of a Hue Server
+	// The URL of the Hue server.
 	HueServerUrl pulumi.StringPtrInput `pulumi:"hueServerUrl"`
 	// The URL of the Jupyterhub.
 	JupyterHubUrl pulumi.StringPtrInput `pulumi:"jupyterHubUrl"`
 	// Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
 	OdhVersion pulumi.StringPtrInput `pulumi:"odhVersion"`
-	// Oracle Linux version installed in the cluster
+	// Oracle Linux version installed in the cluster.
 	OsVersion pulumi.StringPtrInput `pulumi:"osVersion"`
 	// The time the BDS instance was created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
-	// The time the BDS instance was automatically, or manually refreshed. An RFC3339 formatted datetime string
+	// The time the cluster was automatically or manually refreshed, shown as an RFC 3339 formatted datetime string.
 	TimeRefreshed pulumi.StringPtrInput `pulumi:"timeRefreshed"`
 }
 
@@ -3561,7 +3588,7 @@ func (o BdsInstanceClusterDetailOutput) AmbariUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceClusterDetail) *string { return v.AmbariUrl }).(pulumi.StringPtrOutput)
 }
 
-// Cloud SQL cell version
+// Cloud SQL cell version.
 func (o BdsInstanceClusterDetailOutput) BdCellVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceClusterDetail) *string { return v.BdCellVersion }).(pulumi.StringPtrOutput)
 }
@@ -3571,37 +3598,37 @@ func (o BdsInstanceClusterDetailOutput) BdaVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceClusterDetail) *string { return v.BdaVersion }).(pulumi.StringPtrOutput)
 }
 
-// Big Data Manager version installed in the cluster
+// Big Data Manager version installed in the cluster.
 func (o BdsInstanceClusterDetailOutput) BdmVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceClusterDetail) *string { return v.BdmVersion }).(pulumi.StringPtrOutput)
 }
 
-// Big Data Service version installed in the cluster
+// Big Data Service version installed in the cluster.
 func (o BdsInstanceClusterDetailOutput) BdsVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceClusterDetail) *string { return v.BdsVersion }).(pulumi.StringPtrOutput)
 }
 
-// The URL of a Big Data Manager
+// The URL of Big Data Manager.
 func (o BdsInstanceClusterDetailOutput) BigDataManagerUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceClusterDetail) *string { return v.BigDataManagerUrl }).(pulumi.StringPtrOutput)
 }
 
-// The URL of a Cloudera Manager
+// The URL of Cloudera Manager
 func (o BdsInstanceClusterDetailOutput) ClouderaManagerUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceClusterDetail) *string { return v.ClouderaManagerUrl }).(pulumi.StringPtrOutput)
 }
 
-// Big Data SQL version
+// Big Data SQL version.
 func (o BdsInstanceClusterDetailOutput) CsqlCellVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceClusterDetail) *string { return v.CsqlCellVersion }).(pulumi.StringPtrOutput)
 }
 
-// Query Server Database version
+// Cloud SQL query server database version.
 func (o BdsInstanceClusterDetailOutput) DbVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceClusterDetail) *string { return v.DbVersion }).(pulumi.StringPtrOutput)
 }
 
-// The URL of a Hue Server
+// The URL of the Hue server.
 func (o BdsInstanceClusterDetailOutput) HueServerUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceClusterDetail) *string { return v.HueServerUrl }).(pulumi.StringPtrOutput)
 }
@@ -3616,7 +3643,7 @@ func (o BdsInstanceClusterDetailOutput) OdhVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceClusterDetail) *string { return v.OdhVersion }).(pulumi.StringPtrOutput)
 }
 
-// Oracle Linux version installed in the cluster
+// Oracle Linux version installed in the cluster.
 func (o BdsInstanceClusterDetailOutput) OsVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceClusterDetail) *string { return v.OsVersion }).(pulumi.StringPtrOutput)
 }
@@ -3626,7 +3653,7 @@ func (o BdsInstanceClusterDetailOutput) TimeCreated() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceClusterDetail) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
-// The time the BDS instance was automatically, or manually refreshed. An RFC3339 formatted datetime string
+// The time the cluster was automatically or manually refreshed, shown as an RFC 3339 formatted datetime string.
 func (o BdsInstanceClusterDetailOutput) TimeRefreshed() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceClusterDetail) *string { return v.TimeRefreshed }).(pulumi.StringPtrOutput)
 }
@@ -3653,7 +3680,7 @@ func (o BdsInstanceClusterDetailArrayOutput) Index(i pulumi.IntInput) BdsInstanc
 
 type BdsInstanceComputeOnlyWorkerNode struct {
 	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
-	BlockVolumeSizeInGbs string `pulumi:"blockVolumeSizeInGbs"`
+	BlockVolumeSizeInGbs *string `pulumi:"blockVolumeSizeInGbs"`
 	// The amount of worker nodes should be created
 	NumberOfNodes int `pulumi:"numberOfNodes"`
 	// Shape of the node
@@ -3677,7 +3704,7 @@ type BdsInstanceComputeOnlyWorkerNodeInput interface {
 
 type BdsInstanceComputeOnlyWorkerNodeArgs struct {
 	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
-	BlockVolumeSizeInGbs pulumi.StringInput `pulumi:"blockVolumeSizeInGbs"`
+	BlockVolumeSizeInGbs pulumi.StringPtrInput `pulumi:"blockVolumeSizeInGbs"`
 	// The amount of worker nodes should be created
 	NumberOfNodes pulumi.IntInput `pulumi:"numberOfNodes"`
 	// Shape of the node
@@ -3766,8 +3793,8 @@ func (o BdsInstanceComputeOnlyWorkerNodeOutput) ToBdsInstanceComputeOnlyWorkerNo
 }
 
 // The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
-func (o BdsInstanceComputeOnlyWorkerNodeOutput) BlockVolumeSizeInGbs() pulumi.StringOutput {
-	return o.ApplyT(func(v BdsInstanceComputeOnlyWorkerNode) string { return v.BlockVolumeSizeInGbs }).(pulumi.StringOutput)
+func (o BdsInstanceComputeOnlyWorkerNodeOutput) BlockVolumeSizeInGbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsInstanceComputeOnlyWorkerNode) *string { return v.BlockVolumeSizeInGbs }).(pulumi.StringPtrOutput)
 }
 
 // The amount of worker nodes should be created
@@ -3822,7 +3849,7 @@ func (o BdsInstanceComputeOnlyWorkerNodePtrOutput) BlockVolumeSizeInGbs() pulumi
 		if v == nil {
 			return nil
 		}
-		return &v.BlockVolumeSizeInGbs
+		return v.BlockVolumeSizeInGbs
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -3869,6 +3896,8 @@ func (o BdsInstanceComputeOnlyWorkerNodePtrOutput) SubnetId() pulumi.StringPtrOu
 type BdsInstanceComputeOnlyWorkerNodeShapeConfig struct {
 	// The total amount of memory available to the node, in gigabytes
 	MemoryInGbs *int `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes *int `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus *int `pulumi:"ocpus"`
 }
@@ -3887,6 +3916,8 @@ type BdsInstanceComputeOnlyWorkerNodeShapeConfigInput interface {
 type BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs struct {
 	// The total amount of memory available to the node, in gigabytes
 	MemoryInGbs pulumi.IntPtrInput `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes pulumi.IntPtrInput `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus pulumi.IntPtrInput `pulumi:"ocpus"`
 }
@@ -3973,6 +4004,11 @@ func (o BdsInstanceComputeOnlyWorkerNodeShapeConfigOutput) MemoryInGbs() pulumi.
 	return o.ApplyT(func(v BdsInstanceComputeOnlyWorkerNodeShapeConfig) *int { return v.MemoryInGbs }).(pulumi.IntPtrOutput)
 }
 
+// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+func (o BdsInstanceComputeOnlyWorkerNodeShapeConfigOutput) Nvmes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BdsInstanceComputeOnlyWorkerNodeShapeConfig) *int { return v.Nvmes }).(pulumi.IntPtrOutput)
+}
+
 // The total number of OCPUs available to the node.
 func (o BdsInstanceComputeOnlyWorkerNodeShapeConfigOutput) Ocpus() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v BdsInstanceComputeOnlyWorkerNodeShapeConfig) *int { return v.Ocpus }).(pulumi.IntPtrOutput)
@@ -4012,6 +4048,16 @@ func (o BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput) MemoryInGbs() pulu
 	}).(pulumi.IntPtrOutput)
 }
 
+// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+func (o BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput) Nvmes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceComputeOnlyWorkerNodeShapeConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Nvmes
+	}).(pulumi.IntPtrOutput)
+}
+
 // The total number of OCPUs available to the node.
 func (o BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput) Ocpus() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceComputeOnlyWorkerNodeShapeConfig) *int {
@@ -4022,9 +4068,397 @@ func (o BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput) Ocpus() pulumi.Int
 	}).(pulumi.IntPtrOutput)
 }
 
+type BdsInstanceEdgeNode struct {
+	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+	BlockVolumeSizeInGbs *string `pulumi:"blockVolumeSizeInGbs"`
+	// The amount of worker nodes should be created
+	NumberOfNodes int `pulumi:"numberOfNodes"`
+	// Shape of the node
+	Shape string `pulumi:"shape"`
+	// The shape configuration requested for the node.
+	ShapeConfig *BdsInstanceEdgeNodeShapeConfig `pulumi:"shapeConfig"`
+	// The OCID of the subnet in which the node should be created
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// BdsInstanceEdgeNodeInput is an input type that accepts BdsInstanceEdgeNodeArgs and BdsInstanceEdgeNodeOutput values.
+// You can construct a concrete instance of `BdsInstanceEdgeNodeInput` via:
+//
+//	BdsInstanceEdgeNodeArgs{...}
+type BdsInstanceEdgeNodeInput interface {
+	pulumi.Input
+
+	ToBdsInstanceEdgeNodeOutput() BdsInstanceEdgeNodeOutput
+	ToBdsInstanceEdgeNodeOutputWithContext(context.Context) BdsInstanceEdgeNodeOutput
+}
+
+type BdsInstanceEdgeNodeArgs struct {
+	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+	BlockVolumeSizeInGbs pulumi.StringPtrInput `pulumi:"blockVolumeSizeInGbs"`
+	// The amount of worker nodes should be created
+	NumberOfNodes pulumi.IntInput `pulumi:"numberOfNodes"`
+	// Shape of the node
+	Shape pulumi.StringInput `pulumi:"shape"`
+	// The shape configuration requested for the node.
+	ShapeConfig BdsInstanceEdgeNodeShapeConfigPtrInput `pulumi:"shapeConfig"`
+	// The OCID of the subnet in which the node should be created
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (BdsInstanceEdgeNodeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsInstanceEdgeNode)(nil)).Elem()
+}
+
+func (i BdsInstanceEdgeNodeArgs) ToBdsInstanceEdgeNodeOutput() BdsInstanceEdgeNodeOutput {
+	return i.ToBdsInstanceEdgeNodeOutputWithContext(context.Background())
+}
+
+func (i BdsInstanceEdgeNodeArgs) ToBdsInstanceEdgeNodeOutputWithContext(ctx context.Context) BdsInstanceEdgeNodeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceEdgeNodeOutput)
+}
+
+func (i BdsInstanceEdgeNodeArgs) ToBdsInstanceEdgeNodePtrOutput() BdsInstanceEdgeNodePtrOutput {
+	return i.ToBdsInstanceEdgeNodePtrOutputWithContext(context.Background())
+}
+
+func (i BdsInstanceEdgeNodeArgs) ToBdsInstanceEdgeNodePtrOutputWithContext(ctx context.Context) BdsInstanceEdgeNodePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceEdgeNodeOutput).ToBdsInstanceEdgeNodePtrOutputWithContext(ctx)
+}
+
+// BdsInstanceEdgeNodePtrInput is an input type that accepts BdsInstanceEdgeNodeArgs, BdsInstanceEdgeNodePtr and BdsInstanceEdgeNodePtrOutput values.
+// You can construct a concrete instance of `BdsInstanceEdgeNodePtrInput` via:
+//
+//	        BdsInstanceEdgeNodeArgs{...}
+//
+//	or:
+//
+//	        nil
+type BdsInstanceEdgeNodePtrInput interface {
+	pulumi.Input
+
+	ToBdsInstanceEdgeNodePtrOutput() BdsInstanceEdgeNodePtrOutput
+	ToBdsInstanceEdgeNodePtrOutputWithContext(context.Context) BdsInstanceEdgeNodePtrOutput
+}
+
+type bdsInstanceEdgeNodePtrType BdsInstanceEdgeNodeArgs
+
+func BdsInstanceEdgeNodePtr(v *BdsInstanceEdgeNodeArgs) BdsInstanceEdgeNodePtrInput {
+	return (*bdsInstanceEdgeNodePtrType)(v)
+}
+
+func (*bdsInstanceEdgeNodePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**BdsInstanceEdgeNode)(nil)).Elem()
+}
+
+func (i *bdsInstanceEdgeNodePtrType) ToBdsInstanceEdgeNodePtrOutput() BdsInstanceEdgeNodePtrOutput {
+	return i.ToBdsInstanceEdgeNodePtrOutputWithContext(context.Background())
+}
+
+func (i *bdsInstanceEdgeNodePtrType) ToBdsInstanceEdgeNodePtrOutputWithContext(ctx context.Context) BdsInstanceEdgeNodePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceEdgeNodePtrOutput)
+}
+
+type BdsInstanceEdgeNodeOutput struct{ *pulumi.OutputState }
+
+func (BdsInstanceEdgeNodeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsInstanceEdgeNode)(nil)).Elem()
+}
+
+func (o BdsInstanceEdgeNodeOutput) ToBdsInstanceEdgeNodeOutput() BdsInstanceEdgeNodeOutput {
+	return o
+}
+
+func (o BdsInstanceEdgeNodeOutput) ToBdsInstanceEdgeNodeOutputWithContext(ctx context.Context) BdsInstanceEdgeNodeOutput {
+	return o
+}
+
+func (o BdsInstanceEdgeNodeOutput) ToBdsInstanceEdgeNodePtrOutput() BdsInstanceEdgeNodePtrOutput {
+	return o.ToBdsInstanceEdgeNodePtrOutputWithContext(context.Background())
+}
+
+func (o BdsInstanceEdgeNodeOutput) ToBdsInstanceEdgeNodePtrOutputWithContext(ctx context.Context) BdsInstanceEdgeNodePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v BdsInstanceEdgeNode) *BdsInstanceEdgeNode {
+		return &v
+	}).(BdsInstanceEdgeNodePtrOutput)
+}
+
+// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+func (o BdsInstanceEdgeNodeOutput) BlockVolumeSizeInGbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsInstanceEdgeNode) *string { return v.BlockVolumeSizeInGbs }).(pulumi.StringPtrOutput)
+}
+
+// The amount of worker nodes should be created
+func (o BdsInstanceEdgeNodeOutput) NumberOfNodes() pulumi.IntOutput {
+	return o.ApplyT(func(v BdsInstanceEdgeNode) int { return v.NumberOfNodes }).(pulumi.IntOutput)
+}
+
+// Shape of the node
+func (o BdsInstanceEdgeNodeOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v BdsInstanceEdgeNode) string { return v.Shape }).(pulumi.StringOutput)
+}
+
+// The shape configuration requested for the node.
+func (o BdsInstanceEdgeNodeOutput) ShapeConfig() BdsInstanceEdgeNodeShapeConfigPtrOutput {
+	return o.ApplyT(func(v BdsInstanceEdgeNode) *BdsInstanceEdgeNodeShapeConfig { return v.ShapeConfig }).(BdsInstanceEdgeNodeShapeConfigPtrOutput)
+}
+
+// The OCID of the subnet in which the node should be created
+func (o BdsInstanceEdgeNodeOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v BdsInstanceEdgeNode) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type BdsInstanceEdgeNodePtrOutput struct{ *pulumi.OutputState }
+
+func (BdsInstanceEdgeNodePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**BdsInstanceEdgeNode)(nil)).Elem()
+}
+
+func (o BdsInstanceEdgeNodePtrOutput) ToBdsInstanceEdgeNodePtrOutput() BdsInstanceEdgeNodePtrOutput {
+	return o
+}
+
+func (o BdsInstanceEdgeNodePtrOutput) ToBdsInstanceEdgeNodePtrOutputWithContext(ctx context.Context) BdsInstanceEdgeNodePtrOutput {
+	return o
+}
+
+func (o BdsInstanceEdgeNodePtrOutput) Elem() BdsInstanceEdgeNodeOutput {
+	return o.ApplyT(func(v *BdsInstanceEdgeNode) BdsInstanceEdgeNode {
+		if v != nil {
+			return *v
+		}
+		var ret BdsInstanceEdgeNode
+		return ret
+	}).(BdsInstanceEdgeNodeOutput)
+}
+
+// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+func (o BdsInstanceEdgeNodePtrOutput) BlockVolumeSizeInGbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceEdgeNode) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BlockVolumeSizeInGbs
+	}).(pulumi.StringPtrOutput)
+}
+
+// The amount of worker nodes should be created
+func (o BdsInstanceEdgeNodePtrOutput) NumberOfNodes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceEdgeNode) *int {
+		if v == nil {
+			return nil
+		}
+		return &v.NumberOfNodes
+	}).(pulumi.IntPtrOutput)
+}
+
+// Shape of the node
+func (o BdsInstanceEdgeNodePtrOutput) Shape() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceEdgeNode) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Shape
+	}).(pulumi.StringPtrOutput)
+}
+
+// The shape configuration requested for the node.
+func (o BdsInstanceEdgeNodePtrOutput) ShapeConfig() BdsInstanceEdgeNodeShapeConfigPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceEdgeNode) *BdsInstanceEdgeNodeShapeConfig {
+		if v == nil {
+			return nil
+		}
+		return v.ShapeConfig
+	}).(BdsInstanceEdgeNodeShapeConfigPtrOutput)
+}
+
+// The OCID of the subnet in which the node should be created
+func (o BdsInstanceEdgeNodePtrOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceEdgeNode) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.SubnetId
+	}).(pulumi.StringPtrOutput)
+}
+
+type BdsInstanceEdgeNodeShapeConfig struct {
+	// The total amount of memory available to the node, in gigabytes
+	MemoryInGbs *int `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes *int `pulumi:"nvmes"`
+	// The total number of OCPUs available to the node.
+	Ocpus *int `pulumi:"ocpus"`
+}
+
+// BdsInstanceEdgeNodeShapeConfigInput is an input type that accepts BdsInstanceEdgeNodeShapeConfigArgs and BdsInstanceEdgeNodeShapeConfigOutput values.
+// You can construct a concrete instance of `BdsInstanceEdgeNodeShapeConfigInput` via:
+//
+//	BdsInstanceEdgeNodeShapeConfigArgs{...}
+type BdsInstanceEdgeNodeShapeConfigInput interface {
+	pulumi.Input
+
+	ToBdsInstanceEdgeNodeShapeConfigOutput() BdsInstanceEdgeNodeShapeConfigOutput
+	ToBdsInstanceEdgeNodeShapeConfigOutputWithContext(context.Context) BdsInstanceEdgeNodeShapeConfigOutput
+}
+
+type BdsInstanceEdgeNodeShapeConfigArgs struct {
+	// The total amount of memory available to the node, in gigabytes
+	MemoryInGbs pulumi.IntPtrInput `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes pulumi.IntPtrInput `pulumi:"nvmes"`
+	// The total number of OCPUs available to the node.
+	Ocpus pulumi.IntPtrInput `pulumi:"ocpus"`
+}
+
+func (BdsInstanceEdgeNodeShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsInstanceEdgeNodeShapeConfig)(nil)).Elem()
+}
+
+func (i BdsInstanceEdgeNodeShapeConfigArgs) ToBdsInstanceEdgeNodeShapeConfigOutput() BdsInstanceEdgeNodeShapeConfigOutput {
+	return i.ToBdsInstanceEdgeNodeShapeConfigOutputWithContext(context.Background())
+}
+
+func (i BdsInstanceEdgeNodeShapeConfigArgs) ToBdsInstanceEdgeNodeShapeConfigOutputWithContext(ctx context.Context) BdsInstanceEdgeNodeShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceEdgeNodeShapeConfigOutput)
+}
+
+func (i BdsInstanceEdgeNodeShapeConfigArgs) ToBdsInstanceEdgeNodeShapeConfigPtrOutput() BdsInstanceEdgeNodeShapeConfigPtrOutput {
+	return i.ToBdsInstanceEdgeNodeShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i BdsInstanceEdgeNodeShapeConfigArgs) ToBdsInstanceEdgeNodeShapeConfigPtrOutputWithContext(ctx context.Context) BdsInstanceEdgeNodeShapeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceEdgeNodeShapeConfigOutput).ToBdsInstanceEdgeNodeShapeConfigPtrOutputWithContext(ctx)
+}
+
+// BdsInstanceEdgeNodeShapeConfigPtrInput is an input type that accepts BdsInstanceEdgeNodeShapeConfigArgs, BdsInstanceEdgeNodeShapeConfigPtr and BdsInstanceEdgeNodeShapeConfigPtrOutput values.
+// You can construct a concrete instance of `BdsInstanceEdgeNodeShapeConfigPtrInput` via:
+//
+//	        BdsInstanceEdgeNodeShapeConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type BdsInstanceEdgeNodeShapeConfigPtrInput interface {
+	pulumi.Input
+
+	ToBdsInstanceEdgeNodeShapeConfigPtrOutput() BdsInstanceEdgeNodeShapeConfigPtrOutput
+	ToBdsInstanceEdgeNodeShapeConfigPtrOutputWithContext(context.Context) BdsInstanceEdgeNodeShapeConfigPtrOutput
+}
+
+type bdsInstanceEdgeNodeShapeConfigPtrType BdsInstanceEdgeNodeShapeConfigArgs
+
+func BdsInstanceEdgeNodeShapeConfigPtr(v *BdsInstanceEdgeNodeShapeConfigArgs) BdsInstanceEdgeNodeShapeConfigPtrInput {
+	return (*bdsInstanceEdgeNodeShapeConfigPtrType)(v)
+}
+
+func (*bdsInstanceEdgeNodeShapeConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**BdsInstanceEdgeNodeShapeConfig)(nil)).Elem()
+}
+
+func (i *bdsInstanceEdgeNodeShapeConfigPtrType) ToBdsInstanceEdgeNodeShapeConfigPtrOutput() BdsInstanceEdgeNodeShapeConfigPtrOutput {
+	return i.ToBdsInstanceEdgeNodeShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *bdsInstanceEdgeNodeShapeConfigPtrType) ToBdsInstanceEdgeNodeShapeConfigPtrOutputWithContext(ctx context.Context) BdsInstanceEdgeNodeShapeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceEdgeNodeShapeConfigPtrOutput)
+}
+
+type BdsInstanceEdgeNodeShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (BdsInstanceEdgeNodeShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsInstanceEdgeNodeShapeConfig)(nil)).Elem()
+}
+
+func (o BdsInstanceEdgeNodeShapeConfigOutput) ToBdsInstanceEdgeNodeShapeConfigOutput() BdsInstanceEdgeNodeShapeConfigOutput {
+	return o
+}
+
+func (o BdsInstanceEdgeNodeShapeConfigOutput) ToBdsInstanceEdgeNodeShapeConfigOutputWithContext(ctx context.Context) BdsInstanceEdgeNodeShapeConfigOutput {
+	return o
+}
+
+func (o BdsInstanceEdgeNodeShapeConfigOutput) ToBdsInstanceEdgeNodeShapeConfigPtrOutput() BdsInstanceEdgeNodeShapeConfigPtrOutput {
+	return o.ToBdsInstanceEdgeNodeShapeConfigPtrOutputWithContext(context.Background())
+}
+
+func (o BdsInstanceEdgeNodeShapeConfigOutput) ToBdsInstanceEdgeNodeShapeConfigPtrOutputWithContext(ctx context.Context) BdsInstanceEdgeNodeShapeConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v BdsInstanceEdgeNodeShapeConfig) *BdsInstanceEdgeNodeShapeConfig {
+		return &v
+	}).(BdsInstanceEdgeNodeShapeConfigPtrOutput)
+}
+
+// The total amount of memory available to the node, in gigabytes
+func (o BdsInstanceEdgeNodeShapeConfigOutput) MemoryInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BdsInstanceEdgeNodeShapeConfig) *int { return v.MemoryInGbs }).(pulumi.IntPtrOutput)
+}
+
+// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+func (o BdsInstanceEdgeNodeShapeConfigOutput) Nvmes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BdsInstanceEdgeNodeShapeConfig) *int { return v.Nvmes }).(pulumi.IntPtrOutput)
+}
+
+// The total number of OCPUs available to the node.
+func (o BdsInstanceEdgeNodeShapeConfigOutput) Ocpus() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BdsInstanceEdgeNodeShapeConfig) *int { return v.Ocpus }).(pulumi.IntPtrOutput)
+}
+
+type BdsInstanceEdgeNodeShapeConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (BdsInstanceEdgeNodeShapeConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**BdsInstanceEdgeNodeShapeConfig)(nil)).Elem()
+}
+
+func (o BdsInstanceEdgeNodeShapeConfigPtrOutput) ToBdsInstanceEdgeNodeShapeConfigPtrOutput() BdsInstanceEdgeNodeShapeConfigPtrOutput {
+	return o
+}
+
+func (o BdsInstanceEdgeNodeShapeConfigPtrOutput) ToBdsInstanceEdgeNodeShapeConfigPtrOutputWithContext(ctx context.Context) BdsInstanceEdgeNodeShapeConfigPtrOutput {
+	return o
+}
+
+func (o BdsInstanceEdgeNodeShapeConfigPtrOutput) Elem() BdsInstanceEdgeNodeShapeConfigOutput {
+	return o.ApplyT(func(v *BdsInstanceEdgeNodeShapeConfig) BdsInstanceEdgeNodeShapeConfig {
+		if v != nil {
+			return *v
+		}
+		var ret BdsInstanceEdgeNodeShapeConfig
+		return ret
+	}).(BdsInstanceEdgeNodeShapeConfigOutput)
+}
+
+// The total amount of memory available to the node, in gigabytes
+func (o BdsInstanceEdgeNodeShapeConfigPtrOutput) MemoryInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceEdgeNodeShapeConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.MemoryInGbs
+	}).(pulumi.IntPtrOutput)
+}
+
+// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+func (o BdsInstanceEdgeNodeShapeConfigPtrOutput) Nvmes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceEdgeNodeShapeConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Nvmes
+	}).(pulumi.IntPtrOutput)
+}
+
+// The total number of OCPUs available to the node.
+func (o BdsInstanceEdgeNodeShapeConfigPtrOutput) Ocpus() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceEdgeNodeShapeConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Ocpus
+	}).(pulumi.IntPtrOutput)
+}
+
 type BdsInstanceMasterNode struct {
 	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
-	BlockVolumeSizeInGbs string `pulumi:"blockVolumeSizeInGbs"`
+	BlockVolumeSizeInGbs *string `pulumi:"blockVolumeSizeInGbs"`
 	// The amount of worker nodes should be created
 	NumberOfNodes int `pulumi:"numberOfNodes"`
 	// Shape of the node
@@ -4048,7 +4482,7 @@ type BdsInstanceMasterNodeInput interface {
 
 type BdsInstanceMasterNodeArgs struct {
 	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
-	BlockVolumeSizeInGbs pulumi.StringInput `pulumi:"blockVolumeSizeInGbs"`
+	BlockVolumeSizeInGbs pulumi.StringPtrInput `pulumi:"blockVolumeSizeInGbs"`
 	// The amount of worker nodes should be created
 	NumberOfNodes pulumi.IntInput `pulumi:"numberOfNodes"`
 	// Shape of the node
@@ -4137,8 +4571,8 @@ func (o BdsInstanceMasterNodeOutput) ToBdsInstanceMasterNodePtrOutputWithContext
 }
 
 // The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
-func (o BdsInstanceMasterNodeOutput) BlockVolumeSizeInGbs() pulumi.StringOutput {
-	return o.ApplyT(func(v BdsInstanceMasterNode) string { return v.BlockVolumeSizeInGbs }).(pulumi.StringOutput)
+func (o BdsInstanceMasterNodeOutput) BlockVolumeSizeInGbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsInstanceMasterNode) *string { return v.BlockVolumeSizeInGbs }).(pulumi.StringPtrOutput)
 }
 
 // The amount of worker nodes should be created
@@ -4191,7 +4625,7 @@ func (o BdsInstanceMasterNodePtrOutput) BlockVolumeSizeInGbs() pulumi.StringPtrO
 		if v == nil {
 			return nil
 		}
-		return &v.BlockVolumeSizeInGbs
+		return v.BlockVolumeSizeInGbs
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -4238,6 +4672,8 @@ func (o BdsInstanceMasterNodePtrOutput) SubnetId() pulumi.StringPtrOutput {
 type BdsInstanceMasterNodeShapeConfig struct {
 	// The total amount of memory available to the node, in gigabytes
 	MemoryInGbs *int `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes *int `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus *int `pulumi:"ocpus"`
 }
@@ -4256,6 +4692,8 @@ type BdsInstanceMasterNodeShapeConfigInput interface {
 type BdsInstanceMasterNodeShapeConfigArgs struct {
 	// The total amount of memory available to the node, in gigabytes
 	MemoryInGbs pulumi.IntPtrInput `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes pulumi.IntPtrInput `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus pulumi.IntPtrInput `pulumi:"ocpus"`
 }
@@ -4342,6 +4780,11 @@ func (o BdsInstanceMasterNodeShapeConfigOutput) MemoryInGbs() pulumi.IntPtrOutpu
 	return o.ApplyT(func(v BdsInstanceMasterNodeShapeConfig) *int { return v.MemoryInGbs }).(pulumi.IntPtrOutput)
 }
 
+// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+func (o BdsInstanceMasterNodeShapeConfigOutput) Nvmes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BdsInstanceMasterNodeShapeConfig) *int { return v.Nvmes }).(pulumi.IntPtrOutput)
+}
+
 // The total number of OCPUs available to the node.
 func (o BdsInstanceMasterNodeShapeConfigOutput) Ocpus() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v BdsInstanceMasterNodeShapeConfig) *int { return v.Ocpus }).(pulumi.IntPtrOutput)
@@ -4378,6 +4821,16 @@ func (o BdsInstanceMasterNodeShapeConfigPtrOutput) MemoryInGbs() pulumi.IntPtrOu
 			return nil
 		}
 		return v.MemoryInGbs
+	}).(pulumi.IntPtrOutput)
+}
+
+// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+func (o BdsInstanceMasterNodeShapeConfigPtrOutput) Nvmes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceMasterNodeShapeConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Nvmes
 	}).(pulumi.IntPtrOutput)
 }
 
@@ -4574,7 +5027,7 @@ type BdsInstanceNode struct {
 	Shape *string `pulumi:"shape"`
 	// The fingerprint of the SSH key used for node access
 	SshFingerprint *string `pulumi:"sshFingerprint"`
-	// The state of the BDS instance
+	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
 	State *string `pulumi:"state"`
 	// The OCID of the subnet in which the node should be created
 	SubnetId *string `pulumi:"subnetId"`
@@ -4620,7 +5073,7 @@ type BdsInstanceNodeArgs struct {
 	Shape pulumi.StringPtrInput `pulumi:"shape"`
 	// The fingerprint of the SSH key used for node access
 	SshFingerprint pulumi.StringPtrInput `pulumi:"sshFingerprint"`
-	// The state of the BDS instance
+	// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
 	State pulumi.StringPtrInput `pulumi:"state"`
 	// The OCID of the subnet in which the node should be created
 	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
@@ -4744,7 +5197,7 @@ func (o BdsInstanceNodeOutput) SshFingerprint() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceNode) *string { return v.SshFingerprint }).(pulumi.StringPtrOutput)
 }
 
-// The state of the BDS instance
+// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
 func (o BdsInstanceNodeOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceNode) *string { return v.State }).(pulumi.StringPtrOutput)
 }
@@ -4887,7 +5340,7 @@ func (o BdsInstanceNodeAttachedBlockVolumeArrayOutput) Index(i pulumi.IntInput) 
 
 type BdsInstanceUtilNode struct {
 	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
-	BlockVolumeSizeInGbs string `pulumi:"blockVolumeSizeInGbs"`
+	BlockVolumeSizeInGbs *string `pulumi:"blockVolumeSizeInGbs"`
 	// The amount of worker nodes should be created
 	NumberOfNodes int `pulumi:"numberOfNodes"`
 	// Shape of the node
@@ -4911,7 +5364,7 @@ type BdsInstanceUtilNodeInput interface {
 
 type BdsInstanceUtilNodeArgs struct {
 	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
-	BlockVolumeSizeInGbs pulumi.StringInput `pulumi:"blockVolumeSizeInGbs"`
+	BlockVolumeSizeInGbs pulumi.StringPtrInput `pulumi:"blockVolumeSizeInGbs"`
 	// The amount of worker nodes should be created
 	NumberOfNodes pulumi.IntInput `pulumi:"numberOfNodes"`
 	// Shape of the node
@@ -5000,8 +5453,8 @@ func (o BdsInstanceUtilNodeOutput) ToBdsInstanceUtilNodePtrOutputWithContext(ctx
 }
 
 // The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
-func (o BdsInstanceUtilNodeOutput) BlockVolumeSizeInGbs() pulumi.StringOutput {
-	return o.ApplyT(func(v BdsInstanceUtilNode) string { return v.BlockVolumeSizeInGbs }).(pulumi.StringOutput)
+func (o BdsInstanceUtilNodeOutput) BlockVolumeSizeInGbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsInstanceUtilNode) *string { return v.BlockVolumeSizeInGbs }).(pulumi.StringPtrOutput)
 }
 
 // The amount of worker nodes should be created
@@ -5054,7 +5507,7 @@ func (o BdsInstanceUtilNodePtrOutput) BlockVolumeSizeInGbs() pulumi.StringPtrOut
 		if v == nil {
 			return nil
 		}
-		return &v.BlockVolumeSizeInGbs
+		return v.BlockVolumeSizeInGbs
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -5101,6 +5554,8 @@ func (o BdsInstanceUtilNodePtrOutput) SubnetId() pulumi.StringPtrOutput {
 type BdsInstanceUtilNodeShapeConfig struct {
 	// The total amount of memory available to the node, in gigabytes
 	MemoryInGbs *int `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes *int `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus *int `pulumi:"ocpus"`
 }
@@ -5119,6 +5574,8 @@ type BdsInstanceUtilNodeShapeConfigInput interface {
 type BdsInstanceUtilNodeShapeConfigArgs struct {
 	// The total amount of memory available to the node, in gigabytes
 	MemoryInGbs pulumi.IntPtrInput `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes pulumi.IntPtrInput `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus pulumi.IntPtrInput `pulumi:"ocpus"`
 }
@@ -5205,6 +5662,11 @@ func (o BdsInstanceUtilNodeShapeConfigOutput) MemoryInGbs() pulumi.IntPtrOutput 
 	return o.ApplyT(func(v BdsInstanceUtilNodeShapeConfig) *int { return v.MemoryInGbs }).(pulumi.IntPtrOutput)
 }
 
+// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+func (o BdsInstanceUtilNodeShapeConfigOutput) Nvmes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BdsInstanceUtilNodeShapeConfig) *int { return v.Nvmes }).(pulumi.IntPtrOutput)
+}
+
 // The total number of OCPUs available to the node.
 func (o BdsInstanceUtilNodeShapeConfigOutput) Ocpus() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v BdsInstanceUtilNodeShapeConfig) *int { return v.Ocpus }).(pulumi.IntPtrOutput)
@@ -5244,6 +5706,16 @@ func (o BdsInstanceUtilNodeShapeConfigPtrOutput) MemoryInGbs() pulumi.IntPtrOutp
 	}).(pulumi.IntPtrOutput)
 }
 
+// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+func (o BdsInstanceUtilNodeShapeConfigPtrOutput) Nvmes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceUtilNodeShapeConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Nvmes
+	}).(pulumi.IntPtrOutput)
+}
+
 // The total number of OCPUs available to the node.
 func (o BdsInstanceUtilNodeShapeConfigPtrOutput) Ocpus() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *BdsInstanceUtilNodeShapeConfig) *int {
@@ -5256,7 +5728,7 @@ func (o BdsInstanceUtilNodeShapeConfigPtrOutput) Ocpus() pulumi.IntPtrOutput {
 
 type BdsInstanceWorkerNode struct {
 	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
-	BlockVolumeSizeInGbs string `pulumi:"blockVolumeSizeInGbs"`
+	BlockVolumeSizeInGbs *string `pulumi:"blockVolumeSizeInGbs"`
 	// The amount of worker nodes should be created
 	NumberOfNodes int `pulumi:"numberOfNodes"`
 	// Shape of the node
@@ -5280,7 +5752,7 @@ type BdsInstanceWorkerNodeInput interface {
 
 type BdsInstanceWorkerNodeArgs struct {
 	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
-	BlockVolumeSizeInGbs pulumi.StringInput `pulumi:"blockVolumeSizeInGbs"`
+	BlockVolumeSizeInGbs pulumi.StringPtrInput `pulumi:"blockVolumeSizeInGbs"`
 	// The amount of worker nodes should be created
 	NumberOfNodes pulumi.IntInput `pulumi:"numberOfNodes"`
 	// Shape of the node
@@ -5369,8 +5841,8 @@ func (o BdsInstanceWorkerNodeOutput) ToBdsInstanceWorkerNodePtrOutputWithContext
 }
 
 // The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
-func (o BdsInstanceWorkerNodeOutput) BlockVolumeSizeInGbs() pulumi.StringOutput {
-	return o.ApplyT(func(v BdsInstanceWorkerNode) string { return v.BlockVolumeSizeInGbs }).(pulumi.StringOutput)
+func (o BdsInstanceWorkerNodeOutput) BlockVolumeSizeInGbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsInstanceWorkerNode) *string { return v.BlockVolumeSizeInGbs }).(pulumi.StringPtrOutput)
 }
 
 // The amount of worker nodes should be created
@@ -5423,7 +5895,7 @@ func (o BdsInstanceWorkerNodePtrOutput) BlockVolumeSizeInGbs() pulumi.StringPtrO
 		if v == nil {
 			return nil
 		}
-		return &v.BlockVolumeSizeInGbs
+		return v.BlockVolumeSizeInGbs
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -5470,6 +5942,8 @@ func (o BdsInstanceWorkerNodePtrOutput) SubnetId() pulumi.StringPtrOutput {
 type BdsInstanceWorkerNodeShapeConfig struct {
 	// The total amount of memory available to the node, in gigabytes
 	MemoryInGbs *int `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes *int `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus *int `pulumi:"ocpus"`
 }
@@ -5488,6 +5962,8 @@ type BdsInstanceWorkerNodeShapeConfigInput interface {
 type BdsInstanceWorkerNodeShapeConfigArgs struct {
 	// The total amount of memory available to the node, in gigabytes
 	MemoryInGbs pulumi.IntPtrInput `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes pulumi.IntPtrInput `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus pulumi.IntPtrInput `pulumi:"ocpus"`
 }
@@ -5574,6 +6050,11 @@ func (o BdsInstanceWorkerNodeShapeConfigOutput) MemoryInGbs() pulumi.IntPtrOutpu
 	return o.ApplyT(func(v BdsInstanceWorkerNodeShapeConfig) *int { return v.MemoryInGbs }).(pulumi.IntPtrOutput)
 }
 
+// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+func (o BdsInstanceWorkerNodeShapeConfigOutput) Nvmes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BdsInstanceWorkerNodeShapeConfig) *int { return v.Nvmes }).(pulumi.IntPtrOutput)
+}
+
 // The total number of OCPUs available to the node.
 func (o BdsInstanceWorkerNodeShapeConfigOutput) Ocpus() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v BdsInstanceWorkerNodeShapeConfig) *int { return v.Ocpus }).(pulumi.IntPtrOutput)
@@ -5610,6 +6091,16 @@ func (o BdsInstanceWorkerNodeShapeConfigPtrOutput) MemoryInGbs() pulumi.IntPtrOu
 			return nil
 		}
 		return v.MemoryInGbs
+	}).(pulumi.IntPtrOutput)
+}
+
+// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+func (o BdsInstanceWorkerNodeShapeConfigPtrOutput) Nvmes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *BdsInstanceWorkerNodeShapeConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Nvmes
 	}).(pulumi.IntPtrOutput)
 }
 
@@ -10812,6 +11303,12 @@ type GetBdsInstanceCloudSqlDetail struct {
 	IsKerberosMappedToDatabaseUsers bool `pulumi:"isKerberosMappedToDatabaseUsers"`
 	// Details about the Kerberos principals.
 	KerberosDetails []GetBdsInstanceCloudSqlDetailKerberosDetail `pulumi:"kerberosDetails"`
+	// The total amount of memory available to the node, in gigabytes.
+	MemoryInGbs int `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes int `pulumi:"nvmes"`
+	// The total number of OCPUs available to the node.
+	Ocpus int `pulumi:"ocpus"`
 	// Shape of the node.
 	Shape string `pulumi:"shape"`
 }
@@ -10836,6 +11333,12 @@ type GetBdsInstanceCloudSqlDetailArgs struct {
 	IsKerberosMappedToDatabaseUsers pulumi.BoolInput `pulumi:"isKerberosMappedToDatabaseUsers"`
 	// Details about the Kerberos principals.
 	KerberosDetails GetBdsInstanceCloudSqlDetailKerberosDetailArrayInput `pulumi:"kerberosDetails"`
+	// The total amount of memory available to the node, in gigabytes.
+	MemoryInGbs pulumi.IntInput `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes pulumi.IntInput `pulumi:"nvmes"`
+	// The total number of OCPUs available to the node.
+	Ocpus pulumi.IntInput `pulumi:"ocpus"`
 	// Shape of the node.
 	Shape pulumi.StringInput `pulumi:"shape"`
 }
@@ -10911,6 +11414,21 @@ func (o GetBdsInstanceCloudSqlDetailOutput) KerberosDetails() GetBdsInstanceClou
 	return o.ApplyT(func(v GetBdsInstanceCloudSqlDetail) []GetBdsInstanceCloudSqlDetailKerberosDetail {
 		return v.KerberosDetails
 	}).(GetBdsInstanceCloudSqlDetailKerberosDetailArrayOutput)
+}
+
+// The total amount of memory available to the node, in gigabytes.
+func (o GetBdsInstanceCloudSqlDetailOutput) MemoryInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstanceCloudSqlDetail) int { return v.MemoryInGbs }).(pulumi.IntOutput)
+}
+
+// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+func (o GetBdsInstanceCloudSqlDetailOutput) Nvmes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstanceCloudSqlDetail) int { return v.Nvmes }).(pulumi.IntOutput)
+}
+
+// The total number of OCPUs available to the node.
+func (o GetBdsInstanceCloudSqlDetailOutput) Ocpus() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstanceCloudSqlDetail) int { return v.Ocpus }).(pulumi.IntOutput)
 }
 
 // Shape of the node.
@@ -11402,6 +11920,8 @@ func (o GetBdsInstanceComputeOnlyWorkerNodeArrayOutput) Index(i pulumi.IntInput)
 type GetBdsInstanceComputeOnlyWorkerNodeShapeConfig struct {
 	// The total amount of memory available to the node, in gigabytes.
 	MemoryInGbs int `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes int `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus int `pulumi:"ocpus"`
 }
@@ -11420,6 +11940,8 @@ type GetBdsInstanceComputeOnlyWorkerNodeShapeConfigInput interface {
 type GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArgs struct {
 	// The total amount of memory available to the node, in gigabytes.
 	MemoryInGbs pulumi.IntInput `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes pulumi.IntInput `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus pulumi.IntInput `pulumi:"ocpus"`
 }
@@ -11480,6 +12002,11 @@ func (o GetBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput) MemoryInGbs() pulu
 	return o.ApplyT(func(v GetBdsInstanceComputeOnlyWorkerNodeShapeConfig) int { return v.MemoryInGbs }).(pulumi.IntOutput)
 }
 
+// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+func (o GetBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput) Nvmes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstanceComputeOnlyWorkerNodeShapeConfig) int { return v.Nvmes }).(pulumi.IntOutput)
+}
+
 // The total number of OCPUs available to the node.
 func (o GetBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput) Ocpus() pulumi.IntOutput {
 	return o.ApplyT(func(v GetBdsInstanceComputeOnlyWorkerNodeShapeConfig) int { return v.Ocpus }).(pulumi.IntOutput)
@@ -11503,6 +12030,251 @@ func (o GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput) Index(i pulum
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceComputeOnlyWorkerNodeShapeConfig {
 		return vs[0].([]GetBdsInstanceComputeOnlyWorkerNodeShapeConfig)[vs[1].(int)]
 	}).(GetBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput)
+}
+
+type GetBdsInstanceEdgeNode struct {
+	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+	BlockVolumeSizeInGbs string `pulumi:"blockVolumeSizeInGbs"`
+	// The number of nodes that form the cluster.
+	NumberOfNodes int `pulumi:"numberOfNodes"`
+	// Shape of the node.
+	Shape        string                              `pulumi:"shape"`
+	ShapeConfigs []GetBdsInstanceEdgeNodeShapeConfig `pulumi:"shapeConfigs"`
+	// The OCID of the subnet in which the node is to be created.
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetBdsInstanceEdgeNodeInput is an input type that accepts GetBdsInstanceEdgeNodeArgs and GetBdsInstanceEdgeNodeOutput values.
+// You can construct a concrete instance of `GetBdsInstanceEdgeNodeInput` via:
+//
+//	GetBdsInstanceEdgeNodeArgs{...}
+type GetBdsInstanceEdgeNodeInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceEdgeNodeOutput() GetBdsInstanceEdgeNodeOutput
+	ToGetBdsInstanceEdgeNodeOutputWithContext(context.Context) GetBdsInstanceEdgeNodeOutput
+}
+
+type GetBdsInstanceEdgeNodeArgs struct {
+	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+	BlockVolumeSizeInGbs pulumi.StringInput `pulumi:"blockVolumeSizeInGbs"`
+	// The number of nodes that form the cluster.
+	NumberOfNodes pulumi.IntInput `pulumi:"numberOfNodes"`
+	// Shape of the node.
+	Shape        pulumi.StringInput                          `pulumi:"shape"`
+	ShapeConfigs GetBdsInstanceEdgeNodeShapeConfigArrayInput `pulumi:"shapeConfigs"`
+	// The OCID of the subnet in which the node is to be created.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetBdsInstanceEdgeNodeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceEdgeNode)(nil)).Elem()
+}
+
+func (i GetBdsInstanceEdgeNodeArgs) ToGetBdsInstanceEdgeNodeOutput() GetBdsInstanceEdgeNodeOutput {
+	return i.ToGetBdsInstanceEdgeNodeOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceEdgeNodeArgs) ToGetBdsInstanceEdgeNodeOutputWithContext(ctx context.Context) GetBdsInstanceEdgeNodeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceEdgeNodeOutput)
+}
+
+// GetBdsInstanceEdgeNodeArrayInput is an input type that accepts GetBdsInstanceEdgeNodeArray and GetBdsInstanceEdgeNodeArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstanceEdgeNodeArrayInput` via:
+//
+//	GetBdsInstanceEdgeNodeArray{ GetBdsInstanceEdgeNodeArgs{...} }
+type GetBdsInstanceEdgeNodeArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceEdgeNodeArrayOutput() GetBdsInstanceEdgeNodeArrayOutput
+	ToGetBdsInstanceEdgeNodeArrayOutputWithContext(context.Context) GetBdsInstanceEdgeNodeArrayOutput
+}
+
+type GetBdsInstanceEdgeNodeArray []GetBdsInstanceEdgeNodeInput
+
+func (GetBdsInstanceEdgeNodeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceEdgeNode)(nil)).Elem()
+}
+
+func (i GetBdsInstanceEdgeNodeArray) ToGetBdsInstanceEdgeNodeArrayOutput() GetBdsInstanceEdgeNodeArrayOutput {
+	return i.ToGetBdsInstanceEdgeNodeArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceEdgeNodeArray) ToGetBdsInstanceEdgeNodeArrayOutputWithContext(ctx context.Context) GetBdsInstanceEdgeNodeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceEdgeNodeArrayOutput)
+}
+
+type GetBdsInstanceEdgeNodeOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceEdgeNodeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceEdgeNode)(nil)).Elem()
+}
+
+func (o GetBdsInstanceEdgeNodeOutput) ToGetBdsInstanceEdgeNodeOutput() GetBdsInstanceEdgeNodeOutput {
+	return o
+}
+
+func (o GetBdsInstanceEdgeNodeOutput) ToGetBdsInstanceEdgeNodeOutputWithContext(ctx context.Context) GetBdsInstanceEdgeNodeOutput {
+	return o
+}
+
+// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+func (o GetBdsInstanceEdgeNodeOutput) BlockVolumeSizeInGbs() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceEdgeNode) string { return v.BlockVolumeSizeInGbs }).(pulumi.StringOutput)
+}
+
+// The number of nodes that form the cluster.
+func (o GetBdsInstanceEdgeNodeOutput) NumberOfNodes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstanceEdgeNode) int { return v.NumberOfNodes }).(pulumi.IntOutput)
+}
+
+// Shape of the node.
+func (o GetBdsInstanceEdgeNodeOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceEdgeNode) string { return v.Shape }).(pulumi.StringOutput)
+}
+
+func (o GetBdsInstanceEdgeNodeOutput) ShapeConfigs() GetBdsInstanceEdgeNodeShapeConfigArrayOutput {
+	return o.ApplyT(func(v GetBdsInstanceEdgeNode) []GetBdsInstanceEdgeNodeShapeConfig { return v.ShapeConfigs }).(GetBdsInstanceEdgeNodeShapeConfigArrayOutput)
+}
+
+// The OCID of the subnet in which the node is to be created.
+func (o GetBdsInstanceEdgeNodeOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceEdgeNode) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type GetBdsInstanceEdgeNodeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceEdgeNodeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceEdgeNode)(nil)).Elem()
+}
+
+func (o GetBdsInstanceEdgeNodeArrayOutput) ToGetBdsInstanceEdgeNodeArrayOutput() GetBdsInstanceEdgeNodeArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceEdgeNodeArrayOutput) ToGetBdsInstanceEdgeNodeArrayOutputWithContext(ctx context.Context) GetBdsInstanceEdgeNodeArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceEdgeNodeArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceEdgeNodeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceEdgeNode {
+		return vs[0].([]GetBdsInstanceEdgeNode)[vs[1].(int)]
+	}).(GetBdsInstanceEdgeNodeOutput)
+}
+
+type GetBdsInstanceEdgeNodeShapeConfig struct {
+	// The total amount of memory available to the node, in gigabytes.
+	MemoryInGbs int `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes int `pulumi:"nvmes"`
+	// The total number of OCPUs available to the node.
+	Ocpus int `pulumi:"ocpus"`
+}
+
+// GetBdsInstanceEdgeNodeShapeConfigInput is an input type that accepts GetBdsInstanceEdgeNodeShapeConfigArgs and GetBdsInstanceEdgeNodeShapeConfigOutput values.
+// You can construct a concrete instance of `GetBdsInstanceEdgeNodeShapeConfigInput` via:
+//
+//	GetBdsInstanceEdgeNodeShapeConfigArgs{...}
+type GetBdsInstanceEdgeNodeShapeConfigInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceEdgeNodeShapeConfigOutput() GetBdsInstanceEdgeNodeShapeConfigOutput
+	ToGetBdsInstanceEdgeNodeShapeConfigOutputWithContext(context.Context) GetBdsInstanceEdgeNodeShapeConfigOutput
+}
+
+type GetBdsInstanceEdgeNodeShapeConfigArgs struct {
+	// The total amount of memory available to the node, in gigabytes.
+	MemoryInGbs pulumi.IntInput `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes pulumi.IntInput `pulumi:"nvmes"`
+	// The total number of OCPUs available to the node.
+	Ocpus pulumi.IntInput `pulumi:"ocpus"`
+}
+
+func (GetBdsInstanceEdgeNodeShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceEdgeNodeShapeConfig)(nil)).Elem()
+}
+
+func (i GetBdsInstanceEdgeNodeShapeConfigArgs) ToGetBdsInstanceEdgeNodeShapeConfigOutput() GetBdsInstanceEdgeNodeShapeConfigOutput {
+	return i.ToGetBdsInstanceEdgeNodeShapeConfigOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceEdgeNodeShapeConfigArgs) ToGetBdsInstanceEdgeNodeShapeConfigOutputWithContext(ctx context.Context) GetBdsInstanceEdgeNodeShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceEdgeNodeShapeConfigOutput)
+}
+
+// GetBdsInstanceEdgeNodeShapeConfigArrayInput is an input type that accepts GetBdsInstanceEdgeNodeShapeConfigArray and GetBdsInstanceEdgeNodeShapeConfigArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstanceEdgeNodeShapeConfigArrayInput` via:
+//
+//	GetBdsInstanceEdgeNodeShapeConfigArray{ GetBdsInstanceEdgeNodeShapeConfigArgs{...} }
+type GetBdsInstanceEdgeNodeShapeConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstanceEdgeNodeShapeConfigArrayOutput() GetBdsInstanceEdgeNodeShapeConfigArrayOutput
+	ToGetBdsInstanceEdgeNodeShapeConfigArrayOutputWithContext(context.Context) GetBdsInstanceEdgeNodeShapeConfigArrayOutput
+}
+
+type GetBdsInstanceEdgeNodeShapeConfigArray []GetBdsInstanceEdgeNodeShapeConfigInput
+
+func (GetBdsInstanceEdgeNodeShapeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceEdgeNodeShapeConfig)(nil)).Elem()
+}
+
+func (i GetBdsInstanceEdgeNodeShapeConfigArray) ToGetBdsInstanceEdgeNodeShapeConfigArrayOutput() GetBdsInstanceEdgeNodeShapeConfigArrayOutput {
+	return i.ToGetBdsInstanceEdgeNodeShapeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstanceEdgeNodeShapeConfigArray) ToGetBdsInstanceEdgeNodeShapeConfigArrayOutputWithContext(ctx context.Context) GetBdsInstanceEdgeNodeShapeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstanceEdgeNodeShapeConfigArrayOutput)
+}
+
+type GetBdsInstanceEdgeNodeShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceEdgeNodeShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstanceEdgeNodeShapeConfig)(nil)).Elem()
+}
+
+func (o GetBdsInstanceEdgeNodeShapeConfigOutput) ToGetBdsInstanceEdgeNodeShapeConfigOutput() GetBdsInstanceEdgeNodeShapeConfigOutput {
+	return o
+}
+
+func (o GetBdsInstanceEdgeNodeShapeConfigOutput) ToGetBdsInstanceEdgeNodeShapeConfigOutputWithContext(ctx context.Context) GetBdsInstanceEdgeNodeShapeConfigOutput {
+	return o
+}
+
+// The total amount of memory available to the node, in gigabytes.
+func (o GetBdsInstanceEdgeNodeShapeConfigOutput) MemoryInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstanceEdgeNodeShapeConfig) int { return v.MemoryInGbs }).(pulumi.IntOutput)
+}
+
+// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+func (o GetBdsInstanceEdgeNodeShapeConfigOutput) Nvmes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstanceEdgeNodeShapeConfig) int { return v.Nvmes }).(pulumi.IntOutput)
+}
+
+// The total number of OCPUs available to the node.
+func (o GetBdsInstanceEdgeNodeShapeConfigOutput) Ocpus() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstanceEdgeNodeShapeConfig) int { return v.Ocpus }).(pulumi.IntOutput)
+}
+
+type GetBdsInstanceEdgeNodeShapeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstanceEdgeNodeShapeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstanceEdgeNodeShapeConfig)(nil)).Elem()
+}
+
+func (o GetBdsInstanceEdgeNodeShapeConfigArrayOutput) ToGetBdsInstanceEdgeNodeShapeConfigArrayOutput() GetBdsInstanceEdgeNodeShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceEdgeNodeShapeConfigArrayOutput) ToGetBdsInstanceEdgeNodeShapeConfigArrayOutputWithContext(ctx context.Context) GetBdsInstanceEdgeNodeShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetBdsInstanceEdgeNodeShapeConfigArrayOutput) Index(i pulumi.IntInput) GetBdsInstanceEdgeNodeShapeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstanceEdgeNodeShapeConfig {
+		return vs[0].([]GetBdsInstanceEdgeNodeShapeConfig)[vs[1].(int)]
+	}).(GetBdsInstanceEdgeNodeShapeConfigOutput)
 }
 
 type GetBdsInstanceMasterNode struct {
@@ -11638,6 +12410,8 @@ func (o GetBdsInstanceMasterNodeArrayOutput) Index(i pulumi.IntInput) GetBdsInst
 type GetBdsInstanceMasterNodeShapeConfig struct {
 	// The total amount of memory available to the node, in gigabytes.
 	MemoryInGbs int `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes int `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus int `pulumi:"ocpus"`
 }
@@ -11656,6 +12430,8 @@ type GetBdsInstanceMasterNodeShapeConfigInput interface {
 type GetBdsInstanceMasterNodeShapeConfigArgs struct {
 	// The total amount of memory available to the node, in gigabytes.
 	MemoryInGbs pulumi.IntInput `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes pulumi.IntInput `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus pulumi.IntInput `pulumi:"ocpus"`
 }
@@ -11714,6 +12490,11 @@ func (o GetBdsInstanceMasterNodeShapeConfigOutput) ToGetBdsInstanceMasterNodeSha
 // The total amount of memory available to the node, in gigabytes.
 func (o GetBdsInstanceMasterNodeShapeConfigOutput) MemoryInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v GetBdsInstanceMasterNodeShapeConfig) int { return v.MemoryInGbs }).(pulumi.IntOutput)
+}
+
+// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+func (o GetBdsInstanceMasterNodeShapeConfigOutput) Nvmes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstanceMasterNodeShapeConfig) int { return v.Nvmes }).(pulumi.IntOutput)
 }
 
 // The total number of OCPUs available to the node.
@@ -13044,6 +13825,8 @@ func (o GetBdsInstanceUtilNodeArrayOutput) Index(i pulumi.IntInput) GetBdsInstan
 type GetBdsInstanceUtilNodeShapeConfig struct {
 	// The total amount of memory available to the node, in gigabytes.
 	MemoryInGbs int `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes int `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus int `pulumi:"ocpus"`
 }
@@ -13062,6 +13845,8 @@ type GetBdsInstanceUtilNodeShapeConfigInput interface {
 type GetBdsInstanceUtilNodeShapeConfigArgs struct {
 	// The total amount of memory available to the node, in gigabytes.
 	MemoryInGbs pulumi.IntInput `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes pulumi.IntInput `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus pulumi.IntInput `pulumi:"ocpus"`
 }
@@ -13120,6 +13905,11 @@ func (o GetBdsInstanceUtilNodeShapeConfigOutput) ToGetBdsInstanceUtilNodeShapeCo
 // The total amount of memory available to the node, in gigabytes.
 func (o GetBdsInstanceUtilNodeShapeConfigOutput) MemoryInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v GetBdsInstanceUtilNodeShapeConfig) int { return v.MemoryInGbs }).(pulumi.IntOutput)
+}
+
+// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+func (o GetBdsInstanceUtilNodeShapeConfigOutput) Nvmes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstanceUtilNodeShapeConfig) int { return v.Nvmes }).(pulumi.IntOutput)
 }
 
 // The total number of OCPUs available to the node.
@@ -13280,6 +14070,8 @@ func (o GetBdsInstanceWorkerNodeArrayOutput) Index(i pulumi.IntInput) GetBdsInst
 type GetBdsInstanceWorkerNodeShapeConfig struct {
 	// The total amount of memory available to the node, in gigabytes.
 	MemoryInGbs int `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes int `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus int `pulumi:"ocpus"`
 }
@@ -13298,6 +14090,8 @@ type GetBdsInstanceWorkerNodeShapeConfigInput interface {
 type GetBdsInstanceWorkerNodeShapeConfigArgs struct {
 	// The total amount of memory available to the node, in gigabytes.
 	MemoryInGbs pulumi.IntInput `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes pulumi.IntInput `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus pulumi.IntInput `pulumi:"ocpus"`
 }
@@ -13358,6 +14152,11 @@ func (o GetBdsInstanceWorkerNodeShapeConfigOutput) MemoryInGbs() pulumi.IntOutpu
 	return o.ApplyT(func(v GetBdsInstanceWorkerNodeShapeConfig) int { return v.MemoryInGbs }).(pulumi.IntOutput)
 }
 
+// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+func (o GetBdsInstanceWorkerNodeShapeConfigOutput) Nvmes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstanceWorkerNodeShapeConfig) int { return v.Nvmes }).(pulumi.IntOutput)
+}
+
 // The total number of OCPUs available to the node.
 func (o GetBdsInstanceWorkerNodeShapeConfigOutput) Ocpus() pulumi.IntOutput {
 	return o.ApplyT(func(v GetBdsInstanceWorkerNodeShapeConfig) int { return v.Ocpus }).(pulumi.IntOutput)
@@ -13390,8 +14189,10 @@ type GetBdsInstancesBdsInstance struct {
 	CloudSqlDetails      []GetBdsInstancesBdsInstanceCloudSqlDetail `pulumi:"cloudSqlDetails"`
 	ClusterAdminPassword string                                     `pulumi:"clusterAdminPassword"`
 	// Specific info about a Hadoop cluster
-	ClusterDetails   []GetBdsInstancesBdsInstanceClusterDetail `pulumi:"clusterDetails"`
-	ClusterPublicKey string                                    `pulumi:"clusterPublicKey"`
+	ClusterDetails []GetBdsInstancesBdsInstanceClusterDetail `pulumi:"clusterDetails"`
+	// Profile of the Big Data Service cluster.
+	ClusterProfile   string `pulumi:"clusterProfile"`
+	ClusterPublicKey string `pulumi:"clusterPublicKey"`
 	// Version of the Hadoop distribution.
 	ClusterVersion string `pulumi:"clusterVersion"`
 	// The OCID of the compartment.
@@ -13402,13 +14203,15 @@ type GetBdsInstancesBdsInstance struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{"foo-namespace": {"bar-key": "value"}}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName string `pulumi:"displayName"`
+	DisplayName string                               `pulumi:"displayName"`
+	EdgeNodes   []GetBdsInstancesBdsInstanceEdgeNode `pulumi:"edgeNodes"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the Big Data Service resource.
 	Id string `pulumi:"id"`
 	// Boolean flag specifying whether or not Cloud SQL should be configured.
 	IsCloudSqlConfigured bool `pulumi:"isCloudSqlConfigured"`
+	IsForceStopJobs      bool `pulumi:"isForceStopJobs"`
 	// Boolean flag specifying whether or not the cluster is highly available (HA)
 	IsHighAvailability bool `pulumi:"isHighAvailability"`
 	// Boolean flag specifying whether or not the cluster should be set up as secure.
@@ -13451,8 +14254,10 @@ type GetBdsInstancesBdsInstanceArgs struct {
 	CloudSqlDetails      GetBdsInstancesBdsInstanceCloudSqlDetailArrayInput `pulumi:"cloudSqlDetails"`
 	ClusterAdminPassword pulumi.StringInput                                 `pulumi:"clusterAdminPassword"`
 	// Specific info about a Hadoop cluster
-	ClusterDetails   GetBdsInstancesBdsInstanceClusterDetailArrayInput `pulumi:"clusterDetails"`
-	ClusterPublicKey pulumi.StringInput                                `pulumi:"clusterPublicKey"`
+	ClusterDetails GetBdsInstancesBdsInstanceClusterDetailArrayInput `pulumi:"clusterDetails"`
+	// Profile of the Big Data Service cluster.
+	ClusterProfile   pulumi.StringInput `pulumi:"clusterProfile"`
+	ClusterPublicKey pulumi.StringInput `pulumi:"clusterPublicKey"`
 	// Version of the Hadoop distribution.
 	ClusterVersion pulumi.StringInput `pulumi:"clusterVersion"`
 	// The OCID of the compartment.
@@ -13463,13 +14268,15 @@ type GetBdsInstancesBdsInstanceArgs struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{"foo-namespace": {"bar-key": "value"}}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	DisplayName pulumi.StringInput                           `pulumi:"displayName"`
+	EdgeNodes   GetBdsInstancesBdsInstanceEdgeNodeArrayInput `pulumi:"edgeNodes"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The OCID of the Big Data Service resource.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Boolean flag specifying whether or not Cloud SQL should be configured.
 	IsCloudSqlConfigured pulumi.BoolInput `pulumi:"isCloudSqlConfigured"`
+	IsForceStopJobs      pulumi.BoolInput `pulumi:"isForceStopJobs"`
 	// Boolean flag specifying whether or not the cluster is highly available (HA)
 	IsHighAvailability pulumi.BoolInput `pulumi:"isHighAvailability"`
 	// Boolean flag specifying whether or not the cluster should be set up as secure.
@@ -13566,6 +14373,11 @@ func (o GetBdsInstancesBdsInstanceOutput) ClusterDetails() GetBdsInstancesBdsIns
 	return o.ApplyT(func(v GetBdsInstancesBdsInstance) []GetBdsInstancesBdsInstanceClusterDetail { return v.ClusterDetails }).(GetBdsInstancesBdsInstanceClusterDetailArrayOutput)
 }
 
+// Profile of the Big Data Service cluster.
+func (o GetBdsInstancesBdsInstanceOutput) ClusterProfile() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstance) string { return v.ClusterProfile }).(pulumi.StringOutput)
+}
+
 func (o GetBdsInstancesBdsInstanceOutput) ClusterPublicKey() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstancesBdsInstance) string { return v.ClusterPublicKey }).(pulumi.StringOutput)
 }
@@ -13601,6 +14413,10 @@ func (o GetBdsInstancesBdsInstanceOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstancesBdsInstance) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+func (o GetBdsInstancesBdsInstanceOutput) EdgeNodes() GetBdsInstancesBdsInstanceEdgeNodeArrayOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstance) []GetBdsInstancesBdsInstanceEdgeNode { return v.EdgeNodes }).(GetBdsInstancesBdsInstanceEdgeNodeArrayOutput)
+}
+
 // Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`
 func (o GetBdsInstancesBdsInstanceOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetBdsInstancesBdsInstance) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
@@ -13614,6 +14430,10 @@ func (o GetBdsInstancesBdsInstanceOutput) Id() pulumi.StringOutput {
 // Boolean flag specifying whether or not Cloud SQL should be configured.
 func (o GetBdsInstancesBdsInstanceOutput) IsCloudSqlConfigured() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetBdsInstancesBdsInstance) bool { return v.IsCloudSqlConfigured }).(pulumi.BoolOutput)
+}
+
+func (o GetBdsInstancesBdsInstanceOutput) IsForceStopJobs() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstance) bool { return v.IsForceStopJobs }).(pulumi.BoolOutput)
 }
 
 // Boolean flag specifying whether or not the cluster is highly available (HA)
@@ -13706,6 +14526,12 @@ type GetBdsInstancesBdsInstanceCloudSqlDetail struct {
 	IsKerberosMappedToDatabaseUsers bool `pulumi:"isKerberosMappedToDatabaseUsers"`
 	// Details about the Kerberos principals.
 	KerberosDetails []GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetail `pulumi:"kerberosDetails"`
+	// The total amount of memory available to the node, in gigabytes.
+	MemoryInGbs int `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes int `pulumi:"nvmes"`
+	// The total number of OCPUs available to the node.
+	Ocpus int `pulumi:"ocpus"`
 	// Shape of the node.
 	Shape string `pulumi:"shape"`
 }
@@ -13730,6 +14556,12 @@ type GetBdsInstancesBdsInstanceCloudSqlDetailArgs struct {
 	IsKerberosMappedToDatabaseUsers pulumi.BoolInput `pulumi:"isKerberosMappedToDatabaseUsers"`
 	// Details about the Kerberos principals.
 	KerberosDetails GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetailArrayInput `pulumi:"kerberosDetails"`
+	// The total amount of memory available to the node, in gigabytes.
+	MemoryInGbs pulumi.IntInput `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes pulumi.IntInput `pulumi:"nvmes"`
+	// The total number of OCPUs available to the node.
+	Ocpus pulumi.IntInput `pulumi:"ocpus"`
 	// Shape of the node.
 	Shape pulumi.StringInput `pulumi:"shape"`
 }
@@ -13805,6 +14637,21 @@ func (o GetBdsInstancesBdsInstanceCloudSqlDetailOutput) KerberosDetails() GetBds
 	return o.ApplyT(func(v GetBdsInstancesBdsInstanceCloudSqlDetail) []GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetail {
 		return v.KerberosDetails
 	}).(GetBdsInstancesBdsInstanceCloudSqlDetailKerberosDetailArrayOutput)
+}
+
+// The total amount of memory available to the node, in gigabytes.
+func (o GetBdsInstancesBdsInstanceCloudSqlDetailOutput) MemoryInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceCloudSqlDetail) int { return v.MemoryInGbs }).(pulumi.IntOutput)
+}
+
+// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+func (o GetBdsInstancesBdsInstanceCloudSqlDetailOutput) Nvmes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceCloudSqlDetail) int { return v.Nvmes }).(pulumi.IntOutput)
+}
+
+// The total number of OCPUs available to the node.
+func (o GetBdsInstancesBdsInstanceCloudSqlDetailOutput) Ocpus() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceCloudSqlDetail) int { return v.Ocpus }).(pulumi.IntOutput)
 }
 
 // Shape of the node.
@@ -14296,6 +15143,8 @@ func (o GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArrayOutput) Index(i pulu
 type GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfig struct {
 	// The total amount of memory available to the node, in gigabytes.
 	MemoryInGbs int `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes int `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus int `pulumi:"ocpus"`
 }
@@ -14314,6 +15163,8 @@ type GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigInput interface {
 type GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArgs struct {
 	// The total amount of memory available to the node, in gigabytes.
 	MemoryInGbs pulumi.IntInput `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes pulumi.IntInput `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus pulumi.IntInput `pulumi:"ocpus"`
 }
@@ -14374,6 +15225,11 @@ func (o GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput) Memory
 	return o.ApplyT(func(v GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfig) int { return v.MemoryInGbs }).(pulumi.IntOutput)
 }
 
+// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+func (o GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput) Nvmes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfig) int { return v.Nvmes }).(pulumi.IntOutput)
+}
+
 // The total number of OCPUs available to the node.
 func (o GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput) Ocpus() pulumi.IntOutput {
 	return o.ApplyT(func(v GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfig) int { return v.Ocpus }).(pulumi.IntOutput)
@@ -14397,6 +15253,253 @@ func (o GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput) I
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfig {
 		return vs[0].([]GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfig)[vs[1].(int)]
 	}).(GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput)
+}
+
+type GetBdsInstancesBdsInstanceEdgeNode struct {
+	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+	BlockVolumeSizeInGbs string `pulumi:"blockVolumeSizeInGbs"`
+	// The number of nodes that form the cluster.
+	NumberOfNodes int `pulumi:"numberOfNodes"`
+	// Shape of the node.
+	Shape        string                                          `pulumi:"shape"`
+	ShapeConfigs []GetBdsInstancesBdsInstanceEdgeNodeShapeConfig `pulumi:"shapeConfigs"`
+	// The OCID of the subnet in which the node is to be created.
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetBdsInstancesBdsInstanceEdgeNodeInput is an input type that accepts GetBdsInstancesBdsInstanceEdgeNodeArgs and GetBdsInstancesBdsInstanceEdgeNodeOutput values.
+// You can construct a concrete instance of `GetBdsInstancesBdsInstanceEdgeNodeInput` via:
+//
+//	GetBdsInstancesBdsInstanceEdgeNodeArgs{...}
+type GetBdsInstancesBdsInstanceEdgeNodeInput interface {
+	pulumi.Input
+
+	ToGetBdsInstancesBdsInstanceEdgeNodeOutput() GetBdsInstancesBdsInstanceEdgeNodeOutput
+	ToGetBdsInstancesBdsInstanceEdgeNodeOutputWithContext(context.Context) GetBdsInstancesBdsInstanceEdgeNodeOutput
+}
+
+type GetBdsInstancesBdsInstanceEdgeNodeArgs struct {
+	// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+	BlockVolumeSizeInGbs pulumi.StringInput `pulumi:"blockVolumeSizeInGbs"`
+	// The number of nodes that form the cluster.
+	NumberOfNodes pulumi.IntInput `pulumi:"numberOfNodes"`
+	// Shape of the node.
+	Shape        pulumi.StringInput                                      `pulumi:"shape"`
+	ShapeConfigs GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArrayInput `pulumi:"shapeConfigs"`
+	// The OCID of the subnet in which the node is to be created.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetBdsInstancesBdsInstanceEdgeNodeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstancesBdsInstanceEdgeNode)(nil)).Elem()
+}
+
+func (i GetBdsInstancesBdsInstanceEdgeNodeArgs) ToGetBdsInstancesBdsInstanceEdgeNodeOutput() GetBdsInstancesBdsInstanceEdgeNodeOutput {
+	return i.ToGetBdsInstancesBdsInstanceEdgeNodeOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstancesBdsInstanceEdgeNodeArgs) ToGetBdsInstancesBdsInstanceEdgeNodeOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceEdgeNodeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceEdgeNodeOutput)
+}
+
+// GetBdsInstancesBdsInstanceEdgeNodeArrayInput is an input type that accepts GetBdsInstancesBdsInstanceEdgeNodeArray and GetBdsInstancesBdsInstanceEdgeNodeArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstancesBdsInstanceEdgeNodeArrayInput` via:
+//
+//	GetBdsInstancesBdsInstanceEdgeNodeArray{ GetBdsInstancesBdsInstanceEdgeNodeArgs{...} }
+type GetBdsInstancesBdsInstanceEdgeNodeArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstancesBdsInstanceEdgeNodeArrayOutput() GetBdsInstancesBdsInstanceEdgeNodeArrayOutput
+	ToGetBdsInstancesBdsInstanceEdgeNodeArrayOutputWithContext(context.Context) GetBdsInstancesBdsInstanceEdgeNodeArrayOutput
+}
+
+type GetBdsInstancesBdsInstanceEdgeNodeArray []GetBdsInstancesBdsInstanceEdgeNodeInput
+
+func (GetBdsInstancesBdsInstanceEdgeNodeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstancesBdsInstanceEdgeNode)(nil)).Elem()
+}
+
+func (i GetBdsInstancesBdsInstanceEdgeNodeArray) ToGetBdsInstancesBdsInstanceEdgeNodeArrayOutput() GetBdsInstancesBdsInstanceEdgeNodeArrayOutput {
+	return i.ToGetBdsInstancesBdsInstanceEdgeNodeArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstancesBdsInstanceEdgeNodeArray) ToGetBdsInstancesBdsInstanceEdgeNodeArrayOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceEdgeNodeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceEdgeNodeArrayOutput)
+}
+
+type GetBdsInstancesBdsInstanceEdgeNodeOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstancesBdsInstanceEdgeNodeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstancesBdsInstanceEdgeNode)(nil)).Elem()
+}
+
+func (o GetBdsInstancesBdsInstanceEdgeNodeOutput) ToGetBdsInstancesBdsInstanceEdgeNodeOutput() GetBdsInstancesBdsInstanceEdgeNodeOutput {
+	return o
+}
+
+func (o GetBdsInstancesBdsInstanceEdgeNodeOutput) ToGetBdsInstancesBdsInstanceEdgeNodeOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceEdgeNodeOutput {
+	return o
+}
+
+// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
+func (o GetBdsInstancesBdsInstanceEdgeNodeOutput) BlockVolumeSizeInGbs() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceEdgeNode) string { return v.BlockVolumeSizeInGbs }).(pulumi.StringOutput)
+}
+
+// The number of nodes that form the cluster.
+func (o GetBdsInstancesBdsInstanceEdgeNodeOutput) NumberOfNodes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceEdgeNode) int { return v.NumberOfNodes }).(pulumi.IntOutput)
+}
+
+// Shape of the node.
+func (o GetBdsInstancesBdsInstanceEdgeNodeOutput) Shape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceEdgeNode) string { return v.Shape }).(pulumi.StringOutput)
+}
+
+func (o GetBdsInstancesBdsInstanceEdgeNodeOutput) ShapeConfigs() GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArrayOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceEdgeNode) []GetBdsInstancesBdsInstanceEdgeNodeShapeConfig {
+		return v.ShapeConfigs
+	}).(GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArrayOutput)
+}
+
+// The OCID of the subnet in which the node is to be created.
+func (o GetBdsInstancesBdsInstanceEdgeNodeOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceEdgeNode) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type GetBdsInstancesBdsInstanceEdgeNodeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstancesBdsInstanceEdgeNodeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstancesBdsInstanceEdgeNode)(nil)).Elem()
+}
+
+func (o GetBdsInstancesBdsInstanceEdgeNodeArrayOutput) ToGetBdsInstancesBdsInstanceEdgeNodeArrayOutput() GetBdsInstancesBdsInstanceEdgeNodeArrayOutput {
+	return o
+}
+
+func (o GetBdsInstancesBdsInstanceEdgeNodeArrayOutput) ToGetBdsInstancesBdsInstanceEdgeNodeArrayOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceEdgeNodeArrayOutput {
+	return o
+}
+
+func (o GetBdsInstancesBdsInstanceEdgeNodeArrayOutput) Index(i pulumi.IntInput) GetBdsInstancesBdsInstanceEdgeNodeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstancesBdsInstanceEdgeNode {
+		return vs[0].([]GetBdsInstancesBdsInstanceEdgeNode)[vs[1].(int)]
+	}).(GetBdsInstancesBdsInstanceEdgeNodeOutput)
+}
+
+type GetBdsInstancesBdsInstanceEdgeNodeShapeConfig struct {
+	// The total amount of memory available to the node, in gigabytes.
+	MemoryInGbs int `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes int `pulumi:"nvmes"`
+	// The total number of OCPUs available to the node.
+	Ocpus int `pulumi:"ocpus"`
+}
+
+// GetBdsInstancesBdsInstanceEdgeNodeShapeConfigInput is an input type that accepts GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArgs and GetBdsInstancesBdsInstanceEdgeNodeShapeConfigOutput values.
+// You can construct a concrete instance of `GetBdsInstancesBdsInstanceEdgeNodeShapeConfigInput` via:
+//
+//	GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArgs{...}
+type GetBdsInstancesBdsInstanceEdgeNodeShapeConfigInput interface {
+	pulumi.Input
+
+	ToGetBdsInstancesBdsInstanceEdgeNodeShapeConfigOutput() GetBdsInstancesBdsInstanceEdgeNodeShapeConfigOutput
+	ToGetBdsInstancesBdsInstanceEdgeNodeShapeConfigOutputWithContext(context.Context) GetBdsInstancesBdsInstanceEdgeNodeShapeConfigOutput
+}
+
+type GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArgs struct {
+	// The total amount of memory available to the node, in gigabytes.
+	MemoryInGbs pulumi.IntInput `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes pulumi.IntInput `pulumi:"nvmes"`
+	// The total number of OCPUs available to the node.
+	Ocpus pulumi.IntInput `pulumi:"ocpus"`
+}
+
+func (GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstancesBdsInstanceEdgeNodeShapeConfig)(nil)).Elem()
+}
+
+func (i GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArgs) ToGetBdsInstancesBdsInstanceEdgeNodeShapeConfigOutput() GetBdsInstancesBdsInstanceEdgeNodeShapeConfigOutput {
+	return i.ToGetBdsInstancesBdsInstanceEdgeNodeShapeConfigOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArgs) ToGetBdsInstancesBdsInstanceEdgeNodeShapeConfigOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceEdgeNodeShapeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceEdgeNodeShapeConfigOutput)
+}
+
+// GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArrayInput is an input type that accepts GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArray and GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArrayOutput values.
+// You can construct a concrete instance of `GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArrayInput` via:
+//
+//	GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArray{ GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArgs{...} }
+type GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetBdsInstancesBdsInstanceEdgeNodeShapeConfigArrayOutput() GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArrayOutput
+	ToGetBdsInstancesBdsInstanceEdgeNodeShapeConfigArrayOutputWithContext(context.Context) GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArrayOutput
+}
+
+type GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArray []GetBdsInstancesBdsInstanceEdgeNodeShapeConfigInput
+
+func (GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstancesBdsInstanceEdgeNodeShapeConfig)(nil)).Elem()
+}
+
+func (i GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArray) ToGetBdsInstancesBdsInstanceEdgeNodeShapeConfigArrayOutput() GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArrayOutput {
+	return i.ToGetBdsInstancesBdsInstanceEdgeNodeShapeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArray) ToGetBdsInstancesBdsInstanceEdgeNodeShapeConfigArrayOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArrayOutput)
+}
+
+type GetBdsInstancesBdsInstanceEdgeNodeShapeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstancesBdsInstanceEdgeNodeShapeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetBdsInstancesBdsInstanceEdgeNodeShapeConfig)(nil)).Elem()
+}
+
+func (o GetBdsInstancesBdsInstanceEdgeNodeShapeConfigOutput) ToGetBdsInstancesBdsInstanceEdgeNodeShapeConfigOutput() GetBdsInstancesBdsInstanceEdgeNodeShapeConfigOutput {
+	return o
+}
+
+func (o GetBdsInstancesBdsInstanceEdgeNodeShapeConfigOutput) ToGetBdsInstancesBdsInstanceEdgeNodeShapeConfigOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceEdgeNodeShapeConfigOutput {
+	return o
+}
+
+// The total amount of memory available to the node, in gigabytes.
+func (o GetBdsInstancesBdsInstanceEdgeNodeShapeConfigOutput) MemoryInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceEdgeNodeShapeConfig) int { return v.MemoryInGbs }).(pulumi.IntOutput)
+}
+
+// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+func (o GetBdsInstancesBdsInstanceEdgeNodeShapeConfigOutput) Nvmes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceEdgeNodeShapeConfig) int { return v.Nvmes }).(pulumi.IntOutput)
+}
+
+// The total number of OCPUs available to the node.
+func (o GetBdsInstancesBdsInstanceEdgeNodeShapeConfigOutput) Ocpus() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceEdgeNodeShapeConfig) int { return v.Ocpus }).(pulumi.IntOutput)
+}
+
+type GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetBdsInstancesBdsInstanceEdgeNodeShapeConfig)(nil)).Elem()
+}
+
+func (o GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArrayOutput) ToGetBdsInstancesBdsInstanceEdgeNodeShapeConfigArrayOutput() GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArrayOutput) ToGetBdsInstancesBdsInstanceEdgeNodeShapeConfigArrayOutputWithContext(ctx context.Context) GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArrayOutput {
+	return o
+}
+
+func (o GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArrayOutput) Index(i pulumi.IntInput) GetBdsInstancesBdsInstanceEdgeNodeShapeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetBdsInstancesBdsInstanceEdgeNodeShapeConfig {
+		return vs[0].([]GetBdsInstancesBdsInstanceEdgeNodeShapeConfig)[vs[1].(int)]
+	}).(GetBdsInstancesBdsInstanceEdgeNodeShapeConfigOutput)
 }
 
 type GetBdsInstancesBdsInstanceMasterNode struct {
@@ -14534,6 +15637,8 @@ func (o GetBdsInstancesBdsInstanceMasterNodeArrayOutput) Index(i pulumi.IntInput
 type GetBdsInstancesBdsInstanceMasterNodeShapeConfig struct {
 	// The total amount of memory available to the node, in gigabytes.
 	MemoryInGbs int `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes int `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus int `pulumi:"ocpus"`
 }
@@ -14552,6 +15657,8 @@ type GetBdsInstancesBdsInstanceMasterNodeShapeConfigInput interface {
 type GetBdsInstancesBdsInstanceMasterNodeShapeConfigArgs struct {
 	// The total amount of memory available to the node, in gigabytes.
 	MemoryInGbs pulumi.IntInput `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes pulumi.IntInput `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus pulumi.IntInput `pulumi:"ocpus"`
 }
@@ -14610,6 +15717,11 @@ func (o GetBdsInstancesBdsInstanceMasterNodeShapeConfigOutput) ToGetBdsInstances
 // The total amount of memory available to the node, in gigabytes.
 func (o GetBdsInstancesBdsInstanceMasterNodeShapeConfigOutput) MemoryInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v GetBdsInstancesBdsInstanceMasterNodeShapeConfig) int { return v.MemoryInGbs }).(pulumi.IntOutput)
+}
+
+// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+func (o GetBdsInstancesBdsInstanceMasterNodeShapeConfigOutput) Nvmes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceMasterNodeShapeConfig) int { return v.Nvmes }).(pulumi.IntOutput)
 }
 
 // The total number of OCPUs available to the node.
@@ -15218,6 +16330,8 @@ func (o GetBdsInstancesBdsInstanceUtilNodeArrayOutput) Index(i pulumi.IntInput) 
 type GetBdsInstancesBdsInstanceUtilNodeShapeConfig struct {
 	// The total amount of memory available to the node, in gigabytes.
 	MemoryInGbs int `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes int `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus int `pulumi:"ocpus"`
 }
@@ -15236,6 +16350,8 @@ type GetBdsInstancesBdsInstanceUtilNodeShapeConfigInput interface {
 type GetBdsInstancesBdsInstanceUtilNodeShapeConfigArgs struct {
 	// The total amount of memory available to the node, in gigabytes.
 	MemoryInGbs pulumi.IntInput `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes pulumi.IntInput `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus pulumi.IntInput `pulumi:"ocpus"`
 }
@@ -15294,6 +16410,11 @@ func (o GetBdsInstancesBdsInstanceUtilNodeShapeConfigOutput) ToGetBdsInstancesBd
 // The total amount of memory available to the node, in gigabytes.
 func (o GetBdsInstancesBdsInstanceUtilNodeShapeConfigOutput) MemoryInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v GetBdsInstancesBdsInstanceUtilNodeShapeConfig) int { return v.MemoryInGbs }).(pulumi.IntOutput)
+}
+
+// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+func (o GetBdsInstancesBdsInstanceUtilNodeShapeConfigOutput) Nvmes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceUtilNodeShapeConfig) int { return v.Nvmes }).(pulumi.IntOutput)
 }
 
 // The total number of OCPUs available to the node.
@@ -15456,6 +16577,8 @@ func (o GetBdsInstancesBdsInstanceWorkerNodeArrayOutput) Index(i pulumi.IntInput
 type GetBdsInstancesBdsInstanceWorkerNodeShapeConfig struct {
 	// The total amount of memory available to the node, in gigabytes.
 	MemoryInGbs int `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes int `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus int `pulumi:"ocpus"`
 }
@@ -15474,6 +16597,8 @@ type GetBdsInstancesBdsInstanceWorkerNodeShapeConfigInput interface {
 type GetBdsInstancesBdsInstanceWorkerNodeShapeConfigArgs struct {
 	// The total amount of memory available to the node, in gigabytes.
 	MemoryInGbs pulumi.IntInput `pulumi:"memoryInGbs"`
+	// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+	Nvmes pulumi.IntInput `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus pulumi.IntInput `pulumi:"ocpus"`
 }
@@ -15532,6 +16657,11 @@ func (o GetBdsInstancesBdsInstanceWorkerNodeShapeConfigOutput) ToGetBdsInstances
 // The total amount of memory available to the node, in gigabytes.
 func (o GetBdsInstancesBdsInstanceWorkerNodeShapeConfigOutput) MemoryInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v GetBdsInstancesBdsInstanceWorkerNodeShapeConfig) int { return v.MemoryInGbs }).(pulumi.IntOutput)
+}
+
+// The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+func (o GetBdsInstancesBdsInstanceWorkerNodeShapeConfigOutput) Nvmes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceWorkerNodeShapeConfig) int { return v.Nvmes }).(pulumi.IntOutput)
 }
 
 // The total number of OCPUs available to the node.
@@ -15714,6 +16844,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceComputeOnlyWorkerNodePtrInput)(nil)).Elem(), BdsInstanceComputeOnlyWorkerNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceComputeOnlyWorkerNodeShapeConfigInput)(nil)).Elem(), BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrInput)(nil)).Elem(), BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceEdgeNodeInput)(nil)).Elem(), BdsInstanceEdgeNodeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceEdgeNodePtrInput)(nil)).Elem(), BdsInstanceEdgeNodeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceEdgeNodeShapeConfigInput)(nil)).Elem(), BdsInstanceEdgeNodeShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceEdgeNodeShapeConfigPtrInput)(nil)).Elem(), BdsInstanceEdgeNodeShapeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceMasterNodeInput)(nil)).Elem(), BdsInstanceMasterNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceMasterNodePtrInput)(nil)).Elem(), BdsInstanceMasterNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceMasterNodeShapeConfigInput)(nil)).Elem(), BdsInstanceMasterNodeShapeConfigArgs{})
@@ -15830,6 +16964,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceComputeOnlyWorkerNodeArrayInput)(nil)).Elem(), GetBdsInstanceComputeOnlyWorkerNodeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceComputeOnlyWorkerNodeShapeConfigInput)(nil)).Elem(), GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayInput)(nil)).Elem(), GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceEdgeNodeInput)(nil)).Elem(), GetBdsInstanceEdgeNodeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceEdgeNodeArrayInput)(nil)).Elem(), GetBdsInstanceEdgeNodeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceEdgeNodeShapeConfigInput)(nil)).Elem(), GetBdsInstanceEdgeNodeShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceEdgeNodeShapeConfigArrayInput)(nil)).Elem(), GetBdsInstanceEdgeNodeShapeConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceMasterNodeInput)(nil)).Elem(), GetBdsInstanceMasterNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceMasterNodeArrayInput)(nil)).Elem(), GetBdsInstanceMasterNodeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstanceMasterNodeShapeConfigInput)(nil)).Elem(), GetBdsInstanceMasterNodeShapeConfigArgs{})
@@ -15872,6 +17010,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArrayInput)(nil)).Elem(), GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigInput)(nil)).Elem(), GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayInput)(nil)).Elem(), GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceEdgeNodeInput)(nil)).Elem(), GetBdsInstancesBdsInstanceEdgeNodeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceEdgeNodeArrayInput)(nil)).Elem(), GetBdsInstancesBdsInstanceEdgeNodeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceEdgeNodeShapeConfigInput)(nil)).Elem(), GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArrayInput)(nil)).Elem(), GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceMasterNodeInput)(nil)).Elem(), GetBdsInstancesBdsInstanceMasterNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceMasterNodeArrayInput)(nil)).Elem(), GetBdsInstancesBdsInstanceMasterNodeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBdsInstancesBdsInstanceMasterNodeShapeConfigInput)(nil)).Elem(), GetBdsInstancesBdsInstanceMasterNodeShapeConfigArgs{})
@@ -15940,6 +17082,10 @@ func init() {
 	pulumi.RegisterOutputType(BdsInstanceComputeOnlyWorkerNodePtrOutput{})
 	pulumi.RegisterOutputType(BdsInstanceComputeOnlyWorkerNodeShapeConfigOutput{})
 	pulumi.RegisterOutputType(BdsInstanceComputeOnlyWorkerNodeShapeConfigPtrOutput{})
+	pulumi.RegisterOutputType(BdsInstanceEdgeNodeOutput{})
+	pulumi.RegisterOutputType(BdsInstanceEdgeNodePtrOutput{})
+	pulumi.RegisterOutputType(BdsInstanceEdgeNodeShapeConfigOutput{})
+	pulumi.RegisterOutputType(BdsInstanceEdgeNodeShapeConfigPtrOutput{})
 	pulumi.RegisterOutputType(BdsInstanceMasterNodeOutput{})
 	pulumi.RegisterOutputType(BdsInstanceMasterNodePtrOutput{})
 	pulumi.RegisterOutputType(BdsInstanceMasterNodeShapeConfigOutput{})
@@ -16056,6 +17202,10 @@ func init() {
 	pulumi.RegisterOutputType(GetBdsInstanceComputeOnlyWorkerNodeArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceEdgeNodeOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceEdgeNodeArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceEdgeNodeShapeConfigOutput{})
+	pulumi.RegisterOutputType(GetBdsInstanceEdgeNodeShapeConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceMasterNodeOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceMasterNodeArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstanceMasterNodeShapeConfigOutput{})
@@ -16098,6 +17248,10 @@ func init() {
 	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigOutput{})
 	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeShapeConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceEdgeNodeOutput{})
+	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceEdgeNodeArrayOutput{})
+	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceEdgeNodeShapeConfigOutput{})
+	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceEdgeNodeShapeConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceMasterNodeOutput{})
 	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceMasterNodeArrayOutput{})
 	pulumi.RegisterOutputType(GetBdsInstancesBdsInstanceMasterNodeShapeConfigOutput{})

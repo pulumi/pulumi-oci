@@ -48,7 +48,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetBucketSummariesResult> InvokeAsync(GetBucketSummariesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetBucketSummariesResult>("oci:ObjectStorage/getBucketSummaries:getBucketSummaries", args ?? new GetBucketSummariesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetBucketSummariesResult>("oci:ObjectStorage/getBucketSummaries:getBucketSummaries", args ?? new GetBucketSummariesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Buckets in Oracle Cloud Infrastructure Object Storage service.
@@ -87,7 +87,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetBucketSummariesResult> Invoke(GetBucketSummariesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetBucketSummariesResult>("oci:ObjectStorage/getBucketSummaries:getBucketSummaries", args ?? new GetBucketSummariesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetBucketSummariesResult>("oci:ObjectStorage/getBucketSummaries:getBucketSummaries", args ?? new GetBucketSummariesInvokeArgs(), options.WithDefaults());
     }
 
 

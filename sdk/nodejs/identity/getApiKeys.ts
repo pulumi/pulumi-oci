@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getApiKeys(args: GetApiKeysArgs, opts?: pulumi.InvokeOptions): Promise<GetApiKeysResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getApiKeys:getApiKeys", {
         "filters": args.filters,
         "userId": args.userId,
@@ -65,9 +63,27 @@ export interface GetApiKeysResult {
      */
     readonly userId: string;
 }
-
+/**
+ * This data source provides the list of Api Keys in Oracle Cloud Infrastructure Identity service.
+ *
+ * Lists the API signing keys for the specified user. A user can have a maximum of three keys.
+ *
+ * Every user has permission to use this API call for *their own user ID*.  An administrator in your
+ * organization does not need to write a policy to give users this ability.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testApiKeys = oci.Identity.getApiKeys({
+ *     userId: oci_identity_user.test_user.id,
+ * });
+ * ```
+ */
 export function getApiKeysOutput(args: GetApiKeysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetApiKeysResult> {
-    return pulumi.output(args).apply(a => getApiKeys(a, opts))
+    return pulumi.output(args).apply((a: any) => getApiKeys(a, opts))
 }
 
 /**

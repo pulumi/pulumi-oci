@@ -40,7 +40,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetManagedDatabasesUserSystemPrivilegesResult> InvokeAsync(GetManagedDatabasesUserSystemPrivilegesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabasesUserSystemPrivilegesResult>("oci:DatabaseManagement/getManagedDatabasesUserSystemPrivileges:getManagedDatabasesUserSystemPrivileges", args ?? new GetManagedDatabasesUserSystemPrivilegesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabasesUserSystemPrivilegesResult>("oci:DatabaseManagement/getManagedDatabasesUserSystemPrivileges:getManagedDatabasesUserSystemPrivileges", args ?? new GetManagedDatabasesUserSystemPrivilegesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Managed Databases User System Privileges in Oracle Cloud Infrastructure Database Management service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetManagedDatabasesUserSystemPrivilegesResult> Invoke(GetManagedDatabasesUserSystemPrivilegesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetManagedDatabasesUserSystemPrivilegesResult>("oci:DatabaseManagement/getManagedDatabasesUserSystemPrivileges:getManagedDatabasesUserSystemPrivileges", args ?? new GetManagedDatabasesUserSystemPrivilegesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabasesUserSystemPrivilegesResult>("oci:DatabaseManagement/getManagedDatabasesUserSystemPrivileges:getManagedDatabasesUserSystemPrivileges", args ?? new GetManagedDatabasesUserSystemPrivilegesInvokeArgs(), options.WithDefaults());
     }
 
 

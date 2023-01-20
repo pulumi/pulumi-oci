@@ -6,6 +6,7 @@ package com.pulumi.oci.ApmSynthetics.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.ApmSynthetics.inputs.GetMonitorsFilterArgs;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -52,6 +53,36 @@ public final class GetMonitorsArgs extends com.pulumi.resources.InvokeArgs {
 
     public Optional<Output<List<GetMonitorsFilterArgs>>> filters() {
         return Optional.ofNullable(this.filters);
+    }
+
+    /**
+     * A filter to return the monitors whose maintenance window is currently active.
+     * 
+     */
+    @Import(name="isMaintenanceWindowActive")
+    private @Nullable Output<Boolean> isMaintenanceWindowActive;
+
+    /**
+     * @return A filter to return the monitors whose maintenance window is currently active.
+     * 
+     */
+    public Optional<Output<Boolean>> isMaintenanceWindowActive() {
+        return Optional.ofNullable(this.isMaintenanceWindowActive);
+    }
+
+    /**
+     * A filter to return the monitors whose maintenance window is set.
+     * 
+     */
+    @Import(name="isMaintenanceWindowSet")
+    private @Nullable Output<Boolean> isMaintenanceWindowSet;
+
+    /**
+     * @return A filter to return the monitors whose maintenance window is set.
+     * 
+     */
+    public Optional<Output<Boolean>> isMaintenanceWindowSet() {
+        return Optional.ofNullable(this.isMaintenanceWindowSet);
     }
 
     /**
@@ -120,6 +151,8 @@ public final class GetMonitorsArgs extends com.pulumi.resources.InvokeArgs {
         this.apmDomainId = $.apmDomainId;
         this.displayName = $.displayName;
         this.filters = $.filters;
+        this.isMaintenanceWindowActive = $.isMaintenanceWindowActive;
+        this.isMaintenanceWindowSet = $.isMaintenanceWindowSet;
         this.monitorType = $.monitorType;
         this.scriptId = $.scriptId;
         this.status = $.status;
@@ -197,6 +230,48 @@ public final class GetMonitorsArgs extends com.pulumi.resources.InvokeArgs {
 
         public Builder filters(GetMonitorsFilterArgs... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param isMaintenanceWindowActive A filter to return the monitors whose maintenance window is currently active.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isMaintenanceWindowActive(@Nullable Output<Boolean> isMaintenanceWindowActive) {
+            $.isMaintenanceWindowActive = isMaintenanceWindowActive;
+            return this;
+        }
+
+        /**
+         * @param isMaintenanceWindowActive A filter to return the monitors whose maintenance window is currently active.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isMaintenanceWindowActive(Boolean isMaintenanceWindowActive) {
+            return isMaintenanceWindowActive(Output.of(isMaintenanceWindowActive));
+        }
+
+        /**
+         * @param isMaintenanceWindowSet A filter to return the monitors whose maintenance window is set.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isMaintenanceWindowSet(@Nullable Output<Boolean> isMaintenanceWindowSet) {
+            $.isMaintenanceWindowSet = isMaintenanceWindowSet;
+            return this;
+        }
+
+        /**
+         * @param isMaintenanceWindowSet A filter to return the monitors whose maintenance window is set.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isMaintenanceWindowSet(Boolean isMaintenanceWindowSet) {
+            return isMaintenanceWindowSet(Output.of(isMaintenanceWindowSet));
         }
 
         /**

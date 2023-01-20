@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -27,11 +28,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDatabaseSoftwareImages(args: GetDatabaseSoftwareImagesArgs, opts?: pulumi.InvokeOptions): Promise<GetDatabaseSoftwareImagesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getDatabaseSoftwareImages:getDatabaseSoftwareImages", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -112,9 +110,29 @@ export interface GetDatabaseSoftwareImagesResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Database Software Images in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets a list of the database software images in the specified compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDatabaseSoftwareImages = oci.Database.getDatabaseSoftwareImages({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.database_software_image_display_name,
+ *     imageShapeFamily: _var.database_software_image_image_shape_family,
+ *     imageType: _var.database_software_image_image_type,
+ *     isUpgradeSupported: _var.database_software_image_is_upgrade_supported,
+ *     state: _var.database_software_image_state,
+ * });
+ * ```
+ */
 export function getDatabaseSoftwareImagesOutput(args: GetDatabaseSoftwareImagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatabaseSoftwareImagesResult> {
-    return pulumi.output(args).apply(a => getDatabaseSoftwareImages(a, opts))
+    return pulumi.output(args).apply((a: any) => getDatabaseSoftwareImages(a, opts))
 }
 
 /**

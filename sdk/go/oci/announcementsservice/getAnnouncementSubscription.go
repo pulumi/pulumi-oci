@@ -77,6 +77,10 @@ type LookupAnnouncementSubscriptionResult struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The OCID of the Notifications service topic that is the target for publishing announcements that match the configured announcement subscription.
 	OnsTopicId string `pulumi:"onsTopicId"`
+	// (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
+	PreferredLanguage string `pulumi:"preferredLanguage"`
+	// The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+	PreferredTimeZone string `pulumi:"preferredTimeZone"`
 	// The current lifecycle state of the announcement subscription.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -174,6 +178,16 @@ func (o LookupAnnouncementSubscriptionResultOutput) LifecycleDetails() pulumi.St
 // The OCID of the Notifications service topic that is the target for publishing announcements that match the configured announcement subscription.
 func (o LookupAnnouncementSubscriptionResultOutput) OnsTopicId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAnnouncementSubscriptionResult) string { return v.OnsTopicId }).(pulumi.StringOutput)
+}
+
+// (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
+func (o LookupAnnouncementSubscriptionResultOutput) PreferredLanguage() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAnnouncementSubscriptionResult) string { return v.PreferredLanguage }).(pulumi.StringOutput)
+}
+
+// The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+func (o LookupAnnouncementSubscriptionResultOutput) PreferredTimeZone() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAnnouncementSubscriptionResult) string { return v.PreferredTimeZone }).(pulumi.StringOutput)
 }
 
 // The current lifecycle state of the announcement subscription.

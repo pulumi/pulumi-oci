@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getApmDomain(args: GetApmDomainArgs, opts?: pulumi.InvokeOptions): Promise<GetApmDomainResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Apm/getApmDomain:getApmDomain", {
         "apmDomainId": args.apmDomainId,
     }, opts);
@@ -91,9 +88,24 @@ export interface GetApmDomainResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Apm Domain resource in Oracle Cloud Infrastructure Apm service.
+ *
+ * Gets the details of the APM domain specified by OCID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testApmDomain = oci.Apm.getApmDomain({
+ *     apmDomainId: oci_apm_apm_domain.test_apm_domain.id,
+ * });
+ * ```
+ */
 export function getApmDomainOutput(args: GetApmDomainOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetApmDomainResult> {
-    return pulumi.output(args).apply(a => getApmDomain(a, opts))
+    return pulumi.output(args).apply((a: any) => getApmDomain(a, opts))
 }
 
 /**

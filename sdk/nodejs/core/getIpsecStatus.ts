@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getIpsecStatus(args: GetIpsecStatusArgs, opts?: pulumi.InvokeOptions): Promise<GetIpsecStatusResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getIpsecStatus:getIpsecStatus", {
         "filters": args.filters,
         "ipsecId": args.ipsecId,
@@ -68,9 +66,25 @@ export interface GetIpsecStatusResult {
      */
     readonly tunnels: outputs.Core.GetIpsecStatusTunnel[];
 }
-
+/**
+ * This data source provides details about a specific Ip Sec Connection Device Status resource in Oracle Cloud Infrastructure Core service.
+ *
+ * Deprecated. To get the tunnel status, instead use
+ * [GetIPSecConnectionTunnel](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/IPSecConnectionTunnel/GetIPSecConnectionTunnel).
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testIpSecConnectionDeviceStatus = oci.Core.getIpsecStatus({
+ *     ipsecId: oci_core_ipsec.test_ipsec.id,
+ * });
+ * ```
+ */
 export function getIpsecStatusOutput(args: GetIpsecStatusOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIpsecStatusResult> {
-    return pulumi.output(args).apply(a => getIpsecStatus(a, opts))
+    return pulumi.output(args).apply((a: any) => getIpsecStatus(a, opts))
 }
 
 /**

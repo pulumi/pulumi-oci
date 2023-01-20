@@ -75,6 +75,8 @@ type PluggableDatabasesLocalClone struct {
 	PdbName pulumi.StringOutput `pulumi:"pdbName"`
 	// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	PluggableDatabaseId pulumi.StringOutput `pulumi:"pluggableDatabaseId"`
+	// The configuration of the Pluggable Database Management service.
+	PluggableDatabaseManagementConfigs PluggableDatabasesLocalClonePluggableDatabaseManagementConfigArrayOutput `pulumi:"pluggableDatabaseManagementConfigs"`
 	// The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
 	ShouldPdbAdminAccountBeLocked pulumi.BoolOutput `pulumi:"shouldPdbAdminAccountBeLocked"`
 	// The current state of the pluggable database.
@@ -98,6 +100,17 @@ func NewPluggableDatabasesLocalClone(ctx *pulumi.Context,
 	if args.PluggableDatabaseId == nil {
 		return nil, errors.New("invalid value for required argument 'PluggableDatabaseId'")
 	}
+	if args.PdbAdminPassword != nil {
+		args.PdbAdminPassword = pulumi.ToSecret(args.PdbAdminPassword).(pulumi.StringPtrInput)
+	}
+	if args.TargetTdeWalletPassword != nil {
+		args.TargetTdeWalletPassword = pulumi.ToSecret(args.TargetTdeWalletPassword).(pulumi.StringPtrInput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"pdbAdminPassword",
+		"targetTdeWalletPassword",
+	})
+	opts = append(opts, secrets)
 	var resource PluggableDatabasesLocalClone
 	err := ctx.RegisterResource("oci:Database/pluggableDatabasesLocalClone:PluggableDatabasesLocalClone", name, args, &resource, opts...)
 	if err != nil {
@@ -144,6 +157,8 @@ type pluggableDatabasesLocalCloneState struct {
 	PdbName *string `pulumi:"pdbName"`
 	// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	PluggableDatabaseId *string `pulumi:"pluggableDatabaseId"`
+	// The configuration of the Pluggable Database Management service.
+	PluggableDatabaseManagementConfigs []PluggableDatabasesLocalClonePluggableDatabaseManagementConfig `pulumi:"pluggableDatabaseManagementConfigs"`
 	// The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
 	ShouldPdbAdminAccountBeLocked *bool `pulumi:"shouldPdbAdminAccountBeLocked"`
 	// The current state of the pluggable database.
@@ -179,6 +194,8 @@ type PluggableDatabasesLocalCloneState struct {
 	PdbName pulumi.StringPtrInput
 	// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	PluggableDatabaseId pulumi.StringPtrInput
+	// The configuration of the Pluggable Database Management service.
+	PluggableDatabaseManagementConfigs PluggableDatabasesLocalClonePluggableDatabaseManagementConfigArrayInput
 	// The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
 	ShouldPdbAdminAccountBeLocked pulumi.BoolPtrInput
 	// The current state of the pluggable database.
@@ -367,6 +384,13 @@ func (o PluggableDatabasesLocalCloneOutput) PdbName() pulumi.StringOutput {
 // The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o PluggableDatabasesLocalCloneOutput) PluggableDatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v *PluggableDatabasesLocalClone) pulumi.StringOutput { return v.PluggableDatabaseId }).(pulumi.StringOutput)
+}
+
+// The configuration of the Pluggable Database Management service.
+func (o PluggableDatabasesLocalCloneOutput) PluggableDatabaseManagementConfigs() PluggableDatabasesLocalClonePluggableDatabaseManagementConfigArrayOutput {
+	return o.ApplyT(func(v *PluggableDatabasesLocalClone) PluggableDatabasesLocalClonePluggableDatabaseManagementConfigArrayOutput {
+		return v.PluggableDatabaseManagementConfigs
+	}).(PluggableDatabasesLocalClonePluggableDatabaseManagementConfigArrayOutput)
 }
 
 // The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.

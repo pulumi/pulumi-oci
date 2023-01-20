@@ -26,9 +26,13 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly string? RecoveryPoint;
         /// <summary>
-        /// The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup.
+        /// The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup. Use `IMPORTURL` for creating a new database from a URL Object Storage PAR.
         /// </summary>
         public readonly string SourceType;
+        /// <summary>
+        /// The Pre-Authenticated Request (PAR) of a bucket/prefix or PAR of a @.manifest.json object from the Object Storage. Check [Using Pre-Authenticated Requests](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm) for information related to PAR creation. Please create PAR with "Permit object reads" access type and "Enable Object Listing" permission when using a bucket/prefix PAR. Please create PAR with "Permit object reads" access type when using a @.manifest.json object PAR.
+        /// </summary>
+        public readonly string? SourceUrl;
 
         [OutputConstructor]
         private MysqlDbSystemSource(
@@ -38,12 +42,15 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             string? recoveryPoint,
 
-            string sourceType)
+            string sourceType,
+
+            string? sourceUrl)
         {
             BackupId = backupId;
             DbSystemId = dbSystemId;
             RecoveryPoint = recoveryPoint;
             SourceType = sourceType;
+            SourceUrl = sourceUrl;
         }
     }
 }

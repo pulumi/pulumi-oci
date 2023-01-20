@@ -44,7 +44,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDatabaseSoftwareImagesResult> InvokeAsync(GetDatabaseSoftwareImagesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDatabaseSoftwareImagesResult>("oci:Database/getDatabaseSoftwareImages:getDatabaseSoftwareImages", args ?? new GetDatabaseSoftwareImagesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDatabaseSoftwareImagesResult>("oci:Database/getDatabaseSoftwareImages:getDatabaseSoftwareImages", args ?? new GetDatabaseSoftwareImagesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Database Software Images in Oracle Cloud Infrastructure Database service.
@@ -79,7 +79,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDatabaseSoftwareImagesResult> Invoke(GetDatabaseSoftwareImagesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDatabaseSoftwareImagesResult>("oci:Database/getDatabaseSoftwareImages:getDatabaseSoftwareImages", args ?? new GetDatabaseSoftwareImagesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDatabaseSoftwareImagesResult>("oci:Database/getDatabaseSoftwareImages:getDatabaseSoftwareImages", args ?? new GetDatabaseSoftwareImagesInvokeArgs(), options.WithDefaults());
     }
 
 

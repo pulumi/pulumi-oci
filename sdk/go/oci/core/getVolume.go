@@ -77,8 +77,7 @@ type LookupVolumeResult struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the block volume replica.
 	Id string `pulumi:"id"`
-	// Specifies whether the auto-tune performance is enabled for this boot volume.
-	// > > > > > > > theirs
+	// Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
 	IsAutoTuneEnabled bool `pulumi:"isAutoTuneEnabled"`
 	// Specifies whether the cloned volume's data has finished copying from the source volume or backup.
 	IsHydrated bool `pulumi:"isHydrated"`
@@ -197,8 +196,7 @@ func (o LookupVolumeResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVolumeResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Specifies whether the auto-tune performance is enabled for this boot volume.
-// > > > > > > > theirs
+// Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
 func (o LookupVolumeResultOutput) IsAutoTuneEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupVolumeResult) bool { return v.IsAutoTuneEnabled }).(pulumi.BoolOutput)
 }

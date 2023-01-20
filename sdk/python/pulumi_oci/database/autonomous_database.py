@@ -70,6 +70,7 @@ class AutonomousDatabaseArgs:
                  switchover_to: Optional[pulumi.Input[str]] = None,
                  switchover_to_remote_peer_id: Optional[pulumi.Input[str]] = None,
                  timestamp: Optional[pulumi.Input[str]] = None,
+                 use_latest_available_backup_time_stamp: Optional[pulumi.Input[bool]] = None,
                  vault_id: Optional[pulumi.Input[str]] = None,
                  whitelisted_ips: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
@@ -133,6 +134,7 @@ class AutonomousDatabaseArgs:
         :param pulumi.Input[str] switchover_to: It is applicable only when `is_data_guard_enabled` is true. Could be set to `PRIMARY` or `STANDBY`. Default value is `PRIMARY`.
         :param pulumi.Input[str] switchover_to_remote_peer_id: (Updatable) It is applicable only when `dataguard_region_type` and `role` are set, and `is_dedicated` is false. It takes the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the remote peer to switchover to.
         :param pulumi.Input[str] timestamp: The timestamp specified for the point-in-time clone of the source Autonomous Database. The timestamp must be in the past.
+        :param pulumi.Input[bool] use_latest_available_backup_time_stamp: Clone from latest available backup timestamp.
         :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         :param pulumi.Input[Sequence[pulumi.Input[str]]] whitelisted_ips: (Updatable) The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
         """
@@ -242,6 +244,8 @@ class AutonomousDatabaseArgs:
             pulumi.set(__self__, "switchover_to_remote_peer_id", switchover_to_remote_peer_id)
         if timestamp is not None:
             pulumi.set(__self__, "timestamp", timestamp)
+        if use_latest_available_backup_time_stamp is not None:
+            pulumi.set(__self__, "use_latest_available_backup_time_stamp", use_latest_available_backup_time_stamp)
         if vault_id is not None:
             pulumi.set(__self__, "vault_id", vault_id)
         if whitelisted_ips is not None:
@@ -901,6 +905,18 @@ class AutonomousDatabaseArgs:
         pulumi.set(self, "timestamp", value)
 
     @property
+    @pulumi.getter(name="useLatestAvailableBackupTimeStamp")
+    def use_latest_available_backup_time_stamp(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Clone from latest available backup timestamp.
+        """
+        return pulumi.get(self, "use_latest_available_backup_time_stamp")
+
+    @use_latest_available_backup_time_stamp.setter
+    def use_latest_available_backup_time_stamp(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "use_latest_available_backup_time_stamp", value)
+
+    @property
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -1026,6 +1042,7 @@ class _AutonomousDatabaseState:
                  time_reclamation_of_free_autonomous_database: Optional[pulumi.Input[str]] = None,
                  time_until_reconnect_clone_enabled: Optional[pulumi.Input[str]] = None,
                  timestamp: Optional[pulumi.Input[str]] = None,
+                 use_latest_available_backup_time_stamp: Optional[pulumi.Input[bool]] = None,
                  used_data_storage_size_in_tbs: Optional[pulumi.Input[int]] = None,
                  vault_id: Optional[pulumi.Input[str]] = None,
                  whitelisted_ips: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
@@ -1134,6 +1151,7 @@ class _AutonomousDatabaseState:
         :param pulumi.Input[str] time_reclamation_of_free_autonomous_database: The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
         :param pulumi.Input[str] time_until_reconnect_clone_enabled: The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
         :param pulumi.Input[str] timestamp: The timestamp specified for the point-in-time clone of the source Autonomous Database. The timestamp must be in the past.
+        :param pulumi.Input[bool] use_latest_available_backup_time_stamp: Clone from latest available backup timestamp.
         :param pulumi.Input[int] used_data_storage_size_in_tbs: The amount of storage that has been used, in terabytes.
         :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         :param pulumi.Input[Sequence[pulumi.Input[str]]] whitelisted_ips: (Updatable) The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
@@ -1334,6 +1352,8 @@ class _AutonomousDatabaseState:
             pulumi.set(__self__, "time_until_reconnect_clone_enabled", time_until_reconnect_clone_enabled)
         if timestamp is not None:
             pulumi.set(__self__, "timestamp", timestamp)
+        if use_latest_available_backup_time_stamp is not None:
+            pulumi.set(__self__, "use_latest_available_backup_time_stamp", use_latest_available_backup_time_stamp)
         if used_data_storage_size_in_tbs is not None:
             pulumi.set(__self__, "used_data_storage_size_in_tbs", used_data_storage_size_in_tbs)
         if vault_id is not None:
@@ -2523,6 +2543,18 @@ class _AutonomousDatabaseState:
         pulumi.set(self, "timestamp", value)
 
     @property
+    @pulumi.getter(name="useLatestAvailableBackupTimeStamp")
+    def use_latest_available_backup_time_stamp(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Clone from latest available backup timestamp.
+        """
+        return pulumi.get(self, "use_latest_available_backup_time_stamp")
+
+    @use_latest_available_backup_time_stamp.setter
+    def use_latest_available_backup_time_stamp(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "use_latest_available_backup_time_stamp", value)
+
+    @property
     @pulumi.getter(name="usedDataStorageSizeInTbs")
     def used_data_storage_size_in_tbs(self) -> Optional[pulumi.Input[int]]:
         """
@@ -2618,6 +2650,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  switchover_to: Optional[pulumi.Input[str]] = None,
                  switchover_to_remote_peer_id: Optional[pulumi.Input[str]] = None,
                  timestamp: Optional[pulumi.Input[str]] = None,
+                 use_latest_available_backup_time_stamp: Optional[pulumi.Input[bool]] = None,
                  vault_id: Optional[pulumi.Input[str]] = None,
                  whitelisted_ips: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  __props__=None):
@@ -2695,6 +2728,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] switchover_to: It is applicable only when `is_data_guard_enabled` is true. Could be set to `PRIMARY` or `STANDBY`. Default value is `PRIMARY`.
         :param pulumi.Input[str] switchover_to_remote_peer_id: (Updatable) It is applicable only when `dataguard_region_type` and `role` are set, and `is_dedicated` is false. It takes the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the remote peer to switchover to.
         :param pulumi.Input[str] timestamp: The timestamp specified for the point-in-time clone of the source Autonomous Database. The timestamp must be in the past.
+        :param pulumi.Input[bool] use_latest_available_backup_time_stamp: Clone from latest available backup timestamp.
         :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         :param pulumi.Input[Sequence[pulumi.Input[str]]] whitelisted_ips: (Updatable) The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
         """
@@ -2786,6 +2820,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  switchover_to: Optional[pulumi.Input[str]] = None,
                  switchover_to_remote_peer_id: Optional[pulumi.Input[str]] = None,
                  timestamp: Optional[pulumi.Input[str]] = None,
+                 use_latest_available_backup_time_stamp: Optional[pulumi.Input[bool]] = None,
                  vault_id: Optional[pulumi.Input[str]] = None,
                  whitelisted_ips: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  __props__=None):
@@ -2797,7 +2832,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = AutonomousDatabaseArgs.__new__(AutonomousDatabaseArgs)
 
-            __props__.__dict__["admin_password"] = admin_password
+            __props__.__dict__["admin_password"] = None if admin_password is None else pulumi.Output.secret(admin_password)
             __props__.__dict__["are_primary_whitelisted_ips_used"] = are_primary_whitelisted_ips_used
             __props__.__dict__["autonomous_container_database_id"] = autonomous_container_database_id
             __props__.__dict__["autonomous_database_backup_id"] = autonomous_database_backup_id
@@ -2855,6 +2890,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["switchover_to"] = switchover_to
             __props__.__dict__["switchover_to_remote_peer_id"] = switchover_to_remote_peer_id
             __props__.__dict__["timestamp"] = timestamp
+            __props__.__dict__["use_latest_available_backup_time_stamp"] = use_latest_available_backup_time_stamp
             __props__.__dict__["vault_id"] = vault_id
             __props__.__dict__["whitelisted_ips"] = whitelisted_ips
             __props__.__dict__["actual_used_data_storage_size_in_tbs"] = None
@@ -2902,6 +2938,8 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["time_reclamation_of_free_autonomous_database"] = None
             __props__.__dict__["time_until_reconnect_clone_enabled"] = None
             __props__.__dict__["used_data_storage_size_in_tbs"] = None
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["adminPassword"])
+        opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(AutonomousDatabase, __self__).__init__(
             'oci:Database/autonomousDatabase:AutonomousDatabase',
             resource_name,
@@ -3010,6 +3048,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             time_reclamation_of_free_autonomous_database: Optional[pulumi.Input[str]] = None,
             time_until_reconnect_clone_enabled: Optional[pulumi.Input[str]] = None,
             timestamp: Optional[pulumi.Input[str]] = None,
+            use_latest_available_backup_time_stamp: Optional[pulumi.Input[bool]] = None,
             used_data_storage_size_in_tbs: Optional[pulumi.Input[int]] = None,
             vault_id: Optional[pulumi.Input[str]] = None,
             whitelisted_ips: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None) -> 'AutonomousDatabase':
@@ -3123,6 +3162,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] time_reclamation_of_free_autonomous_database: The date and time the Always Free database will be stopped because of inactivity. If this time is reached without any database activity, the database will automatically be put into the STOPPED state.
         :param pulumi.Input[str] time_until_reconnect_clone_enabled: The time and date as an RFC3339 formatted string, e.g., 2022-01-01T12:00:00.000Z, to set the limit for a refreshable clone to be reconnected to its source database.
         :param pulumi.Input[str] timestamp: The timestamp specified for the point-in-time clone of the source Autonomous Database. The timestamp must be in the past.
+        :param pulumi.Input[bool] use_latest_available_backup_time_stamp: Clone from latest available backup timestamp.
         :param pulumi.Input[int] used_data_storage_size_in_tbs: The amount of storage that has been used, in terabytes.
         :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         :param pulumi.Input[Sequence[pulumi.Input[str]]] whitelisted_ips: (Updatable) The client IP access control list (ACL). This feature is available for autonomous databases on [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance.
@@ -3229,6 +3269,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         __props__.__dict__["time_reclamation_of_free_autonomous_database"] = time_reclamation_of_free_autonomous_database
         __props__.__dict__["time_until_reconnect_clone_enabled"] = time_until_reconnect_clone_enabled
         __props__.__dict__["timestamp"] = timestamp
+        __props__.__dict__["use_latest_available_backup_time_stamp"] = use_latest_available_backup_time_stamp
         __props__.__dict__["used_data_storage_size_in_tbs"] = used_data_storage_size_in_tbs
         __props__.__dict__["vault_id"] = vault_id
         __props__.__dict__["whitelisted_ips"] = whitelisted_ips
@@ -4022,6 +4063,14 @@ class AutonomousDatabase(pulumi.CustomResource):
         The timestamp specified for the point-in-time clone of the source Autonomous Database. The timestamp must be in the past.
         """
         return pulumi.get(self, "timestamp")
+
+    @property
+    @pulumi.getter(name="useLatestAvailableBackupTimeStamp")
+    def use_latest_available_backup_time_stamp(self) -> pulumi.Output[bool]:
+        """
+        Clone from latest available backup timestamp.
+        """
+        return pulumi.get(self, "use_latest_available_backup_time_stamp")
 
     @property
     @pulumi.getter(name="usedDataStorageSizeInTbs")

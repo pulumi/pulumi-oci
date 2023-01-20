@@ -26,7 +26,7 @@ public final class GetTablesResult {
      */
     private String id;
     /**
-     * @return The column name.
+     * @return Human-friendly table name, immutable.
      * 
      */
     private @Nullable String name;
@@ -60,7 +60,7 @@ public final class GetTablesResult {
         return this.id;
     }
     /**
-     * @return The column name.
+     * @return Human-friendly table name, immutable.
      * 
      */
     public Optional<String> name() {

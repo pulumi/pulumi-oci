@@ -30,17 +30,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ServiceMesh.NewVirtualDeployment(ctx, "testVirtualDeployment", &ServiceMesh.VirtualDeploymentArgs{
-//				CompartmentId: pulumi.Any(_var.Compartment_id),
-//				Listeners: servicemesh.VirtualDeploymentListenerArray{
-//					&servicemesh.VirtualDeploymentListenerArgs{
-//						Port:     pulumi.Any(_var.Virtual_deployment_listeners_port),
-//						Protocol: pulumi.Any(_var.Virtual_deployment_listeners_protocol),
-//					},
-//				},
-//				ServiceDiscovery: &servicemesh.VirtualDeploymentServiceDiscoveryArgs{
-//					Hostname: pulumi.Any(_var.Virtual_deployment_service_discovery_hostname),
-//					Type:     pulumi.Any(_var.Virtual_deployment_service_discovery_type),
-//				},
+//				CompartmentId:    pulumi.Any(_var.Compartment_id),
 //				VirtualServiceId: pulumi.Any(oci_service_mesh_virtual_service.Test_virtual_service.Id),
 //				AccessLogging: &servicemesh.VirtualDeploymentAccessLoggingArgs{
 //					IsEnabled: pulumi.Any(_var.Virtual_deployment_access_logging_is_enabled),
@@ -51,6 +41,18 @@ import (
 //				Description: pulumi.Any(_var.Virtual_deployment_description),
 //				FreeformTags: pulumi.AnyMap{
 //					"bar-key": pulumi.Any("value"),
+//				},
+//				Listeners: servicemesh.VirtualDeploymentListenerArray{
+//					&servicemesh.VirtualDeploymentListenerArgs{
+//						Port:               pulumi.Any(_var.Virtual_deployment_listeners_port),
+//						Protocol:           pulumi.Any(_var.Virtual_deployment_listeners_protocol),
+//						IdleTimeoutInMs:    pulumi.Any(_var.Virtual_deployment_listeners_idle_timeout_in_ms),
+//						RequestTimeoutInMs: pulumi.Any(_var.Virtual_deployment_listeners_request_timeout_in_ms),
+//					},
+//				},
+//				ServiceDiscovery: &servicemesh.VirtualDeploymentServiceDiscoveryArgs{
+//					Type:     pulumi.Any(_var.Virtual_deployment_service_discovery_type),
+//					Hostname: pulumi.Any(_var.Virtual_deployment_service_discovery_hostname),
 //				},
 //			})
 //			if err != nil {
@@ -113,12 +115,6 @@ func NewVirtualDeployment(ctx *pulumi.Context,
 
 	if args.CompartmentId == nil {
 		return nil, errors.New("invalid value for required argument 'CompartmentId'")
-	}
-	if args.Listeners == nil {
-		return nil, errors.New("invalid value for required argument 'Listeners'")
-	}
-	if args.ServiceDiscovery == nil {
-		return nil, errors.New("invalid value for required argument 'ServiceDiscovery'")
 	}
 	if args.VirtualServiceId == nil {
 		return nil, errors.New("invalid value for required argument 'VirtualServiceId'")
@@ -226,7 +222,7 @@ type virtualDeploymentArgs struct {
 	// A user-friendly name. The name must be unique within the same virtual service and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
 	Name *string `pulumi:"name"`
 	// (Updatable) Service Discovery configuration for virtual deployments.
-	ServiceDiscovery VirtualDeploymentServiceDiscovery `pulumi:"serviceDiscovery"`
+	ServiceDiscovery *VirtualDeploymentServiceDiscovery `pulumi:"serviceDiscovery"`
 	// The OCID of the service mesh in which this access policy is created.
 	VirtualServiceId string `pulumi:"virtualServiceId"`
 }
@@ -248,7 +244,7 @@ type VirtualDeploymentArgs struct {
 	// A user-friendly name. The name must be unique within the same virtual service and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
 	Name pulumi.StringPtrInput
 	// (Updatable) Service Discovery configuration for virtual deployments.
-	ServiceDiscovery VirtualDeploymentServiceDiscoveryInput
+	ServiceDiscovery VirtualDeploymentServiceDiscoveryPtrInput
 	// The OCID of the service mesh in which this access policy is created.
 	VirtualServiceId pulumi.StringInput
 }

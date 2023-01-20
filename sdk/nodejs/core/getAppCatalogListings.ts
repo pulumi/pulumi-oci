@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  */
 export function getAppCatalogListings(args?: GetAppCatalogListingsArgs, opts?: pulumi.InvokeOptions): Promise<GetAppCatalogListingsResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getAppCatalogListings:getAppCatalogListings", {
         "displayName": args.displayName,
         "filters": args.filters,
@@ -80,9 +78,26 @@ export interface GetAppCatalogListingsResult {
     readonly publisherName?: string;
     readonly publisherType?: string;
 }
-
+/**
+ * This data source provides the list of App Catalog Listings in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the published listings.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAppCatalogListings = oci.Core.getAppCatalogListings({
+ *     displayName: _var.app_catalog_listing_display_name,
+ *     publisherName: _var.app_catalog_listing_publisher_name,
+ *     publisherType: _var.app_catalog_listing_publisher_type,
+ * });
+ * ```
+ */
 export function getAppCatalogListingsOutput(args?: GetAppCatalogListingsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppCatalogListingsResult> {
-    return pulumi.output(args).apply(a => getAppCatalogListings(a, opts))
+    return pulumi.output(args).apply((a: any) => getAppCatalogListings(a, opts))
 }
 
 /**

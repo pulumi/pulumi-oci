@@ -46,7 +46,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetManagedDatabaseAttentionLogCountsResult> InvokeAsync(GetManagedDatabaseAttentionLogCountsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseAttentionLogCountsResult>("oci:DatabaseManagement/getManagedDatabaseAttentionLogCounts:getManagedDatabaseAttentionLogCounts", args ?? new GetManagedDatabaseAttentionLogCountsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseAttentionLogCountsResult>("oci:DatabaseManagement/getManagedDatabaseAttentionLogCounts:getManagedDatabaseAttentionLogCounts", args ?? new GetManagedDatabaseAttentionLogCountsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Managed Database Attention Log Counts in Oracle Cloud Infrastructure Database Management service.
@@ -83,7 +83,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetManagedDatabaseAttentionLogCountsResult> Invoke(GetManagedDatabaseAttentionLogCountsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseAttentionLogCountsResult>("oci:DatabaseManagement/getManagedDatabaseAttentionLogCounts:getManagedDatabaseAttentionLogCounts", args ?? new GetManagedDatabaseAttentionLogCountsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseAttentionLogCountsResult>("oci:DatabaseManagement/getManagedDatabaseAttentionLogCounts:getManagedDatabaseAttentionLogCounts", args ?? new GetManagedDatabaseAttentionLogCountsInvokeArgs(), options.WithDefaults());
     }
 
 

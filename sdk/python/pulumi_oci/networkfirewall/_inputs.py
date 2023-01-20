@@ -11,6 +11,7 @@ from .. import _utilities
 
 __all__ = [
     'NetworkFirewallPolicyApplicationListArgs',
+    'NetworkFirewallPolicyApplicationListApplicationValueArgs',
     'NetworkFirewallPolicyDecryptionProfileArgs',
     'NetworkFirewallPolicyDecryptionRuleArgs',
     'NetworkFirewallPolicyDecryptionRuleConditionArgs',
@@ -19,6 +20,7 @@ __all__ = [
     'NetworkFirewallPolicySecurityRuleArgs',
     'NetworkFirewallPolicySecurityRuleConditionArgs',
     'NetworkFirewallPolicyUrlListArgs',
+    'NetworkFirewallPolicyUrlListUrlListValueArgs',
     'GetNetworkFirewallPoliciesFilterArgs',
     'GetNetworkFirewallsFilterArgs',
 ]
@@ -26,18 +28,56 @@ __all__ = [
 @pulumi.input_type
 class NetworkFirewallPolicyApplicationListArgs:
     def __init__(__self__, *,
-                 key: pulumi.Input[str],
+                 application_list_name: pulumi.Input[str],
+                 application_values: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyApplicationListApplicationValueArgs']]]] = None):
+        """
+        :param pulumi.Input[str] application_list_name: (Updatable) The key is the identifier by which the application list is referenced.
+        :param pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyApplicationListApplicationValueArgs']]] application_values: (Updatable) Details about the application
+        """
+        pulumi.set(__self__, "application_list_name", application_list_name)
+        if application_values is not None:
+            pulumi.set(__self__, "application_values", application_values)
+
+    @property
+    @pulumi.getter(name="applicationListName")
+    def application_list_name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The key is the identifier by which the application list is referenced.
+        """
+        return pulumi.get(self, "application_list_name")
+
+    @application_list_name.setter
+    def application_list_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "application_list_name", value)
+
+    @property
+    @pulumi.getter(name="applicationValues")
+    def application_values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyApplicationListApplicationValueArgs']]]]:
+        """
+        (Updatable) Details about the application
+        """
+        return pulumi.get(self, "application_values")
+
+    @application_values.setter
+    def application_values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyApplicationListApplicationValueArgs']]]]):
+        pulumi.set(self, "application_values", value)
+
+
+@pulumi.input_type
+class NetworkFirewallPolicyApplicationListApplicationValueArgs:
+    def __init__(__self__, *,
                  type: pulumi.Input[str],
                  icmp_code: Optional[pulumi.Input[int]] = None,
                  icmp_type: Optional[pulumi.Input[int]] = None,
                  maximum_port: Optional[pulumi.Input[int]] = None,
                  minimum_port: Optional[pulumi.Input[int]] = None):
         """
-        :param pulumi.Input[str] type: (Updatable) Type of the secrets mapped based on the policy.
-               * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-               * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+        :param pulumi.Input[str] type: (Updatable) Type of the url lists based on the policy
+        :param pulumi.Input[int] icmp_code: (Updatable) Used when you select ICMP. 0-Net unreachable, 1-Host unreachable, 2-Protocol unreachable, 3-Port unreachable
+        :param pulumi.Input[int] icmp_type: (Updatable)  Used when you select ICMP. 0-Echo reply, 3-Destination unreachable, 5-Redirect, 8-Echo
+        :param pulumi.Input[int] maximum_port: (Updatable) Used when you select TCP or UDP. Enter a port number.
+        :param pulumi.Input[int] minimum_port: (Updatable) Used when you select TCP or UDP. Enter a port number.
         """
-        pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "type", type)
         if icmp_code is not None:
             pulumi.set(__self__, "icmp_code", icmp_code)
@@ -50,20 +90,9 @@ class NetworkFirewallPolicyApplicationListArgs:
 
     @property
     @pulumi.getter
-    def key(self) -> pulumi.Input[str]:
-        return pulumi.get(self, "key")
-
-    @key.setter
-    def key(self, value: pulumi.Input[str]):
-        pulumi.set(self, "key", value)
-
-    @property
-    @pulumi.getter
     def type(self) -> pulumi.Input[str]:
         """
-        (Updatable) Type of the secrets mapped based on the policy.
-        * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-        * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+        (Updatable) Type of the url lists based on the policy
         """
         return pulumi.get(self, "type")
 
@@ -74,6 +103,9 @@ class NetworkFirewallPolicyApplicationListArgs:
     @property
     @pulumi.getter(name="icmpCode")
     def icmp_code(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Used when you select ICMP. 0-Net unreachable, 1-Host unreachable, 2-Protocol unreachable, 3-Port unreachable
+        """
         return pulumi.get(self, "icmp_code")
 
     @icmp_code.setter
@@ -83,6 +115,9 @@ class NetworkFirewallPolicyApplicationListArgs:
     @property
     @pulumi.getter(name="icmpType")
     def icmp_type(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable)  Used when you select ICMP. 0-Echo reply, 3-Destination unreachable, 5-Redirect, 8-Echo
+        """
         return pulumi.get(self, "icmp_type")
 
     @icmp_type.setter
@@ -92,6 +127,9 @@ class NetworkFirewallPolicyApplicationListArgs:
     @property
     @pulumi.getter(name="maximumPort")
     def maximum_port(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Used when you select TCP or UDP. Enter a port number.
+        """
         return pulumi.get(self, "maximum_port")
 
     @maximum_port.setter
@@ -101,6 +139,9 @@ class NetworkFirewallPolicyApplicationListArgs:
     @property
     @pulumi.getter(name="minimumPort")
     def minimum_port(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Used when you select TCP or UDP. Enter a port number.
+        """
         return pulumi.get(self, "minimum_port")
 
     @minimum_port.setter
@@ -123,9 +164,8 @@ class NetworkFirewallPolicyDecryptionProfileArgs:
                  is_unsupported_version_blocked: Optional[pulumi.Input[bool]] = None,
                  is_untrusted_issuer_blocked: Optional[pulumi.Input[bool]] = None):
         """
-        :param pulumi.Input[str] type: (Updatable) Type of the secrets mapped based on the policy.
-               * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-               * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+        :param pulumi.Input[str] key: Source of the secrets, where the secrets are stored.
+        :param pulumi.Input[str] type: (Updatable) Type of the url lists based on the policy
         :param pulumi.Input[bool] are_certificate_extensions_restricted: (Updatable) Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
         :param pulumi.Input[bool] is_auto_include_alt_name: (Updatable) Whether to automatically append SAN to impersonating certificate if server certificate is missing SAN.
         :param pulumi.Input[bool] is_expired_certificate_blocked: (Updatable) Whether to block sessions if server's certificate is expired.
@@ -160,6 +200,9 @@ class NetworkFirewallPolicyDecryptionProfileArgs:
     @property
     @pulumi.getter
     def key(self) -> pulumi.Input[str]:
+        """
+        Source of the secrets, where the secrets are stored.
+        """
         return pulumi.get(self, "key")
 
     @key.setter
@@ -170,9 +213,7 @@ class NetworkFirewallPolicyDecryptionProfileArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
         """
-        (Updatable) Type of the secrets mapped based on the policy.
-        * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-        * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+        (Updatable) Type of the url lists based on the policy
         """
         return pulumi.get(self, "type")
 
@@ -425,6 +466,10 @@ class NetworkFirewallPolicyIpAddressListArgs:
     def __init__(__self__, *,
                  ip_address_list_name: pulumi.Input[str],
                  ip_address_list_values: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[str] ip_address_list_name: (Updatable) The identifier by which the IP address list is referenced.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] ip_address_list_values: (Updatable) List of IP address lists of the policy.
+        """
         pulumi.set(__self__, "ip_address_list_name", ip_address_list_name)
         if ip_address_list_values is not None:
             pulumi.set(__self__, "ip_address_list_values", ip_address_list_values)
@@ -432,6 +477,9 @@ class NetworkFirewallPolicyIpAddressListArgs:
     @property
     @pulumi.getter(name="ipAddressListName")
     def ip_address_list_name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The identifier by which the IP address list is referenced.
+        """
         return pulumi.get(self, "ip_address_list_name")
 
     @ip_address_list_name.setter
@@ -441,6 +489,9 @@ class NetworkFirewallPolicyIpAddressListArgs:
     @property
     @pulumi.getter(name="ipAddressListValues")
     def ip_address_list_values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) List of IP address lists of the policy.
+        """
         return pulumi.get(self, "ip_address_list_values")
 
     @ip_address_list_values.setter
@@ -456,9 +507,8 @@ class NetworkFirewallPolicyMappedSecretArgs:
                  vault_secret_id: Optional[pulumi.Input[str]] = None,
                  version_number: Optional[pulumi.Input[int]] = None):
         """
-        :param pulumi.Input[str] type: (Updatable) Type of the secrets mapped based on the policy.
-               * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-               * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+        :param pulumi.Input[str] key: Source of the secrets, where the secrets are stored.
+        :param pulumi.Input[str] type: (Updatable) Type of the url lists based on the policy
         :param pulumi.Input[str] vault_secret_id: (Updatable) OCID for the Vault Secret to be used.
         :param pulumi.Input[int] version_number: (Updatable) Version number of the secret to be used.
         """
@@ -472,6 +522,9 @@ class NetworkFirewallPolicyMappedSecretArgs:
     @property
     @pulumi.getter
     def key(self) -> pulumi.Input[str]:
+        """
+        Source of the secrets, where the secrets are stored.
+        """
         return pulumi.get(self, "key")
 
     @key.setter
@@ -482,9 +535,7 @@ class NetworkFirewallPolicyMappedSecretArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
         """
-        (Updatable) Type of the secrets mapped based on the policy.
-        * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-        * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+        (Updatable) Type of the url lists based on the policy
         """
         return pulumi.get(self, "type")
 
@@ -671,35 +722,59 @@ class NetworkFirewallPolicySecurityRuleConditionArgs:
 @pulumi.input_type
 class NetworkFirewallPolicyUrlListArgs:
     def __init__(__self__, *,
-                 key: pulumi.Input[str],
+                 url_list_name: pulumi.Input[str],
+                 url_list_values: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyUrlListUrlListValueArgs']]]] = None):
+        """
+        :param pulumi.Input[str] url_list_name: (Updatable) The identifier for the url list
+        :param pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyUrlListUrlListValueArgs']]] url_list_values: (Updatable) The list of Url Patterns.
+        """
+        pulumi.set(__self__, "url_list_name", url_list_name)
+        if url_list_values is not None:
+            pulumi.set(__self__, "url_list_values", url_list_values)
+
+    @property
+    @pulumi.getter(name="urlListName")
+    def url_list_name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The identifier for the url list
+        """
+        return pulumi.get(self, "url_list_name")
+
+    @url_list_name.setter
+    def url_list_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "url_list_name", value)
+
+    @property
+    @pulumi.getter(name="urlListValues")
+    def url_list_values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyUrlListUrlListValueArgs']]]]:
+        """
+        (Updatable) The list of Url Patterns.
+        """
+        return pulumi.get(self, "url_list_values")
+
+    @url_list_values.setter
+    def url_list_values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyUrlListUrlListValueArgs']]]]):
+        pulumi.set(self, "url_list_values", value)
+
+
+@pulumi.input_type
+class NetworkFirewallPolicyUrlListUrlListValueArgs:
+    def __init__(__self__, *,
                  type: pulumi.Input[str],
                  pattern: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] type: (Updatable) Type of the secrets mapped based on the policy.
-               * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-               * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+        :param pulumi.Input[str] type: (Updatable) Type of the url lists based on the policy
+        :param pulumi.Input[str] pattern: (Updatable) URL lists to allow or deny traffic to a group of URLs. You can include a maximum of 25 URLs in each list.
         """
-        pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "type", type)
         if pattern is not None:
             pulumi.set(__self__, "pattern", pattern)
 
     @property
     @pulumi.getter
-    def key(self) -> pulumi.Input[str]:
-        return pulumi.get(self, "key")
-
-    @key.setter
-    def key(self, value: pulumi.Input[str]):
-        pulumi.set(self, "key", value)
-
-    @property
-    @pulumi.getter
     def type(self) -> pulumi.Input[str]:
         """
-        (Updatable) Type of the secrets mapped based on the policy.
-        * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-        * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+        (Updatable) Type of the url lists based on the policy
         """
         return pulumi.get(self, "type")
 
@@ -710,6 +785,9 @@ class NetworkFirewallPolicyUrlListArgs:
     @property
     @pulumi.getter
     def pattern(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) URL lists to allow or deny traffic to a group of URLs. You can include a maximum of 25 URLs in each list.
+        """
         return pulumi.get(self, "pattern")
 
     @pattern.setter

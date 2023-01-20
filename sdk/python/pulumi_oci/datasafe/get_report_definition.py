@@ -22,7 +22,7 @@ class GetReportDefinitionResult:
     """
     A collection of values returned by getReportDefinition.
     """
-    def __init__(__self__, category=None, column_filters=None, column_infos=None, column_sortings=None, compartment_id=None, data_source=None, defined_tags=None, description=None, display_name=None, display_order=None, freeform_tags=None, id=None, is_seeded=None, parent_id=None, report_definition_id=None, scim_filter=None, state=None, summaries=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, category=None, column_filters=None, column_infos=None, column_sortings=None, compartment_id=None, compliance_standards=None, data_source=None, defined_tags=None, description=None, display_name=None, display_order=None, freeform_tags=None, id=None, is_seeded=None, parent_id=None, record_time_span=None, report_definition_id=None, schedule=None, scheduled_report_compartment_id=None, scheduled_report_mime_type=None, scheduled_report_name=None, scheduled_report_row_limit=None, scim_filter=None, state=None, summaries=None, system_tags=None, time_created=None, time_updated=None):
         if category and not isinstance(category, str):
             raise TypeError("Expected argument 'category' to be a str")
         pulumi.set(__self__, "category", category)
@@ -38,6 +38,9 @@ class GetReportDefinitionResult:
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if compliance_standards and not isinstance(compliance_standards, list):
+            raise TypeError("Expected argument 'compliance_standards' to be a list")
+        pulumi.set(__self__, "compliance_standards", compliance_standards)
         if data_source and not isinstance(data_source, str):
             raise TypeError("Expected argument 'data_source' to be a str")
         pulumi.set(__self__, "data_source", data_source)
@@ -65,9 +68,27 @@ class GetReportDefinitionResult:
         if parent_id and not isinstance(parent_id, str):
             raise TypeError("Expected argument 'parent_id' to be a str")
         pulumi.set(__self__, "parent_id", parent_id)
+        if record_time_span and not isinstance(record_time_span, str):
+            raise TypeError("Expected argument 'record_time_span' to be a str")
+        pulumi.set(__self__, "record_time_span", record_time_span)
         if report_definition_id and not isinstance(report_definition_id, str):
             raise TypeError("Expected argument 'report_definition_id' to be a str")
         pulumi.set(__self__, "report_definition_id", report_definition_id)
+        if schedule and not isinstance(schedule, str):
+            raise TypeError("Expected argument 'schedule' to be a str")
+        pulumi.set(__self__, "schedule", schedule)
+        if scheduled_report_compartment_id and not isinstance(scheduled_report_compartment_id, str):
+            raise TypeError("Expected argument 'scheduled_report_compartment_id' to be a str")
+        pulumi.set(__self__, "scheduled_report_compartment_id", scheduled_report_compartment_id)
+        if scheduled_report_mime_type and not isinstance(scheduled_report_mime_type, str):
+            raise TypeError("Expected argument 'scheduled_report_mime_type' to be a str")
+        pulumi.set(__self__, "scheduled_report_mime_type", scheduled_report_mime_type)
+        if scheduled_report_name and not isinstance(scheduled_report_name, str):
+            raise TypeError("Expected argument 'scheduled_report_name' to be a str")
+        pulumi.set(__self__, "scheduled_report_name", scheduled_report_name)
+        if scheduled_report_row_limit and not isinstance(scheduled_report_row_limit, int):
+            raise TypeError("Expected argument 'scheduled_report_row_limit' to be a int")
+        pulumi.set(__self__, "scheduled_report_row_limit", scheduled_report_row_limit)
         if scim_filter and not isinstance(scim_filter, str):
             raise TypeError("Expected argument 'scim_filter' to be a str")
         pulumi.set(__self__, "scim_filter", scim_filter)
@@ -126,6 +147,14 @@ class GetReportDefinitionResult:
         The OCID of the compartment containing the report definition.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="complianceStandards")
+    def compliance_standards(self) -> Sequence[str]:
+        """
+        The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+        """
+        return pulumi.get(self, "compliance_standards")
 
     @property
     @pulumi.getter(name="dataSource")
@@ -200,9 +229,57 @@ class GetReportDefinitionResult:
         return pulumi.get(self, "parent_id")
 
     @property
+    @pulumi.getter(name="recordTimeSpan")
+    def record_time_span(self) -> str:
+        """
+        The time span of records in report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
+        """
+        return pulumi.get(self, "record_time_span")
+
+    @property
     @pulumi.getter(name="reportDefinitionId")
     def report_definition_id(self) -> str:
         return pulumi.get(self, "report_definition_id")
+
+    @property
+    @pulumi.getter
+    def schedule(self) -> str:
+        """
+        Schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
+        """
+        return pulumi.get(self, "schedule")
+
+    @property
+    @pulumi.getter(name="scheduledReportCompartmentId")
+    def scheduled_report_compartment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the scheduled resource should be created.
+        """
+        return pulumi.get(self, "scheduled_report_compartment_id")
+
+    @property
+    @pulumi.getter(name="scheduledReportMimeType")
+    def scheduled_report_mime_type(self) -> str:
+        """
+        Specifies the format of report to be excel or pdf
+        """
+        return pulumi.get(self, "scheduled_report_mime_type")
+
+    @property
+    @pulumi.getter(name="scheduledReportName")
+    def scheduled_report_name(self) -> str:
+        """
+        The name of the report to be scheduled.
+        """
+        return pulumi.get(self, "scheduled_report_name")
+
+    @property
+    @pulumi.getter(name="scheduledReportRowLimit")
+    def scheduled_report_row_limit(self) -> int:
+        """
+        Specifies the limit on number of rows in report.
+        """
+        return pulumi.get(self, "scheduled_report_row_limit")
 
     @property
     @pulumi.getter(name="scimFilter")
@@ -264,6 +341,7 @@ class AwaitableGetReportDefinitionResult(GetReportDefinitionResult):
             column_infos=self.column_infos,
             column_sortings=self.column_sortings,
             compartment_id=self.compartment_id,
+            compliance_standards=self.compliance_standards,
             data_source=self.data_source,
             defined_tags=self.defined_tags,
             description=self.description,
@@ -273,7 +351,13 @@ class AwaitableGetReportDefinitionResult(GetReportDefinitionResult):
             id=self.id,
             is_seeded=self.is_seeded,
             parent_id=self.parent_id,
+            record_time_span=self.record_time_span,
             report_definition_id=self.report_definition_id,
+            schedule=self.schedule,
+            scheduled_report_compartment_id=self.scheduled_report_compartment_id,
+            scheduled_report_mime_type=self.scheduled_report_mime_type,
+            scheduled_report_name=self.scheduled_report_name,
+            scheduled_report_row_limit=self.scheduled_report_row_limit,
             scim_filter=self.scim_filter,
             state=self.state,
             summaries=self.summaries,
@@ -312,6 +396,7 @@ def get_report_definition(report_definition_id: Optional[str] = None,
         column_infos=__ret__.column_infos,
         column_sortings=__ret__.column_sortings,
         compartment_id=__ret__.compartment_id,
+        compliance_standards=__ret__.compliance_standards,
         data_source=__ret__.data_source,
         defined_tags=__ret__.defined_tags,
         description=__ret__.description,
@@ -321,7 +406,13 @@ def get_report_definition(report_definition_id: Optional[str] = None,
         id=__ret__.id,
         is_seeded=__ret__.is_seeded,
         parent_id=__ret__.parent_id,
+        record_time_span=__ret__.record_time_span,
         report_definition_id=__ret__.report_definition_id,
+        schedule=__ret__.schedule,
+        scheduled_report_compartment_id=__ret__.scheduled_report_compartment_id,
+        scheduled_report_mime_type=__ret__.scheduled_report_mime_type,
+        scheduled_report_name=__ret__.scheduled_report_name,
+        scheduled_report_row_limit=__ret__.scheduled_report_row_limit,
         scim_filter=__ret__.scim_filter,
         state=__ret__.state,
         summaries=__ret__.summaries,

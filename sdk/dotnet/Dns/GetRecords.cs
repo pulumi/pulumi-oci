@@ -12,10 +12,10 @@ namespace Pulumi.Oci.Dns
     public static class GetRecords
     {
         public static Task<GetRecordsResult> InvokeAsync(GetRecordsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetRecordsResult>("oci:Dns/getRecords:getRecords", args ?? new GetRecordsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetRecordsResult>("oci:Dns/getRecords:getRecords", args ?? new GetRecordsArgs(), options.WithDefaults());
 
         public static Output<GetRecordsResult> Invoke(GetRecordsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetRecordsResult>("oci:Dns/getRecords:getRecords", args ?? new GetRecordsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetRecordsResult>("oci:Dns/getRecords:getRecords", args ?? new GetRecordsInvokeArgs(), options.WithDefaults());
     }
 
 

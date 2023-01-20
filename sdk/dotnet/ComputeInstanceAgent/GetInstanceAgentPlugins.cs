@@ -40,7 +40,7 @@ namespace Pulumi.Oci.ComputeInstanceAgent
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetInstanceAgentPluginsResult> InvokeAsync(GetInstanceAgentPluginsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetInstanceAgentPluginsResult>("oci:ComputeInstanceAgent/getInstanceAgentPlugins:getInstanceAgentPlugins", args ?? new GetInstanceAgentPluginsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetInstanceAgentPluginsResult>("oci:ComputeInstanceAgent/getInstanceAgentPlugins:getInstanceAgentPlugins", args ?? new GetInstanceAgentPluginsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Instance Agent Plugins in Oracle Cloud Infrastructure Compute Instance Agent service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.ComputeInstanceAgent
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetInstanceAgentPluginsResult> Invoke(GetInstanceAgentPluginsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetInstanceAgentPluginsResult>("oci:ComputeInstanceAgent/getInstanceAgentPlugins:getInstanceAgentPlugins", args ?? new GetInstanceAgentPluginsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetInstanceAgentPluginsResult>("oci:ComputeInstanceAgent/getInstanceAgentPlugins:getInstanceAgentPlugins", args ?? new GetInstanceAgentPluginsInvokeArgs(), options.WithDefaults());
     }
 
 

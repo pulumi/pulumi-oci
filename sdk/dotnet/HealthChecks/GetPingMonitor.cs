@@ -39,7 +39,7 @@ namespace Pulumi.Oci.HealthChecks
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetPingMonitorResult> InvokeAsync(GetPingMonitorArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetPingMonitorResult>("oci:HealthChecks/getPingMonitor:getPingMonitor", args ?? new GetPingMonitorArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetPingMonitorResult>("oci:HealthChecks/getPingMonitor:getPingMonitor", args ?? new GetPingMonitorArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Ping Monitor resource in Oracle Cloud Infrastructure Health Checks service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.HealthChecks
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetPingMonitorResult> Invoke(GetPingMonitorInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetPingMonitorResult>("oci:HealthChecks/getPingMonitor:getPingMonitor", args ?? new GetPingMonitorInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetPingMonitorResult>("oci:HealthChecks/getPingMonitor:getPingMonitor", args ?? new GetPingMonitorInvokeArgs(), options.WithDefaults());
     }
 
 

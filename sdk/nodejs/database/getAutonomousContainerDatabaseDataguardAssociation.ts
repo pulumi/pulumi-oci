@@ -22,11 +22,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAutonomousContainerDatabaseDataguardAssociation(args: GetAutonomousContainerDatabaseDataguardAssociationArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousContainerDatabaseDataguardAssociationResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getAutonomousContainerDatabaseDataguardAssociation:getAutonomousContainerDatabaseDataguardAssociation", {
         "autonomousContainerDatabaseDataguardAssociationId": args.autonomousContainerDatabaseDataguardAssociationId,
         "autonomousContainerDatabaseId": args.autonomousContainerDatabaseId,
@@ -121,9 +118,25 @@ export interface GetAutonomousContainerDatabaseDataguardAssociationResult {
      */
     readonly transportLag: string;
 }
-
+/**
+ * This data source provides details about a specific Autonomous Container Database Dataguard Association resource in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets an Autonomous Container Database enabled with Autonomous Data Guard associated with the specified Autonomous Container Database.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAutonomousContainerDatabaseDataguardAssociation = oci.Database.getAutonomousContainerDatabaseDataguardAssociation({
+ *     autonomousContainerDatabaseDataguardAssociationId: oci_database_autonomous_container_database_dataguard_association.test_autonomous_container_database_dataguard_association.id,
+ *     autonomousContainerDatabaseId: oci_database_autonomous_container_database.test_autonomous_container_database.id,
+ * });
+ * ```
+ */
 export function getAutonomousContainerDatabaseDataguardAssociationOutput(args: GetAutonomousContainerDatabaseDataguardAssociationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousContainerDatabaseDataguardAssociationResult> {
-    return pulumi.output(args).apply(a => getAutonomousContainerDatabaseDataguardAssociation(a, opts))
+    return pulumi.output(args).apply((a: any) => getAutonomousContainerDatabaseDataguardAssociation(a, opts))
 }
 
 /**

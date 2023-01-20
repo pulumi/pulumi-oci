@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getHostInsight(args: GetHostInsightArgs, opts?: pulumi.InvokeOptions): Promise<GetHostInsightResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Opsi/getHostInsight:getHostInsight", {
         "hostInsightId": args.hostInsightId,
     }, opts);
@@ -47,7 +44,6 @@ export interface GetHostInsightArgs {
 export interface GetHostInsightResult {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-     * <<<<<<< ours
      */
     readonly compartmentId: string;
     /**
@@ -124,7 +120,7 @@ export interface GetHostInsightResult {
      */
     readonly platformName: string;
     /**
-     * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+     * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS].
      */
     readonly platformType: string;
     /**
@@ -156,9 +152,24 @@ export interface GetHostInsightResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Host Insight resource in Oracle Cloud Infrastructure Opsi service.
+ *
+ * Gets details of a host insight.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testHostInsight = oci.Opsi.getHostInsight({
+ *     hostInsightId: oci_opsi_host_insight.test_host_insight.id,
+ * });
+ * ```
+ */
 export function getHostInsightOutput(args: GetHostInsightOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetHostInsightResult> {
-    return pulumi.output(args).apply(a => getHostInsight(a, opts))
+    return pulumi.output(args).apply((a: any) => getHostInsight(a, opts))
 }
 
 /**

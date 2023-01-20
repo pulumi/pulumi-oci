@@ -22,11 +22,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLicenseMetric(args: GetLicenseMetricArgs, opts?: pulumi.InvokeOptions): Promise<GetLicenseMetricResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LicenseManager/getLicenseMetric:getLicenseMetric", {
         "compartmentId": args.compartmentId,
         "isCompartmentIdInSubtree": args.isCompartmentIdInSubtree,
@@ -74,9 +71,25 @@ export interface GetLicenseMetricResult {
      */
     readonly totalProductLicenseCount: number;
 }
-
+/**
+ * This data source provides details about a specific License Metric resource in Oracle Cloud Infrastructure License Manager service.
+ *
+ * Retrieves the license metrics for a given compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testLicenseMetric = oci.LicenseManager.getLicenseMetric({
+ *     compartmentId: _var.compartment_id,
+ *     isCompartmentIdInSubtree: _var.license_metric_is_compartment_id_in_subtree,
+ * });
+ * ```
+ */
 export function getLicenseMetricOutput(args: GetLicenseMetricOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLicenseMetricResult> {
-    return pulumi.output(args).apply(a => getLicenseMetric(a, opts))
+    return pulumi.output(args).apply((a: any) => getLicenseMetric(a, opts))
 }
 
 /**

@@ -42,7 +42,7 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDetectionModelsResult> InvokeAsync(GetDetectionModelsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDetectionModelsResult>("oci:AiAnomalyDetection/getDetectionModels:getDetectionModels", args ?? new GetDetectionModelsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDetectionModelsResult>("oci:AiAnomalyDetection/getDetectionModels:getDetectionModels", args ?? new GetDetectionModelsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Models in Oracle Cloud Infrastructure Ai Anomaly Detection service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.AiAnomalyDetection
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDetectionModelsResult> Invoke(GetDetectionModelsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDetectionModelsResult>("oci:AiAnomalyDetection/getDetectionModels:getDetectionModels", args ?? new GetDetectionModelsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDetectionModelsResult>("oci:AiAnomalyDetection/getDetectionModels:getDetectionModels", args ?? new GetDetectionModelsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLoadBalancerRoutingPolicy(args: GetLoadBalancerRoutingPolicyArgs, opts?: pulumi.InvokeOptions): Promise<GetLoadBalancerRoutingPolicyResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LoadBalancer/getLoadBalancerRoutingPolicy:getLoadBalancerRoutingPolicy", {
         "loadBalancerId": args.loadBalancerId,
         "routingPolicyName": args.routingPolicyName,
@@ -69,9 +67,25 @@ export interface GetLoadBalancerRoutingPolicyResult {
     readonly rules: outputs.LoadBalancer.GetLoadBalancerRoutingPolicyRule[];
     readonly state: string;
 }
-
+/**
+ * This data source provides details about a specific Load Balancer Routing Policy resource in Oracle Cloud Infrastructure Load Balancer service.
+ *
+ * Gets the specified routing policy.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testLoadBalancerRoutingPolicy = oci.LoadBalancer.getLoadBalancerRoutingPolicy({
+ *     loadBalancerId: oci_load_balancer_load_balancer.test_load_balancer.id,
+ *     routingPolicyName: oci_load_balancer_routing_policy.test_routing_policy.name,
+ * });
+ * ```
+ */
 export function getLoadBalancerRoutingPolicyOutput(args: GetLoadBalancerRoutingPolicyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLoadBalancerRoutingPolicyResult> {
-    return pulumi.output(args).apply(a => getLoadBalancerRoutingPolicy(a, opts))
+    return pulumi.output(args).apply((a: any) => getLoadBalancerRoutingPolicy(a, opts))
 }
 
 /**

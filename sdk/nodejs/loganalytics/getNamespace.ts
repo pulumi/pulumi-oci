@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNamespace(args: GetNamespaceArgs, opts?: pulumi.InvokeOptions): Promise<GetNamespaceResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LogAnalytics/getNamespace:getNamespace", {
         "namespace": args.namespace,
     }, opts);
@@ -62,9 +59,24 @@ export interface GetNamespaceResult {
      */
     readonly namespace: string;
 }
-
+/**
+ * This data source provides details about a specific Namespace resource in Oracle Cloud Infrastructure Log Analytics service.
+ *
+ * This API gets the namespace details of a tenancy already onboarded in Logging Analytics Application
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testNamespace = oci.LogAnalytics.getNamespace({
+ *     namespace: _var.namespace_namespace,
+ * });
+ * ```
+ */
 export function getNamespaceOutput(args: GetNamespaceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNamespaceResult> {
-    return pulumi.output(args).apply(a => getNamespace(a, opts))
+    return pulumi.output(args).apply((a: any) => getNamespace(a, opts))
 }
 
 /**

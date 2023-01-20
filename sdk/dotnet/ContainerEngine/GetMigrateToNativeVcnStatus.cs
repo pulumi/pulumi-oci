@@ -12,10 +12,10 @@ namespace Pulumi.Oci.ContainerEngine
     public static class GetMigrateToNativeVcnStatus
     {
         public static Task<GetMigrateToNativeVcnStatusResult> InvokeAsync(GetMigrateToNativeVcnStatusArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetMigrateToNativeVcnStatusResult>("oci:ContainerEngine/getMigrateToNativeVcnStatus:getMigrateToNativeVcnStatus", args ?? new GetMigrateToNativeVcnStatusArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetMigrateToNativeVcnStatusResult>("oci:ContainerEngine/getMigrateToNativeVcnStatus:getMigrateToNativeVcnStatus", args ?? new GetMigrateToNativeVcnStatusArgs(), options.WithDefaults());
 
         public static Output<GetMigrateToNativeVcnStatusResult> Invoke(GetMigrateToNativeVcnStatusInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetMigrateToNativeVcnStatusResult>("oci:ContainerEngine/getMigrateToNativeVcnStatus:getMigrateToNativeVcnStatus", args ?? new GetMigrateToNativeVcnStatusInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetMigrateToNativeVcnStatusResult>("oci:ContainerEngine/getMigrateToNativeVcnStatus:getMigrateToNativeVcnStatus", args ?? new GetMigrateToNativeVcnStatusInvokeArgs(), options.WithDefaults());
     }
 
 

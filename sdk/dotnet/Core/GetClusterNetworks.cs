@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetClusterNetworksResult> InvokeAsync(GetClusterNetworksArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetClusterNetworksResult>("oci:Core/getClusterNetworks:getClusterNetworks", args ?? new GetClusterNetworksArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetClusterNetworksResult>("oci:Core/getClusterNetworks:getClusterNetworks", args ?? new GetClusterNetworksArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Cluster Networks in Oracle Cloud Infrastructure Core service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetClusterNetworksResult> Invoke(GetClusterNetworksInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetClusterNetworksResult>("oci:Core/getClusterNetworks:getClusterNetworks", args ?? new GetClusterNetworksInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetClusterNetworksResult>("oci:Core/getClusterNetworks:getClusterNetworks", args ?? new GetClusterNetworksInvokeArgs(), options.WithDefaults());
     }
 
 

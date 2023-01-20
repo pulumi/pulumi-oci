@@ -67,7 +67,9 @@ type LookupMonitoredResourceResult struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Monitored resource display name.
-	DisplayName        string `pulumi:"displayName"`
+	DisplayName string `pulumi:"displayName"`
+	// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+	ExternalId         string `pulumi:"externalId"`
 	ExternalResourceId string `pulumi:"externalResourceId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -166,6 +168,11 @@ func (o LookupMonitoredResourceResultOutput) DefinedTags() pulumi.MapOutput {
 // Monitored resource display name.
 func (o LookupMonitoredResourceResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMonitoredResourceResult) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+func (o LookupMonitoredResourceResultOutput) ExternalId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupMonitoredResourceResult) string { return v.ExternalId }).(pulumi.StringOutput)
 }
 
 func (o LookupMonitoredResourceResultOutput) ExternalResourceId() pulumi.StringOutput {

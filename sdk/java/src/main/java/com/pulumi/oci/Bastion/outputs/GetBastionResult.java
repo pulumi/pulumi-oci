@@ -35,6 +35,11 @@ public final class GetBastionResult {
      */
     private Map<String,Object> definedTags;
     /**
+     * @return Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
+     * 
+     */
+    private String dnsProxyStatus;
+    /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -141,6 +146,13 @@ public final class GetBastionResult {
      */
     public Map<String,Object> definedTags() {
         return this.definedTags;
+    }
+    /**
+     * @return Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
+     * 
+     */
+    public String dnsProxyStatus() {
+        return this.dnsProxyStatus;
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
@@ -262,6 +274,7 @@ public final class GetBastionResult {
         private List<String> clientCidrBlockAllowLists;
         private String compartmentId;
         private Map<String,Object> definedTags;
+        private String dnsProxyStatus;
         private Map<String,Object> freeformTags;
         private String id;
         private String lifecycleDetails;
@@ -285,6 +298,7 @@ public final class GetBastionResult {
     	      this.clientCidrBlockAllowLists = defaults.clientCidrBlockAllowLists;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
+    	      this.dnsProxyStatus = defaults.dnsProxyStatus;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
@@ -328,6 +342,11 @@ public final class GetBastionResult {
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             this.definedTags = Objects.requireNonNull(definedTags);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder dnsProxyStatus(String dnsProxyStatus) {
+            this.dnsProxyStatus = Objects.requireNonNull(dnsProxyStatus);
             return this;
         }
         @CustomType.Setter
@@ -415,6 +434,7 @@ public final class GetBastionResult {
             o.clientCidrBlockAllowLists = clientCidrBlockAllowLists;
             o.compartmentId = compartmentId;
             o.definedTags = definedTags;
+            o.dnsProxyStatus = dnsProxyStatus;
             o.freeformTags = freeformTags;
             o.id = id;
             o.lifecycleDetails = lifecycleDetails;

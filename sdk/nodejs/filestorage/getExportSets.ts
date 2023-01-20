@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getExportSets(args: GetExportSetsArgs, opts?: pulumi.InvokeOptions): Promise<GetExportSetsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:FileStorage/getExportSets:getExportSets", {
         "availabilityDomain": args.availabilityDomain,
         "compartmentId": args.compartmentId,
@@ -98,9 +96,28 @@ export interface GetExportSetsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Export Sets in Oracle Cloud Infrastructure File Storage service.
+ *
+ * Lists the export set resources in the specified compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testExportSets = oci.FileStorage.getExportSets({
+ *     availabilityDomain: _var.export_set_availability_domain,
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.export_set_display_name,
+ *     id: _var.export_set_id,
+ *     state: _var.export_set_state,
+ * });
+ * ```
+ */
 export function getExportSetsOutput(args: GetExportSetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExportSetsResult> {
-    return pulumi.output(args).apply(a => getExportSets(a, opts))
+    return pulumi.output(args).apply((a: any) => getExportSets(a, opts))
 }
 
 /**

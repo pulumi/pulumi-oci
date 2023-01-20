@@ -41,7 +41,7 @@ namespace Pulumi.Oci.DataIntegration
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetWorkspacesResult> InvokeAsync(GetWorkspacesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetWorkspacesResult>("oci:DataIntegration/getWorkspaces:getWorkspaces", args ?? new GetWorkspacesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetWorkspacesResult>("oci:DataIntegration/getWorkspaces:getWorkspaces", args ?? new GetWorkspacesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Workspaces in Oracle Cloud Infrastructure Data Integration service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.DataIntegration
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetWorkspacesResult> Invoke(GetWorkspacesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetWorkspacesResult>("oci:DataIntegration/getWorkspaces:getWorkspaces", args ?? new GetWorkspacesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetWorkspacesResult>("oci:DataIntegration/getWorkspaces:getWorkspaces", args ?? new GetWorkspacesInvokeArgs(), options.WithDefaults());
     }
 
 

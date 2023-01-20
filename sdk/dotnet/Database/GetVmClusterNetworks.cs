@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetVmClusterNetworksResult> InvokeAsync(GetVmClusterNetworksArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetVmClusterNetworksResult>("oci:Database/getVmClusterNetworks:getVmClusterNetworks", args ?? new GetVmClusterNetworksArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetVmClusterNetworksResult>("oci:Database/getVmClusterNetworks:getVmClusterNetworks", args ?? new GetVmClusterNetworksArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Vm Cluster Networks in Oracle Cloud Infrastructure Database service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetVmClusterNetworksResult> Invoke(GetVmClusterNetworksInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetVmClusterNetworksResult>("oci:Database/getVmClusterNetworks:getVmClusterNetworks", args ?? new GetVmClusterNetworksInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetVmClusterNetworksResult>("oci:Database/getVmClusterNetworks:getVmClusterNetworks", args ?? new GetVmClusterNetworksInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -181,7 +181,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The current state of the VM cluster network.
+        /// The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
         /// </summary>
         public readonly string? State;
         /// <summary>

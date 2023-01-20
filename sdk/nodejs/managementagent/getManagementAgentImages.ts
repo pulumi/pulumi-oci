@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagementAgentImages(args: GetManagementAgentImagesArgs, opts?: pulumi.InvokeOptions): Promise<GetManagementAgentImagesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ManagementAgent/getManagementAgentImages:getManagementAgentImages", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -83,9 +81,27 @@ export interface GetManagementAgentImagesResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Management Agent Images in Oracle Cloud Infrastructure Management Agent service.
+ *
+ * Get supported agent image information
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testManagementAgentImages = oci.ManagementAgent.getManagementAgentImages({
+ *     compartmentId: _var.compartment_id,
+ *     installType: _var.management_agent_image_install_type,
+ *     name: _var.management_agent_image_name,
+ *     state: _var.management_agent_image_state,
+ * });
+ * ```
+ */
 export function getManagementAgentImagesOutput(args: GetManagementAgentImagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementAgentImagesResult> {
-    return pulumi.output(args).apply(a => getManagementAgentImages(a, opts))
+    return pulumi.output(args).apply((a: any) => getManagementAgentImages(a, opts))
 }
 
 /**

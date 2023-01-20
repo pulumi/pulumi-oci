@@ -39,7 +39,7 @@ namespace Pulumi.Oci.LicenseManager
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetLicenseMetricResult> InvokeAsync(GetLicenseMetricArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetLicenseMetricResult>("oci:LicenseManager/getLicenseMetric:getLicenseMetric", args ?? new GetLicenseMetricArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetLicenseMetricResult>("oci:LicenseManager/getLicenseMetric:getLicenseMetric", args ?? new GetLicenseMetricArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific License Metric resource in Oracle Cloud Infrastructure License Manager service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.LicenseManager
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetLicenseMetricResult> Invoke(GetLicenseMetricInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetLicenseMetricResult>("oci:LicenseManager/getLicenseMetric:getLicenseMetric", args ?? new GetLicenseMetricInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetLicenseMetricResult>("oci:LicenseManager/getLicenseMetric:getLicenseMetric", args ?? new GetLicenseMetricInvokeArgs(), options.WithDefaults());
     }
 
 

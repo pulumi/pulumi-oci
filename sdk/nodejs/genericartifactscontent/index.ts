@@ -5,12 +5,21 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./artifactByPath";
-export * from "./getArtifactByPath";
-export * from "./getGenericArtifactsContent";
+export { ArtifactByPathArgs, ArtifactByPathState } from "./artifactByPath";
+export type ArtifactByPath = import("./artifactByPath").ArtifactByPath;
+export const ArtifactByPath: typeof import("./artifactByPath").ArtifactByPath = null as any;
+utilities.lazyLoad(exports, ["ArtifactByPath"], () => require("./artifactByPath"));
 
-// Import resources to register:
-import { ArtifactByPath } from "./artifactByPath";
+export { GetArtifactByPathArgs, GetArtifactByPathResult, GetArtifactByPathOutputArgs } from "./getArtifactByPath";
+export const getArtifactByPath: typeof import("./getArtifactByPath").getArtifactByPath = null as any;
+export const getArtifactByPathOutput: typeof import("./getArtifactByPath").getArtifactByPathOutput = null as any;
+utilities.lazyLoad(exports, ["getArtifactByPath","getArtifactByPathOutput"], () => require("./getArtifactByPath"));
+
+export { GetGenericArtifactsContentArgs, GetGenericArtifactsContentResult, GetGenericArtifactsContentOutputArgs } from "./getGenericArtifactsContent";
+export const getGenericArtifactsContent: typeof import("./getGenericArtifactsContent").getGenericArtifactsContent = null as any;
+export const getGenericArtifactsContentOutput: typeof import("./getGenericArtifactsContent").getGenericArtifactsContentOutput = null as any;
+utilities.lazyLoad(exports, ["getGenericArtifactsContent","getGenericArtifactsContentOutput"], () => require("./getGenericArtifactsContent"));
+
 
 const _module = {
     version: utilities.getVersion(),

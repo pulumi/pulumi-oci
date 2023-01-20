@@ -17,7 +17,7 @@ public final class BdsInstanceClusterDetail {
      */
     private @Nullable String ambariUrl;
     /**
-     * @return Cloud SQL cell version
+     * @return Cloud SQL cell version.
      * 
      */
     private @Nullable String bdCellVersion;
@@ -27,37 +27,37 @@ public final class BdsInstanceClusterDetail {
      */
     private @Nullable String bdaVersion;
     /**
-     * @return Big Data Manager version installed in the cluster
+     * @return Big Data Manager version installed in the cluster.
      * 
      */
     private @Nullable String bdmVersion;
     /**
-     * @return Big Data Service version installed in the cluster
+     * @return Big Data Service version installed in the cluster.
      * 
      */
     private @Nullable String bdsVersion;
     /**
-     * @return The URL of a Big Data Manager
+     * @return The URL of Big Data Manager.
      * 
      */
     private @Nullable String bigDataManagerUrl;
     /**
-     * @return The URL of a Cloudera Manager
+     * @return The URL of Cloudera Manager
      * 
      */
     private @Nullable String clouderaManagerUrl;
     /**
-     * @return Big Data SQL version
+     * @return Big Data SQL version.
      * 
      */
     private @Nullable String csqlCellVersion;
     /**
-     * @return Query Server Database version
+     * @return Cloud SQL query server database version.
      * 
      */
     private @Nullable String dbVersion;
     /**
-     * @return The URL of a Hue Server
+     * @return The URL of the Hue server.
      * 
      */
     private @Nullable String hueServerUrl;
@@ -72,7 +72,7 @@ public final class BdsInstanceClusterDetail {
      */
     private @Nullable String odhVersion;
     /**
-     * @return Oracle Linux version installed in the cluster
+     * @return Oracle Linux version installed in the cluster.
      * 
      */
     private @Nullable String osVersion;
@@ -82,7 +82,7 @@ public final class BdsInstanceClusterDetail {
      */
     private @Nullable String timeCreated;
     /**
-     * @return The time the BDS instance was automatically, or manually refreshed. An RFC3339 formatted datetime string
+     * @return The time the cluster was automatically or manually refreshed, shown as an RFC 3339 formatted datetime string.
      * 
      */
     private @Nullable String timeRefreshed;
@@ -96,7 +96,7 @@ public final class BdsInstanceClusterDetail {
         return Optional.ofNullable(this.ambariUrl);
     }
     /**
-     * @return Cloud SQL cell version
+     * @return Cloud SQL cell version.
      * 
      */
     public Optional<String> bdCellVersion() {
@@ -110,49 +110,49 @@ public final class BdsInstanceClusterDetail {
         return Optional.ofNullable(this.bdaVersion);
     }
     /**
-     * @return Big Data Manager version installed in the cluster
+     * @return Big Data Manager version installed in the cluster.
      * 
      */
     public Optional<String> bdmVersion() {
         return Optional.ofNullable(this.bdmVersion);
     }
     /**
-     * @return Big Data Service version installed in the cluster
+     * @return Big Data Service version installed in the cluster.
      * 
      */
     public Optional<String> bdsVersion() {
         return Optional.ofNullable(this.bdsVersion);
     }
     /**
-     * @return The URL of a Big Data Manager
+     * @return The URL of Big Data Manager.
      * 
      */
     public Optional<String> bigDataManagerUrl() {
         return Optional.ofNullable(this.bigDataManagerUrl);
     }
     /**
-     * @return The URL of a Cloudera Manager
+     * @return The URL of Cloudera Manager
      * 
      */
     public Optional<String> clouderaManagerUrl() {
         return Optional.ofNullable(this.clouderaManagerUrl);
     }
     /**
-     * @return Big Data SQL version
+     * @return Big Data SQL version.
      * 
      */
     public Optional<String> csqlCellVersion() {
         return Optional.ofNullable(this.csqlCellVersion);
     }
     /**
-     * @return Query Server Database version
+     * @return Cloud SQL query server database version.
      * 
      */
     public Optional<String> dbVersion() {
         return Optional.ofNullable(this.dbVersion);
     }
     /**
-     * @return The URL of a Hue Server
+     * @return The URL of the Hue server.
      * 
      */
     public Optional<String> hueServerUrl() {
@@ -173,7 +173,7 @@ public final class BdsInstanceClusterDetail {
         return Optional.ofNullable(this.odhVersion);
     }
     /**
-     * @return Oracle Linux version installed in the cluster
+     * @return Oracle Linux version installed in the cluster.
      * 
      */
     public Optional<String> osVersion() {
@@ -187,7 +187,7 @@ public final class BdsInstanceClusterDetail {
         return Optional.ofNullable(this.timeCreated);
     }
     /**
-     * @return The time the BDS instance was automatically, or manually refreshed. An RFC3339 formatted datetime string
+     * @return The time the cluster was automatically or manually refreshed, shown as an RFC 3339 formatted datetime string.
      * 
      */
     public Optional<String> timeRefreshed() {

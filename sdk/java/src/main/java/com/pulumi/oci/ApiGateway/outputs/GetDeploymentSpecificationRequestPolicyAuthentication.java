@@ -5,11 +5,15 @@ package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentSpecificationRequestPolicyAuthenticationPublicKey;
+import com.pulumi.oci.ApiGateway.outputs.GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicy;
+import com.pulumi.oci.ApiGateway.outputs.GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicy;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentSpecificationRequestPolicyAuthenticationVerifyClaim;
 import java.lang.Boolean;
 import java.lang.Double;
+import java.lang.Object;
 import java.lang.String;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 @CustomType
@@ -19,6 +23,11 @@ public final class GetDeploymentSpecificationRequestPolicyAuthentication {
      * 
      */
     private List<String> audiences;
+    /**
+     * @return A list of keys from &#34;parameters&#34; attribute value whose values will be added to the cache key.
+     * 
+     */
+    private List<String> cacheKeys;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
      * 
@@ -39,6 +48,7 @@ public final class GetDeploymentSpecificationRequestPolicyAuthentication {
      * 
      */
     private Double maxClockSkewInSeconds;
+    private Map<String,Object> parameters;
     /**
      * @return A set of Public Keys that will be used to verify the JWT signature.
      * 
@@ -65,6 +75,16 @@ public final class GetDeploymentSpecificationRequestPolicyAuthentication {
      */
     private String type;
     /**
+     * @return Policy for defining behaviour on validation failure.
+     * 
+     */
+    private List<GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicy> validationFailurePolicies;
+    /**
+     * @return Authentication Policies for the Token Authentication types.
+     * 
+     */
+    private List<GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicy> validationPolicies;
+    /**
      * @return A list of claims which should be validated to consider the token valid.
      * 
      */
@@ -77,6 +97,13 @@ public final class GetDeploymentSpecificationRequestPolicyAuthentication {
      */
     public List<String> audiences() {
         return this.audiences;
+    }
+    /**
+     * @return A list of keys from &#34;parameters&#34; attribute value whose values will be added to the cache key.
+     * 
+     */
+    public List<String> cacheKeys() {
+        return this.cacheKeys;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
@@ -105,6 +132,9 @@ public final class GetDeploymentSpecificationRequestPolicyAuthentication {
      */
     public Double maxClockSkewInSeconds() {
         return this.maxClockSkewInSeconds;
+    }
+    public Map<String,Object> parameters() {
+        return this.parameters;
     }
     /**
      * @return A set of Public Keys that will be used to verify the JWT signature.
@@ -142,6 +172,20 @@ public final class GetDeploymentSpecificationRequestPolicyAuthentication {
         return this.type;
     }
     /**
+     * @return Policy for defining behaviour on validation failure.
+     * 
+     */
+    public List<GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicy> validationFailurePolicies() {
+        return this.validationFailurePolicies;
+    }
+    /**
+     * @return Authentication Policies for the Token Authentication types.
+     * 
+     */
+    public List<GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicy> validationPolicies() {
+        return this.validationPolicies;
+    }
+    /**
      * @return A list of claims which should be validated to consider the token valid.
      * 
      */
@@ -159,29 +203,37 @@ public final class GetDeploymentSpecificationRequestPolicyAuthentication {
     @CustomType.Builder
     public static final class Builder {
         private List<String> audiences;
+        private List<String> cacheKeys;
         private String functionId;
         private Boolean isAnonymousAccessAllowed;
         private List<String> issuers;
         private Double maxClockSkewInSeconds;
+        private Map<String,Object> parameters;
         private List<GetDeploymentSpecificationRequestPolicyAuthenticationPublicKey> publicKeys;
         private String tokenAuthScheme;
         private String tokenHeader;
         private String tokenQueryParam;
         private String type;
+        private List<GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicy> validationFailurePolicies;
+        private List<GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicy> validationPolicies;
         private List<GetDeploymentSpecificationRequestPolicyAuthenticationVerifyClaim> verifyClaims;
         public Builder() {}
         public Builder(GetDeploymentSpecificationRequestPolicyAuthentication defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.audiences = defaults.audiences;
+    	      this.cacheKeys = defaults.cacheKeys;
     	      this.functionId = defaults.functionId;
     	      this.isAnonymousAccessAllowed = defaults.isAnonymousAccessAllowed;
     	      this.issuers = defaults.issuers;
     	      this.maxClockSkewInSeconds = defaults.maxClockSkewInSeconds;
+    	      this.parameters = defaults.parameters;
     	      this.publicKeys = defaults.publicKeys;
     	      this.tokenAuthScheme = defaults.tokenAuthScheme;
     	      this.tokenHeader = defaults.tokenHeader;
     	      this.tokenQueryParam = defaults.tokenQueryParam;
     	      this.type = defaults.type;
+    	      this.validationFailurePolicies = defaults.validationFailurePolicies;
+    	      this.validationPolicies = defaults.validationPolicies;
     	      this.verifyClaims = defaults.verifyClaims;
         }
 
@@ -192,6 +244,14 @@ public final class GetDeploymentSpecificationRequestPolicyAuthentication {
         }
         public Builder audiences(String... audiences) {
             return audiences(List.of(audiences));
+        }
+        @CustomType.Setter
+        public Builder cacheKeys(List<String> cacheKeys) {
+            this.cacheKeys = Objects.requireNonNull(cacheKeys);
+            return this;
+        }
+        public Builder cacheKeys(String... cacheKeys) {
+            return cacheKeys(List.of(cacheKeys));
         }
         @CustomType.Setter
         public Builder functionId(String functionId) {
@@ -214,6 +274,11 @@ public final class GetDeploymentSpecificationRequestPolicyAuthentication {
         @CustomType.Setter
         public Builder maxClockSkewInSeconds(Double maxClockSkewInSeconds) {
             this.maxClockSkewInSeconds = Objects.requireNonNull(maxClockSkewInSeconds);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder parameters(Map<String,Object> parameters) {
+            this.parameters = Objects.requireNonNull(parameters);
             return this;
         }
         @CustomType.Setter
@@ -245,6 +310,22 @@ public final class GetDeploymentSpecificationRequestPolicyAuthentication {
             return this;
         }
         @CustomType.Setter
+        public Builder validationFailurePolicies(List<GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicy> validationFailurePolicies) {
+            this.validationFailurePolicies = Objects.requireNonNull(validationFailurePolicies);
+            return this;
+        }
+        public Builder validationFailurePolicies(GetDeploymentSpecificationRequestPolicyAuthenticationValidationFailurePolicy... validationFailurePolicies) {
+            return validationFailurePolicies(List.of(validationFailurePolicies));
+        }
+        @CustomType.Setter
+        public Builder validationPolicies(List<GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicy> validationPolicies) {
+            this.validationPolicies = Objects.requireNonNull(validationPolicies);
+            return this;
+        }
+        public Builder validationPolicies(GetDeploymentSpecificationRequestPolicyAuthenticationValidationPolicy... validationPolicies) {
+            return validationPolicies(List.of(validationPolicies));
+        }
+        @CustomType.Setter
         public Builder verifyClaims(List<GetDeploymentSpecificationRequestPolicyAuthenticationVerifyClaim> verifyClaims) {
             this.verifyClaims = Objects.requireNonNull(verifyClaims);
             return this;
@@ -255,15 +336,19 @@ public final class GetDeploymentSpecificationRequestPolicyAuthentication {
         public GetDeploymentSpecificationRequestPolicyAuthentication build() {
             final var o = new GetDeploymentSpecificationRequestPolicyAuthentication();
             o.audiences = audiences;
+            o.cacheKeys = cacheKeys;
             o.functionId = functionId;
             o.isAnonymousAccessAllowed = isAnonymousAccessAllowed;
             o.issuers = issuers;
             o.maxClockSkewInSeconds = maxClockSkewInSeconds;
+            o.parameters = parameters;
             o.publicKeys = publicKeys;
             o.tokenAuthScheme = tokenAuthScheme;
             o.tokenHeader = tokenHeader;
             o.tokenQueryParam = tokenQueryParam;
             o.type = type;
+            o.validationFailurePolicies = validationFailurePolicies;
+            o.validationPolicies = validationPolicies;
             o.verifyClaims = verifyClaims;
             return o;
         }

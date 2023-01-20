@@ -115,7 +115,7 @@ export class DbCredential extends pulumi.CustomResource {
                 throw new Error("Missing required property 'userId'");
             }
             resourceInputs["description"] = args ? args.description : undefined;
-            resourceInputs["password"] = args ? args.password : undefined;
+            resourceInputs["password"] = args?.password ? pulumi.secret(args.password) : undefined;
             resourceInputs["userId"] = args ? args.userId : undefined;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
@@ -123,6 +123,8 @@ export class DbCredential extends pulumi.CustomResource {
             resourceInputs["timeExpires"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["password"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(DbCredential.__pulumiType, name, resourceInputs, opts);
     }
 }

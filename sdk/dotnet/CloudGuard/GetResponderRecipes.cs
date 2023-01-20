@@ -57,7 +57,7 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetResponderRecipesResult> InvokeAsync(GetResponderRecipesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetResponderRecipesResult>("oci:CloudGuard/getResponderRecipes:getResponderRecipes", args ?? new GetResponderRecipesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetResponderRecipesResult>("oci:CloudGuard/getResponderRecipes:getResponderRecipes", args ?? new GetResponderRecipesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Responder Recipes in Oracle Cloud Infrastructure Cloud Guard service.
@@ -105,7 +105,7 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetResponderRecipesResult> Invoke(GetResponderRecipesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetResponderRecipesResult>("oci:CloudGuard/getResponderRecipes:getResponderRecipes", args ?? new GetResponderRecipesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetResponderRecipesResult>("oci:CloudGuard/getResponderRecipes:getResponderRecipes", args ?? new GetResponderRecipesInvokeArgs(), options.WithDefaults());
     }
 
 

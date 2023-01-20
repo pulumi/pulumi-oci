@@ -41,7 +41,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetNamespaceScheduledTasksResult> InvokeAsync(GetNamespaceScheduledTasksArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetNamespaceScheduledTasksResult>("oci:LogAnalytics/getNamespaceScheduledTasks:getNamespaceScheduledTasks", args ?? new GetNamespaceScheduledTasksArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetNamespaceScheduledTasksResult>("oci:LogAnalytics/getNamespaceScheduledTasks:getNamespaceScheduledTasks", args ?? new GetNamespaceScheduledTasksArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Namespace Scheduled Tasks in Oracle Cloud Infrastructure Log Analytics service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetNamespaceScheduledTasksResult> Invoke(GetNamespaceScheduledTasksInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetNamespaceScheduledTasksResult>("oci:LogAnalytics/getNamespaceScheduledTasks:getNamespaceScheduledTasks", args ?? new GetNamespaceScheduledTasksInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetNamespaceScheduledTasksResult>("oci:LogAnalytics/getNamespaceScheduledTasks:getNamespaceScheduledTasks", args ?? new GetNamespaceScheduledTasksInvokeArgs(), options.WithDefaults());
     }
 
 

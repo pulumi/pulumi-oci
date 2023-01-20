@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -21,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCloudAutonomousVmCluster(args: GetCloudAutonomousVmClusterArgs, opts?: pulumi.InvokeOptions): Promise<GetCloudAutonomousVmClusterResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getCloudAutonomousVmCluster:getCloudAutonomousVmCluster", {
         "cloudAutonomousVmClusterId": args.cloudAutonomousVmClusterId,
     }, opts);
@@ -79,9 +78,13 @@ export interface GetCloudAutonomousVmClusterResult {
      */
     readonly compartmentId: string;
     /**
-     * The number of CPU cores enabled on the cloud Autonomous VM cluster.
+     * The number of CPU cores on the cloud Autonomous VM cluster.
      */
     readonly cpuCoreCount: number;
+    /**
+     * The number of OCPU cores enabled per VM cluster node.
+     */
+    readonly cpuCoreCountPerNode: number;
     /**
      * The total data storage allocated, in gigabytes (GB).
      */
@@ -94,6 +97,7 @@ export interface GetCloudAutonomousVmClusterResult {
      * The local node storage allocated in GBs.
      */
     readonly dbNodeStorageSizeInGbs: number;
+    readonly dbServers: string[];
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
@@ -138,6 +142,11 @@ export interface GetCloudAutonomousVmClusterResult {
      * Additional information about the current lifecycle state.
      */
     readonly lifecycleDetails: string;
+    readonly maintenanceWindowDetails: outputs.Database.GetCloudAutonomousVmClusterMaintenanceWindowDetail[];
+    /**
+     * The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+     */
+    readonly maintenanceWindows: outputs.Database.GetCloudAutonomousVmClusterMaintenanceWindow[];
     /**
      * The amount of memory (in GBs) enabled per each OCPU core.
      */
@@ -160,15 +169,13 @@ export interface GetCloudAutonomousVmClusterResult {
      */
     readonly nsgIds: string[];
     /**
-     * The number of CPU cores enabled on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
+     * The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
      */
     readonly ocpuCount: number;
     /**
      * CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
      */
     readonly reclaimableCpus: number;
-    readonly rotateOrdsCertsTrigger: boolean;
-    readonly rotateSslCertsTrigger: boolean;
     /**
      * The model name of the Exadata hardware running the cloud Autonomous VM cluster.
      */
@@ -194,9 +201,24 @@ export interface GetCloudAutonomousVmClusterResult {
      */
     readonly totalContainerDatabases: number;
 }
-
+/**
+ * This data source provides details about a specific Cloud Autonomous Vm Cluster resource in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets information about the specified Autonomous Exadata VM cluster in the Oracle cloud. For Exadata Cloud@Custustomer systems, see [GetAutonomousVmCluster ](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousVmCluster/GetAutonomousVmCluster).
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCloudAutonomousVmCluster = oci.Database.getCloudAutonomousVmCluster({
+ *     cloudAutonomousVmClusterId: oci_database_cloud_autonomous_vm_cluster.test_cloud_autonomous_vm_cluster.id,
+ * });
+ * ```
+ */
 export function getCloudAutonomousVmClusterOutput(args: GetCloudAutonomousVmClusterOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudAutonomousVmClusterResult> {
-    return pulumi.output(args).apply(a => getCloudAutonomousVmCluster(a, opts))
+    return pulumi.output(args).apply((a: any) => getCloudAutonomousVmCluster(a, opts))
 }
 
 /**

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getIamWorkRequests(args: GetIamWorkRequestsArgs, opts?: pulumi.InvokeOptions): Promise<GetIamWorkRequestsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getIamWorkRequests:getIamWorkRequests", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -72,9 +70,28 @@ export interface GetIamWorkRequestsResult {
     readonly id: string;
     readonly resourceIdentifier?: string;
 }
-
+/**
+ * This data source provides the list of Iam Work Requests in Oracle Cloud Infrastructure Identity service.
+ *
+ * List the IAM work requests in compartment
+ *
+ * - If IAM workrequest  details are retrieved sucessfully, return 202 ACCEPTED.
+ * - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testIamWorkRequests = oci.Identity.getIamWorkRequests({
+ *     compartmentId: _var.compartment_id,
+ *     resourceIdentifier: _var.iam_work_request_resource_identifier,
+ * });
+ * ```
+ */
 export function getIamWorkRequestsOutput(args: GetIamWorkRequestsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIamWorkRequestsResult> {
-    return pulumi.output(args).apply(a => getIamWorkRequests(a, opts))
+    return pulumi.output(args).apply((a: any) => getIamWorkRequests(a, opts))
 }
 
 /**

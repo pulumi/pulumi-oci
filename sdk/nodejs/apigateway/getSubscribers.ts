@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSubscribers(args: GetSubscribersArgs, opts?: pulumi.InvokeOptions): Promise<GetSubscribersResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ApiGateway/getSubscribers:getSubscribers", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -82,9 +80,26 @@ export interface GetSubscribersResult {
      */
     readonly subscriberCollections: outputs.ApiGateway.GetSubscribersSubscriberCollection[];
 }
-
+/**
+ * This data source provides the list of Subscribers in Oracle Cloud Infrastructure API Gateway service.
+ *
+ * Returns a list of subscribers.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSubscribers = oci.ApiGateway.getSubscribers({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.subscriber_display_name,
+ *     state: _var.subscriber_state,
+ * });
+ * ```
+ */
 export function getSubscribersOutput(args: GetSubscribersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSubscribersResult> {
-    return pulumi.output(args).apply(a => getSubscribers(a, opts))
+    return pulumi.output(args).apply((a: any) => getSubscribers(a, opts))
 }
 
 /**

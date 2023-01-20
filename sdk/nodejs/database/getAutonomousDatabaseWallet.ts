@@ -20,11 +20,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAutonomousDatabaseWallet(args: GetAutonomousDatabaseWalletArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousDatabaseWalletResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getAutonomousDatabaseWallet:getAutonomousDatabaseWallet", {
         "autonomousDatabaseId": args.autonomousDatabaseId,
         "base64EncodeContent": args.base64EncodeContent,
@@ -74,9 +71,23 @@ export interface GetAutonomousDatabaseWalletResult {
     readonly id: string;
     readonly password: string;
 }
-
+/**
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAutonomousDatabaseWallet = oci.Database.getAutonomousDatabaseWallet({
+ *     autonomousDatabaseId: oci_database_autonomous_database.test_autonomous_database.id,
+ *     password: _var.autonomous_database_wallet_password,
+ *     base64EncodeContent: false,
+ *     generateType: _var.autonomous_database_wallet_generate_type,
+ * });
+ * ```
+ */
 export function getAutonomousDatabaseWalletOutput(args: GetAutonomousDatabaseWalletOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousDatabaseWalletResult> {
-    return pulumi.output(args).apply(a => getAutonomousDatabaseWallet(a, opts))
+    return pulumi.output(args).apply((a: any) => getAutonomousDatabaseWallet(a, opts))
 }
 
 /**

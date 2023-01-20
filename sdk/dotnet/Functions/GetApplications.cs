@@ -41,7 +41,7 @@ namespace Pulumi.Oci.Functions
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetApplicationsResult> InvokeAsync(GetApplicationsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetApplicationsResult>("oci:Functions/getApplications:getApplications", args ?? new GetApplicationsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetApplicationsResult>("oci:Functions/getApplications:getApplications", args ?? new GetApplicationsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Applications in Oracle Cloud Infrastructure Functions service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.Functions
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetApplicationsResult> Invoke(GetApplicationsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetApplicationsResult>("oci:Functions/getApplications:getApplications", args ?? new GetApplicationsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetApplicationsResult>("oci:Functions/getApplications:getApplications", args ?? new GetApplicationsInvokeArgs(), options.WithDefaults());
     }
 
 

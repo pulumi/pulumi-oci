@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedInstances(args: GetManagedInstancesArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedInstancesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsManagement/getManagedInstances:getManagedInstances", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -82,9 +80,26 @@ export interface GetManagedInstancesResult {
      */
     readonly osFamily?: string;
 }
-
+/**
+ * This data source provides the list of Managed Instances in Oracle Cloud Infrastructure OS Management service.
+ *
+ * Returns a list of all Managed Instances.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testManagedInstances = oci.OsManagement.getManagedInstances({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.managed_instance_display_name,
+ *     osFamily: _var.managed_instance_os_family,
+ * });
+ * ```
+ */
 export function getManagedInstancesOutput(args: GetManagedInstancesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedInstancesResult> {
-    return pulumi.output(args).apply(a => getManagedInstances(a, opts))
+    return pulumi.output(args).apply((a: any) => getManagedInstances(a, opts))
 }
 
 /**

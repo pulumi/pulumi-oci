@@ -16,6 +16,21 @@ public final class VmClusterNetworkVmNetworkNodeArgs extends com.pulumi.resource
     public static final VmClusterNetworkVmNetworkNodeArgs Empty = new VmClusterNetworkVmNetworkNodeArgs();
 
     /**
+     * (Updatable) The Db server associated with the node.
+     * 
+     */
+    @Import(name="dbServerId")
+    private @Nullable Output<String> dbServerId;
+
+    /**
+     * @return (Updatable) The Db server associated with the node.
+     * 
+     */
+    public Optional<Output<String>> dbServerId() {
+        return Optional.ofNullable(this.dbServerId);
+    }
+
+    /**
      * (Updatable) The node host name.
      * 
      */
@@ -43,6 +58,21 @@ public final class VmClusterNetworkVmNetworkNodeArgs extends com.pulumi.resource
      */
     public Output<String> ip() {
         return this.ip;
+    }
+
+    /**
+     * (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
+     * 
+     */
+    @Import(name="state")
+    private @Nullable Output<String> state;
+
+    /**
+     * @return (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
+     * 
+     */
+    public Optional<Output<String>> state() {
+        return Optional.ofNullable(this.state);
     }
 
     /**
@@ -78,8 +108,10 @@ public final class VmClusterNetworkVmNetworkNodeArgs extends com.pulumi.resource
     private VmClusterNetworkVmNetworkNodeArgs() {}
 
     private VmClusterNetworkVmNetworkNodeArgs(VmClusterNetworkVmNetworkNodeArgs $) {
+        this.dbServerId = $.dbServerId;
         this.hostname = $.hostname;
         this.ip = $.ip;
+        this.state = $.state;
         this.vip = $.vip;
         this.vipHostname = $.vipHostname;
     }
@@ -100,6 +132,27 @@ public final class VmClusterNetworkVmNetworkNodeArgs extends com.pulumi.resource
 
         public Builder(VmClusterNetworkVmNetworkNodeArgs defaults) {
             $ = new VmClusterNetworkVmNetworkNodeArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param dbServerId (Updatable) The Db server associated with the node.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbServerId(@Nullable Output<String> dbServerId) {
+            $.dbServerId = dbServerId;
+            return this;
+        }
+
+        /**
+         * @param dbServerId (Updatable) The Db server associated with the node.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbServerId(String dbServerId) {
+            return dbServerId(Output.of(dbServerId));
         }
 
         /**
@@ -142,6 +195,27 @@ public final class VmClusterNetworkVmNetworkNodeArgs extends com.pulumi.resource
          */
         public Builder ip(String ip) {
             return ip(Output.of(ip));
+        }
+
+        /**
+         * @param state (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder state(@Nullable Output<String> state) {
+            $.state = state;
+            return this;
+        }
+
+        /**
+         * @param state (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder state(String state) {
+            return state(Output.of(state));
         }
 
         /**

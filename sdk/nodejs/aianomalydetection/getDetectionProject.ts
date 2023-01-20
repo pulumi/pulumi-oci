@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDetectionProject(args: GetDetectionProjectArgs, opts?: pulumi.InvokeOptions): Promise<GetDetectionProjectResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:AiAnomalyDetection/getDetectionProject:getDetectionProject", {
         "projectId": args.projectId,
     }, opts);
@@ -87,9 +84,24 @@ export interface GetDetectionProjectResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Project resource in Oracle Cloud Infrastructure Ai Anomaly Detection service.
+ *
+ * Gets a Project by identifier
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testProject = oci.AiAnomalyDetection.getDetectionProject({
+ *     projectId: oci_ai_anomaly_detection_project.test_project.id,
+ * });
+ * ```
+ */
 export function getDetectionProjectOutput(args: GetDetectionProjectOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDetectionProjectResult> {
-    return pulumi.output(args).apply(a => getDetectionProject(a, opts))
+    return pulumi.output(args).apply((a: any) => getDetectionProject(a, opts))
 }
 
 /**

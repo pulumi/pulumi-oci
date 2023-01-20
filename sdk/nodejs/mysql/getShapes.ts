@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -28,11 +29,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getShapes(args: GetShapesArgs, opts?: pulumi.InvokeOptions): Promise<GetShapesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Mysql/getShapes:getShapes", {
         "availabilityDomain": args.availabilityDomain,
         "compartmentId": args.compartmentId,
@@ -89,9 +87,30 @@ export interface GetShapesResult {
      */
     readonly shapes: outputs.Mysql.GetShapesShape[];
 }
-
+/**
+ * This data source provides the list of Shapes in Oracle Cloud Infrastructure MySQL Database service.
+ *
+ * Gets a list of the shapes you can use to create a new MySQL DB System.
+ * The shape determines the resources allocated to the DB System:
+ * CPU cores and memory for VM shapes; CPU cores, memory and
+ * storage for non-VM (or bare metal) shapes.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testShapes = oci.Mysql.getShapes({
+ *     compartmentId: _var.compartment_id,
+ *     availabilityDomain: _var.shape_availability_domain,
+ *     isSupportedFors: _var.shape_is_supported_for,
+ *     name: _var.shape_name,
+ * });
+ * ```
+ */
 export function getShapesOutput(args: GetShapesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetShapesResult> {
-    return pulumi.output(args).apply(a => getShapes(a, opts))
+    return pulumi.output(args).apply((a: any) => getShapes(a, opts))
 }
 
 /**

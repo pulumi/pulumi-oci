@@ -44,7 +44,7 @@ namespace Pulumi.Oci.FileStorage
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetMountTargetsResult> InvokeAsync(GetMountTargetsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetMountTargetsResult>("oci:FileStorage/getMountTargets:getMountTargets", args ?? new GetMountTargetsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetMountTargetsResult>("oci:FileStorage/getMountTargets:getMountTargets", args ?? new GetMountTargetsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Mount Targets in Oracle Cloud Infrastructure File Storage service.
@@ -79,7 +79,7 @@ namespace Pulumi.Oci.FileStorage
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetMountTargetsResult> Invoke(GetMountTargetsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetMountTargetsResult>("oci:FileStorage/getMountTargets:getMountTargets", args ?? new GetMountTargetsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetMountTargetsResult>("oci:FileStorage/getMountTargets:getMountTargets", args ?? new GetMountTargetsInvokeArgs(), options.WithDefaults());
     }
 
 

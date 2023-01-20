@@ -88,6 +88,11 @@ public final class GetAuditProfilesAuditProfileCollectionItemAuditTrail {
      */
     private String timeCreated;
     /**
+     * @return The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+     * 
+     */
+    private String timeLastCollected;
+    /**
      * @return The date and time the audit profile was updated, in the format defined by RFC3339.
      * 
      */
@@ -210,6 +215,13 @@ public final class GetAuditProfilesAuditProfileCollectionItemAuditTrail {
         return this.timeCreated;
     }
     /**
+     * @return The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+     * 
+     */
+    public String timeLastCollected() {
+        return this.timeLastCollected;
+    }
+    /**
      * @return The date and time the audit profile was updated, in the format defined by RFC3339.
      * 
      */
@@ -255,6 +267,7 @@ public final class GetAuditProfilesAuditProfileCollectionItemAuditTrail {
         private Map<String,Object> systemTags;
         private String targetId;
         private String timeCreated;
+        private String timeLastCollected;
         private String timeUpdated;
         private String trailLocation;
         private String workRequestId;
@@ -276,6 +289,7 @@ public final class GetAuditProfilesAuditProfileCollectionItemAuditTrail {
     	      this.systemTags = defaults.systemTags;
     	      this.targetId = defaults.targetId;
     	      this.timeCreated = defaults.timeCreated;
+    	      this.timeLastCollected = defaults.timeLastCollected;
     	      this.timeUpdated = defaults.timeUpdated;
     	      this.trailLocation = defaults.trailLocation;
     	      this.workRequestId = defaults.workRequestId;
@@ -357,6 +371,11 @@ public final class GetAuditProfilesAuditProfileCollectionItemAuditTrail {
             return this;
         }
         @CustomType.Setter
+        public Builder timeLastCollected(String timeLastCollected) {
+            this.timeLastCollected = Objects.requireNonNull(timeLastCollected);
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeUpdated(String timeUpdated) {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
@@ -388,6 +407,7 @@ public final class GetAuditProfilesAuditProfileCollectionItemAuditTrail {
             o.systemTags = systemTags;
             o.targetId = targetId;
             o.timeCreated = timeCreated;
+            o.timeLastCollected = timeLastCollected;
             o.timeUpdated = timeUpdated;
             o.trailLocation = trailLocation;
             o.workRequestId = workRequestId;

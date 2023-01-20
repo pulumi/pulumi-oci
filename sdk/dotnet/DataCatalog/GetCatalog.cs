@@ -38,7 +38,7 @@ namespace Pulumi.Oci.DataCatalog
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetCatalogResult> InvokeAsync(GetCatalogArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetCatalogResult>("oci:DataCatalog/getCatalog:getCatalog", args ?? new GetCatalogArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetCatalogResult>("oci:DataCatalog/getCatalog:getCatalog", args ?? new GetCatalogArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Catalog resource in Oracle Cloud Infrastructure Data Catalog service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.DataCatalog
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetCatalogResult> Invoke(GetCatalogInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetCatalogResult>("oci:DataCatalog/getCatalog:getCatalog", args ?? new GetCatalogInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetCatalogResult>("oci:DataCatalog/getCatalog:getCatalog", args ?? new GetCatalogInvokeArgs(), options.WithDefaults());
     }
 
 

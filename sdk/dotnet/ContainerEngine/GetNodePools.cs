@@ -41,7 +41,7 @@ namespace Pulumi.Oci.ContainerEngine
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetNodePoolsResult> InvokeAsync(GetNodePoolsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetNodePoolsResult>("oci:ContainerEngine/getNodePools:getNodePools", args ?? new GetNodePoolsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetNodePoolsResult>("oci:ContainerEngine/getNodePools:getNodePools", args ?? new GetNodePoolsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Node Pools in Oracle Cloud Infrastructure Container Engine service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.ContainerEngine
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetNodePoolsResult> Invoke(GetNodePoolsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetNodePoolsResult>("oci:ContainerEngine/getNodePools:getNodePools", args ?? new GetNodePoolsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetNodePoolsResult>("oci:ContainerEngine/getNodePools:getNodePools", args ?? new GetNodePoolsInvokeArgs(), options.WithDefaults());
     }
 
 

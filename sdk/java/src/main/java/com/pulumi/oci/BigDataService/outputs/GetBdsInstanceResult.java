@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceCloudSqlDetail;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceClusterDetail;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceComputeOnlyWorkerNode;
+import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceEdgeNode;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceMasterNode;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceNetworkConfig;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceNode;
@@ -39,6 +40,11 @@ public final class GetBdsInstanceResult {
      * 
      */
     private List<GetBdsInstanceClusterDetail> clusterDetails;
+    /**
+     * @return Profile of the Big Data Service cluster.
+     * 
+     */
+    private String clusterProfile;
     private String clusterPublicKey;
     /**
      * @return Version of the Hadoop distribution.
@@ -66,6 +72,7 @@ public final class GetBdsInstanceResult {
      * 
      */
     private String displayName;
+    private List<GetBdsInstanceEdgeNode> edgeNodes;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
@@ -81,6 +88,7 @@ public final class GetBdsInstanceResult {
      * 
      */
     private Boolean isCloudSqlConfigured;
+    private Boolean isForceStopJobs;
     /**
      * @return Boolean flag specifying whether or not the cluster is highly available (HA)
      * 
@@ -159,6 +167,13 @@ public final class GetBdsInstanceResult {
     public List<GetBdsInstanceClusterDetail> clusterDetails() {
         return this.clusterDetails;
     }
+    /**
+     * @return Profile of the Big Data Service cluster.
+     * 
+     */
+    public String clusterProfile() {
+        return this.clusterProfile;
+    }
     public String clusterPublicKey() {
         return this.clusterPublicKey;
     }
@@ -200,6 +215,9 @@ public final class GetBdsInstanceResult {
     public String displayName() {
         return this.displayName;
     }
+    public List<GetBdsInstanceEdgeNode> edgeNodes() {
+        return this.edgeNodes;
+    }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
@@ -220,6 +238,9 @@ public final class GetBdsInstanceResult {
      */
     public Boolean isCloudSqlConfigured() {
         return this.isCloudSqlConfigured;
+    }
+    public Boolean isForceStopJobs() {
+        return this.isForceStopJobs;
     }
     /**
      * @return Boolean flag specifying whether or not the cluster is highly available (HA)
@@ -311,6 +332,7 @@ public final class GetBdsInstanceResult {
         private List<GetBdsInstanceCloudSqlDetail> cloudSqlDetails;
         private String clusterAdminPassword;
         private List<GetBdsInstanceClusterDetail> clusterDetails;
+        private String clusterProfile;
         private String clusterPublicKey;
         private String clusterVersion;
         private String compartmentId;
@@ -318,9 +340,11 @@ public final class GetBdsInstanceResult {
         private String createdBy;
         private Map<String,Object> definedTags;
         private String displayName;
+        private List<GetBdsInstanceEdgeNode> edgeNodes;
         private Map<String,Object> freeformTags;
         private String id;
         private Boolean isCloudSqlConfigured;
+        private Boolean isForceStopJobs;
         private Boolean isHighAvailability;
         private Boolean isSecure;
         private String kerberosRealmName;
@@ -342,6 +366,7 @@ public final class GetBdsInstanceResult {
     	      this.cloudSqlDetails = defaults.cloudSqlDetails;
     	      this.clusterAdminPassword = defaults.clusterAdminPassword;
     	      this.clusterDetails = defaults.clusterDetails;
+    	      this.clusterProfile = defaults.clusterProfile;
     	      this.clusterPublicKey = defaults.clusterPublicKey;
     	      this.clusterVersion = defaults.clusterVersion;
     	      this.compartmentId = defaults.compartmentId;
@@ -349,9 +374,11 @@ public final class GetBdsInstanceResult {
     	      this.createdBy = defaults.createdBy;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
+    	      this.edgeNodes = defaults.edgeNodes;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.isCloudSqlConfigured = defaults.isCloudSqlConfigured;
+    	      this.isForceStopJobs = defaults.isForceStopJobs;
     	      this.isHighAvailability = defaults.isHighAvailability;
     	      this.isSecure = defaults.isSecure;
     	      this.kerberosRealmName = defaults.kerberosRealmName;
@@ -399,6 +426,11 @@ public final class GetBdsInstanceResult {
             return clusterDetails(List.of(clusterDetails));
         }
         @CustomType.Setter
+        public Builder clusterProfile(String clusterProfile) {
+            this.clusterProfile = Objects.requireNonNull(clusterProfile);
+            return this;
+        }
+        @CustomType.Setter
         public Builder clusterPublicKey(String clusterPublicKey) {
             this.clusterPublicKey = Objects.requireNonNull(clusterPublicKey);
             return this;
@@ -437,6 +469,14 @@ public final class GetBdsInstanceResult {
             return this;
         }
         @CustomType.Setter
+        public Builder edgeNodes(List<GetBdsInstanceEdgeNode> edgeNodes) {
+            this.edgeNodes = Objects.requireNonNull(edgeNodes);
+            return this;
+        }
+        public Builder edgeNodes(GetBdsInstanceEdgeNode... edgeNodes) {
+            return edgeNodes(List.of(edgeNodes));
+        }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             this.freeformTags = Objects.requireNonNull(freeformTags);
             return this;
@@ -449,6 +489,11 @@ public final class GetBdsInstanceResult {
         @CustomType.Setter
         public Builder isCloudSqlConfigured(Boolean isCloudSqlConfigured) {
             this.isCloudSqlConfigured = Objects.requireNonNull(isCloudSqlConfigured);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isForceStopJobs(Boolean isForceStopJobs) {
+            this.isForceStopJobs = Objects.requireNonNull(isForceStopJobs);
             return this;
         }
         @CustomType.Setter
@@ -538,6 +583,7 @@ public final class GetBdsInstanceResult {
             o.cloudSqlDetails = cloudSqlDetails;
             o.clusterAdminPassword = clusterAdminPassword;
             o.clusterDetails = clusterDetails;
+            o.clusterProfile = clusterProfile;
             o.clusterPublicKey = clusterPublicKey;
             o.clusterVersion = clusterVersion;
             o.compartmentId = compartmentId;
@@ -545,9 +591,11 @@ public final class GetBdsInstanceResult {
             o.createdBy = createdBy;
             o.definedTags = definedTags;
             o.displayName = displayName;
+            o.edgeNodes = edgeNodes;
             o.freeformTags = freeformTags;
             o.id = id;
             o.isCloudSqlConfigured = isCloudSqlConfigured;
+            o.isForceStopJobs = isForceStopJobs;
             o.isHighAvailability = isHighAvailability;
             o.isSecure = isSecure;
             o.kerberosRealmName = kerberosRealmName;

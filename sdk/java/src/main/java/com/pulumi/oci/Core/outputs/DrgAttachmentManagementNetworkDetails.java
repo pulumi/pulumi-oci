@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DrgAttachmentManagementNetworkDetails {
     /**
-     * @return -(Required) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network attached to the DRG.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network attached to the DRG.
      * 
      */
     private String id;
@@ -22,20 +22,19 @@ public final class DrgAttachmentManagementNetworkDetails {
      */
     private @Nullable String ipsecConnectionId;
     /**
-     * @return (Updatable)- The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the DRG attachment is using.
+     * @return The OCID of the route table the DRG attachment is using.
      * 
      */
     private @Nullable String routeTableId;
     /**
      * @return The type can be one of these values: `IPSEC_TUNNEL`, `REMOTE_PEERING_CONNECTION`, `VCN`,`VIRTUAL_CIRCUIT`
-     * * `route_table_id`(Optional)(Updatable) - The OCID of the route table the DRG attachment is using.
      * 
      */
     private String type;
 
     private DrgAttachmentManagementNetworkDetails() {}
     /**
-     * @return -(Required) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network attached to the DRG.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network attached to the DRG.
      * 
      */
     public String id() {
@@ -49,7 +48,7 @@ public final class DrgAttachmentManagementNetworkDetails {
         return Optional.ofNullable(this.ipsecConnectionId);
     }
     /**
-     * @return (Updatable)- The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the DRG attachment is using.
+     * @return The OCID of the route table the DRG attachment is using.
      * 
      */
     public Optional<String> routeTableId() {
@@ -57,7 +56,6 @@ public final class DrgAttachmentManagementNetworkDetails {
     }
     /**
      * @return The type can be one of these values: `IPSEC_TUNNEL`, `REMOTE_PEERING_CONNECTION`, `VCN`,`VIRTUAL_CIRCUIT`
-     * * `route_table_id`(Optional)(Updatable) - The OCID of the route table the DRG attachment is using.
      * 
      */
     public String type() {

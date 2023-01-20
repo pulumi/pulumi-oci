@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -19,13 +20,6 @@ import * as utilities from "../utilities";
  * const testAccessPolicy = new oci.servicemesh.AccessPolicy("testAccessPolicy", {
  *     compartmentId: _var.compartment_id,
  *     meshId: oci_service_mesh_mesh.test_mesh.id,
- *     definedTags: {
- *         "foo-namespace.bar-key": "value",
- *     },
- *     description: _var.access_policy_description,
- *     freeformTags: {
- *         "bar-key": "value",
- *     },
  *     rules: [{
  *         action: _var.access_policy_rules_action,
  *         destination: {
@@ -47,6 +41,13 @@ import * as utilities from "../utilities";
  *             virtualServiceId: oci_service_mesh_virtual_service.test_virtual_service.id,
  *         },
  *     }],
+ *     definedTags: {
+ *         "foo-namespace.bar-key": "value",
+ *     },
+ *     description: _var.access_policy_description,
+ *     freeformTags: {
+ *         "bar-key": "value",
+ *     },
  * });
  * ```
  *
@@ -168,6 +169,9 @@ export class AccessPolicy extends pulumi.CustomResource {
             if ((!args || args.meshId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'meshId'");
             }
+            if ((!args || args.rules === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'rules'");
+            }
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
@@ -271,5 +275,5 @@ export interface AccessPolicyArgs {
     /**
      * (Updatable) List of applicable rules
      */
-    rules?: pulumi.Input<pulumi.Input<inputs.ServiceMesh.AccessPolicyRule>[]>;
+    rules: pulumi.Input<pulumi.Input<inputs.ServiceMesh.AccessPolicyRule>[]>;
 }

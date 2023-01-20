@@ -44,7 +44,7 @@ namespace Pulumi.Oci.ResourceManager
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetPrivateEndpointsResult> InvokeAsync(GetPrivateEndpointsArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetPrivateEndpointsResult>("oci:ResourceManager/getPrivateEndpoints:getPrivateEndpoints", args ?? new GetPrivateEndpointsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetPrivateEndpointsResult>("oci:ResourceManager/getPrivateEndpoints:getPrivateEndpoints", args ?? new GetPrivateEndpointsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Private Endpoints in Oracle Cloud Infrastructure Resource Manager service.
@@ -79,7 +79,7 @@ namespace Pulumi.Oci.ResourceManager
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetPrivateEndpointsResult> Invoke(GetPrivateEndpointsInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetPrivateEndpointsResult>("oci:ResourceManager/getPrivateEndpoints:getPrivateEndpoints", args ?? new GetPrivateEndpointsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetPrivateEndpointsResult>("oci:ResourceManager/getPrivateEndpoints:getPrivateEndpoints", args ?? new GetPrivateEndpointsInvokeArgs(), options.WithDefaults());
     }
 
 

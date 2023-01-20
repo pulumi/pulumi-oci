@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Marketplace
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetCategoriesResult> InvokeAsync(GetCategoriesArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetCategoriesResult>("oci:Marketplace/getCategories:getCategories", args ?? new GetCategoriesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetCategoriesResult>("oci:Marketplace/getCategories:getCategories", args ?? new GetCategoriesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Categories in Oracle Cloud Infrastructure Marketplace service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Marketplace
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetCategoriesResult> Invoke(GetCategoriesInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetCategoriesResult>("oci:Marketplace/getCategories:getCategories", args ?? new GetCategoriesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetCategoriesResult>("oci:Marketplace/getCategories:getCategories", args ?? new GetCategoriesInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -41,7 +41,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAuditProfileCollectedAuditVolumeResult> InvokeAsync(GetAuditProfileCollectedAuditVolumeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAuditProfileCollectedAuditVolumeResult>("oci:DataSafe/getAuditProfileCollectedAuditVolume:getAuditProfileCollectedAuditVolume", args ?? new GetAuditProfileCollectedAuditVolumeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAuditProfileCollectedAuditVolumeResult>("oci:DataSafe/getAuditProfileCollectedAuditVolume:getAuditProfileCollectedAuditVolume", args ?? new GetAuditProfileCollectedAuditVolumeArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Audit Profile Collected Audit Volume resource in Oracle Cloud Infrastructure Data Safe service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAuditProfileCollectedAuditVolumeResult> Invoke(GetAuditProfileCollectedAuditVolumeInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAuditProfileCollectedAuditVolumeResult>("oci:DataSafe/getAuditProfileCollectedAuditVolume:getAuditProfileCollectedAuditVolume", args ?? new GetAuditProfileCollectedAuditVolumeInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAuditProfileCollectedAuditVolumeResult>("oci:DataSafe/getAuditProfileCollectedAuditVolume:getAuditProfileCollectedAuditVolume", args ?? new GetAuditProfileCollectedAuditVolumeInvokeArgs(), options.WithDefaults());
     }
 
 

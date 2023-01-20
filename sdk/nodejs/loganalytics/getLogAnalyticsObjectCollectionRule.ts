@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLogAnalyticsObjectCollectionRule(args: GetLogAnalyticsObjectCollectionRuleArgs, opts?: pulumi.InvokeOptions): Promise<GetLogAnalyticsObjectCollectionRuleResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LogAnalytics/getLogAnalyticsObjectCollectionRule:getLogAnalyticsObjectCollectionRule", {
         "logAnalyticsObjectCollectionRuleId": args.logAnalyticsObjectCollectionRuleId,
         "namespace": args.namespace,
@@ -94,6 +92,18 @@ export interface GetLogAnalyticsObjectCollectionRuleResult {
      */
     readonly logGroupId: string;
     /**
+     * The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
+     */
+    readonly logSet: string;
+    /**
+     * The regex to be applied against given logSetKey. Regex has to be in string escaped format.
+     */
+    readonly logSetExtRegex: string;
+    /**
+     * An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/<namespace>/b/<bucketname>/o/<objectname>).
+     */
+    readonly logSetKey: string;
+    /**
      * Name of the Logging Analytics Source to use for the processing.
      */
     readonly logSourceName: string;
@@ -138,10 +148,30 @@ export interface GetLogAnalyticsObjectCollectionRuleResult {
      * The time when this rule was last updated. An RFC3339 formatted datetime string.
      */
     readonly timeUpdated: string;
+    /**
+     * Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
+     */
+    readonly timezone: string;
 }
-
+/**
+ * This data source provides details about a specific Log Analytics Object Collection Rule resource in Oracle Cloud Infrastructure Log Analytics service.
+ *
+ * Gets a configured object storage based collection rule by given id
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testLogAnalyticsObjectCollectionRule = oci.LogAnalytics.getLogAnalyticsObjectCollectionRule({
+ *     logAnalyticsObjectCollectionRuleId: oci_log_analytics_log_analytics_object_collection_rule.test_log_analytics_object_collection_rule.id,
+ *     namespace: _var.log_analytics_object_collection_rule_namespace,
+ * });
+ * ```
+ */
 export function getLogAnalyticsObjectCollectionRuleOutput(args: GetLogAnalyticsObjectCollectionRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogAnalyticsObjectCollectionRuleResult> {
-    return pulumi.output(args).apply(a => getLogAnalyticsObjectCollectionRule(a, opts))
+    return pulumi.output(args).apply((a: any) => getLogAnalyticsObjectCollectionRule(a, opts))
 }
 
 /**

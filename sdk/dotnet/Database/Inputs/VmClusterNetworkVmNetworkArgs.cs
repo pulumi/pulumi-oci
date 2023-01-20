@@ -15,20 +15,20 @@ namespace Pulumi.Oci.Database.Inputs
         /// <summary>
         /// (Updatable) The network domain name.
         /// </summary>
-        [Input("domainName", required: true)]
-        public Input<string> DomainName { get; set; } = null!;
+        [Input("domainName")]
+        public Input<string>? DomainName { get; set; }
 
         /// <summary>
         /// (Updatable) The network gateway.
         /// </summary>
-        [Input("gateway", required: true)]
-        public Input<string> Gateway { get; set; } = null!;
+        [Input("gateway")]
+        public Input<string>? Gateway { get; set; }
 
         /// <summary>
         /// (Updatable) The network netmask.
         /// </summary>
-        [Input("netmask", required: true)]
-        public Input<string> Netmask { get; set; } = null!;
+        [Input("netmask")]
+        public Input<string>? Netmask { get; set; }
 
         /// <summary>
         /// (Updatable) The network type.
@@ -51,8 +51,8 @@ namespace Pulumi.Oci.Database.Inputs
         /// <summary>
         /// (Updatable) The network VLAN ID.
         /// </summary>
-        [Input("vlanId", required: true)]
-        public Input<string> VlanId { get; set; } = null!;
+        [Input("vlanId")]
+        public Input<string>? VlanId { get; set; }
 
         public VmClusterNetworkVmNetworkArgs()
         {

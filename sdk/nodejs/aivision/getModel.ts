@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getModel(args: GetModelArgs, opts?: pulumi.InvokeOptions): Promise<GetModelResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:AiVision/getModel:getModel", {
         "modelId": args.modelId,
     }, opts);
@@ -156,9 +154,24 @@ export interface GetModelResult {
      */
     readonly validationDatasets: outputs.AiVision.GetModelValidationDataset[];
 }
-
+/**
+ * This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Ai Vision service.
+ *
+ * Gets a Model by identifier
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testModel = oci.AiVision.getModel({
+ *     modelId: oci_ai_vision_model.test_model.id,
+ * });
+ * ```
+ */
 export function getModelOutput(args: GetModelOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetModelResult> {
-    return pulumi.output(args).apply(a => getModel(a, opts))
+    return pulumi.output(args).apply((a: any) => getModel(a, opts))
 }
 
 /**

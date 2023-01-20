@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVantagePoints(args: GetVantagePointsArgs, opts?: pulumi.InvokeOptions): Promise<GetVantagePointsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ApmSynthetics/getVantagePoints:getVantagePoints", {
         "apmDomainId": args.apmDomainId,
         "displayName": args.displayName,
@@ -79,9 +77,26 @@ export interface GetVantagePointsResult {
      */
     readonly publicVantagePointCollections: outputs.ApmSynthetics.GetVantagePointsPublicVantagePointCollection[];
 }
-
+/**
+ * This data source provides the list of Public Vantage Points in Oracle Cloud Infrastructure Apm Synthetics service.
+ *
+ * Returns a list of public vantage points.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testPublicVantagePoints = oci.ApmSynthetics.getVantagePoints({
+ *     apmDomainId: oci_apm_synthetics_apm_domain.test_apm_domain.id,
+ *     displayName: _var.public_vantage_point_display_name,
+ *     name: _var.public_vantage_point_name,
+ * });
+ * ```
+ */
 export function getVantagePointsOutput(args: GetVantagePointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVantagePointsResult> {
-    return pulumi.output(args).apply(a => getVantagePoints(a, opts))
+    return pulumi.output(args).apply((a: any) => getVantagePoints(a, opts))
 }
 
 /**

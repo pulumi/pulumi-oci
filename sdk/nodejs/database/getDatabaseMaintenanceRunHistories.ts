@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -27,11 +28,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDatabaseMaintenanceRunHistories(args: GetDatabaseMaintenanceRunHistoriesArgs, opts?: pulumi.InvokeOptions): Promise<GetDatabaseMaintenanceRunHistoriesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getDatabaseMaintenanceRunHistories:getDatabaseMaintenanceRunHistories", {
         "availabilityDomain": args.availabilityDomain,
         "compartmentId": args.compartmentId,
@@ -109,9 +107,29 @@ export interface GetDatabaseMaintenanceRunHistoriesResult {
      */
     readonly targetResourceType?: string;
 }
-
+/**
+ * This data source provides the list of Maintenance Run Histories in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets a list of the maintenance run histories in the specified compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testMaintenanceRunHistories = oci.Database.getDatabaseMaintenanceRunHistories({
+ *     compartmentId: _var.compartment_id,
+ *     availabilityDomain: _var.maintenance_run_history_availability_domain,
+ *     maintenanceType: _var.maintenance_run_history_maintenance_type,
+ *     state: _var.maintenance_run_history_state,
+ *     targetResourceId: oci_database_target_resource.test_target_resource.id,
+ *     targetResourceType: _var.maintenance_run_history_target_resource_type,
+ * });
+ * ```
+ */
 export function getDatabaseMaintenanceRunHistoriesOutput(args: GetDatabaseMaintenanceRunHistoriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatabaseMaintenanceRunHistoriesResult> {
-    return pulumi.output(args).apply(a => getDatabaseMaintenanceRunHistories(a, opts))
+    return pulumi.output(args).apply((a: any) => getDatabaseMaintenanceRunHistories(a, opts))
 }
 
 /**

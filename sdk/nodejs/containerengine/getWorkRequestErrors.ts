@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getWorkRequestErrors(args: GetWorkRequestErrorsArgs, opts?: pulumi.InvokeOptions): Promise<GetWorkRequestErrorsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ContainerEngine/getWorkRequestErrors:getWorkRequestErrors", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -66,9 +64,25 @@ export interface GetWorkRequestErrorsResult {
     readonly workRequestErrors: outputs.ContainerEngine.GetWorkRequestErrorsWorkRequestError[];
     readonly workRequestId: string;
 }
-
+/**
+ * This data source provides the list of Work Request Errors in Oracle Cloud Infrastructure Container Engine service.
+ *
+ * Get the errors of a work request.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testWorkRequestErrors = oci.ContainerEngine.getWorkRequestErrors({
+ *     compartmentId: _var.compartment_id,
+ *     workRequestId: oci_containerengine_work_request.test_work_request.id,
+ * });
+ * ```
+ */
 export function getWorkRequestErrorsOutput(args: GetWorkRequestErrorsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetWorkRequestErrorsResult> {
-    return pulumi.output(args).apply(a => getWorkRequestErrors(a, opts))
+    return pulumi.output(args).apply((a: any) => getWorkRequestErrors(a, opts))
 }
 
 /**

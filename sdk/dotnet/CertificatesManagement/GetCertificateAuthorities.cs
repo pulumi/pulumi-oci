@@ -44,7 +44,7 @@ namespace Pulumi.Oci.CertificatesManagement
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetCertificateAuthoritiesResult> InvokeAsync(GetCertificateAuthoritiesArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetCertificateAuthoritiesResult>("oci:CertificatesManagement/getCertificateAuthorities:getCertificateAuthorities", args ?? new GetCertificateAuthoritiesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetCertificateAuthoritiesResult>("oci:CertificatesManagement/getCertificateAuthorities:getCertificateAuthorities", args ?? new GetCertificateAuthoritiesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Certificate Authorities in Oracle Cloud Infrastructure Certificates Management service.
@@ -79,7 +79,7 @@ namespace Pulumi.Oci.CertificatesManagement
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetCertificateAuthoritiesResult> Invoke(GetCertificateAuthoritiesInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetCertificateAuthoritiesResult>("oci:CertificatesManagement/getCertificateAuthorities:getCertificateAuthorities", args ?? new GetCertificateAuthoritiesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetCertificateAuthoritiesResult>("oci:CertificatesManagement/getCertificateAuthorities:getCertificateAuthorities", args ?? new GetCertificateAuthoritiesInvokeArgs(), options.WithDefaults());
     }
 
 

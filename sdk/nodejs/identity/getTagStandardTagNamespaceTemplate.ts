@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getTagStandardTagNamespaceTemplate(args: GetTagStandardTagNamespaceTemplateArgs, opts?: pulumi.InvokeOptions): Promise<GetTagStandardTagNamespaceTemplateResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getTagStandardTagNamespaceTemplate:getTagStandardTagNamespaceTemplate", {
         "compartmentId": args.compartmentId,
         "standardTagNamespaceName": args.standardTagNamespaceName,
@@ -74,9 +72,25 @@ export interface GetTagStandardTagNamespaceTemplateResult {
      */
     readonly tagDefinitionTemplates: outputs.Identity.GetTagStandardTagNamespaceTemplateTagDefinitionTemplate[];
 }
-
+/**
+ * This data source provides details about a specific Tag Standard Tag Namespace Template resource in Oracle Cloud Infrastructure Identity service.
+ *
+ * Retrieve the standard tag namespace template given the standard tag namespace name.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testTagStandardTagNamespaceTemplate = oci.Identity.getTagStandardTagNamespaceTemplate({
+ *     compartmentId: _var.compartment_id,
+ *     standardTagNamespaceName: oci_identity_tag_namespace.test_tag_namespace.name,
+ * });
+ * ```
+ */
 export function getTagStandardTagNamespaceTemplateOutput(args: GetTagStandardTagNamespaceTemplateOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTagStandardTagNamespaceTemplateResult> {
-    return pulumi.output(args).apply(a => getTagStandardTagNamespaceTemplate(a, opts))
+    return pulumi.output(args).apply((a: any) => getTagStandardTagNamespaceTemplate(a, opts))
 }
 
 /**

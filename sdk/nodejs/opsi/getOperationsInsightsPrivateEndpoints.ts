@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -29,11 +30,8 @@ import * as utilities from "../utilities";
  */
 export function getOperationsInsightsPrivateEndpoints(args?: GetOperationsInsightsPrivateEndpointsArgs, opts?: pulumi.InvokeOptions): Promise<GetOperationsInsightsPrivateEndpointsResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Opsi/getOperationsInsightsPrivateEndpoints:getOperationsInsightsPrivateEndpoints", {
         "compartmentId": args.compartmentId,
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
@@ -117,9 +115,30 @@ export interface GetOperationsInsightsPrivateEndpointsResult {
      */
     readonly vcnId?: string;
 }
-
+/**
+ * This data source provides the list of Operations Insights Private Endpoints in Oracle Cloud Infrastructure Opsi service.
+ *
+ * Gets a list of Operation Insights private endpoints.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testOperationsInsightsPrivateEndpoints = oci.Opsi.getOperationsInsightsPrivateEndpoints({
+ *     compartmentId: _var.compartment_id,
+ *     compartmentIdInSubtree: _var.operations_insights_private_endpoint_compartment_id_in_subtree,
+ *     displayName: _var.operations_insights_private_endpoint_display_name,
+ *     isUsedForRacDbs: _var.operations_insights_private_endpoint_is_used_for_rac_dbs,
+ *     opsiPrivateEndpointId: oci_dataflow_private_endpoint.test_private_endpoint.id,
+ *     states: _var.operations_insights_private_endpoint_state,
+ *     vcnId: oci_core_vcn.test_vcn.id,
+ * });
+ * ```
+ */
 export function getOperationsInsightsPrivateEndpointsOutput(args?: GetOperationsInsightsPrivateEndpointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOperationsInsightsPrivateEndpointsResult> {
-    return pulumi.output(args).apply(a => getOperationsInsightsPrivateEndpoints(a, opts))
+    return pulumi.output(args).apply((a: any) => getOperationsInsightsPrivateEndpoints(a, opts))
 }
 
 /**

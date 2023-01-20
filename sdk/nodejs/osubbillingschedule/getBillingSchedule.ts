@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getBillingSchedule(args: GetBillingScheduleArgs, opts?: pulumi.InvokeOptions): Promise<GetBillingScheduleResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsubBillingSchedule/getBillingSchedule:getBillingSchedule", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -81,9 +79,28 @@ export interface GetBillingScheduleResult {
     readonly subscriptionId: string;
     readonly xOneOriginRegion?: string;
 }
-
+/**
+ * This data source provides the list of Billing Schedules in Oracle Cloud Infrastructure Osub Billing Schedule service.
+ *
+ * This list API returns all billing schedules for given subscription id and
+ * for a particular Subscribed Service if provided
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testBillingSchedules = oci.OsubBillingSchedule.getBillingSchedule({
+ *     compartmentId: _var.compartment_id,
+ *     subscriptionId: oci_ons_subscription.test_subscription.id,
+ *     subscribedServiceId: oci_core_service.test_service.id,
+ *     xOneOriginRegion: _var.billing_schedule_x_one_origin_region,
+ * });
+ * ```
+ */
 export function getBillingScheduleOutput(args: GetBillingScheduleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBillingScheduleResult> {
-    return pulumi.output(args).apply(a => getBillingSchedule(a, opts))
+    return pulumi.output(args).apply((a: any) => getBillingSchedule(a, opts))
 }
 
 /**

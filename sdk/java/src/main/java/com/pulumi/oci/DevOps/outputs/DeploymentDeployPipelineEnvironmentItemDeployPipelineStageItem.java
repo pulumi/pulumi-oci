@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItem {
     /**
-     * @return Specifies the OCID of the stage to be redeployed.
+     * @return The OCID of the stage.
      * 
      */
     private @Nullable String deployStageId;
@@ -24,7 +24,7 @@ public final class DeploymentDeployPipelineEnvironmentItemDeployPipelineStageIte
 
     private DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItem() {}
     /**
-     * @return Specifies the OCID of the stage to be redeployed.
+     * @return The OCID of the stage.
      * 
      */
     public Optional<String> deployStageId() {

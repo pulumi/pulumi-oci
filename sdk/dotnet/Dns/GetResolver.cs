@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Dns
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetResolverResult> InvokeAsync(GetResolverArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetResolverResult>("oci:Dns/getResolver:getResolver", args ?? new GetResolverArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetResolverResult>("oci:Dns/getResolver:getResolver", args ?? new GetResolverArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Resolver resource in Oracle Cloud Infrastructure DNS service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.Dns
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetResolverResult> Invoke(GetResolverInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetResolverResult>("oci:Dns/getResolver:getResolver", args ?? new GetResolverInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetResolverResult>("oci:Dns/getResolver:getResolver", args ?? new GetResolverInvokeArgs(), options.WithDefaults());
     }
 
 

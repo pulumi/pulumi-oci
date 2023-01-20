@@ -15,6 +15,31 @@ import (
 //
 // Creates a new OpensearchCluster.
 //
+// ## Prerequisites
+//
+// # The below policies must be created in compartment before creating OpensearchCluster
+//
+// ##### {Compartment-Name} - Name of  your compartment
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			return nil
+//		})
+//	}
+//
+// ```
+//
+// For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
+// Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+//
 // ## Example Usage
 //
 // ```go

@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getBudget(args: GetBudgetArgs, opts?: pulumi.InvokeOptions): Promise<GetBudgetResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Budget/getBudget:getBudget", {
         "budgetId": args.budgetId,
     }, opts);
@@ -133,9 +130,24 @@ export interface GetBudgetResult {
      */
     readonly version: number;
 }
-
+/**
+ * This data source provides details about a specific Budget resource in Oracle Cloud Infrastructure Budget service.
+ *
+ * Gets a budget by the identifier.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testBudget = oci.Budget.getBudget({
+ *     budgetId: oci_budget_budget.test_budget.id,
+ * });
+ * ```
+ */
 export function getBudgetOutput(args: GetBudgetOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBudgetResult> {
-    return pulumi.output(args).apply(a => getBudget(a, opts))
+    return pulumi.output(args).apply((a: any) => getBudget(a, opts))
 }
 
 /**

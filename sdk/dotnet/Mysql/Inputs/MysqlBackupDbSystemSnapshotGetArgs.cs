@@ -37,7 +37,7 @@ namespace Pulumi.Oci.Mysql.Inputs
         }
 
         /// <summary>
-        /// (Updatable) The OCID of the compartment.
+        /// (Updatable) The OCID of the compartment the backup exists in.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -154,7 +154,7 @@ namespace Pulumi.Oci.Mysql.Inputs
         private InputList<Inputs.MysqlBackupDbSystemSnapshotMaintenanceGetArgs>? _maintenances;
 
         /// <summary>
-        /// The Maintenance Policy for the DB System.
+        /// The Maintenance Policy for the DB System or Read Replica that this model is included in.
         /// </summary>
         public InputList<Inputs.MysqlBackupDbSystemSnapshotMaintenanceGetArgs> Maintenances
         {

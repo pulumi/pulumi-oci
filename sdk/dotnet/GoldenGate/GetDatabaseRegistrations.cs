@@ -14,6 +14,7 @@ namespace Pulumi.Oci.GoldenGate
         /// <summary>
         /// This data source provides the list of Database Registrations in Oracle Cloud Infrastructure Golden Gate service.
         /// 
+        /// Note: Deprecated. Use the new resource model APIs instead.
         /// Lists the DatabaseRegistrations in the compartment.
         /// 
         /// 
@@ -41,11 +42,12 @@ namespace Pulumi.Oci.GoldenGate
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDatabaseRegistrationsResult> InvokeAsync(GetDatabaseRegistrationsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDatabaseRegistrationsResult>("oci:GoldenGate/getDatabaseRegistrations:getDatabaseRegistrations", args ?? new GetDatabaseRegistrationsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDatabaseRegistrationsResult>("oci:GoldenGate/getDatabaseRegistrations:getDatabaseRegistrations", args ?? new GetDatabaseRegistrationsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Database Registrations in Oracle Cloud Infrastructure Golden Gate service.
         /// 
+        /// Note: Deprecated. Use the new resource model APIs instead.
         /// Lists the DatabaseRegistrations in the compartment.
         /// 
         /// 
@@ -73,14 +75,14 @@ namespace Pulumi.Oci.GoldenGate
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDatabaseRegistrationsResult> Invoke(GetDatabaseRegistrationsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDatabaseRegistrationsResult>("oci:GoldenGate/getDatabaseRegistrations:getDatabaseRegistrations", args ?? new GetDatabaseRegistrationsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDatabaseRegistrationsResult>("oci:GoldenGate/getDatabaseRegistrations:getDatabaseRegistrations", args ?? new GetDatabaseRegistrationsInvokeArgs(), options.WithDefaults());
     }
 
 
     public sealed class GetDatabaseRegistrationsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         /// </summary>
         [Input("compartmentId", required: true)]
         public string CompartmentId { get; set; } = null!;
@@ -114,7 +116,7 @@ namespace Pulumi.Oci.GoldenGate
     public sealed class GetDatabaseRegistrationsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;

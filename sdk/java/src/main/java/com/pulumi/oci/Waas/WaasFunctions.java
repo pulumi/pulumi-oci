@@ -395,7 +395,7 @@ public final class WaasFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
-     * import com.pulumi.oci.ApiGateway.inputs.GetCertificateArgs;
+     * import com.pulumi.oci.Waas.inputs.GetCertificateArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -434,7 +434,7 @@ public final class WaasFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
-     * import com.pulumi.oci.ApiGateway.inputs.GetCertificateArgs;
+     * import com.pulumi.oci.Waas.inputs.GetCertificateArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -473,7 +473,7 @@ public final class WaasFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
-     * import com.pulumi.oci.ApiGateway.inputs.GetCertificateArgs;
+     * import com.pulumi.oci.Waas.inputs.GetCertificateArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -512,7 +512,7 @@ public final class WaasFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
-     * import com.pulumi.oci.ApiGateway.inputs.GetCertificateArgs;
+     * import com.pulumi.oci.Waas.inputs.GetCertificateArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -551,7 +551,7 @@ public final class WaasFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
-     * import com.pulumi.oci.ApiGateway.inputs.GetCertificatesArgs;
+     * import com.pulumi.oci.Waas.inputs.GetCertificatesArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -595,7 +595,7 @@ public final class WaasFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
-     * import com.pulumi.oci.ApiGateway.inputs.GetCertificatesArgs;
+     * import com.pulumi.oci.Waas.inputs.GetCertificatesArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -639,7 +639,7 @@ public final class WaasFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
-     * import com.pulumi.oci.ApiGateway.inputs.GetCertificatesArgs;
+     * import com.pulumi.oci.Waas.inputs.GetCertificatesArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -683,7 +683,7 @@ public final class WaasFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Waas.WaasFunctions;
-     * import com.pulumi.oci.ApiGateway.inputs.GetCertificatesArgs;
+     * import com.pulumi.oci.Waas.inputs.GetCertificatesArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;

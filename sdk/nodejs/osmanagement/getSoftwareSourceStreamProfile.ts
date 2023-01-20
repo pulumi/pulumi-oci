@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -38,11 +39,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSoftwareSourceStreamProfile(args: GetSoftwareSourceStreamProfileArgs, opts?: pulumi.InvokeOptions): Promise<GetSoftwareSourceStreamProfileResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsManagement/getSoftwareSourceStreamProfile:getSoftwareSourceStreamProfile", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -108,9 +106,40 @@ export interface GetSoftwareSourceStreamProfileResult {
      */
     readonly streamName?: string;
 }
-
+/**
+ * This data source provides the list of Software Source Stream Profiles in Oracle Cloud Infrastructure OS Management service.
+ *
+ * Retrieve a list of module stream profiles from a software source.
+ * Filters may be applied to select a subset of module stream profiles
+ * based on the filter criteria.
+ *
+ * The "moduleName", "streamName", and "profileName" attributes combine
+ * to form a set of filters on the list of module stream profiles.  If
+ * a "moduleName" is provided, only profiles that belong to that module
+ * are returned.  If both a "moduleName" and "streamName" are given,
+ * only profiles belonging to that module stream are returned.  Finally,
+ * if all three are given then only the particular profile indicated
+ * by the triple is returned.  It is not valid to supply a "streamName"
+ * without a "moduleName".  It is also not valid to supply a "profileName"
+ * without a "streamName".
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSoftwareSourceStreamProfiles = oci.OsManagement.getSoftwareSourceStreamProfile({
+ *     softwareSourceId: _var.software_source.id,
+ *     compartmentId: _var.compartment_id,
+ *     moduleName: _var.software_source_module_name,
+ *     profileName: _var.software_source_module_stream_profile_name,
+ *     streamName: _var.software_source_module_stream_name,
+ * });
+ * ```
+ */
 export function getSoftwareSourceStreamProfileOutput(args: GetSoftwareSourceStreamProfileOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSoftwareSourceStreamProfileResult> {
-    return pulumi.output(args).apply(a => getSoftwareSourceStreamProfile(a, opts))
+    return pulumi.output(args).apply((a: any) => getSoftwareSourceStreamProfile(a, opts))
 }
 
 /**

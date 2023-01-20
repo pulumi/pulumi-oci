@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCloudAutonomousVmClusters(args: GetCloudAutonomousVmClustersArgs, opts?: pulumi.InvokeOptions): Promise<GetCloudAutonomousVmClustersResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getCloudAutonomousVmClusters:getCloudAutonomousVmClusters", {
         "availabilityDomain": args.availabilityDomain,
         "cloudExadataInfrastructureId": args.cloudExadataInfrastructureId,
@@ -102,9 +100,28 @@ export interface GetCloudAutonomousVmClustersResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Cloud Autonomous Vm Clusters in Oracle Cloud Infrastructure Database service.
+ *
+ * Lists Autonomous Exadata VM clusters in the Oracle cloud. For Exadata Cloud@Customer systems, see [ListAutonomousVmClusters](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousVmCluster/ListAutonomousVmClusters).
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCloudAutonomousVmClusters = oci.Database.getCloudAutonomousVmClusters({
+ *     compartmentId: _var.compartment_id,
+ *     availabilityDomain: _var.cloud_autonomous_vm_cluster_availability_domain,
+ *     cloudExadataInfrastructureId: oci_database_cloud_exadata_infrastructure.test_cloud_exadata_infrastructure.id,
+ *     displayName: _var.cloud_autonomous_vm_cluster_display_name,
+ *     state: _var.cloud_autonomous_vm_cluster_state,
+ * });
+ * ```
+ */
 export function getCloudAutonomousVmClustersOutput(args: GetCloudAutonomousVmClustersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudAutonomousVmClustersResult> {
-    return pulumi.output(args).apply(a => getCloudAutonomousVmClusters(a, opts))
+    return pulumi.output(args).apply((a: any) => getCloudAutonomousVmClusters(a, opts))
 }
 
 /**

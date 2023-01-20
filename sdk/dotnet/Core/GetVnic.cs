@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetVnicResult> InvokeAsync(GetVnicArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetVnicResult>("oci:Core/getVnic:getVnic", args ?? new GetVnicArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetVnicResult>("oci:Core/getVnic:getVnic", args ?? new GetVnicArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Vnic resource in Oracle Cloud Infrastructure Core service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetVnicResult> Invoke(GetVnicInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetVnicResult>("oci:Core/getVnic:getVnic", args ?? new GetVnicInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetVnicResult>("oci:Core/getVnic:getVnic", args ?? new GetVnicInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -48,7 +48,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetManagedDatabasesResult> InvokeAsync(GetManagedDatabasesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabasesResult>("oci:DatabaseManagement/getManagedDatabases:getManagedDatabases", args ?? new GetManagedDatabasesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabasesResult>("oci:DatabaseManagement/getManagedDatabases:getManagedDatabases", args ?? new GetManagedDatabasesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Managed Databases in Oracle Cloud Infrastructure Database Management service.
@@ -87,7 +87,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetManagedDatabasesResult> Invoke(GetManagedDatabasesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetManagedDatabasesResult>("oci:DatabaseManagement/getManagedDatabases:getManagedDatabases", args ?? new GetManagedDatabasesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabasesResult>("oci:DatabaseManagement/getManagedDatabases:getManagedDatabases", args ?? new GetManagedDatabasesInvokeArgs(), options.WithDefaults());
     }
 
 

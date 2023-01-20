@@ -80,6 +80,21 @@ public final class BastionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
+     * 
+     */
+    @Import(name="dnsProxyStatus")
+    private @Nullable Output<String> dnsProxyStatus;
+
+    /**
+     * @return Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
+     * 
+     */
+    public Optional<Output<String>> dnsProxyStatus() {
+        return Optional.ofNullable(this.dnsProxyStatus);
+    }
+
+    /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -296,6 +311,7 @@ public final class BastionState extends com.pulumi.resources.ResourceArgs {
         this.clientCidrBlockAllowLists = $.clientCidrBlockAllowLists;
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
+        this.dnsProxyStatus = $.dnsProxyStatus;
         this.freeformTags = $.freeformTags;
         this.lifecycleDetails = $.lifecycleDetails;
         this.maxSessionTtlInSeconds = $.maxSessionTtlInSeconds;
@@ -422,6 +438,27 @@ public final class BastionState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder definedTags(Map<String,Object> definedTags) {
             return definedTags(Output.of(definedTags));
+        }
+
+        /**
+         * @param dnsProxyStatus Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dnsProxyStatus(@Nullable Output<String> dnsProxyStatus) {
+            $.dnsProxyStatus = dnsProxyStatus;
+            return this;
+        }
+
+        /**
+         * @param dnsProxyStatus Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dnsProxyStatus(String dnsProxyStatus) {
+            return dnsProxyStatus(Output.of(dnsProxyStatus));
         }
 
         /**

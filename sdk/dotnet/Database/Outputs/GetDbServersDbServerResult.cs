@@ -74,6 +74,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly int MemorySizeInGbs;
         /// <summary>
+        /// The shape of the Db server. The shape determines the amount of CPU, storage, and memory resources available.
+        /// </summary>
+        public readonly string Shape;
+        /// <summary>
         /// A filter to return only resources that match the given lifecycle state exactly.
         /// </summary>
         public readonly string State;
@@ -118,6 +122,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             int memorySizeInGbs,
 
+            string shape,
+
             string state,
 
             string timeCreated,
@@ -139,6 +145,7 @@ namespace Pulumi.Oci.Database.Outputs
             MaxDbNodeStorageInGbs = maxDbNodeStorageInGbs;
             MaxMemoryInGbs = maxMemoryInGbs;
             MemorySizeInGbs = memorySizeInGbs;
+            Shape = shape;
             State = state;
             TimeCreated = timeCreated;
             VmClusterIds = vmClusterIds;

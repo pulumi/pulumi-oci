@@ -29,12 +29,14 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := ApmSynthetics.GetMonitors(ctx, &apmsynthetics.GetMonitorsArgs{
-//				ApmDomainId:  oci_apm_synthetics_apm_domain.Test_apm_domain.Id,
-//				DisplayName:  pulumi.StringRef(_var.Monitor_display_name),
-//				MonitorType:  pulumi.StringRef(_var.Monitor_monitor_type),
-//				ScriptId:     pulumi.StringRef(oci_apm_synthetics_script.Test_script.Id),
-//				Status:       pulumi.StringRef(_var.Monitor_status),
-//				VantagePoint: pulumi.StringRef(_var.Monitor_vantage_point),
+//				ApmDomainId:               oci_apm_synthetics_apm_domain.Test_apm_domain.Id,
+//				DisplayName:               pulumi.StringRef(_var.Monitor_display_name),
+//				IsMaintenanceWindowActive: pulumi.BoolRef(_var.Monitor_is_maintenance_window_active),
+//				IsMaintenanceWindowSet:    pulumi.BoolRef(_var.Monitor_is_maintenance_window_set),
+//				MonitorType:               pulumi.StringRef(_var.Monitor_monitor_type),
+//				ScriptId:                  pulumi.StringRef(oci_apm_synthetics_script.Test_script.Id),
+//				Status:                    pulumi.StringRef(_var.Monitor_status),
+//				VantagePoint:              pulumi.StringRef(_var.Monitor_vantage_point),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -60,6 +62,10 @@ type GetMonitorsArgs struct {
 	// A filter to return only the resources that match the entire display name.
 	DisplayName *string             `pulumi:"displayName"`
 	Filters     []GetMonitorsFilter `pulumi:"filters"`
+	// A filter to return the monitors whose maintenance window is currently active.
+	IsMaintenanceWindowActive *bool `pulumi:"isMaintenanceWindowActive"`
+	// A filter to return the monitors whose maintenance window is set.
+	IsMaintenanceWindowSet *bool `pulumi:"isMaintenanceWindowSet"`
 	// A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
 	MonitorType *string `pulumi:"monitorType"`
 	// A filter to return only monitors using scriptId.
@@ -77,7 +83,9 @@ type GetMonitorsResult struct {
 	DisplayName *string             `pulumi:"displayName"`
 	Filters     []GetMonitorsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id                        string `pulumi:"id"`
+	IsMaintenanceWindowActive *bool  `pulumi:"isMaintenanceWindowActive"`
+	IsMaintenanceWindowSet    *bool  `pulumi:"isMaintenanceWindowSet"`
 	// The list of monitor_collection.
 	MonitorCollections []GetMonitorsMonitorCollection `pulumi:"monitorCollections"`
 	// Type of the monitor.
@@ -109,6 +117,10 @@ type GetMonitorsOutputArgs struct {
 	// A filter to return only the resources that match the entire display name.
 	DisplayName pulumi.StringPtrInput       `pulumi:"displayName"`
 	Filters     GetMonitorsFilterArrayInput `pulumi:"filters"`
+	// A filter to return the monitors whose maintenance window is currently active.
+	IsMaintenanceWindowActive pulumi.BoolPtrInput `pulumi:"isMaintenanceWindowActive"`
+	// A filter to return the monitors whose maintenance window is set.
+	IsMaintenanceWindowSet pulumi.BoolPtrInput `pulumi:"isMaintenanceWindowSet"`
 	// A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
 	MonitorType pulumi.StringPtrInput `pulumi:"monitorType"`
 	// A filter to return only monitors using scriptId.
@@ -154,6 +166,14 @@ func (o GetMonitorsResultOutput) Filters() GetMonitorsFilterArrayOutput {
 // The provider-assigned unique ID for this managed resource.
 func (o GetMonitorsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorsResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetMonitorsResultOutput) IsMaintenanceWindowActive() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMonitorsResult) *bool { return v.IsMaintenanceWindowActive }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetMonitorsResultOutput) IsMaintenanceWindowSet() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMonitorsResult) *bool { return v.IsMaintenanceWindowSet }).(pulumi.BoolPtrOutput)
 }
 
 // The list of monitor_collection.

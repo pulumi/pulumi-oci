@@ -13,6 +13,7 @@ namespace Pulumi.Oci.Database
     /// This resource provides the Pluggable Databases Remote Clone resource in Oracle Cloud Infrastructure Database service.
     /// 
     /// Clones a pluggable database (PDB) to a different database from the source PDB. The cloned PDB will be started upon completion of the clone operation. The source PDB must be in the `READ_WRITE` openMode when performing the clone.
+    /// For Exadata Cloud@Customer instances, the source pluggable database (PDB) must be on the same Exadata Infrastructure as the target container database (CDB) to create a remote clone.
     /// 
     /// ## Example Usage
     /// 
@@ -117,6 +118,12 @@ namespace Pulumi.Oci.Database
         public Output<string> PluggableDatabaseId { get; private set; } = null!;
 
         /// <summary>
+        /// The configuration of the Pluggable Database Management service.
+        /// </summary>
+        [Output("pluggableDatabaseManagementConfigs")]
+        public Output<ImmutableArray<Outputs.PluggableDatabasesRemoteClonePluggableDatabaseManagementConfig>> PluggableDatabaseManagementConfigs { get; private set; } = null!;
+
+        /// <summary>
         /// The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
         /// </summary>
         [Output("shouldPdbAdminAccountBeLocked")]
@@ -175,6 +182,12 @@ namespace Pulumi.Oci.Database
             var defaultOptions = new CustomResourceOptions
             {
                 Version = Utilities.Version,
+                AdditionalSecretOutputs =
+                {
+                    "pdbAdminPassword",
+                    "sourceContainerDbAdminPassword",
+                    "targetTdeWalletPassword",
+                },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -204,11 +217,21 @@ namespace Pulumi.Oci.Database
         [Input("clonedPdbName", required: true)]
         public Input<string> ClonedPdbName { get; set; } = null!;
 
+        [Input("pdbAdminPassword")]
+        private Input<string>? _pdbAdminPassword;
+
         /// <summary>
         /// A strong password for PDB Admin of the newly cloned PDB. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \#, or -.
         /// </summary>
-        [Input("pdbAdminPassword")]
-        public Input<string>? PdbAdminPassword { get; set; }
+        public Input<string>? PdbAdminPassword
+        {
+            get => _pdbAdminPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _pdbAdminPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -222,11 +245,21 @@ namespace Pulumi.Oci.Database
         [Input("shouldPdbAdminAccountBeLocked")]
         public Input<bool>? ShouldPdbAdminAccountBeLocked { get; set; }
 
+        [Input("sourceContainerDbAdminPassword", required: true)]
+        private Input<string>? _sourceContainerDbAdminPassword;
+
         /// <summary>
         /// The DB system administrator password of the source CDB.
         /// </summary>
-        [Input("sourceContainerDbAdminPassword", required: true)]
-        public Input<string> SourceContainerDbAdminPassword { get; set; } = null!;
+        public Input<string>? SourceContainerDbAdminPassword
+        {
+            get => _sourceContainerDbAdminPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _sourceContainerDbAdminPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target CDB
@@ -234,11 +267,21 @@ namespace Pulumi.Oci.Database
         [Input("targetContainerDatabaseId", required: true)]
         public Input<string> TargetContainerDatabaseId { get; set; } = null!;
 
+        [Input("targetTdeWalletPassword")]
+        private Input<string>? _targetTdeWalletPassword;
+
         /// <summary>
         /// The existing TDE wallet password of the target CDB.
         /// </summary>
-        [Input("targetTdeWalletPassword")]
-        public Input<string>? TargetTdeWalletPassword { get; set; }
+        public Input<string>? TargetTdeWalletPassword
+        {
+            get => _targetTdeWalletPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _targetTdeWalletPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         public PluggableDatabasesRemoteCloneArgs()
         {
@@ -320,11 +363,21 @@ namespace Pulumi.Oci.Database
         [Input("openMode")]
         public Input<string>? OpenMode { get; set; }
 
+        [Input("pdbAdminPassword")]
+        private Input<string>? _pdbAdminPassword;
+
         /// <summary>
         /// A strong password for PDB Admin of the newly cloned PDB. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \#, or -.
         /// </summary>
-        [Input("pdbAdminPassword")]
-        public Input<string>? PdbAdminPassword { get; set; }
+        public Input<string>? PdbAdminPassword
+        {
+            get => _pdbAdminPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _pdbAdminPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
@@ -338,17 +391,39 @@ namespace Pulumi.Oci.Database
         [Input("pluggableDatabaseId")]
         public Input<string>? PluggableDatabaseId { get; set; }
 
+        [Input("pluggableDatabaseManagementConfigs")]
+        private InputList<Inputs.PluggableDatabasesRemoteClonePluggableDatabaseManagementConfigGetArgs>? _pluggableDatabaseManagementConfigs;
+
+        /// <summary>
+        /// The configuration of the Pluggable Database Management service.
+        /// </summary>
+        public InputList<Inputs.PluggableDatabasesRemoteClonePluggableDatabaseManagementConfigGetArgs> PluggableDatabaseManagementConfigs
+        {
+            get => _pluggableDatabaseManagementConfigs ?? (_pluggableDatabaseManagementConfigs = new InputList<Inputs.PluggableDatabasesRemoteClonePluggableDatabaseManagementConfigGetArgs>());
+            set => _pluggableDatabaseManagementConfigs = value;
+        }
+
         /// <summary>
         /// The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
         /// </summary>
         [Input("shouldPdbAdminAccountBeLocked")]
         public Input<bool>? ShouldPdbAdminAccountBeLocked { get; set; }
 
+        [Input("sourceContainerDbAdminPassword")]
+        private Input<string>? _sourceContainerDbAdminPassword;
+
         /// <summary>
         /// The DB system administrator password of the source CDB.
         /// </summary>
-        [Input("sourceContainerDbAdminPassword")]
-        public Input<string>? SourceContainerDbAdminPassword { get; set; }
+        public Input<string>? SourceContainerDbAdminPassword
+        {
+            get => _sourceContainerDbAdminPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _sourceContainerDbAdminPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// The current state of the pluggable database.
@@ -362,11 +437,21 @@ namespace Pulumi.Oci.Database
         [Input("targetContainerDatabaseId")]
         public Input<string>? TargetContainerDatabaseId { get; set; }
 
+        [Input("targetTdeWalletPassword")]
+        private Input<string>? _targetTdeWalletPassword;
+
         /// <summary>
         /// The existing TDE wallet password of the target CDB.
         /// </summary>
-        [Input("targetTdeWalletPassword")]
-        public Input<string>? TargetTdeWalletPassword { get; set; }
+        public Input<string>? TargetTdeWalletPassword
+        {
+            get => _targetTdeWalletPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _targetTdeWalletPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// The date and time the pluggable database was created.

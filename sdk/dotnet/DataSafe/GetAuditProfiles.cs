@@ -62,7 +62,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAuditProfilesResult> InvokeAsync(GetAuditProfilesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAuditProfilesResult>("oci:DataSafe/getAuditProfiles:getAuditProfiles", args ?? new GetAuditProfilesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAuditProfilesResult>("oci:DataSafe/getAuditProfiles:getAuditProfiles", args ?? new GetAuditProfilesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Audit Profiles in Oracle Cloud Infrastructure Data Safe service.
@@ -115,7 +115,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAuditProfilesResult> Invoke(GetAuditProfilesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAuditProfilesResult>("oci:DataSafe/getAuditProfiles:getAuditProfiles", args ?? new GetAuditProfilesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAuditProfilesResult>("oci:DataSafe/getAuditProfiles:getAuditProfiles", args ?? new GetAuditProfilesInvokeArgs(), options.WithDefaults());
     }
 
 

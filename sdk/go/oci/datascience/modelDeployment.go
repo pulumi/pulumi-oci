@@ -112,7 +112,7 @@ type ModelDeployment struct {
 	ModelDeploymentUrl pulumi.StringOutput `pulumi:"modelDeploymentUrl"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
 	ProjectId pulumi.StringOutput `pulumi:"projectId"`
-	// The state of the model deployment.
+	// (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The date and time the resource was created, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -178,7 +178,7 @@ type modelDeploymentState struct {
 	ModelDeploymentUrl *string `pulumi:"modelDeploymentUrl"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
 	ProjectId *string `pulumi:"projectId"`
-	// The state of the model deployment.
+	// (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
 	State *string `pulumi:"state"`
 	// The date and time the resource was created, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -207,7 +207,7 @@ type ModelDeploymentState struct {
 	ModelDeploymentUrl pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
 	ProjectId pulumi.StringPtrInput
-	// The state of the model deployment.
+	// (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
 	State pulumi.StringPtrInput
 	// The date and time the resource was created, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
 	TimeCreated pulumi.StringPtrInput
@@ -234,6 +234,8 @@ type modelDeploymentArgs struct {
 	ModelDeploymentConfigurationDetails ModelDeploymentModelDeploymentConfigurationDetails `pulumi:"modelDeploymentConfigurationDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
 	ProjectId string `pulumi:"projectId"`
+	// (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
+	State *string `pulumi:"state"`
 }
 
 // The set of arguments for constructing a ModelDeployment resource.
@@ -254,6 +256,8 @@ type ModelDeploymentArgs struct {
 	ModelDeploymentConfigurationDetails ModelDeploymentModelDeploymentConfigurationDetailsInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
 	ProjectId pulumi.StringInput
+	// (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
+	State pulumi.StringPtrInput
 }
 
 func (ModelDeploymentArgs) ElementType() reflect.Type {
@@ -400,7 +404,7 @@ func (o ModelDeploymentOutput) ProjectId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ModelDeployment) pulumi.StringOutput { return v.ProjectId }).(pulumi.StringOutput)
 }
 
-// The state of the model deployment.
+// (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
 func (o ModelDeploymentOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *ModelDeployment) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }

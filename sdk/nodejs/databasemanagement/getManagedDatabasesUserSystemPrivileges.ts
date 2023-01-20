@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabasesUserSystemPrivileges(args: GetManagedDatabasesUserSystemPrivilegesArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabasesUserSystemPrivilegesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabasesUserSystemPrivileges:getManagedDatabasesUserSystemPrivileges", {
         "filters": args.filters,
         "managedDatabaseId": args.managedDatabaseId,
@@ -76,9 +74,26 @@ export interface GetManagedDatabasesUserSystemPrivilegesResult {
     readonly systemPrivilegeCollections: outputs.DatabaseManagement.GetManagedDatabasesUserSystemPrivilegesSystemPrivilegeCollection[];
     readonly userName: string;
 }
-
+/**
+ * This data source provides the list of Managed Databases User System Privileges in Oracle Cloud Infrastructure Database Management service.
+ *
+ * Gets the list of system privileges granted to a specific user.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testManagedDatabasesUserSystemPrivileges = oci.DatabaseManagement.getManagedDatabasesUserSystemPrivileges({
+ *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
+ *     userName: oci_identity_user.test_user.name,
+ *     name: _var.managed_databases_user_system_privilege_name,
+ * });
+ * ```
+ */
 export function getManagedDatabasesUserSystemPrivilegesOutput(args: GetManagedDatabasesUserSystemPrivilegesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabasesUserSystemPrivilegesResult> {
-    return pulumi.output(args).apply(a => getManagedDatabasesUserSystemPrivileges(a, opts))
+    return pulumi.output(args).apply((a: any) => getManagedDatabasesUserSystemPrivileges(a, opts))
 }
 
 /**

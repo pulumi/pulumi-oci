@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Mysql
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetChannelsResult> InvokeAsync(GetChannelsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetChannelsResult>("oci:Mysql/getChannels:getChannels", args ?? new GetChannelsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetChannelsResult>("oci:Mysql/getChannels:getChannels", args ?? new GetChannelsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Channels in Oracle Cloud Infrastructure MySQL Database service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.Mysql
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetChannelsResult> Invoke(GetChannelsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetChannelsResult>("oci:Mysql/getChannels:getChannels", args ?? new GetChannelsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetChannelsResult>("oci:Mysql/getChannels:getChannels", args ?? new GetChannelsInvokeArgs(), options.WithDefaults());
     }
 
 

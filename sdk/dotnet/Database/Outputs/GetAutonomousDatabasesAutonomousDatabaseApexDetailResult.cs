@@ -19,7 +19,6 @@ namespace Pulumi.Oci.Database.Outputs
         public readonly string ApexVersion;
         /// <summary>
         /// The Oracle REST Data Services (ORDS) version.
-        /// *`are_primary_whitelisted_ips_used` - This field will be null if the Autonomous Database is not Data Guard enabled or Access Control is disabled. It's value would be `TRUE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses primary IP access control list (ACL) for standby. It's value would be `FALSE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses different IP access control list (ACL) for standby compared to primary.
         /// </summary>
         public readonly string OrdsVersion;
 

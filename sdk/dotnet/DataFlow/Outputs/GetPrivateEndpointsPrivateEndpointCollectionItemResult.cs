@@ -62,6 +62,10 @@ namespace Pulumi.Oci.DataFlow.Outputs
         /// </summary>
         public readonly string OwnerUserName;
         /// <summary>
+        /// An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: "scan1.oracle.com", port: "1521"}, { fqdn: "scan2.oracle.com", port: "1521" } ]
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailResult> ScanDetails;
+        /// <summary>
         /// The LifecycleState of the private endpoint.
         /// </summary>
         public readonly string State;
@@ -104,6 +108,8 @@ namespace Pulumi.Oci.DataFlow.Outputs
 
             string ownerUserName,
 
+            ImmutableArray<Outputs.GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailResult> scanDetails,
+
             string state,
 
             string subnetId,
@@ -124,6 +130,7 @@ namespace Pulumi.Oci.DataFlow.Outputs
             NsgIds = nsgIds;
             OwnerPrincipalId = ownerPrincipalId;
             OwnerUserName = ownerUserName;
+            ScanDetails = scanDetails;
             State = state;
             SubnetId = subnetId;
             TimeCreated = timeCreated;

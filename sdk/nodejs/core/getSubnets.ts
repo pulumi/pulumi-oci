@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSubnets(args: GetSubnetsArgs, opts?: pulumi.InvokeOptions): Promise<GetSubnetsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getSubnets:getSubnets", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -93,9 +91,28 @@ export interface GetSubnetsResult {
      */
     readonly vcnId?: string;
 }
-
+/**
+ * This data source provides the list of Subnets in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the subnets in the specified VCN and the specified compartment.
+ * If the VCN ID is not provided, then the list includes the subnets from all VCNs in the specified compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSubnets = oci.Core.getSubnets({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.subnet_display_name,
+ *     state: _var.subnet_state,
+ *     vcnId: oci_core_vcn.test_vcn.id,
+ * });
+ * ```
+ */
 export function getSubnetsOutput(args: GetSubnetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSubnetsResult> {
-    return pulumi.output(args).apply(a => getSubnets(a, opts))
+    return pulumi.output(args).apply((a: any) => getSubnets(a, opts))
 }
 
 /**

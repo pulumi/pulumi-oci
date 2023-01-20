@@ -596,7 +596,7 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
-     * import com.pulumi.oci.DataCatalog.inputs.GetConnectionArgs;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetConnectionArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -635,7 +635,7 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
-     * import com.pulumi.oci.DataCatalog.inputs.GetConnectionArgs;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetConnectionArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -674,7 +674,7 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
-     * import com.pulumi.oci.DataCatalog.inputs.GetConnectionArgs;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetConnectionArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -713,7 +713,7 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
-     * import com.pulumi.oci.DataCatalog.inputs.GetConnectionArgs;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetConnectionArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -752,7 +752,7 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
-     * import com.pulumi.oci.DataCatalog.inputs.GetConnectionsArgs;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetConnectionsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -793,7 +793,7 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
-     * import com.pulumi.oci.DataCatalog.inputs.GetConnectionsArgs;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetConnectionsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -834,7 +834,7 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
-     * import com.pulumi.oci.DataCatalog.inputs.GetConnectionsArgs;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetConnectionsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -875,7 +875,7 @@ public final class DatabaseMigrationFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
-     * import com.pulumi.oci.DataCatalog.inputs.GetConnectionsArgs;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetConnectionsArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;

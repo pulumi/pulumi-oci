@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetManagedPreferredCredentialResult> InvokeAsync(GetManagedPreferredCredentialArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetManagedPreferredCredentialResult>("oci:Database/getManagedPreferredCredential:getManagedPreferredCredential", args ?? new GetManagedPreferredCredentialArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedPreferredCredentialResult>("oci:Database/getManagedPreferredCredential:getManagedPreferredCredential", args ?? new GetManagedPreferredCredentialArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Managed Database Preferred Credential resource in Oracle Cloud Infrastructure Database Management service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetManagedPreferredCredentialResult> Invoke(GetManagedPreferredCredentialInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetManagedPreferredCredentialResult>("oci:Database/getManagedPreferredCredential:getManagedPreferredCredential", args ?? new GetManagedPreferredCredentialInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedPreferredCredentialResult>("oci:Database/getManagedPreferredCredential:getManagedPreferredCredential", args ?? new GetManagedPreferredCredentialInvokeArgs(), options.WithDefaults());
     }
 
 

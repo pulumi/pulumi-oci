@@ -11,13 +11,29 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class NetworkFirewallPolicyIpAddressList {
+    /**
+     * @return (Updatable) The identifier by which the IP address list is referenced.
+     * 
+     */
     private String ipAddressListName;
+    /**
+     * @return (Updatable) List of IP address lists of the policy.
+     * 
+     */
     private @Nullable List<String> ipAddressListValues;
 
     private NetworkFirewallPolicyIpAddressList() {}
+    /**
+     * @return (Updatable) The identifier by which the IP address list is referenced.
+     * 
+     */
     public String ipAddressListName() {
         return this.ipAddressListName;
     }
+    /**
+     * @return (Updatable) List of IP address lists of the policy.
+     * 
+     */
     public List<String> ipAddressListValues() {
         return this.ipAddressListValues == null ? List.of() : this.ipAddressListValues;
     }

@@ -5,209 +5,785 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./autonomousContainerDatabase";
-export * from "./autonomousContainerDatabaseDataguardAssociation";
-export * from "./autonomousContainerDatabaseDataguardAssociationOperation";
-export * from "./autonomousDatabase";
-export * from "./autonomousDatabaseBackup";
-export * from "./autonomousDatabaseInstanceWalletManagement";
-export * from "./autonomousDatabaseRegionalWalletManagement";
-export * from "./autonomousDatabaseWallet";
-export * from "./autonomousExadataInfrastructure";
-export * from "./autonomousVmCluster";
-export * from "./backup";
-export * from "./backupDestination";
-export * from "./cloudAutonomousVmCluster";
-export * from "./cloudDatabaseManagement";
-export * from "./cloudExadataInfrastructure";
-export * from "./cloudVmCluster";
-export * from "./cloudVmClusterIormConfig";
-export * from "./dataGuardAssociation";
-export * from "./database";
-export * from "./databaseSoftwareImage";
-export * from "./databaseUpgrade";
-export * from "./dbHome";
-export * from "./dbNodeConsoleConnection";
-export * from "./dbSystem";
-export * from "./dbSystemsUpgrade";
-export * from "./exadataInfrastructure";
-export * from "./exadataInfrastructureStorage";
-export * from "./exadataIormConfig";
-export * from "./externalContainerDatabase";
-export * from "./externalContainerDatabaseManagement";
-export * from "./externalContainerDatabasesStackMonitoring";
-export * from "./externalDatabaseConnector";
-export * from "./externalNonContainerDatabase";
-export * from "./externalNonContainerDatabaseManagement";
-export * from "./externalNonContainerDatabaseOperationsInsightsManagement";
-export * from "./externalNonContainerDatabasesStackMonitoring";
-export * from "./externalPluggableDatabase";
-export * from "./externalPluggableDatabaseManagement";
-export * from "./externalPluggableDatabaseOperationsInsightsManagement";
-export * from "./externalPluggableDatabasesStackMonitoring";
-export * from "./getAutonomousCharacterSets";
-export * from "./getAutonomousContainerDatabase";
-export * from "./getAutonomousContainerDatabaseDataguardAssociation";
-export * from "./getAutonomousContainerDatabaseDataguardAssociations";
-export * from "./getAutonomousContainerDatabases";
-export * from "./getAutonomousContainerPatches";
-export * from "./getAutonomousDatabase";
-export * from "./getAutonomousDatabaseBackup";
-export * from "./getAutonomousDatabaseBackups";
-export * from "./getAutonomousDatabaseDataguardAssociation";
-export * from "./getAutonomousDatabaseDataguardAssociations";
-export * from "./getAutonomousDatabaseInstanceWalletManagement";
-export * from "./getAutonomousDatabaseRegionalWalletManagement";
-export * from "./getAutonomousDatabaseWallet";
-export * from "./getAutonomousDatabases";
-export * from "./getAutonomousDatabasesClones";
-export * from "./getAutonomousDbPreviewVersions";
-export * from "./getAutonomousDbVersions";
-export * from "./getAutonomousExadataInfrastructure";
-export * from "./getAutonomousExadataInfrastructureOcpu";
-export * from "./getAutonomousExadataInfrastructureShapes";
-export * from "./getAutonomousExadataInfrastructures";
-export * from "./getAutonomousPatch";
-export * from "./getAutonomousVmCluster";
-export * from "./getAutonomousVmClusters";
-export * from "./getBackupDestination";
-export * from "./getBackupDestinations";
-export * from "./getBackups";
-export * from "./getCloudAutonomousVmCluster";
-export * from "./getCloudAutonomousVmClusters";
-export * from "./getCloudExadataInfrastructure";
-export * from "./getCloudExadataInfrastructures";
-export * from "./getCloudVmCluster";
-export * from "./getCloudVmClusterIormConfig";
-export * from "./getCloudVmClusters";
-export * from "./getDataGuardAssociation";
-export * from "./getDataGuardAssociations";
-export * from "./getDatabase";
-export * from "./getDatabaseMaintenanceRunHistories";
-export * from "./getDatabaseMaintenanceRunHistory";
-export * from "./getDatabasePdbConversionHistoryEntries";
-export * from "./getDatabasePdbConversionHistoryEntry";
-export * from "./getDatabaseSoftwareImage";
-export * from "./getDatabaseSoftwareImages";
-export * from "./getDatabaseUpgradeHistoryEntries";
-export * from "./getDatabaseUpgradeHistoryEntry";
-export * from "./getDatabases";
-export * from "./getDbHome";
-export * from "./getDbHomePatchHistoryEntries";
-export * from "./getDbHomePatches";
-export * from "./getDbHomes";
-export * from "./getDbNode";
-export * from "./getDbNodeConsoleConnection";
-export * from "./getDbNodeConsoleConnections";
-export * from "./getDbNodes";
-export * from "./getDbServer";
-export * from "./getDbServers";
-export * from "./getDbSystemComputePerformances";
-export * from "./getDbSystemHistoryEntries";
-export * from "./getDbSystemPatches";
-export * from "./getDbSystemShapes";
-export * from "./getDbSystemStoragePerformances";
-export * from "./getDbSystems";
-export * from "./getDbSystemsUpgradeHistoryEntries";
-export * from "./getDbSystemsUpgradeHistoryEntry";
-export * from "./getDbVersions";
-export * from "./getExadataInfrastructure";
-export * from "./getExadataInfrastructureDownloadConfigFile";
-export * from "./getExadataInfrastructures";
-export * from "./getExadataIormConfig";
-export * from "./getExternalContainerDatabase";
-export * from "./getExternalContainerDatabases";
-export * from "./getExternalDatabaseConnector";
-export * from "./getExternalDatabaseConnectors";
-export * from "./getExternalNonContainerDatabase";
-export * from "./getExternalNonContainerDatabases";
-export * from "./getExternalPluggableDatabase";
-export * from "./getExternalPluggableDatabases";
-export * from "./getFlexComponents";
-export * from "./getGiVersions";
-export * from "./getInfrastructureTargetVersion";
-export * from "./getKeyStore";
-export * from "./getKeyStores";
-export * from "./getMaintenanceRun";
-export * from "./getMaintenanceRuns";
-export * from "./getManagedPreferredCredential";
-export * from "./getManagedPreferredCredentials";
-export * from "./getPluggableDatabase";
-export * from "./getPluggableDatabases";
-export * from "./getVmCluster";
-export * from "./getVmClusterNetwork";
-export * from "./getVmClusterNetworkDownloadConfigFile";
-export * from "./getVmClusterNetworks";
-export * from "./getVmClusterPatch";
-export * from "./getVmClusterPatchHistoryEntries";
-export * from "./getVmClusterPatchHistoryEntry";
-export * from "./getVmClusterPatches";
-export * from "./getVmClusterRecommendedNetwork";
-export * from "./getVmClusterUpdate";
-export * from "./getVmClusterUpdateHistoryEntries";
-export * from "./getVmClusterUpdateHistoryEntry";
-export * from "./getVmClusterUpdates";
-export * from "./getVmClusters";
-export * from "./keyStore";
-export * from "./maintenanceRun";
-export * from "./pluggableDatabase";
-export * from "./pluggableDatabasesLocalClone";
-export * from "./pluggableDatabasesRemoteClone";
-export * from "./vmCluster";
-export * from "./vmClusterAddVirtualNetwork";
-export * from "./vmClusterNetwork";
-export * from "./vmClusterRemoveVirtualMachine";
+export { AutonomousContainerDatabaseArgs, AutonomousContainerDatabaseState } from "./autonomousContainerDatabase";
+export type AutonomousContainerDatabase = import("./autonomousContainerDatabase").AutonomousContainerDatabase;
+export const AutonomousContainerDatabase: typeof import("./autonomousContainerDatabase").AutonomousContainerDatabase = null as any;
+utilities.lazyLoad(exports, ["AutonomousContainerDatabase"], () => require("./autonomousContainerDatabase"));
 
-// Import resources to register:
-import { AutonomousContainerDatabase } from "./autonomousContainerDatabase";
-import { AutonomousContainerDatabaseDataguardAssociation } from "./autonomousContainerDatabaseDataguardAssociation";
-import { AutonomousContainerDatabaseDataguardAssociationOperation } from "./autonomousContainerDatabaseDataguardAssociationOperation";
-import { AutonomousDatabase } from "./autonomousDatabase";
-import { AutonomousDatabaseBackup } from "./autonomousDatabaseBackup";
-import { AutonomousDatabaseInstanceWalletManagement } from "./autonomousDatabaseInstanceWalletManagement";
-import { AutonomousDatabaseRegionalWalletManagement } from "./autonomousDatabaseRegionalWalletManagement";
-import { AutonomousDatabaseWallet } from "./autonomousDatabaseWallet";
-import { AutonomousExadataInfrastructure } from "./autonomousExadataInfrastructure";
-import { AutonomousVmCluster } from "./autonomousVmCluster";
-import { Backup } from "./backup";
-import { BackupDestination } from "./backupDestination";
-import { CloudAutonomousVmCluster } from "./cloudAutonomousVmCluster";
-import { CloudDatabaseManagement } from "./cloudDatabaseManagement";
-import { CloudExadataInfrastructure } from "./cloudExadataInfrastructure";
-import { CloudVmCluster } from "./cloudVmCluster";
-import { CloudVmClusterIormConfig } from "./cloudVmClusterIormConfig";
-import { DataGuardAssociation } from "./dataGuardAssociation";
-import { Database } from "./database";
-import { DatabaseSoftwareImage } from "./databaseSoftwareImage";
-import { DatabaseUpgrade } from "./databaseUpgrade";
-import { DbHome } from "./dbHome";
-import { DbNodeConsoleConnection } from "./dbNodeConsoleConnection";
-import { DbSystem } from "./dbSystem";
-import { DbSystemsUpgrade } from "./dbSystemsUpgrade";
-import { ExadataInfrastructure } from "./exadataInfrastructure";
-import { ExadataInfrastructureStorage } from "./exadataInfrastructureStorage";
-import { ExadataIormConfig } from "./exadataIormConfig";
-import { ExternalContainerDatabase } from "./externalContainerDatabase";
-import { ExternalContainerDatabaseManagement } from "./externalContainerDatabaseManagement";
-import { ExternalContainerDatabasesStackMonitoring } from "./externalContainerDatabasesStackMonitoring";
-import { ExternalDatabaseConnector } from "./externalDatabaseConnector";
-import { ExternalNonContainerDatabase } from "./externalNonContainerDatabase";
-import { ExternalNonContainerDatabaseManagement } from "./externalNonContainerDatabaseManagement";
-import { ExternalNonContainerDatabaseOperationsInsightsManagement } from "./externalNonContainerDatabaseOperationsInsightsManagement";
-import { ExternalNonContainerDatabasesStackMonitoring } from "./externalNonContainerDatabasesStackMonitoring";
-import { ExternalPluggableDatabase } from "./externalPluggableDatabase";
-import { ExternalPluggableDatabaseManagement } from "./externalPluggableDatabaseManagement";
-import { ExternalPluggableDatabaseOperationsInsightsManagement } from "./externalPluggableDatabaseOperationsInsightsManagement";
-import { ExternalPluggableDatabasesStackMonitoring } from "./externalPluggableDatabasesStackMonitoring";
-import { KeyStore } from "./keyStore";
-import { MaintenanceRun } from "./maintenanceRun";
-import { PluggableDatabase } from "./pluggableDatabase";
-import { PluggableDatabasesLocalClone } from "./pluggableDatabasesLocalClone";
-import { PluggableDatabasesRemoteClone } from "./pluggableDatabasesRemoteClone";
-import { VmCluster } from "./vmCluster";
-import { VmClusterAddVirtualNetwork } from "./vmClusterAddVirtualNetwork";
-import { VmClusterNetwork } from "./vmClusterNetwork";
-import { VmClusterRemoveVirtualMachine } from "./vmClusterRemoveVirtualMachine";
+export { AutonomousContainerDatabaseDataguardAssociationArgs, AutonomousContainerDatabaseDataguardAssociationState } from "./autonomousContainerDatabaseDataguardAssociation";
+export type AutonomousContainerDatabaseDataguardAssociation = import("./autonomousContainerDatabaseDataguardAssociation").AutonomousContainerDatabaseDataguardAssociation;
+export const AutonomousContainerDatabaseDataguardAssociation: typeof import("./autonomousContainerDatabaseDataguardAssociation").AutonomousContainerDatabaseDataguardAssociation = null as any;
+utilities.lazyLoad(exports, ["AutonomousContainerDatabaseDataguardAssociation"], () => require("./autonomousContainerDatabaseDataguardAssociation"));
+
+export { AutonomousContainerDatabaseDataguardAssociationOperationArgs, AutonomousContainerDatabaseDataguardAssociationOperationState } from "./autonomousContainerDatabaseDataguardAssociationOperation";
+export type AutonomousContainerDatabaseDataguardAssociationOperation = import("./autonomousContainerDatabaseDataguardAssociationOperation").AutonomousContainerDatabaseDataguardAssociationOperation;
+export const AutonomousContainerDatabaseDataguardAssociationOperation: typeof import("./autonomousContainerDatabaseDataguardAssociationOperation").AutonomousContainerDatabaseDataguardAssociationOperation = null as any;
+utilities.lazyLoad(exports, ["AutonomousContainerDatabaseDataguardAssociationOperation"], () => require("./autonomousContainerDatabaseDataguardAssociationOperation"));
+
+export { AutonomousDatabaseArgs, AutonomousDatabaseState } from "./autonomousDatabase";
+export type AutonomousDatabase = import("./autonomousDatabase").AutonomousDatabase;
+export const AutonomousDatabase: typeof import("./autonomousDatabase").AutonomousDatabase = null as any;
+utilities.lazyLoad(exports, ["AutonomousDatabase"], () => require("./autonomousDatabase"));
+
+export { AutonomousDatabaseBackupArgs, AutonomousDatabaseBackupState } from "./autonomousDatabaseBackup";
+export type AutonomousDatabaseBackup = import("./autonomousDatabaseBackup").AutonomousDatabaseBackup;
+export const AutonomousDatabaseBackup: typeof import("./autonomousDatabaseBackup").AutonomousDatabaseBackup = null as any;
+utilities.lazyLoad(exports, ["AutonomousDatabaseBackup"], () => require("./autonomousDatabaseBackup"));
+
+export { AutonomousDatabaseInstanceWalletManagementArgs, AutonomousDatabaseInstanceWalletManagementState } from "./autonomousDatabaseInstanceWalletManagement";
+export type AutonomousDatabaseInstanceWalletManagement = import("./autonomousDatabaseInstanceWalletManagement").AutonomousDatabaseInstanceWalletManagement;
+export const AutonomousDatabaseInstanceWalletManagement: typeof import("./autonomousDatabaseInstanceWalletManagement").AutonomousDatabaseInstanceWalletManagement = null as any;
+utilities.lazyLoad(exports, ["AutonomousDatabaseInstanceWalletManagement"], () => require("./autonomousDatabaseInstanceWalletManagement"));
+
+export { AutonomousDatabaseRegionalWalletManagementArgs, AutonomousDatabaseRegionalWalletManagementState } from "./autonomousDatabaseRegionalWalletManagement";
+export type AutonomousDatabaseRegionalWalletManagement = import("./autonomousDatabaseRegionalWalletManagement").AutonomousDatabaseRegionalWalletManagement;
+export const AutonomousDatabaseRegionalWalletManagement: typeof import("./autonomousDatabaseRegionalWalletManagement").AutonomousDatabaseRegionalWalletManagement = null as any;
+utilities.lazyLoad(exports, ["AutonomousDatabaseRegionalWalletManagement"], () => require("./autonomousDatabaseRegionalWalletManagement"));
+
+export { AutonomousDatabaseWalletArgs, AutonomousDatabaseWalletState } from "./autonomousDatabaseWallet";
+export type AutonomousDatabaseWallet = import("./autonomousDatabaseWallet").AutonomousDatabaseWallet;
+export const AutonomousDatabaseWallet: typeof import("./autonomousDatabaseWallet").AutonomousDatabaseWallet = null as any;
+utilities.lazyLoad(exports, ["AutonomousDatabaseWallet"], () => require("./autonomousDatabaseWallet"));
+
+export { AutonomousExadataInfrastructureArgs, AutonomousExadataInfrastructureState } from "./autonomousExadataInfrastructure";
+export type AutonomousExadataInfrastructure = import("./autonomousExadataInfrastructure").AutonomousExadataInfrastructure;
+export const AutonomousExadataInfrastructure: typeof import("./autonomousExadataInfrastructure").AutonomousExadataInfrastructure = null as any;
+utilities.lazyLoad(exports, ["AutonomousExadataInfrastructure"], () => require("./autonomousExadataInfrastructure"));
+
+export { AutonomousVmClusterArgs, AutonomousVmClusterState } from "./autonomousVmCluster";
+export type AutonomousVmCluster = import("./autonomousVmCluster").AutonomousVmCluster;
+export const AutonomousVmCluster: typeof import("./autonomousVmCluster").AutonomousVmCluster = null as any;
+utilities.lazyLoad(exports, ["AutonomousVmCluster"], () => require("./autonomousVmCluster"));
+
+export { BackupArgs, BackupState } from "./backup";
+export type Backup = import("./backup").Backup;
+export const Backup: typeof import("./backup").Backup = null as any;
+utilities.lazyLoad(exports, ["Backup"], () => require("./backup"));
+
+export { BackupDestinationArgs, BackupDestinationState } from "./backupDestination";
+export type BackupDestination = import("./backupDestination").BackupDestination;
+export const BackupDestination: typeof import("./backupDestination").BackupDestination = null as any;
+utilities.lazyLoad(exports, ["BackupDestination"], () => require("./backupDestination"));
+
+export { CloudAutonomousVmClusterArgs, CloudAutonomousVmClusterState } from "./cloudAutonomousVmCluster";
+export type CloudAutonomousVmCluster = import("./cloudAutonomousVmCluster").CloudAutonomousVmCluster;
+export const CloudAutonomousVmCluster: typeof import("./cloudAutonomousVmCluster").CloudAutonomousVmCluster = null as any;
+utilities.lazyLoad(exports, ["CloudAutonomousVmCluster"], () => require("./cloudAutonomousVmCluster"));
+
+export { CloudDatabaseManagementArgs, CloudDatabaseManagementState } from "./cloudDatabaseManagement";
+export type CloudDatabaseManagement = import("./cloudDatabaseManagement").CloudDatabaseManagement;
+export const CloudDatabaseManagement: typeof import("./cloudDatabaseManagement").CloudDatabaseManagement = null as any;
+utilities.lazyLoad(exports, ["CloudDatabaseManagement"], () => require("./cloudDatabaseManagement"));
+
+export { CloudExadataInfrastructureArgs, CloudExadataInfrastructureState } from "./cloudExadataInfrastructure";
+export type CloudExadataInfrastructure = import("./cloudExadataInfrastructure").CloudExadataInfrastructure;
+export const CloudExadataInfrastructure: typeof import("./cloudExadataInfrastructure").CloudExadataInfrastructure = null as any;
+utilities.lazyLoad(exports, ["CloudExadataInfrastructure"], () => require("./cloudExadataInfrastructure"));
+
+export { CloudVmClusterArgs, CloudVmClusterState } from "./cloudVmCluster";
+export type CloudVmCluster = import("./cloudVmCluster").CloudVmCluster;
+export const CloudVmCluster: typeof import("./cloudVmCluster").CloudVmCluster = null as any;
+utilities.lazyLoad(exports, ["CloudVmCluster"], () => require("./cloudVmCluster"));
+
+export { CloudVmClusterIormConfigArgs, CloudVmClusterIormConfigState } from "./cloudVmClusterIormConfig";
+export type CloudVmClusterIormConfig = import("./cloudVmClusterIormConfig").CloudVmClusterIormConfig;
+export const CloudVmClusterIormConfig: typeof import("./cloudVmClusterIormConfig").CloudVmClusterIormConfig = null as any;
+utilities.lazyLoad(exports, ["CloudVmClusterIormConfig"], () => require("./cloudVmClusterIormConfig"));
+
+export { DataGuardAssociationArgs, DataGuardAssociationState } from "./dataGuardAssociation";
+export type DataGuardAssociation = import("./dataGuardAssociation").DataGuardAssociation;
+export const DataGuardAssociation: typeof import("./dataGuardAssociation").DataGuardAssociation = null as any;
+utilities.lazyLoad(exports, ["DataGuardAssociation"], () => require("./dataGuardAssociation"));
+
+export { DatabaseArgs, DatabaseState } from "./database";
+export type Database = import("./database").Database;
+export const Database: typeof import("./database").Database = null as any;
+utilities.lazyLoad(exports, ["Database"], () => require("./database"));
+
+export { DatabaseSoftwareImageArgs, DatabaseSoftwareImageState } from "./databaseSoftwareImage";
+export type DatabaseSoftwareImage = import("./databaseSoftwareImage").DatabaseSoftwareImage;
+export const DatabaseSoftwareImage: typeof import("./databaseSoftwareImage").DatabaseSoftwareImage = null as any;
+utilities.lazyLoad(exports, ["DatabaseSoftwareImage"], () => require("./databaseSoftwareImage"));
+
+export { DatabaseUpgradeArgs, DatabaseUpgradeState } from "./databaseUpgrade";
+export type DatabaseUpgrade = import("./databaseUpgrade").DatabaseUpgrade;
+export const DatabaseUpgrade: typeof import("./databaseUpgrade").DatabaseUpgrade = null as any;
+utilities.lazyLoad(exports, ["DatabaseUpgrade"], () => require("./databaseUpgrade"));
+
+export { DbHomeArgs, DbHomeState } from "./dbHome";
+export type DbHome = import("./dbHome").DbHome;
+export const DbHome: typeof import("./dbHome").DbHome = null as any;
+utilities.lazyLoad(exports, ["DbHome"], () => require("./dbHome"));
+
+export { DbNodeConsoleConnectionArgs, DbNodeConsoleConnectionState } from "./dbNodeConsoleConnection";
+export type DbNodeConsoleConnection = import("./dbNodeConsoleConnection").DbNodeConsoleConnection;
+export const DbNodeConsoleConnection: typeof import("./dbNodeConsoleConnection").DbNodeConsoleConnection = null as any;
+utilities.lazyLoad(exports, ["DbNodeConsoleConnection"], () => require("./dbNodeConsoleConnection"));
+
+export { DbSystemArgs, DbSystemState } from "./dbSystem";
+export type DbSystem = import("./dbSystem").DbSystem;
+export const DbSystem: typeof import("./dbSystem").DbSystem = null as any;
+utilities.lazyLoad(exports, ["DbSystem"], () => require("./dbSystem"));
+
+export { DbSystemsUpgradeArgs, DbSystemsUpgradeState } from "./dbSystemsUpgrade";
+export type DbSystemsUpgrade = import("./dbSystemsUpgrade").DbSystemsUpgrade;
+export const DbSystemsUpgrade: typeof import("./dbSystemsUpgrade").DbSystemsUpgrade = null as any;
+utilities.lazyLoad(exports, ["DbSystemsUpgrade"], () => require("./dbSystemsUpgrade"));
+
+export { ExadataInfrastructureArgs, ExadataInfrastructureState } from "./exadataInfrastructure";
+export type ExadataInfrastructure = import("./exadataInfrastructure").ExadataInfrastructure;
+export const ExadataInfrastructure: typeof import("./exadataInfrastructure").ExadataInfrastructure = null as any;
+utilities.lazyLoad(exports, ["ExadataInfrastructure"], () => require("./exadataInfrastructure"));
+
+export { ExadataInfrastructureComputeArgs, ExadataInfrastructureComputeState } from "./exadataInfrastructureCompute";
+export type ExadataInfrastructureCompute = import("./exadataInfrastructureCompute").ExadataInfrastructureCompute;
+export const ExadataInfrastructureCompute: typeof import("./exadataInfrastructureCompute").ExadataInfrastructureCompute = null as any;
+utilities.lazyLoad(exports, ["ExadataInfrastructureCompute"], () => require("./exadataInfrastructureCompute"));
+
+export { ExadataInfrastructureStorageArgs, ExadataInfrastructureStorageState } from "./exadataInfrastructureStorage";
+export type ExadataInfrastructureStorage = import("./exadataInfrastructureStorage").ExadataInfrastructureStorage;
+export const ExadataInfrastructureStorage: typeof import("./exadataInfrastructureStorage").ExadataInfrastructureStorage = null as any;
+utilities.lazyLoad(exports, ["ExadataInfrastructureStorage"], () => require("./exadataInfrastructureStorage"));
+
+export { ExadataIormConfigArgs, ExadataIormConfigState } from "./exadataIormConfig";
+export type ExadataIormConfig = import("./exadataIormConfig").ExadataIormConfig;
+export const ExadataIormConfig: typeof import("./exadataIormConfig").ExadataIormConfig = null as any;
+utilities.lazyLoad(exports, ["ExadataIormConfig"], () => require("./exadataIormConfig"));
+
+export { ExternalContainerDatabaseArgs, ExternalContainerDatabaseState } from "./externalContainerDatabase";
+export type ExternalContainerDatabase = import("./externalContainerDatabase").ExternalContainerDatabase;
+export const ExternalContainerDatabase: typeof import("./externalContainerDatabase").ExternalContainerDatabase = null as any;
+utilities.lazyLoad(exports, ["ExternalContainerDatabase"], () => require("./externalContainerDatabase"));
+
+export { ExternalContainerDatabaseManagementArgs, ExternalContainerDatabaseManagementState } from "./externalContainerDatabaseManagement";
+export type ExternalContainerDatabaseManagement = import("./externalContainerDatabaseManagement").ExternalContainerDatabaseManagement;
+export const ExternalContainerDatabaseManagement: typeof import("./externalContainerDatabaseManagement").ExternalContainerDatabaseManagement = null as any;
+utilities.lazyLoad(exports, ["ExternalContainerDatabaseManagement"], () => require("./externalContainerDatabaseManagement"));
+
+export { ExternalContainerDatabasesStackMonitoringArgs, ExternalContainerDatabasesStackMonitoringState } from "./externalContainerDatabasesStackMonitoring";
+export type ExternalContainerDatabasesStackMonitoring = import("./externalContainerDatabasesStackMonitoring").ExternalContainerDatabasesStackMonitoring;
+export const ExternalContainerDatabasesStackMonitoring: typeof import("./externalContainerDatabasesStackMonitoring").ExternalContainerDatabasesStackMonitoring = null as any;
+utilities.lazyLoad(exports, ["ExternalContainerDatabasesStackMonitoring"], () => require("./externalContainerDatabasesStackMonitoring"));
+
+export { ExternalDatabaseConnectorArgs, ExternalDatabaseConnectorState } from "./externalDatabaseConnector";
+export type ExternalDatabaseConnector = import("./externalDatabaseConnector").ExternalDatabaseConnector;
+export const ExternalDatabaseConnector: typeof import("./externalDatabaseConnector").ExternalDatabaseConnector = null as any;
+utilities.lazyLoad(exports, ["ExternalDatabaseConnector"], () => require("./externalDatabaseConnector"));
+
+export { ExternalNonContainerDatabaseArgs, ExternalNonContainerDatabaseState } from "./externalNonContainerDatabase";
+export type ExternalNonContainerDatabase = import("./externalNonContainerDatabase").ExternalNonContainerDatabase;
+export const ExternalNonContainerDatabase: typeof import("./externalNonContainerDatabase").ExternalNonContainerDatabase = null as any;
+utilities.lazyLoad(exports, ["ExternalNonContainerDatabase"], () => require("./externalNonContainerDatabase"));
+
+export { ExternalNonContainerDatabaseManagementArgs, ExternalNonContainerDatabaseManagementState } from "./externalNonContainerDatabaseManagement";
+export type ExternalNonContainerDatabaseManagement = import("./externalNonContainerDatabaseManagement").ExternalNonContainerDatabaseManagement;
+export const ExternalNonContainerDatabaseManagement: typeof import("./externalNonContainerDatabaseManagement").ExternalNonContainerDatabaseManagement = null as any;
+utilities.lazyLoad(exports, ["ExternalNonContainerDatabaseManagement"], () => require("./externalNonContainerDatabaseManagement"));
+
+export { ExternalNonContainerDatabaseOperationsInsightsManagementArgs, ExternalNonContainerDatabaseOperationsInsightsManagementState } from "./externalNonContainerDatabaseOperationsInsightsManagement";
+export type ExternalNonContainerDatabaseOperationsInsightsManagement = import("./externalNonContainerDatabaseOperationsInsightsManagement").ExternalNonContainerDatabaseOperationsInsightsManagement;
+export const ExternalNonContainerDatabaseOperationsInsightsManagement: typeof import("./externalNonContainerDatabaseOperationsInsightsManagement").ExternalNonContainerDatabaseOperationsInsightsManagement = null as any;
+utilities.lazyLoad(exports, ["ExternalNonContainerDatabaseOperationsInsightsManagement"], () => require("./externalNonContainerDatabaseOperationsInsightsManagement"));
+
+export { ExternalNonContainerDatabasesStackMonitoringArgs, ExternalNonContainerDatabasesStackMonitoringState } from "./externalNonContainerDatabasesStackMonitoring";
+export type ExternalNonContainerDatabasesStackMonitoring = import("./externalNonContainerDatabasesStackMonitoring").ExternalNonContainerDatabasesStackMonitoring;
+export const ExternalNonContainerDatabasesStackMonitoring: typeof import("./externalNonContainerDatabasesStackMonitoring").ExternalNonContainerDatabasesStackMonitoring = null as any;
+utilities.lazyLoad(exports, ["ExternalNonContainerDatabasesStackMonitoring"], () => require("./externalNonContainerDatabasesStackMonitoring"));
+
+export { ExternalPluggableDatabaseArgs, ExternalPluggableDatabaseState } from "./externalPluggableDatabase";
+export type ExternalPluggableDatabase = import("./externalPluggableDatabase").ExternalPluggableDatabase;
+export const ExternalPluggableDatabase: typeof import("./externalPluggableDatabase").ExternalPluggableDatabase = null as any;
+utilities.lazyLoad(exports, ["ExternalPluggableDatabase"], () => require("./externalPluggableDatabase"));
+
+export { ExternalPluggableDatabaseManagementArgs, ExternalPluggableDatabaseManagementState } from "./externalPluggableDatabaseManagement";
+export type ExternalPluggableDatabaseManagement = import("./externalPluggableDatabaseManagement").ExternalPluggableDatabaseManagement;
+export const ExternalPluggableDatabaseManagement: typeof import("./externalPluggableDatabaseManagement").ExternalPluggableDatabaseManagement = null as any;
+utilities.lazyLoad(exports, ["ExternalPluggableDatabaseManagement"], () => require("./externalPluggableDatabaseManagement"));
+
+export { ExternalPluggableDatabaseOperationsInsightsManagementArgs, ExternalPluggableDatabaseOperationsInsightsManagementState } from "./externalPluggableDatabaseOperationsInsightsManagement";
+export type ExternalPluggableDatabaseOperationsInsightsManagement = import("./externalPluggableDatabaseOperationsInsightsManagement").ExternalPluggableDatabaseOperationsInsightsManagement;
+export const ExternalPluggableDatabaseOperationsInsightsManagement: typeof import("./externalPluggableDatabaseOperationsInsightsManagement").ExternalPluggableDatabaseOperationsInsightsManagement = null as any;
+utilities.lazyLoad(exports, ["ExternalPluggableDatabaseOperationsInsightsManagement"], () => require("./externalPluggableDatabaseOperationsInsightsManagement"));
+
+export { ExternalPluggableDatabasesStackMonitoringArgs, ExternalPluggableDatabasesStackMonitoringState } from "./externalPluggableDatabasesStackMonitoring";
+export type ExternalPluggableDatabasesStackMonitoring = import("./externalPluggableDatabasesStackMonitoring").ExternalPluggableDatabasesStackMonitoring;
+export const ExternalPluggableDatabasesStackMonitoring: typeof import("./externalPluggableDatabasesStackMonitoring").ExternalPluggableDatabasesStackMonitoring = null as any;
+utilities.lazyLoad(exports, ["ExternalPluggableDatabasesStackMonitoring"], () => require("./externalPluggableDatabasesStackMonitoring"));
+
+export { GetAutonomousCharacterSetsArgs, GetAutonomousCharacterSetsResult, GetAutonomousCharacterSetsOutputArgs } from "./getAutonomousCharacterSets";
+export const getAutonomousCharacterSets: typeof import("./getAutonomousCharacterSets").getAutonomousCharacterSets = null as any;
+export const getAutonomousCharacterSetsOutput: typeof import("./getAutonomousCharacterSets").getAutonomousCharacterSetsOutput = null as any;
+utilities.lazyLoad(exports, ["getAutonomousCharacterSets","getAutonomousCharacterSetsOutput"], () => require("./getAutonomousCharacterSets"));
+
+export { GetAutonomousContainerDatabaseArgs, GetAutonomousContainerDatabaseResult, GetAutonomousContainerDatabaseOutputArgs } from "./getAutonomousContainerDatabase";
+export const getAutonomousContainerDatabase: typeof import("./getAutonomousContainerDatabase").getAutonomousContainerDatabase = null as any;
+export const getAutonomousContainerDatabaseOutput: typeof import("./getAutonomousContainerDatabase").getAutonomousContainerDatabaseOutput = null as any;
+utilities.lazyLoad(exports, ["getAutonomousContainerDatabase","getAutonomousContainerDatabaseOutput"], () => require("./getAutonomousContainerDatabase"));
+
+export { GetAutonomousContainerDatabaseDataguardAssociationArgs, GetAutonomousContainerDatabaseDataguardAssociationResult, GetAutonomousContainerDatabaseDataguardAssociationOutputArgs } from "./getAutonomousContainerDatabaseDataguardAssociation";
+export const getAutonomousContainerDatabaseDataguardAssociation: typeof import("./getAutonomousContainerDatabaseDataguardAssociation").getAutonomousContainerDatabaseDataguardAssociation = null as any;
+export const getAutonomousContainerDatabaseDataguardAssociationOutput: typeof import("./getAutonomousContainerDatabaseDataguardAssociation").getAutonomousContainerDatabaseDataguardAssociationOutput = null as any;
+utilities.lazyLoad(exports, ["getAutonomousContainerDatabaseDataguardAssociation","getAutonomousContainerDatabaseDataguardAssociationOutput"], () => require("./getAutonomousContainerDatabaseDataguardAssociation"));
+
+export { GetAutonomousContainerDatabaseDataguardAssociationsArgs, GetAutonomousContainerDatabaseDataguardAssociationsResult, GetAutonomousContainerDatabaseDataguardAssociationsOutputArgs } from "./getAutonomousContainerDatabaseDataguardAssociations";
+export const getAutonomousContainerDatabaseDataguardAssociations: typeof import("./getAutonomousContainerDatabaseDataguardAssociations").getAutonomousContainerDatabaseDataguardAssociations = null as any;
+export const getAutonomousContainerDatabaseDataguardAssociationsOutput: typeof import("./getAutonomousContainerDatabaseDataguardAssociations").getAutonomousContainerDatabaseDataguardAssociationsOutput = null as any;
+utilities.lazyLoad(exports, ["getAutonomousContainerDatabaseDataguardAssociations","getAutonomousContainerDatabaseDataguardAssociationsOutput"], () => require("./getAutonomousContainerDatabaseDataguardAssociations"));
+
+export { GetAutonomousContainerDatabasesArgs, GetAutonomousContainerDatabasesResult, GetAutonomousContainerDatabasesOutputArgs } from "./getAutonomousContainerDatabases";
+export const getAutonomousContainerDatabases: typeof import("./getAutonomousContainerDatabases").getAutonomousContainerDatabases = null as any;
+export const getAutonomousContainerDatabasesOutput: typeof import("./getAutonomousContainerDatabases").getAutonomousContainerDatabasesOutput = null as any;
+utilities.lazyLoad(exports, ["getAutonomousContainerDatabases","getAutonomousContainerDatabasesOutput"], () => require("./getAutonomousContainerDatabases"));
+
+export { GetAutonomousContainerPatchesArgs, GetAutonomousContainerPatchesResult, GetAutonomousContainerPatchesOutputArgs } from "./getAutonomousContainerPatches";
+export const getAutonomousContainerPatches: typeof import("./getAutonomousContainerPatches").getAutonomousContainerPatches = null as any;
+export const getAutonomousContainerPatchesOutput: typeof import("./getAutonomousContainerPatches").getAutonomousContainerPatchesOutput = null as any;
+utilities.lazyLoad(exports, ["getAutonomousContainerPatches","getAutonomousContainerPatchesOutput"], () => require("./getAutonomousContainerPatches"));
+
+export { GetAutonomousDatabaseArgs, GetAutonomousDatabaseResult, GetAutonomousDatabaseOutputArgs } from "./getAutonomousDatabase";
+export const getAutonomousDatabase: typeof import("./getAutonomousDatabase").getAutonomousDatabase = null as any;
+export const getAutonomousDatabaseOutput: typeof import("./getAutonomousDatabase").getAutonomousDatabaseOutput = null as any;
+utilities.lazyLoad(exports, ["getAutonomousDatabase","getAutonomousDatabaseOutput"], () => require("./getAutonomousDatabase"));
+
+export { GetAutonomousDatabaseBackupArgs, GetAutonomousDatabaseBackupResult, GetAutonomousDatabaseBackupOutputArgs } from "./getAutonomousDatabaseBackup";
+export const getAutonomousDatabaseBackup: typeof import("./getAutonomousDatabaseBackup").getAutonomousDatabaseBackup = null as any;
+export const getAutonomousDatabaseBackupOutput: typeof import("./getAutonomousDatabaseBackup").getAutonomousDatabaseBackupOutput = null as any;
+utilities.lazyLoad(exports, ["getAutonomousDatabaseBackup","getAutonomousDatabaseBackupOutput"], () => require("./getAutonomousDatabaseBackup"));
+
+export { GetAutonomousDatabaseBackupsArgs, GetAutonomousDatabaseBackupsResult, GetAutonomousDatabaseBackupsOutputArgs } from "./getAutonomousDatabaseBackups";
+export const getAutonomousDatabaseBackups: typeof import("./getAutonomousDatabaseBackups").getAutonomousDatabaseBackups = null as any;
+export const getAutonomousDatabaseBackupsOutput: typeof import("./getAutonomousDatabaseBackups").getAutonomousDatabaseBackupsOutput = null as any;
+utilities.lazyLoad(exports, ["getAutonomousDatabaseBackups","getAutonomousDatabaseBackupsOutput"], () => require("./getAutonomousDatabaseBackups"));
+
+export { GetAutonomousDatabaseDataguardAssociationArgs, GetAutonomousDatabaseDataguardAssociationResult, GetAutonomousDatabaseDataguardAssociationOutputArgs } from "./getAutonomousDatabaseDataguardAssociation";
+export const getAutonomousDatabaseDataguardAssociation: typeof import("./getAutonomousDatabaseDataguardAssociation").getAutonomousDatabaseDataguardAssociation = null as any;
+export const getAutonomousDatabaseDataguardAssociationOutput: typeof import("./getAutonomousDatabaseDataguardAssociation").getAutonomousDatabaseDataguardAssociationOutput = null as any;
+utilities.lazyLoad(exports, ["getAutonomousDatabaseDataguardAssociation","getAutonomousDatabaseDataguardAssociationOutput"], () => require("./getAutonomousDatabaseDataguardAssociation"));
+
+export { GetAutonomousDatabaseDataguardAssociationsArgs, GetAutonomousDatabaseDataguardAssociationsResult, GetAutonomousDatabaseDataguardAssociationsOutputArgs } from "./getAutonomousDatabaseDataguardAssociations";
+export const getAutonomousDatabaseDataguardAssociations: typeof import("./getAutonomousDatabaseDataguardAssociations").getAutonomousDatabaseDataguardAssociations = null as any;
+export const getAutonomousDatabaseDataguardAssociationsOutput: typeof import("./getAutonomousDatabaseDataguardAssociations").getAutonomousDatabaseDataguardAssociationsOutput = null as any;
+utilities.lazyLoad(exports, ["getAutonomousDatabaseDataguardAssociations","getAutonomousDatabaseDataguardAssociationsOutput"], () => require("./getAutonomousDatabaseDataguardAssociations"));
+
+export { GetAutonomousDatabaseInstanceWalletManagementArgs, GetAutonomousDatabaseInstanceWalletManagementResult, GetAutonomousDatabaseInstanceWalletManagementOutputArgs } from "./getAutonomousDatabaseInstanceWalletManagement";
+export const getAutonomousDatabaseInstanceWalletManagement: typeof import("./getAutonomousDatabaseInstanceWalletManagement").getAutonomousDatabaseInstanceWalletManagement = null as any;
+export const getAutonomousDatabaseInstanceWalletManagementOutput: typeof import("./getAutonomousDatabaseInstanceWalletManagement").getAutonomousDatabaseInstanceWalletManagementOutput = null as any;
+utilities.lazyLoad(exports, ["getAutonomousDatabaseInstanceWalletManagement","getAutonomousDatabaseInstanceWalletManagementOutput"], () => require("./getAutonomousDatabaseInstanceWalletManagement"));
+
+export { GetAutonomousDatabaseRefreshableClonesArgs, GetAutonomousDatabaseRefreshableClonesResult, GetAutonomousDatabaseRefreshableClonesOutputArgs } from "./getAutonomousDatabaseRefreshableClones";
+export const getAutonomousDatabaseRefreshableClones: typeof import("./getAutonomousDatabaseRefreshableClones").getAutonomousDatabaseRefreshableClones = null as any;
+export const getAutonomousDatabaseRefreshableClonesOutput: typeof import("./getAutonomousDatabaseRefreshableClones").getAutonomousDatabaseRefreshableClonesOutput = null as any;
+utilities.lazyLoad(exports, ["getAutonomousDatabaseRefreshableClones","getAutonomousDatabaseRefreshableClonesOutput"], () => require("./getAutonomousDatabaseRefreshableClones"));
+
+export { GetAutonomousDatabaseRegionalWalletManagementResult } from "./getAutonomousDatabaseRegionalWalletManagement";
+export const getAutonomousDatabaseRegionalWalletManagement: typeof import("./getAutonomousDatabaseRegionalWalletManagement").getAutonomousDatabaseRegionalWalletManagement = null as any;
+utilities.lazyLoad(exports, ["getAutonomousDatabaseRegionalWalletManagement"], () => require("./getAutonomousDatabaseRegionalWalletManagement"));
+
+export { GetAutonomousDatabaseWalletArgs, GetAutonomousDatabaseWalletResult, GetAutonomousDatabaseWalletOutputArgs } from "./getAutonomousDatabaseWallet";
+export const getAutonomousDatabaseWallet: typeof import("./getAutonomousDatabaseWallet").getAutonomousDatabaseWallet = null as any;
+export const getAutonomousDatabaseWalletOutput: typeof import("./getAutonomousDatabaseWallet").getAutonomousDatabaseWalletOutput = null as any;
+utilities.lazyLoad(exports, ["getAutonomousDatabaseWallet","getAutonomousDatabaseWalletOutput"], () => require("./getAutonomousDatabaseWallet"));
+
+export { GetAutonomousDatabasesArgs, GetAutonomousDatabasesResult, GetAutonomousDatabasesOutputArgs } from "./getAutonomousDatabases";
+export const getAutonomousDatabases: typeof import("./getAutonomousDatabases").getAutonomousDatabases = null as any;
+export const getAutonomousDatabasesOutput: typeof import("./getAutonomousDatabases").getAutonomousDatabasesOutput = null as any;
+utilities.lazyLoad(exports, ["getAutonomousDatabases","getAutonomousDatabasesOutput"], () => require("./getAutonomousDatabases"));
+
+export { GetAutonomousDatabasesClonesArgs, GetAutonomousDatabasesClonesResult, GetAutonomousDatabasesClonesOutputArgs } from "./getAutonomousDatabasesClones";
+export const getAutonomousDatabasesClones: typeof import("./getAutonomousDatabasesClones").getAutonomousDatabasesClones = null as any;
+export const getAutonomousDatabasesClonesOutput: typeof import("./getAutonomousDatabasesClones").getAutonomousDatabasesClonesOutput = null as any;
+utilities.lazyLoad(exports, ["getAutonomousDatabasesClones","getAutonomousDatabasesClonesOutput"], () => require("./getAutonomousDatabasesClones"));
+
+export { GetAutonomousDbPreviewVersionsArgs, GetAutonomousDbPreviewVersionsResult, GetAutonomousDbPreviewVersionsOutputArgs } from "./getAutonomousDbPreviewVersions";
+export const getAutonomousDbPreviewVersions: typeof import("./getAutonomousDbPreviewVersions").getAutonomousDbPreviewVersions = null as any;
+export const getAutonomousDbPreviewVersionsOutput: typeof import("./getAutonomousDbPreviewVersions").getAutonomousDbPreviewVersionsOutput = null as any;
+utilities.lazyLoad(exports, ["getAutonomousDbPreviewVersions","getAutonomousDbPreviewVersionsOutput"], () => require("./getAutonomousDbPreviewVersions"));
+
+export { GetAutonomousDbVersionsArgs, GetAutonomousDbVersionsResult, GetAutonomousDbVersionsOutputArgs } from "./getAutonomousDbVersions";
+export const getAutonomousDbVersions: typeof import("./getAutonomousDbVersions").getAutonomousDbVersions = null as any;
+export const getAutonomousDbVersionsOutput: typeof import("./getAutonomousDbVersions").getAutonomousDbVersionsOutput = null as any;
+utilities.lazyLoad(exports, ["getAutonomousDbVersions","getAutonomousDbVersionsOutput"], () => require("./getAutonomousDbVersions"));
+
+export { GetAutonomousExadataInfrastructureArgs, GetAutonomousExadataInfrastructureResult, GetAutonomousExadataInfrastructureOutputArgs } from "./getAutonomousExadataInfrastructure";
+export const getAutonomousExadataInfrastructure: typeof import("./getAutonomousExadataInfrastructure").getAutonomousExadataInfrastructure = null as any;
+export const getAutonomousExadataInfrastructureOutput: typeof import("./getAutonomousExadataInfrastructure").getAutonomousExadataInfrastructureOutput = null as any;
+utilities.lazyLoad(exports, ["getAutonomousExadataInfrastructure","getAutonomousExadataInfrastructureOutput"], () => require("./getAutonomousExadataInfrastructure"));
+
+export { GetAutonomousExadataInfrastructureOcpuArgs, GetAutonomousExadataInfrastructureOcpuResult, GetAutonomousExadataInfrastructureOcpuOutputArgs } from "./getAutonomousExadataInfrastructureOcpu";
+export const getAutonomousExadataInfrastructureOcpu: typeof import("./getAutonomousExadataInfrastructureOcpu").getAutonomousExadataInfrastructureOcpu = null as any;
+export const getAutonomousExadataInfrastructureOcpuOutput: typeof import("./getAutonomousExadataInfrastructureOcpu").getAutonomousExadataInfrastructureOcpuOutput = null as any;
+utilities.lazyLoad(exports, ["getAutonomousExadataInfrastructureOcpu","getAutonomousExadataInfrastructureOcpuOutput"], () => require("./getAutonomousExadataInfrastructureOcpu"));
+
+export { GetAutonomousExadataInfrastructureShapesArgs, GetAutonomousExadataInfrastructureShapesResult, GetAutonomousExadataInfrastructureShapesOutputArgs } from "./getAutonomousExadataInfrastructureShapes";
+export const getAutonomousExadataInfrastructureShapes: typeof import("./getAutonomousExadataInfrastructureShapes").getAutonomousExadataInfrastructureShapes = null as any;
+export const getAutonomousExadataInfrastructureShapesOutput: typeof import("./getAutonomousExadataInfrastructureShapes").getAutonomousExadataInfrastructureShapesOutput = null as any;
+utilities.lazyLoad(exports, ["getAutonomousExadataInfrastructureShapes","getAutonomousExadataInfrastructureShapesOutput"], () => require("./getAutonomousExadataInfrastructureShapes"));
+
+export { GetAutonomousExadataInfrastructuresArgs, GetAutonomousExadataInfrastructuresResult, GetAutonomousExadataInfrastructuresOutputArgs } from "./getAutonomousExadataInfrastructures";
+export const getAutonomousExadataInfrastructures: typeof import("./getAutonomousExadataInfrastructures").getAutonomousExadataInfrastructures = null as any;
+export const getAutonomousExadataInfrastructuresOutput: typeof import("./getAutonomousExadataInfrastructures").getAutonomousExadataInfrastructuresOutput = null as any;
+utilities.lazyLoad(exports, ["getAutonomousExadataInfrastructures","getAutonomousExadataInfrastructuresOutput"], () => require("./getAutonomousExadataInfrastructures"));
+
+export { GetAutonomousPatchArgs, GetAutonomousPatchResult, GetAutonomousPatchOutputArgs } from "./getAutonomousPatch";
+export const getAutonomousPatch: typeof import("./getAutonomousPatch").getAutonomousPatch = null as any;
+export const getAutonomousPatchOutput: typeof import("./getAutonomousPatch").getAutonomousPatchOutput = null as any;
+utilities.lazyLoad(exports, ["getAutonomousPatch","getAutonomousPatchOutput"], () => require("./getAutonomousPatch"));
+
+export { GetAutonomousVmClusterArgs, GetAutonomousVmClusterResult, GetAutonomousVmClusterOutputArgs } from "./getAutonomousVmCluster";
+export const getAutonomousVmCluster: typeof import("./getAutonomousVmCluster").getAutonomousVmCluster = null as any;
+export const getAutonomousVmClusterOutput: typeof import("./getAutonomousVmCluster").getAutonomousVmClusterOutput = null as any;
+utilities.lazyLoad(exports, ["getAutonomousVmCluster","getAutonomousVmClusterOutput"], () => require("./getAutonomousVmCluster"));
+
+export { GetAutonomousVmClustersArgs, GetAutonomousVmClustersResult, GetAutonomousVmClustersOutputArgs } from "./getAutonomousVmClusters";
+export const getAutonomousVmClusters: typeof import("./getAutonomousVmClusters").getAutonomousVmClusters = null as any;
+export const getAutonomousVmClustersOutput: typeof import("./getAutonomousVmClusters").getAutonomousVmClustersOutput = null as any;
+utilities.lazyLoad(exports, ["getAutonomousVmClusters","getAutonomousVmClustersOutput"], () => require("./getAutonomousVmClusters"));
+
+export { GetBackupDestinationArgs, GetBackupDestinationResult, GetBackupDestinationOutputArgs } from "./getBackupDestination";
+export const getBackupDestination: typeof import("./getBackupDestination").getBackupDestination = null as any;
+export const getBackupDestinationOutput: typeof import("./getBackupDestination").getBackupDestinationOutput = null as any;
+utilities.lazyLoad(exports, ["getBackupDestination","getBackupDestinationOutput"], () => require("./getBackupDestination"));
+
+export { GetBackupDestinationsArgs, GetBackupDestinationsResult, GetBackupDestinationsOutputArgs } from "./getBackupDestinations";
+export const getBackupDestinations: typeof import("./getBackupDestinations").getBackupDestinations = null as any;
+export const getBackupDestinationsOutput: typeof import("./getBackupDestinations").getBackupDestinationsOutput = null as any;
+utilities.lazyLoad(exports, ["getBackupDestinations","getBackupDestinationsOutput"], () => require("./getBackupDestinations"));
+
+export { GetBackupsArgs, GetBackupsResult, GetBackupsOutputArgs } from "./getBackups";
+export const getBackups: typeof import("./getBackups").getBackups = null as any;
+export const getBackupsOutput: typeof import("./getBackups").getBackupsOutput = null as any;
+utilities.lazyLoad(exports, ["getBackups","getBackupsOutput"], () => require("./getBackups"));
+
+export { GetCloudAutonomousVmClusterArgs, GetCloudAutonomousVmClusterResult, GetCloudAutonomousVmClusterOutputArgs } from "./getCloudAutonomousVmCluster";
+export const getCloudAutonomousVmCluster: typeof import("./getCloudAutonomousVmCluster").getCloudAutonomousVmCluster = null as any;
+export const getCloudAutonomousVmClusterOutput: typeof import("./getCloudAutonomousVmCluster").getCloudAutonomousVmClusterOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudAutonomousVmCluster","getCloudAutonomousVmClusterOutput"], () => require("./getCloudAutonomousVmCluster"));
+
+export { GetCloudAutonomousVmClustersArgs, GetCloudAutonomousVmClustersResult, GetCloudAutonomousVmClustersOutputArgs } from "./getCloudAutonomousVmClusters";
+export const getCloudAutonomousVmClusters: typeof import("./getCloudAutonomousVmClusters").getCloudAutonomousVmClusters = null as any;
+export const getCloudAutonomousVmClustersOutput: typeof import("./getCloudAutonomousVmClusters").getCloudAutonomousVmClustersOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudAutonomousVmClusters","getCloudAutonomousVmClustersOutput"], () => require("./getCloudAutonomousVmClusters"));
+
+export { GetCloudExadataInfrastructureArgs, GetCloudExadataInfrastructureResult, GetCloudExadataInfrastructureOutputArgs } from "./getCloudExadataInfrastructure";
+export const getCloudExadataInfrastructure: typeof import("./getCloudExadataInfrastructure").getCloudExadataInfrastructure = null as any;
+export const getCloudExadataInfrastructureOutput: typeof import("./getCloudExadataInfrastructure").getCloudExadataInfrastructureOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudExadataInfrastructure","getCloudExadataInfrastructureOutput"], () => require("./getCloudExadataInfrastructure"));
+
+export { GetCloudExadataInfrastructuresArgs, GetCloudExadataInfrastructuresResult, GetCloudExadataInfrastructuresOutputArgs } from "./getCloudExadataInfrastructures";
+export const getCloudExadataInfrastructures: typeof import("./getCloudExadataInfrastructures").getCloudExadataInfrastructures = null as any;
+export const getCloudExadataInfrastructuresOutput: typeof import("./getCloudExadataInfrastructures").getCloudExadataInfrastructuresOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudExadataInfrastructures","getCloudExadataInfrastructuresOutput"], () => require("./getCloudExadataInfrastructures"));
+
+export { GetCloudVmClusterArgs, GetCloudVmClusterResult, GetCloudVmClusterOutputArgs } from "./getCloudVmCluster";
+export const getCloudVmCluster: typeof import("./getCloudVmCluster").getCloudVmCluster = null as any;
+export const getCloudVmClusterOutput: typeof import("./getCloudVmCluster").getCloudVmClusterOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudVmCluster","getCloudVmClusterOutput"], () => require("./getCloudVmCluster"));
+
+export { GetCloudVmClusterIormConfigArgs, GetCloudVmClusterIormConfigResult, GetCloudVmClusterIormConfigOutputArgs } from "./getCloudVmClusterIormConfig";
+export const getCloudVmClusterIormConfig: typeof import("./getCloudVmClusterIormConfig").getCloudVmClusterIormConfig = null as any;
+export const getCloudVmClusterIormConfigOutput: typeof import("./getCloudVmClusterIormConfig").getCloudVmClusterIormConfigOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudVmClusterIormConfig","getCloudVmClusterIormConfigOutput"], () => require("./getCloudVmClusterIormConfig"));
+
+export { GetCloudVmClustersArgs, GetCloudVmClustersResult, GetCloudVmClustersOutputArgs } from "./getCloudVmClusters";
+export const getCloudVmClusters: typeof import("./getCloudVmClusters").getCloudVmClusters = null as any;
+export const getCloudVmClustersOutput: typeof import("./getCloudVmClusters").getCloudVmClustersOutput = null as any;
+utilities.lazyLoad(exports, ["getCloudVmClusters","getCloudVmClustersOutput"], () => require("./getCloudVmClusters"));
+
+export { GetDataGuardAssociationArgs, GetDataGuardAssociationResult, GetDataGuardAssociationOutputArgs } from "./getDataGuardAssociation";
+export const getDataGuardAssociation: typeof import("./getDataGuardAssociation").getDataGuardAssociation = null as any;
+export const getDataGuardAssociationOutput: typeof import("./getDataGuardAssociation").getDataGuardAssociationOutput = null as any;
+utilities.lazyLoad(exports, ["getDataGuardAssociation","getDataGuardAssociationOutput"], () => require("./getDataGuardAssociation"));
+
+export { GetDataGuardAssociationsArgs, GetDataGuardAssociationsResult, GetDataGuardAssociationsOutputArgs } from "./getDataGuardAssociations";
+export const getDataGuardAssociations: typeof import("./getDataGuardAssociations").getDataGuardAssociations = null as any;
+export const getDataGuardAssociationsOutput: typeof import("./getDataGuardAssociations").getDataGuardAssociationsOutput = null as any;
+utilities.lazyLoad(exports, ["getDataGuardAssociations","getDataGuardAssociationsOutput"], () => require("./getDataGuardAssociations"));
+
+export { GetDatabaseArgs, GetDatabaseResult, GetDatabaseOutputArgs } from "./getDatabase";
+export const getDatabase: typeof import("./getDatabase").getDatabase = null as any;
+export const getDatabaseOutput: typeof import("./getDatabase").getDatabaseOutput = null as any;
+utilities.lazyLoad(exports, ["getDatabase","getDatabaseOutput"], () => require("./getDatabase"));
+
+export { GetDatabaseMaintenanceRunHistoriesArgs, GetDatabaseMaintenanceRunHistoriesResult, GetDatabaseMaintenanceRunHistoriesOutputArgs } from "./getDatabaseMaintenanceRunHistories";
+export const getDatabaseMaintenanceRunHistories: typeof import("./getDatabaseMaintenanceRunHistories").getDatabaseMaintenanceRunHistories = null as any;
+export const getDatabaseMaintenanceRunHistoriesOutput: typeof import("./getDatabaseMaintenanceRunHistories").getDatabaseMaintenanceRunHistoriesOutput = null as any;
+utilities.lazyLoad(exports, ["getDatabaseMaintenanceRunHistories","getDatabaseMaintenanceRunHistoriesOutput"], () => require("./getDatabaseMaintenanceRunHistories"));
+
+export { GetDatabaseMaintenanceRunHistoryArgs, GetDatabaseMaintenanceRunHistoryResult, GetDatabaseMaintenanceRunHistoryOutputArgs } from "./getDatabaseMaintenanceRunHistory";
+export const getDatabaseMaintenanceRunHistory: typeof import("./getDatabaseMaintenanceRunHistory").getDatabaseMaintenanceRunHistory = null as any;
+export const getDatabaseMaintenanceRunHistoryOutput: typeof import("./getDatabaseMaintenanceRunHistory").getDatabaseMaintenanceRunHistoryOutput = null as any;
+utilities.lazyLoad(exports, ["getDatabaseMaintenanceRunHistory","getDatabaseMaintenanceRunHistoryOutput"], () => require("./getDatabaseMaintenanceRunHistory"));
+
+export { GetDatabasePdbConversionHistoryEntriesArgs, GetDatabasePdbConversionHistoryEntriesResult, GetDatabasePdbConversionHistoryEntriesOutputArgs } from "./getDatabasePdbConversionHistoryEntries";
+export const getDatabasePdbConversionHistoryEntries: typeof import("./getDatabasePdbConversionHistoryEntries").getDatabasePdbConversionHistoryEntries = null as any;
+export const getDatabasePdbConversionHistoryEntriesOutput: typeof import("./getDatabasePdbConversionHistoryEntries").getDatabasePdbConversionHistoryEntriesOutput = null as any;
+utilities.lazyLoad(exports, ["getDatabasePdbConversionHistoryEntries","getDatabasePdbConversionHistoryEntriesOutput"], () => require("./getDatabasePdbConversionHistoryEntries"));
+
+export { GetDatabasePdbConversionHistoryEntryArgs, GetDatabasePdbConversionHistoryEntryResult, GetDatabasePdbConversionHistoryEntryOutputArgs } from "./getDatabasePdbConversionHistoryEntry";
+export const getDatabasePdbConversionHistoryEntry: typeof import("./getDatabasePdbConversionHistoryEntry").getDatabasePdbConversionHistoryEntry = null as any;
+export const getDatabasePdbConversionHistoryEntryOutput: typeof import("./getDatabasePdbConversionHistoryEntry").getDatabasePdbConversionHistoryEntryOutput = null as any;
+utilities.lazyLoad(exports, ["getDatabasePdbConversionHistoryEntry","getDatabasePdbConversionHistoryEntryOutput"], () => require("./getDatabasePdbConversionHistoryEntry"));
+
+export { GetDatabaseSoftwareImageArgs, GetDatabaseSoftwareImageResult, GetDatabaseSoftwareImageOutputArgs } from "./getDatabaseSoftwareImage";
+export const getDatabaseSoftwareImage: typeof import("./getDatabaseSoftwareImage").getDatabaseSoftwareImage = null as any;
+export const getDatabaseSoftwareImageOutput: typeof import("./getDatabaseSoftwareImage").getDatabaseSoftwareImageOutput = null as any;
+utilities.lazyLoad(exports, ["getDatabaseSoftwareImage","getDatabaseSoftwareImageOutput"], () => require("./getDatabaseSoftwareImage"));
+
+export { GetDatabaseSoftwareImagesArgs, GetDatabaseSoftwareImagesResult, GetDatabaseSoftwareImagesOutputArgs } from "./getDatabaseSoftwareImages";
+export const getDatabaseSoftwareImages: typeof import("./getDatabaseSoftwareImages").getDatabaseSoftwareImages = null as any;
+export const getDatabaseSoftwareImagesOutput: typeof import("./getDatabaseSoftwareImages").getDatabaseSoftwareImagesOutput = null as any;
+utilities.lazyLoad(exports, ["getDatabaseSoftwareImages","getDatabaseSoftwareImagesOutput"], () => require("./getDatabaseSoftwareImages"));
+
+export { GetDatabaseUpgradeHistoryEntriesArgs, GetDatabaseUpgradeHistoryEntriesResult, GetDatabaseUpgradeHistoryEntriesOutputArgs } from "./getDatabaseUpgradeHistoryEntries";
+export const getDatabaseUpgradeHistoryEntries: typeof import("./getDatabaseUpgradeHistoryEntries").getDatabaseUpgradeHistoryEntries = null as any;
+export const getDatabaseUpgradeHistoryEntriesOutput: typeof import("./getDatabaseUpgradeHistoryEntries").getDatabaseUpgradeHistoryEntriesOutput = null as any;
+utilities.lazyLoad(exports, ["getDatabaseUpgradeHistoryEntries","getDatabaseUpgradeHistoryEntriesOutput"], () => require("./getDatabaseUpgradeHistoryEntries"));
+
+export { GetDatabaseUpgradeHistoryEntryArgs, GetDatabaseUpgradeHistoryEntryResult, GetDatabaseUpgradeHistoryEntryOutputArgs } from "./getDatabaseUpgradeHistoryEntry";
+export const getDatabaseUpgradeHistoryEntry: typeof import("./getDatabaseUpgradeHistoryEntry").getDatabaseUpgradeHistoryEntry = null as any;
+export const getDatabaseUpgradeHistoryEntryOutput: typeof import("./getDatabaseUpgradeHistoryEntry").getDatabaseUpgradeHistoryEntryOutput = null as any;
+utilities.lazyLoad(exports, ["getDatabaseUpgradeHistoryEntry","getDatabaseUpgradeHistoryEntryOutput"], () => require("./getDatabaseUpgradeHistoryEntry"));
+
+export { GetDatabasesArgs, GetDatabasesResult, GetDatabasesOutputArgs } from "./getDatabases";
+export const getDatabases: typeof import("./getDatabases").getDatabases = null as any;
+export const getDatabasesOutput: typeof import("./getDatabases").getDatabasesOutput = null as any;
+utilities.lazyLoad(exports, ["getDatabases","getDatabasesOutput"], () => require("./getDatabases"));
+
+export { GetDbHomeArgs, GetDbHomeResult, GetDbHomeOutputArgs } from "./getDbHome";
+export const getDbHome: typeof import("./getDbHome").getDbHome = null as any;
+export const getDbHomeOutput: typeof import("./getDbHome").getDbHomeOutput = null as any;
+utilities.lazyLoad(exports, ["getDbHome","getDbHomeOutput"], () => require("./getDbHome"));
+
+export { GetDbHomePatchHistoryEntriesArgs, GetDbHomePatchHistoryEntriesResult, GetDbHomePatchHistoryEntriesOutputArgs } from "./getDbHomePatchHistoryEntries";
+export const getDbHomePatchHistoryEntries: typeof import("./getDbHomePatchHistoryEntries").getDbHomePatchHistoryEntries = null as any;
+export const getDbHomePatchHistoryEntriesOutput: typeof import("./getDbHomePatchHistoryEntries").getDbHomePatchHistoryEntriesOutput = null as any;
+utilities.lazyLoad(exports, ["getDbHomePatchHistoryEntries","getDbHomePatchHistoryEntriesOutput"], () => require("./getDbHomePatchHistoryEntries"));
+
+export { GetDbHomePatchesArgs, GetDbHomePatchesResult, GetDbHomePatchesOutputArgs } from "./getDbHomePatches";
+export const getDbHomePatches: typeof import("./getDbHomePatches").getDbHomePatches = null as any;
+export const getDbHomePatchesOutput: typeof import("./getDbHomePatches").getDbHomePatchesOutput = null as any;
+utilities.lazyLoad(exports, ["getDbHomePatches","getDbHomePatchesOutput"], () => require("./getDbHomePatches"));
+
+export { GetDbHomesArgs, GetDbHomesResult, GetDbHomesOutputArgs } from "./getDbHomes";
+export const getDbHomes: typeof import("./getDbHomes").getDbHomes = null as any;
+export const getDbHomesOutput: typeof import("./getDbHomes").getDbHomesOutput = null as any;
+utilities.lazyLoad(exports, ["getDbHomes","getDbHomesOutput"], () => require("./getDbHomes"));
+
+export { GetDbNodeArgs, GetDbNodeResult, GetDbNodeOutputArgs } from "./getDbNode";
+export const getDbNode: typeof import("./getDbNode").getDbNode = null as any;
+export const getDbNodeOutput: typeof import("./getDbNode").getDbNodeOutput = null as any;
+utilities.lazyLoad(exports, ["getDbNode","getDbNodeOutput"], () => require("./getDbNode"));
+
+export { GetDbNodeConsoleConnectionArgs, GetDbNodeConsoleConnectionResult, GetDbNodeConsoleConnectionOutputArgs } from "./getDbNodeConsoleConnection";
+export const getDbNodeConsoleConnection: typeof import("./getDbNodeConsoleConnection").getDbNodeConsoleConnection = null as any;
+export const getDbNodeConsoleConnectionOutput: typeof import("./getDbNodeConsoleConnection").getDbNodeConsoleConnectionOutput = null as any;
+utilities.lazyLoad(exports, ["getDbNodeConsoleConnection","getDbNodeConsoleConnectionOutput"], () => require("./getDbNodeConsoleConnection"));
+
+export { GetDbNodeConsoleConnectionsArgs, GetDbNodeConsoleConnectionsResult, GetDbNodeConsoleConnectionsOutputArgs } from "./getDbNodeConsoleConnections";
+export const getDbNodeConsoleConnections: typeof import("./getDbNodeConsoleConnections").getDbNodeConsoleConnections = null as any;
+export const getDbNodeConsoleConnectionsOutput: typeof import("./getDbNodeConsoleConnections").getDbNodeConsoleConnectionsOutput = null as any;
+utilities.lazyLoad(exports, ["getDbNodeConsoleConnections","getDbNodeConsoleConnectionsOutput"], () => require("./getDbNodeConsoleConnections"));
+
+export { GetDbNodesArgs, GetDbNodesResult, GetDbNodesOutputArgs } from "./getDbNodes";
+export const getDbNodes: typeof import("./getDbNodes").getDbNodes = null as any;
+export const getDbNodesOutput: typeof import("./getDbNodes").getDbNodesOutput = null as any;
+utilities.lazyLoad(exports, ["getDbNodes","getDbNodesOutput"], () => require("./getDbNodes"));
+
+export { GetDbServerArgs, GetDbServerResult, GetDbServerOutputArgs } from "./getDbServer";
+export const getDbServer: typeof import("./getDbServer").getDbServer = null as any;
+export const getDbServerOutput: typeof import("./getDbServer").getDbServerOutput = null as any;
+utilities.lazyLoad(exports, ["getDbServer","getDbServerOutput"], () => require("./getDbServer"));
+
+export { GetDbServersArgs, GetDbServersResult, GetDbServersOutputArgs } from "./getDbServers";
+export const getDbServers: typeof import("./getDbServers").getDbServers = null as any;
+export const getDbServersOutput: typeof import("./getDbServers").getDbServersOutput = null as any;
+utilities.lazyLoad(exports, ["getDbServers","getDbServersOutput"], () => require("./getDbServers"));
+
+export { GetDbSystemComputePerformancesArgs, GetDbSystemComputePerformancesResult, GetDbSystemComputePerformancesOutputArgs } from "./getDbSystemComputePerformances";
+export const getDbSystemComputePerformances: typeof import("./getDbSystemComputePerformances").getDbSystemComputePerformances = null as any;
+export const getDbSystemComputePerformancesOutput: typeof import("./getDbSystemComputePerformances").getDbSystemComputePerformancesOutput = null as any;
+utilities.lazyLoad(exports, ["getDbSystemComputePerformances","getDbSystemComputePerformancesOutput"], () => require("./getDbSystemComputePerformances"));
+
+export { GetDbSystemHistoryEntriesArgs, GetDbSystemHistoryEntriesResult, GetDbSystemHistoryEntriesOutputArgs } from "./getDbSystemHistoryEntries";
+export const getDbSystemHistoryEntries: typeof import("./getDbSystemHistoryEntries").getDbSystemHistoryEntries = null as any;
+export const getDbSystemHistoryEntriesOutput: typeof import("./getDbSystemHistoryEntries").getDbSystemHistoryEntriesOutput = null as any;
+utilities.lazyLoad(exports, ["getDbSystemHistoryEntries","getDbSystemHistoryEntriesOutput"], () => require("./getDbSystemHistoryEntries"));
+
+export { GetDbSystemPatchesArgs, GetDbSystemPatchesResult, GetDbSystemPatchesOutputArgs } from "./getDbSystemPatches";
+export const getDbSystemPatches: typeof import("./getDbSystemPatches").getDbSystemPatches = null as any;
+export const getDbSystemPatchesOutput: typeof import("./getDbSystemPatches").getDbSystemPatchesOutput = null as any;
+utilities.lazyLoad(exports, ["getDbSystemPatches","getDbSystemPatchesOutput"], () => require("./getDbSystemPatches"));
+
+export { GetDbSystemShapesArgs, GetDbSystemShapesResult, GetDbSystemShapesOutputArgs } from "./getDbSystemShapes";
+export const getDbSystemShapes: typeof import("./getDbSystemShapes").getDbSystemShapes = null as any;
+export const getDbSystemShapesOutput: typeof import("./getDbSystemShapes").getDbSystemShapesOutput = null as any;
+utilities.lazyLoad(exports, ["getDbSystemShapes","getDbSystemShapesOutput"], () => require("./getDbSystemShapes"));
+
+export { GetDbSystemStoragePerformancesArgs, GetDbSystemStoragePerformancesResult, GetDbSystemStoragePerformancesOutputArgs } from "./getDbSystemStoragePerformances";
+export const getDbSystemStoragePerformances: typeof import("./getDbSystemStoragePerformances").getDbSystemStoragePerformances = null as any;
+export const getDbSystemStoragePerformancesOutput: typeof import("./getDbSystemStoragePerformances").getDbSystemStoragePerformancesOutput = null as any;
+utilities.lazyLoad(exports, ["getDbSystemStoragePerformances","getDbSystemStoragePerformancesOutput"], () => require("./getDbSystemStoragePerformances"));
+
+export { GetDbSystemsArgs, GetDbSystemsResult, GetDbSystemsOutputArgs } from "./getDbSystems";
+export const getDbSystems: typeof import("./getDbSystems").getDbSystems = null as any;
+export const getDbSystemsOutput: typeof import("./getDbSystems").getDbSystemsOutput = null as any;
+utilities.lazyLoad(exports, ["getDbSystems","getDbSystemsOutput"], () => require("./getDbSystems"));
+
+export { GetDbSystemsUpgradeHistoryEntriesArgs, GetDbSystemsUpgradeHistoryEntriesResult, GetDbSystemsUpgradeHistoryEntriesOutputArgs } from "./getDbSystemsUpgradeHistoryEntries";
+export const getDbSystemsUpgradeHistoryEntries: typeof import("./getDbSystemsUpgradeHistoryEntries").getDbSystemsUpgradeHistoryEntries = null as any;
+export const getDbSystemsUpgradeHistoryEntriesOutput: typeof import("./getDbSystemsUpgradeHistoryEntries").getDbSystemsUpgradeHistoryEntriesOutput = null as any;
+utilities.lazyLoad(exports, ["getDbSystemsUpgradeHistoryEntries","getDbSystemsUpgradeHistoryEntriesOutput"], () => require("./getDbSystemsUpgradeHistoryEntries"));
+
+export { GetDbSystemsUpgradeHistoryEntryArgs, GetDbSystemsUpgradeHistoryEntryResult, GetDbSystemsUpgradeHistoryEntryOutputArgs } from "./getDbSystemsUpgradeHistoryEntry";
+export const getDbSystemsUpgradeHistoryEntry: typeof import("./getDbSystemsUpgradeHistoryEntry").getDbSystemsUpgradeHistoryEntry = null as any;
+export const getDbSystemsUpgradeHistoryEntryOutput: typeof import("./getDbSystemsUpgradeHistoryEntry").getDbSystemsUpgradeHistoryEntryOutput = null as any;
+utilities.lazyLoad(exports, ["getDbSystemsUpgradeHistoryEntry","getDbSystemsUpgradeHistoryEntryOutput"], () => require("./getDbSystemsUpgradeHistoryEntry"));
+
+export { GetDbVersionsArgs, GetDbVersionsResult, GetDbVersionsOutputArgs } from "./getDbVersions";
+export const getDbVersions: typeof import("./getDbVersions").getDbVersions = null as any;
+export const getDbVersionsOutput: typeof import("./getDbVersions").getDbVersionsOutput = null as any;
+utilities.lazyLoad(exports, ["getDbVersions","getDbVersionsOutput"], () => require("./getDbVersions"));
+
+export { GetExadataInfrastructureArgs, GetExadataInfrastructureResult, GetExadataInfrastructureOutputArgs } from "./getExadataInfrastructure";
+export const getExadataInfrastructure: typeof import("./getExadataInfrastructure").getExadataInfrastructure = null as any;
+export const getExadataInfrastructureOutput: typeof import("./getExadataInfrastructure").getExadataInfrastructureOutput = null as any;
+utilities.lazyLoad(exports, ["getExadataInfrastructure","getExadataInfrastructureOutput"], () => require("./getExadataInfrastructure"));
+
+export { GetExadataInfrastructureDownloadConfigFileArgs, GetExadataInfrastructureDownloadConfigFileResult, GetExadataInfrastructureDownloadConfigFileOutputArgs } from "./getExadataInfrastructureDownloadConfigFile";
+export const getExadataInfrastructureDownloadConfigFile: typeof import("./getExadataInfrastructureDownloadConfigFile").getExadataInfrastructureDownloadConfigFile = null as any;
+export const getExadataInfrastructureDownloadConfigFileOutput: typeof import("./getExadataInfrastructureDownloadConfigFile").getExadataInfrastructureDownloadConfigFileOutput = null as any;
+utilities.lazyLoad(exports, ["getExadataInfrastructureDownloadConfigFile","getExadataInfrastructureDownloadConfigFileOutput"], () => require("./getExadataInfrastructureDownloadConfigFile"));
+
+export { GetExadataInfrastructureUnAllocatedResourceArgs, GetExadataInfrastructureUnAllocatedResourceResult, GetExadataInfrastructureUnAllocatedResourceOutputArgs } from "./getExadataInfrastructureUnAllocatedResource";
+export const getExadataInfrastructureUnAllocatedResource: typeof import("./getExadataInfrastructureUnAllocatedResource").getExadataInfrastructureUnAllocatedResource = null as any;
+export const getExadataInfrastructureUnAllocatedResourceOutput: typeof import("./getExadataInfrastructureUnAllocatedResource").getExadataInfrastructureUnAllocatedResourceOutput = null as any;
+utilities.lazyLoad(exports, ["getExadataInfrastructureUnAllocatedResource","getExadataInfrastructureUnAllocatedResourceOutput"], () => require("./getExadataInfrastructureUnAllocatedResource"));
+
+export { GetExadataInfrastructuresArgs, GetExadataInfrastructuresResult, GetExadataInfrastructuresOutputArgs } from "./getExadataInfrastructures";
+export const getExadataInfrastructures: typeof import("./getExadataInfrastructures").getExadataInfrastructures = null as any;
+export const getExadataInfrastructuresOutput: typeof import("./getExadataInfrastructures").getExadataInfrastructuresOutput = null as any;
+utilities.lazyLoad(exports, ["getExadataInfrastructures","getExadataInfrastructuresOutput"], () => require("./getExadataInfrastructures"));
+
+export { GetExadataIormConfigArgs, GetExadataIormConfigResult, GetExadataIormConfigOutputArgs } from "./getExadataIormConfig";
+export const getExadataIormConfig: typeof import("./getExadataIormConfig").getExadataIormConfig = null as any;
+export const getExadataIormConfigOutput: typeof import("./getExadataIormConfig").getExadataIormConfigOutput = null as any;
+utilities.lazyLoad(exports, ["getExadataIormConfig","getExadataIormConfigOutput"], () => require("./getExadataIormConfig"));
+
+export { GetExternalContainerDatabaseArgs, GetExternalContainerDatabaseResult, GetExternalContainerDatabaseOutputArgs } from "./getExternalContainerDatabase";
+export const getExternalContainerDatabase: typeof import("./getExternalContainerDatabase").getExternalContainerDatabase = null as any;
+export const getExternalContainerDatabaseOutput: typeof import("./getExternalContainerDatabase").getExternalContainerDatabaseOutput = null as any;
+utilities.lazyLoad(exports, ["getExternalContainerDatabase","getExternalContainerDatabaseOutput"], () => require("./getExternalContainerDatabase"));
+
+export { GetExternalContainerDatabasesArgs, GetExternalContainerDatabasesResult, GetExternalContainerDatabasesOutputArgs } from "./getExternalContainerDatabases";
+export const getExternalContainerDatabases: typeof import("./getExternalContainerDatabases").getExternalContainerDatabases = null as any;
+export const getExternalContainerDatabasesOutput: typeof import("./getExternalContainerDatabases").getExternalContainerDatabasesOutput = null as any;
+utilities.lazyLoad(exports, ["getExternalContainerDatabases","getExternalContainerDatabasesOutput"], () => require("./getExternalContainerDatabases"));
+
+export { GetExternalDatabaseConnectorArgs, GetExternalDatabaseConnectorResult, GetExternalDatabaseConnectorOutputArgs } from "./getExternalDatabaseConnector";
+export const getExternalDatabaseConnector: typeof import("./getExternalDatabaseConnector").getExternalDatabaseConnector = null as any;
+export const getExternalDatabaseConnectorOutput: typeof import("./getExternalDatabaseConnector").getExternalDatabaseConnectorOutput = null as any;
+utilities.lazyLoad(exports, ["getExternalDatabaseConnector","getExternalDatabaseConnectorOutput"], () => require("./getExternalDatabaseConnector"));
+
+export { GetExternalDatabaseConnectorsArgs, GetExternalDatabaseConnectorsResult, GetExternalDatabaseConnectorsOutputArgs } from "./getExternalDatabaseConnectors";
+export const getExternalDatabaseConnectors: typeof import("./getExternalDatabaseConnectors").getExternalDatabaseConnectors = null as any;
+export const getExternalDatabaseConnectorsOutput: typeof import("./getExternalDatabaseConnectors").getExternalDatabaseConnectorsOutput = null as any;
+utilities.lazyLoad(exports, ["getExternalDatabaseConnectors","getExternalDatabaseConnectorsOutput"], () => require("./getExternalDatabaseConnectors"));
+
+export { GetExternalNonContainerDatabaseArgs, GetExternalNonContainerDatabaseResult, GetExternalNonContainerDatabaseOutputArgs } from "./getExternalNonContainerDatabase";
+export const getExternalNonContainerDatabase: typeof import("./getExternalNonContainerDatabase").getExternalNonContainerDatabase = null as any;
+export const getExternalNonContainerDatabaseOutput: typeof import("./getExternalNonContainerDatabase").getExternalNonContainerDatabaseOutput = null as any;
+utilities.lazyLoad(exports, ["getExternalNonContainerDatabase","getExternalNonContainerDatabaseOutput"], () => require("./getExternalNonContainerDatabase"));
+
+export { GetExternalNonContainerDatabasesArgs, GetExternalNonContainerDatabasesResult, GetExternalNonContainerDatabasesOutputArgs } from "./getExternalNonContainerDatabases";
+export const getExternalNonContainerDatabases: typeof import("./getExternalNonContainerDatabases").getExternalNonContainerDatabases = null as any;
+export const getExternalNonContainerDatabasesOutput: typeof import("./getExternalNonContainerDatabases").getExternalNonContainerDatabasesOutput = null as any;
+utilities.lazyLoad(exports, ["getExternalNonContainerDatabases","getExternalNonContainerDatabasesOutput"], () => require("./getExternalNonContainerDatabases"));
+
+export { GetExternalPluggableDatabaseArgs, GetExternalPluggableDatabaseResult, GetExternalPluggableDatabaseOutputArgs } from "./getExternalPluggableDatabase";
+export const getExternalPluggableDatabase: typeof import("./getExternalPluggableDatabase").getExternalPluggableDatabase = null as any;
+export const getExternalPluggableDatabaseOutput: typeof import("./getExternalPluggableDatabase").getExternalPluggableDatabaseOutput = null as any;
+utilities.lazyLoad(exports, ["getExternalPluggableDatabase","getExternalPluggableDatabaseOutput"], () => require("./getExternalPluggableDatabase"));
+
+export { GetExternalPluggableDatabasesArgs, GetExternalPluggableDatabasesResult, GetExternalPluggableDatabasesOutputArgs } from "./getExternalPluggableDatabases";
+export const getExternalPluggableDatabases: typeof import("./getExternalPluggableDatabases").getExternalPluggableDatabases = null as any;
+export const getExternalPluggableDatabasesOutput: typeof import("./getExternalPluggableDatabases").getExternalPluggableDatabasesOutput = null as any;
+utilities.lazyLoad(exports, ["getExternalPluggableDatabases","getExternalPluggableDatabasesOutput"], () => require("./getExternalPluggableDatabases"));
+
+export { GetFlexComponentsArgs, GetFlexComponentsResult, GetFlexComponentsOutputArgs } from "./getFlexComponents";
+export const getFlexComponents: typeof import("./getFlexComponents").getFlexComponents = null as any;
+export const getFlexComponentsOutput: typeof import("./getFlexComponents").getFlexComponentsOutput = null as any;
+utilities.lazyLoad(exports, ["getFlexComponents","getFlexComponentsOutput"], () => require("./getFlexComponents"));
+
+export { GetGiVersionsArgs, GetGiVersionsResult, GetGiVersionsOutputArgs } from "./getGiVersions";
+export const getGiVersions: typeof import("./getGiVersions").getGiVersions = null as any;
+export const getGiVersionsOutput: typeof import("./getGiVersions").getGiVersionsOutput = null as any;
+utilities.lazyLoad(exports, ["getGiVersions","getGiVersionsOutput"], () => require("./getGiVersions"));
+
+export { GetInfrastructureTargetVersionArgs, GetInfrastructureTargetVersionResult, GetInfrastructureTargetVersionOutputArgs } from "./getInfrastructureTargetVersion";
+export const getInfrastructureTargetVersion: typeof import("./getInfrastructureTargetVersion").getInfrastructureTargetVersion = null as any;
+export const getInfrastructureTargetVersionOutput: typeof import("./getInfrastructureTargetVersion").getInfrastructureTargetVersionOutput = null as any;
+utilities.lazyLoad(exports, ["getInfrastructureTargetVersion","getInfrastructureTargetVersionOutput"], () => require("./getInfrastructureTargetVersion"));
+
+export { GetKeyStoreArgs, GetKeyStoreResult, GetKeyStoreOutputArgs } from "./getKeyStore";
+export const getKeyStore: typeof import("./getKeyStore").getKeyStore = null as any;
+export const getKeyStoreOutput: typeof import("./getKeyStore").getKeyStoreOutput = null as any;
+utilities.lazyLoad(exports, ["getKeyStore","getKeyStoreOutput"], () => require("./getKeyStore"));
+
+export { GetKeyStoresArgs, GetKeyStoresResult, GetKeyStoresOutputArgs } from "./getKeyStores";
+export const getKeyStores: typeof import("./getKeyStores").getKeyStores = null as any;
+export const getKeyStoresOutput: typeof import("./getKeyStores").getKeyStoresOutput = null as any;
+utilities.lazyLoad(exports, ["getKeyStores","getKeyStoresOutput"], () => require("./getKeyStores"));
+
+export { GetMaintenanceRunArgs, GetMaintenanceRunResult, GetMaintenanceRunOutputArgs } from "./getMaintenanceRun";
+export const getMaintenanceRun: typeof import("./getMaintenanceRun").getMaintenanceRun = null as any;
+export const getMaintenanceRunOutput: typeof import("./getMaintenanceRun").getMaintenanceRunOutput = null as any;
+utilities.lazyLoad(exports, ["getMaintenanceRun","getMaintenanceRunOutput"], () => require("./getMaintenanceRun"));
+
+export { GetMaintenanceRunsArgs, GetMaintenanceRunsResult, GetMaintenanceRunsOutputArgs } from "./getMaintenanceRuns";
+export const getMaintenanceRuns: typeof import("./getMaintenanceRuns").getMaintenanceRuns = null as any;
+export const getMaintenanceRunsOutput: typeof import("./getMaintenanceRuns").getMaintenanceRunsOutput = null as any;
+utilities.lazyLoad(exports, ["getMaintenanceRuns","getMaintenanceRunsOutput"], () => require("./getMaintenanceRuns"));
+
+export { GetManagedPreferredCredentialArgs, GetManagedPreferredCredentialResult, GetManagedPreferredCredentialOutputArgs } from "./getManagedPreferredCredential";
+export const getManagedPreferredCredential: typeof import("./getManagedPreferredCredential").getManagedPreferredCredential = null as any;
+export const getManagedPreferredCredentialOutput: typeof import("./getManagedPreferredCredential").getManagedPreferredCredentialOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedPreferredCredential","getManagedPreferredCredentialOutput"], () => require("./getManagedPreferredCredential"));
+
+export { GetManagedPreferredCredentialsArgs, GetManagedPreferredCredentialsResult, GetManagedPreferredCredentialsOutputArgs } from "./getManagedPreferredCredentials";
+export const getManagedPreferredCredentials: typeof import("./getManagedPreferredCredentials").getManagedPreferredCredentials = null as any;
+export const getManagedPreferredCredentialsOutput: typeof import("./getManagedPreferredCredentials").getManagedPreferredCredentialsOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedPreferredCredentials","getManagedPreferredCredentialsOutput"], () => require("./getManagedPreferredCredentials"));
+
+export { GetPluggableDatabaseArgs, GetPluggableDatabaseResult, GetPluggableDatabaseOutputArgs } from "./getPluggableDatabase";
+export const getPluggableDatabase: typeof import("./getPluggableDatabase").getPluggableDatabase = null as any;
+export const getPluggableDatabaseOutput: typeof import("./getPluggableDatabase").getPluggableDatabaseOutput = null as any;
+utilities.lazyLoad(exports, ["getPluggableDatabase","getPluggableDatabaseOutput"], () => require("./getPluggableDatabase"));
+
+export { GetPluggableDatabasesArgs, GetPluggableDatabasesResult, GetPluggableDatabasesOutputArgs } from "./getPluggableDatabases";
+export const getPluggableDatabases: typeof import("./getPluggableDatabases").getPluggableDatabases = null as any;
+export const getPluggableDatabasesOutput: typeof import("./getPluggableDatabases").getPluggableDatabasesOutput = null as any;
+utilities.lazyLoad(exports, ["getPluggableDatabases","getPluggableDatabasesOutput"], () => require("./getPluggableDatabases"));
+
+export { GetVmClusterArgs, GetVmClusterResult, GetVmClusterOutputArgs } from "./getVmCluster";
+export const getVmCluster: typeof import("./getVmCluster").getVmCluster = null as any;
+export const getVmClusterOutput: typeof import("./getVmCluster").getVmClusterOutput = null as any;
+utilities.lazyLoad(exports, ["getVmCluster","getVmClusterOutput"], () => require("./getVmCluster"));
+
+export { GetVmClusterNetworkArgs, GetVmClusterNetworkResult, GetVmClusterNetworkOutputArgs } from "./getVmClusterNetwork";
+export const getVmClusterNetwork: typeof import("./getVmClusterNetwork").getVmClusterNetwork = null as any;
+export const getVmClusterNetworkOutput: typeof import("./getVmClusterNetwork").getVmClusterNetworkOutput = null as any;
+utilities.lazyLoad(exports, ["getVmClusterNetwork","getVmClusterNetworkOutput"], () => require("./getVmClusterNetwork"));
+
+export { GetVmClusterNetworkDownloadConfigFileArgs, GetVmClusterNetworkDownloadConfigFileResult, GetVmClusterNetworkDownloadConfigFileOutputArgs } from "./getVmClusterNetworkDownloadConfigFile";
+export const getVmClusterNetworkDownloadConfigFile: typeof import("./getVmClusterNetworkDownloadConfigFile").getVmClusterNetworkDownloadConfigFile = null as any;
+export const getVmClusterNetworkDownloadConfigFileOutput: typeof import("./getVmClusterNetworkDownloadConfigFile").getVmClusterNetworkDownloadConfigFileOutput = null as any;
+utilities.lazyLoad(exports, ["getVmClusterNetworkDownloadConfigFile","getVmClusterNetworkDownloadConfigFileOutput"], () => require("./getVmClusterNetworkDownloadConfigFile"));
+
+export { GetVmClusterNetworksArgs, GetVmClusterNetworksResult, GetVmClusterNetworksOutputArgs } from "./getVmClusterNetworks";
+export const getVmClusterNetworks: typeof import("./getVmClusterNetworks").getVmClusterNetworks = null as any;
+export const getVmClusterNetworksOutput: typeof import("./getVmClusterNetworks").getVmClusterNetworksOutput = null as any;
+utilities.lazyLoad(exports, ["getVmClusterNetworks","getVmClusterNetworksOutput"], () => require("./getVmClusterNetworks"));
+
+export { GetVmClusterPatchArgs, GetVmClusterPatchResult, GetVmClusterPatchOutputArgs } from "./getVmClusterPatch";
+export const getVmClusterPatch: typeof import("./getVmClusterPatch").getVmClusterPatch = null as any;
+export const getVmClusterPatchOutput: typeof import("./getVmClusterPatch").getVmClusterPatchOutput = null as any;
+utilities.lazyLoad(exports, ["getVmClusterPatch","getVmClusterPatchOutput"], () => require("./getVmClusterPatch"));
+
+export { GetVmClusterPatchHistoryEntriesArgs, GetVmClusterPatchHistoryEntriesResult, GetVmClusterPatchHistoryEntriesOutputArgs } from "./getVmClusterPatchHistoryEntries";
+export const getVmClusterPatchHistoryEntries: typeof import("./getVmClusterPatchHistoryEntries").getVmClusterPatchHistoryEntries = null as any;
+export const getVmClusterPatchHistoryEntriesOutput: typeof import("./getVmClusterPatchHistoryEntries").getVmClusterPatchHistoryEntriesOutput = null as any;
+utilities.lazyLoad(exports, ["getVmClusterPatchHistoryEntries","getVmClusterPatchHistoryEntriesOutput"], () => require("./getVmClusterPatchHistoryEntries"));
+
+export { GetVmClusterPatchHistoryEntryArgs, GetVmClusterPatchHistoryEntryResult, GetVmClusterPatchHistoryEntryOutputArgs } from "./getVmClusterPatchHistoryEntry";
+export const getVmClusterPatchHistoryEntry: typeof import("./getVmClusterPatchHistoryEntry").getVmClusterPatchHistoryEntry = null as any;
+export const getVmClusterPatchHistoryEntryOutput: typeof import("./getVmClusterPatchHistoryEntry").getVmClusterPatchHistoryEntryOutput = null as any;
+utilities.lazyLoad(exports, ["getVmClusterPatchHistoryEntry","getVmClusterPatchHistoryEntryOutput"], () => require("./getVmClusterPatchHistoryEntry"));
+
+export { GetVmClusterPatchesArgs, GetVmClusterPatchesResult, GetVmClusterPatchesOutputArgs } from "./getVmClusterPatches";
+export const getVmClusterPatches: typeof import("./getVmClusterPatches").getVmClusterPatches = null as any;
+export const getVmClusterPatchesOutput: typeof import("./getVmClusterPatches").getVmClusterPatchesOutput = null as any;
+utilities.lazyLoad(exports, ["getVmClusterPatches","getVmClusterPatchesOutput"], () => require("./getVmClusterPatches"));
+
+export { GetVmClusterRecommendedNetworkArgs, GetVmClusterRecommendedNetworkResult, GetVmClusterRecommendedNetworkOutputArgs } from "./getVmClusterRecommendedNetwork";
+export const getVmClusterRecommendedNetwork: typeof import("./getVmClusterRecommendedNetwork").getVmClusterRecommendedNetwork = null as any;
+export const getVmClusterRecommendedNetworkOutput: typeof import("./getVmClusterRecommendedNetwork").getVmClusterRecommendedNetworkOutput = null as any;
+utilities.lazyLoad(exports, ["getVmClusterRecommendedNetwork","getVmClusterRecommendedNetworkOutput"], () => require("./getVmClusterRecommendedNetwork"));
+
+export { GetVmClusterUpdateArgs, GetVmClusterUpdateResult, GetVmClusterUpdateOutputArgs } from "./getVmClusterUpdate";
+export const getVmClusterUpdate: typeof import("./getVmClusterUpdate").getVmClusterUpdate = null as any;
+export const getVmClusterUpdateOutput: typeof import("./getVmClusterUpdate").getVmClusterUpdateOutput = null as any;
+utilities.lazyLoad(exports, ["getVmClusterUpdate","getVmClusterUpdateOutput"], () => require("./getVmClusterUpdate"));
+
+export { GetVmClusterUpdateHistoryEntriesArgs, GetVmClusterUpdateHistoryEntriesResult, GetVmClusterUpdateHistoryEntriesOutputArgs } from "./getVmClusterUpdateHistoryEntries";
+export const getVmClusterUpdateHistoryEntries: typeof import("./getVmClusterUpdateHistoryEntries").getVmClusterUpdateHistoryEntries = null as any;
+export const getVmClusterUpdateHistoryEntriesOutput: typeof import("./getVmClusterUpdateHistoryEntries").getVmClusterUpdateHistoryEntriesOutput = null as any;
+utilities.lazyLoad(exports, ["getVmClusterUpdateHistoryEntries","getVmClusterUpdateHistoryEntriesOutput"], () => require("./getVmClusterUpdateHistoryEntries"));
+
+export { GetVmClusterUpdateHistoryEntryArgs, GetVmClusterUpdateHistoryEntryResult, GetVmClusterUpdateHistoryEntryOutputArgs } from "./getVmClusterUpdateHistoryEntry";
+export const getVmClusterUpdateHistoryEntry: typeof import("./getVmClusterUpdateHistoryEntry").getVmClusterUpdateHistoryEntry = null as any;
+export const getVmClusterUpdateHistoryEntryOutput: typeof import("./getVmClusterUpdateHistoryEntry").getVmClusterUpdateHistoryEntryOutput = null as any;
+utilities.lazyLoad(exports, ["getVmClusterUpdateHistoryEntry","getVmClusterUpdateHistoryEntryOutput"], () => require("./getVmClusterUpdateHistoryEntry"));
+
+export { GetVmClusterUpdatesArgs, GetVmClusterUpdatesResult, GetVmClusterUpdatesOutputArgs } from "./getVmClusterUpdates";
+export const getVmClusterUpdates: typeof import("./getVmClusterUpdates").getVmClusterUpdates = null as any;
+export const getVmClusterUpdatesOutput: typeof import("./getVmClusterUpdates").getVmClusterUpdatesOutput = null as any;
+utilities.lazyLoad(exports, ["getVmClusterUpdates","getVmClusterUpdatesOutput"], () => require("./getVmClusterUpdates"));
+
+export { GetVmClustersArgs, GetVmClustersResult, GetVmClustersOutputArgs } from "./getVmClusters";
+export const getVmClusters: typeof import("./getVmClusters").getVmClusters = null as any;
+export const getVmClustersOutput: typeof import("./getVmClusters").getVmClustersOutput = null as any;
+utilities.lazyLoad(exports, ["getVmClusters","getVmClustersOutput"], () => require("./getVmClusters"));
+
+export { KeyStoreArgs, KeyStoreState } from "./keyStore";
+export type KeyStore = import("./keyStore").KeyStore;
+export const KeyStore: typeof import("./keyStore").KeyStore = null as any;
+utilities.lazyLoad(exports, ["KeyStore"], () => require("./keyStore"));
+
+export { MaintenanceRunArgs, MaintenanceRunState } from "./maintenanceRun";
+export type MaintenanceRun = import("./maintenanceRun").MaintenanceRun;
+export const MaintenanceRun: typeof import("./maintenanceRun").MaintenanceRun = null as any;
+utilities.lazyLoad(exports, ["MaintenanceRun"], () => require("./maintenanceRun"));
+
+export { PluggableDatabaseArgs, PluggableDatabaseState } from "./pluggableDatabase";
+export type PluggableDatabase = import("./pluggableDatabase").PluggableDatabase;
+export const PluggableDatabase: typeof import("./pluggableDatabase").PluggableDatabase = null as any;
+utilities.lazyLoad(exports, ["PluggableDatabase"], () => require("./pluggableDatabase"));
+
+export { PluggableDatabaseManagementsManagementArgs, PluggableDatabaseManagementsManagementState } from "./pluggableDatabaseManagementsManagement";
+export type PluggableDatabaseManagementsManagement = import("./pluggableDatabaseManagementsManagement").PluggableDatabaseManagementsManagement;
+export const PluggableDatabaseManagementsManagement: typeof import("./pluggableDatabaseManagementsManagement").PluggableDatabaseManagementsManagement = null as any;
+utilities.lazyLoad(exports, ["PluggableDatabaseManagementsManagement"], () => require("./pluggableDatabaseManagementsManagement"));
+
+export { PluggableDatabasesLocalCloneArgs, PluggableDatabasesLocalCloneState } from "./pluggableDatabasesLocalClone";
+export type PluggableDatabasesLocalClone = import("./pluggableDatabasesLocalClone").PluggableDatabasesLocalClone;
+export const PluggableDatabasesLocalClone: typeof import("./pluggableDatabasesLocalClone").PluggableDatabasesLocalClone = null as any;
+utilities.lazyLoad(exports, ["PluggableDatabasesLocalClone"], () => require("./pluggableDatabasesLocalClone"));
+
+export { PluggableDatabasesRemoteCloneArgs, PluggableDatabasesRemoteCloneState } from "./pluggableDatabasesRemoteClone";
+export type PluggableDatabasesRemoteClone = import("./pluggableDatabasesRemoteClone").PluggableDatabasesRemoteClone;
+export const PluggableDatabasesRemoteClone: typeof import("./pluggableDatabasesRemoteClone").PluggableDatabasesRemoteClone = null as any;
+utilities.lazyLoad(exports, ["PluggableDatabasesRemoteClone"], () => require("./pluggableDatabasesRemoteClone"));
+
+export { VmClusterArgs, VmClusterState } from "./vmCluster";
+export type VmCluster = import("./vmCluster").VmCluster;
+export const VmCluster: typeof import("./vmCluster").VmCluster = null as any;
+utilities.lazyLoad(exports, ["VmCluster"], () => require("./vmCluster"));
+
+export { VmClusterAddVirtualNetworkArgs, VmClusterAddVirtualNetworkState } from "./vmClusterAddVirtualNetwork";
+export type VmClusterAddVirtualNetwork = import("./vmClusterAddVirtualNetwork").VmClusterAddVirtualNetwork;
+export const VmClusterAddVirtualNetwork: typeof import("./vmClusterAddVirtualNetwork").VmClusterAddVirtualNetwork = null as any;
+utilities.lazyLoad(exports, ["VmClusterAddVirtualNetwork"], () => require("./vmClusterAddVirtualNetwork"));
+
+export { VmClusterNetworkArgs, VmClusterNetworkState } from "./vmClusterNetwork";
+export type VmClusterNetwork = import("./vmClusterNetwork").VmClusterNetwork;
+export const VmClusterNetwork: typeof import("./vmClusterNetwork").VmClusterNetwork = null as any;
+utilities.lazyLoad(exports, ["VmClusterNetwork"], () => require("./vmClusterNetwork"));
+
+export { VmClusterRemoveVirtualMachineArgs, VmClusterRemoveVirtualMachineState } from "./vmClusterRemoveVirtualMachine";
+export type VmClusterRemoveVirtualMachine = import("./vmClusterRemoveVirtualMachine").VmClusterRemoveVirtualMachine;
+export const VmClusterRemoveVirtualMachine: typeof import("./vmClusterRemoveVirtualMachine").VmClusterRemoveVirtualMachine = null as any;
+utilities.lazyLoad(exports, ["VmClusterRemoveVirtualMachine"], () => require("./vmClusterRemoveVirtualMachine"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -265,6 +841,8 @@ const _module = {
                 return new DbSystemsUpgrade(name, <any>undefined, { urn })
             case "oci:Database/exadataInfrastructure:ExadataInfrastructure":
                 return new ExadataInfrastructure(name, <any>undefined, { urn })
+            case "oci:Database/exadataInfrastructureCompute:ExadataInfrastructureCompute":
+                return new ExadataInfrastructureCompute(name, <any>undefined, { urn })
             case "oci:Database/exadataInfrastructureStorage:ExadataInfrastructureStorage":
                 return new ExadataInfrastructureStorage(name, <any>undefined, { urn })
             case "oci:Database/exadataIormConfig:ExadataIormConfig":
@@ -299,6 +877,8 @@ const _module = {
                 return new MaintenanceRun(name, <any>undefined, { urn })
             case "oci:Database/pluggableDatabase:PluggableDatabase":
                 return new PluggableDatabase(name, <any>undefined, { urn })
+            case "oci:Database/pluggableDatabaseManagementsManagement:PluggableDatabaseManagementsManagement":
+                return new PluggableDatabaseManagementsManagement(name, <any>undefined, { urn })
             case "oci:Database/pluggableDatabasesLocalClone:PluggableDatabasesLocalClone":
                 return new PluggableDatabasesLocalClone(name, <any>undefined, { urn })
             case "oci:Database/pluggableDatabasesRemoteClone:PluggableDatabasesRemoteClone":
@@ -342,6 +922,7 @@ pulumi.runtime.registerResourceModule("oci", "Database/dbNodeConsoleConnection",
 pulumi.runtime.registerResourceModule("oci", "Database/dbSystem", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/dbSystemsUpgrade", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/exadataInfrastructure", _module)
+pulumi.runtime.registerResourceModule("oci", "Database/exadataInfrastructureCompute", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/exadataInfrastructureStorage", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/exadataIormConfig", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/externalContainerDatabase", _module)
@@ -359,6 +940,7 @@ pulumi.runtime.registerResourceModule("oci", "Database/externalPluggableDatabase
 pulumi.runtime.registerResourceModule("oci", "Database/keyStore", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/maintenanceRun", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/pluggableDatabase", _module)
+pulumi.runtime.registerResourceModule("oci", "Database/pluggableDatabaseManagementsManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/pluggableDatabasesLocalClone", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/pluggableDatabasesRemoteClone", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/vmCluster", _module)

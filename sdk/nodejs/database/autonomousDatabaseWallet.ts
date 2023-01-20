@@ -98,10 +98,12 @@ export class AutonomousDatabaseWallet extends pulumi.CustomResource {
             resourceInputs["autonomousDatabaseId"] = args ? args.autonomousDatabaseId : undefined;
             resourceInputs["base64EncodeContent"] = args ? args.base64EncodeContent : undefined;
             resourceInputs["generateType"] = args ? args.generateType : undefined;
-            resourceInputs["password"] = args ? args.password : undefined;
+            resourceInputs["password"] = args?.password ? pulumi.secret(args.password) : undefined;
             resourceInputs["content"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["password"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(AutonomousDatabaseWallet.__pulumiType, name, resourceInputs, opts);
     }
 }

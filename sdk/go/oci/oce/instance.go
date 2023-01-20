@@ -148,6 +148,13 @@ func NewInstance(ctx *pulumi.Context,
 	if args.TenancyName == nil {
 		return nil, errors.New("invalid value for required argument 'TenancyName'")
 	}
+	if args.IdcsAccessToken != nil {
+		args.IdcsAccessToken = pulumi.ToSecret(args.IdcsAccessToken).(pulumi.StringInput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"idcsAccessToken",
+	})
+	opts = append(opts, secrets)
 	var resource Instance
 	err := ctx.RegisterResource("oci:Oce/instance:Instance", name, args, &resource, opts...)
 	if err != nil {

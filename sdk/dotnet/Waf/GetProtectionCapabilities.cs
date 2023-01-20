@@ -44,7 +44,7 @@ namespace Pulumi.Oci.Waf
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetProtectionCapabilitiesResult> InvokeAsync(GetProtectionCapabilitiesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetProtectionCapabilitiesResult>("oci:Waf/getProtectionCapabilities:getProtectionCapabilities", args ?? new GetProtectionCapabilitiesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetProtectionCapabilitiesResult>("oci:Waf/getProtectionCapabilities:getProtectionCapabilities", args ?? new GetProtectionCapabilitiesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Protection Capabilities in Oracle Cloud Infrastructure Waf service.
@@ -79,7 +79,7 @@ namespace Pulumi.Oci.Waf
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetProtectionCapabilitiesResult> Invoke(GetProtectionCapabilitiesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetProtectionCapabilitiesResult>("oci:Waf/getProtectionCapabilities:getProtectionCapabilities", args ?? new GetProtectionCapabilitiesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetProtectionCapabilitiesResult>("oci:Waf/getProtectionCapabilities:getProtectionCapabilities", args ?? new GetProtectionCapabilitiesInvokeArgs(), options.WithDefaults());
     }
 
 

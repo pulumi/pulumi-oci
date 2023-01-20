@@ -23,6 +23,10 @@ __all__ = [
     'GetFileSystemsFilterResult',
     'GetMountTargetsFilterResult',
     'GetMountTargetsMountTargetResult',
+    'GetReplicationTargetsFilterResult',
+    'GetReplicationTargetsReplicationTargetResult',
+    'GetReplicationsFilterResult',
+    'GetReplicationsReplicationResult',
     'GetSnapshotsFilterResult',
     'GetSnapshotsSnapshotResult',
 ]
@@ -153,8 +157,8 @@ class FileSystemSourceDetail(dict):
                  parent_file_system_id: Optional[str] = None,
                  source_snapshot_id: Optional[str] = None):
         """
-        :param str parent_file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
-        :param str source_snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+        :param str parent_file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+        :param str source_snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         """
         if parent_file_system_id is not None:
             pulumi.set(__self__, "parent_file_system_id", parent_file_system_id)
@@ -165,7 +169,7 @@ class FileSystemSourceDetail(dict):
     @pulumi.getter(name="parentFileSystemId")
     def parent_file_system_id(self) -> Optional[str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         """
         return pulumi.get(self, "parent_file_system_id")
 
@@ -173,7 +177,7 @@ class FileSystemSourceDetail(dict):
     @pulumi.getter(name="sourceSnapshotId")
     def source_snapshot_id(self) -> Optional[str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         """
         return pulumi.get(self, "source_snapshot_id")
 
@@ -513,9 +517,11 @@ class GetFileSystemsFileSystemResult(dict):
                  id: str,
                  is_clone_parent: bool,
                  is_hydrated: bool,
+                 is_targetable: bool,
                  kms_key_id: str,
                  lifecycle_details: str,
                  metered_bytes: str,
+                 replication_target_id: str,
                  source_details: Sequence['outputs.GetFileSystemsFileSystemSourceDetailResult'],
                  source_snapshot_id: str,
                  state: str,
@@ -527,13 +533,15 @@ class GetFileSystemsFileSystemResult(dict):
         :param str display_name: A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-        :param bool is_clone_parent: Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
-        :param bool is_hydrated: Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm#hydration).
+        :param bool is_clone_parent: Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+        :param bool is_hydrated: Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
+        :param bool is_targetable: Specifies whether the file system can be used as a target file system for replication. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
         :param str kms_key_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key used to encrypt the encryption keys associated with this file system.
         :param str lifecycle_details: Additional information about the current 'lifecycleState'.
         :param str metered_bytes: The number of bytes consumed by the file system, including any snapshots. This number reflects the metered size of the file system and is updated asynchronously with respect to updates to the file system. For more information, see [File System Usage and Metering](https://docs.cloud.oracle.com/iaas/Content/File/Concepts/FSutilization.htm).
+        :param str replication_target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
         :param Sequence['GetFileSystemsFileSystemSourceDetailArgs'] source_details: Source information for the file system.
-        :param str source_snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+        :param str source_snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         :param str state: Filter results by the specified lifecycle state. Must be a valid state for the resource type.
         :param str time_created: The date and time the file system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
@@ -545,9 +553,11 @@ class GetFileSystemsFileSystemResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_clone_parent", is_clone_parent)
         pulumi.set(__self__, "is_hydrated", is_hydrated)
+        pulumi.set(__self__, "is_targetable", is_targetable)
         pulumi.set(__self__, "kms_key_id", kms_key_id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "metered_bytes", metered_bytes)
+        pulumi.set(__self__, "replication_target_id", replication_target_id)
         pulumi.set(__self__, "source_details", source_details)
         pulumi.set(__self__, "source_snapshot_id", source_snapshot_id)
         pulumi.set(__self__, "state", state)
@@ -605,7 +615,7 @@ class GetFileSystemsFileSystemResult(dict):
     @pulumi.getter(name="isCloneParent")
     def is_clone_parent(self) -> bool:
         """
-        Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+        Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         """
         return pulumi.get(self, "is_clone_parent")
 
@@ -613,9 +623,17 @@ class GetFileSystemsFileSystemResult(dict):
     @pulumi.getter(name="isHydrated")
     def is_hydrated(self) -> bool:
         """
-        Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm#hydration).
+        Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
         """
         return pulumi.get(self, "is_hydrated")
+
+    @property
+    @pulumi.getter(name="isTargetable")
+    def is_targetable(self) -> bool:
+        """
+        Specifies whether the file system can be used as a target file system for replication. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
+        """
+        return pulumi.get(self, "is_targetable")
 
     @property
     @pulumi.getter(name="kmsKeyId")
@@ -642,6 +660,14 @@ class GetFileSystemsFileSystemResult(dict):
         return pulumi.get(self, "metered_bytes")
 
     @property
+    @pulumi.getter(name="replicationTargetId")
+    def replication_target_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
+        """
+        return pulumi.get(self, "replication_target_id")
+
+    @property
     @pulumi.getter(name="sourceDetails")
     def source_details(self) -> Sequence['outputs.GetFileSystemsFileSystemSourceDetailResult']:
         """
@@ -653,7 +679,7 @@ class GetFileSystemsFileSystemResult(dict):
     @pulumi.getter(name="sourceSnapshotId")
     def source_snapshot_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         """
         return pulumi.get(self, "source_snapshot_id")
 
@@ -680,8 +706,8 @@ class GetFileSystemsFileSystemSourceDetailResult(dict):
                  parent_file_system_id: str,
                  source_snapshot_id: str):
         """
-        :param str parent_file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
-        :param str source_snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+        :param str parent_file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+        :param str source_snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         """
         pulumi.set(__self__, "parent_file_system_id", parent_file_system_id)
         pulumi.set(__self__, "source_snapshot_id", source_snapshot_id)
@@ -690,7 +716,7 @@ class GetFileSystemsFileSystemSourceDetailResult(dict):
     @pulumi.getter(name="parentFileSystemId")
     def parent_file_system_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         """
         return pulumi.get(self, "parent_file_system_id")
 
@@ -698,7 +724,7 @@ class GetFileSystemsFileSystemSourceDetailResult(dict):
     @pulumi.getter(name="sourceSnapshotId")
     def source_snapshot_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         """
         return pulumi.get(self, "source_snapshot_id")
 
@@ -922,6 +948,437 @@ class GetMountTargetsMountTargetResult(dict):
 
 
 @pulumi.output_type
+class GetReplicationTargetsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetReplicationTargetsReplicationTargetResult(dict):
+    def __init__(__self__, *,
+                 availability_domain: str,
+                 compartment_id: str,
+                 defined_tags: Mapping[str, Any],
+                 delta_progress: str,
+                 delta_status: str,
+                 display_name: str,
+                 freeform_tags: Mapping[str, Any],
+                 id: str,
+                 last_snapshot_id: str,
+                 lifecycle_details: str,
+                 recovery_point_time: str,
+                 replication_id: str,
+                 source_id: str,
+                 state: str,
+                 target_id: str,
+                 time_created: str):
+        """
+        :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param str delta_progress: Percentage progress of the current replication cycle.
+        :param str delta_status: The current state of the snapshot during replication operations.
+        :param str display_name: A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param str id: Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
+        :param str last_snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot snapshot which was completely applied to the target file system. Empty while the initial snapshot is being applied.
+        :param str lifecycle_details: Additional information about the current `lifecycleState`.
+        :param str recovery_point_time: The snapshotTime of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
+        :param str replication_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of replication.
+        :param str source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of source filesystem.
+        :param str state: Filter results by the specified lifecycle state. Must be a valid state for the resource type.
+        :param str target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of target filesystem.
+        :param str time_created: The date and time the replication target was created in target region. in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-01-04T20:01:29.100Z`
+        """
+        pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "delta_progress", delta_progress)
+        pulumi.set(__self__, "delta_status", delta_status)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "last_snapshot_id", last_snapshot_id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "recovery_point_time", recovery_point_time)
+        pulumi.set(__self__, "replication_id", replication_id)
+        pulumi.set(__self__, "source_id", source_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> str:
+        """
+        The name of the availability domain.  Example: `Uocm:PHX-AD-1`
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="deltaProgress")
+    def delta_progress(self) -> str:
+        """
+        Percentage progress of the current replication cycle.
+        """
+        return pulumi.get(self, "delta_progress")
+
+    @property
+    @pulumi.getter(name="deltaStatus")
+    def delta_status(self) -> str:
+        """
+        The current state of the snapshot during replication operations.
+        """
+        return pulumi.get(self, "delta_status")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lastSnapshotId")
+    def last_snapshot_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot snapshot which was completely applied to the target file system. Empty while the initial snapshot is being applied.
+        """
+        return pulumi.get(self, "last_snapshot_id")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Additional information about the current `lifecycleState`.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="recoveryPointTime")
+    def recovery_point_time(self) -> str:
+        """
+        The snapshotTime of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
+        """
+        return pulumi.get(self, "recovery_point_time")
+
+    @property
+    @pulumi.getter(name="replicationId")
+    def replication_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of replication.
+        """
+        return pulumi.get(self, "replication_id")
+
+    @property
+    @pulumi.getter(name="sourceId")
+    def source_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of source filesystem.
+        """
+        return pulumi.get(self, "source_id")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        Filter results by the specified lifecycle state. Must be a valid state for the resource type.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of target filesystem.
+        """
+        return pulumi.get(self, "target_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the replication target was created in target region. in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-01-04T20:01:29.100Z`
+        """
+        return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class GetReplicationsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetReplicationsReplicationResult(dict):
+    def __init__(__self__, *,
+                 availability_domain: str,
+                 compartment_id: str,
+                 defined_tags: Mapping[str, Any],
+                 delta_progress: str,
+                 delta_status: str,
+                 display_name: str,
+                 freeform_tags: Mapping[str, Any],
+                 id: str,
+                 last_snapshot_id: str,
+                 lifecycle_details: str,
+                 recovery_point_time: str,
+                 replication_interval: str,
+                 replication_target_id: str,
+                 source_id: str,
+                 state: str,
+                 target_id: str,
+                 time_created: str):
+        """
+        :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
+        :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param str delta_progress: Percentage progress of the current replication cycle.
+        :param str delta_status: The current state of the snapshot during replication operations.
+        :param str display_name: A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param str id: Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
+        :param str last_snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely. Empty if the copy of the initial snapshot is not complete.
+        :param str lifecycle_details: Additional information about the current 'lifecycleState'.
+        :param str recovery_point_time: The [`snapshotTime`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Snapshot/snapshotTime) of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
+        :param str replication_interval: Duration in minutes between replication snapshots.
+        :param str replication_target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [`ReplicationTarget`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ReplicationTarget).
+        :param str source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source file system.
+        :param str state: Filter results by the specified lifecycle state. Must be a valid state for the resource type.
+        :param str target_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system.
+        :param str time_created: The date and time the replication was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2021-01-04T20:01:29.100Z`
+        """
+        pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "delta_progress", delta_progress)
+        pulumi.set(__self__, "delta_status", delta_status)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "last_snapshot_id", last_snapshot_id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "recovery_point_time", recovery_point_time)
+        pulumi.set(__self__, "replication_interval", replication_interval)
+        pulumi.set(__self__, "replication_target_id", replication_target_id)
+        pulumi.set(__self__, "source_id", source_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> str:
+        """
+        The name of the availability domain.  Example: `Uocm:PHX-AD-1`
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="deltaProgress")
+    def delta_progress(self) -> str:
+        """
+        Percentage progress of the current replication cycle.
+        """
+        return pulumi.get(self, "delta_progress")
+
+    @property
+    @pulumi.getter(name="deltaStatus")
+    def delta_status(self) -> str:
+        """
+        The current state of the snapshot during replication operations.
+        """
+        return pulumi.get(self, "delta_status")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lastSnapshotId")
+    def last_snapshot_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely. Empty if the copy of the initial snapshot is not complete.
+        """
+        return pulumi.get(self, "last_snapshot_id")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Additional information about the current 'lifecycleState'.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="recoveryPointTime")
+    def recovery_point_time(self) -> str:
+        """
+        The [`snapshotTime`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Snapshot/snapshotTime) of the most recent recoverable replication snapshot in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Example: `2021-04-04T20:01:29.100Z`
+        """
+        return pulumi.get(self, "recovery_point_time")
+
+    @property
+    @pulumi.getter(name="replicationInterval")
+    def replication_interval(self) -> str:
+        """
+        Duration in minutes between replication snapshots.
+        """
+        return pulumi.get(self, "replication_interval")
+
+    @property
+    @pulumi.getter(name="replicationTargetId")
+    def replication_target_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [`ReplicationTarget`](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ReplicationTarget).
+        """
+        return pulumi.get(self, "replication_target_id")
+
+    @property
+    @pulumi.getter(name="sourceId")
+    def source_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source file system.
+        """
+        return pulumi.get(self, "source_id")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        Filter results by the specified lifecycle state. Must be a valid state for the resource type.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target file system.
+        """
+        return pulumi.get(self, "target_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the replication was created in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2021-01-04T20:01:29.100Z`
+        """
+        return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
 class GetSnapshotsFilterResult(dict):
     def __init__(__self__, *,
                  name: str,
@@ -965,6 +1422,8 @@ class GetSnapshotsSnapshotResult(dict):
                  lifecycle_details: str,
                  name: str,
                  provenance_id: str,
+                 snapshot_time: str,
+                 snapshot_type: str,
                  state: str,
                  time_created: str):
         """
@@ -972,10 +1431,15 @@ class GetSnapshotsSnapshotResult(dict):
         :param str file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: Filter results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resouce type.
-        :param bool is_clone_source: Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
-        :param str lifecycle_details: Additional information about the current 'lifecycleState'.
+        :param bool is_clone_source: Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+        :param str lifecycle_details: Additional information about the current `lifecycleState`.
         :param str name: Name of the snapshot. This value is immutable.
-        :param str provenance_id: An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+        :param str provenance_id: An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
+        :param str snapshot_time: The date and time the snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. This value might be the same or different from `timeCreated` depending on the following factors:
+               * If the snapshot is created in the original file system directory.
+               * If the snapshot is cloned from a file system.
+               * If the snapshot is replicated from a file system.
+        :param str snapshot_type: Specifies the generation type of the snapshot.
         :param str state: Filter results by the specified lifecycle state. Must be a valid state for the resource type.
         :param str time_created: The date and time the snapshot was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
@@ -987,6 +1451,8 @@ class GetSnapshotsSnapshotResult(dict):
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "provenance_id", provenance_id)
+        pulumi.set(__self__, "snapshot_time", snapshot_time)
+        pulumi.set(__self__, "snapshot_type", snapshot_type)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
 
@@ -1026,7 +1492,7 @@ class GetSnapshotsSnapshotResult(dict):
     @pulumi.getter(name="isCloneSource")
     def is_clone_source(self) -> bool:
         """
-        Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+        Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         """
         return pulumi.get(self, "is_clone_source")
 
@@ -1034,7 +1500,7 @@ class GetSnapshotsSnapshotResult(dict):
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> str:
         """
-        Additional information about the current 'lifecycleState'.
+        Additional information about the current `lifecycleState`.
         """
         return pulumi.get(self, "lifecycle_details")
 
@@ -1050,9 +1516,28 @@ class GetSnapshotsSnapshotResult(dict):
     @pulumi.getter(name="provenanceId")
     def provenance_id(self) -> str:
         """
-        An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+        An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) identifying the parent from which this snapshot was cloned. If this snapshot was not cloned, then the `provenanceId` is the same as the snapshot `id` value. If this snapshot was cloned, then the `provenanceId` value is the parent's `provenanceId`. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         """
         return pulumi.get(self, "provenance_id")
+
+    @property
+    @pulumi.getter(name="snapshotTime")
+    def snapshot_time(self) -> str:
+        """
+        The date and time the snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. This value might be the same or different from `timeCreated` depending on the following factors:
+        * If the snapshot is created in the original file system directory.
+        * If the snapshot is cloned from a file system.
+        * If the snapshot is replicated from a file system.
+        """
+        return pulumi.get(self, "snapshot_time")
+
+    @property
+    @pulumi.getter(name="snapshotType")
+    def snapshot_type(self) -> str:
+        """
+        Specifies the generation type of the snapshot.
+        """
+        return pulumi.get(self, "snapshot_type")
 
     @property
     @pulumi.getter

@@ -22,11 +22,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLogAnalyticsLogGroupsSummary(args: GetLogAnalyticsLogGroupsSummaryArgs, opts?: pulumi.InvokeOptions): Promise<GetLogAnalyticsLogGroupsSummaryResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LogAnalytics/getLogAnalyticsLogGroupsSummary:getLogAnalyticsLogGroupsSummary", {
         "compartmentId": args.compartmentId,
         "namespace": args.namespace,
@@ -59,9 +56,25 @@ export interface GetLogAnalyticsLogGroupsSummaryResult {
     readonly logGroupCount: number;
     readonly namespace: string;
 }
-
+/**
+ * This data source provides details about a specific Log Analytics Log Groups Summary resource in Oracle Cloud Infrastructure Log Analytics service.
+ *
+ * Returns the count of log groups in a compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testLogAnalyticsLogGroupsSummary = oci.LogAnalytics.getLogAnalyticsLogGroupsSummary({
+ *     compartmentId: _var.compartment_id,
+ *     namespace: _var.log_analytics_log_groups_summary_namespace,
+ * });
+ * ```
+ */
 export function getLogAnalyticsLogGroupsSummaryOutput(args: GetLogAnalyticsLogGroupsSummaryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogAnalyticsLogGroupsSummaryResult> {
-    return pulumi.output(args).apply(a => getLogAnalyticsLogGroupsSummary(a, opts))
+    return pulumi.output(args).apply((a: any) => getLogAnalyticsLogGroupsSummary(a, opts))
 }
 
 /**

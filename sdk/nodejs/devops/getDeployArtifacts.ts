@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -27,11 +28,8 @@ import * as utilities from "../utilities";
  */
 export function getDeployArtifacts(args?: GetDeployArtifactsArgs, opts?: pulumi.InvokeOptions): Promise<GetDeployArtifactsResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getDeployArtifacts:getDeployArtifacts", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -99,9 +97,28 @@ export interface GetDeployArtifactsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Deploy Artifacts in Oracle Cloud Infrastructure Devops service.
+ *
+ * Returns a list of deployment artifacts.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDeployArtifacts = oci.DevOps.getDeployArtifacts({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.deploy_artifact_display_name,
+ *     id: _var.deploy_artifact_id,
+ *     projectId: oci_devops_project.test_project.id,
+ *     state: _var.deploy_artifact_state,
+ * });
+ * ```
+ */
 export function getDeployArtifactsOutput(args?: GetDeployArtifactsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDeployArtifactsResult> {
-    return pulumi.output(args).apply(a => getDeployArtifacts(a, opts))
+    return pulumi.output(args).apply((a: any) => getDeployArtifacts(a, opts))
 }
 
 /**

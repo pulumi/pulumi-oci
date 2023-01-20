@@ -30,6 +30,7 @@ __all__ = [
     'MonitoredResourcesSearchAssociationItemDestinationResourceDetail',
     'MonitoredResourcesSearchAssociationItemSourceResourceDetail',
     'MonitoredResourcesSearchItem',
+    'MonitoredResourcesSearchItemProperty',
     'GetDiscoveryJobDiscoveryDetailResult',
     'GetDiscoveryJobDiscoveryDetailCredentialResult',
     'GetDiscoveryJobDiscoveryDetailCredentialItemResult',
@@ -565,6 +566,8 @@ class MonitoredResourceDatabaseConnectionDetails(dict):
             suggest = "db_id"
         elif key == "dbUniqueName":
             suggest = "db_unique_name"
+        elif key == "sslSecretId":
+            suggest = "ssl_secret_id"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in MonitoredResourceDatabaseConnectionDetails. Access the value via the '{suggest}' property getter instead.")
@@ -583,7 +586,8 @@ class MonitoredResourceDatabaseConnectionDetails(dict):
                  service_name: str,
                  connector_id: Optional[str] = None,
                  db_id: Optional[str] = None,
-                 db_unique_name: Optional[str] = None):
+                 db_unique_name: Optional[str] = None,
+                 ssl_secret_id: Optional[str] = None):
         """
         :param int port: (Updatable) Listener Port number used for connection requests.
         :param str protocol: (Updatable) Protocol used in DB connection string when connecting to external database service.
@@ -591,6 +595,7 @@ class MonitoredResourceDatabaseConnectionDetails(dict):
         :param str connector_id: (Updatable) Database connector Identifier
         :param str db_id: (Updatable) dbId of the database
         :param str db_unique_name: (Updatable) UniqueName used for database connection requests.
+        :param str ssl_secret_id: (Updatable) SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         """
         pulumi.set(__self__, "port", port)
         pulumi.set(__self__, "protocol", protocol)
@@ -601,6 +606,8 @@ class MonitoredResourceDatabaseConnectionDetails(dict):
             pulumi.set(__self__, "db_id", db_id)
         if db_unique_name is not None:
             pulumi.set(__self__, "db_unique_name", db_unique_name)
+        if ssl_secret_id is not None:
+            pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
 
     @property
     @pulumi.getter
@@ -649,6 +656,14 @@ class MonitoredResourceDatabaseConnectionDetails(dict):
         (Updatable) UniqueName used for database connection requests.
         """
         return pulumi.get(self, "db_unique_name")
+
+    @property
+    @pulumi.getter(name="sslSecretId")
+    def ssl_secret_id(self) -> Optional[str]:
+        """
+        (Updatable) SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        """
+        return pulumi.get(self, "ssl_secret_id")
 
 
 @pulumi.output_type
@@ -751,6 +766,8 @@ class MonitoredResourcesListMemberItem(dict):
         suggest = None
         if key == "definedTags":
             suggest = "defined_tags"
+        elif key == "externalId":
+            suggest = "external_id"
         elif key == "freeformTags":
             suggest = "freeform_tags"
         elif key == "hostName":
@@ -781,6 +798,7 @@ class MonitoredResourcesListMemberItem(dict):
 
     def __init__(__self__, *,
                  defined_tags: Optional[Mapping[str, Any]] = None,
+                 external_id: Optional[str] = None,
                  freeform_tags: Optional[Mapping[str, Any]] = None,
                  host_name: Optional[str] = None,
                  parent_id: Optional[str] = None,
@@ -792,6 +810,7 @@ class MonitoredResourcesListMemberItem(dict):
                  system_tags: Optional[Mapping[str, Any]] = None):
         """
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param str external_id: External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str host_name: Monitored Resource Host
         :param str parent_id: Parent monitored resource identifier
@@ -804,6 +823,8 @@ class MonitoredResourcesListMemberItem(dict):
         """
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
+        if external_id is not None:
+            pulumi.set(__self__, "external_id", external_id)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if host_name is not None:
@@ -830,6 +851,14 @@ class MonitoredResourcesListMemberItem(dict):
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="externalId")
+    def external_id(self) -> Optional[str]:
+        """
+        External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+        """
+        return pulumi.get(self, "external_id")
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -1081,6 +1110,8 @@ class MonitoredResourcesSearchItem(dict):
             suggest = "defined_tags"
         elif key == "displayName":
             suggest = "display_name"
+        elif key == "externalId":
+            suggest = "external_id"
         elif key == "freeformTags":
             suggest = "freeform_tags"
         elif key == "hostName":
@@ -1108,11 +1139,13 @@ class MonitoredResourcesSearchItem(dict):
     def __init__(__self__, *,
                  defined_tags: Optional[Mapping[str, Any]] = None,
                  display_name: Optional[str] = None,
+                 external_id: Optional[str] = None,
                  freeform_tags: Optional[Mapping[str, Any]] = None,
                  host_name: Optional[str] = None,
                  id: Optional[str] = None,
                  management_agent_id: Optional[str] = None,
                  name: Optional[str] = None,
+                 properties: Optional[Sequence['outputs.MonitoredResourcesSearchItemProperty']] = None,
                  state: Optional[str] = None,
                  system_tags: Optional[Mapping[str, Any]] = None,
                  time_created: Optional[str] = None,
@@ -1121,11 +1154,13 @@ class MonitoredResourcesSearchItem(dict):
         """
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: Monitored resource display name.
+        :param str external_id: External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str host_name: A filter to return resources with host name match
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource.
         :param str management_agent_id: A filter to return resources with matching management agent id.
         :param str name: A filter to return resources that match exact resource name
+        :param Sequence['MonitoredResourcesSearchItemPropertyArgs'] properties: List of monitored resource properties
         :param str state: A filter to return resources with matching lifecycle state.
         :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: Monitored resource creation time. An RFC3339 formatted datetime string
@@ -1136,6 +1171,8 @@ class MonitoredResourcesSearchItem(dict):
             pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if external_id is not None:
+            pulumi.set(__self__, "external_id", external_id)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if host_name is not None:
@@ -1146,6 +1183,8 @@ class MonitoredResourcesSearchItem(dict):
             pulumi.set(__self__, "management_agent_id", management_agent_id)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if properties is not None:
+            pulumi.set(__self__, "properties", properties)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if system_tags is not None:
@@ -1172,6 +1211,14 @@ class MonitoredResourcesSearchItem(dict):
         Monitored resource display name.
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="externalId")
+    def external_id(self) -> Optional[str]:
+        """
+        External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+        """
+        return pulumi.get(self, "external_id")
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -1215,6 +1262,14 @@ class MonitoredResourcesSearchItem(dict):
 
     @property
     @pulumi.getter
+    def properties(self) -> Optional[Sequence['outputs.MonitoredResourcesSearchItemProperty']]:
+        """
+        List of monitored resource properties
+        """
+        return pulumi.get(self, "properties")
+
+    @property
+    @pulumi.getter
     def state(self) -> Optional[str]:
         """
         A filter to return resources with matching lifecycle state.
@@ -1252,6 +1307,37 @@ class MonitoredResourcesSearchItem(dict):
         A filter to return resources that match resource type
         """
         return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class MonitoredResourcesSearchItemProperty(dict):
+    def __init__(__self__, *,
+                 name: Optional[str] = None,
+                 value: Optional[str] = None):
+        """
+        :param str name: A filter to return resources that match exact resource name
+        :param str value: property value
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        A filter to return resources that match exact resource name
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        """
+        property value
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
@@ -1948,7 +2034,8 @@ class GetMonitoredResourceDatabaseConnectionDetailResult(dict):
                  db_unique_name: str,
                  port: int,
                  protocol: str,
-                 service_name: str):
+                 service_name: str,
+                 ssl_secret_id: str):
         """
         :param str connector_id: Database connector Identifier
         :param str db_id: dbId of the database
@@ -1956,6 +2043,7 @@ class GetMonitoredResourceDatabaseConnectionDetailResult(dict):
         :param int port: Listener Port number used for connection requests.
         :param str protocol: Protocol used in DB connection string when connecting to external database service.
         :param str service_name: Service name used for connection requests.
+        :param str ssl_secret_id: SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         """
         pulumi.set(__self__, "connector_id", connector_id)
         pulumi.set(__self__, "db_id", db_id)
@@ -1963,6 +2051,7 @@ class GetMonitoredResourceDatabaseConnectionDetailResult(dict):
         pulumi.set(__self__, "port", port)
         pulumi.set(__self__, "protocol", protocol)
         pulumi.set(__self__, "service_name", service_name)
+        pulumi.set(__self__, "ssl_secret_id", ssl_secret_id)
 
     @property
     @pulumi.getter(name="connectorId")
@@ -2011,6 +2100,14 @@ class GetMonitoredResourceDatabaseConnectionDetailResult(dict):
         Service name used for connection requests.
         """
         return pulumi.get(self, "service_name")
+
+    @property
+    @pulumi.getter(name="sslSecretId")
+    def ssl_secret_id(self) -> str:
+        """
+        SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        """
+        return pulumi.get(self, "ssl_secret_id")
 
 
 @pulumi.output_type

@@ -5639,6 +5639,8 @@ public final class DataSafeFunctions {
      * This data source provides details about a specific Discovery Analytic resource in Oracle Cloud Infrastructure Data Safe service.
      * 
      * Gets consolidated discovery analytics data based on the specified query parameters.
+     * If CompartmentIdInSubtreeQueryParam is specified as true, the behaviour
+     * is equivalent to accessLevel &#34;ACCESSIBLE&#34; by default.
      * 
      * ## Example Usage
      * ```java
@@ -5682,6 +5684,8 @@ public final class DataSafeFunctions {
      * This data source provides details about a specific Discovery Analytic resource in Oracle Cloud Infrastructure Data Safe service.
      * 
      * Gets consolidated discovery analytics data based on the specified query parameters.
+     * If CompartmentIdInSubtreeQueryParam is specified as true, the behaviour
+     * is equivalent to accessLevel &#34;ACCESSIBLE&#34; by default.
      * 
      * ## Example Usage
      * ```java
@@ -5725,6 +5729,8 @@ public final class DataSafeFunctions {
      * This data source provides details about a specific Discovery Analytic resource in Oracle Cloud Infrastructure Data Safe service.
      * 
      * Gets consolidated discovery analytics data based on the specified query parameters.
+     * If CompartmentIdInSubtreeQueryParam is specified as true, the behaviour
+     * is equivalent to accessLevel &#34;ACCESSIBLE&#34; by default.
      * 
      * ## Example Usage
      * ```java
@@ -5768,6 +5774,8 @@ public final class DataSafeFunctions {
      * This data source provides details about a specific Discovery Analytic resource in Oracle Cloud Infrastructure Data Safe service.
      * 
      * Gets consolidated discovery analytics data based on the specified query parameters.
+     * If CompartmentIdInSubtreeQueryParam is specified as true, the behaviour
+     * is equivalent to accessLevel &#34;ACCESSIBLE&#34; by default.
      * 
      * ## Example Usage
      * ```java
@@ -5811,6 +5819,8 @@ public final class DataSafeFunctions {
      * This data source provides the list of Discovery Analytics in Oracle Cloud Infrastructure Data Safe service.
      * 
      * Gets consolidated discovery analytics data based on the specified query parameters.
+     * If CompartmentIdInSubtreeQueryParam is specified as true, the behaviour
+     * is equivalent to accessLevel &#34;ACCESSIBLE&#34; by default.
      * 
      * ## Example Usage
      * ```java
@@ -5854,6 +5864,8 @@ public final class DataSafeFunctions {
      * This data source provides the list of Discovery Analytics in Oracle Cloud Infrastructure Data Safe service.
      * 
      * Gets consolidated discovery analytics data based on the specified query parameters.
+     * If CompartmentIdInSubtreeQueryParam is specified as true, the behaviour
+     * is equivalent to accessLevel &#34;ACCESSIBLE&#34; by default.
      * 
      * ## Example Usage
      * ```java
@@ -5897,6 +5909,8 @@ public final class DataSafeFunctions {
      * This data source provides the list of Discovery Analytics in Oracle Cloud Infrastructure Data Safe service.
      * 
      * Gets consolidated discovery analytics data based on the specified query parameters.
+     * If CompartmentIdInSubtreeQueryParam is specified as true, the behaviour
+     * is equivalent to accessLevel &#34;ACCESSIBLE&#34; by default.
      * 
      * ## Example Usage
      * ```java
@@ -5940,6 +5954,8 @@ public final class DataSafeFunctions {
      * This data source provides the list of Discovery Analytics in Oracle Cloud Infrastructure Data Safe service.
      * 
      * Gets consolidated discovery analytics data based on the specified query parameters.
+     * If CompartmentIdInSubtreeQueryParam is specified as true, the behaviour
+     * is equivalent to accessLevel &#34;ACCESSIBLE&#34; by default.
      * 
      * ## Example Usage
      * ```java
@@ -7023,6 +7039,8 @@ public final class DataSafeFunctions {
      * This data source provides details about a specific Masking Analytic resource in Oracle Cloud Infrastructure Data Safe service.
      * 
      * Gets consolidated masking analytics data based on the specified query parameters.
+     * If CompartmentIdInSubtreeQueryParam is specified as true, the behaviour
+     * is equivalent to accessLevel &#34;ACCESSIBLE&#34; by default.
      * 
      * ## Example Usage
      * ```java
@@ -7066,6 +7084,8 @@ public final class DataSafeFunctions {
      * This data source provides details about a specific Masking Analytic resource in Oracle Cloud Infrastructure Data Safe service.
      * 
      * Gets consolidated masking analytics data based on the specified query parameters.
+     * If CompartmentIdInSubtreeQueryParam is specified as true, the behaviour
+     * is equivalent to accessLevel &#34;ACCESSIBLE&#34; by default.
      * 
      * ## Example Usage
      * ```java
@@ -7109,6 +7129,8 @@ public final class DataSafeFunctions {
      * This data source provides details about a specific Masking Analytic resource in Oracle Cloud Infrastructure Data Safe service.
      * 
      * Gets consolidated masking analytics data based on the specified query parameters.
+     * If CompartmentIdInSubtreeQueryParam is specified as true, the behaviour
+     * is equivalent to accessLevel &#34;ACCESSIBLE&#34; by default.
      * 
      * ## Example Usage
      * ```java
@@ -7152,6 +7174,8 @@ public final class DataSafeFunctions {
      * This data source provides details about a specific Masking Analytic resource in Oracle Cloud Infrastructure Data Safe service.
      * 
      * Gets consolidated masking analytics data based on the specified query parameters.
+     * If CompartmentIdInSubtreeQueryParam is specified as true, the behaviour
+     * is equivalent to accessLevel &#34;ACCESSIBLE&#34; by default.
      * 
      * ## Example Usage
      * ```java
@@ -7195,6 +7219,8 @@ public final class DataSafeFunctions {
      * This data source provides the list of Masking Analytics in Oracle Cloud Infrastructure Data Safe service.
      * 
      * Gets consolidated masking analytics data based on the specified query parameters.
+     * If CompartmentIdInSubtreeQueryParam is specified as true, the behaviour
+     * is equivalent to accessLevel &#34;ACCESSIBLE&#34; by default.
      * 
      * ## Example Usage
      * ```java
@@ -7238,6 +7264,8 @@ public final class DataSafeFunctions {
      * This data source provides the list of Masking Analytics in Oracle Cloud Infrastructure Data Safe service.
      * 
      * Gets consolidated masking analytics data based on the specified query parameters.
+     * If CompartmentIdInSubtreeQueryParam is specified as true, the behaviour
+     * is equivalent to accessLevel &#34;ACCESSIBLE&#34; by default.
      * 
      * ## Example Usage
      * ```java
@@ -7281,6 +7309,8 @@ public final class DataSafeFunctions {
      * This data source provides the list of Masking Analytics in Oracle Cloud Infrastructure Data Safe service.
      * 
      * Gets consolidated masking analytics data based on the specified query parameters.
+     * If CompartmentIdInSubtreeQueryParam is specified as true, the behaviour
+     * is equivalent to accessLevel &#34;ACCESSIBLE&#34; by default.
      * 
      * ## Example Usage
      * ```java
@@ -7324,6 +7354,8 @@ public final class DataSafeFunctions {
      * This data source provides the list of Masking Analytics in Oracle Cloud Infrastructure Data Safe service.
      * 
      * Gets consolidated masking analytics data based on the specified query parameters.
+     * If CompartmentIdInSubtreeQueryParam is specified as true, the behaviour
+     * is equivalent to accessLevel &#34;ACCESSIBLE&#34; by default.
      * 
      * ## Example Usage
      * ```java
@@ -9797,6 +9829,7 @@ public final class DataSafeFunctions {
      *             .displayName(var_.report_display_name())
      *             .reportDefinitionId(oci_data_safe_report_definition.test_report_definition().id())
      *             .state(var_.report_state())
+     *             .type(var_.report_type())
      *             .build());
      * 
      *     }
@@ -9841,6 +9874,7 @@ public final class DataSafeFunctions {
      *             .displayName(var_.report_display_name())
      *             .reportDefinitionId(oci_data_safe_report_definition.test_report_definition().id())
      *             .state(var_.report_state())
+     *             .type(var_.report_type())
      *             .build());
      * 
      *     }
@@ -9885,6 +9919,7 @@ public final class DataSafeFunctions {
      *             .displayName(var_.report_display_name())
      *             .reportDefinitionId(oci_data_safe_report_definition.test_report_definition().id())
      *             .state(var_.report_state())
+     *             .type(var_.report_type())
      *             .build());
      * 
      *     }
@@ -9929,6 +9964,7 @@ public final class DataSafeFunctions {
      *             .displayName(var_.report_display_name())
      *             .reportDefinitionId(oci_data_safe_report_definition.test_report_definition().id())
      *             .state(var_.report_state())
+     *             .type(var_.report_type())
      *             .build());
      * 
      *     }

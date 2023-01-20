@@ -5,6 +5,7 @@ package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Database.outputs.GetPluggableDatabasesPluggableDatabaseConnectionString;
+import com.pulumi.oci.Database.outputs.GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfig;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -65,6 +66,11 @@ public final class GetPluggableDatabasesPluggableDatabase {
      * 
      */
     private String pdbName;
+    /**
+     * @return The configuration of the Pluggable Database Management service.
+     * 
+     */
+    private List<GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfig> pluggableDatabaseManagementConfigs;
     private Boolean shouldPdbAdminAccountBeLocked;
     /**
      * @return A filter to return only resources that match the given lifecycle state exactly.
@@ -152,6 +158,13 @@ public final class GetPluggableDatabasesPluggableDatabase {
     public String pdbName() {
         return this.pdbName;
     }
+    /**
+     * @return The configuration of the Pluggable Database Management service.
+     * 
+     */
+    public List<GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfig> pluggableDatabaseManagementConfigs() {
+        return this.pluggableDatabaseManagementConfigs;
+    }
     public Boolean shouldPdbAdminAccountBeLocked() {
         return this.shouldPdbAdminAccountBeLocked;
     }
@@ -193,6 +206,7 @@ public final class GetPluggableDatabasesPluggableDatabase {
         private String openMode;
         private String pdbAdminPassword;
         private String pdbName;
+        private List<GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfig> pluggableDatabaseManagementConfigs;
         private Boolean shouldPdbAdminAccountBeLocked;
         private String state;
         private String tdeWalletPassword;
@@ -211,6 +225,7 @@ public final class GetPluggableDatabasesPluggableDatabase {
     	      this.openMode = defaults.openMode;
     	      this.pdbAdminPassword = defaults.pdbAdminPassword;
     	      this.pdbName = defaults.pdbName;
+    	      this.pluggableDatabaseManagementConfigs = defaults.pluggableDatabaseManagementConfigs;
     	      this.shouldPdbAdminAccountBeLocked = defaults.shouldPdbAdminAccountBeLocked;
     	      this.state = defaults.state;
     	      this.tdeWalletPassword = defaults.tdeWalletPassword;
@@ -276,6 +291,14 @@ public final class GetPluggableDatabasesPluggableDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder pluggableDatabaseManagementConfigs(List<GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfig> pluggableDatabaseManagementConfigs) {
+            this.pluggableDatabaseManagementConfigs = Objects.requireNonNull(pluggableDatabaseManagementConfigs);
+            return this;
+        }
+        public Builder pluggableDatabaseManagementConfigs(GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfig... pluggableDatabaseManagementConfigs) {
+            return pluggableDatabaseManagementConfigs(List.of(pluggableDatabaseManagementConfigs));
+        }
+        @CustomType.Setter
         public Builder shouldPdbAdminAccountBeLocked(Boolean shouldPdbAdminAccountBeLocked) {
             this.shouldPdbAdminAccountBeLocked = Objects.requireNonNull(shouldPdbAdminAccountBeLocked);
             return this;
@@ -308,6 +331,7 @@ public final class GetPluggableDatabasesPluggableDatabase {
             o.openMode = openMode;
             o.pdbAdminPassword = pdbAdminPassword;
             o.pdbName = pdbName;
+            o.pluggableDatabaseManagementConfigs = pluggableDatabaseManagementConfigs;
             o.shouldPdbAdminAccountBeLocked = shouldPdbAdminAccountBeLocked;
             o.state = state;
             o.tdeWalletPassword = tdeWalletPassword;

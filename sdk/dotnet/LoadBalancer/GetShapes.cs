@@ -38,7 +38,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetShapesResult> InvokeAsync(GetShapesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetShapesResult>("oci:LoadBalancer/getShapes:getShapes", args ?? new GetShapesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetShapesResult>("oci:LoadBalancer/getShapes:getShapes", args ?? new GetShapesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Load Balancer Shapes in Oracle Cloud Infrastructure Load Balancer service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetShapesResult> Invoke(GetShapesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetShapesResult>("oci:LoadBalancer/getShapes:getShapes", args ?? new GetShapesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetShapesResult>("oci:LoadBalancer/getShapes:getShapes", args ?? new GetShapesInvokeArgs(), options.WithDefaults());
     }
 
 

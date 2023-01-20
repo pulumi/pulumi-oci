@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -21,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getExadataInsight(args: GetExadataInsightArgs, opts?: pulumi.InvokeOptions): Promise<GetExadataInsightResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Opsi/getExadataInsight:getExadataInsight", {
         "exadataInsightId": args.exadataInsightId,
     }, opts);
@@ -85,6 +84,14 @@ export interface GetExadataInsightResult {
      * The user-friendly name for the Exadata system. The name does not have to be unique.
      */
     readonly exadataDisplayName: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+     */
+    readonly exadataInfraId: string;
+    /**
+     * Oracle Cloud Infrastructure exadata infrastructure resource type
+     */
+    readonly exadataInfraResourceType: string;
     readonly exadataInsightId: string;
     /**
      * The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
@@ -94,6 +101,10 @@ export interface GetExadataInsightResult {
      * Exadata rack type.
      */
     readonly exadataRackType: string;
+    /**
+     * The shape of the Exadata Infrastructure.
+     */
+    readonly exadataShape: string;
     /**
      * Operations Insights internal representation of the the Exadata system type.
      */
@@ -115,6 +126,7 @@ export interface GetExadataInsightResult {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
     readonly lifecycleDetails: string;
+    readonly memberVmClusterDetails: outputs.Opsi.GetExadataInsightMemberVmClusterDetail[];
     /**
      * The current state of the Exadata insight.
      */
@@ -136,9 +148,24 @@ export interface GetExadataInsightResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Exadata Insight resource in Oracle Cloud Infrastructure Opsi service.
+ *
+ * Gets details of an Exadata insight.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testExadataInsight = oci.Opsi.getExadataInsight({
+ *     exadataInsightId: oci_opsi_exadata_insight.test_exadata_insight.id,
+ * });
+ * ```
+ */
 export function getExadataInsightOutput(args: GetExadataInsightOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExadataInsightResult> {
-    return pulumi.output(args).apply(a => getExadataInsight(a, opts))
+    return pulumi.output(args).apply((a: any) => getExadataInsight(a, opts))
 }
 
 /**

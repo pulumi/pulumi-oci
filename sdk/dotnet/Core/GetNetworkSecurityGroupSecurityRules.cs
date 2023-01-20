@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetNetworkSecurityGroupSecurityRulesResult> InvokeAsync(GetNetworkSecurityGroupSecurityRulesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetNetworkSecurityGroupSecurityRulesResult>("oci:Core/getNetworkSecurityGroupSecurityRules:getNetworkSecurityGroupSecurityRules", args ?? new GetNetworkSecurityGroupSecurityRulesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetNetworkSecurityGroupSecurityRulesResult>("oci:Core/getNetworkSecurityGroupSecurityRules:getNetworkSecurityGroupSecurityRules", args ?? new GetNetworkSecurityGroupSecurityRulesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Network Security Group Security Rules in Oracle Cloud Infrastructure Core service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetNetworkSecurityGroupSecurityRulesResult> Invoke(GetNetworkSecurityGroupSecurityRulesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetNetworkSecurityGroupSecurityRulesResult>("oci:Core/getNetworkSecurityGroupSecurityRules:getNetworkSecurityGroupSecurityRules", args ?? new GetNetworkSecurityGroupSecurityRulesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetNetworkSecurityGroupSecurityRulesResult>("oci:Core/getNetworkSecurityGroupSecurityRules:getNetworkSecurityGroupSecurityRules", args ?? new GetNetworkSecurityGroupSecurityRulesInvokeArgs(), options.WithDefaults());
     }
 
 

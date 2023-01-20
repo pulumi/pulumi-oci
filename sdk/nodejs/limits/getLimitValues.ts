@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLimitValues(args: GetLimitValuesArgs, opts?: pulumi.InvokeOptions): Promise<GetLimitValuesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Limits/getLimitValues:getLimitValues", {
         "availabilityDomain": args.availabilityDomain,
         "compartmentId": args.compartmentId,
@@ -96,9 +94,28 @@ export interface GetLimitValuesResult {
     readonly scopeType?: string;
     readonly serviceName: string;
 }
-
+/**
+ * This data source provides the list of Limit Values in Oracle Cloud Infrastructure Limits service.
+ *
+ * Includes a full list of resource limits belonging to a given service.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testLimitValues = oci.Limits.getLimitValues({
+ *     compartmentId: _var.tenancy_ocid,
+ *     serviceName: oci_limits_service.test_service.name,
+ *     availabilityDomain: _var.limit_value_availability_domain,
+ *     name: _var.limit_value_name,
+ *     scopeType: _var.limit_value_scope_type,
+ * });
+ * ```
+ */
 export function getLimitValuesOutput(args: GetLimitValuesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLimitValuesResult> {
-    return pulumi.output(args).apply(a => getLimitValues(a, opts))
+    return pulumi.output(args).apply((a: any) => getLimitValues(a, opts))
 }
 
 /**

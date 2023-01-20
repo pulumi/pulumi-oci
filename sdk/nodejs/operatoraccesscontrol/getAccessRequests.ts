@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -27,11 +28,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAccessRequests(args: GetAccessRequestsArgs, opts?: pulumi.InvokeOptions): Promise<GetAccessRequestsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OperatorAccessControl/getAccessRequests:getAccessRequests", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -106,9 +104,29 @@ export interface GetAccessRequestsResult {
     readonly timeEnd?: string;
     readonly timeStart?: string;
 }
-
+/**
+ * This data source provides the list of Access Requests in Oracle Cloud Infrastructure Operator Access Control service.
+ *
+ * Lists all access requests in the compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAccessRequests = oci.OperatorAccessControl.getAccessRequests({
+ *     compartmentId: _var.compartment_id,
+ *     resourceName: _var.access_request_resource_name,
+ *     resourceType: _var.access_request_resource_type,
+ *     state: _var.access_request_state,
+ *     timeEnd: _var.access_request_time_end,
+ *     timeStart: _var.access_request_time_start,
+ * });
+ * ```
+ */
 export function getAccessRequestsOutput(args: GetAccessRequestsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAccessRequestsResult> {
-    return pulumi.output(args).apply(a => getAccessRequests(a, opts))
+    return pulumi.output(args).apply((a: any) => getAccessRequests(a, opts))
 }
 
 /**

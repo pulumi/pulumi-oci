@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDomain(args: GetDomainArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getDomain:getDomain", {
         "domainId": args.domainId,
     }, opts);
@@ -121,9 +119,27 @@ export interface GetDomainResult {
      */
     readonly url: string;
 }
-
+/**
+ * This data source provides details about a specific Domain resource in Oracle Cloud Infrastructure Identity service.
+ *
+ * Get the specified domain's information.
+ *
+ * - If the domain doesn't exists, returns 404 NOT FOUND.
+ * - If any internal error occurs, returns 500 INTERNAL SERVER ERROR.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDomain = oci.Identity.getDomain({
+ *     domainId: oci_identity_domain.test_domain.id,
+ * });
+ * ```
+ */
 export function getDomainOutput(args: GetDomainOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDomainResult> {
-    return pulumi.output(args).apply(a => getDomain(a, opts))
+    return pulumi.output(args).apply((a: any) => getDomain(a, opts))
 }
 
 /**

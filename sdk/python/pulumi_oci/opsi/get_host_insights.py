@@ -184,10 +184,8 @@ def get_host_insights(compartment_id: Optional[str] = None,
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param bool compartment_id_in_subtree: A flag to search all resources within a given compartment and all sub-compartments.
     :param str enterprise_manager_bridge_id: Unique Enterprise Manager bridge identifier
-    :param str exadata_insight_id: [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource. 
-           <<<<<<< ours
-    :param Sequence[str] host_types: Filter by one or more host types. Possible value is EXTERNAL-HOST.
-           >>>>>>> theirs
+    :param str exadata_insight_id: [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
+    :param Sequence[str] host_types: Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST
     :param str id: Optional list of host insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param Sequence[str] states: Lifecycle states
     :param Sequence[str] statuses: Resource Status
@@ -255,10 +253,8 @@ def get_host_insights_output(compartment_id: Optional[pulumi.Input[Optional[str]
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param bool compartment_id_in_subtree: A flag to search all resources within a given compartment and all sub-compartments.
     :param str enterprise_manager_bridge_id: Unique Enterprise Manager bridge identifier
-    :param str exadata_insight_id: [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource. 
-           <<<<<<< ours
-    :param Sequence[str] host_types: Filter by one or more host types. Possible value is EXTERNAL-HOST.
-           >>>>>>> theirs
+    :param str exadata_insight_id: [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
+    :param Sequence[str] host_types: Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST
     :param str id: Optional list of host insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param Sequence[str] states: Lifecycle states
     :param Sequence[str] statuses: Resource Status

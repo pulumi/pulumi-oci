@@ -18,7 +18,7 @@ public final class MysqlDbSystemHeatWaveCluster {
      */
     private @Nullable Integer clusterSize;
     /**
-     * @return The name of the shape. The shape determines the resources allocated
+     * @return (Updatable) The name of the shape. The shape determines the resources allocated
      * * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
      * 
      */
@@ -48,7 +48,7 @@ public final class MysqlDbSystemHeatWaveCluster {
         return Optional.ofNullable(this.clusterSize);
     }
     /**
-     * @return The name of the shape. The shape determines the resources allocated
+     * @return (Updatable) The name of the shape. The shape determines the resources allocated
      * * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
      * 
      */

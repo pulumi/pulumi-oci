@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetNatGatewaysResult> InvokeAsync(GetNatGatewaysArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetNatGatewaysResult>("oci:Core/getNatGateways:getNatGateways", args ?? new GetNatGatewaysArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetNatGatewaysResult>("oci:Core/getNatGateways:getNatGateways", args ?? new GetNatGatewaysArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Nat Gateways in Oracle Cloud Infrastructure Core service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetNatGatewaysResult> Invoke(GetNatGatewaysInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetNatGatewaysResult>("oci:Core/getNatGateways:getNatGateways", args ?? new GetNatGatewaysInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetNatGatewaysResult>("oci:Core/getNatGateways:getNatGateways", args ?? new GetNatGatewaysInvokeArgs(), options.WithDefaults());
     }
 
 

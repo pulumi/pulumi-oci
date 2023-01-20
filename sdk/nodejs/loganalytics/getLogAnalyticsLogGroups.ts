@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLogAnalyticsLogGroups(args: GetLogAnalyticsLogGroupsArgs, opts?: pulumi.InvokeOptions): Promise<GetLogAnalyticsLogGroupsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LogAnalytics/getLogAnalyticsLogGroups:getLogAnalyticsLogGroups", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -79,9 +77,26 @@ export interface GetLogAnalyticsLogGroupsResult {
     readonly logAnalyticsLogGroupSummaryCollections: outputs.LogAnalytics.GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollection[];
     readonly namespace: string;
 }
-
+/**
+ * This data source provides the list of Log Analytics Log Groups in Oracle Cloud Infrastructure Log Analytics service.
+ *
+ * Returns a list of log groups in a compartment. You may limit the number of log groups, provide sorting options, and filter the results by specifying a display name.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testLogAnalyticsLogGroups = oci.LogAnalytics.getLogAnalyticsLogGroups({
+ *     compartmentId: _var.compartment_id,
+ *     namespace: _var.log_analytics_log_group_namespace,
+ *     displayName: _var.log_analytics_log_group_display_name,
+ * });
+ * ```
+ */
 export function getLogAnalyticsLogGroupsOutput(args: GetLogAnalyticsLogGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogAnalyticsLogGroupsResult> {
-    return pulumi.output(args).apply(a => getLogAnalyticsLogGroups(a, opts))
+    return pulumi.output(args).apply((a: any) => getLogAnalyticsLogGroups(a, opts))
 }
 
 /**

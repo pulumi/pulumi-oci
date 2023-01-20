@@ -35,6 +35,7 @@ namespace Pulumi.Oci.DataSafe
         ///         DisplayName = @var.Report_display_name,
         ///         ReportDefinitionId = oci_data_safe_report_definition.Test_report_definition.Id,
         ///         State = @var.Report_state,
+        ///         Type = @var.Report_type,
         ///     });
         /// 
         /// });
@@ -43,7 +44,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetReportsResult> InvokeAsync(GetReportsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetReportsResult>("oci:DataSafe/getReports:getReports", args ?? new GetReportsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetReportsResult>("oci:DataSafe/getReports:getReports", args ?? new GetReportsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Reports in Oracle Cloud Infrastructure Data Safe service.
@@ -69,6 +70,7 @@ namespace Pulumi.Oci.DataSafe
         ///         DisplayName = @var.Report_display_name,
         ///         ReportDefinitionId = oci_data_safe_report_definition.Test_report_definition.Id,
         ///         State = @var.Report_state,
+        ///         Type = @var.Report_type,
         ///     });
         /// 
         /// });
@@ -77,7 +79,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetReportsResult> Invoke(GetReportsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetReportsResult>("oci:DataSafe/getReports:getReports", args ?? new GetReportsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetReportsResult>("oci:DataSafe/getReports:getReports", args ?? new GetReportsInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -126,6 +128,12 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         [Input("state")]
         public string? State { get; set; }
+
+        /// <summary>
+        /// An optional filter to return only resources that match the specified type.
+        /// </summary>
+        [Input("type")]
+        public string? Type { get; set; }
 
         public GetReportsArgs()
         {
@@ -179,6 +187,12 @@ namespace Pulumi.Oci.DataSafe
         [Input("state")]
         public Input<string>? State { get; set; }
 
+        /// <summary>
+        /// An optional filter to return only resources that match the specified type.
+        /// </summary>
+        [Input("type")]
+        public Input<string>? Type { get; set; }
+
         public GetReportsInvokeArgs()
         {
         }
@@ -216,6 +230,10 @@ namespace Pulumi.Oci.DataSafe
         /// The current state of the report.
         /// </summary>
         public readonly string? State;
+        /// <summary>
+        /// The type of the report.
+        /// </summary>
+        public readonly string? Type;
 
         [OutputConstructor]
         private GetReportsResult(
@@ -235,7 +253,9 @@ namespace Pulumi.Oci.DataSafe
 
             string? reportDefinitionId,
 
-            string? state)
+            string? state,
+
+            string? type)
         {
             AccessLevel = accessLevel;
             CompartmentId = compartmentId;
@@ -246,6 +266,7 @@ namespace Pulumi.Oci.DataSafe
             ReportCollections = reportCollections;
             ReportDefinitionId = reportDefinitionId;
             State = state;
+            Type = type;
         }
     }
 }

@@ -47,7 +47,7 @@ namespace Pulumi.Oci.DataConnectivity
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetRegistryDataAssetsResult> InvokeAsync(GetRegistryDataAssetsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetRegistryDataAssetsResult>("oci:DataConnectivity/getRegistryDataAssets:getRegistryDataAssets", args ?? new GetRegistryDataAssetsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetRegistryDataAssetsResult>("oci:DataConnectivity/getRegistryDataAssets:getRegistryDataAssets", args ?? new GetRegistryDataAssetsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Registry Data Assets in Oracle Cloud Infrastructure Data Connectivity service.
@@ -85,7 +85,7 @@ namespace Pulumi.Oci.DataConnectivity
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetRegistryDataAssetsResult> Invoke(GetRegistryDataAssetsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetRegistryDataAssetsResult>("oci:DataConnectivity/getRegistryDataAssets:getRegistryDataAssets", args ?? new GetRegistryDataAssetsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetRegistryDataAssetsResult>("oci:DataConnectivity/getRegistryDataAssets:getRegistryDataAssets", args ?? new GetRegistryDataAssetsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -38,7 +38,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDeployPipelineResult> InvokeAsync(GetDeployPipelineArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDeployPipelineResult>("oci:DevOps/getDeployPipeline:getDeployPipeline", args ?? new GetDeployPipelineArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDeployPipelineResult>("oci:DevOps/getDeployPipeline:getDeployPipeline", args ?? new GetDeployPipelineArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Deploy Pipeline resource in Oracle Cloud Infrastructure Devops service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDeployPipelineResult> Invoke(GetDeployPipelineInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDeployPipelineResult>("oci:DevOps/getDeployPipeline:getDeployPipeline", args ?? new GetDeployPipelineInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDeployPipelineResult>("oci:DevOps/getDeployPipeline:getDeployPipeline", args ?? new GetDeployPipelineInvokeArgs(), options.WithDefaults());
     }
 
 

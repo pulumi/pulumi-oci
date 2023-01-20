@@ -2773,11 +2773,10 @@ class DrgAttachmentManagementNetworkDetails(dict):
                  ipsec_connection_id: Optional[str] = None,
                  route_table_id: Optional[str] = None):
         """
-        :param str id: -(Required) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network attached to the DRG.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network attached to the DRG.
         :param str type: The type can be one of these values: `IPSEC_TUNNEL`, `REMOTE_PEERING_CONNECTION`, `VCN`,`VIRTUAL_CIRCUIT`
-               * `route_table_id`(Optional)(Updatable) - The OCID of the route table the DRG attachment is using.
         :param str ipsec_connection_id: The IPSec connection that contains the attached IPSec tunnel.
-        :param str route_table_id: (Updatable)- The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the DRG attachment is using.
+        :param str route_table_id: The OCID of the route table the DRG attachment is using.
         """
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "type", type)
@@ -2790,7 +2789,7 @@ class DrgAttachmentManagementNetworkDetails(dict):
     @pulumi.getter
     def id(self) -> str:
         """
-        -(Required) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network attached to the DRG.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network attached to the DRG.
         """
         return pulumi.get(self, "id")
 
@@ -2799,7 +2798,6 @@ class DrgAttachmentManagementNetworkDetails(dict):
     def type(self) -> str:
         """
         The type can be one of these values: `IPSEC_TUNNEL`, `REMOTE_PEERING_CONNECTION`, `VCN`,`VIRTUAL_CIRCUIT`
-        * `route_table_id`(Optional)(Updatable) - The OCID of the route table the DRG attachment is using.
         """
         return pulumi.get(self, "type")
 
@@ -2815,7 +2813,7 @@ class DrgAttachmentManagementNetworkDetails(dict):
     @pulumi.getter(name="routeTableId")
     def route_table_id(self) -> Optional[str]:
         """
-        (Updatable)- The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the DRG attachment is using.
+        The OCID of the route table the DRG attachment is using.
         """
         return pulumi.get(self, "route_table_id")
 
@@ -3165,8 +3163,6 @@ class ImageImageSourceDetails(dict):
         :param str operating_system: The image's operating system.  Example: `Oracle Linux`
         :param str operating_system_version: The image's operating system version.  Example: `7.2`
         :param str source_image_type: The format of the image to be imported.  Only monolithic images are supported. This attribute is not used for exported Oracle images with the Oracle Cloud Infrastructure image format. Allowed values are:
-               * `QCOW2`
-               * `VMDK`
         :param str source_uri: The Object Storage URL for the image.
         """
         pulumi.set(__self__, "source_type", source_type)
@@ -3238,8 +3234,6 @@ class ImageImageSourceDetails(dict):
     def source_image_type(self) -> Optional[str]:
         """
         The format of the image to be imported.  Only monolithic images are supported. This attribute is not used for exported Oracle images with the Oracle Cloud Infrastructure image format. Allowed values are:
-        * `QCOW2`
-        * `VMDK`
         """
         return pulumi.get(self, "source_image_type")
 
@@ -7351,8 +7345,6 @@ class RouteTableRouteRule(dict):
         :param str description: (Updatable) An optional description of your choice for the rule.
         :param str destination: (Updatable) Conceptually, this is the range of IP addresses used for matching when routing traffic. Required if you provide a `destinationType`.
         :param str destination_type: (Updatable) Type of destination for the rule. Required if you provide a `destination`.
-               * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
-               * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
         """
         pulumi.set(__self__, "network_entity_id", network_entity_id)
         if cidr_block is not None:
@@ -7403,8 +7395,6 @@ class RouteTableRouteRule(dict):
     def destination_type(self) -> Optional[str]:
         """
         (Updatable) Type of destination for the rule. Required if you provide a `destination`.
-        * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
-        * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
         """
         return pulumi.get(self, "destination_type")
 
@@ -7792,8 +7782,6 @@ class SecurityListIngressSecurityRule(dict):
                * [ICMP Parameters](http://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml)
                * [ICMPv6 Parameters](https://www.iana.org/assignments/icmpv6-parameters/icmpv6-parameters.xhtml)
         :param str source_type: (Updatable) Type of source for the rule. The default is `CIDR_BLOCK`.
-               * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
-               * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
         :param bool stateless: (Updatable) A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if ingress traffic allows TCP destination port 80, there should be an egress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
         :param 'SecurityListIngressSecurityRuleTcpOptionsArgs' tcp_options: (Updatable) Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
         :param 'SecurityListIngressSecurityRuleUdpOptionsArgs' udp_options: (Updatable) Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
@@ -7852,8 +7840,6 @@ class SecurityListIngressSecurityRule(dict):
     def source_type(self) -> Optional[str]:
         """
         (Updatable) Type of source for the rule. The default is `CIDR_BLOCK`.
-        * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
-        * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
         """
         return pulumi.get(self, "source_type")
 
@@ -8702,8 +8688,6 @@ class VolumeBackupPolicySchedule(dict):
         :param str offset_type: (Updatable) Indicates how the offset is defined. If value is `STRUCTURED`, then `hourOfDay`, `dayOfWeek`, `dayOfMonth`, and `month` fields are used and `offsetSeconds` will be ignored in requests and users should ignore its value from the responses.
         :param str time_zone: (Updatable) Specifies what time zone is the schedule in
                enum:
-               - `UTC`
-               - `REGIONAL_DATA_CENTER_TIME`
         """
         pulumi.set(__self__, "backup_type", backup_type)
         pulumi.set(__self__, "period", period)
@@ -8801,8 +8785,6 @@ class VolumeBackupPolicySchedule(dict):
         """
         (Updatable) Specifies what time zone is the schedule in
         enum:
-        - `UTC`
-        - `REGIONAL_DATA_CENTER_TIME`
         """
         return pulumi.get(self, "time_zone")
 
@@ -25462,9 +25444,6 @@ class GetNetworkSecurityGroupSecurityRulesSecurityRuleResult(dict):
         :param str protocol: The transport protocol. Specify either `all` or an IPv4 protocol number as defined in [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml). Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
         :param str source: Conceptually, this is the range of IP addresses that a packet coming into the instance can come from.
         :param str source_type: Type of source for the rule. Required if `direction` = `INGRESS`.
-               * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
-               * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
-               * `NETWORK_SECURITY_GROUP`: If the rule's `source` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param bool stateless: A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if egress traffic allows TCP destination port 80, there should be an ingress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
         :param Sequence['GetNetworkSecurityGroupSecurityRulesSecurityRuleTcpOptionArgs'] tcp_options: Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
         :param str time_created: The date and time the security rule was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -25564,9 +25543,6 @@ class GetNetworkSecurityGroupSecurityRulesSecurityRuleResult(dict):
     def source_type(self) -> str:
         """
         Type of source for the rule. Required if `direction` = `INGRESS`.
-        * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
-        * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
-        * `NETWORK_SECURITY_GROUP`: If the rule's `source` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         """
         return pulumi.get(self, "source_type")
 
@@ -26407,8 +26383,6 @@ class GetPublicIpsPublicIpResult(dict):
         :param str private_ip_id: Deprecated. Use `assignedEntityId` instead.
         :param str public_ip_pool_id: A filter to return only resources that belong to the given public IP pool.
         :param str scope: Whether the public IP is regional or specific to a particular availability domain.
-               * `REGION`: The public IP exists within a region and is assigned to a regional entity (such as a [NatGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NatGateway/)), or can be assigned to a private IP in any availability domain in the region. Reserved public IPs have `scope` = `REGION`, as do ephemeral public IPs assigned to a regional entity.
-               * `AVAILABILITY_DOMAIN`: The public IP exists within the availability domain of the entity it's assigned to, which is specified by the `availabilityDomain` property of the public IP object. Ephemeral public IPs that are assigned to private IPs have `scope` = `AVAILABILITY_DOMAIN`.
         :param str state: The public IP's current state.
         :param str time_created: The date and time the public IP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
@@ -26529,8 +26503,6 @@ class GetPublicIpsPublicIpResult(dict):
     def scope(self) -> str:
         """
         Whether the public IP is regional or specific to a particular availability domain.
-        * `REGION`: The public IP exists within a region and is assigned to a regional entity (such as a [NatGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NatGateway/)), or can be assigned to a private IP in any availability domain in the region. Reserved public IPs have `scope` = `REGION`, as do ephemeral public IPs assigned to a regional entity.
-        * `AVAILABILITY_DOMAIN`: The public IP exists within the availability domain of the entity it's assigned to, which is specified by the `availabilityDomain` property of the public IP object. Ephemeral public IPs that are assigned to private IPs have `scope` = `AVAILABILITY_DOMAIN`.
         """
         return pulumi.get(self, "scope")
 
@@ -26875,8 +26847,6 @@ class GetRouteTablesRouteTableRouteRuleResult(dict):
         :param str description: An optional description of your choice for the rule.
         :param str destination: Conceptually, this is the range of IP addresses used for matching when routing traffic. Required if you provide a `destinationType`.
         :param str destination_type: Type of destination for the rule. Required if you provide a `destination`.
-               * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
-               * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
         :param str network_entity_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the route rule's target. For information about the type of targets you can specify, see [Route Tables](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).
         """
         pulumi.set(__self__, "cidr_block", cidr_block)
@@ -26915,8 +26885,6 @@ class GetRouteTablesRouteTableRouteRuleResult(dict):
     def destination_type(self) -> str:
         """
         Type of destination for the rule. Required if you provide a `destination`.
-        * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
-        * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
         """
         return pulumi.get(self, "destination_type")
 
@@ -27359,8 +27327,6 @@ class GetSecurityListsSecurityListIngressSecurityRuleResult(dict):
         :param str protocol: The transport protocol. Specify either `all` or an IPv4 protocol number as defined in [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml). Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
         :param str source: Conceptually, this is the range of IP addresses that a packet coming into the instance can come from.
         :param str source_type: Type of source for the rule. The default is `CIDR_BLOCK`.
-               * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
-               * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
         :param bool stateless: A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if ingress traffic allows TCP destination port 80, there should be an egress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
         :param Sequence['GetSecurityListsSecurityListIngressSecurityRuleTcpOptionArgs'] tcp_options: Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed. 
                * The following 2 attributes specify an inclusive range of allowed destination ports. Use the same number for the min and max to indicate a single port. Defaults to all ports if not specified.
@@ -27415,8 +27381,6 @@ class GetSecurityListsSecurityListIngressSecurityRuleResult(dict):
     def source_type(self) -> str:
         """
         Type of source for the rule. The default is `CIDR_BLOCK`.
-        * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
-        * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
         """
         return pulumi.get(self, "source_type")
 

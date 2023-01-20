@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getResponderRecipe(args: GetResponderRecipeArgs, opts?: pulumi.InvokeOptions): Promise<GetResponderRecipeResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CloudGuard/getResponderRecipe:getResponderRecipe", {
         "responderRecipeId": args.responderRecipeId,
     }, opts);
@@ -108,9 +106,24 @@ export interface GetResponderRecipeResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Responder Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
+ *
+ * Get a ResponderRecipe by identifier
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testResponderRecipe = oci.CloudGuard.getResponderRecipe({
+ *     responderRecipeId: oci_cloud_guard_responder_recipe.test_responder_recipe.id,
+ * });
+ * ```
+ */
 export function getResponderRecipeOutput(args: GetResponderRecipeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetResponderRecipeResult> {
-    return pulumi.output(args).apply(a => getResponderRecipe(a, opts))
+    return pulumi.output(args).apply((a: any) => getResponderRecipe(a, opts))
 }
 
 /**

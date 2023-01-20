@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -30,11 +31,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCatalogTypes(args: GetCatalogTypesArgs, opts?: pulumi.InvokeOptions): Promise<GetCatalogTypesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataCatalog/getCatalogTypes:getCatalogTypes", {
         "catalogId": args.catalogId,
         "externalTypeName": args.externalTypeName,
@@ -139,9 +137,32 @@ export interface GetCatalogTypesResult {
      */
     readonly typeCollections: outputs.DataCatalog.GetCatalogTypesTypeCollection[];
 }
-
+/**
+ * This data source provides the list of Catalog Types in Oracle Cloud Infrastructure Data Catalog service.
+ *
+ * Returns a list of all types within a data catalog.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCatalogTypes = oci.DataCatalog.getCatalogTypes({
+ *     catalogId: oci_datacatalog_catalog.test_catalog.id,
+ *     externalTypeName: _var.catalog_type_external_type_name,
+ *     fields: _var.catalog_type_fields,
+ *     isApproved: _var.catalog_type_is_approved,
+ *     isInternal: _var.catalog_type_is_internal,
+ *     isTag: _var.catalog_type_is_tag,
+ *     name: _var.catalog_type_name,
+ *     state: _var.catalog_type_state,
+ *     typeCategory: _var.catalog_type_type_category,
+ * });
+ * ```
+ */
 export function getCatalogTypesOutput(args: GetCatalogTypesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCatalogTypesResult> {
-    return pulumi.output(args).apply(a => getCatalogTypes(a, opts))
+    return pulumi.output(args).apply((a: any) => getCatalogTypes(a, opts))
 }
 
 /**

@@ -42,7 +42,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAuditProfileAvailableAuditVolumesResult> InvokeAsync(GetAuditProfileAvailableAuditVolumesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAuditProfileAvailableAuditVolumesResult>("oci:DataSafe/getAuditProfileAvailableAuditVolumes:getAuditProfileAvailableAuditVolumes", args ?? new GetAuditProfileAvailableAuditVolumesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAuditProfileAvailableAuditVolumesResult>("oci:DataSafe/getAuditProfileAvailableAuditVolumes:getAuditProfileAvailableAuditVolumes", args ?? new GetAuditProfileAvailableAuditVolumesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Audit Profile Available Audit Volumes in Oracle Cloud Infrastructure Data Safe service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAuditProfileAvailableAuditVolumesResult> Invoke(GetAuditProfileAvailableAuditVolumesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAuditProfileAvailableAuditVolumesResult>("oci:DataSafe/getAuditProfileAvailableAuditVolumes:getAuditProfileAvailableAuditVolumes", args ?? new GetAuditProfileAvailableAuditVolumesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAuditProfileAvailableAuditVolumesResult>("oci:DataSafe/getAuditProfileAvailableAuditVolumes:getAuditProfileAvailableAuditVolumes", args ?? new GetAuditProfileAvailableAuditVolumesInvokeArgs(), options.WithDefaults());
     }
 
 

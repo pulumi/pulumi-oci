@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -27,11 +28,8 @@ import * as utilities from "../utilities";
  */
 export function getKnowledgebases(args?: GetKnowledgebasesArgs, opts?: pulumi.InvokeOptions): Promise<GetKnowledgebasesResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Adm/getKnowledgebases:getKnowledgebases", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -90,9 +88,28 @@ export interface GetKnowledgebasesResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Knowledge Bases in Oracle Cloud Infrastructure ADM service.
+ *
+ * Returns a list of KnowledgeBases based on the specified query parameters.
+ * At least id or compartmentId query parameter must be provided.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testKnowledgeBases = oci.Adm.getKnowledgebases({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.knowledge_base_display_name,
+ *     id: _var.knowledge_base_id,
+ *     state: _var.knowledge_base_state,
+ * });
+ * ```
+ */
 export function getKnowledgebasesOutput(args?: GetKnowledgebasesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetKnowledgebasesResult> {
-    return pulumi.output(args).apply(a => getKnowledgebases(a, opts))
+    return pulumi.output(args).apply((a: any) => getKnowledgebases(a, opts))
 }
 
 /**

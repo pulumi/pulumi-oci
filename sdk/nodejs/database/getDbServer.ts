@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDbServer(args: GetDbServerArgs, opts?: pulumi.InvokeOptions): Promise<GetDbServerResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getDbServer:getDbServer", {
         "dbServerId": args.dbServerId,
         "exadataInfrastructureId": args.exadataInfrastructureId,
@@ -114,6 +112,10 @@ export interface GetDbServerResult {
      */
     readonly memorySizeInGbs: number;
     /**
+     * The shape of the Db server. The shape determines the amount of CPU, storage, and memory resources available.
+     */
+    readonly shape: string;
+    /**
      * The current state of the Db server.
      */
     readonly state: string;
@@ -126,9 +128,25 @@ export interface GetDbServerResult {
      */
     readonly vmClusterIds: string[];
 }
-
+/**
+ * This data source provides details about a specific Db Server resource in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets information about the Exadata Db server.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDbServer = oci.Database.getDbServer({
+ *     dbServerId: oci_database_db_server.test_db_server.id,
+ *     exadataInfrastructureId: oci_database_exadata_infrastructure.test_exadata_infrastructure.id,
+ * });
+ * ```
+ */
 export function getDbServerOutput(args: GetDbServerOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbServerResult> {
-    return pulumi.output(args).apply(a => getDbServer(a, opts))
+    return pulumi.output(args).apply((a: any) => getDbServer(a, opts))
 }
 
 /**

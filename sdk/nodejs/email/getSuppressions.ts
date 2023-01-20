@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -27,11 +28,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSuppressions(args: GetSuppressionsArgs, opts?: pulumi.InvokeOptions): Promise<GetSuppressionsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Email/getSuppressions:getSuppressions", {
         "compartmentId": args.compartmentId,
         "emailAddress": args.emailAddress,
@@ -88,9 +86,29 @@ export interface GetSuppressionsResult {
     readonly timeCreatedGreaterThanOrEqualTo?: string;
     readonly timeCreatedLessThan?: string;
 }
-
+/**
+ * This data source provides the list of Suppressions in Oracle Cloud Infrastructure Email service.
+ *
+ * Gets a list of suppressed recipient email addresses for a user. The
+ * `compartmentId` for suppressions must be a tenancy OCID. The returned list
+ * is sorted by creation time in descending order.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSuppressions = oci.Email.getSuppressions({
+ *     compartmentId: _var.tenancy_ocid,
+ *     emailAddress: _var.suppression_email_address,
+ *     timeCreatedGreaterThanOrEqualTo: _var.suppression_time_created_greater_than_or_equal_to,
+ *     timeCreatedLessThan: _var.suppression_time_created_less_than,
+ * });
+ * ```
+ */
 export function getSuppressionsOutput(args: GetSuppressionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSuppressionsResult> {
-    return pulumi.output(args).apply(a => getSuppressions(a, opts))
+    return pulumi.output(args).apply((a: any) => getSuppressions(a, opts))
 }
 
 /**

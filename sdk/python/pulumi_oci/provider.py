@@ -333,13 +333,15 @@ class Provider(pulumi.ProviderResource):
             __props__.__dict__["disable_auto_retries"] = pulumi.Output.from_input(disable_auto_retries).apply(pulumi.runtime.to_json) if disable_auto_retries is not None else None
             __props__.__dict__["fingerprint"] = fingerprint
             __props__.__dict__["ignore_defined_tags"] = pulumi.Output.from_input(ignore_defined_tags).apply(pulumi.runtime.to_json) if ignore_defined_tags is not None else None
-            __props__.__dict__["private_key"] = private_key
-            __props__.__dict__["private_key_password"] = private_key_password
+            __props__.__dict__["private_key"] = None if private_key is None else pulumi.Output.secret(private_key)
+            __props__.__dict__["private_key_password"] = None if private_key_password is None else pulumi.Output.secret(private_key_password)
             __props__.__dict__["private_key_path"] = private_key_path
             __props__.__dict__["region"] = region
             __props__.__dict__["retry_duration_seconds"] = pulumi.Output.from_input(retry_duration_seconds).apply(pulumi.runtime.to_json) if retry_duration_seconds is not None else None
             __props__.__dict__["tenancy_ocid"] = tenancy_ocid
             __props__.__dict__["user_ocid"] = user_ocid
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["privateKey", "privateKeyPassword"])
+        opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(Provider, __self__).__init__(
             'oci',
             resource_name,

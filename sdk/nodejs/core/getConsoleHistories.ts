@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getConsoleHistories(args: GetConsoleHistoriesArgs, opts?: pulumi.InvokeOptions): Promise<GetConsoleHistoriesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getConsoleHistories:getConsoleHistories", {
         "availabilityDomain": args.availabilityDomain,
         "compartmentId": args.compartmentId,
@@ -92,9 +90,27 @@ export interface GetConsoleHistoriesResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Console Histories in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the console history metadata for the specified compartment or instance.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testConsoleHistories = oci.Core.getConsoleHistories({
+ *     compartmentId: _var.compartment_id,
+ *     availabilityDomain: _var.console_history_availability_domain,
+ *     instanceId: oci_core_instance.test_instance.id,
+ *     state: _var.console_history_state,
+ * });
+ * ```
+ */
 export function getConsoleHistoriesOutput(args: GetConsoleHistoriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetConsoleHistoriesResult> {
-    return pulumi.output(args).apply(a => getConsoleHistories(a, opts))
+    return pulumi.output(args).apply((a: any) => getConsoleHistories(a, opts))
 }
 
 /**

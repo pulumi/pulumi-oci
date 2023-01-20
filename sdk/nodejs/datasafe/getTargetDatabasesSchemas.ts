@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getTargetDatabasesSchemas(args: GetTargetDatabasesSchemasArgs, opts?: pulumi.InvokeOptions): Promise<GetTargetDatabasesSchemasResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getTargetDatabasesSchemas:getTargetDatabasesSchemas", {
         "filters": args.filters,
         "isOracleMaintained": args.isOracleMaintained,
@@ -86,9 +84,27 @@ export interface GetTargetDatabasesSchemasResult {
     readonly schemas: outputs.DataSafe.GetTargetDatabasesSchemasSchema[];
     readonly targetDatabaseId: string;
 }
-
+/**
+ * This data source provides the list of Target Databases Schemas in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Returns list of schema.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testTargetDatabasesSchemas = oci.DataSafe.getTargetDatabasesSchemas({
+ *     targetDatabaseId: oci_data_safe_target_database.test_target_database.id,
+ *     isOracleMaintained: _var.target_databases_schema_is_oracle_maintained,
+ *     schemaNames: _var.target_databases_schema_schema_name,
+ *     schemaNameContains: _var.target_databases_schema_schema_name_contains,
+ * });
+ * ```
+ */
 export function getTargetDatabasesSchemasOutput(args: GetTargetDatabasesSchemasOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTargetDatabasesSchemasResult> {
-    return pulumi.output(args).apply(a => getTargetDatabasesSchemas(a, opts))
+    return pulumi.output(args).apply((a: any) => getTargetDatabasesSchemas(a, opts))
 }
 
 /**

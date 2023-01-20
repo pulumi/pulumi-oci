@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Opsi
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetHostInsightResult> InvokeAsync(GetHostInsightArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetHostInsightResult>("oci:Opsi/getHostInsight:getHostInsight", args ?? new GetHostInsightArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetHostInsightResult>("oci:Opsi/getHostInsight:getHostInsight", args ?? new GetHostInsightArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Host Insight resource in Oracle Cloud Infrastructure Opsi service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Opsi
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetHostInsightResult> Invoke(GetHostInsightInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetHostInsightResult>("oci:Opsi/getHostInsight:getHostInsight", args ?? new GetHostInsightInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetHostInsightResult>("oci:Opsi/getHostInsight:getHostInsight", args ?? new GetHostInsightInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -105,7 +105,6 @@ namespace Pulumi.Oci.Opsi
     {
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        /// &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -182,7 +181,7 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         public readonly string PlatformName;
         /// <summary>
-        /// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+        /// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS].
         /// </summary>
         public readonly string PlatformType;
         /// <summary>

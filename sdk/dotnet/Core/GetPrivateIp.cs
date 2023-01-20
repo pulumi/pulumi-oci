@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetPrivateIpResult> InvokeAsync(GetPrivateIpArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetPrivateIpResult>("oci:Core/getPrivateIp:getPrivateIp", args ?? new GetPrivateIpArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetPrivateIpResult>("oci:Core/getPrivateIp:getPrivateIp", args ?? new GetPrivateIpArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Private Ip resource in Oracle Cloud Infrastructure Core service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetPrivateIpResult> Invoke(GetPrivateIpInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetPrivateIpResult>("oci:Core/getPrivateIp:getPrivateIp", args ?? new GetPrivateIpInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetPrivateIpResult>("oci:Core/getPrivateIp:getPrivateIp", args ?? new GetPrivateIpInvokeArgs(), options.WithDefaults());
     }
 
 

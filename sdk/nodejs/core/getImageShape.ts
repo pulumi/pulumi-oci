@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getImageShape(args: GetImageShapeArgs, opts?: pulumi.InvokeOptions): Promise<GetImageShapeResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getImageShape:getImageShape", {
         "imageId": args.imageId,
         "shapeName": args.shapeName,
@@ -74,9 +72,25 @@ export interface GetImageShapeResult {
     readonly shape: string;
     readonly shapeName: string;
 }
-
+/**
+ * This data source provides details about a specific Image Shape resource in Oracle Cloud Infrastructure Core service.
+ *
+ * Retrieves an image shape compatibility entry.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testImageShape = oci.Core.getImageShape({
+ *     imageId: oci_core_image.test_image.id,
+ *     shapeName: oci_core_shape.test_shape.name,
+ * });
+ * ```
+ */
 export function getImageShapeOutput(args: GetImageShapeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetImageShapeResult> {
-    return pulumi.output(args).apply(a => getImageShape(a, opts))
+    return pulumi.output(args).apply((a: any) => getImageShape(a, opts))
 }
 
 /**

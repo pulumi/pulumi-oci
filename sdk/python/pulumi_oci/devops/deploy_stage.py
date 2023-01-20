@@ -2465,7 +2465,7 @@ class DeployStage(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="valuesArtifactIds")
-    def values_artifact_ids(self) -> pulumi.Output[Sequence[str]]:
+    def values_artifact_ids(self) -> pulumi.Output[Optional[Sequence[str]]]:
         """
         (Updatable) List of values.yaml file artifact OCIDs.
         """

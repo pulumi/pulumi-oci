@@ -25,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getGroup(args: GetGroupArgs, opts?: pulumi.InvokeOptions): Promise<GetGroupResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getGroup:getGroup", {
         "groupId": args.groupId,
     }, opts);
@@ -87,9 +84,28 @@ export interface GetGroupResult {
      */
     readonly timeCreated: string;
 }
-
+/**
+ * This data source provides details about a specific Group resource in Oracle Cloud Infrastructure Identity service.
+ *
+ * Gets the specified group's information.
+ *
+ * This operation does not return a list of all the users in the group. To do that, use
+ * [ListUserGroupMemberships](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/UserGroupMembership/ListUserGroupMemberships) and
+ * provide the group's OCID as a query parameter in the request.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testGroup = oci.Identity.getGroup({
+ *     groupId: oci_identity_group.test_group.id,
+ * });
+ * ```
+ */
 export function getGroupOutput(args: GetGroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetGroupResult> {
-    return pulumi.output(args).apply(a => getGroup(a, opts))
+    return pulumi.output(args).apply((a: any) => getGroup(a, opts))
 }
 
 /**

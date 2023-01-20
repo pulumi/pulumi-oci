@@ -187,6 +187,10 @@ namespace Pulumi.Oci.VisualBuilder
             var defaultOptions = new CustomResourceOptions
             {
                 Version = Utilities.Version,
+                AdditionalSecretOutputs =
+                {
+                    "idcsOpenId",
+                },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -270,11 +274,21 @@ namespace Pulumi.Oci.VisualBuilder
             set => _freeformTags = value;
         }
 
+        [Input("idcsOpenId")]
+        private Input<string>? _idcsOpenId;
+
         /// <summary>
         /// (Updatable) Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
         /// </summary>
-        [Input("idcsOpenId")]
-        public Input<string>? IdcsOpenId { get; set; }
+        public Input<string>? IdcsOpenId
+        {
+            get => _idcsOpenId;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _idcsOpenId = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// (Updatable) Visual Builder is enabled or not.
@@ -356,11 +370,21 @@ namespace Pulumi.Oci.VisualBuilder
             set => _freeformTags = value;
         }
 
+        [Input("idcsOpenId")]
+        private Input<string>? _idcsOpenId;
+
         /// <summary>
         /// (Updatable) Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
         /// </summary>
-        [Input("idcsOpenId")]
-        public Input<string>? IdcsOpenId { get; set; }
+        public Input<string>? IdcsOpenId
+        {
+            get => _idcsOpenId;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _idcsOpenId = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// The Vb Instance URL.

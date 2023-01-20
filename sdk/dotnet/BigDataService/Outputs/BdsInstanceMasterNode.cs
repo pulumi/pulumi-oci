@@ -16,7 +16,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// <summary>
         /// The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
         /// </summary>
-        public readonly string BlockVolumeSizeInGbs;
+        public readonly string? BlockVolumeSizeInGbs;
         /// <summary>
         /// The amount of worker nodes should be created
         /// </summary>
@@ -36,7 +36,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
 
         [OutputConstructor]
         private BdsInstanceMasterNode(
-            string blockVolumeSizeInGbs,
+            string? blockVolumeSizeInGbs,
 
             int numberOfNodes,
 

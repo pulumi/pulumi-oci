@@ -23,6 +23,10 @@ import com.pulumi.oci.DataFlow.inputs.GetRunLogArgs;
 import com.pulumi.oci.DataFlow.inputs.GetRunLogPlainArgs;
 import com.pulumi.oci.DataFlow.inputs.GetRunLogsArgs;
 import com.pulumi.oci.DataFlow.inputs.GetRunLogsPlainArgs;
+import com.pulumi.oci.DataFlow.inputs.GetRunStatementArgs;
+import com.pulumi.oci.DataFlow.inputs.GetRunStatementPlainArgs;
+import com.pulumi.oci.DataFlow.inputs.GetRunStatementsArgs;
+import com.pulumi.oci.DataFlow.inputs.GetRunStatementsPlainArgs;
 import com.pulumi.oci.DataFlow.outputs.GetApplicationResult;
 import com.pulumi.oci.DataFlow.outputs.GetApplicationsResult;
 import com.pulumi.oci.DataFlow.outputs.GetInvokeRunResult;
@@ -31,6 +35,8 @@ import com.pulumi.oci.DataFlow.outputs.GetPrivateEndpointResult;
 import com.pulumi.oci.DataFlow.outputs.GetPrivateEndpointsResult;
 import com.pulumi.oci.DataFlow.outputs.GetRunLogResult;
 import com.pulumi.oci.DataFlow.outputs.GetRunLogsResult;
+import com.pulumi.oci.DataFlow.outputs.GetRunStatementResult;
+import com.pulumi.oci.DataFlow.outputs.GetRunStatementsResult;
 import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
@@ -1342,5 +1348,325 @@ public final class DataFlowFunctions {
      */
     public static CompletableFuture<GetRunLogsResult> getRunLogsPlain(GetRunLogsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataFlow/getRunLogs:getRunLogs", TypeShape.of(GetRunLogsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Run Statement resource in Oracle Cloud Infrastructure Data Flow service.
+     * 
+     * Retrieves the statement corresponding to the `statementId` for a Session run specified by `runId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetRunStatementArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRunStatement = DataFlowFunctions.getRunStatement(GetRunStatementArgs.builder()
+     *             .runId(oci_dataflow_run.test_run().id())
+     *             .statementId(oci_dataflow_statement.test_statement().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetRunStatementResult> getRunStatement(GetRunStatementArgs args) {
+        return getRunStatement(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Run Statement resource in Oracle Cloud Infrastructure Data Flow service.
+     * 
+     * Retrieves the statement corresponding to the `statementId` for a Session run specified by `runId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetRunStatementArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRunStatement = DataFlowFunctions.getRunStatement(GetRunStatementArgs.builder()
+     *             .runId(oci_dataflow_run.test_run().id())
+     *             .statementId(oci_dataflow_statement.test_statement().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetRunStatementResult> getRunStatementPlain(GetRunStatementPlainArgs args) {
+        return getRunStatementPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Run Statement resource in Oracle Cloud Infrastructure Data Flow service.
+     * 
+     * Retrieves the statement corresponding to the `statementId` for a Session run specified by `runId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetRunStatementArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRunStatement = DataFlowFunctions.getRunStatement(GetRunStatementArgs.builder()
+     *             .runId(oci_dataflow_run.test_run().id())
+     *             .statementId(oci_dataflow_statement.test_statement().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetRunStatementResult> getRunStatement(GetRunStatementArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataFlow/getRunStatement:getRunStatement", TypeShape.of(GetRunStatementResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Run Statement resource in Oracle Cloud Infrastructure Data Flow service.
+     * 
+     * Retrieves the statement corresponding to the `statementId` for a Session run specified by `runId`.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetRunStatementArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRunStatement = DataFlowFunctions.getRunStatement(GetRunStatementArgs.builder()
+     *             .runId(oci_dataflow_run.test_run().id())
+     *             .statementId(oci_dataflow_statement.test_statement().id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetRunStatementResult> getRunStatementPlain(GetRunStatementPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataFlow/getRunStatement:getRunStatement", TypeShape.of(GetRunStatementResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Run Statements in Oracle Cloud Infrastructure Data Flow service.
+     * 
+     * Lists all statements for a Session run.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetRunStatementsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRunStatements = DataFlowFunctions.getRunStatements(GetRunStatementsArgs.builder()
+     *             .runId(oci_dataflow_run.test_run().id())
+     *             .state(var_.run_statement_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetRunStatementsResult> getRunStatements(GetRunStatementsArgs args) {
+        return getRunStatements(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Run Statements in Oracle Cloud Infrastructure Data Flow service.
+     * 
+     * Lists all statements for a Session run.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetRunStatementsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRunStatements = DataFlowFunctions.getRunStatements(GetRunStatementsArgs.builder()
+     *             .runId(oci_dataflow_run.test_run().id())
+     *             .state(var_.run_statement_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetRunStatementsResult> getRunStatementsPlain(GetRunStatementsPlainArgs args) {
+        return getRunStatementsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Run Statements in Oracle Cloud Infrastructure Data Flow service.
+     * 
+     * Lists all statements for a Session run.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetRunStatementsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRunStatements = DataFlowFunctions.getRunStatements(GetRunStatementsArgs.builder()
+     *             .runId(oci_dataflow_run.test_run().id())
+     *             .state(var_.run_statement_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetRunStatementsResult> getRunStatements(GetRunStatementsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataFlow/getRunStatements:getRunStatements", TypeShape.of(GetRunStatementsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Run Statements in Oracle Cloud Infrastructure Data Flow service.
+     * 
+     * Lists all statements for a Session run.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataFlow.DataFlowFunctions;
+     * import com.pulumi.oci.DataFlow.inputs.GetRunStatementsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testRunStatements = DataFlowFunctions.getRunStatements(GetRunStatementsArgs.builder()
+     *             .runId(oci_dataflow_run.test_run().id())
+     *             .state(var_.run_statement_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetRunStatementsResult> getRunStatementsPlain(GetRunStatementsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataFlow/getRunStatements:getRunStatements", TypeShape.of(GetRunStatementsResult.class), args, Utilities.withVersion(options));
     }
 }

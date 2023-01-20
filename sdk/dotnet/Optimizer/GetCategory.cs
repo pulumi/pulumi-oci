@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Optimizer
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetCategoryResult> InvokeAsync(GetCategoryArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetCategoryResult>("oci:Optimizer/getCategory:getCategory", args ?? new GetCategoryArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetCategoryResult>("oci:Optimizer/getCategory:getCategory", args ?? new GetCategoryArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Category resource in Oracle Cloud Infrastructure Optimizer service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Optimizer
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetCategoryResult> Invoke(GetCategoryInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetCategoryResult>("oci:Optimizer/getCategory:getCategory", args ?? new GetCategoryInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetCategoryResult>("oci:Optimizer/getCategory:getCategory", args ?? new GetCategoryInvokeArgs(), options.WithDefaults());
     }
 
 

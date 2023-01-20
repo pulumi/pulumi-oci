@@ -358,11 +358,13 @@ class FusionEnvironmentAdminUser(pulumi.CustomResource):
             __props__.__dict__["last_name"] = last_name
             if password is None and not opts.urn:
                 raise TypeError("Missing required property 'password'")
-            __props__.__dict__["password"] = password
+            __props__.__dict__["password"] = None if password is None else pulumi.Output.secret(password)
             if username is None and not opts.urn:
                 raise TypeError("Missing required property 'username'")
             __props__.__dict__["username"] = username
             __props__.__dict__["items"] = None
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["password"])
+        opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(FusionEnvironmentAdminUser, __self__).__init__(
             'oci:FusionApps/fusionEnvironmentAdminUser:FusionEnvironmentAdminUser',
             resource_name,

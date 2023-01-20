@@ -22,7 +22,7 @@ class GetAutonomousVmClusterResult:
     """
     A collection of values returned by getAutonomousVmCluster.
     """
-    def __init__(__self__, autonomous_data_storage_size_in_tbs=None, autonomous_vm_cluster_id=None, available_autonomous_data_storage_size_in_tbs=None, available_container_databases=None, available_cpus=None, available_data_storage_size_in_tbs=None, compartment_id=None, cpu_core_count_per_node=None, cpus_enabled=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, defined_tags=None, display_name=None, exadata_infrastructure_id=None, freeform_tags=None, id=None, is_local_backup_enabled=None, last_maintenance_run_id=None, license_model=None, lifecycle_details=None, maintenance_window_details=None, maintenance_windows=None, memory_per_oracle_compute_unit_in_gbs=None, memory_size_in_gbs=None, next_maintenance_run_id=None, ocpus_enabled=None, reclaimable_cpus=None, state=None, time_created=None, time_zone=None, total_container_databases=None, vm_cluster_network_id=None):
+    def __init__(__self__, autonomous_data_storage_size_in_tbs=None, autonomous_vm_cluster_id=None, available_autonomous_data_storage_size_in_tbs=None, available_container_databases=None, available_cpus=None, available_data_storage_size_in_tbs=None, compartment_id=None, cpu_core_count_per_node=None, cpus_enabled=None, data_storage_size_in_gb=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, defined_tags=None, display_name=None, exadata_infrastructure_id=None, freeform_tags=None, id=None, is_local_backup_enabled=None, is_mtls_enabled=None, last_maintenance_run_id=None, license_model=None, lifecycle_details=None, maintenance_window_details=None, maintenance_windows=None, memory_per_oracle_compute_unit_in_gbs=None, memory_size_in_gbs=None, next_maintenance_run_id=None, ocpus_enabled=None, reclaimable_cpus=None, scan_listener_port_non_tls=None, scan_listener_port_tls=None, state=None, time_created=None, time_zone=None, total_container_databases=None, vm_cluster_network_id=None):
         if autonomous_data_storage_size_in_tbs and not isinstance(autonomous_data_storage_size_in_tbs, float):
             raise TypeError("Expected argument 'autonomous_data_storage_size_in_tbs' to be a float")
         pulumi.set(__self__, "autonomous_data_storage_size_in_tbs", autonomous_data_storage_size_in_tbs)
@@ -77,6 +77,9 @@ class GetAutonomousVmClusterResult:
         if is_local_backup_enabled and not isinstance(is_local_backup_enabled, bool):
             raise TypeError("Expected argument 'is_local_backup_enabled' to be a bool")
         pulumi.set(__self__, "is_local_backup_enabled", is_local_backup_enabled)
+        if is_mtls_enabled and not isinstance(is_mtls_enabled, bool):
+            raise TypeError("Expected argument 'is_mtls_enabled' to be a bool")
+        pulumi.set(__self__, "is_mtls_enabled", is_mtls_enabled)
         if last_maintenance_run_id and not isinstance(last_maintenance_run_id, str):
             raise TypeError("Expected argument 'last_maintenance_run_id' to be a str")
         pulumi.set(__self__, "last_maintenance_run_id", last_maintenance_run_id)
@@ -107,6 +110,12 @@ class GetAutonomousVmClusterResult:
         if reclaimable_cpus and not isinstance(reclaimable_cpus, int):
             raise TypeError("Expected argument 'reclaimable_cpus' to be a int")
         pulumi.set(__self__, "reclaimable_cpus", reclaimable_cpus)
+        if scan_listener_port_non_tls and not isinstance(scan_listener_port_non_tls, int):
+            raise TypeError("Expected argument 'scan_listener_port_non_tls' to be a int")
+        pulumi.set(__self__, "scan_listener_port_non_tls", scan_listener_port_non_tls)
+        if scan_listener_port_tls and not isinstance(scan_listener_port_tls, int):
+            raise TypeError("Expected argument 'scan_listener_port_tls' to be a int")
+        pulumi.set(__self__, "scan_listener_port_tls", scan_listener_port_tls)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -180,7 +189,7 @@ class GetAutonomousVmClusterResult:
     @pulumi.getter(name="cpuCoreCountPerNode")
     def cpu_core_count_per_node(self) -> int:
         """
-        The number of OCPU cores enabled per VM cluster node.
+        The number of CPU cores enabled per VM cluster node.
         """
         return pulumi.get(self, "cpu_core_count_per_node")
 
@@ -265,6 +274,14 @@ class GetAutonomousVmClusterResult:
         return pulumi.get(self, "is_local_backup_enabled")
 
     @property
+    @pulumi.getter(name="isMtlsEnabled")
+    def is_mtls_enabled(self) -> bool:
+        """
+        Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
+        """
+        return pulumi.get(self, "is_mtls_enabled")
+
+    @property
     @pulumi.getter(name="lastMaintenanceRunId")
     def last_maintenance_run_id(self) -> str:
         """
@@ -342,6 +359,22 @@ class GetAutonomousVmClusterResult:
         return pulumi.get(self, "reclaimable_cpus")
 
     @property
+    @pulumi.getter(name="scanListenerPortNonTls")
+    def scan_listener_port_non_tls(self) -> int:
+        """
+        The SCAN Listener Non TLS port number. Default value is 1521.
+        """
+        return pulumi.get(self, "scan_listener_port_non_tls")
+
+    @property
+    @pulumi.getter(name="scanListenerPortTls")
+    def scan_listener_port_tls(self) -> int:
+        """
+        The SCAN Listener TLS port number. Default value is 2484.
+        """
+        return pulumi.get(self, "scan_listener_port_tls")
+
+    @property
     @pulumi.getter
     def state(self) -> str:
         """
@@ -406,6 +439,7 @@ class AwaitableGetAutonomousVmClusterResult(GetAutonomousVmClusterResult):
             freeform_tags=self.freeform_tags,
             id=self.id,
             is_local_backup_enabled=self.is_local_backup_enabled,
+            is_mtls_enabled=self.is_mtls_enabled,
             last_maintenance_run_id=self.last_maintenance_run_id,
             license_model=self.license_model,
             lifecycle_details=self.lifecycle_details,
@@ -416,6 +450,8 @@ class AwaitableGetAutonomousVmClusterResult(GetAutonomousVmClusterResult):
             next_maintenance_run_id=self.next_maintenance_run_id,
             ocpus_enabled=self.ocpus_enabled,
             reclaimable_cpus=self.reclaimable_cpus,
+            scan_listener_port_non_tls=self.scan_listener_port_non_tls,
+            scan_listener_port_tls=self.scan_listener_port_tls,
             state=self.state,
             time_created=self.time_created,
             time_zone=self.time_zone,
@@ -466,6 +502,7 @@ def get_autonomous_vm_cluster(autonomous_vm_cluster_id: Optional[str] = None,
         freeform_tags=__ret__.freeform_tags,
         id=__ret__.id,
         is_local_backup_enabled=__ret__.is_local_backup_enabled,
+        is_mtls_enabled=__ret__.is_mtls_enabled,
         last_maintenance_run_id=__ret__.last_maintenance_run_id,
         license_model=__ret__.license_model,
         lifecycle_details=__ret__.lifecycle_details,
@@ -476,6 +513,8 @@ def get_autonomous_vm_cluster(autonomous_vm_cluster_id: Optional[str] = None,
         next_maintenance_run_id=__ret__.next_maintenance_run_id,
         ocpus_enabled=__ret__.ocpus_enabled,
         reclaimable_cpus=__ret__.reclaimable_cpus,
+        scan_listener_port_non_tls=__ret__.scan_listener_port_non_tls,
+        scan_listener_port_tls=__ret__.scan_listener_port_tls,
         state=__ret__.state,
         time_created=__ret__.time_created,
         time_zone=__ret__.time_zone,

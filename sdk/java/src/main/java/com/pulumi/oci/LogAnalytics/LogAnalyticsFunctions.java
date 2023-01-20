@@ -38,11 +38,19 @@ import com.pulumi.oci.LogAnalytics.inputs.GetLogAnalyticsUnprocessedDataBucketPl
 import com.pulumi.oci.LogAnalytics.inputs.GetLogSetsCountArgs;
 import com.pulumi.oci.LogAnalytics.inputs.GetLogSetsCountPlainArgs;
 import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceArgs;
+import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceIngestTimeRuleArgs;
+import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceIngestTimeRulePlainArgs;
+import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceIngestTimeRulesArgs;
+import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceIngestTimeRulesPlainArgs;
 import com.pulumi.oci.LogAnalytics.inputs.GetNamespacePlainArgs;
+import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceRulesArgs;
+import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceRulesPlainArgs;
 import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceScheduledTaskArgs;
 import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceScheduledTaskPlainArgs;
 import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceScheduledTasksArgs;
 import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceScheduledTasksPlainArgs;
+import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageEncryptionKeyInfoArgs;
+import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageEncryptionKeyInfoPlainArgs;
 import com.pulumi.oci.LogAnalytics.inputs.GetNamespacesArgs;
 import com.pulumi.oci.LogAnalytics.inputs.GetNamespacesPlainArgs;
 import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsCategoriesListResult;
@@ -60,9 +68,13 @@ import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsPreferenceResult;
 import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsResourceCategoriesListResult;
 import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsUnprocessedDataBucketResult;
 import com.pulumi.oci.LogAnalytics.outputs.GetLogSetsCountResult;
+import com.pulumi.oci.LogAnalytics.outputs.GetNamespaceIngestTimeRuleResult;
+import com.pulumi.oci.LogAnalytics.outputs.GetNamespaceIngestTimeRulesResult;
 import com.pulumi.oci.LogAnalytics.outputs.GetNamespaceResult;
+import com.pulumi.oci.LogAnalytics.outputs.GetNamespaceRulesResult;
 import com.pulumi.oci.LogAnalytics.outputs.GetNamespaceScheduledTaskResult;
 import com.pulumi.oci.LogAnalytics.outputs.GetNamespaceScheduledTasksResult;
+import com.pulumi.oci.LogAnalytics.outputs.GetNamespaceStorageEncryptionKeyInfoResult;
 import com.pulumi.oci.LogAnalytics.outputs.GetNamespacesResult;
 import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
@@ -2685,6 +2697,518 @@ public final class LogAnalyticsFunctions {
         return Deployment.getInstance().invokeAsync("oci:LogAnalytics/getNamespace:getNamespace", TypeShape.of(GetNamespaceResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides details about a specific Namespace Ingest Time Rule resource in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Gets detailed information about the specified ingest time rule such as description, defined tags, and free-form tags.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceIngestTimeRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceIngestTimeRule = LogAnalyticsFunctions.getNamespaceIngestTimeRule(GetNamespaceIngestTimeRuleArgs.builder()
+     *             .ingestTimeRuleId(oci_events_rule.test_rule().id())
+     *             .namespace(var_.namespace_ingest_time_rule_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNamespaceIngestTimeRuleResult> getNamespaceIngestTimeRule(GetNamespaceIngestTimeRuleArgs args) {
+        return getNamespaceIngestTimeRule(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Namespace Ingest Time Rule resource in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Gets detailed information about the specified ingest time rule such as description, defined tags, and free-form tags.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceIngestTimeRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceIngestTimeRule = LogAnalyticsFunctions.getNamespaceIngestTimeRule(GetNamespaceIngestTimeRuleArgs.builder()
+     *             .ingestTimeRuleId(oci_events_rule.test_rule().id())
+     *             .namespace(var_.namespace_ingest_time_rule_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNamespaceIngestTimeRuleResult> getNamespaceIngestTimeRulePlain(GetNamespaceIngestTimeRulePlainArgs args) {
+        return getNamespaceIngestTimeRulePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Namespace Ingest Time Rule resource in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Gets detailed information about the specified ingest time rule such as description, defined tags, and free-form tags.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceIngestTimeRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceIngestTimeRule = LogAnalyticsFunctions.getNamespaceIngestTimeRule(GetNamespaceIngestTimeRuleArgs.builder()
+     *             .ingestTimeRuleId(oci_events_rule.test_rule().id())
+     *             .namespace(var_.namespace_ingest_time_rule_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNamespaceIngestTimeRuleResult> getNamespaceIngestTimeRule(GetNamespaceIngestTimeRuleArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:LogAnalytics/getNamespaceIngestTimeRule:getNamespaceIngestTimeRule", TypeShape.of(GetNamespaceIngestTimeRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Namespace Ingest Time Rule resource in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Gets detailed information about the specified ingest time rule such as description, defined tags, and free-form tags.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceIngestTimeRuleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceIngestTimeRule = LogAnalyticsFunctions.getNamespaceIngestTimeRule(GetNamespaceIngestTimeRuleArgs.builder()
+     *             .ingestTimeRuleId(oci_events_rule.test_rule().id())
+     *             .namespace(var_.namespace_ingest_time_rule_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNamespaceIngestTimeRuleResult> getNamespaceIngestTimeRulePlain(GetNamespaceIngestTimeRulePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:LogAnalytics/getNamespaceIngestTimeRule:getNamespaceIngestTimeRule", TypeShape.of(GetNamespaceIngestTimeRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Namespace Ingest Time Rules in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Returns a list of ingest time rules in a compartment. You may limit the number of rules, provide sorting options, and filter the results.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceIngestTimeRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceIngestTimeRules = LogAnalyticsFunctions.getNamespaceIngestTimeRules(GetNamespaceIngestTimeRulesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .namespace(var_.namespace_ingest_time_rule_namespace())
+     *             .conditionKind(var_.namespace_ingest_time_rule_condition_kind())
+     *             .displayName(var_.namespace_ingest_time_rule_display_name())
+     *             .fieldName(var_.namespace_ingest_time_rule_field_name())
+     *             .fieldValue(var_.namespace_ingest_time_rule_field_value())
+     *             .state(var_.namespace_ingest_time_rule_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNamespaceIngestTimeRulesResult> getNamespaceIngestTimeRules(GetNamespaceIngestTimeRulesArgs args) {
+        return getNamespaceIngestTimeRules(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Namespace Ingest Time Rules in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Returns a list of ingest time rules in a compartment. You may limit the number of rules, provide sorting options, and filter the results.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceIngestTimeRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceIngestTimeRules = LogAnalyticsFunctions.getNamespaceIngestTimeRules(GetNamespaceIngestTimeRulesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .namespace(var_.namespace_ingest_time_rule_namespace())
+     *             .conditionKind(var_.namespace_ingest_time_rule_condition_kind())
+     *             .displayName(var_.namespace_ingest_time_rule_display_name())
+     *             .fieldName(var_.namespace_ingest_time_rule_field_name())
+     *             .fieldValue(var_.namespace_ingest_time_rule_field_value())
+     *             .state(var_.namespace_ingest_time_rule_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNamespaceIngestTimeRulesResult> getNamespaceIngestTimeRulesPlain(GetNamespaceIngestTimeRulesPlainArgs args) {
+        return getNamespaceIngestTimeRulesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Namespace Ingest Time Rules in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Returns a list of ingest time rules in a compartment. You may limit the number of rules, provide sorting options, and filter the results.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceIngestTimeRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceIngestTimeRules = LogAnalyticsFunctions.getNamespaceIngestTimeRules(GetNamespaceIngestTimeRulesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .namespace(var_.namespace_ingest_time_rule_namespace())
+     *             .conditionKind(var_.namespace_ingest_time_rule_condition_kind())
+     *             .displayName(var_.namespace_ingest_time_rule_display_name())
+     *             .fieldName(var_.namespace_ingest_time_rule_field_name())
+     *             .fieldValue(var_.namespace_ingest_time_rule_field_value())
+     *             .state(var_.namespace_ingest_time_rule_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNamespaceIngestTimeRulesResult> getNamespaceIngestTimeRules(GetNamespaceIngestTimeRulesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:LogAnalytics/getNamespaceIngestTimeRules:getNamespaceIngestTimeRules", TypeShape.of(GetNamespaceIngestTimeRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Namespace Ingest Time Rules in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Returns a list of ingest time rules in a compartment. You may limit the number of rules, provide sorting options, and filter the results.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceIngestTimeRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceIngestTimeRules = LogAnalyticsFunctions.getNamespaceIngestTimeRules(GetNamespaceIngestTimeRulesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .namespace(var_.namespace_ingest_time_rule_namespace())
+     *             .conditionKind(var_.namespace_ingest_time_rule_condition_kind())
+     *             .displayName(var_.namespace_ingest_time_rule_display_name())
+     *             .fieldName(var_.namespace_ingest_time_rule_field_name())
+     *             .fieldValue(var_.namespace_ingest_time_rule_field_value())
+     *             .state(var_.namespace_ingest_time_rule_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNamespaceIngestTimeRulesResult> getNamespaceIngestTimeRulesPlain(GetNamespaceIngestTimeRulesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:LogAnalytics/getNamespaceIngestTimeRules:getNamespaceIngestTimeRules", TypeShape.of(GetNamespaceIngestTimeRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Namespace Rules in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Returns a list of ingest time rules and scheduled tasks in a compartment. You may limit the number of items returned, provide sorting options, and filter the results.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceRules = LogAnalyticsFunctions.getNamespaceRules(GetNamespaceRulesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .namespace(var_.namespace_rule_namespace())
+     *             .displayName(var_.namespace_rule_display_name())
+     *             .kind(var_.namespace_rule_kind())
+     *             .state(var_.namespace_rule_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNamespaceRulesResult> getNamespaceRules(GetNamespaceRulesArgs args) {
+        return getNamespaceRules(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Namespace Rules in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Returns a list of ingest time rules and scheduled tasks in a compartment. You may limit the number of items returned, provide sorting options, and filter the results.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceRules = LogAnalyticsFunctions.getNamespaceRules(GetNamespaceRulesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .namespace(var_.namespace_rule_namespace())
+     *             .displayName(var_.namespace_rule_display_name())
+     *             .kind(var_.namespace_rule_kind())
+     *             .state(var_.namespace_rule_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNamespaceRulesResult> getNamespaceRulesPlain(GetNamespaceRulesPlainArgs args) {
+        return getNamespaceRulesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Namespace Rules in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Returns a list of ingest time rules and scheduled tasks in a compartment. You may limit the number of items returned, provide sorting options, and filter the results.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceRules = LogAnalyticsFunctions.getNamespaceRules(GetNamespaceRulesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .namespace(var_.namespace_rule_namespace())
+     *             .displayName(var_.namespace_rule_display_name())
+     *             .kind(var_.namespace_rule_kind())
+     *             .state(var_.namespace_rule_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNamespaceRulesResult> getNamespaceRules(GetNamespaceRulesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:LogAnalytics/getNamespaceRules:getNamespaceRules", TypeShape.of(GetNamespaceRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Namespace Rules in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * Returns a list of ingest time rules and scheduled tasks in a compartment. You may limit the number of items returned, provide sorting options, and filter the results.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceRulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceRules = LogAnalyticsFunctions.getNamespaceRules(GetNamespaceRulesArgs.builder()
+     *             .compartmentId(var_.compartment_id())
+     *             .namespace(var_.namespace_rule_namespace())
+     *             .displayName(var_.namespace_rule_display_name())
+     *             .kind(var_.namespace_rule_kind())
+     *             .state(var_.namespace_rule_state())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNamespaceRulesResult> getNamespaceRulesPlain(GetNamespaceRulesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:LogAnalytics/getNamespaceRules:getNamespaceRules", TypeShape.of(GetNamespaceRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides details about a specific Namespace Scheduled Task resource in Oracle Cloud Infrastructure Log Analytics service.
      * 
      * Get the scheduled task for the specified task identifier.
@@ -3011,6 +3535,162 @@ public final class LogAnalyticsFunctions {
      */
     public static CompletableFuture<GetNamespaceScheduledTasksResult> getNamespaceScheduledTasksPlain(GetNamespaceScheduledTasksPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:LogAnalytics/getNamespaceScheduledTasks:getNamespaceScheduledTasks", TypeShape.of(GetNamespaceScheduledTasksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Namespace Storage Encryption Key Info resource in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * This API returns the list of customer owned encryption key info.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageEncryptionKeyInfoArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceStorageEncryptionKeyInfo = LogAnalyticsFunctions.getNamespaceStorageEncryptionKeyInfo(GetNamespaceStorageEncryptionKeyInfoArgs.builder()
+     *             .namespace(var_.namespace_storage_encryption_key_info_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNamespaceStorageEncryptionKeyInfoResult> getNamespaceStorageEncryptionKeyInfo(GetNamespaceStorageEncryptionKeyInfoArgs args) {
+        return getNamespaceStorageEncryptionKeyInfo(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Namespace Storage Encryption Key Info resource in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * This API returns the list of customer owned encryption key info.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageEncryptionKeyInfoArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceStorageEncryptionKeyInfo = LogAnalyticsFunctions.getNamespaceStorageEncryptionKeyInfo(GetNamespaceStorageEncryptionKeyInfoArgs.builder()
+     *             .namespace(var_.namespace_storage_encryption_key_info_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNamespaceStorageEncryptionKeyInfoResult> getNamespaceStorageEncryptionKeyInfoPlain(GetNamespaceStorageEncryptionKeyInfoPlainArgs args) {
+        return getNamespaceStorageEncryptionKeyInfoPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Namespace Storage Encryption Key Info resource in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * This API returns the list of customer owned encryption key info.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageEncryptionKeyInfoArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceStorageEncryptionKeyInfo = LogAnalyticsFunctions.getNamespaceStorageEncryptionKeyInfo(GetNamespaceStorageEncryptionKeyInfoArgs.builder()
+     *             .namespace(var_.namespace_storage_encryption_key_info_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static Output<GetNamespaceStorageEncryptionKeyInfoResult> getNamespaceStorageEncryptionKeyInfo(GetNamespaceStorageEncryptionKeyInfoArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:LogAnalytics/getNamespaceStorageEncryptionKeyInfo:getNamespaceStorageEncryptionKeyInfo", TypeShape.of(GetNamespaceStorageEncryptionKeyInfoResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Namespace Storage Encryption Key Info resource in Oracle Cloud Infrastructure Log Analytics service.
+     * 
+     * This API returns the list of customer owned encryption key info.
+     * 
+     * ## Example Usage
+     * ```java
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.LogAnalytics.LogAnalyticsFunctions;
+     * import com.pulumi.oci.LogAnalytics.inputs.GetNamespaceStorageEncryptionKeyInfoArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNamespaceStorageEncryptionKeyInfo = LogAnalyticsFunctions.getNamespaceStorageEncryptionKeyInfo(GetNamespaceStorageEncryptionKeyInfoArgs.builder()
+     *             .namespace(var_.namespace_storage_encryption_key_info_namespace())
+     *             .build());
+     * 
+     *     }
+     * }
+     * ```
+     * 
+     */
+    public static CompletableFuture<GetNamespaceStorageEncryptionKeyInfoResult> getNamespaceStorageEncryptionKeyInfoPlain(GetNamespaceStorageEncryptionKeyInfoPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:LogAnalytics/getNamespaceStorageEncryptionKeyInfo:getNamespaceStorageEncryptionKeyInfo", TypeShape.of(GetNamespaceStorageEncryptionKeyInfoResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Namespaces in Oracle Cloud Infrastructure Log Analytics service.

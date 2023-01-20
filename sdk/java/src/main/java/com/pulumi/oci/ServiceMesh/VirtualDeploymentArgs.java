@@ -100,15 +100,15 @@ public final class VirtualDeploymentArgs extends com.pulumi.resources.ResourceAr
      * (Updatable) The listeners for the virtual deployment.
      * 
      */
-    @Import(name="listeners", required=true)
-    private Output<List<VirtualDeploymentListenerArgs>> listeners;
+    @Import(name="listeners")
+    private @Nullable Output<List<VirtualDeploymentListenerArgs>> listeners;
 
     /**
      * @return (Updatable) The listeners for the virtual deployment.
      * 
      */
-    public Output<List<VirtualDeploymentListenerArgs>> listeners() {
-        return this.listeners;
+    public Optional<Output<List<VirtualDeploymentListenerArgs>>> listeners() {
+        return Optional.ofNullable(this.listeners);
     }
 
     /**
@@ -130,15 +130,15 @@ public final class VirtualDeploymentArgs extends com.pulumi.resources.ResourceAr
      * (Updatable) Service Discovery configuration for virtual deployments.
      * 
      */
-    @Import(name="serviceDiscovery", required=true)
-    private Output<VirtualDeploymentServiceDiscoveryArgs> serviceDiscovery;
+    @Import(name="serviceDiscovery")
+    private @Nullable Output<VirtualDeploymentServiceDiscoveryArgs> serviceDiscovery;
 
     /**
      * @return (Updatable) Service Discovery configuration for virtual deployments.
      * 
      */
-    public Output<VirtualDeploymentServiceDiscoveryArgs> serviceDiscovery() {
-        return this.serviceDiscovery;
+    public Optional<Output<VirtualDeploymentServiceDiscoveryArgs>> serviceDiscovery() {
+        return Optional.ofNullable(this.serviceDiscovery);
     }
 
     /**
@@ -299,7 +299,7 @@ public final class VirtualDeploymentArgs extends com.pulumi.resources.ResourceAr
          * @return builder
          * 
          */
-        public Builder listeners(Output<List<VirtualDeploymentListenerArgs>> listeners) {
+        public Builder listeners(@Nullable Output<List<VirtualDeploymentListenerArgs>> listeners) {
             $.listeners = listeners;
             return this;
         }
@@ -351,7 +351,7 @@ public final class VirtualDeploymentArgs extends com.pulumi.resources.ResourceAr
          * @return builder
          * 
          */
-        public Builder serviceDiscovery(Output<VirtualDeploymentServiceDiscoveryArgs> serviceDiscovery) {
+        public Builder serviceDiscovery(@Nullable Output<VirtualDeploymentServiceDiscoveryArgs> serviceDiscovery) {
             $.serviceDiscovery = serviceDiscovery;
             return this;
         }
@@ -389,8 +389,6 @@ public final class VirtualDeploymentArgs extends com.pulumi.resources.ResourceAr
 
         public VirtualDeploymentArgs build() {
             $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
-            $.listeners = Objects.requireNonNull($.listeners, "expected parameter 'listeners' to be non-null");
-            $.serviceDiscovery = Objects.requireNonNull($.serviceDiscovery, "expected parameter 'serviceDiscovery' to be non-null");
             $.virtualServiceId = Objects.requireNonNull($.virtualServiceId, "expected parameter 'virtualServiceId' to be non-null");
             return $;
         }

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -20,11 +21,8 @@ import * as utilities from "../utilities";
  * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
  */
 export function getObjects(args: GetObjectsArgs, opts?: pulumi.InvokeOptions): Promise<GetObjectsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ObjectStorage/getObjects:getObjects", {
         "bucket": args.bucket,
         "delimiter": args.delimiter,
@@ -94,9 +92,22 @@ export interface GetObjectsResult {
     readonly start?: string;
     readonly startAfter?: string;
 }
-
+/**
+ * This data source provides the list of Objects in Oracle Cloud Infrastructure Object Storage service.
+ *
+ * Lists the objects in a bucket. By default, ListObjects returns object names only. See the `fields`
+ * parameter for other fields that you can optionally include in ListObjects response.
+ *
+ * ListObjects returns at most 1000 objects. To paginate through more objects, use the returned 'nextStartWith'
+ * value with the 'start' parameter. To filter which objects ListObjects returns, use the 'start' and 'end'
+ * parameters.
+ *
+ * To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
+ * talk to an administrator. If you are an administrator who needs to write policies to give users access, see
+ * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+ */
 export function getObjectsOutput(args: GetObjectsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetObjectsResult> {
-    return pulumi.output(args).apply(a => getObjects(a, opts))
+    return pulumi.output(args).apply((a: any) => getObjects(a, opts))
 }
 
 /**

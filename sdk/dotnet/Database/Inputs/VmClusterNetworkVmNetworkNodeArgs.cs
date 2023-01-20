@@ -13,6 +13,12 @@ namespace Pulumi.Oci.Database.Inputs
     public sealed class VmClusterNetworkVmNetworkNodeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// (Updatable) The Db server associated with the node.
+        /// </summary>
+        [Input("dbServerId")]
+        public Input<string>? DbServerId { get; set; }
+
+        /// <summary>
         /// (Updatable) The node host name.
         /// </summary>
         [Input("hostname", required: true)]
@@ -23,6 +29,12 @@ namespace Pulumi.Oci.Database.Inputs
         /// </summary>
         [Input("ip", required: true)]
         public Input<string> Ip { get; set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
+        /// </summary>
+        [Input("state")]
+        public Input<string>? State { get; set; }
 
         /// <summary>
         /// (Updatable) The node virtual IP (VIP) address.

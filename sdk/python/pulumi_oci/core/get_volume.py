@@ -190,8 +190,7 @@ class GetVolumeResult:
     @pulumi.getter(name="isAutoTuneEnabled")
     def is_auto_tune_enabled(self) -> bool:
         """
-        Specifies whether the auto-tune performance is enabled for this boot volume.
-        >>>>>>> theirs
+        Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
         """
         return pulumi.get(self, "is_auto_tune_enabled")
 

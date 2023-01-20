@@ -38,7 +38,7 @@ namespace Pulumi.Oci.ContainerEngine
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetNodePoolResult> InvokeAsync(GetNodePoolArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetNodePoolResult>("oci:ContainerEngine/getNodePool:getNodePool", args ?? new GetNodePoolArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetNodePoolResult>("oci:ContainerEngine/getNodePool:getNodePool", args ?? new GetNodePoolArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Node Pool resource in Oracle Cloud Infrastructure Container Engine service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.ContainerEngine
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetNodePoolResult> Invoke(GetNodePoolInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetNodePoolResult>("oci:ContainerEngine/getNodePool:getNodePool", args ?? new GetNodePoolInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetNodePoolResult>("oci:ContainerEngine/getNodePool:getNodePool", args ?? new GetNodePoolInvokeArgs(), options.WithDefaults());
     }
 
 

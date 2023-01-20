@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAuditArchiveRetrieval(args: GetAuditArchiveRetrievalArgs, opts?: pulumi.InvokeOptions): Promise<GetAuditArchiveRetrievalResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getAuditArchiveRetrieval:getAuditArchiveRetrieval", {
         "auditArchiveRetrievalId": args.auditArchiveRetrievalId,
     }, opts);
@@ -115,9 +112,24 @@ export interface GetAuditArchiveRetrievalResult {
      */
     readonly timeRequested: string;
 }
-
+/**
+ * This data source provides details about a specific Audit Archive Retrieval resource in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Gets the details of the specified archive retreival.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAuditArchiveRetrieval = oci.DataSafe.getAuditArchiveRetrieval({
+ *     auditArchiveRetrievalId: oci_data_safe_audit_archive_retrieval.test_audit_archive_retrieval.id,
+ * });
+ * ```
+ */
 export function getAuditArchiveRetrievalOutput(args: GetAuditArchiveRetrievalOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuditArchiveRetrievalResult> {
-    return pulumi.output(args).apply(a => getAuditArchiveRetrieval(a, opts))
+    return pulumi.output(args).apply((a: any) => getAuditArchiveRetrieval(a, opts))
 }
 
 /**

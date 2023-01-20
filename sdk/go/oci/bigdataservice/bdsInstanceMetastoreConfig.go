@@ -104,6 +104,17 @@ func NewBdsInstanceMetastoreConfig(ctx *pulumi.Context,
 	if args.MetastoreId == nil {
 		return nil, errors.New("invalid value for required argument 'MetastoreId'")
 	}
+	if args.BdsApiKeyPassphrase != nil {
+		args.BdsApiKeyPassphrase = pulumi.ToSecret(args.BdsApiKeyPassphrase).(pulumi.StringInput)
+	}
+	if args.ClusterAdminPassword != nil {
+		args.ClusterAdminPassword = pulumi.ToSecret(args.ClusterAdminPassword).(pulumi.StringInput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"bdsApiKeyPassphrase",
+		"clusterAdminPassword",
+	})
+	opts = append(opts, secrets)
 	var resource BdsInstanceMetastoreConfig
 	err := ctx.RegisterResource("oci:BigDataService/bdsInstanceMetastoreConfig:BdsInstanceMetastoreConfig", name, args, &resource, opts...)
 	if err != nil {

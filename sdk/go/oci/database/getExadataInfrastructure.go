@@ -14,32 +14,6 @@ import (
 //
 // Gets information about the specified Exadata infrastructure. Applies to Exadata Cloud@Customer instances only.
 // To get information on an Exadata Cloud Service infrastructure resource, use the  [GetCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/GetCloudExadataInfrastructure) operation.
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Database"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Database.GetExadataInfrastructure(ctx, &database.GetExadataInfrastructureArgs{
-//				ExadataInfrastructureId: oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 func LookupExadataInfrastructure(ctx *pulumi.Context, args *LookupExadataInfrastructureArgs, opts ...pulumi.InvokeOption) (*LookupExadataInfrastructureResult, error) {
 	var rv LookupExadataInfrastructureResult
 	err := ctx.Invoke("oci:Database/getExadataInfrastructure:getExadataInfrastructure", args, &rv, opts...)
@@ -60,6 +34,10 @@ type LookupExadataInfrastructureResult struct {
 	// The requested number of additional storage servers activated for the Exadata infrastructure.
 	ActivatedStorageCount int    `pulumi:"activatedStorageCount"`
 	ActivationFile        string `pulumi:"activationFile"`
+	// The requested number of additional compute servers for the Exadata infrastructure.
+	AdditionalComputeCount int `pulumi:"additionalComputeCount"`
+	// Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+	AdditionalComputeSystemModel string `pulumi:"additionalComputeSystemModel"`
 	// The requested number of additional storage servers for the Exadata infrastructure.
 	AdditionalStorageCount int `pulumi:"additionalStorageCount"`
 	// The CIDR block for the Exadata administration network.
@@ -104,6 +82,8 @@ type LookupExadataInfrastructureResult struct {
 	InfiniBandNetworkCidr string `pulumi:"infiniBandNetworkCidr"`
 	// Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
 	IsCpsOfflineReportEnabled bool `pulumi:"isCpsOfflineReportEnabled"`
+	// Indicates if deployment is Multi-Rack or not.
+	IsMultiRackDeployment bool `pulumi:"isMultiRackDeployment"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
@@ -122,6 +102,8 @@ type LookupExadataInfrastructureResult struct {
 	MemorySizeInGbs int `pulumi:"memorySizeInGbs"`
 	// The monthly software version of the database servers (dom0) in the Exadata infrastructure.
 	MonthlyDbServerVersion string `pulumi:"monthlyDbServerVersion"`
+	// The base64 encoded Multi-Rack configuration json file.
+	MultiRackConfigurationFile string `pulumi:"multiRackConfigurationFile"`
 	// The netmask for the control plane network.
 	Netmask string `pulumi:"netmask"`
 	// The list of NTP server IP addresses. Maximum of 3 allowed.
@@ -185,6 +167,16 @@ func (o LookupExadataInfrastructureResultOutput) ActivatedStorageCount() pulumi.
 
 func (o LookupExadataInfrastructureResultOutput) ActivationFile() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExadataInfrastructureResult) string { return v.ActivationFile }).(pulumi.StringOutput)
+}
+
+// The requested number of additional compute servers for the Exadata infrastructure.
+func (o LookupExadataInfrastructureResultOutput) AdditionalComputeCount() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupExadataInfrastructureResult) int { return v.AdditionalComputeCount }).(pulumi.IntOutput)
+}
+
+// Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+func (o LookupExadataInfrastructureResultOutput) AdditionalComputeSystemModel() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupExadataInfrastructureResult) string { return v.AdditionalComputeSystemModel }).(pulumi.StringOutput)
 }
 
 // The requested number of additional storage servers for the Exadata infrastructure.
@@ -300,6 +292,11 @@ func (o LookupExadataInfrastructureResultOutput) IsCpsOfflineReportEnabled() pul
 	return o.ApplyT(func(v LookupExadataInfrastructureResult) bool { return v.IsCpsOfflineReportEnabled }).(pulumi.BoolOutput)
 }
 
+// Indicates if deployment is Multi-Rack or not.
+func (o LookupExadataInfrastructureResultOutput) IsMultiRackDeployment() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupExadataInfrastructureResult) bool { return v.IsMultiRackDeployment }).(pulumi.BoolOutput)
+}
+
 // Additional information about the current lifecycle state.
 func (o LookupExadataInfrastructureResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExadataInfrastructureResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
@@ -345,6 +342,11 @@ func (o LookupExadataInfrastructureResultOutput) MemorySizeInGbs() pulumi.IntOut
 // The monthly software version of the database servers (dom0) in the Exadata infrastructure.
 func (o LookupExadataInfrastructureResultOutput) MonthlyDbServerVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExadataInfrastructureResult) string { return v.MonthlyDbServerVersion }).(pulumi.StringOutput)
+}
+
+// The base64 encoded Multi-Rack configuration json file.
+func (o LookupExadataInfrastructureResultOutput) MultiRackConfigurationFile() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupExadataInfrastructureResult) string { return v.MultiRackConfigurationFile }).(pulumi.StringOutput)
 }
 
 // The netmask for the control plane network.

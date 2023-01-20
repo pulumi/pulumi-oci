@@ -59,6 +59,8 @@ import javax.annotation.Nullable;
  *                     .build())
  *                 .build())
  *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
+ *             .preferredLanguage(var_.announcement_subscription_preferred_language())
+ *             .preferredTimeZone(var_.announcement_subscription_preferred_time_zone())
  *             .build());
  * 
  *     }
@@ -187,6 +189,34 @@ public class AnnouncementSubscription extends com.pulumi.resources.CustomResourc
      */
     public Output<String> onsTopicId() {
         return this.onsTopicId;
+    }
+    /**
+     * (Updatable) (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
+     * 
+     */
+    @Export(name="preferredLanguage", type=String.class, parameters={})
+    private Output<String> preferredLanguage;
+
+    /**
+     * @return (Updatable) (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
+     * 
+     */
+    public Output<String> preferredLanguage() {
+        return this.preferredLanguage;
+    }
+    /**
+     * (Updatable) The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+     * 
+     */
+    @Export(name="preferredTimeZone", type=String.class, parameters={})
+    private Output<String> preferredTimeZone;
+
+    /**
+     * @return (Updatable) The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+     * 
+     */
+    public Output<String> preferredTimeZone() {
+        return this.preferredTimeZone;
     }
     /**
      * The current lifecycle state of the announcement subscription.

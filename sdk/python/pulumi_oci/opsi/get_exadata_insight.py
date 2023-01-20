@@ -8,6 +8,7 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetExadataInsightResult',
@@ -21,7 +22,7 @@ class GetExadataInsightResult:
     """
     A collection of values returned by getExadataInsight.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, enterprise_manager_bridge_id=None, enterprise_manager_entity_display_name=None, enterprise_manager_entity_identifier=None, enterprise_manager_entity_name=None, enterprise_manager_entity_type=None, enterprise_manager_identifier=None, entity_source=None, exadata_display_name=None, exadata_insight_id=None, exadata_name=None, exadata_rack_type=None, exadata_type=None, freeform_tags=None, id=None, is_auto_sync_enabled=None, is_virtualized_exadata=None, lifecycle_details=None, state=None, status=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, enterprise_manager_bridge_id=None, enterprise_manager_entity_display_name=None, enterprise_manager_entity_identifier=None, enterprise_manager_entity_name=None, enterprise_manager_entity_type=None, enterprise_manager_identifier=None, entity_source=None, exadata_display_name=None, exadata_infra_id=None, exadata_infra_resource_type=None, exadata_insight_id=None, exadata_name=None, exadata_rack_type=None, exadata_shape=None, exadata_type=None, freeform_tags=None, id=None, is_auto_sync_enabled=None, is_virtualized_exadata=None, lifecycle_details=None, member_vm_cluster_details=None, state=None, status=None, system_tags=None, time_created=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -52,6 +53,12 @@ class GetExadataInsightResult:
         if exadata_display_name and not isinstance(exadata_display_name, str):
             raise TypeError("Expected argument 'exadata_display_name' to be a str")
         pulumi.set(__self__, "exadata_display_name", exadata_display_name)
+        if exadata_infra_id and not isinstance(exadata_infra_id, str):
+            raise TypeError("Expected argument 'exadata_infra_id' to be a str")
+        pulumi.set(__self__, "exadata_infra_id", exadata_infra_id)
+        if exadata_infra_resource_type and not isinstance(exadata_infra_resource_type, str):
+            raise TypeError("Expected argument 'exadata_infra_resource_type' to be a str")
+        pulumi.set(__self__, "exadata_infra_resource_type", exadata_infra_resource_type)
         if exadata_insight_id and not isinstance(exadata_insight_id, str):
             raise TypeError("Expected argument 'exadata_insight_id' to be a str")
         pulumi.set(__self__, "exadata_insight_id", exadata_insight_id)
@@ -61,6 +68,9 @@ class GetExadataInsightResult:
         if exadata_rack_type and not isinstance(exadata_rack_type, str):
             raise TypeError("Expected argument 'exadata_rack_type' to be a str")
         pulumi.set(__self__, "exadata_rack_type", exadata_rack_type)
+        if exadata_shape and not isinstance(exadata_shape, str):
+            raise TypeError("Expected argument 'exadata_shape' to be a str")
+        pulumi.set(__self__, "exadata_shape", exadata_shape)
         if exadata_type and not isinstance(exadata_type, str):
             raise TypeError("Expected argument 'exadata_type' to be a str")
         pulumi.set(__self__, "exadata_type", exadata_type)
@@ -79,6 +89,9 @@ class GetExadataInsightResult:
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if member_vm_cluster_details and not isinstance(member_vm_cluster_details, list):
+            raise TypeError("Expected argument 'member_vm_cluster_details' to be a list")
+        pulumi.set(__self__, "member_vm_cluster_details", member_vm_cluster_details)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -176,6 +189,22 @@ class GetExadataInsightResult:
         return pulumi.get(self, "exadata_display_name")
 
     @property
+    @pulumi.getter(name="exadataInfraId")
+    def exadata_infra_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+        """
+        return pulumi.get(self, "exadata_infra_id")
+
+    @property
+    @pulumi.getter(name="exadataInfraResourceType")
+    def exadata_infra_resource_type(self) -> str:
+        """
+        Oracle Cloud Infrastructure exadata infrastructure resource type
+        """
+        return pulumi.get(self, "exadata_infra_resource_type")
+
+    @property
     @pulumi.getter(name="exadataInsightId")
     def exadata_insight_id(self) -> str:
         return pulumi.get(self, "exadata_insight_id")
@@ -195,6 +224,14 @@ class GetExadataInsightResult:
         Exadata rack type.
         """
         return pulumi.get(self, "exadata_rack_type")
+
+    @property
+    @pulumi.getter(name="exadataShape")
+    def exadata_shape(self) -> str:
+        """
+        The shape of the Exadata Infrastructure.
+        """
+        return pulumi.get(self, "exadata_shape")
 
     @property
     @pulumi.getter(name="exadataType")
@@ -240,6 +277,11 @@ class GetExadataInsightResult:
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="memberVmClusterDetails")
+    def member_vm_cluster_details(self) -> Sequence['outputs.GetExadataInsightMemberVmClusterDetailResult']:
+        return pulumi.get(self, "member_vm_cluster_details")
 
     @property
     @pulumi.getter
@@ -298,15 +340,19 @@ class AwaitableGetExadataInsightResult(GetExadataInsightResult):
             enterprise_manager_identifier=self.enterprise_manager_identifier,
             entity_source=self.entity_source,
             exadata_display_name=self.exadata_display_name,
+            exadata_infra_id=self.exadata_infra_id,
+            exadata_infra_resource_type=self.exadata_infra_resource_type,
             exadata_insight_id=self.exadata_insight_id,
             exadata_name=self.exadata_name,
             exadata_rack_type=self.exadata_rack_type,
+            exadata_shape=self.exadata_shape,
             exadata_type=self.exadata_type,
             freeform_tags=self.freeform_tags,
             id=self.id,
             is_auto_sync_enabled=self.is_auto_sync_enabled,
             is_virtualized_exadata=self.is_virtualized_exadata,
             lifecycle_details=self.lifecycle_details,
+            member_vm_cluster_details=self.member_vm_cluster_details,
             state=self.state,
             status=self.status,
             system_tags=self.system_tags,
@@ -349,15 +395,19 @@ def get_exadata_insight(exadata_insight_id: Optional[str] = None,
         enterprise_manager_identifier=__ret__.enterprise_manager_identifier,
         entity_source=__ret__.entity_source,
         exadata_display_name=__ret__.exadata_display_name,
+        exadata_infra_id=__ret__.exadata_infra_id,
+        exadata_infra_resource_type=__ret__.exadata_infra_resource_type,
         exadata_insight_id=__ret__.exadata_insight_id,
         exadata_name=__ret__.exadata_name,
         exadata_rack_type=__ret__.exadata_rack_type,
+        exadata_shape=__ret__.exadata_shape,
         exadata_type=__ret__.exadata_type,
         freeform_tags=__ret__.freeform_tags,
         id=__ret__.id,
         is_auto_sync_enabled=__ret__.is_auto_sync_enabled,
         is_virtualized_exadata=__ret__.is_virtualized_exadata,
         lifecycle_details=__ret__.lifecycle_details,
+        member_vm_cluster_details=__ret__.member_vm_cluster_details,
         state=__ret__.state,
         status=__ret__.status,
         system_tags=__ret__.system_tags,

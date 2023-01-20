@@ -52,6 +52,21 @@ public final class FleetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+     * 
+     */
+    @Import(name="approximateJavaServerCount")
+    private @Nullable Output<Integer> approximateJavaServerCount;
+
+    /**
+     * @return The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+     * 
+     */
+    public Optional<Output<Integer>> approximateJavaServerCount() {
+        return Optional.ofNullable(this.approximateJavaServerCount);
+    }
+
+    /**
      * The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
      * 
      */
@@ -172,14 +187,14 @@ public final class FleetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+     * (Updatable) Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
      * 
      */
     @Import(name="isAdvancedFeaturesEnabled")
     private @Nullable Output<Boolean> isAdvancedFeaturesEnabled;
 
     /**
-     * @return (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+     * @return (Updatable) Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
      * 
      */
     public Optional<Output<Boolean>> isAdvancedFeaturesEnabled() {
@@ -251,6 +266,7 @@ public final class FleetState extends com.pulumi.resources.ResourceArgs {
     private FleetState(FleetState $) {
         this.approximateApplicationCount = $.approximateApplicationCount;
         this.approximateInstallationCount = $.approximateInstallationCount;
+        this.approximateJavaServerCount = $.approximateJavaServerCount;
         this.approximateJreCount = $.approximateJreCount;
         this.approximateManagedInstanceCount = $.approximateManagedInstanceCount;
         this.compartmentId = $.compartmentId;
@@ -324,6 +340,27 @@ public final class FleetState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder approximateInstallationCount(Integer approximateInstallationCount) {
             return approximateInstallationCount(Output.of(approximateInstallationCount));
+        }
+
+        /**
+         * @param approximateJavaServerCount The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder approximateJavaServerCount(@Nullable Output<Integer> approximateJavaServerCount) {
+            $.approximateJavaServerCount = approximateJavaServerCount;
+            return this;
+        }
+
+        /**
+         * @param approximateJavaServerCount The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder approximateJavaServerCount(Integer approximateJavaServerCount) {
+            return approximateJavaServerCount(Output.of(approximateJavaServerCount));
         }
 
         /**
@@ -495,7 +532,7 @@ public final class FleetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isAdvancedFeaturesEnabled (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+         * @param isAdvancedFeaturesEnabled (Updatable) Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
          * 
          * @return builder
          * 
@@ -506,7 +543,7 @@ public final class FleetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isAdvancedFeaturesEnabled (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+         * @param isAdvancedFeaturesEnabled (Updatable) Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
          * 
          * @return builder
          * 

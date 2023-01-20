@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -31,11 +32,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDedicatedVmHosts(args: GetDedicatedVmHostsArgs, opts?: pulumi.InvokeOptions): Promise<GetDedicatedVmHostsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getDedicatedVmHosts:getDedicatedVmHosts", {
         "availabilityDomain": args.availabilityDomain,
         "compartmentId": args.compartmentId,
@@ -116,9 +114,33 @@ export interface GetDedicatedVmHostsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Dedicated Vm Hosts in Oracle Cloud Infrastructure Core service.
+ *
+ * Returns the list of dedicated virtual machine hosts that match the specified criteria in the specified compartment.
+ *
+ * You can limit the list by specifying a dedicated virtual machine host display name. The list will include all the identically-named
+ * dedicated virtual machine hosts in the compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDedicatedVmHosts = oci.Core.getDedicatedVmHosts({
+ *     compartmentId: _var.compartment_id,
+ *     availabilityDomain: _var.dedicated_vm_host_availability_domain,
+ *     displayName: _var.dedicated_vm_host_display_name,
+ *     instanceShapeName: _var.dedicated_vm_host_instance_shape_name,
+ *     remainingMemoryInGbsGreaterThanOrEqualTo: _var.dedicated_vm_host_remaining_memory_in_gbs_greater_than_or_equal_to,
+ *     remainingOcpusGreaterThanOrEqualTo: _var.dedicated_vm_host_remaining_ocpus_greater_than_or_equal_to,
+ *     state: _var.dedicated_vm_host_state,
+ * });
+ * ```
+ */
 export function getDedicatedVmHostsOutput(args: GetDedicatedVmHostsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDedicatedVmHostsResult> {
-    return pulumi.output(args).apply(a => getDedicatedVmHosts(a, opts))
+    return pulumi.output(args).apply((a: any) => getDedicatedVmHosts(a, opts))
 }
 
 /**

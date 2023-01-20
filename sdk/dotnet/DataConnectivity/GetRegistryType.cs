@@ -41,7 +41,7 @@ namespace Pulumi.Oci.DataConnectivity
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetRegistryTypeResult> InvokeAsync(GetRegistryTypeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetRegistryTypeResult>("oci:DataConnectivity/getRegistryType:getRegistryType", args ?? new GetRegistryTypeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetRegistryTypeResult>("oci:DataConnectivity/getRegistryType:getRegistryType", args ?? new GetRegistryTypeArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Registry Type resource in Oracle Cloud Infrastructure Data Connectivity service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.DataConnectivity
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetRegistryTypeResult> Invoke(GetRegistryTypeInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetRegistryTypeResult>("oci:DataConnectivity/getRegistryType:getRegistryType", args ?? new GetRegistryTypeInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetRegistryTypeResult>("oci:DataConnectivity/getRegistryType:getRegistryType", args ?? new GetRegistryTypeInvokeArgs(), options.WithDefaults());
     }
 
 

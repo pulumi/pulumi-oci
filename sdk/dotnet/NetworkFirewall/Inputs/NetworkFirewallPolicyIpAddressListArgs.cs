@@ -12,11 +12,18 @@ namespace Pulumi.Oci.NetworkFirewall.Inputs
 
     public sealed class NetworkFirewallPolicyIpAddressListArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// (Updatable) The identifier by which the IP address list is referenced.
+        /// </summary>
         [Input("ipAddressListName", required: true)]
         public Input<string> IpAddressListName { get; set; } = null!;
 
         [Input("ipAddressListValues")]
         private InputList<string>? _ipAddressListValues;
+
+        /// <summary>
+        /// (Updatable) List of IP address lists of the policy.
+        /// </summary>
         public InputList<string> IpAddressListValues
         {
             get => _ipAddressListValues ?? (_ipAddressListValues = new InputList<string>());

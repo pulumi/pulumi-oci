@@ -54,8 +54,7 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// </summary>
         public readonly string EntitySource;
         /// <summary>
-        /// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource. 
-        /// &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
+        /// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
         /// </summary>
         public readonly string ExadataInsightId;
         /// <summary>
@@ -71,8 +70,7 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// </summary>
         public readonly string HostName;
         /// <summary>
-        /// Filter by one or more host types. Possible value is EXTERNAL-HOST.
-        /// &gt;&gt;&gt;&gt;&gt;&gt;&gt; theirs
+        /// Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST
         /// </summary>
         public readonly string HostType;
         /// <summary>
@@ -92,7 +90,7 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// </summary>
         public readonly string PlatformName;
         /// <summary>
-        /// Filter by one or more platform types. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+        /// Filter by one or more platform types. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS].
         /// </summary>
         public readonly string PlatformType;
         /// <summary>

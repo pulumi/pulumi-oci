@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabaseSqlTuningAdvisorTasksRecommendations(args: GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksRecommendations:getManagedDatabaseSqlTuningAdvisorTasksRecommendations", {
         "executionId": args.executionId,
         "filters": args.filters,
@@ -84,9 +82,28 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult {
      */
     readonly sqlTuningAdvisorTaskRecommendationCollections: outputs.DatabaseManagement.GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsSqlTuningAdvisorTaskRecommendationCollection[];
 }
-
+/**
+ * This data source provides the list of Managed Database Sql Tuning Advisor Tasks Recommendations in Oracle Cloud Infrastructure Database Management service.
+ *
+ * Gets the findings and possible actions for a given object in a SQL tuning task.
+ * The task ID and object ID are used to retrieve the findings and recommendations.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testManagedDatabaseSqlTuningAdvisorTasksRecommendations = oci.DatabaseManagement.getManagedDatabaseSqlTuningAdvisorTasksRecommendations({
+ *     executionId: oci_database_management_execution.test_execution.id,
+ *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
+ *     sqlObjectId: oci_objectstorage_object.test_object.id,
+ *     sqlTuningAdvisorTaskId: oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task.id,
+ * });
+ * ```
+ */
 export function getManagedDatabaseSqlTuningAdvisorTasksRecommendationsOutput(args: GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseSqlTuningAdvisorTasksRecommendationsResult> {
-    return pulumi.output(args).apply(a => getManagedDatabaseSqlTuningAdvisorTasksRecommendations(a, opts))
+    return pulumi.output(args).apply((a: any) => getManagedDatabaseSqlTuningAdvisorTasksRecommendations(a, opts))
 }
 
 /**

@@ -21,6 +21,10 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
+	case "oci:GoldenGate/connection:Connection":
+		r = &Connection{}
+	case "oci:GoldenGate/connectionAssignment:ConnectionAssignment":
+		r = &ConnectionAssignment{}
 	case "oci:GoldenGate/databaseRegistration:DatabaseRegistration":
 		r = &DatabaseRegistration{}
 	case "oci:GoldenGate/deployment:Deployment":
@@ -40,6 +44,16 @@ func init() {
 	if err != nil {
 		version = semver.Version{Major: 1}
 	}
+	pulumi.RegisterResourceModule(
+		"oci",
+		"GoldenGate/connection",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"GoldenGate/connectionAssignment",
+		&module{version},
+	)
 	pulumi.RegisterResourceModule(
 		"oci",
 		"GoldenGate/databaseRegistration",

@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetVolumeGroupsResult> InvokeAsync(GetVolumeGroupsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetVolumeGroupsResult>("oci:Core/getVolumeGroups:getVolumeGroups", args ?? new GetVolumeGroupsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetVolumeGroupsResult>("oci:Core/getVolumeGroups:getVolumeGroups", args ?? new GetVolumeGroupsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Volume Groups in Oracle Cloud Infrastructure Core service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetVolumeGroupsResult> Invoke(GetVolumeGroupsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetVolumeGroupsResult>("oci:Core/getVolumeGroups:getVolumeGroups", args ?? new GetVolumeGroupsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetVolumeGroupsResult>("oci:Core/getVolumeGroups:getVolumeGroups", args ?? new GetVolumeGroupsInvokeArgs(), options.WithDefaults());
     }
 
 

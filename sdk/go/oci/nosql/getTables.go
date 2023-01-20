@@ -68,7 +68,7 @@ type GetTablesResult struct {
 	Filters       []GetTablesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// The column name.
+	// Human-friendly table name, immutable.
 	Name *string `pulumi:"name"`
 	// The state of a table.
 	State *string `pulumi:"state"`
@@ -133,7 +133,7 @@ func (o GetTablesResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetTablesResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The column name.
+// Human-friendly table name, immutable.
 func (o GetTablesResultOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetTablesResult) *string { return v.Name }).(pulumi.StringPtrOutput)
 }

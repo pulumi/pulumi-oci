@@ -10,8 +10,468 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+type ConnectionAdditionalAttribute struct {
+	// (Updatable) The name of the property entry.
+	Name *string `pulumi:"name"`
+	// (Updatable) The value of the property entry.
+	Value *string `pulumi:"value"`
+}
+
+// ConnectionAdditionalAttributeInput is an input type that accepts ConnectionAdditionalAttributeArgs and ConnectionAdditionalAttributeOutput values.
+// You can construct a concrete instance of `ConnectionAdditionalAttributeInput` via:
+//
+//	ConnectionAdditionalAttributeArgs{...}
+type ConnectionAdditionalAttributeInput interface {
+	pulumi.Input
+
+	ToConnectionAdditionalAttributeOutput() ConnectionAdditionalAttributeOutput
+	ToConnectionAdditionalAttributeOutputWithContext(context.Context) ConnectionAdditionalAttributeOutput
+}
+
+type ConnectionAdditionalAttributeArgs struct {
+	// (Updatable) The name of the property entry.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// (Updatable) The value of the property entry.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (ConnectionAdditionalAttributeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConnectionAdditionalAttribute)(nil)).Elem()
+}
+
+func (i ConnectionAdditionalAttributeArgs) ToConnectionAdditionalAttributeOutput() ConnectionAdditionalAttributeOutput {
+	return i.ToConnectionAdditionalAttributeOutputWithContext(context.Background())
+}
+
+func (i ConnectionAdditionalAttributeArgs) ToConnectionAdditionalAttributeOutputWithContext(ctx context.Context) ConnectionAdditionalAttributeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConnectionAdditionalAttributeOutput)
+}
+
+// ConnectionAdditionalAttributeArrayInput is an input type that accepts ConnectionAdditionalAttributeArray and ConnectionAdditionalAttributeArrayOutput values.
+// You can construct a concrete instance of `ConnectionAdditionalAttributeArrayInput` via:
+//
+//	ConnectionAdditionalAttributeArray{ ConnectionAdditionalAttributeArgs{...} }
+type ConnectionAdditionalAttributeArrayInput interface {
+	pulumi.Input
+
+	ToConnectionAdditionalAttributeArrayOutput() ConnectionAdditionalAttributeArrayOutput
+	ToConnectionAdditionalAttributeArrayOutputWithContext(context.Context) ConnectionAdditionalAttributeArrayOutput
+}
+
+type ConnectionAdditionalAttributeArray []ConnectionAdditionalAttributeInput
+
+func (ConnectionAdditionalAttributeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ConnectionAdditionalAttribute)(nil)).Elem()
+}
+
+func (i ConnectionAdditionalAttributeArray) ToConnectionAdditionalAttributeArrayOutput() ConnectionAdditionalAttributeArrayOutput {
+	return i.ToConnectionAdditionalAttributeArrayOutputWithContext(context.Background())
+}
+
+func (i ConnectionAdditionalAttributeArray) ToConnectionAdditionalAttributeArrayOutputWithContext(ctx context.Context) ConnectionAdditionalAttributeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConnectionAdditionalAttributeArrayOutput)
+}
+
+type ConnectionAdditionalAttributeOutput struct{ *pulumi.OutputState }
+
+func (ConnectionAdditionalAttributeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConnectionAdditionalAttribute)(nil)).Elem()
+}
+
+func (o ConnectionAdditionalAttributeOutput) ToConnectionAdditionalAttributeOutput() ConnectionAdditionalAttributeOutput {
+	return o
+}
+
+func (o ConnectionAdditionalAttributeOutput) ToConnectionAdditionalAttributeOutputWithContext(ctx context.Context) ConnectionAdditionalAttributeOutput {
+	return o
+}
+
+// (Updatable) The name of the property entry.
+func (o ConnectionAdditionalAttributeOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConnectionAdditionalAttribute) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The value of the property entry.
+func (o ConnectionAdditionalAttributeOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConnectionAdditionalAttribute) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type ConnectionAdditionalAttributeArrayOutput struct{ *pulumi.OutputState }
+
+func (ConnectionAdditionalAttributeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ConnectionAdditionalAttribute)(nil)).Elem()
+}
+
+func (o ConnectionAdditionalAttributeArrayOutput) ToConnectionAdditionalAttributeArrayOutput() ConnectionAdditionalAttributeArrayOutput {
+	return o
+}
+
+func (o ConnectionAdditionalAttributeArrayOutput) ToConnectionAdditionalAttributeArrayOutputWithContext(ctx context.Context) ConnectionAdditionalAttributeArrayOutput {
+	return o
+}
+
+func (o ConnectionAdditionalAttributeArrayOutput) Index(i pulumi.IntInput) ConnectionAdditionalAttributeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ConnectionAdditionalAttribute {
+		return vs[0].([]ConnectionAdditionalAttribute)[vs[1].(int)]
+	}).(ConnectionAdditionalAttributeOutput)
+}
+
+type ConnectionBootstrapServer struct {
+	// (Updatable) The name or address of a host.
+	Host *string `pulumi:"host"`
+	// (Updatable) The port of an endpoint usually specified for a connection.
+	Port *int `pulumi:"port"`
+	// (Updatable) The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+	PrivateIp *string `pulumi:"privateIp"`
+}
+
+// ConnectionBootstrapServerInput is an input type that accepts ConnectionBootstrapServerArgs and ConnectionBootstrapServerOutput values.
+// You can construct a concrete instance of `ConnectionBootstrapServerInput` via:
+//
+//	ConnectionBootstrapServerArgs{...}
+type ConnectionBootstrapServerInput interface {
+	pulumi.Input
+
+	ToConnectionBootstrapServerOutput() ConnectionBootstrapServerOutput
+	ToConnectionBootstrapServerOutputWithContext(context.Context) ConnectionBootstrapServerOutput
+}
+
+type ConnectionBootstrapServerArgs struct {
+	// (Updatable) The name or address of a host.
+	Host pulumi.StringPtrInput `pulumi:"host"`
+	// (Updatable) The port of an endpoint usually specified for a connection.
+	Port pulumi.IntPtrInput `pulumi:"port"`
+	// (Updatable) The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+	PrivateIp pulumi.StringPtrInput `pulumi:"privateIp"`
+}
+
+func (ConnectionBootstrapServerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConnectionBootstrapServer)(nil)).Elem()
+}
+
+func (i ConnectionBootstrapServerArgs) ToConnectionBootstrapServerOutput() ConnectionBootstrapServerOutput {
+	return i.ToConnectionBootstrapServerOutputWithContext(context.Background())
+}
+
+func (i ConnectionBootstrapServerArgs) ToConnectionBootstrapServerOutputWithContext(ctx context.Context) ConnectionBootstrapServerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConnectionBootstrapServerOutput)
+}
+
+// ConnectionBootstrapServerArrayInput is an input type that accepts ConnectionBootstrapServerArray and ConnectionBootstrapServerArrayOutput values.
+// You can construct a concrete instance of `ConnectionBootstrapServerArrayInput` via:
+//
+//	ConnectionBootstrapServerArray{ ConnectionBootstrapServerArgs{...} }
+type ConnectionBootstrapServerArrayInput interface {
+	pulumi.Input
+
+	ToConnectionBootstrapServerArrayOutput() ConnectionBootstrapServerArrayOutput
+	ToConnectionBootstrapServerArrayOutputWithContext(context.Context) ConnectionBootstrapServerArrayOutput
+}
+
+type ConnectionBootstrapServerArray []ConnectionBootstrapServerInput
+
+func (ConnectionBootstrapServerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ConnectionBootstrapServer)(nil)).Elem()
+}
+
+func (i ConnectionBootstrapServerArray) ToConnectionBootstrapServerArrayOutput() ConnectionBootstrapServerArrayOutput {
+	return i.ToConnectionBootstrapServerArrayOutputWithContext(context.Background())
+}
+
+func (i ConnectionBootstrapServerArray) ToConnectionBootstrapServerArrayOutputWithContext(ctx context.Context) ConnectionBootstrapServerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConnectionBootstrapServerArrayOutput)
+}
+
+type ConnectionBootstrapServerOutput struct{ *pulumi.OutputState }
+
+func (ConnectionBootstrapServerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConnectionBootstrapServer)(nil)).Elem()
+}
+
+func (o ConnectionBootstrapServerOutput) ToConnectionBootstrapServerOutput() ConnectionBootstrapServerOutput {
+	return o
+}
+
+func (o ConnectionBootstrapServerOutput) ToConnectionBootstrapServerOutputWithContext(ctx context.Context) ConnectionBootstrapServerOutput {
+	return o
+}
+
+// (Updatable) The name or address of a host.
+func (o ConnectionBootstrapServerOutput) Host() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConnectionBootstrapServer) *string { return v.Host }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The port of an endpoint usually specified for a connection.
+func (o ConnectionBootstrapServerOutput) Port() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ConnectionBootstrapServer) *int { return v.Port }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+func (o ConnectionBootstrapServerOutput) PrivateIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConnectionBootstrapServer) *string { return v.PrivateIp }).(pulumi.StringPtrOutput)
+}
+
+type ConnectionBootstrapServerArrayOutput struct{ *pulumi.OutputState }
+
+func (ConnectionBootstrapServerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ConnectionBootstrapServer)(nil)).Elem()
+}
+
+func (o ConnectionBootstrapServerArrayOutput) ToConnectionBootstrapServerArrayOutput() ConnectionBootstrapServerArrayOutput {
+	return o
+}
+
+func (o ConnectionBootstrapServerArrayOutput) ToConnectionBootstrapServerArrayOutputWithContext(ctx context.Context) ConnectionBootstrapServerArrayOutput {
+	return o
+}
+
+func (o ConnectionBootstrapServerArrayOutput) Index(i pulumi.IntInput) ConnectionBootstrapServerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ConnectionBootstrapServer {
+		return vs[0].([]ConnectionBootstrapServer)[vs[1].(int)]
+	}).(ConnectionBootstrapServerOutput)
+}
+
+type ConnectionIngressIp struct {
+	// A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+	IngressIp *string `pulumi:"ingressIp"`
+}
+
+// ConnectionIngressIpInput is an input type that accepts ConnectionIngressIpArgs and ConnectionIngressIpOutput values.
+// You can construct a concrete instance of `ConnectionIngressIpInput` via:
+//
+//	ConnectionIngressIpArgs{...}
+type ConnectionIngressIpInput interface {
+	pulumi.Input
+
+	ToConnectionIngressIpOutput() ConnectionIngressIpOutput
+	ToConnectionIngressIpOutputWithContext(context.Context) ConnectionIngressIpOutput
+}
+
+type ConnectionIngressIpArgs struct {
+	// A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+	IngressIp pulumi.StringPtrInput `pulumi:"ingressIp"`
+}
+
+func (ConnectionIngressIpArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConnectionIngressIp)(nil)).Elem()
+}
+
+func (i ConnectionIngressIpArgs) ToConnectionIngressIpOutput() ConnectionIngressIpOutput {
+	return i.ToConnectionIngressIpOutputWithContext(context.Background())
+}
+
+func (i ConnectionIngressIpArgs) ToConnectionIngressIpOutputWithContext(ctx context.Context) ConnectionIngressIpOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConnectionIngressIpOutput)
+}
+
+// ConnectionIngressIpArrayInput is an input type that accepts ConnectionIngressIpArray and ConnectionIngressIpArrayOutput values.
+// You can construct a concrete instance of `ConnectionIngressIpArrayInput` via:
+//
+//	ConnectionIngressIpArray{ ConnectionIngressIpArgs{...} }
+type ConnectionIngressIpArrayInput interface {
+	pulumi.Input
+
+	ToConnectionIngressIpArrayOutput() ConnectionIngressIpArrayOutput
+	ToConnectionIngressIpArrayOutputWithContext(context.Context) ConnectionIngressIpArrayOutput
+}
+
+type ConnectionIngressIpArray []ConnectionIngressIpInput
+
+func (ConnectionIngressIpArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ConnectionIngressIp)(nil)).Elem()
+}
+
+func (i ConnectionIngressIpArray) ToConnectionIngressIpArrayOutput() ConnectionIngressIpArrayOutput {
+	return i.ToConnectionIngressIpArrayOutputWithContext(context.Background())
+}
+
+func (i ConnectionIngressIpArray) ToConnectionIngressIpArrayOutputWithContext(ctx context.Context) ConnectionIngressIpArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConnectionIngressIpArrayOutput)
+}
+
+type ConnectionIngressIpOutput struct{ *pulumi.OutputState }
+
+func (ConnectionIngressIpOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConnectionIngressIp)(nil)).Elem()
+}
+
+func (o ConnectionIngressIpOutput) ToConnectionIngressIpOutput() ConnectionIngressIpOutput {
+	return o
+}
+
+func (o ConnectionIngressIpOutput) ToConnectionIngressIpOutputWithContext(ctx context.Context) ConnectionIngressIpOutput {
+	return o
+}
+
+// A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+func (o ConnectionIngressIpOutput) IngressIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConnectionIngressIp) *string { return v.IngressIp }).(pulumi.StringPtrOutput)
+}
+
+type ConnectionIngressIpArrayOutput struct{ *pulumi.OutputState }
+
+func (ConnectionIngressIpArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ConnectionIngressIp)(nil)).Elem()
+}
+
+func (o ConnectionIngressIpArrayOutput) ToConnectionIngressIpArrayOutput() ConnectionIngressIpArrayOutput {
+	return o
+}
+
+func (o ConnectionIngressIpArrayOutput) ToConnectionIngressIpArrayOutputWithContext(ctx context.Context) ConnectionIngressIpArrayOutput {
+	return o
+}
+
+func (o ConnectionIngressIpArrayOutput) Index(i pulumi.IntInput) ConnectionIngressIpOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ConnectionIngressIp {
+		return vs[0].([]ConnectionIngressIp)[vs[1].(int)]
+	}).(ConnectionIngressIpOutput)
+}
+
+type DeploymentDeploymentDiagnosticData struct {
+	// Name of the bucket where the object is to be uploaded in the object storage
+	Bucket *string `pulumi:"bucket"`
+	// The state of the deployment diagnostic collection.
+	DiagnosticState *string `pulumi:"diagnosticState"`
+	// Name of namespace that serves as a container for all of your buckets
+	Namespace *string `pulumi:"namespace"`
+	// Name of the diagnostic collected and uploaded to object storage
+	Object *string `pulumi:"object"`
+	// The time until which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeDiagnosticEnd *string `pulumi:"timeDiagnosticEnd"`
+	// The time from which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeDiagnosticStart *string `pulumi:"timeDiagnosticStart"`
+}
+
+// DeploymentDeploymentDiagnosticDataInput is an input type that accepts DeploymentDeploymentDiagnosticDataArgs and DeploymentDeploymentDiagnosticDataOutput values.
+// You can construct a concrete instance of `DeploymentDeploymentDiagnosticDataInput` via:
+//
+//	DeploymentDeploymentDiagnosticDataArgs{...}
+type DeploymentDeploymentDiagnosticDataInput interface {
+	pulumi.Input
+
+	ToDeploymentDeploymentDiagnosticDataOutput() DeploymentDeploymentDiagnosticDataOutput
+	ToDeploymentDeploymentDiagnosticDataOutputWithContext(context.Context) DeploymentDeploymentDiagnosticDataOutput
+}
+
+type DeploymentDeploymentDiagnosticDataArgs struct {
+	// Name of the bucket where the object is to be uploaded in the object storage
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
+	// The state of the deployment diagnostic collection.
+	DiagnosticState pulumi.StringPtrInput `pulumi:"diagnosticState"`
+	// Name of namespace that serves as a container for all of your buckets
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
+	// Name of the diagnostic collected and uploaded to object storage
+	Object pulumi.StringPtrInput `pulumi:"object"`
+	// The time until which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeDiagnosticEnd pulumi.StringPtrInput `pulumi:"timeDiagnosticEnd"`
+	// The time from which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeDiagnosticStart pulumi.StringPtrInput `pulumi:"timeDiagnosticStart"`
+}
+
+func (DeploymentDeploymentDiagnosticDataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeploymentDeploymentDiagnosticData)(nil)).Elem()
+}
+
+func (i DeploymentDeploymentDiagnosticDataArgs) ToDeploymentDeploymentDiagnosticDataOutput() DeploymentDeploymentDiagnosticDataOutput {
+	return i.ToDeploymentDeploymentDiagnosticDataOutputWithContext(context.Background())
+}
+
+func (i DeploymentDeploymentDiagnosticDataArgs) ToDeploymentDeploymentDiagnosticDataOutputWithContext(ctx context.Context) DeploymentDeploymentDiagnosticDataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeploymentDeploymentDiagnosticDataOutput)
+}
+
+// DeploymentDeploymentDiagnosticDataArrayInput is an input type that accepts DeploymentDeploymentDiagnosticDataArray and DeploymentDeploymentDiagnosticDataArrayOutput values.
+// You can construct a concrete instance of `DeploymentDeploymentDiagnosticDataArrayInput` via:
+//
+//	DeploymentDeploymentDiagnosticDataArray{ DeploymentDeploymentDiagnosticDataArgs{...} }
+type DeploymentDeploymentDiagnosticDataArrayInput interface {
+	pulumi.Input
+
+	ToDeploymentDeploymentDiagnosticDataArrayOutput() DeploymentDeploymentDiagnosticDataArrayOutput
+	ToDeploymentDeploymentDiagnosticDataArrayOutputWithContext(context.Context) DeploymentDeploymentDiagnosticDataArrayOutput
+}
+
+type DeploymentDeploymentDiagnosticDataArray []DeploymentDeploymentDiagnosticDataInput
+
+func (DeploymentDeploymentDiagnosticDataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DeploymentDeploymentDiagnosticData)(nil)).Elem()
+}
+
+func (i DeploymentDeploymentDiagnosticDataArray) ToDeploymentDeploymentDiagnosticDataArrayOutput() DeploymentDeploymentDiagnosticDataArrayOutput {
+	return i.ToDeploymentDeploymentDiagnosticDataArrayOutputWithContext(context.Background())
+}
+
+func (i DeploymentDeploymentDiagnosticDataArray) ToDeploymentDeploymentDiagnosticDataArrayOutputWithContext(ctx context.Context) DeploymentDeploymentDiagnosticDataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeploymentDeploymentDiagnosticDataArrayOutput)
+}
+
+type DeploymentDeploymentDiagnosticDataOutput struct{ *pulumi.OutputState }
+
+func (DeploymentDeploymentDiagnosticDataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeploymentDeploymentDiagnosticData)(nil)).Elem()
+}
+
+func (o DeploymentDeploymentDiagnosticDataOutput) ToDeploymentDeploymentDiagnosticDataOutput() DeploymentDeploymentDiagnosticDataOutput {
+	return o
+}
+
+func (o DeploymentDeploymentDiagnosticDataOutput) ToDeploymentDeploymentDiagnosticDataOutputWithContext(ctx context.Context) DeploymentDeploymentDiagnosticDataOutput {
+	return o
+}
+
+// Name of the bucket where the object is to be uploaded in the object storage
+func (o DeploymentDeploymentDiagnosticDataOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeploymentDeploymentDiagnosticData) *string { return v.Bucket }).(pulumi.StringPtrOutput)
+}
+
+// The state of the deployment diagnostic collection.
+func (o DeploymentDeploymentDiagnosticDataOutput) DiagnosticState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeploymentDeploymentDiagnosticData) *string { return v.DiagnosticState }).(pulumi.StringPtrOutput)
+}
+
+// Name of namespace that serves as a container for all of your buckets
+func (o DeploymentDeploymentDiagnosticDataOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeploymentDeploymentDiagnosticData) *string { return v.Namespace }).(pulumi.StringPtrOutput)
+}
+
+// Name of the diagnostic collected and uploaded to object storage
+func (o DeploymentDeploymentDiagnosticDataOutput) Object() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeploymentDeploymentDiagnosticData) *string { return v.Object }).(pulumi.StringPtrOutput)
+}
+
+// The time until which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o DeploymentDeploymentDiagnosticDataOutput) TimeDiagnosticEnd() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeploymentDeploymentDiagnosticData) *string { return v.TimeDiagnosticEnd }).(pulumi.StringPtrOutput)
+}
+
+// The time from which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o DeploymentDeploymentDiagnosticDataOutput) TimeDiagnosticStart() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeploymentDeploymentDiagnosticData) *string { return v.TimeDiagnosticStart }).(pulumi.StringPtrOutput)
+}
+
+type DeploymentDeploymentDiagnosticDataArrayOutput struct{ *pulumi.OutputState }
+
+func (DeploymentDeploymentDiagnosticDataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DeploymentDeploymentDiagnosticData)(nil)).Elem()
+}
+
+func (o DeploymentDeploymentDiagnosticDataArrayOutput) ToDeploymentDeploymentDiagnosticDataArrayOutput() DeploymentDeploymentDiagnosticDataArrayOutput {
+	return o
+}
+
+func (o DeploymentDeploymentDiagnosticDataArrayOutput) ToDeploymentDeploymentDiagnosticDataArrayOutputWithContext(ctx context.Context) DeploymentDeploymentDiagnosticDataArrayOutput {
+	return o
+}
+
+func (o DeploymentDeploymentDiagnosticDataArrayOutput) Index(i pulumi.IntInput) DeploymentDeploymentDiagnosticDataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DeploymentDeploymentDiagnosticData {
+		return vs[0].([]DeploymentDeploymentDiagnosticData)[vs[1].(int)]
+	}).(DeploymentDeploymentDiagnosticDataOutput)
+}
+
 type DeploymentOggData struct {
-	// (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed.
+	// (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by "passwordSecretId".
 	AdminPassword string `pulumi:"adminPassword"`
 	// (Updatable) The GoldenGate deployment console username.
 	AdminUsername string `pulumi:"adminUsername"`
@@ -37,7 +497,7 @@ type DeploymentOggDataInput interface {
 }
 
 type DeploymentOggDataArgs struct {
-	// (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed.
+	// (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by "passwordSecretId".
 	AdminPassword pulumi.StringInput `pulumi:"adminPassword"`
 	// (Updatable) The GoldenGate deployment console username.
 	AdminUsername pulumi.StringInput `pulumi:"adminUsername"`
@@ -128,7 +588,7 @@ func (o DeploymentOggDataOutput) ToDeploymentOggDataPtrOutputWithContext(ctx con
 	}).(DeploymentOggDataPtrOutput)
 }
 
-// (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed.
+// (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by "passwordSecretId".
 func (o DeploymentOggDataOutput) AdminPassword() pulumi.StringOutput {
 	return o.ApplyT(func(v DeploymentOggData) string { return v.AdminPassword }).(pulumi.StringOutput)
 }
@@ -182,7 +642,7 @@ func (o DeploymentOggDataPtrOutput) Elem() DeploymentOggDataOutput {
 	}).(DeploymentOggDataOutput)
 }
 
-// (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed.
+// (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by "passwordSecretId".
 func (o DeploymentOggDataPtrOutput) AdminPassword() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DeploymentOggData) *string {
 		if v == nil {
@@ -240,6 +700,1796 @@ func (o DeploymentOggDataPtrOutput) OggVersion() pulumi.StringPtrOutput {
 		}
 		return v.OggVersion
 	}).(pulumi.StringPtrOutput)
+}
+
+type GetConnectionAdditionalAttribute struct {
+	// The name of the property entry.
+	Name string `pulumi:"name"`
+	// The value of the property entry.
+	Value string `pulumi:"value"`
+}
+
+// GetConnectionAdditionalAttributeInput is an input type that accepts GetConnectionAdditionalAttributeArgs and GetConnectionAdditionalAttributeOutput values.
+// You can construct a concrete instance of `GetConnectionAdditionalAttributeInput` via:
+//
+//	GetConnectionAdditionalAttributeArgs{...}
+type GetConnectionAdditionalAttributeInput interface {
+	pulumi.Input
+
+	ToGetConnectionAdditionalAttributeOutput() GetConnectionAdditionalAttributeOutput
+	ToGetConnectionAdditionalAttributeOutputWithContext(context.Context) GetConnectionAdditionalAttributeOutput
+}
+
+type GetConnectionAdditionalAttributeArgs struct {
+	// The name of the property entry.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The value of the property entry.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetConnectionAdditionalAttributeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionAdditionalAttribute)(nil)).Elem()
+}
+
+func (i GetConnectionAdditionalAttributeArgs) ToGetConnectionAdditionalAttributeOutput() GetConnectionAdditionalAttributeOutput {
+	return i.ToGetConnectionAdditionalAttributeOutputWithContext(context.Background())
+}
+
+func (i GetConnectionAdditionalAttributeArgs) ToGetConnectionAdditionalAttributeOutputWithContext(ctx context.Context) GetConnectionAdditionalAttributeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionAdditionalAttributeOutput)
+}
+
+// GetConnectionAdditionalAttributeArrayInput is an input type that accepts GetConnectionAdditionalAttributeArray and GetConnectionAdditionalAttributeArrayOutput values.
+// You can construct a concrete instance of `GetConnectionAdditionalAttributeArrayInput` via:
+//
+//	GetConnectionAdditionalAttributeArray{ GetConnectionAdditionalAttributeArgs{...} }
+type GetConnectionAdditionalAttributeArrayInput interface {
+	pulumi.Input
+
+	ToGetConnectionAdditionalAttributeArrayOutput() GetConnectionAdditionalAttributeArrayOutput
+	ToGetConnectionAdditionalAttributeArrayOutputWithContext(context.Context) GetConnectionAdditionalAttributeArrayOutput
+}
+
+type GetConnectionAdditionalAttributeArray []GetConnectionAdditionalAttributeInput
+
+func (GetConnectionAdditionalAttributeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionAdditionalAttribute)(nil)).Elem()
+}
+
+func (i GetConnectionAdditionalAttributeArray) ToGetConnectionAdditionalAttributeArrayOutput() GetConnectionAdditionalAttributeArrayOutput {
+	return i.ToGetConnectionAdditionalAttributeArrayOutputWithContext(context.Background())
+}
+
+func (i GetConnectionAdditionalAttributeArray) ToGetConnectionAdditionalAttributeArrayOutputWithContext(ctx context.Context) GetConnectionAdditionalAttributeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionAdditionalAttributeArrayOutput)
+}
+
+type GetConnectionAdditionalAttributeOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionAdditionalAttributeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionAdditionalAttribute)(nil)).Elem()
+}
+
+func (o GetConnectionAdditionalAttributeOutput) ToGetConnectionAdditionalAttributeOutput() GetConnectionAdditionalAttributeOutput {
+	return o
+}
+
+func (o GetConnectionAdditionalAttributeOutput) ToGetConnectionAdditionalAttributeOutputWithContext(ctx context.Context) GetConnectionAdditionalAttributeOutput {
+	return o
+}
+
+// The name of the property entry.
+func (o GetConnectionAdditionalAttributeOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionAdditionalAttribute) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The value of the property entry.
+func (o GetConnectionAdditionalAttributeOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionAdditionalAttribute) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetConnectionAdditionalAttributeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionAdditionalAttributeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionAdditionalAttribute)(nil)).Elem()
+}
+
+func (o GetConnectionAdditionalAttributeArrayOutput) ToGetConnectionAdditionalAttributeArrayOutput() GetConnectionAdditionalAttributeArrayOutput {
+	return o
+}
+
+func (o GetConnectionAdditionalAttributeArrayOutput) ToGetConnectionAdditionalAttributeArrayOutputWithContext(ctx context.Context) GetConnectionAdditionalAttributeArrayOutput {
+	return o
+}
+
+func (o GetConnectionAdditionalAttributeArrayOutput) Index(i pulumi.IntInput) GetConnectionAdditionalAttributeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConnectionAdditionalAttribute {
+		return vs[0].([]GetConnectionAdditionalAttribute)[vs[1].(int)]
+	}).(GetConnectionAdditionalAttributeOutput)
+}
+
+type GetConnectionAssignmentsConnectionAssignmentCollection struct {
+	Items []GetConnectionAssignmentsConnectionAssignmentCollectionItem `pulumi:"items"`
+}
+
+// GetConnectionAssignmentsConnectionAssignmentCollectionInput is an input type that accepts GetConnectionAssignmentsConnectionAssignmentCollectionArgs and GetConnectionAssignmentsConnectionAssignmentCollectionOutput values.
+// You can construct a concrete instance of `GetConnectionAssignmentsConnectionAssignmentCollectionInput` via:
+//
+//	GetConnectionAssignmentsConnectionAssignmentCollectionArgs{...}
+type GetConnectionAssignmentsConnectionAssignmentCollectionInput interface {
+	pulumi.Input
+
+	ToGetConnectionAssignmentsConnectionAssignmentCollectionOutput() GetConnectionAssignmentsConnectionAssignmentCollectionOutput
+	ToGetConnectionAssignmentsConnectionAssignmentCollectionOutputWithContext(context.Context) GetConnectionAssignmentsConnectionAssignmentCollectionOutput
+}
+
+type GetConnectionAssignmentsConnectionAssignmentCollectionArgs struct {
+	Items GetConnectionAssignmentsConnectionAssignmentCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetConnectionAssignmentsConnectionAssignmentCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionAssignmentsConnectionAssignmentCollection)(nil)).Elem()
+}
+
+func (i GetConnectionAssignmentsConnectionAssignmentCollectionArgs) ToGetConnectionAssignmentsConnectionAssignmentCollectionOutput() GetConnectionAssignmentsConnectionAssignmentCollectionOutput {
+	return i.ToGetConnectionAssignmentsConnectionAssignmentCollectionOutputWithContext(context.Background())
+}
+
+func (i GetConnectionAssignmentsConnectionAssignmentCollectionArgs) ToGetConnectionAssignmentsConnectionAssignmentCollectionOutputWithContext(ctx context.Context) GetConnectionAssignmentsConnectionAssignmentCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionAssignmentsConnectionAssignmentCollectionOutput)
+}
+
+// GetConnectionAssignmentsConnectionAssignmentCollectionArrayInput is an input type that accepts GetConnectionAssignmentsConnectionAssignmentCollectionArray and GetConnectionAssignmentsConnectionAssignmentCollectionArrayOutput values.
+// You can construct a concrete instance of `GetConnectionAssignmentsConnectionAssignmentCollectionArrayInput` via:
+//
+//	GetConnectionAssignmentsConnectionAssignmentCollectionArray{ GetConnectionAssignmentsConnectionAssignmentCollectionArgs{...} }
+type GetConnectionAssignmentsConnectionAssignmentCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetConnectionAssignmentsConnectionAssignmentCollectionArrayOutput() GetConnectionAssignmentsConnectionAssignmentCollectionArrayOutput
+	ToGetConnectionAssignmentsConnectionAssignmentCollectionArrayOutputWithContext(context.Context) GetConnectionAssignmentsConnectionAssignmentCollectionArrayOutput
+}
+
+type GetConnectionAssignmentsConnectionAssignmentCollectionArray []GetConnectionAssignmentsConnectionAssignmentCollectionInput
+
+func (GetConnectionAssignmentsConnectionAssignmentCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionAssignmentsConnectionAssignmentCollection)(nil)).Elem()
+}
+
+func (i GetConnectionAssignmentsConnectionAssignmentCollectionArray) ToGetConnectionAssignmentsConnectionAssignmentCollectionArrayOutput() GetConnectionAssignmentsConnectionAssignmentCollectionArrayOutput {
+	return i.ToGetConnectionAssignmentsConnectionAssignmentCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetConnectionAssignmentsConnectionAssignmentCollectionArray) ToGetConnectionAssignmentsConnectionAssignmentCollectionArrayOutputWithContext(ctx context.Context) GetConnectionAssignmentsConnectionAssignmentCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionAssignmentsConnectionAssignmentCollectionArrayOutput)
+}
+
+type GetConnectionAssignmentsConnectionAssignmentCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionAssignmentsConnectionAssignmentCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionAssignmentsConnectionAssignmentCollection)(nil)).Elem()
+}
+
+func (o GetConnectionAssignmentsConnectionAssignmentCollectionOutput) ToGetConnectionAssignmentsConnectionAssignmentCollectionOutput() GetConnectionAssignmentsConnectionAssignmentCollectionOutput {
+	return o
+}
+
+func (o GetConnectionAssignmentsConnectionAssignmentCollectionOutput) ToGetConnectionAssignmentsConnectionAssignmentCollectionOutputWithContext(ctx context.Context) GetConnectionAssignmentsConnectionAssignmentCollectionOutput {
+	return o
+}
+
+func (o GetConnectionAssignmentsConnectionAssignmentCollectionOutput) Items() GetConnectionAssignmentsConnectionAssignmentCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetConnectionAssignmentsConnectionAssignmentCollection) []GetConnectionAssignmentsConnectionAssignmentCollectionItem {
+		return v.Items
+	}).(GetConnectionAssignmentsConnectionAssignmentCollectionItemArrayOutput)
+}
+
+type GetConnectionAssignmentsConnectionAssignmentCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionAssignmentsConnectionAssignmentCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionAssignmentsConnectionAssignmentCollection)(nil)).Elem()
+}
+
+func (o GetConnectionAssignmentsConnectionAssignmentCollectionArrayOutput) ToGetConnectionAssignmentsConnectionAssignmentCollectionArrayOutput() GetConnectionAssignmentsConnectionAssignmentCollectionArrayOutput {
+	return o
+}
+
+func (o GetConnectionAssignmentsConnectionAssignmentCollectionArrayOutput) ToGetConnectionAssignmentsConnectionAssignmentCollectionArrayOutputWithContext(ctx context.Context) GetConnectionAssignmentsConnectionAssignmentCollectionArrayOutput {
+	return o
+}
+
+func (o GetConnectionAssignmentsConnectionAssignmentCollectionArrayOutput) Index(i pulumi.IntInput) GetConnectionAssignmentsConnectionAssignmentCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConnectionAssignmentsConnectionAssignmentCollection {
+		return vs[0].([]GetConnectionAssignmentsConnectionAssignmentCollection)[vs[1].(int)]
+	}).(GetConnectionAssignmentsConnectionAssignmentCollectionOutput)
+}
+
+type GetConnectionAssignmentsConnectionAssignmentCollectionItem struct {
+	// Credential store alias.
+	AliasName string `pulumi:"aliasName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection.
+	ConnectionId string `pulumi:"connectionId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
+	DeploymentId string `pulumi:"deploymentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection assignment being referenced.
+	Id string `pulumi:"id"`
+	// A filter to return only connection assignments having the 'lifecycleState' given.
+	State string `pulumi:"state"`
+	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetConnectionAssignmentsConnectionAssignmentCollectionItemInput is an input type that accepts GetConnectionAssignmentsConnectionAssignmentCollectionItemArgs and GetConnectionAssignmentsConnectionAssignmentCollectionItemOutput values.
+// You can construct a concrete instance of `GetConnectionAssignmentsConnectionAssignmentCollectionItemInput` via:
+//
+//	GetConnectionAssignmentsConnectionAssignmentCollectionItemArgs{...}
+type GetConnectionAssignmentsConnectionAssignmentCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetConnectionAssignmentsConnectionAssignmentCollectionItemOutput() GetConnectionAssignmentsConnectionAssignmentCollectionItemOutput
+	ToGetConnectionAssignmentsConnectionAssignmentCollectionItemOutputWithContext(context.Context) GetConnectionAssignmentsConnectionAssignmentCollectionItemOutput
+}
+
+type GetConnectionAssignmentsConnectionAssignmentCollectionItemArgs struct {
+	// Credential store alias.
+	AliasName pulumi.StringInput `pulumi:"aliasName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection.
+	ConnectionId pulumi.StringInput `pulumi:"connectionId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
+	DeploymentId pulumi.StringInput `pulumi:"deploymentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection assignment being referenced.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A filter to return only connection assignments having the 'lifecycleState' given.
+	State pulumi.StringInput `pulumi:"state"`
+	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetConnectionAssignmentsConnectionAssignmentCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionAssignmentsConnectionAssignmentCollectionItem)(nil)).Elem()
+}
+
+func (i GetConnectionAssignmentsConnectionAssignmentCollectionItemArgs) ToGetConnectionAssignmentsConnectionAssignmentCollectionItemOutput() GetConnectionAssignmentsConnectionAssignmentCollectionItemOutput {
+	return i.ToGetConnectionAssignmentsConnectionAssignmentCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetConnectionAssignmentsConnectionAssignmentCollectionItemArgs) ToGetConnectionAssignmentsConnectionAssignmentCollectionItemOutputWithContext(ctx context.Context) GetConnectionAssignmentsConnectionAssignmentCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionAssignmentsConnectionAssignmentCollectionItemOutput)
+}
+
+// GetConnectionAssignmentsConnectionAssignmentCollectionItemArrayInput is an input type that accepts GetConnectionAssignmentsConnectionAssignmentCollectionItemArray and GetConnectionAssignmentsConnectionAssignmentCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetConnectionAssignmentsConnectionAssignmentCollectionItemArrayInput` via:
+//
+//	GetConnectionAssignmentsConnectionAssignmentCollectionItemArray{ GetConnectionAssignmentsConnectionAssignmentCollectionItemArgs{...} }
+type GetConnectionAssignmentsConnectionAssignmentCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetConnectionAssignmentsConnectionAssignmentCollectionItemArrayOutput() GetConnectionAssignmentsConnectionAssignmentCollectionItemArrayOutput
+	ToGetConnectionAssignmentsConnectionAssignmentCollectionItemArrayOutputWithContext(context.Context) GetConnectionAssignmentsConnectionAssignmentCollectionItemArrayOutput
+}
+
+type GetConnectionAssignmentsConnectionAssignmentCollectionItemArray []GetConnectionAssignmentsConnectionAssignmentCollectionItemInput
+
+func (GetConnectionAssignmentsConnectionAssignmentCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionAssignmentsConnectionAssignmentCollectionItem)(nil)).Elem()
+}
+
+func (i GetConnectionAssignmentsConnectionAssignmentCollectionItemArray) ToGetConnectionAssignmentsConnectionAssignmentCollectionItemArrayOutput() GetConnectionAssignmentsConnectionAssignmentCollectionItemArrayOutput {
+	return i.ToGetConnectionAssignmentsConnectionAssignmentCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetConnectionAssignmentsConnectionAssignmentCollectionItemArray) ToGetConnectionAssignmentsConnectionAssignmentCollectionItemArrayOutputWithContext(ctx context.Context) GetConnectionAssignmentsConnectionAssignmentCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionAssignmentsConnectionAssignmentCollectionItemArrayOutput)
+}
+
+type GetConnectionAssignmentsConnectionAssignmentCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionAssignmentsConnectionAssignmentCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionAssignmentsConnectionAssignmentCollectionItem)(nil)).Elem()
+}
+
+func (o GetConnectionAssignmentsConnectionAssignmentCollectionItemOutput) ToGetConnectionAssignmentsConnectionAssignmentCollectionItemOutput() GetConnectionAssignmentsConnectionAssignmentCollectionItemOutput {
+	return o
+}
+
+func (o GetConnectionAssignmentsConnectionAssignmentCollectionItemOutput) ToGetConnectionAssignmentsConnectionAssignmentCollectionItemOutputWithContext(ctx context.Context) GetConnectionAssignmentsConnectionAssignmentCollectionItemOutput {
+	return o
+}
+
+// Credential store alias.
+func (o GetConnectionAssignmentsConnectionAssignmentCollectionItemOutput) AliasName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionAssignmentsConnectionAssignmentCollectionItem) string { return v.AliasName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetConnectionAssignmentsConnectionAssignmentCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionAssignmentsConnectionAssignmentCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection.
+func (o GetConnectionAssignmentsConnectionAssignmentCollectionItemOutput) ConnectionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionAssignmentsConnectionAssignmentCollectionItem) string { return v.ConnectionId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
+func (o GetConnectionAssignmentsConnectionAssignmentCollectionItemOutput) DeploymentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionAssignmentsConnectionAssignmentCollectionItem) string { return v.DeploymentId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection assignment being referenced.
+func (o GetConnectionAssignmentsConnectionAssignmentCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionAssignmentsConnectionAssignmentCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A filter to return only connection assignments having the 'lifecycleState' given.
+func (o GetConnectionAssignmentsConnectionAssignmentCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionAssignmentsConnectionAssignmentCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o GetConnectionAssignmentsConnectionAssignmentCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionAssignmentsConnectionAssignmentCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o GetConnectionAssignmentsConnectionAssignmentCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionAssignmentsConnectionAssignmentCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetConnectionAssignmentsConnectionAssignmentCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionAssignmentsConnectionAssignmentCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionAssignmentsConnectionAssignmentCollectionItem)(nil)).Elem()
+}
+
+func (o GetConnectionAssignmentsConnectionAssignmentCollectionItemArrayOutput) ToGetConnectionAssignmentsConnectionAssignmentCollectionItemArrayOutput() GetConnectionAssignmentsConnectionAssignmentCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetConnectionAssignmentsConnectionAssignmentCollectionItemArrayOutput) ToGetConnectionAssignmentsConnectionAssignmentCollectionItemArrayOutputWithContext(ctx context.Context) GetConnectionAssignmentsConnectionAssignmentCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetConnectionAssignmentsConnectionAssignmentCollectionItemArrayOutput) Index(i pulumi.IntInput) GetConnectionAssignmentsConnectionAssignmentCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConnectionAssignmentsConnectionAssignmentCollectionItem {
+		return vs[0].([]GetConnectionAssignmentsConnectionAssignmentCollectionItem)[vs[1].(int)]
+	}).(GetConnectionAssignmentsConnectionAssignmentCollectionItemOutput)
+}
+
+type GetConnectionAssignmentsFilter struct {
+	// The name of the connection in the assignment (aliasName).
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetConnectionAssignmentsFilterInput is an input type that accepts GetConnectionAssignmentsFilterArgs and GetConnectionAssignmentsFilterOutput values.
+// You can construct a concrete instance of `GetConnectionAssignmentsFilterInput` via:
+//
+//	GetConnectionAssignmentsFilterArgs{...}
+type GetConnectionAssignmentsFilterInput interface {
+	pulumi.Input
+
+	ToGetConnectionAssignmentsFilterOutput() GetConnectionAssignmentsFilterOutput
+	ToGetConnectionAssignmentsFilterOutputWithContext(context.Context) GetConnectionAssignmentsFilterOutput
+}
+
+type GetConnectionAssignmentsFilterArgs struct {
+	// The name of the connection in the assignment (aliasName).
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetConnectionAssignmentsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionAssignmentsFilter)(nil)).Elem()
+}
+
+func (i GetConnectionAssignmentsFilterArgs) ToGetConnectionAssignmentsFilterOutput() GetConnectionAssignmentsFilterOutput {
+	return i.ToGetConnectionAssignmentsFilterOutputWithContext(context.Background())
+}
+
+func (i GetConnectionAssignmentsFilterArgs) ToGetConnectionAssignmentsFilterOutputWithContext(ctx context.Context) GetConnectionAssignmentsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionAssignmentsFilterOutput)
+}
+
+// GetConnectionAssignmentsFilterArrayInput is an input type that accepts GetConnectionAssignmentsFilterArray and GetConnectionAssignmentsFilterArrayOutput values.
+// You can construct a concrete instance of `GetConnectionAssignmentsFilterArrayInput` via:
+//
+//	GetConnectionAssignmentsFilterArray{ GetConnectionAssignmentsFilterArgs{...} }
+type GetConnectionAssignmentsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetConnectionAssignmentsFilterArrayOutput() GetConnectionAssignmentsFilterArrayOutput
+	ToGetConnectionAssignmentsFilterArrayOutputWithContext(context.Context) GetConnectionAssignmentsFilterArrayOutput
+}
+
+type GetConnectionAssignmentsFilterArray []GetConnectionAssignmentsFilterInput
+
+func (GetConnectionAssignmentsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionAssignmentsFilter)(nil)).Elem()
+}
+
+func (i GetConnectionAssignmentsFilterArray) ToGetConnectionAssignmentsFilterArrayOutput() GetConnectionAssignmentsFilterArrayOutput {
+	return i.ToGetConnectionAssignmentsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetConnectionAssignmentsFilterArray) ToGetConnectionAssignmentsFilterArrayOutputWithContext(ctx context.Context) GetConnectionAssignmentsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionAssignmentsFilterArrayOutput)
+}
+
+type GetConnectionAssignmentsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionAssignmentsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionAssignmentsFilter)(nil)).Elem()
+}
+
+func (o GetConnectionAssignmentsFilterOutput) ToGetConnectionAssignmentsFilterOutput() GetConnectionAssignmentsFilterOutput {
+	return o
+}
+
+func (o GetConnectionAssignmentsFilterOutput) ToGetConnectionAssignmentsFilterOutputWithContext(ctx context.Context) GetConnectionAssignmentsFilterOutput {
+	return o
+}
+
+// The name of the connection in the assignment (aliasName).
+func (o GetConnectionAssignmentsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionAssignmentsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetConnectionAssignmentsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetConnectionAssignmentsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetConnectionAssignmentsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetConnectionAssignmentsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetConnectionAssignmentsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionAssignmentsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionAssignmentsFilter)(nil)).Elem()
+}
+
+func (o GetConnectionAssignmentsFilterArrayOutput) ToGetConnectionAssignmentsFilterArrayOutput() GetConnectionAssignmentsFilterArrayOutput {
+	return o
+}
+
+func (o GetConnectionAssignmentsFilterArrayOutput) ToGetConnectionAssignmentsFilterArrayOutputWithContext(ctx context.Context) GetConnectionAssignmentsFilterArrayOutput {
+	return o
+}
+
+func (o GetConnectionAssignmentsFilterArrayOutput) Index(i pulumi.IntInput) GetConnectionAssignmentsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConnectionAssignmentsFilter {
+		return vs[0].([]GetConnectionAssignmentsFilter)[vs[1].(int)]
+	}).(GetConnectionAssignmentsFilterOutput)
+}
+
+type GetConnectionBootstrapServer struct {
+	// The name or address of a host.
+	Host string `pulumi:"host"`
+	// The port of an endpoint usually specified for a connection.
+	Port int `pulumi:"port"`
+	// The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+	PrivateIp string `pulumi:"privateIp"`
+}
+
+// GetConnectionBootstrapServerInput is an input type that accepts GetConnectionBootstrapServerArgs and GetConnectionBootstrapServerOutput values.
+// You can construct a concrete instance of `GetConnectionBootstrapServerInput` via:
+//
+//	GetConnectionBootstrapServerArgs{...}
+type GetConnectionBootstrapServerInput interface {
+	pulumi.Input
+
+	ToGetConnectionBootstrapServerOutput() GetConnectionBootstrapServerOutput
+	ToGetConnectionBootstrapServerOutputWithContext(context.Context) GetConnectionBootstrapServerOutput
+}
+
+type GetConnectionBootstrapServerArgs struct {
+	// The name or address of a host.
+	Host pulumi.StringInput `pulumi:"host"`
+	// The port of an endpoint usually specified for a connection.
+	Port pulumi.IntInput `pulumi:"port"`
+	// The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+	PrivateIp pulumi.StringInput `pulumi:"privateIp"`
+}
+
+func (GetConnectionBootstrapServerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionBootstrapServer)(nil)).Elem()
+}
+
+func (i GetConnectionBootstrapServerArgs) ToGetConnectionBootstrapServerOutput() GetConnectionBootstrapServerOutput {
+	return i.ToGetConnectionBootstrapServerOutputWithContext(context.Background())
+}
+
+func (i GetConnectionBootstrapServerArgs) ToGetConnectionBootstrapServerOutputWithContext(ctx context.Context) GetConnectionBootstrapServerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionBootstrapServerOutput)
+}
+
+// GetConnectionBootstrapServerArrayInput is an input type that accepts GetConnectionBootstrapServerArray and GetConnectionBootstrapServerArrayOutput values.
+// You can construct a concrete instance of `GetConnectionBootstrapServerArrayInput` via:
+//
+//	GetConnectionBootstrapServerArray{ GetConnectionBootstrapServerArgs{...} }
+type GetConnectionBootstrapServerArrayInput interface {
+	pulumi.Input
+
+	ToGetConnectionBootstrapServerArrayOutput() GetConnectionBootstrapServerArrayOutput
+	ToGetConnectionBootstrapServerArrayOutputWithContext(context.Context) GetConnectionBootstrapServerArrayOutput
+}
+
+type GetConnectionBootstrapServerArray []GetConnectionBootstrapServerInput
+
+func (GetConnectionBootstrapServerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionBootstrapServer)(nil)).Elem()
+}
+
+func (i GetConnectionBootstrapServerArray) ToGetConnectionBootstrapServerArrayOutput() GetConnectionBootstrapServerArrayOutput {
+	return i.ToGetConnectionBootstrapServerArrayOutputWithContext(context.Background())
+}
+
+func (i GetConnectionBootstrapServerArray) ToGetConnectionBootstrapServerArrayOutputWithContext(ctx context.Context) GetConnectionBootstrapServerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionBootstrapServerArrayOutput)
+}
+
+type GetConnectionBootstrapServerOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionBootstrapServerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionBootstrapServer)(nil)).Elem()
+}
+
+func (o GetConnectionBootstrapServerOutput) ToGetConnectionBootstrapServerOutput() GetConnectionBootstrapServerOutput {
+	return o
+}
+
+func (o GetConnectionBootstrapServerOutput) ToGetConnectionBootstrapServerOutputWithContext(ctx context.Context) GetConnectionBootstrapServerOutput {
+	return o
+}
+
+// The name or address of a host.
+func (o GetConnectionBootstrapServerOutput) Host() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionBootstrapServer) string { return v.Host }).(pulumi.StringOutput)
+}
+
+// The port of an endpoint usually specified for a connection.
+func (o GetConnectionBootstrapServerOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v GetConnectionBootstrapServer) int { return v.Port }).(pulumi.IntOutput)
+}
+
+// The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+func (o GetConnectionBootstrapServerOutput) PrivateIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionBootstrapServer) string { return v.PrivateIp }).(pulumi.StringOutput)
+}
+
+type GetConnectionBootstrapServerArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionBootstrapServerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionBootstrapServer)(nil)).Elem()
+}
+
+func (o GetConnectionBootstrapServerArrayOutput) ToGetConnectionBootstrapServerArrayOutput() GetConnectionBootstrapServerArrayOutput {
+	return o
+}
+
+func (o GetConnectionBootstrapServerArrayOutput) ToGetConnectionBootstrapServerArrayOutputWithContext(ctx context.Context) GetConnectionBootstrapServerArrayOutput {
+	return o
+}
+
+func (o GetConnectionBootstrapServerArrayOutput) Index(i pulumi.IntInput) GetConnectionBootstrapServerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConnectionBootstrapServer {
+		return vs[0].([]GetConnectionBootstrapServer)[vs[1].(int)]
+	}).(GetConnectionBootstrapServerOutput)
+}
+
+type GetConnectionIngressIp struct {
+	// A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+	IngressIp string `pulumi:"ingressIp"`
+}
+
+// GetConnectionIngressIpInput is an input type that accepts GetConnectionIngressIpArgs and GetConnectionIngressIpOutput values.
+// You can construct a concrete instance of `GetConnectionIngressIpInput` via:
+//
+//	GetConnectionIngressIpArgs{...}
+type GetConnectionIngressIpInput interface {
+	pulumi.Input
+
+	ToGetConnectionIngressIpOutput() GetConnectionIngressIpOutput
+	ToGetConnectionIngressIpOutputWithContext(context.Context) GetConnectionIngressIpOutput
+}
+
+type GetConnectionIngressIpArgs struct {
+	// A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+	IngressIp pulumi.StringInput `pulumi:"ingressIp"`
+}
+
+func (GetConnectionIngressIpArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionIngressIp)(nil)).Elem()
+}
+
+func (i GetConnectionIngressIpArgs) ToGetConnectionIngressIpOutput() GetConnectionIngressIpOutput {
+	return i.ToGetConnectionIngressIpOutputWithContext(context.Background())
+}
+
+func (i GetConnectionIngressIpArgs) ToGetConnectionIngressIpOutputWithContext(ctx context.Context) GetConnectionIngressIpOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionIngressIpOutput)
+}
+
+// GetConnectionIngressIpArrayInput is an input type that accepts GetConnectionIngressIpArray and GetConnectionIngressIpArrayOutput values.
+// You can construct a concrete instance of `GetConnectionIngressIpArrayInput` via:
+//
+//	GetConnectionIngressIpArray{ GetConnectionIngressIpArgs{...} }
+type GetConnectionIngressIpArrayInput interface {
+	pulumi.Input
+
+	ToGetConnectionIngressIpArrayOutput() GetConnectionIngressIpArrayOutput
+	ToGetConnectionIngressIpArrayOutputWithContext(context.Context) GetConnectionIngressIpArrayOutput
+}
+
+type GetConnectionIngressIpArray []GetConnectionIngressIpInput
+
+func (GetConnectionIngressIpArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionIngressIp)(nil)).Elem()
+}
+
+func (i GetConnectionIngressIpArray) ToGetConnectionIngressIpArrayOutput() GetConnectionIngressIpArrayOutput {
+	return i.ToGetConnectionIngressIpArrayOutputWithContext(context.Background())
+}
+
+func (i GetConnectionIngressIpArray) ToGetConnectionIngressIpArrayOutputWithContext(ctx context.Context) GetConnectionIngressIpArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionIngressIpArrayOutput)
+}
+
+type GetConnectionIngressIpOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionIngressIpOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionIngressIp)(nil)).Elem()
+}
+
+func (o GetConnectionIngressIpOutput) ToGetConnectionIngressIpOutput() GetConnectionIngressIpOutput {
+	return o
+}
+
+func (o GetConnectionIngressIpOutput) ToGetConnectionIngressIpOutputWithContext(ctx context.Context) GetConnectionIngressIpOutput {
+	return o
+}
+
+// A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+func (o GetConnectionIngressIpOutput) IngressIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionIngressIp) string { return v.IngressIp }).(pulumi.StringOutput)
+}
+
+type GetConnectionIngressIpArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionIngressIpArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionIngressIp)(nil)).Elem()
+}
+
+func (o GetConnectionIngressIpArrayOutput) ToGetConnectionIngressIpArrayOutput() GetConnectionIngressIpArrayOutput {
+	return o
+}
+
+func (o GetConnectionIngressIpArrayOutput) ToGetConnectionIngressIpArrayOutputWithContext(ctx context.Context) GetConnectionIngressIpArrayOutput {
+	return o
+}
+
+func (o GetConnectionIngressIpArrayOutput) Index(i pulumi.IntInput) GetConnectionIngressIpOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConnectionIngressIp {
+		return vs[0].([]GetConnectionIngressIp)[vs[1].(int)]
+	}).(GetConnectionIngressIpOutput)
+}
+
+type GetConnectionsConnectionCollection struct {
+	Items []GetConnectionsConnectionCollectionItem `pulumi:"items"`
+}
+
+// GetConnectionsConnectionCollectionInput is an input type that accepts GetConnectionsConnectionCollectionArgs and GetConnectionsConnectionCollectionOutput values.
+// You can construct a concrete instance of `GetConnectionsConnectionCollectionInput` via:
+//
+//	GetConnectionsConnectionCollectionArgs{...}
+type GetConnectionsConnectionCollectionInput interface {
+	pulumi.Input
+
+	ToGetConnectionsConnectionCollectionOutput() GetConnectionsConnectionCollectionOutput
+	ToGetConnectionsConnectionCollectionOutputWithContext(context.Context) GetConnectionsConnectionCollectionOutput
+}
+
+type GetConnectionsConnectionCollectionArgs struct {
+	Items GetConnectionsConnectionCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetConnectionsConnectionCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionsConnectionCollection)(nil)).Elem()
+}
+
+func (i GetConnectionsConnectionCollectionArgs) ToGetConnectionsConnectionCollectionOutput() GetConnectionsConnectionCollectionOutput {
+	return i.ToGetConnectionsConnectionCollectionOutputWithContext(context.Background())
+}
+
+func (i GetConnectionsConnectionCollectionArgs) ToGetConnectionsConnectionCollectionOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsConnectionCollectionOutput)
+}
+
+// GetConnectionsConnectionCollectionArrayInput is an input type that accepts GetConnectionsConnectionCollectionArray and GetConnectionsConnectionCollectionArrayOutput values.
+// You can construct a concrete instance of `GetConnectionsConnectionCollectionArrayInput` via:
+//
+//	GetConnectionsConnectionCollectionArray{ GetConnectionsConnectionCollectionArgs{...} }
+type GetConnectionsConnectionCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetConnectionsConnectionCollectionArrayOutput() GetConnectionsConnectionCollectionArrayOutput
+	ToGetConnectionsConnectionCollectionArrayOutputWithContext(context.Context) GetConnectionsConnectionCollectionArrayOutput
+}
+
+type GetConnectionsConnectionCollectionArray []GetConnectionsConnectionCollectionInput
+
+func (GetConnectionsConnectionCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionsConnectionCollection)(nil)).Elem()
+}
+
+func (i GetConnectionsConnectionCollectionArray) ToGetConnectionsConnectionCollectionArrayOutput() GetConnectionsConnectionCollectionArrayOutput {
+	return i.ToGetConnectionsConnectionCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetConnectionsConnectionCollectionArray) ToGetConnectionsConnectionCollectionArrayOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsConnectionCollectionArrayOutput)
+}
+
+type GetConnectionsConnectionCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionsConnectionCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionsConnectionCollection)(nil)).Elem()
+}
+
+func (o GetConnectionsConnectionCollectionOutput) ToGetConnectionsConnectionCollectionOutput() GetConnectionsConnectionCollectionOutput {
+	return o
+}
+
+func (o GetConnectionsConnectionCollectionOutput) ToGetConnectionsConnectionCollectionOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionOutput {
+	return o
+}
+
+func (o GetConnectionsConnectionCollectionOutput) Items() GetConnectionsConnectionCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollection) []GetConnectionsConnectionCollectionItem { return v.Items }).(GetConnectionsConnectionCollectionItemArrayOutput)
+}
+
+type GetConnectionsConnectionCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionsConnectionCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionsConnectionCollection)(nil)).Elem()
+}
+
+func (o GetConnectionsConnectionCollectionArrayOutput) ToGetConnectionsConnectionCollectionArrayOutput() GetConnectionsConnectionCollectionArrayOutput {
+	return o
+}
+
+func (o GetConnectionsConnectionCollectionArrayOutput) ToGetConnectionsConnectionCollectionArrayOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionArrayOutput {
+	return o
+}
+
+func (o GetConnectionsConnectionCollectionArrayOutput) Index(i pulumi.IntInput) GetConnectionsConnectionCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConnectionsConnectionCollection {
+		return vs[0].([]GetConnectionsConnectionCollection)[vs[1].(int)]
+	}).(GetConnectionsConnectionCollectionOutput)
+}
+
+type GetConnectionsConnectionCollectionItem struct {
+	AccountKey string `pulumi:"accountKey"`
+	// Sets the Azure storage account name.
+	AccountName string `pulumi:"accountName"`
+	// An array of name-value pair attribute entries. Used as additional parameters in connection string.
+	AdditionalAttributes []GetConnectionsConnectionCollectionItemAdditionalAttribute `pulumi:"additionalAttributes"`
+	// Used authentication mechanism to access Azure Data Lake Storage.
+	AuthenticationType string `pulumi:"authenticationType"`
+	// Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
+	AzureTenantId string `pulumi:"azureTenantId"`
+	// Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
+	BootstrapServers []GetConnectionsConnectionCollectionItemBootstrapServer `pulumi:"bootstrapServers"`
+	// Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+	ClientId     string `pulumi:"clientId"`
+	ClientSecret string `pulumi:"clientSecret"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
+	ConnectionString string `pulumi:"connectionString"`
+	// The array of connection types.
+	ConnectionType     string `pulumi:"connectionType"`
+	ConsumerProperties string `pulumi:"consumerProperties"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
+	DatabaseId string `pulumi:"databaseId"`
+	// The name of the database.
+	DatabaseName string `pulumi:"databaseName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system being referenced.
+	DbSystemId string `pulumi:"dbSystemId"`
+	// Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+	DeploymentId string `pulumi:"deploymentId"`
+	// Metadata about this specific object.
+	Description string `pulumi:"description"`
+	// A filter to return only the resources that match the entire 'displayName' given.
+	DisplayName string `pulumi:"displayName"`
+	// Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+	Endpoint string `pulumi:"endpoint"`
+	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The name or address of a host.
+	Host string `pulumi:"host"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
+	Id string `pulumi:"id"`
+	// List of ingress IP addresses, from where the GoldenGate deployment connects to this connection's privateIp.
+	IngressIps []GetConnectionsConnectionCollectionItemIngressIp `pulumi:"ingressIps"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer "Master" key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+	KeyId            string `pulumi:"keyId"`
+	KeyStore         string `pulumi:"keyStore"`
+	KeyStorePassword string `pulumi:"keyStorePassword"`
+	// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
+	NsgIds   []string `pulumi:"nsgIds"`
+	Password string   `pulumi:"password"`
+	// The port of an endpoint usually specified for a connection.
+	Port int `pulumi:"port"`
+	// The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+	PrivateIp            string `pulumi:"privateIp"`
+	PrivateKeyFile       string `pulumi:"privateKeyFile"`
+	PrivateKeyPassphrase string `pulumi:"privateKeyPassphrase"`
+	ProducerProperties   string `pulumi:"producerProperties"`
+	PublicKeyFingerprint string `pulumi:"publicKeyFingerprint"`
+	// The name of the region. e.g.: us-ashburn-1
+	Region   string `pulumi:"region"`
+	SasToken string `pulumi:"sasToken"`
+	// Security protocol for PostgreSQL.
+	SecurityProtocol string `pulumi:"securityProtocol"`
+	// The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+	SessionMode    string `pulumi:"sessionMode"`
+	SslCa          string `pulumi:"sslCa"`
+	SslCert        string `pulumi:"sslCert"`
+	SslCrl         string `pulumi:"sslCrl"`
+	SslKey         string `pulumi:"sslKey"`
+	SslKeyPassword string `pulumi:"sslKeyPassword"`
+	// SSL mode for PostgreSQL.
+	SslMode string `pulumi:"sslMode"`
+	// A filter to return only connections having the 'lifecycleState' given.
+	State string `pulumi:"state"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
+	StreamPoolId string `pulumi:"streamPoolId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+	SubnetId string `pulumi:"subnetId"`
+	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// The array of technology types.
+	TechnologyType string `pulumi:"technologyType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
+	TenancyId string `pulumi:"tenancyId"`
+	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeUpdated        string `pulumi:"timeUpdated"`
+	TrustStore         string `pulumi:"trustStore"`
+	TrustStorePassword string `pulumi:"trustStorePassword"`
+	// Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081'
+	Url string `pulumi:"url"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Object Storage. The user must have write access to the bucket they want to connect to.
+	UserId string `pulumi:"userId"`
+	// The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+	Username string `pulumi:"username"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+	VaultId string `pulumi:"vaultId"`
+	Wallet  string `pulumi:"wallet"`
+}
+
+// GetConnectionsConnectionCollectionItemInput is an input type that accepts GetConnectionsConnectionCollectionItemArgs and GetConnectionsConnectionCollectionItemOutput values.
+// You can construct a concrete instance of `GetConnectionsConnectionCollectionItemInput` via:
+//
+//	GetConnectionsConnectionCollectionItemArgs{...}
+type GetConnectionsConnectionCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetConnectionsConnectionCollectionItemOutput() GetConnectionsConnectionCollectionItemOutput
+	ToGetConnectionsConnectionCollectionItemOutputWithContext(context.Context) GetConnectionsConnectionCollectionItemOutput
+}
+
+type GetConnectionsConnectionCollectionItemArgs struct {
+	AccountKey pulumi.StringInput `pulumi:"accountKey"`
+	// Sets the Azure storage account name.
+	AccountName pulumi.StringInput `pulumi:"accountName"`
+	// An array of name-value pair attribute entries. Used as additional parameters in connection string.
+	AdditionalAttributes GetConnectionsConnectionCollectionItemAdditionalAttributeArrayInput `pulumi:"additionalAttributes"`
+	// Used authentication mechanism to access Azure Data Lake Storage.
+	AuthenticationType pulumi.StringInput `pulumi:"authenticationType"`
+	// Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
+	AzureTenantId pulumi.StringInput `pulumi:"azureTenantId"`
+	// Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
+	BootstrapServers GetConnectionsConnectionCollectionItemBootstrapServerArrayInput `pulumi:"bootstrapServers"`
+	// Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+	ClientId     pulumi.StringInput `pulumi:"clientId"`
+	ClientSecret pulumi.StringInput `pulumi:"clientSecret"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
+	ConnectionString pulumi.StringInput `pulumi:"connectionString"`
+	// The array of connection types.
+	ConnectionType     pulumi.StringInput `pulumi:"connectionType"`
+	ConsumerProperties pulumi.StringInput `pulumi:"consumerProperties"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
+	DatabaseId pulumi.StringInput `pulumi:"databaseId"`
+	// The name of the database.
+	DatabaseName pulumi.StringInput `pulumi:"databaseName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system being referenced.
+	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
+	// Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+	DeploymentId pulumi.StringInput `pulumi:"deploymentId"`
+	// Metadata about this specific object.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only the resources that match the entire 'displayName' given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+	Endpoint pulumi.StringInput `pulumi:"endpoint"`
+	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The name or address of a host.
+	Host pulumi.StringInput `pulumi:"host"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
+	Id pulumi.StringInput `pulumi:"id"`
+	// List of ingress IP addresses, from where the GoldenGate deployment connects to this connection's privateIp.
+	IngressIps GetConnectionsConnectionCollectionItemIngressIpArrayInput `pulumi:"ingressIps"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer "Master" key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+	KeyId            pulumi.StringInput `pulumi:"keyId"`
+	KeyStore         pulumi.StringInput `pulumi:"keyStore"`
+	KeyStorePassword pulumi.StringInput `pulumi:"keyStorePassword"`
+	// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
+	NsgIds   pulumi.StringArrayInput `pulumi:"nsgIds"`
+	Password pulumi.StringInput      `pulumi:"password"`
+	// The port of an endpoint usually specified for a connection.
+	Port pulumi.IntInput `pulumi:"port"`
+	// The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+	PrivateIp            pulumi.StringInput `pulumi:"privateIp"`
+	PrivateKeyFile       pulumi.StringInput `pulumi:"privateKeyFile"`
+	PrivateKeyPassphrase pulumi.StringInput `pulumi:"privateKeyPassphrase"`
+	ProducerProperties   pulumi.StringInput `pulumi:"producerProperties"`
+	PublicKeyFingerprint pulumi.StringInput `pulumi:"publicKeyFingerprint"`
+	// The name of the region. e.g.: us-ashburn-1
+	Region   pulumi.StringInput `pulumi:"region"`
+	SasToken pulumi.StringInput `pulumi:"sasToken"`
+	// Security protocol for PostgreSQL.
+	SecurityProtocol pulumi.StringInput `pulumi:"securityProtocol"`
+	// The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+	SessionMode    pulumi.StringInput `pulumi:"sessionMode"`
+	SslCa          pulumi.StringInput `pulumi:"sslCa"`
+	SslCert        pulumi.StringInput `pulumi:"sslCert"`
+	SslCrl         pulumi.StringInput `pulumi:"sslCrl"`
+	SslKey         pulumi.StringInput `pulumi:"sslKey"`
+	SslKeyPassword pulumi.StringInput `pulumi:"sslKeyPassword"`
+	// SSL mode for PostgreSQL.
+	SslMode pulumi.StringInput `pulumi:"sslMode"`
+	// A filter to return only connections having the 'lifecycleState' given.
+	State pulumi.StringInput `pulumi:"state"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
+	StreamPoolId pulumi.StringInput `pulumi:"streamPoolId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	// The array of technology types.
+	TechnologyType pulumi.StringInput `pulumi:"technologyType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
+	TenancyId pulumi.StringInput `pulumi:"tenancyId"`
+	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeUpdated        pulumi.StringInput `pulumi:"timeUpdated"`
+	TrustStore         pulumi.StringInput `pulumi:"trustStore"`
+	TrustStorePassword pulumi.StringInput `pulumi:"trustStorePassword"`
+	// Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081'
+	Url pulumi.StringInput `pulumi:"url"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Object Storage. The user must have write access to the bucket they want to connect to.
+	UserId pulumi.StringInput `pulumi:"userId"`
+	// The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+	Username pulumi.StringInput `pulumi:"username"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+	VaultId pulumi.StringInput `pulumi:"vaultId"`
+	Wallet  pulumi.StringInput `pulumi:"wallet"`
+}
+
+func (GetConnectionsConnectionCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionsConnectionCollectionItem)(nil)).Elem()
+}
+
+func (i GetConnectionsConnectionCollectionItemArgs) ToGetConnectionsConnectionCollectionItemOutput() GetConnectionsConnectionCollectionItemOutput {
+	return i.ToGetConnectionsConnectionCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetConnectionsConnectionCollectionItemArgs) ToGetConnectionsConnectionCollectionItemOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsConnectionCollectionItemOutput)
+}
+
+// GetConnectionsConnectionCollectionItemArrayInput is an input type that accepts GetConnectionsConnectionCollectionItemArray and GetConnectionsConnectionCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetConnectionsConnectionCollectionItemArrayInput` via:
+//
+//	GetConnectionsConnectionCollectionItemArray{ GetConnectionsConnectionCollectionItemArgs{...} }
+type GetConnectionsConnectionCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetConnectionsConnectionCollectionItemArrayOutput() GetConnectionsConnectionCollectionItemArrayOutput
+	ToGetConnectionsConnectionCollectionItemArrayOutputWithContext(context.Context) GetConnectionsConnectionCollectionItemArrayOutput
+}
+
+type GetConnectionsConnectionCollectionItemArray []GetConnectionsConnectionCollectionItemInput
+
+func (GetConnectionsConnectionCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionsConnectionCollectionItem)(nil)).Elem()
+}
+
+func (i GetConnectionsConnectionCollectionItemArray) ToGetConnectionsConnectionCollectionItemArrayOutput() GetConnectionsConnectionCollectionItemArrayOutput {
+	return i.ToGetConnectionsConnectionCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetConnectionsConnectionCollectionItemArray) ToGetConnectionsConnectionCollectionItemArrayOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsConnectionCollectionItemArrayOutput)
+}
+
+type GetConnectionsConnectionCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionsConnectionCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionsConnectionCollectionItem)(nil)).Elem()
+}
+
+func (o GetConnectionsConnectionCollectionItemOutput) ToGetConnectionsConnectionCollectionItemOutput() GetConnectionsConnectionCollectionItemOutput {
+	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemOutput) ToGetConnectionsConnectionCollectionItemOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemOutput {
+	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemOutput) AccountKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.AccountKey }).(pulumi.StringOutput)
+}
+
+// Sets the Azure storage account name.
+func (o GetConnectionsConnectionCollectionItemOutput) AccountName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.AccountName }).(pulumi.StringOutput)
+}
+
+// An array of name-value pair attribute entries. Used as additional parameters in connection string.
+func (o GetConnectionsConnectionCollectionItemOutput) AdditionalAttributes() GetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) []GetConnectionsConnectionCollectionItemAdditionalAttribute {
+		return v.AdditionalAttributes
+	}).(GetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutput)
+}
+
+// Used authentication mechanism to access Azure Data Lake Storage.
+func (o GetConnectionsConnectionCollectionItemOutput) AuthenticationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.AuthenticationType }).(pulumi.StringOutput)
+}
+
+// Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
+func (o GetConnectionsConnectionCollectionItemOutput) AzureTenantId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.AzureTenantId }).(pulumi.StringOutput)
+}
+
+// Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
+func (o GetConnectionsConnectionCollectionItemOutput) BootstrapServers() GetConnectionsConnectionCollectionItemBootstrapServerArrayOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) []GetConnectionsConnectionCollectionItemBootstrapServer {
+		return v.BootstrapServers
+	}).(GetConnectionsConnectionCollectionItemBootstrapServerArrayOutput)
+}
+
+// Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+func (o GetConnectionsConnectionCollectionItemOutput) ClientId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.ClientId }).(pulumi.StringOutput)
+}
+
+func (o GetConnectionsConnectionCollectionItemOutput) ClientSecret() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.ClientSecret }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetConnectionsConnectionCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
+func (o GetConnectionsConnectionCollectionItemOutput) ConnectionString() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.ConnectionString }).(pulumi.StringOutput)
+}
+
+// The array of connection types.
+func (o GetConnectionsConnectionCollectionItemOutput) ConnectionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.ConnectionType }).(pulumi.StringOutput)
+}
+
+func (o GetConnectionsConnectionCollectionItemOutput) ConsumerProperties() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.ConsumerProperties }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
+func (o GetConnectionsConnectionCollectionItemOutput) DatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.DatabaseId }).(pulumi.StringOutput)
+}
+
+// The name of the database.
+func (o GetConnectionsConnectionCollectionItemOutput) DatabaseName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.DatabaseName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system being referenced.
+func (o GetConnectionsConnectionCollectionItemOutput) DbSystemId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.DbSystemId }).(pulumi.StringOutput)
+}
+
+// Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetConnectionsConnectionCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+func (o GetConnectionsConnectionCollectionItemOutput) DeploymentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.DeploymentId }).(pulumi.StringOutput)
+}
+
+// Metadata about this specific object.
+func (o GetConnectionsConnectionCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only the resources that match the entire 'displayName' given.
+func (o GetConnectionsConnectionCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Azure Storage service endpoint. e.g: https://test.blob.core.windows.net
+func (o GetConnectionsConnectionCollectionItemOutput) Endpoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.Endpoint }).(pulumi.StringOutput)
+}
+
+// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
+func (o GetConnectionsConnectionCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The name or address of a host.
+func (o GetConnectionsConnectionCollectionItemOutput) Host() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.Host }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
+func (o GetConnectionsConnectionCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// List of ingress IP addresses, from where the GoldenGate deployment connects to this connection's privateIp.
+func (o GetConnectionsConnectionCollectionItemOutput) IngressIps() GetConnectionsConnectionCollectionItemIngressIpArrayOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) []GetConnectionsConnectionCollectionItemIngressIp {
+		return v.IngressIps
+	}).(GetConnectionsConnectionCollectionItemIngressIpArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer "Master" key being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this key to manage secrets.
+func (o GetConnectionsConnectionCollectionItemOutput) KeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.KeyId }).(pulumi.StringOutput)
+}
+
+func (o GetConnectionsConnectionCollectionItemOutput) KeyStore() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.KeyStore }).(pulumi.StringOutput)
+}
+
+func (o GetConnectionsConnectionCollectionItemOutput) KeyStorePassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.KeyStorePassword }).(pulumi.StringOutput)
+}
+
+// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
+func (o GetConnectionsConnectionCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
+func (o GetConnectionsConnectionCollectionItemOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+func (o GetConnectionsConnectionCollectionItemOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.Password }).(pulumi.StringOutput)
+}
+
+// The port of an endpoint usually specified for a connection.
+func (o GetConnectionsConnectionCollectionItemOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) int { return v.Port }).(pulumi.IntOutput)
+}
+
+// The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+func (o GetConnectionsConnectionCollectionItemOutput) PrivateIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.PrivateIp }).(pulumi.StringOutput)
+}
+
+func (o GetConnectionsConnectionCollectionItemOutput) PrivateKeyFile() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.PrivateKeyFile }).(pulumi.StringOutput)
+}
+
+func (o GetConnectionsConnectionCollectionItemOutput) PrivateKeyPassphrase() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.PrivateKeyPassphrase }).(pulumi.StringOutput)
+}
+
+func (o GetConnectionsConnectionCollectionItemOutput) ProducerProperties() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.ProducerProperties }).(pulumi.StringOutput)
+}
+
+func (o GetConnectionsConnectionCollectionItemOutput) PublicKeyFingerprint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.PublicKeyFingerprint }).(pulumi.StringOutput)
+}
+
+// The name of the region. e.g.: us-ashburn-1
+func (o GetConnectionsConnectionCollectionItemOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.Region }).(pulumi.StringOutput)
+}
+
+func (o GetConnectionsConnectionCollectionItemOutput) SasToken() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.SasToken }).(pulumi.StringOutput)
+}
+
+// Security protocol for PostgreSQL.
+func (o GetConnectionsConnectionCollectionItemOutput) SecurityProtocol() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.SecurityProtocol }).(pulumi.StringOutput)
+}
+
+// The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+func (o GetConnectionsConnectionCollectionItemOutput) SessionMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.SessionMode }).(pulumi.StringOutput)
+}
+
+func (o GetConnectionsConnectionCollectionItemOutput) SslCa() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.SslCa }).(pulumi.StringOutput)
+}
+
+func (o GetConnectionsConnectionCollectionItemOutput) SslCert() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.SslCert }).(pulumi.StringOutput)
+}
+
+func (o GetConnectionsConnectionCollectionItemOutput) SslCrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.SslCrl }).(pulumi.StringOutput)
+}
+
+func (o GetConnectionsConnectionCollectionItemOutput) SslKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.SslKey }).(pulumi.StringOutput)
+}
+
+func (o GetConnectionsConnectionCollectionItemOutput) SslKeyPassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.SslKeyPassword }).(pulumi.StringOutput)
+}
+
+// SSL mode for PostgreSQL.
+func (o GetConnectionsConnectionCollectionItemOutput) SslMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.SslMode }).(pulumi.StringOutput)
+}
+
+// A filter to return only connections having the 'lifecycleState' given.
+func (o GetConnectionsConnectionCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
+func (o GetConnectionsConnectionCollectionItemOutput) StreamPoolId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.StreamPoolId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
+func (o GetConnectionsConnectionCollectionItemOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
+func (o GetConnectionsConnectionCollectionItemOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+}
+
+// The array of technology types.
+func (o GetConnectionsConnectionCollectionItemOutput) TechnologyType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.TechnologyType }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
+func (o GetConnectionsConnectionCollectionItemOutput) TenancyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.TenancyId }).(pulumi.StringOutput)
+}
+
+// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o GetConnectionsConnectionCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o GetConnectionsConnectionCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+func (o GetConnectionsConnectionCollectionItemOutput) TrustStore() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.TrustStore }).(pulumi.StringOutput)
+}
+
+func (o GetConnectionsConnectionCollectionItemOutput) TrustStorePassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.TrustStorePassword }).(pulumi.StringOutput)
+}
+
+// Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081'
+func (o GetConnectionsConnectionCollectionItemOutput) Url() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.Url }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Object Storage. The user must have write access to the bucket they want to connect to.
+func (o GetConnectionsConnectionCollectionItemOutput) UserId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.UserId }).(pulumi.StringOutput)
+}
+
+// The username Oracle GoldenGate uses to connect the associated RDBMS.  This username must already exist and be available for use by the database.  It must conform to the security requirements implemented by the database including length, case sensitivity, and so on.
+func (o GetConnectionsConnectionCollectionItemOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.Username }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer vault being referenced. If provided, this will reference a vault which the customer will be required to ensure the policies are established to permit the GoldenGate Service to manage secrets contained within this vault.
+func (o GetConnectionsConnectionCollectionItemOutput) VaultId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.VaultId }).(pulumi.StringOutput)
+}
+
+func (o GetConnectionsConnectionCollectionItemOutput) Wallet() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.Wallet }).(pulumi.StringOutput)
+}
+
+type GetConnectionsConnectionCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionsConnectionCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionsConnectionCollectionItem)(nil)).Elem()
+}
+
+func (o GetConnectionsConnectionCollectionItemArrayOutput) ToGetConnectionsConnectionCollectionItemArrayOutput() GetConnectionsConnectionCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemArrayOutput) ToGetConnectionsConnectionCollectionItemArrayOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemArrayOutput) Index(i pulumi.IntInput) GetConnectionsConnectionCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConnectionsConnectionCollectionItem {
+		return vs[0].([]GetConnectionsConnectionCollectionItem)[vs[1].(int)]
+	}).(GetConnectionsConnectionCollectionItemOutput)
+}
+
+type GetConnectionsConnectionCollectionItemAdditionalAttribute struct {
+	// The name of the property entry.
+	Name string `pulumi:"name"`
+	// The value of the property entry.
+	Value string `pulumi:"value"`
+}
+
+// GetConnectionsConnectionCollectionItemAdditionalAttributeInput is an input type that accepts GetConnectionsConnectionCollectionItemAdditionalAttributeArgs and GetConnectionsConnectionCollectionItemAdditionalAttributeOutput values.
+// You can construct a concrete instance of `GetConnectionsConnectionCollectionItemAdditionalAttributeInput` via:
+//
+//	GetConnectionsConnectionCollectionItemAdditionalAttributeArgs{...}
+type GetConnectionsConnectionCollectionItemAdditionalAttributeInput interface {
+	pulumi.Input
+
+	ToGetConnectionsConnectionCollectionItemAdditionalAttributeOutput() GetConnectionsConnectionCollectionItemAdditionalAttributeOutput
+	ToGetConnectionsConnectionCollectionItemAdditionalAttributeOutputWithContext(context.Context) GetConnectionsConnectionCollectionItemAdditionalAttributeOutput
+}
+
+type GetConnectionsConnectionCollectionItemAdditionalAttributeArgs struct {
+	// The name of the property entry.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The value of the property entry.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetConnectionsConnectionCollectionItemAdditionalAttributeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionsConnectionCollectionItemAdditionalAttribute)(nil)).Elem()
+}
+
+func (i GetConnectionsConnectionCollectionItemAdditionalAttributeArgs) ToGetConnectionsConnectionCollectionItemAdditionalAttributeOutput() GetConnectionsConnectionCollectionItemAdditionalAttributeOutput {
+	return i.ToGetConnectionsConnectionCollectionItemAdditionalAttributeOutputWithContext(context.Background())
+}
+
+func (i GetConnectionsConnectionCollectionItemAdditionalAttributeArgs) ToGetConnectionsConnectionCollectionItemAdditionalAttributeOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemAdditionalAttributeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsConnectionCollectionItemAdditionalAttributeOutput)
+}
+
+// GetConnectionsConnectionCollectionItemAdditionalAttributeArrayInput is an input type that accepts GetConnectionsConnectionCollectionItemAdditionalAttributeArray and GetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutput values.
+// You can construct a concrete instance of `GetConnectionsConnectionCollectionItemAdditionalAttributeArrayInput` via:
+//
+//	GetConnectionsConnectionCollectionItemAdditionalAttributeArray{ GetConnectionsConnectionCollectionItemAdditionalAttributeArgs{...} }
+type GetConnectionsConnectionCollectionItemAdditionalAttributeArrayInput interface {
+	pulumi.Input
+
+	ToGetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutput() GetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutput
+	ToGetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutputWithContext(context.Context) GetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutput
+}
+
+type GetConnectionsConnectionCollectionItemAdditionalAttributeArray []GetConnectionsConnectionCollectionItemAdditionalAttributeInput
+
+func (GetConnectionsConnectionCollectionItemAdditionalAttributeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionsConnectionCollectionItemAdditionalAttribute)(nil)).Elem()
+}
+
+func (i GetConnectionsConnectionCollectionItemAdditionalAttributeArray) ToGetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutput() GetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutput {
+	return i.ToGetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutputWithContext(context.Background())
+}
+
+func (i GetConnectionsConnectionCollectionItemAdditionalAttributeArray) ToGetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutput)
+}
+
+type GetConnectionsConnectionCollectionItemAdditionalAttributeOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionsConnectionCollectionItemAdditionalAttributeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionsConnectionCollectionItemAdditionalAttribute)(nil)).Elem()
+}
+
+func (o GetConnectionsConnectionCollectionItemAdditionalAttributeOutput) ToGetConnectionsConnectionCollectionItemAdditionalAttributeOutput() GetConnectionsConnectionCollectionItemAdditionalAttributeOutput {
+	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemAdditionalAttributeOutput) ToGetConnectionsConnectionCollectionItemAdditionalAttributeOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemAdditionalAttributeOutput {
+	return o
+}
+
+// The name of the property entry.
+func (o GetConnectionsConnectionCollectionItemAdditionalAttributeOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItemAdditionalAttribute) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The value of the property entry.
+func (o GetConnectionsConnectionCollectionItemAdditionalAttributeOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItemAdditionalAttribute) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionsConnectionCollectionItemAdditionalAttribute)(nil)).Elem()
+}
+
+func (o GetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutput) ToGetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutput() GetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutput {
+	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutput) ToGetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutput {
+	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutput) Index(i pulumi.IntInput) GetConnectionsConnectionCollectionItemAdditionalAttributeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConnectionsConnectionCollectionItemAdditionalAttribute {
+		return vs[0].([]GetConnectionsConnectionCollectionItemAdditionalAttribute)[vs[1].(int)]
+	}).(GetConnectionsConnectionCollectionItemAdditionalAttributeOutput)
+}
+
+type GetConnectionsConnectionCollectionItemBootstrapServer struct {
+	// The name or address of a host.
+	Host string `pulumi:"host"`
+	// The port of an endpoint usually specified for a connection.
+	Port int `pulumi:"port"`
+	// The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+	PrivateIp string `pulumi:"privateIp"`
+}
+
+// GetConnectionsConnectionCollectionItemBootstrapServerInput is an input type that accepts GetConnectionsConnectionCollectionItemBootstrapServerArgs and GetConnectionsConnectionCollectionItemBootstrapServerOutput values.
+// You can construct a concrete instance of `GetConnectionsConnectionCollectionItemBootstrapServerInput` via:
+//
+//	GetConnectionsConnectionCollectionItemBootstrapServerArgs{...}
+type GetConnectionsConnectionCollectionItemBootstrapServerInput interface {
+	pulumi.Input
+
+	ToGetConnectionsConnectionCollectionItemBootstrapServerOutput() GetConnectionsConnectionCollectionItemBootstrapServerOutput
+	ToGetConnectionsConnectionCollectionItemBootstrapServerOutputWithContext(context.Context) GetConnectionsConnectionCollectionItemBootstrapServerOutput
+}
+
+type GetConnectionsConnectionCollectionItemBootstrapServerArgs struct {
+	// The name or address of a host.
+	Host pulumi.StringInput `pulumi:"host"`
+	// The port of an endpoint usually specified for a connection.
+	Port pulumi.IntInput `pulumi:"port"`
+	// The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+	PrivateIp pulumi.StringInput `pulumi:"privateIp"`
+}
+
+func (GetConnectionsConnectionCollectionItemBootstrapServerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionsConnectionCollectionItemBootstrapServer)(nil)).Elem()
+}
+
+func (i GetConnectionsConnectionCollectionItemBootstrapServerArgs) ToGetConnectionsConnectionCollectionItemBootstrapServerOutput() GetConnectionsConnectionCollectionItemBootstrapServerOutput {
+	return i.ToGetConnectionsConnectionCollectionItemBootstrapServerOutputWithContext(context.Background())
+}
+
+func (i GetConnectionsConnectionCollectionItemBootstrapServerArgs) ToGetConnectionsConnectionCollectionItemBootstrapServerOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemBootstrapServerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsConnectionCollectionItemBootstrapServerOutput)
+}
+
+// GetConnectionsConnectionCollectionItemBootstrapServerArrayInput is an input type that accepts GetConnectionsConnectionCollectionItemBootstrapServerArray and GetConnectionsConnectionCollectionItemBootstrapServerArrayOutput values.
+// You can construct a concrete instance of `GetConnectionsConnectionCollectionItemBootstrapServerArrayInput` via:
+//
+//	GetConnectionsConnectionCollectionItemBootstrapServerArray{ GetConnectionsConnectionCollectionItemBootstrapServerArgs{...} }
+type GetConnectionsConnectionCollectionItemBootstrapServerArrayInput interface {
+	pulumi.Input
+
+	ToGetConnectionsConnectionCollectionItemBootstrapServerArrayOutput() GetConnectionsConnectionCollectionItemBootstrapServerArrayOutput
+	ToGetConnectionsConnectionCollectionItemBootstrapServerArrayOutputWithContext(context.Context) GetConnectionsConnectionCollectionItemBootstrapServerArrayOutput
+}
+
+type GetConnectionsConnectionCollectionItemBootstrapServerArray []GetConnectionsConnectionCollectionItemBootstrapServerInput
+
+func (GetConnectionsConnectionCollectionItemBootstrapServerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionsConnectionCollectionItemBootstrapServer)(nil)).Elem()
+}
+
+func (i GetConnectionsConnectionCollectionItemBootstrapServerArray) ToGetConnectionsConnectionCollectionItemBootstrapServerArrayOutput() GetConnectionsConnectionCollectionItemBootstrapServerArrayOutput {
+	return i.ToGetConnectionsConnectionCollectionItemBootstrapServerArrayOutputWithContext(context.Background())
+}
+
+func (i GetConnectionsConnectionCollectionItemBootstrapServerArray) ToGetConnectionsConnectionCollectionItemBootstrapServerArrayOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemBootstrapServerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsConnectionCollectionItemBootstrapServerArrayOutput)
+}
+
+type GetConnectionsConnectionCollectionItemBootstrapServerOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionsConnectionCollectionItemBootstrapServerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionsConnectionCollectionItemBootstrapServer)(nil)).Elem()
+}
+
+func (o GetConnectionsConnectionCollectionItemBootstrapServerOutput) ToGetConnectionsConnectionCollectionItemBootstrapServerOutput() GetConnectionsConnectionCollectionItemBootstrapServerOutput {
+	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemBootstrapServerOutput) ToGetConnectionsConnectionCollectionItemBootstrapServerOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemBootstrapServerOutput {
+	return o
+}
+
+// The name or address of a host.
+func (o GetConnectionsConnectionCollectionItemBootstrapServerOutput) Host() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItemBootstrapServer) string { return v.Host }).(pulumi.StringOutput)
+}
+
+// The port of an endpoint usually specified for a connection.
+func (o GetConnectionsConnectionCollectionItemBootstrapServerOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItemBootstrapServer) int { return v.Port }).(pulumi.IntOutput)
+}
+
+// The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+func (o GetConnectionsConnectionCollectionItemBootstrapServerOutput) PrivateIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItemBootstrapServer) string { return v.PrivateIp }).(pulumi.StringOutput)
+}
+
+type GetConnectionsConnectionCollectionItemBootstrapServerArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionsConnectionCollectionItemBootstrapServerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionsConnectionCollectionItemBootstrapServer)(nil)).Elem()
+}
+
+func (o GetConnectionsConnectionCollectionItemBootstrapServerArrayOutput) ToGetConnectionsConnectionCollectionItemBootstrapServerArrayOutput() GetConnectionsConnectionCollectionItemBootstrapServerArrayOutput {
+	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemBootstrapServerArrayOutput) ToGetConnectionsConnectionCollectionItemBootstrapServerArrayOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemBootstrapServerArrayOutput {
+	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemBootstrapServerArrayOutput) Index(i pulumi.IntInput) GetConnectionsConnectionCollectionItemBootstrapServerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConnectionsConnectionCollectionItemBootstrapServer {
+		return vs[0].([]GetConnectionsConnectionCollectionItemBootstrapServer)[vs[1].(int)]
+	}).(GetConnectionsConnectionCollectionItemBootstrapServerOutput)
+}
+
+type GetConnectionsConnectionCollectionItemIngressIp struct {
+	// A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+	IngressIp string `pulumi:"ingressIp"`
+}
+
+// GetConnectionsConnectionCollectionItemIngressIpInput is an input type that accepts GetConnectionsConnectionCollectionItemIngressIpArgs and GetConnectionsConnectionCollectionItemIngressIpOutput values.
+// You can construct a concrete instance of `GetConnectionsConnectionCollectionItemIngressIpInput` via:
+//
+//	GetConnectionsConnectionCollectionItemIngressIpArgs{...}
+type GetConnectionsConnectionCollectionItemIngressIpInput interface {
+	pulumi.Input
+
+	ToGetConnectionsConnectionCollectionItemIngressIpOutput() GetConnectionsConnectionCollectionItemIngressIpOutput
+	ToGetConnectionsConnectionCollectionItemIngressIpOutputWithContext(context.Context) GetConnectionsConnectionCollectionItemIngressIpOutput
+}
+
+type GetConnectionsConnectionCollectionItemIngressIpArgs struct {
+	// A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+	IngressIp pulumi.StringInput `pulumi:"ingressIp"`
+}
+
+func (GetConnectionsConnectionCollectionItemIngressIpArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionsConnectionCollectionItemIngressIp)(nil)).Elem()
+}
+
+func (i GetConnectionsConnectionCollectionItemIngressIpArgs) ToGetConnectionsConnectionCollectionItemIngressIpOutput() GetConnectionsConnectionCollectionItemIngressIpOutput {
+	return i.ToGetConnectionsConnectionCollectionItemIngressIpOutputWithContext(context.Background())
+}
+
+func (i GetConnectionsConnectionCollectionItemIngressIpArgs) ToGetConnectionsConnectionCollectionItemIngressIpOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemIngressIpOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsConnectionCollectionItemIngressIpOutput)
+}
+
+// GetConnectionsConnectionCollectionItemIngressIpArrayInput is an input type that accepts GetConnectionsConnectionCollectionItemIngressIpArray and GetConnectionsConnectionCollectionItemIngressIpArrayOutput values.
+// You can construct a concrete instance of `GetConnectionsConnectionCollectionItemIngressIpArrayInput` via:
+//
+//	GetConnectionsConnectionCollectionItemIngressIpArray{ GetConnectionsConnectionCollectionItemIngressIpArgs{...} }
+type GetConnectionsConnectionCollectionItemIngressIpArrayInput interface {
+	pulumi.Input
+
+	ToGetConnectionsConnectionCollectionItemIngressIpArrayOutput() GetConnectionsConnectionCollectionItemIngressIpArrayOutput
+	ToGetConnectionsConnectionCollectionItemIngressIpArrayOutputWithContext(context.Context) GetConnectionsConnectionCollectionItemIngressIpArrayOutput
+}
+
+type GetConnectionsConnectionCollectionItemIngressIpArray []GetConnectionsConnectionCollectionItemIngressIpInput
+
+func (GetConnectionsConnectionCollectionItemIngressIpArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionsConnectionCollectionItemIngressIp)(nil)).Elem()
+}
+
+func (i GetConnectionsConnectionCollectionItemIngressIpArray) ToGetConnectionsConnectionCollectionItemIngressIpArrayOutput() GetConnectionsConnectionCollectionItemIngressIpArrayOutput {
+	return i.ToGetConnectionsConnectionCollectionItemIngressIpArrayOutputWithContext(context.Background())
+}
+
+func (i GetConnectionsConnectionCollectionItemIngressIpArray) ToGetConnectionsConnectionCollectionItemIngressIpArrayOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemIngressIpArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsConnectionCollectionItemIngressIpArrayOutput)
+}
+
+type GetConnectionsConnectionCollectionItemIngressIpOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionsConnectionCollectionItemIngressIpOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionsConnectionCollectionItemIngressIp)(nil)).Elem()
+}
+
+func (o GetConnectionsConnectionCollectionItemIngressIpOutput) ToGetConnectionsConnectionCollectionItemIngressIpOutput() GetConnectionsConnectionCollectionItemIngressIpOutput {
+	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemIngressIpOutput) ToGetConnectionsConnectionCollectionItemIngressIpOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemIngressIpOutput {
+	return o
+}
+
+// A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+func (o GetConnectionsConnectionCollectionItemIngressIpOutput) IngressIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItemIngressIp) string { return v.IngressIp }).(pulumi.StringOutput)
+}
+
+type GetConnectionsConnectionCollectionItemIngressIpArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionsConnectionCollectionItemIngressIpArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionsConnectionCollectionItemIngressIp)(nil)).Elem()
+}
+
+func (o GetConnectionsConnectionCollectionItemIngressIpArrayOutput) ToGetConnectionsConnectionCollectionItemIngressIpArrayOutput() GetConnectionsConnectionCollectionItemIngressIpArrayOutput {
+	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemIngressIpArrayOutput) ToGetConnectionsConnectionCollectionItemIngressIpArrayOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemIngressIpArrayOutput {
+	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemIngressIpArrayOutput) Index(i pulumi.IntInput) GetConnectionsConnectionCollectionItemIngressIpOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConnectionsConnectionCollectionItemIngressIp {
+		return vs[0].([]GetConnectionsConnectionCollectionItemIngressIp)[vs[1].(int)]
+	}).(GetConnectionsConnectionCollectionItemIngressIpOutput)
+}
+
+type GetConnectionsFilter struct {
+	// The name of the property entry.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetConnectionsFilterInput is an input type that accepts GetConnectionsFilterArgs and GetConnectionsFilterOutput values.
+// You can construct a concrete instance of `GetConnectionsFilterInput` via:
+//
+//	GetConnectionsFilterArgs{...}
+type GetConnectionsFilterInput interface {
+	pulumi.Input
+
+	ToGetConnectionsFilterOutput() GetConnectionsFilterOutput
+	ToGetConnectionsFilterOutputWithContext(context.Context) GetConnectionsFilterOutput
+}
+
+type GetConnectionsFilterArgs struct {
+	// The name of the property entry.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetConnectionsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionsFilter)(nil)).Elem()
+}
+
+func (i GetConnectionsFilterArgs) ToGetConnectionsFilterOutput() GetConnectionsFilterOutput {
+	return i.ToGetConnectionsFilterOutputWithContext(context.Background())
+}
+
+func (i GetConnectionsFilterArgs) ToGetConnectionsFilterOutputWithContext(ctx context.Context) GetConnectionsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsFilterOutput)
+}
+
+// GetConnectionsFilterArrayInput is an input type that accepts GetConnectionsFilterArray and GetConnectionsFilterArrayOutput values.
+// You can construct a concrete instance of `GetConnectionsFilterArrayInput` via:
+//
+//	GetConnectionsFilterArray{ GetConnectionsFilterArgs{...} }
+type GetConnectionsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetConnectionsFilterArrayOutput() GetConnectionsFilterArrayOutput
+	ToGetConnectionsFilterArrayOutputWithContext(context.Context) GetConnectionsFilterArrayOutput
+}
+
+type GetConnectionsFilterArray []GetConnectionsFilterInput
+
+func (GetConnectionsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionsFilter)(nil)).Elem()
+}
+
+func (i GetConnectionsFilterArray) ToGetConnectionsFilterArrayOutput() GetConnectionsFilterArrayOutput {
+	return i.ToGetConnectionsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetConnectionsFilterArray) ToGetConnectionsFilterArrayOutputWithContext(ctx context.Context) GetConnectionsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsFilterArrayOutput)
+}
+
+type GetConnectionsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionsFilter)(nil)).Elem()
+}
+
+func (o GetConnectionsFilterOutput) ToGetConnectionsFilterOutput() GetConnectionsFilterOutput {
+	return o
+}
+
+func (o GetConnectionsFilterOutput) ToGetConnectionsFilterOutputWithContext(ctx context.Context) GetConnectionsFilterOutput {
+	return o
+}
+
+// The name of the property entry.
+func (o GetConnectionsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetConnectionsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetConnectionsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetConnectionsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetConnectionsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetConnectionsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionsFilter)(nil)).Elem()
+}
+
+func (o GetConnectionsFilterArrayOutput) ToGetConnectionsFilterArrayOutput() GetConnectionsFilterArrayOutput {
+	return o
+}
+
+func (o GetConnectionsFilterArrayOutput) ToGetConnectionsFilterArrayOutputWithContext(ctx context.Context) GetConnectionsFilterArrayOutput {
+	return o
+}
+
+func (o GetConnectionsFilterArrayOutput) Index(i pulumi.IntInput) GetConnectionsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConnectionsFilter {
+		return vs[0].([]GetConnectionsFilter)[vs[1].(int)]
+	}).(GetConnectionsFilterOutput)
 }
 
 type GetDatabaseRegistrationsDatabaseRegistrationCollection struct {
@@ -341,13 +2591,13 @@ func (o GetDatabaseRegistrationsDatabaseRegistrationCollectionArrayOutput) Index
 type GetDatabaseRegistrationsDatabaseRegistrationCollectionItem struct {
 	// Credential store alias.
 	AliasName string `pulumi:"aliasName"`
-	// The ID of the compartment in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a database.
 	ConnectionString string `pulumi:"connectionString"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
 	DatabaseId string `pulumi:"databaseId"`
-	// Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Metadata about this specific object.
 	Description string `pulumi:"description"`
@@ -355,7 +2605,7 @@ type GetDatabaseRegistrationsDatabaseRegistrationCollectionItem struct {
 	DisplayName string `pulumi:"displayName"`
 	// A three-label Fully Qualified Domain Name (FQDN) for a resource.
 	Fqdn string `pulumi:"fqdn"`
-	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the databaseRegistration being referenced.
 	Id string `pulumi:"id"`
@@ -372,13 +2622,13 @@ type GetDatabaseRegistrationsDatabaseRegistrationCollectionItem struct {
 	SecretCompartmentId string `pulumi:"secretCompartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer GGS Secret being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this Secret
 	SecretId string `pulumi:"secretId"`
-	// The mode of the database connection session to be established by the data client. REDIRECT - for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+	// The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
 	SessionMode string `pulumi:"sessionMode"`
 	// A filter to return only the resources that match the 'lifecycleState' given.
 	State string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
 	SubnetId string `pulumi:"subnetId"`
-	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeCreated string `pulumi:"timeCreated"`
@@ -405,13 +2655,13 @@ type GetDatabaseRegistrationsDatabaseRegistrationCollectionItemInput interface {
 type GetDatabaseRegistrationsDatabaseRegistrationCollectionItemArgs struct {
 	// Credential store alias.
 	AliasName pulumi.StringInput `pulumi:"aliasName"`
-	// The ID of the compartment in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Connect descriptor or Easy Connect Naming method that Oracle GoldenGate uses to connect to a database.
 	ConnectionString pulumi.StringInput `pulumi:"connectionString"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
 	DatabaseId pulumi.StringInput `pulumi:"databaseId"`
-	// Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// Metadata about this specific object.
 	Description pulumi.StringInput `pulumi:"description"`
@@ -419,7 +2669,7 @@ type GetDatabaseRegistrationsDatabaseRegistrationCollectionItemArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// A three-label Fully Qualified Domain Name (FQDN) for a resource.
 	Fqdn pulumi.StringInput `pulumi:"fqdn"`
-	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the databaseRegistration being referenced.
 	Id pulumi.StringInput `pulumi:"id"`
@@ -436,13 +2686,13 @@ type GetDatabaseRegistrationsDatabaseRegistrationCollectionItemArgs struct {
 	SecretCompartmentId pulumi.StringInput `pulumi:"secretCompartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer GGS Secret being referenced. If provided, this will reference a key which the customer will be required to ensure the policies are established to permit the GoldenGate Service to utilize this Secret
 	SecretId pulumi.StringInput `pulumi:"secretId"`
-	// The mode of the database connection session to be established by the data client. REDIRECT - for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+	// The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
 	SessionMode pulumi.StringInput `pulumi:"sessionMode"`
 	// A filter to return only the resources that match the 'lifecycleState' given.
 	State pulumi.StringInput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
-	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
@@ -511,7 +2761,7 @@ func (o GetDatabaseRegistrationsDatabaseRegistrationCollectionItemOutput) AliasN
 	return o.ApplyT(func(v GetDatabaseRegistrationsDatabaseRegistrationCollectionItem) string { return v.AliasName }).(pulumi.StringOutput)
 }
 
-// The ID of the compartment in which to list resources.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 func (o GetDatabaseRegistrationsDatabaseRegistrationCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseRegistrationsDatabaseRegistrationCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -526,7 +2776,7 @@ func (o GetDatabaseRegistrationsDatabaseRegistrationCollectionItemOutput) Databa
 	return o.ApplyT(func(v GetDatabaseRegistrationsDatabaseRegistrationCollectionItem) string { return v.DatabaseId }).(pulumi.StringOutput)
 }
 
-// Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+// Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
 func (o GetDatabaseRegistrationsDatabaseRegistrationCollectionItemOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetDatabaseRegistrationsDatabaseRegistrationCollectionItem) map[string]interface{} {
 		return v.DefinedTags
@@ -548,7 +2798,7 @@ func (o GetDatabaseRegistrationsDatabaseRegistrationCollectionItemOutput) Fqdn()
 	return o.ApplyT(func(v GetDatabaseRegistrationsDatabaseRegistrationCollectionItem) string { return v.Fqdn }).(pulumi.StringOutput)
 }
 
-// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 func (o GetDatabaseRegistrationsDatabaseRegistrationCollectionItemOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetDatabaseRegistrationsDatabaseRegistrationCollectionItem) map[string]interface{} {
 		return v.FreeformTags
@@ -596,7 +2846,7 @@ func (o GetDatabaseRegistrationsDatabaseRegistrationCollectionItemOutput) Secret
 	return o.ApplyT(func(v GetDatabaseRegistrationsDatabaseRegistrationCollectionItem) string { return v.SecretId }).(pulumi.StringOutput)
 }
 
-// The mode of the database connection session to be established by the data client. REDIRECT - for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+// The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
 func (o GetDatabaseRegistrationsDatabaseRegistrationCollectionItemOutput) SessionMode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseRegistrationsDatabaseRegistrationCollectionItem) string { return v.SessionMode }).(pulumi.StringOutput)
 }
@@ -611,7 +2861,7 @@ func (o GetDatabaseRegistrationsDatabaseRegistrationCollectionItemOutput) Subnet
 	return o.ApplyT(func(v GetDatabaseRegistrationsDatabaseRegistrationCollectionItem) string { return v.SubnetId }).(pulumi.StringOutput)
 }
 
-// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 func (o GetDatabaseRegistrationsDatabaseRegistrationCollectionItemOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetDatabaseRegistrationsDatabaseRegistrationCollectionItem) map[string]interface{} {
 		return v.SystemTags
@@ -869,15 +3119,15 @@ type GetDeploymentBackupsDeploymentBackupCollectionItem struct {
 	BackupType string `pulumi:"backupType"`
 	// Name of the bucket where the object is to be uploaded in the object storage
 	Bucket string `pulumi:"bucket"`
-	// The ID of the compartment in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// The ID of the deployment in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
 	DeploymentId string `pulumi:"deploymentId"`
 	// A filter to return only the resources that match the entire 'displayName' given.
 	DisplayName string `pulumi:"displayName"`
-	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
 	Id string `pulumi:"id"`
@@ -895,7 +3145,7 @@ type GetDeploymentBackupsDeploymentBackupCollectionItem struct {
 	SizeInBytes float64 `pulumi:"sizeInBytes"`
 	// A filter to return only the resources that match the 'lifecycleState' given.
 	State string `pulumi:"state"`
-	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time of the resource backup finish. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeBackupFinished string `pulumi:"timeBackupFinished"`
@@ -923,15 +3173,15 @@ type GetDeploymentBackupsDeploymentBackupCollectionItemArgs struct {
 	BackupType pulumi.StringInput `pulumi:"backupType"`
 	// Name of the bucket where the object is to be uploaded in the object storage
 	Bucket pulumi.StringInput `pulumi:"bucket"`
-	// The ID of the compartment in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
-	// The ID of the deployment in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
 	DeploymentId pulumi.StringInput `pulumi:"deploymentId"`
 	// A filter to return only the resources that match the entire 'displayName' given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
 	Id pulumi.StringInput `pulumi:"id"`
@@ -949,7 +3199,7 @@ type GetDeploymentBackupsDeploymentBackupCollectionItemArgs struct {
 	SizeInBytes pulumi.Float64Input `pulumi:"sizeInBytes"`
 	// A filter to return only the resources that match the 'lifecycleState' given.
 	State pulumi.StringInput `pulumi:"state"`
-	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time of the resource backup finish. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeBackupFinished pulumi.StringInput `pulumi:"timeBackupFinished"`
@@ -1022,19 +3272,19 @@ func (o GetDeploymentBackupsDeploymentBackupCollectionItemOutput) Bucket() pulum
 	return o.ApplyT(func(v GetDeploymentBackupsDeploymentBackupCollectionItem) string { return v.Bucket }).(pulumi.StringOutput)
 }
 
-// The ID of the compartment in which to list resources.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 func (o GetDeploymentBackupsDeploymentBackupCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentBackupsDeploymentBackupCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+// Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
 func (o GetDeploymentBackupsDeploymentBackupCollectionItemOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetDeploymentBackupsDeploymentBackupCollectionItem) map[string]interface{} {
 		return v.DefinedTags
 	}).(pulumi.MapOutput)
 }
 
-// The ID of the deployment in which to list resources.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
 func (o GetDeploymentBackupsDeploymentBackupCollectionItemOutput) DeploymentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentBackupsDeploymentBackupCollectionItem) string { return v.DeploymentId }).(pulumi.StringOutput)
 }
@@ -1044,7 +3294,7 @@ func (o GetDeploymentBackupsDeploymentBackupCollectionItemOutput) DisplayName() 
 	return o.ApplyT(func(v GetDeploymentBackupsDeploymentBackupCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 func (o GetDeploymentBackupsDeploymentBackupCollectionItemOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetDeploymentBackupsDeploymentBackupCollectionItem) map[string]interface{} {
 		return v.FreeformTags
@@ -1091,7 +3341,7 @@ func (o GetDeploymentBackupsDeploymentBackupCollectionItemOutput) State() pulumi
 	return o.ApplyT(func(v GetDeploymentBackupsDeploymentBackupCollectionItem) string { return v.State }).(pulumi.StringOutput)
 }
 
-// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 func (o GetDeploymentBackupsDeploymentBackupCollectionItemOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetDeploymentBackupsDeploymentBackupCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
@@ -1242,6 +3492,148 @@ func (o GetDeploymentBackupsFilterArrayOutput) Index(i pulumi.IntInput) GetDeplo
 	}).(GetDeploymentBackupsFilterOutput)
 }
 
+type GetDeploymentDeploymentDiagnosticData struct {
+	// Name of the bucket where the object is to be uploaded in the object storage
+	Bucket string `pulumi:"bucket"`
+	// The state of the deployment diagnostic collection.
+	DiagnosticState string `pulumi:"diagnosticState"`
+	// Name of namespace that serves as a container for all of your buckets
+	Namespace string `pulumi:"namespace"`
+	// Name of the diagnostic collected and uploaded to object storage
+	Object string `pulumi:"object"`
+	// The time until which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeDiagnosticEnd string `pulumi:"timeDiagnosticEnd"`
+	// The time from which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeDiagnosticStart string `pulumi:"timeDiagnosticStart"`
+}
+
+// GetDeploymentDeploymentDiagnosticDataInput is an input type that accepts GetDeploymentDeploymentDiagnosticDataArgs and GetDeploymentDeploymentDiagnosticDataOutput values.
+// You can construct a concrete instance of `GetDeploymentDeploymentDiagnosticDataInput` via:
+//
+//	GetDeploymentDeploymentDiagnosticDataArgs{...}
+type GetDeploymentDeploymentDiagnosticDataInput interface {
+	pulumi.Input
+
+	ToGetDeploymentDeploymentDiagnosticDataOutput() GetDeploymentDeploymentDiagnosticDataOutput
+	ToGetDeploymentDeploymentDiagnosticDataOutputWithContext(context.Context) GetDeploymentDeploymentDiagnosticDataOutput
+}
+
+type GetDeploymentDeploymentDiagnosticDataArgs struct {
+	// Name of the bucket where the object is to be uploaded in the object storage
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// The state of the deployment diagnostic collection.
+	DiagnosticState pulumi.StringInput `pulumi:"diagnosticState"`
+	// Name of namespace that serves as a container for all of your buckets
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// Name of the diagnostic collected and uploaded to object storage
+	Object pulumi.StringInput `pulumi:"object"`
+	// The time until which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeDiagnosticEnd pulumi.StringInput `pulumi:"timeDiagnosticEnd"`
+	// The time from which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeDiagnosticStart pulumi.StringInput `pulumi:"timeDiagnosticStart"`
+}
+
+func (GetDeploymentDeploymentDiagnosticDataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentDeploymentDiagnosticData)(nil)).Elem()
+}
+
+func (i GetDeploymentDeploymentDiagnosticDataArgs) ToGetDeploymentDeploymentDiagnosticDataOutput() GetDeploymentDeploymentDiagnosticDataOutput {
+	return i.ToGetDeploymentDeploymentDiagnosticDataOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentDeploymentDiagnosticDataArgs) ToGetDeploymentDeploymentDiagnosticDataOutputWithContext(ctx context.Context) GetDeploymentDeploymentDiagnosticDataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentDeploymentDiagnosticDataOutput)
+}
+
+// GetDeploymentDeploymentDiagnosticDataArrayInput is an input type that accepts GetDeploymentDeploymentDiagnosticDataArray and GetDeploymentDeploymentDiagnosticDataArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentDeploymentDiagnosticDataArrayInput` via:
+//
+//	GetDeploymentDeploymentDiagnosticDataArray{ GetDeploymentDeploymentDiagnosticDataArgs{...} }
+type GetDeploymentDeploymentDiagnosticDataArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentDeploymentDiagnosticDataArrayOutput() GetDeploymentDeploymentDiagnosticDataArrayOutput
+	ToGetDeploymentDeploymentDiagnosticDataArrayOutputWithContext(context.Context) GetDeploymentDeploymentDiagnosticDataArrayOutput
+}
+
+type GetDeploymentDeploymentDiagnosticDataArray []GetDeploymentDeploymentDiagnosticDataInput
+
+func (GetDeploymentDeploymentDiagnosticDataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentDeploymentDiagnosticData)(nil)).Elem()
+}
+
+func (i GetDeploymentDeploymentDiagnosticDataArray) ToGetDeploymentDeploymentDiagnosticDataArrayOutput() GetDeploymentDeploymentDiagnosticDataArrayOutput {
+	return i.ToGetDeploymentDeploymentDiagnosticDataArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentDeploymentDiagnosticDataArray) ToGetDeploymentDeploymentDiagnosticDataArrayOutputWithContext(ctx context.Context) GetDeploymentDeploymentDiagnosticDataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentDeploymentDiagnosticDataArrayOutput)
+}
+
+type GetDeploymentDeploymentDiagnosticDataOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentDeploymentDiagnosticDataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentDeploymentDiagnosticData)(nil)).Elem()
+}
+
+func (o GetDeploymentDeploymentDiagnosticDataOutput) ToGetDeploymentDeploymentDiagnosticDataOutput() GetDeploymentDeploymentDiagnosticDataOutput {
+	return o
+}
+
+func (o GetDeploymentDeploymentDiagnosticDataOutput) ToGetDeploymentDeploymentDiagnosticDataOutputWithContext(ctx context.Context) GetDeploymentDeploymentDiagnosticDataOutput {
+	return o
+}
+
+// Name of the bucket where the object is to be uploaded in the object storage
+func (o GetDeploymentDeploymentDiagnosticDataOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentDeploymentDiagnosticData) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// The state of the deployment diagnostic collection.
+func (o GetDeploymentDeploymentDiagnosticDataOutput) DiagnosticState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentDeploymentDiagnosticData) string { return v.DiagnosticState }).(pulumi.StringOutput)
+}
+
+// Name of namespace that serves as a container for all of your buckets
+func (o GetDeploymentDeploymentDiagnosticDataOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentDeploymentDiagnosticData) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// Name of the diagnostic collected and uploaded to object storage
+func (o GetDeploymentDeploymentDiagnosticDataOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentDeploymentDiagnosticData) string { return v.Object }).(pulumi.StringOutput)
+}
+
+// The time until which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o GetDeploymentDeploymentDiagnosticDataOutput) TimeDiagnosticEnd() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentDeploymentDiagnosticData) string { return v.TimeDiagnosticEnd }).(pulumi.StringOutput)
+}
+
+// The time from which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o GetDeploymentDeploymentDiagnosticDataOutput) TimeDiagnosticStart() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentDeploymentDiagnosticData) string { return v.TimeDiagnosticStart }).(pulumi.StringOutput)
+}
+
+type GetDeploymentDeploymentDiagnosticDataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentDeploymentDiagnosticDataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentDeploymentDiagnosticData)(nil)).Elem()
+}
+
+func (o GetDeploymentDeploymentDiagnosticDataArrayOutput) ToGetDeploymentDeploymentDiagnosticDataArrayOutput() GetDeploymentDeploymentDiagnosticDataArrayOutput {
+	return o
+}
+
+func (o GetDeploymentDeploymentDiagnosticDataArrayOutput) ToGetDeploymentDeploymentDiagnosticDataArrayOutputWithContext(ctx context.Context) GetDeploymentDeploymentDiagnosticDataArrayOutput {
+	return o
+}
+
+func (o GetDeploymentDeploymentDiagnosticDataArrayOutput) Index(i pulumi.IntInput) GetDeploymentDeploymentDiagnosticDataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentDeploymentDiagnosticData {
+		return vs[0].([]GetDeploymentDeploymentDiagnosticData)[vs[1].(int)]
+	}).(GetDeploymentDeploymentDiagnosticDataOutput)
+}
+
 type GetDeploymentOggData struct {
 	AdminPassword string `pulumi:"adminPassword"`
 	// The GoldenGate deployment console username.
@@ -1378,6 +3770,495 @@ func (o GetDeploymentOggDataArrayOutput) Index(i pulumi.IntInput) GetDeploymentO
 	}).(GetDeploymentOggDataOutput)
 }
 
+type GetDeploymentTypeItem struct {
+	// The deployment category defines the broad separation of the deployment type into categories.  Currently the separation is 'DATA_REPLICATION' and 'STREAM_ANALYTICS'.
+	Category string `pulumi:"category"`
+	// An array of connectionTypes.
+	ConnectionTypes []string `pulumi:"connectionTypes"`
+	// The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
+	DeploymentType string `pulumi:"deploymentType"`
+	// A filter to return only the resources that match the entire 'displayName' given.
+	DisplayName string `pulumi:"displayName"`
+	// List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
+	SourceTechnologies []string `pulumi:"sourceTechnologies"`
+	// List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
+	TargetTechnologies []string `pulumi:"targetTechnologies"`
+}
+
+// GetDeploymentTypeItemInput is an input type that accepts GetDeploymentTypeItemArgs and GetDeploymentTypeItemOutput values.
+// You can construct a concrete instance of `GetDeploymentTypeItemInput` via:
+//
+//	GetDeploymentTypeItemArgs{...}
+type GetDeploymentTypeItemInput interface {
+	pulumi.Input
+
+	ToGetDeploymentTypeItemOutput() GetDeploymentTypeItemOutput
+	ToGetDeploymentTypeItemOutputWithContext(context.Context) GetDeploymentTypeItemOutput
+}
+
+type GetDeploymentTypeItemArgs struct {
+	// The deployment category defines the broad separation of the deployment type into categories.  Currently the separation is 'DATA_REPLICATION' and 'STREAM_ANALYTICS'.
+	Category pulumi.StringInput `pulumi:"category"`
+	// An array of connectionTypes.
+	ConnectionTypes pulumi.StringArrayInput `pulumi:"connectionTypes"`
+	// The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
+	DeploymentType pulumi.StringInput `pulumi:"deploymentType"`
+	// A filter to return only the resources that match the entire 'displayName' given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
+	SourceTechnologies pulumi.StringArrayInput `pulumi:"sourceTechnologies"`
+	// List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
+	TargetTechnologies pulumi.StringArrayInput `pulumi:"targetTechnologies"`
+}
+
+func (GetDeploymentTypeItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentTypeItem)(nil)).Elem()
+}
+
+func (i GetDeploymentTypeItemArgs) ToGetDeploymentTypeItemOutput() GetDeploymentTypeItemOutput {
+	return i.ToGetDeploymentTypeItemOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentTypeItemArgs) ToGetDeploymentTypeItemOutputWithContext(ctx context.Context) GetDeploymentTypeItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentTypeItemOutput)
+}
+
+// GetDeploymentTypeItemArrayInput is an input type that accepts GetDeploymentTypeItemArray and GetDeploymentTypeItemArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentTypeItemArrayInput` via:
+//
+//	GetDeploymentTypeItemArray{ GetDeploymentTypeItemArgs{...} }
+type GetDeploymentTypeItemArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentTypeItemArrayOutput() GetDeploymentTypeItemArrayOutput
+	ToGetDeploymentTypeItemArrayOutputWithContext(context.Context) GetDeploymentTypeItemArrayOutput
+}
+
+type GetDeploymentTypeItemArray []GetDeploymentTypeItemInput
+
+func (GetDeploymentTypeItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentTypeItem)(nil)).Elem()
+}
+
+func (i GetDeploymentTypeItemArray) ToGetDeploymentTypeItemArrayOutput() GetDeploymentTypeItemArrayOutput {
+	return i.ToGetDeploymentTypeItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentTypeItemArray) ToGetDeploymentTypeItemArrayOutputWithContext(ctx context.Context) GetDeploymentTypeItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentTypeItemArrayOutput)
+}
+
+type GetDeploymentTypeItemOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentTypeItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentTypeItem)(nil)).Elem()
+}
+
+func (o GetDeploymentTypeItemOutput) ToGetDeploymentTypeItemOutput() GetDeploymentTypeItemOutput {
+	return o
+}
+
+func (o GetDeploymentTypeItemOutput) ToGetDeploymentTypeItemOutputWithContext(ctx context.Context) GetDeploymentTypeItemOutput {
+	return o
+}
+
+// The deployment category defines the broad separation of the deployment type into categories.  Currently the separation is 'DATA_REPLICATION' and 'STREAM_ANALYTICS'.
+func (o GetDeploymentTypeItemOutput) Category() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentTypeItem) string { return v.Category }).(pulumi.StringOutput)
+}
+
+// An array of connectionTypes.
+func (o GetDeploymentTypeItemOutput) ConnectionTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDeploymentTypeItem) []string { return v.ConnectionTypes }).(pulumi.StringArrayOutput)
+}
+
+// The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
+func (o GetDeploymentTypeItemOutput) DeploymentType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentTypeItem) string { return v.DeploymentType }).(pulumi.StringOutput)
+}
+
+// A filter to return only the resources that match the entire 'displayName' given.
+func (o GetDeploymentTypeItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentTypeItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
+func (o GetDeploymentTypeItemOutput) SourceTechnologies() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDeploymentTypeItem) []string { return v.SourceTechnologies }).(pulumi.StringArrayOutput)
+}
+
+// List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
+func (o GetDeploymentTypeItemOutput) TargetTechnologies() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDeploymentTypeItem) []string { return v.TargetTechnologies }).(pulumi.StringArrayOutput)
+}
+
+type GetDeploymentTypeItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentTypeItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentTypeItem)(nil)).Elem()
+}
+
+func (o GetDeploymentTypeItemArrayOutput) ToGetDeploymentTypeItemArrayOutput() GetDeploymentTypeItemArrayOutput {
+	return o
+}
+
+func (o GetDeploymentTypeItemArrayOutput) ToGetDeploymentTypeItemArrayOutputWithContext(ctx context.Context) GetDeploymentTypeItemArrayOutput {
+	return o
+}
+
+func (o GetDeploymentTypeItemArrayOutput) Index(i pulumi.IntInput) GetDeploymentTypeItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentTypeItem {
+		return vs[0].([]GetDeploymentTypeItem)[vs[1].(int)]
+	}).(GetDeploymentTypeItemOutput)
+}
+
+type GetDeploymentTypesDeploymentTypeCollection struct {
+	// Array of DeploymentTypeSummary
+	Items []GetDeploymentTypesDeploymentTypeCollectionItem `pulumi:"items"`
+}
+
+// GetDeploymentTypesDeploymentTypeCollectionInput is an input type that accepts GetDeploymentTypesDeploymentTypeCollectionArgs and GetDeploymentTypesDeploymentTypeCollectionOutput values.
+// You can construct a concrete instance of `GetDeploymentTypesDeploymentTypeCollectionInput` via:
+//
+//	GetDeploymentTypesDeploymentTypeCollectionArgs{...}
+type GetDeploymentTypesDeploymentTypeCollectionInput interface {
+	pulumi.Input
+
+	ToGetDeploymentTypesDeploymentTypeCollectionOutput() GetDeploymentTypesDeploymentTypeCollectionOutput
+	ToGetDeploymentTypesDeploymentTypeCollectionOutputWithContext(context.Context) GetDeploymentTypesDeploymentTypeCollectionOutput
+}
+
+type GetDeploymentTypesDeploymentTypeCollectionArgs struct {
+	// Array of DeploymentTypeSummary
+	Items GetDeploymentTypesDeploymentTypeCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetDeploymentTypesDeploymentTypeCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentTypesDeploymentTypeCollection)(nil)).Elem()
+}
+
+func (i GetDeploymentTypesDeploymentTypeCollectionArgs) ToGetDeploymentTypesDeploymentTypeCollectionOutput() GetDeploymentTypesDeploymentTypeCollectionOutput {
+	return i.ToGetDeploymentTypesDeploymentTypeCollectionOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentTypesDeploymentTypeCollectionArgs) ToGetDeploymentTypesDeploymentTypeCollectionOutputWithContext(ctx context.Context) GetDeploymentTypesDeploymentTypeCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentTypesDeploymentTypeCollectionOutput)
+}
+
+// GetDeploymentTypesDeploymentTypeCollectionArrayInput is an input type that accepts GetDeploymentTypesDeploymentTypeCollectionArray and GetDeploymentTypesDeploymentTypeCollectionArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentTypesDeploymentTypeCollectionArrayInput` via:
+//
+//	GetDeploymentTypesDeploymentTypeCollectionArray{ GetDeploymentTypesDeploymentTypeCollectionArgs{...} }
+type GetDeploymentTypesDeploymentTypeCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentTypesDeploymentTypeCollectionArrayOutput() GetDeploymentTypesDeploymentTypeCollectionArrayOutput
+	ToGetDeploymentTypesDeploymentTypeCollectionArrayOutputWithContext(context.Context) GetDeploymentTypesDeploymentTypeCollectionArrayOutput
+}
+
+type GetDeploymentTypesDeploymentTypeCollectionArray []GetDeploymentTypesDeploymentTypeCollectionInput
+
+func (GetDeploymentTypesDeploymentTypeCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentTypesDeploymentTypeCollection)(nil)).Elem()
+}
+
+func (i GetDeploymentTypesDeploymentTypeCollectionArray) ToGetDeploymentTypesDeploymentTypeCollectionArrayOutput() GetDeploymentTypesDeploymentTypeCollectionArrayOutput {
+	return i.ToGetDeploymentTypesDeploymentTypeCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentTypesDeploymentTypeCollectionArray) ToGetDeploymentTypesDeploymentTypeCollectionArrayOutputWithContext(ctx context.Context) GetDeploymentTypesDeploymentTypeCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentTypesDeploymentTypeCollectionArrayOutput)
+}
+
+type GetDeploymentTypesDeploymentTypeCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentTypesDeploymentTypeCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentTypesDeploymentTypeCollection)(nil)).Elem()
+}
+
+func (o GetDeploymentTypesDeploymentTypeCollectionOutput) ToGetDeploymentTypesDeploymentTypeCollectionOutput() GetDeploymentTypesDeploymentTypeCollectionOutput {
+	return o
+}
+
+func (o GetDeploymentTypesDeploymentTypeCollectionOutput) ToGetDeploymentTypesDeploymentTypeCollectionOutputWithContext(ctx context.Context) GetDeploymentTypesDeploymentTypeCollectionOutput {
+	return o
+}
+
+// Array of DeploymentTypeSummary
+func (o GetDeploymentTypesDeploymentTypeCollectionOutput) Items() GetDeploymentTypesDeploymentTypeCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetDeploymentTypesDeploymentTypeCollection) []GetDeploymentTypesDeploymentTypeCollectionItem {
+		return v.Items
+	}).(GetDeploymentTypesDeploymentTypeCollectionItemArrayOutput)
+}
+
+type GetDeploymentTypesDeploymentTypeCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentTypesDeploymentTypeCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentTypesDeploymentTypeCollection)(nil)).Elem()
+}
+
+func (o GetDeploymentTypesDeploymentTypeCollectionArrayOutput) ToGetDeploymentTypesDeploymentTypeCollectionArrayOutput() GetDeploymentTypesDeploymentTypeCollectionArrayOutput {
+	return o
+}
+
+func (o GetDeploymentTypesDeploymentTypeCollectionArrayOutput) ToGetDeploymentTypesDeploymentTypeCollectionArrayOutputWithContext(ctx context.Context) GetDeploymentTypesDeploymentTypeCollectionArrayOutput {
+	return o
+}
+
+func (o GetDeploymentTypesDeploymentTypeCollectionArrayOutput) Index(i pulumi.IntInput) GetDeploymentTypesDeploymentTypeCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentTypesDeploymentTypeCollection {
+		return vs[0].([]GetDeploymentTypesDeploymentTypeCollection)[vs[1].(int)]
+	}).(GetDeploymentTypesDeploymentTypeCollectionOutput)
+}
+
+type GetDeploymentTypesDeploymentTypeCollectionItem struct {
+	// The deployment category defines the broad separation of the deployment type into categories.  Currently the separation is 'DATA_REPLICATION' and 'STREAM_ANALYTICS'.
+	Category string `pulumi:"category"`
+	// An array of connectionTypes.
+	ConnectionTypes []string `pulumi:"connectionTypes"`
+	// The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
+	DeploymentType string `pulumi:"deploymentType"`
+	// A filter to return only the resources that match the entire 'displayName' given.
+	DisplayName string `pulumi:"displayName"`
+	// List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
+	SourceTechnologies []string `pulumi:"sourceTechnologies"`
+	// List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
+	TargetTechnologies []string `pulumi:"targetTechnologies"`
+}
+
+// GetDeploymentTypesDeploymentTypeCollectionItemInput is an input type that accepts GetDeploymentTypesDeploymentTypeCollectionItemArgs and GetDeploymentTypesDeploymentTypeCollectionItemOutput values.
+// You can construct a concrete instance of `GetDeploymentTypesDeploymentTypeCollectionItemInput` via:
+//
+//	GetDeploymentTypesDeploymentTypeCollectionItemArgs{...}
+type GetDeploymentTypesDeploymentTypeCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetDeploymentTypesDeploymentTypeCollectionItemOutput() GetDeploymentTypesDeploymentTypeCollectionItemOutput
+	ToGetDeploymentTypesDeploymentTypeCollectionItemOutputWithContext(context.Context) GetDeploymentTypesDeploymentTypeCollectionItemOutput
+}
+
+type GetDeploymentTypesDeploymentTypeCollectionItemArgs struct {
+	// The deployment category defines the broad separation of the deployment type into categories.  Currently the separation is 'DATA_REPLICATION' and 'STREAM_ANALYTICS'.
+	Category pulumi.StringInput `pulumi:"category"`
+	// An array of connectionTypes.
+	ConnectionTypes pulumi.StringArrayInput `pulumi:"connectionTypes"`
+	// The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
+	DeploymentType pulumi.StringInput `pulumi:"deploymentType"`
+	// A filter to return only the resources that match the entire 'displayName' given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
+	SourceTechnologies pulumi.StringArrayInput `pulumi:"sourceTechnologies"`
+	// List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
+	TargetTechnologies pulumi.StringArrayInput `pulumi:"targetTechnologies"`
+}
+
+func (GetDeploymentTypesDeploymentTypeCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentTypesDeploymentTypeCollectionItem)(nil)).Elem()
+}
+
+func (i GetDeploymentTypesDeploymentTypeCollectionItemArgs) ToGetDeploymentTypesDeploymentTypeCollectionItemOutput() GetDeploymentTypesDeploymentTypeCollectionItemOutput {
+	return i.ToGetDeploymentTypesDeploymentTypeCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentTypesDeploymentTypeCollectionItemArgs) ToGetDeploymentTypesDeploymentTypeCollectionItemOutputWithContext(ctx context.Context) GetDeploymentTypesDeploymentTypeCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentTypesDeploymentTypeCollectionItemOutput)
+}
+
+// GetDeploymentTypesDeploymentTypeCollectionItemArrayInput is an input type that accepts GetDeploymentTypesDeploymentTypeCollectionItemArray and GetDeploymentTypesDeploymentTypeCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentTypesDeploymentTypeCollectionItemArrayInput` via:
+//
+//	GetDeploymentTypesDeploymentTypeCollectionItemArray{ GetDeploymentTypesDeploymentTypeCollectionItemArgs{...} }
+type GetDeploymentTypesDeploymentTypeCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentTypesDeploymentTypeCollectionItemArrayOutput() GetDeploymentTypesDeploymentTypeCollectionItemArrayOutput
+	ToGetDeploymentTypesDeploymentTypeCollectionItemArrayOutputWithContext(context.Context) GetDeploymentTypesDeploymentTypeCollectionItemArrayOutput
+}
+
+type GetDeploymentTypesDeploymentTypeCollectionItemArray []GetDeploymentTypesDeploymentTypeCollectionItemInput
+
+func (GetDeploymentTypesDeploymentTypeCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentTypesDeploymentTypeCollectionItem)(nil)).Elem()
+}
+
+func (i GetDeploymentTypesDeploymentTypeCollectionItemArray) ToGetDeploymentTypesDeploymentTypeCollectionItemArrayOutput() GetDeploymentTypesDeploymentTypeCollectionItemArrayOutput {
+	return i.ToGetDeploymentTypesDeploymentTypeCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentTypesDeploymentTypeCollectionItemArray) ToGetDeploymentTypesDeploymentTypeCollectionItemArrayOutputWithContext(ctx context.Context) GetDeploymentTypesDeploymentTypeCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentTypesDeploymentTypeCollectionItemArrayOutput)
+}
+
+type GetDeploymentTypesDeploymentTypeCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentTypesDeploymentTypeCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentTypesDeploymentTypeCollectionItem)(nil)).Elem()
+}
+
+func (o GetDeploymentTypesDeploymentTypeCollectionItemOutput) ToGetDeploymentTypesDeploymentTypeCollectionItemOutput() GetDeploymentTypesDeploymentTypeCollectionItemOutput {
+	return o
+}
+
+func (o GetDeploymentTypesDeploymentTypeCollectionItemOutput) ToGetDeploymentTypesDeploymentTypeCollectionItemOutputWithContext(ctx context.Context) GetDeploymentTypesDeploymentTypeCollectionItemOutput {
+	return o
+}
+
+// The deployment category defines the broad separation of the deployment type into categories.  Currently the separation is 'DATA_REPLICATION' and 'STREAM_ANALYTICS'.
+func (o GetDeploymentTypesDeploymentTypeCollectionItemOutput) Category() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentTypesDeploymentTypeCollectionItem) string { return v.Category }).(pulumi.StringOutput)
+}
+
+// An array of connectionTypes.
+func (o GetDeploymentTypesDeploymentTypeCollectionItemOutput) ConnectionTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDeploymentTypesDeploymentTypeCollectionItem) []string { return v.ConnectionTypes }).(pulumi.StringArrayOutput)
+}
+
+// The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
+func (o GetDeploymentTypesDeploymentTypeCollectionItemOutput) DeploymentType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentTypesDeploymentTypeCollectionItem) string { return v.DeploymentType }).(pulumi.StringOutput)
+}
+
+// A filter to return only the resources that match the entire 'displayName' given.
+func (o GetDeploymentTypesDeploymentTypeCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentTypesDeploymentTypeCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
+func (o GetDeploymentTypesDeploymentTypeCollectionItemOutput) SourceTechnologies() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDeploymentTypesDeploymentTypeCollectionItem) []string { return v.SourceTechnologies }).(pulumi.StringArrayOutput)
+}
+
+// List of the supported technologies generally.  The value is a freeform text string generally consisting of a description of the technology and optionally the speific version(s) support.  For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
+func (o GetDeploymentTypesDeploymentTypeCollectionItemOutput) TargetTechnologies() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDeploymentTypesDeploymentTypeCollectionItem) []string { return v.TargetTechnologies }).(pulumi.StringArrayOutput)
+}
+
+type GetDeploymentTypesDeploymentTypeCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentTypesDeploymentTypeCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentTypesDeploymentTypeCollectionItem)(nil)).Elem()
+}
+
+func (o GetDeploymentTypesDeploymentTypeCollectionItemArrayOutput) ToGetDeploymentTypesDeploymentTypeCollectionItemArrayOutput() GetDeploymentTypesDeploymentTypeCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDeploymentTypesDeploymentTypeCollectionItemArrayOutput) ToGetDeploymentTypesDeploymentTypeCollectionItemArrayOutputWithContext(ctx context.Context) GetDeploymentTypesDeploymentTypeCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDeploymentTypesDeploymentTypeCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDeploymentTypesDeploymentTypeCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentTypesDeploymentTypeCollectionItem {
+		return vs[0].([]GetDeploymentTypesDeploymentTypeCollectionItem)[vs[1].(int)]
+	}).(GetDeploymentTypesDeploymentTypeCollectionItemOutput)
+}
+
+type GetDeploymentTypesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDeploymentTypesFilterInput is an input type that accepts GetDeploymentTypesFilterArgs and GetDeploymentTypesFilterOutput values.
+// You can construct a concrete instance of `GetDeploymentTypesFilterInput` via:
+//
+//	GetDeploymentTypesFilterArgs{...}
+type GetDeploymentTypesFilterInput interface {
+	pulumi.Input
+
+	ToGetDeploymentTypesFilterOutput() GetDeploymentTypesFilterOutput
+	ToGetDeploymentTypesFilterOutputWithContext(context.Context) GetDeploymentTypesFilterOutput
+}
+
+type GetDeploymentTypesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDeploymentTypesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentTypesFilter)(nil)).Elem()
+}
+
+func (i GetDeploymentTypesFilterArgs) ToGetDeploymentTypesFilterOutput() GetDeploymentTypesFilterOutput {
+	return i.ToGetDeploymentTypesFilterOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentTypesFilterArgs) ToGetDeploymentTypesFilterOutputWithContext(ctx context.Context) GetDeploymentTypesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentTypesFilterOutput)
+}
+
+// GetDeploymentTypesFilterArrayInput is an input type that accepts GetDeploymentTypesFilterArray and GetDeploymentTypesFilterArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentTypesFilterArrayInput` via:
+//
+//	GetDeploymentTypesFilterArray{ GetDeploymentTypesFilterArgs{...} }
+type GetDeploymentTypesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentTypesFilterArrayOutput() GetDeploymentTypesFilterArrayOutput
+	ToGetDeploymentTypesFilterArrayOutputWithContext(context.Context) GetDeploymentTypesFilterArrayOutput
+}
+
+type GetDeploymentTypesFilterArray []GetDeploymentTypesFilterInput
+
+func (GetDeploymentTypesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentTypesFilter)(nil)).Elem()
+}
+
+func (i GetDeploymentTypesFilterArray) ToGetDeploymentTypesFilterArrayOutput() GetDeploymentTypesFilterArrayOutput {
+	return i.ToGetDeploymentTypesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentTypesFilterArray) ToGetDeploymentTypesFilterArrayOutputWithContext(ctx context.Context) GetDeploymentTypesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentTypesFilterArrayOutput)
+}
+
+type GetDeploymentTypesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentTypesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentTypesFilter)(nil)).Elem()
+}
+
+func (o GetDeploymentTypesFilterOutput) ToGetDeploymentTypesFilterOutput() GetDeploymentTypesFilterOutput {
+	return o
+}
+
+func (o GetDeploymentTypesFilterOutput) ToGetDeploymentTypesFilterOutputWithContext(ctx context.Context) GetDeploymentTypesFilterOutput {
+	return o
+}
+
+func (o GetDeploymentTypesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentTypesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDeploymentTypesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDeploymentTypesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDeploymentTypesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDeploymentTypesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDeploymentTypesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentTypesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentTypesFilter)(nil)).Elem()
+}
+
+func (o GetDeploymentTypesFilterArrayOutput) ToGetDeploymentTypesFilterArrayOutput() GetDeploymentTypesFilterArrayOutput {
+	return o
+}
+
+func (o GetDeploymentTypesFilterArrayOutput) ToGetDeploymentTypesFilterArrayOutputWithContext(ctx context.Context) GetDeploymentTypesFilterArrayOutput {
+	return o
+}
+
+func (o GetDeploymentTypesFilterArrayOutput) Index(i pulumi.IntInput) GetDeploymentTypesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentTypesFilter {
+		return vs[0].([]GetDeploymentTypesFilter)[vs[1].(int)]
+	}).(GetDeploymentTypesFilterOutput)
+}
+
 type GetDeploymentUpgradesDeploymentUpgradeCollection struct {
 	Items []GetDeploymentUpgradesDeploymentUpgradeCollectionItem `pulumi:"items"`
 }
@@ -1475,11 +4356,11 @@ func (o GetDeploymentUpgradesDeploymentUpgradeCollectionArrayOutput) Index(i pul
 }
 
 type GetDeploymentUpgradesDeploymentUpgradeCollectionItem struct {
-	// The ID of the compartment in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// The ID of the deployment in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
 	DeploymentId string `pulumi:"deploymentId"`
 	// The type of the deployment upgrade: MANUAL or AUTOMATIC
 	DeploymentUpgradeType string `pulumi:"deploymentUpgradeType"`
@@ -1487,7 +4368,7 @@ type GetDeploymentUpgradesDeploymentUpgradeCollectionItem struct {
 	Description string `pulumi:"description"`
 	// A filter to return only the resources that match the entire 'displayName' given.
 	DisplayName string `pulumi:"displayName"`
-	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment upgrade being referenced.
 	Id string `pulumi:"id"`
@@ -1499,7 +4380,7 @@ type GetDeploymentUpgradesDeploymentUpgradeCollectionItem struct {
 	OggVersion string `pulumi:"oggVersion"`
 	// A filter to return only the resources that match the 'lifecycleState' given.
 	State string `pulumi:"state"`
-	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeCreated string `pulumi:"timeCreated"`
@@ -1523,11 +4404,11 @@ type GetDeploymentUpgradesDeploymentUpgradeCollectionItemInput interface {
 }
 
 type GetDeploymentUpgradesDeploymentUpgradeCollectionItemArgs struct {
-	// The ID of the compartment in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
-	// The ID of the deployment in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
 	DeploymentId pulumi.StringInput `pulumi:"deploymentId"`
 	// The type of the deployment upgrade: MANUAL or AUTOMATIC
 	DeploymentUpgradeType pulumi.StringInput `pulumi:"deploymentUpgradeType"`
@@ -1535,7 +4416,7 @@ type GetDeploymentUpgradesDeploymentUpgradeCollectionItemArgs struct {
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only the resources that match the entire 'displayName' given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment upgrade being referenced.
 	Id pulumi.StringInput `pulumi:"id"`
@@ -1547,7 +4428,7 @@ type GetDeploymentUpgradesDeploymentUpgradeCollectionItemArgs struct {
 	OggVersion pulumi.StringInput `pulumi:"oggVersion"`
 	// A filter to return only the resources that match the 'lifecycleState' given.
 	State pulumi.StringInput `pulumi:"state"`
-	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
@@ -1610,19 +4491,19 @@ func (o GetDeploymentUpgradesDeploymentUpgradeCollectionItemOutput) ToGetDeploym
 	return o
 }
 
-// The ID of the compartment in which to list resources.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 func (o GetDeploymentUpgradesDeploymentUpgradeCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentUpgradesDeploymentUpgradeCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+// Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
 func (o GetDeploymentUpgradesDeploymentUpgradeCollectionItemOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetDeploymentUpgradesDeploymentUpgradeCollectionItem) map[string]interface{} {
 		return v.DefinedTags
 	}).(pulumi.MapOutput)
 }
 
-// The ID of the deployment in which to list resources.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
 func (o GetDeploymentUpgradesDeploymentUpgradeCollectionItemOutput) DeploymentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentUpgradesDeploymentUpgradeCollectionItem) string { return v.DeploymentId }).(pulumi.StringOutput)
 }
@@ -1642,7 +4523,7 @@ func (o GetDeploymentUpgradesDeploymentUpgradeCollectionItemOutput) DisplayName(
 	return o.ApplyT(func(v GetDeploymentUpgradesDeploymentUpgradeCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 func (o GetDeploymentUpgradesDeploymentUpgradeCollectionItemOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetDeploymentUpgradesDeploymentUpgradeCollectionItem) map[string]interface{} {
 		return v.FreeformTags
@@ -1674,7 +4555,7 @@ func (o GetDeploymentUpgradesDeploymentUpgradeCollectionItemOutput) State() pulu
 	return o.ApplyT(func(v GetDeploymentUpgradesDeploymentUpgradeCollectionItem) string { return v.State }).(pulumi.StringOutput)
 }
 
-// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 func (o GetDeploymentUpgradesDeploymentUpgradeCollectionItemOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetDeploymentUpgradesDeploymentUpgradeCollectionItem) map[string]interface{} {
 		return v.SystemTags
@@ -1922,15 +4803,17 @@ func (o GetDeploymentsDeploymentCollectionArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type GetDeploymentsDeploymentCollectionItem struct {
-	// The ID of the compartment in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The Minimum number of OCPUs to be made available for this Deployment.
 	CpuCoreCount int `pulumi:"cpuCoreCount"`
-	// Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
 	DeploymentBackupId string `pulumi:"deploymentBackupId"`
-	// The deployment type.
+	// Information regarding the deployment diagnostic collection
+	DeploymentDiagnosticDatas []GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticData `pulumi:"deploymentDiagnosticDatas"`
+	// The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value OGG is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent DATABASE_ORACLE value.
 	DeploymentType string `pulumi:"deploymentType"`
 	// The URL of a resource.
 	DeploymentUrl string `pulumi:"deploymentUrl"`
@@ -1940,7 +4823,7 @@ type GetDeploymentsDeploymentCollectionItem struct {
 	DisplayName string `pulumi:"displayName"`
 	// A filter to return only the resources that match the 'fqdn' given.
 	Fqdn string `pulumi:"fqdn"`
-	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
 	Id string `pulumi:"id"`
@@ -1960,7 +4843,7 @@ type GetDeploymentsDeploymentCollectionItem struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// A filter to return only the resources that match the 'lifecycleSubState' given.
 	LifecycleSubState string `pulumi:"lifecycleSubState"`
-	// An array of [Network Security Group](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) OCIDs used to define network access for a deployment.
+	// An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
 	NsgIds []string `pulumi:"nsgIds"`
 	// Deployment Data for an OggDeployment
 	OggDatas []GetDeploymentsDeploymentCollectionItemOggData `pulumi:"oggDatas"`
@@ -1974,7 +4857,7 @@ type GetDeploymentsDeploymentCollectionItem struct {
 	StorageUtilizationInBytes string `pulumi:"storageUtilizationInBytes"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
 	SubnetId string `pulumi:"subnetId"`
-	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeCreated string `pulumi:"timeCreated"`
@@ -1996,15 +4879,17 @@ type GetDeploymentsDeploymentCollectionItemInput interface {
 }
 
 type GetDeploymentsDeploymentCollectionItemArgs struct {
-	// The ID of the compartment in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The Minimum number of OCPUs to be made available for this Deployment.
 	CpuCoreCount pulumi.IntInput `pulumi:"cpuCoreCount"`
-	// Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
 	DeploymentBackupId pulumi.StringInput `pulumi:"deploymentBackupId"`
-	// The deployment type.
+	// Information regarding the deployment diagnostic collection
+	DeploymentDiagnosticDatas GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArrayInput `pulumi:"deploymentDiagnosticDatas"`
+	// The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value OGG is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent DATABASE_ORACLE value.
 	DeploymentType pulumi.StringInput `pulumi:"deploymentType"`
 	// The URL of a resource.
 	DeploymentUrl pulumi.StringInput `pulumi:"deploymentUrl"`
@@ -2014,7 +4899,7 @@ type GetDeploymentsDeploymentCollectionItemArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// A filter to return only the resources that match the 'fqdn' given.
 	Fqdn pulumi.StringInput `pulumi:"fqdn"`
-	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
 	Id pulumi.StringInput `pulumi:"id"`
@@ -2034,7 +4919,7 @@ type GetDeploymentsDeploymentCollectionItemArgs struct {
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// A filter to return only the resources that match the 'lifecycleSubState' given.
 	LifecycleSubState pulumi.StringInput `pulumi:"lifecycleSubState"`
-	// An array of [Network Security Group](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) OCIDs used to define network access for a deployment.
+	// An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// Deployment Data for an OggDeployment
 	OggDatas GetDeploymentsDeploymentCollectionItemOggDataArrayInput `pulumi:"oggDatas"`
@@ -2048,7 +4933,7 @@ type GetDeploymentsDeploymentCollectionItemArgs struct {
 	StorageUtilizationInBytes pulumi.StringInput `pulumi:"storageUtilizationInBytes"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet being referenced.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
-	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
@@ -2109,7 +4994,7 @@ func (o GetDeploymentsDeploymentCollectionItemOutput) ToGetDeploymentsDeployment
 	return o
 }
 
-// The ID of the compartment in which to list resources.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 func (o GetDeploymentsDeploymentCollectionItemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -2119,7 +5004,7 @@ func (o GetDeploymentsDeploymentCollectionItemOutput) CpuCoreCount() pulumi.IntO
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) int { return v.CpuCoreCount }).(pulumi.IntOutput)
 }
 
-// Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+// Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
 func (o GetDeploymentsDeploymentCollectionItemOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
@@ -2129,7 +5014,14 @@ func (o GetDeploymentsDeploymentCollectionItemOutput) DeploymentBackupId() pulum
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.DeploymentBackupId }).(pulumi.StringOutput)
 }
 
-// The deployment type.
+// Information regarding the deployment diagnostic collection
+func (o GetDeploymentsDeploymentCollectionItemOutput) DeploymentDiagnosticDatas() GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArrayOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) []GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticData {
+		return v.DeploymentDiagnosticDatas
+	}).(GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArrayOutput)
+}
+
+// The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value OGG is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent DATABASE_ORACLE value.
 func (o GetDeploymentsDeploymentCollectionItemOutput) DeploymentType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.DeploymentType }).(pulumi.StringOutput)
 }
@@ -2154,7 +5046,7 @@ func (o GetDeploymentsDeploymentCollectionItemOutput) Fqdn() pulumi.StringOutput
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.Fqdn }).(pulumi.StringOutput)
 }
 
-// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 func (o GetDeploymentsDeploymentCollectionItemOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
@@ -2204,7 +5096,7 @@ func (o GetDeploymentsDeploymentCollectionItemOutput) LifecycleSubState() pulumi
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.LifecycleSubState }).(pulumi.StringOutput)
 }
 
-// An array of [Network Security Group](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) OCIDs used to define network access for a deployment.
+// An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
 func (o GetDeploymentsDeploymentCollectionItemOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
@@ -2241,7 +5133,7 @@ func (o GetDeploymentsDeploymentCollectionItemOutput) SubnetId() pulumi.StringOu
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.SubnetId }).(pulumi.StringOutput)
 }
 
-// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 func (o GetDeploymentsDeploymentCollectionItemOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
@@ -2279,6 +5171,154 @@ func (o GetDeploymentsDeploymentCollectionItemArrayOutput) Index(i pulumi.IntInp
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentsDeploymentCollectionItem {
 		return vs[0].([]GetDeploymentsDeploymentCollectionItem)[vs[1].(int)]
 	}).(GetDeploymentsDeploymentCollectionItemOutput)
+}
+
+type GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticData struct {
+	// Name of the bucket where the object is to be uploaded in the object storage
+	Bucket string `pulumi:"bucket"`
+	// The state of the deployment diagnostic collection.
+	DiagnosticState string `pulumi:"diagnosticState"`
+	// Name of namespace that serves as a container for all of your buckets
+	Namespace string `pulumi:"namespace"`
+	// Name of the diagnostic collected and uploaded to object storage
+	Object string `pulumi:"object"`
+	// The time until which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeDiagnosticEnd string `pulumi:"timeDiagnosticEnd"`
+	// The time from which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeDiagnosticStart string `pulumi:"timeDiagnosticStart"`
+}
+
+// GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataInput is an input type that accepts GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArgs and GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataOutput values.
+// You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataInput` via:
+//
+//	GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArgs{...}
+type GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataInput interface {
+	pulumi.Input
+
+	ToGetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataOutput() GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataOutput
+	ToGetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataOutputWithContext(context.Context) GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataOutput
+}
+
+type GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArgs struct {
+	// Name of the bucket where the object is to be uploaded in the object storage
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// The state of the deployment diagnostic collection.
+	DiagnosticState pulumi.StringInput `pulumi:"diagnosticState"`
+	// Name of namespace that serves as a container for all of your buckets
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// Name of the diagnostic collected and uploaded to object storage
+	Object pulumi.StringInput `pulumi:"object"`
+	// The time until which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeDiagnosticEnd pulumi.StringInput `pulumi:"timeDiagnosticEnd"`
+	// The time from which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeDiagnosticStart pulumi.StringInput `pulumi:"timeDiagnosticStart"`
+}
+
+func (GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticData)(nil)).Elem()
+}
+
+func (i GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArgs) ToGetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataOutput() GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataOutput {
+	return i.ToGetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArgs) ToGetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataOutput)
+}
+
+// GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArrayInput is an input type that accepts GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArray and GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArrayInput` via:
+//
+//	GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArray{ GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArgs{...} }
+type GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArrayOutput() GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArrayOutput
+	ToGetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArrayOutputWithContext(context.Context) GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArrayOutput
+}
+
+type GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArray []GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataInput
+
+func (GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticData)(nil)).Elem()
+}
+
+func (i GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArray) ToGetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArrayOutput() GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArrayOutput {
+	return i.ToGetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArray) ToGetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArrayOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArrayOutput)
+}
+
+type GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticData)(nil)).Elem()
+}
+
+func (o GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataOutput) ToGetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataOutput() GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataOutput {
+	return o
+}
+
+func (o GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataOutput) ToGetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataOutput {
+	return o
+}
+
+// Name of the bucket where the object is to be uploaded in the object storage
+func (o GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticData) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// The state of the deployment diagnostic collection.
+func (o GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataOutput) DiagnosticState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticData) string {
+		return v.DiagnosticState
+	}).(pulumi.StringOutput)
+}
+
+// Name of namespace that serves as a container for all of your buckets
+func (o GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticData) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// Name of the diagnostic collected and uploaded to object storage
+func (o GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticData) string { return v.Object }).(pulumi.StringOutput)
+}
+
+// The time until which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataOutput) TimeDiagnosticEnd() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticData) string {
+		return v.TimeDiagnosticEnd
+	}).(pulumi.StringOutput)
+}
+
+// The time from which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataOutput) TimeDiagnosticStart() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticData) string {
+		return v.TimeDiagnosticStart
+	}).(pulumi.StringOutput)
+}
+
+type GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticData)(nil)).Elem()
+}
+
+func (o GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArrayOutput) ToGetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArrayOutput() GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArrayOutput {
+	return o
+}
+
+func (o GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArrayOutput) ToGetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArrayOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArrayOutput {
+	return o
+}
+
+func (o GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArrayOutput) Index(i pulumi.IntInput) GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticData {
+		return vs[0].([]GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticData)[vs[1].(int)]
+	}).(GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataOutput)
 }
 
 type GetDeploymentsDeploymentCollectionItemOggData struct {
@@ -2523,9 +5563,1488 @@ func (o GetDeploymentsFilterArrayOutput) Index(i pulumi.IntInput) GetDeployments
 	}).(GetDeploymentsFilterOutput)
 }
 
+type GetMessageItem struct {
+	// The deployment Message in plain text with optional HTML anchor tags.
+	DeploymentMessage string `pulumi:"deploymentMessage"`
+	// The deployment Message Status.
+	DeploymentMessageStatus string `pulumi:"deploymentMessageStatus"`
+	// The deployment Message Id.
+	Id string `pulumi:"id"`
+}
+
+// GetMessageItemInput is an input type that accepts GetMessageItemArgs and GetMessageItemOutput values.
+// You can construct a concrete instance of `GetMessageItemInput` via:
+//
+//	GetMessageItemArgs{...}
+type GetMessageItemInput interface {
+	pulumi.Input
+
+	ToGetMessageItemOutput() GetMessageItemOutput
+	ToGetMessageItemOutputWithContext(context.Context) GetMessageItemOutput
+}
+
+type GetMessageItemArgs struct {
+	// The deployment Message in plain text with optional HTML anchor tags.
+	DeploymentMessage pulumi.StringInput `pulumi:"deploymentMessage"`
+	// The deployment Message Status.
+	DeploymentMessageStatus pulumi.StringInput `pulumi:"deploymentMessageStatus"`
+	// The deployment Message Id.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetMessageItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMessageItem)(nil)).Elem()
+}
+
+func (i GetMessageItemArgs) ToGetMessageItemOutput() GetMessageItemOutput {
+	return i.ToGetMessageItemOutputWithContext(context.Background())
+}
+
+func (i GetMessageItemArgs) ToGetMessageItemOutputWithContext(ctx context.Context) GetMessageItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMessageItemOutput)
+}
+
+// GetMessageItemArrayInput is an input type that accepts GetMessageItemArray and GetMessageItemArrayOutput values.
+// You can construct a concrete instance of `GetMessageItemArrayInput` via:
+//
+//	GetMessageItemArray{ GetMessageItemArgs{...} }
+type GetMessageItemArrayInput interface {
+	pulumi.Input
+
+	ToGetMessageItemArrayOutput() GetMessageItemArrayOutput
+	ToGetMessageItemArrayOutputWithContext(context.Context) GetMessageItemArrayOutput
+}
+
+type GetMessageItemArray []GetMessageItemInput
+
+func (GetMessageItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMessageItem)(nil)).Elem()
+}
+
+func (i GetMessageItemArray) ToGetMessageItemArrayOutput() GetMessageItemArrayOutput {
+	return i.ToGetMessageItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetMessageItemArray) ToGetMessageItemArrayOutputWithContext(ctx context.Context) GetMessageItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMessageItemArrayOutput)
+}
+
+type GetMessageItemOutput struct{ *pulumi.OutputState }
+
+func (GetMessageItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMessageItem)(nil)).Elem()
+}
+
+func (o GetMessageItemOutput) ToGetMessageItemOutput() GetMessageItemOutput {
+	return o
+}
+
+func (o GetMessageItemOutput) ToGetMessageItemOutputWithContext(ctx context.Context) GetMessageItemOutput {
+	return o
+}
+
+// The deployment Message in plain text with optional HTML anchor tags.
+func (o GetMessageItemOutput) DeploymentMessage() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMessageItem) string { return v.DeploymentMessage }).(pulumi.StringOutput)
+}
+
+// The deployment Message Status.
+func (o GetMessageItemOutput) DeploymentMessageStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMessageItem) string { return v.DeploymentMessageStatus }).(pulumi.StringOutput)
+}
+
+// The deployment Message Id.
+func (o GetMessageItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMessageItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+type GetMessageItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMessageItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMessageItem)(nil)).Elem()
+}
+
+func (o GetMessageItemArrayOutput) ToGetMessageItemArrayOutput() GetMessageItemArrayOutput {
+	return o
+}
+
+func (o GetMessageItemArrayOutput) ToGetMessageItemArrayOutputWithContext(ctx context.Context) GetMessageItemArrayOutput {
+	return o
+}
+
+func (o GetMessageItemArrayOutput) Index(i pulumi.IntInput) GetMessageItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMessageItem {
+		return vs[0].([]GetMessageItem)[vs[1].(int)]
+	}).(GetMessageItemOutput)
+}
+
+type GetMessagesDeploymentMessagesCollection struct {
+	// An array of DeploymentMessages.
+	Items []GetMessagesDeploymentMessagesCollectionItem `pulumi:"items"`
+}
+
+// GetMessagesDeploymentMessagesCollectionInput is an input type that accepts GetMessagesDeploymentMessagesCollectionArgs and GetMessagesDeploymentMessagesCollectionOutput values.
+// You can construct a concrete instance of `GetMessagesDeploymentMessagesCollectionInput` via:
+//
+//	GetMessagesDeploymentMessagesCollectionArgs{...}
+type GetMessagesDeploymentMessagesCollectionInput interface {
+	pulumi.Input
+
+	ToGetMessagesDeploymentMessagesCollectionOutput() GetMessagesDeploymentMessagesCollectionOutput
+	ToGetMessagesDeploymentMessagesCollectionOutputWithContext(context.Context) GetMessagesDeploymentMessagesCollectionOutput
+}
+
+type GetMessagesDeploymentMessagesCollectionArgs struct {
+	// An array of DeploymentMessages.
+	Items GetMessagesDeploymentMessagesCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetMessagesDeploymentMessagesCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMessagesDeploymentMessagesCollection)(nil)).Elem()
+}
+
+func (i GetMessagesDeploymentMessagesCollectionArgs) ToGetMessagesDeploymentMessagesCollectionOutput() GetMessagesDeploymentMessagesCollectionOutput {
+	return i.ToGetMessagesDeploymentMessagesCollectionOutputWithContext(context.Background())
+}
+
+func (i GetMessagesDeploymentMessagesCollectionArgs) ToGetMessagesDeploymentMessagesCollectionOutputWithContext(ctx context.Context) GetMessagesDeploymentMessagesCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMessagesDeploymentMessagesCollectionOutput)
+}
+
+// GetMessagesDeploymentMessagesCollectionArrayInput is an input type that accepts GetMessagesDeploymentMessagesCollectionArray and GetMessagesDeploymentMessagesCollectionArrayOutput values.
+// You can construct a concrete instance of `GetMessagesDeploymentMessagesCollectionArrayInput` via:
+//
+//	GetMessagesDeploymentMessagesCollectionArray{ GetMessagesDeploymentMessagesCollectionArgs{...} }
+type GetMessagesDeploymentMessagesCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetMessagesDeploymentMessagesCollectionArrayOutput() GetMessagesDeploymentMessagesCollectionArrayOutput
+	ToGetMessagesDeploymentMessagesCollectionArrayOutputWithContext(context.Context) GetMessagesDeploymentMessagesCollectionArrayOutput
+}
+
+type GetMessagesDeploymentMessagesCollectionArray []GetMessagesDeploymentMessagesCollectionInput
+
+func (GetMessagesDeploymentMessagesCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMessagesDeploymentMessagesCollection)(nil)).Elem()
+}
+
+func (i GetMessagesDeploymentMessagesCollectionArray) ToGetMessagesDeploymentMessagesCollectionArrayOutput() GetMessagesDeploymentMessagesCollectionArrayOutput {
+	return i.ToGetMessagesDeploymentMessagesCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetMessagesDeploymentMessagesCollectionArray) ToGetMessagesDeploymentMessagesCollectionArrayOutputWithContext(ctx context.Context) GetMessagesDeploymentMessagesCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMessagesDeploymentMessagesCollectionArrayOutput)
+}
+
+type GetMessagesDeploymentMessagesCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetMessagesDeploymentMessagesCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMessagesDeploymentMessagesCollection)(nil)).Elem()
+}
+
+func (o GetMessagesDeploymentMessagesCollectionOutput) ToGetMessagesDeploymentMessagesCollectionOutput() GetMessagesDeploymentMessagesCollectionOutput {
+	return o
+}
+
+func (o GetMessagesDeploymentMessagesCollectionOutput) ToGetMessagesDeploymentMessagesCollectionOutputWithContext(ctx context.Context) GetMessagesDeploymentMessagesCollectionOutput {
+	return o
+}
+
+// An array of DeploymentMessages.
+func (o GetMessagesDeploymentMessagesCollectionOutput) Items() GetMessagesDeploymentMessagesCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetMessagesDeploymentMessagesCollection) []GetMessagesDeploymentMessagesCollectionItem {
+		return v.Items
+	}).(GetMessagesDeploymentMessagesCollectionItemArrayOutput)
+}
+
+type GetMessagesDeploymentMessagesCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMessagesDeploymentMessagesCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMessagesDeploymentMessagesCollection)(nil)).Elem()
+}
+
+func (o GetMessagesDeploymentMessagesCollectionArrayOutput) ToGetMessagesDeploymentMessagesCollectionArrayOutput() GetMessagesDeploymentMessagesCollectionArrayOutput {
+	return o
+}
+
+func (o GetMessagesDeploymentMessagesCollectionArrayOutput) ToGetMessagesDeploymentMessagesCollectionArrayOutputWithContext(ctx context.Context) GetMessagesDeploymentMessagesCollectionArrayOutput {
+	return o
+}
+
+func (o GetMessagesDeploymentMessagesCollectionArrayOutput) Index(i pulumi.IntInput) GetMessagesDeploymentMessagesCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMessagesDeploymentMessagesCollection {
+		return vs[0].([]GetMessagesDeploymentMessagesCollection)[vs[1].(int)]
+	}).(GetMessagesDeploymentMessagesCollectionOutput)
+}
+
+type GetMessagesDeploymentMessagesCollectionItem struct {
+	// The deployment Message in plain text with optional HTML anchor tags.
+	DeploymentMessage string `pulumi:"deploymentMessage"`
+	// The deployment Message Status.
+	DeploymentMessageStatus string `pulumi:"deploymentMessageStatus"`
+	// The deployment Message Id.
+	Id string `pulumi:"id"`
+}
+
+// GetMessagesDeploymentMessagesCollectionItemInput is an input type that accepts GetMessagesDeploymentMessagesCollectionItemArgs and GetMessagesDeploymentMessagesCollectionItemOutput values.
+// You can construct a concrete instance of `GetMessagesDeploymentMessagesCollectionItemInput` via:
+//
+//	GetMessagesDeploymentMessagesCollectionItemArgs{...}
+type GetMessagesDeploymentMessagesCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetMessagesDeploymentMessagesCollectionItemOutput() GetMessagesDeploymentMessagesCollectionItemOutput
+	ToGetMessagesDeploymentMessagesCollectionItemOutputWithContext(context.Context) GetMessagesDeploymentMessagesCollectionItemOutput
+}
+
+type GetMessagesDeploymentMessagesCollectionItemArgs struct {
+	// The deployment Message in plain text with optional HTML anchor tags.
+	DeploymentMessage pulumi.StringInput `pulumi:"deploymentMessage"`
+	// The deployment Message Status.
+	DeploymentMessageStatus pulumi.StringInput `pulumi:"deploymentMessageStatus"`
+	// The deployment Message Id.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetMessagesDeploymentMessagesCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMessagesDeploymentMessagesCollectionItem)(nil)).Elem()
+}
+
+func (i GetMessagesDeploymentMessagesCollectionItemArgs) ToGetMessagesDeploymentMessagesCollectionItemOutput() GetMessagesDeploymentMessagesCollectionItemOutput {
+	return i.ToGetMessagesDeploymentMessagesCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetMessagesDeploymentMessagesCollectionItemArgs) ToGetMessagesDeploymentMessagesCollectionItemOutputWithContext(ctx context.Context) GetMessagesDeploymentMessagesCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMessagesDeploymentMessagesCollectionItemOutput)
+}
+
+// GetMessagesDeploymentMessagesCollectionItemArrayInput is an input type that accepts GetMessagesDeploymentMessagesCollectionItemArray and GetMessagesDeploymentMessagesCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetMessagesDeploymentMessagesCollectionItemArrayInput` via:
+//
+//	GetMessagesDeploymentMessagesCollectionItemArray{ GetMessagesDeploymentMessagesCollectionItemArgs{...} }
+type GetMessagesDeploymentMessagesCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetMessagesDeploymentMessagesCollectionItemArrayOutput() GetMessagesDeploymentMessagesCollectionItemArrayOutput
+	ToGetMessagesDeploymentMessagesCollectionItemArrayOutputWithContext(context.Context) GetMessagesDeploymentMessagesCollectionItemArrayOutput
+}
+
+type GetMessagesDeploymentMessagesCollectionItemArray []GetMessagesDeploymentMessagesCollectionItemInput
+
+func (GetMessagesDeploymentMessagesCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMessagesDeploymentMessagesCollectionItem)(nil)).Elem()
+}
+
+func (i GetMessagesDeploymentMessagesCollectionItemArray) ToGetMessagesDeploymentMessagesCollectionItemArrayOutput() GetMessagesDeploymentMessagesCollectionItemArrayOutput {
+	return i.ToGetMessagesDeploymentMessagesCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetMessagesDeploymentMessagesCollectionItemArray) ToGetMessagesDeploymentMessagesCollectionItemArrayOutputWithContext(ctx context.Context) GetMessagesDeploymentMessagesCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMessagesDeploymentMessagesCollectionItemArrayOutput)
+}
+
+type GetMessagesDeploymentMessagesCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetMessagesDeploymentMessagesCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMessagesDeploymentMessagesCollectionItem)(nil)).Elem()
+}
+
+func (o GetMessagesDeploymentMessagesCollectionItemOutput) ToGetMessagesDeploymentMessagesCollectionItemOutput() GetMessagesDeploymentMessagesCollectionItemOutput {
+	return o
+}
+
+func (o GetMessagesDeploymentMessagesCollectionItemOutput) ToGetMessagesDeploymentMessagesCollectionItemOutputWithContext(ctx context.Context) GetMessagesDeploymentMessagesCollectionItemOutput {
+	return o
+}
+
+// The deployment Message in plain text with optional HTML anchor tags.
+func (o GetMessagesDeploymentMessagesCollectionItemOutput) DeploymentMessage() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMessagesDeploymentMessagesCollectionItem) string { return v.DeploymentMessage }).(pulumi.StringOutput)
+}
+
+// The deployment Message Status.
+func (o GetMessagesDeploymentMessagesCollectionItemOutput) DeploymentMessageStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMessagesDeploymentMessagesCollectionItem) string { return v.DeploymentMessageStatus }).(pulumi.StringOutput)
+}
+
+// The deployment Message Id.
+func (o GetMessagesDeploymentMessagesCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMessagesDeploymentMessagesCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+type GetMessagesDeploymentMessagesCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMessagesDeploymentMessagesCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMessagesDeploymentMessagesCollectionItem)(nil)).Elem()
+}
+
+func (o GetMessagesDeploymentMessagesCollectionItemArrayOutput) ToGetMessagesDeploymentMessagesCollectionItemArrayOutput() GetMessagesDeploymentMessagesCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMessagesDeploymentMessagesCollectionItemArrayOutput) ToGetMessagesDeploymentMessagesCollectionItemArrayOutputWithContext(ctx context.Context) GetMessagesDeploymentMessagesCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMessagesDeploymentMessagesCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMessagesDeploymentMessagesCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMessagesDeploymentMessagesCollectionItem {
+		return vs[0].([]GetMessagesDeploymentMessagesCollectionItem)[vs[1].(int)]
+	}).(GetMessagesDeploymentMessagesCollectionItemOutput)
+}
+
+type GetMessagesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetMessagesFilterInput is an input type that accepts GetMessagesFilterArgs and GetMessagesFilterOutput values.
+// You can construct a concrete instance of `GetMessagesFilterInput` via:
+//
+//	GetMessagesFilterArgs{...}
+type GetMessagesFilterInput interface {
+	pulumi.Input
+
+	ToGetMessagesFilterOutput() GetMessagesFilterOutput
+	ToGetMessagesFilterOutputWithContext(context.Context) GetMessagesFilterOutput
+}
+
+type GetMessagesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetMessagesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMessagesFilter)(nil)).Elem()
+}
+
+func (i GetMessagesFilterArgs) ToGetMessagesFilterOutput() GetMessagesFilterOutput {
+	return i.ToGetMessagesFilterOutputWithContext(context.Background())
+}
+
+func (i GetMessagesFilterArgs) ToGetMessagesFilterOutputWithContext(ctx context.Context) GetMessagesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMessagesFilterOutput)
+}
+
+// GetMessagesFilterArrayInput is an input type that accepts GetMessagesFilterArray and GetMessagesFilterArrayOutput values.
+// You can construct a concrete instance of `GetMessagesFilterArrayInput` via:
+//
+//	GetMessagesFilterArray{ GetMessagesFilterArgs{...} }
+type GetMessagesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetMessagesFilterArrayOutput() GetMessagesFilterArrayOutput
+	ToGetMessagesFilterArrayOutputWithContext(context.Context) GetMessagesFilterArrayOutput
+}
+
+type GetMessagesFilterArray []GetMessagesFilterInput
+
+func (GetMessagesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMessagesFilter)(nil)).Elem()
+}
+
+func (i GetMessagesFilterArray) ToGetMessagesFilterArrayOutput() GetMessagesFilterArrayOutput {
+	return i.ToGetMessagesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetMessagesFilterArray) ToGetMessagesFilterArrayOutputWithContext(ctx context.Context) GetMessagesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMessagesFilterArrayOutput)
+}
+
+type GetMessagesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetMessagesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMessagesFilter)(nil)).Elem()
+}
+
+func (o GetMessagesFilterOutput) ToGetMessagesFilterOutput() GetMessagesFilterOutput {
+	return o
+}
+
+func (o GetMessagesFilterOutput) ToGetMessagesFilterOutputWithContext(ctx context.Context) GetMessagesFilterOutput {
+	return o
+}
+
+func (o GetMessagesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMessagesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetMessagesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMessagesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetMessagesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMessagesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetMessagesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMessagesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMessagesFilter)(nil)).Elem()
+}
+
+func (o GetMessagesFilterArrayOutput) ToGetMessagesFilterArrayOutput() GetMessagesFilterArrayOutput {
+	return o
+}
+
+func (o GetMessagesFilterArrayOutput) ToGetMessagesFilterArrayOutputWithContext(ctx context.Context) GetMessagesFilterArrayOutput {
+	return o
+}
+
+func (o GetMessagesFilterArrayOutput) Index(i pulumi.IntInput) GetMessagesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMessagesFilter {
+		return vs[0].([]GetMessagesFilter)[vs[1].(int)]
+	}).(GetMessagesFilterOutput)
+}
+
+type GetTrailFileItem struct {
+	// array of consumer process names
+	Consumers []string `pulumi:"consumers"`
+	// A filter to return only the resources that match the entire 'displayName' given.
+	DisplayName string `pulumi:"displayName"`
+	// Maximum sequence number
+	MaxSequenceNumber string `pulumi:"maxSequenceNumber"`
+	// Minimum sequence number
+	MinSequenceNumber string `pulumi:"minSequenceNumber"`
+	// Number of sequences for a specific trail file
+	NumberOfSequences int `pulumi:"numberOfSequences"`
+	// Producer Process Name if any.
+	Producer string `pulumi:"producer"`
+	// The size of the backup stored in object storage (in bytes)
+	SizeInBytes float64 `pulumi:"sizeInBytes"`
+	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeLastUpdated string `pulumi:"timeLastUpdated"`
+	// A Trail File identifier
+	TrailFileId string `pulumi:"trailFileId"`
+}
+
+// GetTrailFileItemInput is an input type that accepts GetTrailFileItemArgs and GetTrailFileItemOutput values.
+// You can construct a concrete instance of `GetTrailFileItemInput` via:
+//
+//	GetTrailFileItemArgs{...}
+type GetTrailFileItemInput interface {
+	pulumi.Input
+
+	ToGetTrailFileItemOutput() GetTrailFileItemOutput
+	ToGetTrailFileItemOutputWithContext(context.Context) GetTrailFileItemOutput
+}
+
+type GetTrailFileItemArgs struct {
+	// array of consumer process names
+	Consumers pulumi.StringArrayInput `pulumi:"consumers"`
+	// A filter to return only the resources that match the entire 'displayName' given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Maximum sequence number
+	MaxSequenceNumber pulumi.StringInput `pulumi:"maxSequenceNumber"`
+	// Minimum sequence number
+	MinSequenceNumber pulumi.StringInput `pulumi:"minSequenceNumber"`
+	// Number of sequences for a specific trail file
+	NumberOfSequences pulumi.IntInput `pulumi:"numberOfSequences"`
+	// Producer Process Name if any.
+	Producer pulumi.StringInput `pulumi:"producer"`
+	// The size of the backup stored in object storage (in bytes)
+	SizeInBytes pulumi.Float64Input `pulumi:"sizeInBytes"`
+	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeLastUpdated pulumi.StringInput `pulumi:"timeLastUpdated"`
+	// A Trail File identifier
+	TrailFileId pulumi.StringInput `pulumi:"trailFileId"`
+}
+
+func (GetTrailFileItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTrailFileItem)(nil)).Elem()
+}
+
+func (i GetTrailFileItemArgs) ToGetTrailFileItemOutput() GetTrailFileItemOutput {
+	return i.ToGetTrailFileItemOutputWithContext(context.Background())
+}
+
+func (i GetTrailFileItemArgs) ToGetTrailFileItemOutputWithContext(ctx context.Context) GetTrailFileItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTrailFileItemOutput)
+}
+
+// GetTrailFileItemArrayInput is an input type that accepts GetTrailFileItemArray and GetTrailFileItemArrayOutput values.
+// You can construct a concrete instance of `GetTrailFileItemArrayInput` via:
+//
+//	GetTrailFileItemArray{ GetTrailFileItemArgs{...} }
+type GetTrailFileItemArrayInput interface {
+	pulumi.Input
+
+	ToGetTrailFileItemArrayOutput() GetTrailFileItemArrayOutput
+	ToGetTrailFileItemArrayOutputWithContext(context.Context) GetTrailFileItemArrayOutput
+}
+
+type GetTrailFileItemArray []GetTrailFileItemInput
+
+func (GetTrailFileItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTrailFileItem)(nil)).Elem()
+}
+
+func (i GetTrailFileItemArray) ToGetTrailFileItemArrayOutput() GetTrailFileItemArrayOutput {
+	return i.ToGetTrailFileItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetTrailFileItemArray) ToGetTrailFileItemArrayOutputWithContext(ctx context.Context) GetTrailFileItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTrailFileItemArrayOutput)
+}
+
+type GetTrailFileItemOutput struct{ *pulumi.OutputState }
+
+func (GetTrailFileItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTrailFileItem)(nil)).Elem()
+}
+
+func (o GetTrailFileItemOutput) ToGetTrailFileItemOutput() GetTrailFileItemOutput {
+	return o
+}
+
+func (o GetTrailFileItemOutput) ToGetTrailFileItemOutputWithContext(ctx context.Context) GetTrailFileItemOutput {
+	return o
+}
+
+// array of consumer process names
+func (o GetTrailFileItemOutput) Consumers() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTrailFileItem) []string { return v.Consumers }).(pulumi.StringArrayOutput)
+}
+
+// A filter to return only the resources that match the entire 'displayName' given.
+func (o GetTrailFileItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrailFileItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Maximum sequence number
+func (o GetTrailFileItemOutput) MaxSequenceNumber() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrailFileItem) string { return v.MaxSequenceNumber }).(pulumi.StringOutput)
+}
+
+// Minimum sequence number
+func (o GetTrailFileItemOutput) MinSequenceNumber() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrailFileItem) string { return v.MinSequenceNumber }).(pulumi.StringOutput)
+}
+
+// Number of sequences for a specific trail file
+func (o GetTrailFileItemOutput) NumberOfSequences() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTrailFileItem) int { return v.NumberOfSequences }).(pulumi.IntOutput)
+}
+
+// Producer Process Name if any.
+func (o GetTrailFileItemOutput) Producer() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrailFileItem) string { return v.Producer }).(pulumi.StringOutput)
+}
+
+// The size of the backup stored in object storage (in bytes)
+func (o GetTrailFileItemOutput) SizeInBytes() pulumi.Float64Output {
+	return o.ApplyT(func(v GetTrailFileItem) float64 { return v.SizeInBytes }).(pulumi.Float64Output)
+}
+
+// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o GetTrailFileItemOutput) TimeLastUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrailFileItem) string { return v.TimeLastUpdated }).(pulumi.StringOutput)
+}
+
+// A Trail File identifier
+func (o GetTrailFileItemOutput) TrailFileId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrailFileItem) string { return v.TrailFileId }).(pulumi.StringOutput)
+}
+
+type GetTrailFileItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTrailFileItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTrailFileItem)(nil)).Elem()
+}
+
+func (o GetTrailFileItemArrayOutput) ToGetTrailFileItemArrayOutput() GetTrailFileItemArrayOutput {
+	return o
+}
+
+func (o GetTrailFileItemArrayOutput) ToGetTrailFileItemArrayOutputWithContext(ctx context.Context) GetTrailFileItemArrayOutput {
+	return o
+}
+
+func (o GetTrailFileItemArrayOutput) Index(i pulumi.IntInput) GetTrailFileItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTrailFileItem {
+		return vs[0].([]GetTrailFileItem)[vs[1].(int)]
+	}).(GetTrailFileItemOutput)
+}
+
+type GetTrailFilesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetTrailFilesFilterInput is an input type that accepts GetTrailFilesFilterArgs and GetTrailFilesFilterOutput values.
+// You can construct a concrete instance of `GetTrailFilesFilterInput` via:
+//
+//	GetTrailFilesFilterArgs{...}
+type GetTrailFilesFilterInput interface {
+	pulumi.Input
+
+	ToGetTrailFilesFilterOutput() GetTrailFilesFilterOutput
+	ToGetTrailFilesFilterOutputWithContext(context.Context) GetTrailFilesFilterOutput
+}
+
+type GetTrailFilesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetTrailFilesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTrailFilesFilter)(nil)).Elem()
+}
+
+func (i GetTrailFilesFilterArgs) ToGetTrailFilesFilterOutput() GetTrailFilesFilterOutput {
+	return i.ToGetTrailFilesFilterOutputWithContext(context.Background())
+}
+
+func (i GetTrailFilesFilterArgs) ToGetTrailFilesFilterOutputWithContext(ctx context.Context) GetTrailFilesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTrailFilesFilterOutput)
+}
+
+// GetTrailFilesFilterArrayInput is an input type that accepts GetTrailFilesFilterArray and GetTrailFilesFilterArrayOutput values.
+// You can construct a concrete instance of `GetTrailFilesFilterArrayInput` via:
+//
+//	GetTrailFilesFilterArray{ GetTrailFilesFilterArgs{...} }
+type GetTrailFilesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetTrailFilesFilterArrayOutput() GetTrailFilesFilterArrayOutput
+	ToGetTrailFilesFilterArrayOutputWithContext(context.Context) GetTrailFilesFilterArrayOutput
+}
+
+type GetTrailFilesFilterArray []GetTrailFilesFilterInput
+
+func (GetTrailFilesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTrailFilesFilter)(nil)).Elem()
+}
+
+func (i GetTrailFilesFilterArray) ToGetTrailFilesFilterArrayOutput() GetTrailFilesFilterArrayOutput {
+	return i.ToGetTrailFilesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetTrailFilesFilterArray) ToGetTrailFilesFilterArrayOutputWithContext(ctx context.Context) GetTrailFilesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTrailFilesFilterArrayOutput)
+}
+
+type GetTrailFilesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetTrailFilesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTrailFilesFilter)(nil)).Elem()
+}
+
+func (o GetTrailFilesFilterOutput) ToGetTrailFilesFilterOutput() GetTrailFilesFilterOutput {
+	return o
+}
+
+func (o GetTrailFilesFilterOutput) ToGetTrailFilesFilterOutputWithContext(ctx context.Context) GetTrailFilesFilterOutput {
+	return o
+}
+
+func (o GetTrailFilesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrailFilesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetTrailFilesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetTrailFilesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetTrailFilesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTrailFilesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetTrailFilesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTrailFilesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTrailFilesFilter)(nil)).Elem()
+}
+
+func (o GetTrailFilesFilterArrayOutput) ToGetTrailFilesFilterArrayOutput() GetTrailFilesFilterArrayOutput {
+	return o
+}
+
+func (o GetTrailFilesFilterArrayOutput) ToGetTrailFilesFilterArrayOutputWithContext(ctx context.Context) GetTrailFilesFilterArrayOutput {
+	return o
+}
+
+func (o GetTrailFilesFilterArrayOutput) Index(i pulumi.IntInput) GetTrailFilesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTrailFilesFilter {
+		return vs[0].([]GetTrailFilesFilter)[vs[1].(int)]
+	}).(GetTrailFilesFilterOutput)
+}
+
+type GetTrailFilesTrailFileCollection struct {
+	// An array of TrailFiles.
+	Items []GetTrailFilesTrailFileCollectionItem `pulumi:"items"`
+	// The time the data was last fetched from the deployment. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeLastFetched string `pulumi:"timeLastFetched"`
+}
+
+// GetTrailFilesTrailFileCollectionInput is an input type that accepts GetTrailFilesTrailFileCollectionArgs and GetTrailFilesTrailFileCollectionOutput values.
+// You can construct a concrete instance of `GetTrailFilesTrailFileCollectionInput` via:
+//
+//	GetTrailFilesTrailFileCollectionArgs{...}
+type GetTrailFilesTrailFileCollectionInput interface {
+	pulumi.Input
+
+	ToGetTrailFilesTrailFileCollectionOutput() GetTrailFilesTrailFileCollectionOutput
+	ToGetTrailFilesTrailFileCollectionOutputWithContext(context.Context) GetTrailFilesTrailFileCollectionOutput
+}
+
+type GetTrailFilesTrailFileCollectionArgs struct {
+	// An array of TrailFiles.
+	Items GetTrailFilesTrailFileCollectionItemArrayInput `pulumi:"items"`
+	// The time the data was last fetched from the deployment. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeLastFetched pulumi.StringInput `pulumi:"timeLastFetched"`
+}
+
+func (GetTrailFilesTrailFileCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTrailFilesTrailFileCollection)(nil)).Elem()
+}
+
+func (i GetTrailFilesTrailFileCollectionArgs) ToGetTrailFilesTrailFileCollectionOutput() GetTrailFilesTrailFileCollectionOutput {
+	return i.ToGetTrailFilesTrailFileCollectionOutputWithContext(context.Background())
+}
+
+func (i GetTrailFilesTrailFileCollectionArgs) ToGetTrailFilesTrailFileCollectionOutputWithContext(ctx context.Context) GetTrailFilesTrailFileCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTrailFilesTrailFileCollectionOutput)
+}
+
+// GetTrailFilesTrailFileCollectionArrayInput is an input type that accepts GetTrailFilesTrailFileCollectionArray and GetTrailFilesTrailFileCollectionArrayOutput values.
+// You can construct a concrete instance of `GetTrailFilesTrailFileCollectionArrayInput` via:
+//
+//	GetTrailFilesTrailFileCollectionArray{ GetTrailFilesTrailFileCollectionArgs{...} }
+type GetTrailFilesTrailFileCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetTrailFilesTrailFileCollectionArrayOutput() GetTrailFilesTrailFileCollectionArrayOutput
+	ToGetTrailFilesTrailFileCollectionArrayOutputWithContext(context.Context) GetTrailFilesTrailFileCollectionArrayOutput
+}
+
+type GetTrailFilesTrailFileCollectionArray []GetTrailFilesTrailFileCollectionInput
+
+func (GetTrailFilesTrailFileCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTrailFilesTrailFileCollection)(nil)).Elem()
+}
+
+func (i GetTrailFilesTrailFileCollectionArray) ToGetTrailFilesTrailFileCollectionArrayOutput() GetTrailFilesTrailFileCollectionArrayOutput {
+	return i.ToGetTrailFilesTrailFileCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetTrailFilesTrailFileCollectionArray) ToGetTrailFilesTrailFileCollectionArrayOutputWithContext(ctx context.Context) GetTrailFilesTrailFileCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTrailFilesTrailFileCollectionArrayOutput)
+}
+
+type GetTrailFilesTrailFileCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetTrailFilesTrailFileCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTrailFilesTrailFileCollection)(nil)).Elem()
+}
+
+func (o GetTrailFilesTrailFileCollectionOutput) ToGetTrailFilesTrailFileCollectionOutput() GetTrailFilesTrailFileCollectionOutput {
+	return o
+}
+
+func (o GetTrailFilesTrailFileCollectionOutput) ToGetTrailFilesTrailFileCollectionOutputWithContext(ctx context.Context) GetTrailFilesTrailFileCollectionOutput {
+	return o
+}
+
+// An array of TrailFiles.
+func (o GetTrailFilesTrailFileCollectionOutput) Items() GetTrailFilesTrailFileCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetTrailFilesTrailFileCollection) []GetTrailFilesTrailFileCollectionItem { return v.Items }).(GetTrailFilesTrailFileCollectionItemArrayOutput)
+}
+
+// The time the data was last fetched from the deployment. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o GetTrailFilesTrailFileCollectionOutput) TimeLastFetched() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrailFilesTrailFileCollection) string { return v.TimeLastFetched }).(pulumi.StringOutput)
+}
+
+type GetTrailFilesTrailFileCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTrailFilesTrailFileCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTrailFilesTrailFileCollection)(nil)).Elem()
+}
+
+func (o GetTrailFilesTrailFileCollectionArrayOutput) ToGetTrailFilesTrailFileCollectionArrayOutput() GetTrailFilesTrailFileCollectionArrayOutput {
+	return o
+}
+
+func (o GetTrailFilesTrailFileCollectionArrayOutput) ToGetTrailFilesTrailFileCollectionArrayOutputWithContext(ctx context.Context) GetTrailFilesTrailFileCollectionArrayOutput {
+	return o
+}
+
+func (o GetTrailFilesTrailFileCollectionArrayOutput) Index(i pulumi.IntInput) GetTrailFilesTrailFileCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTrailFilesTrailFileCollection {
+		return vs[0].([]GetTrailFilesTrailFileCollection)[vs[1].(int)]
+	}).(GetTrailFilesTrailFileCollectionOutput)
+}
+
+type GetTrailFilesTrailFileCollectionItem struct {
+	// array of consumer process names
+	Consumers []string `pulumi:"consumers"`
+	// A filter to return only the resources that match the entire 'displayName' given.
+	DisplayName string `pulumi:"displayName"`
+	// Maximum sequence number
+	MaxSequenceNumber string `pulumi:"maxSequenceNumber"`
+	// Minimum sequence number
+	MinSequenceNumber string `pulumi:"minSequenceNumber"`
+	// Number of sequences for a specific trail file
+	NumberOfSequences int `pulumi:"numberOfSequences"`
+	// Producer Process Name if any.
+	Producer string `pulumi:"producer"`
+	// The size of the backup stored in object storage (in bytes)
+	SizeInBytes float64 `pulumi:"sizeInBytes"`
+	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeLastUpdated string `pulumi:"timeLastUpdated"`
+	// A Trail File identifier
+	TrailFileId string `pulumi:"trailFileId"`
+}
+
+// GetTrailFilesTrailFileCollectionItemInput is an input type that accepts GetTrailFilesTrailFileCollectionItemArgs and GetTrailFilesTrailFileCollectionItemOutput values.
+// You can construct a concrete instance of `GetTrailFilesTrailFileCollectionItemInput` via:
+//
+//	GetTrailFilesTrailFileCollectionItemArgs{...}
+type GetTrailFilesTrailFileCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetTrailFilesTrailFileCollectionItemOutput() GetTrailFilesTrailFileCollectionItemOutput
+	ToGetTrailFilesTrailFileCollectionItemOutputWithContext(context.Context) GetTrailFilesTrailFileCollectionItemOutput
+}
+
+type GetTrailFilesTrailFileCollectionItemArgs struct {
+	// array of consumer process names
+	Consumers pulumi.StringArrayInput `pulumi:"consumers"`
+	// A filter to return only the resources that match the entire 'displayName' given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Maximum sequence number
+	MaxSequenceNumber pulumi.StringInput `pulumi:"maxSequenceNumber"`
+	// Minimum sequence number
+	MinSequenceNumber pulumi.StringInput `pulumi:"minSequenceNumber"`
+	// Number of sequences for a specific trail file
+	NumberOfSequences pulumi.IntInput `pulumi:"numberOfSequences"`
+	// Producer Process Name if any.
+	Producer pulumi.StringInput `pulumi:"producer"`
+	// The size of the backup stored in object storage (in bytes)
+	SizeInBytes pulumi.Float64Input `pulumi:"sizeInBytes"`
+	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeLastUpdated pulumi.StringInput `pulumi:"timeLastUpdated"`
+	// A Trail File identifier
+	TrailFileId pulumi.StringInput `pulumi:"trailFileId"`
+}
+
+func (GetTrailFilesTrailFileCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTrailFilesTrailFileCollectionItem)(nil)).Elem()
+}
+
+func (i GetTrailFilesTrailFileCollectionItemArgs) ToGetTrailFilesTrailFileCollectionItemOutput() GetTrailFilesTrailFileCollectionItemOutput {
+	return i.ToGetTrailFilesTrailFileCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetTrailFilesTrailFileCollectionItemArgs) ToGetTrailFilesTrailFileCollectionItemOutputWithContext(ctx context.Context) GetTrailFilesTrailFileCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTrailFilesTrailFileCollectionItemOutput)
+}
+
+// GetTrailFilesTrailFileCollectionItemArrayInput is an input type that accepts GetTrailFilesTrailFileCollectionItemArray and GetTrailFilesTrailFileCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetTrailFilesTrailFileCollectionItemArrayInput` via:
+//
+//	GetTrailFilesTrailFileCollectionItemArray{ GetTrailFilesTrailFileCollectionItemArgs{...} }
+type GetTrailFilesTrailFileCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetTrailFilesTrailFileCollectionItemArrayOutput() GetTrailFilesTrailFileCollectionItemArrayOutput
+	ToGetTrailFilesTrailFileCollectionItemArrayOutputWithContext(context.Context) GetTrailFilesTrailFileCollectionItemArrayOutput
+}
+
+type GetTrailFilesTrailFileCollectionItemArray []GetTrailFilesTrailFileCollectionItemInput
+
+func (GetTrailFilesTrailFileCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTrailFilesTrailFileCollectionItem)(nil)).Elem()
+}
+
+func (i GetTrailFilesTrailFileCollectionItemArray) ToGetTrailFilesTrailFileCollectionItemArrayOutput() GetTrailFilesTrailFileCollectionItemArrayOutput {
+	return i.ToGetTrailFilesTrailFileCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetTrailFilesTrailFileCollectionItemArray) ToGetTrailFilesTrailFileCollectionItemArrayOutputWithContext(ctx context.Context) GetTrailFilesTrailFileCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTrailFilesTrailFileCollectionItemArrayOutput)
+}
+
+type GetTrailFilesTrailFileCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetTrailFilesTrailFileCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTrailFilesTrailFileCollectionItem)(nil)).Elem()
+}
+
+func (o GetTrailFilesTrailFileCollectionItemOutput) ToGetTrailFilesTrailFileCollectionItemOutput() GetTrailFilesTrailFileCollectionItemOutput {
+	return o
+}
+
+func (o GetTrailFilesTrailFileCollectionItemOutput) ToGetTrailFilesTrailFileCollectionItemOutputWithContext(ctx context.Context) GetTrailFilesTrailFileCollectionItemOutput {
+	return o
+}
+
+// array of consumer process names
+func (o GetTrailFilesTrailFileCollectionItemOutput) Consumers() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTrailFilesTrailFileCollectionItem) []string { return v.Consumers }).(pulumi.StringArrayOutput)
+}
+
+// A filter to return only the resources that match the entire 'displayName' given.
+func (o GetTrailFilesTrailFileCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrailFilesTrailFileCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Maximum sequence number
+func (o GetTrailFilesTrailFileCollectionItemOutput) MaxSequenceNumber() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrailFilesTrailFileCollectionItem) string { return v.MaxSequenceNumber }).(pulumi.StringOutput)
+}
+
+// Minimum sequence number
+func (o GetTrailFilesTrailFileCollectionItemOutput) MinSequenceNumber() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrailFilesTrailFileCollectionItem) string { return v.MinSequenceNumber }).(pulumi.StringOutput)
+}
+
+// Number of sequences for a specific trail file
+func (o GetTrailFilesTrailFileCollectionItemOutput) NumberOfSequences() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTrailFilesTrailFileCollectionItem) int { return v.NumberOfSequences }).(pulumi.IntOutput)
+}
+
+// Producer Process Name if any.
+func (o GetTrailFilesTrailFileCollectionItemOutput) Producer() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrailFilesTrailFileCollectionItem) string { return v.Producer }).(pulumi.StringOutput)
+}
+
+// The size of the backup stored in object storage (in bytes)
+func (o GetTrailFilesTrailFileCollectionItemOutput) SizeInBytes() pulumi.Float64Output {
+	return o.ApplyT(func(v GetTrailFilesTrailFileCollectionItem) float64 { return v.SizeInBytes }).(pulumi.Float64Output)
+}
+
+// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o GetTrailFilesTrailFileCollectionItemOutput) TimeLastUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrailFilesTrailFileCollectionItem) string { return v.TimeLastUpdated }).(pulumi.StringOutput)
+}
+
+// A Trail File identifier
+func (o GetTrailFilesTrailFileCollectionItemOutput) TrailFileId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrailFilesTrailFileCollectionItem) string { return v.TrailFileId }).(pulumi.StringOutput)
+}
+
+type GetTrailFilesTrailFileCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTrailFilesTrailFileCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTrailFilesTrailFileCollectionItem)(nil)).Elem()
+}
+
+func (o GetTrailFilesTrailFileCollectionItemArrayOutput) ToGetTrailFilesTrailFileCollectionItemArrayOutput() GetTrailFilesTrailFileCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetTrailFilesTrailFileCollectionItemArrayOutput) ToGetTrailFilesTrailFileCollectionItemArrayOutputWithContext(ctx context.Context) GetTrailFilesTrailFileCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetTrailFilesTrailFileCollectionItemArrayOutput) Index(i pulumi.IntInput) GetTrailFilesTrailFileCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTrailFilesTrailFileCollectionItem {
+		return vs[0].([]GetTrailFilesTrailFileCollectionItem)[vs[1].(int)]
+	}).(GetTrailFilesTrailFileCollectionItemOutput)
+}
+
+type GetTrailSequenceItem struct {
+	// A filter to return only the resources that match the entire 'displayName' given.
+	DisplayName string `pulumi:"displayName"`
+	// Sequence Id
+	SequenceId string `pulumi:"sequenceId"`
+	// The size of the backup stored in object storage (in bytes)
+	SizeInBytes float64 `pulumi:"sizeInBytes"`
+	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeLastUpdated string `pulumi:"timeLastUpdated"`
+}
+
+// GetTrailSequenceItemInput is an input type that accepts GetTrailSequenceItemArgs and GetTrailSequenceItemOutput values.
+// You can construct a concrete instance of `GetTrailSequenceItemInput` via:
+//
+//	GetTrailSequenceItemArgs{...}
+type GetTrailSequenceItemInput interface {
+	pulumi.Input
+
+	ToGetTrailSequenceItemOutput() GetTrailSequenceItemOutput
+	ToGetTrailSequenceItemOutputWithContext(context.Context) GetTrailSequenceItemOutput
+}
+
+type GetTrailSequenceItemArgs struct {
+	// A filter to return only the resources that match the entire 'displayName' given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Sequence Id
+	SequenceId pulumi.StringInput `pulumi:"sequenceId"`
+	// The size of the backup stored in object storage (in bytes)
+	SizeInBytes pulumi.Float64Input `pulumi:"sizeInBytes"`
+	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeLastUpdated pulumi.StringInput `pulumi:"timeLastUpdated"`
+}
+
+func (GetTrailSequenceItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTrailSequenceItem)(nil)).Elem()
+}
+
+func (i GetTrailSequenceItemArgs) ToGetTrailSequenceItemOutput() GetTrailSequenceItemOutput {
+	return i.ToGetTrailSequenceItemOutputWithContext(context.Background())
+}
+
+func (i GetTrailSequenceItemArgs) ToGetTrailSequenceItemOutputWithContext(ctx context.Context) GetTrailSequenceItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTrailSequenceItemOutput)
+}
+
+// GetTrailSequenceItemArrayInput is an input type that accepts GetTrailSequenceItemArray and GetTrailSequenceItemArrayOutput values.
+// You can construct a concrete instance of `GetTrailSequenceItemArrayInput` via:
+//
+//	GetTrailSequenceItemArray{ GetTrailSequenceItemArgs{...} }
+type GetTrailSequenceItemArrayInput interface {
+	pulumi.Input
+
+	ToGetTrailSequenceItemArrayOutput() GetTrailSequenceItemArrayOutput
+	ToGetTrailSequenceItemArrayOutputWithContext(context.Context) GetTrailSequenceItemArrayOutput
+}
+
+type GetTrailSequenceItemArray []GetTrailSequenceItemInput
+
+func (GetTrailSequenceItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTrailSequenceItem)(nil)).Elem()
+}
+
+func (i GetTrailSequenceItemArray) ToGetTrailSequenceItemArrayOutput() GetTrailSequenceItemArrayOutput {
+	return i.ToGetTrailSequenceItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetTrailSequenceItemArray) ToGetTrailSequenceItemArrayOutputWithContext(ctx context.Context) GetTrailSequenceItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTrailSequenceItemArrayOutput)
+}
+
+type GetTrailSequenceItemOutput struct{ *pulumi.OutputState }
+
+func (GetTrailSequenceItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTrailSequenceItem)(nil)).Elem()
+}
+
+func (o GetTrailSequenceItemOutput) ToGetTrailSequenceItemOutput() GetTrailSequenceItemOutput {
+	return o
+}
+
+func (o GetTrailSequenceItemOutput) ToGetTrailSequenceItemOutputWithContext(ctx context.Context) GetTrailSequenceItemOutput {
+	return o
+}
+
+// A filter to return only the resources that match the entire 'displayName' given.
+func (o GetTrailSequenceItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrailSequenceItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Sequence Id
+func (o GetTrailSequenceItemOutput) SequenceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrailSequenceItem) string { return v.SequenceId }).(pulumi.StringOutput)
+}
+
+// The size of the backup stored in object storage (in bytes)
+func (o GetTrailSequenceItemOutput) SizeInBytes() pulumi.Float64Output {
+	return o.ApplyT(func(v GetTrailSequenceItem) float64 { return v.SizeInBytes }).(pulumi.Float64Output)
+}
+
+// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o GetTrailSequenceItemOutput) TimeLastUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrailSequenceItem) string { return v.TimeLastUpdated }).(pulumi.StringOutput)
+}
+
+type GetTrailSequenceItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTrailSequenceItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTrailSequenceItem)(nil)).Elem()
+}
+
+func (o GetTrailSequenceItemArrayOutput) ToGetTrailSequenceItemArrayOutput() GetTrailSequenceItemArrayOutput {
+	return o
+}
+
+func (o GetTrailSequenceItemArrayOutput) ToGetTrailSequenceItemArrayOutputWithContext(ctx context.Context) GetTrailSequenceItemArrayOutput {
+	return o
+}
+
+func (o GetTrailSequenceItemArrayOutput) Index(i pulumi.IntInput) GetTrailSequenceItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTrailSequenceItem {
+		return vs[0].([]GetTrailSequenceItem)[vs[1].(int)]
+	}).(GetTrailSequenceItemOutput)
+}
+
+type GetTrailSequencesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetTrailSequencesFilterInput is an input type that accepts GetTrailSequencesFilterArgs and GetTrailSequencesFilterOutput values.
+// You can construct a concrete instance of `GetTrailSequencesFilterInput` via:
+//
+//	GetTrailSequencesFilterArgs{...}
+type GetTrailSequencesFilterInput interface {
+	pulumi.Input
+
+	ToGetTrailSequencesFilterOutput() GetTrailSequencesFilterOutput
+	ToGetTrailSequencesFilterOutputWithContext(context.Context) GetTrailSequencesFilterOutput
+}
+
+type GetTrailSequencesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetTrailSequencesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTrailSequencesFilter)(nil)).Elem()
+}
+
+func (i GetTrailSequencesFilterArgs) ToGetTrailSequencesFilterOutput() GetTrailSequencesFilterOutput {
+	return i.ToGetTrailSequencesFilterOutputWithContext(context.Background())
+}
+
+func (i GetTrailSequencesFilterArgs) ToGetTrailSequencesFilterOutputWithContext(ctx context.Context) GetTrailSequencesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTrailSequencesFilterOutput)
+}
+
+// GetTrailSequencesFilterArrayInput is an input type that accepts GetTrailSequencesFilterArray and GetTrailSequencesFilterArrayOutput values.
+// You can construct a concrete instance of `GetTrailSequencesFilterArrayInput` via:
+//
+//	GetTrailSequencesFilterArray{ GetTrailSequencesFilterArgs{...} }
+type GetTrailSequencesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetTrailSequencesFilterArrayOutput() GetTrailSequencesFilterArrayOutput
+	ToGetTrailSequencesFilterArrayOutputWithContext(context.Context) GetTrailSequencesFilterArrayOutput
+}
+
+type GetTrailSequencesFilterArray []GetTrailSequencesFilterInput
+
+func (GetTrailSequencesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTrailSequencesFilter)(nil)).Elem()
+}
+
+func (i GetTrailSequencesFilterArray) ToGetTrailSequencesFilterArrayOutput() GetTrailSequencesFilterArrayOutput {
+	return i.ToGetTrailSequencesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetTrailSequencesFilterArray) ToGetTrailSequencesFilterArrayOutputWithContext(ctx context.Context) GetTrailSequencesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTrailSequencesFilterArrayOutput)
+}
+
+type GetTrailSequencesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetTrailSequencesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTrailSequencesFilter)(nil)).Elem()
+}
+
+func (o GetTrailSequencesFilterOutput) ToGetTrailSequencesFilterOutput() GetTrailSequencesFilterOutput {
+	return o
+}
+
+func (o GetTrailSequencesFilterOutput) ToGetTrailSequencesFilterOutputWithContext(ctx context.Context) GetTrailSequencesFilterOutput {
+	return o
+}
+
+func (o GetTrailSequencesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrailSequencesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetTrailSequencesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetTrailSequencesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetTrailSequencesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTrailSequencesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetTrailSequencesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTrailSequencesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTrailSequencesFilter)(nil)).Elem()
+}
+
+func (o GetTrailSequencesFilterArrayOutput) ToGetTrailSequencesFilterArrayOutput() GetTrailSequencesFilterArrayOutput {
+	return o
+}
+
+func (o GetTrailSequencesFilterArrayOutput) ToGetTrailSequencesFilterArrayOutputWithContext(ctx context.Context) GetTrailSequencesFilterArrayOutput {
+	return o
+}
+
+func (o GetTrailSequencesFilterArrayOutput) Index(i pulumi.IntInput) GetTrailSequencesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTrailSequencesFilter {
+		return vs[0].([]GetTrailSequencesFilter)[vs[1].(int)]
+	}).(GetTrailSequencesFilterOutput)
+}
+
+type GetTrailSequencesTrailSequenceCollection struct {
+	// An array of TrailSequences.
+	Items []GetTrailSequencesTrailSequenceCollectionItem `pulumi:"items"`
+	// The time the data was last fetched from the deployment. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeLastFetched string `pulumi:"timeLastFetched"`
+}
+
+// GetTrailSequencesTrailSequenceCollectionInput is an input type that accepts GetTrailSequencesTrailSequenceCollectionArgs and GetTrailSequencesTrailSequenceCollectionOutput values.
+// You can construct a concrete instance of `GetTrailSequencesTrailSequenceCollectionInput` via:
+//
+//	GetTrailSequencesTrailSequenceCollectionArgs{...}
+type GetTrailSequencesTrailSequenceCollectionInput interface {
+	pulumi.Input
+
+	ToGetTrailSequencesTrailSequenceCollectionOutput() GetTrailSequencesTrailSequenceCollectionOutput
+	ToGetTrailSequencesTrailSequenceCollectionOutputWithContext(context.Context) GetTrailSequencesTrailSequenceCollectionOutput
+}
+
+type GetTrailSequencesTrailSequenceCollectionArgs struct {
+	// An array of TrailSequences.
+	Items GetTrailSequencesTrailSequenceCollectionItemArrayInput `pulumi:"items"`
+	// The time the data was last fetched from the deployment. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeLastFetched pulumi.StringInput `pulumi:"timeLastFetched"`
+}
+
+func (GetTrailSequencesTrailSequenceCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTrailSequencesTrailSequenceCollection)(nil)).Elem()
+}
+
+func (i GetTrailSequencesTrailSequenceCollectionArgs) ToGetTrailSequencesTrailSequenceCollectionOutput() GetTrailSequencesTrailSequenceCollectionOutput {
+	return i.ToGetTrailSequencesTrailSequenceCollectionOutputWithContext(context.Background())
+}
+
+func (i GetTrailSequencesTrailSequenceCollectionArgs) ToGetTrailSequencesTrailSequenceCollectionOutputWithContext(ctx context.Context) GetTrailSequencesTrailSequenceCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTrailSequencesTrailSequenceCollectionOutput)
+}
+
+// GetTrailSequencesTrailSequenceCollectionArrayInput is an input type that accepts GetTrailSequencesTrailSequenceCollectionArray and GetTrailSequencesTrailSequenceCollectionArrayOutput values.
+// You can construct a concrete instance of `GetTrailSequencesTrailSequenceCollectionArrayInput` via:
+//
+//	GetTrailSequencesTrailSequenceCollectionArray{ GetTrailSequencesTrailSequenceCollectionArgs{...} }
+type GetTrailSequencesTrailSequenceCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetTrailSequencesTrailSequenceCollectionArrayOutput() GetTrailSequencesTrailSequenceCollectionArrayOutput
+	ToGetTrailSequencesTrailSequenceCollectionArrayOutputWithContext(context.Context) GetTrailSequencesTrailSequenceCollectionArrayOutput
+}
+
+type GetTrailSequencesTrailSequenceCollectionArray []GetTrailSequencesTrailSequenceCollectionInput
+
+func (GetTrailSequencesTrailSequenceCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTrailSequencesTrailSequenceCollection)(nil)).Elem()
+}
+
+func (i GetTrailSequencesTrailSequenceCollectionArray) ToGetTrailSequencesTrailSequenceCollectionArrayOutput() GetTrailSequencesTrailSequenceCollectionArrayOutput {
+	return i.ToGetTrailSequencesTrailSequenceCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetTrailSequencesTrailSequenceCollectionArray) ToGetTrailSequencesTrailSequenceCollectionArrayOutputWithContext(ctx context.Context) GetTrailSequencesTrailSequenceCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTrailSequencesTrailSequenceCollectionArrayOutput)
+}
+
+type GetTrailSequencesTrailSequenceCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetTrailSequencesTrailSequenceCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTrailSequencesTrailSequenceCollection)(nil)).Elem()
+}
+
+func (o GetTrailSequencesTrailSequenceCollectionOutput) ToGetTrailSequencesTrailSequenceCollectionOutput() GetTrailSequencesTrailSequenceCollectionOutput {
+	return o
+}
+
+func (o GetTrailSequencesTrailSequenceCollectionOutput) ToGetTrailSequencesTrailSequenceCollectionOutputWithContext(ctx context.Context) GetTrailSequencesTrailSequenceCollectionOutput {
+	return o
+}
+
+// An array of TrailSequences.
+func (o GetTrailSequencesTrailSequenceCollectionOutput) Items() GetTrailSequencesTrailSequenceCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetTrailSequencesTrailSequenceCollection) []GetTrailSequencesTrailSequenceCollectionItem {
+		return v.Items
+	}).(GetTrailSequencesTrailSequenceCollectionItemArrayOutput)
+}
+
+// The time the data was last fetched from the deployment. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o GetTrailSequencesTrailSequenceCollectionOutput) TimeLastFetched() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrailSequencesTrailSequenceCollection) string { return v.TimeLastFetched }).(pulumi.StringOutput)
+}
+
+type GetTrailSequencesTrailSequenceCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTrailSequencesTrailSequenceCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTrailSequencesTrailSequenceCollection)(nil)).Elem()
+}
+
+func (o GetTrailSequencesTrailSequenceCollectionArrayOutput) ToGetTrailSequencesTrailSequenceCollectionArrayOutput() GetTrailSequencesTrailSequenceCollectionArrayOutput {
+	return o
+}
+
+func (o GetTrailSequencesTrailSequenceCollectionArrayOutput) ToGetTrailSequencesTrailSequenceCollectionArrayOutputWithContext(ctx context.Context) GetTrailSequencesTrailSequenceCollectionArrayOutput {
+	return o
+}
+
+func (o GetTrailSequencesTrailSequenceCollectionArrayOutput) Index(i pulumi.IntInput) GetTrailSequencesTrailSequenceCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTrailSequencesTrailSequenceCollection {
+		return vs[0].([]GetTrailSequencesTrailSequenceCollection)[vs[1].(int)]
+	}).(GetTrailSequencesTrailSequenceCollectionOutput)
+}
+
+type GetTrailSequencesTrailSequenceCollectionItem struct {
+	// A filter to return only the resources that match the entire 'displayName' given.
+	DisplayName string `pulumi:"displayName"`
+	// Sequence Id
+	SequenceId string `pulumi:"sequenceId"`
+	// The size of the backup stored in object storage (in bytes)
+	SizeInBytes float64 `pulumi:"sizeInBytes"`
+	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeLastUpdated string `pulumi:"timeLastUpdated"`
+}
+
+// GetTrailSequencesTrailSequenceCollectionItemInput is an input type that accepts GetTrailSequencesTrailSequenceCollectionItemArgs and GetTrailSequencesTrailSequenceCollectionItemOutput values.
+// You can construct a concrete instance of `GetTrailSequencesTrailSequenceCollectionItemInput` via:
+//
+//	GetTrailSequencesTrailSequenceCollectionItemArgs{...}
+type GetTrailSequencesTrailSequenceCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetTrailSequencesTrailSequenceCollectionItemOutput() GetTrailSequencesTrailSequenceCollectionItemOutput
+	ToGetTrailSequencesTrailSequenceCollectionItemOutputWithContext(context.Context) GetTrailSequencesTrailSequenceCollectionItemOutput
+}
+
+type GetTrailSequencesTrailSequenceCollectionItemArgs struct {
+	// A filter to return only the resources that match the entire 'displayName' given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Sequence Id
+	SequenceId pulumi.StringInput `pulumi:"sequenceId"`
+	// The size of the backup stored in object storage (in bytes)
+	SizeInBytes pulumi.Float64Input `pulumi:"sizeInBytes"`
+	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeLastUpdated pulumi.StringInput `pulumi:"timeLastUpdated"`
+}
+
+func (GetTrailSequencesTrailSequenceCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTrailSequencesTrailSequenceCollectionItem)(nil)).Elem()
+}
+
+func (i GetTrailSequencesTrailSequenceCollectionItemArgs) ToGetTrailSequencesTrailSequenceCollectionItemOutput() GetTrailSequencesTrailSequenceCollectionItemOutput {
+	return i.ToGetTrailSequencesTrailSequenceCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetTrailSequencesTrailSequenceCollectionItemArgs) ToGetTrailSequencesTrailSequenceCollectionItemOutputWithContext(ctx context.Context) GetTrailSequencesTrailSequenceCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTrailSequencesTrailSequenceCollectionItemOutput)
+}
+
+// GetTrailSequencesTrailSequenceCollectionItemArrayInput is an input type that accepts GetTrailSequencesTrailSequenceCollectionItemArray and GetTrailSequencesTrailSequenceCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetTrailSequencesTrailSequenceCollectionItemArrayInput` via:
+//
+//	GetTrailSequencesTrailSequenceCollectionItemArray{ GetTrailSequencesTrailSequenceCollectionItemArgs{...} }
+type GetTrailSequencesTrailSequenceCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetTrailSequencesTrailSequenceCollectionItemArrayOutput() GetTrailSequencesTrailSequenceCollectionItemArrayOutput
+	ToGetTrailSequencesTrailSequenceCollectionItemArrayOutputWithContext(context.Context) GetTrailSequencesTrailSequenceCollectionItemArrayOutput
+}
+
+type GetTrailSequencesTrailSequenceCollectionItemArray []GetTrailSequencesTrailSequenceCollectionItemInput
+
+func (GetTrailSequencesTrailSequenceCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTrailSequencesTrailSequenceCollectionItem)(nil)).Elem()
+}
+
+func (i GetTrailSequencesTrailSequenceCollectionItemArray) ToGetTrailSequencesTrailSequenceCollectionItemArrayOutput() GetTrailSequencesTrailSequenceCollectionItemArrayOutput {
+	return i.ToGetTrailSequencesTrailSequenceCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetTrailSequencesTrailSequenceCollectionItemArray) ToGetTrailSequencesTrailSequenceCollectionItemArrayOutputWithContext(ctx context.Context) GetTrailSequencesTrailSequenceCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTrailSequencesTrailSequenceCollectionItemArrayOutput)
+}
+
+type GetTrailSequencesTrailSequenceCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetTrailSequencesTrailSequenceCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTrailSequencesTrailSequenceCollectionItem)(nil)).Elem()
+}
+
+func (o GetTrailSequencesTrailSequenceCollectionItemOutput) ToGetTrailSequencesTrailSequenceCollectionItemOutput() GetTrailSequencesTrailSequenceCollectionItemOutput {
+	return o
+}
+
+func (o GetTrailSequencesTrailSequenceCollectionItemOutput) ToGetTrailSequencesTrailSequenceCollectionItemOutputWithContext(ctx context.Context) GetTrailSequencesTrailSequenceCollectionItemOutput {
+	return o
+}
+
+// A filter to return only the resources that match the entire 'displayName' given.
+func (o GetTrailSequencesTrailSequenceCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrailSequencesTrailSequenceCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Sequence Id
+func (o GetTrailSequencesTrailSequenceCollectionItemOutput) SequenceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrailSequencesTrailSequenceCollectionItem) string { return v.SequenceId }).(pulumi.StringOutput)
+}
+
+// The size of the backup stored in object storage (in bytes)
+func (o GetTrailSequencesTrailSequenceCollectionItemOutput) SizeInBytes() pulumi.Float64Output {
+	return o.ApplyT(func(v GetTrailSequencesTrailSequenceCollectionItem) float64 { return v.SizeInBytes }).(pulumi.Float64Output)
+}
+
+// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o GetTrailSequencesTrailSequenceCollectionItemOutput) TimeLastUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTrailSequencesTrailSequenceCollectionItem) string { return v.TimeLastUpdated }).(pulumi.StringOutput)
+}
+
+type GetTrailSequencesTrailSequenceCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTrailSequencesTrailSequenceCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTrailSequencesTrailSequenceCollectionItem)(nil)).Elem()
+}
+
+func (o GetTrailSequencesTrailSequenceCollectionItemArrayOutput) ToGetTrailSequencesTrailSequenceCollectionItemArrayOutput() GetTrailSequencesTrailSequenceCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetTrailSequencesTrailSequenceCollectionItemArrayOutput) ToGetTrailSequencesTrailSequenceCollectionItemArrayOutputWithContext(ctx context.Context) GetTrailSequencesTrailSequenceCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetTrailSequencesTrailSequenceCollectionItemArrayOutput) Index(i pulumi.IntInput) GetTrailSequencesTrailSequenceCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTrailSequencesTrailSequenceCollectionItem {
+		return vs[0].([]GetTrailSequencesTrailSequenceCollectionItem)[vs[1].(int)]
+	}).(GetTrailSequencesTrailSequenceCollectionItemOutput)
+}
+
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionAdditionalAttributeInput)(nil)).Elem(), ConnectionAdditionalAttributeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionAdditionalAttributeArrayInput)(nil)).Elem(), ConnectionAdditionalAttributeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionBootstrapServerInput)(nil)).Elem(), ConnectionBootstrapServerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionBootstrapServerArrayInput)(nil)).Elem(), ConnectionBootstrapServerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionIngressIpInput)(nil)).Elem(), ConnectionIngressIpArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionIngressIpArrayInput)(nil)).Elem(), ConnectionIngressIpArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentDeploymentDiagnosticDataInput)(nil)).Elem(), DeploymentDeploymentDiagnosticDataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentDeploymentDiagnosticDataArrayInput)(nil)).Elem(), DeploymentDeploymentDiagnosticDataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentOggDataInput)(nil)).Elem(), DeploymentOggDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentOggDataPtrInput)(nil)).Elem(), DeploymentOggDataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionAdditionalAttributeInput)(nil)).Elem(), GetConnectionAdditionalAttributeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionAdditionalAttributeArrayInput)(nil)).Elem(), GetConnectionAdditionalAttributeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionAssignmentsConnectionAssignmentCollectionInput)(nil)).Elem(), GetConnectionAssignmentsConnectionAssignmentCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionAssignmentsConnectionAssignmentCollectionArrayInput)(nil)).Elem(), GetConnectionAssignmentsConnectionAssignmentCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionAssignmentsConnectionAssignmentCollectionItemInput)(nil)).Elem(), GetConnectionAssignmentsConnectionAssignmentCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionAssignmentsConnectionAssignmentCollectionItemArrayInput)(nil)).Elem(), GetConnectionAssignmentsConnectionAssignmentCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionAssignmentsFilterInput)(nil)).Elem(), GetConnectionAssignmentsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionAssignmentsFilterArrayInput)(nil)).Elem(), GetConnectionAssignmentsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionBootstrapServerInput)(nil)).Elem(), GetConnectionBootstrapServerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionBootstrapServerArrayInput)(nil)).Elem(), GetConnectionBootstrapServerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionIngressIpInput)(nil)).Elem(), GetConnectionIngressIpArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionIngressIpArrayInput)(nil)).Elem(), GetConnectionIngressIpArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionInput)(nil)).Elem(), GetConnectionsConnectionCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionArrayInput)(nil)).Elem(), GetConnectionsConnectionCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionItemInput)(nil)).Elem(), GetConnectionsConnectionCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionItemArrayInput)(nil)).Elem(), GetConnectionsConnectionCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionItemAdditionalAttributeInput)(nil)).Elem(), GetConnectionsConnectionCollectionItemAdditionalAttributeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionItemAdditionalAttributeArrayInput)(nil)).Elem(), GetConnectionsConnectionCollectionItemAdditionalAttributeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionItemBootstrapServerInput)(nil)).Elem(), GetConnectionsConnectionCollectionItemBootstrapServerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionItemBootstrapServerArrayInput)(nil)).Elem(), GetConnectionsConnectionCollectionItemBootstrapServerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionItemIngressIpInput)(nil)).Elem(), GetConnectionsConnectionCollectionItemIngressIpArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionItemIngressIpArrayInput)(nil)).Elem(), GetConnectionsConnectionCollectionItemIngressIpArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsFilterInput)(nil)).Elem(), GetConnectionsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsFilterArrayInput)(nil)).Elem(), GetConnectionsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseRegistrationsDatabaseRegistrationCollectionInput)(nil)).Elem(), GetDatabaseRegistrationsDatabaseRegistrationCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseRegistrationsDatabaseRegistrationCollectionArrayInput)(nil)).Elem(), GetDatabaseRegistrationsDatabaseRegistrationCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseRegistrationsDatabaseRegistrationCollectionItemInput)(nil)).Elem(), GetDatabaseRegistrationsDatabaseRegistrationCollectionItemArgs{})
@@ -2538,8 +7057,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentBackupsDeploymentBackupCollectionItemArrayInput)(nil)).Elem(), GetDeploymentBackupsDeploymentBackupCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentBackupsFilterInput)(nil)).Elem(), GetDeploymentBackupsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentBackupsFilterArrayInput)(nil)).Elem(), GetDeploymentBackupsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentDeploymentDiagnosticDataInput)(nil)).Elem(), GetDeploymentDeploymentDiagnosticDataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentDeploymentDiagnosticDataArrayInput)(nil)).Elem(), GetDeploymentDeploymentDiagnosticDataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentOggDataInput)(nil)).Elem(), GetDeploymentOggDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentOggDataArrayInput)(nil)).Elem(), GetDeploymentOggDataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentTypeItemInput)(nil)).Elem(), GetDeploymentTypeItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentTypeItemArrayInput)(nil)).Elem(), GetDeploymentTypeItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentTypesDeploymentTypeCollectionInput)(nil)).Elem(), GetDeploymentTypesDeploymentTypeCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentTypesDeploymentTypeCollectionArrayInput)(nil)).Elem(), GetDeploymentTypesDeploymentTypeCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentTypesDeploymentTypeCollectionItemInput)(nil)).Elem(), GetDeploymentTypesDeploymentTypeCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentTypesDeploymentTypeCollectionItemArrayInput)(nil)).Elem(), GetDeploymentTypesDeploymentTypeCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentTypesFilterInput)(nil)).Elem(), GetDeploymentTypesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentTypesFilterArrayInput)(nil)).Elem(), GetDeploymentTypesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentUpgradesDeploymentUpgradeCollectionInput)(nil)).Elem(), GetDeploymentUpgradesDeploymentUpgradeCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentUpgradesDeploymentUpgradeCollectionArrayInput)(nil)).Elem(), GetDeploymentUpgradesDeploymentUpgradeCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentUpgradesDeploymentUpgradeCollectionItemInput)(nil)).Elem(), GetDeploymentUpgradesDeploymentUpgradeCollectionItemArgs{})
@@ -2550,12 +7079,70 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionArrayInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemArrayInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArrayInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemOggDataInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemOggDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemOggDataArrayInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemOggDataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsFilterInput)(nil)).Elem(), GetDeploymentsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsFilterArrayInput)(nil)).Elem(), GetDeploymentsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMessageItemInput)(nil)).Elem(), GetMessageItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMessageItemArrayInput)(nil)).Elem(), GetMessageItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMessagesDeploymentMessagesCollectionInput)(nil)).Elem(), GetMessagesDeploymentMessagesCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMessagesDeploymentMessagesCollectionArrayInput)(nil)).Elem(), GetMessagesDeploymentMessagesCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMessagesDeploymentMessagesCollectionItemInput)(nil)).Elem(), GetMessagesDeploymentMessagesCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMessagesDeploymentMessagesCollectionItemArrayInput)(nil)).Elem(), GetMessagesDeploymentMessagesCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMessagesFilterInput)(nil)).Elem(), GetMessagesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMessagesFilterArrayInput)(nil)).Elem(), GetMessagesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTrailFileItemInput)(nil)).Elem(), GetTrailFileItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTrailFileItemArrayInput)(nil)).Elem(), GetTrailFileItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTrailFilesFilterInput)(nil)).Elem(), GetTrailFilesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTrailFilesFilterArrayInput)(nil)).Elem(), GetTrailFilesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTrailFilesTrailFileCollectionInput)(nil)).Elem(), GetTrailFilesTrailFileCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTrailFilesTrailFileCollectionArrayInput)(nil)).Elem(), GetTrailFilesTrailFileCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTrailFilesTrailFileCollectionItemInput)(nil)).Elem(), GetTrailFilesTrailFileCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTrailFilesTrailFileCollectionItemArrayInput)(nil)).Elem(), GetTrailFilesTrailFileCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTrailSequenceItemInput)(nil)).Elem(), GetTrailSequenceItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTrailSequenceItemArrayInput)(nil)).Elem(), GetTrailSequenceItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTrailSequencesFilterInput)(nil)).Elem(), GetTrailSequencesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTrailSequencesFilterArrayInput)(nil)).Elem(), GetTrailSequencesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTrailSequencesTrailSequenceCollectionInput)(nil)).Elem(), GetTrailSequencesTrailSequenceCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTrailSequencesTrailSequenceCollectionArrayInput)(nil)).Elem(), GetTrailSequencesTrailSequenceCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTrailSequencesTrailSequenceCollectionItemInput)(nil)).Elem(), GetTrailSequencesTrailSequenceCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTrailSequencesTrailSequenceCollectionItemArrayInput)(nil)).Elem(), GetTrailSequencesTrailSequenceCollectionItemArray{})
+	pulumi.RegisterOutputType(ConnectionAdditionalAttributeOutput{})
+	pulumi.RegisterOutputType(ConnectionAdditionalAttributeArrayOutput{})
+	pulumi.RegisterOutputType(ConnectionBootstrapServerOutput{})
+	pulumi.RegisterOutputType(ConnectionBootstrapServerArrayOutput{})
+	pulumi.RegisterOutputType(ConnectionIngressIpOutput{})
+	pulumi.RegisterOutputType(ConnectionIngressIpArrayOutput{})
+	pulumi.RegisterOutputType(DeploymentDeploymentDiagnosticDataOutput{})
+	pulumi.RegisterOutputType(DeploymentDeploymentDiagnosticDataArrayOutput{})
 	pulumi.RegisterOutputType(DeploymentOggDataOutput{})
 	pulumi.RegisterOutputType(DeploymentOggDataPtrOutput{})
+	pulumi.RegisterOutputType(GetConnectionAdditionalAttributeOutput{})
+	pulumi.RegisterOutputType(GetConnectionAdditionalAttributeArrayOutput{})
+	pulumi.RegisterOutputType(GetConnectionAssignmentsConnectionAssignmentCollectionOutput{})
+	pulumi.RegisterOutputType(GetConnectionAssignmentsConnectionAssignmentCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetConnectionAssignmentsConnectionAssignmentCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetConnectionAssignmentsConnectionAssignmentCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetConnectionAssignmentsFilterOutput{})
+	pulumi.RegisterOutputType(GetConnectionAssignmentsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetConnectionBootstrapServerOutput{})
+	pulumi.RegisterOutputType(GetConnectionBootstrapServerArrayOutput{})
+	pulumi.RegisterOutputType(GetConnectionIngressIpOutput{})
+	pulumi.RegisterOutputType(GetConnectionIngressIpArrayOutput{})
+	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionOutput{})
+	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionItemAdditionalAttributeOutput{})
+	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutput{})
+	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionItemBootstrapServerOutput{})
+	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionItemBootstrapServerArrayOutput{})
+	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionItemIngressIpOutput{})
+	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionItemIngressIpArrayOutput{})
+	pulumi.RegisterOutputType(GetConnectionsFilterOutput{})
+	pulumi.RegisterOutputType(GetConnectionsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseRegistrationsDatabaseRegistrationCollectionOutput{})
 	pulumi.RegisterOutputType(GetDatabaseRegistrationsDatabaseRegistrationCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseRegistrationsDatabaseRegistrationCollectionItemOutput{})
@@ -2568,8 +7155,18 @@ func init() {
 	pulumi.RegisterOutputType(GetDeploymentBackupsDeploymentBackupCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentBackupsFilterOutput{})
 	pulumi.RegisterOutputType(GetDeploymentBackupsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentDeploymentDiagnosticDataOutput{})
+	pulumi.RegisterOutputType(GetDeploymentDeploymentDiagnosticDataArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentOggDataOutput{})
 	pulumi.RegisterOutputType(GetDeploymentOggDataArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentTypeItemOutput{})
+	pulumi.RegisterOutputType(GetDeploymentTypeItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentTypesDeploymentTypeCollectionOutput{})
+	pulumi.RegisterOutputType(GetDeploymentTypesDeploymentTypeCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentTypesDeploymentTypeCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetDeploymentTypesDeploymentTypeCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentTypesFilterOutput{})
+	pulumi.RegisterOutputType(GetDeploymentTypesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentUpgradesDeploymentUpgradeCollectionOutput{})
 	pulumi.RegisterOutputType(GetDeploymentUpgradesDeploymentUpgradeCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentUpgradesDeploymentUpgradeCollectionItemOutput{})
@@ -2580,8 +7177,34 @@ func init() {
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataOutput{})
+	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemOggDataOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemOggDataArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsFilterOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetMessageItemOutput{})
+	pulumi.RegisterOutputType(GetMessageItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMessagesDeploymentMessagesCollectionOutput{})
+	pulumi.RegisterOutputType(GetMessagesDeploymentMessagesCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetMessagesDeploymentMessagesCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetMessagesDeploymentMessagesCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMessagesFilterOutput{})
+	pulumi.RegisterOutputType(GetMessagesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetTrailFileItemOutput{})
+	pulumi.RegisterOutputType(GetTrailFileItemArrayOutput{})
+	pulumi.RegisterOutputType(GetTrailFilesFilterOutput{})
+	pulumi.RegisterOutputType(GetTrailFilesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetTrailFilesTrailFileCollectionOutput{})
+	pulumi.RegisterOutputType(GetTrailFilesTrailFileCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetTrailFilesTrailFileCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetTrailFilesTrailFileCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetTrailSequenceItemOutput{})
+	pulumi.RegisterOutputType(GetTrailSequenceItemArrayOutput{})
+	pulumi.RegisterOutputType(GetTrailSequencesFilterOutput{})
+	pulumi.RegisterOutputType(GetTrailSequencesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetTrailSequencesTrailSequenceCollectionOutput{})
+	pulumi.RegisterOutputType(GetTrailSequencesTrailSequenceCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetTrailSequencesTrailSequenceCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetTrailSequencesTrailSequenceCollectionItemArrayOutput{})
 }

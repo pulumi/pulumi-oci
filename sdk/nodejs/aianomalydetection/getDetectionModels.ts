@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDetectionModels(args: GetDetectionModelsArgs, opts?: pulumi.InvokeOptions): Promise<GetDetectionModelsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:AiAnomalyDetection/getDetectionModels:getDetectionModels", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -92,9 +90,27 @@ export interface GetDetectionModelsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Models in Oracle Cloud Infrastructure Ai Anomaly Detection service.
+ *
+ * Returns a list of Models.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testModels = oci.AiAnomalyDetection.getDetectionModels({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.model_display_name,
+ *     projectId: oci_ai_anomaly_detection_project.test_project.id,
+ *     state: _var.model_state,
+ * });
+ * ```
+ */
 export function getDetectionModelsOutput(args: GetDetectionModelsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDetectionModelsResult> {
-    return pulumi.output(args).apply(a => getDetectionModels(a, opts))
+    return pulumi.output(args).apply((a: any) => getDetectionModels(a, opts))
 }
 
 /**

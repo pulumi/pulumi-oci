@@ -18,14 +18,44 @@ public final class GetDeploymentsArgs extends com.pulumi.resources.InvokeArgs {
     public static final GetDeploymentsArgs Empty = new GetDeploymentsArgs();
 
     /**
-     * The ID of the compartment in which to list resources.
+     * Filters for compatible deployments which can be, but currently not assigned to the connection specified by its id.
+     * 
+     */
+    @Import(name="assignableConnectionId")
+    private @Nullable Output<String> assignableConnectionId;
+
+    /**
+     * @return Filters for compatible deployments which can be, but currently not assigned to the connection specified by its id.
+     * 
+     */
+    public Optional<Output<String>> assignableConnectionId() {
+        return Optional.ofNullable(this.assignableConnectionId);
+    }
+
+    /**
+     * The OCID of the connection which for the deployment must be assigned.
+     * 
+     */
+    @Import(name="assignedConnectionId")
+    private @Nullable Output<String> assignedConnectionId;
+
+    /**
+     * @return The OCID of the connection which for the deployment must be assigned.
+     * 
+     */
+    public Optional<Output<String>> assignedConnectionId() {
+        return Optional.ofNullable(this.assignedConnectionId);
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      * 
      */
     public Output<String> compartmentId() {
@@ -99,15 +129,33 @@ public final class GetDeploymentsArgs extends com.pulumi.resources.InvokeArgs {
         return Optional.ofNullable(this.state);
     }
 
+    /**
+     * The connection type which the deployment must support.
+     * 
+     */
+    @Import(name="supportedConnectionType")
+    private @Nullable Output<String> supportedConnectionType;
+
+    /**
+     * @return The connection type which the deployment must support.
+     * 
+     */
+    public Optional<Output<String>> supportedConnectionType() {
+        return Optional.ofNullable(this.supportedConnectionType);
+    }
+
     private GetDeploymentsArgs() {}
 
     private GetDeploymentsArgs(GetDeploymentsArgs $) {
+        this.assignableConnectionId = $.assignableConnectionId;
+        this.assignedConnectionId = $.assignedConnectionId;
         this.compartmentId = $.compartmentId;
         this.displayName = $.displayName;
         this.filters = $.filters;
         this.fqdn = $.fqdn;
         this.lifecycleSubState = $.lifecycleSubState;
         this.state = $.state;
+        this.supportedConnectionType = $.supportedConnectionType;
     }
 
     public static Builder builder() {
@@ -129,7 +177,49 @@ public final class GetDeploymentsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param compartmentId The ID of the compartment in which to list resources.
+         * @param assignableConnectionId Filters for compatible deployments which can be, but currently not assigned to the connection specified by its id.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder assignableConnectionId(@Nullable Output<String> assignableConnectionId) {
+            $.assignableConnectionId = assignableConnectionId;
+            return this;
+        }
+
+        /**
+         * @param assignableConnectionId Filters for compatible deployments which can be, but currently not assigned to the connection specified by its id.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder assignableConnectionId(String assignableConnectionId) {
+            return assignableConnectionId(Output.of(assignableConnectionId));
+        }
+
+        /**
+         * @param assignedConnectionId The OCID of the connection which for the deployment must be assigned.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder assignedConnectionId(@Nullable Output<String> assignedConnectionId) {
+            $.assignedConnectionId = assignedConnectionId;
+            return this;
+        }
+
+        /**
+         * @param assignedConnectionId The OCID of the connection which for the deployment must be assigned.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder assignedConnectionId(String assignedConnectionId) {
+            return assignedConnectionId(Output.of(assignedConnectionId));
+        }
+
+        /**
+         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
          * 
          * @return builder
          * 
@@ -140,7 +230,7 @@ public final class GetDeploymentsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param compartmentId The ID of the compartment in which to list resources.
+         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
          * 
          * @return builder
          * 
@@ -244,6 +334,27 @@ public final class GetDeploymentsArgs extends com.pulumi.resources.InvokeArgs {
          */
         public Builder state(String state) {
             return state(Output.of(state));
+        }
+
+        /**
+         * @param supportedConnectionType The connection type which the deployment must support.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder supportedConnectionType(@Nullable Output<String> supportedConnectionType) {
+            $.supportedConnectionType = supportedConnectionType;
+            return this;
+        }
+
+        /**
+         * @param supportedConnectionType The connection type which the deployment must support.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder supportedConnectionType(String supportedConnectionType) {
+            return supportedConnectionType(Output.of(supportedConnectionType));
         }
 
         public GetDeploymentsArgs build() {

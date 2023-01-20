@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSubscriptionRewards(args: GetSubscriptionRewardsArgs, opts?: pulumi.InvokeOptions): Promise<GetSubscriptionRewardsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:UsageProxy/getSubscriptionRewards:getSubscriptionRewards", {
         "filters": args.filters,
         "subscriptionId": args.subscriptionId,
@@ -72,9 +70,25 @@ export interface GetSubscriptionRewardsResult {
      */
     readonly tenancyId: string;
 }
-
+/**
+ * This data source provides the list of Subscription Rewards in Oracle Cloud Infrastructure Usage Proxy service.
+ *
+ * Returns the list of rewards for a subscription ID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSubscriptionRewards = oci.UsageProxy.getSubscriptionRewards({
+ *     subscriptionId: oci_ons_subscription.test_subscription.id,
+ *     tenancyId: oci_identity_tenancy.test_tenancy.id,
+ * });
+ * ```
+ */
 export function getSubscriptionRewardsOutput(args: GetSubscriptionRewardsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSubscriptionRewardsResult> {
-    return pulumi.output(args).apply(a => getSubscriptionRewards(a, opts))
+    return pulumi.output(args).apply((a: any) => getSubscriptionRewards(a, opts))
 }
 
 /**

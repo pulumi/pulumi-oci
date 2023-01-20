@@ -45,7 +45,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDhcpOptionsResult> InvokeAsync(GetDhcpOptionsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDhcpOptionsResult>("oci:Core/getDhcpOptions:getDhcpOptions", args ?? new GetDhcpOptionsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDhcpOptionsResult>("oci:Core/getDhcpOptions:getDhcpOptions", args ?? new GetDhcpOptionsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Dhcp Options in Oracle Cloud Infrastructure Core service.
@@ -81,7 +81,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDhcpOptionsResult> Invoke(GetDhcpOptionsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDhcpOptionsResult>("oci:Core/getDhcpOptions:getDhcpOptions", args ?? new GetDhcpOptionsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDhcpOptionsResult>("oci:Core/getDhcpOptions:getDhcpOptions", args ?? new GetDhcpOptionsInvokeArgs(), options.WithDefaults());
     }
 
 

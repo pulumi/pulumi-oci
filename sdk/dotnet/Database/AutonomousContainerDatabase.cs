@@ -56,7 +56,6 @@ namespace Pulumi.Oci.Database
     ///         KmsKeyId = oci_kms_key.Test_key.Id,
     ///         MaintenanceWindowDetails = new Oci.Database.Inputs.AutonomousContainerDatabaseMaintenanceWindowDetailsArgs
     ///         {
-    ///             Preference = @var.Autonomous_container_database_maintenance_window_details_preference,
     ///             CustomActionTimeoutInMins = @var.Autonomous_container_database_maintenance_window_details_custom_action_timeout_in_mins,
     ///             DaysOfWeeks = new[]
     ///             {
@@ -77,6 +76,7 @@ namespace Pulumi.Oci.Database
     ///                 },
     ///             },
     ///             PatchingMode = @var.Autonomous_container_database_maintenance_window_details_patching_mode,
+    ///             Preference = @var.Autonomous_container_database_maintenance_window_details_preference,
     ///             WeeksOfMonths = @var.Autonomous_container_database_maintenance_window_details_weeks_of_month,
     ///         },
     ///         PeerAutonomousContainerDatabaseDisplayName = @var.Autonomous_container_database_peer_autonomous_container_database_display_name,
@@ -138,7 +138,7 @@ namespace Pulumi.Oci.Database
         public Output<string> AvailabilityDomain { get; private set; } = null!;
 
         /// <summary>
-        /// Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+        /// Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
         /// </summary>
         [Output("availableCpus")]
         public Output<double> AvailableCpus { get; private set; } = null!;
@@ -327,7 +327,7 @@ namespace Pulumi.Oci.Database
         public Output<double> ReclaimableCpus { get; private set; } = null!;
 
         /// <summary>
-        /// The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+        /// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         /// </summary>
         [Output("role")]
         public Output<string> Role { get; private set; } = null!;
@@ -606,7 +606,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? AvailabilityDomain { get; set; }
 
         /// <summary>
-        /// Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+        /// Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
         /// </summary>
         [Input("availableCpus")]
         public Input<double>? AvailableCpus { get; set; }
@@ -825,7 +825,7 @@ namespace Pulumi.Oci.Database
         public Input<double>? ReclaimableCpus { get; set; }
 
         /// <summary>
-        /// The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+        /// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         /// </summary>
         [Input("role")]
         public Input<string>? Role { get; set; }

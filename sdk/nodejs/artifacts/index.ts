@@ -5,29 +5,86 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./containerConfiguration";
-export * from "./containerImageSignature";
-export * from "./containerRepository";
-export * from "./genericArtifact";
-export * from "./getContainerConfiguration";
-export * from "./getContainerImage";
-export * from "./getContainerImageSignature";
-export * from "./getContainerImages";
-export * from "./getContainerRepositories";
-export * from "./getContainerRepository";
-export * from "./getContainerSignatures";
-export * from "./getGenericArtifact";
-export * from "./getGenericArtifacts";
-export * from "./getRepositories";
-export * from "./getRepository";
-export * from "./repository";
+export { ContainerConfigurationArgs, ContainerConfigurationState } from "./containerConfiguration";
+export type ContainerConfiguration = import("./containerConfiguration").ContainerConfiguration;
+export const ContainerConfiguration: typeof import("./containerConfiguration").ContainerConfiguration = null as any;
+utilities.lazyLoad(exports, ["ContainerConfiguration"], () => require("./containerConfiguration"));
 
-// Import resources to register:
-import { ContainerConfiguration } from "./containerConfiguration";
-import { ContainerImageSignature } from "./containerImageSignature";
-import { ContainerRepository } from "./containerRepository";
-import { GenericArtifact } from "./genericArtifact";
-import { Repository } from "./repository";
+export { ContainerImageSignatureArgs, ContainerImageSignatureState } from "./containerImageSignature";
+export type ContainerImageSignature = import("./containerImageSignature").ContainerImageSignature;
+export const ContainerImageSignature: typeof import("./containerImageSignature").ContainerImageSignature = null as any;
+utilities.lazyLoad(exports, ["ContainerImageSignature"], () => require("./containerImageSignature"));
+
+export { ContainerRepositoryArgs, ContainerRepositoryState } from "./containerRepository";
+export type ContainerRepository = import("./containerRepository").ContainerRepository;
+export const ContainerRepository: typeof import("./containerRepository").ContainerRepository = null as any;
+utilities.lazyLoad(exports, ["ContainerRepository"], () => require("./containerRepository"));
+
+export { GenericArtifactArgs, GenericArtifactState } from "./genericArtifact";
+export type GenericArtifact = import("./genericArtifact").GenericArtifact;
+export const GenericArtifact: typeof import("./genericArtifact").GenericArtifact = null as any;
+utilities.lazyLoad(exports, ["GenericArtifact"], () => require("./genericArtifact"));
+
+export { GetContainerConfigurationArgs, GetContainerConfigurationResult, GetContainerConfigurationOutputArgs } from "./getContainerConfiguration";
+export const getContainerConfiguration: typeof import("./getContainerConfiguration").getContainerConfiguration = null as any;
+export const getContainerConfigurationOutput: typeof import("./getContainerConfiguration").getContainerConfigurationOutput = null as any;
+utilities.lazyLoad(exports, ["getContainerConfiguration","getContainerConfigurationOutput"], () => require("./getContainerConfiguration"));
+
+export { GetContainerImageArgs, GetContainerImageResult, GetContainerImageOutputArgs } from "./getContainerImage";
+export const getContainerImage: typeof import("./getContainerImage").getContainerImage = null as any;
+export const getContainerImageOutput: typeof import("./getContainerImage").getContainerImageOutput = null as any;
+utilities.lazyLoad(exports, ["getContainerImage","getContainerImageOutput"], () => require("./getContainerImage"));
+
+export { GetContainerImageSignatureArgs, GetContainerImageSignatureResult, GetContainerImageSignatureOutputArgs } from "./getContainerImageSignature";
+export const getContainerImageSignature: typeof import("./getContainerImageSignature").getContainerImageSignature = null as any;
+export const getContainerImageSignatureOutput: typeof import("./getContainerImageSignature").getContainerImageSignatureOutput = null as any;
+utilities.lazyLoad(exports, ["getContainerImageSignature","getContainerImageSignatureOutput"], () => require("./getContainerImageSignature"));
+
+export { GetContainerImagesArgs, GetContainerImagesResult, GetContainerImagesOutputArgs } from "./getContainerImages";
+export const getContainerImages: typeof import("./getContainerImages").getContainerImages = null as any;
+export const getContainerImagesOutput: typeof import("./getContainerImages").getContainerImagesOutput = null as any;
+utilities.lazyLoad(exports, ["getContainerImages","getContainerImagesOutput"], () => require("./getContainerImages"));
+
+export { GetContainerRepositoriesArgs, GetContainerRepositoriesResult, GetContainerRepositoriesOutputArgs } from "./getContainerRepositories";
+export const getContainerRepositories: typeof import("./getContainerRepositories").getContainerRepositories = null as any;
+export const getContainerRepositoriesOutput: typeof import("./getContainerRepositories").getContainerRepositoriesOutput = null as any;
+utilities.lazyLoad(exports, ["getContainerRepositories","getContainerRepositoriesOutput"], () => require("./getContainerRepositories"));
+
+export { GetContainerRepositoryArgs, GetContainerRepositoryResult, GetContainerRepositoryOutputArgs } from "./getContainerRepository";
+export const getContainerRepository: typeof import("./getContainerRepository").getContainerRepository = null as any;
+export const getContainerRepositoryOutput: typeof import("./getContainerRepository").getContainerRepositoryOutput = null as any;
+utilities.lazyLoad(exports, ["getContainerRepository","getContainerRepositoryOutput"], () => require("./getContainerRepository"));
+
+export { GetContainerSignaturesArgs, GetContainerSignaturesResult, GetContainerSignaturesOutputArgs } from "./getContainerSignatures";
+export const getContainerSignatures: typeof import("./getContainerSignatures").getContainerSignatures = null as any;
+export const getContainerSignaturesOutput: typeof import("./getContainerSignatures").getContainerSignaturesOutput = null as any;
+utilities.lazyLoad(exports, ["getContainerSignatures","getContainerSignaturesOutput"], () => require("./getContainerSignatures"));
+
+export { GetGenericArtifactArgs, GetGenericArtifactResult, GetGenericArtifactOutputArgs } from "./getGenericArtifact";
+export const getGenericArtifact: typeof import("./getGenericArtifact").getGenericArtifact = null as any;
+export const getGenericArtifactOutput: typeof import("./getGenericArtifact").getGenericArtifactOutput = null as any;
+utilities.lazyLoad(exports, ["getGenericArtifact","getGenericArtifactOutput"], () => require("./getGenericArtifact"));
+
+export { GetGenericArtifactsArgs, GetGenericArtifactsResult, GetGenericArtifactsOutputArgs } from "./getGenericArtifacts";
+export const getGenericArtifacts: typeof import("./getGenericArtifacts").getGenericArtifacts = null as any;
+export const getGenericArtifactsOutput: typeof import("./getGenericArtifacts").getGenericArtifactsOutput = null as any;
+utilities.lazyLoad(exports, ["getGenericArtifacts","getGenericArtifactsOutput"], () => require("./getGenericArtifacts"));
+
+export { GetRepositoriesArgs, GetRepositoriesResult, GetRepositoriesOutputArgs } from "./getRepositories";
+export const getRepositories: typeof import("./getRepositories").getRepositories = null as any;
+export const getRepositoriesOutput: typeof import("./getRepositories").getRepositoriesOutput = null as any;
+utilities.lazyLoad(exports, ["getRepositories","getRepositoriesOutput"], () => require("./getRepositories"));
+
+export { GetRepositoryArgs, GetRepositoryResult, GetRepositoryOutputArgs } from "./getRepository";
+export const getRepository: typeof import("./getRepository").getRepository = null as any;
+export const getRepositoryOutput: typeof import("./getRepository").getRepositoryOutput = null as any;
+utilities.lazyLoad(exports, ["getRepository","getRepositoryOutput"], () => require("./getRepository"));
+
+export { RepositoryArgs, RepositoryState } from "./repository";
+export type Repository = import("./repository").Repository;
+export const Repository: typeof import("./repository").Repository = null as any;
+utilities.lazyLoad(exports, ["Repository"], () => require("./repository"));
+
 
 const _module = {
     version: utilities.getVersion(),

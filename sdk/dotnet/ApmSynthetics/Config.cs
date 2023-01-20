@@ -30,6 +30,11 @@ namespace Pulumi.Oci.ApmSynthetics
     ///         MonitorType = @var.Monitor_monitor_type,
     ///         RepeatIntervalInSeconds = @var.Monitor_repeat_interval_in_seconds,
     ///         VantagePoints = new[] {},
+    ///         AvailabilityConfiguration = new Oci.ApmSynthetics.Inputs.ConfigAvailabilityConfigurationArgs
+    ///         {
+    ///             MaxAllowedFailuresPerInterval = @var.Monitor_availability_configuration_max_allowed_failures_per_interval,
+    ///             MinAllowedRunsPerInterval = @var.Monitor_availability_configuration_min_allowed_runs_per_interval,
+    ///         },
     ///         BatchIntervalInSeconds = @var.Monitor_batch_interval_in_seconds,
     ///         Configuration = new Oci.ApmSynthetics.Inputs.ConfigConfigurationArgs
     ///         {
@@ -107,6 +112,11 @@ namespace Pulumi.Oci.ApmSynthetics
     ///         },
     ///         IsRunNow = @var.Monitor_is_run_now,
     ///         IsRunOnce = @var.Monitor_is_run_once,
+    ///         MaintenanceWindowSchedule = new Oci.ApmSynthetics.Inputs.ConfigMaintenanceWindowScheduleArgs
+    ///         {
+    ///             TimeEnded = @var.Monitor_maintenance_window_schedule_time_ended,
+    ///             TimeStarted = @var.Monitor_maintenance_window_schedule_time_started,
+    ///         },
     ///         SchedulingPolicy = @var.Monitor_scheduling_policy,
     ///         ScriptId = oci_apm_synthetics_script.Test_script.Id,
     ///         ScriptParameters = new[]
@@ -137,15 +147,19 @@ namespace Pulumi.Oci.ApmSynthetics
     public partial class Config : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) The APM domain ID the request is intended for. 
-        /// &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
+        /// (Updatable) The APM domain ID the request is intended for.
         /// </summary>
         [Output("apmDomainId")]
         public Output<string> ApmDomainId { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Monitor availability configuration details.
+        /// </summary>
+        [Output("availabilityConfiguration")]
+        public Output<Outputs.ConfigAvailabilityConfiguration> AvailabilityConfiguration { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
-        /// =======
         /// </summary>
         [Output("batchIntervalInSeconds")]
         public Output<int> BatchIntervalInSeconds { get; private set; } = null!;
@@ -185,6 +199,12 @@ namespace Pulumi.Oci.ApmSynthetics
         /// </summary>
         [Output("isRunOnce")]
         public Output<bool> IsRunOnce { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Details used to schedule maintenance window.
+        /// </summary>
+        [Output("maintenanceWindowSchedule")]
+        public Output<Outputs.ConfigMaintenanceWindowSchedule> MaintenanceWindowSchedule { get; private set; } = null!;
 
         /// <summary>
         /// Type of monitor.
@@ -247,7 +267,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public Output<string> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+        /// (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
         /// </summary>
         [Output("timeoutInSeconds")]
         public Output<int> TimeoutInSeconds { get; private set; } = null!;
@@ -311,15 +331,19 @@ namespace Pulumi.Oci.ApmSynthetics
     public sealed class ConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The APM domain ID the request is intended for. 
-        /// &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
+        /// (Updatable) The APM domain ID the request is intended for.
         /// </summary>
         [Input("apmDomainId", required: true)]
         public Input<string> ApmDomainId { get; set; } = null!;
 
         /// <summary>
+        /// (Updatable) Monitor availability configuration details.
+        /// </summary>
+        [Input("availabilityConfiguration")]
+        public Input<Inputs.ConfigAvailabilityConfigurationArgs>? AvailabilityConfiguration { get; set; }
+
+        /// <summary>
         /// (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
-        /// =======
         /// </summary>
         [Input("batchIntervalInSeconds")]
         public Input<int>? BatchIntervalInSeconds { get; set; }
@@ -371,6 +395,12 @@ namespace Pulumi.Oci.ApmSynthetics
         /// </summary>
         [Input("isRunOnce")]
         public Input<bool>? IsRunOnce { get; set; }
+
+        /// <summary>
+        /// (Updatable) Details used to schedule maintenance window.
+        /// </summary>
+        [Input("maintenanceWindowSchedule")]
+        public Input<Inputs.ConfigMaintenanceWindowScheduleArgs>? MaintenanceWindowSchedule { get; set; }
 
         /// <summary>
         /// Type of monitor.
@@ -427,7 +457,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public Input<string>? Target { get; set; }
 
         /// <summary>
-        /// (Updatable) Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+        /// (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
         /// </summary>
         [Input("timeoutInSeconds")]
         public Input<int>? TimeoutInSeconds { get; set; }
@@ -453,15 +483,19 @@ namespace Pulumi.Oci.ApmSynthetics
     public sealed class ConfigState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The APM domain ID the request is intended for. 
-        /// &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
+        /// (Updatable) The APM domain ID the request is intended for.
         /// </summary>
         [Input("apmDomainId")]
         public Input<string>? ApmDomainId { get; set; }
 
         /// <summary>
+        /// (Updatable) Monitor availability configuration details.
+        /// </summary>
+        [Input("availabilityConfiguration")]
+        public Input<Inputs.ConfigAvailabilityConfigurationGetArgs>? AvailabilityConfiguration { get; set; }
+
+        /// <summary>
         /// (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
-        /// =======
         /// </summary>
         [Input("batchIntervalInSeconds")]
         public Input<int>? BatchIntervalInSeconds { get; set; }
@@ -513,6 +547,12 @@ namespace Pulumi.Oci.ApmSynthetics
         /// </summary>
         [Input("isRunOnce")]
         public Input<bool>? IsRunOnce { get; set; }
+
+        /// <summary>
+        /// (Updatable) Details used to schedule maintenance window.
+        /// </summary>
+        [Input("maintenanceWindowSchedule")]
+        public Input<Inputs.ConfigMaintenanceWindowScheduleGetArgs>? MaintenanceWindowSchedule { get; set; }
 
         /// <summary>
         /// Type of monitor.
@@ -581,7 +621,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public Input<string>? TimeUpdated { get; set; }
 
         /// <summary>
-        /// (Updatable) Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+        /// (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
         /// </summary>
         [Input("timeoutInSeconds")]
         public Input<int>? TimeoutInSeconds { get; set; }

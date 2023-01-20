@@ -5,26 +5,76 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./getRegistries";
-export * from "./getRegistry";
-export * from "./getRegistryConnection";
-export * from "./getRegistryConnections";
-export * from "./getRegistryDataAsset";
-export * from "./getRegistryDataAssets";
-export * from "./getRegistryFolder";
-export * from "./getRegistryFolders";
-export * from "./getRegistryType";
-export * from "./getRegistryTypes";
-export * from "./registry";
-export * from "./registryConnection";
-export * from "./registryDataAsset";
-export * from "./registryFolder";
+export { GetRegistriesArgs, GetRegistriesResult, GetRegistriesOutputArgs } from "./getRegistries";
+export const getRegistries: typeof import("./getRegistries").getRegistries = null as any;
+export const getRegistriesOutput: typeof import("./getRegistries").getRegistriesOutput = null as any;
+utilities.lazyLoad(exports, ["getRegistries","getRegistriesOutput"], () => require("./getRegistries"));
 
-// Import resources to register:
-import { Registry } from "./registry";
-import { RegistryConnection } from "./registryConnection";
-import { RegistryDataAsset } from "./registryDataAsset";
-import { RegistryFolder } from "./registryFolder";
+export { GetRegistryArgs, GetRegistryResult, GetRegistryOutputArgs } from "./getRegistry";
+export const getRegistry: typeof import("./getRegistry").getRegistry = null as any;
+export const getRegistryOutput: typeof import("./getRegistry").getRegistryOutput = null as any;
+utilities.lazyLoad(exports, ["getRegistry","getRegistryOutput"], () => require("./getRegistry"));
+
+export { GetRegistryConnectionArgs, GetRegistryConnectionResult, GetRegistryConnectionOutputArgs } from "./getRegistryConnection";
+export const getRegistryConnection: typeof import("./getRegistryConnection").getRegistryConnection = null as any;
+export const getRegistryConnectionOutput: typeof import("./getRegistryConnection").getRegistryConnectionOutput = null as any;
+utilities.lazyLoad(exports, ["getRegistryConnection","getRegistryConnectionOutput"], () => require("./getRegistryConnection"));
+
+export { GetRegistryConnectionsArgs, GetRegistryConnectionsResult, GetRegistryConnectionsOutputArgs } from "./getRegistryConnections";
+export const getRegistryConnections: typeof import("./getRegistryConnections").getRegistryConnections = null as any;
+export const getRegistryConnectionsOutput: typeof import("./getRegistryConnections").getRegistryConnectionsOutput = null as any;
+utilities.lazyLoad(exports, ["getRegistryConnections","getRegistryConnectionsOutput"], () => require("./getRegistryConnections"));
+
+export { GetRegistryDataAssetArgs, GetRegistryDataAssetResult, GetRegistryDataAssetOutputArgs } from "./getRegistryDataAsset";
+export const getRegistryDataAsset: typeof import("./getRegistryDataAsset").getRegistryDataAsset = null as any;
+export const getRegistryDataAssetOutput: typeof import("./getRegistryDataAsset").getRegistryDataAssetOutput = null as any;
+utilities.lazyLoad(exports, ["getRegistryDataAsset","getRegistryDataAssetOutput"], () => require("./getRegistryDataAsset"));
+
+export { GetRegistryDataAssetsArgs, GetRegistryDataAssetsResult, GetRegistryDataAssetsOutputArgs } from "./getRegistryDataAssets";
+export const getRegistryDataAssets: typeof import("./getRegistryDataAssets").getRegistryDataAssets = null as any;
+export const getRegistryDataAssetsOutput: typeof import("./getRegistryDataAssets").getRegistryDataAssetsOutput = null as any;
+utilities.lazyLoad(exports, ["getRegistryDataAssets","getRegistryDataAssetsOutput"], () => require("./getRegistryDataAssets"));
+
+export { GetRegistryFolderArgs, GetRegistryFolderResult, GetRegistryFolderOutputArgs } from "./getRegistryFolder";
+export const getRegistryFolder: typeof import("./getRegistryFolder").getRegistryFolder = null as any;
+export const getRegistryFolderOutput: typeof import("./getRegistryFolder").getRegistryFolderOutput = null as any;
+utilities.lazyLoad(exports, ["getRegistryFolder","getRegistryFolderOutput"], () => require("./getRegistryFolder"));
+
+export { GetRegistryFoldersArgs, GetRegistryFoldersResult, GetRegistryFoldersOutputArgs } from "./getRegistryFolders";
+export const getRegistryFolders: typeof import("./getRegistryFolders").getRegistryFolders = null as any;
+export const getRegistryFoldersOutput: typeof import("./getRegistryFolders").getRegistryFoldersOutput = null as any;
+utilities.lazyLoad(exports, ["getRegistryFolders","getRegistryFoldersOutput"], () => require("./getRegistryFolders"));
+
+export { GetRegistryTypeArgs, GetRegistryTypeResult, GetRegistryTypeOutputArgs } from "./getRegistryType";
+export const getRegistryType: typeof import("./getRegistryType").getRegistryType = null as any;
+export const getRegistryTypeOutput: typeof import("./getRegistryType").getRegistryTypeOutput = null as any;
+utilities.lazyLoad(exports, ["getRegistryType","getRegistryTypeOutput"], () => require("./getRegistryType"));
+
+export { GetRegistryTypesArgs, GetRegistryTypesResult, GetRegistryTypesOutputArgs } from "./getRegistryTypes";
+export const getRegistryTypes: typeof import("./getRegistryTypes").getRegistryTypes = null as any;
+export const getRegistryTypesOutput: typeof import("./getRegistryTypes").getRegistryTypesOutput = null as any;
+utilities.lazyLoad(exports, ["getRegistryTypes","getRegistryTypesOutput"], () => require("./getRegistryTypes"));
+
+export { RegistryArgs, RegistryState } from "./registry";
+export type Registry = import("./registry").Registry;
+export const Registry: typeof import("./registry").Registry = null as any;
+utilities.lazyLoad(exports, ["Registry"], () => require("./registry"));
+
+export { RegistryConnectionArgs, RegistryConnectionState } from "./registryConnection";
+export type RegistryConnection = import("./registryConnection").RegistryConnection;
+export const RegistryConnection: typeof import("./registryConnection").RegistryConnection = null as any;
+utilities.lazyLoad(exports, ["RegistryConnection"], () => require("./registryConnection"));
+
+export { RegistryDataAssetArgs, RegistryDataAssetState } from "./registryDataAsset";
+export type RegistryDataAsset = import("./registryDataAsset").RegistryDataAsset;
+export const RegistryDataAsset: typeof import("./registryDataAsset").RegistryDataAsset = null as any;
+utilities.lazyLoad(exports, ["RegistryDataAsset"], () => require("./registryDataAsset"));
+
+export { RegistryFolderArgs, RegistryFolderState } from "./registryFolder";
+export type RegistryFolder = import("./registryFolder").RegistryFolder;
+export const RegistryFolder: typeof import("./registryFolder").RegistryFolder = null as any;
+utilities.lazyLoad(exports, ["RegistryFolder"], () => require("./registryFolder"));
+
 
 const _module = {
     version: utilities.getVersion(),

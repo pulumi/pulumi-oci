@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVirtualCircuit(args: GetVirtualCircuitArgs, opts?: pulumi.InvokeOptions): Promise<GetVirtualCircuitResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getVirtualCircuit:getVirtualCircuit", {
         "virtualCircuitId": args.virtualCircuitId,
     }, opts);
@@ -164,9 +162,24 @@ export interface GetVirtualCircuitResult {
     readonly type: string;
     readonly virtualCircuitId: string;
 }
-
+/**
+ * This data source provides details about a specific Virtual Circuit resource in Oracle Cloud Infrastructure Core service.
+ *
+ * Gets the specified virtual circuit's information.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testVirtualCircuit = oci.Core.getVirtualCircuit({
+ *     virtualCircuitId: oci_core_virtual_circuit.test_virtual_circuit.id,
+ * });
+ * ```
+ */
 export function getVirtualCircuitOutput(args: GetVirtualCircuitOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVirtualCircuitResult> {
-    return pulumi.output(args).apply(a => getVirtualCircuit(a, opts))
+    return pulumi.output(args).apply((a: any) => getVirtualCircuit(a, opts))
 }
 
 /**

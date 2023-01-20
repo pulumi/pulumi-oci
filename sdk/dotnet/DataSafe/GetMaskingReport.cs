@@ -38,7 +38,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetMaskingReportResult> InvokeAsync(GetMaskingReportArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetMaskingReportResult>("oci:DataSafe/getMaskingReport:getMaskingReport", args ?? new GetMaskingReportArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetMaskingReportResult>("oci:DataSafe/getMaskingReport:getMaskingReport", args ?? new GetMaskingReportArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Masking Report resource in Oracle Cloud Infrastructure Data Safe service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetMaskingReportResult> Invoke(GetMaskingReportInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetMaskingReportResult>("oci:DataSafe/getMaskingReport:getMaskingReport", args ?? new GetMaskingReportInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetMaskingReportResult>("oci:DataSafe/getMaskingReport:getMaskingReport", args ?? new GetMaskingReportInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -121,9 +121,17 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly string MaskingWorkRequestId;
         /// <summary>
+        /// The current state of the masking report.
+        /// </summary>
+        public readonly string State;
+        /// <summary>
         /// The OCID of the target database masked.
         /// </summary>
         public readonly string TargetId;
+        /// <summary>
+        /// The date and time the masking report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        /// </summary>
+        public readonly string TimeCreated;
         /// <summary>
         /// The date and time data masking finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
         /// </summary>
@@ -165,7 +173,11 @@ namespace Pulumi.Oci.DataSafe
 
             string maskingWorkRequestId,
 
+            string state,
+
             string targetId,
+
+            string timeCreated,
 
             string timeMaskingFinished,
 
@@ -186,7 +198,9 @@ namespace Pulumi.Oci.DataSafe
             MaskingPolicyId = maskingPolicyId;
             MaskingReportId = maskingReportId;
             MaskingWorkRequestId = maskingWorkRequestId;
+            State = state;
             TargetId = targetId;
+            TimeCreated = timeCreated;
             TimeMaskingFinished = timeMaskingFinished;
             TimeMaskingStarted = timeMaskingStarted;
             TotalMaskedColumns = totalMaskedColumns;

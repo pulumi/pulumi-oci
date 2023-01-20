@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,6 +27,7 @@ import * as utilities from "../utilities";
  *             include: {
  *                 baseRef: _var.trigger_actions_filter_include_base_ref,
  *                 headRef: _var.trigger_actions_filter_include_head_ref,
+ *                 repositoryName: oci_devops_repository.test_repository.name,
  *             },
  *         },
  *     }],
@@ -87,6 +89,9 @@ export class Trigger extends pulumi.CustomResource {
      * The OCID of the compartment that contains the trigger.
      */
     public /*out*/ readonly compartmentId!: pulumi.Output<string>;
+    /**
+     * (Updatable) The OCID of the connection resource used to get details for triggered events.
+     */
     public readonly connectionId!: pulumi.Output<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
@@ -133,7 +138,7 @@ export class Trigger extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
     /**
-     * (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
+     * (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
      */
     public readonly triggerSource!: pulumi.Output<string>;
     /**
@@ -215,6 +220,9 @@ export interface TriggerState {
      * The OCID of the compartment that contains the trigger.
      */
     compartmentId?: pulumi.Input<string>;
+    /**
+     * (Updatable) The OCID of the connection resource used to get details for triggered events.
+     */
     connectionId?: pulumi.Input<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
@@ -261,7 +269,7 @@ export interface TriggerState {
      */
     timeUpdated?: pulumi.Input<string>;
     /**
-     * (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
+     * (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
      */
     triggerSource?: pulumi.Input<string>;
     /**
@@ -278,6 +286,9 @@ export interface TriggerArgs {
      * (Updatable) The list of actions that are to be performed for this trigger.
      */
     actions: pulumi.Input<pulumi.Input<inputs.DevOps.TriggerAction>[]>;
+    /**
+     * (Updatable) The OCID of the connection resource used to get details for triggered events.
+     */
     connectionId?: pulumi.Input<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
@@ -304,7 +315,7 @@ export interface TriggerArgs {
      */
     repositoryId?: pulumi.Input<string>;
     /**
-     * (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
+     * (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
      */
     triggerSource: pulumi.Input<string>;
 }

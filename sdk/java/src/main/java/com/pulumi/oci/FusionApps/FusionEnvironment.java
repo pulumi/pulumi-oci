@@ -10,10 +10,12 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.FusionApps.FusionEnvironmentArgs;
 import com.pulumi.oci.FusionApps.inputs.FusionEnvironmentState;
 import com.pulumi.oci.FusionApps.outputs.FusionEnvironmentCreateFusionEnvironmentAdminUserDetails;
+import com.pulumi.oci.FusionApps.outputs.FusionEnvironmentKmsKeyInfo;
 import com.pulumi.oci.FusionApps.outputs.FusionEnvironmentMaintenancePolicy;
 import com.pulumi.oci.FusionApps.outputs.FusionEnvironmentRefresh;
 import com.pulumi.oci.FusionApps.outputs.FusionEnvironmentRule;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -265,6 +267,20 @@ public class FusionEnvironment extends com.pulumi.resources.CustomResource {
         return this.idcsDomainUrl;
     }
     /**
+     * If it&#39;s true, then the Break Glass feature is enabled
+     * 
+     */
+    @Export(name="isBreakGlassEnabled", type=Boolean.class, parameters={})
+    private Output<Boolean> isBreakGlassEnabled;
+
+    /**
+     * @return If it&#39;s true, then the Break Glass feature is enabled
+     * 
+     */
+    public Output<Boolean> isBreakGlassEnabled() {
+        return this.isBreakGlassEnabled;
+    }
+    /**
      * (Updatable) byok kms keyId
      * 
      */
@@ -282,14 +298,14 @@ public class FusionEnvironment extends com.pulumi.resources.CustomResource {
      * BYOK key info
      * 
      */
-    @Export(name="kmsKeyInfos", type=List.class, parameters={String.class})
-    private Output<List<String>> kmsKeyInfos;
+    @Export(name="kmsKeyInfos", type=List.class, parameters={FusionEnvironmentKmsKeyInfo.class})
+    private Output<List<FusionEnvironmentKmsKeyInfo>> kmsKeyInfos;
 
     /**
      * @return BYOK key info
      * 
      */
-    public Output<List<String>> kmsKeyInfos() {
+    public Output<List<FusionEnvironmentKmsKeyInfo>> kmsKeyInfos() {
         return this.kmsKeyInfos;
     }
     /**
@@ -305,6 +321,20 @@ public class FusionEnvironment extends com.pulumi.resources.CustomResource {
      */
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * The lockbox Id of this fusion environment. If there&#39;s no lockbox id, this field will be null
+     * 
+     */
+    @Export(name="lockboxId", type=String.class, parameters={})
+    private Output<String> lockboxId;
+
+    /**
+     * @return The lockbox Id of this fusion environment. If there&#39;s no lockbox id, this field will be null
+     * 
+     */
+    public Output<String> lockboxId() {
+        return this.lockboxId;
     }
     /**
      * (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).

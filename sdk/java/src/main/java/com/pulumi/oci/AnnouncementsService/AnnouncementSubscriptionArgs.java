@@ -123,6 +123,36 @@ public final class AnnouncementSubscriptionArgs extends com.pulumi.resources.Res
         return this.onsTopicId;
     }
 
+    /**
+     * (Updatable) (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
+     * 
+     */
+    @Import(name="preferredLanguage")
+    private @Nullable Output<String> preferredLanguage;
+
+    /**
+     * @return (Updatable) (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
+     * 
+     */
+    public Optional<Output<String>> preferredLanguage() {
+        return Optional.ofNullable(this.preferredLanguage);
+    }
+
+    /**
+     * (Updatable) The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+     * 
+     */
+    @Import(name="preferredTimeZone")
+    private @Nullable Output<String> preferredTimeZone;
+
+    /**
+     * @return (Updatable) The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+     * 
+     */
+    public Optional<Output<String>> preferredTimeZone() {
+        return Optional.ofNullable(this.preferredTimeZone);
+    }
+
     private AnnouncementSubscriptionArgs() {}
 
     private AnnouncementSubscriptionArgs(AnnouncementSubscriptionArgs $) {
@@ -133,6 +163,8 @@ public final class AnnouncementSubscriptionArgs extends com.pulumi.resources.Res
         this.filterGroups = $.filterGroups;
         this.freeformTags = $.freeformTags;
         this.onsTopicId = $.onsTopicId;
+        this.preferredLanguage = $.preferredLanguage;
+        this.preferredTimeZone = $.preferredTimeZone;
     }
 
     public static Builder builder() {
@@ -298,6 +330,48 @@ public final class AnnouncementSubscriptionArgs extends com.pulumi.resources.Res
          */
         public Builder onsTopicId(String onsTopicId) {
             return onsTopicId(Output.of(onsTopicId));
+        }
+
+        /**
+         * @param preferredLanguage (Updatable) (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder preferredLanguage(@Nullable Output<String> preferredLanguage) {
+            $.preferredLanguage = preferredLanguage;
+            return this;
+        }
+
+        /**
+         * @param preferredLanguage (Updatable) (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder preferredLanguage(String preferredLanguage) {
+            return preferredLanguage(Output.of(preferredLanguage));
+        }
+
+        /**
+         * @param preferredTimeZone (Updatable) The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder preferredTimeZone(@Nullable Output<String> preferredTimeZone) {
+            $.preferredTimeZone = preferredTimeZone;
+            return this;
+        }
+
+        /**
+         * @param preferredTimeZone (Updatable) The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder preferredTimeZone(String preferredTimeZone) {
+            return preferredTimeZone(Output.of(preferredTimeZone));
         }
 
         public AnnouncementSubscriptionArgs build() {

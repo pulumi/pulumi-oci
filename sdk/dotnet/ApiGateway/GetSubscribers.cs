@@ -40,7 +40,7 @@ namespace Pulumi.Oci.ApiGateway
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetSubscribersResult> InvokeAsync(GetSubscribersArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetSubscribersResult>("oci:ApiGateway/getSubscribers:getSubscribers", args ?? new GetSubscribersArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetSubscribersResult>("oci:ApiGateway/getSubscribers:getSubscribers", args ?? new GetSubscribersArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Subscribers in Oracle Cloud Infrastructure API Gateway service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.ApiGateway
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetSubscribersResult> Invoke(GetSubscribersInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetSubscribersResult>("oci:ApiGateway/getSubscribers:getSubscribers", args ?? new GetSubscribersInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetSubscribersResult>("oci:ApiGateway/getSubscribers:getSubscribers", args ?? new GetSubscribersInvokeArgs(), options.WithDefaults());
     }
 
 

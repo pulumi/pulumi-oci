@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAutonomousExadataInfrastructures(args: GetAutonomousExadataInfrastructuresArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousExadataInfrastructuresResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getAutonomousExadataInfrastructures:getAutonomousExadataInfrastructures", {
         "availabilityDomain": args.availabilityDomain,
         "compartmentId": args.compartmentId,
@@ -92,9 +90,27 @@ export interface GetAutonomousExadataInfrastructuresResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Autonomous Exadata Infrastructures in Oracle Cloud Infrastructure Database service.
+ *
+ * **Deprecated.** Use the [ListCloudExadataInfrastructures](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/ListCloudExadataInfrastructures) operation to list Exadata Infrastructures in the Oracle cloud and the  [ListCloudAutonomousVmClusters](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudAutonomousVmCluster/ListCloudAutonomousVmClusters) operation to list Autonomous Exadata VM clusters.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAutonomousExadataInfrastructures = oci.Database.getAutonomousExadataInfrastructures({
+ *     compartmentId: _var.compartment_id,
+ *     availabilityDomain: _var.autonomous_exadata_infrastructure_availability_domain,
+ *     displayName: _var.autonomous_exadata_infrastructure_display_name,
+ *     state: _var.autonomous_exadata_infrastructure_state,
+ * });
+ * ```
+ */
 export function getAutonomousExadataInfrastructuresOutput(args: GetAutonomousExadataInfrastructuresOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousExadataInfrastructuresResult> {
-    return pulumi.output(args).apply(a => getAutonomousExadataInfrastructures(a, opts))
+    return pulumi.output(args).apply((a: any) => getAutonomousExadataInfrastructures(a, opts))
 }
 
 /**

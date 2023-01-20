@@ -2,15 +2,13 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 export function getSecurityAssessmentFinding(args: GetSecurityAssessmentFindingArgs, opts?: pulumi.InvokeOptions): Promise<GetSecurityAssessmentFindingResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getSecurityAssessmentFinding:getSecurityAssessmentFinding", {
         "accessLevel": args.accessLevel,
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
@@ -49,9 +47,8 @@ export interface GetSecurityAssessmentFindingResult {
     readonly securityAssessmentId: string;
     readonly severity?: string;
 }
-
 export function getSecurityAssessmentFindingOutput(args: GetSecurityAssessmentFindingOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityAssessmentFindingResult> {
-    return pulumi.output(args).apply(a => getSecurityAssessmentFinding(a, opts))
+    return pulumi.output(args).apply((a: any) => getSecurityAssessmentFinding(a, opts))
 }
 
 /**

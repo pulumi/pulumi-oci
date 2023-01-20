@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Limits
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetQuotaResult> InvokeAsync(GetQuotaArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetQuotaResult>("oci:Limits/getQuota:getQuota", args ?? new GetQuotaArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetQuotaResult>("oci:Limits/getQuota:getQuota", args ?? new GetQuotaArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Quota resource in Oracle Cloud Infrastructure Limits service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Limits
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetQuotaResult> Invoke(GetQuotaInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetQuotaResult>("oci:Limits/getQuota:getQuota", args ?? new GetQuotaInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetQuotaResult>("oci:Limits/getQuota:getQuota", args ?? new GetQuotaInvokeArgs(), options.WithDefaults());
     }
 
 

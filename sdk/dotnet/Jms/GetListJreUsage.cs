@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Jms
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetListJreUsageResult> InvokeAsync(GetListJreUsageArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetListJreUsageResult>("oci:Jms/getListJreUsage:getListJreUsage", args ?? new GetListJreUsageArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetListJreUsageResult>("oci:Jms/getListJreUsage:getListJreUsage", args ?? new GetListJreUsageArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific List Jre Usage resource in Oracle Cloud Infrastructure Jms service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.Jms
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetListJreUsageResult> Invoke(GetListJreUsageInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetListJreUsageResult>("oci:Jms/getListJreUsage:getListJreUsage", args ?? new GetListJreUsageInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetListJreUsageResult>("oci:Jms/getListJreUsage:getListJreUsage", args ?? new GetListJreUsageInvokeArgs(), options.WithDefaults());
     }
 
 

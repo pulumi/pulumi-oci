@@ -38,7 +38,7 @@ namespace Pulumi.Oci.StackMonitoring
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetMonitoredResourceResult> InvokeAsync(GetMonitoredResourceArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetMonitoredResourceResult>("oci:StackMonitoring/getMonitoredResource:getMonitoredResource", args ?? new GetMonitoredResourceArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetMonitoredResourceResult>("oci:StackMonitoring/getMonitoredResource:getMonitoredResource", args ?? new GetMonitoredResourceArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Monitored Resource resource in Oracle Cloud Infrastructure Stack Monitoring service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.StackMonitoring
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetMonitoredResourceResult> Invoke(GetMonitoredResourceInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetMonitoredResourceResult>("oci:StackMonitoring/getMonitoredResource:getMonitoredResource", args ?? new GetMonitoredResourceInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetMonitoredResourceResult>("oci:StackMonitoring/getMonitoredResource:getMonitoredResource", args ?? new GetMonitoredResourceInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -127,6 +127,10 @@ namespace Pulumi.Oci.StackMonitoring
         /// Monitored resource display name.
         /// </summary>
         public readonly string DisplayName;
+        /// <summary>
+        /// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+        /// </summary>
+        public readonly string ExternalId;
         public readonly string ExternalResourceId;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -196,6 +200,8 @@ namespace Pulumi.Oci.StackMonitoring
 
             string displayName,
 
+            string externalId,
+
             string externalResourceId,
 
             ImmutableDictionary<string, object> freeformTags,
@@ -232,6 +238,7 @@ namespace Pulumi.Oci.StackMonitoring
             DatabaseConnectionDetails = databaseConnectionDetails;
             DefinedTags = definedTags;
             DisplayName = displayName;
+            ExternalId = externalId;
             ExternalResourceId = externalResourceId;
             FreeformTags = freeformTags;
             HostName = hostName;

@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -86,6 +88,10 @@ export class PrivateEndpoint extends pulumi.CustomResource {
      */
     public /*out*/ readonly ownerUserName!: pulumi.Output<string>;
     /**
+     * (Updatable) An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: "scan1.oracle.com", port: "1521"}, { fqdn: "scan2.oracle.com", port: "1521" } ]
+     */
+    public readonly scanDetails!: pulumi.Output<outputs.DataFlow.PrivateEndpointScanDetail[]>;
+    /**
      * The current state of this private endpoint.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
@@ -126,6 +132,7 @@ export class PrivateEndpoint extends pulumi.CustomResource {
             resourceInputs["nsgIds"] = state ? state.nsgIds : undefined;
             resourceInputs["ownerPrincipalId"] = state ? state.ownerPrincipalId : undefined;
             resourceInputs["ownerUserName"] = state ? state.ownerUserName : undefined;
+            resourceInputs["scanDetails"] = state ? state.scanDetails : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["subnetId"] = state ? state.subnetId : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
@@ -149,6 +156,7 @@ export class PrivateEndpoint extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["maxHostCount"] = args ? args.maxHostCount : undefined;
             resourceInputs["nsgIds"] = args ? args.nsgIds : undefined;
+            resourceInputs["scanDetails"] = args ? args.scanDetails : undefined;
             resourceInputs["subnetId"] = args ? args.subnetId : undefined;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["ownerPrincipalId"] = undefined /*out*/;
@@ -211,6 +219,10 @@ export interface PrivateEndpointState {
      */
     ownerUserName?: pulumi.Input<string>;
     /**
+     * (Updatable) An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: "scan1.oracle.com", port: "1521"}, { fqdn: "scan2.oracle.com", port: "1521" } ]
+     */
+    scanDetails?: pulumi.Input<pulumi.Input<inputs.DataFlow.PrivateEndpointScanDetail>[]>;
+    /**
      * The current state of this private endpoint.
      */
     state?: pulumi.Input<string>;
@@ -264,6 +276,10 @@ export interface PrivateEndpointArgs {
      * (Updatable) An array of network security group OCIDs.
      */
     nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * (Updatable) An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: "scan1.oracle.com", port: "1521"}, { fqdn: "scan2.oracle.com", port: "1521" } ]
+     */
+    scanDetails?: pulumi.Input<pulumi.Input<inputs.DataFlow.PrivateEndpointScanDetail>[]>;
     /**
      * The OCID of a subnet.
      */

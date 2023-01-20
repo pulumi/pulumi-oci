@@ -6,7 +6,9 @@ package com.pulumi.oci.DevOps;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.DevOps.inputs.DeploymentDeployArtifactOverrideArgumentsArgs;
+import com.pulumi.oci.DevOps.inputs.DeploymentDeployStageOverrideArgumentsArgs;
 import com.pulumi.oci.DevOps.inputs.DeploymentDeploymentArgumentsArgs;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -65,18 +67,33 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Specifies the OCID of the stage to be redeployed.
+     * The OCID of the stage.
      * 
      */
     @Import(name="deployStageId")
     private @Nullable Output<String> deployStageId;
 
     /**
-     * @return Specifies the OCID of the stage to be redeployed.
+     * @return The OCID of the stage.
      * 
      */
     public Optional<Output<String>> deployStageId() {
         return Optional.ofNullable(this.deployStageId);
+    }
+
+    /**
+     * Specifies the list of arguments to be overriden per Stage at the time of deployment.
+     * 
+     */
+    @Import(name="deployStageOverrideArguments")
+    private @Nullable Output<DeploymentDeployStageOverrideArgumentsArgs> deployStageOverrideArguments;
+
+    /**
+     * @return Specifies the list of arguments to be overriden per Stage at the time of deployment.
+     * 
+     */
+    public Optional<Output<DeploymentDeployStageOverrideArgumentsArgs>> deployStageOverrideArguments() {
+        return Optional.ofNullable(this.deployStageOverrideArguments);
     }
 
     /**
@@ -154,6 +171,21 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.previousDeploymentId);
     }
 
+    /**
+     * A boolean specifying if a new deployment should be created on every apply. As long as this value is set to true in the config, every apply will trigger a new deployment to be created. The existing deployment resource will be replaced with the new one in the state file (deployment resources are never deleted, they persist as a store of records, but your state file will only track the latest one created with this resource block).
+     * 
+     */
+    @Import(name="triggerNewDevopsDeployment")
+    private @Nullable Output<Boolean> triggerNewDevopsDeployment;
+
+    /**
+     * @return A boolean specifying if a new deployment should be created on every apply. As long as this value is set to true in the config, every apply will trigger a new deployment to be created. The existing deployment resource will be replaced with the new one in the state file (deployment resources are never deleted, they persist as a store of records, but your state file will only track the latest one created with this resource block).
+     * 
+     */
+    public Optional<Output<Boolean>> triggerNewDevopsDeployment() {
+        return Optional.ofNullable(this.triggerNewDevopsDeployment);
+    }
+
     private DeploymentArgs() {}
 
     private DeploymentArgs(DeploymentArgs $) {
@@ -161,11 +193,13 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
         this.deployArtifactOverrideArguments = $.deployArtifactOverrideArguments;
         this.deployPipelineId = $.deployPipelineId;
         this.deployStageId = $.deployStageId;
+        this.deployStageOverrideArguments = $.deployStageOverrideArguments;
         this.deploymentArguments = $.deploymentArguments;
         this.deploymentType = $.deploymentType;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.previousDeploymentId = $.previousDeploymentId;
+        this.triggerNewDevopsDeployment = $.triggerNewDevopsDeployment;
     }
 
     public static Builder builder() {
@@ -250,7 +284,7 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deployStageId Specifies the OCID of the stage to be redeployed.
+         * @param deployStageId The OCID of the stage.
          * 
          * @return builder
          * 
@@ -261,13 +295,34 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deployStageId Specifies the OCID of the stage to be redeployed.
+         * @param deployStageId The OCID of the stage.
          * 
          * @return builder
          * 
          */
         public Builder deployStageId(String deployStageId) {
             return deployStageId(Output.of(deployStageId));
+        }
+
+        /**
+         * @param deployStageOverrideArguments Specifies the list of arguments to be overriden per Stage at the time of deployment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder deployStageOverrideArguments(@Nullable Output<DeploymentDeployStageOverrideArgumentsArgs> deployStageOverrideArguments) {
+            $.deployStageOverrideArguments = deployStageOverrideArguments;
+            return this;
+        }
+
+        /**
+         * @param deployStageOverrideArguments Specifies the list of arguments to be overriden per Stage at the time of deployment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder deployStageOverrideArguments(DeploymentDeployStageOverrideArgumentsArgs deployStageOverrideArguments) {
+            return deployStageOverrideArguments(Output.of(deployStageOverrideArguments));
         }
 
         /**
@@ -373,6 +428,27 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder previousDeploymentId(String previousDeploymentId) {
             return previousDeploymentId(Output.of(previousDeploymentId));
+        }
+
+        /**
+         * @param triggerNewDevopsDeployment A boolean specifying if a new deployment should be created on every apply. As long as this value is set to true in the config, every apply will trigger a new deployment to be created. The existing deployment resource will be replaced with the new one in the state file (deployment resources are never deleted, they persist as a store of records, but your state file will only track the latest one created with this resource block).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder triggerNewDevopsDeployment(@Nullable Output<Boolean> triggerNewDevopsDeployment) {
+            $.triggerNewDevopsDeployment = triggerNewDevopsDeployment;
+            return this;
+        }
+
+        /**
+         * @param triggerNewDevopsDeployment A boolean specifying if a new deployment should be created on every apply. As long as this value is set to true in the config, every apply will trigger a new deployment to be created. The existing deployment resource will be replaced with the new one in the state file (deployment resources are never deleted, they persist as a store of records, but your state file will only track the latest one created with this resource block).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder triggerNewDevopsDeployment(Boolean triggerNewDevopsDeployment) {
+            return triggerNewDevopsDeployment(Output.of(triggerNewDevopsDeployment));
         }
 
         public DeploymentArgs build() {

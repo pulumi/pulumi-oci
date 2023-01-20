@@ -38,7 +38,7 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAccessRequestResult> InvokeAsync(GetAccessRequestArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAccessRequestResult>("oci:OperatorAccessControl/getAccessRequest:getAccessRequest", args ?? new GetAccessRequestArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAccessRequestResult>("oci:OperatorAccessControl/getAccessRequest:getAccessRequest", args ?? new GetAccessRequestArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Access Request resource in Oracle Cloud Infrastructure Operator Access Control service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAccessRequestResult> Invoke(GetAccessRequestInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAccessRequestResult>("oci:OperatorAccessControl/getAccessRequest:getAccessRequest", args ?? new GetAccessRequestInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAccessRequestResult>("oci:OperatorAccessControl/getAccessRequest:getAccessRequest", args ?? new GetAccessRequestInvokeArgs(), options.WithDefaults());
     }
 
 

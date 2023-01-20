@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -30,7 +31,6 @@ import * as utilities from "../utilities";
  *         Department: "Finance",
  *     },
  *     maintenanceWindow: {
- *         preference: _var.cloud_exadata_infrastructure_maintenance_window_preference,
  *         customActionTimeoutInMins: _var.cloud_exadata_infrastructure_maintenance_window_custom_action_timeout_in_mins,
  *         daysOfWeeks: [{
  *             name: _var.cloud_exadata_infrastructure_maintenance_window_days_of_week_name,
@@ -43,6 +43,7 @@ import * as utilities from "../utilities";
  *             name: _var.cloud_exadata_infrastructure_maintenance_window_months_name,
  *         }],
  *         patchingMode: _var.cloud_exadata_infrastructure_maintenance_window_patching_mode,
+ *         preference: _var.cloud_exadata_infrastructure_maintenance_window_preference,
  *         weeksOfMonths: _var.cloud_exadata_infrastructure_maintenance_window_weeks_of_month,
  *     },
  *     storageCount: _var.cloud_exadata_infrastructure_storage_count,
@@ -86,6 +87,14 @@ export class CloudExadataInfrastructure extends pulumi.CustomResource {
     }
 
     /**
+     * The requested number of additional storage servers activated for the Exadata infrastructure.
+     */
+    public /*out*/ readonly activatedStorageCount!: pulumi.Output<number>;
+    /**
+     * The requested number of additional storage servers for the Exadata infrastructure.
+     */
+    public /*out*/ readonly additionalStorageCount!: pulumi.Output<number>;
+    /**
      * The availability domain where the cloud Exadata infrastructure is located.
      */
     public readonly availabilityDomain!: pulumi.Output<string>;
@@ -102,9 +111,21 @@ export class CloudExadataInfrastructure extends pulumi.CustomResource {
      */
     public readonly computeCount!: pulumi.Output<number>;
     /**
+     * The total number of CPU cores allocated.
+     */
+    public /*out*/ readonly cpuCount!: pulumi.Output<number>;
+    /**
      * (Updatable) Customer contacts.
      */
     public readonly customerContacts!: pulumi.Output<outputs.Database.CloudExadataInfrastructureCustomerContact[]>;
+    /**
+     * Size, in terabytes, of the DATA disk group.
+     */
+    public /*out*/ readonly dataStorageSizeInTbs!: pulumi.Output<number>;
+    /**
+     * The local node storage allocated in GBs.
+     */
+    public /*out*/ readonly dbNodeStorageSizeInGbs!: pulumi.Output<number>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
@@ -129,6 +150,26 @@ export class CloudExadataInfrastructure extends pulumi.CustomResource {
      * (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */
     public readonly maintenanceWindow!: pulumi.Output<outputs.Database.CloudExadataInfrastructureMaintenanceWindow>;
+    /**
+     * The total number of CPU cores available.
+     */
+    public /*out*/ readonly maxCpuCount!: pulumi.Output<number>;
+    /**
+     * The total available DATA disk group size.
+     */
+    public /*out*/ readonly maxDataStorageInTbs!: pulumi.Output<number>;
+    /**
+     * The total local node storage available in GBs.
+     */
+    public /*out*/ readonly maxDbNodeStorageInGbs!: pulumi.Output<number>;
+    /**
+     * The total memory available in GBs.
+     */
+    public /*out*/ readonly maxMemoryInGbs!: pulumi.Output<number>;
+    /**
+     * The memory allocated in GBs.
+     */
+    public /*out*/ readonly memorySizeInGbs!: pulumi.Output<number>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      */
@@ -167,17 +208,27 @@ export class CloudExadataInfrastructure extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as CloudExadataInfrastructureState | undefined;
+            resourceInputs["activatedStorageCount"] = state ? state.activatedStorageCount : undefined;
+            resourceInputs["additionalStorageCount"] = state ? state.additionalStorageCount : undefined;
             resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
             resourceInputs["availableStorageSizeInGbs"] = state ? state.availableStorageSizeInGbs : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["computeCount"] = state ? state.computeCount : undefined;
+            resourceInputs["cpuCount"] = state ? state.cpuCount : undefined;
             resourceInputs["customerContacts"] = state ? state.customerContacts : undefined;
+            resourceInputs["dataStorageSizeInTbs"] = state ? state.dataStorageSizeInTbs : undefined;
+            resourceInputs["dbNodeStorageSizeInGbs"] = state ? state.dbNodeStorageSizeInGbs : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["lastMaintenanceRunId"] = state ? state.lastMaintenanceRunId : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["maintenanceWindow"] = state ? state.maintenanceWindow : undefined;
+            resourceInputs["maxCpuCount"] = state ? state.maxCpuCount : undefined;
+            resourceInputs["maxDataStorageInTbs"] = state ? state.maxDataStorageInTbs : undefined;
+            resourceInputs["maxDbNodeStorageInGbs"] = state ? state.maxDbNodeStorageInGbs : undefined;
+            resourceInputs["maxMemoryInGbs"] = state ? state.maxMemoryInGbs : undefined;
+            resourceInputs["memorySizeInGbs"] = state ? state.memorySizeInGbs : undefined;
             resourceInputs["nextMaintenanceRunId"] = state ? state.nextMaintenanceRunId : undefined;
             resourceInputs["shape"] = state ? state.shape : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
@@ -208,9 +259,19 @@ export class CloudExadataInfrastructure extends pulumi.CustomResource {
             resourceInputs["maintenanceWindow"] = args ? args.maintenanceWindow : undefined;
             resourceInputs["shape"] = args ? args.shape : undefined;
             resourceInputs["storageCount"] = args ? args.storageCount : undefined;
+            resourceInputs["activatedStorageCount"] = undefined /*out*/;
+            resourceInputs["additionalStorageCount"] = undefined /*out*/;
             resourceInputs["availableStorageSizeInGbs"] = undefined /*out*/;
+            resourceInputs["cpuCount"] = undefined /*out*/;
+            resourceInputs["dataStorageSizeInTbs"] = undefined /*out*/;
+            resourceInputs["dbNodeStorageSizeInGbs"] = undefined /*out*/;
             resourceInputs["lastMaintenanceRunId"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
+            resourceInputs["maxCpuCount"] = undefined /*out*/;
+            resourceInputs["maxDataStorageInTbs"] = undefined /*out*/;
+            resourceInputs["maxDbNodeStorageInGbs"] = undefined /*out*/;
+            resourceInputs["maxMemoryInGbs"] = undefined /*out*/;
+            resourceInputs["memorySizeInGbs"] = undefined /*out*/;
             resourceInputs["nextMaintenanceRunId"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
@@ -225,6 +286,14 @@ export class CloudExadataInfrastructure extends pulumi.CustomResource {
  * Input properties used for looking up and filtering CloudExadataInfrastructure resources.
  */
 export interface CloudExadataInfrastructureState {
+    /**
+     * The requested number of additional storage servers activated for the Exadata infrastructure.
+     */
+    activatedStorageCount?: pulumi.Input<number>;
+    /**
+     * The requested number of additional storage servers for the Exadata infrastructure.
+     */
+    additionalStorageCount?: pulumi.Input<number>;
     /**
      * The availability domain where the cloud Exadata infrastructure is located.
      */
@@ -242,9 +311,21 @@ export interface CloudExadataInfrastructureState {
      */
     computeCount?: pulumi.Input<number>;
     /**
+     * The total number of CPU cores allocated.
+     */
+    cpuCount?: pulumi.Input<number>;
+    /**
      * (Updatable) Customer contacts.
      */
     customerContacts?: pulumi.Input<pulumi.Input<inputs.Database.CloudExadataInfrastructureCustomerContact>[]>;
+    /**
+     * Size, in terabytes, of the DATA disk group.
+     */
+    dataStorageSizeInTbs?: pulumi.Input<number>;
+    /**
+     * The local node storage allocated in GBs.
+     */
+    dbNodeStorageSizeInGbs?: pulumi.Input<number>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
@@ -269,6 +350,26 @@ export interface CloudExadataInfrastructureState {
      * (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */
     maintenanceWindow?: pulumi.Input<inputs.Database.CloudExadataInfrastructureMaintenanceWindow>;
+    /**
+     * The total number of CPU cores available.
+     */
+    maxCpuCount?: pulumi.Input<number>;
+    /**
+     * The total available DATA disk group size.
+     */
+    maxDataStorageInTbs?: pulumi.Input<number>;
+    /**
+     * The total local node storage available in GBs.
+     */
+    maxDbNodeStorageInGbs?: pulumi.Input<number>;
+    /**
+     * The total memory available in GBs.
+     */
+    maxMemoryInGbs?: pulumi.Input<number>;
+    /**
+     * The memory allocated in GBs.
+     */
+    memorySizeInGbs?: pulumi.Input<number>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
      */

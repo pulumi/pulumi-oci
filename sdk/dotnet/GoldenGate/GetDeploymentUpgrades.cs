@@ -42,7 +42,7 @@ namespace Pulumi.Oci.GoldenGate
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDeploymentUpgradesResult> InvokeAsync(GetDeploymentUpgradesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDeploymentUpgradesResult>("oci:GoldenGate/getDeploymentUpgrades:getDeploymentUpgrades", args ?? new GetDeploymentUpgradesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDeploymentUpgradesResult>("oci:GoldenGate/getDeploymentUpgrades:getDeploymentUpgrades", args ?? new GetDeploymentUpgradesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Deployment Upgrades in Oracle Cloud Infrastructure Golden Gate service.
@@ -75,20 +75,20 @@ namespace Pulumi.Oci.GoldenGate
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDeploymentUpgradesResult> Invoke(GetDeploymentUpgradesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDeploymentUpgradesResult>("oci:GoldenGate/getDeploymentUpgrades:getDeploymentUpgrades", args ?? new GetDeploymentUpgradesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDeploymentUpgradesResult>("oci:GoldenGate/getDeploymentUpgrades:getDeploymentUpgrades", args ?? new GetDeploymentUpgradesInvokeArgs(), options.WithDefaults());
     }
 
 
     public sealed class GetDeploymentUpgradesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         /// </summary>
         [Input("compartmentId", required: true)]
         public string CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// The ID of the deployment in which to list resources.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
         /// </summary>
         [Input("deploymentId")]
         public string? DeploymentId { get; set; }
@@ -122,13 +122,13 @@ namespace Pulumi.Oci.GoldenGate
     public sealed class GetDeploymentUpgradesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// The ID of the deployment in which to list resources.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
         /// </summary>
         [Input("deploymentId")]
         public Input<string>? DeploymentId { get; set; }

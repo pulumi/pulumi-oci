@@ -1158,6 +1158,351 @@ func (o InvokeRunParameterArrayOutput) Index(i pulumi.IntInput) InvokeRunParamet
 	}).(InvokeRunParameterOutput)
 }
 
+type PrivateEndpointScanDetail struct {
+	// (Updatable) A fully-qualified domain name (FQDN).
+	Fqdn *string `pulumi:"fqdn"`
+	// (Updatable) The port number of the FQDN
+	Port *string `pulumi:"port"`
+}
+
+// PrivateEndpointScanDetailInput is an input type that accepts PrivateEndpointScanDetailArgs and PrivateEndpointScanDetailOutput values.
+// You can construct a concrete instance of `PrivateEndpointScanDetailInput` via:
+//
+//	PrivateEndpointScanDetailArgs{...}
+type PrivateEndpointScanDetailInput interface {
+	pulumi.Input
+
+	ToPrivateEndpointScanDetailOutput() PrivateEndpointScanDetailOutput
+	ToPrivateEndpointScanDetailOutputWithContext(context.Context) PrivateEndpointScanDetailOutput
+}
+
+type PrivateEndpointScanDetailArgs struct {
+	// (Updatable) A fully-qualified domain name (FQDN).
+	Fqdn pulumi.StringPtrInput `pulumi:"fqdn"`
+	// (Updatable) The port number of the FQDN
+	Port pulumi.StringPtrInput `pulumi:"port"`
+}
+
+func (PrivateEndpointScanDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PrivateEndpointScanDetail)(nil)).Elem()
+}
+
+func (i PrivateEndpointScanDetailArgs) ToPrivateEndpointScanDetailOutput() PrivateEndpointScanDetailOutput {
+	return i.ToPrivateEndpointScanDetailOutputWithContext(context.Background())
+}
+
+func (i PrivateEndpointScanDetailArgs) ToPrivateEndpointScanDetailOutputWithContext(ctx context.Context) PrivateEndpointScanDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PrivateEndpointScanDetailOutput)
+}
+
+// PrivateEndpointScanDetailArrayInput is an input type that accepts PrivateEndpointScanDetailArray and PrivateEndpointScanDetailArrayOutput values.
+// You can construct a concrete instance of `PrivateEndpointScanDetailArrayInput` via:
+//
+//	PrivateEndpointScanDetailArray{ PrivateEndpointScanDetailArgs{...} }
+type PrivateEndpointScanDetailArrayInput interface {
+	pulumi.Input
+
+	ToPrivateEndpointScanDetailArrayOutput() PrivateEndpointScanDetailArrayOutput
+	ToPrivateEndpointScanDetailArrayOutputWithContext(context.Context) PrivateEndpointScanDetailArrayOutput
+}
+
+type PrivateEndpointScanDetailArray []PrivateEndpointScanDetailInput
+
+func (PrivateEndpointScanDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PrivateEndpointScanDetail)(nil)).Elem()
+}
+
+func (i PrivateEndpointScanDetailArray) ToPrivateEndpointScanDetailArrayOutput() PrivateEndpointScanDetailArrayOutput {
+	return i.ToPrivateEndpointScanDetailArrayOutputWithContext(context.Background())
+}
+
+func (i PrivateEndpointScanDetailArray) ToPrivateEndpointScanDetailArrayOutputWithContext(ctx context.Context) PrivateEndpointScanDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PrivateEndpointScanDetailArrayOutput)
+}
+
+type PrivateEndpointScanDetailOutput struct{ *pulumi.OutputState }
+
+func (PrivateEndpointScanDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PrivateEndpointScanDetail)(nil)).Elem()
+}
+
+func (o PrivateEndpointScanDetailOutput) ToPrivateEndpointScanDetailOutput() PrivateEndpointScanDetailOutput {
+	return o
+}
+
+func (o PrivateEndpointScanDetailOutput) ToPrivateEndpointScanDetailOutputWithContext(ctx context.Context) PrivateEndpointScanDetailOutput {
+	return o
+}
+
+// (Updatable) A fully-qualified domain name (FQDN).
+func (o PrivateEndpointScanDetailOutput) Fqdn() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PrivateEndpointScanDetail) *string { return v.Fqdn }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The port number of the FQDN
+func (o PrivateEndpointScanDetailOutput) Port() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PrivateEndpointScanDetail) *string { return v.Port }).(pulumi.StringPtrOutput)
+}
+
+type PrivateEndpointScanDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (PrivateEndpointScanDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PrivateEndpointScanDetail)(nil)).Elem()
+}
+
+func (o PrivateEndpointScanDetailArrayOutput) ToPrivateEndpointScanDetailArrayOutput() PrivateEndpointScanDetailArrayOutput {
+	return o
+}
+
+func (o PrivateEndpointScanDetailArrayOutput) ToPrivateEndpointScanDetailArrayOutputWithContext(ctx context.Context) PrivateEndpointScanDetailArrayOutput {
+	return o
+}
+
+func (o PrivateEndpointScanDetailArrayOutput) Index(i pulumi.IntInput) PrivateEndpointScanDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PrivateEndpointScanDetail {
+		return vs[0].([]PrivateEndpointScanDetail)[vs[1].(int)]
+	}).(PrivateEndpointScanDetailOutput)
+}
+
+type RunStatementOutputType struct {
+	// An object representing execution output of a statement.
+	Datas []RunStatementOutputData `pulumi:"datas"`
+	// The name of the error in the statement output.
+	ErrorName *string `pulumi:"errorName"`
+	// The value of the error in the statement output.
+	ErrorValue *string `pulumi:"errorValue"`
+	// Status of the statement output.
+	Status *string `pulumi:"status"`
+	// The traceback of the statement output.
+	Tracebacks []string `pulumi:"tracebacks"`
+}
+
+// RunStatementOutputTypeInput is an input type that accepts RunStatementOutputTypeArgs and RunStatementOutputTypeOutput values.
+// You can construct a concrete instance of `RunStatementOutputTypeInput` via:
+//
+//	RunStatementOutputTypeArgs{...}
+type RunStatementOutputTypeInput interface {
+	pulumi.Input
+
+	ToRunStatementOutputTypeOutput() RunStatementOutputTypeOutput
+	ToRunStatementOutputTypeOutputWithContext(context.Context) RunStatementOutputTypeOutput
+}
+
+type RunStatementOutputTypeArgs struct {
+	// An object representing execution output of a statement.
+	Datas RunStatementOutputDataArrayInput `pulumi:"datas"`
+	// The name of the error in the statement output.
+	ErrorName pulumi.StringPtrInput `pulumi:"errorName"`
+	// The value of the error in the statement output.
+	ErrorValue pulumi.StringPtrInput `pulumi:"errorValue"`
+	// Status of the statement output.
+	Status pulumi.StringPtrInput `pulumi:"status"`
+	// The traceback of the statement output.
+	Tracebacks pulumi.StringArrayInput `pulumi:"tracebacks"`
+}
+
+func (RunStatementOutputTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RunStatementOutputType)(nil)).Elem()
+}
+
+func (i RunStatementOutputTypeArgs) ToRunStatementOutputTypeOutput() RunStatementOutputTypeOutput {
+	return i.ToRunStatementOutputTypeOutputWithContext(context.Background())
+}
+
+func (i RunStatementOutputTypeArgs) ToRunStatementOutputTypeOutputWithContext(ctx context.Context) RunStatementOutputTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RunStatementOutputTypeOutput)
+}
+
+// RunStatementOutputTypeArrayInput is an input type that accepts RunStatementOutputTypeArray and RunStatementOutputTypeArrayOutput values.
+// You can construct a concrete instance of `RunStatementOutputTypeArrayInput` via:
+//
+//	RunStatementOutputTypeArray{ RunStatementOutputTypeArgs{...} }
+type RunStatementOutputTypeArrayInput interface {
+	pulumi.Input
+
+	ToRunStatementOutputTypeArrayOutput() RunStatementOutputTypeArrayOutput
+	ToRunStatementOutputTypeArrayOutputWithContext(context.Context) RunStatementOutputTypeArrayOutput
+}
+
+type RunStatementOutputTypeArray []RunStatementOutputTypeInput
+
+func (RunStatementOutputTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RunStatementOutputType)(nil)).Elem()
+}
+
+func (i RunStatementOutputTypeArray) ToRunStatementOutputTypeArrayOutput() RunStatementOutputTypeArrayOutput {
+	return i.ToRunStatementOutputTypeArrayOutputWithContext(context.Background())
+}
+
+func (i RunStatementOutputTypeArray) ToRunStatementOutputTypeArrayOutputWithContext(ctx context.Context) RunStatementOutputTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RunStatementOutputTypeArrayOutput)
+}
+
+type RunStatementOutputTypeOutput struct{ *pulumi.OutputState }
+
+func (RunStatementOutputTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RunStatementOutputType)(nil)).Elem()
+}
+
+func (o RunStatementOutputTypeOutput) ToRunStatementOutputTypeOutput() RunStatementOutputTypeOutput {
+	return o
+}
+
+func (o RunStatementOutputTypeOutput) ToRunStatementOutputTypeOutputWithContext(ctx context.Context) RunStatementOutputTypeOutput {
+	return o
+}
+
+// An object representing execution output of a statement.
+func (o RunStatementOutputTypeOutput) Datas() RunStatementOutputDataArrayOutput {
+	return o.ApplyT(func(v RunStatementOutputType) []RunStatementOutputData { return v.Datas }).(RunStatementOutputDataArrayOutput)
+}
+
+// The name of the error in the statement output.
+func (o RunStatementOutputTypeOutput) ErrorName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RunStatementOutputType) *string { return v.ErrorName }).(pulumi.StringPtrOutput)
+}
+
+// The value of the error in the statement output.
+func (o RunStatementOutputTypeOutput) ErrorValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RunStatementOutputType) *string { return v.ErrorValue }).(pulumi.StringPtrOutput)
+}
+
+// Status of the statement output.
+func (o RunStatementOutputTypeOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RunStatementOutputType) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+// The traceback of the statement output.
+func (o RunStatementOutputTypeOutput) Tracebacks() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v RunStatementOutputType) []string { return v.Tracebacks }).(pulumi.StringArrayOutput)
+}
+
+type RunStatementOutputTypeArrayOutput struct{ *pulumi.OutputState }
+
+func (RunStatementOutputTypeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RunStatementOutputType)(nil)).Elem()
+}
+
+func (o RunStatementOutputTypeArrayOutput) ToRunStatementOutputTypeArrayOutput() RunStatementOutputTypeArrayOutput {
+	return o
+}
+
+func (o RunStatementOutputTypeArrayOutput) ToRunStatementOutputTypeArrayOutputWithContext(ctx context.Context) RunStatementOutputTypeArrayOutput {
+	return o
+}
+
+func (o RunStatementOutputTypeArrayOutput) Index(i pulumi.IntInput) RunStatementOutputTypeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) RunStatementOutputType {
+		return vs[0].([]RunStatementOutputType)[vs[1].(int)]
+	}).(RunStatementOutputTypeOutput)
+}
+
+type RunStatementOutputData struct {
+	// The type of the `StatementOutputData` like `TEXT_PLAIN`, `TEXT_HTML` or `IMAGE_PNG`.
+	Type *string `pulumi:"type"`
+	// The statement code execution output in html format.
+	Value *string `pulumi:"value"`
+}
+
+// RunStatementOutputDataInput is an input type that accepts RunStatementOutputDataArgs and RunStatementOutputDataOutput values.
+// You can construct a concrete instance of `RunStatementOutputDataInput` via:
+//
+//	RunStatementOutputDataArgs{...}
+type RunStatementOutputDataInput interface {
+	pulumi.Input
+
+	ToRunStatementOutputDataOutput() RunStatementOutputDataOutput
+	ToRunStatementOutputDataOutputWithContext(context.Context) RunStatementOutputDataOutput
+}
+
+type RunStatementOutputDataArgs struct {
+	// The type of the `StatementOutputData` like `TEXT_PLAIN`, `TEXT_HTML` or `IMAGE_PNG`.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+	// The statement code execution output in html format.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (RunStatementOutputDataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RunStatementOutputData)(nil)).Elem()
+}
+
+func (i RunStatementOutputDataArgs) ToRunStatementOutputDataOutput() RunStatementOutputDataOutput {
+	return i.ToRunStatementOutputDataOutputWithContext(context.Background())
+}
+
+func (i RunStatementOutputDataArgs) ToRunStatementOutputDataOutputWithContext(ctx context.Context) RunStatementOutputDataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RunStatementOutputDataOutput)
+}
+
+// RunStatementOutputDataArrayInput is an input type that accepts RunStatementOutputDataArray and RunStatementOutputDataArrayOutput values.
+// You can construct a concrete instance of `RunStatementOutputDataArrayInput` via:
+//
+//	RunStatementOutputDataArray{ RunStatementOutputDataArgs{...} }
+type RunStatementOutputDataArrayInput interface {
+	pulumi.Input
+
+	ToRunStatementOutputDataArrayOutput() RunStatementOutputDataArrayOutput
+	ToRunStatementOutputDataArrayOutputWithContext(context.Context) RunStatementOutputDataArrayOutput
+}
+
+type RunStatementOutputDataArray []RunStatementOutputDataInput
+
+func (RunStatementOutputDataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RunStatementOutputData)(nil)).Elem()
+}
+
+func (i RunStatementOutputDataArray) ToRunStatementOutputDataArrayOutput() RunStatementOutputDataArrayOutput {
+	return i.ToRunStatementOutputDataArrayOutputWithContext(context.Background())
+}
+
+func (i RunStatementOutputDataArray) ToRunStatementOutputDataArrayOutputWithContext(ctx context.Context) RunStatementOutputDataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RunStatementOutputDataArrayOutput)
+}
+
+type RunStatementOutputDataOutput struct{ *pulumi.OutputState }
+
+func (RunStatementOutputDataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RunStatementOutputData)(nil)).Elem()
+}
+
+func (o RunStatementOutputDataOutput) ToRunStatementOutputDataOutput() RunStatementOutputDataOutput {
+	return o
+}
+
+func (o RunStatementOutputDataOutput) ToRunStatementOutputDataOutputWithContext(ctx context.Context) RunStatementOutputDataOutput {
+	return o
+}
+
+// The type of the `StatementOutputData` like `TEXT_PLAIN`, `TEXT_HTML` or `IMAGE_PNG`.
+func (o RunStatementOutputDataOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RunStatementOutputData) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+// The statement code execution output in html format.
+func (o RunStatementOutputDataOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RunStatementOutputData) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type RunStatementOutputDataArrayOutput struct{ *pulumi.OutputState }
+
+func (RunStatementOutputDataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RunStatementOutputData)(nil)).Elem()
+}
+
+func (o RunStatementOutputDataArrayOutput) ToRunStatementOutputDataArrayOutput() RunStatementOutputDataArrayOutput {
+	return o
+}
+
+func (o RunStatementOutputDataArrayOutput) ToRunStatementOutputDataArrayOutputWithContext(ctx context.Context) RunStatementOutputDataArrayOutput {
+	return o
+}
+
+func (o RunStatementOutputDataArrayOutput) Index(i pulumi.IntInput) RunStatementOutputDataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) RunStatementOutputData {
+		return vs[0].([]RunStatementOutputData)[vs[1].(int)]
+	}).(RunStatementOutputDataOutput)
+}
+
 type GetApplicationApplicationLogConfig struct {
 	// The log group id for where log objects will be for Data Flow Runs.
 	LogGroupId string `pulumi:"logGroupId"`
@@ -1585,7 +1930,7 @@ func (o GetApplicationParameterArrayOutput) Index(i pulumi.IntInput) GetApplicat
 type GetApplicationsApplication struct {
 	// Logging details of Application logs for Data Flow Run.
 	ApplicationLogConfigs []GetApplicationsApplicationApplicationLogConfig `pulumi:"applicationLogConfigs"`
-	// An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+	// A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 	ArchiveUri string `pulumi:"archiveUri"`
 	// The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "inputFile" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
 	Arguments []string `pulumi:"arguments"`
@@ -1617,10 +1962,14 @@ type GetApplicationsApplication struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The application ID.
 	Id string `pulumi:"id"`
+	// The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
+	IdleTimeoutInMinutes string `pulumi:"idleTimeoutInMinutes"`
 	// The Spark language.
 	Language string `pulumi:"language"`
 	// An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 	LogsBucketUri string `pulumi:"logsBucketUri"`
+	// The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
+	MaxDurationInMinutes string `pulumi:"maxDurationInMinutes"`
 	// The OCID of Oracle Cloud Infrastructure Hive Metastore.
 	MetastoreId string `pulumi:"metastoreId"`
 	// The number of executor VMs requested.
@@ -1661,7 +2010,7 @@ type GetApplicationsApplicationInput interface {
 type GetApplicationsApplicationArgs struct {
 	// Logging details of Application logs for Data Flow Run.
 	ApplicationLogConfigs GetApplicationsApplicationApplicationLogConfigArrayInput `pulumi:"applicationLogConfigs"`
-	// An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+	// A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 	ArchiveUri pulumi.StringInput `pulumi:"archiveUri"`
 	// The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "inputFile" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
 	Arguments pulumi.StringArrayInput `pulumi:"arguments"`
@@ -1693,10 +2042,14 @@ type GetApplicationsApplicationArgs struct {
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The application ID.
 	Id pulumi.StringInput `pulumi:"id"`
+	// The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
+	IdleTimeoutInMinutes pulumi.StringInput `pulumi:"idleTimeoutInMinutes"`
 	// The Spark language.
 	Language pulumi.StringInput `pulumi:"language"`
 	// An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 	LogsBucketUri pulumi.StringInput `pulumi:"logsBucketUri"`
+	// The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
+	MaxDurationInMinutes pulumi.StringInput `pulumi:"maxDurationInMinutes"`
 	// The OCID of Oracle Cloud Infrastructure Hive Metastore.
 	MetastoreId pulumi.StringInput `pulumi:"metastoreId"`
 	// The number of executor VMs requested.
@@ -1781,7 +2134,7 @@ func (o GetApplicationsApplicationOutput) ApplicationLogConfigs() GetApplication
 	}).(GetApplicationsApplicationApplicationLogConfigArrayOutput)
 }
 
-// An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+// A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, “oci://path/to/a.zip,oci://path/to/b.zip“. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 func (o GetApplicationsApplicationOutput) ArchiveUri() pulumi.StringOutput {
 	return o.ApplyT(func(v GetApplicationsApplication) string { return v.ArchiveUri }).(pulumi.StringOutput)
 }
@@ -1865,6 +2218,11 @@ func (o GetApplicationsApplicationOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetApplicationsApplication) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
+func (o GetApplicationsApplicationOutput) IdleTimeoutInMinutes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApplicationsApplication) string { return v.IdleTimeoutInMinutes }).(pulumi.StringOutput)
+}
+
 // The Spark language.
 func (o GetApplicationsApplicationOutput) Language() pulumi.StringOutput {
 	return o.ApplyT(func(v GetApplicationsApplication) string { return v.Language }).(pulumi.StringOutput)
@@ -1873,6 +2231,11 @@ func (o GetApplicationsApplicationOutput) Language() pulumi.StringOutput {
 // An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 func (o GetApplicationsApplicationOutput) LogsBucketUri() pulumi.StringOutput {
 	return o.ApplyT(func(v GetApplicationsApplication) string { return v.LogsBucketUri }).(pulumi.StringOutput)
+}
+
+// The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
+func (o GetApplicationsApplicationOutput) MaxDurationInMinutes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetApplicationsApplication) string { return v.MaxDurationInMinutes }).(pulumi.StringOutput)
 }
 
 // The OCID of Oracle Cloud Infrastructure Hive Metastore.
@@ -3026,7 +3389,7 @@ type GetInvokeRunsRun struct {
 	ApplicationId string `pulumi:"applicationId"`
 	// Logging details of Application logs for Data Flow Run.
 	ApplicationLogConfigs []GetInvokeRunsRunApplicationLogConfig `pulumi:"applicationLogConfigs"`
-	// An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+	// A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 	ArchiveUri string `pulumi:"archiveUri"`
 	// The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "inputFile" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
 	Arguments    []string `pulumi:"arguments"`
@@ -3061,12 +3424,16 @@ type GetInvokeRunsRun struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The ID of a run.
 	Id string `pulumi:"id"`
+	// The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
+	IdleTimeoutInMinutes string `pulumi:"idleTimeoutInMinutes"`
 	// The Spark language.
 	Language string `pulumi:"language"`
 	// The detailed messages about the lifecycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 	LogsBucketUri string `pulumi:"logsBucketUri"`
+	// The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
+	MaxDurationInMinutes string `pulumi:"maxDurationInMinutes"`
 	// The OCID of Oracle Cloud Infrastructure Hive Metastore.
 	MetastoreId string `pulumi:"metastoreId"`
 	// The number of executor VMs requested.
@@ -3123,7 +3490,7 @@ type GetInvokeRunsRunArgs struct {
 	ApplicationId pulumi.StringInput `pulumi:"applicationId"`
 	// Logging details of Application logs for Data Flow Run.
 	ApplicationLogConfigs GetInvokeRunsRunApplicationLogConfigArrayInput `pulumi:"applicationLogConfigs"`
-	// An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+	// A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 	ArchiveUri pulumi.StringInput `pulumi:"archiveUri"`
 	// The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "inputFile" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
 	Arguments    pulumi.StringArrayInput `pulumi:"arguments"`
@@ -3158,12 +3525,16 @@ type GetInvokeRunsRunArgs struct {
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The ID of a run.
 	Id pulumi.StringInput `pulumi:"id"`
+	// The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
+	IdleTimeoutInMinutes pulumi.StringInput `pulumi:"idleTimeoutInMinutes"`
 	// The Spark language.
 	Language pulumi.StringInput `pulumi:"language"`
 	// The detailed messages about the lifecycle state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 	LogsBucketUri pulumi.StringInput `pulumi:"logsBucketUri"`
+	// The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
+	MaxDurationInMinutes pulumi.StringInput `pulumi:"maxDurationInMinutes"`
 	// The OCID of Oracle Cloud Infrastructure Hive Metastore.
 	MetastoreId pulumi.StringInput `pulumi:"metastoreId"`
 	// The number of executor VMs requested.
@@ -3265,7 +3636,7 @@ func (o GetInvokeRunsRunOutput) ApplicationLogConfigs() GetInvokeRunsRunApplicat
 	return o.ApplyT(func(v GetInvokeRunsRun) []GetInvokeRunsRunApplicationLogConfig { return v.ApplicationLogConfigs }).(GetInvokeRunsRunApplicationLogConfigArrayOutput)
 }
 
-// An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+// A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, “oci://path/to/a.zip,oci://path/to/b.zip“. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 func (o GetInvokeRunsRunOutput) ArchiveUri() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInvokeRunsRun) string { return v.ArchiveUri }).(pulumi.StringOutput)
 }
@@ -3354,6 +3725,11 @@ func (o GetInvokeRunsRunOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInvokeRunsRun) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
+func (o GetInvokeRunsRunOutput) IdleTimeoutInMinutes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInvokeRunsRun) string { return v.IdleTimeoutInMinutes }).(pulumi.StringOutput)
+}
+
 // The Spark language.
 func (o GetInvokeRunsRunOutput) Language() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInvokeRunsRun) string { return v.Language }).(pulumi.StringOutput)
@@ -3367,6 +3743,11 @@ func (o GetInvokeRunsRunOutput) LifecycleDetails() pulumi.StringOutput {
 // An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 func (o GetInvokeRunsRunOutput) LogsBucketUri() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInvokeRunsRun) string { return v.LogsBucketUri }).(pulumi.StringOutput)
+}
+
+// The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
+func (o GetInvokeRunsRunOutput) MaxDurationInMinutes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInvokeRunsRun) string { return v.MaxDurationInMinutes }).(pulumi.StringOutput)
 }
 
 // The OCID of Oracle Cloud Infrastructure Hive Metastore.
@@ -3908,6 +4289,112 @@ func (o GetInvokeRunsRunParameterArrayOutput) Index(i pulumi.IntInput) GetInvoke
 	}).(GetInvokeRunsRunParameterOutput)
 }
 
+type GetPrivateEndpointScanDetail struct {
+	// A fully-qualified domain name (FQDN).
+	Fqdn string `pulumi:"fqdn"`
+	// The port number of the FQDN
+	Port string `pulumi:"port"`
+}
+
+// GetPrivateEndpointScanDetailInput is an input type that accepts GetPrivateEndpointScanDetailArgs and GetPrivateEndpointScanDetailOutput values.
+// You can construct a concrete instance of `GetPrivateEndpointScanDetailInput` via:
+//
+//	GetPrivateEndpointScanDetailArgs{...}
+type GetPrivateEndpointScanDetailInput interface {
+	pulumi.Input
+
+	ToGetPrivateEndpointScanDetailOutput() GetPrivateEndpointScanDetailOutput
+	ToGetPrivateEndpointScanDetailOutputWithContext(context.Context) GetPrivateEndpointScanDetailOutput
+}
+
+type GetPrivateEndpointScanDetailArgs struct {
+	// A fully-qualified domain name (FQDN).
+	Fqdn pulumi.StringInput `pulumi:"fqdn"`
+	// The port number of the FQDN
+	Port pulumi.StringInput `pulumi:"port"`
+}
+
+func (GetPrivateEndpointScanDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPrivateEndpointScanDetail)(nil)).Elem()
+}
+
+func (i GetPrivateEndpointScanDetailArgs) ToGetPrivateEndpointScanDetailOutput() GetPrivateEndpointScanDetailOutput {
+	return i.ToGetPrivateEndpointScanDetailOutputWithContext(context.Background())
+}
+
+func (i GetPrivateEndpointScanDetailArgs) ToGetPrivateEndpointScanDetailOutputWithContext(ctx context.Context) GetPrivateEndpointScanDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateEndpointScanDetailOutput)
+}
+
+// GetPrivateEndpointScanDetailArrayInput is an input type that accepts GetPrivateEndpointScanDetailArray and GetPrivateEndpointScanDetailArrayOutput values.
+// You can construct a concrete instance of `GetPrivateEndpointScanDetailArrayInput` via:
+//
+//	GetPrivateEndpointScanDetailArray{ GetPrivateEndpointScanDetailArgs{...} }
+type GetPrivateEndpointScanDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPrivateEndpointScanDetailArrayOutput() GetPrivateEndpointScanDetailArrayOutput
+	ToGetPrivateEndpointScanDetailArrayOutputWithContext(context.Context) GetPrivateEndpointScanDetailArrayOutput
+}
+
+type GetPrivateEndpointScanDetailArray []GetPrivateEndpointScanDetailInput
+
+func (GetPrivateEndpointScanDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPrivateEndpointScanDetail)(nil)).Elem()
+}
+
+func (i GetPrivateEndpointScanDetailArray) ToGetPrivateEndpointScanDetailArrayOutput() GetPrivateEndpointScanDetailArrayOutput {
+	return i.ToGetPrivateEndpointScanDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPrivateEndpointScanDetailArray) ToGetPrivateEndpointScanDetailArrayOutputWithContext(ctx context.Context) GetPrivateEndpointScanDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateEndpointScanDetailArrayOutput)
+}
+
+type GetPrivateEndpointScanDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPrivateEndpointScanDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPrivateEndpointScanDetail)(nil)).Elem()
+}
+
+func (o GetPrivateEndpointScanDetailOutput) ToGetPrivateEndpointScanDetailOutput() GetPrivateEndpointScanDetailOutput {
+	return o
+}
+
+func (o GetPrivateEndpointScanDetailOutput) ToGetPrivateEndpointScanDetailOutputWithContext(ctx context.Context) GetPrivateEndpointScanDetailOutput {
+	return o
+}
+
+// A fully-qualified domain name (FQDN).
+func (o GetPrivateEndpointScanDetailOutput) Fqdn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateEndpointScanDetail) string { return v.Fqdn }).(pulumi.StringOutput)
+}
+
+// The port number of the FQDN
+func (o GetPrivateEndpointScanDetailOutput) Port() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateEndpointScanDetail) string { return v.Port }).(pulumi.StringOutput)
+}
+
+type GetPrivateEndpointScanDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPrivateEndpointScanDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPrivateEndpointScanDetail)(nil)).Elem()
+}
+
+func (o GetPrivateEndpointScanDetailArrayOutput) ToGetPrivateEndpointScanDetailArrayOutput() GetPrivateEndpointScanDetailArrayOutput {
+	return o
+}
+
+func (o GetPrivateEndpointScanDetailArrayOutput) ToGetPrivateEndpointScanDetailArrayOutputWithContext(ctx context.Context) GetPrivateEndpointScanDetailArrayOutput {
+	return o
+}
+
+func (o GetPrivateEndpointScanDetailArrayOutput) Index(i pulumi.IntInput) GetPrivateEndpointScanDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPrivateEndpointScanDetail {
+		return vs[0].([]GetPrivateEndpointScanDetail)[vs[1].(int)]
+	}).(GetPrivateEndpointScanDetailOutput)
+}
+
 type GetPrivateEndpointsFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -4135,6 +4622,8 @@ type GetPrivateEndpointsPrivateEndpointCollectionItem struct {
 	OwnerPrincipalId string `pulumi:"ownerPrincipalId"`
 	// The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
 	OwnerUserName string `pulumi:"ownerUserName"`
+	// An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: "scan1.oracle.com", port: "1521"}, { fqdn: "scan2.oracle.com", port: "1521" } ]
+	ScanDetails []GetPrivateEndpointsPrivateEndpointCollectionItemScanDetail `pulumi:"scanDetails"`
 	// The LifecycleState of the private endpoint.
 	State string `pulumi:"state"`
 	// The OCID of a subnet.
@@ -4181,6 +4670,8 @@ type GetPrivateEndpointsPrivateEndpointCollectionItemArgs struct {
 	OwnerPrincipalId pulumi.StringInput `pulumi:"ownerPrincipalId"`
 	// The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
 	OwnerUserName pulumi.StringInput `pulumi:"ownerUserName"`
+	// An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: "scan1.oracle.com", port: "1521"}, { fqdn: "scan2.oracle.com", port: "1521" } ]
+	ScanDetails GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArrayInput `pulumi:"scanDetails"`
 	// The LifecycleState of the private endpoint.
 	State pulumi.StringInput `pulumi:"state"`
 	// The OCID of a subnet.
@@ -4302,6 +4793,13 @@ func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) OwnerUserName() 
 	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) string { return v.OwnerUserName }).(pulumi.StringOutput)
 }
 
+// An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: "scan1.oracle.com", port: "1521"}, { fqdn: "scan2.oracle.com", port: "1521" } ]
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) ScanDetails() GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArrayOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) []GetPrivateEndpointsPrivateEndpointCollectionItemScanDetail {
+		return v.ScanDetails
+	}).(GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArrayOutput)
+}
+
 // The LifecycleState of the private endpoint.
 func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) string { return v.State }).(pulumi.StringOutput)
@@ -4340,6 +4838,112 @@ func (o GetPrivateEndpointsPrivateEndpointCollectionItemArrayOutput) Index(i pul
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPrivateEndpointsPrivateEndpointCollectionItem {
 		return vs[0].([]GetPrivateEndpointsPrivateEndpointCollectionItem)[vs[1].(int)]
 	}).(GetPrivateEndpointsPrivateEndpointCollectionItemOutput)
+}
+
+type GetPrivateEndpointsPrivateEndpointCollectionItemScanDetail struct {
+	// A fully-qualified domain name (FQDN).
+	Fqdn string `pulumi:"fqdn"`
+	// The port number of the FQDN
+	Port string `pulumi:"port"`
+}
+
+// GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailInput is an input type that accepts GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArgs and GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailOutput values.
+// You can construct a concrete instance of `GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailInput` via:
+//
+//	GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArgs{...}
+type GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailInput interface {
+	pulumi.Input
+
+	ToGetPrivateEndpointsPrivateEndpointCollectionItemScanDetailOutput() GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailOutput
+	ToGetPrivateEndpointsPrivateEndpointCollectionItemScanDetailOutputWithContext(context.Context) GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailOutput
+}
+
+type GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArgs struct {
+	// A fully-qualified domain name (FQDN).
+	Fqdn pulumi.StringInput `pulumi:"fqdn"`
+	// The port number of the FQDN
+	Port pulumi.StringInput `pulumi:"port"`
+}
+
+func (GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPrivateEndpointsPrivateEndpointCollectionItemScanDetail)(nil)).Elem()
+}
+
+func (i GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArgs) ToGetPrivateEndpointsPrivateEndpointCollectionItemScanDetailOutput() GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailOutput {
+	return i.ToGetPrivateEndpointsPrivateEndpointCollectionItemScanDetailOutputWithContext(context.Background())
+}
+
+func (i GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArgs) ToGetPrivateEndpointsPrivateEndpointCollectionItemScanDetailOutputWithContext(ctx context.Context) GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailOutput)
+}
+
+// GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArrayInput is an input type that accepts GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArray and GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArrayOutput values.
+// You can construct a concrete instance of `GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArrayInput` via:
+//
+//	GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArray{ GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArgs{...} }
+type GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArrayOutput() GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArrayOutput
+	ToGetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArrayOutputWithContext(context.Context) GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArrayOutput
+}
+
+type GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArray []GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailInput
+
+func (GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPrivateEndpointsPrivateEndpointCollectionItemScanDetail)(nil)).Elem()
+}
+
+func (i GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArray) ToGetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArrayOutput() GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArrayOutput {
+	return i.ToGetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArray) ToGetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArrayOutputWithContext(ctx context.Context) GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArrayOutput)
+}
+
+type GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPrivateEndpointsPrivateEndpointCollectionItemScanDetail)(nil)).Elem()
+}
+
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailOutput) ToGetPrivateEndpointsPrivateEndpointCollectionItemScanDetailOutput() GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailOutput {
+	return o
+}
+
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailOutput) ToGetPrivateEndpointsPrivateEndpointCollectionItemScanDetailOutputWithContext(ctx context.Context) GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailOutput {
+	return o
+}
+
+// A fully-qualified domain name (FQDN).
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailOutput) Fqdn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItemScanDetail) string { return v.Fqdn }).(pulumi.StringOutput)
+}
+
+// The port number of the FQDN
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailOutput) Port() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItemScanDetail) string { return v.Port }).(pulumi.StringOutput)
+}
+
+type GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPrivateEndpointsPrivateEndpointCollectionItemScanDetail)(nil)).Elem()
+}
+
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArrayOutput) ToGetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArrayOutput() GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArrayOutput {
+	return o
+}
+
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArrayOutput) ToGetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArrayOutputWithContext(ctx context.Context) GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArrayOutput {
+	return o
+}
+
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArrayOutput) Index(i pulumi.IntInput) GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPrivateEndpointsPrivateEndpointCollectionItemScanDetail {
+		return vs[0].([]GetPrivateEndpointsPrivateEndpointCollectionItemScanDetail)[vs[1].(int)]
+	}).(GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailOutput)
 }
 
 type GetRunLogsFilter struct {
@@ -4575,6 +5179,848 @@ func (o GetRunLogsRunLogArrayOutput) Index(i pulumi.IntInput) GetRunLogsRunLogOu
 	}).(GetRunLogsRunLogOutput)
 }
 
+type GetRunStatementOutput struct {
+	// An object representing execution output of a statement.
+	Datas []GetRunStatementOutputData `pulumi:"datas"`
+	// The name of the error in the statement output.
+	ErrorName string `pulumi:"errorName"`
+	// The value of the error in the statement output.
+	ErrorValue string `pulumi:"errorValue"`
+	// Status of the statement output.
+	Status string `pulumi:"status"`
+	// The traceback of the statement output.
+	Tracebacks []string `pulumi:"tracebacks"`
+}
+
+// GetRunStatementOutputInput is an input type that accepts GetRunStatementOutputArgs and GetRunStatementOutputOutput values.
+// You can construct a concrete instance of `GetRunStatementOutputInput` via:
+//
+//	GetRunStatementOutputArgs{...}
+type GetRunStatementOutputInput interface {
+	pulumi.Input
+
+	ToGetRunStatementOutputOutput() GetRunStatementOutputOutput
+	ToGetRunStatementOutputOutputWithContext(context.Context) GetRunStatementOutputOutput
+}
+
+type GetRunStatementOutputArgs struct {
+	// An object representing execution output of a statement.
+	Datas GetRunStatementOutputDataArrayInput `pulumi:"datas"`
+	// The name of the error in the statement output.
+	ErrorName pulumi.StringInput `pulumi:"errorName"`
+	// The value of the error in the statement output.
+	ErrorValue pulumi.StringInput `pulumi:"errorValue"`
+	// Status of the statement output.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The traceback of the statement output.
+	Tracebacks pulumi.StringArrayInput `pulumi:"tracebacks"`
+}
+
+func (GetRunStatementOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRunStatementOutput)(nil)).Elem()
+}
+
+func (i GetRunStatementOutputArgs) ToGetRunStatementOutputOutput() GetRunStatementOutputOutput {
+	return i.ToGetRunStatementOutputOutputWithContext(context.Background())
+}
+
+func (i GetRunStatementOutputArgs) ToGetRunStatementOutputOutputWithContext(ctx context.Context) GetRunStatementOutputOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRunStatementOutputOutput)
+}
+
+// GetRunStatementOutputArrayInput is an input type that accepts GetRunStatementOutputArray and GetRunStatementOutputArrayOutput values.
+// You can construct a concrete instance of `GetRunStatementOutputArrayInput` via:
+//
+//	GetRunStatementOutputArray{ GetRunStatementOutputArgs{...} }
+type GetRunStatementOutputArrayInput interface {
+	pulumi.Input
+
+	ToGetRunStatementOutputArrayOutput() GetRunStatementOutputArrayOutput
+	ToGetRunStatementOutputArrayOutputWithContext(context.Context) GetRunStatementOutputArrayOutput
+}
+
+type GetRunStatementOutputArray []GetRunStatementOutputInput
+
+func (GetRunStatementOutputArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRunStatementOutput)(nil)).Elem()
+}
+
+func (i GetRunStatementOutputArray) ToGetRunStatementOutputArrayOutput() GetRunStatementOutputArrayOutput {
+	return i.ToGetRunStatementOutputArrayOutputWithContext(context.Background())
+}
+
+func (i GetRunStatementOutputArray) ToGetRunStatementOutputArrayOutputWithContext(ctx context.Context) GetRunStatementOutputArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRunStatementOutputArrayOutput)
+}
+
+type GetRunStatementOutputOutput struct{ *pulumi.OutputState }
+
+func (GetRunStatementOutputOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRunStatementOutput)(nil)).Elem()
+}
+
+func (o GetRunStatementOutputOutput) ToGetRunStatementOutputOutput() GetRunStatementOutputOutput {
+	return o
+}
+
+func (o GetRunStatementOutputOutput) ToGetRunStatementOutputOutputWithContext(ctx context.Context) GetRunStatementOutputOutput {
+	return o
+}
+
+// An object representing execution output of a statement.
+func (o GetRunStatementOutputOutput) Datas() GetRunStatementOutputDataArrayOutput {
+	return o.ApplyT(func(v GetRunStatementOutput) []GetRunStatementOutputData { return v.Datas }).(GetRunStatementOutputDataArrayOutput)
+}
+
+// The name of the error in the statement output.
+func (o GetRunStatementOutputOutput) ErrorName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRunStatementOutput) string { return v.ErrorName }).(pulumi.StringOutput)
+}
+
+// The value of the error in the statement output.
+func (o GetRunStatementOutputOutput) ErrorValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRunStatementOutput) string { return v.ErrorValue }).(pulumi.StringOutput)
+}
+
+// Status of the statement output.
+func (o GetRunStatementOutputOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRunStatementOutput) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// The traceback of the statement output.
+func (o GetRunStatementOutputOutput) Tracebacks() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRunStatementOutput) []string { return v.Tracebacks }).(pulumi.StringArrayOutput)
+}
+
+type GetRunStatementOutputArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRunStatementOutputArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRunStatementOutput)(nil)).Elem()
+}
+
+func (o GetRunStatementOutputArrayOutput) ToGetRunStatementOutputArrayOutput() GetRunStatementOutputArrayOutput {
+	return o
+}
+
+func (o GetRunStatementOutputArrayOutput) ToGetRunStatementOutputArrayOutputWithContext(ctx context.Context) GetRunStatementOutputArrayOutput {
+	return o
+}
+
+func (o GetRunStatementOutputArrayOutput) Index(i pulumi.IntInput) GetRunStatementOutputOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRunStatementOutput {
+		return vs[0].([]GetRunStatementOutput)[vs[1].(int)]
+	}).(GetRunStatementOutputOutput)
+}
+
+type GetRunStatementOutputData struct {
+	// The type of the `StatementOutputData` like `TEXT_PLAIN`, `TEXT_HTML` or `IMAGE_PNG`.
+	Type string `pulumi:"type"`
+	// The statement code execution output in html format.
+	Value string `pulumi:"value"`
+}
+
+// GetRunStatementOutputDataInput is an input type that accepts GetRunStatementOutputDataArgs and GetRunStatementOutputDataOutput values.
+// You can construct a concrete instance of `GetRunStatementOutputDataInput` via:
+//
+//	GetRunStatementOutputDataArgs{...}
+type GetRunStatementOutputDataInput interface {
+	pulumi.Input
+
+	ToGetRunStatementOutputDataOutput() GetRunStatementOutputDataOutput
+	ToGetRunStatementOutputDataOutputWithContext(context.Context) GetRunStatementOutputDataOutput
+}
+
+type GetRunStatementOutputDataArgs struct {
+	// The type of the `StatementOutputData` like `TEXT_PLAIN`, `TEXT_HTML` or `IMAGE_PNG`.
+	Type pulumi.StringInput `pulumi:"type"`
+	// The statement code execution output in html format.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetRunStatementOutputDataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRunStatementOutputData)(nil)).Elem()
+}
+
+func (i GetRunStatementOutputDataArgs) ToGetRunStatementOutputDataOutput() GetRunStatementOutputDataOutput {
+	return i.ToGetRunStatementOutputDataOutputWithContext(context.Background())
+}
+
+func (i GetRunStatementOutputDataArgs) ToGetRunStatementOutputDataOutputWithContext(ctx context.Context) GetRunStatementOutputDataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRunStatementOutputDataOutput)
+}
+
+// GetRunStatementOutputDataArrayInput is an input type that accepts GetRunStatementOutputDataArray and GetRunStatementOutputDataArrayOutput values.
+// You can construct a concrete instance of `GetRunStatementOutputDataArrayInput` via:
+//
+//	GetRunStatementOutputDataArray{ GetRunStatementOutputDataArgs{...} }
+type GetRunStatementOutputDataArrayInput interface {
+	pulumi.Input
+
+	ToGetRunStatementOutputDataArrayOutput() GetRunStatementOutputDataArrayOutput
+	ToGetRunStatementOutputDataArrayOutputWithContext(context.Context) GetRunStatementOutputDataArrayOutput
+}
+
+type GetRunStatementOutputDataArray []GetRunStatementOutputDataInput
+
+func (GetRunStatementOutputDataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRunStatementOutputData)(nil)).Elem()
+}
+
+func (i GetRunStatementOutputDataArray) ToGetRunStatementOutputDataArrayOutput() GetRunStatementOutputDataArrayOutput {
+	return i.ToGetRunStatementOutputDataArrayOutputWithContext(context.Background())
+}
+
+func (i GetRunStatementOutputDataArray) ToGetRunStatementOutputDataArrayOutputWithContext(ctx context.Context) GetRunStatementOutputDataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRunStatementOutputDataArrayOutput)
+}
+
+type GetRunStatementOutputDataOutput struct{ *pulumi.OutputState }
+
+func (GetRunStatementOutputDataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRunStatementOutputData)(nil)).Elem()
+}
+
+func (o GetRunStatementOutputDataOutput) ToGetRunStatementOutputDataOutput() GetRunStatementOutputDataOutput {
+	return o
+}
+
+func (o GetRunStatementOutputDataOutput) ToGetRunStatementOutputDataOutputWithContext(ctx context.Context) GetRunStatementOutputDataOutput {
+	return o
+}
+
+// The type of the `StatementOutputData` like `TEXT_PLAIN`, `TEXT_HTML` or `IMAGE_PNG`.
+func (o GetRunStatementOutputDataOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRunStatementOutputData) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// The statement code execution output in html format.
+func (o GetRunStatementOutputDataOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRunStatementOutputData) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetRunStatementOutputDataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRunStatementOutputDataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRunStatementOutputData)(nil)).Elem()
+}
+
+func (o GetRunStatementOutputDataArrayOutput) ToGetRunStatementOutputDataArrayOutput() GetRunStatementOutputDataArrayOutput {
+	return o
+}
+
+func (o GetRunStatementOutputDataArrayOutput) ToGetRunStatementOutputDataArrayOutputWithContext(ctx context.Context) GetRunStatementOutputDataArrayOutput {
+	return o
+}
+
+func (o GetRunStatementOutputDataArrayOutput) Index(i pulumi.IntInput) GetRunStatementOutputDataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRunStatementOutputData {
+		return vs[0].([]GetRunStatementOutputData)[vs[1].(int)]
+	}).(GetRunStatementOutputDataOutput)
+}
+
+type GetRunStatementsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetRunStatementsFilterInput is an input type that accepts GetRunStatementsFilterArgs and GetRunStatementsFilterOutput values.
+// You can construct a concrete instance of `GetRunStatementsFilterInput` via:
+//
+//	GetRunStatementsFilterArgs{...}
+type GetRunStatementsFilterInput interface {
+	pulumi.Input
+
+	ToGetRunStatementsFilterOutput() GetRunStatementsFilterOutput
+	ToGetRunStatementsFilterOutputWithContext(context.Context) GetRunStatementsFilterOutput
+}
+
+type GetRunStatementsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetRunStatementsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRunStatementsFilter)(nil)).Elem()
+}
+
+func (i GetRunStatementsFilterArgs) ToGetRunStatementsFilterOutput() GetRunStatementsFilterOutput {
+	return i.ToGetRunStatementsFilterOutputWithContext(context.Background())
+}
+
+func (i GetRunStatementsFilterArgs) ToGetRunStatementsFilterOutputWithContext(ctx context.Context) GetRunStatementsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRunStatementsFilterOutput)
+}
+
+// GetRunStatementsFilterArrayInput is an input type that accepts GetRunStatementsFilterArray and GetRunStatementsFilterArrayOutput values.
+// You can construct a concrete instance of `GetRunStatementsFilterArrayInput` via:
+//
+//	GetRunStatementsFilterArray{ GetRunStatementsFilterArgs{...} }
+type GetRunStatementsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetRunStatementsFilterArrayOutput() GetRunStatementsFilterArrayOutput
+	ToGetRunStatementsFilterArrayOutputWithContext(context.Context) GetRunStatementsFilterArrayOutput
+}
+
+type GetRunStatementsFilterArray []GetRunStatementsFilterInput
+
+func (GetRunStatementsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRunStatementsFilter)(nil)).Elem()
+}
+
+func (i GetRunStatementsFilterArray) ToGetRunStatementsFilterArrayOutput() GetRunStatementsFilterArrayOutput {
+	return i.ToGetRunStatementsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetRunStatementsFilterArray) ToGetRunStatementsFilterArrayOutputWithContext(ctx context.Context) GetRunStatementsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRunStatementsFilterArrayOutput)
+}
+
+type GetRunStatementsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetRunStatementsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRunStatementsFilter)(nil)).Elem()
+}
+
+func (o GetRunStatementsFilterOutput) ToGetRunStatementsFilterOutput() GetRunStatementsFilterOutput {
+	return o
+}
+
+func (o GetRunStatementsFilterOutput) ToGetRunStatementsFilterOutputWithContext(ctx context.Context) GetRunStatementsFilterOutput {
+	return o
+}
+
+func (o GetRunStatementsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRunStatementsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetRunStatementsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetRunStatementsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetRunStatementsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRunStatementsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetRunStatementsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRunStatementsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRunStatementsFilter)(nil)).Elem()
+}
+
+func (o GetRunStatementsFilterArrayOutput) ToGetRunStatementsFilterArrayOutput() GetRunStatementsFilterArrayOutput {
+	return o
+}
+
+func (o GetRunStatementsFilterArrayOutput) ToGetRunStatementsFilterArrayOutputWithContext(ctx context.Context) GetRunStatementsFilterArrayOutput {
+	return o
+}
+
+func (o GetRunStatementsFilterArrayOutput) Index(i pulumi.IntInput) GetRunStatementsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRunStatementsFilter {
+		return vs[0].([]GetRunStatementsFilter)[vs[1].(int)]
+	}).(GetRunStatementsFilterOutput)
+}
+
+type GetRunStatementsStatementCollection struct {
+	Items []GetRunStatementsStatementCollectionItem `pulumi:"items"`
+}
+
+// GetRunStatementsStatementCollectionInput is an input type that accepts GetRunStatementsStatementCollectionArgs and GetRunStatementsStatementCollectionOutput values.
+// You can construct a concrete instance of `GetRunStatementsStatementCollectionInput` via:
+//
+//	GetRunStatementsStatementCollectionArgs{...}
+type GetRunStatementsStatementCollectionInput interface {
+	pulumi.Input
+
+	ToGetRunStatementsStatementCollectionOutput() GetRunStatementsStatementCollectionOutput
+	ToGetRunStatementsStatementCollectionOutputWithContext(context.Context) GetRunStatementsStatementCollectionOutput
+}
+
+type GetRunStatementsStatementCollectionArgs struct {
+	Items GetRunStatementsStatementCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetRunStatementsStatementCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRunStatementsStatementCollection)(nil)).Elem()
+}
+
+func (i GetRunStatementsStatementCollectionArgs) ToGetRunStatementsStatementCollectionOutput() GetRunStatementsStatementCollectionOutput {
+	return i.ToGetRunStatementsStatementCollectionOutputWithContext(context.Background())
+}
+
+func (i GetRunStatementsStatementCollectionArgs) ToGetRunStatementsStatementCollectionOutputWithContext(ctx context.Context) GetRunStatementsStatementCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRunStatementsStatementCollectionOutput)
+}
+
+// GetRunStatementsStatementCollectionArrayInput is an input type that accepts GetRunStatementsStatementCollectionArray and GetRunStatementsStatementCollectionArrayOutput values.
+// You can construct a concrete instance of `GetRunStatementsStatementCollectionArrayInput` via:
+//
+//	GetRunStatementsStatementCollectionArray{ GetRunStatementsStatementCollectionArgs{...} }
+type GetRunStatementsStatementCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetRunStatementsStatementCollectionArrayOutput() GetRunStatementsStatementCollectionArrayOutput
+	ToGetRunStatementsStatementCollectionArrayOutputWithContext(context.Context) GetRunStatementsStatementCollectionArrayOutput
+}
+
+type GetRunStatementsStatementCollectionArray []GetRunStatementsStatementCollectionInput
+
+func (GetRunStatementsStatementCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRunStatementsStatementCollection)(nil)).Elem()
+}
+
+func (i GetRunStatementsStatementCollectionArray) ToGetRunStatementsStatementCollectionArrayOutput() GetRunStatementsStatementCollectionArrayOutput {
+	return i.ToGetRunStatementsStatementCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetRunStatementsStatementCollectionArray) ToGetRunStatementsStatementCollectionArrayOutputWithContext(ctx context.Context) GetRunStatementsStatementCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRunStatementsStatementCollectionArrayOutput)
+}
+
+type GetRunStatementsStatementCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetRunStatementsStatementCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRunStatementsStatementCollection)(nil)).Elem()
+}
+
+func (o GetRunStatementsStatementCollectionOutput) ToGetRunStatementsStatementCollectionOutput() GetRunStatementsStatementCollectionOutput {
+	return o
+}
+
+func (o GetRunStatementsStatementCollectionOutput) ToGetRunStatementsStatementCollectionOutputWithContext(ctx context.Context) GetRunStatementsStatementCollectionOutput {
+	return o
+}
+
+func (o GetRunStatementsStatementCollectionOutput) Items() GetRunStatementsStatementCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetRunStatementsStatementCollection) []GetRunStatementsStatementCollectionItem { return v.Items }).(GetRunStatementsStatementCollectionItemArrayOutput)
+}
+
+type GetRunStatementsStatementCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRunStatementsStatementCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRunStatementsStatementCollection)(nil)).Elem()
+}
+
+func (o GetRunStatementsStatementCollectionArrayOutput) ToGetRunStatementsStatementCollectionArrayOutput() GetRunStatementsStatementCollectionArrayOutput {
+	return o
+}
+
+func (o GetRunStatementsStatementCollectionArrayOutput) ToGetRunStatementsStatementCollectionArrayOutputWithContext(ctx context.Context) GetRunStatementsStatementCollectionArrayOutput {
+	return o
+}
+
+func (o GetRunStatementsStatementCollectionArrayOutput) Index(i pulumi.IntInput) GetRunStatementsStatementCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRunStatementsStatementCollection {
+		return vs[0].([]GetRunStatementsStatementCollection)[vs[1].(int)]
+	}).(GetRunStatementsStatementCollectionOutput)
+}
+
+type GetRunStatementsStatementCollectionItem struct {
+	// The statement code to execute. Example: `println(sc.version)`
+	Code string `pulumi:"code"`
+	// The statement ID.
+	Id string `pulumi:"id"`
+	// The execution output of a statement.
+	Outputs []GetRunStatementsStatementCollectionItemOutputType `pulumi:"outputs"`
+	// The execution progress.
+	Progress float64 `pulumi:"progress"`
+	// The unique ID for the run
+	RunId string `pulumi:"runId"`
+	// The LifecycleState of the statement.
+	State string `pulumi:"state"`
+	// The date and time a statement execution was completed, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2022-05-31T21:10:29.600Z`
+	TimeCompleted string `pulumi:"timeCompleted"`
+	// The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+}
+
+// GetRunStatementsStatementCollectionItemInput is an input type that accepts GetRunStatementsStatementCollectionItemArgs and GetRunStatementsStatementCollectionItemOutput values.
+// You can construct a concrete instance of `GetRunStatementsStatementCollectionItemInput` via:
+//
+//	GetRunStatementsStatementCollectionItemArgs{...}
+type GetRunStatementsStatementCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetRunStatementsStatementCollectionItemOutput() GetRunStatementsStatementCollectionItemOutput
+	ToGetRunStatementsStatementCollectionItemOutputWithContext(context.Context) GetRunStatementsStatementCollectionItemOutput
+}
+
+type GetRunStatementsStatementCollectionItemArgs struct {
+	// The statement code to execute. Example: `println(sc.version)`
+	Code pulumi.StringInput `pulumi:"code"`
+	// The statement ID.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The execution output of a statement.
+	Outputs GetRunStatementsStatementCollectionItemOutputTypeArrayInput `pulumi:"outputs"`
+	// The execution progress.
+	Progress pulumi.Float64Input `pulumi:"progress"`
+	// The unique ID for the run
+	RunId pulumi.StringInput `pulumi:"runId"`
+	// The LifecycleState of the statement.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time a statement execution was completed, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2022-05-31T21:10:29.600Z`
+	TimeCompleted pulumi.StringInput `pulumi:"timeCompleted"`
+	// The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+}
+
+func (GetRunStatementsStatementCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRunStatementsStatementCollectionItem)(nil)).Elem()
+}
+
+func (i GetRunStatementsStatementCollectionItemArgs) ToGetRunStatementsStatementCollectionItemOutput() GetRunStatementsStatementCollectionItemOutput {
+	return i.ToGetRunStatementsStatementCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetRunStatementsStatementCollectionItemArgs) ToGetRunStatementsStatementCollectionItemOutputWithContext(ctx context.Context) GetRunStatementsStatementCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRunStatementsStatementCollectionItemOutput)
+}
+
+// GetRunStatementsStatementCollectionItemArrayInput is an input type that accepts GetRunStatementsStatementCollectionItemArray and GetRunStatementsStatementCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetRunStatementsStatementCollectionItemArrayInput` via:
+//
+//	GetRunStatementsStatementCollectionItemArray{ GetRunStatementsStatementCollectionItemArgs{...} }
+type GetRunStatementsStatementCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetRunStatementsStatementCollectionItemArrayOutput() GetRunStatementsStatementCollectionItemArrayOutput
+	ToGetRunStatementsStatementCollectionItemArrayOutputWithContext(context.Context) GetRunStatementsStatementCollectionItemArrayOutput
+}
+
+type GetRunStatementsStatementCollectionItemArray []GetRunStatementsStatementCollectionItemInput
+
+func (GetRunStatementsStatementCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRunStatementsStatementCollectionItem)(nil)).Elem()
+}
+
+func (i GetRunStatementsStatementCollectionItemArray) ToGetRunStatementsStatementCollectionItemArrayOutput() GetRunStatementsStatementCollectionItemArrayOutput {
+	return i.ToGetRunStatementsStatementCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetRunStatementsStatementCollectionItemArray) ToGetRunStatementsStatementCollectionItemArrayOutputWithContext(ctx context.Context) GetRunStatementsStatementCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRunStatementsStatementCollectionItemArrayOutput)
+}
+
+type GetRunStatementsStatementCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetRunStatementsStatementCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRunStatementsStatementCollectionItem)(nil)).Elem()
+}
+
+func (o GetRunStatementsStatementCollectionItemOutput) ToGetRunStatementsStatementCollectionItemOutput() GetRunStatementsStatementCollectionItemOutput {
+	return o
+}
+
+func (o GetRunStatementsStatementCollectionItemOutput) ToGetRunStatementsStatementCollectionItemOutputWithContext(ctx context.Context) GetRunStatementsStatementCollectionItemOutput {
+	return o
+}
+
+// The statement code to execute. Example: `println(sc.version)`
+func (o GetRunStatementsStatementCollectionItemOutput) Code() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRunStatementsStatementCollectionItem) string { return v.Code }).(pulumi.StringOutput)
+}
+
+// The statement ID.
+func (o GetRunStatementsStatementCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRunStatementsStatementCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The execution output of a statement.
+func (o GetRunStatementsStatementCollectionItemOutput) Outputs() GetRunStatementsStatementCollectionItemOutputTypeArrayOutput {
+	return o.ApplyT(func(v GetRunStatementsStatementCollectionItem) []GetRunStatementsStatementCollectionItemOutputType {
+		return v.Outputs
+	}).(GetRunStatementsStatementCollectionItemOutputTypeArrayOutput)
+}
+
+// The execution progress.
+func (o GetRunStatementsStatementCollectionItemOutput) Progress() pulumi.Float64Output {
+	return o.ApplyT(func(v GetRunStatementsStatementCollectionItem) float64 { return v.Progress }).(pulumi.Float64Output)
+}
+
+// The unique ID for the run
+func (o GetRunStatementsStatementCollectionItemOutput) RunId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRunStatementsStatementCollectionItem) string { return v.RunId }).(pulumi.StringOutput)
+}
+
+// The LifecycleState of the statement.
+func (o GetRunStatementsStatementCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRunStatementsStatementCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time a statement execution was completed, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2022-05-31T21:10:29.600Z`
+func (o GetRunStatementsStatementCollectionItemOutput) TimeCompleted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRunStatementsStatementCollectionItem) string { return v.TimeCompleted }).(pulumi.StringOutput)
+}
+
+// The date and time a application was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
+func (o GetRunStatementsStatementCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRunStatementsStatementCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+type GetRunStatementsStatementCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRunStatementsStatementCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRunStatementsStatementCollectionItem)(nil)).Elem()
+}
+
+func (o GetRunStatementsStatementCollectionItemArrayOutput) ToGetRunStatementsStatementCollectionItemArrayOutput() GetRunStatementsStatementCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetRunStatementsStatementCollectionItemArrayOutput) ToGetRunStatementsStatementCollectionItemArrayOutputWithContext(ctx context.Context) GetRunStatementsStatementCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetRunStatementsStatementCollectionItemArrayOutput) Index(i pulumi.IntInput) GetRunStatementsStatementCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRunStatementsStatementCollectionItem {
+		return vs[0].([]GetRunStatementsStatementCollectionItem)[vs[1].(int)]
+	}).(GetRunStatementsStatementCollectionItemOutput)
+}
+
+type GetRunStatementsStatementCollectionItemOutputType struct {
+	// An object representing execution output of a statement.
+	Datas []GetRunStatementsStatementCollectionItemOutputData `pulumi:"datas"`
+	// The name of the error in the statement output.
+	ErrorName string `pulumi:"errorName"`
+	// The value of the error in the statement output.
+	ErrorValue string `pulumi:"errorValue"`
+	// Status of the statement output.
+	Status string `pulumi:"status"`
+	// The traceback of the statement output.
+	Tracebacks []string `pulumi:"tracebacks"`
+}
+
+// GetRunStatementsStatementCollectionItemOutputTypeInput is an input type that accepts GetRunStatementsStatementCollectionItemOutputTypeArgs and GetRunStatementsStatementCollectionItemOutputTypeOutput values.
+// You can construct a concrete instance of `GetRunStatementsStatementCollectionItemOutputTypeInput` via:
+//
+//	GetRunStatementsStatementCollectionItemOutputTypeArgs{...}
+type GetRunStatementsStatementCollectionItemOutputTypeInput interface {
+	pulumi.Input
+
+	ToGetRunStatementsStatementCollectionItemOutputTypeOutput() GetRunStatementsStatementCollectionItemOutputTypeOutput
+	ToGetRunStatementsStatementCollectionItemOutputTypeOutputWithContext(context.Context) GetRunStatementsStatementCollectionItemOutputTypeOutput
+}
+
+type GetRunStatementsStatementCollectionItemOutputTypeArgs struct {
+	// An object representing execution output of a statement.
+	Datas GetRunStatementsStatementCollectionItemOutputDataArrayInput `pulumi:"datas"`
+	// The name of the error in the statement output.
+	ErrorName pulumi.StringInput `pulumi:"errorName"`
+	// The value of the error in the statement output.
+	ErrorValue pulumi.StringInput `pulumi:"errorValue"`
+	// Status of the statement output.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The traceback of the statement output.
+	Tracebacks pulumi.StringArrayInput `pulumi:"tracebacks"`
+}
+
+func (GetRunStatementsStatementCollectionItemOutputTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRunStatementsStatementCollectionItemOutputType)(nil)).Elem()
+}
+
+func (i GetRunStatementsStatementCollectionItemOutputTypeArgs) ToGetRunStatementsStatementCollectionItemOutputTypeOutput() GetRunStatementsStatementCollectionItemOutputTypeOutput {
+	return i.ToGetRunStatementsStatementCollectionItemOutputTypeOutputWithContext(context.Background())
+}
+
+func (i GetRunStatementsStatementCollectionItemOutputTypeArgs) ToGetRunStatementsStatementCollectionItemOutputTypeOutputWithContext(ctx context.Context) GetRunStatementsStatementCollectionItemOutputTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRunStatementsStatementCollectionItemOutputTypeOutput)
+}
+
+// GetRunStatementsStatementCollectionItemOutputTypeArrayInput is an input type that accepts GetRunStatementsStatementCollectionItemOutputTypeArray and GetRunStatementsStatementCollectionItemOutputTypeArrayOutput values.
+// You can construct a concrete instance of `GetRunStatementsStatementCollectionItemOutputTypeArrayInput` via:
+//
+//	GetRunStatementsStatementCollectionItemOutputTypeArray{ GetRunStatementsStatementCollectionItemOutputTypeArgs{...} }
+type GetRunStatementsStatementCollectionItemOutputTypeArrayInput interface {
+	pulumi.Input
+
+	ToGetRunStatementsStatementCollectionItemOutputTypeArrayOutput() GetRunStatementsStatementCollectionItemOutputTypeArrayOutput
+	ToGetRunStatementsStatementCollectionItemOutputTypeArrayOutputWithContext(context.Context) GetRunStatementsStatementCollectionItemOutputTypeArrayOutput
+}
+
+type GetRunStatementsStatementCollectionItemOutputTypeArray []GetRunStatementsStatementCollectionItemOutputTypeInput
+
+func (GetRunStatementsStatementCollectionItemOutputTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRunStatementsStatementCollectionItemOutputType)(nil)).Elem()
+}
+
+func (i GetRunStatementsStatementCollectionItemOutputTypeArray) ToGetRunStatementsStatementCollectionItemOutputTypeArrayOutput() GetRunStatementsStatementCollectionItemOutputTypeArrayOutput {
+	return i.ToGetRunStatementsStatementCollectionItemOutputTypeArrayOutputWithContext(context.Background())
+}
+
+func (i GetRunStatementsStatementCollectionItemOutputTypeArray) ToGetRunStatementsStatementCollectionItemOutputTypeArrayOutputWithContext(ctx context.Context) GetRunStatementsStatementCollectionItemOutputTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRunStatementsStatementCollectionItemOutputTypeArrayOutput)
+}
+
+type GetRunStatementsStatementCollectionItemOutputTypeOutput struct{ *pulumi.OutputState }
+
+func (GetRunStatementsStatementCollectionItemOutputTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRunStatementsStatementCollectionItemOutputType)(nil)).Elem()
+}
+
+func (o GetRunStatementsStatementCollectionItemOutputTypeOutput) ToGetRunStatementsStatementCollectionItemOutputTypeOutput() GetRunStatementsStatementCollectionItemOutputTypeOutput {
+	return o
+}
+
+func (o GetRunStatementsStatementCollectionItemOutputTypeOutput) ToGetRunStatementsStatementCollectionItemOutputTypeOutputWithContext(ctx context.Context) GetRunStatementsStatementCollectionItemOutputTypeOutput {
+	return o
+}
+
+// An object representing execution output of a statement.
+func (o GetRunStatementsStatementCollectionItemOutputTypeOutput) Datas() GetRunStatementsStatementCollectionItemOutputDataArrayOutput {
+	return o.ApplyT(func(v GetRunStatementsStatementCollectionItemOutputType) []GetRunStatementsStatementCollectionItemOutputData {
+		return v.Datas
+	}).(GetRunStatementsStatementCollectionItemOutputDataArrayOutput)
+}
+
+// The name of the error in the statement output.
+func (o GetRunStatementsStatementCollectionItemOutputTypeOutput) ErrorName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRunStatementsStatementCollectionItemOutputType) string { return v.ErrorName }).(pulumi.StringOutput)
+}
+
+// The value of the error in the statement output.
+func (o GetRunStatementsStatementCollectionItemOutputTypeOutput) ErrorValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRunStatementsStatementCollectionItemOutputType) string { return v.ErrorValue }).(pulumi.StringOutput)
+}
+
+// Status of the statement output.
+func (o GetRunStatementsStatementCollectionItemOutputTypeOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRunStatementsStatementCollectionItemOutputType) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// The traceback of the statement output.
+func (o GetRunStatementsStatementCollectionItemOutputTypeOutput) Tracebacks() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRunStatementsStatementCollectionItemOutputType) []string { return v.Tracebacks }).(pulumi.StringArrayOutput)
+}
+
+type GetRunStatementsStatementCollectionItemOutputTypeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRunStatementsStatementCollectionItemOutputTypeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRunStatementsStatementCollectionItemOutputType)(nil)).Elem()
+}
+
+func (o GetRunStatementsStatementCollectionItemOutputTypeArrayOutput) ToGetRunStatementsStatementCollectionItemOutputTypeArrayOutput() GetRunStatementsStatementCollectionItemOutputTypeArrayOutput {
+	return o
+}
+
+func (o GetRunStatementsStatementCollectionItemOutputTypeArrayOutput) ToGetRunStatementsStatementCollectionItemOutputTypeArrayOutputWithContext(ctx context.Context) GetRunStatementsStatementCollectionItemOutputTypeArrayOutput {
+	return o
+}
+
+func (o GetRunStatementsStatementCollectionItemOutputTypeArrayOutput) Index(i pulumi.IntInput) GetRunStatementsStatementCollectionItemOutputTypeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRunStatementsStatementCollectionItemOutputType {
+		return vs[0].([]GetRunStatementsStatementCollectionItemOutputType)[vs[1].(int)]
+	}).(GetRunStatementsStatementCollectionItemOutputTypeOutput)
+}
+
+type GetRunStatementsStatementCollectionItemOutputData struct {
+	// The type of the `StatementOutputData` like `TEXT_PLAIN`, `TEXT_HTML` or `IMAGE_PNG`.
+	Type string `pulumi:"type"`
+	// The statement code execution output in html format.
+	Value string `pulumi:"value"`
+}
+
+// GetRunStatementsStatementCollectionItemOutputDataInput is an input type that accepts GetRunStatementsStatementCollectionItemOutputDataArgs and GetRunStatementsStatementCollectionItemOutputDataOutput values.
+// You can construct a concrete instance of `GetRunStatementsStatementCollectionItemOutputDataInput` via:
+//
+//	GetRunStatementsStatementCollectionItemOutputDataArgs{...}
+type GetRunStatementsStatementCollectionItemOutputDataInput interface {
+	pulumi.Input
+
+	ToGetRunStatementsStatementCollectionItemOutputDataOutput() GetRunStatementsStatementCollectionItemOutputDataOutput
+	ToGetRunStatementsStatementCollectionItemOutputDataOutputWithContext(context.Context) GetRunStatementsStatementCollectionItemOutputDataOutput
+}
+
+type GetRunStatementsStatementCollectionItemOutputDataArgs struct {
+	// The type of the `StatementOutputData` like `TEXT_PLAIN`, `TEXT_HTML` or `IMAGE_PNG`.
+	Type pulumi.StringInput `pulumi:"type"`
+	// The statement code execution output in html format.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetRunStatementsStatementCollectionItemOutputDataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRunStatementsStatementCollectionItemOutputData)(nil)).Elem()
+}
+
+func (i GetRunStatementsStatementCollectionItemOutputDataArgs) ToGetRunStatementsStatementCollectionItemOutputDataOutput() GetRunStatementsStatementCollectionItemOutputDataOutput {
+	return i.ToGetRunStatementsStatementCollectionItemOutputDataOutputWithContext(context.Background())
+}
+
+func (i GetRunStatementsStatementCollectionItemOutputDataArgs) ToGetRunStatementsStatementCollectionItemOutputDataOutputWithContext(ctx context.Context) GetRunStatementsStatementCollectionItemOutputDataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRunStatementsStatementCollectionItemOutputDataOutput)
+}
+
+// GetRunStatementsStatementCollectionItemOutputDataArrayInput is an input type that accepts GetRunStatementsStatementCollectionItemOutputDataArray and GetRunStatementsStatementCollectionItemOutputDataArrayOutput values.
+// You can construct a concrete instance of `GetRunStatementsStatementCollectionItemOutputDataArrayInput` via:
+//
+//	GetRunStatementsStatementCollectionItemOutputDataArray{ GetRunStatementsStatementCollectionItemOutputDataArgs{...} }
+type GetRunStatementsStatementCollectionItemOutputDataArrayInput interface {
+	pulumi.Input
+
+	ToGetRunStatementsStatementCollectionItemOutputDataArrayOutput() GetRunStatementsStatementCollectionItemOutputDataArrayOutput
+	ToGetRunStatementsStatementCollectionItemOutputDataArrayOutputWithContext(context.Context) GetRunStatementsStatementCollectionItemOutputDataArrayOutput
+}
+
+type GetRunStatementsStatementCollectionItemOutputDataArray []GetRunStatementsStatementCollectionItemOutputDataInput
+
+func (GetRunStatementsStatementCollectionItemOutputDataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRunStatementsStatementCollectionItemOutputData)(nil)).Elem()
+}
+
+func (i GetRunStatementsStatementCollectionItemOutputDataArray) ToGetRunStatementsStatementCollectionItemOutputDataArrayOutput() GetRunStatementsStatementCollectionItemOutputDataArrayOutput {
+	return i.ToGetRunStatementsStatementCollectionItemOutputDataArrayOutputWithContext(context.Background())
+}
+
+func (i GetRunStatementsStatementCollectionItemOutputDataArray) ToGetRunStatementsStatementCollectionItemOutputDataArrayOutputWithContext(ctx context.Context) GetRunStatementsStatementCollectionItemOutputDataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRunStatementsStatementCollectionItemOutputDataArrayOutput)
+}
+
+type GetRunStatementsStatementCollectionItemOutputDataOutput struct{ *pulumi.OutputState }
+
+func (GetRunStatementsStatementCollectionItemOutputDataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRunStatementsStatementCollectionItemOutputData)(nil)).Elem()
+}
+
+func (o GetRunStatementsStatementCollectionItemOutputDataOutput) ToGetRunStatementsStatementCollectionItemOutputDataOutput() GetRunStatementsStatementCollectionItemOutputDataOutput {
+	return o
+}
+
+func (o GetRunStatementsStatementCollectionItemOutputDataOutput) ToGetRunStatementsStatementCollectionItemOutputDataOutputWithContext(ctx context.Context) GetRunStatementsStatementCollectionItemOutputDataOutput {
+	return o
+}
+
+// The type of the `StatementOutputData` like `TEXT_PLAIN`, `TEXT_HTML` or `IMAGE_PNG`.
+func (o GetRunStatementsStatementCollectionItemOutputDataOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRunStatementsStatementCollectionItemOutputData) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// The statement code execution output in html format.
+func (o GetRunStatementsStatementCollectionItemOutputDataOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRunStatementsStatementCollectionItemOutputData) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetRunStatementsStatementCollectionItemOutputDataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRunStatementsStatementCollectionItemOutputDataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRunStatementsStatementCollectionItemOutputData)(nil)).Elem()
+}
+
+func (o GetRunStatementsStatementCollectionItemOutputDataArrayOutput) ToGetRunStatementsStatementCollectionItemOutputDataArrayOutput() GetRunStatementsStatementCollectionItemOutputDataArrayOutput {
+	return o
+}
+
+func (o GetRunStatementsStatementCollectionItemOutputDataArrayOutput) ToGetRunStatementsStatementCollectionItemOutputDataArrayOutputWithContext(ctx context.Context) GetRunStatementsStatementCollectionItemOutputDataArrayOutput {
+	return o
+}
+
+func (o GetRunStatementsStatementCollectionItemOutputDataArrayOutput) Index(i pulumi.IntInput) GetRunStatementsStatementCollectionItemOutputDataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRunStatementsStatementCollectionItemOutputData {
+		return vs[0].([]GetRunStatementsStatementCollectionItemOutputData)[vs[1].(int)]
+	}).(GetRunStatementsStatementCollectionItemOutputDataOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationApplicationLogConfigInput)(nil)).Elem(), ApplicationApplicationLogConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ApplicationApplicationLogConfigPtrInput)(nil)).Elem(), ApplicationApplicationLogConfigArgs{})
@@ -4592,6 +6038,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*InvokeRunExecutorShapeConfigPtrInput)(nil)).Elem(), InvokeRunExecutorShapeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InvokeRunParameterInput)(nil)).Elem(), InvokeRunParameterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InvokeRunParameterArrayInput)(nil)).Elem(), InvokeRunParameterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PrivateEndpointScanDetailInput)(nil)).Elem(), PrivateEndpointScanDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PrivateEndpointScanDetailArrayInput)(nil)).Elem(), PrivateEndpointScanDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RunStatementOutputTypeInput)(nil)).Elem(), RunStatementOutputTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RunStatementOutputTypeArrayInput)(nil)).Elem(), RunStatementOutputTypeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RunStatementOutputDataInput)(nil)).Elem(), RunStatementOutputDataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RunStatementOutputDataArrayInput)(nil)).Elem(), RunStatementOutputDataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationApplicationLogConfigInput)(nil)).Elem(), GetApplicationApplicationLogConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationApplicationLogConfigArrayInput)(nil)).Elem(), GetApplicationApplicationLogConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApplicationDriverShapeConfigInput)(nil)).Elem(), GetApplicationDriverShapeConfigArgs{})
@@ -4632,16 +6084,34 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInvokeRunsRunExecutorShapeConfigArrayInput)(nil)).Elem(), GetInvokeRunsRunExecutorShapeConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInvokeRunsRunParameterInput)(nil)).Elem(), GetInvokeRunsRunParameterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInvokeRunsRunParameterArrayInput)(nil)).Elem(), GetInvokeRunsRunParameterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPrivateEndpointScanDetailInput)(nil)).Elem(), GetPrivateEndpointScanDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPrivateEndpointScanDetailArrayInput)(nil)).Elem(), GetPrivateEndpointScanDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPrivateEndpointsFilterInput)(nil)).Elem(), GetPrivateEndpointsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPrivateEndpointsFilterArrayInput)(nil)).Elem(), GetPrivateEndpointsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPrivateEndpointsPrivateEndpointCollectionInput)(nil)).Elem(), GetPrivateEndpointsPrivateEndpointCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPrivateEndpointsPrivateEndpointCollectionArrayInput)(nil)).Elem(), GetPrivateEndpointsPrivateEndpointCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPrivateEndpointsPrivateEndpointCollectionItemInput)(nil)).Elem(), GetPrivateEndpointsPrivateEndpointCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPrivateEndpointsPrivateEndpointCollectionItemArrayInput)(nil)).Elem(), GetPrivateEndpointsPrivateEndpointCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailInput)(nil)).Elem(), GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArrayInput)(nil)).Elem(), GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRunLogsFilterInput)(nil)).Elem(), GetRunLogsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRunLogsFilterArrayInput)(nil)).Elem(), GetRunLogsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRunLogsRunLogInput)(nil)).Elem(), GetRunLogsRunLogArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRunLogsRunLogArrayInput)(nil)).Elem(), GetRunLogsRunLogArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRunStatementOutputInput)(nil)).Elem(), GetRunStatementOutputArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRunStatementOutputArrayInput)(nil)).Elem(), GetRunStatementOutputArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRunStatementOutputDataInput)(nil)).Elem(), GetRunStatementOutputDataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRunStatementOutputDataArrayInput)(nil)).Elem(), GetRunStatementOutputDataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRunStatementsFilterInput)(nil)).Elem(), GetRunStatementsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRunStatementsFilterArrayInput)(nil)).Elem(), GetRunStatementsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRunStatementsStatementCollectionInput)(nil)).Elem(), GetRunStatementsStatementCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRunStatementsStatementCollectionArrayInput)(nil)).Elem(), GetRunStatementsStatementCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRunStatementsStatementCollectionItemInput)(nil)).Elem(), GetRunStatementsStatementCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRunStatementsStatementCollectionItemArrayInput)(nil)).Elem(), GetRunStatementsStatementCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRunStatementsStatementCollectionItemOutputTypeInput)(nil)).Elem(), GetRunStatementsStatementCollectionItemOutputTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRunStatementsStatementCollectionItemOutputTypeArrayInput)(nil)).Elem(), GetRunStatementsStatementCollectionItemOutputTypeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRunStatementsStatementCollectionItemOutputDataInput)(nil)).Elem(), GetRunStatementsStatementCollectionItemOutputDataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRunStatementsStatementCollectionItemOutputDataArrayInput)(nil)).Elem(), GetRunStatementsStatementCollectionItemOutputDataArray{})
 	pulumi.RegisterOutputType(ApplicationApplicationLogConfigOutput{})
 	pulumi.RegisterOutputType(ApplicationApplicationLogConfigPtrOutput{})
 	pulumi.RegisterOutputType(ApplicationDriverShapeConfigOutput{})
@@ -4658,6 +6128,12 @@ func init() {
 	pulumi.RegisterOutputType(InvokeRunExecutorShapeConfigPtrOutput{})
 	pulumi.RegisterOutputType(InvokeRunParameterOutput{})
 	pulumi.RegisterOutputType(InvokeRunParameterArrayOutput{})
+	pulumi.RegisterOutputType(PrivateEndpointScanDetailOutput{})
+	pulumi.RegisterOutputType(PrivateEndpointScanDetailArrayOutput{})
+	pulumi.RegisterOutputType(RunStatementOutputTypeOutput{})
+	pulumi.RegisterOutputType(RunStatementOutputTypeArrayOutput{})
+	pulumi.RegisterOutputType(RunStatementOutputDataOutput{})
+	pulumi.RegisterOutputType(RunStatementOutputDataArrayOutput{})
 	pulumi.RegisterOutputType(GetApplicationApplicationLogConfigOutput{})
 	pulumi.RegisterOutputType(GetApplicationApplicationLogConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetApplicationDriverShapeConfigOutput{})
@@ -4698,14 +6174,32 @@ func init() {
 	pulumi.RegisterOutputType(GetInvokeRunsRunExecutorShapeConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetInvokeRunsRunParameterOutput{})
 	pulumi.RegisterOutputType(GetInvokeRunsRunParameterArrayOutput{})
+	pulumi.RegisterOutputType(GetPrivateEndpointScanDetailOutput{})
+	pulumi.RegisterOutputType(GetPrivateEndpointScanDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetPrivateEndpointsFilterOutput{})
 	pulumi.RegisterOutputType(GetPrivateEndpointsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetPrivateEndpointsPrivateEndpointCollectionOutput{})
 	pulumi.RegisterOutputType(GetPrivateEndpointsPrivateEndpointCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetPrivateEndpointsPrivateEndpointCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetPrivateEndpointsPrivateEndpointCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailOutput{})
+	pulumi.RegisterOutputType(GetPrivateEndpointsPrivateEndpointCollectionItemScanDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetRunLogsFilterOutput{})
 	pulumi.RegisterOutputType(GetRunLogsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetRunLogsRunLogOutput{})
 	pulumi.RegisterOutputType(GetRunLogsRunLogArrayOutput{})
+	pulumi.RegisterOutputType(GetRunStatementOutputOutput{})
+	pulumi.RegisterOutputType(GetRunStatementOutputArrayOutput{})
+	pulumi.RegisterOutputType(GetRunStatementOutputDataOutput{})
+	pulumi.RegisterOutputType(GetRunStatementOutputDataArrayOutput{})
+	pulumi.RegisterOutputType(GetRunStatementsFilterOutput{})
+	pulumi.RegisterOutputType(GetRunStatementsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetRunStatementsStatementCollectionOutput{})
+	pulumi.RegisterOutputType(GetRunStatementsStatementCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetRunStatementsStatementCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetRunStatementsStatementCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetRunStatementsStatementCollectionItemOutputTypeOutput{})
+	pulumi.RegisterOutputType(GetRunStatementsStatementCollectionItemOutputTypeArrayOutput{})
+	pulumi.RegisterOutputType(GetRunStatementsStatementCollectionItemOutputDataOutput{})
+	pulumi.RegisterOutputType(GetRunStatementsStatementCollectionItemOutputDataArrayOutput{})
 }

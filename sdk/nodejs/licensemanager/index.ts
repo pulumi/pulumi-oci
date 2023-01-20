@@ -5,23 +5,66 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./configuration";
-export * from "./getConfiguration";
-export * from "./getLicenseMetric";
-export * from "./getLicenseRecord";
-export * from "./getLicenseRecords";
-export * from "./getProductLicense";
-export * from "./getProductLicenseConsumers";
-export * from "./getProductLicenses";
-export * from "./getTopUtilizedProductLicenses";
-export * from "./getTopUtilizedResources";
-export * from "./licenseRecord";
-export * from "./productLicense";
+export { ConfigurationArgs, ConfigurationState } from "./configuration";
+export type Configuration = import("./configuration").Configuration;
+export const Configuration: typeof import("./configuration").Configuration = null as any;
+utilities.lazyLoad(exports, ["Configuration"], () => require("./configuration"));
 
-// Import resources to register:
-import { Configuration } from "./configuration";
-import { LicenseRecord } from "./licenseRecord";
-import { ProductLicense } from "./productLicense";
+export { GetConfigurationArgs, GetConfigurationResult, GetConfigurationOutputArgs } from "./getConfiguration";
+export const getConfiguration: typeof import("./getConfiguration").getConfiguration = null as any;
+export const getConfigurationOutput: typeof import("./getConfiguration").getConfigurationOutput = null as any;
+utilities.lazyLoad(exports, ["getConfiguration","getConfigurationOutput"], () => require("./getConfiguration"));
+
+export { GetLicenseMetricArgs, GetLicenseMetricResult, GetLicenseMetricOutputArgs } from "./getLicenseMetric";
+export const getLicenseMetric: typeof import("./getLicenseMetric").getLicenseMetric = null as any;
+export const getLicenseMetricOutput: typeof import("./getLicenseMetric").getLicenseMetricOutput = null as any;
+utilities.lazyLoad(exports, ["getLicenseMetric","getLicenseMetricOutput"], () => require("./getLicenseMetric"));
+
+export { GetLicenseRecordArgs, GetLicenseRecordResult, GetLicenseRecordOutputArgs } from "./getLicenseRecord";
+export const getLicenseRecord: typeof import("./getLicenseRecord").getLicenseRecord = null as any;
+export const getLicenseRecordOutput: typeof import("./getLicenseRecord").getLicenseRecordOutput = null as any;
+utilities.lazyLoad(exports, ["getLicenseRecord","getLicenseRecordOutput"], () => require("./getLicenseRecord"));
+
+export { GetLicenseRecordsArgs, GetLicenseRecordsResult, GetLicenseRecordsOutputArgs } from "./getLicenseRecords";
+export const getLicenseRecords: typeof import("./getLicenseRecords").getLicenseRecords = null as any;
+export const getLicenseRecordsOutput: typeof import("./getLicenseRecords").getLicenseRecordsOutput = null as any;
+utilities.lazyLoad(exports, ["getLicenseRecords","getLicenseRecordsOutput"], () => require("./getLicenseRecords"));
+
+export { GetProductLicenseArgs, GetProductLicenseResult, GetProductLicenseOutputArgs } from "./getProductLicense";
+export const getProductLicense: typeof import("./getProductLicense").getProductLicense = null as any;
+export const getProductLicenseOutput: typeof import("./getProductLicense").getProductLicenseOutput = null as any;
+utilities.lazyLoad(exports, ["getProductLicense","getProductLicenseOutput"], () => require("./getProductLicense"));
+
+export { GetProductLicenseConsumersArgs, GetProductLicenseConsumersResult, GetProductLicenseConsumersOutputArgs } from "./getProductLicenseConsumers";
+export const getProductLicenseConsumers: typeof import("./getProductLicenseConsumers").getProductLicenseConsumers = null as any;
+export const getProductLicenseConsumersOutput: typeof import("./getProductLicenseConsumers").getProductLicenseConsumersOutput = null as any;
+utilities.lazyLoad(exports, ["getProductLicenseConsumers","getProductLicenseConsumersOutput"], () => require("./getProductLicenseConsumers"));
+
+export { GetProductLicensesArgs, GetProductLicensesResult, GetProductLicensesOutputArgs } from "./getProductLicenses";
+export const getProductLicenses: typeof import("./getProductLicenses").getProductLicenses = null as any;
+export const getProductLicensesOutput: typeof import("./getProductLicenses").getProductLicensesOutput = null as any;
+utilities.lazyLoad(exports, ["getProductLicenses","getProductLicensesOutput"], () => require("./getProductLicenses"));
+
+export { GetTopUtilizedProductLicensesArgs, GetTopUtilizedProductLicensesResult, GetTopUtilizedProductLicensesOutputArgs } from "./getTopUtilizedProductLicenses";
+export const getTopUtilizedProductLicenses: typeof import("./getTopUtilizedProductLicenses").getTopUtilizedProductLicenses = null as any;
+export const getTopUtilizedProductLicensesOutput: typeof import("./getTopUtilizedProductLicenses").getTopUtilizedProductLicensesOutput = null as any;
+utilities.lazyLoad(exports, ["getTopUtilizedProductLicenses","getTopUtilizedProductLicensesOutput"], () => require("./getTopUtilizedProductLicenses"));
+
+export { GetTopUtilizedResourcesArgs, GetTopUtilizedResourcesResult, GetTopUtilizedResourcesOutputArgs } from "./getTopUtilizedResources";
+export const getTopUtilizedResources: typeof import("./getTopUtilizedResources").getTopUtilizedResources = null as any;
+export const getTopUtilizedResourcesOutput: typeof import("./getTopUtilizedResources").getTopUtilizedResourcesOutput = null as any;
+utilities.lazyLoad(exports, ["getTopUtilizedResources","getTopUtilizedResourcesOutput"], () => require("./getTopUtilizedResources"));
+
+export { LicenseRecordArgs, LicenseRecordState } from "./licenseRecord";
+export type LicenseRecord = import("./licenseRecord").LicenseRecord;
+export const LicenseRecord: typeof import("./licenseRecord").LicenseRecord = null as any;
+utilities.lazyLoad(exports, ["LicenseRecord"], () => require("./licenseRecord"));
+
+export { ProductLicenseArgs, ProductLicenseState } from "./productLicense";
+export type ProductLicense = import("./productLicense").ProductLicense;
+export const ProductLicense: typeof import("./productLicense").ProductLicense = null as any;
+utilities.lazyLoad(exports, ["ProductLicense"], () => require("./productLicense"));
+
 
 const _module = {
     version: utilities.getVersion(),

@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Dns
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetTsigKeysResult> InvokeAsync(GetTsigKeysArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetTsigKeysResult>("oci:Dns/getTsigKeys:getTsigKeys", args ?? new GetTsigKeysArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetTsigKeysResult>("oci:Dns/getTsigKeys:getTsigKeys", args ?? new GetTsigKeysArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Tsig Keys in Oracle Cloud Infrastructure DNS service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.Dns
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetTsigKeysResult> Invoke(GetTsigKeysInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetTsigKeysResult>("oci:Dns/getTsigKeys:getTsigKeys", args ?? new GetTsigKeysInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetTsigKeysResult>("oci:Dns/getTsigKeys:getTsigKeys", args ?? new GetTsigKeysInvokeArgs(), options.WithDefaults());
     }
 
 

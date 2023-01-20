@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Kms
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetReplicationStatusResult> InvokeAsync(GetReplicationStatusArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetReplicationStatusResult>("oci:Kms/getReplicationStatus:getReplicationStatus", args ?? new GetReplicationStatusArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetReplicationStatusResult>("oci:Kms/getReplicationStatus:getReplicationStatus", args ?? new GetReplicationStatusArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Replication Status resource in Oracle Cloud Infrastructure Kms service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.Kms
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetReplicationStatusResult> Invoke(GetReplicationStatusInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetReplicationStatusResult>("oci:Kms/getReplicationStatus:getReplicationStatus", args ?? new GetReplicationStatusInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetReplicationStatusResult>("oci:Kms/getReplicationStatus:getReplicationStatus", args ?? new GetReplicationStatusInvokeArgs(), options.WithDefaults());
     }
 
 

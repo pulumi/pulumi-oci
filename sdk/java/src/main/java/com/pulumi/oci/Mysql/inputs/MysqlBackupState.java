@@ -51,14 +51,14 @@ public final class MysqlBackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The OCID of the compartment.
+     * (Updatable) The OCID of the compartment the backup exists in.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The OCID of the compartment.
+     * @return (Updatable) The OCID of the compartment the backup exists in.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -374,7 +374,7 @@ public final class MysqlBackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment.
+         * @param compartmentId (Updatable) The OCID of the compartment the backup exists in.
          * 
          * @return builder
          * 
@@ -385,7 +385,7 @@ public final class MysqlBackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment.
+         * @param compartmentId (Updatable) The OCID of the compartment the backup exists in.
          * 
          * @return builder
          * 

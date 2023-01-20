@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Ocvp
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetSupportedVmwareSoftwareVersionsResult> InvokeAsync(GetSupportedVmwareSoftwareVersionsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetSupportedVmwareSoftwareVersionsResult>("oci:Ocvp/getSupportedVmwareSoftwareVersions:getSupportedVmwareSoftwareVersions", args ?? new GetSupportedVmwareSoftwareVersionsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetSupportedVmwareSoftwareVersionsResult>("oci:Ocvp/getSupportedVmwareSoftwareVersions:getSupportedVmwareSoftwareVersions", args ?? new GetSupportedVmwareSoftwareVersionsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Supported Vmware Software Versions in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Ocvp
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetSupportedVmwareSoftwareVersionsResult> Invoke(GetSupportedVmwareSoftwareVersionsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetSupportedVmwareSoftwareVersionsResult>("oci:Ocvp/getSupportedVmwareSoftwareVersions:getSupportedVmwareSoftwareVersions", args ?? new GetSupportedVmwareSoftwareVersionsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetSupportedVmwareSoftwareVersionsResult>("oci:Ocvp/getSupportedVmwareSoftwareVersions:getSupportedVmwareSoftwareVersions", args ?? new GetSupportedVmwareSoftwareVersionsInvokeArgs(), options.WithDefaults());
     }
 
 

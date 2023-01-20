@@ -5,11 +5,15 @@ package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.ApiGateway.outputs.DeploymentSpecificationRequestPoliciesAuthenticationPublicKeys;
+import com.pulumi.oci.ApiGateway.outputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicy;
+import com.pulumi.oci.ApiGateway.outputs.DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicy;
 import com.pulumi.oci.ApiGateway.outputs.DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaim;
 import java.lang.Boolean;
 import java.lang.Double;
+import java.lang.Object;
 import java.lang.String;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -21,6 +25,11 @@ public final class DeploymentSpecificationRequestPoliciesAuthentication {
      * 
      */
     private @Nullable List<String> audiences;
+    /**
+     * @return (Updatable) A list of keys from &#34;parameters&#34; attribute value whose values will be added to the cache key.
+     * 
+     */
+    private @Nullable List<String> cacheKeys;
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
      * 
@@ -41,6 +50,11 @@ public final class DeploymentSpecificationRequestPoliciesAuthentication {
      * 
      */
     private @Nullable Double maxClockSkewInSeconds;
+    /**
+     * @return (Updatable)
+     * 
+     */
+    private @Nullable Map<String,Object> parameters;
     /**
      * @return (Updatable) A set of Public Keys that will be used to verify the JWT signature.
      * 
@@ -67,6 +81,16 @@ public final class DeploymentSpecificationRequestPoliciesAuthentication {
      */
     private String type;
     /**
+     * @return (Updatable) Policy for defining behaviour on validation failure.
+     * 
+     */
+    private @Nullable DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicy validationFailurePolicy;
+    /**
+     * @return (Updatable) Authentication Policies for the Token Authentication types.
+     * 
+     */
+    private @Nullable DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicy validationPolicy;
+    /**
      * @return (Updatable) A list of claims which should be validated to consider the token valid.
      * 
      */
@@ -79,6 +103,13 @@ public final class DeploymentSpecificationRequestPoliciesAuthentication {
      */
     public List<String> audiences() {
         return this.audiences == null ? List.of() : this.audiences;
+    }
+    /**
+     * @return (Updatable) A list of keys from &#34;parameters&#34; attribute value whose values will be added to the cache key.
+     * 
+     */
+    public List<String> cacheKeys() {
+        return this.cacheKeys == null ? List.of() : this.cacheKeys;
     }
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
@@ -107,6 +138,13 @@ public final class DeploymentSpecificationRequestPoliciesAuthentication {
      */
     public Optional<Double> maxClockSkewInSeconds() {
         return Optional.ofNullable(this.maxClockSkewInSeconds);
+    }
+    /**
+     * @return (Updatable)
+     * 
+     */
+    public Map<String,Object> parameters() {
+        return this.parameters == null ? Map.of() : this.parameters;
     }
     /**
      * @return (Updatable) A set of Public Keys that will be used to verify the JWT signature.
@@ -144,6 +182,20 @@ public final class DeploymentSpecificationRequestPoliciesAuthentication {
         return this.type;
     }
     /**
+     * @return (Updatable) Policy for defining behaviour on validation failure.
+     * 
+     */
+    public Optional<DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicy> validationFailurePolicy() {
+        return Optional.ofNullable(this.validationFailurePolicy);
+    }
+    /**
+     * @return (Updatable) Authentication Policies for the Token Authentication types.
+     * 
+     */
+    public Optional<DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicy> validationPolicy() {
+        return Optional.ofNullable(this.validationPolicy);
+    }
+    /**
      * @return (Updatable) A list of claims which should be validated to consider the token valid.
      * 
      */
@@ -161,29 +213,37 @@ public final class DeploymentSpecificationRequestPoliciesAuthentication {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<String> audiences;
+        private @Nullable List<String> cacheKeys;
         private @Nullable String functionId;
         private @Nullable Boolean isAnonymousAccessAllowed;
         private @Nullable List<String> issuers;
         private @Nullable Double maxClockSkewInSeconds;
+        private @Nullable Map<String,Object> parameters;
         private @Nullable DeploymentSpecificationRequestPoliciesAuthenticationPublicKeys publicKeys;
         private @Nullable String tokenAuthScheme;
         private @Nullable String tokenHeader;
         private @Nullable String tokenQueryParam;
         private String type;
+        private @Nullable DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicy validationFailurePolicy;
+        private @Nullable DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicy validationPolicy;
         private @Nullable List<DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaim> verifyClaims;
         public Builder() {}
         public Builder(DeploymentSpecificationRequestPoliciesAuthentication defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.audiences = defaults.audiences;
+    	      this.cacheKeys = defaults.cacheKeys;
     	      this.functionId = defaults.functionId;
     	      this.isAnonymousAccessAllowed = defaults.isAnonymousAccessAllowed;
     	      this.issuers = defaults.issuers;
     	      this.maxClockSkewInSeconds = defaults.maxClockSkewInSeconds;
+    	      this.parameters = defaults.parameters;
     	      this.publicKeys = defaults.publicKeys;
     	      this.tokenAuthScheme = defaults.tokenAuthScheme;
     	      this.tokenHeader = defaults.tokenHeader;
     	      this.tokenQueryParam = defaults.tokenQueryParam;
     	      this.type = defaults.type;
+    	      this.validationFailurePolicy = defaults.validationFailurePolicy;
+    	      this.validationPolicy = defaults.validationPolicy;
     	      this.verifyClaims = defaults.verifyClaims;
         }
 
@@ -194,6 +254,14 @@ public final class DeploymentSpecificationRequestPoliciesAuthentication {
         }
         public Builder audiences(String... audiences) {
             return audiences(List.of(audiences));
+        }
+        @CustomType.Setter
+        public Builder cacheKeys(@Nullable List<String> cacheKeys) {
+            this.cacheKeys = cacheKeys;
+            return this;
+        }
+        public Builder cacheKeys(String... cacheKeys) {
+            return cacheKeys(List.of(cacheKeys));
         }
         @CustomType.Setter
         public Builder functionId(@Nullable String functionId) {
@@ -216,6 +284,11 @@ public final class DeploymentSpecificationRequestPoliciesAuthentication {
         @CustomType.Setter
         public Builder maxClockSkewInSeconds(@Nullable Double maxClockSkewInSeconds) {
             this.maxClockSkewInSeconds = maxClockSkewInSeconds;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder parameters(@Nullable Map<String,Object> parameters) {
+            this.parameters = parameters;
             return this;
         }
         @CustomType.Setter
@@ -244,6 +317,16 @@ public final class DeploymentSpecificationRequestPoliciesAuthentication {
             return this;
         }
         @CustomType.Setter
+        public Builder validationFailurePolicy(@Nullable DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicy validationFailurePolicy) {
+            this.validationFailurePolicy = validationFailurePolicy;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder validationPolicy(@Nullable DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicy validationPolicy) {
+            this.validationPolicy = validationPolicy;
+            return this;
+        }
+        @CustomType.Setter
         public Builder verifyClaims(@Nullable List<DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaim> verifyClaims) {
             this.verifyClaims = verifyClaims;
             return this;
@@ -254,15 +337,19 @@ public final class DeploymentSpecificationRequestPoliciesAuthentication {
         public DeploymentSpecificationRequestPoliciesAuthentication build() {
             final var o = new DeploymentSpecificationRequestPoliciesAuthentication();
             o.audiences = audiences;
+            o.cacheKeys = cacheKeys;
             o.functionId = functionId;
             o.isAnonymousAccessAllowed = isAnonymousAccessAllowed;
             o.issuers = issuers;
             o.maxClockSkewInSeconds = maxClockSkewInSeconds;
+            o.parameters = parameters;
             o.publicKeys = publicKeys;
             o.tokenAuthScheme = tokenAuthScheme;
             o.tokenHeader = tokenHeader;
             o.tokenQueryParam = tokenQueryParam;
             o.type = type;
+            o.validationFailurePolicy = validationFailurePolicy;
+            o.validationPolicy = validationPolicy;
             o.verifyClaims = verifyClaims;
             return o;
         }

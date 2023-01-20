@@ -44,7 +44,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDiscoveryJobsResultsResult> InvokeAsync(GetDiscoveryJobsResultsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDiscoveryJobsResultsResult>("oci:DataSafe/getDiscoveryJobsResults:getDiscoveryJobsResults", args ?? new GetDiscoveryJobsResultsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDiscoveryJobsResultsResult>("oci:DataSafe/getDiscoveryJobsResults:getDiscoveryJobsResults", args ?? new GetDiscoveryJobsResultsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Discovery Jobs Results in Oracle Cloud Infrastructure Data Safe service.
@@ -79,7 +79,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDiscoveryJobsResultsResult> Invoke(GetDiscoveryJobsResultsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDiscoveryJobsResultsResult>("oci:DataSafe/getDiscoveryJobsResults:getDiscoveryJobsResults", args ?? new GetDiscoveryJobsResultsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDiscoveryJobsResultsResult>("oci:DataSafe/getDiscoveryJobsResults:getDiscoveryJobsResults", args ?? new GetDiscoveryJobsResultsInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -243,6 +243,9 @@ namespace Pulumi.Oci.DataSafe
         /// The name of the sensitive column.
         /// </summary>
         public readonly ImmutableArray<string> ColumnNames;
+        /// <summary>
+        /// The OCID of the discovery job.
+        /// </summary>
         public readonly string DiscoveryJobId;
         /// <summary>
         /// The list of discovery_job_result_collection.

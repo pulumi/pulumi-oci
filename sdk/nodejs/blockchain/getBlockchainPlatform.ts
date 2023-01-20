@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getBlockchainPlatform(args: GetBlockchainPlatformArgs, opts?: pulumi.InvokeOptions): Promise<GetBlockchainPlatformResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Blockchain/getBlockchainPlatform:getBlockchainPlatform", {
         "blockchainPlatformId": args.blockchainPlatformId,
     }, opts);
@@ -151,9 +149,24 @@ export interface GetBlockchainPlatformResult {
      */
     readonly totalOcpuCapacity: number;
 }
-
+/**
+ * This data source provides details about a specific Blockchain Platform resource in Oracle Cloud Infrastructure Blockchain service.
+ *
+ * Gets information about a Blockchain Platform identified by the specific id
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testBlockchainPlatform = oci.Blockchain.getBlockchainPlatform({
+ *     blockchainPlatformId: oci_blockchain_blockchain_platform.test_blockchain_platform.id,
+ * });
+ * ```
+ */
 export function getBlockchainPlatformOutput(args: GetBlockchainPlatformOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBlockchainPlatformResult> {
-    return pulumi.output(args).apply(a => getBlockchainPlatform(a, opts))
+    return pulumi.output(args).apply((a: any) => getBlockchainPlatform(a, opts))
 }
 
 /**

@@ -39,7 +39,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetScheduleResult> InvokeAsync(GetScheduleArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetScheduleResult>("oci:MeteringComputation/getSchedule:getSchedule", args ?? new GetScheduleArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetScheduleResult>("oci:MeteringComputation/getSchedule:getSchedule", args ?? new GetScheduleArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Schedule resource in Oracle Cloud Infrastructure Metering Computation service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetScheduleResult> Invoke(GetScheduleInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetScheduleResult>("oci:MeteringComputation/getSchedule:getSchedule", args ?? new GetScheduleInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetScheduleResult>("oci:MeteringComputation/getSchedule:getSchedule", args ?? new GetScheduleInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -106,7 +106,7 @@ namespace Pulumi.Oci.MeteringComputation
     public sealed class GetScheduleResult
     {
         /// <summary>
-        /// The tenancy of the customer
+        /// The customer tenancy.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -114,32 +114,44 @@ namespace Pulumi.Oci.MeteringComputation
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         /// <summary>
-        /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        /// The description of the schedule.
+        /// </summary>
+        public readonly string Description;
+        /// <summary>
+        /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// The OCID representing unique shedule
+        /// The OCID representing a unique shedule.
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The unique name of the schedule created by the user
+        /// The unique name of the schedule created by the user.
         /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// Specifies supported output file format.
+        /// </summary>
+        public readonly string OutputFileFormat;
         /// <summary>
         /// The query properties.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetScheduleQueryPropertyResult> QueryProperties;
         /// <summary>
-        /// The location where usage/cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
+        /// The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetScheduleResultLocationResult> ResultLocations;
+        /// <summary>
+        /// The saved report id which can also be used to generate query.
+        /// </summary>
+        public readonly string SavedReportId;
         public readonly string ScheduleId;
         /// <summary>
-        /// In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 Describes the frequency of when the schedule will be run
+        /// Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
         /// </summary>
         public readonly string ScheduleRecurrences;
         /// <summary>
-        /// The lifecycle state of the schedule
+        /// The schedule lifecycle state.
         /// </summary>
         public readonly string State;
         /// <summary>
@@ -147,11 +159,15 @@ namespace Pulumi.Oci.MeteringComputation
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
-        /// The date and time of when the schedule was created
+        /// The date and time the schedule was created.
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The date and time of the first time job execution
+        /// The date and time of the next job execution.
+        /// </summary>
+        public readonly string TimeNextRun;
+        /// <summary>
+        /// The date and time of the first time job execution.
         /// </summary>
         public readonly string TimeScheduled;
 
@@ -161,15 +177,21 @@ namespace Pulumi.Oci.MeteringComputation
 
             ImmutableDictionary<string, object> definedTags,
 
+            string description,
+
             ImmutableDictionary<string, object> freeformTags,
 
             string id,
 
             string name,
 
+            string outputFileFormat,
+
             ImmutableArray<Outputs.GetScheduleQueryPropertyResult> queryProperties,
 
             ImmutableArray<Outputs.GetScheduleResultLocationResult> resultLocations,
+
+            string savedReportId,
 
             string scheduleId,
 
@@ -181,20 +203,26 @@ namespace Pulumi.Oci.MeteringComputation
 
             string timeCreated,
 
+            string timeNextRun,
+
             string timeScheduled)
         {
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
+            Description = description;
             FreeformTags = freeformTags;
             Id = id;
             Name = name;
+            OutputFileFormat = outputFileFormat;
             QueryProperties = queryProperties;
             ResultLocations = resultLocations;
+            SavedReportId = savedReportId;
             ScheduleId = scheduleId;
             ScheduleRecurrences = scheduleRecurrences;
             State = state;
             SystemTags = systemTags;
             TimeCreated = timeCreated;
+            TimeNextRun = timeNextRun;
             TimeScheduled = timeScheduled;
         }
     }

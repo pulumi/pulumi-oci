@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -27,11 +28,8 @@ import * as utilities from "../utilities";
  */
 export function getDeployStages(args?: GetDeployStagesArgs, opts?: pulumi.InvokeOptions): Promise<GetDeployStagesResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getDeployStages:getDeployStages", {
         "compartmentId": args.compartmentId,
         "deployPipelineId": args.deployPipelineId,
@@ -99,9 +97,28 @@ export interface GetDeployStagesResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Deploy Stages in Oracle Cloud Infrastructure Devops service.
+ *
+ * Retrieves a list of deployment stages.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDeployStages = oci.DevOps.getDeployStages({
+ *     compartmentId: _var.compartment_id,
+ *     deployPipelineId: oci_devops_deploy_pipeline.test_deploy_pipeline.id,
+ *     displayName: _var.deploy_stage_display_name,
+ *     id: _var.deploy_stage_id,
+ *     state: _var.deploy_stage_state,
+ * });
+ * ```
+ */
 export function getDeployStagesOutput(args?: GetDeployStagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDeployStagesResult> {
-    return pulumi.output(args).apply(a => getDeployStages(a, opts))
+    return pulumi.output(args).apply((a: any) => getDeployStages(a, opts))
 }
 
 /**

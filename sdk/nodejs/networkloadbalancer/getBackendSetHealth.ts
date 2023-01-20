@@ -5,11 +5,8 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 export function getBackendSetHealth(args: GetBackendSetHealthArgs, opts?: pulumi.InvokeOptions): Promise<GetBackendSetHealthResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:NetworkLoadBalancer/getBackendSetHealth:getBackendSetHealth", {
         "backendSetName": args.backendSetName,
         "networkLoadBalancerId": args.networkLoadBalancerId,
@@ -40,9 +37,8 @@ export interface GetBackendSetHealthResult {
     readonly unknownStateBackendNames: string[];
     readonly warningStateBackendNames: string[];
 }
-
 export function getBackendSetHealthOutput(args: GetBackendSetHealthOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBackendSetHealthResult> {
-    return pulumi.output(args).apply(a => getBackendSetHealth(a, opts))
+    return pulumi.output(args).apply((a: any) => getBackendSetHealth(a, opts))
 }
 
 /**

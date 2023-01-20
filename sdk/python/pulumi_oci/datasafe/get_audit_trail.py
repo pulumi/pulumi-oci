@@ -21,7 +21,7 @@ class GetAuditTrailResult:
     """
     A collection of values returned by getAuditTrail.
     """
-    def __init__(__self__, audit_collection_start_time=None, audit_profile_id=None, audit_trail_id=None, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, is_auto_purge_enabled=None, lifecycle_details=None, resume_trigger=None, state=None, status=None, system_tags=None, target_id=None, time_created=None, time_updated=None, trail_location=None, work_request_id=None):
+    def __init__(__self__, audit_collection_start_time=None, audit_profile_id=None, audit_trail_id=None, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, is_auto_purge_enabled=None, lifecycle_details=None, resume_trigger=None, state=None, status=None, system_tags=None, target_id=None, time_created=None, time_last_collected=None, time_updated=None, trail_location=None, work_request_id=None):
         if audit_collection_start_time and not isinstance(audit_collection_start_time, str):
             raise TypeError("Expected argument 'audit_collection_start_time' to be a str")
         pulumi.set(__self__, "audit_collection_start_time", audit_collection_start_time)
@@ -73,6 +73,9 @@ class GetAuditTrailResult:
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
+        if time_last_collected and not isinstance(time_last_collected, str):
+            raise TypeError("Expected argument 'time_last_collected' to be a str")
+        pulumi.set(__self__, "time_last_collected", time_last_collected)
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
@@ -214,6 +217,14 @@ class GetAuditTrailResult:
         return pulumi.get(self, "time_created")
 
     @property
+    @pulumi.getter(name="timeLastCollected")
+    def time_last_collected(self) -> str:
+        """
+        The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_last_collected")
+
+    @property
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
@@ -261,6 +272,7 @@ class AwaitableGetAuditTrailResult(GetAuditTrailResult):
             system_tags=self.system_tags,
             target_id=self.target_id,
             time_created=self.time_created,
+            time_last_collected=self.time_last_collected,
             time_updated=self.time_updated,
             trail_location=self.trail_location,
             work_request_id=self.work_request_id)
@@ -308,6 +320,7 @@ def get_audit_trail(audit_trail_id: Optional[str] = None,
         system_tags=__ret__.system_tags,
         target_id=__ret__.target_id,
         time_created=__ret__.time_created,
+        time_last_collected=__ret__.time_last_collected,
         time_updated=__ret__.time_updated,
         trail_location=__ret__.trail_location,
         work_request_id=__ret__.work_request_id)

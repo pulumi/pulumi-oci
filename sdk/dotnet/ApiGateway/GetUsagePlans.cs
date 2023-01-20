@@ -40,7 +40,7 @@ namespace Pulumi.Oci.ApiGateway
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetUsagePlansResult> InvokeAsync(GetUsagePlansArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetUsagePlansResult>("oci:ApiGateway/getUsagePlans:getUsagePlans", args ?? new GetUsagePlansArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetUsagePlansResult>("oci:ApiGateway/getUsagePlans:getUsagePlans", args ?? new GetUsagePlansArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Usage Plans in Oracle Cloud Infrastructure API Gateway service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.ApiGateway
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetUsagePlansResult> Invoke(GetUsagePlansInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetUsagePlansResult>("oci:ApiGateway/getUsagePlans:getUsagePlans", args ?? new GetUsagePlansInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetUsagePlansResult>("oci:ApiGateway/getUsagePlans:getUsagePlans", args ?? new GetUsagePlansInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Analytics
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAnalyticsInstanceResult> InvokeAsync(GetAnalyticsInstanceArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAnalyticsInstanceResult>("oci:Analytics/getAnalyticsInstance:getAnalyticsInstance", args ?? new GetAnalyticsInstanceArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAnalyticsInstanceResult>("oci:Analytics/getAnalyticsInstance:getAnalyticsInstance", args ?? new GetAnalyticsInstanceArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Analytics Instance resource in Oracle Cloud Infrastructure Analytics service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Analytics
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAnalyticsInstanceResult> Invoke(GetAnalyticsInstanceInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAnalyticsInstanceResult>("oci:Analytics/getAnalyticsInstance:getAnalyticsInstance", args ?? new GetAnalyticsInstanceInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAnalyticsInstanceResult>("oci:Analytics/getAnalyticsInstance:getAnalyticsInstance", args ?? new GetAnalyticsInstanceInvokeArgs(), options.WithDefaults());
     }
 
 

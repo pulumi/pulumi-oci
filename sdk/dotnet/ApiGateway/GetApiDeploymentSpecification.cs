@@ -38,7 +38,7 @@ namespace Pulumi.Oci.ApiGateway
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetApiDeploymentSpecificationResult> InvokeAsync(GetApiDeploymentSpecificationArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetApiDeploymentSpecificationResult>("oci:ApiGateway/getApiDeploymentSpecification:getApiDeploymentSpecification", args ?? new GetApiDeploymentSpecificationArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetApiDeploymentSpecificationResult>("oci:ApiGateway/getApiDeploymentSpecification:getApiDeploymentSpecification", args ?? new GetApiDeploymentSpecificationArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Api Deployment Specification resource in Oracle Cloud Infrastructure API Gateway service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.ApiGateway
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetApiDeploymentSpecificationResult> Invoke(GetApiDeploymentSpecificationInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetApiDeploymentSpecificationResult>("oci:ApiGateway/getApiDeploymentSpecification:getApiDeploymentSpecification", args ?? new GetApiDeploymentSpecificationInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetApiDeploymentSpecificationResult>("oci:ApiGateway/getApiDeploymentSpecification:getApiDeploymentSpecification", args ?? new GetApiDeploymentSpecificationInvokeArgs(), options.WithDefaults());
     }
 
 

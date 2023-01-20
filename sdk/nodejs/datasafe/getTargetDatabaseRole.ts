@@ -2,15 +2,13 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 export function getTargetDatabaseRole(args: GetTargetDatabaseRoleArgs, opts?: pulumi.InvokeOptions): Promise<GetTargetDatabaseRoleResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getTargetDatabaseRole:getTargetDatabaseRole", {
         "authenticationType": args.authenticationType,
         "filters": args.filters,
@@ -49,9 +47,8 @@ export interface GetTargetDatabaseRoleResult {
     readonly roles: outputs.DataSafe.GetTargetDatabaseRoleRole[];
     readonly targetDatabaseId: string;
 }
-
 export function getTargetDatabaseRoleOutput(args: GetTargetDatabaseRoleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTargetDatabaseRoleResult> {
-    return pulumi.output(args).apply(a => getTargetDatabaseRole(a, opts))
+    return pulumi.output(args).apply((a: any) => getTargetDatabaseRole(a, opts))
 }
 
 /**

@@ -10,18 +10,6 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.Core
 {
     /// <summary>
-    /// ## ]
-    /// 
-    /// ***
-    /// subcategory: "Core"
-    /// layout: "oci"
-    /// page_title: "Oracle Cloud Infrastructure: oci.Core.BootVolume"
-    /// sidebar_current: "docs-oci-resource-core-boot_volume"
-    /// description: |-
-    ///   Provides the Boot Volume resource in Oracle Cloud Infrastructure Core service
-    /// ---
-    /// 
-    /// # oci.Core.BootVolume
     /// This resource provides the Boot Volume resource in Oracle Cloud Infrastructure Core service.
     /// 
     /// Creates a new boot volume in the specified compartment from an existing boot volume or a boot volume backup.

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedInstanceGroups(args: GetManagedInstanceGroupsArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedInstanceGroupsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsManagement/getManagedInstanceGroups:getManagedInstanceGroups", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -92,9 +90,27 @@ export interface GetManagedInstanceGroupsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Managed Instance Groups in Oracle Cloud Infrastructure OS Management service.
+ *
+ * Returns a list of all Managed Instance Groups.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testManagedInstanceGroups = oci.OsManagement.getManagedInstanceGroups({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.managed_instance_group_display_name,
+ *     osFamily: _var.managed_instance_group_os_family,
+ *     state: _var.managed_instance_group_state,
+ * });
+ * ```
+ */
 export function getManagedInstanceGroupsOutput(args: GetManagedInstanceGroupsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedInstanceGroupsResult> {
-    return pulumi.output(args).apply(a => getManagedInstanceGroups(a, opts))
+    return pulumi.output(args).apply((a: any) => getManagedInstanceGroups(a, opts))
 }
 
 /**

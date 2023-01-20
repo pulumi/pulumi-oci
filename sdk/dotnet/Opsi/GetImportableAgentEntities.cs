@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Opsi
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetImportableAgentEntitiesResult> InvokeAsync(GetImportableAgentEntitiesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetImportableAgentEntitiesResult>("oci:Opsi/getImportableAgentEntities:getImportableAgentEntities", args ?? new GetImportableAgentEntitiesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetImportableAgentEntitiesResult>("oci:Opsi/getImportableAgentEntities:getImportableAgentEntities", args ?? new GetImportableAgentEntitiesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Importable Agent Entities in Oracle Cloud Infrastructure Opsi service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.Opsi
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetImportableAgentEntitiesResult> Invoke(GetImportableAgentEntitiesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetImportableAgentEntitiesResult>("oci:Opsi/getImportableAgentEntities:getImportableAgentEntities", args ?? new GetImportableAgentEntitiesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetImportableAgentEntitiesResult>("oci:Opsi/getImportableAgentEntities:getImportableAgentEntities", args ?? new GetImportableAgentEntitiesInvokeArgs(), options.WithDefaults());
     }
 
 

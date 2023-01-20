@@ -17,7 +17,7 @@ namespace Pulumi.Oci.Database
         /// Generates a recommended Cloud@Customer VM cluster network configuration.
         /// </summary>
         public static Task<GetVmClusterRecommendedNetworkResult> InvokeAsync(GetVmClusterRecommendedNetworkArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetVmClusterRecommendedNetworkResult>("oci:Database/getVmClusterRecommendedNetwork:getVmClusterRecommendedNetwork", args ?? new GetVmClusterRecommendedNetworkArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetVmClusterRecommendedNetworkResult>("oci:Database/getVmClusterRecommendedNetwork:getVmClusterRecommendedNetwork", args ?? new GetVmClusterRecommendedNetworkArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Vm Cluster Recommended Network resource in Oracle Cloud Infrastructure Database service.
@@ -25,7 +25,7 @@ namespace Pulumi.Oci.Database
         /// Generates a recommended Cloud@Customer VM cluster network configuration.
         /// </summary>
         public static Output<GetVmClusterRecommendedNetworkResult> Invoke(GetVmClusterRecommendedNetworkInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetVmClusterRecommendedNetworkResult>("oci:Database/getVmClusterRecommendedNetwork:getVmClusterRecommendedNetwork", args ?? new GetVmClusterRecommendedNetworkInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetVmClusterRecommendedNetworkResult>("oci:Database/getVmClusterRecommendedNetwork:getVmClusterRecommendedNetwork", args ?? new GetVmClusterRecommendedNetworkInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -36,6 +36,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("compartmentId", required: true)]
         public string CompartmentId { get; set; } = null!;
+
+        [Input("dbServers")]
+        private List<string>? _dbServers;
+
+        /// <summary>
+        /// The list of Db server Ids to configure network.
+        /// </summary>
+        public List<string> DbServers
+        {
+            get => _dbServers ?? (_dbServers = new List<string>());
+            set => _dbServers = value;
+        }
 
         [Input("definedTags")]
         private Dictionary<string, object>? _definedTags;
@@ -135,6 +147,18 @@ namespace Pulumi.Oci.Database
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
 
+        [Input("dbServers")]
+        private InputList<string>? _dbServers;
+
+        /// <summary>
+        /// The list of Db server Ids to configure network.
+        /// </summary>
+        public InputList<string> DbServers
+        {
+            get => _dbServers ?? (_dbServers = new InputList<string>());
+            set => _dbServers = value;
+        }
+
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
 
@@ -233,6 +257,7 @@ namespace Pulumi.Oci.Database
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         public readonly string CompartmentId;
+        public readonly ImmutableArray<string> DbServers;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
@@ -280,6 +305,8 @@ namespace Pulumi.Oci.Database
         private GetVmClusterRecommendedNetworkResult(
             string compartmentId,
 
+            ImmutableArray<string> dbServers,
+
             ImmutableDictionary<string, object> definedTags,
 
             string displayName,
@@ -305,6 +332,7 @@ namespace Pulumi.Oci.Database
             ImmutableArray<Outputs.GetVmClusterRecommendedNetworkVmNetworkResult> vmNetworks)
         {
             CompartmentId = compartmentId;
+            DbServers = dbServers;
             DefinedTags = definedTags;
             DisplayName = displayName;
             Dns = dns;

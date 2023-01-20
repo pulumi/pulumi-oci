@@ -26,7 +26,7 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationPublicKey
      */
     private @Nullable List<DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKey> keys;
     /**
-     * @return (Updatable) The duration for which the JWKS should be cached before it is fetched again.
+     * @return (Updatable) The duration for which the introspect URL response should be cached before it is fetched again.
      * 
      */
     private @Nullable Integer maxCacheDurationInHours;
@@ -57,7 +57,7 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationPublicKey
         return this.keys == null ? List.of() : this.keys;
     }
     /**
-     * @return (Updatable) The duration for which the JWKS should be cached before it is fetched again.
+     * @return (Updatable) The duration for which the introspect URL response should be cached before it is fetched again.
      * 
      */
     public Optional<Integer> maxCacheDurationInHours() {

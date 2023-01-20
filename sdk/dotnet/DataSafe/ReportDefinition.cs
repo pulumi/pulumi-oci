@@ -127,6 +127,12 @@ namespace Pulumi.Oci.DataSafe
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
+        /// The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+        /// </summary>
+        [Output("complianceStandards")]
+        public Output<ImmutableArray<string>> ComplianceStandards { get; private set; } = null!;
+
+        /// <summary>
         /// Specifies the name of a resource that provides data for the report. For example alerts, events.
         /// </summary>
         [Output("dataSource")]
@@ -173,6 +179,42 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         [Output("parentId")]
         public Output<string> ParentId { get; private set; } = null!;
+
+        /// <summary>
+        /// The time span of records in report to be scheduled. &lt;period-value&gt;&lt;period&gt; Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
+        /// </summary>
+        [Output("recordTimeSpan")]
+        public Output<string> RecordTimeSpan { get; private set; } = null!;
+
+        /// <summary>
+        /// Schedule to generate the report periodically in the specified format: &lt;version-string&gt;;&lt;version-specific-schedule&gt;
+        /// </summary>
+        [Output("schedule")]
+        public Output<string> Schedule { get; private set; } = null!;
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the scheduled resource should be created.
+        /// </summary>
+        [Output("scheduledReportCompartmentId")]
+        public Output<string> ScheduledReportCompartmentId { get; private set; } = null!;
+
+        /// <summary>
+        /// Specifies the format of report to be excel or pdf
+        /// </summary>
+        [Output("scheduledReportMimeType")]
+        public Output<string> ScheduledReportMimeType { get; private set; } = null!;
+
+        /// <summary>
+        /// The name of the report to be scheduled.
+        /// </summary>
+        [Output("scheduledReportName")]
+        public Output<string> ScheduledReportName { get; private set; } = null!;
+
+        /// <summary>
+        /// Specifies the limit on number of rows in report.
+        /// </summary>
+        [Output("scheduledReportRowLimit")]
+        public Output<int> ScheduledReportRowLimit { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Additional scim filters used to get the specific summary.
@@ -408,6 +450,18 @@ namespace Pulumi.Oci.DataSafe
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
 
+        [Input("complianceStandards")]
+        private InputList<string>? _complianceStandards;
+
+        /// <summary>
+        /// The list of data protection regulations/standards used in the report that will help demonstrate compliance.
+        /// </summary>
+        public InputList<string> ComplianceStandards
+        {
+            get => _complianceStandards ?? (_complianceStandards = new InputList<string>());
+            set => _complianceStandards = value;
+        }
+
         /// <summary>
         /// Specifies the name of a resource that provides data for the report. For example alerts, events.
         /// </summary>
@@ -467,6 +521,42 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         [Input("parentId")]
         public Input<string>? ParentId { get; set; }
+
+        /// <summary>
+        /// The time span of records in report to be scheduled. &lt;period-value&gt;&lt;period&gt; Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
+        /// </summary>
+        [Input("recordTimeSpan")]
+        public Input<string>? RecordTimeSpan { get; set; }
+
+        /// <summary>
+        /// Schedule to generate the report periodically in the specified format: &lt;version-string&gt;;&lt;version-specific-schedule&gt;
+        /// </summary>
+        [Input("schedule")]
+        public Input<string>? Schedule { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the scheduled resource should be created.
+        /// </summary>
+        [Input("scheduledReportCompartmentId")]
+        public Input<string>? ScheduledReportCompartmentId { get; set; }
+
+        /// <summary>
+        /// Specifies the format of report to be excel or pdf
+        /// </summary>
+        [Input("scheduledReportMimeType")]
+        public Input<string>? ScheduledReportMimeType { get; set; }
+
+        /// <summary>
+        /// The name of the report to be scheduled.
+        /// </summary>
+        [Input("scheduledReportName")]
+        public Input<string>? ScheduledReportName { get; set; }
+
+        /// <summary>
+        /// Specifies the limit on number of rows in report.
+        /// </summary>
+        [Input("scheduledReportRowLimit")]
+        public Input<int>? ScheduledReportRowLimit { get; set; }
 
         /// <summary>
         /// (Updatable) Additional scim filters used to get the specific summary.

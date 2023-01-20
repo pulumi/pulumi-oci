@@ -36,11 +36,12 @@ namespace Pulumi.Oci.BigDataService
     ///         {
     ///             Shape = @var.Bds_instance_nodes_shape,
     ///             SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///             BlockVolumeSizeInGbs = @var.Bds_instance_nodes_block_volume_size_in_gbs,
     ///             NumberOfNodes = @var.Bds_instance_number_of_nodes,
+    ///             BlockVolumeSizeInGbs = @var.Bds_instance_nodes_block_volume_size_in_gbs,
     ///             ShapeConfig = new Oci.BigDataService.Inputs.BdsInstanceMasterNodeShapeConfigArgs
     ///             {
     ///                 MemoryInGbs = @var.Bds_instance_nodes_shape_config_memory_in_gbs,
+    ///                 Nvmes = @var.Bds_instance_nodes_shape_config_nvmes,
     ///                 Ocpus = @var.Bds_instance_nodes_shape_config_ocpus,
     ///             },
     ///         },
@@ -48,11 +49,12 @@ namespace Pulumi.Oci.BigDataService
     ///         {
     ///             Shape = @var.Bds_instance_nodes_shape,
     ///             SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///             BlockVolumeSizeInGbs = @var.Bds_instance_nodes_block_volume_size_in_gbs,
     ///             NumberOfNodes = @var.Bds_instance_number_of_nodes,
+    ///             BlockVolumeSizeInGbs = @var.Bds_instance_nodes_block_volume_size_in_gbs,
     ///             ShapeConfig = new Oci.BigDataService.Inputs.BdsInstanceUtilNodeShapeConfigArgs
     ///             {
     ///                 MemoryInGbs = @var.Bds_instance_nodes_shape_config_memory_in_gbs,
+    ///                 Nvmes = @var.Bds_instance_nodes_shape_config_nvmes,
     ///                 Ocpus = @var.Bds_instance_nodes_shape_config_ocpus,
     ///             },
     ///         },
@@ -60,11 +62,12 @@ namespace Pulumi.Oci.BigDataService
     ///         {
     ///             Shape = @var.Bds_instance_nodes_shape,
     ///             SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///             BlockVolumeSizeInGbs = @var.Bds_instance_nodes_block_volume_size_in_gbs,
     ///             NumberOfNodes = @var.Bds_instance_number_of_nodes,
+    ///             BlockVolumeSizeInGbs = @var.Bds_instance_nodes_block_volume_size_in_gbs,
     ///             ShapeConfig = new Oci.BigDataService.Inputs.BdsInstanceWorkerNodeShapeConfigArgs
     ///             {
     ///                 MemoryInGbs = @var.Bds_instance_nodes_shape_config_memory_in_gbs,
+    ///                 Nvmes = @var.Bds_instance_nodes_shape_config_nvmes,
     ///                 Ocpus = @var.Bds_instance_nodes_shape_config_ocpus,
     ///             },
     ///         },
@@ -72,15 +75,30 @@ namespace Pulumi.Oci.BigDataService
     ///         {
     ///             Shape = @var.Bds_instance_nodes_shape,
     ///             SubnetId = oci_core_subnet.Test_subnet.Id,
-    ///             BlockVolumeSizeInGbs = @var.Bds_instance_nodes_block_volume_size_in_gbs,
     ///             NumberOfNodes = @var.Bds_instance_number_of_nodes,
+    ///             BlockVolumeSizeInGbs = @var.Bds_instance_nodes_block_volume_size_in_gbs,
     ///             ShapeConfig = new Oci.BigDataService.Inputs.BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs
     ///             {
     ///                 MemoryInGbs = @var.Bds_instance_nodes_shape_config_memory_in_gbs,
+    ///                 Nvmes = @var.Bds_instance_nodes_shape_config_nvmes,
+    ///                 Ocpus = @var.Bds_instance_nodes_shape_config_ocpus,
+    ///             },
+    ///         },
+    ///         EdgeNode = new Oci.BigDataService.Inputs.BdsInstanceEdgeNodeArgs
+    ///         {
+    ///             Shape = @var.Bds_instance_nodes_shape,
+    ///             SubnetId = oci_core_subnet.Test_subnet.Id,
+    ///             NumberOfNodes = @var.Bds_instance_number_of_nodes,
+    ///             BlockVolumeSizeInGbs = @var.Bds_instance_nodes_block_volume_size_in_gbs,
+    ///             ShapeConfig = new Oci.BigDataService.Inputs.BdsInstanceEdgeNodeShapeConfigArgs
+    ///             {
+    ///                 MemoryInGbs = @var.Bds_instance_nodes_shape_config_memory_in_gbs,
+    ///                 Nvmes = @var.Bds_instance_nodes_shape_config_nvmes,
     ///                 Ocpus = @var.Bds_instance_nodes_shape_config_ocpus,
     ///             },
     ///         },
     ///         BootstrapScriptUrl = @var.Bds_instance_bootstrap_script_url,
+    ///         ClusterProfile = @var.Bds_instance_cluster_profile,
     ///         DefinedTags = @var.Bds_instance_defined_tags,
     ///         FreeformTags = @var.Bds_instance_freeform_tags,
     ///         KerberosRealmName = @var.Bds_instance_kerberos_realm_name,
@@ -113,13 +131,13 @@ namespace Pulumi.Oci.BigDataService
         public Output<string> BootstrapScriptUrl { get; private set; } = null!;
 
         /// <summary>
-        /// -(Optional) The information about added Cloud SQL capability
+        /// The information about added Cloud SQL capability
         /// </summary>
         [Output("cloudSqlDetails")]
         public Output<ImmutableArray<Outputs.BdsInstanceCloudSqlDetail>> CloudSqlDetails { get; private set; } = null!;
 
         /// <summary>
-        /// Base-64 encoded password for Cloudera Manager admin user
+        /// Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
         /// </summary>
         [Output("clusterAdminPassword")]
         public Output<string> ClusterAdminPassword { get; private set; } = null!;
@@ -129,6 +147,12 @@ namespace Pulumi.Oci.BigDataService
         /// </summary>
         [Output("clusterDetails")]
         public Output<ImmutableArray<Outputs.BdsInstanceClusterDetail>> ClusterDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// Profile of the Big Data Service cluster.
+        /// </summary>
+        [Output("clusterProfile")]
+        public Output<string> ClusterProfile { get; private set; } = null!;
 
         /// <summary>
         /// The SSH public key used to authenticate the cluster connection.
@@ -152,7 +176,7 @@ namespace Pulumi.Oci.BigDataService
         public Output<Outputs.BdsInstanceComputeOnlyWorkerNode?> ComputeOnlyWorkerNode { get; private set; } = null!;
 
         /// <summary>
-        /// The user who created the BDS instance.
+        /// The user who created the cluster.
         /// </summary>
         [Output("createdBy")]
         public Output<string> CreatedBy { get; private set; } = null!;
@@ -169,6 +193,9 @@ namespace Pulumi.Oci.BigDataService
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
 
+        [Output("edgeNode")]
+        public Output<Outputs.BdsInstanceEdgeNode?> EdgeNode { get; private set; } = null!;
+
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
@@ -176,10 +203,16 @@ namespace Pulumi.Oci.BigDataService
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// -(Optional) (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
+        /// (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
         /// </summary>
         [Output("isCloudSqlConfigured")]
         public Output<bool> IsCloudSqlConfigured { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
+        /// </summary>
+        [Output("isForceStopJobs")]
+        public Output<bool?> IsForceStopJobs { get; private set; } = null!;
 
         /// <summary>
         /// Boolean flag specifying whether or not the cluster is HA
@@ -230,7 +263,7 @@ namespace Pulumi.Oci.BigDataService
         public Output<int> NumberOfNodes { get; private set; } = null!;
 
         /// <summary>
-        /// The state of the BDS instance
+        /// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
@@ -279,6 +312,10 @@ namespace Pulumi.Oci.BigDataService
             var defaultOptions = new CustomResourceOptions
             {
                 Version = Utilities.Version,
+                AdditionalSecretOutputs =
+                {
+                    "clusterAdminPassword",
+                },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -312,7 +349,7 @@ namespace Pulumi.Oci.BigDataService
         private InputList<Inputs.BdsInstanceCloudSqlDetailArgs>? _cloudSqlDetails;
 
         /// <summary>
-        /// -(Optional) The information about added Cloud SQL capability
+        /// The information about added Cloud SQL capability
         /// </summary>
         public InputList<Inputs.BdsInstanceCloudSqlDetailArgs> CloudSqlDetails
         {
@@ -320,11 +357,27 @@ namespace Pulumi.Oci.BigDataService
             set => _cloudSqlDetails = value;
         }
 
-        /// <summary>
-        /// Base-64 encoded password for Cloudera Manager admin user
-        /// </summary>
         [Input("clusterAdminPassword", required: true)]
-        public Input<string> ClusterAdminPassword { get; set; } = null!;
+        private Input<string>? _clusterAdminPassword;
+
+        /// <summary>
+        /// Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+        /// </summary>
+        public Input<string>? ClusterAdminPassword
+        {
+            get => _clusterAdminPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _clusterAdminPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
+        /// <summary>
+        /// Profile of the Big Data Service cluster.
+        /// </summary>
+        [Input("clusterProfile")]
+        public Input<string>? ClusterProfile { get; set; }
 
         /// <summary>
         /// The SSH public key used to authenticate the cluster connection.
@@ -365,6 +418,9 @@ namespace Pulumi.Oci.BigDataService
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
 
+        [Input("edgeNode")]
+        public Input<Inputs.BdsInstanceEdgeNodeArgs>? EdgeNode { get; set; }
+
         [Input("freeformTags")]
         private InputMap<object>? _freeformTags;
 
@@ -378,10 +434,16 @@ namespace Pulumi.Oci.BigDataService
         }
 
         /// <summary>
-        /// -(Optional) (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
+        /// (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
         /// </summary>
         [Input("isCloudSqlConfigured")]
         public Input<bool>? IsCloudSqlConfigured { get; set; }
+
+        /// <summary>
+        /// (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
+        /// </summary>
+        [Input("isForceStopJobs")]
+        public Input<bool>? IsForceStopJobs { get; set; }
 
         /// <summary>
         /// Boolean flag specifying whether or not the cluster is HA
@@ -420,6 +482,12 @@ namespace Pulumi.Oci.BigDataService
         public Input<Inputs.BdsInstanceNetworkConfigArgs>? NetworkConfig { get; set; }
 
         /// <summary>
+        /// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
+        /// </summary>
+        [Input("state")]
+        public Input<string>? State { get; set; }
+
+        /// <summary>
         /// The utility node in the BDS instance
         /// </summary>
         [Input("utilNode", required: true)]
@@ -446,7 +514,7 @@ namespace Pulumi.Oci.BigDataService
         private InputList<Inputs.BdsInstanceCloudSqlDetailGetArgs>? _cloudSqlDetails;
 
         /// <summary>
-        /// -(Optional) The information about added Cloud SQL capability
+        /// The information about added Cloud SQL capability
         /// </summary>
         public InputList<Inputs.BdsInstanceCloudSqlDetailGetArgs> CloudSqlDetails
         {
@@ -454,11 +522,21 @@ namespace Pulumi.Oci.BigDataService
             set => _cloudSqlDetails = value;
         }
 
-        /// <summary>
-        /// Base-64 encoded password for Cloudera Manager admin user
-        /// </summary>
         [Input("clusterAdminPassword")]
-        public Input<string>? ClusterAdminPassword { get; set; }
+        private Input<string>? _clusterAdminPassword;
+
+        /// <summary>
+        /// Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+        /// </summary>
+        public Input<string>? ClusterAdminPassword
+        {
+            get => _clusterAdminPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _clusterAdminPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         [Input("clusterDetails")]
         private InputList<Inputs.BdsInstanceClusterDetailGetArgs>? _clusterDetails;
@@ -471,6 +549,12 @@ namespace Pulumi.Oci.BigDataService
             get => _clusterDetails ?? (_clusterDetails = new InputList<Inputs.BdsInstanceClusterDetailGetArgs>());
             set => _clusterDetails = value;
         }
+
+        /// <summary>
+        /// Profile of the Big Data Service cluster.
+        /// </summary>
+        [Input("clusterProfile")]
+        public Input<string>? ClusterProfile { get; set; }
 
         /// <summary>
         /// The SSH public key used to authenticate the cluster connection.
@@ -494,7 +578,7 @@ namespace Pulumi.Oci.BigDataService
         public Input<Inputs.BdsInstanceComputeOnlyWorkerNodeGetArgs>? ComputeOnlyWorkerNode { get; set; }
 
         /// <summary>
-        /// The user who created the BDS instance.
+        /// The user who created the cluster.
         /// </summary>
         [Input("createdBy")]
         public Input<string>? CreatedBy { get; set; }
@@ -517,6 +601,9 @@ namespace Pulumi.Oci.BigDataService
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
+        [Input("edgeNode")]
+        public Input<Inputs.BdsInstanceEdgeNodeGetArgs>? EdgeNode { get; set; }
+
         [Input("freeformTags")]
         private InputMap<object>? _freeformTags;
 
@@ -530,10 +617,16 @@ namespace Pulumi.Oci.BigDataService
         }
 
         /// <summary>
-        /// -(Optional) (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
+        /// (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
         /// </summary>
         [Input("isCloudSqlConfigured")]
         public Input<bool>? IsCloudSqlConfigured { get; set; }
+
+        /// <summary>
+        /// (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
+        /// </summary>
+        [Input("isForceStopJobs")]
+        public Input<bool>? IsForceStopJobs { get; set; }
 
         /// <summary>
         /// Boolean flag specifying whether or not the cluster is HA
@@ -590,7 +683,7 @@ namespace Pulumi.Oci.BigDataService
         public Input<int>? NumberOfNodes { get; set; }
 
         /// <summary>
-        /// The state of the BDS instance
+        /// (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }

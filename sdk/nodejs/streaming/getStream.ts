@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getStream(args: GetStreamArgs, opts?: pulumi.InvokeOptions): Promise<GetStreamResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Streaming/getStream:getStream", {
         "streamId": args.streamId,
     }, opts);
@@ -95,9 +92,24 @@ export interface GetStreamResult {
      */
     readonly timeCreated: string;
 }
-
+/**
+ * This data source provides details about a specific Stream resource in Oracle Cloud Infrastructure Streaming service.
+ *
+ * Gets detailed information about a stream, including the number of partitions.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testStream = oci.Streaming.getStream({
+ *     streamId: oci_streaming_stream.test_stream.id,
+ * });
+ * ```
+ */
 export function getStreamOutput(args: GetStreamOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetStreamResult> {
-    return pulumi.output(args).apply(a => getStream(a, opts))
+    return pulumi.output(args).apply((a: any) => getStream(a, opts))
 }
 
 /**

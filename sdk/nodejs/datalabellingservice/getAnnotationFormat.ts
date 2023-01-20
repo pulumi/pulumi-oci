@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAnnotationFormat(args: GetAnnotationFormatArgs, opts?: pulumi.InvokeOptions): Promise<GetAnnotationFormatResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataLabellingService/getAnnotationFormat:getAnnotationFormat", {
         "compartmentId": args.compartmentId,
     }, opts);
@@ -56,9 +54,24 @@ export interface GetAnnotationFormatResult {
      */
     readonly items: outputs.DataLabellingService.GetAnnotationFormatItem[];
 }
-
+/**
+ * This data source provides details about a specific Annotation Format resource in Oracle Cloud Infrastructure Data Labeling Service service.
+ *
+ * These are a static list in a given region.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAnnotationFormat = oci.DataLabellingService.getAnnotationFormat({
+ *     compartmentId: _var.compartment_id,
+ * });
+ * ```
+ */
 export function getAnnotationFormatOutput(args: GetAnnotationFormatOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAnnotationFormatResult> {
-    return pulumi.output(args).apply(a => getAnnotationFormat(a, opts))
+    return pulumi.output(args).apply((a: any) => getAnnotationFormat(a, opts))
 }
 
 /**

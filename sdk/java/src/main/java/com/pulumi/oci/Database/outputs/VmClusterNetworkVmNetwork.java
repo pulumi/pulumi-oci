@@ -8,6 +8,8 @@ import com.pulumi.oci.Database.outputs.VmClusterNetworkVmNetworkNode;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class VmClusterNetworkVmNetwork {
@@ -15,17 +17,17 @@ public final class VmClusterNetworkVmNetwork {
      * @return (Updatable) The network domain name.
      * 
      */
-    private String domainName;
+    private @Nullable String domainName;
     /**
      * @return (Updatable) The network gateway.
      * 
      */
-    private String gateway;
+    private @Nullable String gateway;
     /**
      * @return (Updatable) The network netmask.
      * 
      */
-    private String netmask;
+    private @Nullable String netmask;
     /**
      * @return (Updatable) The network type.
      * 
@@ -40,29 +42,29 @@ public final class VmClusterNetworkVmNetwork {
      * @return (Updatable) The network VLAN ID.
      * 
      */
-    private String vlanId;
+    private @Nullable String vlanId;
 
     private VmClusterNetworkVmNetwork() {}
     /**
      * @return (Updatable) The network domain name.
      * 
      */
-    public String domainName() {
-        return this.domainName;
+    public Optional<String> domainName() {
+        return Optional.ofNullable(this.domainName);
     }
     /**
      * @return (Updatable) The network gateway.
      * 
      */
-    public String gateway() {
-        return this.gateway;
+    public Optional<String> gateway() {
+        return Optional.ofNullable(this.gateway);
     }
     /**
      * @return (Updatable) The network netmask.
      * 
      */
-    public String netmask() {
-        return this.netmask;
+    public Optional<String> netmask() {
+        return Optional.ofNullable(this.netmask);
     }
     /**
      * @return (Updatable) The network type.
@@ -82,8 +84,8 @@ public final class VmClusterNetworkVmNetwork {
      * @return (Updatable) The network VLAN ID.
      * 
      */
-    public String vlanId() {
-        return this.vlanId;
+    public Optional<String> vlanId() {
+        return Optional.ofNullable(this.vlanId);
     }
 
     public static Builder builder() {
@@ -95,12 +97,12 @@ public final class VmClusterNetworkVmNetwork {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String domainName;
-        private String gateway;
-        private String netmask;
+        private @Nullable String domainName;
+        private @Nullable String gateway;
+        private @Nullable String netmask;
         private String networkType;
         private List<VmClusterNetworkVmNetworkNode> nodes;
-        private String vlanId;
+        private @Nullable String vlanId;
         public Builder() {}
         public Builder(VmClusterNetworkVmNetwork defaults) {
     	      Objects.requireNonNull(defaults);
@@ -113,18 +115,18 @@ public final class VmClusterNetworkVmNetwork {
         }
 
         @CustomType.Setter
-        public Builder domainName(String domainName) {
-            this.domainName = Objects.requireNonNull(domainName);
+        public Builder domainName(@Nullable String domainName) {
+            this.domainName = domainName;
             return this;
         }
         @CustomType.Setter
-        public Builder gateway(String gateway) {
-            this.gateway = Objects.requireNonNull(gateway);
+        public Builder gateway(@Nullable String gateway) {
+            this.gateway = gateway;
             return this;
         }
         @CustomType.Setter
-        public Builder netmask(String netmask) {
-            this.netmask = Objects.requireNonNull(netmask);
+        public Builder netmask(@Nullable String netmask) {
+            this.netmask = netmask;
             return this;
         }
         @CustomType.Setter
@@ -141,8 +143,8 @@ public final class VmClusterNetworkVmNetwork {
             return nodes(List.of(nodes));
         }
         @CustomType.Setter
-        public Builder vlanId(String vlanId) {
-            this.vlanId = Objects.requireNonNull(vlanId);
+        public Builder vlanId(@Nullable String vlanId) {
+            this.vlanId = vlanId;
             return this;
         }
         public VmClusterNetworkVmNetwork build() {

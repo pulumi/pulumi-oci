@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getClusterOption(args: GetClusterOptionArgs, opts?: pulumi.InvokeOptions): Promise<GetClusterOptionResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ContainerEngine/getClusterOption:getClusterOption", {
         "clusterOptionId": args.clusterOptionId,
         "compartmentId": args.compartmentId,
@@ -67,9 +65,25 @@ export interface GetClusterOptionResult {
      */
     readonly kubernetesVersions: string[];
 }
-
+/**
+ * This data source provides details about a specific Cluster Option resource in Oracle Cloud Infrastructure Container Engine service.
+ *
+ * Get options available for clusters.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testClusterOption = oci.ContainerEngine.getClusterOption({
+ *     clusterOptionId: oci_containerengine_cluster_option.test_cluster_option.id,
+ *     compartmentId: _var.compartment_id,
+ * });
+ * ```
+ */
 export function getClusterOptionOutput(args: GetClusterOptionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetClusterOptionResult> {
-    return pulumi.output(args).apply(a => getClusterOption(a, opts))
+    return pulumi.output(args).apply((a: any) => getClusterOption(a, opts))
 }
 
 /**

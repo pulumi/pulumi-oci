@@ -22,11 +22,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDatabasePdbConversionHistoryEntry(args: GetDatabasePdbConversionHistoryEntryArgs, opts?: pulumi.InvokeOptions): Promise<GetDatabasePdbConversionHistoryEntryResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getDatabasePdbConversionHistoryEntry:getDatabasePdbConversionHistoryEntry", {
         "databaseId": args.databaseId,
         "pdbConversionHistoryEntryId": args.pdbConversionHistoryEntryId,
@@ -103,9 +100,25 @@ export interface GetDatabasePdbConversionHistoryEntryResult {
      */
     readonly timeStarted: string;
 }
-
+/**
+ * This data source provides details about a specific Database Pdb Conversion History Entry resource in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets the details of operations performed to convert the specified database from non-container (non-CDB) to pluggable (PDB).
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDatabasePdbConversionHistoryEntry = oci.Database.getDatabasePdbConversionHistoryEntry({
+ *     databaseId: oci_database_database.test_database.id,
+ *     pdbConversionHistoryEntryId: oci_database_pdb_conversion_history_entry.test_pdb_conversion_history_entry.id,
+ * });
+ * ```
+ */
 export function getDatabasePdbConversionHistoryEntryOutput(args: GetDatabasePdbConversionHistoryEntryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatabasePdbConversionHistoryEntryResult> {
-    return pulumi.output(args).apply(a => getDatabasePdbConversionHistoryEntry(a, opts))
+    return pulumi.output(args).apply((a: any) => getDatabasePdbConversionHistoryEntry(a, opts))
 }
 
 /**

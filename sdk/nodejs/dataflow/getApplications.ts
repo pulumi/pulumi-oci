@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getApplications(args: GetApplicationsArgs, opts?: pulumi.InvokeOptions): Promise<GetApplicationsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataFlow/getApplications:getApplications", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -99,9 +97,28 @@ export interface GetApplicationsResult {
      */
     readonly sparkVersion?: string;
 }
-
+/**
+ * This data source provides the list of Applications in Oracle Cloud Infrastructure Data Flow service.
+ *
+ * Lists all applications in the specified compartment. Only one parameter other than compartmentId may also be included in a query. The query must include compartmentId. If the query does not include compartmentId, or includes compartmentId but two or more other parameters an error is returned.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testApplications = oci.DataFlow.getApplications({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.application_display_name,
+ *     displayNameStartsWith: _var.application_display_name_starts_with,
+ *     ownerPrincipalId: oci_dataflow_owner_principal.test_owner_principal.id,
+ *     sparkVersion: _var.application_spark_version,
+ * });
+ * ```
+ */
 export function getApplicationsOutput(args: GetApplicationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetApplicationsResult> {
-    return pulumi.output(args).apply(a => getApplications(a, opts))
+    return pulumi.output(args).apply((a: any) => getApplications(a, opts))
 }
 
 /**

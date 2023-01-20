@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -35,6 +36,7 @@ import * as utilities from "../utilities";
  *         isPathRewriteEnabled: _var.ingress_gateway_route_table_route_rules_is_path_rewrite_enabled,
  *         path: _var.ingress_gateway_route_table_route_rules_path,
  *         pathType: _var.ingress_gateway_route_table_route_rules_path_type,
+ *         requestTimeoutInMs: _var.ingress_gateway_route_table_route_rules_request_timeout_in_ms,
  *     }],
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",

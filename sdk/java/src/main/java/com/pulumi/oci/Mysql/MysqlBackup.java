@@ -99,14 +99,14 @@ public class MysqlBackup extends com.pulumi.resources.CustomResource {
         return this.backupType;
     }
     /**
-     * (Updatable) The OCID of the compartment.
+     * (Updatable) The OCID of the compartment the backup exists in.
      * 
      */
     @Export(name="compartmentId", type=String.class, parameters={})
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The OCID of the compartment.
+     * @return (Updatable) The OCID of the compartment the backup exists in.
      * 
      */
     public Output<String> compartmentId() {

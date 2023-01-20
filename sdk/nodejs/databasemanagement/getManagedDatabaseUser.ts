@@ -22,11 +22,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabaseUser(args: GetManagedDatabaseUserArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseUserResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabaseUser:getManagedDatabaseUser", {
         "managedDatabaseId": args.managedDatabaseId,
         "userName": args.userName,
@@ -154,9 +151,25 @@ export interface GetManagedDatabaseUserResult {
     readonly timePasswordChanged: string;
     readonly userName: string;
 }
-
+/**
+ * This data source provides details about a specific Managed Database User resource in Oracle Cloud Infrastructure Database Management service.
+ *
+ * Gets the details of the user specified by managedDatabaseId and userName.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testManagedDatabaseUser = oci.DatabaseManagement.getManagedDatabaseUser({
+ *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
+ *     userName: oci_identity_user.test_user.name,
+ * });
+ * ```
+ */
 export function getManagedDatabaseUserOutput(args: GetManagedDatabaseUserOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseUserResult> {
-    return pulumi.output(args).apply(a => getManagedDatabaseUser(a, opts))
+    return pulumi.output(args).apply((a: any) => getManagedDatabaseUser(a, opts))
 }
 
 /**

@@ -40,7 +40,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetManagedDatabaseUserConsumerGroupPrivilegeResult> InvokeAsync(GetManagedDatabaseUserConsumerGroupPrivilegeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseUserConsumerGroupPrivilegeResult>("oci:DatabaseManagement/getManagedDatabaseUserConsumerGroupPrivilege:getManagedDatabaseUserConsumerGroupPrivilege", args ?? new GetManagedDatabaseUserConsumerGroupPrivilegeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseUserConsumerGroupPrivilegeResult>("oci:DatabaseManagement/getManagedDatabaseUserConsumerGroupPrivilege:getManagedDatabaseUserConsumerGroupPrivilege", args ?? new GetManagedDatabaseUserConsumerGroupPrivilegeArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Managed Database User Consumer Group Privilege resource in Oracle Cloud Infrastructure Database Management service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetManagedDatabaseUserConsumerGroupPrivilegeResult> Invoke(GetManagedDatabaseUserConsumerGroupPrivilegeInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseUserConsumerGroupPrivilegeResult>("oci:DatabaseManagement/getManagedDatabaseUserConsumerGroupPrivilege:getManagedDatabaseUserConsumerGroupPrivilege", args ?? new GetManagedDatabaseUserConsumerGroupPrivilegeInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseUserConsumerGroupPrivilegeResult>("oci:DatabaseManagement/getManagedDatabaseUserConsumerGroupPrivilege:getManagedDatabaseUserConsumerGroupPrivilege", args ?? new GetManagedDatabaseUserConsumerGroupPrivilegeInvokeArgs(), options.WithDefaults());
     }
 
 

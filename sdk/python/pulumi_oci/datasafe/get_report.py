@@ -21,7 +21,7 @@ class GetReportResult:
     """
     A collection of values returned by getReport.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, mime_type=None, report_definition_id=None, report_id=None, state=None, system_tags=None, time_generated=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, mime_type=None, report_definition_id=None, report_id=None, state=None, system_tags=None, time_generated=None, type=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -58,6 +58,9 @@ class GetReportResult:
         if time_generated and not isinstance(time_generated, str):
             raise TypeError("Expected argument 'time_generated' to be a str")
         pulumi.set(__self__, "time_generated", time_generated)
+        if type and not isinstance(type, str):
+            raise TypeError("Expected argument 'type' to be a str")
+        pulumi.set(__self__, "type", type)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -152,6 +155,14 @@ class GetReportResult:
         """
         return pulumi.get(self, "time_generated")
 
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The type of the report.
+        """
+        return pulumi.get(self, "type")
+
 
 class AwaitableGetReportResult(GetReportResult):
     # pylint: disable=using-constant-test
@@ -170,7 +181,8 @@ class AwaitableGetReportResult(GetReportResult):
             report_id=self.report_id,
             state=self.state,
             system_tags=self.system_tags,
-            time_generated=self.time_generated)
+            time_generated=self.time_generated,
+            type=self.type)
 
 
 def get_report(report_id: Optional[str] = None,
@@ -209,7 +221,8 @@ def get_report(report_id: Optional[str] = None,
         report_id=__ret__.report_id,
         state=__ret__.state,
         system_tags=__ret__.system_tags,
-        time_generated=__ret__.time_generated)
+        time_generated=__ret__.time_generated,
+        type=__ret__.type)
 
 
 @_utilities.lift_output_func(get_report)

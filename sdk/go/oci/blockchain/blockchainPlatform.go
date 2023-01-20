@@ -146,6 +146,13 @@ func NewBlockchainPlatform(ctx *pulumi.Context,
 	if args.PlatformRole == nil {
 		return nil, errors.New("invalid value for required argument 'PlatformRole'")
 	}
+	if args.IdcsAccessToken != nil {
+		args.IdcsAccessToken = pulumi.ToSecret(args.IdcsAccessToken).(pulumi.StringInput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"idcsAccessToken",
+	})
+	opts = append(opts, secrets)
 	var resource BlockchainPlatform
 	err := ctx.RegisterResource("oci:Blockchain/blockchainPlatform:BlockchainPlatform", name, args, &resource, opts...)
 	if err != nil {

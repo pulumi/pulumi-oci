@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -30,11 +31,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAlertAnalytic(args: GetAlertAnalyticArgs, opts?: pulumi.InvokeOptions): Promise<GetAlertAnalyticResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getAlertAnalytic:getAlertAnalytic", {
         "accessLevel": args.accessLevel,
         "compartmentId": args.compartmentId,
@@ -121,9 +119,32 @@ export interface GetAlertAnalyticResult {
      */
     readonly timeStarted?: string;
 }
-
+/**
+ * This data source provides details about a specific Alert Analytic resource in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Returns aggregation details of alerts.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAlertAnalytic = oci.DataSafe.getAlertAnalytic({
+ *     compartmentId: _var.compartment_id,
+ *     accessLevel: _var.alert_analytic_access_level,
+ *     compartmentIdInSubtree: _var.alert_analytic_compartment_id_in_subtree,
+ *     groupBies: _var.alert_analytic_group_by,
+ *     queryTimeZone: _var.alert_analytic_query_time_zone,
+ *     scimQuery: _var.alert_analytic_scim_query,
+ *     summaryFields: _var.alert_analytic_summary_field,
+ *     timeEnded: _var.alert_analytic_time_ended,
+ *     timeStarted: _var.alert_analytic_time_started,
+ * });
+ * ```
+ */
 export function getAlertAnalyticOutput(args: GetAlertAnalyticOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAlertAnalyticResult> {
-    return pulumi.output(args).apply(a => getAlertAnalytic(a, opts))
+    return pulumi.output(args).apply((a: any) => getAlertAnalytic(a, opts))
 }
 
 /**

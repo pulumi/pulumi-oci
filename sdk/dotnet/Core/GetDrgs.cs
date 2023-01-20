@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDrgsResult> InvokeAsync(GetDrgsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDrgsResult>("oci:Core/getDrgs:getDrgs", args ?? new GetDrgsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDrgsResult>("oci:Core/getDrgs:getDrgs", args ?? new GetDrgsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Drgs in Oracle Cloud Infrastructure Core service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDrgsResult> Invoke(GetDrgsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDrgsResult>("oci:Core/getDrgs:getDrgs", args ?? new GetDrgsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDrgsResult>("oci:Core/getDrgs:getDrgs", args ?? new GetDrgsInvokeArgs(), options.WithDefaults());
     }
 
 

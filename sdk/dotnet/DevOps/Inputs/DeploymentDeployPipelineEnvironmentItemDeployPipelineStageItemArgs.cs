@@ -13,7 +13,7 @@ namespace Pulumi.Oci.DevOps.Inputs
     public sealed class DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Specifies the OCID of the stage to be redeployed.
+        /// The OCID of the stage.
         /// </summary>
         [Input("deployStageId")]
         public Input<string>? DeployStageId { get; set; }

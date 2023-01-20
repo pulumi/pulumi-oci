@@ -5,24 +5,56 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./discoveryJob";
-export * from "./getDiscoveryJob";
-export * from "./getDiscoveryJobLogs";
-export * from "./getDiscoveryJobs";
-export * from "./getMonitoredResource";
-export * from "./monitoredResource";
-export * from "./monitoredResourcesAssociateMonitoredResource";
-export * from "./monitoredResourcesListMember";
-export * from "./monitoredResourcesSearch";
-export * from "./monitoredResourcesSearchAssociation";
+export { DiscoveryJobArgs, DiscoveryJobState } from "./discoveryJob";
+export type DiscoveryJob = import("./discoveryJob").DiscoveryJob;
+export const DiscoveryJob: typeof import("./discoveryJob").DiscoveryJob = null as any;
+utilities.lazyLoad(exports, ["DiscoveryJob"], () => require("./discoveryJob"));
 
-// Import resources to register:
-import { DiscoveryJob } from "./discoveryJob";
-import { MonitoredResource } from "./monitoredResource";
-import { MonitoredResourcesAssociateMonitoredResource } from "./monitoredResourcesAssociateMonitoredResource";
-import { MonitoredResourcesListMember } from "./monitoredResourcesListMember";
-import { MonitoredResourcesSearch } from "./monitoredResourcesSearch";
-import { MonitoredResourcesSearchAssociation } from "./monitoredResourcesSearchAssociation";
+export { GetDiscoveryJobArgs, GetDiscoveryJobResult, GetDiscoveryJobOutputArgs } from "./getDiscoveryJob";
+export const getDiscoveryJob: typeof import("./getDiscoveryJob").getDiscoveryJob = null as any;
+export const getDiscoveryJobOutput: typeof import("./getDiscoveryJob").getDiscoveryJobOutput = null as any;
+utilities.lazyLoad(exports, ["getDiscoveryJob","getDiscoveryJobOutput"], () => require("./getDiscoveryJob"));
+
+export { GetDiscoveryJobLogsArgs, GetDiscoveryJobLogsResult, GetDiscoveryJobLogsOutputArgs } from "./getDiscoveryJobLogs";
+export const getDiscoveryJobLogs: typeof import("./getDiscoveryJobLogs").getDiscoveryJobLogs = null as any;
+export const getDiscoveryJobLogsOutput: typeof import("./getDiscoveryJobLogs").getDiscoveryJobLogsOutput = null as any;
+utilities.lazyLoad(exports, ["getDiscoveryJobLogs","getDiscoveryJobLogsOutput"], () => require("./getDiscoveryJobLogs"));
+
+export { GetDiscoveryJobsArgs, GetDiscoveryJobsResult, GetDiscoveryJobsOutputArgs } from "./getDiscoveryJobs";
+export const getDiscoveryJobs: typeof import("./getDiscoveryJobs").getDiscoveryJobs = null as any;
+export const getDiscoveryJobsOutput: typeof import("./getDiscoveryJobs").getDiscoveryJobsOutput = null as any;
+utilities.lazyLoad(exports, ["getDiscoveryJobs","getDiscoveryJobsOutput"], () => require("./getDiscoveryJobs"));
+
+export { GetMonitoredResourceArgs, GetMonitoredResourceResult, GetMonitoredResourceOutputArgs } from "./getMonitoredResource";
+export const getMonitoredResource: typeof import("./getMonitoredResource").getMonitoredResource = null as any;
+export const getMonitoredResourceOutput: typeof import("./getMonitoredResource").getMonitoredResourceOutput = null as any;
+utilities.lazyLoad(exports, ["getMonitoredResource","getMonitoredResourceOutput"], () => require("./getMonitoredResource"));
+
+export { MonitoredResourceArgs, MonitoredResourceState } from "./monitoredResource";
+export type MonitoredResource = import("./monitoredResource").MonitoredResource;
+export const MonitoredResource: typeof import("./monitoredResource").MonitoredResource = null as any;
+utilities.lazyLoad(exports, ["MonitoredResource"], () => require("./monitoredResource"));
+
+export { MonitoredResourcesAssociateMonitoredResourceArgs, MonitoredResourcesAssociateMonitoredResourceState } from "./monitoredResourcesAssociateMonitoredResource";
+export type MonitoredResourcesAssociateMonitoredResource = import("./monitoredResourcesAssociateMonitoredResource").MonitoredResourcesAssociateMonitoredResource;
+export const MonitoredResourcesAssociateMonitoredResource: typeof import("./monitoredResourcesAssociateMonitoredResource").MonitoredResourcesAssociateMonitoredResource = null as any;
+utilities.lazyLoad(exports, ["MonitoredResourcesAssociateMonitoredResource"], () => require("./monitoredResourcesAssociateMonitoredResource"));
+
+export { MonitoredResourcesListMemberArgs, MonitoredResourcesListMemberState } from "./monitoredResourcesListMember";
+export type MonitoredResourcesListMember = import("./monitoredResourcesListMember").MonitoredResourcesListMember;
+export const MonitoredResourcesListMember: typeof import("./monitoredResourcesListMember").MonitoredResourcesListMember = null as any;
+utilities.lazyLoad(exports, ["MonitoredResourcesListMember"], () => require("./monitoredResourcesListMember"));
+
+export { MonitoredResourcesSearchArgs, MonitoredResourcesSearchState } from "./monitoredResourcesSearch";
+export type MonitoredResourcesSearch = import("./monitoredResourcesSearch").MonitoredResourcesSearch;
+export const MonitoredResourcesSearch: typeof import("./monitoredResourcesSearch").MonitoredResourcesSearch = null as any;
+utilities.lazyLoad(exports, ["MonitoredResourcesSearch"], () => require("./monitoredResourcesSearch"));
+
+export { MonitoredResourcesSearchAssociationArgs, MonitoredResourcesSearchAssociationState } from "./monitoredResourcesSearchAssociation";
+export type MonitoredResourcesSearchAssociation = import("./monitoredResourcesSearchAssociation").MonitoredResourcesSearchAssociation;
+export const MonitoredResourcesSearchAssociation: typeof import("./monitoredResourcesSearchAssociation").MonitoredResourcesSearchAssociation = null as any;
+utilities.lazyLoad(exports, ["MonitoredResourcesSearchAssociation"], () => require("./monitoredResourcesSearchAssociation"));
+
 
 const _module = {
     version: utilities.getVersion(),

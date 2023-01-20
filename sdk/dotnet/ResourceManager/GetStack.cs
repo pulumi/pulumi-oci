@@ -38,7 +38,7 @@ namespace Pulumi.Oci.ResourceManager
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetStackResult> InvokeAsync(GetStackArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetStackResult>("oci:ResourceManager/getStack:getStack", args ?? new GetStackArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetStackResult>("oci:ResourceManager/getStack:getStack", args ?? new GetStackArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Stack resource in Oracle Cloud Infrastructure Resource Manager service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.ResourceManager
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetStackResult> Invoke(GetStackInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetStackResult>("oci:ResourceManager/getStack:getStack", args ?? new GetStackInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetStackResult>("oci:ResourceManager/getStack:getStack", args ?? new GetStackInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -39,7 +39,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetBackendSetHealthResult> InvokeAsync(GetBackendSetHealthArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetBackendSetHealthResult>("oci:LoadBalancer/getBackendSetHealth:getBackendSetHealth", args ?? new GetBackendSetHealthArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetBackendSetHealthResult>("oci:LoadBalancer/getBackendSetHealth:getBackendSetHealth", args ?? new GetBackendSetHealthArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Backend Set Health resource in Oracle Cloud Infrastructure Load Balancer service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetBackendSetHealthResult> Invoke(GetBackendSetHealthInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetBackendSetHealthResult>("oci:LoadBalancer/getBackendSetHealth:getBackendSetHealth", args ?? new GetBackendSetHealthInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetBackendSetHealthResult>("oci:LoadBalancer/getBackendSetHealth:getBackendSetHealth", args ?? new GetBackendSetHealthInvokeArgs(), options.WithDefaults());
     }
 
 

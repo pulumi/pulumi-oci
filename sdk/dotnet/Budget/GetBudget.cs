@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Budget
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetBudgetResult> InvokeAsync(GetBudgetArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetBudgetResult>("oci:Budget/getBudget:getBudget", args ?? new GetBudgetArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetBudgetResult>("oci:Budget/getBudget:getBudget", args ?? new GetBudgetArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Budget resource in Oracle Cloud Infrastructure Budget service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Budget
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetBudgetResult> Invoke(GetBudgetInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetBudgetResult>("oci:Budget/getBudget:getBudget", args ?? new GetBudgetInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetBudgetResult>("oci:Budget/getBudget:getBudget", args ?? new GetBudgetInvokeArgs(), options.WithDefaults());
     }
 
 

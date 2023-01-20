@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAutonomousExadataInfrastructureShapes(args: GetAutonomousExadataInfrastructureShapesArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousExadataInfrastructureShapesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getAutonomousExadataInfrastructureShapes:getAutonomousExadataInfrastructureShapes", {
         "availabilityDomain": args.availabilityDomain,
         "compartmentId": args.compartmentId,
@@ -66,9 +64,25 @@ export interface GetAutonomousExadataInfrastructureShapesResult {
      */
     readonly id: string;
 }
-
+/**
+ * This data source provides the list of Autonomous Exadata Infrastructure Shapes in Oracle Cloud Infrastructure Database service.
+ *
+ * **Deprecated.**
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAutonomousExadataInfrastructureShapes = oci.Database.getAutonomousExadataInfrastructureShapes({
+ *     availabilityDomain: _var.autonomous_exadata_infrastructure_shape_availability_domain,
+ *     compartmentId: _var.compartment_id,
+ * });
+ * ```
+ */
 export function getAutonomousExadataInfrastructureShapesOutput(args: GetAutonomousExadataInfrastructureShapesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousExadataInfrastructureShapesResult> {
-    return pulumi.output(args).apply(a => getAutonomousExadataInfrastructureShapes(a, opts))
+    return pulumi.output(args).apply((a: any) => getAutonomousExadataInfrastructureShapes(a, opts))
 }
 
 /**

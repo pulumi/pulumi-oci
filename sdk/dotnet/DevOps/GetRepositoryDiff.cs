@@ -43,7 +43,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetRepositoryDiffResult> InvokeAsync(GetRepositoryDiffArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetRepositoryDiffResult>("oci:DevOps/getRepositoryDiff:getRepositoryDiff", args ?? new GetRepositoryDiffArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetRepositoryDiffResult>("oci:DevOps/getRepositoryDiff:getRepositoryDiff", args ?? new GetRepositoryDiffArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Repository Diff resource in Oracle Cloud Infrastructure Devops service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetRepositoryDiffResult> Invoke(GetRepositoryDiffInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetRepositoryDiffResult>("oci:DevOps/getRepositoryDiff:getRepositoryDiff", args ?? new GetRepositoryDiffInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetRepositoryDiffResult>("oci:DevOps/getRepositoryDiff:getRepositoryDiff", args ?? new GetRepositoryDiffInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVbInstanceApplications(args: GetVbInstanceApplicationsArgs, opts?: pulumi.InvokeOptions): Promise<GetVbInstanceApplicationsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:VisualBuilder/getVbInstanceApplications:getVbInstanceApplications", {
         "idcsOpenId": args.idcsOpenId,
         "vbInstanceId": args.vbInstanceId,
@@ -63,9 +61,25 @@ export interface GetVbInstanceApplicationsResult {
     readonly idcsOpenId?: string;
     readonly vbInstanceId: string;
 }
-
+/**
+ * This data source provides the list of published and staged applications of a Visual Builder Instance in Oracle Cloud Infrastructure Visual Builder service.
+ *
+ * Returns a list of published and staged applications of a Visual Builder instance.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testVbInstanceApplications = oci.VisualBuilder.getVbInstanceApplications({
+ *     vbInstanceId: oci_visual_builder_vb_instance.test_vb_instance.id,
+ *     idcsOpenId: "idcs_open_id_value",
+ * });
+ * ```
+ */
 export function getVbInstanceApplicationsOutput(args: GetVbInstanceApplicationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVbInstanceApplicationsResult> {
-    return pulumi.output(args).apply(a => getVbInstanceApplications(a, opts))
+    return pulumi.output(args).apply((a: any) => getVbInstanceApplications(a, opts))
 }
 
 /**

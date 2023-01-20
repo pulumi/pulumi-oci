@@ -22,11 +22,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLogAnalyticsLogGroup(args: GetLogAnalyticsLogGroupArgs, opts?: pulumi.InvokeOptions): Promise<GetLogAnalyticsLogGroupResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LogAnalytics/getLogAnalyticsLogGroup:getLogAnalyticsLogGroup", {
         "logAnalyticsLogGroupId": args.logAnalyticsLogGroupId,
         "namespace": args.namespace,
@@ -86,9 +83,25 @@ export interface GetLogAnalyticsLogGroupResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Log Analytics Log Group resource in Oracle Cloud Infrastructure Log Analytics service.
+ *
+ * Gets detailed information about the specified log group such as display name, description, defined tags, and free-form tags.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testLogAnalyticsLogGroup = oci.LogAnalytics.getLogAnalyticsLogGroup({
+ *     logAnalyticsLogGroupId: oci_log_analytics_log_analytics_log_group.test_log_analytics_log_group.id,
+ *     namespace: _var.log_analytics_log_group_namespace,
+ * });
+ * ```
+ */
 export function getLogAnalyticsLogGroupOutput(args: GetLogAnalyticsLogGroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogAnalyticsLogGroupResult> {
-    return pulumi.output(args).apply(a => getLogAnalyticsLogGroup(a, opts))
+    return pulumi.output(args).apply((a: any) => getLogAnalyticsLogGroup(a, opts))
 }
 
 /**

@@ -40,7 +40,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetRepositoryAuthorsResult> InvokeAsync(GetRepositoryAuthorsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetRepositoryAuthorsResult>("oci:DevOps/getRepositoryAuthors:getRepositoryAuthors", args ?? new GetRepositoryAuthorsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetRepositoryAuthorsResult>("oci:DevOps/getRepositoryAuthors:getRepositoryAuthors", args ?? new GetRepositoryAuthorsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Repository Authors in Oracle Cloud Infrastructure Devops service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetRepositoryAuthorsResult> Invoke(GetRepositoryAuthorsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetRepositoryAuthorsResult>("oci:DevOps/getRepositoryAuthors:getRepositoryAuthors", args ?? new GetRepositoryAuthorsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetRepositoryAuthorsResult>("oci:DevOps/getRepositoryAuthors:getRepositoryAuthors", args ?? new GetRepositoryAuthorsInvokeArgs(), options.WithDefaults());
     }
 
 

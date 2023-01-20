@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getOsn(args: GetOsnArgs, opts?: pulumi.InvokeOptions): Promise<GetOsnResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Blockchain/getOsn:getOsn", {
         "blockchainPlatformId": args.blockchainPlatformId,
         "osnId": args.osnId,
@@ -72,9 +70,25 @@ export interface GetOsnResult {
      */
     readonly state: string;
 }
-
+/**
+ * This data source provides details about a specific Osn resource in Oracle Cloud Infrastructure Blockchain service.
+ *
+ * Gets information about an OSN identified by the specific id
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testOsn = oci.Blockchain.getOsn({
+ *     blockchainPlatformId: oci_blockchain_blockchain_platform.test_blockchain_platform.id,
+ *     osnId: oci_blockchain_osn.test_osn.id,
+ * });
+ * ```
+ */
 export function getOsnOutput(args: GetOsnOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOsnResult> {
-    return pulumi.output(args).apply(a => getOsn(a, opts))
+    return pulumi.output(args).apply((a: any) => getOsn(a, opts))
 }
 
 /**

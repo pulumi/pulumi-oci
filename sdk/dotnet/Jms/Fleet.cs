@@ -82,6 +82,12 @@ namespace Pulumi.Oci.Jms
         public Output<int> ApproximateInstallationCount { get; private set; } = null!;
 
         /// <summary>
+        /// The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+        /// </summary>
+        [Output("approximateJavaServerCount")]
+        public Output<int> ApproximateJavaServerCount { get; private set; } = null!;
+
+        /// <summary>
         /// The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
         /// </summary>
         [Output("approximateJreCount")]
@@ -130,7 +136,7 @@ namespace Pulumi.Oci.Jms
         public Output<Outputs.FleetInventoryLog> InventoryLog { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+        /// (Updatable) Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
         /// </summary>
         [Output("isAdvancedFeaturesEnabled")]
         public Output<bool> IsAdvancedFeaturesEnabled { get; private set; } = null!;
@@ -254,7 +260,7 @@ namespace Pulumi.Oci.Jms
         public Input<Inputs.FleetInventoryLogArgs> InventoryLog { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+        /// (Updatable) Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
         /// </summary>
         [Input("isAdvancedFeaturesEnabled")]
         public Input<bool>? IsAdvancedFeaturesEnabled { get; set; }
@@ -284,6 +290,12 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         [Input("approximateInstallationCount")]
         public Input<int>? ApproximateInstallationCount { get; set; }
+
+        /// <summary>
+        /// The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+        /// </summary>
+        [Input("approximateJavaServerCount")]
+        public Input<int>? ApproximateJavaServerCount { get; set; }
 
         /// <summary>
         /// The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
@@ -346,7 +358,7 @@ namespace Pulumi.Oci.Jms
         public Input<Inputs.FleetInventoryLogGetArgs>? InventoryLog { get; set; }
 
         /// <summary>
-        /// (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+        /// (Updatable) Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
         /// </summary>
         [Input("isAdvancedFeaturesEnabled")]
         public Input<bool>? IsAdvancedFeaturesEnabled { get; set; }

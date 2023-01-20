@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAutonomousDatabaseResult> InvokeAsync(GetAutonomousDatabaseArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAutonomousDatabaseResult>("oci:Database/getAutonomousDatabase:getAutonomousDatabase", args ?? new GetAutonomousDatabaseArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAutonomousDatabaseResult>("oci:Database/getAutonomousDatabase:getAutonomousDatabase", args ?? new GetAutonomousDatabaseArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Autonomous Database resource in Oracle Cloud Infrastructure Database service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAutonomousDatabaseResult> Invoke(GetAutonomousDatabaseInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAutonomousDatabaseResult>("oci:Database/getAutonomousDatabase:getAutonomousDatabase", args ?? new GetAutonomousDatabaseInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousDatabaseResult>("oci:Database/getAutonomousDatabase:getAutonomousDatabase", args ?? new GetAutonomousDatabaseInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -158,7 +158,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousDatabaseConnectionUrlResult> ConnectionUrls;
         /// <summary>
-        /// The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+        /// The number of OCPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&amp;id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
         /// </summary>
         public readonly int CpuCoreCount;
         /// <summary>
@@ -473,6 +473,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string TimeUntilReconnectCloneEnabled;
         public readonly string Timestamp;
+        public readonly bool UseLatestAvailableBackupTimeStamp;
         /// <summary>
         /// The amount of storage that has been used, in terabytes.
         /// </summary>
@@ -686,6 +687,8 @@ namespace Pulumi.Oci.Database
 
             string timestamp,
 
+            bool useLatestAvailableBackupTimeStamp,
+
             int usedDataStorageSizeInTbs,
 
             string vaultId,
@@ -791,6 +794,7 @@ namespace Pulumi.Oci.Database
             TimeReclamationOfFreeAutonomousDatabase = timeReclamationOfFreeAutonomousDatabase;
             TimeUntilReconnectCloneEnabled = timeUntilReconnectCloneEnabled;
             Timestamp = timestamp;
+            UseLatestAvailableBackupTimeStamp = useLatestAvailableBackupTimeStamp;
             UsedDataStorageSizeInTbs = usedDataStorageSizeInTbs;
             VaultId = vaultId;
             WhitelistedIps = whitelistedIps;

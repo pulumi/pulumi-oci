@@ -22,11 +22,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAppCatalogListingResourceVersion(args: GetAppCatalogListingResourceVersionArgs, opts?: pulumi.InvokeOptions): Promise<GetAppCatalogListingResourceVersionResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getAppCatalogListingResourceVersion:getAppCatalogListingResourceVersion", {
         "listingId": args.listingId,
         "resourceVersion": args.resourceVersion,
@@ -89,9 +86,25 @@ export interface GetAppCatalogListingResourceVersionResult {
      */
     readonly timePublished: string;
 }
-
+/**
+ * This data source provides details about a specific App Catalog Listing Resource Version resource in Oracle Cloud Infrastructure Core service.
+ *
+ * Gets the specified listing resource version.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAppCatalogListingResourceVersion = oci.Core.getAppCatalogListingResourceVersion({
+ *     listingId: data.oci_core_app_catalog_listing.test_listing.id,
+ *     resourceVersion: _var.app_catalog_listing_resource_version_resource_version,
+ * });
+ * ```
+ */
 export function getAppCatalogListingResourceVersionOutput(args: GetAppCatalogListingResourceVersionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppCatalogListingResourceVersionResult> {
-    return pulumi.output(args).apply(a => getAppCatalogListingResourceVersion(a, opts))
+    return pulumi.output(args).apply((a: any) => getAppCatalogListingResourceVersion(a, opts))
 }
 
 /**

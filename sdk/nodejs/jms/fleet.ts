@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -89,6 +90,10 @@ export class Fleet extends pulumi.CustomResource {
      */
     public /*out*/ readonly approximateInstallationCount!: pulumi.Output<number>;
     /**
+     * The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+     */
+    public /*out*/ readonly approximateJavaServerCount!: pulumi.Output<number>;
+    /**
      * The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
      */
     public /*out*/ readonly approximateJreCount!: pulumi.Output<number>;
@@ -121,7 +126,7 @@ export class Fleet extends pulumi.CustomResource {
      */
     public readonly inventoryLog!: pulumi.Output<outputs.Jms.FleetInventoryLog>;
     /**
-     * (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+     * (Updatable) Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
      */
     public readonly isAdvancedFeaturesEnabled!: pulumi.Output<boolean>;
     /**
@@ -156,6 +161,7 @@ export class Fleet extends pulumi.CustomResource {
             const state = argsOrState as FleetState | undefined;
             resourceInputs["approximateApplicationCount"] = state ? state.approximateApplicationCount : undefined;
             resourceInputs["approximateInstallationCount"] = state ? state.approximateInstallationCount : undefined;
+            resourceInputs["approximateJavaServerCount"] = state ? state.approximateJavaServerCount : undefined;
             resourceInputs["approximateJreCount"] = state ? state.approximateJreCount : undefined;
             resourceInputs["approximateManagedInstanceCount"] = state ? state.approximateManagedInstanceCount : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
@@ -190,6 +196,7 @@ export class Fleet extends pulumi.CustomResource {
             resourceInputs["operationLog"] = args ? args.operationLog : undefined;
             resourceInputs["approximateApplicationCount"] = undefined /*out*/;
             resourceInputs["approximateInstallationCount"] = undefined /*out*/;
+            resourceInputs["approximateJavaServerCount"] = undefined /*out*/;
             resourceInputs["approximateJreCount"] = undefined /*out*/;
             resourceInputs["approximateManagedInstanceCount"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
@@ -213,6 +220,10 @@ export interface FleetState {
      * The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
      */
     approximateInstallationCount?: pulumi.Input<number>;
+    /**
+     * The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+     */
+    approximateJavaServerCount?: pulumi.Input<number>;
     /**
      * The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
      */
@@ -246,7 +257,7 @@ export interface FleetState {
      */
     inventoryLog?: pulumi.Input<inputs.Jms.FleetInventoryLog>;
     /**
-     * (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+     * (Updatable) Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
      */
     isAdvancedFeaturesEnabled?: pulumi.Input<boolean>;
     /**
@@ -296,7 +307,7 @@ export interface FleetArgs {
      */
     inventoryLog: pulumi.Input<inputs.Jms.FleetInventoryLog>;
     /**
-     * (Updatable) Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+     * (Updatable) Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
      */
     isAdvancedFeaturesEnabled?: pulumi.Input<boolean>;
     /**

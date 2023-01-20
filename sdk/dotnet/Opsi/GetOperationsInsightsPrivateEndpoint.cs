@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Opsi
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetOperationsInsightsPrivateEndpointResult> InvokeAsync(GetOperationsInsightsPrivateEndpointArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetOperationsInsightsPrivateEndpointResult>("oci:Opsi/getOperationsInsightsPrivateEndpoint:getOperationsInsightsPrivateEndpoint", args ?? new GetOperationsInsightsPrivateEndpointArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetOperationsInsightsPrivateEndpointResult>("oci:Opsi/getOperationsInsightsPrivateEndpoint:getOperationsInsightsPrivateEndpoint", args ?? new GetOperationsInsightsPrivateEndpointArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Operations Insights Private Endpoint resource in Oracle Cloud Infrastructure Opsi service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Opsi
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetOperationsInsightsPrivateEndpointResult> Invoke(GetOperationsInsightsPrivateEndpointInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetOperationsInsightsPrivateEndpointResult>("oci:Opsi/getOperationsInsightsPrivateEndpoint:getOperationsInsightsPrivateEndpoint", args ?? new GetOperationsInsightsPrivateEndpointInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetOperationsInsightsPrivateEndpointResult>("oci:Opsi/getOperationsInsightsPrivateEndpoint:getOperationsInsightsPrivateEndpoint", args ?? new GetOperationsInsightsPrivateEndpointInvokeArgs(), options.WithDefaults());
     }
 
 

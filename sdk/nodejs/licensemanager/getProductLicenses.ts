@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getProductLicenses(args: GetProductLicensesArgs, opts?: pulumi.InvokeOptions): Promise<GetProductLicensesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LicenseManager/getProductLicenses:getProductLicenses", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -69,9 +67,25 @@ export interface GetProductLicensesResult {
      */
     readonly productLicenseCollections: outputs.LicenseManager.GetProductLicensesProductLicenseCollection[];
 }
-
+/**
+ * This data source provides the list of Product Licenses in Oracle Cloud Infrastructure License Manager service.
+ *
+ * Retrieves all the product licenses from a given compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testProductLicenses = oci.LicenseManager.getProductLicenses({
+ *     compartmentId: _var.compartment_id,
+ *     isCompartmentIdInSubtree: _var.product_license_is_compartment_id_in_subtree,
+ * });
+ * ```
+ */
 export function getProductLicensesOutput(args: GetProductLicensesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProductLicensesResult> {
-    return pulumi.output(args).apply(a => getProductLicenses(a, opts))
+    return pulumi.output(args).apply((a: any) => getProductLicenses(a, opts))
 }
 
 /**

@@ -63,7 +63,7 @@ type HostInsight struct {
 	ManagementAgentId pulumi.StringOutput `pulumi:"managementAgentId"`
 	// Platform name.
 	PlatformName pulumi.StringOutput `pulumi:"platformName"`
-	// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+	// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS].
 	PlatformType pulumi.StringOutput `pulumi:"platformType"`
 	// Platform version.
 	PlatformVersion pulumi.StringOutput `pulumi:"platformVersion"`
@@ -152,7 +152,7 @@ type hostInsightState struct {
 	ManagementAgentId *string `pulumi:"managementAgentId"`
 	// Platform name.
 	PlatformName *string `pulumi:"platformName"`
-	// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+	// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS].
 	PlatformType *string `pulumi:"platformType"`
 	// Platform version.
 	PlatformVersion *string `pulumi:"platformVersion"`
@@ -207,7 +207,7 @@ type HostInsightState struct {
 	ManagementAgentId pulumi.StringPtrInput
 	// Platform name.
 	PlatformName pulumi.StringPtrInput
-	// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+	// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS].
 	PlatformType pulumi.StringPtrInput
 	// Platform version.
 	PlatformVersion pulumi.StringPtrInput
@@ -457,7 +457,7 @@ func (o HostInsightOutput) PlatformName() pulumi.StringOutput {
 	return o.ApplyT(func(v *HostInsight) pulumi.StringOutput { return v.PlatformName }).(pulumi.StringOutput)
 }
 
-// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS].
 func (o HostInsightOutput) PlatformType() pulumi.StringOutput {
 	return o.ApplyT(func(v *HostInsight) pulumi.StringOutput { return v.PlatformType }).(pulumi.StringOutput)
 }

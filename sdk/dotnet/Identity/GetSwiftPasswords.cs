@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetSwiftPasswordsResult> InvokeAsync(GetSwiftPasswordsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetSwiftPasswordsResult>("oci:Identity/getSwiftPasswords:getSwiftPasswords", args ?? new GetSwiftPasswordsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetSwiftPasswordsResult>("oci:Identity/getSwiftPasswords:getSwiftPasswords", args ?? new GetSwiftPasswordsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Swift Passwords in Oracle Cloud Infrastructure Identity service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetSwiftPasswordsResult> Invoke(GetSwiftPasswordsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetSwiftPasswordsResult>("oci:Identity/getSwiftPasswords:getSwiftPasswords", args ?? new GetSwiftPasswordsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetSwiftPasswordsResult>("oci:Identity/getSwiftPasswords:getSwiftPasswords", args ?? new GetSwiftPasswordsInvokeArgs(), options.WithDefaults());
     }
 
 

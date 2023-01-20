@@ -10,6 +10,7 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Database.PluggableDatabaseArgs;
 import com.pulumi.oci.Database.inputs.PluggableDatabaseState;
 import com.pulumi.oci.Database.outputs.PluggableDatabaseConnectionString;
+import com.pulumi.oci.Database.outputs.PluggableDatabasePluggableDatabaseManagementConfig;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -212,6 +213,20 @@ public class PluggableDatabase extends com.pulumi.resources.CustomResource {
         return this.pdbName;
     }
     /**
+     * The configuration of the Pluggable Database Management service.
+     * 
+     */
+    @Export(name="pluggableDatabaseManagementConfigs", type=List.class, parameters={PluggableDatabasePluggableDatabaseManagementConfig.class})
+    private Output<List<PluggableDatabasePluggableDatabaseManagementConfig>> pluggableDatabaseManagementConfigs;
+
+    /**
+     * @return The configuration of the Pluggable Database Management service.
+     * 
+     */
+    public Output<List<PluggableDatabasePluggableDatabaseManagementConfig>> pluggableDatabaseManagementConfigs() {
+        return this.pluggableDatabaseManagementConfigs;
+    }
+    /**
      * The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
      * 
      */
@@ -300,6 +315,10 @@ public class PluggableDatabase extends com.pulumi.resources.CustomResource {
     private static com.pulumi.resources.CustomResourceOptions makeResourceOptions(@Nullable com.pulumi.resources.CustomResourceOptions options, @Nullable Output<String> id) {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
+            .additionalSecretOutputs(List.of(
+                "pdbAdminPassword",
+                "tdeWalletPassword"
+            ))
             .build();
         return com.pulumi.resources.CustomResourceOptions.merge(defaultOptions, options, id);
     }

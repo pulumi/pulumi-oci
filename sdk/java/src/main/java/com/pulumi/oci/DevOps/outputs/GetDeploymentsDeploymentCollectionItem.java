@@ -7,8 +7,10 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DevOps.outputs.GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgument;
 import com.pulumi.oci.DevOps.outputs.GetDeploymentsDeploymentCollectionItemDeployPipelineArtifact;
 import com.pulumi.oci.DevOps.outputs.GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironment;
+import com.pulumi.oci.DevOps.outputs.GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgument;
 import com.pulumi.oci.DevOps.outputs.GetDeploymentsDeploymentCollectionItemDeploymentArgument;
 import com.pulumi.oci.DevOps.outputs.GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgress;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -52,6 +54,11 @@ public final class GetDeploymentsDeploymentCollectionItem {
      * 
      */
     private String deployStageId;
+    /**
+     * @return Specifies the list of arguments to be overriden per Stage at the time of deployment.
+     * 
+     */
+    private List<GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgument> deployStageOverrideArguments;
     /**
      * @return Specifies list of arguments passed along with the deployment.
      * 
@@ -117,6 +124,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
      * 
      */
     private String timeUpdated;
+    private Boolean triggerNewDevopsDeployment;
 
     private GetDeploymentsDeploymentCollectionItem() {}
     /**
@@ -167,6 +175,13 @@ public final class GetDeploymentsDeploymentCollectionItem {
      */
     public String deployStageId() {
         return this.deployStageId;
+    }
+    /**
+     * @return Specifies the list of arguments to be overriden per Stage at the time of deployment.
+     * 
+     */
+    public List<GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgument> deployStageOverrideArguments() {
+        return this.deployStageOverrideArguments;
     }
     /**
      * @return Specifies list of arguments passed along with the deployment.
@@ -259,6 +274,9 @@ public final class GetDeploymentsDeploymentCollectionItem {
     public String timeUpdated() {
         return this.timeUpdated;
     }
+    public Boolean triggerNewDevopsDeployment() {
+        return this.triggerNewDevopsDeployment;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -276,6 +294,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
         private List<GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironment> deployPipelineEnvironments;
         private String deployPipelineId;
         private String deployStageId;
+        private List<GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgument> deployStageOverrideArguments;
         private List<GetDeploymentsDeploymentCollectionItemDeploymentArgument> deploymentArguments;
         private List<GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgress> deploymentExecutionProgresses;
         private String deploymentType;
@@ -289,6 +308,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
         private Map<String,Object> systemTags;
         private String timeCreated;
         private String timeUpdated;
+        private Boolean triggerNewDevopsDeployment;
         public Builder() {}
         public Builder(GetDeploymentsDeploymentCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -299,6 +319,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
     	      this.deployPipelineEnvironments = defaults.deployPipelineEnvironments;
     	      this.deployPipelineId = defaults.deployPipelineId;
     	      this.deployStageId = defaults.deployStageId;
+    	      this.deployStageOverrideArguments = defaults.deployStageOverrideArguments;
     	      this.deploymentArguments = defaults.deploymentArguments;
     	      this.deploymentExecutionProgresses = defaults.deploymentExecutionProgresses;
     	      this.deploymentType = defaults.deploymentType;
@@ -312,6 +333,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
+    	      this.triggerNewDevopsDeployment = defaults.triggerNewDevopsDeployment;
         }
 
         @CustomType.Setter
@@ -357,6 +379,14 @@ public final class GetDeploymentsDeploymentCollectionItem {
         public Builder deployStageId(String deployStageId) {
             this.deployStageId = Objects.requireNonNull(deployStageId);
             return this;
+        }
+        @CustomType.Setter
+        public Builder deployStageOverrideArguments(List<GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgument> deployStageOverrideArguments) {
+            this.deployStageOverrideArguments = Objects.requireNonNull(deployStageOverrideArguments);
+            return this;
+        }
+        public Builder deployStageOverrideArguments(GetDeploymentsDeploymentCollectionItemDeployStageOverrideArgument... deployStageOverrideArguments) {
+            return deployStageOverrideArguments(List.of(deployStageOverrideArguments));
         }
         @CustomType.Setter
         public Builder deploymentArguments(List<GetDeploymentsDeploymentCollectionItemDeploymentArgument> deploymentArguments) {
@@ -429,6 +459,11 @@ public final class GetDeploymentsDeploymentCollectionItem {
             this.timeUpdated = Objects.requireNonNull(timeUpdated);
             return this;
         }
+        @CustomType.Setter
+        public Builder triggerNewDevopsDeployment(Boolean triggerNewDevopsDeployment) {
+            this.triggerNewDevopsDeployment = Objects.requireNonNull(triggerNewDevopsDeployment);
+            return this;
+        }
         public GetDeploymentsDeploymentCollectionItem build() {
             final var o = new GetDeploymentsDeploymentCollectionItem();
             o.compartmentId = compartmentId;
@@ -438,6 +473,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
             o.deployPipelineEnvironments = deployPipelineEnvironments;
             o.deployPipelineId = deployPipelineId;
             o.deployStageId = deployStageId;
+            o.deployStageOverrideArguments = deployStageOverrideArguments;
             o.deploymentArguments = deploymentArguments;
             o.deploymentExecutionProgresses = deploymentExecutionProgresses;
             o.deploymentType = deploymentType;
@@ -451,6 +487,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
             o.systemTags = systemTags;
             o.timeCreated = timeCreated;
             o.timeUpdated = timeUpdated;
+            o.triggerNewDevopsDeployment = triggerNewDevopsDeployment;
             return o;
         }
     }

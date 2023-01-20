@@ -39,6 +39,7 @@ namespace Pulumi.Oci.DevOps
     ///                     {
     ///                         BaseRef = @var.Trigger_actions_filter_include_base_ref,
     ///                         HeadRef = @var.Trigger_actions_filter_include_head_ref,
+    ///                         RepositoryName = oci_devops_repository.Test_repository.Name,
     ///                     },
     ///                 },
     ///             },
@@ -84,6 +85,9 @@ namespace Pulumi.Oci.DevOps
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
 
+        /// <summary>
+        /// (Updatable) The OCID of the connection resource used to get details for triggered events.
+        /// </summary>
         [Output("connectionId")]
         public Output<string> ConnectionId { get; private set; } = null!;
 
@@ -154,7 +158,7 @@ namespace Pulumi.Oci.DevOps
         public Output<string> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
+        /// (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
         /// </summary>
         [Output("triggerSource")]
         public Output<string> TriggerSource { get; private set; } = null!;
@@ -223,6 +227,9 @@ namespace Pulumi.Oci.DevOps
             set => _actions = value;
         }
 
+        /// <summary>
+        /// (Updatable) The OCID of the connection resource used to get details for triggered events.
+        /// </summary>
         [Input("connectionId")]
         public Input<string>? ConnectionId { get; set; }
 
@@ -275,7 +282,7 @@ namespace Pulumi.Oci.DevOps
         public Input<string>? RepositoryId { get; set; }
 
         /// <summary>
-        /// (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
+        /// (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
         /// </summary>
         [Input("triggerSource", required: true)]
         public Input<string> TriggerSource { get; set; } = null!;
@@ -306,6 +313,9 @@ namespace Pulumi.Oci.DevOps
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
 
+        /// <summary>
+        /// (Updatable) The OCID of the connection resource used to get details for triggered events.
+        /// </summary>
         [Input("connectionId")]
         public Input<string>? ConnectionId { get; set; }
 
@@ -394,7 +404,7 @@ namespace Pulumi.Oci.DevOps
         public Input<string>? TimeUpdated { get; set; }
 
         /// <summary>
-        /// (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
+        /// (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
         /// </summary>
         [Input("triggerSource")]
         public Input<string>? TriggerSource { get; set; }

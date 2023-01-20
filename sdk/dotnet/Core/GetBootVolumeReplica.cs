@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetBootVolumeReplicaResult> InvokeAsync(GetBootVolumeReplicaArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetBootVolumeReplicaResult>("oci:Core/getBootVolumeReplica:getBootVolumeReplica", args ?? new GetBootVolumeReplicaArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetBootVolumeReplicaResult>("oci:Core/getBootVolumeReplica:getBootVolumeReplica", args ?? new GetBootVolumeReplicaArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Boot Volume Replica resource in Oracle Cloud Infrastructure Core service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetBootVolumeReplicaResult> Invoke(GetBootVolumeReplicaInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetBootVolumeReplicaResult>("oci:Core/getBootVolumeReplica:getBootVolumeReplica", args ?? new GetBootVolumeReplicaInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetBootVolumeReplicaResult>("oci:Core/getBootVolumeReplica:getBootVolumeReplica", args ?? new GetBootVolumeReplicaInvokeArgs(), options.WithDefaults());
     }
 
 

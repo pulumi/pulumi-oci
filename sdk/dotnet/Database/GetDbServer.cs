@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDbServerResult> InvokeAsync(GetDbServerArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDbServerResult>("oci:Database/getDbServer:getDbServer", args ?? new GetDbServerArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDbServerResult>("oci:Database/getDbServer:getDbServer", args ?? new GetDbServerArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Db Server resource in Oracle Cloud Infrastructure Database service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDbServerResult> Invoke(GetDbServerInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDbServerResult>("oci:Database/getDbServer:getDbServer", args ?? new GetDbServerInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDbServerResult>("oci:Database/getDbServer:getDbServer", args ?? new GetDbServerInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -181,6 +181,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly int MemorySizeInGbs;
         /// <summary>
+        /// The shape of the Db server. The shape determines the amount of CPU, storage, and memory resources available.
+        /// </summary>
+        public readonly string Shape;
+        /// <summary>
         /// The current state of the Db server.
         /// </summary>
         public readonly string State;
@@ -227,6 +231,8 @@ namespace Pulumi.Oci.Database
 
             int memorySizeInGbs,
 
+            string shape,
+
             string state,
 
             string timeCreated,
@@ -249,6 +255,7 @@ namespace Pulumi.Oci.Database
             MaxDbNodeStorageInGbs = maxDbNodeStorageInGbs;
             MaxMemoryInGbs = maxMemoryInGbs;
             MemorySizeInGbs = memorySizeInGbs;
+            Shape = shape;
             State = state;
             TimeCreated = timeCreated;
             VmClusterIds = vmClusterIds;

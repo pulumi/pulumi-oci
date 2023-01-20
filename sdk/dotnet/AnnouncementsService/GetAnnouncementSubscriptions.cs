@@ -44,7 +44,7 @@ namespace Pulumi.Oci.AnnouncementsService
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAnnouncementSubscriptionsResult> InvokeAsync(GetAnnouncementSubscriptionsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAnnouncementSubscriptionsResult>("oci:AnnouncementsService/getAnnouncementSubscriptions:getAnnouncementSubscriptions", args ?? new GetAnnouncementSubscriptionsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAnnouncementSubscriptionsResult>("oci:AnnouncementsService/getAnnouncementSubscriptions:getAnnouncementSubscriptions", args ?? new GetAnnouncementSubscriptionsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Announcement Subscriptions in Oracle Cloud Infrastructure Announcements Service service.
@@ -79,7 +79,7 @@ namespace Pulumi.Oci.AnnouncementsService
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAnnouncementSubscriptionsResult> Invoke(GetAnnouncementSubscriptionsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAnnouncementSubscriptionsResult>("oci:AnnouncementsService/getAnnouncementSubscriptions:getAnnouncementSubscriptions", args ?? new GetAnnouncementSubscriptionsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAnnouncementSubscriptionsResult>("oci:AnnouncementsService/getAnnouncementSubscriptions:getAnnouncementSubscriptions", args ?? new GetAnnouncementSubscriptionsInvokeArgs(), options.WithDefaults());
     }
 
 

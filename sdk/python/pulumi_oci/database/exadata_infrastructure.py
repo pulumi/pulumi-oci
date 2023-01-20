@@ -37,7 +37,9 @@ class ExadataInfrastructureArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_cps_offline_report_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_multi_rack_deployment: Optional[pulumi.Input[bool]] = None,
                  maintenance_window: Optional[pulumi.Input['ExadataInfrastructureMaintenanceWindowArgs']] = None,
+                 multi_rack_configuration_file: Optional[pulumi.Input[str]] = None,
                  storage_count: Optional[pulumi.Input[int]] = None):
         """
         The set of arguments for constructing a ExadataInfrastructure resource.
@@ -61,7 +63,9 @@ class ExadataInfrastructureArgs:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_cps_offline_report_enabled: (Updatable) Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
+        :param pulumi.Input[bool] is_multi_rack_deployment: (Updatable) Indicates if deployment is Multi-Rack or not.
         :param pulumi.Input['ExadataInfrastructureMaintenanceWindowArgs'] maintenance_window: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+        :param pulumi.Input[str] multi_rack_configuration_file: (Updatable) The base64 encoded Multi-Rack configuration json file.
         :param pulumi.Input[int] storage_count: The number of storage servers for the Exadata infrastructure.
         """
         pulumi.set(__self__, "admin_network_cidr", admin_network_cidr)
@@ -94,8 +98,12 @@ class ExadataInfrastructureArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_cps_offline_report_enabled is not None:
             pulumi.set(__self__, "is_cps_offline_report_enabled", is_cps_offline_report_enabled)
+        if is_multi_rack_deployment is not None:
+            pulumi.set(__self__, "is_multi_rack_deployment", is_multi_rack_deployment)
         if maintenance_window is not None:
             pulumi.set(__self__, "maintenance_window", maintenance_window)
+        if multi_rack_configuration_file is not None:
+            pulumi.set(__self__, "multi_rack_configuration_file", multi_rack_configuration_file)
         if storage_count is not None:
             pulumi.set(__self__, "storage_count", storage_count)
 
@@ -349,6 +357,18 @@ class ExadataInfrastructureArgs:
         pulumi.set(self, "is_cps_offline_report_enabled", value)
 
     @property
+    @pulumi.getter(name="isMultiRackDeployment")
+    def is_multi_rack_deployment(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Indicates if deployment is Multi-Rack or not.
+        """
+        return pulumi.get(self, "is_multi_rack_deployment")
+
+    @is_multi_rack_deployment.setter
+    def is_multi_rack_deployment(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_multi_rack_deployment", value)
+
+    @property
     @pulumi.getter(name="maintenanceWindow")
     def maintenance_window(self) -> Optional[pulumi.Input['ExadataInfrastructureMaintenanceWindowArgs']]:
         """
@@ -359,6 +379,18 @@ class ExadataInfrastructureArgs:
     @maintenance_window.setter
     def maintenance_window(self, value: Optional[pulumi.Input['ExadataInfrastructureMaintenanceWindowArgs']]):
         pulumi.set(self, "maintenance_window", value)
+
+    @property
+    @pulumi.getter(name="multiRackConfigurationFile")
+    def multi_rack_configuration_file(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The base64 encoded Multi-Rack configuration json file.
+        """
+        return pulumi.get(self, "multi_rack_configuration_file")
+
+    @multi_rack_configuration_file.setter
+    def multi_rack_configuration_file(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "multi_rack_configuration_file", value)
 
     @property
     @pulumi.getter(name="storageCount")
@@ -378,6 +410,8 @@ class _ExadataInfrastructureState:
     def __init__(__self__, *,
                  activated_storage_count: Optional[pulumi.Input[int]] = None,
                  activation_file: Optional[pulumi.Input[str]] = None,
+                 additional_compute_count: Optional[pulumi.Input[int]] = None,
+                 additional_compute_system_model: Optional[pulumi.Input[str]] = None,
                  additional_storage_count: Optional[pulumi.Input[int]] = None,
                  admin_network_cidr: Optional[pulumi.Input[str]] = None,
                  cloud_control_plane_server1: Optional[pulumi.Input[str]] = None,
@@ -399,6 +433,7 @@ class _ExadataInfrastructureState:
                  gateway: Optional[pulumi.Input[str]] = None,
                  infini_band_network_cidr: Optional[pulumi.Input[str]] = None,
                  is_cps_offline_report_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_multi_rack_deployment: Optional[pulumi.Input[bool]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  maintenance_slo_status: Optional[pulumi.Input[str]] = None,
                  maintenance_window: Optional[pulumi.Input['ExadataInfrastructureMaintenanceWindowArgs']] = None,
@@ -408,6 +443,7 @@ class _ExadataInfrastructureState:
                  max_memory_in_gbs: Optional[pulumi.Input[int]] = None,
                  memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
                  monthly_db_server_version: Optional[pulumi.Input[str]] = None,
+                 multi_rack_configuration_file: Optional[pulumi.Input[str]] = None,
                  netmask: Optional[pulumi.Input[str]] = None,
                  ntp_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
@@ -420,6 +456,8 @@ class _ExadataInfrastructureState:
         Input properties used for looking up and filtering ExadataInfrastructure resources.
         :param pulumi.Input[int] activated_storage_count: The requested number of additional storage servers activated for the Exadata infrastructure.
         :param pulumi.Input[str] activation_file: (Updatable) The activation zip file. If provided in config, exadata infrastructure will be activated after creation. Updates are not allowed on activated exadata infrastructure.
+        :param pulumi.Input[int] additional_compute_count: The requested number of additional compute servers for the Exadata infrastructure.
+        :param pulumi.Input[str] additional_compute_system_model: Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
         :param pulumi.Input[int] additional_storage_count: The requested number of additional storage servers for the Exadata infrastructure.
         :param pulumi.Input[str] admin_network_cidr: (Updatable) The CIDR block for the Exadata administration network.
         :param pulumi.Input[str] cloud_control_plane_server1: (Updatable) The IP address for the first control plane server.
@@ -440,6 +478,7 @@ class _ExadataInfrastructureState:
         :param pulumi.Input[str] gateway: (Updatable) The gateway for the control plane network.
         :param pulumi.Input[str] infini_band_network_cidr: (Updatable) The CIDR block for the Exadata InfiniBand interconnect.
         :param pulumi.Input[bool] is_cps_offline_report_enabled: (Updatable) Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
+        :param pulumi.Input[bool] is_multi_rack_deployment: (Updatable) Indicates if deployment is Multi-Rack or not.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[str] maintenance_slo_status: A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
         :param pulumi.Input['ExadataInfrastructureMaintenanceWindowArgs'] maintenance_window: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
@@ -449,6 +488,7 @@ class _ExadataInfrastructureState:
         :param pulumi.Input[int] max_memory_in_gbs: The total memory available in GBs.
         :param pulumi.Input[int] memory_size_in_gbs: The memory allocated in GBs.
         :param pulumi.Input[str] monthly_db_server_version: The monthly software version of the database servers (dom0) in the Exadata infrastructure.
+        :param pulumi.Input[str] multi_rack_configuration_file: (Updatable) The base64 encoded Multi-Rack configuration json file.
         :param pulumi.Input[str] netmask: (Updatable) The netmask for the control plane network.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ntp_servers: (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
         :param pulumi.Input[str] shape: The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
@@ -462,6 +502,10 @@ class _ExadataInfrastructureState:
             pulumi.set(__self__, "activated_storage_count", activated_storage_count)
         if activation_file is not None:
             pulumi.set(__self__, "activation_file", activation_file)
+        if additional_compute_count is not None:
+            pulumi.set(__self__, "additional_compute_count", additional_compute_count)
+        if additional_compute_system_model is not None:
+            pulumi.set(__self__, "additional_compute_system_model", additional_compute_system_model)
         if additional_storage_count is not None:
             pulumi.set(__self__, "additional_storage_count", additional_storage_count)
         if admin_network_cidr is not None:
@@ -504,6 +548,8 @@ class _ExadataInfrastructureState:
             pulumi.set(__self__, "infini_band_network_cidr", infini_band_network_cidr)
         if is_cps_offline_report_enabled is not None:
             pulumi.set(__self__, "is_cps_offline_report_enabled", is_cps_offline_report_enabled)
+        if is_multi_rack_deployment is not None:
+            pulumi.set(__self__, "is_multi_rack_deployment", is_multi_rack_deployment)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if maintenance_slo_status is not None:
@@ -522,6 +568,8 @@ class _ExadataInfrastructureState:
             pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
         if monthly_db_server_version is not None:
             pulumi.set(__self__, "monthly_db_server_version", monthly_db_server_version)
+        if multi_rack_configuration_file is not None:
+            pulumi.set(__self__, "multi_rack_configuration_file", multi_rack_configuration_file)
         if netmask is not None:
             pulumi.set(__self__, "netmask", netmask)
         if ntp_servers is not None:
@@ -562,6 +610,30 @@ class _ExadataInfrastructureState:
     @activation_file.setter
     def activation_file(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "activation_file", value)
+
+    @property
+    @pulumi.getter(name="additionalComputeCount")
+    def additional_compute_count(self) -> Optional[pulumi.Input[int]]:
+        """
+        The requested number of additional compute servers for the Exadata infrastructure.
+        """
+        return pulumi.get(self, "additional_compute_count")
+
+    @additional_compute_count.setter
+    def additional_compute_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "additional_compute_count", value)
+
+    @property
+    @pulumi.getter(name="additionalComputeSystemModel")
+    def additional_compute_system_model(self) -> Optional[pulumi.Input[str]]:
+        """
+        Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+        """
+        return pulumi.get(self, "additional_compute_system_model")
+
+    @additional_compute_system_model.setter
+    def additional_compute_system_model(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "additional_compute_system_model", value)
 
     @property
     @pulumi.getter(name="additionalStorageCount")
@@ -813,6 +885,18 @@ class _ExadataInfrastructureState:
         pulumi.set(self, "is_cps_offline_report_enabled", value)
 
     @property
+    @pulumi.getter(name="isMultiRackDeployment")
+    def is_multi_rack_deployment(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Indicates if deployment is Multi-Rack or not.
+        """
+        return pulumi.get(self, "is_multi_rack_deployment")
+
+    @is_multi_rack_deployment.setter
+    def is_multi_rack_deployment(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_multi_rack_deployment", value)
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
         """
@@ -919,6 +1003,18 @@ class _ExadataInfrastructureState:
     @monthly_db_server_version.setter
     def monthly_db_server_version(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "monthly_db_server_version", value)
+
+    @property
+    @pulumi.getter(name="multiRackConfigurationFile")
+    def multi_rack_configuration_file(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The base64 encoded Multi-Rack configuration json file.
+        """
+        return pulumi.get(self, "multi_rack_configuration_file")
+
+    @multi_rack_configuration_file.setter
+    def multi_rack_configuration_file(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "multi_rack_configuration_file", value)
 
     @property
     @pulumi.getter
@@ -1039,7 +1135,9 @@ class ExadataInfrastructure(pulumi.CustomResource):
                  gateway: Optional[pulumi.Input[str]] = None,
                  infini_band_network_cidr: Optional[pulumi.Input[str]] = None,
                  is_cps_offline_report_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_multi_rack_deployment: Optional[pulumi.Input[bool]] = None,
                  maintenance_window: Optional[pulumi.Input[pulumi.InputType['ExadataInfrastructureMaintenanceWindowArgs']]] = None,
+                 multi_rack_configuration_file: Optional[pulumi.Input[str]] = None,
                  netmask: Optional[pulumi.Input[str]] = None,
                  ntp_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
@@ -1086,8 +1184,8 @@ class ExadataInfrastructure(pulumi.CustomResource):
                 "Department": "Finance",
             },
             is_cps_offline_report_enabled=var["exadata_infrastructure_is_cps_offline_report_enabled"],
+            is_multi_rack_deployment=var["exadata_infrastructure_is_multi_rack_deployment"],
             maintenance_window=oci.database.ExadataInfrastructureMaintenanceWindowArgs(
-                preference=var["exadata_infrastructure_maintenance_window_preference"],
                 custom_action_timeout_in_mins=var["exadata_infrastructure_maintenance_window_custom_action_timeout_in_mins"],
                 days_of_weeks=[oci.database.ExadataInfrastructureMaintenanceWindowDaysOfWeekArgs(
                     name=var["exadata_infrastructure_maintenance_window_days_of_week_name"],
@@ -1100,8 +1198,10 @@ class ExadataInfrastructure(pulumi.CustomResource):
                     name=var["exadata_infrastructure_maintenance_window_months_name"],
                 )],
                 patching_mode=var["exadata_infrastructure_maintenance_window_patching_mode"],
+                preference=var["exadata_infrastructure_maintenance_window_preference"],
                 weeks_of_months=var["exadata_infrastructure_maintenance_window_weeks_of_month"],
             ),
+            multi_rack_configuration_file=var["exadata_infrastructure_multi_rack_configuration_file"],
             storage_count=var["exadata_infrastructure_storage_count"])
         ```
 
@@ -1131,7 +1231,9 @@ class ExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[str] gateway: (Updatable) The gateway for the control plane network.
         :param pulumi.Input[str] infini_band_network_cidr: (Updatable) The CIDR block for the Exadata InfiniBand interconnect.
         :param pulumi.Input[bool] is_cps_offline_report_enabled: (Updatable) Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
+        :param pulumi.Input[bool] is_multi_rack_deployment: (Updatable) Indicates if deployment is Multi-Rack or not.
         :param pulumi.Input[pulumi.InputType['ExadataInfrastructureMaintenanceWindowArgs']] maintenance_window: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+        :param pulumi.Input[str] multi_rack_configuration_file: (Updatable) The base64 encoded Multi-Rack configuration json file.
         :param pulumi.Input[str] netmask: (Updatable) The netmask for the control plane network.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ntp_servers: (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
         :param pulumi.Input[str] shape: The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
@@ -1184,8 +1286,8 @@ class ExadataInfrastructure(pulumi.CustomResource):
                 "Department": "Finance",
             },
             is_cps_offline_report_enabled=var["exadata_infrastructure_is_cps_offline_report_enabled"],
+            is_multi_rack_deployment=var["exadata_infrastructure_is_multi_rack_deployment"],
             maintenance_window=oci.database.ExadataInfrastructureMaintenanceWindowArgs(
-                preference=var["exadata_infrastructure_maintenance_window_preference"],
                 custom_action_timeout_in_mins=var["exadata_infrastructure_maintenance_window_custom_action_timeout_in_mins"],
                 days_of_weeks=[oci.database.ExadataInfrastructureMaintenanceWindowDaysOfWeekArgs(
                     name=var["exadata_infrastructure_maintenance_window_days_of_week_name"],
@@ -1198,8 +1300,10 @@ class ExadataInfrastructure(pulumi.CustomResource):
                     name=var["exadata_infrastructure_maintenance_window_months_name"],
                 )],
                 patching_mode=var["exadata_infrastructure_maintenance_window_patching_mode"],
+                preference=var["exadata_infrastructure_maintenance_window_preference"],
                 weeks_of_months=var["exadata_infrastructure_maintenance_window_weeks_of_month"],
             ),
+            multi_rack_configuration_file=var["exadata_infrastructure_multi_rack_configuration_file"],
             storage_count=var["exadata_infrastructure_storage_count"])
         ```
 
@@ -1243,7 +1347,9 @@ class ExadataInfrastructure(pulumi.CustomResource):
                  gateway: Optional[pulumi.Input[str]] = None,
                  infini_band_network_cidr: Optional[pulumi.Input[str]] = None,
                  is_cps_offline_report_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_multi_rack_deployment: Optional[pulumi.Input[bool]] = None,
                  maintenance_window: Optional[pulumi.Input[pulumi.InputType['ExadataInfrastructureMaintenanceWindowArgs']]] = None,
+                 multi_rack_configuration_file: Optional[pulumi.Input[str]] = None,
                  netmask: Optional[pulumi.Input[str]] = None,
                  ntp_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
@@ -1291,7 +1397,9 @@ class ExadataInfrastructure(pulumi.CustomResource):
                 raise TypeError("Missing required property 'infini_band_network_cidr'")
             __props__.__dict__["infini_band_network_cidr"] = infini_band_network_cidr
             __props__.__dict__["is_cps_offline_report_enabled"] = is_cps_offline_report_enabled
+            __props__.__dict__["is_multi_rack_deployment"] = is_multi_rack_deployment
             __props__.__dict__["maintenance_window"] = maintenance_window
+            __props__.__dict__["multi_rack_configuration_file"] = multi_rack_configuration_file
             if netmask is None and not opts.urn:
                 raise TypeError("Missing required property 'netmask'")
             __props__.__dict__["netmask"] = netmask
@@ -1306,6 +1414,8 @@ class ExadataInfrastructure(pulumi.CustomResource):
                 raise TypeError("Missing required property 'time_zone'")
             __props__.__dict__["time_zone"] = time_zone
             __props__.__dict__["activated_storage_count"] = None
+            __props__.__dict__["additional_compute_count"] = None
+            __props__.__dict__["additional_compute_system_model"] = None
             __props__.__dict__["cpus_enabled"] = None
             __props__.__dict__["csi_number"] = None
             __props__.__dict__["data_storage_size_in_tbs"] = None
@@ -1334,6 +1444,8 @@ class ExadataInfrastructure(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             activated_storage_count: Optional[pulumi.Input[int]] = None,
             activation_file: Optional[pulumi.Input[str]] = None,
+            additional_compute_count: Optional[pulumi.Input[int]] = None,
+            additional_compute_system_model: Optional[pulumi.Input[str]] = None,
             additional_storage_count: Optional[pulumi.Input[int]] = None,
             admin_network_cidr: Optional[pulumi.Input[str]] = None,
             cloud_control_plane_server1: Optional[pulumi.Input[str]] = None,
@@ -1355,6 +1467,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
             gateway: Optional[pulumi.Input[str]] = None,
             infini_band_network_cidr: Optional[pulumi.Input[str]] = None,
             is_cps_offline_report_enabled: Optional[pulumi.Input[bool]] = None,
+            is_multi_rack_deployment: Optional[pulumi.Input[bool]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             maintenance_slo_status: Optional[pulumi.Input[str]] = None,
             maintenance_window: Optional[pulumi.Input[pulumi.InputType['ExadataInfrastructureMaintenanceWindowArgs']]] = None,
@@ -1364,6 +1477,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
             max_memory_in_gbs: Optional[pulumi.Input[int]] = None,
             memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
             monthly_db_server_version: Optional[pulumi.Input[str]] = None,
+            multi_rack_configuration_file: Optional[pulumi.Input[str]] = None,
             netmask: Optional[pulumi.Input[str]] = None,
             ntp_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             shape: Optional[pulumi.Input[str]] = None,
@@ -1381,6 +1495,8 @@ class ExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[int] activated_storage_count: The requested number of additional storage servers activated for the Exadata infrastructure.
         :param pulumi.Input[str] activation_file: (Updatable) The activation zip file. If provided in config, exadata infrastructure will be activated after creation. Updates are not allowed on activated exadata infrastructure.
+        :param pulumi.Input[int] additional_compute_count: The requested number of additional compute servers for the Exadata infrastructure.
+        :param pulumi.Input[str] additional_compute_system_model: Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
         :param pulumi.Input[int] additional_storage_count: The requested number of additional storage servers for the Exadata infrastructure.
         :param pulumi.Input[str] admin_network_cidr: (Updatable) The CIDR block for the Exadata administration network.
         :param pulumi.Input[str] cloud_control_plane_server1: (Updatable) The IP address for the first control plane server.
@@ -1401,6 +1517,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[str] gateway: (Updatable) The gateway for the control plane network.
         :param pulumi.Input[str] infini_band_network_cidr: (Updatable) The CIDR block for the Exadata InfiniBand interconnect.
         :param pulumi.Input[bool] is_cps_offline_report_enabled: (Updatable) Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
+        :param pulumi.Input[bool] is_multi_rack_deployment: (Updatable) Indicates if deployment is Multi-Rack or not.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[str] maintenance_slo_status: A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
         :param pulumi.Input[pulumi.InputType['ExadataInfrastructureMaintenanceWindowArgs']] maintenance_window: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
@@ -1410,6 +1527,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[int] max_memory_in_gbs: The total memory available in GBs.
         :param pulumi.Input[int] memory_size_in_gbs: The memory allocated in GBs.
         :param pulumi.Input[str] monthly_db_server_version: The monthly software version of the database servers (dom0) in the Exadata infrastructure.
+        :param pulumi.Input[str] multi_rack_configuration_file: (Updatable) The base64 encoded Multi-Rack configuration json file.
         :param pulumi.Input[str] netmask: (Updatable) The netmask for the control plane network.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ntp_servers: (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
         :param pulumi.Input[str] shape: The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
@@ -1425,6 +1543,8 @@ class ExadataInfrastructure(pulumi.CustomResource):
 
         __props__.__dict__["activated_storage_count"] = activated_storage_count
         __props__.__dict__["activation_file"] = activation_file
+        __props__.__dict__["additional_compute_count"] = additional_compute_count
+        __props__.__dict__["additional_compute_system_model"] = additional_compute_system_model
         __props__.__dict__["additional_storage_count"] = additional_storage_count
         __props__.__dict__["admin_network_cidr"] = admin_network_cidr
         __props__.__dict__["cloud_control_plane_server1"] = cloud_control_plane_server1
@@ -1446,6 +1566,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
         __props__.__dict__["gateway"] = gateway
         __props__.__dict__["infini_band_network_cidr"] = infini_band_network_cidr
         __props__.__dict__["is_cps_offline_report_enabled"] = is_cps_offline_report_enabled
+        __props__.__dict__["is_multi_rack_deployment"] = is_multi_rack_deployment
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["maintenance_slo_status"] = maintenance_slo_status
         __props__.__dict__["maintenance_window"] = maintenance_window
@@ -1455,6 +1576,7 @@ class ExadataInfrastructure(pulumi.CustomResource):
         __props__.__dict__["max_memory_in_gbs"] = max_memory_in_gbs
         __props__.__dict__["memory_size_in_gbs"] = memory_size_in_gbs
         __props__.__dict__["monthly_db_server_version"] = monthly_db_server_version
+        __props__.__dict__["multi_rack_configuration_file"] = multi_rack_configuration_file
         __props__.__dict__["netmask"] = netmask
         __props__.__dict__["ntp_servers"] = ntp_servers
         __props__.__dict__["shape"] = shape
@@ -1480,6 +1602,22 @@ class ExadataInfrastructure(pulumi.CustomResource):
         (Updatable) The activation zip file. If provided in config, exadata infrastructure will be activated after creation. Updates are not allowed on activated exadata infrastructure.
         """
         return pulumi.get(self, "activation_file")
+
+    @property
+    @pulumi.getter(name="additionalComputeCount")
+    def additional_compute_count(self) -> pulumi.Output[int]:
+        """
+        The requested number of additional compute servers for the Exadata infrastructure.
+        """
+        return pulumi.get(self, "additional_compute_count")
+
+    @property
+    @pulumi.getter(name="additionalComputeSystemModel")
+    def additional_compute_system_model(self) -> pulumi.Output[str]:
+        """
+        Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+        """
+        return pulumi.get(self, "additional_compute_system_model")
 
     @property
     @pulumi.getter(name="additionalStorageCount")
@@ -1647,6 +1785,14 @@ class ExadataInfrastructure(pulumi.CustomResource):
         return pulumi.get(self, "is_cps_offline_report_enabled")
 
     @property
+    @pulumi.getter(name="isMultiRackDeployment")
+    def is_multi_rack_deployment(self) -> pulumi.Output[bool]:
+        """
+        (Updatable) Indicates if deployment is Multi-Rack or not.
+        """
+        return pulumi.get(self, "is_multi_rack_deployment")
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> pulumi.Output[str]:
         """
@@ -1717,6 +1863,14 @@ class ExadataInfrastructure(pulumi.CustomResource):
         The monthly software version of the database servers (dom0) in the Exadata infrastructure.
         """
         return pulumi.get(self, "monthly_db_server_version")
+
+    @property
+    @pulumi.getter(name="multiRackConfigurationFile")
+    def multi_rack_configuration_file(self) -> pulumi.Output[Optional[str]]:
+        """
+        (Updatable) The base64 encoded Multi-Rack configuration json file.
+        """
+        return pulumi.get(self, "multi_rack_configuration_file")
 
     @property
     @pulumi.getter

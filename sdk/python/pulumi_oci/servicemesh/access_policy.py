@@ -18,23 +18,24 @@ class AccessPolicyArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[str],
                  mesh_id: pulumi.Input[str],
+                 rules: pulumi.Input[Sequence[pulumi.Input['AccessPolicyRuleArgs']]],
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 name: Optional[pulumi.Input[str]] = None,
-                 rules: Optional[pulumi.Input[Sequence[pulumi.Input['AccessPolicyRuleArgs']]]] = None):
+                 name: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a AccessPolicy resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[str] mesh_id: The OCID of the service mesh in which this access policy is created.
+        :param pulumi.Input[Sequence[pulumi.Input['AccessPolicyRuleArgs']]] rules: (Updatable) List of applicable rules
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] name: A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-        :param pulumi.Input[Sequence[pulumi.Input['AccessPolicyRuleArgs']]] rules: (Updatable) List of applicable rules
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "mesh_id", mesh_id)
+        pulumi.set(__self__, "rules", rules)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
@@ -43,8 +44,6 @@ class AccessPolicyArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if name is not None:
             pulumi.set(__self__, "name", name)
-        if rules is not None:
-            pulumi.set(__self__, "rules", rules)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -69,6 +68,18 @@ class AccessPolicyArgs:
     @mesh_id.setter
     def mesh_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "mesh_id", value)
+
+    @property
+    @pulumi.getter
+    def rules(self) -> pulumi.Input[Sequence[pulumi.Input['AccessPolicyRuleArgs']]]:
+        """
+        (Updatable) List of applicable rules
+        """
+        return pulumi.get(self, "rules")
+
+    @rules.setter
+    def rules(self, value: pulumi.Input[Sequence[pulumi.Input['AccessPolicyRuleArgs']]]):
+        pulumi.set(self, "rules", value)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -117,18 +128,6 @@ class AccessPolicyArgs:
     @name.setter
     def name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "name", value)
-
-    @property
-    @pulumi.getter
-    def rules(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AccessPolicyRuleArgs']]]]:
-        """
-        (Updatable) List of applicable rules
-        """
-        return pulumi.get(self, "rules")
-
-    @rules.setter
-    def rules(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AccessPolicyRuleArgs']]]]):
-        pulumi.set(self, "rules", value)
 
 
 @pulumi.input_type
@@ -358,13 +357,6 @@ class AccessPolicy(pulumi.CustomResource):
         test_access_policy = oci.service_mesh.AccessPolicy("testAccessPolicy",
             compartment_id=var["compartment_id"],
             mesh_id=oci_service_mesh_mesh["test_mesh"]["id"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["access_policy_description"],
-            freeform_tags={
-                "bar-key": "value",
-            },
             rules=[oci.service_mesh.AccessPolicyRuleArgs(
                 action=var["access_policy_rules_action"],
                 destination=oci.service_mesh.AccessPolicyRuleDestinationArgs(
@@ -385,7 +377,14 @@ class AccessPolicy(pulumi.CustomResource):
                     protocol=var["access_policy_rules_source_protocol"],
                     virtual_service_id=oci_service_mesh_virtual_service["test_virtual_service"]["id"],
                 ),
-            )])
+            )],
+            defined_tags={
+                "foo-namespace.bar-key": "value",
+            },
+            description=var["access_policy_description"],
+            freeform_tags={
+                "bar-key": "value",
+            })
         ```
 
         ## Import
@@ -426,13 +425,6 @@ class AccessPolicy(pulumi.CustomResource):
         test_access_policy = oci.service_mesh.AccessPolicy("testAccessPolicy",
             compartment_id=var["compartment_id"],
             mesh_id=oci_service_mesh_mesh["test_mesh"]["id"],
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
-            description=var["access_policy_description"],
-            freeform_tags={
-                "bar-key": "value",
-            },
             rules=[oci.service_mesh.AccessPolicyRuleArgs(
                 action=var["access_policy_rules_action"],
                 destination=oci.service_mesh.AccessPolicyRuleDestinationArgs(
@@ -453,7 +445,14 @@ class AccessPolicy(pulumi.CustomResource):
                     protocol=var["access_policy_rules_source_protocol"],
                     virtual_service_id=oci_service_mesh_virtual_service["test_virtual_service"]["id"],
                 ),
-            )])
+            )],
+            defined_tags={
+                "foo-namespace.bar-key": "value",
+            },
+            description=var["access_policy_description"],
+            freeform_tags={
+                "bar-key": "value",
+            })
         ```
 
         ## Import
@@ -505,6 +504,8 @@ class AccessPolicy(pulumi.CustomResource):
                 raise TypeError("Missing required property 'mesh_id'")
             __props__.__dict__["mesh_id"] = mesh_id
             __props__.__dict__["name"] = name
+            if rules is None and not opts.urn:
+                raise TypeError("Missing required property 'rules'")
             __props__.__dict__["rules"] = rules
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["state"] = None

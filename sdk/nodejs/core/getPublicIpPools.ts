@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getPublicIpPools(args: GetPublicIpPoolsArgs, opts?: pulumi.InvokeOptions): Promise<GetPublicIpPoolsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getPublicIpPools:getPublicIpPools", {
         "byoipRangeId": args.byoipRangeId,
         "compartmentId": args.compartmentId,
@@ -80,9 +78,27 @@ export interface GetPublicIpPoolsResult {
      */
     readonly publicIpPoolCollections: outputs.Core.GetPublicIpPoolsPublicIpPoolCollection[];
 }
-
+/**
+ * This data source provides the list of Public Ip Pools in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the public IP pools in the specified compartment.
+ * You can filter the list using query parameters.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testPublicIpPools = oci.Core.getPublicIpPools({
+ *     compartmentId: _var.compartment_id,
+ *     byoipRangeId: oci_core_byoip_range.test_byoip_range.id,
+ *     displayName: _var.public_ip_pool_display_name,
+ * });
+ * ```
+ */
 export function getPublicIpPoolsOutput(args: GetPublicIpPoolsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPublicIpPoolsResult> {
-    return pulumi.output(args).apply(a => getPublicIpPools(a, opts))
+    return pulumi.output(args).apply((a: any) => getPublicIpPools(a, opts))
 }
 
 /**

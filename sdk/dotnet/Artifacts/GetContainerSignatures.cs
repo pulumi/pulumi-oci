@@ -47,7 +47,7 @@ namespace Pulumi.Oci.Artifacts
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetContainerSignaturesResult> InvokeAsync(GetContainerSignaturesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetContainerSignaturesResult>("oci:Artifacts/getContainerSignatures:getContainerSignatures", args ?? new GetContainerSignaturesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetContainerSignaturesResult>("oci:Artifacts/getContainerSignatures:getContainerSignatures", args ?? new GetContainerSignaturesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Container Image Signatures in Oracle Cloud Infrastructure Artifacts service.
@@ -85,7 +85,7 @@ namespace Pulumi.Oci.Artifacts
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetContainerSignaturesResult> Invoke(GetContainerSignaturesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetContainerSignaturesResult>("oci:Artifacts/getContainerSignatures:getContainerSignatures", args ?? new GetContainerSignaturesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetContainerSignaturesResult>("oci:Artifacts/getContainerSignatures:getContainerSignatures", args ?? new GetContainerSignaturesInvokeArgs(), options.WithDefaults());
     }
 
 

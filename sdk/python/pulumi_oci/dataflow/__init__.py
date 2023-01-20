@@ -14,7 +14,10 @@ from .get_private_endpoint import *
 from .get_private_endpoints import *
 from .get_run_log import *
 from .get_run_logs import *
+from .get_run_statement import *
+from .get_run_statements import *
 from .invoke_run import *
 from .private_endpoint import *
+from .run_statement import *
 from ._inputs import *
 from . import outputs

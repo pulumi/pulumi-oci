@@ -27,15 +27,6 @@ namespace Pulumi.Oci.ServiceMesh
     ///     {
     ///         CompartmentId = @var.Compartment_id,
     ///         MeshId = oci_service_mesh_mesh.Test_mesh.Id,
-    ///         DefinedTags = 
-    ///         {
-    ///             { "foo-namespace.bar-key", "value" },
-    ///         },
-    ///         Description = @var.Access_policy_description,
-    ///         FreeformTags = 
-    ///         {
-    ///             { "bar-key", "value" },
-    ///         },
     ///         Rules = new[]
     ///         {
     ///             new Oci.ServiceMesh.Inputs.AccessPolicyRuleArgs
@@ -62,6 +53,15 @@ namespace Pulumi.Oci.ServiceMesh
     ///                     VirtualServiceId = oci_service_mesh_virtual_service.Test_virtual_service.Id,
     ///                 },
     ///             },
+    ///         },
+    ///         DefinedTags = 
+    ///         {
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         Description = @var.Access_policy_description,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
     ///         },
     ///     });
     /// 
@@ -245,7 +245,7 @@ namespace Pulumi.Oci.ServiceMesh
         [Input("name")]
         public Input<string>? Name { get; set; }
 
-        [Input("rules")]
+        [Input("rules", required: true)]
         private InputList<Inputs.AccessPolicyRuleArgs>? _rules;
 
         /// <summary>

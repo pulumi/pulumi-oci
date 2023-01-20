@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getWorkRequestLogEntries(args: GetWorkRequestLogEntriesArgs, opts?: pulumi.InvokeOptions): Promise<GetWorkRequestLogEntriesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ContainerEngine/getWorkRequestLogEntries:getWorkRequestLogEntries", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -66,9 +64,25 @@ export interface GetWorkRequestLogEntriesResult {
      */
     readonly workRequestLogEntries: outputs.ContainerEngine.GetWorkRequestLogEntriesWorkRequestLogEntry[];
 }
-
+/**
+ * This data source provides the list of Work Request Log Entries in Oracle Cloud Infrastructure Container Engine service.
+ *
+ * Get the logs of a work request.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testWorkRequestLogEntries = oci.ContainerEngine.getWorkRequestLogEntries({
+ *     compartmentId: _var.compartment_id,
+ *     workRequestId: oci_containerengine_work_request.test_work_request.id,
+ * });
+ * ```
+ */
 export function getWorkRequestLogEntriesOutput(args: GetWorkRequestLogEntriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetWorkRequestLogEntriesResult> {
-    return pulumi.output(args).apply(a => getWorkRequestLogEntries(a, opts))
+    return pulumi.output(args).apply((a: any) => getWorkRequestLogEntries(a, opts))
 }
 
 /**

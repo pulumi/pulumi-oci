@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Email
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDkimResult> InvokeAsync(GetDkimArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDkimResult>("oci:Email/getDkim:getDkim", args ?? new GetDkimArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDkimResult>("oci:Email/getDkim:getDkim", args ?? new GetDkimArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Dkim resource in Oracle Cloud Infrastructure Email service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Email
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDkimResult> Invoke(GetDkimInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDkimResult>("oci:Email/getDkim:getDkim", args ?? new GetDkimInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDkimResult>("oci:Email/getDkim:getDkim", args ?? new GetDkimInvokeArgs(), options.WithDefaults());
     }
 
 

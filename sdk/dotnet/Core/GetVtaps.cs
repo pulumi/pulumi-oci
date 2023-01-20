@@ -46,7 +46,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetVtapsResult> InvokeAsync(GetVtapsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetVtapsResult>("oci:Core/getVtaps:getVtaps", args ?? new GetVtapsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetVtapsResult>("oci:Core/getVtaps:getVtaps", args ?? new GetVtapsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Vtaps in Oracle Cloud Infrastructure Core service.
@@ -83,7 +83,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetVtapsResult> Invoke(GetVtapsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetVtapsResult>("oci:Core/getVtaps:getVtaps", args ?? new GetVtapsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetVtapsResult>("oci:Core/getVtaps:getVtaps", args ?? new GetVtapsInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -238,8 +238,6 @@ namespace Pulumi.Oci.Core
         public readonly string Id;
         /// <summary>
         /// Used to start or stop a `Vtap` resource.
-        /// * `TRUE` directs the VTAP to start mirroring traffic.
-        /// * `FALSE` (Default) directs the VTAP to stop mirroring traffic.
         /// </summary>
         public readonly bool? IsVtapEnabled;
         public readonly string? Source;

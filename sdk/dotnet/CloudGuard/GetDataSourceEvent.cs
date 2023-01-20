@@ -40,7 +40,7 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDataSourceEventResult> InvokeAsync(GetDataSourceEventArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDataSourceEventResult>("oci:CloudGuard/getDataSourceEvent:getDataSourceEvent", args ?? new GetDataSourceEventArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDataSourceEventResult>("oci:CloudGuard/getDataSourceEvent:getDataSourceEvent", args ?? new GetDataSourceEventArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Data Source Event resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDataSourceEventResult> Invoke(GetDataSourceEventInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDataSourceEventResult>("oci:CloudGuard/getDataSourceEvent:getDataSourceEvent", args ?? new GetDataSourceEventInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDataSourceEventResult>("oci:CloudGuard/getDataSourceEvent:getDataSourceEvent", args ?? new GetDataSourceEventInvokeArgs(), options.WithDefaults());
     }
 
 

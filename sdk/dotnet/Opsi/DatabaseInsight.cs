@@ -172,10 +172,22 @@ namespace Pulumi.Oci.Opsi
         public Output<string> OpsiPrivateEndpointId { get; private set; } = null!;
 
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
+        /// </summary>
+        [Output("parentId")]
+        public Output<string> ParentId { get; private set; } = null!;
+
+        /// <summary>
         /// Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
         /// </summary>
         [Output("processorCount")]
         public Output<int> ProcessorCount { get; private set; } = null!;
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+        /// </summary>
+        [Output("rootId")]
+        public Output<string> RootId { get; private set; } = null!;
 
         /// <summary>
         /// Database service name used for connection requests.
@@ -556,10 +568,22 @@ namespace Pulumi.Oci.Opsi
         public Input<string>? OpsiPrivateEndpointId { get; set; }
 
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
+        /// </summary>
+        [Input("parentId")]
+        public Input<string>? ParentId { get; set; }
+
+        /// <summary>
         /// Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
         /// </summary>
         [Input("processorCount")]
         public Input<int>? ProcessorCount { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+        /// </summary>
+        [Input("rootId")]
+        public Input<string>? RootId { get; set; }
 
         /// <summary>
         /// Database service name used for connection requests.

@@ -17,7 +17,7 @@ namespace Pulumi.Oci.DataCatalog
         /// Returns a list of data assets within a data catalog.
         /// </summary>
         public static Task<GetDataAssetsResult> InvokeAsync(GetDataAssetsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDataAssetsResult>("oci:DataCatalog/getDataAssets:getDataAssets", args ?? new GetDataAssetsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDataAssetsResult>("oci:DataCatalog/getDataAssets:getDataAssets", args ?? new GetDataAssetsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Data Assets in Oracle Cloud Infrastructure Data Catalog service.
@@ -25,7 +25,7 @@ namespace Pulumi.Oci.DataCatalog
         /// Returns a list of data assets within a data catalog.
         /// </summary>
         public static Output<GetDataAssetsResult> Invoke(GetDataAssetsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDataAssetsResult>("oci:DataCatalog/getDataAssets:getDataAssets", args ?? new GetDataAssetsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDataAssetsResult>("oci:DataCatalog/getDataAssets:getDataAssets", args ?? new GetDataAssetsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -38,7 +38,7 @@ namespace Pulumi.Oci.EmWarehouse
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetEmWarehouseResult> InvokeAsync(GetEmWarehouseArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetEmWarehouseResult>("oci:EmWarehouse/getEmWarehouse:getEmWarehouse", args ?? new GetEmWarehouseArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetEmWarehouseResult>("oci:EmWarehouse/getEmWarehouse:getEmWarehouse", args ?? new GetEmWarehouseArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Em Warehouse resource in Oracle Cloud Infrastructure Em Warehouse service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.EmWarehouse
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetEmWarehouseResult> Invoke(GetEmWarehouseInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetEmWarehouseResult>("oci:EmWarehouse/getEmWarehouse:getEmWarehouse", args ?? new GetEmWarehouseInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetEmWarehouseResult>("oci:EmWarehouse/getEmWarehouse:getEmWarehouse", args ?? new GetEmWarehouseInvokeArgs(), options.WithDefaults());
     }
 
 

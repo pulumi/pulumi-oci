@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFusionEnvironmentDataMaskingActivities(args: GetFusionEnvironmentDataMaskingActivitiesArgs, opts?: pulumi.InvokeOptions): Promise<GetFusionEnvironmentDataMaskingActivitiesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Functions/getFusionEnvironmentDataMaskingActivities:getFusionEnvironmentDataMaskingActivities", {
         "filters": args.filters,
         "fusionEnvironmentId": args.fusionEnvironmentId,
@@ -72,9 +70,25 @@ export interface GetFusionEnvironmentDataMaskingActivitiesResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Fusion Environment Data Masking Activities in Oracle Cloud Infrastructure Fusion Apps service.
+ *
+ * Returns a list of DataMaskingActivities.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testFusionEnvironmentDataMaskingActivities = oci.Functions.getFusionEnvironmentDataMaskingActivities({
+ *     fusionEnvironmentId: oci_fusion_apps_fusion_environment.test_fusion_environment.id,
+ *     state: _var.fusion_environment_data_masking_activity_state,
+ * });
+ * ```
+ */
 export function getFusionEnvironmentDataMaskingActivitiesOutput(args: GetFusionEnvironmentDataMaskingActivitiesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFusionEnvironmentDataMaskingActivitiesResult> {
-    return pulumi.output(args).apply(a => getFusionEnvironmentDataMaskingActivities(a, opts))
+    return pulumi.output(args).apply((a: any) => getFusionEnvironmentDataMaskingActivities(a, opts))
 }
 
 /**

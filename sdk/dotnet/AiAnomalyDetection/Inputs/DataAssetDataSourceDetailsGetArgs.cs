@@ -12,11 +12,21 @@ namespace Pulumi.Oci.AiAnomalyDetection.Inputs
 
     public sealed class DataAssetDataSourceDetailsGetArgs : global::Pulumi.ResourceArgs
     {
+        [Input("atpPasswordSecretId")]
+        private Input<string>? _atpPasswordSecretId;
+
         /// <summary>
         /// atp db password Secret Id
         /// </summary>
-        [Input("atpPasswordSecretId")]
-        public Input<string>? AtpPasswordSecretId { get; set; }
+        public Input<string>? AtpPasswordSecretId
+        {
+            get => _atpPasswordSecretId;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _atpPasswordSecretId = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// atp db user name
@@ -84,11 +94,21 @@ namespace Pulumi.Oci.AiAnomalyDetection.Inputs
         [Input("ojdbcFileSecretId")]
         public Input<string>? OjdbcFileSecretId { get; set; }
 
+        [Input("passwordSecretId")]
+        private Input<string>? _passwordSecretId;
+
         /// <summary>
         /// Password Secret Id for the influx connection
         /// </summary>
-        [Input("passwordSecretId")]
-        public Input<string>? PasswordSecretId { get; set; }
+        public Input<string>? PasswordSecretId
+        {
+            get => _passwordSecretId;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _passwordSecretId = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// atp database table name
@@ -126,11 +146,21 @@ namespace Pulumi.Oci.AiAnomalyDetection.Inputs
         [Input("versionSpecificDetails")]
         public Input<Inputs.DataAssetDataSourceDetailsVersionSpecificDetailsGetArgs>? VersionSpecificDetails { get; set; }
 
+        [Input("walletPasswordSecretId")]
+        private Input<string>? _walletPasswordSecretId;
+
         /// <summary>
         /// wallet password Secret ID in String format
         /// </summary>
-        [Input("walletPasswordSecretId")]
-        public Input<string>? WalletPasswordSecretId { get; set; }
+        public Input<string>? WalletPasswordSecretId
+        {
+            get => _walletPasswordSecretId;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _walletPasswordSecretId = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         public DataAssetDataSourceDetailsGetArgs()
         {

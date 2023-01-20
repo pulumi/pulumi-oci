@@ -44,7 +44,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDrgRouteDistributionsResult> InvokeAsync(GetDrgRouteDistributionsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDrgRouteDistributionsResult>("oci:Core/getDrgRouteDistributions:getDrgRouteDistributions", args ?? new GetDrgRouteDistributionsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDrgRouteDistributionsResult>("oci:Core/getDrgRouteDistributions:getDrgRouteDistributions", args ?? new GetDrgRouteDistributionsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Drg Route Distributions in Oracle Cloud Infrastructure Core service.
@@ -79,7 +79,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDrgRouteDistributionsResult> Invoke(GetDrgRouteDistributionsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDrgRouteDistributionsResult>("oci:Core/getDrgRouteDistributions:getDrgRouteDistributions", args ?? new GetDrgRouteDistributionsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDrgRouteDistributionsResult>("oci:Core/getDrgRouteDistributions:getDrgRouteDistributions", args ?? new GetDrgRouteDistributionsInvokeArgs(), options.WithDefaults());
     }
 
 

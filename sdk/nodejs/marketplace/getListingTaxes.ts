@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getListingTaxes(args: GetListingTaxesArgs, opts?: pulumi.InvokeOptions): Promise<GetListingTaxesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Marketplace/getListingTaxes:getListingTaxes", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -66,9 +64,25 @@ export interface GetListingTaxesResult {
      */
     readonly taxes: outputs.Marketplace.GetListingTaxesTax[];
 }
-
+/**
+ * This data source provides the list of Listing Taxes in Oracle Cloud Infrastructure Marketplace service.
+ *
+ * Returns list of all tax implications that current tenant may be liable to once they launch the listing.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testListingTaxes = oci.Marketplace.getListingTaxes({
+ *     listingId: oci_marketplace_listing.test_listing.id,
+ *     compartmentId: _var.compartment_id,
+ * });
+ * ```
+ */
 export function getListingTaxesOutput(args: GetListingTaxesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetListingTaxesResult> {
-    return pulumi.output(args).apply(a => getListingTaxes(a, opts))
+    return pulumi.output(args).apply((a: any) => getListingTaxes(a, opts))
 }
 
 /**

@@ -13,26 +13,17 @@ namespace Pulumi.Oci.Nosql.Outputs
     [OutputType]
     public sealed class GetTablesTableCollectionSchemaResult
     {
-        /// <summary>
-        /// The columns of a table.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetTablesTableCollectionSchemaColumnResult> Columns;
-        /// <summary>
-        /// A list of column names that make up a key.
-        /// </summary>
+        public readonly ImmutableArray<Outputs.GetTablesTableCollectionSchemaIdentityResult> Identities;
         public readonly ImmutableArray<string> PrimaryKeys;
-        /// <summary>
-        /// A list of column names that make up a key.
-        /// </summary>
         public readonly ImmutableArray<string> ShardKeys;
-        /// <summary>
-        /// The default Time-to-Live for the table, in days.
-        /// </summary>
         public readonly int Ttl;
 
         [OutputConstructor]
         private GetTablesTableCollectionSchemaResult(
             ImmutableArray<Outputs.GetTablesTableCollectionSchemaColumnResult> columns,
+
+            ImmutableArray<Outputs.GetTablesTableCollectionSchemaIdentityResult> identities,
 
             ImmutableArray<string> primaryKeys,
 
@@ -41,6 +32,7 @@ namespace Pulumi.Oci.Nosql.Outputs
             int ttl)
         {
             Columns = columns;
+            Identities = identities;
             PrimaryKeys = primaryKeys;
             ShardKeys = shardKeys;
             Ttl = ttl;

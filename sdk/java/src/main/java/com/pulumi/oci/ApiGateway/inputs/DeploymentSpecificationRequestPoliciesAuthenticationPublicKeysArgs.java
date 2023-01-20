@@ -50,14 +50,14 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationPublicKey
     }
 
     /**
-     * (Updatable) The duration for which the JWKS should be cached before it is fetched again.
+     * (Updatable) The duration for which the introspect URL response should be cached before it is fetched again.
      * 
      */
     @Import(name="maxCacheDurationInHours")
     private @Nullable Output<Integer> maxCacheDurationInHours;
 
     /**
-     * @return (Updatable) The duration for which the JWKS should be cached before it is fetched again.
+     * @return (Updatable) The duration for which the introspect URL response should be cached before it is fetched again.
      * 
      */
     public Optional<Output<Integer>> maxCacheDurationInHours() {
@@ -175,7 +175,7 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationPublicKey
         }
 
         /**
-         * @param maxCacheDurationInHours (Updatable) The duration for which the JWKS should be cached before it is fetched again.
+         * @param maxCacheDurationInHours (Updatable) The duration for which the introspect URL response should be cached before it is fetched again.
          * 
          * @return builder
          * 
@@ -186,7 +186,7 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationPublicKey
         }
 
         /**
-         * @param maxCacheDurationInHours (Updatable) The duration for which the JWKS should be cached before it is fetched again.
+         * @param maxCacheDurationInHours (Updatable) The duration for which the introspect URL response should be cached before it is fetched again.
          * 
          * @return builder
          * 

@@ -59,7 +59,10 @@ type FusionEnvironmentRefreshActivity struct {
 	// unique FusionEnvironment identifier
 	FusionEnvironmentId pulumi.StringOutput `pulumi:"fusionEnvironmentId"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	LifecycleDetails  pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	RefreshActivityId pulumi.StringOutput `pulumi:"refreshActivityId"`
+	// Details of refresh investigation information, each item represents a different issue.
+	RefreshIssueDetailsLists FusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayOutput `pulumi:"refreshIssueDetailsLists"`
 	// Service availability / impact during refresh activity execution up down
 	ServiceAvailability pulumi.StringOutput `pulumi:"serviceAvailability"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
@@ -74,8 +77,6 @@ type FusionEnvironmentRefreshActivity struct {
 	TimeFinished pulumi.StringOutput `pulumi:"timeFinished"`
 	// The date and time of the most recent source environment backup used for the environment refresh.
 	TimeOfRestorationPoint pulumi.StringOutput `pulumi:"timeOfRestorationPoint"`
-	// The time the refresh activity is scheduled to start. An RFC3339 formatted datetime string.
-	TimeScheduledStart pulumi.StringOutput `pulumi:"timeScheduledStart"`
 	// The time the refresh activity record was updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 }
@@ -120,7 +121,10 @@ type fusionEnvironmentRefreshActivityState struct {
 	// unique FusionEnvironment identifier
 	FusionEnvironmentId *string `pulumi:"fusionEnvironmentId"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	LifecycleDetails  *string `pulumi:"lifecycleDetails"`
+	RefreshActivityId *string `pulumi:"refreshActivityId"`
+	// Details of refresh investigation information, each item represents a different issue.
+	RefreshIssueDetailsLists []FusionEnvironmentRefreshActivityRefreshIssueDetailsList `pulumi:"refreshIssueDetailsLists"`
 	// Service availability / impact during refresh activity execution up down
 	ServiceAvailability *string `pulumi:"serviceAvailability"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
@@ -135,8 +139,6 @@ type fusionEnvironmentRefreshActivityState struct {
 	TimeFinished *string `pulumi:"timeFinished"`
 	// The date and time of the most recent source environment backup used for the environment refresh.
 	TimeOfRestorationPoint *string `pulumi:"timeOfRestorationPoint"`
-	// The time the refresh activity is scheduled to start. An RFC3339 formatted datetime string.
-	TimeScheduledStart *string `pulumi:"timeScheduledStart"`
 	// The time the refresh activity record was updated. An RFC3339 formatted datetime string.
 	TimeUpdated *string `pulumi:"timeUpdated"`
 }
@@ -147,7 +149,10 @@ type FusionEnvironmentRefreshActivityState struct {
 	// unique FusionEnvironment identifier
 	FusionEnvironmentId pulumi.StringPtrInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-	LifecycleDetails pulumi.StringPtrInput
+	LifecycleDetails  pulumi.StringPtrInput
+	RefreshActivityId pulumi.StringPtrInput
+	// Details of refresh investigation information, each item represents a different issue.
+	RefreshIssueDetailsLists FusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayInput
 	// Service availability / impact during refresh activity execution up down
 	ServiceAvailability pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source environment
@@ -162,8 +167,6 @@ type FusionEnvironmentRefreshActivityState struct {
 	TimeFinished pulumi.StringPtrInput
 	// The date and time of the most recent source environment backup used for the environment refresh.
 	TimeOfRestorationPoint pulumi.StringPtrInput
-	// The time the refresh activity is scheduled to start. An RFC3339 formatted datetime string.
-	TimeScheduledStart pulumi.StringPtrInput
 	// The time the refresh activity record was updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringPtrInput
 }
@@ -289,6 +292,17 @@ func (o FusionEnvironmentRefreshActivityOutput) LifecycleDetails() pulumi.String
 	return o.ApplyT(func(v *FusionEnvironmentRefreshActivity) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+func (o FusionEnvironmentRefreshActivityOutput) RefreshActivityId() pulumi.StringOutput {
+	return o.ApplyT(func(v *FusionEnvironmentRefreshActivity) pulumi.StringOutput { return v.RefreshActivityId }).(pulumi.StringOutput)
+}
+
+// Details of refresh investigation information, each item represents a different issue.
+func (o FusionEnvironmentRefreshActivityOutput) RefreshIssueDetailsLists() FusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayOutput {
+	return o.ApplyT(func(v *FusionEnvironmentRefreshActivity) FusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayOutput {
+		return v.RefreshIssueDetailsLists
+	}).(FusionEnvironmentRefreshActivityRefreshIssueDetailsListArrayOutput)
+}
+
 // Service availability / impact during refresh activity execution up down
 func (o FusionEnvironmentRefreshActivityOutput) ServiceAvailability() pulumi.StringOutput {
 	return o.ApplyT(func(v *FusionEnvironmentRefreshActivity) pulumi.StringOutput { return v.ServiceAvailability }).(pulumi.StringOutput)
@@ -322,11 +336,6 @@ func (o FusionEnvironmentRefreshActivityOutput) TimeFinished() pulumi.StringOutp
 // The date and time of the most recent source environment backup used for the environment refresh.
 func (o FusionEnvironmentRefreshActivityOutput) TimeOfRestorationPoint() pulumi.StringOutput {
 	return o.ApplyT(func(v *FusionEnvironmentRefreshActivity) pulumi.StringOutput { return v.TimeOfRestorationPoint }).(pulumi.StringOutput)
-}
-
-// The time the refresh activity is scheduled to start. An RFC3339 formatted datetime string.
-func (o FusionEnvironmentRefreshActivityOutput) TimeScheduledStart() pulumi.StringOutput {
-	return o.ApplyT(func(v *FusionEnvironmentRefreshActivity) pulumi.StringOutput { return v.TimeScheduledStart }).(pulumi.StringOutput)
 }
 
 // The time the refresh activity record was updated. An RFC3339 formatted datetime string.

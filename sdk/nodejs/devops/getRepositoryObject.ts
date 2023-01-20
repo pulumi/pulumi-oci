@@ -23,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRepositoryObject(args: GetRepositoryObjectArgs, opts?: pulumi.InvokeOptions): Promise<GetRepositoryObjectResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getRepositoryObject:getRepositoryObject", {
         "filePath": args.filePath,
         "refName": args.refName,
@@ -81,9 +78,26 @@ export interface GetRepositoryObjectResult {
      */
     readonly type: string;
 }
-
+/**
+ * This data source provides details about a specific Repository Object resource in Oracle Cloud Infrastructure Devops service.
+ *
+ * Retrieves blob of specific branch name/commit ID and file path.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testRepositoryObject = oci.DevOps.getRepositoryObject({
+ *     repositoryId: oci_devops_repository.test_repository.id,
+ *     filePath: _var.repository_object_file_path,
+ *     refName: _var.repository_object_ref_name,
+ * });
+ * ```
+ */
 export function getRepositoryObjectOutput(args: GetRepositoryObjectOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoryObjectResult> {
-    return pulumi.output(args).apply(a => getRepositoryObject(a, opts))
+    return pulumi.output(args).apply((a: any) => getRepositoryObject(a, opts))
 }
 
 /**

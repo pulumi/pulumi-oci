@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getBlockVolumeReplica(args: GetBlockVolumeReplicaArgs, opts?: pulumi.InvokeOptions): Promise<GetBlockVolumeReplicaResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getBlockVolumeReplica:getBlockVolumeReplica", {
         "blockVolumeReplicaId": args.blockVolumeReplicaId,
     }, opts);
@@ -92,9 +89,24 @@ export interface GetBlockVolumeReplicaResult {
     readonly timeLastSynced: string;
     readonly volumeGroupReplicaId: string;
 }
-
+/**
+ * This data source provides details about a specific Block Volume Replica resource in Oracle Cloud Infrastructure Core service.
+ *
+ * Gets information for the specified block volume replica.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testBlockVolumeReplica = oci.Core.getBlockVolumeReplica({
+ *     blockVolumeReplicaId: oci_core_block_volume_replica.test_block_volume_replica.id,
+ * });
+ * ```
+ */
 export function getBlockVolumeReplicaOutput(args: GetBlockVolumeReplicaOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBlockVolumeReplicaResult> {
-    return pulumi.output(args).apply(a => getBlockVolumeReplica(a, opts))
+    return pulumi.output(args).apply((a: any) => getBlockVolumeReplica(a, opts))
 }
 
 /**

@@ -41,7 +41,7 @@ namespace Pulumi.Oci.ManagementAgent
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetManagementAgentPluginCountResult> InvokeAsync(GetManagementAgentPluginCountArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetManagementAgentPluginCountResult>("oci:ManagementAgent/getManagementAgentPluginCount:getManagementAgentPluginCount", args ?? new GetManagementAgentPluginCountArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagementAgentPluginCountResult>("oci:ManagementAgent/getManagementAgentPluginCount:getManagementAgentPluginCount", args ?? new GetManagementAgentPluginCountArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Management Agent Plugin Count resource in Oracle Cloud Infrastructure Management Agent service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.ManagementAgent
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetManagementAgentPluginCountResult> Invoke(GetManagementAgentPluginCountInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetManagementAgentPluginCountResult>("oci:ManagementAgent/getManagementAgentPluginCount:getManagementAgentPluginCount", args ?? new GetManagementAgentPluginCountInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagementAgentPluginCountResult>("oci:ManagementAgent/getManagementAgentPluginCount:getManagementAgentPluginCount", args ?? new GetManagementAgentPluginCountInvokeArgs(), options.WithDefaults());
     }
 
 

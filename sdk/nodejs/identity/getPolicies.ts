@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -28,11 +29,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getPolicies(args: GetPoliciesArgs, opts?: pulumi.InvokeOptions): Promise<GetPoliciesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getPolicies:getPolicies", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -86,9 +84,30 @@ export interface GetPoliciesResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Policies in Oracle Cloud Infrastructure Identity service.
+ *
+ * Lists the policies in the specified compartment (either the tenancy or another of your compartments).
+ * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
+ *
+ * To determine which policies apply to a particular group or compartment, you must view the individual
+ * statements inside all your policies. There isn't a way to automatically obtain that information via the API.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testPolicies = oci.Identity.getPolicies({
+ *     compartmentId: _var.tenancy_ocid,
+ *     name: _var.policy_name,
+ *     state: _var.policy_state,
+ * });
+ * ```
+ */
 export function getPoliciesOutput(args: GetPoliciesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPoliciesResult> {
-    return pulumi.output(args).apply(a => getPolicies(a, opts))
+    return pulumi.output(args).apply((a: any) => getPolicies(a, opts))
 }
 
 /**

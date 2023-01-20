@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDbHomeResult> InvokeAsync(GetDbHomeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDbHomeResult>("oci:Database/getDbHome:getDbHome", args ?? new GetDbHomeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDbHomeResult>("oci:Database/getDbHome:getDbHome", args ?? new GetDbHomeArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Db Home resource in Oracle Cloud Infrastructure Database service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDbHomeResult> Invoke(GetDbHomeInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDbHomeResult>("oci:Database/getDbHome:getDbHome", args ?? new GetDbHomeInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDbHomeResult>("oci:Database/getDbHome:getDbHome", args ?? new GetDbHomeInvokeArgs(), options.WithDefaults());
     }
 
 

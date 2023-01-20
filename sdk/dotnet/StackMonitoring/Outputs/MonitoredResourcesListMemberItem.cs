@@ -18,6 +18,10 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
+        /// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource type identifiers - externalcontainerdatabase, externalnoncontainerdatabase, externalpluggabledatabase and Oracle Cloud Infrastructure compute instance.
+        /// </summary>
+        public readonly string? ExternalId;
+        /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object>? FreeformTags;
@@ -58,6 +62,8 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         private MonitoredResourcesListMemberItem(
             ImmutableDictionary<string, object>? definedTags,
 
+            string? externalId,
+
             ImmutableDictionary<string, object>? freeformTags,
 
             string? hostName,
@@ -77,6 +83,7 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
             ImmutableDictionary<string, object>? systemTags)
         {
             DefinedTags = definedTags;
+            ExternalId = externalId;
             FreeformTags = freeformTags;
             HostName = hostName;
             ParentId = parentId;

@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Functions
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetFusionEnvironmentRefreshActivitiesResult> InvokeAsync(GetFusionEnvironmentRefreshActivitiesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetFusionEnvironmentRefreshActivitiesResult>("oci:Functions/getFusionEnvironmentRefreshActivities:getFusionEnvironmentRefreshActivities", args ?? new GetFusionEnvironmentRefreshActivitiesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetFusionEnvironmentRefreshActivitiesResult>("oci:Functions/getFusionEnvironmentRefreshActivities:getFusionEnvironmentRefreshActivities", args ?? new GetFusionEnvironmentRefreshActivitiesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Fusion Environment Refresh Activities in Oracle Cloud Infrastructure Fusion Apps service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.Functions
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetFusionEnvironmentRefreshActivitiesResult> Invoke(GetFusionEnvironmentRefreshActivitiesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetFusionEnvironmentRefreshActivitiesResult>("oci:Functions/getFusionEnvironmentRefreshActivities:getFusionEnvironmentRefreshActivities", args ?? new GetFusionEnvironmentRefreshActivitiesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetFusionEnvironmentRefreshActivitiesResult>("oci:Functions/getFusionEnvironmentRefreshActivities:getFusionEnvironmentRefreshActivities", args ?? new GetFusionEnvironmentRefreshActivitiesInvokeArgs(), options.WithDefaults());
     }
 
 

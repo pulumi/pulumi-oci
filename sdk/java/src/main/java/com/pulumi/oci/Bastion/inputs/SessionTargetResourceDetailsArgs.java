@@ -47,18 +47,29 @@ public final class SessionTargetResourceDetailsArgs extends com.pulumi.resources
     }
 
     /**
-     * The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to. It&#39;s optional depends on the type of session you want to create.
-     * * (Required) For MANAGED_SSH session type, we can only use target_resource_id to create session.
-     * * (Optional) For PORT_FORWARDING session type, you must either use target_resource_id or target_resource_private_ip_address
+     * The Fully Qualified Domain Name of the target resource that the session connects to.
+     * 
+     */
+    @Import(name="targetResourceFqdn")
+    private @Nullable Output<String> targetResourceFqdn;
+
+    /**
+     * @return The Fully Qualified Domain Name of the target resource that the session connects to.
+     * 
+     */
+    public Optional<Output<String>> targetResourceFqdn() {
+        return Optional.ofNullable(this.targetResourceFqdn);
+    }
+
+    /**
+     * The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
      * 
      */
     @Import(name="targetResourceId")
     private @Nullable Output<String> targetResourceId;
 
     /**
-     * @return The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to. It&#39;s optional depends on the type of session you want to create.
-     * * (Required) For MANAGED_SSH session type, we can only use target_resource_id to create session.
-     * * (Optional) For PORT_FORWARDING session type, you must either use target_resource_id or target_resource_private_ip_address
+     * @return The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
      * 
      */
     public Optional<Output<String>> targetResourceId() {
@@ -96,14 +107,14 @@ public final class SessionTargetResourceDetailsArgs extends com.pulumi.resources
     }
 
     /**
-     * The private IP address of the target resource that the session connects to. For PORT_FORWARDING session type, you must either use target_resource_id or target_resource_private_ip_address
+     * The private IP address of the target resource that the session connects to.
      * 
      */
     @Import(name="targetResourcePrivateIpAddress")
     private @Nullable Output<String> targetResourcePrivateIpAddress;
 
     /**
-     * @return The private IP address of the target resource that the session connects to. For PORT_FORWARDING session type, you must either use target_resource_id or target_resource_private_ip_address
+     * @return The private IP address of the target resource that the session connects to.
      * 
      */
     public Optional<Output<String>> targetResourcePrivateIpAddress() {
@@ -115,6 +126,7 @@ public final class SessionTargetResourceDetailsArgs extends com.pulumi.resources
     private SessionTargetResourceDetailsArgs(SessionTargetResourceDetailsArgs $) {
         this.sessionType = $.sessionType;
         this.targetResourceDisplayName = $.targetResourceDisplayName;
+        this.targetResourceFqdn = $.targetResourceFqdn;
         this.targetResourceId = $.targetResourceId;
         this.targetResourceOperatingSystemUserName = $.targetResourceOperatingSystemUserName;
         this.targetResourcePort = $.targetResourcePort;
@@ -182,9 +194,28 @@ public final class SessionTargetResourceDetailsArgs extends com.pulumi.resources
         }
 
         /**
-         * @param targetResourceId The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to. It&#39;s optional depends on the type of session you want to create.
-         * * (Required) For MANAGED_SSH session type, we can only use target_resource_id to create session.
-         * * (Optional) For PORT_FORWARDING session type, you must either use target_resource_id or target_resource_private_ip_address
+         * @param targetResourceFqdn The Fully Qualified Domain Name of the target resource that the session connects to.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetResourceFqdn(@Nullable Output<String> targetResourceFqdn) {
+            $.targetResourceFqdn = targetResourceFqdn;
+            return this;
+        }
+
+        /**
+         * @param targetResourceFqdn The Fully Qualified Domain Name of the target resource that the session connects to.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetResourceFqdn(String targetResourceFqdn) {
+            return targetResourceFqdn(Output.of(targetResourceFqdn));
+        }
+
+        /**
+         * @param targetResourceId The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
          * 
          * @return builder
          * 
@@ -195,9 +226,7 @@ public final class SessionTargetResourceDetailsArgs extends com.pulumi.resources
         }
 
         /**
-         * @param targetResourceId The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to. It&#39;s optional depends on the type of session you want to create.
-         * * (Required) For MANAGED_SSH session type, we can only use target_resource_id to create session.
-         * * (Optional) For PORT_FORWARDING session type, you must either use target_resource_id or target_resource_private_ip_address
+         * @param targetResourceId The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
          * 
          * @return builder
          * 
@@ -249,7 +278,7 @@ public final class SessionTargetResourceDetailsArgs extends com.pulumi.resources
         }
 
         /**
-         * @param targetResourcePrivateIpAddress The private IP address of the target resource that the session connects to. For PORT_FORWARDING session type, you must either use target_resource_id or target_resource_private_ip_address
+         * @param targetResourcePrivateIpAddress The private IP address of the target resource that the session connects to.
          * 
          * @return builder
          * 
@@ -260,7 +289,7 @@ public final class SessionTargetResourceDetailsArgs extends com.pulumi.resources
         }
 
         /**
-         * @param targetResourcePrivateIpAddress The private IP address of the target resource that the session connects to. For PORT_FORWARDING session type, you must either use target_resource_id or target_resource_private_ip_address
+         * @param targetResourcePrivateIpAddress The private IP address of the target resource that the session connects to.
          * 
          * @return builder
          * 

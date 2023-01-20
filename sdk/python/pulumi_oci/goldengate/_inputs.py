@@ -10,12 +10,242 @@ from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
+    'ConnectionAdditionalAttributeArgs',
+    'ConnectionBootstrapServerArgs',
+    'ConnectionIngressIpArgs',
+    'DeploymentDeploymentDiagnosticDataArgs',
     'DeploymentOggDataArgs',
+    'GetConnectionAssignmentsFilterArgs',
+    'GetConnectionsFilterArgs',
     'GetDatabaseRegistrationsFilterArgs',
     'GetDeploymentBackupsFilterArgs',
+    'GetDeploymentTypesFilterArgs',
     'GetDeploymentUpgradesFilterArgs',
     'GetDeploymentsFilterArgs',
+    'GetMessagesFilterArgs',
+    'GetTrailFilesFilterArgs',
+    'GetTrailSequencesFilterArgs',
 ]
+
+@pulumi.input_type
+class ConnectionAdditionalAttributeArgs:
+    def __init__(__self__, *,
+                 name: Optional[pulumi.Input[str]] = None,
+                 value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] name: (Updatable) The name of the property entry.
+        :param pulumi.Input[str] value: (Updatable) The value of the property entry.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The name of the property entry.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The value of the property entry.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
+
+
+@pulumi.input_type
+class ConnectionBootstrapServerArgs:
+    def __init__(__self__, *,
+                 host: Optional[pulumi.Input[str]] = None,
+                 port: Optional[pulumi.Input[int]] = None,
+                 private_ip: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] host: (Updatable) The name or address of a host.
+        :param pulumi.Input[int] port: (Updatable) The port of an endpoint usually specified for a connection.
+        :param pulumi.Input[str] private_ip: (Updatable) The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+        """
+        if host is not None:
+            pulumi.set(__self__, "host", host)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if private_ip is not None:
+            pulumi.set(__self__, "private_ip", private_ip)
+
+    @property
+    @pulumi.getter
+    def host(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The name or address of a host.
+        """
+        return pulumi.get(self, "host")
+
+    @host.setter
+    def host(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "host", value)
+
+    @property
+    @pulumi.getter
+    def port(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) The port of an endpoint usually specified for a connection.
+        """
+        return pulumi.get(self, "port")
+
+    @port.setter
+    def port(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "port", value)
+
+    @property
+    @pulumi.getter(name="privateIp")
+    def private_ip(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+        """
+        return pulumi.get(self, "private_ip")
+
+    @private_ip.setter
+    def private_ip(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "private_ip", value)
+
+
+@pulumi.input_type
+class ConnectionIngressIpArgs:
+    def __init__(__self__, *,
+                 ingress_ip: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] ingress_ip: A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+        """
+        if ingress_ip is not None:
+            pulumi.set(__self__, "ingress_ip", ingress_ip)
+
+    @property
+    @pulumi.getter(name="ingressIp")
+    def ingress_ip(self) -> Optional[pulumi.Input[str]]:
+        """
+        A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+        """
+        return pulumi.get(self, "ingress_ip")
+
+    @ingress_ip.setter
+    def ingress_ip(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ingress_ip", value)
+
+
+@pulumi.input_type
+class DeploymentDeploymentDiagnosticDataArgs:
+    def __init__(__self__, *,
+                 bucket: Optional[pulumi.Input[str]] = None,
+                 diagnostic_state: Optional[pulumi.Input[str]] = None,
+                 namespace: Optional[pulumi.Input[str]] = None,
+                 object: Optional[pulumi.Input[str]] = None,
+                 time_diagnostic_end: Optional[pulumi.Input[str]] = None,
+                 time_diagnostic_start: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] bucket: Name of the bucket where the object is to be uploaded in the object storage
+        :param pulumi.Input[str] diagnostic_state: The state of the deployment diagnostic collection.
+        :param pulumi.Input[str] namespace: Name of namespace that serves as a container for all of your buckets
+        :param pulumi.Input[str] object: Name of the diagnostic collected and uploaded to object storage
+        :param pulumi.Input[str] time_diagnostic_end: The time until which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        :param pulumi.Input[str] time_diagnostic_start: The time from which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if diagnostic_state is not None:
+            pulumi.set(__self__, "diagnostic_state", diagnostic_state)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if object is not None:
+            pulumi.set(__self__, "object", object)
+        if time_diagnostic_end is not None:
+            pulumi.set(__self__, "time_diagnostic_end", time_diagnostic_end)
+        if time_diagnostic_start is not None:
+            pulumi.set(__self__, "time_diagnostic_start", time_diagnostic_start)
+
+    @property
+    @pulumi.getter
+    def bucket(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of the bucket where the object is to be uploaded in the object storage
+        """
+        return pulumi.get(self, "bucket")
+
+    @bucket.setter
+    def bucket(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "bucket", value)
+
+    @property
+    @pulumi.getter(name="diagnosticState")
+    def diagnostic_state(self) -> Optional[pulumi.Input[str]]:
+        """
+        The state of the deployment diagnostic collection.
+        """
+        return pulumi.get(self, "diagnostic_state")
+
+    @diagnostic_state.setter
+    def diagnostic_state(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "diagnostic_state", value)
+
+    @property
+    @pulumi.getter
+    def namespace(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of namespace that serves as a container for all of your buckets
+        """
+        return pulumi.get(self, "namespace")
+
+    @namespace.setter
+    def namespace(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "namespace", value)
+
+    @property
+    @pulumi.getter
+    def object(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of the diagnostic collected and uploaded to object storage
+        """
+        return pulumi.get(self, "object")
+
+    @object.setter
+    def object(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "object", value)
+
+    @property
+    @pulumi.getter(name="timeDiagnosticEnd")
+    def time_diagnostic_end(self) -> Optional[pulumi.Input[str]]:
+        """
+        The time until which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_diagnostic_end")
+
+    @time_diagnostic_end.setter
+    def time_diagnostic_end(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_diagnostic_end", value)
+
+    @property
+    @pulumi.getter(name="timeDiagnosticStart")
+    def time_diagnostic_start(self) -> Optional[pulumi.Input[str]]:
+        """
+        The time from which the diagnostic collection should collect the logs. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_diagnostic_start")
+
+    @time_diagnostic_start.setter
+    def time_diagnostic_start(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_diagnostic_start", value)
+
 
 @pulumi.input_type
 class DeploymentOggDataArgs:
@@ -27,7 +257,7 @@ class DeploymentOggDataArgs:
                  key: Optional[pulumi.Input[str]] = None,
                  ogg_version: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] admin_password: (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed.
+        :param pulumi.Input[str] admin_password: (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by "passwordSecretId".
         :param pulumi.Input[str] admin_username: (Updatable) The GoldenGate deployment console username.
         :param pulumi.Input[str] deployment_name: The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
         :param pulumi.Input[str] certificate: (Updatable) A PEM-encoded SSL certificate.
@@ -48,7 +278,7 @@ class DeploymentOggDataArgs:
     @pulumi.getter(name="adminPassword")
     def admin_password(self) -> pulumi.Input[str]:
         """
-        (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed.
+        (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by "passwordSecretId".
         """
         return pulumi.get(self, "admin_password")
 
@@ -115,6 +345,96 @@ class DeploymentOggDataArgs:
     @ogg_version.setter
     def ogg_version(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "ogg_version", value)
+
+
+@pulumi.input_type
+class GetConnectionAssignmentsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: The name of the connection in the assignment (aliasName).
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The name of the connection in the assignment (aliasName).
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetConnectionsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        """
+        :param str name: The name of the property entry.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        The name of the property entry.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
 
 
 @pulumi.input_type
@@ -196,6 +516,45 @@ class GetDeploymentBackupsFilterArgs:
 
 
 @pulumi.input_type
+class GetDeploymentTypesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
 class GetDeploymentUpgradesFilterArgs:
     def __init__(__self__, *,
                  name: str,
@@ -236,6 +595,123 @@ class GetDeploymentUpgradesFilterArgs:
 
 @pulumi.input_type
 class GetDeploymentsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetMessagesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetTrailFilesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetTrailSequencesFilterArgs:
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],

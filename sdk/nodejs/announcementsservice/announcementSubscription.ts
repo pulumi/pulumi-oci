@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -35,6 +36,8 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
+ *     preferredLanguage: _var.announcement_subscription_preferred_language,
+ *     preferredTimeZone: _var.announcement_subscription_preferred_time_zone,
  * });
  * ```
  *
@@ -107,6 +110,14 @@ export class AnnouncementSubscription extends pulumi.CustomResource {
      */
     public readonly onsTopicId!: pulumi.Output<string>;
     /**
+     * (Updatable) (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
+     */
+    public readonly preferredLanguage!: pulumi.Output<string>;
+    /**
+     * (Updatable) The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+     */
+    public readonly preferredTimeZone!: pulumi.Output<string>;
+    /**
      * The current lifecycle state of the announcement subscription.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
@@ -144,6 +155,8 @@ export class AnnouncementSubscription extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["onsTopicId"] = state ? state.onsTopicId : undefined;
+            resourceInputs["preferredLanguage"] = state ? state.preferredLanguage : undefined;
+            resourceInputs["preferredTimeZone"] = state ? state.preferredTimeZone : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
@@ -166,6 +179,8 @@ export class AnnouncementSubscription extends pulumi.CustomResource {
             resourceInputs["filterGroups"] = args ? args.filterGroups : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["onsTopicId"] = args ? args.onsTopicId : undefined;
+            resourceInputs["preferredLanguage"] = args ? args.preferredLanguage : undefined;
+            resourceInputs["preferredTimeZone"] = args ? args.preferredTimeZone : undefined;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
@@ -213,6 +228,14 @@ export interface AnnouncementSubscriptionState {
      * (Updatable) The OCID of the Notifications service topic that is the target for publishing announcements that match the configured announcement subscription. The caller of the operation needs the ONS_TOPIC_PUBLISH permission for the targeted Notifications service topic. For more information about Notifications permissions, see [Details for Notifications](https://docs.cloud.oracle.com/iaas/Content/Identity/policyreference/notificationpolicyreference.htm).
      */
     onsTopicId?: pulumi.Input<string>;
+    /**
+     * (Updatable) (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
+     */
+    preferredLanguage?: pulumi.Input<string>;
+    /**
+     * (Updatable) The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+     */
+    preferredTimeZone?: pulumi.Input<string>;
     /**
      * The current lifecycle state of the announcement subscription.
      */
@@ -263,4 +286,12 @@ export interface AnnouncementSubscriptionArgs {
      * (Updatable) The OCID of the Notifications service topic that is the target for publishing announcements that match the configured announcement subscription. The caller of the operation needs the ONS_TOPIC_PUBLISH permission for the targeted Notifications service topic. For more information about Notifications permissions, see [Details for Notifications](https://docs.cloud.oracle.com/iaas/Content/Identity/policyreference/notificationpolicyreference.htm).
      */
     onsTopicId: pulumi.Input<string>;
+    /**
+     * (Updatable) (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
+     */
+    preferredLanguage?: pulumi.Input<string>;
+    /**
+     * (Updatable) The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+     */
+    preferredTimeZone?: pulumi.Input<string>;
 }

@@ -19,12 +19,19 @@ class DiscoveryJobsResultArgs:
                  discovery_job_id: pulumi.Input[str]):
         """
         The set of arguments for constructing a DiscoveryJobsResult resource.
+        :param pulumi.Input[str] discovery_job_id: The OCID of the discovery job.
         """
+        if discovery_job_id is not None:
+            warnings.warn("""The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""", DeprecationWarning)
+            pulumi.log.warn("""discovery_job_id is deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""")
         pulumi.set(__self__, "discovery_job_id", discovery_job_id)
 
     @property
     @pulumi.getter(name="discoveryJobId")
     def discovery_job_id(self) -> pulumi.Input[str]:
+        """
+        The OCID of the discovery job.
+        """
         return pulumi.get(self, "discovery_job_id")
 
     @discovery_job_id.setter
@@ -62,6 +69,7 @@ class _DiscoveryJobsResultState:
         :param pulumi.Input[str] column_name: The name of the sensitive column.
         :param pulumi.Input[str] data_type: The data type of the sensitive column.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] db_defined_child_column_keys: Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
+        :param pulumi.Input[str] discovery_job_id: The OCID of the discovery job.
         :param pulumi.Input[str] discovery_type: The type of the discovery result. It can be one of the following three types: NEW: A new sensitive column in the target database that is not in the sensitive data model. DELETED: A column that is present in the sensitive data model but has been deleted from the target database. MODIFIED: A column that is present in the target database as well as the sensitive data model but some of its attributes have been modified.
         :param pulumi.Input[str] estimated_data_value_count: The estimated number of data values the column has in the associated database.
         :param pulumi.Input[bool] is_result_applied: Indicates if the discovery result has been processed. You can update this attribute using the PatchDiscoveryJobResults operation to track whether the discovery result has already been processed and applied to the sensitive data model.
@@ -88,13 +96,22 @@ class _DiscoveryJobsResultState:
         if db_defined_child_column_keys is not None:
             pulumi.set(__self__, "db_defined_child_column_keys", db_defined_child_column_keys)
         if discovery_job_id is not None:
+            warnings.warn("""The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""", DeprecationWarning)
+            pulumi.log.warn("""discovery_job_id is deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""")
+        if discovery_job_id is not None:
             pulumi.set(__self__, "discovery_job_id", discovery_job_id)
+        if discovery_type is not None:
+            warnings.warn("""The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""", DeprecationWarning)
+            pulumi.log.warn("""discovery_type is deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""")
         if discovery_type is not None:
             pulumi.set(__self__, "discovery_type", discovery_type)
         if estimated_data_value_count is not None:
             pulumi.set(__self__, "estimated_data_value_count", estimated_data_value_count)
         if is_result_applied is not None:
             pulumi.set(__self__, "is_result_applied", is_result_applied)
+        if key is not None:
+            warnings.warn("""The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""", DeprecationWarning)
+            pulumi.log.warn("""key is deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""")
         if key is not None:
             pulumi.set(__self__, "key", key)
         if modified_attributes is not None:
@@ -181,6 +198,9 @@ class _DiscoveryJobsResultState:
     @property
     @pulumi.getter(name="discoveryJobId")
     def discovery_job_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The OCID of the discovery job.
+        """
         return pulumi.get(self, "discovery_job_id")
 
     @discovery_job_id.setter
@@ -364,6 +384,8 @@ class DiscoveryJobsResult(pulumi.CustomResource):
                  discovery_job_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
+        **Deprecated. This resource does not support create and update operations.**
+
         This resource provides the Discovery Jobs Result resource in Oracle Cloud Infrastructure Data Safe service.
 
         ## Example Usage
@@ -385,6 +407,7 @@ class DiscoveryJobsResult(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[str] discovery_job_id: The OCID of the discovery job.
         """
         ...
     @overload
@@ -393,6 +416,8 @@ class DiscoveryJobsResult(pulumi.CustomResource):
                  args: DiscoveryJobsResultArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        **Deprecated. This resource does not support create and update operations.**
+
         This resource provides the Discovery Jobs Result resource in Oracle Cloud Infrastructure Data Safe service.
 
         ## Example Usage
@@ -439,6 +464,9 @@ class DiscoveryJobsResult(pulumi.CustomResource):
 
             if discovery_job_id is None and not opts.urn:
                 raise TypeError("Missing required property 'discovery_job_id'")
+            if discovery_job_id is not None and not opts.urn:
+                warnings.warn("""The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""", DeprecationWarning)
+                pulumi.log.warn("""discovery_job_id is deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""")
             __props__.__dict__["discovery_job_id"] = discovery_job_id
             __props__.__dict__["app_defined_child_column_keys"] = None
             __props__.__dict__["app_name"] = None
@@ -501,6 +529,7 @@ class DiscoveryJobsResult(pulumi.CustomResource):
         :param pulumi.Input[str] column_name: The name of the sensitive column.
         :param pulumi.Input[str] data_type: The data type of the sensitive column.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] db_defined_child_column_keys: Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
+        :param pulumi.Input[str] discovery_job_id: The OCID of the discovery job.
         :param pulumi.Input[str] discovery_type: The type of the discovery result. It can be one of the following three types: NEW: A new sensitive column in the target database that is not in the sensitive data model. DELETED: A column that is present in the sensitive data model but has been deleted from the target database. MODIFIED: A column that is present in the target database as well as the sensitive data model but some of its attributes have been modified.
         :param pulumi.Input[str] estimated_data_value_count: The estimated number of data values the column has in the associated database.
         :param pulumi.Input[bool] is_result_applied: Indicates if the discovery result has been processed. You can update this attribute using the PatchDiscoveryJobResults operation to track whether the discovery result has already been processed and applied to the sensitive data model.
@@ -585,6 +614,9 @@ class DiscoveryJobsResult(pulumi.CustomResource):
     @property
     @pulumi.getter(name="discoveryJobId")
     def discovery_job_id(self) -> pulumi.Output[str]:
+        """
+        The OCID of the discovery job.
+        """
         return pulumi.get(self, "discovery_job_id")
 
     @property

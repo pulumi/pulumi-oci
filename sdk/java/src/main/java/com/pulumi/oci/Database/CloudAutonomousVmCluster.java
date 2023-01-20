@@ -9,8 +9,9 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Database.CloudAutonomousVmClusterArgs;
 import com.pulumi.oci.Database.inputs.CloudAutonomousVmClusterState;
+import com.pulumi.oci.Database.outputs.CloudAutonomousVmClusterMaintenanceWindow;
+import com.pulumi.oci.Database.outputs.CloudAutonomousVmClusterMaintenanceWindowDetails;
 import com.pulumi.oci.Utilities;
-import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
 import java.lang.Object;
@@ -34,6 +35,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.Database.CloudAutonomousVmCluster;
  * import com.pulumi.oci.Database.CloudAutonomousVmClusterArgs;
+ * import com.pulumi.oci.Database.inputs.CloudAutonomousVmClusterMaintenanceWindowDetailsArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -52,12 +54,33 @@ import javax.annotation.Nullable;
  *             .compartmentId(var_.compartment_id())
  *             .displayName(var_.cloud_autonomous_vm_cluster_display_name())
  *             .subnetId(oci_core_subnet.test_subnet().id())
+ *             .autonomousDataStorageSizeInTbs(var_.cloud_autonomous_vm_cluster_autonomous_data_storage_size_in_tbs())
  *             .clusterTimeZone(var_.cloud_autonomous_vm_cluster_cluster_time_zone())
+ *             .cpuCoreCountPerNode(var_.cloud_autonomous_vm_cluster_cpu_core_count_per_node())
+ *             .dbServers(var_.cloud_autonomous_vm_cluster_db_servers())
  *             .definedTags(var_.cloud_autonomous_vm_cluster_defined_tags())
  *             .description(var_.cloud_autonomous_vm_cluster_description())
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .licenseModel(var_.cloud_autonomous_vm_cluster_license_model())
+ *             .maintenanceWindowDetails(CloudAutonomousVmClusterMaintenanceWindowDetailsArgs.builder()
+ *                 .customActionTimeoutInMins(var_.cloud_autonomous_vm_cluster_maintenance_window_details_custom_action_timeout_in_mins())
+ *                 .daysOfWeeks(CloudAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeekArgs.builder()
+ *                     .name(var_.cloud_autonomous_vm_cluster_maintenance_window_details_days_of_week_name())
+ *                     .build())
+ *                 .hoursOfDays(var_.cloud_autonomous_vm_cluster_maintenance_window_details_hours_of_day())
+ *                 .isCustomActionTimeoutEnabled(var_.cloud_autonomous_vm_cluster_maintenance_window_details_is_custom_action_timeout_enabled())
+ *                 .isMonthlyPatchingEnabled(var_.cloud_autonomous_vm_cluster_maintenance_window_details_is_monthly_patching_enabled())
+ *                 .leadTimeInWeeks(var_.cloud_autonomous_vm_cluster_maintenance_window_details_lead_time_in_weeks())
+ *                 .months(CloudAutonomousVmClusterMaintenanceWindowDetailsMonthArgs.builder()
+ *                     .name(var_.cloud_autonomous_vm_cluster_maintenance_window_details_months_name())
+ *                     .build())
+ *                 .patchingMode(var_.cloud_autonomous_vm_cluster_maintenance_window_details_patching_mode())
+ *                 .preference(var_.cloud_autonomous_vm_cluster_maintenance_window_details_preference())
+ *                 .weeksOfMonths(var_.cloud_autonomous_vm_cluster_maintenance_window_details_weeks_of_month())
+ *                 .build())
+ *             .memoryPerOracleComputeUnitInGbs(var_.cloud_autonomous_vm_cluster_memory_per_oracle_compute_unit_in_gbs())
  *             .nsgIds(var_.cloud_autonomous_vm_cluster_nsg_ids())
+ *             .totalContainerDatabases(var_.cloud_autonomous_vm_cluster_total_container_databases())
  *             .build());
  * 
  *     }
@@ -76,14 +99,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:Database/cloudAutonomousVmCluster:CloudAutonomousVmCluster")
 public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResource {
     /**
-     * The data disk group size allocated for Autonomous Databases, in TBs.
+     * The data disk group size to be allocated for Autonomous Databases, in TBs.
      * 
      */
     @Export(name="autonomousDataStorageSizeInTbs", type=Double.class, parameters={})
     private Output<Double> autonomousDataStorageSizeInTbs;
 
     /**
-     * @return The data disk group size allocated for Autonomous Databases, in TBs.
+     * @return The data disk group size to be allocated for Autonomous Databases, in TBs.
      * 
      */
     public Output<Double> autonomousDataStorageSizeInTbs() {
@@ -188,18 +211,32 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
         return this.compartmentId;
     }
     /**
-     * The number of CPU cores enabled on the cloud Autonomous VM cluster.
+     * The number of CPU cores on the cloud Autonomous VM cluster.
      * 
      */
     @Export(name="cpuCoreCount", type=Integer.class, parameters={})
     private Output<Integer> cpuCoreCount;
 
     /**
-     * @return The number of CPU cores enabled on the cloud Autonomous VM cluster.
+     * @return The number of CPU cores on the cloud Autonomous VM cluster.
      * 
      */
     public Output<Integer> cpuCoreCount() {
         return this.cpuCoreCount;
+    }
+    /**
+     * The number of OCPU cores to be enabled per VM cluster node.
+     * 
+     */
+    @Export(name="cpuCoreCountPerNode", type=Integer.class, parameters={})
+    private Output<Integer> cpuCoreCountPerNode;
+
+    /**
+     * @return The number of OCPU cores to be enabled per VM cluster node.
+     * 
+     */
+    public Output<Integer> cpuCoreCountPerNode() {
+        return this.cpuCoreCountPerNode;
     }
     /**
      * The total data storage allocated, in gigabytes (GB).
@@ -242,6 +279,20 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
      */
     public Output<Integer> dbNodeStorageSizeInGbs() {
         return this.dbNodeStorageSizeInGbs;
+    }
+    /**
+     * The list of database servers.
+     * 
+     */
+    @Export(name="dbServers", type=List.class, parameters={String.class})
+    private Output</* @Nullable */ List<String>> dbServers;
+
+    /**
+     * @return The list of database servers.
+     * 
+     */
+    public Output<Optional<List<String>>> dbServers() {
+        return Codegen.optional(this.dbServers);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -384,14 +435,42 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
         return this.lifecycleDetails;
     }
     /**
-     * The amount of memory (in GBs) enabled per each OCPU core.
+     * (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+     * 
+     */
+    @Export(name="maintenanceWindowDetails", type=CloudAutonomousVmClusterMaintenanceWindowDetails.class, parameters={})
+    private Output</* @Nullable */ CloudAutonomousVmClusterMaintenanceWindowDetails> maintenanceWindowDetails;
+
+    /**
+     * @return (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+     * 
+     */
+    public Output<Optional<CloudAutonomousVmClusterMaintenanceWindowDetails>> maintenanceWindowDetails() {
+        return Codegen.optional(this.maintenanceWindowDetails);
+    }
+    /**
+     * The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+     * 
+     */
+    @Export(name="maintenanceWindows", type=List.class, parameters={CloudAutonomousVmClusterMaintenanceWindow.class})
+    private Output<List<CloudAutonomousVmClusterMaintenanceWindow>> maintenanceWindows;
+
+    /**
+     * @return The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+     * 
+     */
+    public Output<List<CloudAutonomousVmClusterMaintenanceWindow>> maintenanceWindows() {
+        return this.maintenanceWindows;
+    }
+    /**
+     * The amount of memory (in GBs) to be enabled per each OCPU core.
      * 
      */
     @Export(name="memoryPerOracleComputeUnitInGbs", type=Integer.class, parameters={})
     private Output<Integer> memoryPerOracleComputeUnitInGbs;
 
     /**
-     * @return The amount of memory (in GBs) enabled per each OCPU core.
+     * @return The amount of memory (in GBs) to be enabled per each OCPU core.
      * 
      */
     public Output<Integer> memoryPerOracleComputeUnitInGbs() {
@@ -456,14 +535,14 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
         return this.nsgIds;
     }
     /**
-     * The number of CPU cores enabled on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
+     * The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
      * 
      */
     @Export(name="ocpuCount", type=Double.class, parameters={})
     private Output<Double> ocpuCount;
 
     /**
-     * @return The number of CPU cores enabled on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
+     * @return The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
      * 
      */
     public Output<Double> ocpuCount() {
@@ -482,18 +561,6 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
      */
     public Output<Double> reclaimableCpus() {
         return this.reclaimableCpus;
-    }
-    @Export(name="rotateOrdsCertsTrigger", type=Boolean.class, parameters={})
-    private Output</* @Nullable */ Boolean> rotateOrdsCertsTrigger;
-
-    public Output<Optional<Boolean>> rotateOrdsCertsTrigger() {
-        return Codegen.optional(this.rotateOrdsCertsTrigger);
-    }
-    @Export(name="rotateSslCertsTrigger", type=Boolean.class, parameters={})
-    private Output</* @Nullable */ Boolean> rotateSslCertsTrigger;
-
-    public Output<Optional<Boolean>> rotateSslCertsTrigger() {
-        return Codegen.optional(this.rotateSslCertsTrigger);
     }
     /**
      * The model name of the Exadata hardware running the cloud Autonomous VM cluster.
@@ -556,24 +623,24 @@ public class CloudAutonomousVmCluster extends com.pulumi.resources.CustomResourc
      * 
      */
     @Export(name="timeUpdated", type=String.class, parameters={})
-    private Output<String> timeUpdated;
+    private Output</* @Nullable */ String> timeUpdated;
 
     /**
      * @return The last date and time that the cloud Autonomous VM cluster was updated.
      * 
      */
-    public Output<String> timeUpdated() {
-        return this.timeUpdated;
+    public Output<Optional<String>> timeUpdated() {
+        return Codegen.optional(this.timeUpdated);
     }
     /**
-     * The total number of Autonomous Container Databases that can be created with the allocated local storage.
+     * The total number of Autonomous Container Databases that can be created.
      * 
      */
     @Export(name="totalContainerDatabases", type=Integer.class, parameters={})
     private Output<Integer> totalContainerDatabases;
 
     /**
-     * @return The total number of Autonomous Container Databases that can be created with the allocated local storage.
+     * @return The total number of Autonomous Container Databases that can be created.
      * 
      */
     public Output<Integer> totalContainerDatabases() {

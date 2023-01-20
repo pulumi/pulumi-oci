@@ -36,6 +36,21 @@ public final class GetVmClusterRecommendedNetworkArgs extends com.pulumi.resourc
     }
 
     /**
+     * The list of Db server Ids to configure network.
+     * 
+     */
+    @Import(name="dbServers")
+    private @Nullable Output<List<String>> dbServers;
+
+    /**
+     * @return The list of Db server Ids to configure network.
+     * 
+     */
+    public Optional<Output<List<String>>> dbServers() {
+        return Optional.ofNullable(this.dbServers);
+    }
+
+    /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
@@ -174,6 +189,7 @@ public final class GetVmClusterRecommendedNetworkArgs extends com.pulumi.resourc
 
     private GetVmClusterRecommendedNetworkArgs(GetVmClusterRecommendedNetworkArgs $) {
         this.compartmentId = $.compartmentId;
+        this.dbServers = $.dbServers;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.dns = $.dns;
@@ -222,6 +238,37 @@ public final class GetVmClusterRecommendedNetworkArgs extends com.pulumi.resourc
          */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
+        }
+
+        /**
+         * @param dbServers The list of Db server Ids to configure network.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbServers(@Nullable Output<List<String>> dbServers) {
+            $.dbServers = dbServers;
+            return this;
+        }
+
+        /**
+         * @param dbServers The list of Db server Ids to configure network.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbServers(List<String> dbServers) {
+            return dbServers(Output.of(dbServers));
+        }
+
+        /**
+         * @param dbServers The list of Db server Ids to configure network.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbServers(String... dbServers) {
+            return dbServers(List.of(dbServers));
         }
 
         /**

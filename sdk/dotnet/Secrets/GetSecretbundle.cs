@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Secrets
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetSecretbundleResult> InvokeAsync(GetSecretbundleArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetSecretbundleResult>("oci:Secrets/getSecretbundle:getSecretbundle", args ?? new GetSecretbundleArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetSecretbundleResult>("oci:Secrets/getSecretbundle:getSecretbundle", args ?? new GetSecretbundleArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Secretbundle resource in Oracle Cloud Infrastructure Secrets service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.Secrets
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetSecretbundleResult> Invoke(GetSecretbundleInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetSecretbundleResult>("oci:Secrets/getSecretbundle:getSecretbundle", args ?? new GetSecretbundleInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetSecretbundleResult>("oci:Secrets/getSecretbundle:getSecretbundle", args ?? new GetSecretbundleInvokeArgs(), options.WithDefaults());
     }
 
 

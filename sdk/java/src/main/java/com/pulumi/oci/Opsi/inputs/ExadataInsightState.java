@@ -5,9 +5,11 @@ package com.pulumi.oci.Opsi.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Opsi.inputs.ExadataInsightMemberVmClusterDetailArgs;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -168,6 +170,20 @@ public final class ExadataInsightState extends com.pulumi.resources.ResourceArgs
         return Optional.ofNullable(this.exadataDisplayName);
     }
 
+    @Import(name="exadataInfraId")
+    private @Nullable Output<String> exadataInfraId;
+
+    public Optional<Output<String>> exadataInfraId() {
+        return Optional.ofNullable(this.exadataInfraId);
+    }
+
+    @Import(name="exadataInfraResourceType")
+    private @Nullable Output<String> exadataInfraResourceType;
+
+    public Optional<Output<String>> exadataInfraResourceType() {
+        return Optional.ofNullable(this.exadataInfraResourceType);
+    }
+
     /**
      * The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
      * 
@@ -196,6 +212,13 @@ public final class ExadataInsightState extends com.pulumi.resources.ResourceArgs
      */
     public Optional<Output<String>> exadataRackType() {
         return Optional.ofNullable(this.exadataRackType);
+    }
+
+    @Import(name="exadataShape")
+    private @Nullable Output<String> exadataShape;
+
+    public Optional<Output<String>> exadataShape() {
+        return Optional.ofNullable(this.exadataShape);
     }
 
     /**
@@ -271,6 +294,13 @@ public final class ExadataInsightState extends com.pulumi.resources.ResourceArgs
      */
     public Optional<Output<String>> lifecycleDetails() {
         return Optional.ofNullable(this.lifecycleDetails);
+    }
+
+    @Import(name="memberVmClusterDetails")
+    private @Nullable Output<List<ExadataInsightMemberVmClusterDetailArgs>> memberVmClusterDetails;
+
+    public Optional<Output<List<ExadataInsightMemberVmClusterDetailArgs>>> memberVmClusterDetails() {
+        return Optional.ofNullable(this.memberVmClusterDetails);
     }
 
     /**
@@ -361,13 +391,17 @@ public final class ExadataInsightState extends com.pulumi.resources.ResourceArgs
         this.enterpriseManagerIdentifier = $.enterpriseManagerIdentifier;
         this.entitySource = $.entitySource;
         this.exadataDisplayName = $.exadataDisplayName;
+        this.exadataInfraId = $.exadataInfraId;
+        this.exadataInfraResourceType = $.exadataInfraResourceType;
         this.exadataName = $.exadataName;
         this.exadataRackType = $.exadataRackType;
+        this.exadataShape = $.exadataShape;
         this.exadataType = $.exadataType;
         this.freeformTags = $.freeformTags;
         this.isAutoSyncEnabled = $.isAutoSyncEnabled;
         this.isVirtualizedExadata = $.isVirtualizedExadata;
         this.lifecycleDetails = $.lifecycleDetails;
+        this.memberVmClusterDetails = $.memberVmClusterDetails;
         this.state = $.state;
         this.status = $.status;
         this.systemTags = $.systemTags;
@@ -603,6 +637,24 @@ public final class ExadataInsightState extends com.pulumi.resources.ResourceArgs
             return exadataDisplayName(Output.of(exadataDisplayName));
         }
 
+        public Builder exadataInfraId(@Nullable Output<String> exadataInfraId) {
+            $.exadataInfraId = exadataInfraId;
+            return this;
+        }
+
+        public Builder exadataInfraId(String exadataInfraId) {
+            return exadataInfraId(Output.of(exadataInfraId));
+        }
+
+        public Builder exadataInfraResourceType(@Nullable Output<String> exadataInfraResourceType) {
+            $.exadataInfraResourceType = exadataInfraResourceType;
+            return this;
+        }
+
+        public Builder exadataInfraResourceType(String exadataInfraResourceType) {
+            return exadataInfraResourceType(Output.of(exadataInfraResourceType));
+        }
+
         /**
          * @param exadataName The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
          * 
@@ -643,6 +695,15 @@ public final class ExadataInsightState extends com.pulumi.resources.ResourceArgs
          */
         public Builder exadataRackType(String exadataRackType) {
             return exadataRackType(Output.of(exadataRackType));
+        }
+
+        public Builder exadataShape(@Nullable Output<String> exadataShape) {
+            $.exadataShape = exadataShape;
+            return this;
+        }
+
+        public Builder exadataShape(String exadataShape) {
+            return exadataShape(Output.of(exadataShape));
         }
 
         /**
@@ -748,6 +809,19 @@ public final class ExadataInsightState extends com.pulumi.resources.ResourceArgs
          */
         public Builder lifecycleDetails(String lifecycleDetails) {
             return lifecycleDetails(Output.of(lifecycleDetails));
+        }
+
+        public Builder memberVmClusterDetails(@Nullable Output<List<ExadataInsightMemberVmClusterDetailArgs>> memberVmClusterDetails) {
+            $.memberVmClusterDetails = memberVmClusterDetails;
+            return this;
+        }
+
+        public Builder memberVmClusterDetails(List<ExadataInsightMemberVmClusterDetailArgs> memberVmClusterDetails) {
+            return memberVmClusterDetails(Output.of(memberVmClusterDetails));
+        }
+
+        public Builder memberVmClusterDetails(ExadataInsightMemberVmClusterDetailArgs... memberVmClusterDetails) {
+            return memberVmClusterDetails(List.of(memberVmClusterDetails));
         }
 
         /**

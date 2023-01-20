@@ -5,22 +5,71 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./cluster";
-export * from "./getClusterKubeConfig";
-export * from "./getClusterOption";
-export * from "./getClusters";
-export * from "./getMigrateToNativeVcnStatus";
-export * from "./getNodePool";
-export * from "./getNodePoolOption";
-export * from "./getNodePools";
-export * from "./getWorkRequestErrors";
-export * from "./getWorkRequestLogEntries";
-export * from "./getWorkRequests";
-export * from "./nodePool";
+export { ClusterArgs, ClusterState } from "./cluster";
+export type Cluster = import("./cluster").Cluster;
+export const Cluster: typeof import("./cluster").Cluster = null as any;
+utilities.lazyLoad(exports, ["Cluster"], () => require("./cluster"));
 
-// Import resources to register:
-import { Cluster } from "./cluster";
-import { NodePool } from "./nodePool";
+export { ContainerInstanceArgs, ContainerInstanceState } from "./containerInstance";
+export type ContainerInstance = import("./containerInstance").ContainerInstance;
+export const ContainerInstance: typeof import("./containerInstance").ContainerInstance = null as any;
+utilities.lazyLoad(exports, ["ContainerInstance"], () => require("./containerInstance"));
+
+export { GetClusterKubeConfigArgs, GetClusterKubeConfigResult, GetClusterKubeConfigOutputArgs } from "./getClusterKubeConfig";
+export const getClusterKubeConfig: typeof import("./getClusterKubeConfig").getClusterKubeConfig = null as any;
+export const getClusterKubeConfigOutput: typeof import("./getClusterKubeConfig").getClusterKubeConfigOutput = null as any;
+utilities.lazyLoad(exports, ["getClusterKubeConfig","getClusterKubeConfigOutput"], () => require("./getClusterKubeConfig"));
+
+export { GetClusterOptionArgs, GetClusterOptionResult, GetClusterOptionOutputArgs } from "./getClusterOption";
+export const getClusterOption: typeof import("./getClusterOption").getClusterOption = null as any;
+export const getClusterOptionOutput: typeof import("./getClusterOption").getClusterOptionOutput = null as any;
+utilities.lazyLoad(exports, ["getClusterOption","getClusterOptionOutput"], () => require("./getClusterOption"));
+
+export { GetClustersArgs, GetClustersResult, GetClustersOutputArgs } from "./getClusters";
+export const getClusters: typeof import("./getClusters").getClusters = null as any;
+export const getClustersOutput: typeof import("./getClusters").getClustersOutput = null as any;
+utilities.lazyLoad(exports, ["getClusters","getClustersOutput"], () => require("./getClusters"));
+
+export { GetMigrateToNativeVcnStatusArgs, GetMigrateToNativeVcnStatusResult, GetMigrateToNativeVcnStatusOutputArgs } from "./getMigrateToNativeVcnStatus";
+export const getMigrateToNativeVcnStatus: typeof import("./getMigrateToNativeVcnStatus").getMigrateToNativeVcnStatus = null as any;
+export const getMigrateToNativeVcnStatusOutput: typeof import("./getMigrateToNativeVcnStatus").getMigrateToNativeVcnStatusOutput = null as any;
+utilities.lazyLoad(exports, ["getMigrateToNativeVcnStatus","getMigrateToNativeVcnStatusOutput"], () => require("./getMigrateToNativeVcnStatus"));
+
+export { GetNodePoolArgs, GetNodePoolResult, GetNodePoolOutputArgs } from "./getNodePool";
+export const getNodePool: typeof import("./getNodePool").getNodePool = null as any;
+export const getNodePoolOutput: typeof import("./getNodePool").getNodePoolOutput = null as any;
+utilities.lazyLoad(exports, ["getNodePool","getNodePoolOutput"], () => require("./getNodePool"));
+
+export { GetNodePoolOptionArgs, GetNodePoolOptionResult, GetNodePoolOptionOutputArgs } from "./getNodePoolOption";
+export const getNodePoolOption: typeof import("./getNodePoolOption").getNodePoolOption = null as any;
+export const getNodePoolOptionOutput: typeof import("./getNodePoolOption").getNodePoolOptionOutput = null as any;
+utilities.lazyLoad(exports, ["getNodePoolOption","getNodePoolOptionOutput"], () => require("./getNodePoolOption"));
+
+export { GetNodePoolsArgs, GetNodePoolsResult, GetNodePoolsOutputArgs } from "./getNodePools";
+export const getNodePools: typeof import("./getNodePools").getNodePools = null as any;
+export const getNodePoolsOutput: typeof import("./getNodePools").getNodePoolsOutput = null as any;
+utilities.lazyLoad(exports, ["getNodePools","getNodePoolsOutput"], () => require("./getNodePools"));
+
+export { GetWorkRequestErrorsArgs, GetWorkRequestErrorsResult, GetWorkRequestErrorsOutputArgs } from "./getWorkRequestErrors";
+export const getWorkRequestErrors: typeof import("./getWorkRequestErrors").getWorkRequestErrors = null as any;
+export const getWorkRequestErrorsOutput: typeof import("./getWorkRequestErrors").getWorkRequestErrorsOutput = null as any;
+utilities.lazyLoad(exports, ["getWorkRequestErrors","getWorkRequestErrorsOutput"], () => require("./getWorkRequestErrors"));
+
+export { GetWorkRequestLogEntriesArgs, GetWorkRequestLogEntriesResult, GetWorkRequestLogEntriesOutputArgs } from "./getWorkRequestLogEntries";
+export const getWorkRequestLogEntries: typeof import("./getWorkRequestLogEntries").getWorkRequestLogEntries = null as any;
+export const getWorkRequestLogEntriesOutput: typeof import("./getWorkRequestLogEntries").getWorkRequestLogEntriesOutput = null as any;
+utilities.lazyLoad(exports, ["getWorkRequestLogEntries","getWorkRequestLogEntriesOutput"], () => require("./getWorkRequestLogEntries"));
+
+export { GetWorkRequestsArgs, GetWorkRequestsResult, GetWorkRequestsOutputArgs } from "./getWorkRequests";
+export const getWorkRequests: typeof import("./getWorkRequests").getWorkRequests = null as any;
+export const getWorkRequestsOutput: typeof import("./getWorkRequests").getWorkRequestsOutput = null as any;
+utilities.lazyLoad(exports, ["getWorkRequests","getWorkRequestsOutput"], () => require("./getWorkRequests"));
+
+export { NodePoolArgs, NodePoolState } from "./nodePool";
+export type NodePool = import("./nodePool").NodePool;
+export const NodePool: typeof import("./nodePool").NodePool = null as any;
+utilities.lazyLoad(exports, ["NodePool"], () => require("./nodePool"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -28,6 +77,8 @@ const _module = {
         switch (type) {
             case "oci:ContainerEngine/cluster:Cluster":
                 return new Cluster(name, <any>undefined, { urn })
+            case "oci:ContainerEngine/containerInstance:ContainerInstance":
+                return new ContainerInstance(name, <any>undefined, { urn })
             case "oci:ContainerEngine/nodePool:NodePool":
                 return new NodePool(name, <any>undefined, { urn })
             default:
@@ -36,4 +87,5 @@ const _module = {
     },
 };
 pulumi.runtime.registerResourceModule("oci", "ContainerEngine/cluster", _module)
+pulumi.runtime.registerResourceModule("oci", "ContainerEngine/containerInstance", _module)
 pulumi.runtime.registerResourceModule("oci", "ContainerEngine/nodePool", _module)

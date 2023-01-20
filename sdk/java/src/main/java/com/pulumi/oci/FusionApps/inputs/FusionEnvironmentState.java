@@ -6,9 +6,11 @@ package com.pulumi.oci.FusionApps.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.FusionApps.inputs.FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs;
+import com.pulumi.oci.FusionApps.inputs.FusionEnvironmentKmsKeyInfoArgs;
 import com.pulumi.oci.FusionApps.inputs.FusionEnvironmentMaintenancePolicyArgs;
 import com.pulumi.oci.FusionApps.inputs.FusionEnvironmentRefreshArgs;
 import com.pulumi.oci.FusionApps.inputs.FusionEnvironmentRuleArgs;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -203,6 +205,21 @@ public final class FusionEnvironmentState extends com.pulumi.resources.ResourceA
     }
 
     /**
+     * If it&#39;s true, then the Break Glass feature is enabled
+     * 
+     */
+    @Import(name="isBreakGlassEnabled")
+    private @Nullable Output<Boolean> isBreakGlassEnabled;
+
+    /**
+     * @return If it&#39;s true, then the Break Glass feature is enabled
+     * 
+     */
+    public Optional<Output<Boolean>> isBreakGlassEnabled() {
+        return Optional.ofNullable(this.isBreakGlassEnabled);
+    }
+
+    /**
      * (Updatable) byok kms keyId
      * 
      */
@@ -222,13 +239,13 @@ public final class FusionEnvironmentState extends com.pulumi.resources.ResourceA
      * 
      */
     @Import(name="kmsKeyInfos")
-    private @Nullable Output<List<String>> kmsKeyInfos;
+    private @Nullable Output<List<FusionEnvironmentKmsKeyInfoArgs>> kmsKeyInfos;
 
     /**
      * @return BYOK key info
      * 
      */
-    public Optional<Output<List<String>>> kmsKeyInfos() {
+    public Optional<Output<List<FusionEnvironmentKmsKeyInfoArgs>>> kmsKeyInfos() {
         return Optional.ofNullable(this.kmsKeyInfos);
     }
 
@@ -245,6 +262,21 @@ public final class FusionEnvironmentState extends com.pulumi.resources.ResourceA
      */
     public Optional<Output<String>> lifecycleDetails() {
         return Optional.ofNullable(this.lifecycleDetails);
+    }
+
+    /**
+     * The lockbox Id of this fusion environment. If there&#39;s no lockbox id, this field will be null
+     * 
+     */
+    @Import(name="lockboxId")
+    private @Nullable Output<String> lockboxId;
+
+    /**
+     * @return The lockbox Id of this fusion environment. If there&#39;s no lockbox id, this field will be null
+     * 
+     */
+    public Optional<Output<String>> lockboxId() {
+        return Optional.ofNullable(this.lockboxId);
     }
 
     /**
@@ -427,9 +459,11 @@ public final class FusionEnvironmentState extends com.pulumi.resources.ResourceA
         this.fusionEnvironmentFamilyId = $.fusionEnvironmentFamilyId;
         this.fusionEnvironmentType = $.fusionEnvironmentType;
         this.idcsDomainUrl = $.idcsDomainUrl;
+        this.isBreakGlassEnabled = $.isBreakGlassEnabled;
         this.kmsKeyId = $.kmsKeyId;
         this.kmsKeyInfos = $.kmsKeyInfos;
         this.lifecycleDetails = $.lifecycleDetails;
+        this.lockboxId = $.lockboxId;
         this.maintenancePolicy = $.maintenancePolicy;
         this.publicUrl = $.publicUrl;
         this.refreshes = $.refreshes;
@@ -734,6 +768,27 @@ public final class FusionEnvironmentState extends com.pulumi.resources.ResourceA
         }
 
         /**
+         * @param isBreakGlassEnabled If it&#39;s true, then the Break Glass feature is enabled
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isBreakGlassEnabled(@Nullable Output<Boolean> isBreakGlassEnabled) {
+            $.isBreakGlassEnabled = isBreakGlassEnabled;
+            return this;
+        }
+
+        /**
+         * @param isBreakGlassEnabled If it&#39;s true, then the Break Glass feature is enabled
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isBreakGlassEnabled(Boolean isBreakGlassEnabled) {
+            return isBreakGlassEnabled(Output.of(isBreakGlassEnabled));
+        }
+
+        /**
          * @param kmsKeyId (Updatable) byok kms keyId
          * 
          * @return builder
@@ -760,7 +815,7 @@ public final class FusionEnvironmentState extends com.pulumi.resources.ResourceA
          * @return builder
          * 
          */
-        public Builder kmsKeyInfos(@Nullable Output<List<String>> kmsKeyInfos) {
+        public Builder kmsKeyInfos(@Nullable Output<List<FusionEnvironmentKmsKeyInfoArgs>> kmsKeyInfos) {
             $.kmsKeyInfos = kmsKeyInfos;
             return this;
         }
@@ -771,7 +826,7 @@ public final class FusionEnvironmentState extends com.pulumi.resources.ResourceA
          * @return builder
          * 
          */
-        public Builder kmsKeyInfos(List<String> kmsKeyInfos) {
+        public Builder kmsKeyInfos(List<FusionEnvironmentKmsKeyInfoArgs> kmsKeyInfos) {
             return kmsKeyInfos(Output.of(kmsKeyInfos));
         }
 
@@ -781,7 +836,7 @@ public final class FusionEnvironmentState extends com.pulumi.resources.ResourceA
          * @return builder
          * 
          */
-        public Builder kmsKeyInfos(String... kmsKeyInfos) {
+        public Builder kmsKeyInfos(FusionEnvironmentKmsKeyInfoArgs... kmsKeyInfos) {
             return kmsKeyInfos(List.of(kmsKeyInfos));
         }
 
@@ -804,6 +859,27 @@ public final class FusionEnvironmentState extends com.pulumi.resources.ResourceA
          */
         public Builder lifecycleDetails(String lifecycleDetails) {
             return lifecycleDetails(Output.of(lifecycleDetails));
+        }
+
+        /**
+         * @param lockboxId The lockbox Id of this fusion environment. If there&#39;s no lockbox id, this field will be null
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lockboxId(@Nullable Output<String> lockboxId) {
+            $.lockboxId = lockboxId;
+            return this;
+        }
+
+        /**
+         * @param lockboxId The lockbox Id of this fusion environment. If there&#39;s no lockbox id, this field will be null
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lockboxId(String lockboxId) {
+            return lockboxId(Output.of(lockboxId));
         }
 
         /**

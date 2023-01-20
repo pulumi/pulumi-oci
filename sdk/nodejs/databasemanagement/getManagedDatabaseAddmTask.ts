@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabaseAddmTask(args: GetManagedDatabaseAddmTaskArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseAddmTaskResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabaseAddmTask:getManagedDatabaseAddmTask", {
         "managedDatabaseId": args.managedDatabaseId,
         "timeEnd": args.timeEnd,
@@ -74,9 +72,27 @@ export interface GetManagedDatabaseAddmTaskResult {
     readonly timeEnd: string;
     readonly timeStart: string;
 }
-
+/**
+ * This data source provides details about a specific Managed Database Addm Task resource in Oracle Cloud Infrastructure Database Management service.
+ *
+ * Lists the metadata for each ADDM task who's end snapshot time falls within the provided start and end time. Details include
+ * the name of the ADDM task, description, user, status and creation date time.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testManagedDatabaseAddmTask = oci.DatabaseManagement.getManagedDatabaseAddmTask({
+ *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
+ *     timeEnd: _var.managed_database_addm_task_time_end,
+ *     timeStart: _var.managed_database_addm_task_time_start,
+ * });
+ * ```
+ */
 export function getManagedDatabaseAddmTaskOutput(args: GetManagedDatabaseAddmTaskOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseAddmTaskResult> {
-    return pulumi.output(args).apply(a => getManagedDatabaseAddmTask(a, opts))
+    return pulumi.output(args).apply((a: any) => getManagedDatabaseAddmTask(a, opts))
 }
 
 /**

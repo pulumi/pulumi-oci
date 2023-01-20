@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetServiceGatewaysResult> InvokeAsync(GetServiceGatewaysArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetServiceGatewaysResult>("oci:Core/getServiceGateways:getServiceGateways", args ?? new GetServiceGatewaysArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetServiceGatewaysResult>("oci:Core/getServiceGateways:getServiceGateways", args ?? new GetServiceGatewaysArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Service Gateways in Oracle Cloud Infrastructure Core service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetServiceGatewaysResult> Invoke(GetServiceGatewaysInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetServiceGatewaysResult>("oci:Core/getServiceGateways:getServiceGateways", args ?? new GetServiceGatewaysInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetServiceGatewaysResult>("oci:Core/getServiceGateways:getServiceGateways", args ?? new GetServiceGatewaysInvokeArgs(), options.WithDefaults());
     }
 
 

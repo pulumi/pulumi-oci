@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVmClusterUpdates(args: GetVmClusterUpdatesArgs, opts?: pulumi.InvokeOptions): Promise<GetVmClusterUpdatesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getVmClusterUpdates:getVmClusterUpdates", {
         "filters": args.filters,
         "state": args.state,
@@ -79,9 +77,26 @@ export interface GetVmClusterUpdatesResult {
      */
     readonly vmClusterUpdates: outputs.Database.GetVmClusterUpdatesVmClusterUpdate[];
 }
-
+/**
+ * This data source provides the list of Vm Cluster Updates in Oracle Cloud Infrastructure Database service.
+ *
+ * Lists the maintenance updates that can be applied to the specified VM cluster. Applies to Exadata Cloud@Customer instances only.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testVmClusterUpdates = oci.Database.getVmClusterUpdates({
+ *     vmClusterId: oci_database_vm_cluster.test_vm_cluster.id,
+ *     state: _var.vm_cluster_update_state,
+ *     updateType: _var.vm_cluster_update_update_type,
+ * });
+ * ```
+ */
 export function getVmClusterUpdatesOutput(args: GetVmClusterUpdatesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVmClusterUpdatesResult> {
-    return pulumi.output(args).apply(a => getVmClusterUpdates(a, opts))
+    return pulumi.output(args).apply((a: any) => getVmClusterUpdates(a, opts))
 }
 
 /**

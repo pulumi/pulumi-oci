@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -20,14 +22,35 @@ import * as utilities from "../utilities";
  *     compartmentId: _var.compartment_id,
  *     displayName: _var.cloud_autonomous_vm_cluster_display_name,
  *     subnetId: oci_core_subnet.test_subnet.id,
+ *     autonomousDataStorageSizeInTbs: _var.cloud_autonomous_vm_cluster_autonomous_data_storage_size_in_tbs,
  *     clusterTimeZone: _var.cloud_autonomous_vm_cluster_cluster_time_zone,
+ *     cpuCoreCountPerNode: _var.cloud_autonomous_vm_cluster_cpu_core_count_per_node,
+ *     dbServers: _var.cloud_autonomous_vm_cluster_db_servers,
  *     definedTags: _var.cloud_autonomous_vm_cluster_defined_tags,
  *     description: _var.cloud_autonomous_vm_cluster_description,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
  *     licenseModel: _var.cloud_autonomous_vm_cluster_license_model,
+ *     maintenanceWindowDetails: {
+ *         customActionTimeoutInMins: _var.cloud_autonomous_vm_cluster_maintenance_window_details_custom_action_timeout_in_mins,
+ *         daysOfWeeks: [{
+ *             name: _var.cloud_autonomous_vm_cluster_maintenance_window_details_days_of_week_name,
+ *         }],
+ *         hoursOfDays: _var.cloud_autonomous_vm_cluster_maintenance_window_details_hours_of_day,
+ *         isCustomActionTimeoutEnabled: _var.cloud_autonomous_vm_cluster_maintenance_window_details_is_custom_action_timeout_enabled,
+ *         isMonthlyPatchingEnabled: _var.cloud_autonomous_vm_cluster_maintenance_window_details_is_monthly_patching_enabled,
+ *         leadTimeInWeeks: _var.cloud_autonomous_vm_cluster_maintenance_window_details_lead_time_in_weeks,
+ *         months: [{
+ *             name: _var.cloud_autonomous_vm_cluster_maintenance_window_details_months_name,
+ *         }],
+ *         patchingMode: _var.cloud_autonomous_vm_cluster_maintenance_window_details_patching_mode,
+ *         preference: _var.cloud_autonomous_vm_cluster_maintenance_window_details_preference,
+ *         weeksOfMonths: _var.cloud_autonomous_vm_cluster_maintenance_window_details_weeks_of_month,
+ *     },
+ *     memoryPerOracleComputeUnitInGbs: _var.cloud_autonomous_vm_cluster_memory_per_oracle_compute_unit_in_gbs,
  *     nsgIds: _var.cloud_autonomous_vm_cluster_nsg_ids,
+ *     totalContainerDatabases: _var.cloud_autonomous_vm_cluster_total_container_databases,
  * });
  * ```
  *
@@ -68,9 +91,9 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
     }
 
     /**
-     * The data disk group size allocated for Autonomous Databases, in TBs.
+     * The data disk group size to be allocated for Autonomous Databases, in TBs.
      */
-    public /*out*/ readonly autonomousDataStorageSizeInTbs!: pulumi.Output<number>;
+    public readonly autonomousDataStorageSizeInTbs!: pulumi.Output<number>;
     /**
      * The name of the availability domain that the cloud Autonomous VM cluster is located in.
      */
@@ -100,9 +123,13 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
-     * The number of CPU cores enabled on the cloud Autonomous VM cluster.
+     * The number of CPU cores on the cloud Autonomous VM cluster.
      */
     public /*out*/ readonly cpuCoreCount!: pulumi.Output<number>;
+    /**
+     * The number of OCPU cores to be enabled per VM cluster node.
+     */
+    public readonly cpuCoreCountPerNode!: pulumi.Output<number>;
     /**
      * The total data storage allocated, in gigabytes (GB).
      */
@@ -115,6 +142,10 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
      * The local node storage allocated in GBs.
      */
     public /*out*/ readonly dbNodeStorageSizeInGbs!: pulumi.Output<number>;
+    /**
+     * The list of database servers.
+     */
+    public readonly dbServers!: pulumi.Output<string[] | undefined>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
@@ -156,9 +187,17 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
-     * The amount of memory (in GBs) enabled per each OCPU core.
+     * (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
      */
-    public /*out*/ readonly memoryPerOracleComputeUnitInGbs!: pulumi.Output<number>;
+    public readonly maintenanceWindowDetails!: pulumi.Output<outputs.Database.CloudAutonomousVmClusterMaintenanceWindowDetails | undefined>;
+    /**
+     * The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+     */
+    public /*out*/ readonly maintenanceWindows!: pulumi.Output<outputs.Database.CloudAutonomousVmClusterMaintenanceWindow[]>;
+    /**
+     * The amount of memory (in GBs) to be enabled per each OCPU core.
+     */
+    public readonly memoryPerOracleComputeUnitInGbs!: pulumi.Output<number>;
     /**
      * The memory allocated in GBs.
      */
@@ -177,15 +216,13 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
      */
     public readonly nsgIds!: pulumi.Output<string[]>;
     /**
-     * The number of CPU cores enabled on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
+     * The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
      */
     public /*out*/ readonly ocpuCount!: pulumi.Output<number>;
     /**
      * CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
      */
     public /*out*/ readonly reclaimableCpus!: pulumi.Output<number>;
-    public readonly rotateOrdsCertsTrigger!: pulumi.Output<boolean | undefined>;
-    public readonly rotateSslCertsTrigger!: pulumi.Output<boolean | undefined>;
     /**
      * The model name of the Exadata hardware running the cloud Autonomous VM cluster.
      */
@@ -205,11 +242,11 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
     /**
      * The last date and time that the cloud Autonomous VM cluster was updated.
      */
-    public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
+    public readonly timeUpdated!: pulumi.Output<string | undefined>;
     /**
-     * The total number of Autonomous Container Databases that can be created with the allocated local storage.
+     * The total number of Autonomous Container Databases that can be created.
      */
-    public /*out*/ readonly totalContainerDatabases!: pulumi.Output<number>;
+    public readonly totalContainerDatabases!: pulumi.Output<number>;
 
     /**
      * Create a CloudAutonomousVmCluster resource with the given unique name, arguments, and options.
@@ -233,9 +270,11 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["clusterTimeZone"] = state ? state.clusterTimeZone : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["cpuCoreCount"] = state ? state.cpuCoreCount : undefined;
+            resourceInputs["cpuCoreCountPerNode"] = state ? state.cpuCoreCountPerNode : undefined;
             resourceInputs["dataStorageSizeInGb"] = state ? state.dataStorageSizeInGb : undefined;
             resourceInputs["dataStorageSizeInTbs"] = state ? state.dataStorageSizeInTbs : undefined;
             resourceInputs["dbNodeStorageSizeInGbs"] = state ? state.dbNodeStorageSizeInGbs : undefined;
+            resourceInputs["dbServers"] = state ? state.dbServers : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
@@ -246,6 +285,8 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["lastUpdateHistoryEntryId"] = state ? state.lastUpdateHistoryEntryId : undefined;
             resourceInputs["licenseModel"] = state ? state.licenseModel : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
+            resourceInputs["maintenanceWindowDetails"] = state ? state.maintenanceWindowDetails : undefined;
+            resourceInputs["maintenanceWindows"] = state ? state.maintenanceWindows : undefined;
             resourceInputs["memoryPerOracleComputeUnitInGbs"] = state ? state.memoryPerOracleComputeUnitInGbs : undefined;
             resourceInputs["memorySizeInGbs"] = state ? state.memorySizeInGbs : undefined;
             resourceInputs["nextMaintenanceRunId"] = state ? state.nextMaintenanceRunId : undefined;
@@ -253,8 +294,6 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["nsgIds"] = state ? state.nsgIds : undefined;
             resourceInputs["ocpuCount"] = state ? state.ocpuCount : undefined;
             resourceInputs["reclaimableCpus"] = state ? state.reclaimableCpus : undefined;
-            resourceInputs["rotateOrdsCertsTrigger"] = state ? state.rotateOrdsCertsTrigger : undefined;
-            resourceInputs["rotateSslCertsTrigger"] = state ? state.rotateSslCertsTrigger : undefined;
             resourceInputs["shape"] = state ? state.shape : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["subnetId"] = state ? state.subnetId : undefined;
@@ -275,19 +314,23 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
             if ((!args || args.subnetId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'subnetId'");
             }
+            resourceInputs["autonomousDataStorageSizeInTbs"] = args ? args.autonomousDataStorageSizeInTbs : undefined;
             resourceInputs["cloudExadataInfrastructureId"] = args ? args.cloudExadataInfrastructureId : undefined;
             resourceInputs["clusterTimeZone"] = args ? args.clusterTimeZone : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
+            resourceInputs["cpuCoreCountPerNode"] = args ? args.cpuCoreCountPerNode : undefined;
+            resourceInputs["dbServers"] = args ? args.dbServers : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["licenseModel"] = args ? args.licenseModel : undefined;
+            resourceInputs["maintenanceWindowDetails"] = args ? args.maintenanceWindowDetails : undefined;
+            resourceInputs["memoryPerOracleComputeUnitInGbs"] = args ? args.memoryPerOracleComputeUnitInGbs : undefined;
             resourceInputs["nsgIds"] = args ? args.nsgIds : undefined;
-            resourceInputs["rotateOrdsCertsTrigger"] = args ? args.rotateOrdsCertsTrigger : undefined;
-            resourceInputs["rotateSslCertsTrigger"] = args ? args.rotateSslCertsTrigger : undefined;
             resourceInputs["subnetId"] = args ? args.subnetId : undefined;
-            resourceInputs["autonomousDataStorageSizeInTbs"] = undefined /*out*/;
+            resourceInputs["timeUpdated"] = args ? args.timeUpdated : undefined;
+            resourceInputs["totalContainerDatabases"] = args ? args.totalContainerDatabases : undefined;
             resourceInputs["availabilityDomain"] = undefined /*out*/;
             resourceInputs["availableAutonomousDataStorageSizeInTbs"] = undefined /*out*/;
             resourceInputs["availableContainerDatabases"] = undefined /*out*/;
@@ -301,7 +344,7 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["lastMaintenanceRunId"] = undefined /*out*/;
             resourceInputs["lastUpdateHistoryEntryId"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
-            resourceInputs["memoryPerOracleComputeUnitInGbs"] = undefined /*out*/;
+            resourceInputs["maintenanceWindows"] = undefined /*out*/;
             resourceInputs["memorySizeInGbs"] = undefined /*out*/;
             resourceInputs["nextMaintenanceRunId"] = undefined /*out*/;
             resourceInputs["nodeCount"] = undefined /*out*/;
@@ -310,8 +353,6 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
             resourceInputs["shape"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
-            resourceInputs["timeUpdated"] = undefined /*out*/;
-            resourceInputs["totalContainerDatabases"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(CloudAutonomousVmCluster.__pulumiType, name, resourceInputs, opts);
@@ -323,7 +364,7 @@ export class CloudAutonomousVmCluster extends pulumi.CustomResource {
  */
 export interface CloudAutonomousVmClusterState {
     /**
-     * The data disk group size allocated for Autonomous Databases, in TBs.
+     * The data disk group size to be allocated for Autonomous Databases, in TBs.
      */
     autonomousDataStorageSizeInTbs?: pulumi.Input<number>;
     /**
@@ -355,9 +396,13 @@ export interface CloudAutonomousVmClusterState {
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * The number of CPU cores enabled on the cloud Autonomous VM cluster.
+     * The number of CPU cores on the cloud Autonomous VM cluster.
      */
     cpuCoreCount?: pulumi.Input<number>;
+    /**
+     * The number of OCPU cores to be enabled per VM cluster node.
+     */
+    cpuCoreCountPerNode?: pulumi.Input<number>;
     /**
      * The total data storage allocated, in gigabytes (GB).
      */
@@ -370,6 +415,10 @@ export interface CloudAutonomousVmClusterState {
      * The local node storage allocated in GBs.
      */
     dbNodeStorageSizeInGbs?: pulumi.Input<number>;
+    /**
+     * The list of database servers.
+     */
+    dbServers?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
@@ -411,7 +460,15 @@ export interface CloudAutonomousVmClusterState {
      */
     lifecycleDetails?: pulumi.Input<string>;
     /**
-     * The amount of memory (in GBs) enabled per each OCPU core.
+     * (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+     */
+    maintenanceWindowDetails?: pulumi.Input<inputs.Database.CloudAutonomousVmClusterMaintenanceWindowDetails>;
+    /**
+     * The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+     */
+    maintenanceWindows?: pulumi.Input<pulumi.Input<inputs.Database.CloudAutonomousVmClusterMaintenanceWindow>[]>;
+    /**
+     * The amount of memory (in GBs) to be enabled per each OCPU core.
      */
     memoryPerOracleComputeUnitInGbs?: pulumi.Input<number>;
     /**
@@ -432,15 +489,13 @@ export interface CloudAutonomousVmClusterState {
      */
     nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The number of CPU cores enabled on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
+     * The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
      */
     ocpuCount?: pulumi.Input<number>;
     /**
      * CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
      */
     reclaimableCpus?: pulumi.Input<number>;
-    rotateOrdsCertsTrigger?: pulumi.Input<boolean>;
-    rotateSslCertsTrigger?: pulumi.Input<boolean>;
     /**
      * The model name of the Exadata hardware running the cloud Autonomous VM cluster.
      */
@@ -462,7 +517,7 @@ export interface CloudAutonomousVmClusterState {
      */
     timeUpdated?: pulumi.Input<string>;
     /**
-     * The total number of Autonomous Container Databases that can be created with the allocated local storage.
+     * The total number of Autonomous Container Databases that can be created.
      */
     totalContainerDatabases?: pulumi.Input<number>;
 }
@@ -471,6 +526,10 @@ export interface CloudAutonomousVmClusterState {
  * The set of arguments for constructing a CloudAutonomousVmCluster resource.
  */
 export interface CloudAutonomousVmClusterArgs {
+    /**
+     * The data disk group size to be allocated for Autonomous Databases, in TBs.
+     */
+    autonomousDataStorageSizeInTbs?: pulumi.Input<number>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure.
      */
@@ -483,6 +542,14 @@ export interface CloudAutonomousVmClusterArgs {
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     compartmentId: pulumi.Input<string>;
+    /**
+     * The number of OCPU cores to be enabled per VM cluster node.
+     */
+    cpuCoreCountPerNode?: pulumi.Input<number>;
+    /**
+     * The list of database servers.
+     */
+    dbServers?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
@@ -504,14 +571,28 @@ export interface CloudAutonomousVmClusterArgs {
      */
     licenseModel?: pulumi.Input<string>;
     /**
+     * (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+     */
+    maintenanceWindowDetails?: pulumi.Input<inputs.Database.CloudAutonomousVmClusterMaintenanceWindowDetails>;
+    /**
+     * The amount of memory (in GBs) to be enabled per each OCPU core.
+     */
+    memoryPerOracleComputeUnitInGbs?: pulumi.Input<number>;
+    /**
      * (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
      * * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      */
     nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
-    rotateOrdsCertsTrigger?: pulumi.Input<boolean>;
-    rotateSslCertsTrigger?: pulumi.Input<boolean>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the cloud Autonomous VM Cluster is associated with.
      */
     subnetId: pulumi.Input<string>;
+    /**
+     * The last date and time that the cloud Autonomous VM cluster was updated.
+     */
+    timeUpdated?: pulumi.Input<string>;
+    /**
+     * The total number of Autonomous Container Databases that can be created.
+     */
+    totalContainerDatabases?: pulumi.Input<number>;
 }

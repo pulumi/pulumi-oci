@@ -12,11 +12,21 @@ namespace Pulumi.Oci.Database.Inputs
 
     public sealed class DatabaseDatabaseArgs : global::Pulumi.ResourceArgs
     {
+        [Input("adminPassword", required: true)]
+        private Input<string>? _adminPassword;
+
         /// <summary>
         /// A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \#, or -.
         /// </summary>
-        [Input("adminPassword", required: true)]
-        public Input<string> AdminPassword { get; set; } = null!;
+        public Input<string>? AdminPassword
+        {
+            get => _adminPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _adminPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -24,11 +34,21 @@ namespace Pulumi.Oci.Database.Inputs
         [Input("backupId")]
         public Input<string>? BackupId { get; set; }
 
+        [Input("backupTdePassword")]
+        private Input<string>? _backupTdePassword;
+
         /// <summary>
         /// The password to open the TDE wallet.
         /// </summary>
-        [Input("backupTdePassword")]
-        public Input<string>? BackupTdePassword { get; set; }
+        public Input<string>? BackupTdePassword
+        {
+            get => _backupTdePassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _backupTdePassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// The character set for the database.  The default is AL32UTF8. Allowed values are:
@@ -120,11 +140,21 @@ namespace Pulumi.Oci.Database.Inputs
         [Input("sidPrefix")]
         public Input<string>? SidPrefix { get; set; }
 
+        [Input("tdeWalletPassword")]
+        private Input<string>? _tdeWalletPassword;
+
         /// <summary>
         /// The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \#, or -.
         /// </summary>
-        [Input("tdeWalletPassword")]
-        public Input<string>? TdeWalletPassword { get; set; }
+        public Input<string>? TdeWalletPassword
+        {
+            get => _tdeWalletPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _tdeWalletPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).

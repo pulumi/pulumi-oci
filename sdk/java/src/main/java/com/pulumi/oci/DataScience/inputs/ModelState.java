@@ -21,16 +21,32 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
 
     public static final ModelState Empty = new ModelState();
 
+    /**
+     * This allows to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=model-artifact.zip`
+     * 
+     */
     @Import(name="artifactContentDisposition")
     private @Nullable Output<String> artifactContentDisposition;
 
+    /**
+     * @return This allows to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=model-artifact.zip`
+     * 
+     */
     public Optional<Output<String>> artifactContentDisposition() {
         return Optional.ofNullable(this.artifactContentDisposition);
     }
 
+    /**
+     * The content length of the model_artifact.
+     * 
+     */
     @Import(name="artifactContentLength")
     private @Nullable Output<String> artifactContentLength;
 
+    /**
+     * @return The content length of the model_artifact.
+     * 
+     */
     public Optional<Output<String>> artifactContentLength() {
         return Optional.ofNullable(this.artifactContentLength);
     }
@@ -191,9 +207,17 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.inputSchema);
     }
 
+    /**
+     * The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in &#34;Creating&#34; state until its artifact is uploaded.
+     * 
+     */
     @Import(name="modelArtifact")
     private @Nullable Output<String> modelArtifact;
 
+    /**
+     * @return The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in &#34;Creating&#34; state until its artifact is uploaded.
+     * 
+     */
     public Optional<Output<String>> modelArtifact() {
         return Optional.ofNullable(this.modelArtifact);
     }
@@ -300,20 +324,44 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
             $ = new ModelState(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param artifactContentDisposition This allows to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=model-artifact.zip`
+         * 
+         * @return builder
+         * 
+         */
         public Builder artifactContentDisposition(@Nullable Output<String> artifactContentDisposition) {
             $.artifactContentDisposition = artifactContentDisposition;
             return this;
         }
 
+        /**
+         * @param artifactContentDisposition This allows to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=model-artifact.zip`
+         * 
+         * @return builder
+         * 
+         */
         public Builder artifactContentDisposition(String artifactContentDisposition) {
             return artifactContentDisposition(Output.of(artifactContentDisposition));
         }
 
+        /**
+         * @param artifactContentLength The content length of the model_artifact.
+         * 
+         * @return builder
+         * 
+         */
         public Builder artifactContentLength(@Nullable Output<String> artifactContentLength) {
             $.artifactContentLength = artifactContentLength;
             return this;
         }
 
+        /**
+         * @param artifactContentLength The content length of the model_artifact.
+         * 
+         * @return builder
+         * 
+         */
         public Builder artifactContentLength(String artifactContentLength) {
             return artifactContentLength(Output.of(artifactContentLength));
         }
@@ -554,11 +602,23 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
             return inputSchema(Output.of(inputSchema));
         }
 
+        /**
+         * @param modelArtifact The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in &#34;Creating&#34; state until its artifact is uploaded.
+         * 
+         * @return builder
+         * 
+         */
         public Builder modelArtifact(@Nullable Output<String> modelArtifact) {
             $.modelArtifact = modelArtifact;
             return this;
         }
 
+        /**
+         * @param modelArtifact The model artifact to upload. It is a ZIP archive of the files necessary to run the model. This can be done in a separate step or using cli/sdk. The Model will remain in &#34;Creating&#34; state until its artifact is uploaded.
+         * 
+         * @return builder
+         * 
+         */
         public Builder modelArtifact(String modelArtifact) {
             return modelArtifact(Output.of(modelArtifact));
         }

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -27,11 +28,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMountTargets(args: GetMountTargetsArgs, opts?: pulumi.InvokeOptions): Promise<GetMountTargetsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:FileStorage/getMountTargets:getMountTargets", {
         "availabilityDomain": args.availabilityDomain,
         "compartmentId": args.compartmentId,
@@ -108,9 +106,29 @@ export interface GetMountTargetsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Mount Targets in Oracle Cloud Infrastructure File Storage service.
+ *
+ * Lists the mount target resources in the specified compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testMountTargets = oci.FileStorage.getMountTargets({
+ *     availabilityDomain: _var.mount_target_availability_domain,
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.mount_target_display_name,
+ *     exportSetId: oci_file_storage_export_set.test_export_set.id,
+ *     id: _var.mount_target_id,
+ *     state: _var.mount_target_state,
+ * });
+ * ```
+ */
 export function getMountTargetsOutput(args: GetMountTargetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMountTargetsResult> {
-    return pulumi.output(args).apply(a => getMountTargets(a, opts))
+    return pulumi.output(args).apply((a: any) => getMountTargets(a, opts))
 }
 
 /**

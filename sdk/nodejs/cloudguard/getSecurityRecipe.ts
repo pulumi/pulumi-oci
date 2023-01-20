@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSecurityRecipe(args: GetSecurityRecipeArgs, opts?: pulumi.InvokeOptions): Promise<GetSecurityRecipeResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CloudGuard/getSecurityRecipe:getSecurityRecipe", {
         "securityRecipeId": args.securityRecipeId,
     }, opts);
@@ -99,9 +96,24 @@ export interface GetSecurityRecipeResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Security Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
+ *
+ * Gets a security zone recipe by identifier. A security zone recipe is a collection of security zone policies.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSecurityRecipe = oci.CloudGuard.getSecurityRecipe({
+ *     securityRecipeId: oci_cloud_guard_security_recipe.test_security_recipe.id,
+ * });
+ * ```
+ */
 export function getSecurityRecipeOutput(args: GetSecurityRecipeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityRecipeResult> {
-    return pulumi.output(args).apply(a => getSecurityRecipe(a, opts))
+    return pulumi.output(args).apply((a: any) => getSecurityRecipe(a, opts))
 }
 
 /**

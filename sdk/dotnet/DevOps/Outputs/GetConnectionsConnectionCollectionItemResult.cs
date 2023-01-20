@@ -22,7 +22,7 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// </summary>
         public readonly string AppPassword;
         /// <summary>
-        /// The Base URL of the hosted BitbucketServer.
+        /// The Base URL of the hosted BitbucketServer/Visual Builder Studio server.
         /// </summary>
         public readonly string BaseUrl;
         /// <summary>

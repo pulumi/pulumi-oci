@@ -29,12 +29,13 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataScience.GetModels(ctx, &datascience.GetModelsArgs{
-//				CompartmentId: _var.Compartment_id,
-//				CreatedBy:     pulumi.StringRef(_var.Model_created_by),
-//				DisplayName:   pulumi.StringRef(_var.Model_display_name),
-//				Id:            pulumi.StringRef(_var.Model_id),
-//				ProjectId:     pulumi.StringRef(oci_datascience_project.Test_project.Id),
-//				State:         pulumi.StringRef(_var.Model_state),
+//				CompartmentId:       _var.Compartment_id,
+//				CreatedBy:           pulumi.StringRef(_var.Model_created_by),
+//				DisplayName:         pulumi.StringRef(_var.Model_display_name),
+//				Id:                  pulumi.StringRef(_var.Model_id),
+//				ModelVersionSetName: oci_datascience_model_version_set.Test_model_version_set.Name,
+//				ProjectId:           pulumi.StringRef(oci_datascience_project.Test_project.Id),
+//				State:               pulumi.StringRef(_var.Model_state),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -63,11 +64,13 @@ type GetModelsArgs struct {
 	DisplayName *string           `pulumi:"displayName"`
 	Filters     []GetModelsFilter `pulumi:"filters"`
 	// <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
-	Id *string `pulumi:"id"`
+	Id                  *string `pulumi:"id"`
+	ModelVersionSetName string  `pulumi:"modelVersionSetName"`
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
 	ProjectId *string `pulumi:"projectId"`
 	// <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
-	State *string `pulumi:"state"`
+	State        *string `pulumi:"state"`
+	VersionLabel string  `pulumi:"versionLabel"`
 }
 
 // A collection of values returned by getModels.
@@ -80,13 +83,15 @@ type GetModelsResult struct {
 	DisplayName *string           `pulumi:"displayName"`
 	Filters     []GetModelsFilter `pulumi:"filters"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
-	Id *string `pulumi:"id"`
+	Id                  *string `pulumi:"id"`
+	ModelVersionSetName string  `pulumi:"modelVersionSetName"`
 	// The list of models.
 	Models []GetModelsModel `pulumi:"models"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project associated with the model.
 	ProjectId *string `pulumi:"projectId"`
 	// The state of the model.
-	State *string `pulumi:"state"`
+	State        *string `pulumi:"state"`
+	VersionLabel string  `pulumi:"versionLabel"`
 }
 
 func GetModelsOutput(ctx *pulumi.Context, args GetModelsOutputArgs, opts ...pulumi.InvokeOption) GetModelsResultOutput {
@@ -112,11 +117,13 @@ type GetModelsOutputArgs struct {
 	DisplayName pulumi.StringPtrInput     `pulumi:"displayName"`
 	Filters     GetModelsFilterArrayInput `pulumi:"filters"`
 	// <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
-	Id pulumi.StringPtrInput `pulumi:"id"`
+	Id                  pulumi.StringPtrInput `pulumi:"id"`
+	ModelVersionSetName pulumi.StringInput    `pulumi:"modelVersionSetName"`
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
 	ProjectId pulumi.StringPtrInput `pulumi:"projectId"`
 	// <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
-	State pulumi.StringPtrInput `pulumi:"state"`
+	State        pulumi.StringPtrInput `pulumi:"state"`
+	VersionLabel pulumi.StringInput    `pulumi:"versionLabel"`
 }
 
 func (GetModelsOutputArgs) ElementType() reflect.Type {
@@ -162,6 +169,10 @@ func (o GetModelsResultOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetModelsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
+func (o GetModelsResultOutput) ModelVersionSetName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelsResult) string { return v.ModelVersionSetName }).(pulumi.StringOutput)
+}
+
 // The list of models.
 func (o GetModelsResultOutput) Models() GetModelsModelArrayOutput {
 	return o.ApplyT(func(v GetModelsResult) []GetModelsModel { return v.Models }).(GetModelsModelArrayOutput)
@@ -175,6 +186,10 @@ func (o GetModelsResultOutput) ProjectId() pulumi.StringPtrOutput {
 // The state of the model.
 func (o GetModelsResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetModelsResult) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+func (o GetModelsResultOutput) VersionLabel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelsResult) string { return v.VersionLabel }).(pulumi.StringOutput)
 }
 
 func init() {

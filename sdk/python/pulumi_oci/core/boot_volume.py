@@ -613,18 +613,6 @@ class BootVolume(pulumi.CustomResource):
                  vpus_per_gb: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        ## ]
-
-        ***
-        subcategory: "Core"
-        layout: "oci"
-        page_title: "Oracle Cloud Infrastructure: Core.BootVolume"
-        sidebar_current: "docs-oci-resource-core-boot_volume"
-        description: |-
-          Provides the Boot Volume resource in Oracle Cloud Infrastructure Core service
-        ---
-
-        # Core.BootVolume
         This resource provides the Boot Volume resource in Oracle Cloud Infrastructure Core service.
 
         Creates a new boot volume in the specified compartment from an existing boot volume or a boot volume backup.
@@ -698,18 +686,6 @@ class BootVolume(pulumi.CustomResource):
                  args: BootVolumeArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        ## ]
-
-        ***
-        subcategory: "Core"
-        layout: "oci"
-        page_title: "Oracle Cloud Infrastructure: Core.BootVolume"
-        sidebar_current: "docs-oci-resource-core-boot_volume"
-        description: |-
-          Provides the Boot Volume resource in Oracle Cloud Infrastructure Core service
-        ---
-
-        # Core.BootVolume
         This resource provides the Boot Volume resource in Oracle Cloud Infrastructure Core service.
 
         Creates a new boot volume in the specified compartment from an existing boot volume or a boot volume backup.

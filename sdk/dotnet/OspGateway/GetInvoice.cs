@@ -40,7 +40,7 @@ namespace Pulumi.Oci.OspGateway
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetInvoiceResult> InvokeAsync(GetInvoiceArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetInvoiceResult>("oci:OspGateway/getInvoice:getInvoice", args ?? new GetInvoiceArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetInvoiceResult>("oci:OspGateway/getInvoice:getInvoice", args ?? new GetInvoiceArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Invoice resource in Oracle Cloud Infrastructure Osp Gateway service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.OspGateway
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetInvoiceResult> Invoke(GetInvoiceInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetInvoiceResult>("oci:OspGateway/getInvoice:getInvoice", args ?? new GetInvoiceInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetInvoiceResult>("oci:OspGateway/getInvoice:getInvoice", args ?? new GetInvoiceInvokeArgs(), options.WithDefaults());
     }
 
 

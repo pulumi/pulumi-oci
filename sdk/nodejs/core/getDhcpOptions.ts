@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -28,11 +29,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDhcpOptions(args: GetDhcpOptionsArgs, opts?: pulumi.InvokeOptions): Promise<GetDhcpOptionsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getDhcpOptions:getDhcpOptions", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -95,9 +93,30 @@ export interface GetDhcpOptionsResult {
      */
     readonly vcnId?: string;
 }
-
+/**
+ * This data source provides the list of Dhcp Options in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the sets of DHCP options in the specified VCN and specified compartment.
+ * If the VCN ID is not provided, then the list includes the sets of DHCP options from all VCNs in the specified compartment.
+ * The response includes the default set of options that automatically comes with each VCN,
+ * plus any other sets you've created.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDhcpOptions = oci.Core.getDhcpOptions({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.dhcp_options_display_name,
+ *     state: _var.dhcp_options_state,
+ *     vcnId: oci_core_vcn.test_vcn.id,
+ * });
+ * ```
+ */
 export function getDhcpOptionsOutput(args: GetDhcpOptionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDhcpOptionsResult> {
-    return pulumi.output(args).apply(a => getDhcpOptions(a, opts))
+    return pulumi.output(args).apply((a: any) => getDhcpOptions(a, opts))
 }
 
 /**

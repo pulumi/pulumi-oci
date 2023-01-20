@@ -114,6 +114,13 @@ func NewOperationsInsightsWarehouseUser(ctx *pulumi.Context,
 	if args.OperationsInsightsWarehouseId == nil {
 		return nil, errors.New("invalid value for required argument 'OperationsInsightsWarehouseId'")
 	}
+	if args.ConnectionPassword != nil {
+		args.ConnectionPassword = pulumi.ToSecret(args.ConnectionPassword).(pulumi.StringInput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"connectionPassword",
+	})
+	opts = append(opts, secrets)
 	var resource OperationsInsightsWarehouseUser
 	err := ctx.RegisterResource("oci:Opsi/operationsInsightsWarehouseUser:OperationsInsightsWarehouseUser", name, args, &resource, opts...)
 	if err != nil {

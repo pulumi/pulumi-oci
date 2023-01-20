@@ -13,8 +13,10 @@ from . import outputs
 __all__ = [
     'AnalyticsClusterClusterNode',
     'ChannelSource',
+    'ChannelSourceAnonymousTransactionsHandling',
     'ChannelSourceSslCaCertificate',
     'ChannelTarget',
+    'ChannelTargetFilter',
     'HeatWaveClusterClusterNode',
     'MysqlBackupDbSystemSnapshot',
     'MysqlBackupDbSystemSnapshotBackupPolicy',
@@ -29,8 +31,10 @@ __all__ = [
     'MysqlDbSystemBackupPolicyPitrPolicy',
     'MysqlDbSystemChannel',
     'MysqlDbSystemChannelSource',
+    'MysqlDbSystemChannelSourceAnonymousTransactionsHandling',
     'MysqlDbSystemChannelSourceSslCaCertificate',
     'MysqlDbSystemChannelTarget',
+    'MysqlDbSystemChannelTargetFilter',
     'MysqlDbSystemCurrentPlacement',
     'MysqlDbSystemDeletionPolicy',
     'MysqlDbSystemEndpoint',
@@ -40,12 +44,16 @@ __all__ = [
     'MysqlDbSystemSource',
     'GetAnalyticsClusterClusterNodeResult',
     'GetChannelSourceResult',
+    'GetChannelSourceAnonymousTransactionsHandlingResult',
     'GetChannelSourceSslCaCertificateResult',
     'GetChannelTargetResult',
+    'GetChannelTargetFilterResult',
     'GetChannelsChannelResult',
     'GetChannelsChannelSourceResult',
+    'GetChannelsChannelSourceAnonymousTransactionsHandlingResult',
     'GetChannelsChannelSourceSslCaCertificateResult',
     'GetChannelsChannelTargetResult',
+    'GetChannelsChannelTargetFilterResult',
     'GetChannelsFilterResult',
     'GetHeatWaveClusterClusterNodeResult',
     'GetMysqlBackupDbSystemSnapshotResult',
@@ -73,8 +81,10 @@ __all__ = [
     'GetMysqlDbSystemBackupPolicyPitrPolicyResult',
     'GetMysqlDbSystemChannelResult',
     'GetMysqlDbSystemChannelSourceResult',
+    'GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingResult',
     'GetMysqlDbSystemChannelSourceSslCaCertificateResult',
     'GetMysqlDbSystemChannelTargetResult',
+    'GetMysqlDbSystemChannelTargetFilterResult',
     'GetMysqlDbSystemCurrentPlacementResult',
     'GetMysqlDbSystemDeletionPolicyResult',
     'GetMysqlDbSystemEndpointResult',
@@ -88,8 +98,10 @@ __all__ = [
     'GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyResult',
     'GetMysqlDbSystemsDbSystemChannelResult',
     'GetMysqlDbSystemsDbSystemChannelSourceResult',
+    'GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingResult',
     'GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateResult',
     'GetMysqlDbSystemsDbSystemChannelTargetResult',
+    'GetMysqlDbSystemsDbSystemChannelTargetFilterResult',
     'GetMysqlDbSystemsDbSystemCurrentPlacementResult',
     'GetMysqlDbSystemsDbSystemDeletionPolicyResult',
     'GetMysqlDbSystemsDbSystemEndpointResult',
@@ -103,6 +115,8 @@ __all__ = [
     'GetMysqlVersionVersionVersionResult',
     'GetShapesFilterResult',
     'GetShapesShapeResult',
+    'GetrRplicasFilterResult',
+    'GetrRplicasReplicaResult',
 ]
 
 @pulumi.output_type
@@ -190,6 +204,8 @@ class ChannelSource(dict):
             suggest = "source_type"
         elif key == "sslMode":
             suggest = "ssl_mode"
+        elif key == "anonymousTransactionsHandling":
+            suggest = "anonymous_transactions_handling"
         elif key == "sslCaCertificate":
             suggest = "ssl_ca_certificate"
 
@@ -210,6 +226,7 @@ class ChannelSource(dict):
                  source_type: str,
                  ssl_mode: str,
                  username: str,
+                 anonymous_transactions_handling: Optional['outputs.ChannelSourceAnonymousTransactionsHandling'] = None,
                  port: Optional[int] = None,
                  ssl_ca_certificate: Optional['outputs.ChannelSourceSslCaCertificate'] = None):
         """
@@ -218,6 +235,7 @@ class ChannelSource(dict):
         :param str source_type: (Updatable) The specific source identifier.
         :param str ssl_mode: (Updatable) The SSL mode of the Channel.
         :param str username: (Updatable) The name of the replication user on the source MySQL instance. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
+        :param 'ChannelSourceAnonymousTransactionsHandlingArgs' anonymous_transactions_handling: (Updatable) Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
         :param int port: (Updatable) The port the source MySQL instance listens on.
         :param 'ChannelSourceSslCaCertificateArgs' ssl_ca_certificate: (Updatable) The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
         """
@@ -226,6 +244,8 @@ class ChannelSource(dict):
         pulumi.set(__self__, "source_type", source_type)
         pulumi.set(__self__, "ssl_mode", ssl_mode)
         pulumi.set(__self__, "username", username)
+        if anonymous_transactions_handling is not None:
+            pulumi.set(__self__, "anonymous_transactions_handling", anonymous_transactions_handling)
         if port is not None:
             pulumi.set(__self__, "port", port)
         if ssl_ca_certificate is not None:
@@ -272,6 +292,14 @@ class ChannelSource(dict):
         return pulumi.get(self, "username")
 
     @property
+    @pulumi.getter(name="anonymousTransactionsHandling")
+    def anonymous_transactions_handling(self) -> Optional['outputs.ChannelSourceAnonymousTransactionsHandling']:
+        """
+        (Updatable) Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
+        """
+        return pulumi.get(self, "anonymous_transactions_handling")
+
+    @property
     @pulumi.getter
     def port(self) -> Optional[int]:
         """
@@ -286,6 +314,79 @@ class ChannelSource(dict):
         (Updatable) The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
         """
         return pulumi.get(self, "ssl_ca_certificate")
+
+
+@pulumi.output_type
+class ChannelSourceAnonymousTransactionsHandling(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "lastConfiguredLogFilename":
+            suggest = "last_configured_log_filename"
+        elif key == "lastConfiguredLogOffset":
+            suggest = "last_configured_log_offset"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ChannelSourceAnonymousTransactionsHandling. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ChannelSourceAnonymousTransactionsHandling.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ChannelSourceAnonymousTransactionsHandling.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 policy: str,
+                 last_configured_log_filename: Optional[str] = None,
+                 last_configured_log_offset: Optional[str] = None,
+                 uuid: Optional[str] = None):
+        """
+        :param str policy: (Updatable) Specifies how the replication channel handles anonymous transactions.
+        :param str last_configured_log_filename: (Updatable) Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+        :param str last_configured_log_offset: (Updatable) Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+        :param str uuid: (Updatable) The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
+        """
+        pulumi.set(__self__, "policy", policy)
+        if last_configured_log_filename is not None:
+            pulumi.set(__self__, "last_configured_log_filename", last_configured_log_filename)
+        if last_configured_log_offset is not None:
+            pulumi.set(__self__, "last_configured_log_offset", last_configured_log_offset)
+        if uuid is not None:
+            pulumi.set(__self__, "uuid", uuid)
+
+    @property
+    @pulumi.getter
+    def policy(self) -> str:
+        """
+        (Updatable) Specifies how the replication channel handles anonymous transactions.
+        """
+        return pulumi.get(self, "policy")
+
+    @property
+    @pulumi.getter(name="lastConfiguredLogFilename")
+    def last_configured_log_filename(self) -> Optional[str]:
+        """
+        (Updatable) Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+        """
+        return pulumi.get(self, "last_configured_log_filename")
+
+    @property
+    @pulumi.getter(name="lastConfiguredLogOffset")
+    def last_configured_log_offset(self) -> Optional[str]:
+        """
+        (Updatable) Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+        """
+        return pulumi.get(self, "last_configured_log_offset")
+
+    @property
+    @pulumi.getter
+    def uuid(self) -> Optional[str]:
+        """
+        (Updatable) The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
+        """
+        return pulumi.get(self, "uuid")
 
 
 @pulumi.output_type
@@ -363,12 +464,14 @@ class ChannelTarget(dict):
                  db_system_id: str,
                  target_type: str,
                  applier_username: Optional[str] = None,
-                 channel_name: Optional[str] = None):
+                 channel_name: Optional[str] = None,
+                 filters: Optional[Sequence['outputs.ChannelTargetFilter']] = None):
         """
         :param str db_system_id: The OCID of the target DB System.
         :param str target_type: (Updatable) The specific target identifier.
         :param str applier_username: (Updatable) The username for the replication applier of the target MySQL DB System.
         :param str channel_name: (Updatable) The case-insensitive name that identifies the replication channel. Channel names must follow the rules defined for [MySQL identifiers](https://dev.mysql.com/doc/refman/8.0/en/identifiers.html). The names of non-Deleted Channels must be unique for each DB System.
+        :param Sequence['ChannelTargetFilterArgs'] filters: (Updatable) Replication filter rules to be applied at the DB System Channel target.
         """
         pulumi.set(__self__, "db_system_id", db_system_id)
         pulumi.set(__self__, "target_type", target_type)
@@ -376,6 +479,8 @@ class ChannelTarget(dict):
             pulumi.set(__self__, "applier_username", applier_username)
         if channel_name is not None:
             pulumi.set(__self__, "channel_name", channel_name)
+        if filters is not None:
+            pulumi.set(__self__, "filters", filters)
 
     @property
     @pulumi.getter(name="dbSystemId")
@@ -408,6 +513,43 @@ class ChannelTarget(dict):
         (Updatable) The case-insensitive name that identifies the replication channel. Channel names must follow the rules defined for [MySQL identifiers](https://dev.mysql.com/doc/refman/8.0/en/identifiers.html). The names of non-Deleted Channels must be unique for each DB System.
         """
         return pulumi.get(self, "channel_name")
+
+    @property
+    @pulumi.getter
+    def filters(self) -> Optional[Sequence['outputs.ChannelTargetFilter']]:
+        """
+        (Updatable) Replication filter rules to be applied at the DB System Channel target.
+        """
+        return pulumi.get(self, "filters")
+
+
+@pulumi.output_type
+class ChannelTargetFilter(dict):
+    def __init__(__self__, *,
+                 type: str,
+                 value: str):
+        """
+        :param str type: (Updatable) The type of the filter rule.
+        :param str value: (Updatable) The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+        """
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        (Updatable) The type of the filter rule.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        (Updatable) The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
@@ -570,7 +712,7 @@ class MysqlBackupDbSystemSnapshot(dict):
         :param str admin_username: The username for the administrative user.
         :param str availability_domain: The Availability Domain where the primary DB System should be located.
         :param Sequence['MysqlBackupDbSystemSnapshotBackupPolicyArgs'] backup_policies: The Backup policy for the DB System.
-        :param str compartment_id: (Updatable) The OCID of the compartment.
+        :param str compartment_id: (Updatable) The OCID of the compartment the backup exists in.
         :param str configuration_id: The OCID of the Configuration to be used for Instances in this DB System.
         :param str crash_recovery: Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
         :param int data_storage_size_in_gb: Initial size of the data volume in GiBs that will be created and attached.
@@ -585,7 +727,7 @@ class MysqlBackupDbSystemSnapshot(dict):
         :param str id: OCID of the backup itself
         :param str ip_address: The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
         :param bool is_highly_available: Specifies if the DB System is highly available.
-        :param Sequence['MysqlBackupDbSystemSnapshotMaintenanceArgs'] maintenances: The Maintenance Policy for the DB System.
+        :param Sequence['MysqlBackupDbSystemSnapshotMaintenanceArgs'] maintenances: The Maintenance Policy for the DB System or Read Replica that this model is included in.
         :param str mysql_version: The MySQL server version of the DB System used for backup.
         :param int port: The port for primary endpoint of the DB System to listen on.
         :param int port_x: The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
@@ -669,7 +811,7 @@ class MysqlBackupDbSystemSnapshot(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
         """
-        (Updatable) The OCID of the compartment.
+        (Updatable) The OCID of the compartment the backup exists in.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -789,7 +931,7 @@ class MysqlBackupDbSystemSnapshot(dict):
     @pulumi.getter
     def maintenances(self) -> Optional[Sequence['outputs.MysqlBackupDbSystemSnapshotMaintenance']]:
         """
-        The Maintenance Policy for the DB System.
+        The Maintenance Policy for the DB System or Read Replica that this model is included in.
         """
         return pulumi.get(self, "maintenances")
 
@@ -1049,6 +1191,10 @@ class MysqlBackupDbSystemSnapshotEndpoint(dict):
             suggest = "ip_address"
         elif key == "portX":
             suggest = "port_x"
+        elif key == "resourceId":
+            suggest = "resource_id"
+        elif key == "resourceType":
+            suggest = "resource_type"
         elif key == "statusDetails":
             suggest = "status_details"
 
@@ -1069,6 +1215,8 @@ class MysqlBackupDbSystemSnapshotEndpoint(dict):
                  modes: Optional[Sequence[str]] = None,
                  port: Optional[int] = None,
                  port_x: Optional[int] = None,
+                 resource_id: Optional[str] = None,
+                 resource_type: Optional[str] = None,
                  status: Optional[str] = None,
                  status_details: Optional[str] = None):
         """
@@ -1077,6 +1225,8 @@ class MysqlBackupDbSystemSnapshotEndpoint(dict):
         :param Sequence[str] modes: The access modes from the client that this endpoint supports.
         :param int port: The port for primary endpoint of the DB System to listen on.
         :param int port_x: The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
+        :param str resource_id: The OCID of the resource that this endpoint is attached to.
+        :param str resource_type: The type of endpoint that clients and connectors can connect to.
         :param str status: The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
         :param str status_details: Additional information about the current endpoint status.
         """
@@ -1090,6 +1240,10 @@ class MysqlBackupDbSystemSnapshotEndpoint(dict):
             pulumi.set(__self__, "port", port)
         if port_x is not None:
             pulumi.set(__self__, "port_x", port_x)
+        if resource_id is not None:
+            pulumi.set(__self__, "resource_id", resource_id)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
         if status is not None:
             pulumi.set(__self__, "status", status)
         if status_details is not None:
@@ -1134,6 +1288,22 @@ class MysqlBackupDbSystemSnapshotEndpoint(dict):
         The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
         """
         return pulumi.get(self, "port_x")
+
+    @property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> Optional[str]:
+        """
+        The OCID of the resource that this endpoint is attached to.
+        """
+        return pulumi.get(self, "resource_id")
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> Optional[str]:
+        """
+        The type of endpoint that clients and connectors can connect to.
+        """
+        return pulumi.get(self, "resource_type")
 
     @property
     @pulumi.getter
@@ -2391,7 +2561,7 @@ class MysqlDbSystemAnalyticsCluster(dict):
                  time_updated: Optional[str] = None):
         """
         :param int cluster_size: The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
-        :param str shape_name: The name of the shape. The shape determines the resources allocated
+        :param str shape_name: (Updatable) The name of the shape. The shape determines the resources allocated
                * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
         :param str state: (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
         :param str time_created: The date and time the DB System was created.
@@ -2420,7 +2590,7 @@ class MysqlDbSystemAnalyticsCluster(dict):
     @pulumi.getter(name="shapeName")
     def shape_name(self) -> Optional[str]:
         """
-        The name of the shape. The shape determines the resources allocated
+        (Updatable) The name of the shape. The shape determines the resources allocated
         * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
         """
         return pulumi.get(self, "shape_name")
@@ -2779,7 +2949,9 @@ class MysqlDbSystemChannelSource(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "sourceType":
+        if key == "anonymousTransactionsHandlings":
+            suggest = "anonymous_transactions_handlings"
+        elif key == "sourceType":
             suggest = "source_type"
         elif key == "sslCaCertificates":
             suggest = "ssl_ca_certificates"
@@ -2798,6 +2970,7 @@ class MysqlDbSystemChannelSource(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 anonymous_transactions_handlings: Optional[Sequence['outputs.MysqlDbSystemChannelSourceAnonymousTransactionsHandling']] = None,
                  hostname: Optional[str] = None,
                  port: Optional[int] = None,
                  source_type: Optional[str] = None,
@@ -2805,13 +2978,16 @@ class MysqlDbSystemChannelSource(dict):
                  ssl_mode: Optional[str] = None,
                  username: Optional[str] = None):
         """
+        :param Sequence['MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs'] anonymous_transactions_handlings: Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
         :param str hostname: The network address of the DB System.
         :param int port: The port for primary endpoint of the DB System to listen on.
-        :param str source_type: The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup.
+        :param str source_type: The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup. Use `IMPORTURL` for creating a new database from a URL Object Storage PAR.
         :param Sequence['MysqlDbSystemChannelSourceSslCaCertificateArgs'] ssl_ca_certificates: The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
         :param str ssl_mode: The SSL mode of the Channel.
         :param str username: The name of the replication user on the source MySQL instance. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
         """
+        if anonymous_transactions_handlings is not None:
+            pulumi.set(__self__, "anonymous_transactions_handlings", anonymous_transactions_handlings)
         if hostname is not None:
             pulumi.set(__self__, "hostname", hostname)
         if port is not None:
@@ -2824,6 +3000,14 @@ class MysqlDbSystemChannelSource(dict):
             pulumi.set(__self__, "ssl_mode", ssl_mode)
         if username is not None:
             pulumi.set(__self__, "username", username)
+
+    @property
+    @pulumi.getter(name="anonymousTransactionsHandlings")
+    def anonymous_transactions_handlings(self) -> Optional[Sequence['outputs.MysqlDbSystemChannelSourceAnonymousTransactionsHandling']]:
+        """
+        Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
+        """
+        return pulumi.get(self, "anonymous_transactions_handlings")
 
     @property
     @pulumi.getter
@@ -2845,7 +3029,7 @@ class MysqlDbSystemChannelSource(dict):
     @pulumi.getter(name="sourceType")
     def source_type(self) -> Optional[str]:
         """
-        The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup.
+        The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup. Use `IMPORTURL` for creating a new database from a URL Object Storage PAR.
         """
         return pulumi.get(self, "source_type")
 
@@ -2872,6 +3056,80 @@ class MysqlDbSystemChannelSource(dict):
         The name of the replication user on the source MySQL instance. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
         """
         return pulumi.get(self, "username")
+
+
+@pulumi.output_type
+class MysqlDbSystemChannelSourceAnonymousTransactionsHandling(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "lastConfiguredLogFilename":
+            suggest = "last_configured_log_filename"
+        elif key == "lastConfiguredLogOffset":
+            suggest = "last_configured_log_offset"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MysqlDbSystemChannelSourceAnonymousTransactionsHandling. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MysqlDbSystemChannelSourceAnonymousTransactionsHandling.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MysqlDbSystemChannelSourceAnonymousTransactionsHandling.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 last_configured_log_filename: Optional[str] = None,
+                 last_configured_log_offset: Optional[str] = None,
+                 policy: Optional[str] = None,
+                 uuid: Optional[str] = None):
+        """
+        :param str last_configured_log_filename: Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+        :param str last_configured_log_offset: Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+        :param str policy: Specifies how the replication channel handles anonymous transactions.
+        :param str uuid: The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
+        """
+        if last_configured_log_filename is not None:
+            pulumi.set(__self__, "last_configured_log_filename", last_configured_log_filename)
+        if last_configured_log_offset is not None:
+            pulumi.set(__self__, "last_configured_log_offset", last_configured_log_offset)
+        if policy is not None:
+            pulumi.set(__self__, "policy", policy)
+        if uuid is not None:
+            pulumi.set(__self__, "uuid", uuid)
+
+    @property
+    @pulumi.getter(name="lastConfiguredLogFilename")
+    def last_configured_log_filename(self) -> Optional[str]:
+        """
+        Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+        """
+        return pulumi.get(self, "last_configured_log_filename")
+
+    @property
+    @pulumi.getter(name="lastConfiguredLogOffset")
+    def last_configured_log_offset(self) -> Optional[str]:
+        """
+        Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+        """
+        return pulumi.get(self, "last_configured_log_offset")
+
+    @property
+    @pulumi.getter
+    def policy(self) -> Optional[str]:
+        """
+        Specifies how the replication channel handles anonymous transactions.
+        """
+        return pulumi.get(self, "policy")
+
+    @property
+    @pulumi.getter
+    def uuid(self) -> Optional[str]:
+        """
+        The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
+        """
+        return pulumi.get(self, "uuid")
 
 
 @pulumi.output_type
@@ -2951,11 +3209,13 @@ class MysqlDbSystemChannelTarget(dict):
                  applier_username: Optional[str] = None,
                  channel_name: Optional[str] = None,
                  db_system_id: Optional[str] = None,
+                 filters: Optional[Sequence['outputs.MysqlDbSystemChannelTargetFilter']] = None,
                  target_type: Optional[str] = None):
         """
         :param str applier_username: The username for the replication applier of the target MySQL DB System.
         :param str channel_name: The case-insensitive name that identifies the replication channel. Channel names must follow the rules defined for [MySQL identifiers](https://dev.mysql.com/doc/refman/8.0/en/identifiers.html). The names of non-Deleted Channels must be unique for each DB System.
         :param str db_system_id: The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
+        :param Sequence['MysqlDbSystemChannelTargetFilterArgs'] filters: Replication filter rules to be applied at the DB System Channel target.
         :param str target_type: The specific target identifier.
         """
         if applier_username is not None:
@@ -2964,6 +3224,8 @@ class MysqlDbSystemChannelTarget(dict):
             pulumi.set(__self__, "channel_name", channel_name)
         if db_system_id is not None:
             pulumi.set(__self__, "db_system_id", db_system_id)
+        if filters is not None:
+            pulumi.set(__self__, "filters", filters)
         if target_type is not None:
             pulumi.set(__self__, "target_type", target_type)
 
@@ -2992,12 +3254,51 @@ class MysqlDbSystemChannelTarget(dict):
         return pulumi.get(self, "db_system_id")
 
     @property
+    @pulumi.getter
+    def filters(self) -> Optional[Sequence['outputs.MysqlDbSystemChannelTargetFilter']]:
+        """
+        Replication filter rules to be applied at the DB System Channel target.
+        """
+        return pulumi.get(self, "filters")
+
+    @property
     @pulumi.getter(name="targetType")
     def target_type(self) -> Optional[str]:
         """
         The specific target identifier.
         """
         return pulumi.get(self, "target_type")
+
+
+@pulumi.output_type
+class MysqlDbSystemChannelTargetFilter(dict):
+    def __init__(__self__, *,
+                 type: Optional[str] = None,
+                 value: Optional[str] = None):
+        """
+        :param str type: The type of the filter rule.
+        :param str value: The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+        """
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> Optional[str]:
+        """
+        The type of the filter rule.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        """
+        The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
@@ -3123,6 +3424,10 @@ class MysqlDbSystemEndpoint(dict):
             suggest = "ip_address"
         elif key == "portX":
             suggest = "port_x"
+        elif key == "resourceId":
+            suggest = "resource_id"
+        elif key == "resourceType":
+            suggest = "resource_type"
         elif key == "statusDetails":
             suggest = "status_details"
 
@@ -3143,6 +3448,8 @@ class MysqlDbSystemEndpoint(dict):
                  modes: Optional[Sequence[str]] = None,
                  port: Optional[int] = None,
                  port_x: Optional[int] = None,
+                 resource_id: Optional[str] = None,
+                 resource_type: Optional[str] = None,
                  status: Optional[str] = None,
                  status_details: Optional[str] = None):
         """
@@ -3151,6 +3458,8 @@ class MysqlDbSystemEndpoint(dict):
         :param Sequence[str] modes: The access modes from the client that this endpoint supports.
         :param int port: The port for primary endpoint of the DB System to listen on.
         :param int port_x: The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
+        :param str resource_id: The OCID of the resource that this endpoint is attached to.
+        :param str resource_type: The type of endpoint that clients and connectors can connect to.
         :param str status: The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
         :param str status_details: Additional information about the current endpoint status.
         """
@@ -3164,6 +3473,10 @@ class MysqlDbSystemEndpoint(dict):
             pulumi.set(__self__, "port", port)
         if port_x is not None:
             pulumi.set(__self__, "port_x", port_x)
+        if resource_id is not None:
+            pulumi.set(__self__, "resource_id", resource_id)
+        if resource_type is not None:
+            pulumi.set(__self__, "resource_type", resource_type)
         if status is not None:
             pulumi.set(__self__, "status", status)
         if status_details is not None:
@@ -3208,6 +3521,22 @@ class MysqlDbSystemEndpoint(dict):
         The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
         """
         return pulumi.get(self, "port_x")
+
+    @property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> Optional[str]:
+        """
+        The OCID of the resource that this endpoint is attached to.
+        """
+        return pulumi.get(self, "resource_id")
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> Optional[str]:
+        """
+        The type of endpoint that clients and connectors can connect to.
+        """
+        return pulumi.get(self, "resource_type")
 
     @property
     @pulumi.getter
@@ -3259,7 +3588,7 @@ class MysqlDbSystemHeatWaveCluster(dict):
                  time_updated: Optional[str] = None):
         """
         :param int cluster_size: The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
-        :param str shape_name: The name of the shape. The shape determines the resources allocated
+        :param str shape_name: (Updatable) The name of the shape. The shape determines the resources allocated
                * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
         :param str state: (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
         :param str time_created: The date and time the DB System was created.
@@ -3288,7 +3617,7 @@ class MysqlDbSystemHeatWaveCluster(dict):
     @pulumi.getter(name="shapeName")
     def shape_name(self) -> Optional[str]:
         """
-        The name of the shape. The shape determines the resources allocated
+        (Updatable) The name of the shape. The shape determines the resources allocated
         * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
         """
         return pulumi.get(self, "shape_name")
@@ -3416,6 +3745,8 @@ class MysqlDbSystemSource(dict):
             suggest = "db_system_id"
         elif key == "recoveryPoint":
             suggest = "recovery_point"
+        elif key == "sourceUrl":
+            suggest = "source_url"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in MysqlDbSystemSource. Access the value via the '{suggest}' property getter instead.")
@@ -3432,12 +3763,14 @@ class MysqlDbSystemSource(dict):
                  source_type: str,
                  backup_id: Optional[str] = None,
                  db_system_id: Optional[str] = None,
-                 recovery_point: Optional[str] = None):
+                 recovery_point: Optional[str] = None,
+                 source_url: Optional[str] = None):
         """
-        :param str source_type: The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup.
+        :param str source_type: The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup. Use `IMPORTURL` for creating a new database from a URL Object Storage PAR.
         :param str backup_id: The OCID of the backup to be used as the source for the new DB System.
         :param str db_system_id: The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
         :param str recovery_point: The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
+        :param str source_url: The Pre-Authenticated Request (PAR) of a bucket/prefix or PAR of a @.manifest.json object from the Object Storage. Check [Using Pre-Authenticated Requests](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm) for information related to PAR creation. Please create PAR with "Permit object reads" access type and "Enable Object Listing" permission when using a bucket/prefix PAR. Please create PAR with "Permit object reads" access type when using a @.manifest.json object PAR.
         """
         pulumi.set(__self__, "source_type", source_type)
         if backup_id is not None:
@@ -3446,12 +3779,14 @@ class MysqlDbSystemSource(dict):
             pulumi.set(__self__, "db_system_id", db_system_id)
         if recovery_point is not None:
             pulumi.set(__self__, "recovery_point", recovery_point)
+        if source_url is not None:
+            pulumi.set(__self__, "source_url", source_url)
 
     @property
     @pulumi.getter(name="sourceType")
     def source_type(self) -> str:
         """
-        The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup.
+        The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup. Use `IMPORTURL` for creating a new database from a URL Object Storage PAR.
         """
         return pulumi.get(self, "source_type")
 
@@ -3478,6 +3813,14 @@ class MysqlDbSystemSource(dict):
         The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
         """
         return pulumi.get(self, "recovery_point")
+
+    @property
+    @pulumi.getter(name="sourceUrl")
+    def source_url(self) -> Optional[str]:
+        """
+        The Pre-Authenticated Request (PAR) of a bucket/prefix or PAR of a @.manifest.json object from the Object Storage. Check [Using Pre-Authenticated Requests](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm) for information related to PAR creation. Please create PAR with "Permit object reads" access type and "Enable Object Listing" permission when using a bucket/prefix PAR. Please create PAR with "Permit object reads" access type when using a @.manifest.json object PAR.
+        """
+        return pulumi.get(self, "source_url")
 
 
 @pulumi.output_type
@@ -3534,6 +3877,7 @@ class GetAnalyticsClusterClusterNodeResult(dict):
 @pulumi.output_type
 class GetChannelSourceResult(dict):
     def __init__(__self__, *,
+                 anonymous_transactions_handlings: Sequence['outputs.GetChannelSourceAnonymousTransactionsHandlingResult'],
                  hostname: str,
                  password: str,
                  port: int,
@@ -3542,6 +3886,7 @@ class GetChannelSourceResult(dict):
                  ssl_mode: str,
                  username: str):
         """
+        :param Sequence['GetChannelSourceAnonymousTransactionsHandlingArgs'] anonymous_transactions_handlings: Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
         :param str hostname: The network address of the MySQL instance.
         :param int port: The port the source MySQL instance listens on.
         :param str source_type: The specific source identifier.
@@ -3549,6 +3894,7 @@ class GetChannelSourceResult(dict):
         :param str ssl_mode: The SSL mode of the Channel.
         :param str username: The name of the replication user on the source MySQL instance. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
         """
+        pulumi.set(__self__, "anonymous_transactions_handlings", anonymous_transactions_handlings)
         pulumi.set(__self__, "hostname", hostname)
         pulumi.set(__self__, "password", password)
         pulumi.set(__self__, "port", port)
@@ -3556,6 +3902,14 @@ class GetChannelSourceResult(dict):
         pulumi.set(__self__, "ssl_ca_certificates", ssl_ca_certificates)
         pulumi.set(__self__, "ssl_mode", ssl_mode)
         pulumi.set(__self__, "username", username)
+
+    @property
+    @pulumi.getter(name="anonymousTransactionsHandlings")
+    def anonymous_transactions_handlings(self) -> Sequence['outputs.GetChannelSourceAnonymousTransactionsHandlingResult']:
+        """
+        Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
+        """
+        return pulumi.get(self, "anonymous_transactions_handlings")
 
     @property
     @pulumi.getter
@@ -3612,6 +3966,57 @@ class GetChannelSourceResult(dict):
 
 
 @pulumi.output_type
+class GetChannelSourceAnonymousTransactionsHandlingResult(dict):
+    def __init__(__self__, *,
+                 last_configured_log_filename: str,
+                 last_configured_log_offset: str,
+                 policy: str,
+                 uuid: str):
+        """
+        :param str last_configured_log_filename: Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+        :param str last_configured_log_offset: Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+        :param str policy: Specifies how the replication channel handles anonymous transactions.
+        :param str uuid: The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
+        """
+        pulumi.set(__self__, "last_configured_log_filename", last_configured_log_filename)
+        pulumi.set(__self__, "last_configured_log_offset", last_configured_log_offset)
+        pulumi.set(__self__, "policy", policy)
+        pulumi.set(__self__, "uuid", uuid)
+
+    @property
+    @pulumi.getter(name="lastConfiguredLogFilename")
+    def last_configured_log_filename(self) -> str:
+        """
+        Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+        """
+        return pulumi.get(self, "last_configured_log_filename")
+
+    @property
+    @pulumi.getter(name="lastConfiguredLogOffset")
+    def last_configured_log_offset(self) -> str:
+        """
+        Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+        """
+        return pulumi.get(self, "last_configured_log_offset")
+
+    @property
+    @pulumi.getter
+    def policy(self) -> str:
+        """
+        Specifies how the replication channel handles anonymous transactions.
+        """
+        return pulumi.get(self, "policy")
+
+    @property
+    @pulumi.getter
+    def uuid(self) -> str:
+        """
+        The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
+        """
+        return pulumi.get(self, "uuid")
+
+
+@pulumi.output_type
 class GetChannelSourceSslCaCertificateResult(dict):
     def __init__(__self__, *,
                  certificate_type: str,
@@ -3646,16 +4051,19 @@ class GetChannelTargetResult(dict):
                  applier_username: str,
                  channel_name: str,
                  db_system_id: str,
+                 filters: Sequence['outputs.GetChannelTargetFilterResult'],
                  target_type: str):
         """
         :param str applier_username: The username for the replication applier of the target MySQL DB System.
         :param str channel_name: The case-insensitive name that identifies the replication channel. Channel names must follow the rules defined for [MySQL identifiers](https://dev.mysql.com/doc/refman/8.0/en/identifiers.html). The names of non-Deleted Channels must be unique for each DB System.
         :param str db_system_id: The OCID of the source DB System.
+        :param Sequence['GetChannelTargetFilterArgs'] filters: Replication filter rules to be applied at the DB System Channel target.
         :param str target_type: The specific target identifier.
         """
         pulumi.set(__self__, "applier_username", applier_username)
         pulumi.set(__self__, "channel_name", channel_name)
         pulumi.set(__self__, "db_system_id", db_system_id)
+        pulumi.set(__self__, "filters", filters)
         pulumi.set(__self__, "target_type", target_type)
 
     @property
@@ -3683,12 +4091,49 @@ class GetChannelTargetResult(dict):
         return pulumi.get(self, "db_system_id")
 
     @property
+    @pulumi.getter
+    def filters(self) -> Sequence['outputs.GetChannelTargetFilterResult']:
+        """
+        Replication filter rules to be applied at the DB System Channel target.
+        """
+        return pulumi.get(self, "filters")
+
+    @property
     @pulumi.getter(name="targetType")
     def target_type(self) -> str:
         """
         The specific target identifier.
         """
         return pulumi.get(self, "target_type")
+
+
+@pulumi.output_type
+class GetChannelTargetFilterResult(dict):
+    def __init__(__self__, *,
+                 type: str,
+                 value: str):
+        """
+        :param str type: The type of the filter rule.
+        :param str value: The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+        """
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The type of the filter rule.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
@@ -3844,6 +4289,7 @@ class GetChannelsChannelResult(dict):
 @pulumi.output_type
 class GetChannelsChannelSourceResult(dict):
     def __init__(__self__, *,
+                 anonymous_transactions_handlings: Sequence['outputs.GetChannelsChannelSourceAnonymousTransactionsHandlingResult'],
                  hostname: str,
                  password: str,
                  port: int,
@@ -3852,6 +4298,7 @@ class GetChannelsChannelSourceResult(dict):
                  ssl_mode: str,
                  username: str):
         """
+        :param Sequence['GetChannelsChannelSourceAnonymousTransactionsHandlingArgs'] anonymous_transactions_handlings: Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
         :param str hostname: The network address of the MySQL instance.
         :param int port: The port the source MySQL instance listens on.
         :param str source_type: The specific source identifier.
@@ -3859,6 +4306,7 @@ class GetChannelsChannelSourceResult(dict):
         :param str ssl_mode: The SSL mode of the Channel.
         :param str username: The name of the replication user on the source MySQL instance. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
         """
+        pulumi.set(__self__, "anonymous_transactions_handlings", anonymous_transactions_handlings)
         pulumi.set(__self__, "hostname", hostname)
         pulumi.set(__self__, "password", password)
         pulumi.set(__self__, "port", port)
@@ -3866,6 +4314,14 @@ class GetChannelsChannelSourceResult(dict):
         pulumi.set(__self__, "ssl_ca_certificates", ssl_ca_certificates)
         pulumi.set(__self__, "ssl_mode", ssl_mode)
         pulumi.set(__self__, "username", username)
+
+    @property
+    @pulumi.getter(name="anonymousTransactionsHandlings")
+    def anonymous_transactions_handlings(self) -> Sequence['outputs.GetChannelsChannelSourceAnonymousTransactionsHandlingResult']:
+        """
+        Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
+        """
+        return pulumi.get(self, "anonymous_transactions_handlings")
 
     @property
     @pulumi.getter
@@ -3922,6 +4378,57 @@ class GetChannelsChannelSourceResult(dict):
 
 
 @pulumi.output_type
+class GetChannelsChannelSourceAnonymousTransactionsHandlingResult(dict):
+    def __init__(__self__, *,
+                 last_configured_log_filename: str,
+                 last_configured_log_offset: str,
+                 policy: str,
+                 uuid: str):
+        """
+        :param str last_configured_log_filename: Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+        :param str last_configured_log_offset: Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+        :param str policy: Specifies how the replication channel handles anonymous transactions.
+        :param str uuid: The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
+        """
+        pulumi.set(__self__, "last_configured_log_filename", last_configured_log_filename)
+        pulumi.set(__self__, "last_configured_log_offset", last_configured_log_offset)
+        pulumi.set(__self__, "policy", policy)
+        pulumi.set(__self__, "uuid", uuid)
+
+    @property
+    @pulumi.getter(name="lastConfiguredLogFilename")
+    def last_configured_log_filename(self) -> str:
+        """
+        Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+        """
+        return pulumi.get(self, "last_configured_log_filename")
+
+    @property
+    @pulumi.getter(name="lastConfiguredLogOffset")
+    def last_configured_log_offset(self) -> str:
+        """
+        Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+        """
+        return pulumi.get(self, "last_configured_log_offset")
+
+    @property
+    @pulumi.getter
+    def policy(self) -> str:
+        """
+        Specifies how the replication channel handles anonymous transactions.
+        """
+        return pulumi.get(self, "policy")
+
+    @property
+    @pulumi.getter
+    def uuid(self) -> str:
+        """
+        The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
+        """
+        return pulumi.get(self, "uuid")
+
+
+@pulumi.output_type
 class GetChannelsChannelSourceSslCaCertificateResult(dict):
     def __init__(__self__, *,
                  certificate_type: str,
@@ -3956,16 +4463,19 @@ class GetChannelsChannelTargetResult(dict):
                  applier_username: str,
                  channel_name: str,
                  db_system_id: str,
+                 filters: Sequence['outputs.GetChannelsChannelTargetFilterResult'],
                  target_type: str):
         """
         :param str applier_username: The username for the replication applier of the target MySQL DB System.
         :param str channel_name: The case-insensitive name that identifies the replication channel. Channel names must follow the rules defined for [MySQL identifiers](https://dev.mysql.com/doc/refman/8.0/en/identifiers.html). The names of non-Deleted Channels must be unique for each DB System.
         :param str db_system_id: The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param Sequence['GetChannelsChannelTargetFilterArgs'] filters: Replication filter rules to be applied at the DB System Channel target.
         :param str target_type: The specific target identifier.
         """
         pulumi.set(__self__, "applier_username", applier_username)
         pulumi.set(__self__, "channel_name", channel_name)
         pulumi.set(__self__, "db_system_id", db_system_id)
+        pulumi.set(__self__, "filters", filters)
         pulumi.set(__self__, "target_type", target_type)
 
     @property
@@ -3993,12 +4503,49 @@ class GetChannelsChannelTargetResult(dict):
         return pulumi.get(self, "db_system_id")
 
     @property
+    @pulumi.getter
+    def filters(self) -> Sequence['outputs.GetChannelsChannelTargetFilterResult']:
+        """
+        Replication filter rules to be applied at the DB System Channel target.
+        """
+        return pulumi.get(self, "filters")
+
+    @property
     @pulumi.getter(name="targetType")
     def target_type(self) -> str:
         """
         The specific target identifier.
         """
         return pulumi.get(self, "target_type")
+
+
+@pulumi.output_type
+class GetChannelsChannelTargetFilterResult(dict):
+    def __init__(__self__, *,
+                 type: str,
+                 value: str):
+        """
+        :param str type: The type of the filter rule.
+        :param str value: The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+        """
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The type of the filter rule.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
@@ -4125,7 +4672,7 @@ class GetMysqlBackupDbSystemSnapshotResult(dict):
         :param str id: OCID of the backup itself
         :param str ip_address: The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
         :param bool is_highly_available: Specifies if the DB System is highly available.
-        :param Sequence['GetMysqlBackupDbSystemSnapshotMaintenanceArgs'] maintenances: The Maintenance Policy for the DB System.
+        :param Sequence['GetMysqlBackupDbSystemSnapshotMaintenanceArgs'] maintenances: The Maintenance Policy for the DB System or Read Replica that this model is included in.
         :param str mysql_version: The MySQL server version of the DB System used for backup.
         :param int port: The port for primary endpoint of the DB System to listen on.
         :param int port_x: The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
@@ -4305,7 +4852,7 @@ class GetMysqlBackupDbSystemSnapshotResult(dict):
     @pulumi.getter
     def maintenances(self) -> Sequence['outputs.GetMysqlBackupDbSystemSnapshotMaintenanceResult']:
         """
-        The Maintenance Policy for the DB System.
+        The Maintenance Policy for the DB System or Read Replica that this model is included in.
         """
         return pulumi.get(self, "maintenances")
 
@@ -4489,6 +5036,8 @@ class GetMysqlBackupDbSystemSnapshotEndpointResult(dict):
                  modes: Sequence[str],
                  port: int,
                  port_x: int,
+                 resource_id: str,
+                 resource_type: str,
                  status: str,
                  status_details: str):
         """
@@ -4497,6 +5046,8 @@ class GetMysqlBackupDbSystemSnapshotEndpointResult(dict):
         :param Sequence[str] modes: The access modes from the client that this endpoint supports.
         :param int port: The port for primary endpoint of the DB System to listen on.
         :param int port_x: The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
+        :param str resource_id: The OCID of the resource that this endpoint is attached to.
+        :param str resource_type: The type of endpoint that clients and connectors can connect to.
         :param str status: The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
         :param str status_details: Additional information about the current endpoint status.
         """
@@ -4505,6 +5056,8 @@ class GetMysqlBackupDbSystemSnapshotEndpointResult(dict):
         pulumi.set(__self__, "modes", modes)
         pulumi.set(__self__, "port", port)
         pulumi.set(__self__, "port_x", port_x)
+        pulumi.set(__self__, "resource_id", resource_id)
+        pulumi.set(__self__, "resource_type", resource_type)
         pulumi.set(__self__, "status", status)
         pulumi.set(__self__, "status_details", status_details)
 
@@ -4547,6 +5100,22 @@ class GetMysqlBackupDbSystemSnapshotEndpointResult(dict):
         The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
         """
         return pulumi.get(self, "port_x")
+
+    @property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> str:
+        """
+        The OCID of the resource that this endpoint is attached to.
+        """
+        return pulumi.get(self, "resource_id")
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> str:
+        """
+        The type of endpoint that clients and connectors can connect to.
+        """
+        return pulumi.get(self, "resource_type")
 
     @property
     @pulumi.getter
@@ -4845,7 +5414,7 @@ class GetMysqlBackupsBackupDbSystemSnapshotResult(dict):
         :param str id: OCID of the backup itself
         :param str ip_address: The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
         :param bool is_highly_available: Specifies if the DB System is highly available.
-        :param Sequence['GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArgs'] maintenances: The Maintenance Policy for the DB System.
+        :param Sequence['GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArgs'] maintenances: The Maintenance Policy for the DB System or Read Replica that this model is included in.
         :param str mysql_version: The MySQL server version of the DB System used for backup.
         :param int port: The port for primary endpoint of the DB System to listen on.
         :param int port_x: The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
@@ -5025,7 +5594,7 @@ class GetMysqlBackupsBackupDbSystemSnapshotResult(dict):
     @pulumi.getter
     def maintenances(self) -> Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotMaintenanceResult']:
         """
-        The Maintenance Policy for the DB System.
+        The Maintenance Policy for the DB System or Read Replica that this model is included in.
         """
         return pulumi.get(self, "maintenances")
 
@@ -5209,6 +5778,8 @@ class GetMysqlBackupsBackupDbSystemSnapshotEndpointResult(dict):
                  modes: Sequence[str],
                  port: int,
                  port_x: int,
+                 resource_id: str,
+                 resource_type: str,
                  status: str,
                  status_details: str):
         """
@@ -5217,6 +5788,8 @@ class GetMysqlBackupsBackupDbSystemSnapshotEndpointResult(dict):
         :param Sequence[str] modes: The access modes from the client that this endpoint supports.
         :param int port: The port for primary endpoint of the DB System to listen on.
         :param int port_x: The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
+        :param str resource_id: The OCID of the resource that this endpoint is attached to.
+        :param str resource_type: The type of endpoint that clients and connectors can connect to.
         :param str status: The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
         :param str status_details: Additional information about the current endpoint status.
         """
@@ -5225,6 +5798,8 @@ class GetMysqlBackupsBackupDbSystemSnapshotEndpointResult(dict):
         pulumi.set(__self__, "modes", modes)
         pulumi.set(__self__, "port", port)
         pulumi.set(__self__, "port_x", port_x)
+        pulumi.set(__self__, "resource_id", resource_id)
+        pulumi.set(__self__, "resource_type", resource_type)
         pulumi.set(__self__, "status", status)
         pulumi.set(__self__, "status_details", status_details)
 
@@ -5267,6 +5842,22 @@ class GetMysqlBackupsBackupDbSystemSnapshotEndpointResult(dict):
         The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
         """
         return pulumi.get(self, "port_x")
+
+    @property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> str:
+        """
+        The OCID of the resource that this endpoint is attached to.
+        """
+        return pulumi.get(self, "resource_id")
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> str:
+        """
+        The type of endpoint that clients and connectors can connect to.
+        """
+        return pulumi.get(self, "resource_type")
 
     @property
     @pulumi.getter
@@ -7617,6 +8208,7 @@ class GetMysqlDbSystemChannelResult(dict):
 @pulumi.output_type
 class GetMysqlDbSystemChannelSourceResult(dict):
     def __init__(__self__, *,
+                 anonymous_transactions_handlings: Sequence['outputs.GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingResult'],
                  hostname: str,
                  port: int,
                  source_type: str,
@@ -7624,6 +8216,7 @@ class GetMysqlDbSystemChannelSourceResult(dict):
                  ssl_mode: str,
                  username: str):
         """
+        :param Sequence['GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs'] anonymous_transactions_handlings: Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
         :param str hostname: The network address of the DB System.
         :param int port: The port for primary endpoint of the DB System to listen on.
         :param str source_type: The specific source identifier.
@@ -7631,12 +8224,21 @@ class GetMysqlDbSystemChannelSourceResult(dict):
         :param str ssl_mode: The SSL mode of the Channel.
         :param str username: The name of the replication user on the source MySQL instance. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
         """
+        pulumi.set(__self__, "anonymous_transactions_handlings", anonymous_transactions_handlings)
         pulumi.set(__self__, "hostname", hostname)
         pulumi.set(__self__, "port", port)
         pulumi.set(__self__, "source_type", source_type)
         pulumi.set(__self__, "ssl_ca_certificates", ssl_ca_certificates)
         pulumi.set(__self__, "ssl_mode", ssl_mode)
         pulumi.set(__self__, "username", username)
+
+    @property
+    @pulumi.getter(name="anonymousTransactionsHandlings")
+    def anonymous_transactions_handlings(self) -> Sequence['outputs.GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingResult']:
+        """
+        Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
+        """
+        return pulumi.get(self, "anonymous_transactions_handlings")
 
     @property
     @pulumi.getter
@@ -7688,6 +8290,57 @@ class GetMysqlDbSystemChannelSourceResult(dict):
 
 
 @pulumi.output_type
+class GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingResult(dict):
+    def __init__(__self__, *,
+                 last_configured_log_filename: str,
+                 last_configured_log_offset: str,
+                 policy: str,
+                 uuid: str):
+        """
+        :param str last_configured_log_filename: Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+        :param str last_configured_log_offset: Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+        :param str policy: Specifies how the replication channel handles anonymous transactions.
+        :param str uuid: The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
+        """
+        pulumi.set(__self__, "last_configured_log_filename", last_configured_log_filename)
+        pulumi.set(__self__, "last_configured_log_offset", last_configured_log_offset)
+        pulumi.set(__self__, "policy", policy)
+        pulumi.set(__self__, "uuid", uuid)
+
+    @property
+    @pulumi.getter(name="lastConfiguredLogFilename")
+    def last_configured_log_filename(self) -> str:
+        """
+        Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+        """
+        return pulumi.get(self, "last_configured_log_filename")
+
+    @property
+    @pulumi.getter(name="lastConfiguredLogOffset")
+    def last_configured_log_offset(self) -> str:
+        """
+        Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+        """
+        return pulumi.get(self, "last_configured_log_offset")
+
+    @property
+    @pulumi.getter
+    def policy(self) -> str:
+        """
+        Specifies how the replication channel handles anonymous transactions.
+        """
+        return pulumi.get(self, "policy")
+
+    @property
+    @pulumi.getter
+    def uuid(self) -> str:
+        """
+        The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
+        """
+        return pulumi.get(self, "uuid")
+
+
+@pulumi.output_type
 class GetMysqlDbSystemChannelSourceSslCaCertificateResult(dict):
     def __init__(__self__, *,
                  certificate_type: str,
@@ -7722,16 +8375,19 @@ class GetMysqlDbSystemChannelTargetResult(dict):
                  applier_username: str,
                  channel_name: str,
                  db_system_id: str,
+                 filters: Sequence['outputs.GetMysqlDbSystemChannelTargetFilterResult'],
                  target_type: str):
         """
         :param str applier_username: The username for the replication applier of the target MySQL DB System.
         :param str channel_name: The case-insensitive name that identifies the replication channel. Channel names must follow the rules defined for [MySQL identifiers](https://dev.mysql.com/doc/refman/8.0/en/identifiers.html). The names of non-Deleted Channels must be unique for each DB System.
         :param str db_system_id: The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param Sequence['GetMysqlDbSystemChannelTargetFilterArgs'] filters: Replication filter rules to be applied at the DB System Channel target.
         :param str target_type: The specific target identifier.
         """
         pulumi.set(__self__, "applier_username", applier_username)
         pulumi.set(__self__, "channel_name", channel_name)
         pulumi.set(__self__, "db_system_id", db_system_id)
+        pulumi.set(__self__, "filters", filters)
         pulumi.set(__self__, "target_type", target_type)
 
     @property
@@ -7759,12 +8415,49 @@ class GetMysqlDbSystemChannelTargetResult(dict):
         return pulumi.get(self, "db_system_id")
 
     @property
+    @pulumi.getter
+    def filters(self) -> Sequence['outputs.GetMysqlDbSystemChannelTargetFilterResult']:
+        """
+        Replication filter rules to be applied at the DB System Channel target.
+        """
+        return pulumi.get(self, "filters")
+
+    @property
     @pulumi.getter(name="targetType")
     def target_type(self) -> str:
         """
         The specific target identifier.
         """
         return pulumi.get(self, "target_type")
+
+
+@pulumi.output_type
+class GetMysqlDbSystemChannelTargetFilterResult(dict):
+    def __init__(__self__, *,
+                 type: str,
+                 value: str):
+        """
+        :param str type: The type of the filter rule.
+        :param str value: The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+        """
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The type of the filter rule.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
@@ -7844,6 +8537,8 @@ class GetMysqlDbSystemEndpointResult(dict):
                  modes: Sequence[str],
                  port: int,
                  port_x: int,
+                 resource_id: str,
+                 resource_type: str,
                  status: str,
                  status_details: str):
         """
@@ -7852,6 +8547,8 @@ class GetMysqlDbSystemEndpointResult(dict):
         :param Sequence[str] modes: The access modes from the client that this endpoint supports.
         :param int port: The port for primary endpoint of the DB System to listen on.
         :param int port_x: The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
+        :param str resource_id: The OCID of the resource that this endpoint is attached to.
+        :param str resource_type: The type of endpoint that clients and connectors can connect to.
         :param str status: The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
         :param str status_details: Additional information about the current endpoint status.
         """
@@ -7860,6 +8557,8 @@ class GetMysqlDbSystemEndpointResult(dict):
         pulumi.set(__self__, "modes", modes)
         pulumi.set(__self__, "port", port)
         pulumi.set(__self__, "port_x", port_x)
+        pulumi.set(__self__, "resource_id", resource_id)
+        pulumi.set(__self__, "resource_type", resource_type)
         pulumi.set(__self__, "status", status)
         pulumi.set(__self__, "status_details", status_details)
 
@@ -7902,6 +8601,22 @@ class GetMysqlDbSystemEndpointResult(dict):
         The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
         """
         return pulumi.get(self, "port_x")
+
+    @property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> str:
+        """
+        The OCID of the resource that this endpoint is attached to.
+        """
+        return pulumi.get(self, "resource_id")
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> str:
+        """
+        The type of endpoint that clients and connectors can connect to.
+        """
+        return pulumi.get(self, "resource_type")
 
     @property
     @pulumi.getter
@@ -8035,7 +8750,8 @@ class GetMysqlDbSystemSourceResult(dict):
                  backup_id: str,
                  db_system_id: str,
                  recovery_point: str,
-                 source_type: str):
+                 source_type: str,
+                 source_url: str):
         """
         :param str backup_id: The OCID of the backup to be used as the source for the new DB System.
         :param str db_system_id: The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -8046,6 +8762,7 @@ class GetMysqlDbSystemSourceResult(dict):
         pulumi.set(__self__, "db_system_id", db_system_id)
         pulumi.set(__self__, "recovery_point", recovery_point)
         pulumi.set(__self__, "source_type", source_type)
+        pulumi.set(__self__, "source_url", source_url)
 
     @property
     @pulumi.getter(name="backupId")
@@ -8078,6 +8795,11 @@ class GetMysqlDbSystemSourceResult(dict):
         The specific source identifier.
         """
         return pulumi.get(self, "source_type")
+
+    @property
+    @pulumi.getter(name="sourceUrl")
+    def source_url(self) -> str:
+        return pulumi.get(self, "source_url")
 
 
 @pulumi.output_type
@@ -8146,7 +8868,7 @@ class GetMysqlDbSystemsDbSystemResult(dict):
         :param bool is_heat_wave_cluster_attached: If true, return only DB Systems with a HeatWave cluster attached, if false return only DB Systems with no HeatWave cluster attached. If not present, return all DB Systems.
         :param bool is_highly_available: Specifies if the DB System is highly available.
         :param str lifecycle_details: Additional information about the current lifecycleState.
-        :param Sequence['GetMysqlDbSystemsDbSystemMaintenanceArgs'] maintenances: The Maintenance Policy for the DB System.
+        :param Sequence['GetMysqlDbSystemsDbSystemMaintenanceArgs'] maintenances: The Maintenance Policy for the DB System or Read Replica that this model is included in.
         :param str mysql_version: Name of the MySQL Version in use for the DB System.
         :param Sequence['GetMysqlDbSystemsDbSystemPointInTimeRecoveryDetailArgs'] point_in_time_recovery_details: Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
         :param int port: The port for primary endpoint of the DB System to listen on.
@@ -8403,7 +9125,7 @@ class GetMysqlDbSystemsDbSystemResult(dict):
     @pulumi.getter
     def maintenances(self) -> Sequence['outputs.GetMysqlDbSystemsDbSystemMaintenanceResult']:
         """
-        The Maintenance Policy for the DB System.
+        The Maintenance Policy for the DB System or Read Replica that this model is included in.
         """
         return pulumi.get(self, "maintenances")
 
@@ -8788,6 +9510,7 @@ class GetMysqlDbSystemsDbSystemChannelResult(dict):
 @pulumi.output_type
 class GetMysqlDbSystemsDbSystemChannelSourceResult(dict):
     def __init__(__self__, *,
+                 anonymous_transactions_handlings: Sequence['outputs.GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingResult'],
                  hostname: str,
                  port: int,
                  source_type: str,
@@ -8795,6 +9518,7 @@ class GetMysqlDbSystemsDbSystemChannelSourceResult(dict):
                  ssl_mode: str,
                  username: str):
         """
+        :param Sequence['GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArgs'] anonymous_transactions_handlings: Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
         :param str hostname: The network address of the DB System.
         :param int port: The port for primary endpoint of the DB System to listen on.
         :param str source_type: The specific source identifier.
@@ -8802,12 +9526,21 @@ class GetMysqlDbSystemsDbSystemChannelSourceResult(dict):
         :param str ssl_mode: The SSL mode of the Channel.
         :param str username: The name of the replication user on the source MySQL instance. The username has a maximum length of 96 characters. For more information, please see the [MySQL documentation](https://dev.mysql.com/doc/refman/8.0/en/change-master-to.html)
         """
+        pulumi.set(__self__, "anonymous_transactions_handlings", anonymous_transactions_handlings)
         pulumi.set(__self__, "hostname", hostname)
         pulumi.set(__self__, "port", port)
         pulumi.set(__self__, "source_type", source_type)
         pulumi.set(__self__, "ssl_ca_certificates", ssl_ca_certificates)
         pulumi.set(__self__, "ssl_mode", ssl_mode)
         pulumi.set(__self__, "username", username)
+
+    @property
+    @pulumi.getter(name="anonymousTransactionsHandlings")
+    def anonymous_transactions_handlings(self) -> Sequence['outputs.GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingResult']:
+        """
+        Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
+        """
+        return pulumi.get(self, "anonymous_transactions_handlings")
 
     @property
     @pulumi.getter
@@ -8859,6 +9592,57 @@ class GetMysqlDbSystemsDbSystemChannelSourceResult(dict):
 
 
 @pulumi.output_type
+class GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingResult(dict):
+    def __init__(__self__, *,
+                 last_configured_log_filename: str,
+                 last_configured_log_offset: str,
+                 policy: str,
+                 uuid: str):
+        """
+        :param str last_configured_log_filename: Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+        :param str last_configured_log_offset: Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+        :param str policy: Specifies how the replication channel handles anonymous transactions.
+        :param str uuid: The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
+        """
+        pulumi.set(__self__, "last_configured_log_filename", last_configured_log_filename)
+        pulumi.set(__self__, "last_configured_log_offset", last_configured_log_offset)
+        pulumi.set(__self__, "policy", policy)
+        pulumi.set(__self__, "uuid", uuid)
+
+    @property
+    @pulumi.getter(name="lastConfiguredLogFilename")
+    def last_configured_log_filename(self) -> str:
+        """
+        Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+        """
+        return pulumi.get(self, "last_configured_log_filename")
+
+    @property
+    @pulumi.getter(name="lastConfiguredLogOffset")
+    def last_configured_log_offset(self) -> str:
+        """
+        Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+        """
+        return pulumi.get(self, "last_configured_log_offset")
+
+    @property
+    @pulumi.getter
+    def policy(self) -> str:
+        """
+        Specifies how the replication channel handles anonymous transactions.
+        """
+        return pulumi.get(self, "policy")
+
+    @property
+    @pulumi.getter
+    def uuid(self) -> str:
+        """
+        The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
+        """
+        return pulumi.get(self, "uuid")
+
+
+@pulumi.output_type
 class GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateResult(dict):
     def __init__(__self__, *,
                  certificate_type: str,
@@ -8893,16 +9677,19 @@ class GetMysqlDbSystemsDbSystemChannelTargetResult(dict):
                  applier_username: str,
                  channel_name: str,
                  db_system_id: str,
+                 filters: Sequence['outputs.GetMysqlDbSystemsDbSystemChannelTargetFilterResult'],
                  target_type: str):
         """
         :param str applier_username: The username for the replication applier of the target MySQL DB System.
         :param str channel_name: The case-insensitive name that identifies the replication channel. Channel names must follow the rules defined for [MySQL identifiers](https://dev.mysql.com/doc/refman/8.0/en/identifiers.html). The names of non-Deleted Channels must be unique for each DB System.
         :param str db_system_id: The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param Sequence['GetMysqlDbSystemsDbSystemChannelTargetFilterArgs'] filters: Replication filter rules to be applied at the DB System Channel target.
         :param str target_type: The specific target identifier.
         """
         pulumi.set(__self__, "applier_username", applier_username)
         pulumi.set(__self__, "channel_name", channel_name)
         pulumi.set(__self__, "db_system_id", db_system_id)
+        pulumi.set(__self__, "filters", filters)
         pulumi.set(__self__, "target_type", target_type)
 
     @property
@@ -8930,12 +9717,49 @@ class GetMysqlDbSystemsDbSystemChannelTargetResult(dict):
         return pulumi.get(self, "db_system_id")
 
     @property
+    @pulumi.getter
+    def filters(self) -> Sequence['outputs.GetMysqlDbSystemsDbSystemChannelTargetFilterResult']:
+        """
+        Replication filter rules to be applied at the DB System Channel target.
+        """
+        return pulumi.get(self, "filters")
+
+    @property
     @pulumi.getter(name="targetType")
     def target_type(self) -> str:
         """
         The specific target identifier.
         """
         return pulumi.get(self, "target_type")
+
+
+@pulumi.output_type
+class GetMysqlDbSystemsDbSystemChannelTargetFilterResult(dict):
+    def __init__(__self__, *,
+                 type: str,
+                 value: str):
+        """
+        :param str type: The type of the filter rule.
+        :param str value: The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+        """
+        pulumi.set(__self__, "type", type)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        The type of the filter rule.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
@@ -9015,6 +9839,8 @@ class GetMysqlDbSystemsDbSystemEndpointResult(dict):
                  modes: Sequence[str],
                  port: int,
                  port_x: int,
+                 resource_id: str,
+                 resource_type: str,
                  status: str,
                  status_details: str):
         """
@@ -9023,6 +9849,8 @@ class GetMysqlDbSystemsDbSystemEndpointResult(dict):
         :param Sequence[str] modes: The access modes from the client that this endpoint supports.
         :param int port: The port for primary endpoint of the DB System to listen on.
         :param int port_x: The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
+        :param str resource_id: The OCID of the resource that this endpoint is attached to.
+        :param str resource_type: The type of endpoint that clients and connectors can connect to.
         :param str status: The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
         :param str status_details: Additional information about the current endpoint status.
         """
@@ -9031,6 +9859,8 @@ class GetMysqlDbSystemsDbSystemEndpointResult(dict):
         pulumi.set(__self__, "modes", modes)
         pulumi.set(__self__, "port", port)
         pulumi.set(__self__, "port_x", port_x)
+        pulumi.set(__self__, "resource_id", resource_id)
+        pulumi.set(__self__, "resource_type", resource_type)
         pulumi.set(__self__, "status", status)
         pulumi.set(__self__, "status_details", status_details)
 
@@ -9073,6 +9903,22 @@ class GetMysqlDbSystemsDbSystemEndpointResult(dict):
         The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
         """
         return pulumi.get(self, "port_x")
+
+    @property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> str:
+        """
+        The OCID of the resource that this endpoint is attached to.
+        """
+        return pulumi.get(self, "resource_id")
+
+    @property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> str:
+        """
+        The type of endpoint that clients and connectors can connect to.
+        """
+        return pulumi.get(self, "resource_type")
 
     @property
     @pulumi.getter
@@ -9206,7 +10052,8 @@ class GetMysqlDbSystemsDbSystemSourceResult(dict):
                  backup_id: str,
                  db_system_id: str,
                  recovery_point: str,
-                 source_type: str):
+                 source_type: str,
+                 source_url: str):
         """
         :param str backup_id: The OCID of the backup to be used as the source for the new DB System.
         :param str db_system_id: The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -9217,6 +10064,7 @@ class GetMysqlDbSystemsDbSystemSourceResult(dict):
         pulumi.set(__self__, "db_system_id", db_system_id)
         pulumi.set(__self__, "recovery_point", recovery_point)
         pulumi.set(__self__, "source_type", source_type)
+        pulumi.set(__self__, "source_url", source_url)
 
     @property
     @pulumi.getter(name="backupId")
@@ -9249,6 +10097,11 @@ class GetMysqlDbSystemsDbSystemSourceResult(dict):
         The specific source identifier.
         """
         return pulumi.get(self, "source_type")
+
+    @property
+    @pulumi.getter(name="sourceUrl")
+    def source_url(self) -> str:
+        return pulumi.get(self, "source_url")
 
 
 @pulumi.output_type
@@ -9445,5 +10298,237 @@ class GetShapesShapeResult(dict):
         Name
         """
         return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetrRplicasFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetrRplicasReplicaResult(dict):
+    def __init__(__self__, *,
+                 availability_domain: str,
+                 compartment_id: str,
+                 db_system_id: str,
+                 defined_tags: Mapping[str, Any],
+                 description: str,
+                 display_name: str,
+                 fault_domain: str,
+                 freeform_tags: Mapping[str, Any],
+                 id: str,
+                 ip_address: str,
+                 is_delete_protected: bool,
+                 lifecycle_details: str,
+                 mysql_version: str,
+                 port: int,
+                 port_x: int,
+                 state: str,
+                 time_created: str,
+                 time_updated: str):
+        """
+        :param str availability_domain: The name of the Availability Domain the read replica is located in.
+        :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param str db_system_id: The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param str description: User provided description of the read replica.
+        :param str display_name: A filter to return only the resource matching the given display name exactly.
+        :param str fault_domain: The name of the Fault Domain the read replica is located in.
+        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param str id: The OCID of the read replica.
+        :param str ip_address: The IP address the read replica is configured to listen on.
+        :param bool is_delete_protected: Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
+        :param str lifecycle_details: A message describing the state of the read replica.
+        :param str mysql_version: The MySQL version used by the read replica.
+        :param int port: The port the read replica is configured to listen on.
+        :param int port_x: The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
+        :param str state: The LifecycleState of the read replica.
+        :param str time_created: The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        :param str time_updated: The time the read replica was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        """
+        pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "db_system_id", db_system_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "fault_domain", fault_domain)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "ip_address", ip_address)
+        pulumi.set(__self__, "is_delete_protected", is_delete_protected)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "mysql_version", mysql_version)
+        pulumi.set(__self__, "port", port)
+        pulumi.set(__self__, "port_x", port_x)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> str:
+        """
+        The name of the Availability Domain the read replica is located in.
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="dbSystemId")
+    def db_system_id(self) -> str:
+        """
+        The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "db_system_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        User provided description of the read replica.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only the resource matching the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="faultDomain")
+    def fault_domain(self) -> str:
+        """
+        The name of the Fault Domain the read replica is located in.
+        """
+        return pulumi.get(self, "fault_domain")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The OCID of the read replica.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="ipAddress")
+    def ip_address(self) -> str:
+        """
+        The IP address the read replica is configured to listen on.
+        """
+        return pulumi.get(self, "ip_address")
+
+    @property
+    @pulumi.getter(name="isDeleteProtected")
+    def is_delete_protected(self) -> bool:
+        """
+        Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
+        """
+        return pulumi.get(self, "is_delete_protected")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        A message describing the state of the read replica.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="mysqlVersion")
+    def mysql_version(self) -> str:
+        """
+        The MySQL version used by the read replica.
+        """
+        return pulumi.get(self, "mysql_version")
+
+    @property
+    @pulumi.getter
+    def port(self) -> int:
+        """
+        The port the read replica is configured to listen on.
+        """
+        return pulumi.get(self, "port")
+
+    @property
+    @pulumi.getter(name="portX")
+    def port_x(self) -> int:
+        """
+        The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
+        """
+        return pulumi.get(self, "port_x")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The LifecycleState of the read replica.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> str:
+        """
+        The time the read replica was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        """
+        return pulumi.get(self, "time_updated")
 
 

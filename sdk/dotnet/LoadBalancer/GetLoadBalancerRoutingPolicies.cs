@@ -38,7 +38,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetLoadBalancerRoutingPoliciesResult> InvokeAsync(GetLoadBalancerRoutingPoliciesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetLoadBalancerRoutingPoliciesResult>("oci:LoadBalancer/getLoadBalancerRoutingPolicies:getLoadBalancerRoutingPolicies", args ?? new GetLoadBalancerRoutingPoliciesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetLoadBalancerRoutingPoliciesResult>("oci:LoadBalancer/getLoadBalancerRoutingPolicies:getLoadBalancerRoutingPolicies", args ?? new GetLoadBalancerRoutingPoliciesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Load Balancer Routing Policies in Oracle Cloud Infrastructure Load Balancer service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetLoadBalancerRoutingPoliciesResult> Invoke(GetLoadBalancerRoutingPoliciesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetLoadBalancerRoutingPoliciesResult>("oci:LoadBalancer/getLoadBalancerRoutingPolicies:getLoadBalancerRoutingPolicies", args ?? new GetLoadBalancerRoutingPoliciesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetLoadBalancerRoutingPoliciesResult>("oci:LoadBalancer/getLoadBalancerRoutingPolicies:getLoadBalancerRoutingPolicies", args ?? new GetLoadBalancerRoutingPoliciesInvokeArgs(), options.WithDefaults());
     }
 
 

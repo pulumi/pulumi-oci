@@ -44,7 +44,7 @@ namespace Pulumi.Oci.DataScience
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetModelDeploymentsResult> InvokeAsync(GetModelDeploymentsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetModelDeploymentsResult>("oci:DataScience/getModelDeployments:getModelDeployments", args ?? new GetModelDeploymentsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetModelDeploymentsResult>("oci:DataScience/getModelDeployments:getModelDeployments", args ?? new GetModelDeploymentsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Model Deployments in Oracle Cloud Infrastructure Datascience service.
@@ -79,7 +79,7 @@ namespace Pulumi.Oci.DataScience
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetModelDeploymentsResult> Invoke(GetModelDeploymentsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetModelDeploymentsResult>("oci:DataScience/getModelDeployments:getModelDeployments", args ?? new GetModelDeploymentsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetModelDeploymentsResult>("oci:DataScience/getModelDeployments:getModelDeployments", args ?? new GetModelDeploymentsInvokeArgs(), options.WithDefaults());
     }
 
 

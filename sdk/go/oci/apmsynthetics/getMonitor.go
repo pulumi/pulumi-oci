@@ -60,6 +60,8 @@ type GetMonitorArgs struct {
 // A collection of values returned by getMonitor.
 type GetMonitorResult struct {
 	ApmDomainId string `pulumi:"apmDomainId"`
+	// Monitor availability configuration details.
+	AvailabilityConfigurations []GetMonitorAvailabilityConfiguration `pulumi:"availabilityConfigurations"`
 	// Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
 	BatchIntervalInSeconds int `pulumi:"batchIntervalInSeconds"`
 	// Details of monitor configuration.
@@ -75,8 +77,10 @@ type GetMonitorResult struct {
 	// If isRunNow is enabled, then the monitor will run now.
 	IsRunNow bool `pulumi:"isRunNow"`
 	// If runOnce is enabled, then the monitor will run once.
-	IsRunOnce bool   `pulumi:"isRunOnce"`
-	MonitorId string `pulumi:"monitorId"`
+	IsRunOnce bool `pulumi:"isRunOnce"`
+	// Details used to schedule maintenance window.
+	MaintenanceWindowSchedules []GetMonitorMaintenanceWindowSchedule `pulumi:"maintenanceWindowSchedules"`
+	MonitorId                  string                                `pulumi:"monitorId"`
 	// Type of the monitor.
 	MonitorType string `pulumi:"monitorType"`
 	// Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
@@ -97,7 +101,7 @@ type GetMonitorResult struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+	// Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
 	TimeoutInSeconds int `pulumi:"timeoutInSeconds"`
 	// Number of vantage points where monitor is running.
 	VantagePointCount int `pulumi:"vantagePointCount"`
@@ -149,6 +153,11 @@ func (o GetMonitorResultOutput) ApmDomainId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorResult) string { return v.ApmDomainId }).(pulumi.StringOutput)
 }
 
+// Monitor availability configuration details.
+func (o GetMonitorResultOutput) AvailabilityConfigurations() GetMonitorAvailabilityConfigurationArrayOutput {
+	return o.ApplyT(func(v GetMonitorResult) []GetMonitorAvailabilityConfiguration { return v.AvailabilityConfigurations }).(GetMonitorAvailabilityConfigurationArrayOutput)
+}
+
 // Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
 func (o GetMonitorResultOutput) BatchIntervalInSeconds() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMonitorResult) int { return v.BatchIntervalInSeconds }).(pulumi.IntOutput)
@@ -187,6 +196,11 @@ func (o GetMonitorResultOutput) IsRunNow() pulumi.BoolOutput {
 // If runOnce is enabled, then the monitor will run once.
 func (o GetMonitorResultOutput) IsRunOnce() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMonitorResult) bool { return v.IsRunOnce }).(pulumi.BoolOutput)
+}
+
+// Details used to schedule maintenance window.
+func (o GetMonitorResultOutput) MaintenanceWindowSchedules() GetMonitorMaintenanceWindowScheduleArrayOutput {
+	return o.ApplyT(func(v GetMonitorResult) []GetMonitorMaintenanceWindowSchedule { return v.MaintenanceWindowSchedules }).(GetMonitorMaintenanceWindowScheduleArrayOutput)
 }
 
 func (o GetMonitorResultOutput) MonitorId() pulumi.StringOutput {
@@ -243,7 +257,7 @@ func (o GetMonitorResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+// Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
 func (o GetMonitorResultOutput) TimeoutInSeconds() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMonitorResult) int { return v.TimeoutInSeconds }).(pulumi.IntOutput)
 }

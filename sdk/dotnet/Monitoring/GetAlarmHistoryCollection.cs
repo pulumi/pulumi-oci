@@ -47,7 +47,7 @@ namespace Pulumi.Oci.Monitoring
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAlarmHistoryCollectionResult> InvokeAsync(GetAlarmHistoryCollectionArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAlarmHistoryCollectionResult>("oci:Monitoring/getAlarmHistoryCollection:getAlarmHistoryCollection", args ?? new GetAlarmHistoryCollectionArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAlarmHistoryCollectionResult>("oci:Monitoring/getAlarmHistoryCollection:getAlarmHistoryCollection", args ?? new GetAlarmHistoryCollectionArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Alarm History Collection resource in Oracle Cloud Infrastructure Monitoring service.
@@ -85,7 +85,7 @@ namespace Pulumi.Oci.Monitoring
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAlarmHistoryCollectionResult> Invoke(GetAlarmHistoryCollectionInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAlarmHistoryCollectionResult>("oci:Monitoring/getAlarmHistoryCollection:getAlarmHistoryCollection", args ?? new GetAlarmHistoryCollectionInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAlarmHistoryCollectionResult>("oci:Monitoring/getAlarmHistoryCollection:getAlarmHistoryCollection", args ?? new GetAlarmHistoryCollectionInvokeArgs(), options.WithDefaults());
     }
 
 

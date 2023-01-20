@@ -110,14 +110,14 @@ public final class DrgAttachmentManagementState extends com.pulumi.resources.Res
     }
 
     /**
-     * - The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
      * 
      */
     @Import(name="exportDrgRouteDistributionId")
     private @Nullable Output<String> exportDrgRouteDistributionId;
 
     /**
-     * @return - The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
      * 
      */
     public Optional<Output<String>> exportDrgRouteDistributionId() {
@@ -200,14 +200,14 @@ public final class DrgAttachmentManagementState extends com.pulumi.resources.Res
     }
 
     /**
-     * (Updatable)- The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the DRG attachment is using.
+     * The OCID of the route table the DRG attachment is using.
      * 
      */
     @Import(name="routeTableId")
     private @Nullable Output<String> routeTableId;
 
     /**
-     * @return (Updatable)- The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the DRG attachment is using.
+     * @return The OCID of the route table the DRG attachment is using.
      * 
      */
     public Optional<Output<String>> routeTableId() {
@@ -425,7 +425,7 @@ public final class DrgAttachmentManagementState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param exportDrgRouteDistributionId - The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
+         * @param exportDrgRouteDistributionId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
          * 
          * @return builder
          * 
@@ -436,7 +436,7 @@ public final class DrgAttachmentManagementState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param exportDrgRouteDistributionId - The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
+         * @param exportDrgRouteDistributionId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
          * 
          * @return builder
          * 
@@ -551,7 +551,7 @@ public final class DrgAttachmentManagementState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param routeTableId (Updatable)- The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the DRG attachment is using.
+         * @param routeTableId The OCID of the route table the DRG attachment is using.
          * 
          * @return builder
          * 
@@ -562,7 +562,7 @@ public final class DrgAttachmentManagementState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param routeTableId (Updatable)- The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the DRG attachment is using.
+         * @param routeTableId The OCID of the route table the DRG attachment is using.
          * 
          * @return builder
          * 

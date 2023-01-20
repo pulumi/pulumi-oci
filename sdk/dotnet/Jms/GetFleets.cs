@@ -44,7 +44,7 @@ namespace Pulumi.Oci.Jms
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetFleetsResult> InvokeAsync(GetFleetsArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetFleetsResult>("oci:Jms/getFleets:getFleets", args ?? new GetFleetsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetFleetsResult>("oci:Jms/getFleets:getFleets", args ?? new GetFleetsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Fleets in Oracle Cloud Infrastructure Jms service.
@@ -79,7 +79,7 @@ namespace Pulumi.Oci.Jms
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetFleetsResult> Invoke(GetFleetsInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetFleetsResult>("oci:Jms/getFleets:getFleets", args ?? new GetFleetsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetFleetsResult>("oci:Jms/getFleets:getFleets", args ?? new GetFleetsInvokeArgs(), options.WithDefaults());
     }
 
 

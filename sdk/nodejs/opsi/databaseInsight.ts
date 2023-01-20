@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -143,9 +144,17 @@ export class DatabaseInsight extends pulumi.CustomResource {
      */
     public readonly opsiPrivateEndpointId!: pulumi.Output<string>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
+     */
+    public /*out*/ readonly parentId!: pulumi.Output<string>;
+    /**
      * Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
      */
     public /*out*/ readonly processorCount!: pulumi.Output<number>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+     */
+    public /*out*/ readonly rootId!: pulumi.Output<string>;
     /**
      * Database service name used for connection requests.
      */
@@ -209,7 +218,9 @@ export class DatabaseInsight extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["opsiPrivateEndpointId"] = state ? state.opsiPrivateEndpointId : undefined;
+            resourceInputs["parentId"] = state ? state.parentId : undefined;
             resourceInputs["processorCount"] = state ? state.processorCount : undefined;
+            resourceInputs["rootId"] = state ? state.rootId : undefined;
             resourceInputs["serviceName"] = state ? state.serviceName : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["status"] = state ? state.status : undefined;
@@ -251,7 +262,9 @@ export class DatabaseInsight extends pulumi.CustomResource {
             resourceInputs["enterpriseManagerEntityName"] = undefined /*out*/;
             resourceInputs["enterpriseManagerEntityType"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
+            resourceInputs["parentId"] = undefined /*out*/;
             resourceInputs["processorCount"] = undefined /*out*/;
+            resourceInputs["rootId"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
@@ -367,9 +380,17 @@ export interface DatabaseInsightState {
      */
     opsiPrivateEndpointId?: pulumi.Input<string>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
+     */
+    parentId?: pulumi.Input<string>;
+    /**
      * Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
      */
     processorCount?: pulumi.Input<number>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+     */
+    rootId?: pulumi.Input<string>;
     /**
      * Database service name used for connection requests.
      */

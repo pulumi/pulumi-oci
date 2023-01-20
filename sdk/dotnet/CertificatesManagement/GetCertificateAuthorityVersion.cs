@@ -18,7 +18,7 @@ namespace Pulumi.Oci.CertificatesManagement
         /// Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
         /// </summary>
         public static Task<GetCertificateAuthorityVersionResult> InvokeAsync(GetCertificateAuthorityVersionArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetCertificateAuthorityVersionResult>("oci:CertificatesManagement/getCertificateAuthorityVersion:getCertificateAuthorityVersion", args ?? new GetCertificateAuthorityVersionArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetCertificateAuthorityVersionResult>("oci:CertificatesManagement/getCertificateAuthorityVersion:getCertificateAuthorityVersion", args ?? new GetCertificateAuthorityVersionArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Certificate Authority Version resource in Oracle Cloud Infrastructure Certificates Management service.
@@ -27,7 +27,7 @@ namespace Pulumi.Oci.CertificatesManagement
         /// Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
         /// </summary>
         public static Output<GetCertificateAuthorityVersionResult> Invoke(GetCertificateAuthorityVersionInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetCertificateAuthorityVersionResult>("oci:CertificatesManagement/getCertificateAuthorityVersion:getCertificateAuthorityVersion", args ?? new GetCertificateAuthorityVersionInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetCertificateAuthorityVersionResult>("oci:CertificatesManagement/getCertificateAuthorityVersion:getCertificateAuthorityVersion", args ?? new GetCertificateAuthorityVersionInvokeArgs(), options.WithDefaults());
     }
 
 

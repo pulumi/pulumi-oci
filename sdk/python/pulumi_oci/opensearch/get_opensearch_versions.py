@@ -84,6 +84,18 @@ def get_opensearch_versions(compartment_id: Optional[str] = None,
 
     Lists the supported Opensearch versions
 
+    ## Prerequisites
+
+    The below policies must be created in compartment before creating OpensearchCluster
+
+    ##### {Compartment-Name} - Name of  your compartment
+    ```python
+    import pulumi
+    ```
+
+    For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\\
+    Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
+
     ## Example Usage
 
     ```python
@@ -117,6 +129,18 @@ def get_opensearch_versions_output(compartment_id: Optional[pulumi.Input[str]] =
     This data source provides the list of Opensearch Versions in Oracle Cloud Infrastructure Opensearch service.
 
     Lists the supported Opensearch versions
+
+    ## Prerequisites
+
+    The below policies must be created in compartment before creating OpensearchCluster
+
+    ##### {Compartment-Name} - Name of  your compartment
+    ```python
+    import pulumi
+    ```
+
+    For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\\
+    Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
 
     ## Example Usage
 

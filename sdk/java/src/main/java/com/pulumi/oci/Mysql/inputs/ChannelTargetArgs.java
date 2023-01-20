@@ -5,7 +5,9 @@ package com.pulumi.oci.Mysql.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Mysql.inputs.ChannelTargetFilterArgs;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -61,6 +63,21 @@ public final class ChannelTargetArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Replication filter rules to be applied at the DB System Channel target.
+     * 
+     */
+    @Import(name="filters")
+    private @Nullable Output<List<ChannelTargetFilterArgs>> filters;
+
+    /**
+     * @return (Updatable) Replication filter rules to be applied at the DB System Channel target.
+     * 
+     */
+    public Optional<Output<List<ChannelTargetFilterArgs>>> filters() {
+        return Optional.ofNullable(this.filters);
+    }
+
+    /**
      * (Updatable) The specific target identifier.
      * 
      */
@@ -81,6 +98,7 @@ public final class ChannelTargetArgs extends com.pulumi.resources.ResourceArgs {
         this.applierUsername = $.applierUsername;
         this.channelName = $.channelName;
         this.dbSystemId = $.dbSystemId;
+        this.filters = $.filters;
         this.targetType = $.targetType;
     }
 
@@ -163,6 +181,37 @@ public final class ChannelTargetArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder dbSystemId(String dbSystemId) {
             return dbSystemId(Output.of(dbSystemId));
+        }
+
+        /**
+         * @param filters (Updatable) Replication filter rules to be applied at the DB System Channel target.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder filters(@Nullable Output<List<ChannelTargetFilterArgs>> filters) {
+            $.filters = filters;
+            return this;
+        }
+
+        /**
+         * @param filters (Updatable) Replication filter rules to be applied at the DB System Channel target.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder filters(List<ChannelTargetFilterArgs> filters) {
+            return filters(Output.of(filters));
+        }
+
+        /**
+         * @param filters (Updatable) Replication filter rules to be applied at the DB System Channel target.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder filters(ChannelTargetFilterArgs... filters) {
+            return filters(List.of(filters));
         }
 
         /**

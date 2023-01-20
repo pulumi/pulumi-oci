@@ -11,9 +11,17 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class TriggerActionFilterIncludeFileFilter {
+    /**
+     * @return (Updatable) The file paths/glob pattern for files.
+     * 
+     */
     private @Nullable List<String> filePaths;
 
     private TriggerActionFilterIncludeFileFilter() {}
+    /**
+     * @return (Updatable) The file paths/glob pattern for files.
+     * 
+     */
     public List<String> filePaths() {
         return this.filePaths == null ? List.of() : this.filePaths;
     }

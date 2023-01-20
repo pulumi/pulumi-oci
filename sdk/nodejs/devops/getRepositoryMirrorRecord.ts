@@ -22,11 +22,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRepositoryMirrorRecord(args: GetRepositoryMirrorRecordArgs, opts?: pulumi.InvokeOptions): Promise<GetRepositoryMirrorRecordResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getRepositoryMirrorRecord:getRepositoryMirrorRecord", {
         "mirrorRecordType": args.mirrorRecordType,
         "repositoryId": args.repositoryId,
@@ -78,9 +75,25 @@ export interface GetRepositoryMirrorRecordResult {
      */
     readonly workRequestId: string;
 }
-
+/**
+ * This data source provides details about a specific Repository Mirror Record resource in Oracle Cloud Infrastructure Devops service.
+ *
+ * Returns either current mirror record or last successful mirror record for a specific mirror repository.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testRepositoryMirrorRecord = oci.DevOps.getRepositoryMirrorRecord({
+ *     mirrorRecordType: _var.repository_mirror_record_mirror_record_type,
+ *     repositoryId: oci_devops_repository.test_repository.id,
+ * });
+ * ```
+ */
 export function getRepositoryMirrorRecordOutput(args: GetRepositoryMirrorRecordOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoryMirrorRecordResult> {
-    return pulumi.output(args).apply(a => getRepositoryMirrorRecord(a, opts))
+    return pulumi.output(args).apply((a: any) => getRepositoryMirrorRecord(a, opts))
 }
 
 /**

@@ -47,7 +47,7 @@ namespace Pulumi.Oci.Mysql
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetMysqlDbSystemsResult> InvokeAsync(GetMysqlDbSystemsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetMysqlDbSystemsResult>("oci:Mysql/getMysqlDbSystems:getMysqlDbSystems", args ?? new GetMysqlDbSystemsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetMysqlDbSystemsResult>("oci:Mysql/getMysqlDbSystems:getMysqlDbSystems", args ?? new GetMysqlDbSystemsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Mysql Db Systems in Oracle Cloud Infrastructure MySQL Database service.
@@ -85,7 +85,7 @@ namespace Pulumi.Oci.Mysql
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetMysqlDbSystemsResult> Invoke(GetMysqlDbSystemsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetMysqlDbSystemsResult>("oci:Mysql/getMysqlDbSystems:getMysqlDbSystems", args ?? new GetMysqlDbSystemsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetMysqlDbSystemsResult>("oci:Mysql/getMysqlDbSystems:getMysqlDbSystems", args ?? new GetMysqlDbSystemsInvokeArgs(), options.WithDefaults());
     }
 
 

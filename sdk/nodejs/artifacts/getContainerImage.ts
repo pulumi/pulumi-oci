@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getContainerImage(args: GetContainerImageArgs, opts?: pulumi.InvokeOptions): Promise<GetContainerImageResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Artifacts/getContainerImage:getContainerImage", {
         "imageId": args.imageId,
     }, opts);
@@ -112,9 +110,24 @@ export interface GetContainerImageResult {
      */
     readonly versions: outputs.Artifacts.GetContainerImageVersion[];
 }
-
+/**
+ * This data source provides details about a specific Container Image resource in Oracle Cloud Infrastructure Artifacts service.
+ *
+ * Get container image metadata.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testContainerImage = oci.Artifacts.getContainerImage({
+ *     imageId: _var.container_image_id,
+ * });
+ * ```
+ */
 export function getContainerImageOutput(args: GetContainerImageOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetContainerImageResult> {
-    return pulumi.output(args).apply(a => getContainerImage(a, opts))
+    return pulumi.output(args).apply((a: any) => getContainerImage(a, opts))
 }
 
 /**

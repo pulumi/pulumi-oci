@@ -20,6 +20,10 @@ public final class GetDiscoveryJobsResultsResult {
      * 
      */
     private @Nullable List<String> columnNames;
+    /**
+     * @return The OCID of the discovery job.
+     * 
+     */
     private String discoveryJobId;
     /**
      * @return The list of discovery_job_result_collection.
@@ -66,6 +70,10 @@ public final class GetDiscoveryJobsResultsResult {
     public List<String> columnNames() {
         return this.columnNames == null ? List.of() : this.columnNames;
     }
+    /**
+     * @return The OCID of the discovery job.
+     * 
+     */
     public String discoveryJobId() {
         return this.discoveryJobId;
     }

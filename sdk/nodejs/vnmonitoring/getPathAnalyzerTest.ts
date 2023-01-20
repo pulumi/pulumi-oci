@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getPathAnalyzerTest(args: GetPathAnalyzerTestArgs, opts?: pulumi.InvokeOptions): Promise<GetPathAnalyzerTestResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:VnMonitoring/getPathAnalyzerTest:GetPathAnalyzerTest", {
         "pathAnalyzerTestId": args.pathAnalyzerTestId,
     }, opts);
@@ -104,9 +102,24 @@ export interface GetPathAnalyzerTestResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Path Analyzer Test resource in Oracle Cloud Infrastructure Vn Monitoring service.
+ *
+ * Gets a `PathAnalyzerTest` using its identifier.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testPathAnalyzerTest = oci.VnMonitoring.GetPathAnalyzerTest({
+ *     pathAnalyzerTestId: oci_vn_monitoring_path_analyzer_test.test_path_analyzer_test.id,
+ * });
+ * ```
+ */
 export function getPathAnalyzerTestOutput(args: GetPathAnalyzerTestOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPathAnalyzerTestResult> {
-    return pulumi.output(args).apply(a => getPathAnalyzerTest(a, opts))
+    return pulumi.output(args).apply((a: any) => getPathAnalyzerTest(a, opts))
 }
 
 /**

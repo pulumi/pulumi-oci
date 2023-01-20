@@ -48,6 +48,11 @@ public final class GetReportsResult {
      * 
      */
     private @Nullable String state;
+    /**
+     * @return The type of the report.
+     * 
+     */
+    private @Nullable String type;
 
     private GetReportsResult() {}
     public Optional<String> accessLevel() {
@@ -101,6 +106,13 @@ public final class GetReportsResult {
     public Optional<String> state() {
         return Optional.ofNullable(this.state);
     }
+    /**
+     * @return The type of the report.
+     * 
+     */
+    public Optional<String> type() {
+        return Optional.ofNullable(this.type);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -120,6 +132,7 @@ public final class GetReportsResult {
         private List<GetReportsReportCollection> reportCollections;
         private @Nullable String reportDefinitionId;
         private @Nullable String state;
+        private @Nullable String type;
         public Builder() {}
         public Builder(GetReportsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -132,6 +145,7 @@ public final class GetReportsResult {
     	      this.reportCollections = defaults.reportCollections;
     	      this.reportDefinitionId = defaults.reportDefinitionId;
     	      this.state = defaults.state;
+    	      this.type = defaults.type;
         }
 
         @CustomType.Setter
@@ -185,6 +199,11 @@ public final class GetReportsResult {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
+        public Builder type(@Nullable String type) {
+            this.type = type;
+            return this;
+        }
         public GetReportsResult build() {
             final var o = new GetReportsResult();
             o.accessLevel = accessLevel;
@@ -196,6 +215,7 @@ public final class GetReportsResult {
             o.reportCollections = reportCollections;
             o.reportDefinitionId = reportDefinitionId;
             o.state = state;
+            o.type = type;
             return o;
         }
     }

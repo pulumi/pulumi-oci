@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNetworkSources(args: GetNetworkSourcesArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkSourcesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getNetworkSources:getNetworkSources", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -84,9 +82,28 @@ export interface GetNetworkSourcesResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Network Sources in Oracle Cloud Infrastructure Identity service.
+ *
+ * Lists the network sources in your tenancy. You must specify your tenancy's OCID as the value for
+ * the compartment ID (remember that the tenancy is simply the root compartment).
+ * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testNetworkSources = oci.Identity.getNetworkSources({
+ *     compartmentId: _var.tenancy_ocid,
+ *     name: _var.network_source_name,
+ *     state: _var.network_source_state,
+ * });
+ * ```
+ */
 export function getNetworkSourcesOutput(args: GetNetworkSourcesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkSourcesResult> {
-    return pulumi.output(args).apply(a => getNetworkSources(a, opts))
+    return pulumi.output(args).apply((a: any) => getNetworkSources(a, opts))
 }
 
 /**

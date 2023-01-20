@@ -24,7 +24,7 @@ public final class GetConnectionsConnectionCollectionItem {
      */
     private String appPassword;
     /**
-     * @return The Base URL of the hosted BitbucketServer.
+     * @return The Base URL of the hosted BitbucketServer/Visual Builder Studio server.
      * 
      */
     private String baseUrl;
@@ -115,7 +115,7 @@ public final class GetConnectionsConnectionCollectionItem {
         return this.appPassword;
     }
     /**
-     * @return The Base URL of the hosted BitbucketServer.
+     * @return The Base URL of the hosted BitbucketServer/Visual Builder Studio server.
      * 
      */
     public String baseUrl() {

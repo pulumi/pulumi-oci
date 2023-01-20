@@ -14,6 +14,10 @@ namespace Pulumi.Oci.Database.Outputs
     public sealed class GetVmClusterNetworksVmClusterNetworkVmNetworkNodeResult
     {
         /// <summary>
+        /// The Db server associated with the node.
+        /// </summary>
+        public readonly string DbServerId;
+        /// <summary>
         /// The node host name.
         /// </summary>
         public readonly string Hostname;
@@ -21,6 +25,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// The node IP address.
         /// </summary>
         public readonly string Ip;
+        /// <summary>
+        /// A filter to return only resources that match the given lifecycle state exactly.
+        /// </summary>
+        public readonly string State;
         /// <summary>
         /// The node virtual IP (VIP) address.
         /// </summary>
@@ -32,16 +40,22 @@ namespace Pulumi.Oci.Database.Outputs
 
         [OutputConstructor]
         private GetVmClusterNetworksVmClusterNetworkVmNetworkNodeResult(
+            string dbServerId,
+
             string hostname,
 
             string ip,
+
+            string state,
 
             string vip,
 
             string vipHostname)
         {
+            DbServerId = dbServerId;
             Hostname = hostname;
             Ip = ip;
+            State = state;
             Vip = vip;
             VipHostname = vipHostname;
         }

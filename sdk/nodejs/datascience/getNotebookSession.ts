@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNotebookSession(args: GetNotebookSessionArgs, opts?: pulumi.InvokeOptions): Promise<GetNotebookSessionResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataScience/getNotebookSession:getNotebookSession", {
         "notebookSessionId": args.notebookSessionId,
     }, opts);
@@ -104,9 +102,24 @@ export interface GetNotebookSessionResult {
      */
     readonly timeCreated: string;
 }
-
+/**
+ * This data source provides details about a specific Notebook Session resource in Oracle Cloud Infrastructure Data Science service.
+ *
+ * Gets the specified notebook session's information.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testNotebookSession = oci.DataScience.getNotebookSession({
+ *     notebookSessionId: oci_datascience_notebook_session.test_notebook_session.id,
+ * });
+ * ```
+ */
 export function getNotebookSessionOutput(args: GetNotebookSessionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNotebookSessionResult> {
-    return pulumi.output(args).apply(a => getNotebookSession(a, opts))
+    return pulumi.output(args).apply((a: any) => getNotebookSession(a, opts))
 }
 
 /**

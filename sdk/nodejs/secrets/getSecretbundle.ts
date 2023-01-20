@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSecretbundle(args: GetSecretbundleArgs, opts?: pulumi.InvokeOptions): Promise<GetSecretbundleResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Secrets/getSecretbundle:getSecretbundle", {
         "secretId": args.secretId,
         "secretVersionName": args.secretVersionName,
@@ -108,9 +106,28 @@ export interface GetSecretbundleResult {
      */
     readonly versionNumber: string;
 }
-
+/**
+ * This data source provides details about a specific Secretbundle resource in Oracle Cloud Infrastructure Secrets service.
+ *
+ * Gets a secret bundle that matches either the specified `stage`, `label`, or `versionNumber` parameter.
+ * If none of these parameters are provided, the bundle for the secret version marked as `CURRENT` will be returned.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSecretbundle = oci.Secrets.getSecretbundle({
+ *     secretId: oci_vault_secret.test_secret.id,
+ *     secretVersionName: oci_vault_secret_version.test_secret_version.name,
+ *     stage: _var.secretbundle_stage,
+ *     versionNumber: _var.secretbundle_version_number,
+ * });
+ * ```
+ */
 export function getSecretbundleOutput(args: GetSecretbundleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecretbundleResult> {
-    return pulumi.output(args).apply(a => getSecretbundle(a, opts))
+    return pulumi.output(args).apply((a: any) => getSecretbundle(a, opts))
 }
 
 /**

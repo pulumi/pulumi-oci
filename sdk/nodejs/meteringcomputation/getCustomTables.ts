@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCustomTables(args: GetCustomTablesArgs, opts?: pulumi.InvokeOptions): Promise<GetCustomTablesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:MeteringComputation/getCustomTables:getCustomTables", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -72,9 +70,25 @@ export interface GetCustomTablesResult {
      */
     readonly savedReportId: string;
 }
-
+/**
+ * This data source provides the list of Custom Tables in Oracle Cloud Infrastructure Metering Computation service.
+ *
+ * Returns the saved custom table list.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCustomTables = oci.MeteringComputation.getCustomTables({
+ *     compartmentId: _var.compartment_id,
+ *     savedReportId: oci_metering_computation_saved_report.test_saved_report.id,
+ * });
+ * ```
+ */
 export function getCustomTablesOutput(args: GetCustomTablesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCustomTablesResult> {
-    return pulumi.output(args).apply(a => getCustomTables(a, opts))
+    return pulumi.output(args).apply((a: any) => getCustomTables(a, opts))
 }
 
 /**

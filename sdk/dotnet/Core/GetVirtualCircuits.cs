@@ -41,7 +41,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetVirtualCircuitsResult> InvokeAsync(GetVirtualCircuitsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetVirtualCircuitsResult>("oci:Core/getVirtualCircuits:getVirtualCircuits", args ?? new GetVirtualCircuitsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetVirtualCircuitsResult>("oci:Core/getVirtualCircuits:getVirtualCircuits", args ?? new GetVirtualCircuitsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Virtual Circuits in Oracle Cloud Infrastructure Core service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetVirtualCircuitsResult> Invoke(GetVirtualCircuitsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetVirtualCircuitsResult>("oci:Core/getVirtualCircuits:getVirtualCircuits", args ?? new GetVirtualCircuitsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetVirtualCircuitsResult>("oci:Core/getVirtualCircuits:getVirtualCircuits", args ?? new GetVirtualCircuitsInvokeArgs(), options.WithDefaults());
     }
 
 

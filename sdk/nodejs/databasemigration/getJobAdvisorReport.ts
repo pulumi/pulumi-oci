@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getJobAdvisorReport(args: GetJobAdvisorReportArgs, opts?: pulumi.InvokeOptions): Promise<GetJobAdvisorReportResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseMigration/getJobAdvisorReport:getJobAdvisorReport", {
         "jobId": args.jobId,
     }, opts);
@@ -76,9 +74,24 @@ export interface GetJobAdvisorReportResult {
      */
     readonly result: string;
 }
-
+/**
+ * This data source provides details about a specific Job Advisor Report resource in Oracle Cloud Infrastructure Database Migration service.
+ *
+ * Get the Pre-Migration Advisor report details
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testJobAdvisorReport = oci.DatabaseMigration.getJobAdvisorReport({
+ *     jobId: oci_database_migration_job.test_job.id,
+ * });
+ * ```
+ */
 export function getJobAdvisorReportOutput(args: GetJobAdvisorReportOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJobAdvisorReportResult> {
-    return pulumi.output(args).apply(a => getJobAdvisorReport(a, opts))
+    return pulumi.output(args).apply((a: any) => getJobAdvisorReport(a, opts))
 }
 
 /**

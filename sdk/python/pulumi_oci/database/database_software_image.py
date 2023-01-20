@@ -224,7 +224,7 @@ class _DatabaseSoftwareImageState:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] image_shape_family: To what shape the image is meant for.
         :param pulumi.Input[str] image_type: The type of software image. Can be grid or database.
-        :param pulumi.Input[str] included_patches_summary: The patches included in the image and the version of the image
+        :param pulumi.Input[str] included_patches_summary: The patches included in the image and the version of the image.
         :param pulumi.Input[bool] is_upgrade_supported: True if this Database software image is supported for Upgrade.
         :param pulumi.Input[str] lifecycle_details: Detailed message for the lifecycle state.
         :param pulumi.Input[str] ls_inventory: The output from the OPatch lsInventory command, which is passed as a string.
@@ -380,7 +380,7 @@ class _DatabaseSoftwareImageState:
     @pulumi.getter(name="includedPatchesSummary")
     def included_patches_summary(self) -> Optional[pulumi.Input[str]]:
         """
-        The patches included in the image and the version of the image
+        The patches included in the image and the version of the image.
         """
         return pulumi.get(self, "included_patches_summary")
 
@@ -679,7 +679,7 @@ class DatabaseSoftwareImage(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] image_shape_family: To what shape the image is meant for.
         :param pulumi.Input[str] image_type: The type of software image. Can be grid or database.
-        :param pulumi.Input[str] included_patches_summary: The patches included in the image and the version of the image
+        :param pulumi.Input[str] included_patches_summary: The patches included in the image and the version of the image.
         :param pulumi.Input[bool] is_upgrade_supported: True if this Database software image is supported for Upgrade.
         :param pulumi.Input[str] lifecycle_details: Detailed message for the lifecycle state.
         :param pulumi.Input[str] ls_inventory: The output from the OPatch lsInventory command, which is passed as a string.
@@ -787,7 +787,7 @@ class DatabaseSoftwareImage(pulumi.CustomResource):
     @pulumi.getter(name="includedPatchesSummary")
     def included_patches_summary(self) -> pulumi.Output[str]:
         """
-        The patches included in the image and the version of the image
+        The patches included in the image and the version of the image.
         """
         return pulumi.get(self, "included_patches_summary")
 

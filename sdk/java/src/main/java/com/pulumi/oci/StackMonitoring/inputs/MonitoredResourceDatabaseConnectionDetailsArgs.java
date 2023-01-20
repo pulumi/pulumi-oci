@@ -106,6 +106,21 @@ public final class MonitoredResourceDatabaseConnectionDetailsArgs extends com.pu
         return this.serviceName;
     }
 
+    /**
+     * (Updatable) SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * 
+     */
+    @Import(name="sslSecretId")
+    private @Nullable Output<String> sslSecretId;
+
+    /**
+     * @return (Updatable) SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * 
+     */
+    public Optional<Output<String>> sslSecretId() {
+        return Optional.ofNullable(this.sslSecretId);
+    }
+
     private MonitoredResourceDatabaseConnectionDetailsArgs() {}
 
     private MonitoredResourceDatabaseConnectionDetailsArgs(MonitoredResourceDatabaseConnectionDetailsArgs $) {
@@ -115,6 +130,7 @@ public final class MonitoredResourceDatabaseConnectionDetailsArgs extends com.pu
         this.port = $.port;
         this.protocol = $.protocol;
         this.serviceName = $.serviceName;
+        this.sslSecretId = $.sslSecretId;
     }
 
     public static Builder builder() {
@@ -259,6 +275,27 @@ public final class MonitoredResourceDatabaseConnectionDetailsArgs extends com.pu
          */
         public Builder serviceName(String serviceName) {
             return serviceName(Output.of(serviceName));
+        }
+
+        /**
+         * @param sslSecretId (Updatable) SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sslSecretId(@Nullable Output<String> sslSecretId) {
+            $.sslSecretId = sslSecretId;
+            return this;
+        }
+
+        /**
+         * @param sslSecretId (Updatable) SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sslSecretId(String sslSecretId) {
+            return sslSecretId(Output.of(sslSecretId));
         }
 
         public MonitoredResourceDatabaseConnectionDetailsArgs build() {

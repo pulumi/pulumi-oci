@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getTags(args: GetTagsArgs, opts?: pulumi.InvokeOptions): Promise<GetTagsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getTags:getTags", {
         "filters": args.filters,
         "state": args.state,
@@ -72,9 +70,25 @@ export interface GetTagsResult {
      */
     readonly tags: outputs.Identity.GetTagsTag[];
 }
-
+/**
+ * This data source provides the list of Tags in Oracle Cloud Infrastructure Identity service.
+ *
+ * Lists the tag definitions in the specified tag namespace.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testTags = oci.Identity.getTags({
+ *     tagNamespaceId: oci_identity_tag_namespace.test_tag_namespace.id,
+ *     state: _var.tag_state,
+ * });
+ * ```
+ */
 export function getTagsOutput(args: GetTagsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTagsResult> {
-    return pulumi.output(args).apply(a => getTags(a, opts))
+    return pulumi.output(args).apply((a: any) => getTags(a, opts))
 }
 
 /**

@@ -31,10 +31,26 @@ namespace Pulumi.Oci.Mysql.Inputs
         public Input<string>? RecoveryPoint { get; set; }
 
         /// <summary>
-        /// The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup.
+        /// The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup. Use `IMPORTURL` for creating a new database from a URL Object Storage PAR.
         /// </summary>
         [Input("sourceType", required: true)]
         public Input<string> SourceType { get; set; } = null!;
+
+        [Input("sourceUrl")]
+        private Input<string>? _sourceUrl;
+
+        /// <summary>
+        /// The Pre-Authenticated Request (PAR) of a bucket/prefix or PAR of a @.manifest.json object from the Object Storage. Check [Using Pre-Authenticated Requests](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm) for information related to PAR creation. Please create PAR with "Permit object reads" access type and "Enable Object Listing" permission when using a bucket/prefix PAR. Please create PAR with "Permit object reads" access type when using a @.manifest.json object PAR.
+        /// </summary>
+        public Input<string>? SourceUrl
+        {
+            get => _sourceUrl;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _sourceUrl = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         public MysqlDbSystemSourceGetArgs()
         {

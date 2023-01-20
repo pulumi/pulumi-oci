@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getPublicIpPool(args: GetPublicIpPoolArgs, opts?: pulumi.InvokeOptions): Promise<GetPublicIpPoolResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getPublicIpPool:getPublicIpPool", {
         "publicIpPoolId": args.publicIpPoolId,
     }, opts);
@@ -79,9 +76,24 @@ export interface GetPublicIpPoolResult {
      */
     readonly timeCreated: string;
 }
-
+/**
+ * This data source provides details about a specific Public Ip Pool resource in Oracle Cloud Infrastructure Core service.
+ *
+ * Gets the specified `PublicIpPool` object. You must specify the object's [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testPublicIpPool = oci.Core.getPublicIpPool({
+ *     publicIpPoolId: oci_core_public_ip_pool.test_public_ip_pool.id,
+ * });
+ * ```
+ */
 export function getPublicIpPoolOutput(args: GetPublicIpPoolOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPublicIpPoolResult> {
-    return pulumi.output(args).apply(a => getPublicIpPool(a, opts))
+    return pulumi.output(args).apply((a: any) => getPublicIpPool(a, opts))
 }
 
 /**

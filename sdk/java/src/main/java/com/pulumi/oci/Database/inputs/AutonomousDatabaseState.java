@@ -1511,6 +1511,21 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
     }
 
     /**
+     * Clone from latest available backup timestamp.
+     * 
+     */
+    @Import(name="useLatestAvailableBackupTimeStamp")
+    private @Nullable Output<Boolean> useLatestAvailableBackupTimeStamp;
+
+    /**
+     * @return Clone from latest available backup timestamp.
+     * 
+     */
+    public Optional<Output<Boolean>> useLatestAvailableBackupTimeStamp() {
+        return Optional.ofNullable(this.useLatestAvailableBackupTimeStamp);
+    }
+
+    /**
      * The amount of storage that has been used, in terabytes.
      * 
      */
@@ -1656,6 +1671,7 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
         this.timeReclamationOfFreeAutonomousDatabase = $.timeReclamationOfFreeAutonomousDatabase;
         this.timeUntilReconnectCloneEnabled = $.timeUntilReconnectCloneEnabled;
         this.timestamp = $.timestamp;
+        this.useLatestAvailableBackupTimeStamp = $.useLatestAvailableBackupTimeStamp;
         this.usedDataStorageSizeInTbs = $.usedDataStorageSizeInTbs;
         this.vaultId = $.vaultId;
         this.whitelistedIps = $.whitelistedIps;
@@ -3896,6 +3912,27 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
          */
         public Builder timestamp(String timestamp) {
             return timestamp(Output.of(timestamp));
+        }
+
+        /**
+         * @param useLatestAvailableBackupTimeStamp Clone from latest available backup timestamp.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder useLatestAvailableBackupTimeStamp(@Nullable Output<Boolean> useLatestAvailableBackupTimeStamp) {
+            $.useLatestAvailableBackupTimeStamp = useLatestAvailableBackupTimeStamp;
+            return this;
+        }
+
+        /**
+         * @param useLatestAvailableBackupTimeStamp Clone from latest available backup timestamp.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder useLatestAvailableBackupTimeStamp(Boolean useLatestAvailableBackupTimeStamp) {
+            return useLatestAvailableBackupTimeStamp(Output.of(useLatestAvailableBackupTimeStamp));
         }
 
         /**

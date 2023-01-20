@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -36,11 +37,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMaskingPoliciesMaskingColumns(args: GetMaskingPoliciesMaskingColumnsArgs, opts?: pulumi.InvokeOptions): Promise<GetMaskingPoliciesMaskingColumnsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getMaskingPoliciesMaskingColumns:getMaskingPoliciesMaskingColumns", {
         "columnNames": args.columnNames,
         "dataTypes": args.dataTypes,
@@ -184,9 +182,38 @@ export interface GetMaskingPoliciesMaskingColumnsResult {
     readonly timeUpdatedGreaterThanOrEqualTo?: string;
     readonly timeUpdatedLessThan?: string;
 }
-
+/**
+ * This data source provides the list of Masking Policies Masking Columns in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Gets a list of masking columns present in the specified masking policy and based on the specified query parameters.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testMaskingPoliciesMaskingColumns = oci.DataSafe.getMaskingPoliciesMaskingColumns({
+ *     maskingPolicyId: oci_data_safe_masking_policy.test_masking_policy.id,
+ *     columnNames: _var.masking_policies_masking_column_column_name,
+ *     dataTypes: _var.masking_policies_masking_column_data_type,
+ *     isMaskingEnabled: _var.masking_policies_masking_column_is_masking_enabled,
+ *     isSeedRequired: _var.masking_policies_masking_column_is_seed_required,
+ *     maskingColumnGroups: _var.masking_policies_masking_column_masking_column_group,
+ *     maskingColumnLifecycleState: _var.masking_policies_masking_column_masking_column_lifecycle_state,
+ *     objects: _var.masking_policies_masking_column_object,
+ *     objectTypes: _var.masking_policies_masking_column_object_type,
+ *     schemaNames: _var.masking_policies_masking_column_schema_name,
+ *     sensitiveTypeId: oci_data_safe_sensitive_type.test_sensitive_type.id,
+ *     timeCreatedGreaterThanOrEqualTo: _var.masking_policies_masking_column_time_created_greater_than_or_equal_to,
+ *     timeCreatedLessThan: _var.masking_policies_masking_column_time_created_less_than,
+ *     timeUpdatedGreaterThanOrEqualTo: _var.masking_policies_masking_column_time_updated_greater_than_or_equal_to,
+ *     timeUpdatedLessThan: _var.masking_policies_masking_column_time_updated_less_than,
+ * });
+ * ```
+ */
 export function getMaskingPoliciesMaskingColumnsOutput(args: GetMaskingPoliciesMaskingColumnsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMaskingPoliciesMaskingColumnsResult> {
-    return pulumi.output(args).apply(a => getMaskingPoliciesMaskingColumns(a, opts))
+    return pulumi.output(args).apply((a: any) => getMaskingPoliciesMaskingColumns(a, opts))
 }
 
 /**

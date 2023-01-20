@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetConsoleHistoriesResult> InvokeAsync(GetConsoleHistoriesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetConsoleHistoriesResult>("oci:Core/getConsoleHistories:getConsoleHistories", args ?? new GetConsoleHistoriesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetConsoleHistoriesResult>("oci:Core/getConsoleHistories:getConsoleHistories", args ?? new GetConsoleHistoriesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Console Histories in Oracle Cloud Infrastructure Core service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetConsoleHistoriesResult> Invoke(GetConsoleHistoriesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetConsoleHistoriesResult>("oci:Core/getConsoleHistories:getConsoleHistories", args ?? new GetConsoleHistoriesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetConsoleHistoriesResult>("oci:Core/getConsoleHistories:getConsoleHistories", args ?? new GetConsoleHistoriesInvokeArgs(), options.WithDefaults());
     }
 
 

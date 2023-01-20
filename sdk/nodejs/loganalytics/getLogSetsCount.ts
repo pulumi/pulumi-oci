@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLogSetsCount(args: GetLogSetsCountArgs, opts?: pulumi.InvokeOptions): Promise<GetLogSetsCountResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LogAnalytics/getLogSetsCount:getLogSetsCount", {
         "namespace": args.namespace,
     }, opts);
@@ -55,9 +52,24 @@ export interface GetLogSetsCountResult {
     readonly logSetsCount: string;
     readonly namespace: string;
 }
-
+/**
+ * This data source provides details about a specific Log Sets Count resource in Oracle Cloud Infrastructure Log Analytics service.
+ *
+ * This API returns the count of distinct log sets.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testLogSetsCount = oci.LogAnalytics.getLogSetsCount({
+ *     namespace: _var.log_sets_count_namespace,
+ * });
+ * ```
+ */
 export function getLogSetsCountOutput(args: GetLogSetsCountOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogSetsCountResult> {
-    return pulumi.output(args).apply(a => getLogSetsCount(a, opts))
+    return pulumi.output(args).apply((a: any) => getLogSetsCount(a, opts))
 }
 
 /**

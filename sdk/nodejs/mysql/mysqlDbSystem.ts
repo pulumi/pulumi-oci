@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -134,7 +135,7 @@ export class MysqlDbSystem extends pulumi.CustomResource {
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
-     * The OCID of the Configuration to be used for this DB System.
+     * (Updatable) The OCID of the Configuration to be used for this DB System.
      */
     public readonly configurationId!: pulumi.Output<string>;
     /**
@@ -146,7 +147,7 @@ export class MysqlDbSystem extends pulumi.CustomResource {
      */
     public /*out*/ readonly currentPlacements!: pulumi.Output<outputs.Mysql.MysqlDbSystemCurrentPlacement[]>;
     /**
-     * Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
+     * (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
      */
     public readonly dataStorageSizeInGb!: pulumi.Output<number>;
     /**
@@ -206,11 +207,11 @@ export class MysqlDbSystem extends pulumi.CustomResource {
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
-     * (Updatable) The Maintenance Policy for the DB System. `maintenance` and `backupPolicy` cannot be updated in the same request.
+     * (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backupPolicy` cannot be updated in the same request.
      */
     public readonly maintenance!: pulumi.Output<outputs.Mysql.MysqlDbSystemMaintenance>;
     /**
-     * Name of the MySQL Version in use for the DB System.
+     * The specific MySQL version identifier.
      */
     public readonly mysqlVersion!: pulumi.Output<string>;
     /**
@@ -226,7 +227,7 @@ export class MysqlDbSystem extends pulumi.CustomResource {
      */
     public readonly portX!: pulumi.Output<number>;
     /**
-     * The name of the shape. The shape determines the resources allocated
+     * (Updatable) The name of the shape. The shape determines the resources allocated
      * * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
      */
     public readonly shapeName!: pulumi.Output<string>;
@@ -319,7 +320,7 @@ export class MysqlDbSystem extends pulumi.CustomResource {
             if ((!args || args.subnetId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'subnetId'");
             }
-            resourceInputs["adminPassword"] = args ? args.adminPassword : undefined;
+            resourceInputs["adminPassword"] = args?.adminPassword ? pulumi.secret(args.adminPassword) : undefined;
             resourceInputs["adminUsername"] = args ? args.adminUsername : undefined;
             resourceInputs["availabilityDomain"] = args ? args.availabilityDomain : undefined;
             resourceInputs["backupPolicy"] = args ? args.backupPolicy : undefined;
@@ -358,6 +359,8 @@ export class MysqlDbSystem extends pulumi.CustomResource {
             resourceInputs["timeUpdated"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["adminPassword"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(MysqlDbSystem.__pulumiType, name, resourceInputs, opts);
     }
 }
@@ -395,7 +398,7 @@ export interface MysqlDbSystemState {
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * The OCID of the Configuration to be used for this DB System.
+     * (Updatable) The OCID of the Configuration to be used for this DB System.
      */
     configurationId?: pulumi.Input<string>;
     /**
@@ -407,7 +410,7 @@ export interface MysqlDbSystemState {
      */
     currentPlacements?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlDbSystemCurrentPlacement>[]>;
     /**
-     * Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
+     * (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
      */
     dataStorageSizeInGb?: pulumi.Input<number>;
     /**
@@ -467,11 +470,11 @@ export interface MysqlDbSystemState {
      */
     lifecycleDetails?: pulumi.Input<string>;
     /**
-     * (Updatable) The Maintenance Policy for the DB System. `maintenance` and `backupPolicy` cannot be updated in the same request.
+     * (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backupPolicy` cannot be updated in the same request.
      */
     maintenance?: pulumi.Input<inputs.Mysql.MysqlDbSystemMaintenance>;
     /**
-     * Name of the MySQL Version in use for the DB System.
+     * The specific MySQL version identifier.
      */
     mysqlVersion?: pulumi.Input<string>;
     /**
@@ -487,7 +490,7 @@ export interface MysqlDbSystemState {
      */
     portX?: pulumi.Input<number>;
     /**
-     * The name of the shape. The shape determines the resources allocated
+     * (Updatable) The name of the shape. The shape determines the resources allocated
      * * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
      */
     shapeName?: pulumi.Input<string>;
@@ -542,7 +545,7 @@ export interface MysqlDbSystemArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * The OCID of the Configuration to be used for this DB System.
+     * (Updatable) The OCID of the Configuration to be used for this DB System.
      */
     configurationId?: pulumi.Input<string>;
     /**
@@ -550,7 +553,7 @@ export interface MysqlDbSystemArgs {
      */
     crashRecovery?: pulumi.Input<string>;
     /**
-     * Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
+     * (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
      */
     dataStorageSizeInGb?: pulumi.Input<number>;
     /**
@@ -590,11 +593,11 @@ export interface MysqlDbSystemArgs {
      */
     isHighlyAvailable?: pulumi.Input<boolean>;
     /**
-     * (Updatable) The Maintenance Policy for the DB System. `maintenance` and `backupPolicy` cannot be updated in the same request.
+     * (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backupPolicy` cannot be updated in the same request.
      */
     maintenance?: pulumi.Input<inputs.Mysql.MysqlDbSystemMaintenance>;
     /**
-     * Name of the MySQL Version in use for the DB System.
+     * The specific MySQL version identifier.
      */
     mysqlVersion?: pulumi.Input<string>;
     /**
@@ -606,7 +609,7 @@ export interface MysqlDbSystemArgs {
      */
     portX?: pulumi.Input<number>;
     /**
-     * The name of the shape. The shape determines the resources allocated
+     * (Updatable) The name of the shape. The shape determines the resources allocated
      * * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
      */
     shapeName: pulumi.Input<string>;

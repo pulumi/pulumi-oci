@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCnvDnsResolverAssociation(args: GetCnvDnsResolverAssociationArgs, opts?: pulumi.InvokeOptions): Promise<GetCnvDnsResolverAssociationResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getCnvDnsResolverAssociation:getCnvDnsResolverAssociation", {
         "vcnId": args.vcnId,
     }, opts);
@@ -60,9 +57,24 @@ export interface GetCnvDnsResolverAssociationResult {
      */
     readonly vcnId: string;
 }
-
+/**
+ * This data source provides details about a specific Vcn Dns Resolver Association resource in Oracle Cloud Infrastructure Core service.
+ *
+ * Get the associated DNS resolver information with a vcn
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testVcnDnsResolverAssociation = oci.Core.getCnvDnsResolverAssociation({
+ *     vcnId: oci_core_vcn.test_vcn.id,
+ * });
+ * ```
+ */
 export function getCnvDnsResolverAssociationOutput(args: GetCnvDnsResolverAssociationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCnvDnsResolverAssociationResult> {
-    return pulumi.output(args).apply(a => getCnvDnsResolverAssociation(a, opts))
+    return pulumi.output(args).apply((a: any) => getCnvDnsResolverAssociation(a, opts))
 }
 
 /**

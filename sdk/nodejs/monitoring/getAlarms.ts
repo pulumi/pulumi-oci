@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -30,11 +31,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAlarms(args: GetAlarmsArgs, opts?: pulumi.InvokeOptions): Promise<GetAlarmsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Monitoring/getAlarms:getAlarms", {
         "compartmentId": args.compartmentId,
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
@@ -94,9 +92,32 @@ export interface GetAlarmsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Alarms in Oracle Cloud Infrastructure Monitoring service.
+ *
+ * Lists the alarms for the specified compartment.
+ * For important limits information, see [Limits on Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#Limits).
+ *
+ * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
+ * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
+ * or transactions, per second (TPS) for a given tenancy.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAlarms = oci.Monitoring.getAlarms({
+ *     compartmentId: _var.compartment_id,
+ *     compartmentIdInSubtree: _var.alarm_compartment_id_in_subtree,
+ *     displayName: _var.alarm_display_name,
+ *     state: _var.alarm_state,
+ * });
+ * ```
+ */
 export function getAlarmsOutput(args: GetAlarmsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAlarmsResult> {
-    return pulumi.output(args).apply(a => getAlarms(a, opts))
+    return pulumi.output(args).apply((a: any) => getAlarms(a, opts))
 }
 
 /**

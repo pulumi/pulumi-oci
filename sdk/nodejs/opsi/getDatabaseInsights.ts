@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -34,11 +35,8 @@ import * as utilities from "../utilities";
  */
 export function getDatabaseInsights(args?: GetDatabaseInsightsArgs, opts?: pulumi.InvokeOptions): Promise<GetDatabaseInsightsResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Opsi/getDatabaseInsights:getDatabaseInsights", {
         "compartmentId": args.compartmentId,
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
@@ -154,9 +152,35 @@ export interface GetDatabaseInsightsResult {
      */
     readonly statuses?: string[];
 }
-
+/**
+ * This data source provides the list of Database Insights in Oracle Cloud Infrastructure Opsi service.
+ *
+ * Gets a list of database insights based on the query parameters specified. Either compartmentId or id query parameter must be specified.
+ * When both compartmentId and compartmentIdInSubtree are specified, a list of database insights in that compartment and in all sub-compartments will be returned.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDatabaseInsights = oci.Opsi.getDatabaseInsights({
+ *     compartmentId: _var.compartment_id,
+ *     compartmentIdInSubtree: _var.database_insight_compartment_id_in_subtree,
+ *     databaseIds: oci_database_database.test_database.id,
+ *     databaseTypes: _var.database_insight_database_type,
+ *     enterpriseManagerBridgeId: oci_opsi_enterprise_manager_bridge.test_enterprise_manager_bridge.id,
+ *     exadataInsightId: oci_opsi_exadata_insight.test_exadata_insight.id,
+ *     fields: _var.database_insight_fields,
+ *     id: _var.database_insight_id,
+ *     opsiPrivateEndpointId: oci_dataflow_private_endpoint.test_private_endpoint.id,
+ *     states: _var.database_insight_state,
+ *     statuses: _var.database_insight_status,
+ * });
+ * ```
+ */
 export function getDatabaseInsightsOutput(args?: GetDatabaseInsightsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatabaseInsightsResult> {
-    return pulumi.output(args).apply(a => getDatabaseInsights(a, opts))
+    return pulumi.output(args).apply((a: any) => getDatabaseInsights(a, opts))
 }
 
 /**

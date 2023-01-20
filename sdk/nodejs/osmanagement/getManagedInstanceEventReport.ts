@@ -24,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedInstanceEventReport(args: GetManagedInstanceEventReportArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedInstanceEventReportResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsManagement/getManagedInstanceEventReport:getManagedInstanceEventReport", {
         "compartmentId": args.compartmentId,
         "latestTimestampGreaterThanOrEqualTo": args.latestTimestampGreaterThanOrEqualTo,
@@ -73,9 +70,27 @@ export interface GetManagedInstanceEventReportResult {
     readonly latestTimestampLessThan?: string;
     readonly managedInstanceId: string;
 }
-
+/**
+ * This data source provides details about a specific Managed Instance Event Report resource in Oracle Cloud Infrastructure OS Management service.
+ *
+ * Get summary information about events on this instance.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testManagedInstanceEventReport = oci.OsManagement.getManagedInstanceEventReport({
+ *     compartmentId: _var.compartment_id,
+ *     managedInstanceId: oci_osmanagement_managed_instance.test_managed_instance.id,
+ *     latestTimestampGreaterThanOrEqualTo: _var.managed_instance_event_report_latest_timestamp_greater_than_or_equal_to,
+ *     latestTimestampLessThan: _var.managed_instance_event_report_latest_timestamp_less_than,
+ * });
+ * ```
+ */
 export function getManagedInstanceEventReportOutput(args: GetManagedInstanceEventReportOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedInstanceEventReportResult> {
-    return pulumi.output(args).apply(a => getManagedInstanceEventReport(a, opts))
+    return pulumi.output(args).apply((a: any) => getManagedInstanceEventReport(a, opts))
 }
 
 /**

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -27,11 +28,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAnnouncementSubscriptions(args: GetAnnouncementSubscriptionsArgs, opts?: pulumi.InvokeOptions): Promise<GetAnnouncementSubscriptionsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:AnnouncementsService/getAnnouncementSubscriptions:getAnnouncementSubscriptions", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -90,9 +88,29 @@ export interface GetAnnouncementSubscriptionsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Announcement Subscriptions in Oracle Cloud Infrastructure Announcements Service service.
+ *
+ * Gets a list of all announcement subscriptions in the specified compartment.
+ *
+ * This call is subject to an Announcements limit that applies to the total number of requests across all read or write operations. Announcements might throttle this call to reject an otherwise valid request when the total rate of operations exceeds 20 requests per second for a given user. The service might also throttle this call to reject an otherwise valid request when the total rate of operations exceeds 100 requests per second for a given tenancy.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAnnouncementSubscriptions = oci.AnnouncementsService.getAnnouncementSubscriptions({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.announcement_subscription_display_name,
+ *     id: _var.announcement_subscription_id,
+ *     state: _var.announcement_subscription_state,
+ * });
+ * ```
+ */
 export function getAnnouncementSubscriptionsOutput(args: GetAnnouncementSubscriptionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAnnouncementSubscriptionsResult> {
-    return pulumi.output(args).apply(a => getAnnouncementSubscriptions(a, opts))
+    return pulumi.output(args).apply((a: any) => getAnnouncementSubscriptions(a, opts))
 }
 
 /**

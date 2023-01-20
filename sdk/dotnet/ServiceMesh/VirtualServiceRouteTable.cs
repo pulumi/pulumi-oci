@@ -43,6 +43,7 @@ namespace Pulumi.Oci.ServiceMesh
     ///                 IsGrpc = @var.Virtual_service_route_table_route_rules_is_grpc,
     ///                 Path = @var.Virtual_service_route_table_route_rules_path,
     ///                 PathType = @var.Virtual_service_route_table_route_rules_path_type,
+    ///                 RequestTimeoutInMs = @var.Virtual_service_route_table_route_rules_request_timeout_in_ms,
     ///             },
     ///         },
     ///         VirtualServiceId = oci_service_mesh_virtual_service.Test_virtual_service.Id,

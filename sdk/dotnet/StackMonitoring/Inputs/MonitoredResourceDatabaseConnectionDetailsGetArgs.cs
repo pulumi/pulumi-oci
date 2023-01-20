@@ -48,6 +48,12 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         [Input("serviceName", required: true)]
         public Input<string> ServiceName { get; set; } = null!;
 
+        /// <summary>
+        /// (Updatable) SSL Secret Identifier for TCPS connector in Oracle Cloud Infrastructure Vault[OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+        /// </summary>
+        [Input("sslSecretId")]
+        public Input<string>? SslSecretId { get; set; }
+
         public MonitoredResourceDatabaseConnectionDetailsGetArgs()
         {
         }

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getIamWorkRequestLogs(args: GetIamWorkRequestLogsArgs, opts?: pulumi.InvokeOptions): Promise<GetIamWorkRequestLogsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getIamWorkRequestLogs:getIamWorkRequestLogs", {
         "filters": args.filters,
         "iamWorkRequestId": args.iamWorkRequestId,
@@ -63,9 +61,28 @@ export interface GetIamWorkRequestLogsResult {
      */
     readonly id: string;
 }
-
+/**
+ * This data source provides the list of Iam Work Request Logs in Oracle Cloud Infrastructure Identity service.
+ *
+ * Gets logs for a specified IAM work request. For asynchronous operations in Identity and Access Management service, opc-work-request-id header values contains
+ * iam work request id that can be provided in this API to track the current status of the operation.
+ *
+ * - If workrequest exists, returns 202 ACCEPTED
+ * - If workrequest does not exist, returns 404 NOT FOUND
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testIamWorkRequestLogs = oci.Identity.getIamWorkRequestLogs({
+ *     iamWorkRequestId: oci_identity_iam_work_request.test_iam_work_request.id,
+ * });
+ * ```
+ */
 export function getIamWorkRequestLogsOutput(args: GetIamWorkRequestLogsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetIamWorkRequestLogsResult> {
-    return pulumi.output(args).apply(a => getIamWorkRequestLogs(a, opts))
+    return pulumi.output(args).apply((a: any) => getIamWorkRequestLogs(a, opts))
 }
 
 /**

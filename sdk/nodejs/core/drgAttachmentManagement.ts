@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -89,7 +90,7 @@ export class DrgAttachmentManagement extends pulumi.CustomResource {
      */
     public readonly drgRouteTableId!: pulumi.Output<string>;
     /**
-     * - The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
      */
     public readonly exportDrgRouteDistributionId!: pulumi.Output<string>;
     /**
@@ -113,7 +114,7 @@ export class DrgAttachmentManagement extends pulumi.CustomResource {
      */
     public readonly removeExportDrgRouteDistributionTrigger!: pulumi.Output<boolean | undefined>;
     /**
-     * (Updatable)- The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the DRG attachment is using.
+     * The OCID of the route table the DRG attachment is using.
      */
     public readonly routeTableId!: pulumi.Output<string>;
     /**
@@ -220,7 +221,7 @@ export interface DrgAttachmentManagementState {
      */
     drgRouteTableId?: pulumi.Input<string>;
     /**
-     * - The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
      */
     exportDrgRouteDistributionId?: pulumi.Input<string>;
     /**
@@ -244,7 +245,7 @@ export interface DrgAttachmentManagementState {
      */
     removeExportDrgRouteDistributionTrigger?: pulumi.Input<boolean>;
     /**
-     * (Updatable)- The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the DRG attachment is using.
+     * The OCID of the route table the DRG attachment is using.
      */
     routeTableId?: pulumi.Input<string>;
     /**
@@ -290,7 +291,7 @@ export interface DrgAttachmentManagementArgs {
      */
     drgRouteTableId?: pulumi.Input<string>;
     /**
-     * - The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
      */
     exportDrgRouteDistributionId?: pulumi.Input<string>;
     /**
@@ -310,7 +311,7 @@ export interface DrgAttachmentManagementArgs {
      */
     removeExportDrgRouteDistributionTrigger?: pulumi.Input<boolean>;
     /**
-     * (Updatable)- The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the DRG attachment is using.
+     * The OCID of the route table the DRG attachment is using.
      */
     routeTableId?: pulumi.Input<string>;
     /**

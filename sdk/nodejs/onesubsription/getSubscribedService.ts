@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSubscribedService(args: GetSubscribedServiceArgs, opts?: pulumi.InvokeOptions): Promise<GetSubscribedServiceResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OneSubsription/getSubscribedService:getSubscribedService", {
         "fields": args.fields,
         "subscribedServiceId": args.subscribedServiceId,
@@ -502,9 +500,25 @@ export interface GetSubscribedServiceResult {
      */
     readonly usedAmount: string;
 }
-
+/**
+ * This data source provides details about a specific Subscribed Service resource in Oracle Cloud Infrastructure Onesubscription service.
+ *
+ * This API returns the subscribed service details corresponding to the id provided
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSubscribedService = oci.OneSubsription.getSubscribedService({
+ *     subscribedServiceId: oci_onesubscription_subscribed_service.test_subscribed_service.id,
+ *     fields: _var.subscribed_service_fields,
+ * });
+ * ```
+ */
 export function getSubscribedServiceOutput(args: GetSubscribedServiceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSubscribedServiceResult> {
-    return pulumi.output(args).apply(a => getSubscribedService(a, opts))
+    return pulumi.output(args).apply((a: any) => getSubscribedService(a, opts))
 }
 
 /**

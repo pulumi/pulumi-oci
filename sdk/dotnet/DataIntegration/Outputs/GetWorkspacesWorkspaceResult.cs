@@ -37,6 +37,15 @@ namespace Pulumi.Oci.DataIntegration.Outputs
         /// The DNS zone of the custom DNS to use to resolve names.
         /// </summary>
         public readonly string DnsServerZone;
+        public readonly string EndpointCompartmentId;
+        /// <summary>
+        /// DCMS endpoint associated with the container/workspace. Returns null if there is none.
+        /// </summary>
+        public readonly string EndpointId;
+        /// <summary>
+        /// Name of the private endpoint associated with the container/workspace. Returns null if there is none.
+        /// </summary>
+        public readonly string EndpointName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
@@ -51,6 +60,12 @@ namespace Pulumi.Oci.DataIntegration.Outputs
         /// </summary>
         public readonly bool IsPrivateNetworkEnabled;
         public readonly int QuiesceTimeout;
+        public readonly string RegistryCompartmentId;
+        /// <summary>
+        /// DCMS registry associated with the container/workspace. Returns null if there is none.
+        /// </summary>
+        public readonly string RegistryId;
+        public readonly string RegistryName;
         /// <summary>
         /// The lifecycle state of a resource. When specified, the operation only returns resources that match the given lifecycle state. When not specified, all lifecycle states are processed as a match.
         /// </summary>
@@ -90,6 +105,12 @@ namespace Pulumi.Oci.DataIntegration.Outputs
 
             string dnsServerZone,
 
+            string endpointCompartmentId,
+
+            string endpointId,
+
+            string endpointName,
+
             ImmutableDictionary<string, object> freeformTags,
 
             string id,
@@ -99,6 +120,12 @@ namespace Pulumi.Oci.DataIntegration.Outputs
             bool isPrivateNetworkEnabled,
 
             int quiesceTimeout,
+
+            string registryCompartmentId,
+
+            string registryId,
+
+            string registryName,
 
             string state,
 
@@ -118,11 +145,17 @@ namespace Pulumi.Oci.DataIntegration.Outputs
             DisplayName = displayName;
             DnsServerIp = dnsServerIp;
             DnsServerZone = dnsServerZone;
+            EndpointCompartmentId = endpointCompartmentId;
+            EndpointId = endpointId;
+            EndpointName = endpointName;
             FreeformTags = freeformTags;
             Id = id;
             IsForceOperation = isForceOperation;
             IsPrivateNetworkEnabled = isPrivateNetworkEnabled;
             QuiesceTimeout = quiesceTimeout;
+            RegistryCompartmentId = registryCompartmentId;
+            RegistryId = registryId;
+            RegistryName = registryName;
             State = state;
             StateMessage = stateMessage;
             SubnetId = subnetId;

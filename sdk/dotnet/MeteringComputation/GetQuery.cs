@@ -39,7 +39,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetQueryResult> InvokeAsync(GetQueryArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetQueryResult>("oci:MeteringComputation/getQuery:getQuery", args ?? new GetQueryArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetQueryResult>("oci:MeteringComputation/getQuery:getQuery", args ?? new GetQueryArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Query resource in Oracle Cloud Infrastructure Metering Computation service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetQueryResult> Invoke(GetQueryInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetQueryResult>("oci:MeteringComputation/getQuery:getQuery", args ?? new GetQueryInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetQueryResult>("oci:MeteringComputation/getQuery:getQuery", args ?? new GetQueryInvokeArgs(), options.WithDefaults());
     }
 
 

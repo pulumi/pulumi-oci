@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getEmailDomain(args: GetEmailDomainArgs, opts?: pulumi.InvokeOptions): Promise<GetEmailDomainResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Email/getEmailDomain:getEmailDomain", {
         "emailDomainId": args.emailDomainId,
     }, opts);
@@ -91,9 +88,24 @@ export interface GetEmailDomainResult {
      */
     readonly timeCreated: string;
 }
-
+/**
+ * This data source provides details about a specific Email Domain resource in Oracle Cloud Infrastructure Email service.
+ *
+ * Retrieves the specified email domain.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testEmailDomain = oci.Email.getEmailDomain({
+ *     emailDomainId: oci_email_email_domain.test_email_domain.id,
+ * });
+ * ```
+ */
 export function getEmailDomainOutput(args: GetEmailDomainOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEmailDomainResult> {
-    return pulumi.output(args).apply(a => getEmailDomain(a, opts))
+    return pulumi.output(args).apply((a: any) => getEmailDomain(a, opts))
 }
 
 /**

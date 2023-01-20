@@ -43,7 +43,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetTriggersResult> InvokeAsync(GetTriggersArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetTriggersResult>("oci:DevOps/getTriggers:getTriggers", args ?? new GetTriggersArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetTriggersResult>("oci:DevOps/getTriggers:getTriggers", args ?? new GetTriggersArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Triggers in Oracle Cloud Infrastructure Devops service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetTriggersResult> Invoke(GetTriggersInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetTriggersResult>("oci:DevOps/getTriggers:getTriggers", args ?? new GetTriggersInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetTriggersResult>("oci:DevOps/getTriggers:getTriggers", args ?? new GetTriggersInvokeArgs(), options.WithDefaults());
     }
 
 

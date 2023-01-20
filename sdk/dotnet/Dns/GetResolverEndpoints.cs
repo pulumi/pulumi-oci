@@ -45,7 +45,7 @@ namespace Pulumi.Oci.Dns
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetResolverEndpointsResult> InvokeAsync(GetResolverEndpointsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetResolverEndpointsResult>("oci:Dns/getResolverEndpoints:getResolverEndpoints", args ?? new GetResolverEndpointsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetResolverEndpointsResult>("oci:Dns/getResolverEndpoints:getResolverEndpoints", args ?? new GetResolverEndpointsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Resolver Endpoints in Oracle Cloud Infrastructure DNS service.
@@ -81,7 +81,7 @@ namespace Pulumi.Oci.Dns
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetResolverEndpointsResult> Invoke(GetResolverEndpointsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetResolverEndpointsResult>("oci:Dns/getResolverEndpoints:getResolverEndpoints", args ?? new GetResolverEndpointsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetResolverEndpointsResult>("oci:Dns/getResolverEndpoints:getResolverEndpoints", args ?? new GetResolverEndpointsInvokeArgs(), options.WithDefaults());
     }
 
 

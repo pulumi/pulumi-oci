@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDedicatedVmHostShapes(args: GetDedicatedVmHostShapesArgs, opts?: pulumi.InvokeOptions): Promise<GetDedicatedVmHostShapesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getDedicatedVmHostShapes:getDedicatedVmHostShapes", {
         "availabilityDomain": args.availabilityDomain,
         "compartmentId": args.compartmentId,
@@ -76,9 +74,26 @@ export interface GetDedicatedVmHostShapesResult {
     readonly id: string;
     readonly instanceShapeName?: string;
 }
-
+/**
+ * This data source provides the list of Dedicated Vm Host Shapes in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the shapes that can be used to launch a dedicated virtual machine host within the specified compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDedicatedVmHostShapes = oci.Core.getDedicatedVmHostShapes({
+ *     compartmentId: _var.compartment_id,
+ *     availabilityDomain: _var.dedicated_vm_host_shape_availability_domain,
+ *     instanceShapeName: _var.dedicated_vm_host_shape_instance_shape_name,
+ * });
+ * ```
+ */
 export function getDedicatedVmHostShapesOutput(args: GetDedicatedVmHostShapesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDedicatedVmHostShapesResult> {
-    return pulumi.output(args).apply(a => getDedicatedVmHostShapes(a, opts))
+    return pulumi.output(args).apply((a: any) => getDedicatedVmHostShapes(a, opts))
 }
 
 /**

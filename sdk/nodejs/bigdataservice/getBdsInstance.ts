@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getBdsInstance(args: GetBdsInstanceArgs, opts?: pulumi.InvokeOptions): Promise<GetBdsInstanceResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:BigDataService/getBdsInstance:getBdsInstance", {
         "bdsInstanceId": args.bdsInstanceId,
     }, opts);
@@ -60,6 +58,10 @@ export interface GetBdsInstanceResult {
      * Specific info about a Hadoop cluster
      */
     readonly clusterDetails: outputs.BigDataService.GetBdsInstanceClusterDetail[];
+    /**
+     * Profile of the Big Data Service cluster.
+     */
+    readonly clusterProfile: string;
     readonly clusterPublicKey: string;
     /**
      * Version of the Hadoop distribution.
@@ -82,6 +84,7 @@ export interface GetBdsInstanceResult {
      * The name of the node.
      */
     readonly displayName: string;
+    readonly edgeNodes: outputs.BigDataService.GetBdsInstanceEdgeNode[];
     /**
      * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`
      */
@@ -94,6 +97,7 @@ export interface GetBdsInstanceResult {
      * Boolean flag specifying whether or not Cloud SQL should be configured.
      */
     readonly isCloudSqlConfigured: boolean;
+    readonly isForceStopJobs: boolean;
     /**
      * Boolean flag specifying whether or not the cluster is highly available (HA)
      */
@@ -135,9 +139,24 @@ export interface GetBdsInstanceResult {
     readonly utilNodes: outputs.BigDataService.GetBdsInstanceUtilNode[];
     readonly workerNodes: outputs.BigDataService.GetBdsInstanceWorkerNode[];
 }
-
+/**
+ * This data source provides details about a specific Bds Instance resource in Oracle Cloud Infrastructure Big Data Service service.
+ *
+ * Returns information about the Big Data Service cluster identified by the given ID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testBdsInstance = oci.BigDataService.getBdsInstance({
+ *     bdsInstanceId: oci_bds_bds_instance.test_bds_instance.id,
+ * });
+ * ```
+ */
 export function getBdsInstanceOutput(args: GetBdsInstanceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBdsInstanceResult> {
-    return pulumi.output(args).apply(a => getBdsInstance(a, opts))
+    return pulumi.output(args).apply((a: any) => getBdsInstance(a, opts))
 }
 
 /**

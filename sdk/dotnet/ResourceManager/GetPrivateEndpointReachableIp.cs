@@ -40,7 +40,7 @@ namespace Pulumi.Oci.ResourceManager
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetPrivateEndpointReachableIpResult> InvokeAsync(GetPrivateEndpointReachableIpArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetPrivateEndpointReachableIpResult>("oci:ResourceManager/getPrivateEndpointReachableIp:getPrivateEndpointReachableIp", args ?? new GetPrivateEndpointReachableIpArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetPrivateEndpointReachableIpResult>("oci:ResourceManager/getPrivateEndpointReachableIp:getPrivateEndpointReachableIp", args ?? new GetPrivateEndpointReachableIpArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Private Endpoint Reachable Ip resource in Oracle Cloud Infrastructure Resource Manager service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.ResourceManager
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetPrivateEndpointReachableIpResult> Invoke(GetPrivateEndpointReachableIpInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetPrivateEndpointReachableIpResult>("oci:ResourceManager/getPrivateEndpointReachableIp:getPrivateEndpointReachableIp", args ?? new GetPrivateEndpointReachableIpInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetPrivateEndpointReachableIpResult>("oci:ResourceManager/getPrivateEndpointReachableIp:getPrivateEndpointReachableIp", args ?? new GetPrivateEndpointReachableIpInvokeArgs(), options.WithDefaults());
     }
 
 

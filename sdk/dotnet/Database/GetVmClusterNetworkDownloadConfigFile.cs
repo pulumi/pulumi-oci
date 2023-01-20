@@ -41,7 +41,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetVmClusterNetworkDownloadConfigFileResult> InvokeAsync(GetVmClusterNetworkDownloadConfigFileArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetVmClusterNetworkDownloadConfigFileResult>("oci:Database/getVmClusterNetworkDownloadConfigFile:getVmClusterNetworkDownloadConfigFile", args ?? new GetVmClusterNetworkDownloadConfigFileArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetVmClusterNetworkDownloadConfigFileResult>("oci:Database/getVmClusterNetworkDownloadConfigFile:getVmClusterNetworkDownloadConfigFile", args ?? new GetVmClusterNetworkDownloadConfigFileArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Vm Cluster Network Download Config File resource in Oracle Cloud Infrastructure Database service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetVmClusterNetworkDownloadConfigFileResult> Invoke(GetVmClusterNetworkDownloadConfigFileInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetVmClusterNetworkDownloadConfigFileResult>("oci:Database/getVmClusterNetworkDownloadConfigFile:getVmClusterNetworkDownloadConfigFile", args ?? new GetVmClusterNetworkDownloadConfigFileInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetVmClusterNetworkDownloadConfigFileResult>("oci:Database/getVmClusterNetworkDownloadConfigFile:getVmClusterNetworkDownloadConfigFile", args ?? new GetVmClusterNetworkDownloadConfigFileInvokeArgs(), options.WithDefaults());
     }
 
 

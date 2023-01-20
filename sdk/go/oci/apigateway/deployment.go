@@ -47,10 +47,12 @@ import (
 //						Authentication: &apigateway.DeploymentSpecificationRequestPoliciesAuthenticationArgs{
 //							Type:                     pulumi.Any(_var.Deployment_specification_request_policies_authentication_type),
 //							Audiences:                pulumi.Any(_var.Deployment_specification_request_policies_authentication_audiences),
+//							CacheKeys:                pulumi.Any(_var.Deployment_specification_request_policies_authentication_cache_key),
 //							FunctionId:               pulumi.Any(oci_functions_function.Test_function.Id),
 //							IsAnonymousAccessAllowed: pulumi.Any(_var.Deployment_specification_request_policies_authentication_is_anonymous_access_allowed),
 //							Issuers:                  pulumi.Any(_var.Deployment_specification_request_policies_authentication_issuers),
 //							MaxClockSkewInSeconds:    pulumi.Any(_var.Deployment_specification_request_policies_authentication_max_clock_skew_in_seconds),
+//							Parameters:               pulumi.Any(_var.Deployment_specification_request_policies_authentication_parameters),
 //							PublicKeys: &apigateway.DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysArgs{
 //								Type:                pulumi.Any(_var.Deployment_specification_request_policies_authentication_public_keys_type),
 //								IsSslVerifyDisabled: pulumi.Any(_var.Deployment_specification_request_policies_authentication_public_keys_is_ssl_verify_disabled),
@@ -73,6 +75,96 @@ import (
 //							TokenAuthScheme: pulumi.Any(_var.Deployment_specification_request_policies_authentication_token_auth_scheme),
 //							TokenHeader:     pulumi.Any(_var.Deployment_specification_request_policies_authentication_token_header),
 //							TokenQueryParam: pulumi.Any(_var.Deployment_specification_request_policies_authentication_token_query_param),
+//							ValidationFailurePolicy: &apigateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyArgs{
+//								Type: pulumi.Any(_var.Deployment_specification_request_policies_authentication_validation_failure_policy_type),
+//								ClientDetails: &apigateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyClientDetailsArgs{
+//									Type:                      pulumi.Any(_var.Deployment_specification_request_policies_authentication_validation_failure_policy_client_details_type),
+//									ClientId:                  pulumi.Any(oci_apigateway_client.Test_client.Id),
+//									ClientSecretId:            pulumi.Any(oci_vault_secret.Test_secret.Id),
+//									ClientSecretVersionNumber: pulumi.Any(_var.Deployment_specification_request_policies_authentication_validation_failure_policy_client_details_client_secret_version_number),
+//								},
+//								FallbackRedirectPath:     pulumi.Any(_var.Deployment_specification_request_policies_authentication_validation_failure_policy_fallback_redirect_path),
+//								LogoutPath:               pulumi.Any(_var.Deployment_specification_request_policies_authentication_validation_failure_policy_logout_path),
+//								MaxExpiryDurationInHours: pulumi.Any(_var.Deployment_specification_request_policies_authentication_validation_failure_policy_max_expiry_duration_in_hours),
+//								ResponseCode:             pulumi.Any(_var.Deployment_specification_request_policies_authentication_validation_failure_policy_response_code),
+//								ResponseHeaderTransformations: &apigateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsArgs{
+//									FilterHeaders: &apigateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersArgs{
+//										Items: apigateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemArray{
+//											&apigateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemArgs{
+//												Name: pulumi.Any(_var.Deployment_specification_request_policies_authentication_validation_failure_policy_response_header_transformations_filter_headers_items_name),
+//											},
+//										},
+//										Type: pulumi.Any(_var.Deployment_specification_request_policies_authentication_validation_failure_policy_response_header_transformations_filter_headers_type),
+//									},
+//									RenameHeaders: &apigateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersArgs{
+//										Items: apigateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemArray{
+//											&apigateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemArgs{
+//												From: pulumi.Any(_var.Deployment_specification_request_policies_authentication_validation_failure_policy_response_header_transformations_rename_headers_items_from),
+//												To:   pulumi.Any(_var.Deployment_specification_request_policies_authentication_validation_failure_policy_response_header_transformations_rename_headers_items_to),
+//											},
+//										},
+//									},
+//									SetHeaders: &apigateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersArgs{
+//										Items: apigateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemArray{
+//											&apigateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemArgs{
+//												IfExists: pulumi.Any(_var.Deployment_specification_request_policies_authentication_validation_failure_policy_response_header_transformations_set_headers_items_if_exists),
+//												Name:     pulumi.Any(_var.Deployment_specification_request_policies_authentication_validation_failure_policy_response_header_transformations_set_headers_items_name),
+//												Values:   pulumi.Any(_var.Deployment_specification_request_policies_authentication_validation_failure_policy_response_header_transformations_set_headers_items_values),
+//											},
+//										},
+//									},
+//								},
+//								ResponseMessage: pulumi.Any(_var.Deployment_specification_request_policies_authentication_validation_failure_policy_response_message),
+//								ResponseType:    pulumi.Any(_var.Deployment_specification_request_policies_authentication_validation_failure_policy_response_type),
+//								Scopes:          pulumi.Any(_var.Deployment_specification_request_policies_authentication_validation_failure_policy_scopes),
+//								SourceUriDetails: &apigateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicySourceUriDetailsArgs{
+//									Type: pulumi.Any(_var.Deployment_specification_request_policies_authentication_validation_failure_policy_source_uri_details_type),
+//									Uri:  pulumi.Any(_var.Deployment_specification_request_policies_authentication_validation_failure_policy_source_uri_details_uri),
+//								},
+//								UseCookiesForIntermediateSteps: pulumi.Any(_var.Deployment_specification_request_policies_authentication_validation_failure_policy_use_cookies_for_intermediate_steps),
+//								UseCookiesForSession:           pulumi.Any(_var.Deployment_specification_request_policies_authentication_validation_failure_policy_use_cookies_for_session),
+//								UsePkce:                        pulumi.Any(_var.Deployment_specification_request_policies_authentication_validation_failure_policy_use_pkce),
+//							},
+//							ValidationPolicy: &apigateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyArgs{
+//								Type: pulumi.Any(_var.Deployment_specification_request_policies_authentication_validation_policy_type),
+//								AdditionalValidationPolicy: &apigateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyArgs{
+//									Audiences: pulumi.Any(_var.Deployment_specification_request_policies_authentication_validation_policy_additional_validation_policy_audiences),
+//									Issuers:   pulumi.Any(_var.Deployment_specification_request_policies_authentication_validation_policy_additional_validation_policy_issuers),
+//									VerifyClaims: apigateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaimArray{
+//										&apigateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaimArgs{
+//											IsRequired: pulumi.Any(_var.Deployment_specification_request_policies_authentication_validation_policy_additional_validation_policy_verify_claims_is_required),
+//											Key:        pulumi.Any(_var.Deployment_specification_request_policies_authentication_validation_policy_additional_validation_policy_verify_claims_key),
+//											Values:     pulumi.Any(_var.Deployment_specification_request_policies_authentication_validation_policy_additional_validation_policy_verify_claims_values),
+//										},
+//									},
+//								},
+//								ClientDetails: &apigateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyClientDetailsArgs{
+//									Type:                      pulumi.Any(_var.Deployment_specification_request_policies_authentication_validation_policy_client_details_type),
+//									ClientId:                  pulumi.Any(oci_apigateway_client.Test_client.Id),
+//									ClientSecretId:            pulumi.Any(oci_vault_secret.Test_secret.Id),
+//									ClientSecretVersionNumber: pulumi.Any(_var.Deployment_specification_request_policies_authentication_validation_policy_client_details_client_secret_version_number),
+//								},
+//								IsSslVerifyDisabled: pulumi.Any(_var.Deployment_specification_request_policies_authentication_validation_policy_is_ssl_verify_disabled),
+//								Keys: apigateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKeyArray{
+//									&apigateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKeyArgs{
+//										Format: pulumi.Any(_var.Deployment_specification_request_policies_authentication_validation_policy_keys_format),
+//										Alg:    pulumi.Any(_var.Deployment_specification_request_policies_authentication_validation_policy_keys_alg),
+//										E:      pulumi.Any(_var.Deployment_specification_request_policies_authentication_validation_policy_keys_e),
+//										Key:    pulumi.Any(_var.Deployment_specification_request_policies_authentication_validation_policy_keys_key),
+//										KeyOps: pulumi.Any(_var.Deployment_specification_request_policies_authentication_validation_policy_keys_key_ops),
+//										Kid:    pulumi.Any(_var.Deployment_specification_request_policies_authentication_validation_policy_keys_kid),
+//										Kty:    pulumi.Any(_var.Deployment_specification_request_policies_authentication_validation_policy_keys_kty),
+//										N:      pulumi.Any(_var.Deployment_specification_request_policies_authentication_validation_policy_keys_n),
+//										Use:    pulumi.Any(_var.Deployment_specification_request_policies_authentication_validation_policy_keys_use),
+//									},
+//								},
+//								MaxCacheDurationInHours: pulumi.Any(_var.Deployment_specification_request_policies_authentication_validation_policy_max_cache_duration_in_hours),
+//								SourceUriDetails: &apigateway.DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicySourceUriDetailsArgs{
+//									Type: pulumi.Any(_var.Deployment_specification_request_policies_authentication_validation_policy_source_uri_details_type),
+//									Uri:  pulumi.Any(_var.Deployment_specification_request_policies_authentication_validation_policy_source_uri_details_uri),
+//								},
+//								Uri: pulumi.Any(_var.Deployment_specification_request_policies_authentication_validation_policy_uri),
+//							},
 //							VerifyClaims: apigateway.DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaimArray{
 //								&apigateway.DeploymentSpecificationRequestPoliciesAuthenticationVerifyClaimArgs{
 //									IsRequired: pulumi.Any(_var.Deployment_specification_request_policies_authentication_verify_claims_is_required),
@@ -88,6 +180,150 @@ import (
 //							ExposedHeaders:            pulumi.Any(_var.Deployment_specification_request_policies_cors_exposed_headers),
 //							IsAllowCredentialsEnabled: pulumi.Any(_var.Deployment_specification_request_policies_cors_is_allow_credentials_enabled),
 //							MaxAgeInSeconds:           pulumi.Any(_var.Deployment_specification_request_policies_cors_max_age_in_seconds),
+//						},
+//						DynamicAuthentication: &apigateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationArgs{
+//							AuthenticationServers: apigateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerArray{
+//								&apigateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerArgs{
+//									AuthenticationServerDetail: &apigateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailArgs{
+//										Type:                     pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_type),
+//										Audiences:                pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_audiences),
+//										FunctionId:               pulumi.Any(oci_functions_function.Test_function.Id),
+//										IsAnonymousAccessAllowed: pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_is_anonymous_access_allowed),
+//										Issuers:                  pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_issuers),
+//										MaxClockSkewInSeconds:    pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_max_clock_skew_in_seconds),
+//										PublicKeys: &apigateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeysArgs{
+//											Type:                pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_type),
+//											IsSslVerifyDisabled: pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_is_ssl_verify_disabled),
+//											Keys: apigateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeysKeyArray{
+//												&apigateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeysKeyArgs{
+//													Format: pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_format),
+//													Alg:    pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_alg),
+//													E:      pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_e),
+//													Key:    pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_key),
+//													KeyOps: pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_key_ops),
+//													Kid:    pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_kid),
+//													Kty:    pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_kty),
+//													N:      pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_n),
+//													Use:    pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_use),
+//												},
+//											},
+//											MaxCacheDurationInHours: pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_max_cache_duration_in_hours),
+//											Uri:                     pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_uri),
+//										},
+//										TokenAuthScheme: pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_token_auth_scheme),
+//										TokenHeader:     pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_token_header),
+//										TokenQueryParam: pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_token_query_param),
+//										ValidationFailurePolicy: &apigateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyArgs{
+//											Type: pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_type),
+//											ClientDetails: &apigateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyClientDetailsArgs{
+//												Type:                      pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_client_details_type),
+//												ClientId:                  pulumi.Any(oci_apigateway_client.Test_client.Id),
+//												ClientSecretId:            pulumi.Any(oci_vault_secret.Test_secret.Id),
+//												ClientSecretVersionNumber: pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_client_details_client_secret_version_number),
+//											},
+//											FallbackRedirectPath:     pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_fallback_redirect_path),
+//											LogoutPath:               pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_logout_path),
+//											MaxExpiryDurationInHours: pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_max_expiry_duration_in_hours),
+//											ResponseCode:             pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_code),
+//											ResponseHeaderTransformations: &apigateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsArgs{
+//												FilterHeaders: &apigateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersArgs{
+//													Items: apigateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemArray{
+//														&apigateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemArgs{
+//															Name: pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_header_transformations_filter_headers_items_name),
+//														},
+//													},
+//													Type: pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_header_transformations_filter_headers_type),
+//												},
+//												RenameHeaders: &apigateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersArgs{
+//													Items: apigateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemArray{
+//														&apigateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemArgs{
+//															From: pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_header_transformations_rename_headers_items_from),
+//															To:   pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_header_transformations_rename_headers_items_to),
+//														},
+//													},
+//												},
+//												SetHeaders: &apigateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersArgs{
+//													Items: apigateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemArray{
+//														&apigateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemArgs{
+//															IfExists: pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_header_transformations_set_headers_items_if_exists),
+//															Name:     pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_header_transformations_set_headers_items_name),
+//															Values:   pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_header_transformations_set_headers_items_values),
+//														},
+//													},
+//												},
+//											},
+//											ResponseMessage: pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_message),
+//											ResponseType:    pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_type),
+//											Scopes:          pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_scopes),
+//											SourceUriDetails: &apigateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationFailurePolicySourceUriDetailsArgs{
+//												Type: pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_source_uri_details_type),
+//												Uri:  pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_source_uri_details_uri),
+//											},
+//											UseCookiesForIntermediateSteps: pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_use_cookies_for_intermediate_steps),
+//											UseCookiesForSession:           pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_use_cookies_for_session),
+//											UsePkce:                        pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_use_pkce),
+//										},
+//										ValidationPolicy: &apigateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyArgs{
+//											Type: pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_type),
+//											AdditionalValidationPolicy: &apigateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyArgs{
+//												Audiences: pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_additional_validation_policy_audiences),
+//												Issuers:   pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_additional_validation_policy_issuers),
+//												VerifyClaims: apigateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaimArray{
+//													&apigateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaimArgs{
+//														IsRequired: pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_additional_validation_policy_verify_claims_is_required),
+//														Key:        pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_additional_validation_policy_verify_claims_key),
+//														Values:     pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_additional_validation_policy_verify_claims_values),
+//													},
+//												},
+//											},
+//											ClientDetails: &apigateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyClientDetailsArgs{
+//												Type:                      pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_client_details_type),
+//												ClientId:                  pulumi.Any(oci_apigateway_client.Test_client.Id),
+//												ClientSecretId:            pulumi.Any(oci_vault_secret.Test_secret.Id),
+//												ClientSecretVersionNumber: pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_client_details_client_secret_version_number),
+//											},
+//											IsSslVerifyDisabled: pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_is_ssl_verify_disabled),
+//											Keys: apigateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyKeyArray{
+//												&apigateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicyKeyArgs{
+//													Format: pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_format),
+//													Alg:    pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_alg),
+//													E:      pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_e),
+//													Key:    pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_key),
+//													KeyOps: pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_key_ops),
+//													Kid:    pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_kid),
+//													Kty:    pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_kty),
+//													N:      pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_n),
+//													Use:    pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_use),
+//												},
+//											},
+//											MaxCacheDurationInHours: pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_max_cache_duration_in_hours),
+//											SourceUriDetails: &apigateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailValidationPolicySourceUriDetailsArgs{
+//												Type: pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_source_uri_details_type),
+//												Uri:  pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_source_uri_details_uri),
+//											},
+//											Uri: pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_uri),
+//										},
+//										VerifyClaims: apigateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailVerifyClaimArray{
+//											&apigateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailVerifyClaimArgs{
+//												IsRequired: pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_verify_claims_is_required),
+//												Key:        pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_verify_claims_key),
+//												Values:     pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_verify_claims_values),
+//											},
+//										},
+//									},
+//									Key: &apigateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerKeyArgs{
+//										Name:       pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_name),
+//										Expression: pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_expression),
+//										IsDefault:  pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_is_default),
+//										Type:       pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_type),
+//										Values:     pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_values),
+//									},
+//								},
+//							},
+//							SelectionSource: &apigateway.DeploymentSpecificationRequestPoliciesDynamicAuthenticationSelectionSourceArgs{
+//								Selector: pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_selection_source_selector),
+//								Type:     pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_selection_source_type),
+//							},
 //						},
 //						MutualTls: &apigateway.DeploymentSpecificationRequestPoliciesMutualTlsArgs{
 //							AllowedSans:                   pulumi.Any(_var.Deployment_specification_request_policies_mutual_tls_allowed_sans),
@@ -105,6 +341,7 @@ import (
 //						&apigateway.DeploymentSpecificationRouteArgs{
 //							Backend: &apigateway.DeploymentSpecificationRouteBackendArgs{
 //								Type:                    pulumi.Any(_var.Deployment_specification_routes_backend_type),
+//								AllowedPostLogoutUris:   pulumi.Any(_var.Deployment_specification_routes_backend_allowed_post_logout_uris),
 //								Body:                    pulumi.Any(_var.Deployment_specification_routes_backend_body),
 //								ConnectTimeoutInSeconds: pulumi.Any(_var.Deployment_specification_routes_backend_connect_timeout_in_seconds),
 //								FunctionId:              pulumi.Any(oci_functions_function.Test_function.Id),
@@ -115,7 +352,40 @@ import (
 //									},
 //								},
 //								IsSslVerifyDisabled:  pulumi.Any(_var.Deployment_specification_routes_backend_is_ssl_verify_disabled),
+//								PostLogoutState:      pulumi.Any(_var.Deployment_specification_routes_backend_post_logout_state),
 //								ReadTimeoutInSeconds: pulumi.Any(_var.Deployment_specification_routes_backend_read_timeout_in_seconds),
+//								RoutingBackends: apigateway.DeploymentSpecificationRouteBackendRoutingBackendArray{
+//									&apigateway.DeploymentSpecificationRouteBackendRoutingBackendArgs{
+//										Backend: &apigateway.DeploymentSpecificationRouteBackendRoutingBackendBackendArgs{
+//											Type:                    pulumi.Any(_var.Deployment_specification_routes_backend_routing_backends_backend_type),
+//											Body:                    pulumi.Any(_var.Deployment_specification_routes_backend_routing_backends_backend_body),
+//											ConnectTimeoutInSeconds: pulumi.Any(_var.Deployment_specification_routes_backend_routing_backends_backend_connect_timeout_in_seconds),
+//											FunctionId:              pulumi.Any(oci_functions_function.Test_function.Id),
+//											Headers: apigateway.DeploymentSpecificationRouteBackendRoutingBackendBackendHeaderArray{
+//												&apigateway.DeploymentSpecificationRouteBackendRoutingBackendBackendHeaderArgs{
+//													Name:  pulumi.Any(_var.Deployment_specification_routes_backend_routing_backends_backend_headers_name),
+//													Value: pulumi.Any(_var.Deployment_specification_routes_backend_routing_backends_backend_headers_value),
+//												},
+//											},
+//											IsSslVerifyDisabled:  pulumi.Any(_var.Deployment_specification_routes_backend_routing_backends_backend_is_ssl_verify_disabled),
+//											ReadTimeoutInSeconds: pulumi.Any(_var.Deployment_specification_routes_backend_routing_backends_backend_read_timeout_in_seconds),
+//											SendTimeoutInSeconds: pulumi.Any(_var.Deployment_specification_routes_backend_routing_backends_backend_send_timeout_in_seconds),
+//											Status:               pulumi.Any(_var.Deployment_specification_routes_backend_routing_backends_backend_status),
+//											Url:                  pulumi.Any(_var.Deployment_specification_routes_backend_routing_backends_backend_url),
+//										},
+//										Key: &apigateway.DeploymentSpecificationRouteBackendRoutingBackendKeyArgs{
+//											Name:       pulumi.Any(_var.Deployment_specification_routes_backend_routing_backends_key_name),
+//											Type:       pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_type),
+//											Expression: pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_expression),
+//											IsDefault:  pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_is_default),
+//											Values:     pulumi.Any(_var.Deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_values),
+//										},
+//									},
+//								},
+//								SelectionSource: &apigateway.DeploymentSpecificationRouteBackendSelectionSourceArgs{
+//									Selector: pulumi.Any(_var.Deployment_specification_routes_backend_selection_source_selector),
+//									Type:     pulumi.Any(_var.Deployment_specification_routes_backend_selection_source_type),
+//								},
 //								SendTimeoutInSeconds: pulumi.Any(_var.Deployment_specification_routes_backend_send_timeout_in_seconds),
 //								Status:               pulumi.Any(_var.Deployment_specification_routes_backend_status),
 //								Url:                  pulumi.Any(_var.Deployment_specification_routes_backend_url),

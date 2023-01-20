@@ -37,6 +37,16 @@ public final class GetMysqlDbSystemEndpoint {
      */
     private Integer portX;
     /**
+     * @return The OCID of the resource that this endpoint is attached to.
+     * 
+     */
+    private String resourceId;
+    /**
+     * @return The type of endpoint that clients and connectors can connect to.
+     * 
+     */
+    private String resourceType;
+    /**
      * @return The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
      * 
      */
@@ -84,6 +94,20 @@ public final class GetMysqlDbSystemEndpoint {
         return this.portX;
     }
     /**
+     * @return The OCID of the resource that this endpoint is attached to.
+     * 
+     */
+    public String resourceId() {
+        return this.resourceId;
+    }
+    /**
+     * @return The type of endpoint that clients and connectors can connect to.
+     * 
+     */
+    public String resourceType() {
+        return this.resourceType;
+    }
+    /**
      * @return The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
      * 
      */
@@ -112,6 +136,8 @@ public final class GetMysqlDbSystemEndpoint {
         private List<String> modes;
         private Integer port;
         private Integer portX;
+        private String resourceId;
+        private String resourceType;
         private String status;
         private String statusDetails;
         public Builder() {}
@@ -122,6 +148,8 @@ public final class GetMysqlDbSystemEndpoint {
     	      this.modes = defaults.modes;
     	      this.port = defaults.port;
     	      this.portX = defaults.portX;
+    	      this.resourceId = defaults.resourceId;
+    	      this.resourceType = defaults.resourceType;
     	      this.status = defaults.status;
     	      this.statusDetails = defaults.statusDetails;
         }
@@ -155,6 +183,16 @@ public final class GetMysqlDbSystemEndpoint {
             return this;
         }
         @CustomType.Setter
+        public Builder resourceId(String resourceId) {
+            this.resourceId = Objects.requireNonNull(resourceId);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder resourceType(String resourceType) {
+            this.resourceType = Objects.requireNonNull(resourceType);
+            return this;
+        }
+        @CustomType.Setter
         public Builder status(String status) {
             this.status = Objects.requireNonNull(status);
             return this;
@@ -171,6 +209,8 @@ public final class GetMysqlDbSystemEndpoint {
             o.modes = modes;
             o.port = port;
             o.portX = portX;
+            o.resourceId = resourceId;
+            o.resourceType = resourceType;
             o.status = status;
             o.statusDetails = statusDetails;
             return o;

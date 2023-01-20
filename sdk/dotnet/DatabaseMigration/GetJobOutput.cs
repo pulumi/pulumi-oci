@@ -39,7 +39,7 @@ namespace Pulumi.Oci.DatabaseMigration
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetJobOutputResult> InvokeAsync(GetJobOutputArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetJobOutputResult>("oci:DatabaseMigration/getJobOutput:getJobOutput", args ?? new GetJobOutputArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetJobOutputResult>("oci:DatabaseMigration/getJobOutput:getJobOutput", args ?? new GetJobOutputArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Job Output resource in Oracle Cloud Infrastructure Database Migration service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.DatabaseMigration
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetJobOutputResult> Invoke(GetJobOutputInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetJobOutputResult>("oci:DatabaseMigration/getJobOutput:getJobOutput", args ?? new GetJobOutputInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetJobOutputResult>("oci:DatabaseMigration/getJobOutput:getJobOutput", args ?? new GetJobOutputInvokeArgs(), options.WithDefaults());
     }
 
 

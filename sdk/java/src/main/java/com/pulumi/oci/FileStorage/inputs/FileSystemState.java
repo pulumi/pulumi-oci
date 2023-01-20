@@ -96,14 +96,14 @@ public final class FileSystemState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+     * Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      * 
      */
     @Import(name="isCloneParent")
     private @Nullable Output<Boolean> isCloneParent;
 
     /**
-     * @return Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+     * @return Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      * 
      */
     public Optional<Output<Boolean>> isCloneParent() {
@@ -111,18 +111,33 @@ public final class FileSystemState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm#hydration).
+     * Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
      * 
      */
     @Import(name="isHydrated")
     private @Nullable Output<Boolean> isHydrated;
 
     /**
-     * @return Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm#hydration).
+     * @return Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
      * 
      */
     public Optional<Output<Boolean>> isHydrated() {
         return Optional.ofNullable(this.isHydrated);
+    }
+
+    /**
+     * Specifies whether the file system can be used as a target file system for replication. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
+     * 
+     */
+    @Import(name="isTargetable")
+    private @Nullable Output<Boolean> isTargetable;
+
+    /**
+     * @return Specifies whether the file system can be used as a target file system for replication. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
+     * 
+     */
+    public Optional<Output<Boolean>> isTargetable() {
+        return Optional.ofNullable(this.isTargetable);
     }
 
     /**
@@ -171,6 +186,21 @@ public final class FileSystemState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
+     * 
+     */
+    @Import(name="replicationTargetId")
+    private @Nullable Output<String> replicationTargetId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
+     * 
+     */
+    public Optional<Output<String>> replicationTargetId() {
+        return Optional.ofNullable(this.replicationTargetId);
+    }
+
+    /**
      * Source information for the file system.
      * 
      */
@@ -186,14 +216,14 @@ public final class FileSystemState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      * 
      */
     @Import(name="sourceSnapshotId")
     private @Nullable Output<String> sourceSnapshotId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      * 
      */
     public Optional<Output<String>> sourceSnapshotId() {
@@ -240,9 +270,11 @@ public final class FileSystemState extends com.pulumi.resources.ResourceArgs {
         this.freeformTags = $.freeformTags;
         this.isCloneParent = $.isCloneParent;
         this.isHydrated = $.isHydrated;
+        this.isTargetable = $.isTargetable;
         this.kmsKeyId = $.kmsKeyId;
         this.lifecycleDetails = $.lifecycleDetails;
         this.meteredBytes = $.meteredBytes;
+        this.replicationTargetId = $.replicationTargetId;
         this.sourceDetails = $.sourceDetails;
         this.sourceSnapshotId = $.sourceSnapshotId;
         this.state = $.state;
@@ -373,7 +405,7 @@ public final class FileSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isCloneParent Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+         * @param isCloneParent Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
          * 
          * @return builder
          * 
@@ -384,7 +416,7 @@ public final class FileSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isCloneParent Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+         * @param isCloneParent Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
          * 
          * @return builder
          * 
@@ -394,7 +426,7 @@ public final class FileSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isHydrated Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm#hydration).
+         * @param isHydrated Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
          * 
          * @return builder
          * 
@@ -405,13 +437,34 @@ public final class FileSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isHydrated Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm#hydration).
+         * @param isHydrated Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
          * 
          * @return builder
          * 
          */
         public Builder isHydrated(Boolean isHydrated) {
             return isHydrated(Output.of(isHydrated));
+        }
+
+        /**
+         * @param isTargetable Specifies whether the file system can be used as a target file system for replication. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isTargetable(@Nullable Output<Boolean> isTargetable) {
+            $.isTargetable = isTargetable;
+            return this;
+        }
+
+        /**
+         * @param isTargetable Specifies whether the file system can be used as a target file system for replication. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isTargetable(Boolean isTargetable) {
+            return isTargetable(Output.of(isTargetable));
         }
 
         /**
@@ -478,6 +531,27 @@ public final class FileSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param replicationTargetId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder replicationTargetId(@Nullable Output<String> replicationTargetId) {
+            $.replicationTargetId = replicationTargetId;
+            return this;
+        }
+
+        /**
+         * @param replicationTargetId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder replicationTargetId(String replicationTargetId) {
+            return replicationTargetId(Output.of(replicationTargetId));
+        }
+
+        /**
          * @param sourceDetails Source information for the file system.
          * 
          * @return builder
@@ -509,7 +583,7 @@ public final class FileSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sourceSnapshotId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+         * @param sourceSnapshotId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
          * 
          * @return builder
          * 
@@ -520,7 +594,7 @@ public final class FileSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sourceSnapshotId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+         * @param sourceSnapshotId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
          * 
          * @return builder
          * 

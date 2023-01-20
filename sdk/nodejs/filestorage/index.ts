@@ -5,24 +5,86 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./export";
-export * from "./exportSet";
-export * from "./fileSystem";
-export * from "./getExportSets";
-export * from "./getExports";
-export * from "./getFileSystems";
-export * from "./getMountTargets";
-export * from "./getSnapshot";
-export * from "./getSnapshots";
-export * from "./mountTarget";
-export * from "./snapshot";
+export { ExportArgs, ExportState } from "./export";
+export type Export = import("./export").Export;
+export const Export: typeof import("./export").Export = null as any;
+utilities.lazyLoad(exports, ["Export"], () => require("./export"));
 
-// Import resources to register:
-import { Export } from "./export";
-import { ExportSet } from "./exportSet";
-import { FileSystem } from "./fileSystem";
-import { MountTarget } from "./mountTarget";
-import { Snapshot } from "./snapshot";
+export { ExportSetArgs, ExportSetState } from "./exportSet";
+export type ExportSet = import("./exportSet").ExportSet;
+export const ExportSet: typeof import("./exportSet").ExportSet = null as any;
+utilities.lazyLoad(exports, ["ExportSet"], () => require("./exportSet"));
+
+export { FileSystemArgs, FileSystemState } from "./fileSystem";
+export type FileSystem = import("./fileSystem").FileSystem;
+export const FileSystem: typeof import("./fileSystem").FileSystem = null as any;
+utilities.lazyLoad(exports, ["FileSystem"], () => require("./fileSystem"));
+
+export { GetExportSetsArgs, GetExportSetsResult, GetExportSetsOutputArgs } from "./getExportSets";
+export const getExportSets: typeof import("./getExportSets").getExportSets = null as any;
+export const getExportSetsOutput: typeof import("./getExportSets").getExportSetsOutput = null as any;
+utilities.lazyLoad(exports, ["getExportSets","getExportSetsOutput"], () => require("./getExportSets"));
+
+export { GetExportsArgs, GetExportsResult, GetExportsOutputArgs } from "./getExports";
+export const getExports: typeof import("./getExports").getExports = null as any;
+export const getExportsOutput: typeof import("./getExports").getExportsOutput = null as any;
+utilities.lazyLoad(exports, ["getExports","getExportsOutput"], () => require("./getExports"));
+
+export { GetFileSystemsArgs, GetFileSystemsResult, GetFileSystemsOutputArgs } from "./getFileSystems";
+export const getFileSystems: typeof import("./getFileSystems").getFileSystems = null as any;
+export const getFileSystemsOutput: typeof import("./getFileSystems").getFileSystemsOutput = null as any;
+utilities.lazyLoad(exports, ["getFileSystems","getFileSystemsOutput"], () => require("./getFileSystems"));
+
+export { GetMountTargetsArgs, GetMountTargetsResult, GetMountTargetsOutputArgs } from "./getMountTargets";
+export const getMountTargets: typeof import("./getMountTargets").getMountTargets = null as any;
+export const getMountTargetsOutput: typeof import("./getMountTargets").getMountTargetsOutput = null as any;
+utilities.lazyLoad(exports, ["getMountTargets","getMountTargetsOutput"], () => require("./getMountTargets"));
+
+export { GetReplicationArgs, GetReplicationResult, GetReplicationOutputArgs } from "./getReplication";
+export const getReplication: typeof import("./getReplication").getReplication = null as any;
+export const getReplicationOutput: typeof import("./getReplication").getReplicationOutput = null as any;
+utilities.lazyLoad(exports, ["getReplication","getReplicationOutput"], () => require("./getReplication"));
+
+export { GetReplicationTargetArgs, GetReplicationTargetResult, GetReplicationTargetOutputArgs } from "./getReplicationTarget";
+export const getReplicationTarget: typeof import("./getReplicationTarget").getReplicationTarget = null as any;
+export const getReplicationTargetOutput: typeof import("./getReplicationTarget").getReplicationTargetOutput = null as any;
+utilities.lazyLoad(exports, ["getReplicationTarget","getReplicationTargetOutput"], () => require("./getReplicationTarget"));
+
+export { GetReplicationTargetsArgs, GetReplicationTargetsResult, GetReplicationTargetsOutputArgs } from "./getReplicationTargets";
+export const getReplicationTargets: typeof import("./getReplicationTargets").getReplicationTargets = null as any;
+export const getReplicationTargetsOutput: typeof import("./getReplicationTargets").getReplicationTargetsOutput = null as any;
+utilities.lazyLoad(exports, ["getReplicationTargets","getReplicationTargetsOutput"], () => require("./getReplicationTargets"));
+
+export { GetReplicationsArgs, GetReplicationsResult, GetReplicationsOutputArgs } from "./getReplications";
+export const getReplications: typeof import("./getReplications").getReplications = null as any;
+export const getReplicationsOutput: typeof import("./getReplications").getReplicationsOutput = null as any;
+utilities.lazyLoad(exports, ["getReplications","getReplicationsOutput"], () => require("./getReplications"));
+
+export { GetSnapshotArgs, GetSnapshotResult, GetSnapshotOutputArgs } from "./getSnapshot";
+export const getSnapshot: typeof import("./getSnapshot").getSnapshot = null as any;
+export const getSnapshotOutput: typeof import("./getSnapshot").getSnapshotOutput = null as any;
+utilities.lazyLoad(exports, ["getSnapshot","getSnapshotOutput"], () => require("./getSnapshot"));
+
+export { GetSnapshotsArgs, GetSnapshotsResult, GetSnapshotsOutputArgs } from "./getSnapshots";
+export const getSnapshots: typeof import("./getSnapshots").getSnapshots = null as any;
+export const getSnapshotsOutput: typeof import("./getSnapshots").getSnapshotsOutput = null as any;
+utilities.lazyLoad(exports, ["getSnapshots","getSnapshotsOutput"], () => require("./getSnapshots"));
+
+export { MountTargetArgs, MountTargetState } from "./mountTarget";
+export type MountTarget = import("./mountTarget").MountTarget;
+export const MountTarget: typeof import("./mountTarget").MountTarget = null as any;
+utilities.lazyLoad(exports, ["MountTarget"], () => require("./mountTarget"));
+
+export { ReplicationArgs, ReplicationState } from "./replication";
+export type Replication = import("./replication").Replication;
+export const Replication: typeof import("./replication").Replication = null as any;
+utilities.lazyLoad(exports, ["Replication"], () => require("./replication"));
+
+export { SnapshotArgs, SnapshotState } from "./snapshot";
+export type Snapshot = import("./snapshot").Snapshot;
+export const Snapshot: typeof import("./snapshot").Snapshot = null as any;
+utilities.lazyLoad(exports, ["Snapshot"], () => require("./snapshot"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -36,6 +98,8 @@ const _module = {
                 return new FileSystem(name, <any>undefined, { urn })
             case "oci:FileStorage/mountTarget:MountTarget":
                 return new MountTarget(name, <any>undefined, { urn })
+            case "oci:FileStorage/replication:Replication":
+                return new Replication(name, <any>undefined, { urn })
             case "oci:FileStorage/snapshot:Snapshot":
                 return new Snapshot(name, <any>undefined, { urn })
             default:
@@ -47,4 +111,5 @@ pulumi.runtime.registerResourceModule("oci", "FileStorage/export", _module)
 pulumi.runtime.registerResourceModule("oci", "FileStorage/exportSet", _module)
 pulumi.runtime.registerResourceModule("oci", "FileStorage/fileSystem", _module)
 pulumi.runtime.registerResourceModule("oci", "FileStorage/mountTarget", _module)
+pulumi.runtime.registerResourceModule("oci", "FileStorage/replication", _module)
 pulumi.runtime.registerResourceModule("oci", "FileStorage/snapshot", _module)

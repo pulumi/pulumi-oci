@@ -399,6 +399,7 @@ class VirtualServiceRouteTable(pulumi.CustomResource):
                 is_grpc=var["virtual_service_route_table_route_rules_is_grpc"],
                 path=var["virtual_service_route_table_route_rules_path"],
                 path_type=var["virtual_service_route_table_route_rules_path_type"],
+                request_timeout_in_ms=var["virtual_service_route_table_route_rules_request_timeout_in_ms"],
             )],
             virtual_service_id=oci_service_mesh_virtual_service["test_virtual_service"]["id"],
             defined_tags={
@@ -459,6 +460,7 @@ class VirtualServiceRouteTable(pulumi.CustomResource):
                 is_grpc=var["virtual_service_route_table_route_rules_is_grpc"],
                 path=var["virtual_service_route_table_route_rules_path"],
                 path_type=var["virtual_service_route_table_route_rules_path_type"],
+                request_timeout_in_ms=var["virtual_service_route_table_route_rules_request_timeout_in_ms"],
             )],
             virtual_service_id=oci_service_mesh_virtual_service["test_virtual_service"]["id"],
             defined_tags={

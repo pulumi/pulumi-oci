@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -27,11 +28,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAcceptedAgreements(args: GetAcceptedAgreementsArgs, opts?: pulumi.InvokeOptions): Promise<GetAcceptedAgreementsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Marketplace/getAcceptedAgreements:getAcceptedAgreements", {
         "acceptedAgreementId": args.acceptedAgreementId,
         "compartmentId": args.compartmentId,
@@ -100,9 +98,29 @@ export interface GetAcceptedAgreementsResult {
      */
     readonly packageVersion?: string;
 }
-
+/**
+ * This data source provides the list of Accepted Agreements in Oracle Cloud Infrastructure Marketplace service.
+ *
+ * Lists the terms of use agreements that have been accepted in the specified compartment.
+ * You can filter results by specifying query parameters.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAcceptedAgreements = oci.Marketplace.getAcceptedAgreements({
+ *     compartmentId: _var.compartment_id,
+ *     acceptedAgreementId: oci_marketplace_accepted_agreement.test_accepted_agreement.id,
+ *     displayName: _var.accepted_agreement_display_name,
+ *     listingId: oci_marketplace_listing.test_listing.id,
+ *     packageVersion: _var.accepted_agreement_package_version,
+ * });
+ * ```
+ */
 export function getAcceptedAgreementsOutput(args: GetAcceptedAgreementsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAcceptedAgreementsResult> {
-    return pulumi.output(args).apply(a => getAcceptedAgreements(a, opts))
+    return pulumi.output(args).apply((a: any) => getAcceptedAgreements(a, opts))
 }
 
 /**

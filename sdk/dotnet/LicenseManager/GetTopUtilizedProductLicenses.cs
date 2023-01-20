@@ -39,7 +39,7 @@ namespace Pulumi.Oci.LicenseManager
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetTopUtilizedProductLicensesResult> InvokeAsync(GetTopUtilizedProductLicensesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetTopUtilizedProductLicensesResult>("oci:LicenseManager/getTopUtilizedProductLicenses:getTopUtilizedProductLicenses", args ?? new GetTopUtilizedProductLicensesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetTopUtilizedProductLicensesResult>("oci:LicenseManager/getTopUtilizedProductLicenses:getTopUtilizedProductLicenses", args ?? new GetTopUtilizedProductLicensesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Top Utilized Product Licenses in Oracle Cloud Infrastructure License Manager service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.LicenseManager
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetTopUtilizedProductLicensesResult> Invoke(GetTopUtilizedProductLicensesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetTopUtilizedProductLicensesResult>("oci:LicenseManager/getTopUtilizedProductLicenses:getTopUtilizedProductLicenses", args ?? new GetTopUtilizedProductLicensesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetTopUtilizedProductLicensesResult>("oci:LicenseManager/getTopUtilizedProductLicenses:getTopUtilizedProductLicenses", args ?? new GetTopUtilizedProductLicensesInvokeArgs(), options.WithDefaults());
     }
 
 

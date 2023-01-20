@@ -41,7 +41,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetCloudExadataInfrastructuresResult> InvokeAsync(GetCloudExadataInfrastructuresArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetCloudExadataInfrastructuresResult>("oci:Database/getCloudExadataInfrastructures:getCloudExadataInfrastructures", args ?? new GetCloudExadataInfrastructuresArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetCloudExadataInfrastructuresResult>("oci:Database/getCloudExadataInfrastructures:getCloudExadataInfrastructures", args ?? new GetCloudExadataInfrastructuresArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Cloud Exadata Infrastructures in Oracle Cloud Infrastructure Database service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetCloudExadataInfrastructuresResult> Invoke(GetCloudExadataInfrastructuresInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetCloudExadataInfrastructuresResult>("oci:Database/getCloudExadataInfrastructures:getCloudExadataInfrastructures", args ?? new GetCloudExadataInfrastructuresInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetCloudExadataInfrastructuresResult>("oci:Database/getCloudExadataInfrastructures:getCloudExadataInfrastructures", args ?? new GetCloudExadataInfrastructuresInvokeArgs(), options.WithDefaults());
     }
 
 

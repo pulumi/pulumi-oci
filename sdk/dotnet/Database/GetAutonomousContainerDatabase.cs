@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAutonomousContainerDatabaseResult> InvokeAsync(GetAutonomousContainerDatabaseArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAutonomousContainerDatabaseResult>("oci:Database/getAutonomousContainerDatabase:getAutonomousContainerDatabase", args ?? new GetAutonomousContainerDatabaseArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAutonomousContainerDatabaseResult>("oci:Database/getAutonomousContainerDatabase:getAutonomousContainerDatabase", args ?? new GetAutonomousContainerDatabaseArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Autonomous Container Database resource in Oracle Cloud Infrastructure Database service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAutonomousContainerDatabaseResult> Invoke(GetAutonomousContainerDatabaseInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAutonomousContainerDatabaseResult>("oci:Database/getAutonomousContainerDatabase:getAutonomousContainerDatabase", args ?? new GetAutonomousContainerDatabaseInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousContainerDatabaseResult>("oci:Database/getAutonomousContainerDatabase:getAutonomousContainerDatabase", args ?? new GetAutonomousContainerDatabaseInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -117,7 +117,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string AvailabilityDomain;
         /// <summary>
-        /// Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+        /// Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
         /// </summary>
         public readonly double AvailableCpus;
         /// <summary>
@@ -220,7 +220,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly double ReclaimableCpus;
         /// <summary>
-        /// The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+        /// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         /// </summary>
         public readonly string Role;
         public readonly bool RotateKeyTrigger;

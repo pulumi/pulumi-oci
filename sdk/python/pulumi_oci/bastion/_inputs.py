@@ -43,6 +43,7 @@ class SessionTargetResourceDetailsArgs:
     def __init__(__self__, *,
                  session_type: pulumi.Input[str],
                  target_resource_display_name: Optional[pulumi.Input[str]] = None,
+                 target_resource_fqdn: Optional[pulumi.Input[str]] = None,
                  target_resource_id: Optional[pulumi.Input[str]] = None,
                  target_resource_operating_system_user_name: Optional[pulumi.Input[str]] = None,
                  target_resource_port: Optional[pulumi.Input[int]] = None,
@@ -50,16 +51,17 @@ class SessionTargetResourceDetailsArgs:
         """
         :param pulumi.Input[str] session_type: The session type.
         :param pulumi.Input[str] target_resource_display_name: The display name of the target Compute instance that the session connects to.
-        :param pulumi.Input[str] target_resource_id: The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to. It's optional depends on the type of session you want to create.
-               * (Required) For MANAGED_SSH session type, we can only use target_resource_id to create session.
-               * (Optional) For PORT_FORWARDING session type, you must either use target_resource_id or target_resource_private_ip_address
+        :param pulumi.Input[str] target_resource_fqdn: The Fully Qualified Domain Name of the target resource that the session connects to.
+        :param pulumi.Input[str] target_resource_id: The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
         :param pulumi.Input[str] target_resource_operating_system_user_name: The name of the user on the target resource operating system that the session uses for the connection.
         :param pulumi.Input[int] target_resource_port: The port number to connect to on the target resource.
-        :param pulumi.Input[str] target_resource_private_ip_address: The private IP address of the target resource that the session connects to. For PORT_FORWARDING session type, you must either use target_resource_id or target_resource_private_ip_address
+        :param pulumi.Input[str] target_resource_private_ip_address: The private IP address of the target resource that the session connects to.
         """
         pulumi.set(__self__, "session_type", session_type)
         if target_resource_display_name is not None:
             pulumi.set(__self__, "target_resource_display_name", target_resource_display_name)
+        if target_resource_fqdn is not None:
+            pulumi.set(__self__, "target_resource_fqdn", target_resource_fqdn)
         if target_resource_id is not None:
             pulumi.set(__self__, "target_resource_id", target_resource_id)
         if target_resource_operating_system_user_name is not None:
@@ -94,12 +96,22 @@ class SessionTargetResourceDetailsArgs:
         pulumi.set(self, "target_resource_display_name", value)
 
     @property
+    @pulumi.getter(name="targetResourceFqdn")
+    def target_resource_fqdn(self) -> Optional[pulumi.Input[str]]:
+        """
+        The Fully Qualified Domain Name of the target resource that the session connects to.
+        """
+        return pulumi.get(self, "target_resource_fqdn")
+
+    @target_resource_fqdn.setter
+    def target_resource_fqdn(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "target_resource_fqdn", value)
+
+    @property
     @pulumi.getter(name="targetResourceId")
     def target_resource_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to. It's optional depends on the type of session you want to create.
-        * (Required) For MANAGED_SSH session type, we can only use target_resource_id to create session.
-        * (Optional) For PORT_FORWARDING session type, you must either use target_resource_id or target_resource_private_ip_address
+        The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
         """
         return pulumi.get(self, "target_resource_id")
 
@@ -135,7 +147,7 @@ class SessionTargetResourceDetailsArgs:
     @pulumi.getter(name="targetResourcePrivateIpAddress")
     def target_resource_private_ip_address(self) -> Optional[pulumi.Input[str]]:
         """
-        The private IP address of the target resource that the session connects to. For PORT_FORWARDING session type, you must either use target_resource_id or target_resource_private_ip_address
+        The private IP address of the target resource that the session connects to.
         """
         return pulumi.get(self, "target_resource_private_ip_address")
 

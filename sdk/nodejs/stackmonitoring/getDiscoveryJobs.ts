@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDiscoveryJobs(args: GetDiscoveryJobsArgs, opts?: pulumi.InvokeOptions): Promise<GetDiscoveryJobsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:StackMonitoring/getDiscoveryJobs:getDiscoveryJobs", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -69,9 +67,25 @@ export interface GetDiscoveryJobsResult {
     readonly id: string;
     readonly name?: string;
 }
-
+/**
+ * This data source provides the list of Discovery Jobs in Oracle Cloud Infrastructure Stack Monitoring service.
+ *
+ * API to get the details of all Discovery Jobs.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDiscoveryJobs = oci.StackMonitoring.getDiscoveryJobs({
+ *     compartmentId: _var.compartment_id,
+ *     name: _var.discovery_job_name,
+ * });
+ * ```
+ */
 export function getDiscoveryJobsOutput(args: GetDiscoveryJobsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDiscoveryJobsResult> {
-    return pulumi.output(args).apply(a => getDiscoveryJobs(a, opts))
+    return pulumi.output(args).apply((a: any) => getDiscoveryJobs(a, opts))
 }
 
 /**

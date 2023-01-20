@@ -45,7 +45,7 @@ namespace Pulumi.Oci.DataFlow
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetInvokeRunsResult> InvokeAsync(GetInvokeRunsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetInvokeRunsResult>("oci:DataFlow/getInvokeRuns:getInvokeRuns", args ?? new GetInvokeRunsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetInvokeRunsResult>("oci:DataFlow/getInvokeRuns:getInvokeRuns", args ?? new GetInvokeRunsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Invoke Runs in Oracle Cloud Infrastructure Data Flow service.
@@ -81,7 +81,7 @@ namespace Pulumi.Oci.DataFlow
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetInvokeRunsResult> Invoke(GetInvokeRunsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetInvokeRunsResult>("oci:DataFlow/getInvokeRuns:getInvokeRuns", args ?? new GetInvokeRunsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetInvokeRunsResult>("oci:DataFlow/getInvokeRuns:getInvokeRuns", args ?? new GetInvokeRunsInvokeArgs(), options.WithDefaults());
     }
 
 

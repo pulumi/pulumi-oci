@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getJobOutput(args: GetJobOutputArgs, opts?: pulumi.InvokeOptions): Promise<GetJobOutputResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseMigration/getJobOutput:getJobOutput", {
         "jobId": args.jobId,
     }, opts);
@@ -56,9 +54,24 @@ export interface GetJobOutputResult {
     readonly items: outputs.DatabaseMigration.GetJobOutputItem[];
     readonly jobId: string;
 }
-
+/**
+ * This data source provides details about a specific Job Output resource in Oracle Cloud Infrastructure Database Migration service.
+ *
+ * List the Job Outputs
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testJobOutput = oci.DatabaseMigration.getJobOutput({
+ *     jobId: oci_database_migration_job.test_job.id,
+ * });
+ * ```
+ */
 export function getJobOutputOutput(args: GetJobOutputOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetJobOutputResult> {
-    return pulumi.output(args).apply(a => getJobOutput(a, opts))
+    return pulumi.output(args).apply((a: any) => getJobOutput(a, opts))
 }
 
 /**

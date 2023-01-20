@@ -16,8 +16,6 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
         public readonly string Key;
         /// <summary>
         /// Type of the secrets mapped based on the policy.
-        /// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-        /// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
         /// </summary>
         public readonly string Type;
         /// <summary>

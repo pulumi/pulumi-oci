@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLogAnalyticsCategoriesList(args: GetLogAnalyticsCategoriesListArgs, opts?: pulumi.InvokeOptions): Promise<GetLogAnalyticsCategoriesListResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LogAnalytics/getLogAnalyticsCategoriesList:getLogAnalyticsCategoriesList", {
         "categoryDisplayText": args.categoryDisplayText,
         "categoryType": args.categoryType,
@@ -80,9 +78,27 @@ export interface GetLogAnalyticsCategoriesListResult {
     readonly name?: string;
     readonly namespace: string;
 }
-
+/**
+ * This data source provides details about Categories in Oracle Cloud Infrastructure Log Analytics service.
+ *
+ * Returns a list of categories, containing detailed information about them. You may limit the number of results, provide sorting order, and filter by information such as category name or description.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testLogAnalyticsCategoriesList = oci.LogAnalytics.getLogAnalyticsCategoriesList({
+ *     namespace: _var.log_analytics_categories_list_namespace,
+ *     categoryDisplayText: _var.log_analytics_categories_list_category_display_text,
+ *     categoryType: _var.log_analytics_categories_list_category_type,
+ *     name: _var.log_analytics_categories_list_name,
+ * });
+ * ```
+ */
 export function getLogAnalyticsCategoriesListOutput(args: GetLogAnalyticsCategoriesListOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogAnalyticsCategoriesListResult> {
-    return pulumi.output(args).apply(a => getLogAnalyticsCategoriesList(a, opts))
+    return pulumi.output(args).apply((a: any) => getLogAnalyticsCategoriesList(a, opts))
 }
 
 /**

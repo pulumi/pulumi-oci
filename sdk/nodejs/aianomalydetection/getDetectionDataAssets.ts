@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDetectionDataAssets(args: GetDetectionDataAssetsArgs, opts?: pulumi.InvokeOptions): Promise<GetDetectionDataAssetsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:AiAnomalyDetection/getDetectionDataAssets:getDetectionDataAssets", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -92,9 +90,27 @@ export interface GetDetectionDataAssetsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Data Assets in Oracle Cloud Infrastructure Ai Anomaly Detection service.
+ *
+ * Returns a list of DataAssets.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDataAssets = oci.AiAnomalyDetection.getDetectionDataAssets({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.data_asset_display_name,
+ *     projectId: oci_ai_anomaly_detection_project.test_project.id,
+ *     state: _var.data_asset_state,
+ * });
+ * ```
+ */
 export function getDetectionDataAssetsOutput(args: GetDetectionDataAssetsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDetectionDataAssetsResult> {
-    return pulumi.output(args).apply(a => getDetectionDataAssets(a, opts))
+    return pulumi.output(args).apply((a: any) => getDetectionDataAssets(a, opts))
 }
 
 /**

@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetTagsResult> InvokeAsync(GetTagsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetTagsResult>("oci:Identity/getTags:getTags", args ?? new GetTagsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetTagsResult>("oci:Identity/getTags:getTags", args ?? new GetTagsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Tags in Oracle Cloud Infrastructure Identity service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetTagsResult> Invoke(GetTagsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetTagsResult>("oci:Identity/getTags:getTags", args ?? new GetTagsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetTagsResult>("oci:Identity/getTags:getTags", args ?? new GetTagsInvokeArgs(), options.WithDefaults());
     }
 
 

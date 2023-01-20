@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDrgRouteDistribution(args: GetDrgRouteDistributionArgs, opts?: pulumi.InvokeOptions): Promise<GetDrgRouteDistributionResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getDrgRouteDistribution:getDrgRouteDistribution", {
         "drgRouteDistributionId": args.drgRouteDistributionId,
     }, opts);
@@ -83,9 +80,24 @@ export interface GetDrgRouteDistributionResult {
      */
     readonly timeCreated: string;
 }
-
+/**
+ * This data source provides details about a specific Drg Route Distribution resource in Oracle Cloud Infrastructure Core service.
+ *
+ * Gets the specified route distribution's information.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDrgRouteDistribution = oci.Core.getDrgRouteDistribution({
+ *     drgRouteDistributionId: oci_core_drg_route_distribution.test_drg_route_distribution.id,
+ * });
+ * ```
+ */
 export function getDrgRouteDistributionOutput(args: GetDrgRouteDistributionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDrgRouteDistributionResult> {
-    return pulumi.output(args).apply(a => getDrgRouteDistribution(a, opts))
+    return pulumi.output(args).apply((a: any) => getDrgRouteDistribution(a, opts))
 }
 
 /**

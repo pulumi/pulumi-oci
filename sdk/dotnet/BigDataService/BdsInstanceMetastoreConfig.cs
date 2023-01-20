@@ -136,6 +136,11 @@ namespace Pulumi.Oci.BigDataService
             var defaultOptions = new CustomResourceOptions
             {
                 Version = Utilities.Version,
+                AdditionalSecretOutputs =
+                {
+                    "bdsApiKeyPassphrase",
+                    "clusterAdminPassword",
+                },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -171,11 +176,21 @@ namespace Pulumi.Oci.BigDataService
         [Input("bdsApiKeyId", required: true)]
         public Input<string> BdsApiKeyId { get; set; } = null!;
 
+        [Input("bdsApiKeyPassphrase", required: true)]
+        private Input<string>? _bdsApiKeyPassphrase;
+
         /// <summary>
         /// (Updatable) Base-64 encoded passphrase of the BDS Api Key.
         /// </summary>
-        [Input("bdsApiKeyPassphrase", required: true)]
-        public Input<string> BdsApiKeyPassphrase { get; set; } = null!;
+        public Input<string>? BdsApiKeyPassphrase
+        {
+            get => _bdsApiKeyPassphrase;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _bdsApiKeyPassphrase = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// The OCID of the cluster.
@@ -183,11 +198,21 @@ namespace Pulumi.Oci.BigDataService
         [Input("bdsInstanceId", required: true)]
         public Input<string> BdsInstanceId { get; set; } = null!;
 
+        [Input("clusterAdminPassword", required: true)]
+        private Input<string>? _clusterAdminPassword;
+
         /// <summary>
         /// (Updatable) Base-64 encoded password for the cluster admin user.
         /// </summary>
-        [Input("clusterAdminPassword", required: true)]
-        public Input<string> ClusterAdminPassword { get; set; } = null!;
+        public Input<string>? ClusterAdminPassword
+        {
+            get => _clusterAdminPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _clusterAdminPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// (Updatable) The display name of the metastore configuration
@@ -221,11 +246,21 @@ namespace Pulumi.Oci.BigDataService
         [Input("bdsApiKeyId")]
         public Input<string>? BdsApiKeyId { get; set; }
 
+        [Input("bdsApiKeyPassphrase")]
+        private Input<string>? _bdsApiKeyPassphrase;
+
         /// <summary>
         /// (Updatable) Base-64 encoded passphrase of the BDS Api Key.
         /// </summary>
-        [Input("bdsApiKeyPassphrase")]
-        public Input<string>? BdsApiKeyPassphrase { get; set; }
+        public Input<string>? BdsApiKeyPassphrase
+        {
+            get => _bdsApiKeyPassphrase;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _bdsApiKeyPassphrase = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// The OCID of the cluster.
@@ -233,11 +268,21 @@ namespace Pulumi.Oci.BigDataService
         [Input("bdsInstanceId")]
         public Input<string>? BdsInstanceId { get; set; }
 
+        [Input("clusterAdminPassword")]
+        private Input<string>? _clusterAdminPassword;
+
         /// <summary>
         /// (Updatable) Base-64 encoded password for the cluster admin user.
         /// </summary>
-        [Input("clusterAdminPassword")]
-        public Input<string>? ClusterAdminPassword { get; set; }
+        public Input<string>? ClusterAdminPassword
+        {
+            get => _clusterAdminPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _clusterAdminPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// (Updatable) The display name of the metastore configuration

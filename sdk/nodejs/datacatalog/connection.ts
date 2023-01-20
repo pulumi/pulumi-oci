@@ -183,7 +183,7 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["dataAssetKey"] = args ? args.dataAssetKey : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
-            resourceInputs["encProperties"] = args ? args.encProperties : undefined;
+            resourceInputs["encProperties"] = args?.encProperties ? pulumi.secret(args.encProperties) : undefined;
             resourceInputs["isDefault"] = args ? args.isDefault : undefined;
             resourceInputs["properties"] = args ? args.properties : undefined;
             resourceInputs["typeKey"] = args ? args.typeKey : undefined;
@@ -198,6 +198,8 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["uri"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["encProperties"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(Connection.__pulumiType, name, resourceInputs, opts);
     }
 }

@@ -134,7 +134,7 @@ namespace Pulumi.Oci.Opsi
         public Output<string> PlatformName { get; private set; } = null!;
 
         /// <summary>
-        /// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+        /// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS].
         /// </summary>
         [Output("platformType")]
         public Output<string> PlatformType { get; private set; } = null!;
@@ -434,7 +434,7 @@ namespace Pulumi.Oci.Opsi
         public Input<string>? PlatformName { get; set; }
 
         /// <summary>
-        /// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX].
+        /// Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS].
         /// </summary>
         [Input("platformType")]
         public Input<string>? PlatformType { get; set; }

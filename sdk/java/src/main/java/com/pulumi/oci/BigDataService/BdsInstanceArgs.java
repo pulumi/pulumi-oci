@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.BigDataService.inputs.BdsInstanceCloudSqlDetailArgs;
 import com.pulumi.oci.BigDataService.inputs.BdsInstanceComputeOnlyWorkerNodeArgs;
+import com.pulumi.oci.BigDataService.inputs.BdsInstanceEdgeNodeArgs;
 import com.pulumi.oci.BigDataService.inputs.BdsInstanceMasterNodeArgs;
 import com.pulumi.oci.BigDataService.inputs.BdsInstanceNetworkConfigArgs;
 import com.pulumi.oci.BigDataService.inputs.BdsInstanceUtilNodeArgs;
@@ -41,14 +42,14 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * -(Optional) The information about added Cloud SQL capability
+     * The information about added Cloud SQL capability
      * 
      */
     @Import(name="cloudSqlDetails")
     private @Nullable Output<List<BdsInstanceCloudSqlDetailArgs>> cloudSqlDetails;
 
     /**
-     * @return -(Optional) The information about added Cloud SQL capability
+     * @return The information about added Cloud SQL capability
      * 
      */
     public Optional<Output<List<BdsInstanceCloudSqlDetailArgs>>> cloudSqlDetails() {
@@ -56,18 +57,33 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Base-64 encoded password for Cloudera Manager admin user
+     * Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
      * 
      */
     @Import(name="clusterAdminPassword", required=true)
     private Output<String> clusterAdminPassword;
 
     /**
-     * @return Base-64 encoded password for Cloudera Manager admin user
+     * @return Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
      * 
      */
     public Output<String> clusterAdminPassword() {
         return this.clusterAdminPassword;
+    }
+
+    /**
+     * Profile of the Big Data Service cluster.
+     * 
+     */
+    @Import(name="clusterProfile")
+    private @Nullable Output<String> clusterProfile;
+
+    /**
+     * @return Profile of the Big Data Service cluster.
+     * 
+     */
+    public Optional<Output<String>> clusterProfile() {
+        return Optional.ofNullable(this.clusterProfile);
     }
 
     /**
@@ -152,6 +168,13 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
         return this.displayName;
     }
 
+    @Import(name="edgeNode")
+    private @Nullable Output<BdsInstanceEdgeNodeArgs> edgeNode;
+
+    public Optional<Output<BdsInstanceEdgeNodeArgs>> edgeNode() {
+        return Optional.ofNullable(this.edgeNode);
+    }
+
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
@@ -168,18 +191,33 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * -(Optional) (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
+     * (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
      * 
      */
     @Import(name="isCloudSqlConfigured")
     private @Nullable Output<Boolean> isCloudSqlConfigured;
 
     /**
-     * @return -(Optional) (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
+     * @return (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
      * 
      */
     public Optional<Output<Boolean>> isCloudSqlConfigured() {
         return Optional.ofNullable(this.isCloudSqlConfigured);
+    }
+
+    /**
+     * (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
+     * 
+     */
+    @Import(name="isForceStopJobs")
+    private @Nullable Output<Boolean> isForceStopJobs;
+
+    /**
+     * @return (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
+     * 
+     */
+    public Optional<Output<Boolean>> isForceStopJobs() {
+        return Optional.ofNullable(this.isForceStopJobs);
     }
 
     /**
@@ -273,6 +311,21 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
+     * 
+     */
+    @Import(name="state")
+    private @Nullable Output<String> state;
+
+    /**
+     * @return (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
+     * 
+     */
+    public Optional<Output<String>> state() {
+        return Optional.ofNullable(this.state);
+    }
+
+    /**
      * The utility node in the BDS instance
      * 
      */
@@ -300,20 +353,24 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
         this.bootstrapScriptUrl = $.bootstrapScriptUrl;
         this.cloudSqlDetails = $.cloudSqlDetails;
         this.clusterAdminPassword = $.clusterAdminPassword;
+        this.clusterProfile = $.clusterProfile;
         this.clusterPublicKey = $.clusterPublicKey;
         this.clusterVersion = $.clusterVersion;
         this.compartmentId = $.compartmentId;
         this.computeOnlyWorkerNode = $.computeOnlyWorkerNode;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
+        this.edgeNode = $.edgeNode;
         this.freeformTags = $.freeformTags;
         this.isCloudSqlConfigured = $.isCloudSqlConfigured;
+        this.isForceStopJobs = $.isForceStopJobs;
         this.isHighAvailability = $.isHighAvailability;
         this.isSecure = $.isSecure;
         this.kerberosRealmName = $.kerberosRealmName;
         this.kmsKeyId = $.kmsKeyId;
         this.masterNode = $.masterNode;
         this.networkConfig = $.networkConfig;
+        this.state = $.state;
         this.utilNode = $.utilNode;
         this.workerNode = $.workerNode;
     }
@@ -358,7 +415,7 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cloudSqlDetails -(Optional) The information about added Cloud SQL capability
+         * @param cloudSqlDetails The information about added Cloud SQL capability
          * 
          * @return builder
          * 
@@ -369,7 +426,7 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cloudSqlDetails -(Optional) The information about added Cloud SQL capability
+         * @param cloudSqlDetails The information about added Cloud SQL capability
          * 
          * @return builder
          * 
@@ -379,7 +436,7 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cloudSqlDetails -(Optional) The information about added Cloud SQL capability
+         * @param cloudSqlDetails The information about added Cloud SQL capability
          * 
          * @return builder
          * 
@@ -389,7 +446,7 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clusterAdminPassword Base-64 encoded password for Cloudera Manager admin user
+         * @param clusterAdminPassword Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
          * 
          * @return builder
          * 
@@ -400,13 +457,34 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clusterAdminPassword Base-64 encoded password for Cloudera Manager admin user
+         * @param clusterAdminPassword Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
          * 
          * @return builder
          * 
          */
         public Builder clusterAdminPassword(String clusterAdminPassword) {
             return clusterAdminPassword(Output.of(clusterAdminPassword));
+        }
+
+        /**
+         * @param clusterProfile Profile of the Big Data Service cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterProfile(@Nullable Output<String> clusterProfile) {
+            $.clusterProfile = clusterProfile;
+            return this;
+        }
+
+        /**
+         * @param clusterProfile Profile of the Big Data Service cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder clusterProfile(String clusterProfile) {
+            return clusterProfile(Output.of(clusterProfile));
         }
 
         /**
@@ -523,6 +601,15 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
             return displayName(Output.of(displayName));
         }
 
+        public Builder edgeNode(@Nullable Output<BdsInstanceEdgeNodeArgs> edgeNode) {
+            $.edgeNode = edgeNode;
+            return this;
+        }
+
+        public Builder edgeNode(BdsInstanceEdgeNodeArgs edgeNode) {
+            return edgeNode(Output.of(edgeNode));
+        }
+
         /**
          * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
@@ -545,7 +632,7 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isCloudSqlConfigured -(Optional) (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
+         * @param isCloudSqlConfigured (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
          * 
          * @return builder
          * 
@@ -556,13 +643,34 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isCloudSqlConfigured -(Optional) (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
+         * @param isCloudSqlConfigured (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
          * 
          * @return builder
          * 
          */
         public Builder isCloudSqlConfigured(Boolean isCloudSqlConfigured) {
             return isCloudSqlConfigured(Output.of(isCloudSqlConfigured));
+        }
+
+        /**
+         * @param isForceStopJobs (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isForceStopJobs(@Nullable Output<Boolean> isForceStopJobs) {
+            $.isForceStopJobs = isForceStopJobs;
+            return this;
+        }
+
+        /**
+         * @param isForceStopJobs (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isForceStopJobs(Boolean isForceStopJobs) {
+            return isForceStopJobs(Output.of(isForceStopJobs));
         }
 
         /**
@@ -689,6 +797,27 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder networkConfig(BdsInstanceNetworkConfigArgs networkConfig) {
             return networkConfig(Output.of(networkConfig));
+        }
+
+        /**
+         * @param state (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder state(@Nullable Output<String> state) {
+            $.state = state;
+            return this;
+        }
+
+        /**
+         * @param state (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder state(String state) {
+            return state(Output.of(state));
         }
 
         /**

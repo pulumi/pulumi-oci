@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNetworkSecurityGroupSecurityRules(args: GetNetworkSecurityGroupSecurityRulesArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkSecurityGroupSecurityRulesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getNetworkSecurityGroupSecurityRules:getNetworkSecurityGroupSecurityRules", {
         "direction": args.direction,
         "filters": args.filters,
@@ -69,9 +67,25 @@ export interface GetNetworkSecurityGroupSecurityRulesResult {
      */
     readonly securityRules: outputs.Core.GetNetworkSecurityGroupSecurityRulesSecurityRule[];
 }
-
+/**
+ * This data source provides the list of Network Security Group Security Rules in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the security rules in the specified network security group.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testNetworkSecurityGroupSecurityRules = oci.Core.getNetworkSecurityGroupSecurityRules({
+ *     networkSecurityGroupId: oci_core_network_security_group.test_network_security_group.id,
+ *     direction: _var.network_security_group_security_rule_direction,
+ * });
+ * ```
+ */
 export function getNetworkSecurityGroupSecurityRulesOutput(args: GetNetworkSecurityGroupSecurityRulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkSecurityGroupSecurityRulesResult> {
-    return pulumi.output(args).apply(a => getNetworkSecurityGroupSecurityRules(a, opts))
+    return pulumi.output(args).apply((a: any) => getNetworkSecurityGroupSecurityRules(a, opts))
 }
 
 /**

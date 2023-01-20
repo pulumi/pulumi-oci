@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getTagDefault(args: GetTagDefaultArgs, opts?: pulumi.InvokeOptions): Promise<GetTagDefaultResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getTagDefault:getTagDefault", {
         "tagDefaultId": args.tagDefaultId,
     }, opts);
@@ -85,9 +82,24 @@ export interface GetTagDefaultResult {
      */
     readonly value: string;
 }
-
+/**
+ * This data source provides details about a specific Tag Default resource in Oracle Cloud Infrastructure Identity service.
+ *
+ * Retrieves the specified tag default.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testTagDefault = oci.Identity.getTagDefault({
+ *     tagDefaultId: oci_identity_tag_default.test_tag_default.id,
+ * });
+ * ```
+ */
 export function getTagDefaultOutput(args: GetTagDefaultOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTagDefaultResult> {
-    return pulumi.output(args).apply(a => getTagDefault(a, opts))
+    return pulumi.output(args).apply((a: any) => getTagDefault(a, opts))
 }
 
 /**

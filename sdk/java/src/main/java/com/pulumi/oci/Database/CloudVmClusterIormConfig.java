@@ -58,6 +58,14 @@ import javax.annotation.Nullable;
  * }
  * ```
  * 
+ * ## Import
+ * 
+ * CloudVmClusterIormConfigs can be imported using the `id`, e.g.
+ * 
+ * ```sh
+ *  $ pulumi import oci:Database/cloudVmClusterIormConfig:CloudVmClusterIormConfig test_cloud_vm_cluster_iorm_config &#34;cloudVmClusters/{cloudVmClusterId}/CloudVmClusterIormConfig&#34;
+ * ```
+ * 
  */
 @ResourceType(type="oci:Database/cloudVmClusterIormConfig:CloudVmClusterIormConfig")
 public class CloudVmClusterIormConfig extends com.pulumi.resources.CustomResource {
@@ -118,14 +126,14 @@ public class CloudVmClusterIormConfig extends com.pulumi.resources.CustomResourc
         return this.objective;
     }
     /**
-     * The current state of IORM configuration for the Cloud Vm Cluster.
+     * The current state of IORM configuration for the Exadata DB system.
      * 
      */
     @Export(name="state", type=String.class, parameters={})
     private Output<String> state;
 
     /**
-     * @return The current state of IORM configuration for the Cloud Vm Cluster.
+     * @return The current state of IORM configuration for the Exadata DB system.
      * 
      */
     public Output<String> state() {

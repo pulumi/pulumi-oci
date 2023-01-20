@@ -15950,9 +15950,6 @@ type GetManagedDatabasesDatabaseParameterItem struct {
 	// Applicable in case of Oracle Real Application Clusters (Oracle RAC) databases. A `UNIQUE` parameter is one which is unique to each Oracle Real Application Clusters (Oracle RAC) instance. For example, the parameter `INSTANCE_NUMBER` must have different values in each instance. An `IDENTICAL` parameter must have the same value for every instance. For example, the parameter `DB_BLOCK_SIZE` must have the same value in all instances.
 	Constraint string `pulumi:"constraint"`
 	// The ID of the database container to which the data pertains. Possible values include:
-	// * `0`: This value is used for data that pertain to the entire CDB. This value is also used for data in non-CDBs.
-	// * `1`: This value is used for data that pertain to only the root container.
-	// * `n`: Where n is the applicable container ID for the data.
 	ContainerId float64 `pulumi:"containerId"`
 	// The description of the parameter.
 	Description string `pulumi:"description"`
@@ -16016,9 +16013,6 @@ type GetManagedDatabasesDatabaseParameterItemArgs struct {
 	// Applicable in case of Oracle Real Application Clusters (Oracle RAC) databases. A `UNIQUE` parameter is one which is unique to each Oracle Real Application Clusters (Oracle RAC) instance. For example, the parameter `INSTANCE_NUMBER` must have different values in each instance. An `IDENTICAL` parameter must have the same value for every instance. For example, the parameter `DB_BLOCK_SIZE` must have the same value in all instances.
 	Constraint pulumi.StringInput `pulumi:"constraint"`
 	// The ID of the database container to which the data pertains. Possible values include:
-	// * `0`: This value is used for data that pertain to the entire CDB. This value is also used for data in non-CDBs.
-	// * `1`: This value is used for data that pertain to only the root container.
-	// * `n`: Where n is the applicable container ID for the data.
 	ContainerId pulumi.Float64Input `pulumi:"containerId"`
 	// The description of the parameter.
 	Description pulumi.StringInput `pulumi:"description"`
@@ -16132,9 +16126,6 @@ func (o GetManagedDatabasesDatabaseParameterItemOutput) Constraint() pulumi.Stri
 }
 
 // The ID of the database container to which the data pertains. Possible values include:
-// * `0`: This value is used for data that pertain to the entire CDB. This value is also used for data in non-CDBs.
-// * `1`: This value is used for data that pertain to only the root container.
-// * `n`: Where n is the applicable container ID for the data.
 func (o GetManagedDatabasesDatabaseParameterItemOutput) ContainerId() pulumi.Float64Output {
 	return o.ApplyT(func(v GetManagedDatabasesDatabaseParameterItem) float64 { return v.ContainerId }).(pulumi.Float64Output)
 }
@@ -16523,9 +16514,6 @@ type GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItem struc
 	// Applicable in case of Oracle Real Application Clusters (Oracle RAC) databases. A `UNIQUE` parameter is one which is unique to each Oracle Real Application Clusters (Oracle RAC) instance. For example, the parameter `INSTANCE_NUMBER` must have different values in each instance. An `IDENTICAL` parameter must have the same value for every instance. For example, the parameter `DB_BLOCK_SIZE` must have the same value in all instances.
 	Constraint string `pulumi:"constraint"`
 	// The ID of the database container to which the data pertains. Possible values include:
-	// * `0`: This value is used for data that pertain to the entire CDB. This value is also used for data in non-CDBs.
-	// * `1`: This value is used for data that pertain to only the root container.
-	// * `n`: Where n is the applicable container ID for the data.
 	ContainerId float64 `pulumi:"containerId"`
 	// The description of the parameter.
 	Description string `pulumi:"description"`
@@ -16589,9 +16577,6 @@ type GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemArgs s
 	// Applicable in case of Oracle Real Application Clusters (Oracle RAC) databases. A `UNIQUE` parameter is one which is unique to each Oracle Real Application Clusters (Oracle RAC) instance. For example, the parameter `INSTANCE_NUMBER` must have different values in each instance. An `IDENTICAL` parameter must have the same value for every instance. For example, the parameter `DB_BLOCK_SIZE` must have the same value in all instances.
 	Constraint pulumi.StringInput `pulumi:"constraint"`
 	// The ID of the database container to which the data pertains. Possible values include:
-	// * `0`: This value is used for data that pertain to the entire CDB. This value is also used for data in non-CDBs.
-	// * `1`: This value is used for data that pertain to only the root container.
-	// * `n`: Where n is the applicable container ID for the data.
 	ContainerId pulumi.Float64Input `pulumi:"containerId"`
 	// The description of the parameter.
 	Description pulumi.StringInput `pulumi:"description"`
@@ -16709,9 +16694,6 @@ func (o GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemOut
 }
 
 // The ID of the database container to which the data pertains. Possible values include:
-// * `0`: This value is used for data that pertain to the entire CDB. This value is also used for data in non-CDBs.
-// * `1`: This value is used for data that pertain to only the root container.
-// * `n`: Where n is the applicable container ID for the data.
 func (o GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemOutput) ContainerId() pulumi.Float64Output {
 	return o.ApplyT(func(v GetManagedDatabasesDatabaseParametersDatabaseParametersCollectionItem) float64 {
 		return v.ContainerId

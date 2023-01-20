@@ -22,11 +22,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDbSystemsUpgradeHistoryEntry(args: GetDbSystemsUpgradeHistoryEntryArgs, opts?: pulumi.InvokeOptions): Promise<GetDbSystemsUpgradeHistoryEntryResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getDbSystemsUpgradeHistoryEntry:getDbSystemsUpgradeHistoryEntry", {
         "dbSystemId": args.dbSystemId,
         "upgradeHistoryEntryId": args.upgradeHistoryEntryId,
@@ -90,9 +87,25 @@ export interface GetDbSystemsUpgradeHistoryEntryResult {
     readonly timeStarted: string;
     readonly upgradeHistoryEntryId: string;
 }
-
+/**
+ * This data source provides details about a specific Db Systems Upgrade History Entry resource in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets the details of the specified operating system upgrade operation for the specified DB system.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDbSystemsUpgradeHistoryEntry = oci.Database.getDbSystemsUpgradeHistoryEntry({
+ *     dbSystemId: oci_database_db_system.test_db_system.id,
+ *     upgradeHistoryEntryId: oci_database_upgrade_history_entry.test_upgrade_history_entry.id,
+ * });
+ * ```
+ */
 export function getDbSystemsUpgradeHistoryEntryOutput(args: GetDbSystemsUpgradeHistoryEntryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbSystemsUpgradeHistoryEntryResult> {
-    return pulumi.output(args).apply(a => getDbSystemsUpgradeHistoryEntry(a, opts))
+    return pulumi.output(args).apply((a: any) => getDbSystemsUpgradeHistoryEntry(a, opts))
 }
 
 /**

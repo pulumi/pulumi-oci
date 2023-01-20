@@ -47,7 +47,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetIdentityProvidersResult> InvokeAsync(GetIdentityProvidersArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetIdentityProvidersResult>("oci:Identity/getIdentityProviders:getIdentityProviders", args ?? new GetIdentityProvidersArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetIdentityProvidersResult>("oci:Identity/getIdentityProviders:getIdentityProviders", args ?? new GetIdentityProvidersArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Identity Providers in Oracle Cloud Infrastructure Identity service.
@@ -85,7 +85,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetIdentityProvidersResult> Invoke(GetIdentityProvidersInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetIdentityProvidersResult>("oci:Identity/getIdentityProviders:getIdentityProviders", args ?? new GetIdentityProvidersInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetIdentityProvidersResult>("oci:Identity/getIdentityProviders:getIdentityProviders", args ?? new GetIdentityProvidersInvokeArgs(), options.WithDefaults());
     }
 
 

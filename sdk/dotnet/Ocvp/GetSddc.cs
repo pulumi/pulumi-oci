@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Ocvp
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetSddcResult> InvokeAsync(GetSddcArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetSddcResult>("oci:Ocvp/getSddc:getSddc", args ?? new GetSddcArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetSddcResult>("oci:Ocvp/getSddc:getSddc", args ?? new GetSddcArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Sddc resource in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Ocvp
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetSddcResult> Invoke(GetSddcInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetSddcResult>("oci:Ocvp/getSddc:getSddc", args ?? new GetSddcInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetSddcResult>("oci:Ocvp/getSddc:getSddc", args ?? new GetSddcInvokeArgs(), options.WithDefaults());
     }
 
 

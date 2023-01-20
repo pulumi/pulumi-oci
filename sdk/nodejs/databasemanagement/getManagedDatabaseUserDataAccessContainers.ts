@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabaseUserDataAccessContainers(args: GetManagedDatabaseUserDataAccessContainersArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseUserDataAccessContainersResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabaseUserDataAccessContainers:getManagedDatabaseUserDataAccessContainers", {
         "filters": args.filters,
         "managedDatabaseId": args.managedDatabaseId,
@@ -76,9 +74,26 @@ export interface GetManagedDatabaseUserDataAccessContainersResult {
     readonly name?: string;
     readonly userName: string;
 }
-
+/**
+ * This data source provides the list of Managed Database User Data Access Containers in Oracle Cloud Infrastructure Database Management service.
+ *
+ * Gets the list of containers for a specific user. This is only applicable if ALL_CONTAINERS !='Y'.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testManagedDatabaseUserDataAccessContainers = oci.DatabaseManagement.getManagedDatabaseUserDataAccessContainers({
+ *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
+ *     userName: oci_identity_user.test_user.name,
+ *     name: _var.managed_database_user_data_access_container_name,
+ * });
+ * ```
+ */
 export function getManagedDatabaseUserDataAccessContainersOutput(args: GetManagedDatabaseUserDataAccessContainersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseUserDataAccessContainersResult> {
-    return pulumi.output(args).apply(a => getManagedDatabaseUserDataAccessContainers(a, opts))
+    return pulumi.output(args).apply((a: any) => getManagedDatabaseUserDataAccessContainers(a, opts))
 }
 
 /**

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSnapshots(args: GetSnapshotsArgs, opts?: pulumi.InvokeOptions): Promise<GetSnapshotsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:FileStorage/getSnapshots:getSnapshots", {
         "fileSystemId": args.fileSystemId,
         "filters": args.filters,
@@ -78,9 +76,26 @@ export interface GetSnapshotsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Snapshots in Oracle Cloud Infrastructure File Storage service.
+ *
+ * Lists snapshots of the specified file system.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSnapshots = oci.FileStorage.getSnapshots({
+ *     fileSystemId: oci_file_storage_file_system.test_file_system.id,
+ *     id: _var.snapshot_id,
+ *     state: _var.snapshot_state,
+ * });
+ * ```
+ */
 export function getSnapshotsOutput(args: GetSnapshotsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSnapshotsResult> {
-    return pulumi.output(args).apply(a => getSnapshots(a, opts))
+    return pulumi.output(args).apply((a: any) => getSnapshots(a, opts))
 }
 
 /**

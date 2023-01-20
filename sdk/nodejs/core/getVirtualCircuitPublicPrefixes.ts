@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getVirtualCircuitPublicPrefixes(args: GetVirtualCircuitPublicPrefixesArgs, opts?: pulumi.InvokeOptions): Promise<GetVirtualCircuitPublicPrefixesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getVirtualCircuitPublicPrefixes:getVirtualCircuitPublicPrefixes", {
         "filters": args.filters,
         "verificationState": args.verificationState,
@@ -70,9 +68,26 @@ export interface GetVirtualCircuitPublicPrefixesResult {
      */
     readonly virtualCircuitPublicPrefixes: outputs.Core.GetVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefix[];
 }
-
+/**
+ * This data source provides the list of Virtual Circuit Public Prefixes in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the public IP prefixes and their details for the specified
+ * public virtual circuit.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testVirtualCircuitPublicPrefixes = oci.Core.getVirtualCircuitPublicPrefixes({
+ *     virtualCircuitId: oci_core_virtual_circuit.test_virtual_circuit.id,
+ *     verificationState: _var.virtual_circuit_public_prefix_verification_state,
+ * });
+ * ```
+ */
 export function getVirtualCircuitPublicPrefixesOutput(args: GetVirtualCircuitPublicPrefixesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVirtualCircuitPublicPrefixesResult> {
-    return pulumi.output(args).apply(a => getVirtualCircuitPublicPrefixes(a, opts))
+    return pulumi.output(args).apply((a: any) => getVirtualCircuitPublicPrefixes(a, opts))
 }
 
 /**

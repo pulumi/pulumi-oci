@@ -40,7 +40,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetRepositoryMirrorRecordResult> InvokeAsync(GetRepositoryMirrorRecordArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetRepositoryMirrorRecordResult>("oci:DevOps/getRepositoryMirrorRecord:getRepositoryMirrorRecord", args ?? new GetRepositoryMirrorRecordArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetRepositoryMirrorRecordResult>("oci:DevOps/getRepositoryMirrorRecord:getRepositoryMirrorRecord", args ?? new GetRepositoryMirrorRecordArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Repository Mirror Record resource in Oracle Cloud Infrastructure Devops service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetRepositoryMirrorRecordResult> Invoke(GetRepositoryMirrorRecordInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetRepositoryMirrorRecordResult>("oci:DevOps/getRepositoryMirrorRecord:getRepositoryMirrorRecord", args ?? new GetRepositoryMirrorRecordInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetRepositoryMirrorRecordResult>("oci:DevOps/getRepositoryMirrorRecord:getRepositoryMirrorRecord", args ?? new GetRepositoryMirrorRecordInvokeArgs(), options.WithDefaults());
     }
 
 

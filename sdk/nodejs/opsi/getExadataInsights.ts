@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -30,11 +31,8 @@ import * as utilities from "../utilities";
  */
 export function getExadataInsights(args?: GetExadataInsightsArgs, opts?: pulumi.InvokeOptions): Promise<GetExadataInsightsResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Opsi/getExadataInsights:getExadataInsights", {
         "compartmentId": args.compartmentId,
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
@@ -117,9 +115,31 @@ export interface GetExadataInsightsResult {
      */
     readonly statuses?: string[];
 }
-
+/**
+ * This data source provides the list of Exadata Insights in Oracle Cloud Infrastructure Opsi service.
+ *
+ * Gets a list of Exadata insights based on the query parameters specified. Either compartmentId or id query parameter must be specified.
+ * When both compartmentId and compartmentIdInSubtree are specified, a list of Exadata insights in that compartment and in all sub-compartments will be returned.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testExadataInsights = oci.Opsi.getExadataInsights({
+ *     compartmentId: _var.compartment_id,
+ *     compartmentIdInSubtree: _var.exadata_insight_compartment_id_in_subtree,
+ *     enterpriseManagerBridgeId: oci_opsi_enterprise_manager_bridge.test_enterprise_manager_bridge.id,
+ *     exadataTypes: _var.exadata_insight_exadata_type,
+ *     id: _var.exadata_insight_id,
+ *     states: _var.exadata_insight_state,
+ *     statuses: _var.exadata_insight_status,
+ * });
+ * ```
+ */
 export function getExadataInsightsOutput(args?: GetExadataInsightsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExadataInsightsResult> {
-    return pulumi.output(args).apply(a => getExadataInsights(a, opts))
+    return pulumi.output(args).apply((a: any) => getExadataInsights(a, opts))
 }
 
 /**

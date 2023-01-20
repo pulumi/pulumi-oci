@@ -22,7 +22,10 @@ class GetVmClusterNetworkResult:
     """
     A collection of values returned by getVmClusterNetwork.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, display_name=None, dns=None, exadata_infrastructure_id=None, freeform_tags=None, id=None, lifecycle_details=None, ntps=None, scans=None, state=None, time_created=None, validate_vm_cluster_network=None, vm_cluster_id=None, vm_cluster_network_id=None, vm_networks=None):
+    def __init__(__self__, action=None, compartment_id=None, defined_tags=None, display_name=None, dns=None, exadata_infrastructure_id=None, freeform_tags=None, id=None, lifecycle_details=None, ntps=None, scans=None, state=None, time_created=None, validate_vm_cluster_network=None, vm_cluster_id=None, vm_cluster_network_id=None, vm_networks=None):
+        if action and not isinstance(action, str):
+            raise TypeError("Expected argument 'action' to be a str")
+        pulumi.set(__self__, "action", action)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -71,6 +74,11 @@ class GetVmClusterNetworkResult:
         if vm_networks and not isinstance(vm_networks, list):
             raise TypeError("Expected argument 'vm_networks' to be a list")
         pulumi.set(__self__, "vm_networks", vm_networks)
+
+    @property
+    @pulumi.getter
+    def action(self) -> str:
+        return pulumi.get(self, "action")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -156,7 +164,7 @@ class GetVmClusterNetworkResult:
     @pulumi.getter
     def state(self) -> str:
         """
-        The current state of the VM cluster network.
+        The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
         """
         return pulumi.get(self, "state")
 
@@ -201,6 +209,7 @@ class AwaitableGetVmClusterNetworkResult(GetVmClusterNetworkResult):
         if False:
             yield self
         return GetVmClusterNetworkResult(
+            action=self.action,
             compartment_id=self.compartment_id,
             defined_tags=self.defined_tags,
             display_name=self.display_name,
@@ -249,6 +258,7 @@ def get_vm_cluster_network(exadata_infrastructure_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getVmClusterNetwork:getVmClusterNetwork', __args__, opts=opts, typ=GetVmClusterNetworkResult).value
 
     return AwaitableGetVmClusterNetworkResult(
+        action=__ret__.action,
         compartment_id=__ret__.compartment_id,
         defined_tags=__ret__.defined_tags,
         display_name=__ret__.display_name,

@@ -10,6 +10,8 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DataSafe
 {
     /// <summary>
+    /// **Deprecated. This resource does not support create and update operations.**
+    /// 
     /// This resource provides the Discovery Jobs Result resource in Oracle Cloud Infrastructure Data Safe service.
     /// 
     /// ## Example Usage
@@ -67,6 +69,9 @@ namespace Pulumi.Oci.DataSafe
         [Output("dbDefinedChildColumnKeys")]
         public Output<ImmutableArray<string>> DbDefinedChildColumnKeys { get; private set; } = null!;
 
+        /// <summary>
+        /// The OCID of the discovery job.
+        /// </summary>
         [Output("discoveryJobId")]
         public Output<string> DiscoveryJobId { get; private set; } = null!;
 
@@ -200,6 +205,9 @@ namespace Pulumi.Oci.DataSafe
 
     public sealed class DiscoveryJobsResultArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The OCID of the discovery job.
+        /// </summary>
         [Input("discoveryJobId", required: true)]
         public Input<string> DiscoveryJobId { get; set; } = null!;
 
@@ -253,6 +261,9 @@ namespace Pulumi.Oci.DataSafe
             set => _dbDefinedChildColumnKeys = value;
         }
 
+        /// <summary>
+        /// The OCID of the discovery job.
+        /// </summary>
         [Input("discoveryJobId")]
         public Input<string>? DiscoveryJobId { get; set; }
 

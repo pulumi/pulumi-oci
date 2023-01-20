@@ -39,7 +39,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetManagedDatabasesAsmPropertiesResult> InvokeAsync(GetManagedDatabasesAsmPropertiesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabasesAsmPropertiesResult>("oci:DatabaseManagement/getManagedDatabasesAsmProperties:getManagedDatabasesAsmProperties", args ?? new GetManagedDatabasesAsmPropertiesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabasesAsmPropertiesResult>("oci:DatabaseManagement/getManagedDatabasesAsmProperties:getManagedDatabasesAsmProperties", args ?? new GetManagedDatabasesAsmPropertiesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Managed Databases Asm Properties in Oracle Cloud Infrastructure Database Management service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetManagedDatabasesAsmPropertiesResult> Invoke(GetManagedDatabasesAsmPropertiesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetManagedDatabasesAsmPropertiesResult>("oci:DatabaseManagement/getManagedDatabasesAsmProperties:getManagedDatabasesAsmProperties", args ?? new GetManagedDatabasesAsmPropertiesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabasesAsmPropertiesResult>("oci:DatabaseManagement/getManagedDatabasesAsmProperties:getManagedDatabasesAsmProperties", args ?? new GetManagedDatabasesAsmPropertiesInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -5,6 +5,7 @@ package com.pulumi.oci.Mysql.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Mysql.inputs.ChannelSourceAnonymousTransactionsHandlingArgs;
 import com.pulumi.oci.Mysql.inputs.ChannelSourceSslCaCertificateArgs;
 import java.lang.Integer;
 import java.lang.String;
@@ -16,6 +17,21 @@ import javax.annotation.Nullable;
 public final class ChannelSourceArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final ChannelSourceArgs Empty = new ChannelSourceArgs();
+
+    /**
+     * (Updatable) Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
+     * 
+     */
+    @Import(name="anonymousTransactionsHandling")
+    private @Nullable Output<ChannelSourceAnonymousTransactionsHandlingArgs> anonymousTransactionsHandling;
+
+    /**
+     * @return (Updatable) Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
+     * 
+     */
+    public Optional<Output<ChannelSourceAnonymousTransactionsHandlingArgs>> anonymousTransactionsHandling() {
+        return Optional.ofNullable(this.anonymousTransactionsHandling);
+    }
 
     /**
      * (Updatable) The network address of the MySQL instance.
@@ -125,6 +141,7 @@ public final class ChannelSourceArgs extends com.pulumi.resources.ResourceArgs {
     private ChannelSourceArgs() {}
 
     private ChannelSourceArgs(ChannelSourceArgs $) {
+        this.anonymousTransactionsHandling = $.anonymousTransactionsHandling;
         this.hostname = $.hostname;
         this.password = $.password;
         this.port = $.port;
@@ -150,6 +167,27 @@ public final class ChannelSourceArgs extends com.pulumi.resources.ResourceArgs {
 
         public Builder(ChannelSourceArgs defaults) {
             $ = new ChannelSourceArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param anonymousTransactionsHandling (Updatable) Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder anonymousTransactionsHandling(@Nullable Output<ChannelSourceAnonymousTransactionsHandlingArgs> anonymousTransactionsHandling) {
+            $.anonymousTransactionsHandling = anonymousTransactionsHandling;
+            return this;
+        }
+
+        /**
+         * @param anonymousTransactionsHandling (Updatable) Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder anonymousTransactionsHandling(ChannelSourceAnonymousTransactionsHandlingArgs anonymousTransactionsHandling) {
+            return anonymousTransactionsHandling(Output.of(anonymousTransactionsHandling));
         }
 
         /**

@@ -8,6 +8,7 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetPrivateEndpointResult',
@@ -21,7 +22,7 @@ class GetPrivateEndpointResult:
     """
     A collection of values returned by getPrivateEndpoint.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, dns_zones=None, freeform_tags=None, id=None, lifecycle_details=None, max_host_count=None, nsg_ids=None, owner_principal_id=None, owner_user_name=None, private_endpoint_id=None, state=None, subnet_id=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, dns_zones=None, freeform_tags=None, id=None, lifecycle_details=None, max_host_count=None, nsg_ids=None, owner_principal_id=None, owner_user_name=None, private_endpoint_id=None, scan_details=None, state=None, subnet_id=None, time_created=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -61,6 +62,9 @@ class GetPrivateEndpointResult:
         if private_endpoint_id and not isinstance(private_endpoint_id, str):
             raise TypeError("Expected argument 'private_endpoint_id' to be a str")
         pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
+        if scan_details and not isinstance(scan_details, list):
+            raise TypeError("Expected argument 'scan_details' to be a list")
+        pulumi.set(__self__, "scan_details", scan_details)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -176,6 +180,14 @@ class GetPrivateEndpointResult:
         return pulumi.get(self, "private_endpoint_id")
 
     @property
+    @pulumi.getter(name="scanDetails")
+    def scan_details(self) -> Sequence['outputs.GetPrivateEndpointScanDetailResult']:
+        """
+        An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: "scan1.oracle.com", port: "1521"}, { fqdn: "scan2.oracle.com", port: "1521" } ]
+        """
+        return pulumi.get(self, "scan_details")
+
+    @property
     @pulumi.getter
     def state(self) -> str:
         """
@@ -227,6 +239,7 @@ class AwaitableGetPrivateEndpointResult(GetPrivateEndpointResult):
             owner_principal_id=self.owner_principal_id,
             owner_user_name=self.owner_user_name,
             private_endpoint_id=self.private_endpoint_id,
+            scan_details=self.scan_details,
             state=self.state,
             subnet_id=self.subnet_id,
             time_created=self.time_created,
@@ -271,6 +284,7 @@ def get_private_endpoint(private_endpoint_id: Optional[str] = None,
         owner_principal_id=__ret__.owner_principal_id,
         owner_user_name=__ret__.owner_user_name,
         private_endpoint_id=__ret__.private_endpoint_id,
+        scan_details=__ret__.scan_details,
         state=__ret__.state,
         subnet_id=__ret__.subnet_id,
         time_created=__ret__.time_created,

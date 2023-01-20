@@ -33,14 +33,14 @@ public final class AutonomousDatabaseInstanceWalletManagementArgs extends com.pu
     }
 
     /**
-     * (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+     * (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
      * 
      */
     @Import(name="gracePeriod")
     private @Nullable Output<Integer> gracePeriod;
 
     /**
-     * @return (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+     * @return (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
      * 
      */
     public Optional<Output<Integer>> gracePeriod() {
@@ -110,7 +110,7 @@ public final class AutonomousDatabaseInstanceWalletManagementArgs extends com.pu
         }
 
         /**
-         * @param gracePeriod (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+         * @param gracePeriod (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
          * 
          * @return builder
          * 
@@ -121,7 +121,7 @@ public final class AutonomousDatabaseInstanceWalletManagementArgs extends com.pu
         }
 
         /**
-         * @param gracePeriod (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+         * @param gracePeriod (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
          * 
          * @return builder
          * 

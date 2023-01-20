@@ -41,7 +41,7 @@ namespace Pulumi.Oci.AnnouncementsService
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAnnouncementSubscriptionResult> InvokeAsync(GetAnnouncementSubscriptionArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAnnouncementSubscriptionResult>("oci:AnnouncementsService/getAnnouncementSubscription:getAnnouncementSubscription", args ?? new GetAnnouncementSubscriptionArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAnnouncementSubscriptionResult>("oci:AnnouncementsService/getAnnouncementSubscription:getAnnouncementSubscription", args ?? new GetAnnouncementSubscriptionArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Announcement Subscription resource in Oracle Cloud Infrastructure Announcements Service service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.AnnouncementsService
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAnnouncementSubscriptionResult> Invoke(GetAnnouncementSubscriptionInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAnnouncementSubscriptionResult>("oci:AnnouncementsService/getAnnouncementSubscription:getAnnouncementSubscription", args ?? new GetAnnouncementSubscriptionInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAnnouncementSubscriptionResult>("oci:AnnouncementsService/getAnnouncementSubscription:getAnnouncementSubscription", args ?? new GetAnnouncementSubscriptionInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -147,6 +147,14 @@ namespace Pulumi.Oci.AnnouncementsService
         /// </summary>
         public readonly string OnsTopicId;
         /// <summary>
+        /// (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
+        /// </summary>
+        public readonly string PreferredLanguage;
+        /// <summary>
+        /// The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+        /// </summary>
+        public readonly string PreferredTimeZone;
+        /// <summary>
         /// The current lifecycle state of the announcement subscription.
         /// </summary>
         public readonly string State;
@@ -185,6 +193,10 @@ namespace Pulumi.Oci.AnnouncementsService
 
             string onsTopicId,
 
+            string preferredLanguage,
+
+            string preferredTimeZone,
+
             string state,
 
             ImmutableDictionary<string, object> systemTags,
@@ -203,6 +215,8 @@ namespace Pulumi.Oci.AnnouncementsService
             Id = id;
             LifecycleDetails = lifecycleDetails;
             OnsTopicId = onsTopicId;
+            PreferredLanguage = preferredLanguage;
+            PreferredTimeZone = preferredTimeZone;
             State = state;
             SystemTags = systemTags;
             TimeCreated = timeCreated;

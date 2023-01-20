@@ -4,49 +4,22 @@
 package com.pulumi.oci.NetworkFirewall.outputs;
 
 import com.pulumi.core.annotations.CustomType;
-import java.lang.Integer;
+import com.pulumi.oci.NetworkFirewall.outputs.GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValue;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
 public final class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationList {
-    private Integer icmpCode;
-    private Integer icmpType;
-    private String key;
-    private Integer maximumPort;
-    private Integer minimumPort;
-    /**
-     * @return Type of the secrets mapped based on the policy.
-     * * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-     * * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
-     * 
-     */
-    private String type;
+    private String applicationListName;
+    private List<GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValue> applicationValues;
 
     private GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationList() {}
-    public Integer icmpCode() {
-        return this.icmpCode;
+    public String applicationListName() {
+        return this.applicationListName;
     }
-    public Integer icmpType() {
-        return this.icmpType;
-    }
-    public String key() {
-        return this.key;
-    }
-    public Integer maximumPort() {
-        return this.maximumPort;
-    }
-    public Integer minimumPort() {
-        return this.minimumPort;
-    }
-    /**
-     * @return Type of the secrets mapped based on the policy.
-     * * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-     * * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
-     * 
-     */
-    public String type() {
-        return this.type;
+    public List<GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValue> applicationValues() {
+        return this.applicationValues;
     }
 
     public static Builder builder() {
@@ -58,61 +31,32 @@ public final class GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollect
     }
     @CustomType.Builder
     public static final class Builder {
-        private Integer icmpCode;
-        private Integer icmpType;
-        private String key;
-        private Integer maximumPort;
-        private Integer minimumPort;
-        private String type;
+        private String applicationListName;
+        private List<GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValue> applicationValues;
         public Builder() {}
         public Builder(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationList defaults) {
     	      Objects.requireNonNull(defaults);
-    	      this.icmpCode = defaults.icmpCode;
-    	      this.icmpType = defaults.icmpType;
-    	      this.key = defaults.key;
-    	      this.maximumPort = defaults.maximumPort;
-    	      this.minimumPort = defaults.minimumPort;
-    	      this.type = defaults.type;
+    	      this.applicationListName = defaults.applicationListName;
+    	      this.applicationValues = defaults.applicationValues;
         }
 
         @CustomType.Setter
-        public Builder icmpCode(Integer icmpCode) {
-            this.icmpCode = Objects.requireNonNull(icmpCode);
+        public Builder applicationListName(String applicationListName) {
+            this.applicationListName = Objects.requireNonNull(applicationListName);
             return this;
         }
         @CustomType.Setter
-        public Builder icmpType(Integer icmpType) {
-            this.icmpType = Objects.requireNonNull(icmpType);
+        public Builder applicationValues(List<GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValue> applicationValues) {
+            this.applicationValues = Objects.requireNonNull(applicationValues);
             return this;
         }
-        @CustomType.Setter
-        public Builder key(String key) {
-            this.key = Objects.requireNonNull(key);
-            return this;
-        }
-        @CustomType.Setter
-        public Builder maximumPort(Integer maximumPort) {
-            this.maximumPort = Objects.requireNonNull(maximumPort);
-            return this;
-        }
-        @CustomType.Setter
-        public Builder minimumPort(Integer minimumPort) {
-            this.minimumPort = Objects.requireNonNull(minimumPort);
-            return this;
-        }
-        @CustomType.Setter
-        public Builder type(String type) {
-            this.type = Objects.requireNonNull(type);
-            return this;
+        public Builder applicationValues(GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationListApplicationValue... applicationValues) {
+            return applicationValues(List.of(applicationValues));
         }
         public GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationList build() {
             final var o = new GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemApplicationList();
-            o.icmpCode = icmpCode;
-            o.icmpType = icmpType;
-            o.key = key;
-            o.maximumPort = maximumPort;
-            o.minimumPort = minimumPort;
-            o.type = type;
+            o.applicationListName = applicationListName;
+            o.applicationValues = applicationValues;
             return o;
         }
     }

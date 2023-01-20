@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRepositoryMirrorRecords(args: GetRepositoryMirrorRecordsArgs, opts?: pulumi.InvokeOptions): Promise<GetRepositoryMirrorRecordsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getRepositoryMirrorRecords:getRepositoryMirrorRecords", {
         "filters": args.filters,
         "repositoryId": args.repositoryId,
@@ -59,9 +57,24 @@ export interface GetRepositoryMirrorRecordsResult {
      */
     readonly repositoryMirrorRecordCollections: outputs.DevOps.GetRepositoryMirrorRecordsRepositoryMirrorRecordCollection[];
 }
-
+/**
+ * This data source provides the list of Repository Mirror Records in Oracle Cloud Infrastructure Devops service.
+ *
+ * Returns a list of mirror entry in history within 30 days.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testRepositoryMirrorRecords = oci.DevOps.getRepositoryMirrorRecords({
+ *     repositoryId: oci_devops_repository.test_repository.id,
+ * });
+ * ```
+ */
 export function getRepositoryMirrorRecordsOutput(args: GetRepositoryMirrorRecordsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoryMirrorRecordsResult> {
-    return pulumi.output(args).apply(a => getRepositoryMirrorRecords(a, opts))
+    return pulumi.output(args).apply((a: any) => getRepositoryMirrorRecords(a, opts))
 }
 
 /**

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -11,11 +12,8 @@ import * as utilities from "../utilities";
  * This is a collection API which returns a list of aggregated computed usage details (there can be multiple Parent Products under a given SubID each of which is represented under Subscription Service Line # in SPM).
  */
 export function getCommitmentAggregateds(args: GetCommitmentAggregatedsArgs, opts?: pulumi.InvokeOptions): Promise<GetCommitmentAggregatedsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsubUsage/getCommitmentAggregateds:getCommitmentAggregateds", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -90,9 +88,13 @@ export interface GetCommitmentAggregatedsResult {
     readonly timeTo: string;
     readonly xOneOriginRegion?: string;
 }
-
+/**
+ * This data source provides the list of Computed Usage Aggregateds in Oracle Cloud Infrastructure Osub Usage service.
+ *
+ * This is a collection API which returns a list of aggregated computed usage details (there can be multiple Parent Products under a given SubID each of which is represented under Subscription Service Line # in SPM).
+ */
 export function getCommitmentAggregatedsOutput(args: GetCommitmentAggregatedsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCommitmentAggregatedsResult> {
-    return pulumi.output(args).apply(a => getCommitmentAggregateds(a, opts))
+    return pulumi.output(args).apply((a: any) => getCommitmentAggregateds(a, opts))
 }
 
 /**

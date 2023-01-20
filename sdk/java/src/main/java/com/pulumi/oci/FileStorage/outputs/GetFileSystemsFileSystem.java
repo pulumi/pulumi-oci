@@ -45,15 +45,20 @@ public final class GetFileSystemsFileSystem {
      */
     private String id;
     /**
-     * @return Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+     * @return Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      * 
      */
     private Boolean isCloneParent;
     /**
-     * @return Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm#hydration).
+     * @return Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
      * 
      */
     private Boolean isHydrated;
+    /**
+     * @return Specifies whether the file system can be used as a target file system for replication. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
+     * 
+     */
+    private Boolean isTargetable;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key used to encrypt the encryption keys associated with this file system.
      * 
@@ -70,12 +75,17 @@ public final class GetFileSystemsFileSystem {
      */
     private String meteredBytes;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
+     * 
+     */
+    private String replicationTargetId;
+    /**
      * @return Source information for the file system.
      * 
      */
     private List<GetFileSystemsFileSystemSourceDetail> sourceDetails;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      * 
      */
     private String sourceSnapshotId;
@@ -134,18 +144,25 @@ public final class GetFileSystemsFileSystem {
         return this.id;
     }
     /**
-     * @return Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+     * @return Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      * 
      */
     public Boolean isCloneParent() {
         return this.isCloneParent;
     }
     /**
-     * @return Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm#hydration).
+     * @return Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
      * 
      */
     public Boolean isHydrated() {
         return this.isHydrated;
+    }
+    /**
+     * @return Specifies whether the file system can be used as a target file system for replication. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
+     * 
+     */
+    public Boolean isTargetable() {
+        return this.isTargetable;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key used to encrypt the encryption keys associated with this file system.
@@ -169,6 +186,13 @@ public final class GetFileSystemsFileSystem {
         return this.meteredBytes;
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
+     * 
+     */
+    public String replicationTargetId() {
+        return this.replicationTargetId;
+    }
+    /**
      * @return Source information for the file system.
      * 
      */
@@ -176,7 +200,7 @@ public final class GetFileSystemsFileSystem {
         return this.sourceDetails;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      * 
      */
     public String sourceSnapshotId() {
@@ -214,9 +238,11 @@ public final class GetFileSystemsFileSystem {
         private String id;
         private Boolean isCloneParent;
         private Boolean isHydrated;
+        private Boolean isTargetable;
         private String kmsKeyId;
         private String lifecycleDetails;
         private String meteredBytes;
+        private String replicationTargetId;
         private List<GetFileSystemsFileSystemSourceDetail> sourceDetails;
         private String sourceSnapshotId;
         private String state;
@@ -232,9 +258,11 @@ public final class GetFileSystemsFileSystem {
     	      this.id = defaults.id;
     	      this.isCloneParent = defaults.isCloneParent;
     	      this.isHydrated = defaults.isHydrated;
+    	      this.isTargetable = defaults.isTargetable;
     	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.meteredBytes = defaults.meteredBytes;
+    	      this.replicationTargetId = defaults.replicationTargetId;
     	      this.sourceDetails = defaults.sourceDetails;
     	      this.sourceSnapshotId = defaults.sourceSnapshotId;
     	      this.state = defaults.state;
@@ -282,6 +310,11 @@ public final class GetFileSystemsFileSystem {
             return this;
         }
         @CustomType.Setter
+        public Builder isTargetable(Boolean isTargetable) {
+            this.isTargetable = Objects.requireNonNull(isTargetable);
+            return this;
+        }
+        @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
             this.kmsKeyId = Objects.requireNonNull(kmsKeyId);
             return this;
@@ -294,6 +327,11 @@ public final class GetFileSystemsFileSystem {
         @CustomType.Setter
         public Builder meteredBytes(String meteredBytes) {
             this.meteredBytes = Objects.requireNonNull(meteredBytes);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder replicationTargetId(String replicationTargetId) {
+            this.replicationTargetId = Objects.requireNonNull(replicationTargetId);
             return this;
         }
         @CustomType.Setter
@@ -329,9 +367,11 @@ public final class GetFileSystemsFileSystem {
             o.id = id;
             o.isCloneParent = isCloneParent;
             o.isHydrated = isHydrated;
+            o.isTargetable = isTargetable;
             o.kmsKeyId = kmsKeyId;
             o.lifecycleDetails = lifecycleDetails;
             o.meteredBytes = meteredBytes;
+            o.replicationTargetId = replicationTargetId;
             o.sourceDetails = sourceDetails;
             o.sourceSnapshotId = sourceSnapshotId;
             o.state = state;

@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Email
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetEmailDomainResult> InvokeAsync(GetEmailDomainArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetEmailDomainResult>("oci:Email/getEmailDomain:getEmailDomain", args ?? new GetEmailDomainArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetEmailDomainResult>("oci:Email/getEmailDomain:getEmailDomain", args ?? new GetEmailDomainArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Email Domain resource in Oracle Cloud Infrastructure Email service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Email
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetEmailDomainResult> Invoke(GetEmailDomainInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetEmailDomainResult>("oci:Email/getEmailDomain:getEmailDomain", args ?? new GetEmailDomainInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetEmailDomainResult>("oci:Email/getEmailDomain:getEmailDomain", args ?? new GetEmailDomainInvokeArgs(), options.WithDefaults());
     }
 
 

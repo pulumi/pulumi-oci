@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getBastions(args: GetBastionsArgs, opts?: pulumi.InvokeOptions): Promise<GetBastionsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Bastion/getBastions:getBastions", {
         "bastionId": args.bastionId,
         "bastionLifecycleState": args.bastionLifecycleState,
@@ -86,9 +84,27 @@ export interface GetBastionsResult {
      */
     readonly name?: string;
 }
-
+/**
+ * This data source provides the list of Bastions in Oracle Cloud Infrastructure Bastion service.
+ *
+ * Retrieves a list of BastionSummary objects in a compartment. Bastions provide secured, public access to target resources in the cloud that you cannot otherwise reach from the internet.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testBastions = oci.Bastion.getBastions({
+ *     compartmentId: _var.compartment_id,
+ *     bastionId: oci_bastion_bastion.test_bastion.id,
+ *     bastionLifecycleState: _var.bastion_bastion_lifecycle_state,
+ *     name: _var.bastion_name,
+ * });
+ * ```
+ */
 export function getBastionsOutput(args: GetBastionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBastionsResult> {
-    return pulumi.output(args).apply(a => getBastions(a, opts))
+    return pulumi.output(args).apply((a: any) => getBastions(a, opts))
 }
 
 /**

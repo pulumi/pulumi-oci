@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFusionEnvironmentFamily(args: GetFusionEnvironmentFamilyArgs, opts?: pulumi.InvokeOptions): Promise<GetFusionEnvironmentFamilyResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Functions/getFusionEnvironmentFamily:getFusionEnvironmentFamily", {
         "fusionEnvironmentFamilyId": args.fusionEnvironmentFamilyId,
     }, opts);
@@ -97,9 +95,24 @@ export interface GetFusionEnvironmentFamilyResult {
     readonly timeCreated: string;
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Fusion Environment Family resource in Oracle Cloud Infrastructure Fusion Apps service.
+ *
+ * Retrieves a fusion environment family identified by its OCID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testFusionEnvironmentFamily = oci.Functions.getFusionEnvironmentFamily({
+ *     fusionEnvironmentFamilyId: oci_fusion_apps_fusion_environment_family.test_fusion_environment_family.id,
+ * });
+ * ```
+ */
 export function getFusionEnvironmentFamilyOutput(args: GetFusionEnvironmentFamilyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFusionEnvironmentFamilyResult> {
-    return pulumi.output(args).apply(a => getFusionEnvironmentFamily(a, opts))
+    return pulumi.output(args).apply((a: any) => getFusionEnvironmentFamily(a, opts))
 }
 
 /**

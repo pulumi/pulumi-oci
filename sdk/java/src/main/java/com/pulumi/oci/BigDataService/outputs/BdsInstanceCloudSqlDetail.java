@@ -6,6 +6,7 @@ package com.pulumi.oci.BigDataService.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.BigDataService.outputs.BdsInstanceCloudSqlDetailKerberosDetail;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -18,7 +19,7 @@ public final class BdsInstanceCloudSqlDetail {
      * @return The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
      * 
      */
-    private String blockVolumeSizeInGbs;
+    private @Nullable String blockVolumeSizeInGbs;
     /**
      * @return IP address of the node
      * 
@@ -35,6 +36,21 @@ public final class BdsInstanceCloudSqlDetail {
      */
     private @Nullable List<BdsInstanceCloudSqlDetailKerberosDetail> kerberosDetails;
     /**
+     * @return The total amount of memory available to the node, in gigabytes
+     * 
+     */
+    private @Nullable Integer memoryInGbs;
+    /**
+     * @return The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+     * 
+     */
+    private @Nullable Integer nvmes;
+    /**
+     * @return The total number of OCPUs available to the node.
+     * 
+     */
+    private @Nullable Integer ocpus;
+    /**
      * @return Shape of the node
      * 
      */
@@ -45,8 +61,8 @@ public final class BdsInstanceCloudSqlDetail {
      * @return The size of block volume in GB that needs to be attached to a given node. All the necessary details needed for attachment are managed by service itself.
      * 
      */
-    public String blockVolumeSizeInGbs() {
-        return this.blockVolumeSizeInGbs;
+    public Optional<String> blockVolumeSizeInGbs() {
+        return Optional.ofNullable(this.blockVolumeSizeInGbs);
     }
     /**
      * @return IP address of the node
@@ -70,6 +86,27 @@ public final class BdsInstanceCloudSqlDetail {
         return this.kerberosDetails == null ? List.of() : this.kerberosDetails;
     }
     /**
+     * @return The total amount of memory available to the node, in gigabytes
+     * 
+     */
+    public Optional<Integer> memoryInGbs() {
+        return Optional.ofNullable(this.memoryInGbs);
+    }
+    /**
+     * @return The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+     * 
+     */
+    public Optional<Integer> nvmes() {
+        return Optional.ofNullable(this.nvmes);
+    }
+    /**
+     * @return The total number of OCPUs available to the node.
+     * 
+     */
+    public Optional<Integer> ocpus() {
+        return Optional.ofNullable(this.ocpus);
+    }
+    /**
      * @return Shape of the node
      * 
      */
@@ -86,10 +123,13 @@ public final class BdsInstanceCloudSqlDetail {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String blockVolumeSizeInGbs;
+        private @Nullable String blockVolumeSizeInGbs;
         private @Nullable String ipAddress;
         private @Nullable Boolean isKerberosMappedToDatabaseUsers;
         private @Nullable List<BdsInstanceCloudSqlDetailKerberosDetail> kerberosDetails;
+        private @Nullable Integer memoryInGbs;
+        private @Nullable Integer nvmes;
+        private @Nullable Integer ocpus;
         private String shape;
         public Builder() {}
         public Builder(BdsInstanceCloudSqlDetail defaults) {
@@ -98,12 +138,15 @@ public final class BdsInstanceCloudSqlDetail {
     	      this.ipAddress = defaults.ipAddress;
     	      this.isKerberosMappedToDatabaseUsers = defaults.isKerberosMappedToDatabaseUsers;
     	      this.kerberosDetails = defaults.kerberosDetails;
+    	      this.memoryInGbs = defaults.memoryInGbs;
+    	      this.nvmes = defaults.nvmes;
+    	      this.ocpus = defaults.ocpus;
     	      this.shape = defaults.shape;
         }
 
         @CustomType.Setter
-        public Builder blockVolumeSizeInGbs(String blockVolumeSizeInGbs) {
-            this.blockVolumeSizeInGbs = Objects.requireNonNull(blockVolumeSizeInGbs);
+        public Builder blockVolumeSizeInGbs(@Nullable String blockVolumeSizeInGbs) {
+            this.blockVolumeSizeInGbs = blockVolumeSizeInGbs;
             return this;
         }
         @CustomType.Setter
@@ -125,6 +168,21 @@ public final class BdsInstanceCloudSqlDetail {
             return kerberosDetails(List.of(kerberosDetails));
         }
         @CustomType.Setter
+        public Builder memoryInGbs(@Nullable Integer memoryInGbs) {
+            this.memoryInGbs = memoryInGbs;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder nvmes(@Nullable Integer nvmes) {
+            this.nvmes = nvmes;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder ocpus(@Nullable Integer ocpus) {
+            this.ocpus = ocpus;
+            return this;
+        }
+        @CustomType.Setter
         public Builder shape(String shape) {
             this.shape = Objects.requireNonNull(shape);
             return this;
@@ -135,6 +193,9 @@ public final class BdsInstanceCloudSqlDetail {
             o.ipAddress = ipAddress;
             o.isKerberosMappedToDatabaseUsers = isKerberosMappedToDatabaseUsers;
             o.kerberosDetails = kerberosDetails;
+            o.memoryInGbs = memoryInGbs;
+            o.nvmes = nvmes;
+            o.ocpus = ocpus;
             o.shape = shape;
             return o;
         }

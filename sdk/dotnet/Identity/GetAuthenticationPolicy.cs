@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAuthenticationPolicyResult> InvokeAsync(GetAuthenticationPolicyArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAuthenticationPolicyResult>("oci:Identity/getAuthenticationPolicy:getAuthenticationPolicy", args ?? new GetAuthenticationPolicyArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAuthenticationPolicyResult>("oci:Identity/getAuthenticationPolicy:getAuthenticationPolicy", args ?? new GetAuthenticationPolicyArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Authentication Policy resource in Oracle Cloud Infrastructure Identity service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAuthenticationPolicyResult> Invoke(GetAuthenticationPolicyInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAuthenticationPolicyResult>("oci:Identity/getAuthenticationPolicy:getAuthenticationPolicy", args ?? new GetAuthenticationPolicyInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAuthenticationPolicyResult>("oci:Identity/getAuthenticationPolicy:getAuthenticationPolicy", args ?? new GetAuthenticationPolicyInvokeArgs(), options.WithDefaults());
     }
 
 

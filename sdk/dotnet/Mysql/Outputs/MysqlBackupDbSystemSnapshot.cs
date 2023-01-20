@@ -26,7 +26,7 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.MysqlBackupDbSystemSnapshotBackupPolicy> BackupPolicies;
         /// <summary>
-        /// (Updatable) The OCID of the compartment.
+        /// (Updatable) The OCID of the compartment the backup exists in.
         /// </summary>
         public readonly string? CompartmentId;
         /// <summary>
@@ -86,7 +86,7 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly bool? IsHighlyAvailable;
         /// <summary>
-        /// The Maintenance Policy for the DB System.
+        /// The Maintenance Policy for the DB System or Read Replica that this model is included in.
         /// </summary>
         public readonly ImmutableArray<Outputs.MysqlBackupDbSystemSnapshotMaintenance> Maintenances;
         /// <summary>

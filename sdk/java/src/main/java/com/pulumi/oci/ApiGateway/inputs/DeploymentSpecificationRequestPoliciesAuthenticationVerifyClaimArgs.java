@@ -33,14 +33,14 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationVerifyCla
     }
 
     /**
-     * (Updatable) Name of the claim.
+     * (Updatable) Information around the values for selector of an authentication/ routing branch.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return (Updatable) Name of the claim.
+     * @return (Updatable) Information around the values for selector of an authentication/ routing branch.
      * 
      */
     public Optional<Output<String>> key() {
@@ -110,7 +110,7 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationVerifyCla
         }
 
         /**
-         * @param key (Updatable) Name of the claim.
+         * @param key (Updatable) Information around the values for selector of an authentication/ routing branch.
          * 
          * @return builder
          * 
@@ -121,7 +121,7 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationVerifyCla
         }
 
         /**
-         * @param key (Updatable) Name of the claim.
+         * @param key (Updatable) Information around the values for selector of an authentication/ routing branch.
          * 
          * @return builder
          * 

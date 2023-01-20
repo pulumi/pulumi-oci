@@ -22,7 +22,7 @@ class GetInvokeRunResult:
     """
     A collection of values returned by getInvokeRun.
     """
-    def __init__(__self__, application_id=None, application_log_configs=None, archive_uri=None, arguments=None, asynchronous=None, class_name=None, compartment_id=None, configuration=None, data_read_in_bytes=None, data_written_in_bytes=None, defined_tags=None, display_name=None, driver_shape=None, driver_shape_configs=None, execute=None, executor_shape=None, executor_shape_configs=None, file_uri=None, freeform_tags=None, id=None, language=None, lifecycle_details=None, logs_bucket_uri=None, metastore_id=None, num_executors=None, opc_request_id=None, owner_principal_id=None, owner_user_name=None, parameters=None, private_endpoint_dns_zones=None, private_endpoint_id=None, private_endpoint_max_host_count=None, private_endpoint_nsg_ids=None, private_endpoint_subnet_id=None, run_duration_in_milliseconds=None, run_id=None, spark_version=None, state=None, time_created=None, time_updated=None, total_ocpu=None, type=None, warehouse_bucket_uri=None):
+    def __init__(__self__, application_id=None, application_log_configs=None, archive_uri=None, arguments=None, asynchronous=None, class_name=None, compartment_id=None, configuration=None, data_read_in_bytes=None, data_written_in_bytes=None, defined_tags=None, display_name=None, driver_shape=None, driver_shape_configs=None, execute=None, executor_shape=None, executor_shape_configs=None, file_uri=None, freeform_tags=None, id=None, idle_timeout_in_minutes=None, language=None, lifecycle_details=None, logs_bucket_uri=None, max_duration_in_minutes=None, metastore_id=None, num_executors=None, opc_request_id=None, owner_principal_id=None, owner_user_name=None, parameters=None, private_endpoint_dns_zones=None, private_endpoint_id=None, private_endpoint_max_host_count=None, private_endpoint_nsg_ids=None, private_endpoint_subnet_id=None, run_duration_in_milliseconds=None, run_id=None, spark_version=None, state=None, time_created=None, time_updated=None, total_ocpu=None, type=None, warehouse_bucket_uri=None):
         if application_id and not isinstance(application_id, str):
             raise TypeError("Expected argument 'application_id' to be a str")
         pulumi.set(__self__, "application_id", application_id)
@@ -83,6 +83,9 @@ class GetInvokeRunResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if idle_timeout_in_minutes and not isinstance(idle_timeout_in_minutes, str):
+            raise TypeError("Expected argument 'idle_timeout_in_minutes' to be a str")
+        pulumi.set(__self__, "idle_timeout_in_minutes", idle_timeout_in_minutes)
         if language and not isinstance(language, str):
             raise TypeError("Expected argument 'language' to be a str")
         pulumi.set(__self__, "language", language)
@@ -92,6 +95,9 @@ class GetInvokeRunResult:
         if logs_bucket_uri and not isinstance(logs_bucket_uri, str):
             raise TypeError("Expected argument 'logs_bucket_uri' to be a str")
         pulumi.set(__self__, "logs_bucket_uri", logs_bucket_uri)
+        if max_duration_in_minutes and not isinstance(max_duration_in_minutes, str):
+            raise TypeError("Expected argument 'max_duration_in_minutes' to be a str")
+        pulumi.set(__self__, "max_duration_in_minutes", max_duration_in_minutes)
         if metastore_id and not isinstance(metastore_id, str):
             raise TypeError("Expected argument 'metastore_id' to be a str")
         pulumi.set(__self__, "metastore_id", metastore_id)
@@ -173,7 +179,7 @@ class GetInvokeRunResult:
     @pulumi.getter(name="archiveUri")
     def archive_uri(self) -> str:
         """
-        An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
+        A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         """
         return pulumi.get(self, "archive_uri")
 
@@ -311,6 +317,14 @@ class GetInvokeRunResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="idleTimeoutInMinutes")
+    def idle_timeout_in_minutes(self) -> str:
+        """
+        The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
+        """
+        return pulumi.get(self, "idle_timeout_in_minutes")
+
+    @property
     @pulumi.getter
     def language(self) -> str:
         """
@@ -333,6 +347,14 @@ class GetInvokeRunResult:
         An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         """
         return pulumi.get(self, "logs_bucket_uri")
+
+    @property
+    @pulumi.getter(name="maxDurationInMinutes")
+    def max_duration_in_minutes(self) -> str:
+        """
+        The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
+        """
+        return pulumi.get(self, "max_duration_in_minutes")
 
     @property
     @pulumi.getter(name="metastoreId")
@@ -518,9 +540,11 @@ class AwaitableGetInvokeRunResult(GetInvokeRunResult):
             file_uri=self.file_uri,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            idle_timeout_in_minutes=self.idle_timeout_in_minutes,
             language=self.language,
             lifecycle_details=self.lifecycle_details,
             logs_bucket_uri=self.logs_bucket_uri,
+            max_duration_in_minutes=self.max_duration_in_minutes,
             metastore_id=self.metastore_id,
             num_executors=self.num_executors,
             opc_request_id=self.opc_request_id,
@@ -588,9 +612,11 @@ def get_invoke_run(run_id: Optional[str] = None,
         file_uri=__ret__.file_uri,
         freeform_tags=__ret__.freeform_tags,
         id=__ret__.id,
+        idle_timeout_in_minutes=__ret__.idle_timeout_in_minutes,
         language=__ret__.language,
         lifecycle_details=__ret__.lifecycle_details,
         logs_bucket_uri=__ret__.logs_bucket_uri,
+        max_duration_in_minutes=__ret__.max_duration_in_minutes,
         metastore_id=__ret__.metastore_id,
         num_executors=__ret__.num_executors,
         opc_request_id=__ret__.opc_request_id,

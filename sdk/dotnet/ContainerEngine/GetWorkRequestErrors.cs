@@ -39,7 +39,7 @@ namespace Pulumi.Oci.ContainerEngine
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetWorkRequestErrorsResult> InvokeAsync(GetWorkRequestErrorsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetWorkRequestErrorsResult>("oci:ContainerEngine/getWorkRequestErrors:getWorkRequestErrors", args ?? new GetWorkRequestErrorsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetWorkRequestErrorsResult>("oci:ContainerEngine/getWorkRequestErrors:getWorkRequestErrors", args ?? new GetWorkRequestErrorsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Work Request Errors in Oracle Cloud Infrastructure Container Engine service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.ContainerEngine
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetWorkRequestErrorsResult> Invoke(GetWorkRequestErrorsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetWorkRequestErrorsResult>("oci:ContainerEngine/getWorkRequestErrors:getWorkRequestErrors", args ?? new GetWorkRequestErrorsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetWorkRequestErrorsResult>("oci:ContainerEngine/getWorkRequestErrors:getWorkRequestErrors", args ?? new GetWorkRequestErrorsInvokeArgs(), options.WithDefaults());
     }
 
 

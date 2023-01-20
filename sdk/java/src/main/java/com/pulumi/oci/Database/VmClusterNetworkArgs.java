@@ -21,6 +21,13 @@ public final class VmClusterNetworkArgs extends com.pulumi.resources.ResourceArg
 
     public static final VmClusterNetworkArgs Empty = new VmClusterNetworkArgs();
 
+    @Import(name="action")
+    private @Nullable Output<String> action;
+
+    public Optional<Output<String>> action() {
+        return Optional.ofNullable(this.action);
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
@@ -166,6 +173,7 @@ public final class VmClusterNetworkArgs extends com.pulumi.resources.ResourceArg
     private VmClusterNetworkArgs() {}
 
     private VmClusterNetworkArgs(VmClusterNetworkArgs $) {
+        this.action = $.action;
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
@@ -194,6 +202,15 @@ public final class VmClusterNetworkArgs extends com.pulumi.resources.ResourceArg
 
         public Builder(VmClusterNetworkArgs defaults) {
             $ = new VmClusterNetworkArgs(Objects.requireNonNull(defaults));
+        }
+
+        public Builder action(@Nullable Output<String> action) {
+            $.action = action;
+            return this;
+        }
+
+        public Builder action(String action) {
+            return action(Output.of(action));
         }
 
         /**

@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Ocvp
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetSupportedSkusResult> InvokeAsync(GetSupportedSkusArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetSupportedSkusResult>("oci:Ocvp/getSupportedSkus:getSupportedSkus", args ?? new GetSupportedSkusArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetSupportedSkusResult>("oci:Ocvp/getSupportedSkus:getSupportedSkus", args ?? new GetSupportedSkusArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Supported Skus in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Ocvp
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetSupportedSkusResult> Invoke(GetSupportedSkusInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetSupportedSkusResult>("oci:Ocvp/getSupportedSkus:getSupportedSkus", args ?? new GetSupportedSkusInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetSupportedSkusResult>("oci:Ocvp/getSupportedSkus:getSupportedSkus", args ?? new GetSupportedSkusInvokeArgs(), options.WithDefaults());
     }
 
 

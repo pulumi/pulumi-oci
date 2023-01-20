@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFusionEnvironmentServiceAttachments(args: GetFusionEnvironmentServiceAttachmentsArgs, opts?: pulumi.InvokeOptions): Promise<GetFusionEnvironmentServiceAttachmentsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Functions/getFusionEnvironmentServiceAttachments:getFusionEnvironmentServiceAttachments", {
         "displayName": args.displayName,
         "filters": args.filters,
@@ -89,9 +87,27 @@ export interface GetFusionEnvironmentServiceAttachmentsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Fusion Environment Service Attachments in Oracle Cloud Infrastructure Fusion Apps service.
+ *
+ * Returns a list of service attachments.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testFusionEnvironmentServiceAttachments = oci.Functions.getFusionEnvironmentServiceAttachments({
+ *     fusionEnvironmentId: oci_fusion_apps_fusion_environment.test_fusion_environment.id,
+ *     displayName: _var.fusion_environment_service_attachment_display_name,
+ *     serviceInstanceType: _var.fusion_environment_service_attachment_service_instance_type,
+ *     state: _var.fusion_environment_service_attachment_state,
+ * });
+ * ```
+ */
 export function getFusionEnvironmentServiceAttachmentsOutput(args: GetFusionEnvironmentServiceAttachmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFusionEnvironmentServiceAttachmentsResult> {
-    return pulumi.output(args).apply(a => getFusionEnvironmentServiceAttachments(a, opts))
+    return pulumi.output(args).apply((a: any) => getFusionEnvironmentServiceAttachments(a, opts))
 }
 
 /**

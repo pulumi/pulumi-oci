@@ -112,9 +112,17 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// </summary>
         public readonly string OpsiPrivateEndpointId;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
+        /// </summary>
+        public readonly string ParentId;
+        /// <summary>
         /// Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
         /// </summary>
         public readonly int ProcessorCount;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+        /// </summary>
+        public readonly string RootId;
         /// <summary>
         /// Database service name used for connection requests.
         /// </summary>
@@ -194,7 +202,11 @@ namespace Pulumi.Oci.Opsi.Outputs
 
             string opsiPrivateEndpointId,
 
+            string parentId,
+
             int processorCount,
+
+            string rootId,
 
             string serviceName,
 
@@ -234,7 +246,9 @@ namespace Pulumi.Oci.Opsi.Outputs
             Id = id;
             LifecycleDetails = lifecycleDetails;
             OpsiPrivateEndpointId = opsiPrivateEndpointId;
+            ParentId = parentId;
             ProcessorCount = processorCount;
+            RootId = rootId;
             ServiceName = serviceName;
             State = state;
             Status = status;

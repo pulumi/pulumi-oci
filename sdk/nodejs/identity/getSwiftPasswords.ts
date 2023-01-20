@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSwiftPasswords(args: GetSwiftPasswordsArgs, opts?: pulumi.InvokeOptions): Promise<GetSwiftPasswordsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getSwiftPasswords:getSwiftPasswords", {
         "filters": args.filters,
         "userId": args.userId,
@@ -65,9 +63,27 @@ export interface GetSwiftPasswordsResult {
      */
     readonly userId: string;
 }
-
+/**
+ * This data source provides the list of Swift Passwords in Oracle Cloud Infrastructure Identity service.
+ *
+ * **Deprecated. Use [ListAuthTokens](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/AuthToken/ListAuthTokens) instead.**
+ *
+ * Lists the Swift passwords for the specified user. The returned object contains the password's OCID, but not
+ * the password itself. The actual password is returned only upon creation.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSwiftPasswords = oci.Identity.getSwiftPasswords({
+ *     userId: oci_identity_user.test_user.id,
+ * });
+ * ```
+ */
 export function getSwiftPasswordsOutput(args: GetSwiftPasswordsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSwiftPasswordsResult> {
-    return pulumi.output(args).apply(a => getSwiftPasswords(a, opts))
+    return pulumi.output(args).apply((a: any) => getSwiftPasswords(a, opts))
 }
 
 /**

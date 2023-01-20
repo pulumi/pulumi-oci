@@ -21,7 +21,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Workspace resource in Oracle Cloud Infrastructure Data Integration service.
  * 
- * Creates a new Data Integration workspace ready for performing data integration tasks.
+ * Creates a new Data Integration workspace ready for performing data integration tasks. To retrieve the OCID for the new workspace, use the opc-work-request-id returned by this API and call the [GetWorkRequest](https://docs.cloud.oracle.com/iaas/api/#/en/data-integration/latest/WorkRequest/GetWorkRequest) API.
  * 
  * ## Example Usage
  * ```java
@@ -52,8 +52,14 @@ import javax.annotation.Nullable;
  *             .description(var_.workspace_description())
  *             .dnsServerIp(var_.workspace_dns_server_ip())
  *             .dnsServerZone(var_.workspace_dns_server_zone())
+ *             .endpointCompartmentId(oci_identity_compartment.test_compartment().id())
+ *             .endpointId(oci_dataintegration_endpoint.test_endpoint().id())
+ *             .endpointName(var_.workspace_endpoint_name())
  *             .freeformTags(Map.of(&#34;Department&#34;, &#34;Finance&#34;))
  *             .isPrivateNetworkEnabled(var_.workspace_is_private_network_enabled())
+ *             .registryCompartmentId(oci_identity_compartment.test_compartment().id())
+ *             .registryId(oci_data_connectivity_registry.test_registry().id())
+ *             .registryName(oci_data_connectivity_registry.test_registry().name())
  *             .subnetId(oci_core_subnet.test_subnet().id())
  *             .vcnId(oci_core_vcn.test_vcn().id())
  *             .build());
@@ -158,6 +164,48 @@ public class Workspace extends com.pulumi.resources.CustomResource {
         return this.dnsServerZone;
     }
     /**
+     * DCMS PRivate Endpoint Compartment Identifier
+     * 
+     */
+    @Export(name="endpointCompartmentId", type=String.class, parameters={})
+    private Output<String> endpointCompartmentId;
+
+    /**
+     * @return DCMS PRivate Endpoint Compartment Identifier
+     * 
+     */
+    public Output<String> endpointCompartmentId() {
+        return this.endpointCompartmentId;
+    }
+    /**
+     * DCMS Private Endpoint ID associated with workspace if the pvt networking is enabled
+     * 
+     */
+    @Export(name="endpointId", type=String.class, parameters={})
+    private Output<String> endpointId;
+
+    /**
+     * @return DCMS Private Endpoint ID associated with workspace if the pvt networking is enabled
+     * 
+     */
+    public Output<String> endpointId() {
+        return this.endpointId;
+    }
+    /**
+     * DCMS Private Endpoint Name
+     * 
+     */
+    @Export(name="endpointName", type=String.class, parameters={})
+    private Output<String> endpointName;
+
+    /**
+     * @return DCMS Private Endpoint Name
+     * 
+     */
+    public Output<String> endpointName() {
+        return this.endpointName;
+    }
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -192,10 +240,52 @@ public class Workspace extends com.pulumi.resources.CustomResource {
         return this.isPrivateNetworkEnabled;
     }
     @Export(name="quiesceTimeout", type=Integer.class, parameters={})
-    private Output</* @Nullable */ Integer> quiesceTimeout;
+    private Output<Integer> quiesceTimeout;
 
-    public Output<Optional<Integer>> quiesceTimeout() {
-        return Codegen.optional(this.quiesceTimeout);
+    public Output<Integer> quiesceTimeout() {
+        return this.quiesceTimeout;
+    }
+    /**
+     * DCMS Data Asset Registry Compartment Identifier
+     * 
+     */
+    @Export(name="registryCompartmentId", type=String.class, parameters={})
+    private Output<String> registryCompartmentId;
+
+    /**
+     * @return DCMS Data Asset Registry Compartment Identifier
+     * 
+     */
+    public Output<String> registryCompartmentId() {
+        return this.registryCompartmentId;
+    }
+    /**
+     * DCMS Data Asset Registry ID to which the workspace is associated
+     * 
+     */
+    @Export(name="registryId", type=String.class, parameters={})
+    private Output<String> registryId;
+
+    /**
+     * @return DCMS Data Asset Registry ID to which the workspace is associated
+     * 
+     */
+    public Output<String> registryId() {
+        return this.registryId;
+    }
+    /**
+     * DCMS Data Asset Registry display name
+     * 
+     */
+    @Export(name="registryName", type=String.class, parameters={})
+    private Output<String> registryName;
+
+    /**
+     * @return DCMS Data Asset Registry display name
+     * 
+     */
+    public Output<String> registryName() {
+        return this.registryName;
     }
     /**
      * Lifecycle states for workspaces in Data Integration Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn&#39;t available FAILED   - The resource is in a failed state due to validation or other errors STARTING - The resource is being started and may not be usable until becomes ACTIVE again STOPPING - The resource is in the process of Stopping and may not be usable until it Stops or fails STOPPED  - The resource is in Stopped state due to stop operation.

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFusionEnvironmentAdminUser(args: GetFusionEnvironmentAdminUserArgs, opts?: pulumi.InvokeOptions): Promise<GetFusionEnvironmentAdminUserResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Functions/getFusionEnvironmentAdminUser:getFusionEnvironmentAdminUser", {
         "fusionEnvironmentId": args.fusionEnvironmentId,
     }, opts);
@@ -70,9 +68,24 @@ export interface GetFusionEnvironmentAdminUserResult {
      */
     readonly username: string;
 }
-
+/**
+ * This data source provides details about a specific Fusion Environment Admin User resource in Oracle Cloud Infrastructure Fusion Apps service.
+ *
+ * List all FusionEnvironment admin users
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testFusionEnvironmentAdminUser = oci.Functions.getFusionEnvironmentAdminUser({
+ *     fusionEnvironmentId: oci_fusion_apps_fusion_environment.test_fusion_environment.id,
+ * });
+ * ```
+ */
 export function getFusionEnvironmentAdminUserOutput(args: GetFusionEnvironmentAdminUserOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFusionEnvironmentAdminUserResult> {
-    return pulumi.output(args).apply(a => getFusionEnvironmentAdminUser(a, opts))
+    return pulumi.output(args).apply((a: any) => getFusionEnvironmentAdminUser(a, opts))
 }
 
 /**

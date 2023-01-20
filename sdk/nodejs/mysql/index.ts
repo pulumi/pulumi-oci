@@ -5,32 +5,111 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./analyticsCluster";
-export * from "./channel";
-export * from "./getAnalyticsCluster";
-export * from "./getChannel";
-export * from "./getChannels";
-export * from "./getHeatWaveCluster";
-export * from "./getMysqlBackup";
-export * from "./getMysqlBackups";
-export * from "./getMysqlConfiguration";
-export * from "./getMysqlConfigurations";
-export * from "./getMysqlDbSystem";
-export * from "./getMysqlDbSystems";
-export * from "./getMysqlVersion";
-export * from "./getShapes";
-export * from "./heatWaveCluster";
-export * from "./mysqlBackup";
-export * from "./mysqlConfiguration";
-export * from "./mysqlDbSystem";
+export { AnalyticsClusterArgs, AnalyticsClusterState } from "./analyticsCluster";
+export type AnalyticsCluster = import("./analyticsCluster").AnalyticsCluster;
+export const AnalyticsCluster: typeof import("./analyticsCluster").AnalyticsCluster = null as any;
+utilities.lazyLoad(exports, ["AnalyticsCluster"], () => require("./analyticsCluster"));
 
-// Import resources to register:
-import { AnalyticsCluster } from "./analyticsCluster";
-import { Channel } from "./channel";
-import { HeatWaveCluster } from "./heatWaveCluster";
-import { MysqlBackup } from "./mysqlBackup";
-import { MysqlConfiguration } from "./mysqlConfiguration";
-import { MysqlDbSystem } from "./mysqlDbSystem";
+export { ChannelArgs, ChannelState } from "./channel";
+export type Channel = import("./channel").Channel;
+export const Channel: typeof import("./channel").Channel = null as any;
+utilities.lazyLoad(exports, ["Channel"], () => require("./channel"));
+
+export { GetAnalyticsClusterArgs, GetAnalyticsClusterResult, GetAnalyticsClusterOutputArgs } from "./getAnalyticsCluster";
+export const getAnalyticsCluster: typeof import("./getAnalyticsCluster").getAnalyticsCluster = null as any;
+export const getAnalyticsClusterOutput: typeof import("./getAnalyticsCluster").getAnalyticsClusterOutput = null as any;
+utilities.lazyLoad(exports, ["getAnalyticsCluster","getAnalyticsClusterOutput"], () => require("./getAnalyticsCluster"));
+
+export { GetChannelArgs, GetChannelResult, GetChannelOutputArgs } from "./getChannel";
+export const getChannel: typeof import("./getChannel").getChannel = null as any;
+export const getChannelOutput: typeof import("./getChannel").getChannelOutput = null as any;
+utilities.lazyLoad(exports, ["getChannel","getChannelOutput"], () => require("./getChannel"));
+
+export { GetChannelsArgs, GetChannelsResult, GetChannelsOutputArgs } from "./getChannels";
+export const getChannels: typeof import("./getChannels").getChannels = null as any;
+export const getChannelsOutput: typeof import("./getChannels").getChannelsOutput = null as any;
+utilities.lazyLoad(exports, ["getChannels","getChannelsOutput"], () => require("./getChannels"));
+
+export { GetHeatWaveClusterArgs, GetHeatWaveClusterResult, GetHeatWaveClusterOutputArgs } from "./getHeatWaveCluster";
+export const getHeatWaveCluster: typeof import("./getHeatWaveCluster").getHeatWaveCluster = null as any;
+export const getHeatWaveClusterOutput: typeof import("./getHeatWaveCluster").getHeatWaveClusterOutput = null as any;
+utilities.lazyLoad(exports, ["getHeatWaveCluster","getHeatWaveClusterOutput"], () => require("./getHeatWaveCluster"));
+
+export { GetMysqlBackupArgs, GetMysqlBackupResult, GetMysqlBackupOutputArgs } from "./getMysqlBackup";
+export const getMysqlBackup: typeof import("./getMysqlBackup").getMysqlBackup = null as any;
+export const getMysqlBackupOutput: typeof import("./getMysqlBackup").getMysqlBackupOutput = null as any;
+utilities.lazyLoad(exports, ["getMysqlBackup","getMysqlBackupOutput"], () => require("./getMysqlBackup"));
+
+export { GetMysqlBackupsArgs, GetMysqlBackupsResult, GetMysqlBackupsOutputArgs } from "./getMysqlBackups";
+export const getMysqlBackups: typeof import("./getMysqlBackups").getMysqlBackups = null as any;
+export const getMysqlBackupsOutput: typeof import("./getMysqlBackups").getMysqlBackupsOutput = null as any;
+utilities.lazyLoad(exports, ["getMysqlBackups","getMysqlBackupsOutput"], () => require("./getMysqlBackups"));
+
+export { GetMysqlConfigurationArgs, GetMysqlConfigurationResult, GetMysqlConfigurationOutputArgs } from "./getMysqlConfiguration";
+export const getMysqlConfiguration: typeof import("./getMysqlConfiguration").getMysqlConfiguration = null as any;
+export const getMysqlConfigurationOutput: typeof import("./getMysqlConfiguration").getMysqlConfigurationOutput = null as any;
+utilities.lazyLoad(exports, ["getMysqlConfiguration","getMysqlConfigurationOutput"], () => require("./getMysqlConfiguration"));
+
+export { GetMysqlConfigurationsArgs, GetMysqlConfigurationsResult, GetMysqlConfigurationsOutputArgs } from "./getMysqlConfigurations";
+export const getMysqlConfigurations: typeof import("./getMysqlConfigurations").getMysqlConfigurations = null as any;
+export const getMysqlConfigurationsOutput: typeof import("./getMysqlConfigurations").getMysqlConfigurationsOutput = null as any;
+utilities.lazyLoad(exports, ["getMysqlConfigurations","getMysqlConfigurationsOutput"], () => require("./getMysqlConfigurations"));
+
+export { GetMysqlDbSystemArgs, GetMysqlDbSystemResult, GetMysqlDbSystemOutputArgs } from "./getMysqlDbSystem";
+export const getMysqlDbSystem: typeof import("./getMysqlDbSystem").getMysqlDbSystem = null as any;
+export const getMysqlDbSystemOutput: typeof import("./getMysqlDbSystem").getMysqlDbSystemOutput = null as any;
+utilities.lazyLoad(exports, ["getMysqlDbSystem","getMysqlDbSystemOutput"], () => require("./getMysqlDbSystem"));
+
+export { GetMysqlDbSystemsArgs, GetMysqlDbSystemsResult, GetMysqlDbSystemsOutputArgs } from "./getMysqlDbSystems";
+export const getMysqlDbSystems: typeof import("./getMysqlDbSystems").getMysqlDbSystems = null as any;
+export const getMysqlDbSystemsOutput: typeof import("./getMysqlDbSystems").getMysqlDbSystemsOutput = null as any;
+utilities.lazyLoad(exports, ["getMysqlDbSystems","getMysqlDbSystemsOutput"], () => require("./getMysqlDbSystems"));
+
+export { GetMysqlVersionArgs, GetMysqlVersionResult, GetMysqlVersionOutputArgs } from "./getMysqlVersion";
+export const getMysqlVersion: typeof import("./getMysqlVersion").getMysqlVersion = null as any;
+export const getMysqlVersionOutput: typeof import("./getMysqlVersion").getMysqlVersionOutput = null as any;
+utilities.lazyLoad(exports, ["getMysqlVersion","getMysqlVersionOutput"], () => require("./getMysqlVersion"));
+
+export { GetReplicaArgs, GetReplicaResult, GetReplicaOutputArgs } from "./getReplica";
+export const getReplica: typeof import("./getReplica").getReplica = null as any;
+export const getReplicaOutput: typeof import("./getReplica").getReplicaOutput = null as any;
+utilities.lazyLoad(exports, ["getReplica","getReplicaOutput"], () => require("./getReplica"));
+
+export { GetShapesArgs, GetShapesResult, GetShapesOutputArgs } from "./getShapes";
+export const getShapes: typeof import("./getShapes").getShapes = null as any;
+export const getShapesOutput: typeof import("./getShapes").getShapesOutput = null as any;
+utilities.lazyLoad(exports, ["getShapes","getShapesOutput"], () => require("./getShapes"));
+
+export { GetrRplicasArgs, GetrRplicasResult, GetrRplicasOutputArgs } from "./getrRplicas";
+export const getrRplicas: typeof import("./getrRplicas").getrRplicas = null as any;
+export const getrRplicasOutput: typeof import("./getrRplicas").getrRplicasOutput = null as any;
+utilities.lazyLoad(exports, ["getrRplicas","getrRplicasOutput"], () => require("./getrRplicas"));
+
+export { HeatWaveClusterArgs, HeatWaveClusterState } from "./heatWaveCluster";
+export type HeatWaveCluster = import("./heatWaveCluster").HeatWaveCluster;
+export const HeatWaveCluster: typeof import("./heatWaveCluster").HeatWaveCluster = null as any;
+utilities.lazyLoad(exports, ["HeatWaveCluster"], () => require("./heatWaveCluster"));
+
+export { MysqlBackupArgs, MysqlBackupState } from "./mysqlBackup";
+export type MysqlBackup = import("./mysqlBackup").MysqlBackup;
+export const MysqlBackup: typeof import("./mysqlBackup").MysqlBackup = null as any;
+utilities.lazyLoad(exports, ["MysqlBackup"], () => require("./mysqlBackup"));
+
+export { MysqlConfigurationArgs, MysqlConfigurationState } from "./mysqlConfiguration";
+export type MysqlConfiguration = import("./mysqlConfiguration").MysqlConfiguration;
+export const MysqlConfiguration: typeof import("./mysqlConfiguration").MysqlConfiguration = null as any;
+utilities.lazyLoad(exports, ["MysqlConfiguration"], () => require("./mysqlConfiguration"));
+
+export { MysqlDbSystemArgs, MysqlDbSystemState } from "./mysqlDbSystem";
+export type MysqlDbSystem = import("./mysqlDbSystem").MysqlDbSystem;
+export const MysqlDbSystem: typeof import("./mysqlDbSystem").MysqlDbSystem = null as any;
+utilities.lazyLoad(exports, ["MysqlDbSystem"], () => require("./mysqlDbSystem"));
+
+export { ReplicaArgs, ReplicaState } from "./replica";
+export type Replica = import("./replica").Replica;
+export const Replica: typeof import("./replica").Replica = null as any;
+utilities.lazyLoad(exports, ["Replica"], () => require("./replica"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -48,6 +127,8 @@ const _module = {
                 return new MysqlConfiguration(name, <any>undefined, { urn })
             case "oci:Mysql/mysqlDbSystem:MysqlDbSystem":
                 return new MysqlDbSystem(name, <any>undefined, { urn })
+            case "oci:Mysql/replica:Replica":
+                return new Replica(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -59,3 +140,4 @@ pulumi.runtime.registerResourceModule("oci", "Mysql/heatWaveCluster", _module)
 pulumi.runtime.registerResourceModule("oci", "Mysql/mysqlBackup", _module)
 pulumi.runtime.registerResourceModule("oci", "Mysql/mysqlConfiguration", _module)
 pulumi.runtime.registerResourceModule("oci", "Mysql/mysqlDbSystem", _module)
+pulumi.runtime.registerResourceModule("oci", "Mysql/replica", _module)

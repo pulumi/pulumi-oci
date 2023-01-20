@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetNetworkSourceResult> InvokeAsync(GetNetworkSourceArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetNetworkSourceResult>("oci:Identity/getNetworkSource:getNetworkSource", args ?? new GetNetworkSourceArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetNetworkSourceResult>("oci:Identity/getNetworkSource:getNetworkSource", args ?? new GetNetworkSourceArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Network Source resource in Oracle Cloud Infrastructure Identity service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetNetworkSourceResult> Invoke(GetNetworkSourceInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetNetworkSourceResult>("oci:Identity/getNetworkSource:getNetworkSource", args ?? new GetNetworkSourceInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetNetworkSourceResult>("oci:Identity/getNetworkSource:getNetworkSource", args ?? new GetNetworkSourceInvokeArgs(), options.WithDefaults());
     }
 
 

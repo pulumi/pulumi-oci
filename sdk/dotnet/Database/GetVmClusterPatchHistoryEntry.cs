@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetVmClusterPatchHistoryEntryResult> InvokeAsync(GetVmClusterPatchHistoryEntryArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetVmClusterPatchHistoryEntryResult>("oci:Database/getVmClusterPatchHistoryEntry:getVmClusterPatchHistoryEntry", args ?? new GetVmClusterPatchHistoryEntryArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetVmClusterPatchHistoryEntryResult>("oci:Database/getVmClusterPatchHistoryEntry:getVmClusterPatchHistoryEntry", args ?? new GetVmClusterPatchHistoryEntryArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Vm Cluster Patch History Entry resource in Oracle Cloud Infrastructure Database service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetVmClusterPatchHistoryEntryResult> Invoke(GetVmClusterPatchHistoryEntryInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetVmClusterPatchHistoryEntryResult>("oci:Database/getVmClusterPatchHistoryEntry:getVmClusterPatchHistoryEntry", args ?? new GetVmClusterPatchHistoryEntryInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetVmClusterPatchHistoryEntryResult>("oci:Database/getVmClusterPatchHistoryEntry:getVmClusterPatchHistoryEntry", args ?? new GetVmClusterPatchHistoryEntryInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDataGuardAssociation(args: GetDataGuardAssociationArgs, opts?: pulumi.InvokeOptions): Promise<GetDataGuardAssociationResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getDataGuardAssociation:getDataGuardAssociation", {
         "dataGuardAssociationId": args.dataGuardAssociationId,
         "databaseId": args.databaseId,
@@ -145,9 +143,25 @@ export interface GetDataGuardAssociationResult {
      */
     readonly transportType: string;
 }
-
+/**
+ * This data source provides details about a specific Data Guard Association resource in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets the specified Data Guard association's configuration information.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDataGuardAssociation = oci.Database.getDataGuardAssociation({
+ *     dataGuardAssociationId: oci_database_data_guard_association.test_data_guard_association.id,
+ *     databaseId: oci_database_database.test_database.id,
+ * });
+ * ```
+ */
 export function getDataGuardAssociationOutput(args: GetDataGuardAssociationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDataGuardAssociationResult> {
-    return pulumi.output(args).apply(a => getDataGuardAssociation(a, opts))
+    return pulumi.output(args).apply((a: any) => getDataGuardAssociation(a, opts))
 }
 
 /**

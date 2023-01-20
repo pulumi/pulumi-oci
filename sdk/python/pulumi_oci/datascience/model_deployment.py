@@ -23,7 +23,8 @@ class ModelDeploymentArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 state: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a ModelDeployment resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the model deployment.
@@ -34,6 +35,7 @@ class ModelDeploymentArgs:
         :param pulumi.Input[str] description: (Updatable) A short description of the model deployment.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource. Does not have to be unique, and can be modified. Avoid entering confidential information. Example: `My ModelDeployment`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[str] state: (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "model_deployment_configuration_details", model_deployment_configuration_details)
@@ -48,6 +50,8 @@ class ModelDeploymentArgs:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -145,6 +149,18 @@ class ModelDeploymentArgs:
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
 
+    @property
+    @pulumi.getter
+    def state(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "state", value)
+
 
 @pulumi.input_type
 class _ModelDeploymentState:
@@ -175,7 +191,7 @@ class _ModelDeploymentState:
         :param pulumi.Input['ModelDeploymentModelDeploymentConfigurationDetailsArgs'] model_deployment_configuration_details: (Updatable) The model deployment configuration details.
         :param pulumi.Input[str] model_deployment_url: The URL to interact with the model deployment.
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
-        :param pulumi.Input[str] state: The state of the model deployment.
+        :param pulumi.Input[str] state: (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
         :param pulumi.Input[str] time_created: The date and time the resource was created, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
         """
         if category_log_details is not None:
@@ -341,7 +357,7 @@ class _ModelDeploymentState:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        The state of the model deployment.
+        (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
         """
         return pulumi.get(self, "state")
 
@@ -375,6 +391,7 @@ class ModelDeployment(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  model_deployment_configuration_details: Optional[pulumi.Input[pulumi.InputType['ModelDeploymentModelDeploymentConfigurationDetailsArgs']]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
+                 state: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         This resource provides the Model Deployment resource in Oracle Cloud Infrastructure Datascience service.
@@ -446,6 +463,7 @@ class ModelDeployment(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[pulumi.InputType['ModelDeploymentModelDeploymentConfigurationDetailsArgs']] model_deployment_configuration_details: (Updatable) The model deployment configuration details.
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
+        :param pulumi.Input[str] state: (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
         """
         ...
     @overload
@@ -536,6 +554,7 @@ class ModelDeployment(pulumi.CustomResource):
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  model_deployment_configuration_details: Optional[pulumi.Input[pulumi.InputType['ModelDeploymentModelDeploymentConfigurationDetailsArgs']]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
+                 state: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -559,10 +578,10 @@ class ModelDeployment(pulumi.CustomResource):
             if project_id is None and not opts.urn:
                 raise TypeError("Missing required property 'project_id'")
             __props__.__dict__["project_id"] = project_id
+            __props__.__dict__["state"] = state
             __props__.__dict__["created_by"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["model_deployment_url"] = None
-            __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
         super(ModelDeployment, __self__).__init__(
             'oci:DataScience/modelDeployment:ModelDeployment',
@@ -605,7 +624,7 @@ class ModelDeployment(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['ModelDeploymentModelDeploymentConfigurationDetailsArgs']] model_deployment_configuration_details: (Updatable) The model deployment configuration details.
         :param pulumi.Input[str] model_deployment_url: The URL to interact with the model deployment.
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
-        :param pulumi.Input[str] state: The state of the model deployment.
+        :param pulumi.Input[str] state: (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
         :param pulumi.Input[str] time_created: The date and time the resource was created, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -719,7 +738,7 @@ class ModelDeployment(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[str]:
         """
-        The state of the model deployment.
+        (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
         """
         return pulumi.get(self, "state")
 

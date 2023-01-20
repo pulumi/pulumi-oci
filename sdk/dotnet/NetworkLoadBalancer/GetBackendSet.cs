@@ -17,7 +17,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// Retrieves the configuration information for the specified backend set.
         /// </summary>
         public static Task<GetBackendSetResult> InvokeAsync(GetBackendSetArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetBackendSetResult>("oci:NetworkLoadBalancer/getBackendSet:getBackendSet", args ?? new GetBackendSetArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetBackendSetResult>("oci:NetworkLoadBalancer/getBackendSet:getBackendSet", args ?? new GetBackendSetArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Backend Set resource in Oracle Cloud Infrastructure Network Load Balancer service.
@@ -25,7 +25,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// Retrieves the configuration information for the specified backend set.
         /// </summary>
         public static Output<GetBackendSetResult> Invoke(GetBackendSetInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetBackendSetResult>("oci:NetworkLoadBalancer/getBackendSet:getBackendSet", args ?? new GetBackendSetInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetBackendSetResult>("oci:NetworkLoadBalancer/getBackendSet:getBackendSet", args ?? new GetBackendSetInvokeArgs(), options.WithDefaults());
     }
 
 

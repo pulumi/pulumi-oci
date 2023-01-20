@@ -43,7 +43,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetBuildPipelinesResult> InvokeAsync(GetBuildPipelinesArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetBuildPipelinesResult>("oci:DevOps/getBuildPipelines:getBuildPipelines", args ?? new GetBuildPipelinesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetBuildPipelinesResult>("oci:DevOps/getBuildPipelines:getBuildPipelines", args ?? new GetBuildPipelinesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Build Pipelines in Oracle Cloud Infrastructure Devops service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetBuildPipelinesResult> Invoke(GetBuildPipelinesInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetBuildPipelinesResult>("oci:DevOps/getBuildPipelines:getBuildPipelines", args ?? new GetBuildPipelinesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetBuildPipelinesResult>("oci:DevOps/getBuildPipelines:getBuildPipelines", args ?? new GetBuildPipelinesInvokeArgs(), options.WithDefaults());
     }
 
 

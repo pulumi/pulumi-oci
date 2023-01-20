@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Sch
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetServiceConnectorResult> InvokeAsync(GetServiceConnectorArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetServiceConnectorResult>("oci:Sch/getServiceConnector:getServiceConnector", args ?? new GetServiceConnectorArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetServiceConnectorResult>("oci:Sch/getServiceConnector:getServiceConnector", args ?? new GetServiceConnectorArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Service Connector resource in Oracle Cloud Infrastructure Service Connector Hub service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Sch
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetServiceConnectorResult> Invoke(GetServiceConnectorInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetServiceConnectorResult>("oci:Sch/getServiceConnector:getServiceConnector", args ?? new GetServiceConnectorInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetServiceConnectorResult>("oci:Sch/getServiceConnector:getServiceConnector", args ?? new GetServiceConnectorInvokeArgs(), options.WithDefaults());
     }
 
 

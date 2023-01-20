@@ -42,7 +42,7 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetControlAssignmentsResult> InvokeAsync(GetControlAssignmentsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetControlAssignmentsResult>("oci:OperatorAccessControl/getControlAssignments:getControlAssignments", args ?? new GetControlAssignmentsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetControlAssignmentsResult>("oci:OperatorAccessControl/getControlAssignments:getControlAssignments", args ?? new GetControlAssignmentsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Operator Control Assignments in Oracle Cloud Infrastructure Operator Access Control service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetControlAssignmentsResult> Invoke(GetControlAssignmentsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetControlAssignmentsResult>("oci:OperatorAccessControl/getControlAssignments:getControlAssignments", args ?? new GetControlAssignmentsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetControlAssignmentsResult>("oci:OperatorAccessControl/getControlAssignments:getControlAssignments", args ?? new GetControlAssignmentsInvokeArgs(), options.WithDefaults());
     }
 
 

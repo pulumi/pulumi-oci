@@ -22,8 +22,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// </summary>
         public readonly ImmutableArray<string> AllowedMethods;
         /// <summary>
-        /// Indicates whether or not invalid characters in client header fields will be allowed. Valid names are composed of English letters, digits, hyphens and underscores. If "true", invalid characters are allowed in the HTTP header. If "false", invalid characters are not allowed in the HTTP header 
-        /// * `conditions` -
+        /// Indicates whether or not invalid characters in client header fields will be allowed. Valid names are composed of English letters, digits, hyphens and underscores. If "true", invalid characters are allowed in the HTTP header. If "false", invalid characters are not allowed in the HTTP header
         /// </summary>
         public readonly bool AreInvalidCharactersAllowed;
         public readonly ImmutableArray<Outputs.GetRuleSetsRuleSetItemConditionResult> Conditions;

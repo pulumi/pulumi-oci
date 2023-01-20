@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getOceInstance(args: GetOceInstanceArgs, opts?: pulumi.InvokeOptions): Promise<GetOceInstanceResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Oce/getOceInstance:getOceInstance", {
         "oceInstanceId": args.oceInstanceId,
     }, opts);
@@ -148,9 +145,24 @@ export interface GetOceInstanceResult {
      */
     readonly wafPrimaryDomain: string;
 }
-
+/**
+ * This data source provides details about a specific Oce Instance resource in Oracle Cloud Infrastructure Content and Experience service.
+ *
+ * Gets a OceInstance by identifier
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testOceInstance = oci.Oce.getOceInstance({
+ *     oceInstanceId: oci_oce_oce_instance.test_oce_instance.id,
+ * });
+ * ```
+ */
 export function getOceInstanceOutput(args: GetOceInstanceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetOceInstanceResult> {
-    return pulumi.output(args).apply(a => getOceInstance(a, opts))
+    return pulumi.output(args).apply((a: any) => getOceInstance(a, opts))
 }
 
 /**

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -28,11 +29,8 @@ import * as utilities from "../utilities";
  */
 export function getConnections(args?: GetConnectionsArgs, opts?: pulumi.InvokeOptions): Promise<GetConnectionsResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getConnections:getConnections", {
         "compartmentId": args.compartmentId,
         "connectionType": args.connectionType,
@@ -109,9 +107,29 @@ export interface GetConnectionsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Connections in Oracle Cloud Infrastructure Devops service.
+ *
+ * Returns a list of connections.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testConnections = oci.DevOps.getConnections({
+ *     compartmentId: _var.compartment_id,
+ *     connectionType: _var.connection_connection_type,
+ *     displayName: _var.connection_display_name,
+ *     id: _var.connection_id,
+ *     projectId: oci_devops_project.test_project.id,
+ *     state: _var.connection_state,
+ * });
+ * ```
+ */
 export function getConnectionsOutput(args?: GetConnectionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetConnectionsResult> {
-    return pulumi.output(args).apply(a => getConnections(a, opts))
+    return pulumi.output(args).apply((a: any) => getConnections(a, opts))
 }
 
 /**

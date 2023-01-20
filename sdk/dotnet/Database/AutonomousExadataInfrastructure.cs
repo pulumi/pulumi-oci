@@ -42,7 +42,6 @@ namespace Pulumi.Oci.Database
     ///         LicenseModel = @var.Autonomous_exadata_infrastructure_license_model,
     ///         MaintenanceWindowDetails = new Oci.Database.Inputs.AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs
     ///         {
-    ///             Preference = @var.Autonomous_exadata_infrastructure_maintenance_window_details_preference,
     ///             CustomActionTimeoutInMins = @var.Autonomous_exadata_infrastructure_maintenance_window_details_custom_action_timeout_in_mins,
     ///             DaysOfWeeks = new[]
     ///             {
@@ -63,6 +62,7 @@ namespace Pulumi.Oci.Database
     ///                 },
     ///             },
     ///             PatchingMode = @var.Autonomous_exadata_infrastructure_maintenance_window_details_patching_mode,
+    ///             Preference = @var.Autonomous_exadata_infrastructure_maintenance_window_details_preference,
     ///             WeeksOfMonths = @var.Autonomous_exadata_infrastructure_maintenance_window_details_weeks_of_month,
     ///         },
     ///         NsgIds = @var.Autonomous_exadata_infrastructure_nsg_ids,

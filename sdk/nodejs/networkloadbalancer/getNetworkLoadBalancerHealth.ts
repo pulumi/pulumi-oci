@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNetworkLoadBalancerHealth(args: GetNetworkLoadBalancerHealthArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkLoadBalancerHealthResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:NetworkLoadBalancer/getNetworkLoadBalancerHealth:getNetworkLoadBalancerHealth", {
         "networkLoadBalancerId": args.networkLoadBalancerId,
     }, opts);
@@ -79,9 +76,24 @@ export interface GetNetworkLoadBalancerHealthResult {
      */
     readonly warningStateBackendSetNames: string[];
 }
-
+/**
+ * This data source provides details about a specific Network Load Balancer Health resource in Oracle Cloud Infrastructure Network Load Balancer service.
+ *
+ * Retrieves the health status for the specified network load balancer.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testNetworkLoadBalancerHealth = oci.NetworkLoadBalancer.getNetworkLoadBalancerHealth({
+ *     networkLoadBalancerId: oci_network_load_balancer_network_load_balancer.test_network_load_balancer.id,
+ * });
+ * ```
+ */
 export function getNetworkLoadBalancerHealthOutput(args: GetNetworkLoadBalancerHealthOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkLoadBalancerHealthResult> {
-    return pulumi.output(args).apply(a => getNetworkLoadBalancerHealth(a, opts))
+    return pulumi.output(args).apply((a: any) => getNetworkLoadBalancerHealth(a, opts))
 }
 
 /**

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -28,11 +29,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMaintenanceRuns(args: GetMaintenanceRunsArgs, opts?: pulumi.InvokeOptions): Promise<GetMaintenanceRunsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getMaintenanceRuns:getMaintenanceRuns", {
         "availabilityDomain": args.availabilityDomain,
         "compartmentId": args.compartmentId,
@@ -119,9 +117,30 @@ export interface GetMaintenanceRunsResult {
      */
     readonly targetResourceType?: string;
 }
-
+/**
+ * This data source provides the list of Maintenance Runs in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets a list of the maintenance runs in the specified compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testMaintenanceRuns = oci.Database.getMaintenanceRuns({
+ *     compartmentId: _var.compartment_id,
+ *     availabilityDomain: _var.maintenance_run_availability_domain,
+ *     maintenanceSubtype: _var.maintenance_run_maintenance_subtype,
+ *     maintenanceType: _var.maintenance_run_maintenance_type,
+ *     state: _var.maintenance_run_state,
+ *     targetResourceId: oci_database_target_resource.test_target_resource.id,
+ *     targetResourceType: _var.maintenance_run_target_resource_type,
+ * });
+ * ```
+ */
 export function getMaintenanceRunsOutput(args: GetMaintenanceRunsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMaintenanceRunsResult> {
-    return pulumi.output(args).apply(a => getMaintenanceRuns(a, opts))
+    return pulumi.output(args).apply((a: any) => getMaintenanceRuns(a, opts))
 }
 
 /**

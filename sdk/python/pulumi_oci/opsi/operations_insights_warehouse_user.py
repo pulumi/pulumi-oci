@@ -532,7 +532,7 @@ class OperationsInsightsWarehouseUser(pulumi.CustomResource):
             __props__.__dict__["compartment_id"] = compartment_id
             if connection_password is None and not opts.urn:
                 raise TypeError("Missing required property 'connection_password'")
-            __props__.__dict__["connection_password"] = connection_password
+            __props__.__dict__["connection_password"] = None if connection_password is None else pulumi.Output.secret(connection_password)
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["freeform_tags"] = freeform_tags
             if is_awr_data_access is None and not opts.urn:
@@ -549,6 +549,8 @@ class OperationsInsightsWarehouseUser(pulumi.CustomResource):
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["connectionPassword"])
+        opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(OperationsInsightsWarehouseUser, __self__).__init__(
             'oci:Opsi/operationsInsightsWarehouseUser:OperationsInsightsWarehouseUser',
             resource_name,

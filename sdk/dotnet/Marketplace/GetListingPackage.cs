@@ -54,7 +54,7 @@ namespace Pulumi.Oci.Marketplace
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetListingPackageResult> InvokeAsync(GetListingPackageArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetListingPackageResult>("oci:Marketplace/getListingPackage:getListingPackage", args ?? new GetListingPackageArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetListingPackageResult>("oci:Marketplace/getListingPackage:getListingPackage", args ?? new GetListingPackageArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Listing Package resource in Oracle Cloud Infrastructure Marketplace service.
@@ -99,7 +99,7 @@ namespace Pulumi.Oci.Marketplace
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetListingPackageResult> Invoke(GetListingPackageInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetListingPackageResult>("oci:Marketplace/getListingPackage:getListingPackage", args ?? new GetListingPackageInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetListingPackageResult>("oci:Marketplace/getListingPackage:getListingPackage", args ?? new GetListingPackageInvokeArgs(), options.WithDefaults());
     }
 
 

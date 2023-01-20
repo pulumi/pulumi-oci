@@ -36,7 +36,7 @@ namespace Pulumi.Oci.DatabaseMigration
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetMigrationObjectTypesResult> InvokeAsync(GetMigrationObjectTypesArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetMigrationObjectTypesResult>("oci:DatabaseMigration/getMigrationObjectTypes:getMigrationObjectTypes", args ?? new GetMigrationObjectTypesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetMigrationObjectTypesResult>("oci:DatabaseMigration/getMigrationObjectTypes:getMigrationObjectTypes", args ?? new GetMigrationObjectTypesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Migration Object Types in Oracle Cloud Infrastructure Database Migration service.
@@ -63,7 +63,7 @@ namespace Pulumi.Oci.DatabaseMigration
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetMigrationObjectTypesResult> Invoke(GetMigrationObjectTypesInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetMigrationObjectTypesResult>("oci:DatabaseMigration/getMigrationObjectTypes:getMigrationObjectTypes", args ?? new GetMigrationObjectTypesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetMigrationObjectTypesResult>("oci:DatabaseMigration/getMigrationObjectTypes:getMigrationObjectTypes", args ?? new GetMigrationObjectTypesInvokeArgs(), options.WithDefaults());
     }
 
 

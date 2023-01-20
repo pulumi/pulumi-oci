@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDatabaseInsight(args: GetDatabaseInsightArgs, opts?: pulumi.InvokeOptions): Promise<GetDatabaseInsightResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Opsi/getDatabaseInsight:getDatabaseInsight", {
         "databaseInsightId": args.databaseInsightId,
     }, opts);
@@ -146,9 +144,17 @@ export interface GetDatabaseInsightResult {
      */
     readonly opsiPrivateEndpointId: string;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
+     */
+    readonly parentId: string;
+    /**
      * Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
      */
     readonly processorCount: number;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+     */
+    readonly rootId: string;
     /**
      * Database service name used for connection requests.
      */
@@ -174,9 +180,24 @@ export interface GetDatabaseInsightResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Database Insight resource in Oracle Cloud Infrastructure Opsi service.
+ *
+ * Gets details of a database insight.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDatabaseInsight = oci.Opsi.getDatabaseInsight({
+ *     databaseInsightId: oci_opsi_database_insight.test_database_insight.id,
+ * });
+ * ```
+ */
 export function getDatabaseInsightOutput(args: GetDatabaseInsightOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatabaseInsightResult> {
-    return pulumi.output(args).apply(a => getDatabaseInsight(a, opts))
+    return pulumi.output(args).apply((a: any) => getDatabaseInsight(a, opts))
 }
 
 /**

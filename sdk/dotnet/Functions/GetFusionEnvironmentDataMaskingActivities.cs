@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Functions
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetFusionEnvironmentDataMaskingActivitiesResult> InvokeAsync(GetFusionEnvironmentDataMaskingActivitiesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetFusionEnvironmentDataMaskingActivitiesResult>("oci:Functions/getFusionEnvironmentDataMaskingActivities:getFusionEnvironmentDataMaskingActivities", args ?? new GetFusionEnvironmentDataMaskingActivitiesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetFusionEnvironmentDataMaskingActivitiesResult>("oci:Functions/getFusionEnvironmentDataMaskingActivities:getFusionEnvironmentDataMaskingActivities", args ?? new GetFusionEnvironmentDataMaskingActivitiesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Fusion Environment Data Masking Activities in Oracle Cloud Infrastructure Fusion Apps service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Functions
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetFusionEnvironmentDataMaskingActivitiesResult> Invoke(GetFusionEnvironmentDataMaskingActivitiesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetFusionEnvironmentDataMaskingActivitiesResult>("oci:Functions/getFusionEnvironmentDataMaskingActivities:getFusionEnvironmentDataMaskingActivities", args ?? new GetFusionEnvironmentDataMaskingActivitiesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetFusionEnvironmentDataMaskingActivitiesResult>("oci:Functions/getFusionEnvironmentDataMaskingActivities:getFusionEnvironmentDataMaskingActivities", args ?? new GetFusionEnvironmentDataMaskingActivitiesInvokeArgs(), options.WithDefaults());
     }
 
 

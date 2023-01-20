@@ -42,7 +42,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetCompatibleFormatsForDataTypeResult> InvokeAsync(InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetCompatibleFormatsForDataTypeResult>("oci:DataSafe/getCompatibleFormatsForDataType:getCompatibleFormatsForDataType", InvokeArgs.Empty, options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetCompatibleFormatsForDataTypeResult>("oci:DataSafe/getCompatibleFormatsForDataType:getCompatibleFormatsForDataType", InvokeArgs.Empty, options.WithDefaults());
     }
 
 

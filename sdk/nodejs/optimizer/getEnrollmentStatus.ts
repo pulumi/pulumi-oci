@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getEnrollmentStatus(args: GetEnrollmentStatusArgs, opts?: pulumi.InvokeOptions): Promise<GetEnrollmentStatusResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Optimizer/getEnrollmentStatus:getEnrollmentStatus", {
         "enrollmentStatusId": args.enrollmentStatusId,
     }, opts);
@@ -75,9 +72,24 @@ export interface GetEnrollmentStatusResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Enrollment Status resource in Oracle Cloud Infrastructure Optimizer service.
+ *
+ * Gets the Cloud Advisor enrollment status.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testEnrollmentStatus = oci.Optimizer.getEnrollmentStatus({
+ *     enrollmentStatusId: oci_optimizer_enrollment_status.test_enrollment_status.id,
+ * });
+ * ```
+ */
 export function getEnrollmentStatusOutput(args: GetEnrollmentStatusOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetEnrollmentStatusResult> {
-    return pulumi.output(args).apply(a => getEnrollmentStatus(a, opts))
+    return pulumi.output(args).apply((a: any) => getEnrollmentStatus(a, opts))
 }
 
 /**

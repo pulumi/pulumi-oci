@@ -10,26 +10,26 @@ import java.util.Objects;
 @CustomType
 public final class GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetail {
     /**
-     * @return A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+     * @return The total amount of memory available to the job run instance, in gigabytes.
      * 
      */
     private Double memoryInGbs;
     /**
-     * @return A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+     * @return The total number of OCPUs available to the job run instance.
      * 
      */
     private Double ocpus;
 
     private GetJobsJobJobInfrastructureConfigurationDetailJobShapeConfigDetail() {}
     /**
-     * @return A job run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+     * @return The total amount of memory available to the job run instance, in gigabytes.
      * 
      */
     public Double memoryInGbs() {
         return this.memoryInGbs;
     }
     /**
-     * @return A job run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+     * @return The total number of OCPUs available to the job run instance.
      * 
      */
     public Double ocpus() {

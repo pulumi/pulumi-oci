@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCustomProtectionRule(args: GetCustomProtectionRuleArgs, opts?: pulumi.InvokeOptions): Promise<GetCustomProtectionRuleResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Waas/getCustomProtectionRule:getCustomProtectionRule", {
         "customProtectionRuleId": args.customProtectionRuleId,
     }, opts);
@@ -87,9 +84,24 @@ export interface GetCustomProtectionRuleResult {
      */
     readonly timeCreated: string;
 }
-
+/**
+ * This data source provides details about a specific Custom Protection Rule resource in Oracle Cloud Infrastructure Web Application Acceleration and Security service.
+ *
+ * Gets the details of a custom protection rule.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCustomProtectionRule = oci.Waas.getCustomProtectionRule({
+ *     customProtectionRuleId: oci_waas_custom_protection_rule.test_custom_protection_rule.id,
+ * });
+ * ```
+ */
 export function getCustomProtectionRuleOutput(args: GetCustomProtectionRuleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCustomProtectionRuleResult> {
-    return pulumi.output(args).apply(a => getCustomProtectionRule(a, opts))
+    return pulumi.output(args).apply((a: any) => getCustomProtectionRule(a, opts))
 }
 
 /**

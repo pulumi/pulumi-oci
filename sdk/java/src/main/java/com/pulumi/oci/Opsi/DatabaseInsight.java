@@ -436,6 +436,20 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
         return this.opsiPrivateEndpointId;
     }
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
+     * 
+     */
+    @Export(name="parentId", type=String.class, parameters={})
+    private Output<String> parentId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
+     * 
+     */
+    public Output<String> parentId() {
+        return this.parentId;
+    }
+    /**
      * Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
      * 
      */
@@ -448,6 +462,20 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
      */
     public Output<Integer> processorCount() {
         return this.processorCount;
+    }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+     * 
+     */
+    @Export(name="rootId", type=String.class, parameters={})
+    private Output<String> rootId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+     * 
+     */
+    public Output<String> rootId() {
+        return this.rootId;
     }
     /**
      * Database service name used for connection requests.

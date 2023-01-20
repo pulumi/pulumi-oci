@@ -38,7 +38,7 @@ namespace Pulumi.Oci.ServiceMesh
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetVirtualServiceResult> InvokeAsync(GetVirtualServiceArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetVirtualServiceResult>("oci:ServiceMesh/getVirtualService:getVirtualService", args ?? new GetVirtualServiceArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetVirtualServiceResult>("oci:ServiceMesh/getVirtualService:getVirtualService", args ?? new GetVirtualServiceArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Virtual Service resource in Oracle Cloud Infrastructure Service Mesh service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.ServiceMesh
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetVirtualServiceResult> Invoke(GetVirtualServiceInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetVirtualServiceResult>("oci:ServiceMesh/getVirtualService:getVirtualService", args ?? new GetVirtualServiceInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetVirtualServiceResult>("oci:ServiceMesh/getVirtualService:getVirtualService", args ?? new GetVirtualServiceInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -50,7 +50,7 @@ namespace Pulumi.Oci.Monitoring
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetMetricDataResult> InvokeAsync(GetMetricDataArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetMetricDataResult>("oci:Monitoring/getMetricData:getMetricData", args ?? new GetMetricDataArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetMetricDataResult>("oci:Monitoring/getMetricData:getMetricData", args ?? new GetMetricDataArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Metric Data in Oracle Cloud Infrastructure Monitoring service.
@@ -91,7 +91,7 @@ namespace Pulumi.Oci.Monitoring
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetMetricDataResult> Invoke(GetMetricDataInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetMetricDataResult>("oci:Monitoring/getMetricData:getMetricData", args ?? new GetMetricDataInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetMetricDataResult>("oci:Monitoring/getMetricData:getMetricData", args ?? new GetMetricDataInvokeArgs(), options.WithDefaults());
     }
 
 

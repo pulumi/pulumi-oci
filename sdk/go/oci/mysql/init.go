@@ -33,6 +33,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &MysqlConfiguration{}
 	case "oci:Mysql/mysqlDbSystem:MysqlDbSystem":
 		r = &MysqlDbSystem{}
+	case "oci:Mysql/replica:Replica":
+		r = &Replica{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -74,6 +76,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Mysql/mysqlDbSystem",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Mysql/replica",
 		&module{version},
 	)
 }

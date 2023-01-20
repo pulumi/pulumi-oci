@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSoftwareSource(args: GetSoftwareSourceArgs, opts?: pulumi.InvokeOptions): Promise<GetSoftwareSourceResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsManagement/getSoftwareSource:getSoftwareSource", {
         "softwareSourceId": args.softwareSourceId,
     }, opts);
@@ -136,9 +134,24 @@ export interface GetSoftwareSourceResult {
      */
     readonly url: string;
 }
-
+/**
+ * This data source provides details about a specific Software Source resource in Oracle Cloud Infrastructure OS Management service.
+ *
+ * Returns a specific Software Source.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSoftwareSource = oci.OsManagement.getSoftwareSource({
+ *     softwareSourceId: oci_osmanagement_software_source.test_software_source.id,
+ * });
+ * ```
+ */
 export function getSoftwareSourceOutput(args: GetSoftwareSourceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSoftwareSourceResult> {
-    return pulumi.output(args).apply(a => getSoftwareSource(a, opts))
+    return pulumi.output(args).apply((a: any) => getSoftwareSource(a, opts))
 }
 
 /**

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getModelDeployment(args: GetModelDeploymentArgs, opts?: pulumi.InvokeOptions): Promise<GetModelDeploymentResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataScience/getModelDeployment:getModelDeployment", {
         "modelDeploymentId": args.modelDeploymentId,
     }, opts);
@@ -104,9 +102,24 @@ export interface GetModelDeploymentResult {
      */
     readonly timeCreated: string;
 }
-
+/**
+ * This data source provides details about a specific Model Deployment resource in Oracle Cloud Infrastructure Datascience service.
+ *
+ * Retrieves the model deployment for the specified `modelDeploymentId`.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testModelDeployment = oci.DataScience.getModelDeployment({
+ *     modelDeploymentId: oci_datascience_model_deployment.test_model_deployment.id,
+ * });
+ * ```
+ */
 export function getModelDeploymentOutput(args: GetModelDeploymentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetModelDeploymentResult> {
-    return pulumi.output(args).apply(a => getModelDeployment(a, opts))
+    return pulumi.output(args).apply((a: any) => getModelDeployment(a, opts))
 }
 
 /**

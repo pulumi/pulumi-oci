@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetUiPasswordResult> InvokeAsync(GetUiPasswordArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetUiPasswordResult>("oci:Identity/getUiPassword:getUiPassword", args ?? new GetUiPasswordArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetUiPasswordResult>("oci:Identity/getUiPassword:getUiPassword", args ?? new GetUiPasswordArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Ui Password resource in Oracle Cloud Infrastructure Identity service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetUiPasswordResult> Invoke(GetUiPasswordInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetUiPasswordResult>("oci:Identity/getUiPassword:getUiPassword", args ?? new GetUiPasswordInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetUiPasswordResult>("oci:Identity/getUiPassword:getUiPassword", args ?? new GetUiPasswordInvokeArgs(), options.WithDefaults());
     }
 
 

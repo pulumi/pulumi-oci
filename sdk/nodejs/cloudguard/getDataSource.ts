@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDataSource(args: GetDataSourceArgs, opts?: pulumi.InvokeOptions): Promise<GetDataSourceResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CloudGuard/getDataSource:getDataSource", {
         "dataSourceId": args.dataSourceId,
     }, opts);
@@ -104,9 +102,24 @@ export interface GetDataSourceResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Data Source resource in Oracle Cloud Infrastructure Cloud Guard service.
+ *
+ * Returns a DataSource identified by dataSourceId
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDataSource = oci.CloudGuard.getDataSource({
+ *     dataSourceId: oci_cloud_guard_data_source.test_data_source.id,
+ * });
+ * ```
+ */
 export function getDataSourceOutput(args: GetDataSourceOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDataSourceResult> {
-    return pulumi.output(args).apply(a => getDataSource(a, opts))
+    return pulumi.output(args).apply((a: any) => getDataSource(a, opts))
 }
 
 /**

@@ -42,7 +42,7 @@ namespace Pulumi.Oci.DatabaseTools
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDatabaseToolsConnectionsResult> InvokeAsync(GetDatabaseToolsConnectionsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDatabaseToolsConnectionsResult>("oci:DatabaseTools/getDatabaseToolsConnections:getDatabaseToolsConnections", args ?? new GetDatabaseToolsConnectionsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDatabaseToolsConnectionsResult>("oci:DatabaseTools/getDatabaseToolsConnections:getDatabaseToolsConnections", args ?? new GetDatabaseToolsConnectionsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Database Tools Connections in Oracle Cloud Infrastructure Database Tools service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.DatabaseTools
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDatabaseToolsConnectionsResult> Invoke(GetDatabaseToolsConnectionsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDatabaseToolsConnectionsResult>("oci:DatabaseTools/getDatabaseToolsConnections:getDatabaseToolsConnections", args ?? new GetDatabaseToolsConnectionsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDatabaseToolsConnectionsResult>("oci:DatabaseTools/getDatabaseToolsConnections:getDatabaseToolsConnections", args ?? new GetDatabaseToolsConnectionsInvokeArgs(), options.WithDefaults());
     }
 
 

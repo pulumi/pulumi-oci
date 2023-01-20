@@ -27,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getNetworkSecurityGroup(args: GetNetworkSecurityGroupArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkSecurityGroupResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getNetworkSecurityGroup:getNetworkSecurityGroup", {
         "networkSecurityGroupId": args.networkSecurityGroupId,
     }, opts);
@@ -85,9 +82,30 @@ export interface GetNetworkSecurityGroupResult {
      */
     readonly vcnId: string;
 }
-
+/**
+ * This data source provides details about a specific Network Security Group resource in Oracle Cloud Infrastructure Core service.
+ *
+ * Gets the specified network security group's information.
+ *
+ * To list the VNICs in an NSG, see
+ * [ListNetworkSecurityGroupVnics](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroupVnic/ListNetworkSecurityGroupVnics).
+ *
+ * To list the security rules in an NSG, see
+ * [ListNetworkSecurityGroupSecurityRules](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/SecurityRule/ListNetworkSecurityGroupSecurityRules).
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testNetworkSecurityGroup = oci.Core.getNetworkSecurityGroup({
+ *     networkSecurityGroupId: oci_core_network_security_group.test_network_security_group.id,
+ * });
+ * ```
+ */
 export function getNetworkSecurityGroupOutput(args: GetNetworkSecurityGroupOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetNetworkSecurityGroupResult> {
-    return pulumi.output(args).apply(a => getNetworkSecurityGroup(a, opts))
+    return pulumi.output(args).apply((a: any) => getNetworkSecurityGroup(a, opts))
 }
 
 /**

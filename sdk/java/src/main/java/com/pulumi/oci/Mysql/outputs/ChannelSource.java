@@ -4,6 +4,7 @@
 package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.Mysql.outputs.ChannelSourceAnonymousTransactionsHandling;
 import com.pulumi.oci.Mysql.outputs.ChannelSourceSslCaCertificate;
 import java.lang.Integer;
 import java.lang.String;
@@ -13,6 +14,11 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class ChannelSource {
+    /**
+     * @return (Updatable) Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
+     * 
+     */
+    private @Nullable ChannelSourceAnonymousTransactionsHandling anonymousTransactionsHandling;
     /**
      * @return (Updatable) The network address of the MySQL instance.
      * 
@@ -50,6 +56,13 @@ public final class ChannelSource {
     private String username;
 
     private ChannelSource() {}
+    /**
+     * @return (Updatable) Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
+     * 
+     */
+    public Optional<ChannelSourceAnonymousTransactionsHandling> anonymousTransactionsHandling() {
+        return Optional.ofNullable(this.anonymousTransactionsHandling);
+    }
     /**
      * @return (Updatable) The network address of the MySQL instance.
      * 
@@ -109,6 +122,7 @@ public final class ChannelSource {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable ChannelSourceAnonymousTransactionsHandling anonymousTransactionsHandling;
         private String hostname;
         private String password;
         private @Nullable Integer port;
@@ -119,6 +133,7 @@ public final class ChannelSource {
         public Builder() {}
         public Builder(ChannelSource defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.anonymousTransactionsHandling = defaults.anonymousTransactionsHandling;
     	      this.hostname = defaults.hostname;
     	      this.password = defaults.password;
     	      this.port = defaults.port;
@@ -128,6 +143,11 @@ public final class ChannelSource {
     	      this.username = defaults.username;
         }
 
+        @CustomType.Setter
+        public Builder anonymousTransactionsHandling(@Nullable ChannelSourceAnonymousTransactionsHandling anonymousTransactionsHandling) {
+            this.anonymousTransactionsHandling = anonymousTransactionsHandling;
+            return this;
+        }
         @CustomType.Setter
         public Builder hostname(String hostname) {
             this.hostname = Objects.requireNonNull(hostname);
@@ -165,6 +185,7 @@ public final class ChannelSource {
         }
         public ChannelSource build() {
             final var o = new ChannelSource();
+            o.anonymousTransactionsHandling = anonymousTransactionsHandling;
             o.hostname = hostname;
             o.password = password;
             o.port = port;

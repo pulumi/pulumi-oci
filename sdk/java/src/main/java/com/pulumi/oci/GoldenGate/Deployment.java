@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.GoldenGate.DeploymentArgs;
 import com.pulumi.oci.GoldenGate.inputs.DeploymentState;
+import com.pulumi.oci.GoldenGate.outputs.DeploymentDeploymentDiagnosticData;
 import com.pulumi.oci.GoldenGate.outputs.DeploymentOggData;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
@@ -64,14 +65,14 @@ public class Deployment extends com.pulumi.resources.CustomResource {
         return this.cpuCoreCount;
     }
     /**
-     * (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="definedTags", type=Map.class, parameters={String.class, Object.class})
     private Output<Map<String,Object>> definedTags;
 
     /**
-     * @return (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * @return (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Output<Map<String,Object>> definedTags() {
@@ -92,14 +93,28 @@ public class Deployment extends com.pulumi.resources.CustomResource {
         return this.deploymentBackupId;
     }
     /**
-     * The deployment type.
+     * Information regarding the deployment diagnostic collection
+     * 
+     */
+    @Export(name="deploymentDiagnosticDatas", type=List.class, parameters={DeploymentDeploymentDiagnosticData.class})
+    private Output<List<DeploymentDeploymentDiagnosticData>> deploymentDiagnosticDatas;
+
+    /**
+     * @return Information regarding the deployment diagnostic collection
+     * 
+     */
+    public Output<List<DeploymentDeploymentDiagnosticData>> deploymentDiagnosticDatas() {
+        return this.deploymentDiagnosticDatas;
+    }
+    /**
+     * The type of deployment, the value determines the exact &#39;type&#39; of service executed in the Deployment. NOTE: Use of the value &#39;OGG&#39; is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent &#39;DATABASE_ORACLE&#39; value.
      * 
      */
     @Export(name="deploymentType", type=String.class, parameters={})
     private Output<String> deploymentType;
 
     /**
-     * @return The deployment type.
+     * @return The type of deployment, the value determines the exact &#39;type&#39; of service executed in the Deployment. NOTE: Use of the value &#39;OGG&#39; is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent &#39;DATABASE_ORACLE&#39; value.
      * 
      */
     public Output<String> deploymentType() {
@@ -162,14 +177,14 @@ public class Deployment extends com.pulumi.resources.CustomResource {
         return this.fqdn;
     }
     /**
-     * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", type=Map.class, parameters={String.class, Object.class})
     private Output<Map<String,Object>> freeformTags;
 
     /**
-     * @return (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Output<Map<String,Object>> freeformTags() {
@@ -288,14 +303,14 @@ public class Deployment extends com.pulumi.resources.CustomResource {
         return this.lifecycleSubState;
     }
     /**
-     * (Updatable) An array of [Network Security Group](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) OCIDs used to define network access for a deployment.
+     * (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
      * 
      */
     @Export(name="nsgIds", type=List.class, parameters={String.class})
     private Output<List<String>> nsgIds;
 
     /**
-     * @return (Updatable) An array of [Network Security Group](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) OCIDs used to define network access for a deployment.
+     * @return (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
      * 
      */
     public Output<List<String>> nsgIds() {
@@ -386,14 +401,14 @@ public class Deployment extends com.pulumi.resources.CustomResource {
         return this.subnetId;
     }
     /**
-     * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+     * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
     @Export(name="systemTags", type=Map.class, parameters={String.class, Object.class})
     private Output<Map<String,Object>> systemTags;
 
     /**
-     * @return The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+     * @return The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
     public Output<Map<String,Object>> systemTags() {

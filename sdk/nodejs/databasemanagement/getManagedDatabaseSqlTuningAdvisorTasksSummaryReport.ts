@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -28,11 +29,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabaseSqlTuningAdvisorTasksSummaryReport(args: GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksSummaryReport:getManagedDatabaseSqlTuningAdvisorTasksSummaryReport", {
         "beginExecIdGreaterThanOrEqualTo": args.beginExecIdGreaterThanOrEqualTo,
         "endExecIdLessThanOrEqualTo": args.endExecIdLessThanOrEqualTo,
@@ -110,9 +108,30 @@ export interface GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult {
     readonly timeGreaterThanOrEqualTo?: string;
     readonly timeLessThanOrEqualTo?: string;
 }
-
+/**
+ * This data source provides details about a specific Managed Database Sql Tuning Advisor Tasks Summary Report resource in Oracle Cloud Infrastructure Database Management service.
+ *
+ * Gets the summary report for the specified SQL Tuning Advisor task.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testManagedDatabaseSqlTuningAdvisorTasksSummaryReport = oci.DatabaseManagement.getManagedDatabaseSqlTuningAdvisorTasksSummaryReport({
+ *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
+ *     sqlTuningAdvisorTaskId: oci_database_management_sql_tuning_advisor_task.test_sql_tuning_advisor_task.id,
+ *     beginExecIdGreaterThanOrEqualTo: _var.managed_database_sql_tuning_advisor_tasks_summary_report_begin_exec_id_greater_than_or_equal_to,
+ *     endExecIdLessThanOrEqualTo: _var.managed_database_sql_tuning_advisor_tasks_summary_report_end_exec_id_less_than_or_equal_to,
+ *     searchPeriod: _var.managed_database_sql_tuning_advisor_tasks_summary_report_search_period,
+ *     timeGreaterThanOrEqualTo: _var.managed_database_sql_tuning_advisor_tasks_summary_report_time_greater_than_or_equal_to,
+ *     timeLessThanOrEqualTo: _var.managed_database_sql_tuning_advisor_tasks_summary_report_time_less_than_or_equal_to,
+ * });
+ * ```
+ */
 export function getManagedDatabaseSqlTuningAdvisorTasksSummaryReportOutput(args: GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseSqlTuningAdvisorTasksSummaryReportResult> {
-    return pulumi.output(args).apply(a => getManagedDatabaseSqlTuningAdvisorTasksSummaryReport(a, opts))
+    return pulumi.output(args).apply((a: any) => getManagedDatabaseSqlTuningAdvisorTasksSummaryReport(a, opts))
 }
 
 /**

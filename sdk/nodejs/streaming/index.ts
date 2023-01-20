@@ -5,20 +5,51 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./connectHarness";
-export * from "./getConnectHarness";
-export * from "./getConnectHarnesses";
-export * from "./getStream";
-export * from "./getStreamPool";
-export * from "./getStreamPools";
-export * from "./getStreams";
-export * from "./stream";
-export * from "./streamPool";
+export { ConnectHarnessArgs, ConnectHarnessState } from "./connectHarness";
+export type ConnectHarness = import("./connectHarness").ConnectHarness;
+export const ConnectHarness: typeof import("./connectHarness").ConnectHarness = null as any;
+utilities.lazyLoad(exports, ["ConnectHarness"], () => require("./connectHarness"));
 
-// Import resources to register:
-import { ConnectHarness } from "./connectHarness";
-import { Stream } from "./stream";
-import { StreamPool } from "./streamPool";
+export { GetConnectHarnessArgs, GetConnectHarnessResult, GetConnectHarnessOutputArgs } from "./getConnectHarness";
+export const getConnectHarness: typeof import("./getConnectHarness").getConnectHarness = null as any;
+export const getConnectHarnessOutput: typeof import("./getConnectHarness").getConnectHarnessOutput = null as any;
+utilities.lazyLoad(exports, ["getConnectHarness","getConnectHarnessOutput"], () => require("./getConnectHarness"));
+
+export { GetConnectHarnessesArgs, GetConnectHarnessesResult, GetConnectHarnessesOutputArgs } from "./getConnectHarnesses";
+export const getConnectHarnesses: typeof import("./getConnectHarnesses").getConnectHarnesses = null as any;
+export const getConnectHarnessesOutput: typeof import("./getConnectHarnesses").getConnectHarnessesOutput = null as any;
+utilities.lazyLoad(exports, ["getConnectHarnesses","getConnectHarnessesOutput"], () => require("./getConnectHarnesses"));
+
+export { GetStreamArgs, GetStreamResult, GetStreamOutputArgs } from "./getStream";
+export const getStream: typeof import("./getStream").getStream = null as any;
+export const getStreamOutput: typeof import("./getStream").getStreamOutput = null as any;
+utilities.lazyLoad(exports, ["getStream","getStreamOutput"], () => require("./getStream"));
+
+export { GetStreamPoolArgs, GetStreamPoolResult, GetStreamPoolOutputArgs } from "./getStreamPool";
+export const getStreamPool: typeof import("./getStreamPool").getStreamPool = null as any;
+export const getStreamPoolOutput: typeof import("./getStreamPool").getStreamPoolOutput = null as any;
+utilities.lazyLoad(exports, ["getStreamPool","getStreamPoolOutput"], () => require("./getStreamPool"));
+
+export { GetStreamPoolsArgs, GetStreamPoolsResult, GetStreamPoolsOutputArgs } from "./getStreamPools";
+export const getStreamPools: typeof import("./getStreamPools").getStreamPools = null as any;
+export const getStreamPoolsOutput: typeof import("./getStreamPools").getStreamPoolsOutput = null as any;
+utilities.lazyLoad(exports, ["getStreamPools","getStreamPoolsOutput"], () => require("./getStreamPools"));
+
+export { GetStreamsArgs, GetStreamsResult, GetStreamsOutputArgs } from "./getStreams";
+export const getStreams: typeof import("./getStreams").getStreams = null as any;
+export const getStreamsOutput: typeof import("./getStreams").getStreamsOutput = null as any;
+utilities.lazyLoad(exports, ["getStreams","getStreamsOutput"], () => require("./getStreams"));
+
+export { StreamArgs, StreamState } from "./stream";
+export type Stream = import("./stream").Stream;
+export const Stream: typeof import("./stream").Stream = null as any;
+utilities.lazyLoad(exports, ["Stream"], () => require("./stream"));
+
+export { StreamPoolArgs, StreamPoolState } from "./streamPool";
+export type StreamPool = import("./streamPool").StreamPool;
+export const StreamPool: typeof import("./streamPool").StreamPool = null as any;
+utilities.lazyLoad(exports, ["StreamPool"], () => require("./streamPool"));
+
 
 const _module = {
     version: utilities.getVersion(),

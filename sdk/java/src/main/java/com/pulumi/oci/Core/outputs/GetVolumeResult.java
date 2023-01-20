@@ -70,8 +70,7 @@ public final class GetVolumeResult {
      */
     private String id;
     /**
-     * @return Specifies whether the auto-tune performance is enabled for this boot volume.
-     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
+     * @return Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
      * 
      */
     private Boolean isAutoTuneEnabled;
@@ -205,8 +204,7 @@ public final class GetVolumeResult {
         return this.id;
     }
     /**
-     * @return Specifies whether the auto-tune performance is enabled for this boot volume.
-     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
+     * @return Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
      * 
      */
     public Boolean isAutoTuneEnabled() {

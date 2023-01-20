@@ -5,6 +5,8 @@ package com.pulumi.oci.ApiGateway.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentSpecificationRouteBackendHeader;
+import com.pulumi.oci.ApiGateway.outputs.GetDeploymentSpecificationRouteBackendRoutingBackend;
+import com.pulumi.oci.ApiGateway.outputs.GetDeploymentSpecificationRouteBackendSelectionSource;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
@@ -14,6 +16,7 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDeploymentSpecificationRouteBackend {
+    private List<String> allowedPostLogoutUris;
     /**
      * @return The body of the stock response from the mock backend.
      * 
@@ -36,10 +39,25 @@ public final class GetDeploymentSpecificationRouteBackend {
      */
     private Boolean isSslVerifyDisabled;
     /**
+     * @return Defines a state that should be shared on redirecting to postLogout URL.
+     * 
+     */
+    private String postLogoutState;
+    /**
      * @return Defines a timeout for reading a response from the proxied server.
      * 
      */
     private Double readTimeoutInSeconds;
+    /**
+     * @return List of backends to chose from for Dynamic Routing.
+     * 
+     */
+    private List<GetDeploymentSpecificationRouteBackendRoutingBackend> routingBackends;
+    /**
+     * @return Information around selector used for branching among routes/ authentication servers while dynamic routing/ authentication.
+     * 
+     */
+    private List<GetDeploymentSpecificationRouteBackendSelectionSource> selectionSources;
     /**
      * @return Defines a timeout for transmitting a request to the proxied server.
      * 
@@ -58,6 +76,9 @@ public final class GetDeploymentSpecificationRouteBackend {
     private String url;
 
     private GetDeploymentSpecificationRouteBackend() {}
+    public List<String> allowedPostLogoutUris() {
+        return this.allowedPostLogoutUris;
+    }
     /**
      * @return The body of the stock response from the mock backend.
      * 
@@ -90,11 +111,32 @@ public final class GetDeploymentSpecificationRouteBackend {
         return this.isSslVerifyDisabled;
     }
     /**
+     * @return Defines a state that should be shared on redirecting to postLogout URL.
+     * 
+     */
+    public String postLogoutState() {
+        return this.postLogoutState;
+    }
+    /**
      * @return Defines a timeout for reading a response from the proxied server.
      * 
      */
     public Double readTimeoutInSeconds() {
         return this.readTimeoutInSeconds;
+    }
+    /**
+     * @return List of backends to chose from for Dynamic Routing.
+     * 
+     */
+    public List<GetDeploymentSpecificationRouteBackendRoutingBackend> routingBackends() {
+        return this.routingBackends;
+    }
+    /**
+     * @return Information around selector used for branching among routes/ authentication servers while dynamic routing/ authentication.
+     * 
+     */
+    public List<GetDeploymentSpecificationRouteBackendSelectionSource> selectionSources() {
+        return this.selectionSources;
     }
     /**
      * @return Defines a timeout for transmitting a request to the proxied server.
@@ -130,12 +172,16 @@ public final class GetDeploymentSpecificationRouteBackend {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<String> allowedPostLogoutUris;
         private String body;
         private Double connectTimeoutInSeconds;
         private String functionId;
         private List<GetDeploymentSpecificationRouteBackendHeader> headers;
         private Boolean isSslVerifyDisabled;
+        private String postLogoutState;
         private Double readTimeoutInSeconds;
+        private List<GetDeploymentSpecificationRouteBackendRoutingBackend> routingBackends;
+        private List<GetDeploymentSpecificationRouteBackendSelectionSource> selectionSources;
         private Double sendTimeoutInSeconds;
         private Integer status;
         private String type;
@@ -143,18 +189,30 @@ public final class GetDeploymentSpecificationRouteBackend {
         public Builder() {}
         public Builder(GetDeploymentSpecificationRouteBackend defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.allowedPostLogoutUris = defaults.allowedPostLogoutUris;
     	      this.body = defaults.body;
     	      this.connectTimeoutInSeconds = defaults.connectTimeoutInSeconds;
     	      this.functionId = defaults.functionId;
     	      this.headers = defaults.headers;
     	      this.isSslVerifyDisabled = defaults.isSslVerifyDisabled;
+    	      this.postLogoutState = defaults.postLogoutState;
     	      this.readTimeoutInSeconds = defaults.readTimeoutInSeconds;
+    	      this.routingBackends = defaults.routingBackends;
+    	      this.selectionSources = defaults.selectionSources;
     	      this.sendTimeoutInSeconds = defaults.sendTimeoutInSeconds;
     	      this.status = defaults.status;
     	      this.type = defaults.type;
     	      this.url = defaults.url;
         }
 
+        @CustomType.Setter
+        public Builder allowedPostLogoutUris(List<String> allowedPostLogoutUris) {
+            this.allowedPostLogoutUris = Objects.requireNonNull(allowedPostLogoutUris);
+            return this;
+        }
+        public Builder allowedPostLogoutUris(String... allowedPostLogoutUris) {
+            return allowedPostLogoutUris(List.of(allowedPostLogoutUris));
+        }
         @CustomType.Setter
         public Builder body(String body) {
             this.body = Objects.requireNonNull(body);
@@ -184,9 +242,30 @@ public final class GetDeploymentSpecificationRouteBackend {
             return this;
         }
         @CustomType.Setter
+        public Builder postLogoutState(String postLogoutState) {
+            this.postLogoutState = Objects.requireNonNull(postLogoutState);
+            return this;
+        }
+        @CustomType.Setter
         public Builder readTimeoutInSeconds(Double readTimeoutInSeconds) {
             this.readTimeoutInSeconds = Objects.requireNonNull(readTimeoutInSeconds);
             return this;
+        }
+        @CustomType.Setter
+        public Builder routingBackends(List<GetDeploymentSpecificationRouteBackendRoutingBackend> routingBackends) {
+            this.routingBackends = Objects.requireNonNull(routingBackends);
+            return this;
+        }
+        public Builder routingBackends(GetDeploymentSpecificationRouteBackendRoutingBackend... routingBackends) {
+            return routingBackends(List.of(routingBackends));
+        }
+        @CustomType.Setter
+        public Builder selectionSources(List<GetDeploymentSpecificationRouteBackendSelectionSource> selectionSources) {
+            this.selectionSources = Objects.requireNonNull(selectionSources);
+            return this;
+        }
+        public Builder selectionSources(GetDeploymentSpecificationRouteBackendSelectionSource... selectionSources) {
+            return selectionSources(List.of(selectionSources));
         }
         @CustomType.Setter
         public Builder sendTimeoutInSeconds(Double sendTimeoutInSeconds) {
@@ -210,12 +289,16 @@ public final class GetDeploymentSpecificationRouteBackend {
         }
         public GetDeploymentSpecificationRouteBackend build() {
             final var o = new GetDeploymentSpecificationRouteBackend();
+            o.allowedPostLogoutUris = allowedPostLogoutUris;
             o.body = body;
             o.connectTimeoutInSeconds = connectTimeoutInSeconds;
             o.functionId = functionId;
             o.headers = headers;
             o.isSslVerifyDisabled = isSslVerifyDisabled;
+            o.postLogoutState = postLogoutState;
             o.readTimeoutInSeconds = readTimeoutInSeconds;
+            o.routingBackends = routingBackends;
+            o.selectionSources = selectionSources;
             o.sendTimeoutInSeconds = sendTimeoutInSeconds;
             o.status = status;
             o.type = type;

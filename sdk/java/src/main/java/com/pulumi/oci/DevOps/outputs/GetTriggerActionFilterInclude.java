@@ -22,6 +22,11 @@ public final class GetTriggerActionFilterInclude {
      * 
      */
     private String headRef;
+    /**
+     * @return The repository name for trigger events.
+     * 
+     */
+    private String repositoryName;
 
     private GetTriggerActionFilterInclude() {}
     /**
@@ -41,6 +46,13 @@ public final class GetTriggerActionFilterInclude {
     public String headRef() {
         return this.headRef;
     }
+    /**
+     * @return The repository name for trigger events.
+     * 
+     */
+    public String repositoryName() {
+        return this.repositoryName;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -54,12 +66,14 @@ public final class GetTriggerActionFilterInclude {
         private String baseRef;
         private List<GetTriggerActionFilterIncludeFileFilter> fileFilters;
         private String headRef;
+        private String repositoryName;
         public Builder() {}
         public Builder(GetTriggerActionFilterInclude defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.baseRef = defaults.baseRef;
     	      this.fileFilters = defaults.fileFilters;
     	      this.headRef = defaults.headRef;
+    	      this.repositoryName = defaults.repositoryName;
         }
 
         @CustomType.Setter
@@ -80,11 +94,17 @@ public final class GetTriggerActionFilterInclude {
             this.headRef = Objects.requireNonNull(headRef);
             return this;
         }
+        @CustomType.Setter
+        public Builder repositoryName(String repositoryName) {
+            this.repositoryName = Objects.requireNonNull(repositoryName);
+            return this;
+        }
         public GetTriggerActionFilterInclude build() {
             final var o = new GetTriggerActionFilterInclude();
             o.baseRef = baseRef;
             o.fileFilters = fileFilters;
             o.headRef = headRef;
+            o.repositoryName = repositoryName;
             return o;
         }
     }

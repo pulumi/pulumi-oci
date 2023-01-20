@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetIpv6Result> InvokeAsync(GetIpv6Args args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetIpv6Result>("oci:Core/getIpv6:getIpv6", args ?? new GetIpv6Args(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetIpv6Result>("oci:Core/getIpv6:getIpv6", args ?? new GetIpv6Args(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Ipv6 resource in Oracle Cloud Infrastructure Core service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetIpv6Result> Invoke(GetIpv6InvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetIpv6Result>("oci:Core/getIpv6:getIpv6", args ?? new GetIpv6InvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetIpv6Result>("oci:Core/getIpv6:getIpv6", args ?? new GetIpv6InvokeArgs(), options.WithDefaults());
     }
 
 

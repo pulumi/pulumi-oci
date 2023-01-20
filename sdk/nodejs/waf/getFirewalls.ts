@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFirewalls(args: GetFirewallsArgs, opts?: pulumi.InvokeOptions): Promise<GetFirewallsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Waf/getFirewalls:getFirewalls", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -98,9 +96,28 @@ export interface GetFirewallsResult {
      */
     readonly webAppFirewallPolicyId?: string;
 }
-
+/**
+ * This data source provides the list of Web App Firewalls in Oracle Cloud Infrastructure Waf service.
+ *
+ * Gets a list of all WebAppFirewalls in a compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testWebAppFirewalls = oci.Waf.getFirewalls({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.web_app_firewall_display_name,
+ *     id: _var.web_app_firewall_id,
+ *     states: _var.web_app_firewall_state,
+ *     webAppFirewallPolicyId: oci_waf_web_app_firewall_policy.test_web_app_firewall_policy.id,
+ * });
+ * ```
+ */
 export function getFirewallsOutput(args: GetFirewallsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFirewallsResult> {
-    return pulumi.output(args).apply(a => getFirewalls(a, opts))
+    return pulumi.output(args).apply((a: any) => getFirewalls(a, opts))
 }
 
 /**

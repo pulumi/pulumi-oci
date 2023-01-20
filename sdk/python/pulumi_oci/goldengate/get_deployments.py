@@ -23,7 +23,13 @@ class GetDeploymentsResult:
     """
     A collection of values returned by getDeployments.
     """
-    def __init__(__self__, compartment_id=None, deployment_collections=None, display_name=None, filters=None, fqdn=None, id=None, lifecycle_sub_state=None, state=None):
+    def __init__(__self__, assignable_connection_id=None, assigned_connection_id=None, compartment_id=None, deployment_collections=None, display_name=None, filters=None, fqdn=None, id=None, lifecycle_sub_state=None, state=None, supported_connection_type=None):
+        if assignable_connection_id and not isinstance(assignable_connection_id, str):
+            raise TypeError("Expected argument 'assignable_connection_id' to be a str")
+        pulumi.set(__self__, "assignable_connection_id", assignable_connection_id)
+        if assigned_connection_id and not isinstance(assigned_connection_id, str):
+            raise TypeError("Expected argument 'assigned_connection_id' to be a str")
+        pulumi.set(__self__, "assigned_connection_id", assigned_connection_id)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -48,6 +54,19 @@ class GetDeploymentsResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if supported_connection_type and not isinstance(supported_connection_type, str):
+            raise TypeError("Expected argument 'supported_connection_type' to be a str")
+        pulumi.set(__self__, "supported_connection_type", supported_connection_type)
+
+    @property
+    @pulumi.getter(name="assignableConnectionId")
+    def assignable_connection_id(self) -> Optional[str]:
+        return pulumi.get(self, "assignable_connection_id")
+
+    @property
+    @pulumi.getter(name="assignedConnectionId")
+    def assigned_connection_id(self) -> Optional[str]:
+        return pulumi.get(self, "assigned_connection_id")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -110,6 +129,11 @@ class GetDeploymentsResult:
         """
         return pulumi.get(self, "state")
 
+    @property
+    @pulumi.getter(name="supportedConnectionType")
+    def supported_connection_type(self) -> Optional[str]:
+        return pulumi.get(self, "supported_connection_type")
+
 
 class AwaitableGetDeploymentsResult(GetDeploymentsResult):
     # pylint: disable=using-constant-test
@@ -117,6 +141,8 @@ class AwaitableGetDeploymentsResult(GetDeploymentsResult):
         if False:
             yield self
         return GetDeploymentsResult(
+            assignable_connection_id=self.assignable_connection_id,
+            assigned_connection_id=self.assigned_connection_id,
             compartment_id=self.compartment_id,
             deployment_collections=self.deployment_collections,
             display_name=self.display_name,
@@ -124,15 +150,19 @@ class AwaitableGetDeploymentsResult(GetDeploymentsResult):
             fqdn=self.fqdn,
             id=self.id,
             lifecycle_sub_state=self.lifecycle_sub_state,
-            state=self.state)
+            state=self.state,
+            supported_connection_type=self.supported_connection_type)
 
 
-def get_deployments(compartment_id: Optional[str] = None,
+def get_deployments(assignable_connection_id: Optional[str] = None,
+                    assigned_connection_id: Optional[str] = None,
+                    compartment_id: Optional[str] = None,
                     display_name: Optional[str] = None,
                     filters: Optional[Sequence[pulumi.InputType['GetDeploymentsFilterArgs']]] = None,
                     fqdn: Optional[str] = None,
                     lifecycle_sub_state: Optional[str] = None,
                     state: Optional[str] = None,
+                    supported_connection_type: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDeploymentsResult:
     """
     This data source provides the list of Deployments in Oracle Cloud Infrastructure Golden Gate service.
@@ -146,30 +176,41 @@ def get_deployments(compartment_id: Optional[str] = None,
     import pulumi_oci as oci
 
     test_deployments = oci.GoldenGate.get_deployments(compartment_id=var["compartment_id"],
+        assignable_connection_id=oci_golden_gate_connection["test_connection"]["id"],
+        assigned_connection_id=oci_golden_gate_connection["test_connection"]["id"],
         display_name=var["deployment_display_name"],
         fqdn=var["deployment_fqdn"],
         lifecycle_sub_state=var["deployment_lifecycle_sub_state"],
-        state=var["deployment_state"])
+        state=var["deployment_state"],
+        supported_connection_type=var["deployment_supported_connection_type"])
     ```
 
 
-    :param str compartment_id: The ID of the compartment in which to list resources.
+    :param str assignable_connection_id: Filters for compatible deployments which can be, but currently not assigned to the connection specified by its id.
+    :param str assigned_connection_id: The OCID of the connection which for the deployment must be assigned.
+    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
     :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
     :param str fqdn: A filter to return only the resources that match the 'fqdn' given.
     :param str lifecycle_sub_state: A filter to return only the resources that match the 'lifecycleSubState' given.
     :param str state: A filter to return only the resources that match the 'lifecycleState' given.
+    :param str supported_connection_type: The connection type which the deployment must support.
     """
     __args__ = dict()
+    __args__['assignableConnectionId'] = assignable_connection_id
+    __args__['assignedConnectionId'] = assigned_connection_id
     __args__['compartmentId'] = compartment_id
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['fqdn'] = fqdn
     __args__['lifecycleSubState'] = lifecycle_sub_state
     __args__['state'] = state
+    __args__['supportedConnectionType'] = supported_connection_type
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:GoldenGate/getDeployments:getDeployments', __args__, opts=opts, typ=GetDeploymentsResult).value
 
     return AwaitableGetDeploymentsResult(
+        assignable_connection_id=__ret__.assignable_connection_id,
+        assigned_connection_id=__ret__.assigned_connection_id,
         compartment_id=__ret__.compartment_id,
         deployment_collections=__ret__.deployment_collections,
         display_name=__ret__.display_name,
@@ -177,16 +218,20 @@ def get_deployments(compartment_id: Optional[str] = None,
         fqdn=__ret__.fqdn,
         id=__ret__.id,
         lifecycle_sub_state=__ret__.lifecycle_sub_state,
-        state=__ret__.state)
+        state=__ret__.state,
+        supported_connection_type=__ret__.supported_connection_type)
 
 
 @_utilities.lift_output_func(get_deployments)
-def get_deployments_output(compartment_id: Optional[pulumi.Input[str]] = None,
+def get_deployments_output(assignable_connection_id: Optional[pulumi.Input[Optional[str]]] = None,
+                           assigned_connection_id: Optional[pulumi.Input[Optional[str]]] = None,
+                           compartment_id: Optional[pulumi.Input[str]] = None,
                            display_name: Optional[pulumi.Input[Optional[str]]] = None,
                            filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetDeploymentsFilterArgs']]]]] = None,
                            fqdn: Optional[pulumi.Input[Optional[str]]] = None,
                            lifecycle_sub_state: Optional[pulumi.Input[Optional[str]]] = None,
                            state: Optional[pulumi.Input[Optional[str]]] = None,
+                           supported_connection_type: Optional[pulumi.Input[Optional[str]]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDeploymentsResult]:
     """
     This data source provides the list of Deployments in Oracle Cloud Infrastructure Golden Gate service.
@@ -200,17 +245,23 @@ def get_deployments_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi_oci as oci
 
     test_deployments = oci.GoldenGate.get_deployments(compartment_id=var["compartment_id"],
+        assignable_connection_id=oci_golden_gate_connection["test_connection"]["id"],
+        assigned_connection_id=oci_golden_gate_connection["test_connection"]["id"],
         display_name=var["deployment_display_name"],
         fqdn=var["deployment_fqdn"],
         lifecycle_sub_state=var["deployment_lifecycle_sub_state"],
-        state=var["deployment_state"])
+        state=var["deployment_state"],
+        supported_connection_type=var["deployment_supported_connection_type"])
     ```
 
 
-    :param str compartment_id: The ID of the compartment in which to list resources.
+    :param str assignable_connection_id: Filters for compatible deployments which can be, but currently not assigned to the connection specified by its id.
+    :param str assigned_connection_id: The OCID of the connection which for the deployment must be assigned.
+    :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
     :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
     :param str fqdn: A filter to return only the resources that match the 'fqdn' given.
     :param str lifecycle_sub_state: A filter to return only the resources that match the 'lifecycleSubState' given.
     :param str state: A filter to return only the resources that match the 'lifecycleState' given.
+    :param str supported_connection_type: The connection type which the deployment must support.
     """
     ...

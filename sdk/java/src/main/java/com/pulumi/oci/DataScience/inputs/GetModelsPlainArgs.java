@@ -83,6 +83,13 @@ public final class GetModelsPlainArgs extends com.pulumi.resources.InvokeArgs {
         return Optional.ofNullable(this.id);
     }
 
+    @Import(name="modelVersionSetName", required=true)
+    private String modelVersionSetName;
+
+    public String modelVersionSetName() {
+        return this.modelVersionSetName;
+    }
+
     /**
      * &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
      * 
@@ -113,6 +120,13 @@ public final class GetModelsPlainArgs extends com.pulumi.resources.InvokeArgs {
         return Optional.ofNullable(this.state);
     }
 
+    @Import(name="versionLabel", required=true)
+    private String versionLabel;
+
+    public String versionLabel() {
+        return this.versionLabel;
+    }
+
     private GetModelsPlainArgs() {}
 
     private GetModelsPlainArgs(GetModelsPlainArgs $) {
@@ -121,8 +135,10 @@ public final class GetModelsPlainArgs extends com.pulumi.resources.InvokeArgs {
         this.displayName = $.displayName;
         this.filters = $.filters;
         this.id = $.id;
+        this.modelVersionSetName = $.modelVersionSetName;
         this.projectId = $.projectId;
         this.state = $.state;
+        this.versionLabel = $.versionLabel;
     }
 
     public static Builder builder() {
@@ -196,6 +212,11 @@ public final class GetModelsPlainArgs extends com.pulumi.resources.InvokeArgs {
             return this;
         }
 
+        public Builder modelVersionSetName(String modelVersionSetName) {
+            $.modelVersionSetName = modelVersionSetName;
+            return this;
+        }
+
         /**
          * @param projectId &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
          * 
@@ -218,8 +239,15 @@ public final class GetModelsPlainArgs extends com.pulumi.resources.InvokeArgs {
             return this;
         }
 
+        public Builder versionLabel(String versionLabel) {
+            $.versionLabel = versionLabel;
+            return this;
+        }
+
         public GetModelsPlainArgs build() {
             $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            $.modelVersionSetName = Objects.requireNonNull($.modelVersionSetName, "expected parameter 'modelVersionSetName' to be non-null");
+            $.versionLabel = Objects.requireNonNull($.versionLabel, "expected parameter 'versionLabel' to be non-null");
             return $;
         }
     }

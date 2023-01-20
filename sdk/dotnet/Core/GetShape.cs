@@ -12,10 +12,10 @@ namespace Pulumi.Oci.Core
     public static class GetShape
     {
         public static Task<GetShapeResult> InvokeAsync(GetShapeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetShapeResult>("oci:Core/getShape:getShape", args ?? new GetShapeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetShapeResult>("oci:Core/getShape:getShape", args ?? new GetShapeArgs(), options.WithDefaults());
 
         public static Output<GetShapeResult> Invoke(GetShapeInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetShapeResult>("oci:Core/getShape:getShape", args ?? new GetShapeInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetShapeResult>("oci:Core/getShape:getShape", args ?? new GetShapeInvokeArgs(), options.WithDefaults());
     }
 
 

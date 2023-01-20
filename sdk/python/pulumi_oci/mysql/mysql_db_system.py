@@ -46,15 +46,15 @@ class MysqlDbSystemArgs:
         The set of arguments for constructing a MysqlDbSystem resource.
         :param pulumi.Input[str] availability_domain: The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment.
-        :param pulumi.Input[str] shape_name: The name of the shape. The shape determines the resources allocated
+        :param pulumi.Input[str] shape_name: (Updatable) The name of the shape. The shape determines the resources allocated
                * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
         :param pulumi.Input[str] subnet_id: The OCID of the subnet the DB System is associated with.
         :param pulumi.Input[str] admin_password: The password for the administrative user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
         :param pulumi.Input[str] admin_username: The username for the administrative user.
         :param pulumi.Input['MysqlDbSystemBackupPolicyArgs'] backup_policy: (Updatable) Backup policy as optionally used for DB System Creation.
-        :param pulumi.Input[str] configuration_id: The OCID of the Configuration to be used for this DB System.
+        :param pulumi.Input[str] configuration_id: (Updatable) The OCID of the Configuration to be used for this DB System.
         :param pulumi.Input[str] crash_recovery: (Updatable) Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
-        :param pulumi.Input[int] data_storage_size_in_gb: Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
+        :param pulumi.Input[int] data_storage_size_in_gb: (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemDeletionPolicyArgs']]] deletion_policies: (Updatable) Policy for how the DB System and related resources should be handled at the time of its deletion.
         :param pulumi.Input[str] description: (Updatable) User-provided data about the DB System.
@@ -64,8 +64,8 @@ class MysqlDbSystemArgs:
         :param pulumi.Input[str] hostname_label: The hostname for the primary endpoint of the DB System. Used for DNS.
         :param pulumi.Input[str] ip_address: The IP address the DB System is configured to listen on. A private IP address of your choice to assign to the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
         :param pulumi.Input[bool] is_highly_available: (Updatable) Specifies if the DB System is highly available.
-        :param pulumi.Input['MysqlDbSystemMaintenanceArgs'] maintenance: (Updatable) The Maintenance Policy for the DB System. `maintenance` and `backup_policy` cannot be updated in the same request.
-        :param pulumi.Input[str] mysql_version: Name of the MySQL Version in use for the DB System.
+        :param pulumi.Input['MysqlDbSystemMaintenanceArgs'] maintenance: (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backup_policy` cannot be updated in the same request.
+        :param pulumi.Input[str] mysql_version: The specific MySQL version identifier.
         :param pulumi.Input[int] port: The port for primary endpoint of the DB System to listen on.
         :param pulumi.Input[int] port_x: The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
         :param pulumi.Input[str] shutdown_type: It is applicable only for stopping a DB System. Could be set to `FAST`, `SLOW` or `IMMEDIATE`. Default value is `FAST`.
@@ -149,7 +149,7 @@ class MysqlDbSystemArgs:
     @pulumi.getter(name="shapeName")
     def shape_name(self) -> pulumi.Input[str]:
         """
-        The name of the shape. The shape determines the resources allocated
+        (Updatable) The name of the shape. The shape determines the resources allocated
         * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
         """
         return pulumi.get(self, "shape_name")
@@ -210,7 +210,7 @@ class MysqlDbSystemArgs:
     @pulumi.getter(name="configurationId")
     def configuration_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of the Configuration to be used for this DB System.
+        (Updatable) The OCID of the Configuration to be used for this DB System.
         """
         return pulumi.get(self, "configuration_id")
 
@@ -234,7 +234,7 @@ class MysqlDbSystemArgs:
     @pulumi.getter(name="dataStorageSizeInGb")
     def data_storage_size_in_gb(self) -> Optional[pulumi.Input[int]]:
         """
-        Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
+        (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
         """
         return pulumi.get(self, "data_storage_size_in_gb")
 
@@ -354,7 +354,7 @@ class MysqlDbSystemArgs:
     @pulumi.getter
     def maintenance(self) -> Optional[pulumi.Input['MysqlDbSystemMaintenanceArgs']]:
         """
-        (Updatable) The Maintenance Policy for the DB System. `maintenance` and `backup_policy` cannot be updated in the same request.
+        (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backup_policy` cannot be updated in the same request.
         """
         return pulumi.get(self, "maintenance")
 
@@ -366,7 +366,7 @@ class MysqlDbSystemArgs:
     @pulumi.getter(name="mysqlVersion")
     def mysql_version(self) -> Optional[pulumi.Input[str]]:
         """
-        Name of the MySQL Version in use for the DB System.
+        The specific MySQL version identifier.
         """
         return pulumi.get(self, "mysql_version")
 
@@ -484,10 +484,10 @@ class _MysqlDbSystemState:
         :param pulumi.Input['MysqlDbSystemBackupPolicyArgs'] backup_policy: (Updatable) Backup policy as optionally used for DB System Creation.
         :param pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemChannelArgs']]] channels: A list with a summary of all the Channels attached to the DB System.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment.
-        :param pulumi.Input[str] configuration_id: The OCID of the Configuration to be used for this DB System.
+        :param pulumi.Input[str] configuration_id: (Updatable) The OCID of the Configuration to be used for this DB System.
         :param pulumi.Input[str] crash_recovery: (Updatable) Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
         :param pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemCurrentPlacementArgs']]] current_placements: The availability domain and fault domain a DB System is placed in.
-        :param pulumi.Input[int] data_storage_size_in_gb: Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
+        :param pulumi.Input[int] data_storage_size_in_gb: (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemDeletionPolicyArgs']]] deletion_policies: (Updatable) Policy for how the DB System and related resources should be handled at the time of its deletion.
         :param pulumi.Input[str] description: (Updatable) User-provided data about the DB System.
@@ -502,12 +502,12 @@ class _MysqlDbSystemState:
         :param pulumi.Input[bool] is_heat_wave_cluster_attached: If the DB System has a HeatWave Cluster attached.
         :param pulumi.Input[bool] is_highly_available: (Updatable) Specifies if the DB System is highly available.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycleState.
-        :param pulumi.Input['MysqlDbSystemMaintenanceArgs'] maintenance: (Updatable) The Maintenance Policy for the DB System. `maintenance` and `backup_policy` cannot be updated in the same request.
-        :param pulumi.Input[str] mysql_version: Name of the MySQL Version in use for the DB System.
+        :param pulumi.Input['MysqlDbSystemMaintenanceArgs'] maintenance: (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backup_policy` cannot be updated in the same request.
+        :param pulumi.Input[str] mysql_version: The specific MySQL version identifier.
         :param pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemPointInTimeRecoveryDetailArgs']]] point_in_time_recovery_details: Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
         :param pulumi.Input[int] port: The port for primary endpoint of the DB System to listen on.
         :param pulumi.Input[int] port_x: The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
-        :param pulumi.Input[str] shape_name: The name of the shape. The shape determines the resources allocated
+        :param pulumi.Input[str] shape_name: (Updatable) The name of the shape. The shape determines the resources allocated
                * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
         :param pulumi.Input[str] shutdown_type: It is applicable only for stopping a DB System. Could be set to `FAST`, `SLOW` or `IMMEDIATE`. Default value is `FAST`.
         :param pulumi.Input['MysqlDbSystemSourceArgs'] source: Parameters detailing how to provision the initial data of the system.
@@ -679,7 +679,7 @@ class _MysqlDbSystemState:
     @pulumi.getter(name="configurationId")
     def configuration_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of the Configuration to be used for this DB System.
+        (Updatable) The OCID of the Configuration to be used for this DB System.
         """
         return pulumi.get(self, "configuration_id")
 
@@ -715,7 +715,7 @@ class _MysqlDbSystemState:
     @pulumi.getter(name="dataStorageSizeInGb")
     def data_storage_size_in_gb(self) -> Optional[pulumi.Input[int]]:
         """
-        Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
+        (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
         """
         return pulumi.get(self, "data_storage_size_in_gb")
 
@@ -895,7 +895,7 @@ class _MysqlDbSystemState:
     @pulumi.getter
     def maintenance(self) -> Optional[pulumi.Input['MysqlDbSystemMaintenanceArgs']]:
         """
-        (Updatable) The Maintenance Policy for the DB System. `maintenance` and `backup_policy` cannot be updated in the same request.
+        (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backup_policy` cannot be updated in the same request.
         """
         return pulumi.get(self, "maintenance")
 
@@ -907,7 +907,7 @@ class _MysqlDbSystemState:
     @pulumi.getter(name="mysqlVersion")
     def mysql_version(self) -> Optional[pulumi.Input[str]]:
         """
-        Name of the MySQL Version in use for the DB System.
+        The specific MySQL version identifier.
         """
         return pulumi.get(self, "mysql_version")
 
@@ -955,7 +955,7 @@ class _MysqlDbSystemState:
     @pulumi.getter(name="shapeName")
     def shape_name(self) -> Optional[pulumi.Input[str]]:
         """
-        The name of the shape. The shape determines the resources allocated
+        (Updatable) The name of the shape. The shape determines the resources allocated
         * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
         """
         return pulumi.get(self, "shape_name")
@@ -1147,9 +1147,9 @@ class MysqlDbSystem(pulumi.CustomResource):
         :param pulumi.Input[str] availability_domain: The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
         :param pulumi.Input[pulumi.InputType['MysqlDbSystemBackupPolicyArgs']] backup_policy: (Updatable) Backup policy as optionally used for DB System Creation.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment.
-        :param pulumi.Input[str] configuration_id: The OCID of the Configuration to be used for this DB System.
+        :param pulumi.Input[str] configuration_id: (Updatable) The OCID of the Configuration to be used for this DB System.
         :param pulumi.Input[str] crash_recovery: (Updatable) Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
-        :param pulumi.Input[int] data_storage_size_in_gb: Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
+        :param pulumi.Input[int] data_storage_size_in_gb: (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MysqlDbSystemDeletionPolicyArgs']]]] deletion_policies: (Updatable) Policy for how the DB System and related resources should be handled at the time of its deletion.
         :param pulumi.Input[str] description: (Updatable) User-provided data about the DB System.
@@ -1159,11 +1159,11 @@ class MysqlDbSystem(pulumi.CustomResource):
         :param pulumi.Input[str] hostname_label: The hostname for the primary endpoint of the DB System. Used for DNS.
         :param pulumi.Input[str] ip_address: The IP address the DB System is configured to listen on. A private IP address of your choice to assign to the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
         :param pulumi.Input[bool] is_highly_available: (Updatable) Specifies if the DB System is highly available.
-        :param pulumi.Input[pulumi.InputType['MysqlDbSystemMaintenanceArgs']] maintenance: (Updatable) The Maintenance Policy for the DB System. `maintenance` and `backup_policy` cannot be updated in the same request.
-        :param pulumi.Input[str] mysql_version: Name of the MySQL Version in use for the DB System.
+        :param pulumi.Input[pulumi.InputType['MysqlDbSystemMaintenanceArgs']] maintenance: (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backup_policy` cannot be updated in the same request.
+        :param pulumi.Input[str] mysql_version: The specific MySQL version identifier.
         :param pulumi.Input[int] port: The port for primary endpoint of the DB System to listen on.
         :param pulumi.Input[int] port_x: The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
-        :param pulumi.Input[str] shape_name: The name of the shape. The shape determines the resources allocated
+        :param pulumi.Input[str] shape_name: (Updatable) The name of the shape. The shape determines the resources allocated
                * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
         :param pulumi.Input[str] shutdown_type: It is applicable only for stopping a DB System. Could be set to `FAST`, `SLOW` or `IMMEDIATE`. Default value is `FAST`.
         :param pulumi.Input[pulumi.InputType['MysqlDbSystemSourceArgs']] source: Parameters detailing how to provision the initial data of the system.
@@ -1297,7 +1297,7 @@ class MysqlDbSystem(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = MysqlDbSystemArgs.__new__(MysqlDbSystemArgs)
 
-            __props__.__dict__["admin_password"] = admin_password
+            __props__.__dict__["admin_password"] = None if admin_password is None else pulumi.Output.secret(admin_password)
             __props__.__dict__["admin_username"] = admin_username
             if availability_domain is None and not opts.urn:
                 raise TypeError("Missing required property 'availability_domain'")
@@ -1342,6 +1342,8 @@ class MysqlDbSystem(pulumi.CustomResource):
             __props__.__dict__["point_in_time_recovery_details"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["adminPassword"])
+        opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(MysqlDbSystem, __self__).__init__(
             'oci:Mysql/mysqlDbSystem:MysqlDbSystem',
             resource_name,
@@ -1403,10 +1405,10 @@ class MysqlDbSystem(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['MysqlDbSystemBackupPolicyArgs']] backup_policy: (Updatable) Backup policy as optionally used for DB System Creation.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MysqlDbSystemChannelArgs']]]] channels: A list with a summary of all the Channels attached to the DB System.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment.
-        :param pulumi.Input[str] configuration_id: The OCID of the Configuration to be used for this DB System.
+        :param pulumi.Input[str] configuration_id: (Updatable) The OCID of the Configuration to be used for this DB System.
         :param pulumi.Input[str] crash_recovery: (Updatable) Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MysqlDbSystemCurrentPlacementArgs']]]] current_placements: The availability domain and fault domain a DB System is placed in.
-        :param pulumi.Input[int] data_storage_size_in_gb: Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
+        :param pulumi.Input[int] data_storage_size_in_gb: (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MysqlDbSystemDeletionPolicyArgs']]]] deletion_policies: (Updatable) Policy for how the DB System and related resources should be handled at the time of its deletion.
         :param pulumi.Input[str] description: (Updatable) User-provided data about the DB System.
@@ -1421,12 +1423,12 @@ class MysqlDbSystem(pulumi.CustomResource):
         :param pulumi.Input[bool] is_heat_wave_cluster_attached: If the DB System has a HeatWave Cluster attached.
         :param pulumi.Input[bool] is_highly_available: (Updatable) Specifies if the DB System is highly available.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycleState.
-        :param pulumi.Input[pulumi.InputType['MysqlDbSystemMaintenanceArgs']] maintenance: (Updatable) The Maintenance Policy for the DB System. `maintenance` and `backup_policy` cannot be updated in the same request.
-        :param pulumi.Input[str] mysql_version: Name of the MySQL Version in use for the DB System.
+        :param pulumi.Input[pulumi.InputType['MysqlDbSystemMaintenanceArgs']] maintenance: (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backup_policy` cannot be updated in the same request.
+        :param pulumi.Input[str] mysql_version: The specific MySQL version identifier.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MysqlDbSystemPointInTimeRecoveryDetailArgs']]]] point_in_time_recovery_details: Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
         :param pulumi.Input[int] port: The port for primary endpoint of the DB System to listen on.
         :param pulumi.Input[int] port_x: The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
-        :param pulumi.Input[str] shape_name: The name of the shape. The shape determines the resources allocated
+        :param pulumi.Input[str] shape_name: (Updatable) The name of the shape. The shape determines the resources allocated
                * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
         :param pulumi.Input[str] shutdown_type: It is applicable only for stopping a DB System. Could be set to `FAST`, `SLOW` or `IMMEDIATE`. Default value is `FAST`.
         :param pulumi.Input[pulumi.InputType['MysqlDbSystemSourceArgs']] source: Parameters detailing how to provision the initial data of the system.
@@ -1538,7 +1540,7 @@ class MysqlDbSystem(pulumi.CustomResource):
     @pulumi.getter(name="configurationId")
     def configuration_id(self) -> pulumi.Output[str]:
         """
-        The OCID of the Configuration to be used for this DB System.
+        (Updatable) The OCID of the Configuration to be used for this DB System.
         """
         return pulumi.get(self, "configuration_id")
 
@@ -1562,7 +1564,7 @@ class MysqlDbSystem(pulumi.CustomResource):
     @pulumi.getter(name="dataStorageSizeInGb")
     def data_storage_size_in_gb(self) -> pulumi.Output[int]:
         """
-        Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
+        (Updatable) Initial size of the data volume in GBs that will be created and attached. Keep in mind that this only specifies the size of the database data volume, the log volume for the database will be scaled appropriately with its shape. It is required if you are creating a new database. It cannot be set if you are creating a database from a backup.
         """
         return pulumi.get(self, "data_storage_size_in_gb")
 
@@ -1682,7 +1684,7 @@ class MysqlDbSystem(pulumi.CustomResource):
     @pulumi.getter
     def maintenance(self) -> pulumi.Output['outputs.MysqlDbSystemMaintenance']:
         """
-        (Updatable) The Maintenance Policy for the DB System. `maintenance` and `backup_policy` cannot be updated in the same request.
+        (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backup_policy` cannot be updated in the same request.
         """
         return pulumi.get(self, "maintenance")
 
@@ -1690,7 +1692,7 @@ class MysqlDbSystem(pulumi.CustomResource):
     @pulumi.getter(name="mysqlVersion")
     def mysql_version(self) -> pulumi.Output[str]:
         """
-        Name of the MySQL Version in use for the DB System.
+        The specific MySQL version identifier.
         """
         return pulumi.get(self, "mysql_version")
 
@@ -1722,7 +1724,7 @@ class MysqlDbSystem(pulumi.CustomResource):
     @pulumi.getter(name="shapeName")
     def shape_name(self) -> pulumi.Output[str]:
         """
-        The name of the shape. The shape determines the resources allocated
+        (Updatable) The name of the shape. The shape determines the resources allocated
         * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
         """
         return pulumi.get(self, "shape_name")

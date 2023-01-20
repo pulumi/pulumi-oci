@@ -23,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSoftwareSourceModuleStream(args: GetSoftwareSourceModuleStreamArgs, opts?: pulumi.InvokeOptions): Promise<GetSoftwareSourceModuleStreamResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:OsManagement/getSoftwareSourceModuleStream:getSoftwareSourceModuleStream", {
         "moduleName": args.moduleName,
         "softwareSourceId": args.softwareSourceId,
@@ -94,9 +91,26 @@ export interface GetSoftwareSourceModuleStreamResult {
      */
     readonly streamName: string;
 }
-
+/**
+ * This data source provides details about a specific Software Source Module Stream resource in Oracle Cloud Infrastructure OS Management service.
+ *
+ * Retrieve a detailed description of a module stream from a software source.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSoftwareSourceModuleStream = oci.OsManagement.getSoftwareSourceModuleStream({
+ *     moduleName: _var.software_source_module_stream_module_name,
+ *     softwareSourceId: _var.software_source.id,
+ *     streamName: _var.software_source_module_stream_name,
+ * });
+ * ```
+ */
 export function getSoftwareSourceModuleStreamOutput(args: GetSoftwareSourceModuleStreamOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSoftwareSourceModuleStreamResult> {
-    return pulumi.output(args).apply(a => getSoftwareSourceModuleStream(a, opts))
+    return pulumi.output(args).apply((a: any) => getSoftwareSourceModuleStream(a, opts))
 }
 
 /**

@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetails {
     /**
-     * @return (Updatable) A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+     * @return (Updatable) The total amount of memory available to the notebook session instance, in gigabytes.
      * 
      */
     private @Nullable Double memoryInGbs;
     /**
-     * @return (Updatable) A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+     * @return (Updatable) The total number of OCPUs available to the notebook session instance.
      * 
      */
     private @Nullable Double ocpus;
 
     private NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetails() {}
     /**
-     * @return (Updatable) A notebook session instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+     * @return (Updatable) The total amount of memory available to the notebook session instance, in gigabytes.
      * 
      */
     public Optional<Double> memoryInGbs() {
         return Optional.ofNullable(this.memoryInGbs);
     }
     /**
-     * @return (Updatable) A notebook session instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+     * @return (Updatable) The total number of OCPUs available to the notebook session instance.
      * 
      */
     public Optional<Double> ocpus() {

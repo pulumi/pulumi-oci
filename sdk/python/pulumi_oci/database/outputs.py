@@ -47,6 +47,12 @@ __all__ = [
     'AutonomousVmClusterMaintenanceWindowMonth',
     'BackupDestinationAssociatedDatabase',
     'BackupDestinationMountTypeDetails',
+    'CloudAutonomousVmClusterMaintenanceWindow',
+    'CloudAutonomousVmClusterMaintenanceWindowDaysOfWeek',
+    'CloudAutonomousVmClusterMaintenanceWindowDetails',
+    'CloudAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeek',
+    'CloudAutonomousVmClusterMaintenanceWindowDetailsMonth',
+    'CloudAutonomousVmClusterMaintenanceWindowMonth',
     'CloudDatabaseManagementCredentialdetails',
     'CloudExadataInfrastructureCustomerContact',
     'CloudExadataInfrastructureMaintenanceWindow',
@@ -93,6 +99,10 @@ __all__ = [
     'DbSystemsUpgradeMaintenanceWindow',
     'DbSystemsUpgradeMaintenanceWindowDaysOfWeek',
     'DbSystemsUpgradeMaintenanceWindowMonth',
+    'ExadataInfrastructureComputeContact',
+    'ExadataInfrastructureComputeMaintenanceWindow',
+    'ExadataInfrastructureComputeMaintenanceWindowDaysOfWeek',
+    'ExadataInfrastructureComputeMaintenanceWindowMonth',
     'ExadataInfrastructureContact',
     'ExadataInfrastructureMaintenanceWindow',
     'ExadataInfrastructureMaintenanceWindowDaysOfWeek',
@@ -116,8 +126,14 @@ __all__ = [
     'KeyStoreTypeDetails',
     'MaintenanceRunEstimatedPatchingTime',
     'PluggableDatabaseConnectionString',
+    'PluggableDatabaseManagementsManagementConnectionString',
+    'PluggableDatabaseManagementsManagementCredentialDetails',
+    'PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfig',
+    'PluggableDatabasePluggableDatabaseManagementConfig',
     'PluggableDatabasesLocalCloneConnectionString',
+    'PluggableDatabasesLocalClonePluggableDatabaseManagementConfig',
     'PluggableDatabasesRemoteCloneConnectionString',
+    'PluggableDatabasesRemoteClonePluggableDatabaseManagementConfig',
     'VmClusterAddVirtualNetworkDataCollectionOption',
     'VmClusterAddVirtualNetworkDbServer',
     'VmClusterDataCollectionOptions',
@@ -168,6 +184,9 @@ __all__ = [
     'GetAutonomousDatabaseDataguardAssociationsFilterResult',
     'GetAutonomousDatabaseKeyHistoryEntryResult',
     'GetAutonomousDatabaseLocalStandbyDbResult',
+    'GetAutonomousDatabaseRefreshableClonesFilterResult',
+    'GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollectionResult',
+    'GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollectionItemResult',
     'GetAutonomousDatabaseScheduledOperationResult',
     'GetAutonomousDatabaseScheduledOperationDayOfWeekResult',
     'GetAutonomousDatabaseStandbyDbResult',
@@ -240,7 +259,19 @@ __all__ = [
     'GetBackupDestinationsFilterResult',
     'GetBackupsBackupResult',
     'GetBackupsFilterResult',
+    'GetCloudAutonomousVmClusterMaintenanceWindowResult',
+    'GetCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekResult',
+    'GetCloudAutonomousVmClusterMaintenanceWindowDetailResult',
+    'GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekResult',
+    'GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthResult',
+    'GetCloudAutonomousVmClusterMaintenanceWindowMonthResult',
     'GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult',
+    'GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowResult',
+    'GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekResult',
+    'GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailResult',
+    'GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekResult',
+    'GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthResult',
+    'GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthResult',
     'GetCloudAutonomousVmClustersFilterResult',
     'GetCloudExadataInfrastructureCustomerContactResult',
     'GetCloudExadataInfrastructureMaintenanceWindowResult',
@@ -361,6 +392,7 @@ __all__ = [
     'GetExadataInfrastructureMaintenanceWindowResult',
     'GetExadataInfrastructureMaintenanceWindowDaysOfWeekResult',
     'GetExadataInfrastructureMaintenanceWindowMonthResult',
+    'GetExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterResult',
     'GetExadataInfrastructuresExadataInfrastructureResult',
     'GetExadataInfrastructuresExadataInfrastructureContactResult',
     'GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowResult',
@@ -415,9 +447,11 @@ __all__ = [
     'GetManagedPreferredCredentialsPreferredCredentialCollectionResult',
     'GetManagedPreferredCredentialsPreferredCredentialCollectionItemResult',
     'GetPluggableDatabaseConnectionStringResult',
+    'GetPluggableDatabasePluggableDatabaseManagementConfigResult',
     'GetPluggableDatabasesFilterResult',
     'GetPluggableDatabasesPluggableDatabaseResult',
     'GetPluggableDatabasesPluggableDatabaseConnectionStringResult',
+    'GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigResult',
     'GetVmClusterDataCollectionOptionResult',
     'GetVmClusterNetworkScanResult',
     'GetVmClusterNetworkVmNetworkResult',
@@ -2796,6 +2830,399 @@ class BackupDestinationMountTypeDetails(dict):
         IP addresses for NFS Auto mount.
         """
         return pulumi.get(self, "nfs_servers")
+
+
+@pulumi.output_type
+class CloudAutonomousVmClusterMaintenanceWindow(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customActionTimeoutInMins":
+            suggest = "custom_action_timeout_in_mins"
+        elif key == "daysOfWeeks":
+            suggest = "days_of_weeks"
+        elif key == "hoursOfDays":
+            suggest = "hours_of_days"
+        elif key == "isCustomActionTimeoutEnabled":
+            suggest = "is_custom_action_timeout_enabled"
+        elif key == "isMonthlyPatchingEnabled":
+            suggest = "is_monthly_patching_enabled"
+        elif key == "leadTimeInWeeks":
+            suggest = "lead_time_in_weeks"
+        elif key == "patchingMode":
+            suggest = "patching_mode"
+        elif key == "weeksOfMonths":
+            suggest = "weeks_of_months"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudAutonomousVmClusterMaintenanceWindow. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudAutonomousVmClusterMaintenanceWindow.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudAutonomousVmClusterMaintenanceWindow.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 custom_action_timeout_in_mins: Optional[int] = None,
+                 days_of_weeks: Optional[Sequence['outputs.CloudAutonomousVmClusterMaintenanceWindowDaysOfWeek']] = None,
+                 hours_of_days: Optional[Sequence[int]] = None,
+                 is_custom_action_timeout_enabled: Optional[bool] = None,
+                 is_monthly_patching_enabled: Optional[bool] = None,
+                 lead_time_in_weeks: Optional[int] = None,
+                 months: Optional[Sequence['outputs.CloudAutonomousVmClusterMaintenanceWindowMonth']] = None,
+                 patching_mode: Optional[str] = None,
+                 preference: Optional[str] = None,
+                 weeks_of_months: Optional[Sequence[int]] = None):
+        """
+        :param int custom_action_timeout_in_mins: (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+        :param Sequence['CloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs'] days_of_weeks: (Updatable) Days during the week when maintenance should be performed.
+        :param Sequence[int] hours_of_days: (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+               * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        :param bool is_custom_action_timeout_enabled: (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+        :param bool is_monthly_patching_enabled: (Updatable) If true, enables the monthly patching option.
+        :param int lead_time_in_weeks: (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+        :param Sequence['CloudAutonomousVmClusterMaintenanceWindowMonthArgs'] months: (Updatable) Months during the year when maintenance should be performed.
+        :param str patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+        :param str preference: (Updatable) The maintenance window scheduling preference.
+        :param Sequence[int] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+        """
+        if custom_action_timeout_in_mins is not None:
+            pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
+        if days_of_weeks is not None:
+            pulumi.set(__self__, "days_of_weeks", days_of_weeks)
+        if hours_of_days is not None:
+            pulumi.set(__self__, "hours_of_days", hours_of_days)
+        if is_custom_action_timeout_enabled is not None:
+            pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
+        if is_monthly_patching_enabled is not None:
+            pulumi.set(__self__, "is_monthly_patching_enabled", is_monthly_patching_enabled)
+        if lead_time_in_weeks is not None:
+            pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
+        if months is not None:
+            pulumi.set(__self__, "months", months)
+        if patching_mode is not None:
+            pulumi.set(__self__, "patching_mode", patching_mode)
+        if preference is not None:
+            pulumi.set(__self__, "preference", preference)
+        if weeks_of_months is not None:
+            pulumi.set(__self__, "weeks_of_months", weeks_of_months)
+
+    @property
+    @pulumi.getter(name="customActionTimeoutInMins")
+    def custom_action_timeout_in_mins(self) -> Optional[int]:
+        """
+        (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+        """
+        return pulumi.get(self, "custom_action_timeout_in_mins")
+
+    @property
+    @pulumi.getter(name="daysOfWeeks")
+    def days_of_weeks(self) -> Optional[Sequence['outputs.CloudAutonomousVmClusterMaintenanceWindowDaysOfWeek']]:
+        """
+        (Updatable) Days during the week when maintenance should be performed.
+        """
+        return pulumi.get(self, "days_of_weeks")
+
+    @property
+    @pulumi.getter(name="hoursOfDays")
+    def hours_of_days(self) -> Optional[Sequence[int]]:
+        """
+        (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        """
+        return pulumi.get(self, "hours_of_days")
+
+    @property
+    @pulumi.getter(name="isCustomActionTimeoutEnabled")
+    def is_custom_action_timeout_enabled(self) -> Optional[bool]:
+        """
+        (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+        """
+        return pulumi.get(self, "is_custom_action_timeout_enabled")
+
+    @property
+    @pulumi.getter(name="isMonthlyPatchingEnabled")
+    def is_monthly_patching_enabled(self) -> Optional[bool]:
+        """
+        (Updatable) If true, enables the monthly patching option.
+        """
+        return pulumi.get(self, "is_monthly_patching_enabled")
+
+    @property
+    @pulumi.getter(name="leadTimeInWeeks")
+    def lead_time_in_weeks(self) -> Optional[int]:
+        """
+        (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+        """
+        return pulumi.get(self, "lead_time_in_weeks")
+
+    @property
+    @pulumi.getter
+    def months(self) -> Optional[Sequence['outputs.CloudAutonomousVmClusterMaintenanceWindowMonth']]:
+        """
+        (Updatable) Months during the year when maintenance should be performed.
+        """
+        return pulumi.get(self, "months")
+
+    @property
+    @pulumi.getter(name="patchingMode")
+    def patching_mode(self) -> Optional[str]:
+        """
+        (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+        """
+        return pulumi.get(self, "patching_mode")
+
+    @property
+    @pulumi.getter
+    def preference(self) -> Optional[str]:
+        """
+        (Updatable) The maintenance window scheduling preference.
+        """
+        return pulumi.get(self, "preference")
+
+    @property
+    @pulumi.getter(name="weeksOfMonths")
+    def weeks_of_months(self) -> Optional[Sequence[int]]:
+        """
+        (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+        """
+        return pulumi.get(self, "weeks_of_months")
+
+
+@pulumi.output_type
+class CloudAutonomousVmClusterMaintenanceWindowDaysOfWeek(dict):
+    def __init__(__self__, *,
+                 name: Optional[str] = None):
+        """
+        :param str name: (Updatable) Name of the month of the year.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        (Updatable) Name of the month of the year.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class CloudAutonomousVmClusterMaintenanceWindowDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customActionTimeoutInMins":
+            suggest = "custom_action_timeout_in_mins"
+        elif key == "daysOfWeeks":
+            suggest = "days_of_weeks"
+        elif key == "hoursOfDays":
+            suggest = "hours_of_days"
+        elif key == "isCustomActionTimeoutEnabled":
+            suggest = "is_custom_action_timeout_enabled"
+        elif key == "isMonthlyPatchingEnabled":
+            suggest = "is_monthly_patching_enabled"
+        elif key == "leadTimeInWeeks":
+            suggest = "lead_time_in_weeks"
+        elif key == "patchingMode":
+            suggest = "patching_mode"
+        elif key == "weeksOfMonths":
+            suggest = "weeks_of_months"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudAutonomousVmClusterMaintenanceWindowDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudAutonomousVmClusterMaintenanceWindowDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudAutonomousVmClusterMaintenanceWindowDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 preference: str,
+                 custom_action_timeout_in_mins: Optional[int] = None,
+                 days_of_weeks: Optional[Sequence['outputs.CloudAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeek']] = None,
+                 hours_of_days: Optional[Sequence[int]] = None,
+                 is_custom_action_timeout_enabled: Optional[bool] = None,
+                 is_monthly_patching_enabled: Optional[bool] = None,
+                 lead_time_in_weeks: Optional[int] = None,
+                 months: Optional[Sequence['outputs.CloudAutonomousVmClusterMaintenanceWindowDetailsMonth']] = None,
+                 patching_mode: Optional[str] = None,
+                 weeks_of_months: Optional[Sequence[int]] = None):
+        """
+        :param str preference: (Updatable) The maintenance window scheduling preference.
+        :param int custom_action_timeout_in_mins: (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+        :param Sequence['CloudAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeekArgs'] days_of_weeks: (Updatable) Days during the week when maintenance should be performed.
+        :param Sequence[int] hours_of_days: (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+               * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        :param bool is_custom_action_timeout_enabled: (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+        :param bool is_monthly_patching_enabled: (Updatable) If true, enables the monthly patching option.
+        :param int lead_time_in_weeks: (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+        :param Sequence['CloudAutonomousVmClusterMaintenanceWindowDetailsMonthArgs'] months: (Updatable) Months during the year when maintenance should be performed.
+        :param str patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+        :param Sequence[int] weeks_of_months: (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+        """
+        pulumi.set(__self__, "preference", preference)
+        if custom_action_timeout_in_mins is not None:
+            pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
+        if days_of_weeks is not None:
+            pulumi.set(__self__, "days_of_weeks", days_of_weeks)
+        if hours_of_days is not None:
+            pulumi.set(__self__, "hours_of_days", hours_of_days)
+        if is_custom_action_timeout_enabled is not None:
+            pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
+        if is_monthly_patching_enabled is not None:
+            pulumi.set(__self__, "is_monthly_patching_enabled", is_monthly_patching_enabled)
+        if lead_time_in_weeks is not None:
+            pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
+        if months is not None:
+            pulumi.set(__self__, "months", months)
+        if patching_mode is not None:
+            pulumi.set(__self__, "patching_mode", patching_mode)
+        if weeks_of_months is not None:
+            pulumi.set(__self__, "weeks_of_months", weeks_of_months)
+
+    @property
+    @pulumi.getter
+    def preference(self) -> str:
+        """
+        (Updatable) The maintenance window scheduling preference.
+        """
+        return pulumi.get(self, "preference")
+
+    @property
+    @pulumi.getter(name="customActionTimeoutInMins")
+    def custom_action_timeout_in_mins(self) -> Optional[int]:
+        """
+        (Updatable) Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+        """
+        return pulumi.get(self, "custom_action_timeout_in_mins")
+
+    @property
+    @pulumi.getter(name="daysOfWeeks")
+    def days_of_weeks(self) -> Optional[Sequence['outputs.CloudAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeek']]:
+        """
+        (Updatable) Days during the week when maintenance should be performed.
+        """
+        return pulumi.get(self, "days_of_weeks")
+
+    @property
+    @pulumi.getter(name="hoursOfDays")
+    def hours_of_days(self) -> Optional[Sequence[int]]:
+        """
+        (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        """
+        return pulumi.get(self, "hours_of_days")
+
+    @property
+    @pulumi.getter(name="isCustomActionTimeoutEnabled")
+    def is_custom_action_timeout_enabled(self) -> Optional[bool]:
+        """
+        (Updatable) If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+        """
+        return pulumi.get(self, "is_custom_action_timeout_enabled")
+
+    @property
+    @pulumi.getter(name="isMonthlyPatchingEnabled")
+    def is_monthly_patching_enabled(self) -> Optional[bool]:
+        """
+        (Updatable) If true, enables the monthly patching option.
+        """
+        return pulumi.get(self, "is_monthly_patching_enabled")
+
+    @property
+    @pulumi.getter(name="leadTimeInWeeks")
+    def lead_time_in_weeks(self) -> Optional[int]:
+        """
+        (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+        """
+        return pulumi.get(self, "lead_time_in_weeks")
+
+    @property
+    @pulumi.getter
+    def months(self) -> Optional[Sequence['outputs.CloudAutonomousVmClusterMaintenanceWindowDetailsMonth']]:
+        """
+        (Updatable) Months during the year when maintenance should be performed.
+        """
+        return pulumi.get(self, "months")
+
+    @property
+    @pulumi.getter(name="patchingMode")
+    def patching_mode(self) -> Optional[str]:
+        """
+        (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+        """
+        return pulumi.get(self, "patching_mode")
+
+    @property
+    @pulumi.getter(name="weeksOfMonths")
+    def weeks_of_months(self) -> Optional[Sequence[int]]:
+        """
+        (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+        """
+        return pulumi.get(self, "weeks_of_months")
+
+
+@pulumi.output_type
+class CloudAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeek(dict):
+    def __init__(__self__, *,
+                 name: str):
+        """
+        :param str name: (Updatable) Name of the month of the year.
+        """
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        (Updatable) Name of the month of the year.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class CloudAutonomousVmClusterMaintenanceWindowDetailsMonth(dict):
+    def __init__(__self__, *,
+                 name: str):
+        """
+        :param str name: (Updatable) Name of the month of the year.
+        """
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        (Updatable) Name of the month of the year.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class CloudAutonomousVmClusterMaintenanceWindowMonth(dict):
+    def __init__(__self__, *,
+                 name: Optional[str] = None):
+        """
+        :param str name: (Updatable) Name of the month of the year.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        (Updatable) Name of the month of the year.
+        """
+        return pulumi.get(self, "name")
 
 
 @pulumi.output_type
@@ -6542,6 +6969,292 @@ class DbSystemsUpgradeMaintenanceWindowMonth(dict):
 
 
 @pulumi.output_type
+class ExadataInfrastructureComputeContact(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "isContactMosValidated":
+            suggest = "is_contact_mos_validated"
+        elif key == "isPrimary":
+            suggest = "is_primary"
+        elif key == "phoneNumber":
+            suggest = "phone_number"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ExadataInfrastructureComputeContact. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ExadataInfrastructureComputeContact.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ExadataInfrastructureComputeContact.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 email: Optional[str] = None,
+                 is_contact_mos_validated: Optional[bool] = None,
+                 is_primary: Optional[bool] = None,
+                 name: Optional[str] = None,
+                 phone_number: Optional[str] = None):
+        """
+        :param str email: The email for the Exadata Infrastructure contact.
+        :param bool is_contact_mos_validated: If `true`, this Exadata Infrastructure contact is a valid My Oracle Support (MOS) contact. If `false`, this Exadata Infrastructure contact is not a valid MOS contact.
+        :param bool is_primary: If `true`, this Exadata Infrastructure contact is a primary contact. If `false`, this Exadata Infrastructure is a secondary contact.
+        :param str name: Name of the month of the year.
+        :param str phone_number: The phone number for the Exadata Infrastructure contact.
+        """
+        if email is not None:
+            pulumi.set(__self__, "email", email)
+        if is_contact_mos_validated is not None:
+            pulumi.set(__self__, "is_contact_mos_validated", is_contact_mos_validated)
+        if is_primary is not None:
+            pulumi.set(__self__, "is_primary", is_primary)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if phone_number is not None:
+            pulumi.set(__self__, "phone_number", phone_number)
+
+    @property
+    @pulumi.getter
+    def email(self) -> Optional[str]:
+        """
+        The email for the Exadata Infrastructure contact.
+        """
+        return pulumi.get(self, "email")
+
+    @property
+    @pulumi.getter(name="isContactMosValidated")
+    def is_contact_mos_validated(self) -> Optional[bool]:
+        """
+        If `true`, this Exadata Infrastructure contact is a valid My Oracle Support (MOS) contact. If `false`, this Exadata Infrastructure contact is not a valid MOS contact.
+        """
+        return pulumi.get(self, "is_contact_mos_validated")
+
+    @property
+    @pulumi.getter(name="isPrimary")
+    def is_primary(self) -> Optional[bool]:
+        """
+        If `true`, this Exadata Infrastructure contact is a primary contact. If `false`, this Exadata Infrastructure is a secondary contact.
+        """
+        return pulumi.get(self, "is_primary")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        Name of the month of the year.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="phoneNumber")
+    def phone_number(self) -> Optional[str]:
+        """
+        The phone number for the Exadata Infrastructure contact.
+        """
+        return pulumi.get(self, "phone_number")
+
+
+@pulumi.output_type
+class ExadataInfrastructureComputeMaintenanceWindow(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customActionTimeoutInMins":
+            suggest = "custom_action_timeout_in_mins"
+        elif key == "daysOfWeeks":
+            suggest = "days_of_weeks"
+        elif key == "hoursOfDays":
+            suggest = "hours_of_days"
+        elif key == "isCustomActionTimeoutEnabled":
+            suggest = "is_custom_action_timeout_enabled"
+        elif key == "isMonthlyPatchingEnabled":
+            suggest = "is_monthly_patching_enabled"
+        elif key == "leadTimeInWeeks":
+            suggest = "lead_time_in_weeks"
+        elif key == "patchingMode":
+            suggest = "patching_mode"
+        elif key == "weeksOfMonths":
+            suggest = "weeks_of_months"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ExadataInfrastructureComputeMaintenanceWindow. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ExadataInfrastructureComputeMaintenanceWindow.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ExadataInfrastructureComputeMaintenanceWindow.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 custom_action_timeout_in_mins: Optional[int] = None,
+                 days_of_weeks: Optional[Sequence['outputs.ExadataInfrastructureComputeMaintenanceWindowDaysOfWeek']] = None,
+                 hours_of_days: Optional[Sequence[int]] = None,
+                 is_custom_action_timeout_enabled: Optional[bool] = None,
+                 is_monthly_patching_enabled: Optional[bool] = None,
+                 lead_time_in_weeks: Optional[int] = None,
+                 months: Optional[Sequence['outputs.ExadataInfrastructureComputeMaintenanceWindowMonth']] = None,
+                 patching_mode: Optional[str] = None,
+                 preference: Optional[str] = None,
+                 weeks_of_months: Optional[Sequence[int]] = None):
+        """
+        :param int custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+        :param Sequence['ExadataInfrastructureComputeMaintenanceWindowDaysOfWeekArgs'] days_of_weeks: Days during the week when maintenance should be performed.
+        :param Sequence[int] hours_of_days: The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+               * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        :param bool is_custom_action_timeout_enabled: If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+        :param bool is_monthly_patching_enabled: If true, enables the monthly patching option.
+        :param int lead_time_in_weeks: Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+        :param Sequence['ExadataInfrastructureComputeMaintenanceWindowMonthArgs'] months: Months during the year when maintenance should be performed.
+        :param str patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+        :param str preference: The maintenance window scheduling preference.
+        :param Sequence[int] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+        """
+        if custom_action_timeout_in_mins is not None:
+            pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
+        if days_of_weeks is not None:
+            pulumi.set(__self__, "days_of_weeks", days_of_weeks)
+        if hours_of_days is not None:
+            pulumi.set(__self__, "hours_of_days", hours_of_days)
+        if is_custom_action_timeout_enabled is not None:
+            pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
+        if is_monthly_patching_enabled is not None:
+            pulumi.set(__self__, "is_monthly_patching_enabled", is_monthly_patching_enabled)
+        if lead_time_in_weeks is not None:
+            pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
+        if months is not None:
+            pulumi.set(__self__, "months", months)
+        if patching_mode is not None:
+            pulumi.set(__self__, "patching_mode", patching_mode)
+        if preference is not None:
+            pulumi.set(__self__, "preference", preference)
+        if weeks_of_months is not None:
+            pulumi.set(__self__, "weeks_of_months", weeks_of_months)
+
+    @property
+    @pulumi.getter(name="customActionTimeoutInMins")
+    def custom_action_timeout_in_mins(self) -> Optional[int]:
+        """
+        Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+        """
+        return pulumi.get(self, "custom_action_timeout_in_mins")
+
+    @property
+    @pulumi.getter(name="daysOfWeeks")
+    def days_of_weeks(self) -> Optional[Sequence['outputs.ExadataInfrastructureComputeMaintenanceWindowDaysOfWeek']]:
+        """
+        Days during the week when maintenance should be performed.
+        """
+        return pulumi.get(self, "days_of_weeks")
+
+    @property
+    @pulumi.getter(name="hoursOfDays")
+    def hours_of_days(self) -> Optional[Sequence[int]]:
+        """
+        The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        """
+        return pulumi.get(self, "hours_of_days")
+
+    @property
+    @pulumi.getter(name="isCustomActionTimeoutEnabled")
+    def is_custom_action_timeout_enabled(self) -> Optional[bool]:
+        """
+        If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+        """
+        return pulumi.get(self, "is_custom_action_timeout_enabled")
+
+    @property
+    @pulumi.getter(name="isMonthlyPatchingEnabled")
+    def is_monthly_patching_enabled(self) -> Optional[bool]:
+        """
+        If true, enables the monthly patching option.
+        """
+        return pulumi.get(self, "is_monthly_patching_enabled")
+
+    @property
+    @pulumi.getter(name="leadTimeInWeeks")
+    def lead_time_in_weeks(self) -> Optional[int]:
+        """
+        Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+        """
+        return pulumi.get(self, "lead_time_in_weeks")
+
+    @property
+    @pulumi.getter
+    def months(self) -> Optional[Sequence['outputs.ExadataInfrastructureComputeMaintenanceWindowMonth']]:
+        """
+        Months during the year when maintenance should be performed.
+        """
+        return pulumi.get(self, "months")
+
+    @property
+    @pulumi.getter(name="patchingMode")
+    def patching_mode(self) -> Optional[str]:
+        """
+        Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+        """
+        return pulumi.get(self, "patching_mode")
+
+    @property
+    @pulumi.getter
+    def preference(self) -> Optional[str]:
+        """
+        The maintenance window scheduling preference.
+        """
+        return pulumi.get(self, "preference")
+
+    @property
+    @pulumi.getter(name="weeksOfMonths")
+    def weeks_of_months(self) -> Optional[Sequence[int]]:
+        """
+        Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+        """
+        return pulumi.get(self, "weeks_of_months")
+
+
+@pulumi.output_type
+class ExadataInfrastructureComputeMaintenanceWindowDaysOfWeek(dict):
+    def __init__(__self__, *,
+                 name: Optional[str] = None):
+        """
+        :param str name: Name of the month of the year.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        Name of the month of the year.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class ExadataInfrastructureComputeMaintenanceWindowMonth(dict):
+    def __init__(__self__, *,
+                 name: Optional[str] = None):
+        """
+        :param str name: Name of the month of the year.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        Name of the month of the year.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
 class ExadataInfrastructureContact(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -7912,6 +8625,216 @@ class PluggableDatabaseConnectionString(dict):
 
 
 @pulumi.output_type
+class PluggableDatabaseManagementsManagementConnectionString(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "enablePluggabledatabasemanagement":
+            suggest = "enable_pluggabledatabasemanagement"
+        elif key == "allConnectionStrings":
+            suggest = "all_connection_strings"
+        elif key == "pdbDefault":
+            suggest = "pdb_default"
+        elif key == "pdbIpDefault":
+            suggest = "pdb_ip_default"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PluggableDatabaseManagementsManagementConnectionString. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PluggableDatabaseManagementsManagementConnectionString.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PluggableDatabaseManagementsManagementConnectionString.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enable_pluggabledatabasemanagement: bool,
+                 all_connection_strings: Optional[Mapping[str, Any]] = None,
+                 pdb_default: Optional[str] = None,
+                 pdb_ip_default: Optional[str] = None):
+        """
+        :param bool enable_pluggabledatabasemanagement: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        :param Mapping[str, Any] all_connection_strings: All connection strings to use to connect to the pluggable database.
+        :param str pdb_default: A host name-based PDB connection string.
+        :param str pdb_ip_default: An IP-based PDB connection string.
+        """
+        pulumi.set(__self__, "enable_pluggabledatabasemanagement", enable_pluggabledatabasemanagement)
+        if all_connection_strings is not None:
+            pulumi.set(__self__, "all_connection_strings", all_connection_strings)
+        if pdb_default is not None:
+            pulumi.set(__self__, "pdb_default", pdb_default)
+        if pdb_ip_default is not None:
+            pulumi.set(__self__, "pdb_ip_default", pdb_ip_default)
+
+    @property
+    @pulumi.getter(name="enablePluggabledatabasemanagement")
+    def enable_pluggabledatabasemanagement(self) -> bool:
+        """
+        (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        """
+        return pulumi.get(self, "enable_pluggabledatabasemanagement")
+
+    @property
+    @pulumi.getter(name="allConnectionStrings")
+    def all_connection_strings(self) -> Optional[Mapping[str, Any]]:
+        """
+        All connection strings to use to connect to the pluggable database.
+        """
+        return pulumi.get(self, "all_connection_strings")
+
+    @property
+    @pulumi.getter(name="pdbDefault")
+    def pdb_default(self) -> Optional[str]:
+        """
+        A host name-based PDB connection string.
+        """
+        return pulumi.get(self, "pdb_default")
+
+    @property
+    @pulumi.getter(name="pdbIpDefault")
+    def pdb_ip_default(self) -> Optional[str]:
+        """
+        An IP-based PDB connection string.
+        """
+        return pulumi.get(self, "pdb_ip_default")
+
+
+@pulumi.output_type
+class PluggableDatabaseManagementsManagementCredentialDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "passwordSecretId":
+            suggest = "password_secret_id"
+        elif key == "userName":
+            suggest = "user_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PluggableDatabaseManagementsManagementCredentialDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PluggableDatabaseManagementsManagementCredentialDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PluggableDatabaseManagementsManagementCredentialDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 password_secret_id: str,
+                 user_name: str):
+        """
+        :param str password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        :param str user_name: The name of the Oracle Database user that will be used to connect to the database.
+        """
+        pulumi.set(__self__, "password_secret_id", password_secret_id)
+        pulumi.set(__self__, "user_name", user_name)
+
+    @property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+        """
+        return pulumi.get(self, "password_secret_id")
+
+    @property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> str:
+        """
+        The name of the Oracle Database user that will be used to connect to the database.
+        """
+        return pulumi.get(self, "user_name")
+
+
+@pulumi.output_type
+class PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "enablePluggabledatabasemanagement":
+            suggest = "enable_pluggabledatabasemanagement"
+        elif key == "managementStatus":
+            suggest = "management_status"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enable_pluggabledatabasemanagement: bool,
+                 management_status: Optional[str] = None):
+        """
+        :param bool enable_pluggabledatabasemanagement: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        :param str management_status: The status of the Pluggable Database Management service.
+        """
+        pulumi.set(__self__, "enable_pluggabledatabasemanagement", enable_pluggabledatabasemanagement)
+        if management_status is not None:
+            pulumi.set(__self__, "management_status", management_status)
+
+    @property
+    @pulumi.getter(name="enablePluggabledatabasemanagement")
+    def enable_pluggabledatabasemanagement(self) -> bool:
+        """
+        (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        """
+        return pulumi.get(self, "enable_pluggabledatabasemanagement")
+
+    @property
+    @pulumi.getter(name="managementStatus")
+    def management_status(self) -> Optional[str]:
+        """
+        The status of the Pluggable Database Management service.
+        """
+        return pulumi.get(self, "management_status")
+
+
+@pulumi.output_type
+class PluggableDatabasePluggableDatabaseManagementConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "managementStatus":
+            suggest = "management_status"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PluggableDatabasePluggableDatabaseManagementConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PluggableDatabasePluggableDatabaseManagementConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PluggableDatabasePluggableDatabaseManagementConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 management_status: Optional[str] = None):
+        """
+        :param str management_status: The status of the Pluggable Database Management service.
+        """
+        if management_status is not None:
+            pulumi.set(__self__, "management_status", management_status)
+
+    @property
+    @pulumi.getter(name="managementStatus")
+    def management_status(self) -> Optional[str]:
+        """
+        The status of the Pluggable Database Management service.
+        """
+        return pulumi.get(self, "management_status")
+
+
+@pulumi.output_type
 class PluggableDatabasesLocalCloneConnectionString(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -7976,6 +8899,42 @@ class PluggableDatabasesLocalCloneConnectionString(dict):
 
 
 @pulumi.output_type
+class PluggableDatabasesLocalClonePluggableDatabaseManagementConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "managementStatus":
+            suggest = "management_status"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PluggableDatabasesLocalClonePluggableDatabaseManagementConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PluggableDatabasesLocalClonePluggableDatabaseManagementConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PluggableDatabasesLocalClonePluggableDatabaseManagementConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 management_status: Optional[str] = None):
+        """
+        :param str management_status: The status of the Pluggable Database Management service.
+        """
+        if management_status is not None:
+            pulumi.set(__self__, "management_status", management_status)
+
+    @property
+    @pulumi.getter(name="managementStatus")
+    def management_status(self) -> Optional[str]:
+        """
+        The status of the Pluggable Database Management service.
+        """
+        return pulumi.get(self, "management_status")
+
+
+@pulumi.output_type
 class PluggableDatabasesRemoteCloneConnectionString(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -8037,6 +8996,42 @@ class PluggableDatabasesRemoteCloneConnectionString(dict):
         An IP-based PDB connection string.
         """
         return pulumi.get(self, "pdb_ip_default")
+
+
+@pulumi.output_type
+class PluggableDatabasesRemoteClonePluggableDatabaseManagementConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "managementStatus":
+            suggest = "management_status"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PluggableDatabasesRemoteClonePluggableDatabaseManagementConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PluggableDatabasesRemoteClonePluggableDatabaseManagementConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PluggableDatabasesRemoteClonePluggableDatabaseManagementConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 management_status: Optional[str] = None):
+        """
+        :param str management_status: The status of the Pluggable Database Management service.
+        """
+        if management_status is not None:
+            pulumi.set(__self__, "management_status", management_status)
+
+    @property
+    @pulumi.getter(name="managementStatus")
+    def management_status(self) -> Optional[str]:
+        """
+        The status of the Pluggable Database Management service.
+        """
+        return pulumi.get(self, "management_status")
 
 
 @pulumi.output_type
@@ -8290,10 +9285,10 @@ class VmClusterNetworkVmNetwork(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "domainName":
-            suggest = "domain_name"
-        elif key == "networkType":
+        if key == "networkType":
             suggest = "network_type"
+        elif key == "domainName":
+            suggest = "domain_name"
         elif key == "vlanId":
             suggest = "vlan_id"
 
@@ -8309,50 +9304,30 @@ class VmClusterNetworkVmNetwork(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 domain_name: str,
-                 gateway: str,
-                 netmask: str,
                  network_type: str,
                  nodes: Sequence['outputs.VmClusterNetworkVmNetworkNode'],
-                 vlan_id: str):
+                 domain_name: Optional[str] = None,
+                 gateway: Optional[str] = None,
+                 netmask: Optional[str] = None,
+                 vlan_id: Optional[str] = None):
         """
+        :param str network_type: (Updatable) The network type.
+        :param Sequence['VmClusterNetworkVmNetworkNodeArgs'] nodes: (Updatable) The list of node details.
         :param str domain_name: (Updatable) The network domain name.
         :param str gateway: (Updatable) The network gateway.
         :param str netmask: (Updatable) The network netmask.
-        :param str network_type: (Updatable) The network type.
-        :param Sequence['VmClusterNetworkVmNetworkNodeArgs'] nodes: (Updatable) The list of node details.
         :param str vlan_id: (Updatable) The network VLAN ID.
         """
-        pulumi.set(__self__, "domain_name", domain_name)
-        pulumi.set(__self__, "gateway", gateway)
-        pulumi.set(__self__, "netmask", netmask)
         pulumi.set(__self__, "network_type", network_type)
         pulumi.set(__self__, "nodes", nodes)
-        pulumi.set(__self__, "vlan_id", vlan_id)
-
-    @property
-    @pulumi.getter(name="domainName")
-    def domain_name(self) -> str:
-        """
-        (Updatable) The network domain name.
-        """
-        return pulumi.get(self, "domain_name")
-
-    @property
-    @pulumi.getter
-    def gateway(self) -> str:
-        """
-        (Updatable) The network gateway.
-        """
-        return pulumi.get(self, "gateway")
-
-    @property
-    @pulumi.getter
-    def netmask(self) -> str:
-        """
-        (Updatable) The network netmask.
-        """
-        return pulumi.get(self, "netmask")
+        if domain_name is not None:
+            pulumi.set(__self__, "domain_name", domain_name)
+        if gateway is not None:
+            pulumi.set(__self__, "gateway", gateway)
+        if netmask is not None:
+            pulumi.set(__self__, "netmask", netmask)
+        if vlan_id is not None:
+            pulumi.set(__self__, "vlan_id", vlan_id)
 
     @property
     @pulumi.getter(name="networkType")
@@ -8371,8 +9346,32 @@ class VmClusterNetworkVmNetwork(dict):
         return pulumi.get(self, "nodes")
 
     @property
+    @pulumi.getter(name="domainName")
+    def domain_name(self) -> Optional[str]:
+        """
+        (Updatable) The network domain name.
+        """
+        return pulumi.get(self, "domain_name")
+
+    @property
+    @pulumi.getter
+    def gateway(self) -> Optional[str]:
+        """
+        (Updatable) The network gateway.
+        """
+        return pulumi.get(self, "gateway")
+
+    @property
+    @pulumi.getter
+    def netmask(self) -> Optional[str]:
+        """
+        (Updatable) The network netmask.
+        """
+        return pulumi.get(self, "netmask")
+
+    @property
     @pulumi.getter(name="vlanId")
-    def vlan_id(self) -> str:
+    def vlan_id(self) -> Optional[str]:
         """
         (Updatable) The network VLAN ID.
         """
@@ -8384,7 +9383,9 @@ class VmClusterNetworkVmNetworkNode(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "vipHostname":
+        if key == "dbServerId":
+            suggest = "db_server_id"
+        elif key == "vipHostname":
             suggest = "vip_hostname"
 
         if suggest:
@@ -8401,16 +9402,24 @@ class VmClusterNetworkVmNetworkNode(dict):
     def __init__(__self__, *,
                  hostname: str,
                  ip: str,
+                 db_server_id: Optional[str] = None,
+                 state: Optional[str] = None,
                  vip: Optional[str] = None,
                  vip_hostname: Optional[str] = None):
         """
         :param str hostname: (Updatable) The node host name.
         :param str ip: (Updatable) The node IP address.
+        :param str db_server_id: (Updatable) The Db server associated with the node.
+        :param str state: (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
         :param str vip: (Updatable) The node virtual IP (VIP) address.
         :param str vip_hostname: (Updatable) The node virtual IP (VIP) host name.
         """
         pulumi.set(__self__, "hostname", hostname)
         pulumi.set(__self__, "ip", ip)
+        if db_server_id is not None:
+            pulumi.set(__self__, "db_server_id", db_server_id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
         if vip is not None:
             pulumi.set(__self__, "vip", vip)
         if vip_hostname is not None:
@@ -8431,6 +9440,22 @@ class VmClusterNetworkVmNetworkNode(dict):
         (Updatable) The node IP address.
         """
         return pulumi.get(self, "ip")
+
+    @property
+    @pulumi.getter(name="dbServerId")
+    def db_server_id(self) -> Optional[str]:
+        """
+        (Updatable) The Db server associated with the node.
+        """
+        return pulumi.get(self, "db_server_id")
+
+    @property
+    @pulumi.getter
+    def state(self) -> Optional[str]:
+        """
+        (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
+        """
+        return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
@@ -9422,7 +10447,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         :param str autonomous_exadata_infrastructure_id: The Autonomous Exadata Infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str autonomous_vm_cluster_id: The Autonomous VM Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str availability_domain: A filter to return only resources that match the given availability domain exactly.
-        :param float available_cpus: Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+        :param float available_cpus: Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
         :param Sequence['GetAutonomousContainerDatabasesAutonomousContainerDatabaseBackupConfigArgs'] backup_configs: Backup options for the Autonomous Container Database.
         :param str cloud_autonomous_vm_cluster_id: The cloud Autonomous VM Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -9445,7 +10470,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         :param str patch_model: Database patch model preference.
         :param Sequence[float] provisionable_cpuses: An array of CPU values that can be used to successfully provision a single Autonomous Database.
         :param float reclaimable_cpus: CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
-        :param str role: The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+        :param str role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         :param str service_level_agreement_type: A filter to return only resources that match the given service level agreement type exactly.
         :param int standby_maintenance_buffer_in_days: The scheduling detail for the quarterly maintenance window of the standby Autonomous Container Database. This value represents the number of days before scheduled maintenance of the primary database.
         :param str state: A filter to return only resources that match the given lifecycle state exactly.
@@ -9527,7 +10552,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
     @pulumi.getter(name="availableCpus")
     def available_cpus(self) -> float:
         """
-        Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+        Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
         """
         return pulumi.get(self, "available_cpus")
 
@@ -9766,7 +10791,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
     @pulumi.getter
     def role(self) -> str:
         """
-        The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+        The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         """
         return pulumi.get(self, "role")
 
@@ -11089,7 +12114,7 @@ class GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssoc
         :param str peer_autonomous_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer Autonomous Database.
         :param str peer_autonomous_database_life_cycle_state: The current state of Autonomous Data Guard.
         :param str peer_role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
-        :param str protection_mode: The protection mode of this Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        :param str protection_mode: The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         :param str role: The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
         :param str state: The current state of Autonomous Data Guard.
         :param str time_created: The date and time the Data Guard association was created.
@@ -11190,7 +12215,7 @@ class GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseDataguardAssoc
     @pulumi.getter(name="protectionMode")
     def protection_mode(self) -> str:
         """
-        The protection mode of this Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
+        The protection mode of this Autonomous Data Guard association. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         """
         return pulumi.get(self, "protection_mode")
 
@@ -11370,6 +12395,74 @@ class GetAutonomousDatabaseLocalStandbyDbResult(dict):
         The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         """
         return pulumi.get(self, "time_data_guard_role_changed")
+
+
+@pulumi.output_type
+class GetAutonomousDatabaseRefreshableClonesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 id: str,
+                 region: str):
+        """
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
+        :param str region: The name of the region where the refreshable clone exists.
+        """
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "region", region)
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def region(self) -> str:
+        """
+        The name of the region where the refreshable clone exists.
+        """
+        return pulumi.get(self, "region")
 
 
 @pulumi.output_type
@@ -11583,6 +12676,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
                  time_reclamation_of_free_autonomous_database: str,
                  time_until_reconnect_clone_enabled: str,
                  timestamp: str,
+                 use_latest_available_backup_time_stamp: bool,
                  used_data_storage_size_in_tbs: int,
                  vault_id: str,
                  whitelisted_ips: Sequence[str]):
@@ -11590,6 +12684,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param float actual_used_data_storage_size_in_tbs: The current amount of storage in use for user and system data, in terabytes (TB).
         :param float allocated_storage_size_in_tbs: The amount of storage currently allocated for the database tables and billed for, rounded up. When auto-scaling is not enabled, this value is equal to the `dataStorageSizeInTBs` value. You can compare this value to the `actualUsedDataStorageSizeInTBs` value to determine if a manual shrink operation is appropriate for your allocated storage.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseApexDetailArgs'] apex_details: Information about Oracle APEX Application Development.
+        :param bool are_primary_whitelisted_ips_used: This field will be null if the Autonomous Database is not Data Guard enabled or Access Control is disabled. It's value would be `TRUE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses primary IP access control list (ACL) for standby. It's value would be `FALSE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses different IP access control list (ACL) for standby compared to primary.
         :param str autonomous_container_database_id: The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str autonomous_maintenance_schedule_type: The maintenance schedule type of the Autonomous Database on shared Exadata infrastructure. The EARLY maintenance schedule of this Autonomous Database follows a schedule that applies patches prior to the REGULAR schedule.The REGULAR maintenance schedule of this Autonomous Database follows the normal cycle.
         :param Sequence[str] available_upgrade_versions: List of Oracle Database versions available for a database upgrade. If there are no version upgrades available, this list is empty.
@@ -11598,7 +12693,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseConnectionStringArgs'] connection_strings: The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseConnectionUrlArgs'] connection_urls: The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for databases on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).  Example: `{"sqlDevWebUrl": "https://<hostname>/ords...", "apexUrl", "https://<hostname>/ords..."}`
-        :param int cpu_core_count: The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+        :param int cpu_core_count: The number of OCPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseCustomerContactArgs'] customer_contacts: Customer Contacts.
         :param str data_safe_status: Status of the Data Safe registration for this Autonomous Database. Could be REGISTERED or NOT_REGISTERED.
         :param int data_storage_size_in_gb: The quantity of data in the database, in gigabytes.
@@ -11778,6 +12873,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "time_reclamation_of_free_autonomous_database", time_reclamation_of_free_autonomous_database)
         pulumi.set(__self__, "time_until_reconnect_clone_enabled", time_until_reconnect_clone_enabled)
         pulumi.set(__self__, "timestamp", timestamp)
+        pulumi.set(__self__, "use_latest_available_backup_time_stamp", use_latest_available_backup_time_stamp)
         pulumi.set(__self__, "used_data_storage_size_in_tbs", used_data_storage_size_in_tbs)
         pulumi.set(__self__, "vault_id", vault_id)
         pulumi.set(__self__, "whitelisted_ips", whitelisted_ips)
@@ -11814,6 +12910,9 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @property
     @pulumi.getter(name="arePrimaryWhitelistedIpsUsed")
     def are_primary_whitelisted_ips_used(self) -> bool:
+        """
+        This field will be null if the Autonomous Database is not Data Guard enabled or Access Control is disabled. It's value would be `TRUE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses primary IP access control list (ACL) for standby. It's value would be `FALSE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses different IP access control list (ACL) for standby compared to primary.
+        """
         return pulumi.get(self, "are_primary_whitelisted_ips_used")
 
     @property
@@ -11899,7 +12998,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="cpuCoreCount")
     def cpu_core_count(self) -> int:
         """
-        The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+        The number of OCPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
         """
         return pulumi.get(self, "cpu_core_count")
 
@@ -12540,6 +13639,11 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         return pulumi.get(self, "timestamp")
 
     @property
+    @pulumi.getter(name="useLatestAvailableBackupTimeStamp")
+    def use_latest_available_backup_time_stamp(self) -> bool:
+        return pulumi.get(self, "use_latest_available_backup_time_stamp")
+
+    @property
     @pulumi.getter(name="usedDataStorageSizeInTbs")
     def used_data_storage_size_in_tbs(self) -> int:
         """
@@ -12572,7 +13676,6 @@ class GetAutonomousDatabasesAutonomousDatabaseApexDetailResult(dict):
         """
         :param str apex_version: The Oracle APEX Application Development version.
         :param str ords_version: The Oracle REST Data Services (ORDS) version.
-               *`are_primary_whitelisted_ips_used` - This field will be null if the Autonomous Database is not Data Guard enabled or Access Control is disabled. It's value would be `TRUE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses primary IP access control list (ACL) for standby. It's value would be `FALSE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses different IP access control list (ACL) for standby compared to primary.
         """
         pulumi.set(__self__, "apex_version", apex_version)
         pulumi.set(__self__, "ords_version", ords_version)
@@ -12590,7 +13693,6 @@ class GetAutonomousDatabasesAutonomousDatabaseApexDetailResult(dict):
     def ords_version(self) -> str:
         """
         The Oracle REST Data Services (ORDS) version.
-        *`are_primary_whitelisted_ips_used` - This field will be null if the Autonomous Database is not Data Guard enabled or Access Control is disabled. It's value would be `TRUE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses primary IP access control list (ACL) for standby. It's value would be `FALSE` if Autonomous Database is Data Guard enabled and Access Control is enabled and if the Autonomous Database uses different IP access control list (ACL) for standby compared to primary.
         """
         return pulumi.get(self, "ords_version")
 
@@ -13177,7 +14279,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringArgs'] connection_strings: The connection string used to connect to the Autonomous Database. The username for the Service Console is ADMIN. Use the password you entered when creating the Autonomous Database for the password value.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlArgs'] connection_urls: The URLs for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN. Note that these URLs are provided by the console only for databases on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html).  Example: `{"sqlDevWebUrl": "https://<hostname>/ords...", "apexUrl", "https://<hostname>/ords..."}`
-        :param int cpu_core_count: The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+        :param int cpu_core_count: The number of OCPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseCustomerContactArgs'] customer_contacts: Customer Contacts.
         :param str data_safe_status: Status of the Data Safe registration for this Autonomous Database.
         :param int data_storage_size_in_gb: The quantity of data in the database, in gigabytes.
@@ -13450,7 +14552,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
     @pulumi.getter(name="cpuCoreCount")
     def cpu_core_count(self) -> int:
         """
-        The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+        The number of OCPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
         """
         return pulumi.get(self, "cpu_core_count")
 
@@ -16188,6 +17290,7 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
                  freeform_tags: Mapping[str, Any],
                  id: str,
                  is_local_backup_enabled: bool,
+                 is_mtls_enabled: bool,
                  last_maintenance_run_id: str,
                  license_model: str,
                  lifecycle_details: str,
@@ -16198,6 +17301,8 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
                  next_maintenance_run_id: str,
                  ocpus_enabled: float,
                  reclaimable_cpus: int,
+                 scan_listener_port_non_tls: int,
+                 scan_listener_port_tls: int,
                  state: str,
                  time_created: str,
                  time_zone: str,
@@ -16210,7 +17315,7 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
         :param int available_cpus: The numnber of CPU cores available.
         :param float available_data_storage_size_in_tbs: **Deprecated.** Use `availableAutonomousDataStorageSizeInTBs` for Autonomous Databases' data storage availability in TBs.
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param int cpu_core_count_per_node: The number of OCPU cores enabled per VM cluster node.
+        :param int cpu_core_count_per_node: The number of CPU cores enabled per VM cluster node.
         :param int cpus_enabled: The number of enabled CPU cores.
         :param float data_storage_size_in_gb: The total data storage allocated in GBs.
         :param float data_storage_size_in_tbs: The total data storage allocated in TBs
@@ -16221,6 +17326,7 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous VM cluster.
         :param bool is_local_backup_enabled: If true, database backup on local Exadata storage is configured for the Autonomous VM cluster. If false, database backup on local Exadata storage is not available in the Autonomous VM cluster.
+        :param bool is_mtls_enabled: Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
         :param str last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         :param str license_model: The Oracle license model that applies to the Autonomous VM cluster. The default is LICENSE_INCLUDED.
         :param str lifecycle_details: Additional information about the current lifecycle state.
@@ -16230,6 +17336,8 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
         :param str next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         :param float ocpus_enabled: The number of enabled OCPU cores.
         :param int reclaimable_cpus: CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
+        :param int scan_listener_port_non_tls: The SCAN Listener Non TLS port number. Default value is 1521.
+        :param int scan_listener_port_tls: The SCAN Listener TLS port number. Default value is 2484.
         :param str state: A filter to return only resources that match the given lifecycle state exactly.
         :param str time_created: The date and time that the Autonomous VM cluster was created.
         :param str time_zone: The time zone to use for the Autonomous VM cluster. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
@@ -16253,6 +17361,7 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_local_backup_enabled", is_local_backup_enabled)
+        pulumi.set(__self__, "is_mtls_enabled", is_mtls_enabled)
         pulumi.set(__self__, "last_maintenance_run_id", last_maintenance_run_id)
         pulumi.set(__self__, "license_model", license_model)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -16263,6 +17372,8 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
         pulumi.set(__self__, "next_maintenance_run_id", next_maintenance_run_id)
         pulumi.set(__self__, "ocpus_enabled", ocpus_enabled)
         pulumi.set(__self__, "reclaimable_cpus", reclaimable_cpus)
+        pulumi.set(__self__, "scan_listener_port_non_tls", scan_listener_port_non_tls)
+        pulumi.set(__self__, "scan_listener_port_tls", scan_listener_port_tls)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_zone", time_zone)
@@ -16321,7 +17432,7 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
     @pulumi.getter(name="cpuCoreCountPerNode")
     def cpu_core_count_per_node(self) -> int:
         """
-        The number of OCPU cores enabled per VM cluster node.
+        The number of CPU cores enabled per VM cluster node.
         """
         return pulumi.get(self, "cpu_core_count_per_node")
 
@@ -16406,6 +17517,14 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
         return pulumi.get(self, "is_local_backup_enabled")
 
     @property
+    @pulumi.getter(name="isMtlsEnabled")
+    def is_mtls_enabled(self) -> bool:
+        """
+        Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
+        """
+        return pulumi.get(self, "is_mtls_enabled")
+
+    @property
     @pulumi.getter(name="lastMaintenanceRunId")
     def last_maintenance_run_id(self) -> str:
         """
@@ -16481,6 +17600,22 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
         CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
         """
         return pulumi.get(self, "reclaimable_cpus")
+
+    @property
+    @pulumi.getter(name="scanListenerPortNonTls")
+    def scan_listener_port_non_tls(self) -> int:
+        """
+        The SCAN Listener Non TLS port number. Default value is 1521.
+        """
+        return pulumi.get(self, "scan_listener_port_non_tls")
+
+    @property
+    @pulumi.getter(name="scanListenerPortTls")
+    def scan_listener_port_tls(self) -> int:
+        """
+        The SCAN Listener TLS port number. Default value is 2484.
+        """
+        return pulumi.get(self, "scan_listener_port_tls")
 
     @property
     @pulumi.getter
@@ -17425,6 +18560,316 @@ class GetBackupsFilterResult(dict):
 
 
 @pulumi.output_type
+class GetCloudAutonomousVmClusterMaintenanceWindowResult(dict):
+    def __init__(__self__, *,
+                 custom_action_timeout_in_mins: int,
+                 days_of_weeks: Sequence['outputs.GetCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekResult'],
+                 hours_of_days: Sequence[int],
+                 is_custom_action_timeout_enabled: bool,
+                 is_monthly_patching_enabled: bool,
+                 lead_time_in_weeks: int,
+                 months: Sequence['outputs.GetCloudAutonomousVmClusterMaintenanceWindowMonthResult'],
+                 patching_mode: str,
+                 preference: str,
+                 weeks_of_months: Sequence[int]):
+        """
+        :param int custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+        :param Sequence['GetCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs'] days_of_weeks: Days during the week when maintenance should be performed.
+        :param Sequence[int] hours_of_days: The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+               * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        :param bool is_custom_action_timeout_enabled: If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+        :param bool is_monthly_patching_enabled: If true, enables the monthly patching option.
+        :param int lead_time_in_weeks: Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+        :param Sequence['GetCloudAutonomousVmClusterMaintenanceWindowMonthArgs'] months: Months during the year when maintenance should be performed.
+        :param str patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+        :param str preference: The maintenance window scheduling preference.
+        :param Sequence[int] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+        """
+        pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
+        pulumi.set(__self__, "days_of_weeks", days_of_weeks)
+        pulumi.set(__self__, "hours_of_days", hours_of_days)
+        pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
+        pulumi.set(__self__, "is_monthly_patching_enabled", is_monthly_patching_enabled)
+        pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
+        pulumi.set(__self__, "months", months)
+        pulumi.set(__self__, "patching_mode", patching_mode)
+        pulumi.set(__self__, "preference", preference)
+        pulumi.set(__self__, "weeks_of_months", weeks_of_months)
+
+    @property
+    @pulumi.getter(name="customActionTimeoutInMins")
+    def custom_action_timeout_in_mins(self) -> int:
+        """
+        Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+        """
+        return pulumi.get(self, "custom_action_timeout_in_mins")
+
+    @property
+    @pulumi.getter(name="daysOfWeeks")
+    def days_of_weeks(self) -> Sequence['outputs.GetCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekResult']:
+        """
+        Days during the week when maintenance should be performed.
+        """
+        return pulumi.get(self, "days_of_weeks")
+
+    @property
+    @pulumi.getter(name="hoursOfDays")
+    def hours_of_days(self) -> Sequence[int]:
+        """
+        The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        """
+        return pulumi.get(self, "hours_of_days")
+
+    @property
+    @pulumi.getter(name="isCustomActionTimeoutEnabled")
+    def is_custom_action_timeout_enabled(self) -> bool:
+        """
+        If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+        """
+        return pulumi.get(self, "is_custom_action_timeout_enabled")
+
+    @property
+    @pulumi.getter(name="isMonthlyPatchingEnabled")
+    def is_monthly_patching_enabled(self) -> bool:
+        """
+        If true, enables the monthly patching option.
+        """
+        return pulumi.get(self, "is_monthly_patching_enabled")
+
+    @property
+    @pulumi.getter(name="leadTimeInWeeks")
+    def lead_time_in_weeks(self) -> int:
+        """
+        Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+        """
+        return pulumi.get(self, "lead_time_in_weeks")
+
+    @property
+    @pulumi.getter
+    def months(self) -> Sequence['outputs.GetCloudAutonomousVmClusterMaintenanceWindowMonthResult']:
+        """
+        Months during the year when maintenance should be performed.
+        """
+        return pulumi.get(self, "months")
+
+    @property
+    @pulumi.getter(name="patchingMode")
+    def patching_mode(self) -> str:
+        """
+        Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+        """
+        return pulumi.get(self, "patching_mode")
+
+    @property
+    @pulumi.getter
+    def preference(self) -> str:
+        """
+        The maintenance window scheduling preference.
+        """
+        return pulumi.get(self, "preference")
+
+    @property
+    @pulumi.getter(name="weeksOfMonths")
+    def weeks_of_months(self) -> Sequence[int]:
+        """
+        Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+        """
+        return pulumi.get(self, "weeks_of_months")
+
+
+@pulumi.output_type
+class GetCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekResult(dict):
+    def __init__(__self__, *,
+                 name: str):
+        """
+        :param str name: Name of the month of the year.
+        """
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the month of the year.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetCloudAutonomousVmClusterMaintenanceWindowDetailResult(dict):
+    def __init__(__self__, *,
+                 custom_action_timeout_in_mins: int,
+                 days_of_weeks: Sequence['outputs.GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekResult'],
+                 hours_of_days: Sequence[int],
+                 is_custom_action_timeout_enabled: bool,
+                 is_monthly_patching_enabled: bool,
+                 lead_time_in_weeks: int,
+                 months: Sequence['outputs.GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthResult'],
+                 patching_mode: str,
+                 preference: str,
+                 weeks_of_months: Sequence[int]):
+        """
+        :param int custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+        :param Sequence['GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs'] days_of_weeks: Days during the week when maintenance should be performed.
+        :param Sequence[int] hours_of_days: The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+               * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        :param bool is_custom_action_timeout_enabled: If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+        :param bool is_monthly_patching_enabled: If true, enables the monthly patching option.
+        :param int lead_time_in_weeks: Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+        :param Sequence['GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthArgs'] months: Months during the year when maintenance should be performed.
+        :param str patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+        :param str preference: The maintenance window scheduling preference.
+        :param Sequence[int] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+        """
+        pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
+        pulumi.set(__self__, "days_of_weeks", days_of_weeks)
+        pulumi.set(__self__, "hours_of_days", hours_of_days)
+        pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
+        pulumi.set(__self__, "is_monthly_patching_enabled", is_monthly_patching_enabled)
+        pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
+        pulumi.set(__self__, "months", months)
+        pulumi.set(__self__, "patching_mode", patching_mode)
+        pulumi.set(__self__, "preference", preference)
+        pulumi.set(__self__, "weeks_of_months", weeks_of_months)
+
+    @property
+    @pulumi.getter(name="customActionTimeoutInMins")
+    def custom_action_timeout_in_mins(self) -> int:
+        """
+        Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+        """
+        return pulumi.get(self, "custom_action_timeout_in_mins")
+
+    @property
+    @pulumi.getter(name="daysOfWeeks")
+    def days_of_weeks(self) -> Sequence['outputs.GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekResult']:
+        """
+        Days during the week when maintenance should be performed.
+        """
+        return pulumi.get(self, "days_of_weeks")
+
+    @property
+    @pulumi.getter(name="hoursOfDays")
+    def hours_of_days(self) -> Sequence[int]:
+        """
+        The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        """
+        return pulumi.get(self, "hours_of_days")
+
+    @property
+    @pulumi.getter(name="isCustomActionTimeoutEnabled")
+    def is_custom_action_timeout_enabled(self) -> bool:
+        """
+        If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+        """
+        return pulumi.get(self, "is_custom_action_timeout_enabled")
+
+    @property
+    @pulumi.getter(name="isMonthlyPatchingEnabled")
+    def is_monthly_patching_enabled(self) -> bool:
+        """
+        If true, enables the monthly patching option.
+        """
+        return pulumi.get(self, "is_monthly_patching_enabled")
+
+    @property
+    @pulumi.getter(name="leadTimeInWeeks")
+    def lead_time_in_weeks(self) -> int:
+        """
+        Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+        """
+        return pulumi.get(self, "lead_time_in_weeks")
+
+    @property
+    @pulumi.getter
+    def months(self) -> Sequence['outputs.GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthResult']:
+        """
+        Months during the year when maintenance should be performed.
+        """
+        return pulumi.get(self, "months")
+
+    @property
+    @pulumi.getter(name="patchingMode")
+    def patching_mode(self) -> str:
+        """
+        Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+        """
+        return pulumi.get(self, "patching_mode")
+
+    @property
+    @pulumi.getter
+    def preference(self) -> str:
+        """
+        The maintenance window scheduling preference.
+        """
+        return pulumi.get(self, "preference")
+
+    @property
+    @pulumi.getter(name="weeksOfMonths")
+    def weeks_of_months(self) -> Sequence[int]:
+        """
+        Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+        """
+        return pulumi.get(self, "weeks_of_months")
+
+
+@pulumi.output_type
+class GetCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekResult(dict):
+    def __init__(__self__, *,
+                 name: str):
+        """
+        :param str name: Name of the month of the year.
+        """
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the month of the year.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetCloudAutonomousVmClusterMaintenanceWindowDetailMonthResult(dict):
+    def __init__(__self__, *,
+                 name: str):
+        """
+        :param str name: Name of the month of the year.
+        """
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the month of the year.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetCloudAutonomousVmClusterMaintenanceWindowMonthResult(dict):
+    def __init__(__self__, *,
+                 name: str):
+        """
+        :param str name: Name of the month of the year.
+        """
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the month of the year.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
 class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
     def __init__(__self__, *,
                  autonomous_data_storage_size_in_tbs: float,
@@ -17436,9 +18881,11 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
                  cluster_time_zone: str,
                  compartment_id: str,
                  cpu_core_count: int,
+                 cpu_core_count_per_node: int,
                  data_storage_size_in_gb: float,
                  data_storage_size_in_tbs: float,
                  db_node_storage_size_in_gbs: int,
+                 db_servers: Sequence[str],
                  defined_tags: Mapping[str, Any],
                  description: str,
                  display_name: str,
@@ -17450,6 +18897,8 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
                  last_update_history_entry_id: str,
                  license_model: str,
                  lifecycle_details: str,
+                 maintenance_window_details: Sequence['outputs.GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailResult'],
+                 maintenance_windows: Sequence['outputs.GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowResult'],
                  memory_per_oracle_compute_unit_in_gbs: int,
                  memory_size_in_gbs: int,
                  next_maintenance_run_id: str,
@@ -17457,8 +18906,6 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
                  nsg_ids: Sequence[str],
                  ocpu_count: float,
                  reclaimable_cpus: float,
-                 rotate_ords_certs_trigger: bool,
-                 rotate_ssl_certs_trigger: bool,
                  shape: str,
                  state: str,
                  subnet_id: str,
@@ -17474,7 +18921,8 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         :param str cloud_exadata_infrastructure_id: If provided, filters the results for the specified cloud Exadata infrastructure.
         :param str cluster_time_zone: The time zone of the Cloud Autonomous VM Cluster.
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param int cpu_core_count: The number of CPU cores enabled on the cloud Autonomous VM cluster.
+        :param int cpu_core_count: The number of CPU cores on the cloud Autonomous VM cluster.
+        :param int cpu_core_count_per_node: The number of OCPU cores enabled per VM cluster node.
         :param float data_storage_size_in_gb: The total data storage allocated, in gigabytes (GB).
         :param float data_storage_size_in_tbs: The total data storage allocated, in terabytes (TB).
         :param int db_node_storage_size_in_gbs: The local node storage allocated in GBs.
@@ -17489,13 +18937,14 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         :param str last_update_history_entry_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history. This value is updated when a maintenance update starts.
         :param str license_model: The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle PaaS and IaaS services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Database service. Note that when provisioning an Autonomous Database on [dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null because the attribute is already set at the Autonomous Exadata Infrastructure level. When using [shared Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), if a value is not specified, the system will supply the value of `BRING_YOUR_OWN_LICENSE`.
         :param str lifecycle_details: Additional information about the current lifecycle state.
+        :param Sequence['GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowArgs'] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         :param int memory_per_oracle_compute_unit_in_gbs: The amount of memory (in GBs) enabled per each OCPU core.
         :param int memory_size_in_gbs: The memory allocated in GBs.
         :param str next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         :param int node_count: The number of database servers in the cloud VM cluster.
         :param Sequence[str] nsg_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
-        :param float ocpu_count: The number of CPU cores enabled on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
+        :param float ocpu_count: The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
         :param float reclaimable_cpus: CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
         :param str shape: The model name of the Exadata hardware running the cloud Autonomous VM cluster.
         :param str state: A filter to return only resources that match the given lifecycle state exactly.
@@ -17513,9 +18962,11 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         pulumi.set(__self__, "cluster_time_zone", cluster_time_zone)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "cpu_core_count", cpu_core_count)
+        pulumi.set(__self__, "cpu_core_count_per_node", cpu_core_count_per_node)
         pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
         pulumi.set(__self__, "data_storage_size_in_tbs", data_storage_size_in_tbs)
         pulumi.set(__self__, "db_node_storage_size_in_gbs", db_node_storage_size_in_gbs)
+        pulumi.set(__self__, "db_servers", db_servers)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "display_name", display_name)
@@ -17527,6 +18978,8 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         pulumi.set(__self__, "last_update_history_entry_id", last_update_history_entry_id)
         pulumi.set(__self__, "license_model", license_model)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "maintenance_window_details", maintenance_window_details)
+        pulumi.set(__self__, "maintenance_windows", maintenance_windows)
         pulumi.set(__self__, "memory_per_oracle_compute_unit_in_gbs", memory_per_oracle_compute_unit_in_gbs)
         pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
         pulumi.set(__self__, "next_maintenance_run_id", next_maintenance_run_id)
@@ -17534,8 +18987,6 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "ocpu_count", ocpu_count)
         pulumi.set(__self__, "reclaimable_cpus", reclaimable_cpus)
-        pulumi.set(__self__, "rotate_ords_certs_trigger", rotate_ords_certs_trigger)
-        pulumi.set(__self__, "rotate_ssl_certs_trigger", rotate_ssl_certs_trigger)
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "subnet_id", subnet_id)
@@ -17611,9 +19062,17 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
     @pulumi.getter(name="cpuCoreCount")
     def cpu_core_count(self) -> int:
         """
-        The number of CPU cores enabled on the cloud Autonomous VM cluster.
+        The number of CPU cores on the cloud Autonomous VM cluster.
         """
         return pulumi.get(self, "cpu_core_count")
+
+    @property
+    @pulumi.getter(name="cpuCoreCountPerNode")
+    def cpu_core_count_per_node(self) -> int:
+        """
+        The number of OCPU cores enabled per VM cluster node.
+        """
+        return pulumi.get(self, "cpu_core_count_per_node")
 
     @property
     @pulumi.getter(name="dataStorageSizeInGb")
@@ -17638,6 +19097,11 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         The local node storage allocated in GBs.
         """
         return pulumi.get(self, "db_node_storage_size_in_gbs")
+
+    @property
+    @pulumi.getter(name="dbServers")
+    def db_servers(self) -> Sequence[str]:
+        return pulumi.get(self, "db_servers")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -17728,6 +19192,19 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter(name="maintenanceWindowDetails")
+    def maintenance_window_details(self) -> Sequence['outputs.GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailResult']:
+        return pulumi.get(self, "maintenance_window_details")
+
+    @property
+    @pulumi.getter(name="maintenanceWindows")
+    def maintenance_windows(self) -> Sequence['outputs.GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowResult']:
+        """
+        The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+        """
+        return pulumi.get(self, "maintenance_windows")
+
+    @property
     @pulumi.getter(name="memoryPerOracleComputeUnitInGbs")
     def memory_per_oracle_compute_unit_in_gbs(self) -> int:
         """
@@ -17772,7 +19249,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
     @pulumi.getter(name="ocpuCount")
     def ocpu_count(self) -> float:
         """
-        The number of CPU cores enabled on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
+        The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
         """
         return pulumi.get(self, "ocpu_count")
 
@@ -17783,16 +19260,6 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
         """
         return pulumi.get(self, "reclaimable_cpus")
-
-    @property
-    @pulumi.getter(name="rotateOrdsCertsTrigger")
-    def rotate_ords_certs_trigger(self) -> bool:
-        return pulumi.get(self, "rotate_ords_certs_trigger")
-
-    @property
-    @pulumi.getter(name="rotateSslCertsTrigger")
-    def rotate_ssl_certs_trigger(self) -> bool:
-        return pulumi.get(self, "rotate_ssl_certs_trigger")
 
     @property
     @pulumi.getter
@@ -17844,11 +19311,324 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
 
 
 @pulumi.output_type
+class GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowResult(dict):
+    def __init__(__self__, *,
+                 custom_action_timeout_in_mins: int,
+                 days_of_weeks: Sequence['outputs.GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekResult'],
+                 hours_of_days: Sequence[int],
+                 is_custom_action_timeout_enabled: bool,
+                 is_monthly_patching_enabled: bool,
+                 lead_time_in_weeks: int,
+                 months: Sequence['outputs.GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthResult'],
+                 patching_mode: str,
+                 preference: str,
+                 weeks_of_months: Sequence[int]):
+        """
+        :param int custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+        :param Sequence['GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekArgs'] days_of_weeks: Days during the week when maintenance should be performed.
+        :param Sequence[int] hours_of_days: The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+               * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        :param bool is_custom_action_timeout_enabled: If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+        :param bool is_monthly_patching_enabled: If true, enables the monthly patching option.
+        :param int lead_time_in_weeks: Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+        :param Sequence['GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthArgs'] months: Months during the year when maintenance should be performed.
+        :param str patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+        :param str preference: The maintenance window scheduling preference.
+        :param Sequence[int] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+        """
+        pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
+        pulumi.set(__self__, "days_of_weeks", days_of_weeks)
+        pulumi.set(__self__, "hours_of_days", hours_of_days)
+        pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
+        pulumi.set(__self__, "is_monthly_patching_enabled", is_monthly_patching_enabled)
+        pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
+        pulumi.set(__self__, "months", months)
+        pulumi.set(__self__, "patching_mode", patching_mode)
+        pulumi.set(__self__, "preference", preference)
+        pulumi.set(__self__, "weeks_of_months", weeks_of_months)
+
+    @property
+    @pulumi.getter(name="customActionTimeoutInMins")
+    def custom_action_timeout_in_mins(self) -> int:
+        """
+        Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+        """
+        return pulumi.get(self, "custom_action_timeout_in_mins")
+
+    @property
+    @pulumi.getter(name="daysOfWeeks")
+    def days_of_weeks(self) -> Sequence['outputs.GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekResult']:
+        """
+        Days during the week when maintenance should be performed.
+        """
+        return pulumi.get(self, "days_of_weeks")
+
+    @property
+    @pulumi.getter(name="hoursOfDays")
+    def hours_of_days(self) -> Sequence[int]:
+        """
+        The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        """
+        return pulumi.get(self, "hours_of_days")
+
+    @property
+    @pulumi.getter(name="isCustomActionTimeoutEnabled")
+    def is_custom_action_timeout_enabled(self) -> bool:
+        """
+        If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+        """
+        return pulumi.get(self, "is_custom_action_timeout_enabled")
+
+    @property
+    @pulumi.getter(name="isMonthlyPatchingEnabled")
+    def is_monthly_patching_enabled(self) -> bool:
+        """
+        If true, enables the monthly patching option.
+        """
+        return pulumi.get(self, "is_monthly_patching_enabled")
+
+    @property
+    @pulumi.getter(name="leadTimeInWeeks")
+    def lead_time_in_weeks(self) -> int:
+        """
+        Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+        """
+        return pulumi.get(self, "lead_time_in_weeks")
+
+    @property
+    @pulumi.getter
+    def months(self) -> Sequence['outputs.GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthResult']:
+        """
+        Months during the year when maintenance should be performed.
+        """
+        return pulumi.get(self, "months")
+
+    @property
+    @pulumi.getter(name="patchingMode")
+    def patching_mode(self) -> str:
+        """
+        Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+        """
+        return pulumi.get(self, "patching_mode")
+
+    @property
+    @pulumi.getter
+    def preference(self) -> str:
+        """
+        The maintenance window scheduling preference.
+        """
+        return pulumi.get(self, "preference")
+
+    @property
+    @pulumi.getter(name="weeksOfMonths")
+    def weeks_of_months(self) -> Sequence[int]:
+        """
+        Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+        """
+        return pulumi.get(self, "weeks_of_months")
+
+
+@pulumi.output_type
+class GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDaysOfWeekResult(dict):
+    def __init__(__self__, *,
+                 name: str):
+        """
+        :param str name: Name of the month of the year.
+        """
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the month of the year.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailResult(dict):
+    def __init__(__self__, *,
+                 custom_action_timeout_in_mins: int,
+                 days_of_weeks: Sequence['outputs.GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekResult'],
+                 hours_of_days: Sequence[int],
+                 is_custom_action_timeout_enabled: bool,
+                 is_monthly_patching_enabled: bool,
+                 lead_time_in_weeks: int,
+                 months: Sequence['outputs.GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthResult'],
+                 patching_mode: str,
+                 preference: str,
+                 weeks_of_months: Sequence[int]):
+        """
+        :param int custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+        :param Sequence['GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekArgs'] days_of_weeks: Days during the week when maintenance should be performed.
+        :param Sequence[int] hours_of_days: The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+               * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        :param bool is_custom_action_timeout_enabled: If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+        :param bool is_monthly_patching_enabled: If true, enables the monthly patching option.
+        :param int lead_time_in_weeks: Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+        :param Sequence['GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthArgs'] months: Months during the year when maintenance should be performed.
+        :param str patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+        :param str preference: The maintenance window scheduling preference.
+        :param Sequence[int] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+        """
+        pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
+        pulumi.set(__self__, "days_of_weeks", days_of_weeks)
+        pulumi.set(__self__, "hours_of_days", hours_of_days)
+        pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
+        pulumi.set(__self__, "is_monthly_patching_enabled", is_monthly_patching_enabled)
+        pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
+        pulumi.set(__self__, "months", months)
+        pulumi.set(__self__, "patching_mode", patching_mode)
+        pulumi.set(__self__, "preference", preference)
+        pulumi.set(__self__, "weeks_of_months", weeks_of_months)
+
+    @property
+    @pulumi.getter(name="customActionTimeoutInMins")
+    def custom_action_timeout_in_mins(self) -> int:
+        """
+        Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+        """
+        return pulumi.get(self, "custom_action_timeout_in_mins")
+
+    @property
+    @pulumi.getter(name="daysOfWeeks")
+    def days_of_weeks(self) -> Sequence['outputs.GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekResult']:
+        """
+        Days during the week when maintenance should be performed.
+        """
+        return pulumi.get(self, "days_of_weeks")
+
+    @property
+    @pulumi.getter(name="hoursOfDays")
+    def hours_of_days(self) -> Sequence[int]:
+        """
+        The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+        * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        """
+        return pulumi.get(self, "hours_of_days")
+
+    @property
+    @pulumi.getter(name="isCustomActionTimeoutEnabled")
+    def is_custom_action_timeout_enabled(self) -> bool:
+        """
+        If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+        """
+        return pulumi.get(self, "is_custom_action_timeout_enabled")
+
+    @property
+    @pulumi.getter(name="isMonthlyPatchingEnabled")
+    def is_monthly_patching_enabled(self) -> bool:
+        """
+        If true, enables the monthly patching option.
+        """
+        return pulumi.get(self, "is_monthly_patching_enabled")
+
+    @property
+    @pulumi.getter(name="leadTimeInWeeks")
+    def lead_time_in_weeks(self) -> int:
+        """
+        Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+        """
+        return pulumi.get(self, "lead_time_in_weeks")
+
+    @property
+    @pulumi.getter
+    def months(self) -> Sequence['outputs.GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthResult']:
+        """
+        Months during the year when maintenance should be performed.
+        """
+        return pulumi.get(self, "months")
+
+    @property
+    @pulumi.getter(name="patchingMode")
+    def patching_mode(self) -> str:
+        """
+        Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+        """
+        return pulumi.get(self, "patching_mode")
+
+    @property
+    @pulumi.getter
+    def preference(self) -> str:
+        """
+        The maintenance window scheduling preference.
+        """
+        return pulumi.get(self, "preference")
+
+    @property
+    @pulumi.getter(name="weeksOfMonths")
+    def weeks_of_months(self) -> Sequence[int]:
+        """
+        Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+        """
+        return pulumi.get(self, "weeks_of_months")
+
+
+@pulumi.output_type
+class GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailDaysOfWeekResult(dict):
+    def __init__(__self__, *,
+                 name: str):
+        """
+        :param str name: Name of the month of the year.
+        """
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the month of the year.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowDetailMonthResult(dict):
+    def __init__(__self__, *,
+                 name: str):
+        """
+        :param str name: Name of the month of the year.
+        """
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the month of the year.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetCloudAutonomousVmClustersCloudAutonomousVmClusterMaintenanceWindowMonthResult(dict):
+    def __init__(__self__, *,
+                 name: str):
+        """
+        :param str name: Name of the month of the year.
+        """
+        pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of the month of the year.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
 class GetCloudAutonomousVmClustersFilterResult(dict):
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],
                  regex: Optional[bool] = None):
+        """
+        :param str name: Name of the month of the year.
+        """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
         if regex is not None:
@@ -17857,6 +19637,9 @@ class GetCloudAutonomousVmClustersFilterResult(dict):
     @property
     @pulumi.getter
     def name(self) -> str:
+        """
+        Name of the month of the year.
+        """
         return pulumi.get(self, "name")
 
     @property
@@ -18046,11 +19829,16 @@ class GetCloudExadataInfrastructureMaintenanceWindowMonthResult(dict):
 @pulumi.output_type
 class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
     def __init__(__self__, *,
+                 activated_storage_count: int,
+                 additional_storage_count: int,
                  availability_domain: str,
                  available_storage_size_in_gbs: int,
                  compartment_id: str,
                  compute_count: int,
+                 cpu_count: int,
                  customer_contacts: Sequence['outputs.GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactResult'],
+                 data_storage_size_in_tbs: float,
+                 db_node_storage_size_in_gbs: int,
                  defined_tags: Mapping[str, Any],
                  display_name: str,
                  freeform_tags: Mapping[str, Any],
@@ -18058,6 +19846,11 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
                  last_maintenance_run_id: str,
                  lifecycle_details: str,
                  maintenance_windows: Sequence['outputs.GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowResult'],
+                 max_cpu_count: int,
+                 max_data_storage_in_tbs: float,
+                 max_db_node_storage_in_gbs: int,
+                 max_memory_in_gbs: int,
+                 memory_size_in_gbs: int,
                  next_maintenance_run_id: str,
                  shape: str,
                  state: str,
@@ -18065,11 +19858,16 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
                  time_created: str,
                  total_storage_size_in_gbs: int):
         """
+        :param int activated_storage_count: The requested number of additional storage servers activated for the Exadata infrastructure.
+        :param int additional_storage_count: The requested number of additional storage servers for the Exadata infrastructure.
         :param str availability_domain: The name of the availability domain that the cloud Exadata infrastructure resource is located in.
         :param int available_storage_size_in_gbs: The available storage can be allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param int compute_count: The number of compute servers for the cloud Exadata infrastructure.
+        :param int cpu_count: The total number of CPU cores allocated.
         :param Sequence['GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactArgs'] customer_contacts: The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure Database service resource. Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators. Up to 10 email addresses can be added to the customer contacts for a cloud Exadata infrastructure instance.
+        :param float data_storage_size_in_tbs: Size, in terabytes, of the DATA disk group.
+        :param int db_node_storage_size_in_gbs: The local node storage allocated in GBs.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -18077,6 +19875,11 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
         :param str last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param Sequence['GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowArgs'] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+        :param int max_cpu_count: The total number of CPU cores available.
+        :param float max_data_storage_in_tbs: The total available DATA disk group size.
+        :param int max_db_node_storage_in_gbs: The total local node storage available in GBs.
+        :param int max_memory_in_gbs: The total memory available in GBs.
+        :param int memory_size_in_gbs: The memory allocated in GBs.
         :param str next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         :param str shape: The model name of the cloud Exadata infrastructure resource.
         :param str state: A filter to return only resources that match the given lifecycle state exactly.
@@ -18084,11 +19887,16 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
         :param str time_created: The date and time the cloud Exadata infrastructure resource was created.
         :param int total_storage_size_in_gbs: The total storage allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
         """
+        pulumi.set(__self__, "activated_storage_count", activated_storage_count)
+        pulumi.set(__self__, "additional_storage_count", additional_storage_count)
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "available_storage_size_in_gbs", available_storage_size_in_gbs)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "compute_count", compute_count)
+        pulumi.set(__self__, "cpu_count", cpu_count)
         pulumi.set(__self__, "customer_contacts", customer_contacts)
+        pulumi.set(__self__, "data_storage_size_in_tbs", data_storage_size_in_tbs)
+        pulumi.set(__self__, "db_node_storage_size_in_gbs", db_node_storage_size_in_gbs)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -18096,12 +19904,33 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
         pulumi.set(__self__, "last_maintenance_run_id", last_maintenance_run_id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "maintenance_windows", maintenance_windows)
+        pulumi.set(__self__, "max_cpu_count", max_cpu_count)
+        pulumi.set(__self__, "max_data_storage_in_tbs", max_data_storage_in_tbs)
+        pulumi.set(__self__, "max_db_node_storage_in_gbs", max_db_node_storage_in_gbs)
+        pulumi.set(__self__, "max_memory_in_gbs", max_memory_in_gbs)
+        pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
         pulumi.set(__self__, "next_maintenance_run_id", next_maintenance_run_id)
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "storage_count", storage_count)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "total_storage_size_in_gbs", total_storage_size_in_gbs)
+
+    @property
+    @pulumi.getter(name="activatedStorageCount")
+    def activated_storage_count(self) -> int:
+        """
+        The requested number of additional storage servers activated for the Exadata infrastructure.
+        """
+        return pulumi.get(self, "activated_storage_count")
+
+    @property
+    @pulumi.getter(name="additionalStorageCount")
+    def additional_storage_count(self) -> int:
+        """
+        The requested number of additional storage servers for the Exadata infrastructure.
+        """
+        return pulumi.get(self, "additional_storage_count")
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -18136,12 +19965,36 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
         return pulumi.get(self, "compute_count")
 
     @property
+    @pulumi.getter(name="cpuCount")
+    def cpu_count(self) -> int:
+        """
+        The total number of CPU cores allocated.
+        """
+        return pulumi.get(self, "cpu_count")
+
+    @property
     @pulumi.getter(name="customerContacts")
     def customer_contacts(self) -> Sequence['outputs.GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactResult']:
         """
         The list of customer email addresses that receive information from Oracle about the specified Oracle Cloud Infrastructure Database service resource. Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators. Up to 10 email addresses can be added to the customer contacts for a cloud Exadata infrastructure instance.
         """
         return pulumi.get(self, "customer_contacts")
+
+    @property
+    @pulumi.getter(name="dataStorageSizeInTbs")
+    def data_storage_size_in_tbs(self) -> float:
+        """
+        Size, in terabytes, of the DATA disk group.
+        """
+        return pulumi.get(self, "data_storage_size_in_tbs")
+
+    @property
+    @pulumi.getter(name="dbNodeStorageSizeInGbs")
+    def db_node_storage_size_in_gbs(self) -> int:
+        """
+        The local node storage allocated in GBs.
+        """
+        return pulumi.get(self, "db_node_storage_size_in_gbs")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -18198,6 +20051,46 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
         The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         """
         return pulumi.get(self, "maintenance_windows")
+
+    @property
+    @pulumi.getter(name="maxCpuCount")
+    def max_cpu_count(self) -> int:
+        """
+        The total number of CPU cores available.
+        """
+        return pulumi.get(self, "max_cpu_count")
+
+    @property
+    @pulumi.getter(name="maxDataStorageInTbs")
+    def max_data_storage_in_tbs(self) -> float:
+        """
+        The total available DATA disk group size.
+        """
+        return pulumi.get(self, "max_data_storage_in_tbs")
+
+    @property
+    @pulumi.getter(name="maxDbNodeStorageInGbs")
+    def max_db_node_storage_in_gbs(self) -> int:
+        """
+        The total local node storage available in GBs.
+        """
+        return pulumi.get(self, "max_db_node_storage_in_gbs")
+
+    @property
+    @pulumi.getter(name="maxMemoryInGbs")
+    def max_memory_in_gbs(self) -> int:
+        """
+        The total memory available in GBs.
+        """
+        return pulumi.get(self, "max_memory_in_gbs")
+
+    @property
+    @pulumi.getter(name="memorySizeInGbs")
+    def memory_size_in_gbs(self) -> int:
+        """
+        The memory allocated in GBs.
+        """
+        return pulumi.get(self, "memory_size_in_gbs")
 
     @property
     @pulumi.getter(name="nextMaintenanceRunId")
@@ -18638,6 +20531,9 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
                  create_async: bool,
                  data_collection_options: Sequence['outputs.GetCloudVmClustersCloudVmClusterDataCollectionOptionResult'],
                  data_storage_percentage: int,
+                 data_storage_size_in_tbs: float,
+                 db_node_storage_size_in_gbs: int,
+                 db_servers: Sequence[str],
                  defined_tags: Mapping[str, Any],
                  disk_redundancy: str,
                  display_name: str,
@@ -18653,9 +20549,11 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
                  license_model: str,
                  lifecycle_details: str,
                  listener_port: str,
+                 memory_size_in_gbs: int,
                  node_count: int,
                  nsg_ids: Sequence[str],
                  ocpu_count: float,
+                 private_zone_id: str,
                  scan_dns_name: str,
                  scan_dns_record_id: str,
                  scan_ip_ids: Sequence[str],
@@ -18681,6 +20579,9 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         :param int cpu_core_count: The number of CPU cores enabled on the cloud VM cluster.
         :param Sequence['GetCloudVmClustersCloudVmClusterDataCollectionOptionArgs'] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param int data_storage_percentage: The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
+        :param float data_storage_size_in_tbs: The data disk group size to be allocated in TBs.
+        :param int db_node_storage_size_in_gbs: The local node storage to be allocated in GBs.
+        :param Sequence[str] db_servers: The list of DB servers.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str disk_redundancy: The type of redundancy configured for the cloud Vm cluster. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
@@ -18695,6 +20596,7 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         :param str license_model: The Oracle license model that applies to the cloud VM cluster. The default is LICENSE_INCLUDED.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param str listener_port: The port number configured for the listener on the cloud VM cluster.
+        :param int memory_size_in_gbs: The memory to be allocated in GBs.
         :param int node_count: The number of nodes in the cloud VM cluster.
         :param Sequence[str] nsg_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
                * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
@@ -18725,6 +20627,9 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         pulumi.set(__self__, "create_async", create_async)
         pulumi.set(__self__, "data_collection_options", data_collection_options)
         pulumi.set(__self__, "data_storage_percentage", data_storage_percentage)
+        pulumi.set(__self__, "data_storage_size_in_tbs", data_storage_size_in_tbs)
+        pulumi.set(__self__, "db_node_storage_size_in_gbs", db_node_storage_size_in_gbs)
+        pulumi.set(__self__, "db_servers", db_servers)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "disk_redundancy", disk_redundancy)
         pulumi.set(__self__, "display_name", display_name)
@@ -18740,9 +20645,11 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         pulumi.set(__self__, "license_model", license_model)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "listener_port", listener_port)
+        pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
         pulumi.set(__self__, "node_count", node_count)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "ocpu_count", ocpu_count)
+        pulumi.set(__self__, "private_zone_id", private_zone_id)
         pulumi.set(__self__, "scan_dns_name", scan_dns_name)
         pulumi.set(__self__, "scan_dns_record_id", scan_dns_record_id)
         pulumi.set(__self__, "scan_ip_ids", scan_ip_ids)
@@ -18835,6 +20742,30 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
         """
         return pulumi.get(self, "data_storage_percentage")
+
+    @property
+    @pulumi.getter(name="dataStorageSizeInTbs")
+    def data_storage_size_in_tbs(self) -> float:
+        """
+        The data disk group size to be allocated in TBs.
+        """
+        return pulumi.get(self, "data_storage_size_in_tbs")
+
+    @property
+    @pulumi.getter(name="dbNodeStorageSizeInGbs")
+    def db_node_storage_size_in_gbs(self) -> int:
+        """
+        The local node storage to be allocated in GBs.
+        """
+        return pulumi.get(self, "db_node_storage_size_in_gbs")
+
+    @property
+    @pulumi.getter(name="dbServers")
+    def db_servers(self) -> Sequence[str]:
+        """
+        The list of DB servers.
+        """
+        return pulumi.get(self, "db_servers")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -18954,6 +20885,14 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         return pulumi.get(self, "listener_port")
 
     @property
+    @pulumi.getter(name="memorySizeInGbs")
+    def memory_size_in_gbs(self) -> int:
+        """
+        The memory to be allocated in GBs.
+        """
+        return pulumi.get(self, "memory_size_in_gbs")
+
+    @property
     @pulumi.getter(name="nodeCount")
     def node_count(self) -> int:
         """
@@ -18977,6 +20916,11 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         The number of OCPU cores to enable on the cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
         """
         return pulumi.get(self, "ocpu_count")
+
+    @property
+    @pulumi.getter(name="privateZoneId")
+    def private_zone_id(self) -> str:
+        return pulumi.get(self, "private_zone_id")
 
     @property
     @pulumi.getter(name="scanDnsName")
@@ -21296,7 +23240,7 @@ class GetDatabaseSoftwareImagesDatabaseSoftwareImageResult(dict):
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database software image.
         :param str image_shape_family: A filter to return only resources that match the given image shape family exactly.
         :param str image_type: A filter to return only resources that match the given image type exactly.
-        :param str included_patches_summary: The patches included in the image and the version of the image
+        :param str included_patches_summary: The patches included in the image and the version of the image.
         :param bool is_upgrade_supported: If provided, filters the results to the set of database versions which are supported for Upgrade.
         :param str lifecycle_details: Detailed message for the lifecycle state.
         :param str ls_inventory: The output from the OPatch lsInventory command, which is passed as a string.
@@ -21407,7 +23351,7 @@ class GetDatabaseSoftwareImagesDatabaseSoftwareImageResult(dict):
     @pulumi.getter(name="includedPatchesSummary")
     def included_patches_summary(self) -> str:
         """
-        The patches included in the image and the version of the image
+        The patches included in the image and the version of the image.
         """
         return pulumi.get(self, "included_patches_summary")
 
@@ -23997,6 +25941,7 @@ class GetDbServersDbServerResult(dict):
                  max_db_node_storage_in_gbs: int,
                  max_memory_in_gbs: int,
                  memory_size_in_gbs: int,
+                 shape: str,
                  state: str,
                  time_created: str,
                  vm_cluster_ids: Sequence[str]):
@@ -24016,6 +25961,7 @@ class GetDbServersDbServerResult(dict):
         :param int max_db_node_storage_in_gbs: The total local node storage available in GBs.
         :param int max_memory_in_gbs: The total memory available in GBs.
         :param int memory_size_in_gbs: The allocated memory in GBs on the Db server.
+        :param str shape: The shape of the Db server. The shape determines the amount of CPU, storage, and memory resources available.
         :param str state: A filter to return only resources that match the given lifecycle state exactly.
         :param str time_created: The date and time that the Db Server was created.
         :param Sequence[str] vm_cluster_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Clusters associated with the Db server.
@@ -24035,6 +25981,7 @@ class GetDbServersDbServerResult(dict):
         pulumi.set(__self__, "max_db_node_storage_in_gbs", max_db_node_storage_in_gbs)
         pulumi.set(__self__, "max_memory_in_gbs", max_memory_in_gbs)
         pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
+        pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "vm_cluster_ids", vm_cluster_ids)
@@ -24158,6 +26105,14 @@ class GetDbServersDbServerResult(dict):
         The allocated memory in GBs on the Db server.
         """
         return pulumi.get(self, "memory_size_in_gbs")
+
+    @property
+    @pulumi.getter
+    def shape(self) -> str:
+        """
+        The shape of the Db server. The shape determines the amount of CPU, storage, and memory resources available.
+        """
+        return pulumi.get(self, "shape")
 
     @property
     @pulumi.getter
@@ -24649,18 +26604,18 @@ class GetDbSystemShapesDbSystemShapeResult(dict):
         :param int available_memory_per_node_in_gbs: The maximum memory available per database node for this shape. Only applicable to ExaCC Elastic shapes.
         :param int core_count_increment: The discrete number by which the CPU core count for this shape can be increased or decreased.
         :param int max_storage_count: The maximum number of Exadata storage servers available for the Exadata infrastructure.
-        :param int maximum_node_count: The maximum number of database nodes available for this shape.
+        :param int maximum_node_count: The maximum number of compute servers available for this shape.
         :param int min_core_count_per_node: The minimum number of CPU cores that can be enabled per node for this shape.
         :param int min_data_storage_in_tbs: The minimum data storage that need be allocated for this shape.
         :param int min_db_node_storage_per_node_in_gbs: The minimum Db Node storage that need be allocated per node for this shape.
         :param int min_memory_per_node_in_gbs: The minimum memory that need be allocated per node for this shape.
         :param int min_storage_count: The minimum number of Exadata storage servers available for the Exadata infrastructure.
         :param int minimum_core_count: The minimum number of CPU cores that can be enabled on the DB system for this shape.
-        :param int minimum_node_count: The minimum number of database nodes available for this shape.
+        :param int minimum_node_count: The minimum number of compute servers available for this shape.
         :param str name: The name of the shape used for the DB system.
         :param str shape: Deprecated. Use `name` instead of `shape`.
         :param str shape_family: The family of the shape used for the DB system.
-        :param str shape_type: The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are `AMD` and `INTEL`.
+        :param str shape_type: The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are `AMD` , `INTEL` or `INTEL_FLEX_X9`.
         """
         pulumi.set(__self__, "available_core_count", available_core_count)
         pulumi.set(__self__, "available_core_count_per_node", available_core_count_per_node)
@@ -24769,7 +26724,7 @@ class GetDbSystemShapesDbSystemShapeResult(dict):
     @pulumi.getter(name="maximumNodeCount")
     def maximum_node_count(self) -> int:
         """
-        The maximum number of database nodes available for this shape.
+        The maximum number of compute servers available for this shape.
         """
         return pulumi.get(self, "maximum_node_count")
 
@@ -24825,7 +26780,7 @@ class GetDbSystemShapesDbSystemShapeResult(dict):
     @pulumi.getter(name="minimumNodeCount")
     def minimum_node_count(self) -> int:
         """
-        The minimum number of database nodes available for this shape.
+        The minimum number of compute servers available for this shape.
         """
         return pulumi.get(self, "minimum_node_count")
 
@@ -24857,7 +26812,7 @@ class GetDbSystemShapesDbSystemShapeResult(dict):
     @pulumi.getter(name="shapeType")
     def shape_type(self) -> str:
         """
-        The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are `AMD` and `INTEL`.
+        The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are `AMD` , `INTEL` or `INTEL_FLEX_X9`.
         """
         return pulumi.get(self, "shape_type")
 
@@ -27075,10 +29030,41 @@ class GetExadataInfrastructureMaintenanceWindowMonthResult(dict):
 
 
 @pulumi.output_type
+class GetExadataInfrastructureUnAllocatedResourceCloudAutonomousVmClusterResult(dict):
+    def __init__(__self__, *,
+                 id: str,
+                 un_allocated_adb_storage_in_tbs: float):
+        """
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Exadata infrastructure.
+        :param float un_allocated_adb_storage_in_tbs: Total unallocated autonomous data storage in the Cloud Autonomous VM Cluster in TBs.
+        """
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "un_allocated_adb_storage_in_tbs", un_allocated_adb_storage_in_tbs)
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Exadata infrastructure.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="unAllocatedAdbStorageInTbs")
+    def un_allocated_adb_storage_in_tbs(self) -> float:
+        """
+        Total unallocated autonomous data storage in the Cloud Autonomous VM Cluster in TBs.
+        """
+        return pulumi.get(self, "un_allocated_adb_storage_in_tbs")
+
+
+@pulumi.output_type
 class GetExadataInfrastructuresExadataInfrastructureResult(dict):
     def __init__(__self__, *,
                  activated_storage_count: int,
                  activation_file: str,
+                 additional_compute_count: int,
+                 additional_compute_system_model: str,
                  additional_storage_count: int,
                  admin_network_cidr: str,
                  cloud_control_plane_server1: str,
@@ -27101,6 +29087,7 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
                  id: str,
                  infini_band_network_cidr: str,
                  is_cps_offline_report_enabled: bool,
+                 is_multi_rack_deployment: bool,
                  lifecycle_details: str,
                  maintenance_slo_status: str,
                  maintenance_windows: Sequence['outputs.GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowResult'],
@@ -27110,6 +29097,7 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
                  max_memory_in_gbs: int,
                  memory_size_in_gbs: int,
                  monthly_db_server_version: str,
+                 multi_rack_configuration_file: str,
                  netmask: str,
                  ntp_servers: Sequence[str],
                  shape: str,
@@ -27120,6 +29108,8 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
                  time_zone: str):
         """
         :param int activated_storage_count: The requested number of additional storage servers activated for the Exadata infrastructure.
+        :param int additional_compute_count: The requested number of additional compute servers for the Exadata infrastructure.
+        :param str additional_compute_system_model: Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
         :param int additional_storage_count: The requested number of additional storage servers for the Exadata infrastructure.
         :param str admin_network_cidr: The CIDR block for the Exadata administration network.
         :param str cloud_control_plane_server1: The IP address for the first control plane server.
@@ -27141,6 +29131,7 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
         :param str infini_band_network_cidr: The CIDR block for the Exadata InfiniBand interconnect.
         :param bool is_cps_offline_report_enabled: Indicates whether cps offline diagnostic report is enabled for this Exadata infrastructure. This will allow a customer to quickly check status themselves and fix problems on their end, saving time and frustration for both Oracle and the customer when they find the CPS in a disconnected state.You can enable offline diagnostic report during Exadata infrastructure provisioning. You can also disable or enable it at any time using the UpdateExadatainfrastructure API.
+        :param bool is_multi_rack_deployment: Indicates if deployment is Multi-Rack or not.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param str maintenance_slo_status: A field to capture ‘Maintenance SLO Status’ for the Exadata infrastructure with values ‘OK’, ‘DEGRADED’. Default is ‘OK’ when the infrastructure is provisioned.
         :param Sequence['GetExadataInfrastructuresExadataInfrastructureMaintenanceWindowArgs'] maintenance_windows: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
@@ -27150,6 +29141,7 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
         :param int max_memory_in_gbs: The total memory available in GBs.
         :param int memory_size_in_gbs: The memory allocated in GBs.
         :param str monthly_db_server_version: The monthly software version of the database servers (dom0) in the Exadata infrastructure.
+        :param str multi_rack_configuration_file: The base64 encoded Multi-Rack configuration json file.
         :param str netmask: The netmask for the control plane network.
         :param Sequence[str] ntp_servers: The list of NTP server IP addresses. Maximum of 3 allowed.
         :param str shape: The shape of the Exadata infrastructure. The shape determines the amount of CPU, storage, and memory resources allocated to the instance.
@@ -27161,6 +29153,8 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
         """
         pulumi.set(__self__, "activated_storage_count", activated_storage_count)
         pulumi.set(__self__, "activation_file", activation_file)
+        pulumi.set(__self__, "additional_compute_count", additional_compute_count)
+        pulumi.set(__self__, "additional_compute_system_model", additional_compute_system_model)
         pulumi.set(__self__, "additional_storage_count", additional_storage_count)
         pulumi.set(__self__, "admin_network_cidr", admin_network_cidr)
         pulumi.set(__self__, "cloud_control_plane_server1", cloud_control_plane_server1)
@@ -27183,6 +29177,7 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "infini_band_network_cidr", infini_band_network_cidr)
         pulumi.set(__self__, "is_cps_offline_report_enabled", is_cps_offline_report_enabled)
+        pulumi.set(__self__, "is_multi_rack_deployment", is_multi_rack_deployment)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "maintenance_slo_status", maintenance_slo_status)
         pulumi.set(__self__, "maintenance_windows", maintenance_windows)
@@ -27192,6 +29187,7 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
         pulumi.set(__self__, "max_memory_in_gbs", max_memory_in_gbs)
         pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
         pulumi.set(__self__, "monthly_db_server_version", monthly_db_server_version)
+        pulumi.set(__self__, "multi_rack_configuration_file", multi_rack_configuration_file)
         pulumi.set(__self__, "netmask", netmask)
         pulumi.set(__self__, "ntp_servers", ntp_servers)
         pulumi.set(__self__, "shape", shape)
@@ -27213,6 +29209,22 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
     @pulumi.getter(name="activationFile")
     def activation_file(self) -> str:
         return pulumi.get(self, "activation_file")
+
+    @property
+    @pulumi.getter(name="additionalComputeCount")
+    def additional_compute_count(self) -> int:
+        """
+        The requested number of additional compute servers for the Exadata infrastructure.
+        """
+        return pulumi.get(self, "additional_compute_count")
+
+    @property
+    @pulumi.getter(name="additionalComputeSystemModel")
+    def additional_compute_system_model(self) -> str:
+        """
+        Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+        """
+        return pulumi.get(self, "additional_compute_system_model")
 
     @property
     @pulumi.getter(name="additionalStorageCount")
@@ -27388,6 +29400,14 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
         return pulumi.get(self, "is_cps_offline_report_enabled")
 
     @property
+    @pulumi.getter(name="isMultiRackDeployment")
+    def is_multi_rack_deployment(self) -> bool:
+        """
+        Indicates if deployment is Multi-Rack or not.
+        """
+        return pulumi.get(self, "is_multi_rack_deployment")
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> str:
         """
@@ -27458,6 +29478,14 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
         The monthly software version of the database servers (dom0) in the Exadata infrastructure.
         """
         return pulumi.get(self, "monthly_db_server_version")
+
+    @property
+    @pulumi.getter(name="multiRackConfigurationFile")
+    def multi_rack_configuration_file(self) -> str:
+        """
+        The base64 encoded Multi-Rack configuration json file.
+        """
+        return pulumi.get(self, "multi_rack_configuration_file")
 
     @property
     @pulumi.getter
@@ -30667,6 +32695,24 @@ class GetPluggableDatabaseConnectionStringResult(dict):
 
 
 @pulumi.output_type
+class GetPluggableDatabasePluggableDatabaseManagementConfigResult(dict):
+    def __init__(__self__, *,
+                 management_status: str):
+        """
+        :param str management_status: The status of the Pluggable Database Management service.
+        """
+        pulumi.set(__self__, "management_status", management_status)
+
+    @property
+    @pulumi.getter(name="managementStatus")
+    def management_status(self) -> str:
+        """
+        The status of the Pluggable Database Management service.
+        """
+        return pulumi.get(self, "management_status")
+
+
+@pulumi.output_type
 class GetPluggableDatabasesFilterResult(dict):
     def __init__(__self__, *,
                  name: str,
@@ -30707,6 +32753,7 @@ class GetPluggableDatabasesPluggableDatabaseResult(dict):
                  open_mode: str,
                  pdb_admin_password: str,
                  pdb_name: str,
+                 pluggable_database_management_configs: Sequence['outputs.GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigResult'],
                  should_pdb_admin_account_be_locked: bool,
                  state: str,
                  tde_wallet_password: str,
@@ -30722,6 +32769,7 @@ class GetPluggableDatabasesPluggableDatabaseResult(dict):
         :param str lifecycle_details: Detailed message for the lifecycle state.
         :param str open_mode: The mode that pluggable database is in. Open mode can only be changed to READ_ONLY or MIGRATE directly from the backend (within the Oracle Database software).
         :param str pdb_name: A filter to return only pluggable databases that match the entire name given. The match is not case sensitive.
+        :param Sequence['GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigArgs'] pluggable_database_management_configs: The configuration of the Pluggable Database Management service.
         :param str state: A filter to return only resources that match the given lifecycle state exactly.
         :param str time_created: The date and time the pluggable database was created.
         """
@@ -30736,6 +32784,7 @@ class GetPluggableDatabasesPluggableDatabaseResult(dict):
         pulumi.set(__self__, "open_mode", open_mode)
         pulumi.set(__self__, "pdb_admin_password", pdb_admin_password)
         pulumi.set(__self__, "pdb_name", pdb_name)
+        pulumi.set(__self__, "pluggable_database_management_configs", pluggable_database_management_configs)
         pulumi.set(__self__, "should_pdb_admin_account_be_locked", should_pdb_admin_account_be_locked)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "tde_wallet_password", tde_wallet_password)
@@ -30827,6 +32876,14 @@ class GetPluggableDatabasesPluggableDatabaseResult(dict):
         return pulumi.get(self, "pdb_name")
 
     @property
+    @pulumi.getter(name="pluggableDatabaseManagementConfigs")
+    def pluggable_database_management_configs(self) -> Sequence['outputs.GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigResult']:
+        """
+        The configuration of the Pluggable Database Management service.
+        """
+        return pulumi.get(self, "pluggable_database_management_configs")
+
+    @property
     @pulumi.getter(name="shouldPdbAdminAccountBeLocked")
     def should_pdb_admin_account_be_locked(self) -> bool:
         return pulumi.get(self, "should_pdb_admin_account_be_locked")
@@ -30891,6 +32948,24 @@ class GetPluggableDatabasesPluggableDatabaseConnectionStringResult(dict):
         An IP-based PDB connection string.
         """
         return pulumi.get(self, "pdb_ip_default")
+
+
+@pulumi.output_type
+class GetPluggableDatabasesPluggableDatabasePluggableDatabaseManagementConfigResult(dict):
+    def __init__(__self__, *,
+                 management_status: str):
+        """
+        :param str management_status: The status of the Pluggable Database Management service.
+        """
+        pulumi.set(__self__, "management_status", management_status)
+
+    @property
+    @pulumi.getter(name="managementStatus")
+    def management_status(self) -> str:
+        """
+        The status of the Pluggable Database Management service.
+        """
+        return pulumi.get(self, "management_status")
 
 
 @pulumi.output_type
@@ -31071,20 +33146,34 @@ class GetVmClusterNetworkVmNetworkResult(dict):
 @pulumi.output_type
 class GetVmClusterNetworkVmNetworkNodeResult(dict):
     def __init__(__self__, *,
+                 db_server_id: str,
                  hostname: str,
                  ip: str,
+                 state: str,
                  vip: str,
                  vip_hostname: str):
         """
+        :param str db_server_id: The Db server associated with the node.
         :param str hostname: The node host name.
         :param str ip: The node IP address.
+        :param str state: The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
         :param str vip: The node virtual IP (VIP) address.
         :param str vip_hostname: The node virtual IP (VIP) host name.
         """
+        pulumi.set(__self__, "db_server_id", db_server_id)
         pulumi.set(__self__, "hostname", hostname)
         pulumi.set(__self__, "ip", ip)
+        pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "vip", vip)
         pulumi.set(__self__, "vip_hostname", vip_hostname)
+
+    @property
+    @pulumi.getter(name="dbServerId")
+    def db_server_id(self) -> str:
+        """
+        The Db server associated with the node.
+        """
+        return pulumi.get(self, "db_server_id")
 
     @property
     @pulumi.getter
@@ -31101,6 +33190,14 @@ class GetVmClusterNetworkVmNetworkNodeResult(dict):
         The node IP address.
         """
         return pulumi.get(self, "ip")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
+        """
+        return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
@@ -31149,6 +33246,7 @@ class GetVmClusterNetworksFilterResult(dict):
 @pulumi.output_type
 class GetVmClusterNetworksVmClusterNetworkResult(dict):
     def __init__(__self__, *,
+                 action: str,
                  compartment_id: str,
                  defined_tags: Mapping[str, Any],
                  display_name: str,
@@ -31180,6 +33278,7 @@ class GetVmClusterNetworksVmClusterNetworkResult(dict):
         :param str vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated VM Cluster.
         :param Sequence['GetVmClusterNetworksVmClusterNetworkVmNetworkArgs'] vm_networks: Details of the client and backup networks.
         """
+        pulumi.set(__self__, "action", action)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
@@ -31195,6 +33294,11 @@ class GetVmClusterNetworksVmClusterNetworkResult(dict):
         pulumi.set(__self__, "validate_vm_cluster_network", validate_vm_cluster_network)
         pulumi.set(__self__, "vm_cluster_id", vm_cluster_id)
         pulumi.set(__self__, "vm_networks", vm_networks)
+
+    @property
+    @pulumi.getter
+    def action(self) -> str:
+        return pulumi.get(self, "action")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -31452,20 +33556,34 @@ class GetVmClusterNetworksVmClusterNetworkVmNetworkResult(dict):
 @pulumi.output_type
 class GetVmClusterNetworksVmClusterNetworkVmNetworkNodeResult(dict):
     def __init__(__self__, *,
+                 db_server_id: str,
                  hostname: str,
                  ip: str,
+                 state: str,
                  vip: str,
                  vip_hostname: str):
         """
+        :param str db_server_id: The Db server associated with the node.
         :param str hostname: The node host name.
         :param str ip: The node IP address.
+        :param str state: A filter to return only resources that match the given lifecycle state exactly.
         :param str vip: The node virtual IP (VIP) address.
         :param str vip_hostname: The node virtual IP (VIP) host name.
         """
+        pulumi.set(__self__, "db_server_id", db_server_id)
         pulumi.set(__self__, "hostname", hostname)
         pulumi.set(__self__, "ip", ip)
+        pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "vip", vip)
         pulumi.set(__self__, "vip_hostname", vip_hostname)
+
+    @property
+    @pulumi.getter(name="dbServerId")
+    def db_server_id(self) -> str:
+        """
+        The Db server associated with the node.
+        """
+        return pulumi.get(self, "db_server_id")
 
     @property
     @pulumi.getter
@@ -31482,6 +33600,14 @@ class GetVmClusterNetworksVmClusterNetworkVmNetworkNodeResult(dict):
         The node IP address.
         """
         return pulumi.get(self, "ip")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only resources that match the given lifecycle state exactly.
+        """
+        return pulumi.get(self, "state")
 
     @property
     @pulumi.getter
@@ -31955,20 +34081,34 @@ class GetVmClusterRecommendedNetworkVmNetworkResult(dict):
 @pulumi.output_type
 class GetVmClusterRecommendedNetworkVmNetworkNodeResult(dict):
     def __init__(__self__, *,
+                 db_server_id: str,
                  hostname: str,
                  ip: str,
+                 state: str,
                  vip: str,
                  vip_hostname: str):
         """
+        :param str db_server_id: The Db server associated with the node.
         :param str hostname: The node host name.
         :param str ip: The node IP address.
+        :param str state: The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
         :param str vip: The node virtual IP (VIP) address.
         :param str vip_hostname: The node virtual IP (VIP) host name.
         """
+        pulumi.set(__self__, "db_server_id", db_server_id)
         pulumi.set(__self__, "hostname", hostname)
         pulumi.set(__self__, "ip", ip)
+        pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "vip", vip)
         pulumi.set(__self__, "vip_hostname", vip_hostname)
+
+    @property
+    @pulumi.getter(name="dbServerId")
+    def db_server_id(self) -> str:
+        """
+        The Db server associated with the node.
+        """
+        return pulumi.get(self, "db_server_id")
 
     @property
     @pulumi.getter
@@ -31985,6 +34125,14 @@ class GetVmClusterRecommendedNetworkVmNetworkNodeResult(dict):
         The node IP address.
         """
         return pulumi.get(self, "ip")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
+        """
+        return pulumi.get(self, "state")
 
     @property
     @pulumi.getter

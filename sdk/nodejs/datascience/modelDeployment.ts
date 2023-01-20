@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -139,9 +140,9 @@ export class ModelDeployment extends pulumi.CustomResource {
      */
     public readonly projectId!: pulumi.Output<string>;
     /**
-     * The state of the model deployment.
+     * (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
      */
-    public /*out*/ readonly state!: pulumi.Output<string>;
+    public readonly state!: pulumi.Output<string>;
     /**
      * The date and time the resource was created, in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
      */
@@ -192,10 +193,10 @@ export class ModelDeployment extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["modelDeploymentConfigurationDetails"] = args ? args.modelDeploymentConfigurationDetails : undefined;
             resourceInputs["projectId"] = args ? args.projectId : undefined;
+            resourceInputs["state"] = args ? args.state : undefined;
             resourceInputs["createdBy"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["modelDeploymentUrl"] = undefined /*out*/;
-            resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -252,7 +253,7 @@ export interface ModelDeploymentState {
      */
     projectId?: pulumi.Input<string>;
     /**
-     * The state of the model deployment.
+     * (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
      */
     state?: pulumi.Input<string>;
     /**
@@ -297,4 +298,8 @@ export interface ModelDeploymentArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
      */
     projectId: pulumi.Input<string>;
+    /**
+     * (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
+     */
+    state?: pulumi.Input<string>;
 }

@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getLogAnalyticsUnprocessedDataBucket(args: GetLogAnalyticsUnprocessedDataBucketArgs, opts?: pulumi.InvokeOptions): Promise<GetLogAnalyticsUnprocessedDataBucketResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:LogAnalytics/getLogAnalyticsUnprocessedDataBucket:getLogAnalyticsUnprocessedDataBucket", {
         "namespace": args.namespace,
     }, opts);
@@ -70,9 +67,24 @@ export interface GetLogAnalyticsUnprocessedDataBucketResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Log Analytics Unprocessed Data Bucket resource in Oracle Cloud Infrastructure Log Analytics service.
+ *
+ * This API retrieves details of the configured bucket that stores unprocessed payloads.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testLogAnalyticsUnprocessedDataBucket = oci.LogAnalytics.getLogAnalyticsUnprocessedDataBucket({
+ *     namespace: _var.log_analytics_unprocessed_data_bucket_namespace,
+ * });
+ * ```
+ */
 export function getLogAnalyticsUnprocessedDataBucketOutput(args: GetLogAnalyticsUnprocessedDataBucketOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetLogAnalyticsUnprocessedDataBucketResult> {
-    return pulumi.output(args).apply(a => getLogAnalyticsUnprocessedDataBucket(a, opts))
+    return pulumi.output(args).apply((a: any) => getLogAnalyticsUnprocessedDataBucket(a, opts))
 }
 
 /**

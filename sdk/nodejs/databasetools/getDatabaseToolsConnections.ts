@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDatabaseToolsConnections(args: GetDatabaseToolsConnectionsArgs, opts?: pulumi.InvokeOptions): Promise<GetDatabaseToolsConnectionsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseTools/getDatabaseToolsConnections:getDatabaseToolsConnections", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -92,9 +90,27 @@ export interface GetDatabaseToolsConnectionsResult {
      */
     readonly types?: string[];
 }
-
+/**
+ * This data source provides the list of Database Tools Connections in Oracle Cloud Infrastructure Database Tools service.
+ *
+ * Returns a list of Database Tools connections.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDatabaseToolsConnections = oci.DatabaseTools.getDatabaseToolsConnections({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.database_tools_connection_display_name,
+ *     state: _var.database_tools_connection_state,
+ *     types: _var.database_tools_connection_type,
+ * });
+ * ```
+ */
 export function getDatabaseToolsConnectionsOutput(args: GetDatabaseToolsConnectionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatabaseToolsConnectionsResult> {
-    return pulumi.output(args).apply(a => getDatabaseToolsConnections(a, opts))
+    return pulumi.output(args).apply((a: any) => getDatabaseToolsConnections(a, opts))
 }
 
 /**

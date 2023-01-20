@@ -38,7 +38,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetOnpremConnectorResult> InvokeAsync(GetOnpremConnectorArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetOnpremConnectorResult>("oci:DataSafe/getOnpremConnector:getOnpremConnector", args ?? new GetOnpremConnectorArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetOnpremConnectorResult>("oci:DataSafe/getOnpremConnector:getOnpremConnector", args ?? new GetOnpremConnectorArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific On Prem Connector resource in Oracle Cloud Infrastructure Data Safe service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetOnpremConnectorResult> Invoke(GetOnpremConnectorInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetOnpremConnectorResult>("oci:DataSafe/getOnpremConnector:getOnpremConnector", args ?? new GetOnpremConnectorInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetOnpremConnectorResult>("oci:DataSafe/getOnpremConnector:getOnpremConnector", args ?? new GetOnpremConnectorInvokeArgs(), options.WithDefaults());
     }
 
 

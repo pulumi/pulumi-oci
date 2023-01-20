@@ -12,11 +12,13 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class NetworkFirewallPolicyMappedSecret {
+    /**
+     * @return Source of the secrets, where the secrets are stored.
+     * 
+     */
     private String key;
     /**
-     * @return (Updatable) Type of the secrets mapped based on the policy.
-     * * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-     * * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+     * @return (Updatable) Type of the url lists based on the policy
      * 
      */
     private String type;
@@ -32,13 +34,15 @@ public final class NetworkFirewallPolicyMappedSecret {
     private @Nullable Integer versionNumber;
 
     private NetworkFirewallPolicyMappedSecret() {}
+    /**
+     * @return Source of the secrets, where the secrets are stored.
+     * 
+     */
     public String key() {
         return this.key;
     }
     /**
-     * @return (Updatable) Type of the secrets mapped based on the policy.
-     * * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-     * * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+     * @return (Updatable) Type of the url lists based on the policy
      * 
      */
     public String type() {

@@ -47,7 +47,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetSensitiveDataModelsResult> InvokeAsync(GetSensitiveDataModelsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetSensitiveDataModelsResult>("oci:DataSafe/getSensitiveDataModels:getSensitiveDataModels", args ?? new GetSensitiveDataModelsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetSensitiveDataModelsResult>("oci:DataSafe/getSensitiveDataModels:getSensitiveDataModels", args ?? new GetSensitiveDataModelsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Sensitive Data Models in Oracle Cloud Infrastructure Data Safe service.
@@ -85,7 +85,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetSensitiveDataModelsResult> Invoke(GetSensitiveDataModelsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetSensitiveDataModelsResult>("oci:DataSafe/getSensitiveDataModels:getSensitiveDataModels", args ?? new GetSensitiveDataModelsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetSensitiveDataModelsResult>("oci:DataSafe/getSensitiveDataModels:getSensitiveDataModels", args ?? new GetSensitiveDataModelsInvokeArgs(), options.WithDefaults());
     }
 
 

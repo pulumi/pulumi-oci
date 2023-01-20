@@ -62,10 +62,16 @@ namespace Pulumi.Oci.DevOps
         public Output<string> DeployPipelineId { get; private set; } = null!;
 
         /// <summary>
-        /// Specifies the OCID of the stage to be redeployed.
+        /// The OCID of the stage.
         /// </summary>
         [Output("deployStageId")]
         public Output<string> DeployStageId { get; private set; } = null!;
+
+        /// <summary>
+        /// Specifies the list of arguments to be overriden per Stage at the time of deployment.
+        /// </summary>
+        [Output("deployStageOverrideArguments")]
+        public Output<Outputs.DeploymentDeployStageOverrideArguments> DeployStageOverrideArguments { get; private set; } = null!;
 
         /// <summary>
         /// Specifies list of arguments passed along with the deployment.
@@ -139,6 +145,12 @@ namespace Pulumi.Oci.DevOps
         [Output("timeUpdated")]
         public Output<string> TimeUpdated { get; private set; } = null!;
 
+        /// <summary>
+        /// A boolean specifying if a new deployment should be created on every apply. As long as this value is set to true in the config, every apply will trigger a new deployment to be created. The existing deployment resource will be replaced with the new one in the state file (deployment resources are never deleted, they persist as a store of records, but your state file will only track the latest one created with this resource block).
+        /// </summary>
+        [Output("triggerNewDevopsDeployment")]
+        public Output<bool?> TriggerNewDevopsDeployment { get; private set; } = null!;
+
 
         /// <summary>
         /// Create a Deployment resource with the given unique name, arguments, and options.
@@ -210,10 +222,16 @@ namespace Pulumi.Oci.DevOps
         public Input<string> DeployPipelineId { get; set; } = null!;
 
         /// <summary>
-        /// Specifies the OCID of the stage to be redeployed.
+        /// The OCID of the stage.
         /// </summary>
         [Input("deployStageId")]
         public Input<string>? DeployStageId { get; set; }
+
+        /// <summary>
+        /// Specifies the list of arguments to be overriden per Stage at the time of deployment.
+        /// </summary>
+        [Input("deployStageOverrideArguments")]
+        public Input<Inputs.DeploymentDeployStageOverrideArgumentsArgs>? DeployStageOverrideArguments { get; set; }
 
         /// <summary>
         /// Specifies list of arguments passed along with the deployment.
@@ -250,6 +268,12 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         [Input("previousDeploymentId")]
         public Input<string>? PreviousDeploymentId { get; set; }
+
+        /// <summary>
+        /// A boolean specifying if a new deployment should be created on every apply. As long as this value is set to true in the config, every apply will trigger a new deployment to be created. The existing deployment resource will be replaced with the new one in the state file (deployment resources are never deleted, they persist as a store of records, but your state file will only track the latest one created with this resource block).
+        /// </summary>
+        [Input("triggerNewDevopsDeployment")]
+        public Input<bool>? TriggerNewDevopsDeployment { get; set; }
 
         public DeploymentArgs()
         {
@@ -314,10 +338,16 @@ namespace Pulumi.Oci.DevOps
         public Input<string>? DeployPipelineId { get; set; }
 
         /// <summary>
-        /// Specifies the OCID of the stage to be redeployed.
+        /// The OCID of the stage.
         /// </summary>
         [Input("deployStageId")]
         public Input<string>? DeployStageId { get; set; }
+
+        /// <summary>
+        /// Specifies the list of arguments to be overriden per Stage at the time of deployment.
+        /// </summary>
+        [Input("deployStageOverrideArguments")]
+        public Input<Inputs.DeploymentDeployStageOverrideArgumentsGetArgs>? DeployStageOverrideArguments { get; set; }
 
         /// <summary>
         /// Specifies list of arguments passed along with the deployment.
@@ -408,6 +438,12 @@ namespace Pulumi.Oci.DevOps
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }
+
+        /// <summary>
+        /// A boolean specifying if a new deployment should be created on every apply. As long as this value is set to true in the config, every apply will trigger a new deployment to be created. The existing deployment resource will be replaced with the new one in the state file (deployment resources are never deleted, they persist as a store of records, but your state file will only track the latest one created with this resource block).
+        /// </summary>
+        [Input("triggerNewDevopsDeployment")]
+        public Input<bool>? TriggerNewDevopsDeployment { get; set; }
 
         public DeploymentState()
         {

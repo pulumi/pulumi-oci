@@ -22,7 +22,7 @@ class GetDatabaseInsightResult:
     """
     A collection of values returned by getDatabaseInsight.
     """
-    def __init__(__self__, compartment_id=None, connection_credential_details=None, connection_details=None, credential_details=None, database_connection_status_details=None, database_display_name=None, database_id=None, database_insight_id=None, database_name=None, database_resource_type=None, database_type=None, database_version=None, dbm_private_endpoint_id=None, defined_tags=None, deployment_type=None, enterprise_manager_bridge_id=None, enterprise_manager_entity_display_name=None, enterprise_manager_entity_identifier=None, enterprise_manager_entity_name=None, enterprise_manager_entity_type=None, enterprise_manager_identifier=None, entity_source=None, exadata_insight_id=None, freeform_tags=None, id=None, lifecycle_details=None, opsi_private_endpoint_id=None, processor_count=None, service_name=None, state=None, status=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, connection_credential_details=None, connection_details=None, credential_details=None, database_connection_status_details=None, database_display_name=None, database_id=None, database_insight_id=None, database_name=None, database_resource_type=None, database_type=None, database_version=None, dbm_private_endpoint_id=None, defined_tags=None, deployment_type=None, enterprise_manager_bridge_id=None, enterprise_manager_entity_display_name=None, enterprise_manager_entity_identifier=None, enterprise_manager_entity_name=None, enterprise_manager_entity_type=None, enterprise_manager_identifier=None, entity_source=None, exadata_insight_id=None, freeform_tags=None, id=None, lifecycle_details=None, opsi_private_endpoint_id=None, parent_id=None, processor_count=None, root_id=None, service_name=None, state=None, status=None, system_tags=None, time_created=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -104,9 +104,15 @@ class GetDatabaseInsightResult:
         if opsi_private_endpoint_id and not isinstance(opsi_private_endpoint_id, str):
             raise TypeError("Expected argument 'opsi_private_endpoint_id' to be a str")
         pulumi.set(__self__, "opsi_private_endpoint_id", opsi_private_endpoint_id)
+        if parent_id and not isinstance(parent_id, str):
+            raise TypeError("Expected argument 'parent_id' to be a str")
+        pulumi.set(__self__, "parent_id", parent_id)
         if processor_count and not isinstance(processor_count, int):
             raise TypeError("Expected argument 'processor_count' to be a int")
         pulumi.set(__self__, "processor_count", processor_count)
+        if root_id and not isinstance(root_id, str):
+            raise TypeError("Expected argument 'root_id' to be a str")
+        pulumi.set(__self__, "root_id", root_id)
         if service_name and not isinstance(service_name, str):
             raise TypeError("Expected argument 'service_name' to be a str")
         pulumi.set(__self__, "service_name", service_name)
@@ -334,12 +340,28 @@ class GetDatabaseInsightResult:
         return pulumi.get(self, "opsi_private_endpoint_id")
 
     @property
+    @pulumi.getter(name="parentId")
+    def parent_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
+        """
+        return pulumi.get(self, "parent_id")
+
+    @property
     @pulumi.getter(name="processorCount")
     def processor_count(self) -> int:
         """
         Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
         """
         return pulumi.get(self, "processor_count")
+
+    @property
+    @pulumi.getter(name="rootId")
+    def root_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+        """
+        return pulumi.get(self, "root_id")
 
     @property
     @pulumi.getter(name="serviceName")
@@ -423,7 +445,9 @@ class AwaitableGetDatabaseInsightResult(GetDatabaseInsightResult):
             id=self.id,
             lifecycle_details=self.lifecycle_details,
             opsi_private_endpoint_id=self.opsi_private_endpoint_id,
+            parent_id=self.parent_id,
             processor_count=self.processor_count,
+            root_id=self.root_id,
             service_name=self.service_name,
             state=self.state,
             status=self.status,
@@ -484,7 +508,9 @@ def get_database_insight(database_insight_id: Optional[str] = None,
         id=__ret__.id,
         lifecycle_details=__ret__.lifecycle_details,
         opsi_private_endpoint_id=__ret__.opsi_private_endpoint_id,
+        parent_id=__ret__.parent_id,
         processor_count=__ret__.processor_count,
+        root_id=__ret__.root_id,
         service_name=__ret__.service_name,
         state=__ret__.state,
         status=__ret__.status,

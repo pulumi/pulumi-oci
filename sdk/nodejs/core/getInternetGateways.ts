@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getInternetGateways(args: GetInternetGatewaysArgs, opts?: pulumi.InvokeOptions): Promise<GetInternetGatewaysResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getInternetGateways:getInternetGateways", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -93,9 +91,28 @@ export interface GetInternetGatewaysResult {
      */
     readonly vcnId?: string;
 }
-
+/**
+ * This data source provides the list of Internet Gateways in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the internet gateways in the specified VCN and the specified compartment.
+ * If the VCN ID is not provided, then the list includes the internet gateways from all VCNs in the specified compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testInternetGateways = oci.Core.getInternetGateways({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.internet_gateway_display_name,
+ *     state: _var.internet_gateway_state,
+ *     vcnId: oci_core_vcn.test_vcn.id,
+ * });
+ * ```
+ */
 export function getInternetGatewaysOutput(args: GetInternetGatewaysOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetInternetGatewaysResult> {
-    return pulumi.output(args).apply(a => getInternetGateways(a, opts))
+    return pulumi.output(args).apply((a: any) => getInternetGateways(a, opts))
 }
 
 /**

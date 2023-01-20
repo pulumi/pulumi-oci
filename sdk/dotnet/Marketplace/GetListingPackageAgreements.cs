@@ -41,7 +41,7 @@ namespace Pulumi.Oci.Marketplace
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetListingPackageAgreementsResult> InvokeAsync(GetListingPackageAgreementsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetListingPackageAgreementsResult>("oci:Marketplace/getListingPackageAgreements:getListingPackageAgreements", args ?? new GetListingPackageAgreementsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetListingPackageAgreementsResult>("oci:Marketplace/getListingPackageAgreements:getListingPackageAgreements", args ?? new GetListingPackageAgreementsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Listing Package Agreements in Oracle Cloud Infrastructure Marketplace service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.Marketplace
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetListingPackageAgreementsResult> Invoke(GetListingPackageAgreementsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetListingPackageAgreementsResult>("oci:Marketplace/getListingPackageAgreements:getListingPackageAgreements", args ?? new GetListingPackageAgreementsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetListingPackageAgreementsResult>("oci:Marketplace/getListingPackageAgreements:getListingPackageAgreements", args ?? new GetListingPackageAgreementsInvokeArgs(), options.WithDefaults());
     }
 
 

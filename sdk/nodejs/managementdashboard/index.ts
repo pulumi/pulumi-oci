@@ -5,11 +5,16 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./getManagementDashboardsExport";
-export * from "./managementDashboardsImport";
+export { GetManagementDashboardsExportArgs, GetManagementDashboardsExportResult, GetManagementDashboardsExportOutputArgs } from "./getManagementDashboardsExport";
+export const getManagementDashboardsExport: typeof import("./getManagementDashboardsExport").getManagementDashboardsExport = null as any;
+export const getManagementDashboardsExportOutput: typeof import("./getManagementDashboardsExport").getManagementDashboardsExportOutput = null as any;
+utilities.lazyLoad(exports, ["getManagementDashboardsExport","getManagementDashboardsExportOutput"], () => require("./getManagementDashboardsExport"));
 
-// Import resources to register:
-import { ManagementDashboardsImport } from "./managementDashboardsImport";
+export { ManagementDashboardsImportArgs, ManagementDashboardsImportState } from "./managementDashboardsImport";
+export type ManagementDashboardsImport = import("./managementDashboardsImport").ManagementDashboardsImport;
+export const ManagementDashboardsImport: typeof import("./managementDashboardsImport").ManagementDashboardsImport = null as any;
+utilities.lazyLoad(exports, ["ManagementDashboardsImport"], () => require("./managementDashboardsImport"));
+
 
 const _module = {
     version: utilities.getVersion(),

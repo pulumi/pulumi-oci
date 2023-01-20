@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -55,7 +56,7 @@ export class Deployment extends pulumi.CustomResource {
      */
     public readonly cpuCoreCount!: pulumi.Output<number>;
     /**
-     * (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+     * (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
@@ -63,7 +64,11 @@ export class Deployment extends pulumi.CustomResource {
      */
     public readonly deploymentBackupId!: pulumi.Output<string>;
     /**
-     * The deployment type.
+     * Information regarding the deployment diagnostic collection
+     */
+    public /*out*/ readonly deploymentDiagnosticDatas!: pulumi.Output<outputs.GoldenGate.DeploymentDeploymentDiagnosticData[]>;
+    /**
+     * The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
      */
     public readonly deploymentType!: pulumi.Output<string>;
     /**
@@ -83,7 +88,7 @@ export class Deployment extends pulumi.CustomResource {
      */
     public readonly fqdn!: pulumi.Output<string>;
     /**
-     * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
@@ -119,7 +124,7 @@ export class Deployment extends pulumi.CustomResource {
      */
     public /*out*/ readonly lifecycleSubState!: pulumi.Output<string>;
     /**
-     * (Updatable) An array of [Network Security Group](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) OCIDs used to define network access for a deployment.
+     * (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
      */
     public readonly nsgIds!: pulumi.Output<string[]>;
     /**
@@ -147,7 +152,7 @@ export class Deployment extends pulumi.CustomResource {
      */
     public readonly subnetId!: pulumi.Output<string>;
     /**
-     * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+     * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
     /**
@@ -180,6 +185,7 @@ export class Deployment extends pulumi.CustomResource {
             resourceInputs["cpuCoreCount"] = state ? state.cpuCoreCount : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["deploymentBackupId"] = state ? state.deploymentBackupId : undefined;
+            resourceInputs["deploymentDiagnosticDatas"] = state ? state.deploymentDiagnosticDatas : undefined;
             resourceInputs["deploymentType"] = state ? state.deploymentType : undefined;
             resourceInputs["deploymentUrl"] = state ? state.deploymentUrl : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
@@ -243,6 +249,7 @@ export class Deployment extends pulumi.CustomResource {
             resourceInputs["nsgIds"] = args ? args.nsgIds : undefined;
             resourceInputs["oggData"] = args ? args.oggData : undefined;
             resourceInputs["subnetId"] = args ? args.subnetId : undefined;
+            resourceInputs["deploymentDiagnosticDatas"] = undefined /*out*/;
             resourceInputs["deploymentUrl"] = undefined /*out*/;
             resourceInputs["isHealthy"] = undefined /*out*/;
             resourceInputs["isLatestVersion"] = undefined /*out*/;
@@ -276,7 +283,7 @@ export interface DeploymentState {
      */
     cpuCoreCount?: pulumi.Input<number>;
     /**
-     * (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+     * (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
@@ -284,7 +291,11 @@ export interface DeploymentState {
      */
     deploymentBackupId?: pulumi.Input<string>;
     /**
-     * The deployment type.
+     * Information regarding the deployment diagnostic collection
+     */
+    deploymentDiagnosticDatas?: pulumi.Input<pulumi.Input<inputs.GoldenGate.DeploymentDeploymentDiagnosticData>[]>;
+    /**
+     * The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
      */
     deploymentType?: pulumi.Input<string>;
     /**
@@ -304,7 +315,7 @@ export interface DeploymentState {
      */
     fqdn?: pulumi.Input<string>;
     /**
-     * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
@@ -340,7 +351,7 @@ export interface DeploymentState {
      */
     lifecycleSubState?: pulumi.Input<string>;
     /**
-     * (Updatable) An array of [Network Security Group](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) OCIDs used to define network access for a deployment.
+     * (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
      */
     nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -368,7 +379,7 @@ export interface DeploymentState {
      */
     subnetId?: pulumi.Input<string>;
     /**
-     * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+     * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      */
     systemTags?: pulumi.Input<{[key: string]: any}>;
     /**
@@ -398,7 +409,7 @@ export interface DeploymentArgs {
      */
     cpuCoreCount: pulumi.Input<number>;
     /**
-     * (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+     * (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
@@ -406,7 +417,7 @@ export interface DeploymentArgs {
      */
     deploymentBackupId?: pulumi.Input<string>;
     /**
-     * The deployment type.
+     * The type of deployment, the value determines the exact 'type' of service executed in the Deployment. NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of the equivalent 'DATABASE_ORACLE' value.
      */
     deploymentType: pulumi.Input<string>;
     /**
@@ -422,7 +433,7 @@ export interface DeploymentArgs {
      */
     fqdn?: pulumi.Input<string>;
     /**
-     * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
@@ -438,7 +449,7 @@ export interface DeploymentArgs {
      */
     licenseModel: pulumi.Input<string>;
     /**
-     * (Updatable) An array of [Network Security Group](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm) OCIDs used to define network access for a deployment.
+     * (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
      */
     nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**

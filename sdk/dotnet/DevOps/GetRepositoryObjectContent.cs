@@ -41,7 +41,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetRepositoryObjectContentResult> InvokeAsync(GetRepositoryObjectContentArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetRepositoryObjectContentResult>("oci:DevOps/getRepositoryObjectContent:getRepositoryObjectContent", args ?? new GetRepositoryObjectContentArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetRepositoryObjectContentResult>("oci:DevOps/getRepositoryObjectContent:getRepositoryObjectContent", args ?? new GetRepositoryObjectContentArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Repository Object Content resource in Oracle Cloud Infrastructure Devops service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.DevOps
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetRepositoryObjectContentResult> Invoke(GetRepositoryObjectContentInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetRepositoryObjectContentResult>("oci:DevOps/getRepositoryObjectContent:getRepositoryObjectContent", args ?? new GetRepositoryObjectContentInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetRepositoryObjectContentResult>("oci:DevOps/getRepositoryObjectContent:getRepositoryObjectContent", args ?? new GetRepositoryObjectContentInvokeArgs(), options.WithDefaults());
     }
 
 

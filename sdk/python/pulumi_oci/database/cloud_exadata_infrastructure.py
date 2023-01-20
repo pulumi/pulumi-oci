@@ -180,17 +180,27 @@ class CloudExadataInfrastructureArgs:
 @pulumi.input_type
 class _CloudExadataInfrastructureState:
     def __init__(__self__, *,
+                 activated_storage_count: Optional[pulumi.Input[int]] = None,
+                 additional_storage_count: Optional[pulumi.Input[int]] = None,
                  availability_domain: Optional[pulumi.Input[str]] = None,
                  available_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  compute_count: Optional[pulumi.Input[int]] = None,
+                 cpu_count: Optional[pulumi.Input[int]] = None,
                  customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureCustomerContactArgs']]]] = None,
+                 data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
+                 db_node_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  last_maintenance_run_id: Optional[pulumi.Input[str]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  maintenance_window: Optional[pulumi.Input['CloudExadataInfrastructureMaintenanceWindowArgs']] = None,
+                 max_cpu_count: Optional[pulumi.Input[int]] = None,
+                 max_data_storage_in_tbs: Optional[pulumi.Input[float]] = None,
+                 max_db_node_storage_in_gbs: Optional[pulumi.Input[int]] = None,
+                 max_memory_in_gbs: Optional[pulumi.Input[int]] = None,
+                 memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
                  next_maintenance_run_id: Optional[pulumi.Input[str]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
@@ -199,17 +209,27 @@ class _CloudExadataInfrastructureState:
                  total_storage_size_in_gbs: Optional[pulumi.Input[int]] = None):
         """
         Input properties used for looking up and filtering CloudExadataInfrastructure resources.
+        :param pulumi.Input[int] activated_storage_count: The requested number of additional storage servers activated for the Exadata infrastructure.
+        :param pulumi.Input[int] additional_storage_count: The requested number of additional storage servers for the Exadata infrastructure.
         :param pulumi.Input[str] availability_domain: The availability domain where the cloud Exadata infrastructure is located.
         :param pulumi.Input[int] available_storage_size_in_gbs: The available storage can be allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[int] compute_count: (Updatable) The number of compute servers for the cloud Exadata infrastructure.
+        :param pulumi.Input[int] cpu_count: The total number of CPU cores allocated.
         :param pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureCustomerContactArgs']]] customer_contacts: (Updatable) Customer contacts.
+        :param pulumi.Input[float] data_storage_size_in_tbs: Size, in terabytes, of the DATA disk group.
+        :param pulumi.Input[int] db_node_storage_size_in_gbs: The local node storage allocated in GBs.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input['CloudExadataInfrastructureMaintenanceWindowArgs'] maintenance_window: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+        :param pulumi.Input[int] max_cpu_count: The total number of CPU cores available.
+        :param pulumi.Input[float] max_data_storage_in_tbs: The total available DATA disk group size.
+        :param pulumi.Input[int] max_db_node_storage_in_gbs: The total local node storage available in GBs.
+        :param pulumi.Input[int] max_memory_in_gbs: The total memory available in GBs.
+        :param pulumi.Input[int] memory_size_in_gbs: The memory allocated in GBs.
         :param pulumi.Input[str] next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         :param pulumi.Input[str] shape: The shape of the cloud Exadata infrastructure resource.
         :param pulumi.Input[str] state: The current lifecycle state of the cloud Exadata infrastructure resource.
@@ -217,6 +237,10 @@ class _CloudExadataInfrastructureState:
         :param pulumi.Input[str] time_created: The date and time the cloud Exadata infrastructure resource was created.
         :param pulumi.Input[int] total_storage_size_in_gbs: The total storage allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
         """
+        if activated_storage_count is not None:
+            pulumi.set(__self__, "activated_storage_count", activated_storage_count)
+        if additional_storage_count is not None:
+            pulumi.set(__self__, "additional_storage_count", additional_storage_count)
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
         if available_storage_size_in_gbs is not None:
@@ -225,8 +249,14 @@ class _CloudExadataInfrastructureState:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if compute_count is not None:
             pulumi.set(__self__, "compute_count", compute_count)
+        if cpu_count is not None:
+            pulumi.set(__self__, "cpu_count", cpu_count)
         if customer_contacts is not None:
             pulumi.set(__self__, "customer_contacts", customer_contacts)
+        if data_storage_size_in_tbs is not None:
+            pulumi.set(__self__, "data_storage_size_in_tbs", data_storage_size_in_tbs)
+        if db_node_storage_size_in_gbs is not None:
+            pulumi.set(__self__, "db_node_storage_size_in_gbs", db_node_storage_size_in_gbs)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
@@ -239,6 +269,16 @@ class _CloudExadataInfrastructureState:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if maintenance_window is not None:
             pulumi.set(__self__, "maintenance_window", maintenance_window)
+        if max_cpu_count is not None:
+            pulumi.set(__self__, "max_cpu_count", max_cpu_count)
+        if max_data_storage_in_tbs is not None:
+            pulumi.set(__self__, "max_data_storage_in_tbs", max_data_storage_in_tbs)
+        if max_db_node_storage_in_gbs is not None:
+            pulumi.set(__self__, "max_db_node_storage_in_gbs", max_db_node_storage_in_gbs)
+        if max_memory_in_gbs is not None:
+            pulumi.set(__self__, "max_memory_in_gbs", max_memory_in_gbs)
+        if memory_size_in_gbs is not None:
+            pulumi.set(__self__, "memory_size_in_gbs", memory_size_in_gbs)
         if next_maintenance_run_id is not None:
             pulumi.set(__self__, "next_maintenance_run_id", next_maintenance_run_id)
         if shape is not None:
@@ -251,6 +291,30 @@ class _CloudExadataInfrastructureState:
             pulumi.set(__self__, "time_created", time_created)
         if total_storage_size_in_gbs is not None:
             pulumi.set(__self__, "total_storage_size_in_gbs", total_storage_size_in_gbs)
+
+    @property
+    @pulumi.getter(name="activatedStorageCount")
+    def activated_storage_count(self) -> Optional[pulumi.Input[int]]:
+        """
+        The requested number of additional storage servers activated for the Exadata infrastructure.
+        """
+        return pulumi.get(self, "activated_storage_count")
+
+    @activated_storage_count.setter
+    def activated_storage_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "activated_storage_count", value)
+
+    @property
+    @pulumi.getter(name="additionalStorageCount")
+    def additional_storage_count(self) -> Optional[pulumi.Input[int]]:
+        """
+        The requested number of additional storage servers for the Exadata infrastructure.
+        """
+        return pulumi.get(self, "additional_storage_count")
+
+    @additional_storage_count.setter
+    def additional_storage_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "additional_storage_count", value)
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -301,6 +365,18 @@ class _CloudExadataInfrastructureState:
         pulumi.set(self, "compute_count", value)
 
     @property
+    @pulumi.getter(name="cpuCount")
+    def cpu_count(self) -> Optional[pulumi.Input[int]]:
+        """
+        The total number of CPU cores allocated.
+        """
+        return pulumi.get(self, "cpu_count")
+
+    @cpu_count.setter
+    def cpu_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "cpu_count", value)
+
+    @property
     @pulumi.getter(name="customerContacts")
     def customer_contacts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureCustomerContactArgs']]]]:
         """
@@ -311,6 +387,30 @@ class _CloudExadataInfrastructureState:
     @customer_contacts.setter
     def customer_contacts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureCustomerContactArgs']]]]):
         pulumi.set(self, "customer_contacts", value)
+
+    @property
+    @pulumi.getter(name="dataStorageSizeInTbs")
+    def data_storage_size_in_tbs(self) -> Optional[pulumi.Input[float]]:
+        """
+        Size, in terabytes, of the DATA disk group.
+        """
+        return pulumi.get(self, "data_storage_size_in_tbs")
+
+    @data_storage_size_in_tbs.setter
+    def data_storage_size_in_tbs(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "data_storage_size_in_tbs", value)
+
+    @property
+    @pulumi.getter(name="dbNodeStorageSizeInGbs")
+    def db_node_storage_size_in_gbs(self) -> Optional[pulumi.Input[int]]:
+        """
+        The local node storage allocated in GBs.
+        """
+        return pulumi.get(self, "db_node_storage_size_in_gbs")
+
+    @db_node_storage_size_in_gbs.setter
+    def db_node_storage_size_in_gbs(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "db_node_storage_size_in_gbs", value)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -383,6 +483,66 @@ class _CloudExadataInfrastructureState:
     @maintenance_window.setter
     def maintenance_window(self, value: Optional[pulumi.Input['CloudExadataInfrastructureMaintenanceWindowArgs']]):
         pulumi.set(self, "maintenance_window", value)
+
+    @property
+    @pulumi.getter(name="maxCpuCount")
+    def max_cpu_count(self) -> Optional[pulumi.Input[int]]:
+        """
+        The total number of CPU cores available.
+        """
+        return pulumi.get(self, "max_cpu_count")
+
+    @max_cpu_count.setter
+    def max_cpu_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "max_cpu_count", value)
+
+    @property
+    @pulumi.getter(name="maxDataStorageInTbs")
+    def max_data_storage_in_tbs(self) -> Optional[pulumi.Input[float]]:
+        """
+        The total available DATA disk group size.
+        """
+        return pulumi.get(self, "max_data_storage_in_tbs")
+
+    @max_data_storage_in_tbs.setter
+    def max_data_storage_in_tbs(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "max_data_storage_in_tbs", value)
+
+    @property
+    @pulumi.getter(name="maxDbNodeStorageInGbs")
+    def max_db_node_storage_in_gbs(self) -> Optional[pulumi.Input[int]]:
+        """
+        The total local node storage available in GBs.
+        """
+        return pulumi.get(self, "max_db_node_storage_in_gbs")
+
+    @max_db_node_storage_in_gbs.setter
+    def max_db_node_storage_in_gbs(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "max_db_node_storage_in_gbs", value)
+
+    @property
+    @pulumi.getter(name="maxMemoryInGbs")
+    def max_memory_in_gbs(self) -> Optional[pulumi.Input[int]]:
+        """
+        The total memory available in GBs.
+        """
+        return pulumi.get(self, "max_memory_in_gbs")
+
+    @max_memory_in_gbs.setter
+    def max_memory_in_gbs(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "max_memory_in_gbs", value)
+
+    @property
+    @pulumi.getter(name="memorySizeInGbs")
+    def memory_size_in_gbs(self) -> Optional[pulumi.Input[int]]:
+        """
+        The memory allocated in GBs.
+        """
+        return pulumi.get(self, "memory_size_in_gbs")
+
+    @memory_size_in_gbs.setter
+    def memory_size_in_gbs(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "memory_size_in_gbs", value)
 
     @property
     @pulumi.getter(name="nextMaintenanceRunId")
@@ -498,7 +658,6 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
                 "Department": "Finance",
             },
             maintenance_window=oci.database.CloudExadataInfrastructureMaintenanceWindowArgs(
-                preference=var["cloud_exadata_infrastructure_maintenance_window_preference"],
                 custom_action_timeout_in_mins=var["cloud_exadata_infrastructure_maintenance_window_custom_action_timeout_in_mins"],
                 days_of_weeks=[oci.database.CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs(
                     name=var["cloud_exadata_infrastructure_maintenance_window_days_of_week_name"],
@@ -511,6 +670,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
                     name=var["cloud_exadata_infrastructure_maintenance_window_months_name"],
                 )],
                 patching_mode=var["cloud_exadata_infrastructure_maintenance_window_patching_mode"],
+                preference=var["cloud_exadata_infrastructure_maintenance_window_preference"],
                 weeks_of_months=var["cloud_exadata_infrastructure_maintenance_window_weeks_of_month"],
             ),
             storage_count=var["cloud_exadata_infrastructure_storage_count"])
@@ -568,7 +728,6 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
                 "Department": "Finance",
             },
             maintenance_window=oci.database.CloudExadataInfrastructureMaintenanceWindowArgs(
-                preference=var["cloud_exadata_infrastructure_maintenance_window_preference"],
                 custom_action_timeout_in_mins=var["cloud_exadata_infrastructure_maintenance_window_custom_action_timeout_in_mins"],
                 days_of_weeks=[oci.database.CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs(
                     name=var["cloud_exadata_infrastructure_maintenance_window_days_of_week_name"],
@@ -581,6 +740,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
                     name=var["cloud_exadata_infrastructure_maintenance_window_months_name"],
                 )],
                 patching_mode=var["cloud_exadata_infrastructure_maintenance_window_patching_mode"],
+                preference=var["cloud_exadata_infrastructure_maintenance_window_preference"],
                 weeks_of_months=var["cloud_exadata_infrastructure_maintenance_window_weeks_of_month"],
             ),
             storage_count=var["cloud_exadata_infrastructure_storage_count"])
@@ -646,9 +806,19 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
                 raise TypeError("Missing required property 'shape'")
             __props__.__dict__["shape"] = shape
             __props__.__dict__["storage_count"] = storage_count
+            __props__.__dict__["activated_storage_count"] = None
+            __props__.__dict__["additional_storage_count"] = None
             __props__.__dict__["available_storage_size_in_gbs"] = None
+            __props__.__dict__["cpu_count"] = None
+            __props__.__dict__["data_storage_size_in_tbs"] = None
+            __props__.__dict__["db_node_storage_size_in_gbs"] = None
             __props__.__dict__["last_maintenance_run_id"] = None
             __props__.__dict__["lifecycle_details"] = None
+            __props__.__dict__["max_cpu_count"] = None
+            __props__.__dict__["max_data_storage_in_tbs"] = None
+            __props__.__dict__["max_db_node_storage_in_gbs"] = None
+            __props__.__dict__["max_memory_in_gbs"] = None
+            __props__.__dict__["memory_size_in_gbs"] = None
             __props__.__dict__["next_maintenance_run_id"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
@@ -663,17 +833,27 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            activated_storage_count: Optional[pulumi.Input[int]] = None,
+            additional_storage_count: Optional[pulumi.Input[int]] = None,
             availability_domain: Optional[pulumi.Input[str]] = None,
             available_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             compute_count: Optional[pulumi.Input[int]] = None,
+            cpu_count: Optional[pulumi.Input[int]] = None,
             customer_contacts: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudExadataInfrastructureCustomerContactArgs']]]]] = None,
+            data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
+            db_node_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             last_maintenance_run_id: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             maintenance_window: Optional[pulumi.Input[pulumi.InputType['CloudExadataInfrastructureMaintenanceWindowArgs']]] = None,
+            max_cpu_count: Optional[pulumi.Input[int]] = None,
+            max_data_storage_in_tbs: Optional[pulumi.Input[float]] = None,
+            max_db_node_storage_in_gbs: Optional[pulumi.Input[int]] = None,
+            max_memory_in_gbs: Optional[pulumi.Input[int]] = None,
+            memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
             next_maintenance_run_id: Optional[pulumi.Input[str]] = None,
             shape: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
@@ -687,17 +867,27 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[int] activated_storage_count: The requested number of additional storage servers activated for the Exadata infrastructure.
+        :param pulumi.Input[int] additional_storage_count: The requested number of additional storage servers for the Exadata infrastructure.
         :param pulumi.Input[str] availability_domain: The availability domain where the cloud Exadata infrastructure is located.
         :param pulumi.Input[int] available_storage_size_in_gbs: The available storage can be allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[int] compute_count: (Updatable) The number of compute servers for the cloud Exadata infrastructure.
+        :param pulumi.Input[int] cpu_count: The total number of CPU cores allocated.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CloudExadataInfrastructureCustomerContactArgs']]]] customer_contacts: (Updatable) Customer contacts.
+        :param pulumi.Input[float] data_storage_size_in_tbs: Size, in terabytes, of the DATA disk group.
+        :param pulumi.Input[int] db_node_storage_size_in_gbs: The local node storage allocated in GBs.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
         :param pulumi.Input[pulumi.InputType['CloudExadataInfrastructureMaintenanceWindowArgs']] maintenance_window: (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+        :param pulumi.Input[int] max_cpu_count: The total number of CPU cores available.
+        :param pulumi.Input[float] max_data_storage_in_tbs: The total available DATA disk group size.
+        :param pulumi.Input[int] max_db_node_storage_in_gbs: The total local node storage available in GBs.
+        :param pulumi.Input[int] max_memory_in_gbs: The total memory available in GBs.
+        :param pulumi.Input[int] memory_size_in_gbs: The memory allocated in GBs.
         :param pulumi.Input[str] next_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
         :param pulumi.Input[str] shape: The shape of the cloud Exadata infrastructure resource.
         :param pulumi.Input[str] state: The current lifecycle state of the cloud Exadata infrastructure resource.
@@ -709,17 +899,27 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
 
         __props__ = _CloudExadataInfrastructureState.__new__(_CloudExadataInfrastructureState)
 
+        __props__.__dict__["activated_storage_count"] = activated_storage_count
+        __props__.__dict__["additional_storage_count"] = additional_storage_count
         __props__.__dict__["availability_domain"] = availability_domain
         __props__.__dict__["available_storage_size_in_gbs"] = available_storage_size_in_gbs
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["compute_count"] = compute_count
+        __props__.__dict__["cpu_count"] = cpu_count
         __props__.__dict__["customer_contacts"] = customer_contacts
+        __props__.__dict__["data_storage_size_in_tbs"] = data_storage_size_in_tbs
+        __props__.__dict__["db_node_storage_size_in_gbs"] = db_node_storage_size_in_gbs
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["last_maintenance_run_id"] = last_maintenance_run_id
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["maintenance_window"] = maintenance_window
+        __props__.__dict__["max_cpu_count"] = max_cpu_count
+        __props__.__dict__["max_data_storage_in_tbs"] = max_data_storage_in_tbs
+        __props__.__dict__["max_db_node_storage_in_gbs"] = max_db_node_storage_in_gbs
+        __props__.__dict__["max_memory_in_gbs"] = max_memory_in_gbs
+        __props__.__dict__["memory_size_in_gbs"] = memory_size_in_gbs
         __props__.__dict__["next_maintenance_run_id"] = next_maintenance_run_id
         __props__.__dict__["shape"] = shape
         __props__.__dict__["state"] = state
@@ -727,6 +927,22 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["total_storage_size_in_gbs"] = total_storage_size_in_gbs
         return CloudExadataInfrastructure(resource_name, opts=opts, __props__=__props__)
+
+    @property
+    @pulumi.getter(name="activatedStorageCount")
+    def activated_storage_count(self) -> pulumi.Output[int]:
+        """
+        The requested number of additional storage servers activated for the Exadata infrastructure.
+        """
+        return pulumi.get(self, "activated_storage_count")
+
+    @property
+    @pulumi.getter(name="additionalStorageCount")
+    def additional_storage_count(self) -> pulumi.Output[int]:
+        """
+        The requested number of additional storage servers for the Exadata infrastructure.
+        """
+        return pulumi.get(self, "additional_storage_count")
 
     @property
     @pulumi.getter(name="availabilityDomain")
@@ -761,12 +977,36 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         return pulumi.get(self, "compute_count")
 
     @property
+    @pulumi.getter(name="cpuCount")
+    def cpu_count(self) -> pulumi.Output[int]:
+        """
+        The total number of CPU cores allocated.
+        """
+        return pulumi.get(self, "cpu_count")
+
+    @property
     @pulumi.getter(name="customerContacts")
     def customer_contacts(self) -> pulumi.Output[Sequence['outputs.CloudExadataInfrastructureCustomerContact']]:
         """
         (Updatable) Customer contacts.
         """
         return pulumi.get(self, "customer_contacts")
+
+    @property
+    @pulumi.getter(name="dataStorageSizeInTbs")
+    def data_storage_size_in_tbs(self) -> pulumi.Output[float]:
+        """
+        Size, in terabytes, of the DATA disk group.
+        """
+        return pulumi.get(self, "data_storage_size_in_tbs")
+
+    @property
+    @pulumi.getter(name="dbNodeStorageSizeInGbs")
+    def db_node_storage_size_in_gbs(self) -> pulumi.Output[int]:
+        """
+        The local node storage allocated in GBs.
+        """
+        return pulumi.get(self, "db_node_storage_size_in_gbs")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -815,6 +1055,46 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         """
         return pulumi.get(self, "maintenance_window")
+
+    @property
+    @pulumi.getter(name="maxCpuCount")
+    def max_cpu_count(self) -> pulumi.Output[int]:
+        """
+        The total number of CPU cores available.
+        """
+        return pulumi.get(self, "max_cpu_count")
+
+    @property
+    @pulumi.getter(name="maxDataStorageInTbs")
+    def max_data_storage_in_tbs(self) -> pulumi.Output[float]:
+        """
+        The total available DATA disk group size.
+        """
+        return pulumi.get(self, "max_data_storage_in_tbs")
+
+    @property
+    @pulumi.getter(name="maxDbNodeStorageInGbs")
+    def max_db_node_storage_in_gbs(self) -> pulumi.Output[int]:
+        """
+        The total local node storage available in GBs.
+        """
+        return pulumi.get(self, "max_db_node_storage_in_gbs")
+
+    @property
+    @pulumi.getter(name="maxMemoryInGbs")
+    def max_memory_in_gbs(self) -> pulumi.Output[int]:
+        """
+        The total memory available in GBs.
+        """
+        return pulumi.get(self, "max_memory_in_gbs")
+
+    @property
+    @pulumi.getter(name="memorySizeInGbs")
+    def memory_size_in_gbs(self) -> pulumi.Output[int]:
+        """
+        The memory allocated in GBs.
+        """
+        return pulumi.get(self, "memory_size_in_gbs")
 
     @property
     @pulumi.getter(name="nextMaintenanceRunId")

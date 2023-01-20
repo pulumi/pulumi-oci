@@ -259,6 +259,20 @@ public class AuditTrail extends com.pulumi.resources.CustomResource {
         return this.timeCreated;
     }
     /**
+     * The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+     * 
+     */
+    @Export(name="timeLastCollected", type=String.class, parameters={})
+    private Output<String> timeLastCollected;
+
+    /**
+     * @return The date and time until which the audit events are collected from target database by Data Safe audit trail  collection process, in the format defined by RFC3339.
+     * 
+     */
+    public Output<String> timeLastCollected() {
+        return this.timeLastCollected;
+    }
+    /**
      * The date and time the audit trail was updated, in the format defined by RFC3339.
      * 
      */

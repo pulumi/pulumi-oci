@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAutonomousDatabase(args: GetAutonomousDatabaseArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousDatabaseResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getAutonomousDatabase:getAutonomousDatabase", {
         "autonomousDatabaseId": args.autonomousDatabaseId,
     }, opts);
@@ -99,7 +97,7 @@ export interface GetAutonomousDatabaseResult {
      */
     readonly connectionUrls: outputs.Database.GetAutonomousDatabaseConnectionUrl[];
     /**
-     * The number of OCPU cores to be made available to the database. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
+     * The number of OCPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Databases on dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
      */
     readonly cpuCoreCount: number;
     /**
@@ -414,6 +412,7 @@ export interface GetAutonomousDatabaseResult {
      */
     readonly timeUntilReconnectCloneEnabled: string;
     readonly timestamp: string;
+    readonly useLatestAvailableBackupTimeStamp: boolean;
     /**
      * The amount of storage that has been used, in terabytes.
      */
@@ -427,9 +426,24 @@ export interface GetAutonomousDatabaseResult {
      */
     readonly whitelistedIps: string[];
 }
-
+/**
+ * This data source provides details about a specific Autonomous Database resource in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets the details of the specified Autonomous Database.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAutonomousDatabase = oci.Database.getAutonomousDatabase({
+ *     autonomousDatabaseId: oci_database_autonomous_database.test_autonomous_database.id,
+ * });
+ * ```
+ */
 export function getAutonomousDatabaseOutput(args: GetAutonomousDatabaseOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutonomousDatabaseResult> {
-    return pulumi.output(args).apply(a => getAutonomousDatabase(a, opts))
+    return pulumi.output(args).apply((a: any) => getAutonomousDatabase(a, opts))
 }
 
 /**

@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Optimizer
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetRecommendationResult> InvokeAsync(GetRecommendationArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetRecommendationResult>("oci:Optimizer/getRecommendation:getRecommendation", args ?? new GetRecommendationArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetRecommendationResult>("oci:Optimizer/getRecommendation:getRecommendation", args ?? new GetRecommendationArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Recommendation resource in Oracle Cloud Infrastructure Optimizer service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Optimizer
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetRecommendationResult> Invoke(GetRecommendationInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetRecommendationResult>("oci:Optimizer/getRecommendation:getRecommendation", args ?? new GetRecommendationInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetRecommendationResult>("oci:Optimizer/getRecommendation:getRecommendation", args ?? new GetRecommendationInvokeArgs(), options.WithDefaults());
     }
 
 

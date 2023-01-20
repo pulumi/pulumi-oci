@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  */
 export function getVantagePoints(args?: GetVantagePointsArgs, opts?: pulumi.InvokeOptions): Promise<GetVantagePointsResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:HealthChecks/getVantagePoints:getVantagePoints", {
         "displayName": args.displayName,
         "filters": args.filters,
@@ -73,9 +71,25 @@ export interface GetVantagePointsResult {
      */
     readonly name?: string;
 }
-
+/**
+ * This data source provides the list of Vantage Points in Oracle Cloud Infrastructure Health Checks service.
+ *
+ * Gets information about all vantage points available to the user.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testVantagePoints = oci.HealthChecks.getVantagePoints({
+ *     displayName: _var.vantage_point_display_name,
+ *     name: _var.vantage_point_name,
+ * });
+ * ```
+ */
 export function getVantagePointsOutput(args?: GetVantagePointsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVantagePointsResult> {
-    return pulumi.output(args).apply(a => getVantagePoints(a, opts))
+    return pulumi.output(args).apply((a: any) => getVantagePoints(a, opts))
 }
 
 /**

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getListingPackageAgreements(args: GetListingPackageAgreementsArgs, opts?: pulumi.InvokeOptions): Promise<GetListingPackageAgreementsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Marketplace/getListingPackageAgreements:getListingPackageAgreements", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -76,9 +74,26 @@ export interface GetListingPackageAgreementsResult {
     readonly listingId: string;
     readonly packageVersion: string;
 }
-
+/**
+ * This data source provides the list of Listing Package Agreements in Oracle Cloud Infrastructure Marketplace service.
+ *
+ * Returns the terms of use agreements that must be accepted before you can deploy the specified version of a package.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testListingPackageAgreements = oci.Marketplace.getListingPackageAgreements({
+ *     listingId: oci_marketplace_listing.test_listing.id,
+ *     packageVersion: _var.listing_package_agreement_package_version,
+ *     compartmentId: _var.compartment_id,
+ * });
+ * ```
+ */
 export function getListingPackageAgreementsOutput(args: GetListingPackageAgreementsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetListingPackageAgreementsResult> {
-    return pulumi.output(args).apply(a => getListingPackageAgreements(a, opts))
+    return pulumi.output(args).apply((a: any) => getListingPackageAgreements(a, opts))
 }
 
 /**

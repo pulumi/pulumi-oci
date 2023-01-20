@@ -22,11 +22,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDatabaseUpgradeHistoryEntry(args: GetDatabaseUpgradeHistoryEntryArgs, opts?: pulumi.InvokeOptions): Promise<GetDatabaseUpgradeHistoryEntryResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getDatabaseUpgradeHistoryEntry:getDatabaseUpgradeHistoryEntry", {
         "databaseId": args.databaseId,
         "upgradeHistoryEntryId": args.upgradeHistoryEntryId,
@@ -104,9 +101,25 @@ export interface GetDatabaseUpgradeHistoryEntryResult {
     readonly timeStarted: string;
     readonly upgradeHistoryEntryId: string;
 }
-
+/**
+ * This data source provides details about a specific Database Upgrade History Entry resource in Oracle Cloud Infrastructure Database service.
+ *
+ * gets the upgrade history for a specified database.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDatabaseUpgradeHistoryEntry = oci.Database.getDatabaseUpgradeHistoryEntry({
+ *     databaseId: oci_database_database.test_database.id,
+ *     upgradeHistoryEntryId: oci_database_upgrade_history_entry.test_upgrade_history_entry.id,
+ * });
+ * ```
+ */
 export function getDatabaseUpgradeHistoryEntryOutput(args: GetDatabaseUpgradeHistoryEntryOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatabaseUpgradeHistoryEntryResult> {
-    return pulumi.output(args).apply(a => getDatabaseUpgradeHistoryEntry(a, opts))
+    return pulumi.output(args).apply((a: any) => getDatabaseUpgradeHistoryEntry(a, opts))
 }
 
 /**

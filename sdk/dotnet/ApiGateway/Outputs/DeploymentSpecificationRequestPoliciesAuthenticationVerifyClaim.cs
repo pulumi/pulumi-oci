@@ -18,7 +18,7 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// </summary>
         public readonly bool? IsRequired;
         /// <summary>
-        /// (Updatable) Name of the claim.
+        /// (Updatable) Information around the values for selector of an authentication/ routing branch.
         /// </summary>
         public readonly string? Key;
         /// <summary>

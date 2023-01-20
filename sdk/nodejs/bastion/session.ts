@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,6 +24,7 @@ import * as utilities from "../utilities";
  *     },
  *     targetResourceDetails: {
  *         sessionType: _var.session_target_resource_details_session_type,
+ *         targetResourceFqdn: _var.session_target_resource_details_target_resource_fqdn,
  *         targetResourceId: oci_bastion_target_resource.test_target_resource.id,
  *         targetResourceOperatingSystemUserName: oci_identity_user.test_user.name,
  *         targetResourcePort: _var.session_target_resource_details_target_resource_port,

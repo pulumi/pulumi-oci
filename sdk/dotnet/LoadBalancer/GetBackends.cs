@@ -39,7 +39,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetBackendsResult> InvokeAsync(GetBackendsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetBackendsResult>("oci:LoadBalancer/getBackends:getBackends", args ?? new GetBackendsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetBackendsResult>("oci:LoadBalancer/getBackends:getBackends", args ?? new GetBackendsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Backends in Oracle Cloud Infrastructure Load Balancer service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetBackendsResult> Invoke(GetBackendsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetBackendsResult>("oci:LoadBalancer/getBackends:getBackends", args ?? new GetBackendsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetBackendsResult>("oci:LoadBalancer/getBackends:getBackends", args ?? new GetBackendsInvokeArgs(), options.WithDefaults());
     }
 
 

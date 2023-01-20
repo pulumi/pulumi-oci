@@ -39,6 +39,16 @@ public final class MysqlDbSystemEndpoint {
      */
     private @Nullable Integer portX;
     /**
+     * @return The OCID of the resource that this endpoint is attached to.
+     * 
+     */
+    private @Nullable String resourceId;
+    /**
+     * @return The type of endpoint that clients and connectors can connect to.
+     * 
+     */
+    private @Nullable String resourceType;
+    /**
      * @return The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
      * 
      */
@@ -86,6 +96,20 @@ public final class MysqlDbSystemEndpoint {
         return Optional.ofNullable(this.portX);
     }
     /**
+     * @return The OCID of the resource that this endpoint is attached to.
+     * 
+     */
+    public Optional<String> resourceId() {
+        return Optional.ofNullable(this.resourceId);
+    }
+    /**
+     * @return The type of endpoint that clients and connectors can connect to.
+     * 
+     */
+    public Optional<String> resourceType() {
+        return Optional.ofNullable(this.resourceType);
+    }
+    /**
      * @return The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
      * 
      */
@@ -114,6 +138,8 @@ public final class MysqlDbSystemEndpoint {
         private @Nullable List<String> modes;
         private @Nullable Integer port;
         private @Nullable Integer portX;
+        private @Nullable String resourceId;
+        private @Nullable String resourceType;
         private @Nullable String status;
         private @Nullable String statusDetails;
         public Builder() {}
@@ -124,6 +150,8 @@ public final class MysqlDbSystemEndpoint {
     	      this.modes = defaults.modes;
     	      this.port = defaults.port;
     	      this.portX = defaults.portX;
+    	      this.resourceId = defaults.resourceId;
+    	      this.resourceType = defaults.resourceType;
     	      this.status = defaults.status;
     	      this.statusDetails = defaults.statusDetails;
         }
@@ -157,6 +185,16 @@ public final class MysqlDbSystemEndpoint {
             return this;
         }
         @CustomType.Setter
+        public Builder resourceId(@Nullable String resourceId) {
+            this.resourceId = resourceId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder resourceType(@Nullable String resourceType) {
+            this.resourceType = resourceType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder status(@Nullable String status) {
             this.status = status;
             return this;
@@ -173,6 +211,8 @@ public final class MysqlDbSystemEndpoint {
             o.modes = modes;
             o.port = port;
             o.portX = portX;
+            o.resourceId = resourceId;
+            o.resourceType = resourceType;
             o.status = status;
             o.statusDetails = statusDetails;
             return o;

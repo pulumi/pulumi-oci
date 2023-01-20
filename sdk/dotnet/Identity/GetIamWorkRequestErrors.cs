@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetIamWorkRequestErrorsResult> InvokeAsync(GetIamWorkRequestErrorsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetIamWorkRequestErrorsResult>("oci:Identity/getIamWorkRequestErrors:getIamWorkRequestErrors", args ?? new GetIamWorkRequestErrorsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetIamWorkRequestErrorsResult>("oci:Identity/getIamWorkRequestErrors:getIamWorkRequestErrors", args ?? new GetIamWorkRequestErrorsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Iam Work Request Errors in Oracle Cloud Infrastructure Identity service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.Identity
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetIamWorkRequestErrorsResult> Invoke(GetIamWorkRequestErrorsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetIamWorkRequestErrorsResult>("oci:Identity/getIamWorkRequestErrors:getIamWorkRequestErrors", args ?? new GetIamWorkRequestErrorsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetIamWorkRequestErrorsResult>("oci:Identity/getIamWorkRequestErrors:getIamWorkRequestErrors", args ?? new GetIamWorkRequestErrorsInvokeArgs(), options.WithDefaults());
     }
 
 

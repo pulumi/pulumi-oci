@@ -68,7 +68,7 @@ class GetTablesResult:
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        The column name.
+        Human-friendly table name, immutable.
         """
         return pulumi.get(self, "name")
 

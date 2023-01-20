@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Jms
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetFleetResult> InvokeAsync(GetFleetArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetFleetResult>("oci:Jms/getFleet:getFleet", args ?? new GetFleetArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetFleetResult>("oci:Jms/getFleet:getFleet", args ?? new GetFleetArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Fleet resource in Oracle Cloud Infrastructure Jms service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Jms
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetFleetResult> Invoke(GetFleetInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetFleetResult>("oci:Jms/getFleet:getFleet", args ?? new GetFleetInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetFleetResult>("oci:Jms/getFleet:getFleet", args ?? new GetFleetInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -112,6 +112,10 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public readonly int ApproximateInstallationCount;
         /// <summary>
+        /// The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+        /// </summary>
+        public readonly int ApproximateJavaServerCount;
+        /// <summary>
         /// The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
         /// </summary>
         public readonly int ApproximateJreCount;
@@ -149,7 +153,7 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFleetInventoryLogResult> InventoryLogs;
         /// <summary>
-        /// Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+        /// Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
         /// </summary>
         public readonly bool IsAdvancedFeaturesEnabled;
         /// <summary>
@@ -174,6 +178,8 @@ namespace Pulumi.Oci.Jms
             int approximateApplicationCount,
 
             int approximateInstallationCount,
+
+            int approximateJavaServerCount,
 
             int approximateJreCount,
 
@@ -207,6 +213,7 @@ namespace Pulumi.Oci.Jms
         {
             ApproximateApplicationCount = approximateApplicationCount;
             ApproximateInstallationCount = approximateInstallationCount;
+            ApproximateJavaServerCount = approximateJavaServerCount;
             ApproximateJreCount = approximateJreCount;
             ApproximateManagedInstanceCount = approximateManagedInstanceCount;
             CompartmentId = compartmentId;

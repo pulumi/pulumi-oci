@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getHttpMonitors(args: GetHttpMonitorsArgs, opts?: pulumi.InvokeOptions): Promise<GetHttpMonitorsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:HealthChecks/getHttpMonitors:getHttpMonitors", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -82,9 +80,26 @@ export interface GetHttpMonitorsResult {
      */
     readonly id: string;
 }
-
+/**
+ * This data source provides the list of Http Monitors in Oracle Cloud Infrastructure Health Checks service.
+ *
+ * Gets a list of HTTP monitors.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testHttpMonitors = oci.HealthChecks.getHttpMonitors({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.http_monitor_display_name,
+ *     homeRegion: _var.http_monitor_home_region,
+ * });
+ * ```
+ */
 export function getHttpMonitorsOutput(args: GetHttpMonitorsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetHttpMonitorsResult> {
-    return pulumi.output(args).apply(a => getHttpMonitors(a, opts))
+    return pulumi.output(args).apply((a: any) => getHttpMonitors(a, opts))
 }
 
 /**

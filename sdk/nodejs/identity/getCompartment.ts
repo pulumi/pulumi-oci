@@ -28,11 +28,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCompartment(args: GetCompartmentArgs, opts?: pulumi.InvokeOptions): Promise<GetCompartmentResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Identity/getCompartment:getCompartment", {
         "id": args.id,
     }, opts);
@@ -93,9 +90,31 @@ export interface GetCompartmentResult {
      */
     readonly timeCreated: string;
 }
-
+/**
+ * This data source provides details about a specific Compartment resource in Oracle Cloud Infrastructure Identity service.
+ *
+ * Gets the specified compartment's information.
+ *
+ * This operation does not return a list of all the resources inside the compartment. There is no single
+ * API operation that does that. Compartments can contain multiple types of resources (instances, block
+ * storage volumes, etc.). To find out what's in a compartment, you must call the "List" operation for
+ * each resource type and specify the compartment's OCID as a query parameter in the request. For example,
+ * call the [ListInstances](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Instance/ListInstances) operation in the Cloud Compute
+ * Service or the [ListVolumes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Volume/ListVolumes) operation in Cloud Block Storage.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCompartment = oci.Identity.getCompartment({
+ *     id: _var.compartment_id,
+ * });
+ * ```
+ */
 export function getCompartmentOutput(args: GetCompartmentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCompartmentResult> {
-    return pulumi.output(args).apply(a => getCompartment(a, opts))
+    return pulumi.output(args).apply((a: any) => getCompartment(a, opts))
 }
 
 /**

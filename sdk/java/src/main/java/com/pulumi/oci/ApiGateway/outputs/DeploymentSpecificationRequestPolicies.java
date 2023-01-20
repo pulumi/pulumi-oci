@@ -6,6 +6,7 @@ package com.pulumi.oci.ApiGateway.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.ApiGateway.outputs.DeploymentSpecificationRequestPoliciesAuthentication;
 import com.pulumi.oci.ApiGateway.outputs.DeploymentSpecificationRequestPoliciesCors;
+import com.pulumi.oci.ApiGateway.outputs.DeploymentSpecificationRequestPoliciesDynamicAuthentication;
 import com.pulumi.oci.ApiGateway.outputs.DeploymentSpecificationRequestPoliciesMutualTls;
 import com.pulumi.oci.ApiGateway.outputs.DeploymentSpecificationRequestPoliciesRateLimiting;
 import com.pulumi.oci.ApiGateway.outputs.DeploymentSpecificationRequestPoliciesUsagePlans;
@@ -25,6 +26,11 @@ public final class DeploymentSpecificationRequestPolicies {
      * 
      */
     private @Nullable DeploymentSpecificationRequestPoliciesCors cors;
+    /**
+     * @return (Updatable) Policy on how to authenticate requests when multiple authentication options are configured for a deployment. For an incoming request, the value of selector specified under selectionSource will be matched against the keys specified for each authentication server. The authentication server whose key matches the value of selector will be used for authentication.
+     * 
+     */
+    private @Nullable DeploymentSpecificationRequestPoliciesDynamicAuthentication dynamicAuthentication;
     /**
      * @return (Updatable) Properties used to configure client mTLS verification when API Consumer makes connection to the gateway.
      * 
@@ -55,6 +61,13 @@ public final class DeploymentSpecificationRequestPolicies {
      */
     public Optional<DeploymentSpecificationRequestPoliciesCors> cors() {
         return Optional.ofNullable(this.cors);
+    }
+    /**
+     * @return (Updatable) Policy on how to authenticate requests when multiple authentication options are configured for a deployment. For an incoming request, the value of selector specified under selectionSource will be matched against the keys specified for each authentication server. The authentication server whose key matches the value of selector will be used for authentication.
+     * 
+     */
+    public Optional<DeploymentSpecificationRequestPoliciesDynamicAuthentication> dynamicAuthentication() {
+        return Optional.ofNullable(this.dynamicAuthentication);
     }
     /**
      * @return (Updatable) Properties used to configure client mTLS verification when API Consumer makes connection to the gateway.
@@ -89,6 +102,7 @@ public final class DeploymentSpecificationRequestPolicies {
     public static final class Builder {
         private @Nullable DeploymentSpecificationRequestPoliciesAuthentication authentication;
         private @Nullable DeploymentSpecificationRequestPoliciesCors cors;
+        private @Nullable DeploymentSpecificationRequestPoliciesDynamicAuthentication dynamicAuthentication;
         private @Nullable DeploymentSpecificationRequestPoliciesMutualTls mutualTls;
         private @Nullable DeploymentSpecificationRequestPoliciesRateLimiting rateLimiting;
         private @Nullable DeploymentSpecificationRequestPoliciesUsagePlans usagePlans;
@@ -97,6 +111,7 @@ public final class DeploymentSpecificationRequestPolicies {
     	      Objects.requireNonNull(defaults);
     	      this.authentication = defaults.authentication;
     	      this.cors = defaults.cors;
+    	      this.dynamicAuthentication = defaults.dynamicAuthentication;
     	      this.mutualTls = defaults.mutualTls;
     	      this.rateLimiting = defaults.rateLimiting;
     	      this.usagePlans = defaults.usagePlans;
@@ -110,6 +125,11 @@ public final class DeploymentSpecificationRequestPolicies {
         @CustomType.Setter
         public Builder cors(@Nullable DeploymentSpecificationRequestPoliciesCors cors) {
             this.cors = cors;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder dynamicAuthentication(@Nullable DeploymentSpecificationRequestPoliciesDynamicAuthentication dynamicAuthentication) {
+            this.dynamicAuthentication = dynamicAuthentication;
             return this;
         }
         @CustomType.Setter
@@ -131,6 +151,7 @@ public final class DeploymentSpecificationRequestPolicies {
             final var o = new DeploymentSpecificationRequestPolicies();
             o.authentication = authentication;
             o.cors = cors;
+            o.dynamicAuthentication = dynamicAuthentication;
             o.mutualTls = mutualTls;
             o.rateLimiting = rateLimiting;
             o.usagePlans = usagePlans;

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getExternalContainerDatabase(args: GetExternalContainerDatabaseArgs, opts?: pulumi.InvokeOptions): Promise<GetExternalContainerDatabaseResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getExternalContainerDatabase:getExternalContainerDatabase", {
         "externalContainerDatabaseId": args.externalContainerDatabaseId,
     }, opts);
@@ -124,9 +122,24 @@ export interface GetExternalContainerDatabaseResult {
      */
     readonly timeZone: string;
 }
-
+/**
+ * This data source provides details about a specific External Container Database resource in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets information about the specified external container database.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testExternalContainerDatabase = oci.Database.getExternalContainerDatabase({
+ *     externalContainerDatabaseId: oci_database_external_container_database.test_external_container_database.id,
+ * });
+ * ```
+ */
 export function getExternalContainerDatabaseOutput(args: GetExternalContainerDatabaseOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExternalContainerDatabaseResult> {
-    return pulumi.output(args).apply(a => getExternalContainerDatabase(a, opts))
+    return pulumi.output(args).apply((a: any) => getExternalContainerDatabase(a, opts))
 }
 
 /**

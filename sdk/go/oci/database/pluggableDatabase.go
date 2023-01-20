@@ -82,6 +82,8 @@ type PluggableDatabase struct {
 	PdbAdminPassword pulumi.StringOutput `pulumi:"pdbAdminPassword"`
 	// The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
 	PdbName pulumi.StringOutput `pulumi:"pdbName"`
+	// The configuration of the Pluggable Database Management service.
+	PluggableDatabaseManagementConfigs PluggableDatabasePluggableDatabaseManagementConfigArrayOutput `pulumi:"pluggableDatabaseManagementConfigs"`
 	// The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
 	ShouldPdbAdminAccountBeLocked pulumi.BoolOutput `pulumi:"shouldPdbAdminAccountBeLocked"`
 	// The current state of the pluggable database.
@@ -105,6 +107,17 @@ func NewPluggableDatabase(ctx *pulumi.Context,
 	if args.PdbName == nil {
 		return nil, errors.New("invalid value for required argument 'PdbName'")
 	}
+	if args.PdbAdminPassword != nil {
+		args.PdbAdminPassword = pulumi.ToSecret(args.PdbAdminPassword).(pulumi.StringPtrInput)
+	}
+	if args.TdeWalletPassword != nil {
+		args.TdeWalletPassword = pulumi.ToSecret(args.TdeWalletPassword).(pulumi.StringPtrInput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"pdbAdminPassword",
+		"tdeWalletPassword",
+	})
+	opts = append(opts, secrets)
 	var resource PluggableDatabase
 	err := ctx.RegisterResource("oci:Database/pluggableDatabase:PluggableDatabase", name, args, &resource, opts...)
 	if err != nil {
@@ -147,6 +160,8 @@ type pluggableDatabaseState struct {
 	PdbAdminPassword *string `pulumi:"pdbAdminPassword"`
 	// The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
 	PdbName *string `pulumi:"pdbName"`
+	// The configuration of the Pluggable Database Management service.
+	PluggableDatabaseManagementConfigs []PluggableDatabasePluggableDatabaseManagementConfig `pulumi:"pluggableDatabaseManagementConfigs"`
 	// The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
 	ShouldPdbAdminAccountBeLocked *bool `pulumi:"shouldPdbAdminAccountBeLocked"`
 	// The current state of the pluggable database.
@@ -178,6 +193,8 @@ type PluggableDatabaseState struct {
 	PdbAdminPassword pulumi.StringPtrInput
 	// The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
 	PdbName pulumi.StringPtrInput
+	// The configuration of the Pluggable Database Management service.
+	PluggableDatabaseManagementConfigs PluggableDatabasePluggableDatabaseManagementConfigArrayInput
 	// The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.
 	ShouldPdbAdminAccountBeLocked pulumi.BoolPtrInput
 	// The current state of the pluggable database.
@@ -362,6 +379,13 @@ func (o PluggableDatabaseOutput) PdbAdminPassword() pulumi.StringOutput {
 // The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
 func (o PluggableDatabaseOutput) PdbName() pulumi.StringOutput {
 	return o.ApplyT(func(v *PluggableDatabase) pulumi.StringOutput { return v.PdbName }).(pulumi.StringOutput)
+}
+
+// The configuration of the Pluggable Database Management service.
+func (o PluggableDatabaseOutput) PluggableDatabaseManagementConfigs() PluggableDatabasePluggableDatabaseManagementConfigArrayOutput {
+	return o.ApplyT(func(v *PluggableDatabase) PluggableDatabasePluggableDatabaseManagementConfigArrayOutput {
+		return v.PluggableDatabaseManagementConfigs
+	}).(PluggableDatabasePluggableDatabaseManagementConfigArrayOutput)
 }
 
 // The locked mode of the pluggable database admin account. If false, the user needs to provide the PDB Admin Password to connect to it. If true, the pluggable database will be locked and user cannot login to it.

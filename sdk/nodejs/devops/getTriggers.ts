@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -27,11 +28,8 @@ import * as utilities from "../utilities";
  */
 export function getTriggers(args?: GetTriggersArgs, opts?: pulumi.InvokeOptions): Promise<GetTriggersResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getTriggers:getTriggers", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -105,9 +103,28 @@ export interface GetTriggersResult {
      */
     readonly triggerCollections: outputs.DevOps.GetTriggersTriggerCollection[];
 }
-
+/**
+ * This data source provides the list of Triggers in Oracle Cloud Infrastructure Devops service.
+ *
+ * Returns a list of triggers.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testTriggers = oci.DevOps.getTriggers({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.trigger_display_name,
+ *     id: _var.trigger_id,
+ *     projectId: oci_devops_project.test_project.id,
+ *     state: _var.trigger_state,
+ * });
+ * ```
+ */
 export function getTriggersOutput(args?: GetTriggersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTriggersResult> {
-    return pulumi.output(args).apply(a => getTriggers(a, opts))
+    return pulumi.output(args).apply((a: any) => getTriggers(a, opts))
 }
 
 /**

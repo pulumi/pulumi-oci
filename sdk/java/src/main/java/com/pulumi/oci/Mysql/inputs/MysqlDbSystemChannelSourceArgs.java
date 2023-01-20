@@ -5,6 +5,7 @@ package com.pulumi.oci.Mysql.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Mysql.inputs.MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlDbSystemChannelSourceSslCaCertificateArgs;
 import java.lang.Integer;
 import java.lang.String;
@@ -17,6 +18,21 @@ import javax.annotation.Nullable;
 public final class MysqlDbSystemChannelSourceArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final MysqlDbSystemChannelSourceArgs Empty = new MysqlDbSystemChannelSourceArgs();
+
+    /**
+     * Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
+     * 
+     */
+    @Import(name="anonymousTransactionsHandlings")
+    private @Nullable Output<List<MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs>> anonymousTransactionsHandlings;
+
+    /**
+     * @return Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
+     * 
+     */
+    public Optional<Output<List<MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs>>> anonymousTransactionsHandlings() {
+        return Optional.ofNullable(this.anonymousTransactionsHandlings);
+    }
 
     /**
      * The network address of the DB System.
@@ -49,14 +65,14 @@ public final class MysqlDbSystemChannelSourceArgs extends com.pulumi.resources.R
     }
 
     /**
-     * The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup.
+     * The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup. Use `IMPORTURL` for creating a new database from a URL Object Storage PAR.
      * 
      */
     @Import(name="sourceType")
     private @Nullable Output<String> sourceType;
 
     /**
-     * @return The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup.
+     * @return The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup. Use `IMPORTURL` for creating a new database from a URL Object Storage PAR.
      * 
      */
     public Optional<Output<String>> sourceType() {
@@ -111,6 +127,7 @@ public final class MysqlDbSystemChannelSourceArgs extends com.pulumi.resources.R
     private MysqlDbSystemChannelSourceArgs() {}
 
     private MysqlDbSystemChannelSourceArgs(MysqlDbSystemChannelSourceArgs $) {
+        this.anonymousTransactionsHandlings = $.anonymousTransactionsHandlings;
         this.hostname = $.hostname;
         this.port = $.port;
         this.sourceType = $.sourceType;
@@ -135,6 +152,37 @@ public final class MysqlDbSystemChannelSourceArgs extends com.pulumi.resources.R
 
         public Builder(MysqlDbSystemChannelSourceArgs defaults) {
             $ = new MysqlDbSystemChannelSourceArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param anonymousTransactionsHandlings Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder anonymousTransactionsHandlings(@Nullable Output<List<MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs>> anonymousTransactionsHandlings) {
+            $.anonymousTransactionsHandlings = anonymousTransactionsHandlings;
+            return this;
+        }
+
+        /**
+         * @param anonymousTransactionsHandlings Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder anonymousTransactionsHandlings(List<MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs> anonymousTransactionsHandlings) {
+            return anonymousTransactionsHandlings(Output.of(anonymousTransactionsHandlings));
+        }
+
+        /**
+         * @param anonymousTransactionsHandlings Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder anonymousTransactionsHandlings(MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs... anonymousTransactionsHandlings) {
+            return anonymousTransactionsHandlings(List.of(anonymousTransactionsHandlings));
         }
 
         /**
@@ -180,7 +228,7 @@ public final class MysqlDbSystemChannelSourceArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param sourceType The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup.
+         * @param sourceType The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup. Use `IMPORTURL` for creating a new database from a URL Object Storage PAR.
          * 
          * @return builder
          * 
@@ -191,7 +239,7 @@ public final class MysqlDbSystemChannelSourceArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param sourceType The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup.
+         * @param sourceType The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup. Use `IMPORTURL` for creating a new database from a URL Object Storage PAR.
          * 
          * @return builder
          * 

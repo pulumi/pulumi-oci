@@ -53,9 +53,9 @@ func GetDeploymentBackups(ctx *pulumi.Context, args *GetDeploymentBackupsArgs, o
 
 // A collection of arguments for invoking getDeploymentBackups.
 type GetDeploymentBackupsArgs struct {
-	// The ID of the compartment in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
-	// The ID of the deployment in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
 	DeploymentId *string `pulumi:"deploymentId"`
 	// A filter to return only the resources that match the entire 'displayName' given.
 	DisplayName *string                      `pulumi:"displayName"`
@@ -96,9 +96,9 @@ func GetDeploymentBackupsOutput(ctx *pulumi.Context, args GetDeploymentBackupsOu
 
 // A collection of arguments for invoking getDeploymentBackups.
 type GetDeploymentBackupsOutputArgs struct {
-	// The ID of the compartment in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// The ID of the deployment in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
 	DeploymentId pulumi.StringPtrInput `pulumi:"deploymentId"`
 	// A filter to return only the resources that match the entire 'displayName' given.
 	DisplayName pulumi.StringPtrInput                `pulumi:"displayName"`

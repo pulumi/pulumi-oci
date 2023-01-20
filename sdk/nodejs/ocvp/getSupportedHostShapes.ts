@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -20,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSupportedHostShapes(args: GetSupportedHostShapesArgs, opts?: pulumi.InvokeOptions): Promise<GetSupportedHostShapesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Ocvp/getSupportedHostShapes:getSupportedHostShapes", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -72,9 +70,22 @@ export interface GetSupportedHostShapesResult {
     readonly name?: string;
     readonly sddcType?: string;
 }
-
+/**
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSupportedHostShapes = oci.Ocvp.getSupportedHostShapes({
+ *     compartmentId: _var.compartment_id,
+ *     name: _var.supported_host_shape_name,
+ *     sddcType: _var.supported_host_shape_sddc_type,
+ * });
+ * ```
+ */
 export function getSupportedHostShapesOutput(args: GetSupportedHostShapesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSupportedHostShapesResult> {
-    return pulumi.output(args).apply(a => getSupportedHostShapes(a, opts))
+    return pulumi.output(args).apply((a: any) => getSupportedHostShapes(a, opts))
 }
 
 /**

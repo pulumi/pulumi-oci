@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -34,11 +35,8 @@ import * as utilities from "../utilities";
  */
 export function getExsiHosts(args?: GetExsiHostsArgs, opts?: pulumi.InvokeOptions): Promise<GetExsiHostsResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Ocvp/getExsiHosts:getExsiHosts", {
         "computeInstanceId": args.computeInstanceId,
         "displayName": args.displayName,
@@ -101,9 +99,35 @@ export interface GetExsiHostsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Esxi Hosts in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
+ *
+ * Lists the ESXi hosts in the specified SDDC. The list can be filtered
+ * by Compute instance OCID or ESXi display name.
+ *
+ * Remember that in terms of implementation, an ESXi host is a Compute instance that
+ * is configured with the chosen bundle of VMware software. Each `EsxiHost`
+ * object has its own OCID (`id`), and a separate attribute for the OCID of
+ * the Compute instance (`computeInstanceId`). When filtering the list of
+ * ESXi hosts, you can specify the OCID of the Compute instance, not the
+ * ESXi host OCID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testEsxiHosts = oci.Ocvp.getExsiHosts({
+ *     computeInstanceId: oci_core_instance.test_instance.id,
+ *     displayName: _var.esxi_host_display_name,
+ *     sddcId: oci_ocvp_sddc.test_sddc.id,
+ *     state: _var.esxi_host_state,
+ * });
+ * ```
+ */
 export function getExsiHostsOutput(args?: GetExsiHostsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExsiHostsResult> {
-    return pulumi.output(args).apply(a => getExsiHosts(a, opts))
+    return pulumi.output(args).apply((a: any) => getExsiHosts(a, opts))
 }
 
 /**

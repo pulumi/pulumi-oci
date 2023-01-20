@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -33,7 +34,7 @@ import * as utilities from "../utilities";
  *
  * All Oracle Cloud Infrastructure resources, including
  * file systems, get an Oracle-assigned, unique ID called an Oracle
- * Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).\
+ * Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
  * When you create a resource, you can find its OCID in the response.
  * You can also retrieve a resource's OCID by using a List API operation on that resource
  * type or by viewing the resource in the Console.
@@ -116,13 +117,17 @@ export class FileSystem extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+     * Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      */
     public /*out*/ readonly isCloneParent!: pulumi.Output<boolean>;
     /**
-     * Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm#hydration).
+     * Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
      */
     public /*out*/ readonly isHydrated!: pulumi.Output<boolean>;
+    /**
+     * Specifies whether the file system can be used as a target file system for replication. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
+     */
+    public /*out*/ readonly isTargetable!: pulumi.Output<boolean>;
     /**
      * (Updatable) The OCID of KMS key used to encrypt the encryption keys associated with this file system. May be unset as a blank or deleted from the configuration to remove the KMS key.
      */
@@ -136,11 +141,15 @@ export class FileSystem extends pulumi.CustomResource {
      */
     public /*out*/ readonly meteredBytes!: pulumi.Output<string>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
+     */
+    public /*out*/ readonly replicationTargetId!: pulumi.Output<string>;
+    /**
      * Source information for the file system.
      */
     public /*out*/ readonly sourceDetails!: pulumi.Output<outputs.FileStorage.FileSystemSourceDetail[]>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      */
     public readonly sourceSnapshotId!: pulumi.Output<string>;
     /**
@@ -172,9 +181,11 @@ export class FileSystem extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["isCloneParent"] = state ? state.isCloneParent : undefined;
             resourceInputs["isHydrated"] = state ? state.isHydrated : undefined;
+            resourceInputs["isTargetable"] = state ? state.isTargetable : undefined;
             resourceInputs["kmsKeyId"] = state ? state.kmsKeyId : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["meteredBytes"] = state ? state.meteredBytes : undefined;
+            resourceInputs["replicationTargetId"] = state ? state.replicationTargetId : undefined;
             resourceInputs["sourceDetails"] = state ? state.sourceDetails : undefined;
             resourceInputs["sourceSnapshotId"] = state ? state.sourceSnapshotId : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
@@ -196,8 +207,10 @@ export class FileSystem extends pulumi.CustomResource {
             resourceInputs["sourceSnapshotId"] = args ? args.sourceSnapshotId : undefined;
             resourceInputs["isCloneParent"] = undefined /*out*/;
             resourceInputs["isHydrated"] = undefined /*out*/;
+            resourceInputs["isTargetable"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["meteredBytes"] = undefined /*out*/;
+            resourceInputs["replicationTargetId"] = undefined /*out*/;
             resourceInputs["sourceDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
@@ -232,13 +245,17 @@ export interface FileSystemState {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+     * Specifies whether the file system has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      */
     isCloneParent?: pulumi.Input<boolean>;
     /**
-     * Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm#hydration).
+     * Specifies whether the data has finished copying from the source to the clone. Hydration can take up to several hours to complete depending on the size of the source. The source and clone remain available during hydration, but there may be some performance impact. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm#hydration).
      */
     isHydrated?: pulumi.Input<boolean>;
+    /**
+     * Specifies whether the file system can be used as a target file system for replication. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
+     */
+    isTargetable?: pulumi.Input<boolean>;
     /**
      * (Updatable) The OCID of KMS key used to encrypt the encryption keys associated with this file system. May be unset as a blank or deleted from the configuration to remove the KMS key.
      */
@@ -252,11 +269,15 @@ export interface FileSystemState {
      */
     meteredBytes?: pulumi.Input<string>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication target associated with the file system. Empty if the file system is not being used as target in a replication.
+     */
+    replicationTargetId?: pulumi.Input<string>;
+    /**
      * Source information for the file system.
      */
     sourceDetails?: pulumi.Input<pulumi.Input<inputs.FileStorage.FileSystemSourceDetail>[]>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      */
     sourceSnapshotId?: pulumi.Input<string>;
     /**
@@ -298,7 +319,7 @@ export interface FileSystemArgs {
      */
     kmsKeyId?: pulumi.Input<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningafilesystem.htm).
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      */
     sourceSnapshotId?: pulumi.Input<string>;
 }

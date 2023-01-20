@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -31,11 +32,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getViews(args: GetViewsArgs, opts?: pulumi.InvokeOptions): Promise<GetViewsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Dns/getViews:getViews", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -100,9 +98,33 @@ export interface GetViewsResult {
      */
     readonly views: outputs.Dns.GetViewsView[];
 }
-
+/**
+ * This data source provides the list of Views in Oracle Cloud Infrastructure DNS service.
+ *
+ * Gets a list of all views within a compartment. The collection can
+ * be filtered by display name, id, or lifecycle state. It can be sorted
+ * on creation time or displayName both in ASC or DESC order. Note that
+ * when no lifecycleState query parameter is provided, the collection
+ * does not include views in the DELETED lifecycleState to be consistent
+ * with other operations of the API. Requires a `PRIVATE` scope query parameter.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testViews = oci.Dns.getViews({
+ *     compartmentId: _var.compartment_id,
+ *     scope: "PRIVATE",
+ *     displayName: _var.view_display_name,
+ *     id: _var.view_id,
+ *     state: _var.view_state,
+ * });
+ * ```
+ */
 export function getViewsOutput(args: GetViewsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetViewsResult> {
-    return pulumi.output(args).apply(a => getViews(a, opts))
+    return pulumi.output(args).apply((a: any) => getViews(a, opts))
 }
 
 /**

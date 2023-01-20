@@ -125,6 +125,21 @@ public final class IngressGatewayRouteTableRouteRuleArgs extends com.pulumi.reso
     }
 
     /**
+     * (Updatable) The maximum duration in milliseconds for the upstream service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when &#39;isGrpc&#39; is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the upstream service, consider either keeping the timeout disabled or set a sufficiently high value.
+     * 
+     */
+    @Import(name="requestTimeoutInMs")
+    private @Nullable Output<String> requestTimeoutInMs;
+
+    /**
+     * @return (Updatable) The maximum duration in milliseconds for the upstream service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when &#39;isGrpc&#39; is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the upstream service, consider either keeping the timeout disabled or set a sufficiently high value.
+     * 
+     */
+    public Optional<Output<String>> requestTimeoutInMs() {
+        return Optional.ofNullable(this.requestTimeoutInMs);
+    }
+
+    /**
      * (Updatable) Type of protocol.
      * 
      */
@@ -149,6 +164,7 @@ public final class IngressGatewayRouteTableRouteRuleArgs extends com.pulumi.reso
         this.isPathRewriteEnabled = $.isPathRewriteEnabled;
         this.path = $.path;
         this.pathType = $.pathType;
+        this.requestTimeoutInMs = $.requestTimeoutInMs;
         this.type = $.type;
     }
 
@@ -325,6 +341,27 @@ public final class IngressGatewayRouteTableRouteRuleArgs extends com.pulumi.reso
          */
         public Builder pathType(String pathType) {
             return pathType(Output.of(pathType));
+        }
+
+        /**
+         * @param requestTimeoutInMs (Updatable) The maximum duration in milliseconds for the upstream service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when &#39;isGrpc&#39; is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the upstream service, consider either keeping the timeout disabled or set a sufficiently high value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder requestTimeoutInMs(@Nullable Output<String> requestTimeoutInMs) {
+            $.requestTimeoutInMs = requestTimeoutInMs;
+            return this;
+        }
+
+        /**
+         * @param requestTimeoutInMs (Updatable) The maximum duration in milliseconds for the upstream service to respond to a request.  If provided, the timeout value overrides the default timeout of 15 seconds for the HTTP based route rules, and disabled (no timeout) when &#39;isGrpc&#39; is true.  The value 0 (zero) indicates that the timeout is disabled.  For streaming responses from the upstream service, consider either keeping the timeout disabled or set a sufficiently high value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder requestTimeoutInMs(String requestTimeoutInMs) {
+            return requestTimeoutInMs(Output.of(requestTimeoutInMs));
         }
 
         /**

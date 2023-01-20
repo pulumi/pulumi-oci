@@ -7,6 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Database Registration resource in Oracle Cloud Infrastructure Golden Gate service.
  *
+ * Note: Deprecated. Use the new resource model APIs instead.
  * Retrieves a DatabaseRegistration.
  *
  * ## Example Usage
@@ -21,11 +22,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDatabaseRegistration(args: GetDatabaseRegistrationArgs, opts?: pulumi.InvokeOptions): Promise<GetDatabaseRegistrationResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:GoldenGate/getDatabaseRegistration:getDatabaseRegistration", {
         "databaseRegistrationId": args.databaseRegistrationId,
     }, opts);
@@ -63,7 +61,7 @@ export interface GetDatabaseRegistrationResult {
     readonly databaseId: string;
     readonly databaseRegistrationId: string;
     /**
-     * Tags defined for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+     * Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
      */
     readonly definedTags: {[key: string]: any};
     /**
@@ -79,7 +77,7 @@ export interface GetDatabaseRegistrationResult {
      */
     readonly fqdn: string;
     /**
-     * A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     * A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
      */
     readonly freeformTags: {[key: string]: any};
     /**
@@ -112,7 +110,7 @@ export interface GetDatabaseRegistrationResult {
      */
     readonly secretId: string;
     /**
-     * The mode of the database connection session to be established by the data client. REDIRECT - for a RAC database, DIRECT - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
+     * The mode of the database connection session to be established by the data client. 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database involves a redirection received from the SCAN listeners to the database node to connect to. By default the mode would be DIRECT.
      */
     readonly sessionMode: string;
     /**
@@ -124,7 +122,7 @@ export interface GetDatabaseRegistrationResult {
      */
     readonly subnetId: string;
     /**
-     * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+     * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      */
     readonly systemTags: {[key: string]: any};
     /**
@@ -145,9 +143,25 @@ export interface GetDatabaseRegistrationResult {
     readonly vaultId: string;
     readonly wallet: string;
 }
-
+/**
+ * This data source provides details about a specific Database Registration resource in Oracle Cloud Infrastructure Golden Gate service.
+ *
+ * Note: Deprecated. Use the new resource model APIs instead.
+ * Retrieves a DatabaseRegistration.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDatabaseRegistration = oci.GoldenGate.getDatabaseRegistration({
+ *     databaseRegistrationId: oci_golden_gate_database_registration.test_database_registration.id,
+ * });
+ * ```
+ */
 export function getDatabaseRegistrationOutput(args: GetDatabaseRegistrationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatabaseRegistrationResult> {
-    return pulumi.output(args).apply(a => getDatabaseRegistration(a, opts))
+    return pulumi.output(args).apply((a: any) => getDatabaseRegistration(a, opts))
 }
 
 /**

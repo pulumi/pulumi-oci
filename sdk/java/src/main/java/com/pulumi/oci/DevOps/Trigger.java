@@ -57,6 +57,7 @@ import javax.annotation.Nullable;
  *                     .include(TriggerActionFilterIncludeArgs.builder()
  *                         .baseRef(var_.trigger_actions_filter_include_base_ref())
  *                         .headRef(var_.trigger_actions_filter_include_head_ref())
+ *                         .repositoryName(oci_devops_repository.test_repository().name())
  *                         .build())
  *                     .build())
  *                 .build())
@@ -112,9 +113,17 @@ public class Trigger extends com.pulumi.resources.CustomResource {
     public Output<String> compartmentId() {
         return this.compartmentId;
     }
+    /**
+     * (Updatable) The OCID of the connection resource used to get details for triggered events.
+     * 
+     */
     @Export(name="connectionId", type=String.class, parameters={})
     private Output<String> connectionId;
 
+    /**
+     * @return (Updatable) The OCID of the connection resource used to get details for triggered events.
+     * 
+     */
     public Output<String> connectionId() {
         return this.connectionId;
     }
@@ -273,14 +282,14 @@ public class Trigger extends com.pulumi.resources.CustomResource {
         return this.timeUpdated;
     }
     /**
-     * (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
+     * (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
      * 
      */
     @Export(name="triggerSource", type=String.class, parameters={})
     private Output<String> triggerSource;
 
     /**
-     * @return (Updatable) Source of the trigger. Allowed values are, GITHUB,GITLAB and BITBUCKET_CLOUD.
+     * @return (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
      * 
      */
     public Output<String> triggerSource() {

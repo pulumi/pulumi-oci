@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAutonomousExadataInfrastructureShapesResult> InvokeAsync(GetAutonomousExadataInfrastructureShapesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAutonomousExadataInfrastructureShapesResult>("oci:Database/getAutonomousExadataInfrastructureShapes:getAutonomousExadataInfrastructureShapes", args ?? new GetAutonomousExadataInfrastructureShapesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAutonomousExadataInfrastructureShapesResult>("oci:Database/getAutonomousExadataInfrastructureShapes:getAutonomousExadataInfrastructureShapes", args ?? new GetAutonomousExadataInfrastructureShapesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Autonomous Exadata Infrastructure Shapes in Oracle Cloud Infrastructure Database service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAutonomousExadataInfrastructureShapesResult> Invoke(GetAutonomousExadataInfrastructureShapesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAutonomousExadataInfrastructureShapesResult>("oci:Database/getAutonomousExadataInfrastructureShapes:getAutonomousExadataInfrastructureShapes", args ?? new GetAutonomousExadataInfrastructureShapesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousExadataInfrastructureShapesResult>("oci:Database/getAutonomousExadataInfrastructureShapes:getAutonomousExadataInfrastructureShapes", args ?? new GetAutonomousExadataInfrastructureShapesInvokeArgs(), options.WithDefaults());
     }
 
 

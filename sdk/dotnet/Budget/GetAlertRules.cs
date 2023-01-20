@@ -41,7 +41,7 @@ namespace Pulumi.Oci.Budget
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAlertRulesResult> InvokeAsync(GetAlertRulesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAlertRulesResult>("oci:Budget/getAlertRules:getAlertRules", args ?? new GetAlertRulesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAlertRulesResult>("oci:Budget/getAlertRules:getAlertRules", args ?? new GetAlertRulesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Alert Rules in Oracle Cloud Infrastructure Budget service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.Budget
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAlertRulesResult> Invoke(GetAlertRulesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAlertRulesResult>("oci:Budget/getAlertRules:getAlertRules", args ?? new GetAlertRulesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAlertRulesResult>("oci:Budget/getAlertRules:getAlertRules", args ?? new GetAlertRulesInvokeArgs(), options.WithDefaults());
     }
 
 

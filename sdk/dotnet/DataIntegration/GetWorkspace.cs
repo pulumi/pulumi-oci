@@ -38,7 +38,7 @@ namespace Pulumi.Oci.DataIntegration
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetWorkspaceResult> InvokeAsync(GetWorkspaceArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetWorkspaceResult>("oci:DataIntegration/getWorkspace:getWorkspace", args ?? new GetWorkspaceArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetWorkspaceResult>("oci:DataIntegration/getWorkspace:getWorkspace", args ?? new GetWorkspaceArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Workspace resource in Oracle Cloud Infrastructure Data Integration service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.DataIntegration
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetWorkspaceResult> Invoke(GetWorkspaceInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetWorkspaceResult>("oci:DataIntegration/getWorkspace:getWorkspace", args ?? new GetWorkspaceInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetWorkspaceResult>("oci:DataIntegration/getWorkspace:getWorkspace", args ?? new GetWorkspaceInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -127,6 +127,15 @@ namespace Pulumi.Oci.DataIntegration
         /// The DNS zone of the custom DNS to use to resolve names.
         /// </summary>
         public readonly string DnsServerZone;
+        public readonly string EndpointCompartmentId;
+        /// <summary>
+        /// DCMS endpoint associated with the container/workspace. Returns null if there is none.
+        /// </summary>
+        public readonly string EndpointId;
+        /// <summary>
+        /// Name of the private endpoint associated with the container/workspace. Returns null if there is none.
+        /// </summary>
+        public readonly string EndpointName;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
@@ -141,6 +150,12 @@ namespace Pulumi.Oci.DataIntegration
         /// </summary>
         public readonly bool IsPrivateNetworkEnabled;
         public readonly int QuiesceTimeout;
+        public readonly string RegistryCompartmentId;
+        /// <summary>
+        /// DCMS registry associated with the container/workspace. Returns null if there is none.
+        /// </summary>
+        public readonly string RegistryId;
+        public readonly string RegistryName;
         /// <summary>
         /// Lifecycle states for workspaces in Data Integration Service CREATING - The resource is being created and may not be usable until the entire metadata is defined UPDATING - The resource is being updated and may not be usable until all changes are commited DELETING - The resource is being deleted and might require deep cleanup of children. ACTIVE   - The resource is valid and available for access INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for administrative reasons DELETED  - The resource has been deleted and isn't available FAILED   - The resource is in a failed state due to validation or other errors STARTING - The resource is being started and may not be usable until becomes ACTIVE again STOPPING - The resource is in the process of Stopping and may not be usable until it Stops or fails STOPPED  - The resource is in Stopped state due to stop operation.
         /// </summary>
@@ -181,6 +196,12 @@ namespace Pulumi.Oci.DataIntegration
 
             string dnsServerZone,
 
+            string endpointCompartmentId,
+
+            string endpointId,
+
+            string endpointName,
+
             ImmutableDictionary<string, object> freeformTags,
 
             string id,
@@ -190,6 +211,12 @@ namespace Pulumi.Oci.DataIntegration
             bool isPrivateNetworkEnabled,
 
             int quiesceTimeout,
+
+            string registryCompartmentId,
+
+            string registryId,
+
+            string registryName,
 
             string state,
 
@@ -211,11 +238,17 @@ namespace Pulumi.Oci.DataIntegration
             DisplayName = displayName;
             DnsServerIp = dnsServerIp;
             DnsServerZone = dnsServerZone;
+            EndpointCompartmentId = endpointCompartmentId;
+            EndpointId = endpointId;
+            EndpointName = endpointName;
             FreeformTags = freeformTags;
             Id = id;
             IsForceOperation = isForceOperation;
             IsPrivateNetworkEnabled = isPrivateNetworkEnabled;
             QuiesceTimeout = quiesceTimeout;
+            RegistryCompartmentId = registryCompartmentId;
+            RegistryId = registryId;
+            RegistryName = registryName;
             State = state;
             StateMessage = stateMessage;
             SubnetId = subnetId;

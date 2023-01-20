@@ -62,7 +62,7 @@ public final class GetDbSystemShapesDbSystemShape {
      */
     private Integer maxStorageCount;
     /**
-     * @return The maximum number of database nodes available for this shape.
+     * @return The maximum number of compute servers available for this shape.
      * 
      */
     private Integer maximumNodeCount;
@@ -97,7 +97,7 @@ public final class GetDbSystemShapesDbSystemShape {
      */
     private Integer minimumCoreCount;
     /**
-     * @return The minimum number of database nodes available for this shape.
+     * @return The minimum number of compute servers available for this shape.
      * 
      */
     private Integer minimumNodeCount;
@@ -121,7 +121,7 @@ public final class GetDbSystemShapesDbSystemShape {
      */
     private String shapeFamily;
     /**
-     * @return The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are `AMD` and `INTEL`.
+     * @return The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are `AMD` , `INTEL` or `INTEL_FLEX_X9`.
      * 
      */
     private String shapeType;
@@ -198,7 +198,7 @@ public final class GetDbSystemShapesDbSystemShape {
         return this.maxStorageCount;
     }
     /**
-     * @return The maximum number of database nodes available for this shape.
+     * @return The maximum number of compute servers available for this shape.
      * 
      */
     public Integer maximumNodeCount() {
@@ -247,7 +247,7 @@ public final class GetDbSystemShapesDbSystemShape {
         return this.minimumCoreCount;
     }
     /**
-     * @return The minimum number of database nodes available for this shape.
+     * @return The minimum number of compute servers available for this shape.
      * 
      */
     public Integer minimumNodeCount() {
@@ -279,7 +279,7 @@ public final class GetDbSystemShapesDbSystemShape {
         return this.shapeFamily;
     }
     /**
-     * @return The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are `AMD` and `INTEL`.
+     * @return The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are `AMD` , `INTEL` or `INTEL_FLEX_X9`.
      * 
      */
     public String shapeType() {

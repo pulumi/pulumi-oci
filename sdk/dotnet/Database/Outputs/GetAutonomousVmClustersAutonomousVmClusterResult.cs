@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// The number of OCPU cores enabled per VM cluster node.
+        /// The number of CPU cores enabled per VM cluster node.
         /// </summary>
         public readonly int CpuCoreCountPerNode;
         /// <summary>
@@ -82,6 +82,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly bool IsLocalBackupEnabled;
         /// <summary>
+        /// Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
+        /// </summary>
+        public readonly bool IsMtlsEnabled;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         /// </summary>
         public readonly string LastMaintenanceRunId;
@@ -118,6 +122,14 @@ namespace Pulumi.Oci.Database.Outputs
         /// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
         /// </summary>
         public readonly int ReclaimableCpus;
+        /// <summary>
+        /// The SCAN Listener Non TLS port number. Default value is 1521.
+        /// </summary>
+        public readonly int ScanListenerPortNonTls;
+        /// <summary>
+        /// The SCAN Listener TLS port number. Default value is 2484.
+        /// </summary>
+        public readonly int ScanListenerPortTls;
         /// <summary>
         /// A filter to return only resources that match the given lifecycle state exactly.
         /// </summary>
@@ -175,6 +187,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             bool isLocalBackupEnabled,
 
+            bool isMtlsEnabled,
+
             string lastMaintenanceRunId,
 
             string licenseModel,
@@ -194,6 +208,10 @@ namespace Pulumi.Oci.Database.Outputs
             double ocpusEnabled,
 
             int reclaimableCpus,
+
+            int scanListenerPortNonTls,
+
+            int scanListenerPortTls,
 
             string state,
 
@@ -222,6 +240,7 @@ namespace Pulumi.Oci.Database.Outputs
             FreeformTags = freeformTags;
             Id = id;
             IsLocalBackupEnabled = isLocalBackupEnabled;
+            IsMtlsEnabled = isMtlsEnabled;
             LastMaintenanceRunId = lastMaintenanceRunId;
             LicenseModel = licenseModel;
             LifecycleDetails = lifecycleDetails;
@@ -232,6 +251,8 @@ namespace Pulumi.Oci.Database.Outputs
             NextMaintenanceRunId = nextMaintenanceRunId;
             OcpusEnabled = ocpusEnabled;
             ReclaimableCpus = reclaimableCpus;
+            ScanListenerPortNonTls = scanListenerPortNonTls;
+            ScanListenerPortTls = scanListenerPortTls;
             State = state;
             TimeCreated = timeCreated;
             TimeZone = timeZone;

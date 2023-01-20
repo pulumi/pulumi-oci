@@ -18,6 +18,10 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// </summary>
         public readonly string ApmDomainId;
         /// <summary>
+        /// Monitor availability configuration details.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMonitorsMonitorCollectionItemAvailabilityConfigurationResult> AvailabilityConfigurations;
+        /// <summary>
         /// Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
         /// </summary>
         public readonly int BatchIntervalInSeconds;
@@ -49,6 +53,10 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// If runOnce is enabled, then the monitor will run once.
         /// </summary>
         public readonly bool IsRunOnce;
+        /// <summary>
+        /// Details used to schedule maintenance window.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleResult> MaintenanceWindowSchedules;
         /// <summary>
         /// A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST and REST.
         /// </summary>
@@ -90,7 +98,7 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// </summary>
         public readonly string TimeUpdated;
         /// <summary>
-        /// Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+        /// Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
         /// </summary>
         public readonly int TimeoutInSeconds;
         /// <summary>
@@ -105,6 +113,8 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         [OutputConstructor]
         private GetMonitorsMonitorCollectionItemResult(
             string apmDomainId,
+
+            ImmutableArray<Outputs.GetMonitorsMonitorCollectionItemAvailabilityConfigurationResult> availabilityConfigurations,
 
             int batchIntervalInSeconds,
 
@@ -121,6 +131,8 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
             bool isRunNow,
 
             bool isRunOnce,
+
+            ImmutableArray<Outputs.GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleResult> maintenanceWindowSchedules,
 
             string monitorType,
 
@@ -149,6 +161,7 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
             ImmutableArray<string> vantagePoints)
         {
             ApmDomainId = apmDomainId;
+            AvailabilityConfigurations = availabilityConfigurations;
             BatchIntervalInSeconds = batchIntervalInSeconds;
             Configurations = configurations;
             DefinedTags = definedTags;
@@ -157,6 +170,7 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
             Id = id;
             IsRunNow = isRunNow;
             IsRunOnce = isRunOnce;
+            MaintenanceWindowSchedules = maintenanceWindowSchedules;
             MonitorType = monitorType;
             RepeatIntervalInSeconds = repeatIntervalInSeconds;
             SchedulingPolicy = schedulingPolicy;

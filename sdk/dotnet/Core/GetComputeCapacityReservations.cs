@@ -45,7 +45,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetComputeCapacityReservationsResult> InvokeAsync(GetComputeCapacityReservationsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetComputeCapacityReservationsResult>("oci:Core/getComputeCapacityReservations:getComputeCapacityReservations", args ?? new GetComputeCapacityReservationsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetComputeCapacityReservationsResult>("oci:Core/getComputeCapacityReservations:getComputeCapacityReservations", args ?? new GetComputeCapacityReservationsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Compute Capacity Reservations in Oracle Cloud Infrastructure Core service.
@@ -81,7 +81,7 @@ namespace Pulumi.Oci.Core
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetComputeCapacityReservationsResult> Invoke(GetComputeCapacityReservationsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetComputeCapacityReservationsResult>("oci:Core/getComputeCapacityReservations:getComputeCapacityReservations", args ?? new GetComputeCapacityReservationsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetComputeCapacityReservationsResult>("oci:Core/getComputeCapacityReservations:getComputeCapacityReservations", args ?? new GetComputeCapacityReservationsInvokeArgs(), options.WithDefaults());
     }
 
 

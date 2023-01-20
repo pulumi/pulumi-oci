@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDrgRouteTableRouteRules(args: GetDrgRouteTableRouteRulesArgs, opts?: pulumi.InvokeOptions): Promise<GetDrgRouteTableRouteRulesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getDrgRouteTableRouteRules:getDrgRouteTableRouteRules", {
         "drgRouteTableId": args.drgRouteTableId,
         "filters": args.filters,
@@ -69,9 +67,25 @@ export interface GetDrgRouteTableRouteRulesResult {
      */
     readonly routeType?: string;
 }
-
+/**
+ * This data source provides the list of Drg Route Table Route Rules in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the route rules in the specified DRG route table.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDrgRouteTableRouteRules = oci.Core.getDrgRouteTableRouteRules({
+ *     drgRouteTableId: oci_core_drg_route_table.test_drg_route_table.id,
+ *     routeType: _var.drg_route_table_route_rule_route_type,
+ * });
+ * ```
+ */
 export function getDrgRouteTableRouteRulesOutput(args: GetDrgRouteTableRouteRulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDrgRouteTableRouteRulesResult> {
-    return pulumi.output(args).apply(a => getDrgRouteTableRouteRules(a, opts))
+    return pulumi.output(args).apply((a: any) => getDrgRouteTableRouteRules(a, opts))
 }
 
 /**

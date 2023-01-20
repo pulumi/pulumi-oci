@@ -13,7 +13,13 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
     [OutputType]
     public sealed class NetworkFirewallPolicyIpAddressList
     {
+        /// <summary>
+        /// (Updatable) The identifier by which the IP address list is referenced.
+        /// </summary>
         public readonly string IpAddressListName;
+        /// <summary>
+        /// (Updatable) List of IP address lists of the policy.
+        /// </summary>
         public readonly ImmutableArray<string> IpAddressListValues;
 
         [OutputConstructor]

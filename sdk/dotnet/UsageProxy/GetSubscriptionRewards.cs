@@ -40,7 +40,7 @@ namespace Pulumi.Oci.UsageProxy
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetSubscriptionRewardsResult> InvokeAsync(GetSubscriptionRewardsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetSubscriptionRewardsResult>("oci:UsageProxy/getSubscriptionRewards:getSubscriptionRewards", args ?? new GetSubscriptionRewardsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetSubscriptionRewardsResult>("oci:UsageProxy/getSubscriptionRewards:getSubscriptionRewards", args ?? new GetSubscriptionRewardsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Subscription Rewards in Oracle Cloud Infrastructure Usage Proxy service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.UsageProxy
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetSubscriptionRewardsResult> Invoke(GetSubscriptionRewardsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetSubscriptionRewardsResult>("oci:UsageProxy/getSubscriptionRewards:getSubscriptionRewards", args ?? new GetSubscriptionRewardsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetSubscriptionRewardsResult>("oci:UsageProxy/getSubscriptionRewards:getSubscriptionRewards", args ?? new GetSubscriptionRewardsInvokeArgs(), options.WithDefaults());
     }
 
 

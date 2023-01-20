@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -27,11 +28,8 @@ import * as utilities from "../utilities";
  */
 export function getVolumes(args?: GetVolumesArgs, opts?: pulumi.InvokeOptions): Promise<GetVolumesResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getVolumes:getVolumes", {
         "availabilityDomain": args.availabilityDomain,
         "compartmentId": args.compartmentId,
@@ -103,9 +101,28 @@ export interface GetVolumesResult {
      */
     readonly volumes: outputs.Core.GetVolumesVolume[];
 }
-
+/**
+ * This data source provides the list of Volumes in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the volumes in the specified compartment and availability domain.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testVolumes = oci.Core.getVolumes({
+ *     availabilityDomain: _var.volume_availability_domain,
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.volume_display_name,
+ *     state: _var.volume_state,
+ *     volumeGroupId: oci_core_volume_group.test_volume_group.id,
+ * });
+ * ```
+ */
 export function getVolumesOutput(args?: GetVolumesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetVolumesResult> {
-    return pulumi.output(args).apply(a => getVolumes(a, opts))
+    return pulumi.output(args).apply((a: any) => getVolumes(a, opts))
 }
 
 /**

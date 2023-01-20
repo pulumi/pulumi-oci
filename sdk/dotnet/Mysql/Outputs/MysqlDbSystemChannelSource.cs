@@ -14,6 +14,10 @@ namespace Pulumi.Oci.Mysql.Outputs
     public sealed class MysqlDbSystemChannelSource
     {
         /// <summary>
+        /// Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.MysqlDbSystemChannelSourceAnonymousTransactionsHandling> AnonymousTransactionsHandlings;
+        /// <summary>
         /// The network address of the DB System.
         /// </summary>
         public readonly string? Hostname;
@@ -22,7 +26,7 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly int? Port;
         /// <summary>
-        /// The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup.
+        /// The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup. Use `IMPORTURL` for creating a new database from a URL Object Storage PAR.
         /// </summary>
         public readonly string? SourceType;
         /// <summary>
@@ -40,6 +44,8 @@ namespace Pulumi.Oci.Mysql.Outputs
 
         [OutputConstructor]
         private MysqlDbSystemChannelSource(
+            ImmutableArray<Outputs.MysqlDbSystemChannelSourceAnonymousTransactionsHandling> anonymousTransactionsHandlings,
+
             string? hostname,
 
             int? port,
@@ -52,6 +58,7 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             string? username)
         {
+            AnonymousTransactionsHandlings = anonymousTransactionsHandlings;
             Hostname = hostname;
             Port = port;
             SourceType = sourceType;

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -30,11 +31,8 @@ import * as utilities from "../utilities";
  */
 export function getDeployments(args?: GetDeploymentsArgs, opts?: pulumi.InvokeOptions): Promise<GetDeploymentsResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getDeployments:getDeployments", {
         "compartmentId": args.compartmentId,
         "deployPipelineId": args.deployPipelineId,
@@ -123,9 +121,31 @@ export interface GetDeploymentsResult {
     readonly timeCreatedGreaterThanOrEqualTo?: string;
     readonly timeCreatedLessThan?: string;
 }
-
+/**
+ * This data source provides the list of Deployments in Oracle Cloud Infrastructure Devops service.
+ *
+ * Returns a list of deployments.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDeployments = oci.DevOps.getDeployments({
+ *     compartmentId: _var.compartment_id,
+ *     deployPipelineId: oci_devops_deploy_pipeline.test_deploy_pipeline.id,
+ *     displayName: _var.deployment_display_name,
+ *     id: _var.deployment_id,
+ *     projectId: oci_devops_project.test_project.id,
+ *     state: _var.deployment_state,
+ *     timeCreatedGreaterThanOrEqualTo: _var.deployment_time_created_greater_than_or_equal_to,
+ *     timeCreatedLessThan: _var.deployment_time_created_less_than,
+ * });
+ * ```
+ */
 export function getDeploymentsOutput(args?: GetDeploymentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDeploymentsResult> {
-    return pulumi.output(args).apply(a => getDeployments(a, opts))
+    return pulumi.output(args).apply((a: any) => getDeployments(a, opts))
 }
 
 /**

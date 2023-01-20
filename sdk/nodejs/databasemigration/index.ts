@@ -5,26 +5,76 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
-export * from "./agent";
-export * from "./connection";
-export * from "./getAgent";
-export * from "./getAgentImages";
-export * from "./getAgents";
-export * from "./getConnection";
-export * from "./getConnections";
-export * from "./getJobAdvisorReport";
-export * from "./getJobOutput";
-export * from "./getMigration";
-export * from "./getMigrationObjectTypes";
-export * from "./getMigrations";
-export * from "./job";
-export * from "./migration";
+export { AgentArgs, AgentState } from "./agent";
+export type Agent = import("./agent").Agent;
+export const Agent: typeof import("./agent").Agent = null as any;
+utilities.lazyLoad(exports, ["Agent"], () => require("./agent"));
 
-// Import resources to register:
-import { Agent } from "./agent";
-import { Connection } from "./connection";
-import { Job } from "./job";
-import { Migration } from "./migration";
+export { ConnectionArgs, ConnectionState } from "./connection";
+export type Connection = import("./connection").Connection;
+export const Connection: typeof import("./connection").Connection = null as any;
+utilities.lazyLoad(exports, ["Connection"], () => require("./connection"));
+
+export { GetAgentArgs, GetAgentResult, GetAgentOutputArgs } from "./getAgent";
+export const getAgent: typeof import("./getAgent").getAgent = null as any;
+export const getAgentOutput: typeof import("./getAgent").getAgentOutput = null as any;
+utilities.lazyLoad(exports, ["getAgent","getAgentOutput"], () => require("./getAgent"));
+
+export { GetAgentImagesArgs, GetAgentImagesResult, GetAgentImagesOutputArgs } from "./getAgentImages";
+export const getAgentImages: typeof import("./getAgentImages").getAgentImages = null as any;
+export const getAgentImagesOutput: typeof import("./getAgentImages").getAgentImagesOutput = null as any;
+utilities.lazyLoad(exports, ["getAgentImages","getAgentImagesOutput"], () => require("./getAgentImages"));
+
+export { GetAgentsArgs, GetAgentsResult, GetAgentsOutputArgs } from "./getAgents";
+export const getAgents: typeof import("./getAgents").getAgents = null as any;
+export const getAgentsOutput: typeof import("./getAgents").getAgentsOutput = null as any;
+utilities.lazyLoad(exports, ["getAgents","getAgentsOutput"], () => require("./getAgents"));
+
+export { GetConnectionArgs, GetConnectionResult, GetConnectionOutputArgs } from "./getConnection";
+export const getConnection: typeof import("./getConnection").getConnection = null as any;
+export const getConnectionOutput: typeof import("./getConnection").getConnectionOutput = null as any;
+utilities.lazyLoad(exports, ["getConnection","getConnectionOutput"], () => require("./getConnection"));
+
+export { GetConnectionsArgs, GetConnectionsResult, GetConnectionsOutputArgs } from "./getConnections";
+export const getConnections: typeof import("./getConnections").getConnections = null as any;
+export const getConnectionsOutput: typeof import("./getConnections").getConnectionsOutput = null as any;
+utilities.lazyLoad(exports, ["getConnections","getConnectionsOutput"], () => require("./getConnections"));
+
+export { GetJobAdvisorReportArgs, GetJobAdvisorReportResult, GetJobAdvisorReportOutputArgs } from "./getJobAdvisorReport";
+export const getJobAdvisorReport: typeof import("./getJobAdvisorReport").getJobAdvisorReport = null as any;
+export const getJobAdvisorReportOutput: typeof import("./getJobAdvisorReport").getJobAdvisorReportOutput = null as any;
+utilities.lazyLoad(exports, ["getJobAdvisorReport","getJobAdvisorReportOutput"], () => require("./getJobAdvisorReport"));
+
+export { GetJobOutputArgs, GetJobOutputResult, GetJobOutputOutputArgs } from "./getJobOutput";
+export const getJobOutput: typeof import("./getJobOutput").getJobOutput = null as any;
+export const getJobOutputOutput: typeof import("./getJobOutput").getJobOutputOutput = null as any;
+utilities.lazyLoad(exports, ["getJobOutput","getJobOutputOutput"], () => require("./getJobOutput"));
+
+export { GetMigrationArgs, GetMigrationResult, GetMigrationOutputArgs } from "./getMigration";
+export const getMigration: typeof import("./getMigration").getMigration = null as any;
+export const getMigrationOutput: typeof import("./getMigration").getMigrationOutput = null as any;
+utilities.lazyLoad(exports, ["getMigration","getMigrationOutput"], () => require("./getMigration"));
+
+export { GetMigrationObjectTypesArgs, GetMigrationObjectTypesResult, GetMigrationObjectTypesOutputArgs } from "./getMigrationObjectTypes";
+export const getMigrationObjectTypes: typeof import("./getMigrationObjectTypes").getMigrationObjectTypes = null as any;
+export const getMigrationObjectTypesOutput: typeof import("./getMigrationObjectTypes").getMigrationObjectTypesOutput = null as any;
+utilities.lazyLoad(exports, ["getMigrationObjectTypes","getMigrationObjectTypesOutput"], () => require("./getMigrationObjectTypes"));
+
+export { GetMigrationsArgs, GetMigrationsResult, GetMigrationsOutputArgs } from "./getMigrations";
+export const getMigrations: typeof import("./getMigrations").getMigrations = null as any;
+export const getMigrationsOutput: typeof import("./getMigrations").getMigrationsOutput = null as any;
+utilities.lazyLoad(exports, ["getMigrations","getMigrationsOutput"], () => require("./getMigrations"));
+
+export { JobArgs, JobState } from "./job";
+export type Job = import("./job").Job;
+export const Job: typeof import("./job").Job = null as any;
+utilities.lazyLoad(exports, ["Job"], () => require("./job"));
+
+export { MigrationArgs, MigrationState } from "./migration";
+export type Migration = import("./migration").Migration;
+export const Migration: typeof import("./migration").Migration = null as any;
+utilities.lazyLoad(exports, ["Migration"], () => require("./migration"));
+
 
 const _module = {
     version: utilities.getVersion(),

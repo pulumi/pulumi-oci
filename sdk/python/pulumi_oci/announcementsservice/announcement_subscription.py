@@ -22,7 +22,9 @@ class AnnouncementSubscriptionArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  filter_groups: Optional[pulumi.Input['AnnouncementSubscriptionFilterGroupsArgs']] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 preferred_language: Optional[pulumi.Input[str]] = None,
+                 preferred_time_zone: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a AnnouncementSubscription resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the announcement subscription.
@@ -32,6 +34,8 @@ class AnnouncementSubscriptionArgs:
         :param pulumi.Input[str] description: (Updatable) A description of the announcement subscription. Avoid entering confidential information.
         :param pulumi.Input['AnnouncementSubscriptionFilterGroupsArgs'] filter_groups: A list of filter groups for the announcement subscription. A filter group combines one or more filters that the Announcements service applies to announcements for matching purposes.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[str] preferred_language: (Updatable) (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
+        :param pulumi.Input[str] preferred_time_zone: (Updatable) The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -44,6 +48,10 @@ class AnnouncementSubscriptionArgs:
             pulumi.set(__self__, "filter_groups", filter_groups)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if preferred_language is not None:
+            pulumi.set(__self__, "preferred_language", preferred_language)
+        if preferred_time_zone is not None:
+            pulumi.set(__self__, "preferred_time_zone", preferred_time_zone)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -129,6 +137,30 @@ class AnnouncementSubscriptionArgs:
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
 
+    @property
+    @pulumi.getter(name="preferredLanguage")
+    def preferred_language(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
+        """
+        return pulumi.get(self, "preferred_language")
+
+    @preferred_language.setter
+    def preferred_language(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "preferred_language", value)
+
+    @property
+    @pulumi.getter(name="preferredTimeZone")
+    def preferred_time_zone(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+        """
+        return pulumi.get(self, "preferred_time_zone")
+
+    @preferred_time_zone.setter
+    def preferred_time_zone(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "preferred_time_zone", value)
+
 
 @pulumi.input_type
 class _AnnouncementSubscriptionState:
@@ -141,6 +173,8 @@ class _AnnouncementSubscriptionState:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  ons_topic_id: Optional[pulumi.Input[str]] = None,
+                 preferred_language: Optional[pulumi.Input[str]] = None,
+                 preferred_time_zone: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
@@ -155,6 +189,8 @@ class _AnnouncementSubscriptionState:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current lifecycle state in more detail. For example, details might provide required or recommended actions for a resource in a Failed state.
         :param pulumi.Input[str] ons_topic_id: (Updatable) The OCID of the Notifications service topic that is the target for publishing announcements that match the configured announcement subscription. The caller of the operation needs the ONS_TOPIC_PUBLISH permission for the targeted Notifications service topic. For more information about Notifications permissions, see [Details for Notifications](https://docs.cloud.oracle.com/iaas/Content/Identity/policyreference/notificationpolicyreference.htm).
+        :param pulumi.Input[str] preferred_language: (Updatable) (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
+        :param pulumi.Input[str] preferred_time_zone: (Updatable) The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
         :param pulumi.Input[str] state: The current lifecycle state of the announcement subscription.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The date and time that the announcement subscription was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -176,6 +212,10 @@ class _AnnouncementSubscriptionState:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if ons_topic_id is not None:
             pulumi.set(__self__, "ons_topic_id", ons_topic_id)
+        if preferred_language is not None:
+            pulumi.set(__self__, "preferred_language", preferred_language)
+        if preferred_time_zone is not None:
+            pulumi.set(__self__, "preferred_time_zone", preferred_time_zone)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if system_tags is not None:
@@ -282,6 +322,30 @@ class _AnnouncementSubscriptionState:
         pulumi.set(self, "ons_topic_id", value)
 
     @property
+    @pulumi.getter(name="preferredLanguage")
+    def preferred_language(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
+        """
+        return pulumi.get(self, "preferred_language")
+
+    @preferred_language.setter
+    def preferred_language(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "preferred_language", value)
+
+    @property
+    @pulumi.getter(name="preferredTimeZone")
+    def preferred_time_zone(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+        """
+        return pulumi.get(self, "preferred_time_zone")
+
+    @preferred_time_zone.setter
+    def preferred_time_zone(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "preferred_time_zone", value)
+
+    @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
@@ -342,6 +406,8 @@ class AnnouncementSubscription(pulumi.CustomResource):
                  filter_groups: Optional[pulumi.Input[pulumi.InputType['AnnouncementSubscriptionFilterGroupsArgs']]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  ons_topic_id: Optional[pulumi.Input[str]] = None,
+                 preferred_language: Optional[pulumi.Input[str]] = None,
+                 preferred_time_zone: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         This resource provides the Announcement Subscription resource in Oracle Cloud Infrastructure Announcements Service service.
@@ -372,7 +438,9 @@ class AnnouncementSubscription(pulumi.CustomResource):
             ),
             freeform_tags={
                 "bar-key": "value",
-            })
+            },
+            preferred_language=var["announcement_subscription_preferred_language"],
+            preferred_time_zone=var["announcement_subscription_preferred_time_zone"])
         ```
 
         ## Import
@@ -392,6 +460,8 @@ class AnnouncementSubscription(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['AnnouncementSubscriptionFilterGroupsArgs']] filter_groups: A list of filter groups for the announcement subscription. A filter group combines one or more filters that the Announcements service applies to announcements for matching purposes.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] ons_topic_id: (Updatable) The OCID of the Notifications service topic that is the target for publishing announcements that match the configured announcement subscription. The caller of the operation needs the ONS_TOPIC_PUBLISH permission for the targeted Notifications service topic. For more information about Notifications permissions, see [Details for Notifications](https://docs.cloud.oracle.com/iaas/Content/Identity/policyreference/notificationpolicyreference.htm).
+        :param pulumi.Input[str] preferred_language: (Updatable) (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
+        :param pulumi.Input[str] preferred_time_zone: (Updatable) The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
         """
         ...
     @overload
@@ -428,7 +498,9 @@ class AnnouncementSubscription(pulumi.CustomResource):
             ),
             freeform_tags={
                 "bar-key": "value",
-            })
+            },
+            preferred_language=var["announcement_subscription_preferred_language"],
+            preferred_time_zone=var["announcement_subscription_preferred_time_zone"])
         ```
 
         ## Import
@@ -461,6 +533,8 @@ class AnnouncementSubscription(pulumi.CustomResource):
                  filter_groups: Optional[pulumi.Input[pulumi.InputType['AnnouncementSubscriptionFilterGroupsArgs']]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  ons_topic_id: Optional[pulumi.Input[str]] = None,
+                 preferred_language: Optional[pulumi.Input[str]] = None,
+                 preferred_time_zone: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -483,6 +557,8 @@ class AnnouncementSubscription(pulumi.CustomResource):
             if ons_topic_id is None and not opts.urn:
                 raise TypeError("Missing required property 'ons_topic_id'")
             __props__.__dict__["ons_topic_id"] = ons_topic_id
+            __props__.__dict__["preferred_language"] = preferred_language
+            __props__.__dict__["preferred_time_zone"] = preferred_time_zone
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
@@ -506,6 +582,8 @@ class AnnouncementSubscription(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             ons_topic_id: Optional[pulumi.Input[str]] = None,
+            preferred_language: Optional[pulumi.Input[str]] = None,
+            preferred_time_zone: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
@@ -525,6 +603,8 @@ class AnnouncementSubscription(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current lifecycle state in more detail. For example, details might provide required or recommended actions for a resource in a Failed state.
         :param pulumi.Input[str] ons_topic_id: (Updatable) The OCID of the Notifications service topic that is the target for publishing announcements that match the configured announcement subscription. The caller of the operation needs the ONS_TOPIC_PUBLISH permission for the targeted Notifications service topic. For more information about Notifications permissions, see [Details for Notifications](https://docs.cloud.oracle.com/iaas/Content/Identity/policyreference/notificationpolicyreference.htm).
+        :param pulumi.Input[str] preferred_language: (Updatable) (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
+        :param pulumi.Input[str] preferred_time_zone: (Updatable) The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
         :param pulumi.Input[str] state: The current lifecycle state of the announcement subscription.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The date and time that the announcement subscription was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -542,6 +622,8 @@ class AnnouncementSubscription(pulumi.CustomResource):
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["ons_topic_id"] = ons_topic_id
+        __props__.__dict__["preferred_language"] = preferred_language
+        __props__.__dict__["preferred_time_zone"] = preferred_time_zone
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
@@ -611,6 +693,22 @@ class AnnouncementSubscription(pulumi.CustomResource):
         (Updatable) The OCID of the Notifications service topic that is the target for publishing announcements that match the configured announcement subscription. The caller of the operation needs the ONS_TOPIC_PUBLISH permission for the targeted Notifications service topic. For more information about Notifications permissions, see [Details for Notifications](https://docs.cloud.oracle.com/iaas/Content/Identity/policyreference/notificationpolicyreference.htm).
         """
         return pulumi.get(self, "ons_topic_id")
+
+    @property
+    @pulumi.getter(name="preferredLanguage")
+    def preferred_language(self) -> pulumi.Output[str]:
+        """
+        (Updatable) (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
+        """
+        return pulumi.get(self, "preferred_language")
+
+    @property
+    @pulumi.getter(name="preferredTimeZone")
+    def preferred_time_zone(self) -> pulumi.Output[str]:
+        """
+        (Updatable) The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+        """
+        return pulumi.get(self, "preferred_time_zone")
 
     @property
     @pulumi.getter

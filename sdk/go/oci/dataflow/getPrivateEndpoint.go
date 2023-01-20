@@ -81,6 +81,8 @@ type LookupPrivateEndpointResult struct {
 	// The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
 	OwnerUserName     string `pulumi:"ownerUserName"`
 	PrivateEndpointId string `pulumi:"privateEndpointId"`
+	// An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: "scan1.oracle.com", port: "1521"}, { fqdn: "scan2.oracle.com", port: "1521" } ]
+	ScanDetails []GetPrivateEndpointScanDetail `pulumi:"scanDetails"`
 	// The current state of this private endpoint.
 	State string `pulumi:"state"`
 	// The OCID of a subnet.
@@ -191,6 +193,11 @@ func (o LookupPrivateEndpointResultOutput) OwnerUserName() pulumi.StringOutput {
 
 func (o LookupPrivateEndpointResultOutput) PrivateEndpointId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupPrivateEndpointResult) string { return v.PrivateEndpointId }).(pulumi.StringOutput)
+}
+
+// An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: "scan1.oracle.com", port: "1521"}, { fqdn: "scan2.oracle.com", port: "1521" } ]
+func (o LookupPrivateEndpointResultOutput) ScanDetails() GetPrivateEndpointScanDetailArrayOutput {
+	return o.ApplyT(func(v LookupPrivateEndpointResult) []GetPrivateEndpointScanDetail { return v.ScanDetails }).(GetPrivateEndpointScanDetailArrayOutput)
 }
 
 // The current state of this private endpoint.

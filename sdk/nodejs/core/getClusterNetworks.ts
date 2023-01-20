@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getClusterNetworks(args: GetClusterNetworksArgs, opts?: pulumi.InvokeOptions): Promise<GetClusterNetworksResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getClusterNetworks:getClusterNetworks", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -82,9 +80,26 @@ export interface GetClusterNetworksResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Cluster Networks in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the cluster networks in the specified compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testClusterNetworks = oci.Core.getClusterNetworks({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.cluster_network_display_name,
+ *     state: _var.cluster_network_state,
+ * });
+ * ```
+ */
 export function getClusterNetworksOutput(args: GetClusterNetworksOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetClusterNetworksResult> {
-    return pulumi.output(args).apply(a => getClusterNetworks(a, opts))
+    return pulumi.output(args).apply((a: any) => getClusterNetworks(a, opts))
 }
 
 /**

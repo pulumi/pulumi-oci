@@ -115,6 +115,12 @@ namespace Pulumi.Oci.Opsi
         [Output("exadataDisplayName")]
         public Output<string> ExadataDisplayName { get; private set; } = null!;
 
+        [Output("exadataInfraId")]
+        public Output<string> ExadataInfraId { get; private set; } = null!;
+
+        [Output("exadataInfraResourceType")]
+        public Output<string> ExadataInfraResourceType { get; private set; } = null!;
+
         /// <summary>
         /// The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
         /// </summary>
@@ -126,6 +132,9 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         [Output("exadataRackType")]
         public Output<string> ExadataRackType { get; private set; } = null!;
+
+        [Output("exadataShape")]
+        public Output<string> ExadataShape { get; private set; } = null!;
 
         /// <summary>
         /// Operations Insights internal representation of the the Exadata system type.
@@ -156,6 +165,9 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
+
+        [Output("memberVmClusterDetails")]
+        public Output<ImmutableArray<Outputs.ExadataInsightMemberVmClusterDetail>> MemberVmClusterDetails { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the Exadata insight.
@@ -254,26 +266,29 @@ namespace Pulumi.Oci.Opsi
         /// <summary>
         /// OPSI Enterprise Manager Bridge OCID
         /// </summary>
-        [Input("enterpriseManagerBridgeId", required: true)]
-        public Input<string> EnterpriseManagerBridgeId { get; set; } = null!;
+        [Input("enterpriseManagerBridgeId")]
+        public Input<string>? EnterpriseManagerBridgeId { get; set; }
 
         /// <summary>
         /// Enterprise Manager Entity Unique Identifier
         /// </summary>
-        [Input("enterpriseManagerEntityIdentifier", required: true)]
-        public Input<string> EnterpriseManagerEntityIdentifier { get; set; } = null!;
+        [Input("enterpriseManagerEntityIdentifier")]
+        public Input<string>? EnterpriseManagerEntityIdentifier { get; set; }
 
         /// <summary>
         /// Enterprise Manager Unique Identifier
         /// </summary>
-        [Input("enterpriseManagerIdentifier", required: true)]
-        public Input<string> EnterpriseManagerIdentifier { get; set; } = null!;
+        [Input("enterpriseManagerIdentifier")]
+        public Input<string>? EnterpriseManagerIdentifier { get; set; }
 
         /// <summary>
         /// (Updatable) Source of the Exadata system.
         /// </summary>
         [Input("entitySource", required: true)]
         public Input<string> EntitySource { get; set; } = null!;
+
+        [Input("exadataInfraId")]
+        public Input<string>? ExadataInfraId { get; set; }
 
         [Input("freeformTags")]
         private InputMap<object>? _freeformTags;
@@ -292,6 +307,14 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         [Input("isAutoSyncEnabled")]
         public Input<bool>? IsAutoSyncEnabled { get; set; }
+
+        [Input("memberVmClusterDetails")]
+        private InputList<Inputs.ExadataInsightMemberVmClusterDetailArgs>? _memberVmClusterDetails;
+        public InputList<Inputs.ExadataInsightMemberVmClusterDetailArgs> MemberVmClusterDetails
+        {
+            get => _memberVmClusterDetails ?? (_memberVmClusterDetails = new InputList<Inputs.ExadataInsightMemberVmClusterDetailArgs>());
+            set => _memberVmClusterDetails = value;
+        }
 
         /// <summary>
         /// (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
@@ -373,6 +396,12 @@ namespace Pulumi.Oci.Opsi
         [Input("exadataDisplayName")]
         public Input<string>? ExadataDisplayName { get; set; }
 
+        [Input("exadataInfraId")]
+        public Input<string>? ExadataInfraId { get; set; }
+
+        [Input("exadataInfraResourceType")]
+        public Input<string>? ExadataInfraResourceType { get; set; }
+
         /// <summary>
         /// The Exadata system name. If the Exadata systems managed by Enterprise Manager, the name is unique amongst the Exadata systems managed by the same Enterprise Manager.
         /// </summary>
@@ -384,6 +413,9 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         [Input("exadataRackType")]
         public Input<string>? ExadataRackType { get; set; }
+
+        [Input("exadataShape")]
+        public Input<string>? ExadataShape { get; set; }
 
         /// <summary>
         /// Operations Insights internal representation of the the Exadata system type.
@@ -420,6 +452,14 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
+
+        [Input("memberVmClusterDetails")]
+        private InputList<Inputs.ExadataInsightMemberVmClusterDetailGetArgs>? _memberVmClusterDetails;
+        public InputList<Inputs.ExadataInsightMemberVmClusterDetailGetArgs> MemberVmClusterDetails
+        {
+            get => _memberVmClusterDetails ?? (_memberVmClusterDetails = new InputList<Inputs.ExadataInsightMemberVmClusterDetailGetArgs>());
+            set => _memberVmClusterDetails = value;
+        }
 
         /// <summary>
         /// The current state of the Exadata insight.

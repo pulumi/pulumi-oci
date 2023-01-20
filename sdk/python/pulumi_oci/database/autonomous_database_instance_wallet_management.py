@@ -20,7 +20,7 @@ class AutonomousDatabaseInstanceWalletManagementArgs:
         """
         The set of arguments for constructing a AutonomousDatabaseInstanceWalletManagement resource.
         :param pulumi.Input[str] autonomous_database_id: (Updatable) The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[int] grace_period: (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+        :param pulumi.Input[int] grace_period: (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
         :param pulumi.Input[bool] should_rotate: (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
         """
         pulumi.set(__self__, "autonomous_database_id", autonomous_database_id)
@@ -45,7 +45,7 @@ class AutonomousDatabaseInstanceWalletManagementArgs:
     @pulumi.getter(name="gracePeriod")
     def grace_period(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+        (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
         """
         return pulumi.get(self, "grace_period")
 
@@ -77,7 +77,7 @@ class _AutonomousDatabaseInstanceWalletManagementState:
         """
         Input properties used for looking up and filtering AutonomousDatabaseInstanceWalletManagement resources.
         :param pulumi.Input[str] autonomous_database_id: (Updatable) The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[int] grace_period: (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+        :param pulumi.Input[int] grace_period: (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
         :param pulumi.Input[bool] should_rotate: (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
         :param pulumi.Input[str] state: The current lifecycle state of the Autonomous Database wallet.
         :param pulumi.Input[str] time_rotated: The date and time the wallet was last rotated.
@@ -109,7 +109,7 @@ class _AutonomousDatabaseInstanceWalletManagementState:
     @pulumi.getter(name="gracePeriod")
     def grace_period(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+        (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
         """
         return pulumi.get(self, "grace_period")
 
@@ -187,7 +187,7 @@ class AutonomousDatabaseInstanceWalletManagement(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] autonomous_database_id: (Updatable) The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[int] grace_period: (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+        :param pulumi.Input[int] grace_period: (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
         :param pulumi.Input[bool] should_rotate: (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
         """
         ...
@@ -274,7 +274,7 @@ class AutonomousDatabaseInstanceWalletManagement(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] autonomous_database_id: (Updatable) The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[int] grace_period: (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+        :param pulumi.Input[int] grace_period: (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
         :param pulumi.Input[bool] should_rotate: (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
         :param pulumi.Input[str] state: The current lifecycle state of the Autonomous Database wallet.
         :param pulumi.Input[str] time_rotated: The date and time the wallet was last rotated.
@@ -302,7 +302,7 @@ class AutonomousDatabaseInstanceWalletManagement(pulumi.CustomResource):
     @pulumi.getter(name="gracePeriod")
     def grace_period(self) -> pulumi.Output[int]:
         """
-        (Updatable) Grace period in hours to keep the existing wallet valid after rotation.
+        (Updatable) The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
         """
         return pulumi.get(self, "grace_period")
 

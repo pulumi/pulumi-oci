@@ -14,6 +14,10 @@ namespace Pulumi.Oci.Mysql.Outputs
     public sealed class GetChannelSourceResult
     {
         /// <summary>
+        /// Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetChannelSourceAnonymousTransactionsHandlingResult> AnonymousTransactionsHandlings;
+        /// <summary>
         /// The network address of the MySQL instance.
         /// </summary>
         public readonly string Hostname;
@@ -41,6 +45,8 @@ namespace Pulumi.Oci.Mysql.Outputs
 
         [OutputConstructor]
         private GetChannelSourceResult(
+            ImmutableArray<Outputs.GetChannelSourceAnonymousTransactionsHandlingResult> anonymousTransactionsHandlings,
+
             string hostname,
 
             string password,
@@ -55,6 +61,7 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             string username)
         {
+            AnonymousTransactionsHandlings = anonymousTransactionsHandlings;
             Hostname = hostname;
             Password = password;
             Port = port;

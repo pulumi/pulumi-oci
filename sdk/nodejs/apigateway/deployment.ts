@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -34,10 +35,12 @@ import * as utilities from "../utilities";
  *             authentication: {
  *                 type: _var.deployment_specification_request_policies_authentication_type,
  *                 audiences: _var.deployment_specification_request_policies_authentication_audiences,
+ *                 cacheKeys: _var.deployment_specification_request_policies_authentication_cache_key,
  *                 functionId: oci_functions_function.test_function.id,
  *                 isAnonymousAccessAllowed: _var.deployment_specification_request_policies_authentication_is_anonymous_access_allowed,
  *                 issuers: _var.deployment_specification_request_policies_authentication_issuers,
  *                 maxClockSkewInSeconds: _var.deployment_specification_request_policies_authentication_max_clock_skew_in_seconds,
+ *                 parameters: _var.deployment_specification_request_policies_authentication_parameters,
  *                 publicKeys: {
  *                     type: _var.deployment_specification_request_policies_authentication_public_keys_type,
  *                     isSslVerifyDisabled: _var.deployment_specification_request_policies_authentication_public_keys_is_ssl_verify_disabled,
@@ -58,6 +61,86 @@ import * as utilities from "../utilities";
  *                 tokenAuthScheme: _var.deployment_specification_request_policies_authentication_token_auth_scheme,
  *                 tokenHeader: _var.deployment_specification_request_policies_authentication_token_header,
  *                 tokenQueryParam: _var.deployment_specification_request_policies_authentication_token_query_param,
+ *                 validationFailurePolicy: {
+ *                     type: _var.deployment_specification_request_policies_authentication_validation_failure_policy_type,
+ *                     clientDetails: {
+ *                         type: _var.deployment_specification_request_policies_authentication_validation_failure_policy_client_details_type,
+ *                         clientId: oci_apigateway_client.test_client.id,
+ *                         clientSecretId: oci_vault_secret.test_secret.id,
+ *                         clientSecretVersionNumber: _var.deployment_specification_request_policies_authentication_validation_failure_policy_client_details_client_secret_version_number,
+ *                     },
+ *                     fallbackRedirectPath: _var.deployment_specification_request_policies_authentication_validation_failure_policy_fallback_redirect_path,
+ *                     logoutPath: _var.deployment_specification_request_policies_authentication_validation_failure_policy_logout_path,
+ *                     maxExpiryDurationInHours: _var.deployment_specification_request_policies_authentication_validation_failure_policy_max_expiry_duration_in_hours,
+ *                     responseCode: _var.deployment_specification_request_policies_authentication_validation_failure_policy_response_code,
+ *                     responseHeaderTransformations: {
+ *                         filterHeaders: {
+ *                             items: [{
+ *                                 name: _var.deployment_specification_request_policies_authentication_validation_failure_policy_response_header_transformations_filter_headers_items_name,
+ *                             }],
+ *                             type: _var.deployment_specification_request_policies_authentication_validation_failure_policy_response_header_transformations_filter_headers_type,
+ *                         },
+ *                         renameHeaders: {
+ *                             items: [{
+ *                                 from: _var.deployment_specification_request_policies_authentication_validation_failure_policy_response_header_transformations_rename_headers_items_from,
+ *                                 to: _var.deployment_specification_request_policies_authentication_validation_failure_policy_response_header_transformations_rename_headers_items_to,
+ *                             }],
+ *                         },
+ *                         setHeaders: {
+ *                             items: [{
+ *                                 ifExists: _var.deployment_specification_request_policies_authentication_validation_failure_policy_response_header_transformations_set_headers_items_if_exists,
+ *                                 name: _var.deployment_specification_request_policies_authentication_validation_failure_policy_response_header_transformations_set_headers_items_name,
+ *                                 values: _var.deployment_specification_request_policies_authentication_validation_failure_policy_response_header_transformations_set_headers_items_values,
+ *                             }],
+ *                         },
+ *                     },
+ *                     responseMessage: _var.deployment_specification_request_policies_authentication_validation_failure_policy_response_message,
+ *                     responseType: _var.deployment_specification_request_policies_authentication_validation_failure_policy_response_type,
+ *                     scopes: _var.deployment_specification_request_policies_authentication_validation_failure_policy_scopes,
+ *                     sourceUriDetails: {
+ *                         type: _var.deployment_specification_request_policies_authentication_validation_failure_policy_source_uri_details_type,
+ *                         uri: _var.deployment_specification_request_policies_authentication_validation_failure_policy_source_uri_details_uri,
+ *                     },
+ *                     useCookiesForIntermediateSteps: _var.deployment_specification_request_policies_authentication_validation_failure_policy_use_cookies_for_intermediate_steps,
+ *                     useCookiesForSession: _var.deployment_specification_request_policies_authentication_validation_failure_policy_use_cookies_for_session,
+ *                     usePkce: _var.deployment_specification_request_policies_authentication_validation_failure_policy_use_pkce,
+ *                 },
+ *                 validationPolicy: {
+ *                     type: _var.deployment_specification_request_policies_authentication_validation_policy_type,
+ *                     additionalValidationPolicy: {
+ *                         audiences: _var.deployment_specification_request_policies_authentication_validation_policy_additional_validation_policy_audiences,
+ *                         issuers: _var.deployment_specification_request_policies_authentication_validation_policy_additional_validation_policy_issuers,
+ *                         verifyClaims: [{
+ *                             isRequired: _var.deployment_specification_request_policies_authentication_validation_policy_additional_validation_policy_verify_claims_is_required,
+ *                             key: _var.deployment_specification_request_policies_authentication_validation_policy_additional_validation_policy_verify_claims_key,
+ *                             values: _var.deployment_specification_request_policies_authentication_validation_policy_additional_validation_policy_verify_claims_values,
+ *                         }],
+ *                     },
+ *                     clientDetails: {
+ *                         type: _var.deployment_specification_request_policies_authentication_validation_policy_client_details_type,
+ *                         clientId: oci_apigateway_client.test_client.id,
+ *                         clientSecretId: oci_vault_secret.test_secret.id,
+ *                         clientSecretVersionNumber: _var.deployment_specification_request_policies_authentication_validation_policy_client_details_client_secret_version_number,
+ *                     },
+ *                     isSslVerifyDisabled: _var.deployment_specification_request_policies_authentication_validation_policy_is_ssl_verify_disabled,
+ *                     keys: [{
+ *                         format: _var.deployment_specification_request_policies_authentication_validation_policy_keys_format,
+ *                         alg: _var.deployment_specification_request_policies_authentication_validation_policy_keys_alg,
+ *                         e: _var.deployment_specification_request_policies_authentication_validation_policy_keys_e,
+ *                         key: _var.deployment_specification_request_policies_authentication_validation_policy_keys_key,
+ *                         keyOps: _var.deployment_specification_request_policies_authentication_validation_policy_keys_key_ops,
+ *                         kid: _var.deployment_specification_request_policies_authentication_validation_policy_keys_kid,
+ *                         kty: _var.deployment_specification_request_policies_authentication_validation_policy_keys_kty,
+ *                         n: _var.deployment_specification_request_policies_authentication_validation_policy_keys_n,
+ *                         use: _var.deployment_specification_request_policies_authentication_validation_policy_keys_use,
+ *                     }],
+ *                     maxCacheDurationInHours: _var.deployment_specification_request_policies_authentication_validation_policy_max_cache_duration_in_hours,
+ *                     sourceUriDetails: {
+ *                         type: _var.deployment_specification_request_policies_authentication_validation_policy_source_uri_details_type,
+ *                         uri: _var.deployment_specification_request_policies_authentication_validation_policy_source_uri_details_uri,
+ *                     },
+ *                     uri: _var.deployment_specification_request_policies_authentication_validation_policy_uri,
+ *                 },
  *                 verifyClaims: [{
  *                     isRequired: _var.deployment_specification_request_policies_authentication_verify_claims_is_required,
  *                     key: _var.deployment_specification_request_policies_authentication_verify_claims_key,
@@ -71,6 +154,134 @@ import * as utilities from "../utilities";
  *                 exposedHeaders: _var.deployment_specification_request_policies_cors_exposed_headers,
  *                 isAllowCredentialsEnabled: _var.deployment_specification_request_policies_cors_is_allow_credentials_enabled,
  *                 maxAgeInSeconds: _var.deployment_specification_request_policies_cors_max_age_in_seconds,
+ *             },
+ *             dynamicAuthentication: {
+ *                 authenticationServers: [{
+ *                     authenticationServerDetail: {
+ *                         type: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_type,
+ *                         audiences: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_audiences,
+ *                         functionId: oci_functions_function.test_function.id,
+ *                         isAnonymousAccessAllowed: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_is_anonymous_access_allowed,
+ *                         issuers: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_issuers,
+ *                         maxClockSkewInSeconds: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_max_clock_skew_in_seconds,
+ *                         publicKeys: {
+ *                             type: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_type,
+ *                             isSslVerifyDisabled: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_is_ssl_verify_disabled,
+ *                             keys: [{
+ *                                 format: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_format,
+ *                                 alg: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_alg,
+ *                                 e: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_e,
+ *                                 key: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_key,
+ *                                 keyOps: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_key_ops,
+ *                                 kid: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_kid,
+ *                                 kty: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_kty,
+ *                                 n: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_n,
+ *                                 use: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_keys_use,
+ *                             }],
+ *                             maxCacheDurationInHours: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_max_cache_duration_in_hours,
+ *                             uri: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_public_keys_uri,
+ *                         },
+ *                         tokenAuthScheme: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_token_auth_scheme,
+ *                         tokenHeader: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_token_header,
+ *                         tokenQueryParam: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_token_query_param,
+ *                         validationFailurePolicy: {
+ *                             type: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_type,
+ *                             clientDetails: {
+ *                                 type: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_client_details_type,
+ *                                 clientId: oci_apigateway_client.test_client.id,
+ *                                 clientSecretId: oci_vault_secret.test_secret.id,
+ *                                 clientSecretVersionNumber: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_client_details_client_secret_version_number,
+ *                             },
+ *                             fallbackRedirectPath: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_fallback_redirect_path,
+ *                             logoutPath: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_logout_path,
+ *                             maxExpiryDurationInHours: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_max_expiry_duration_in_hours,
+ *                             responseCode: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_code,
+ *                             responseHeaderTransformations: {
+ *                                 filterHeaders: {
+ *                                     items: [{
+ *                                         name: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_header_transformations_filter_headers_items_name,
+ *                                     }],
+ *                                     type: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_header_transformations_filter_headers_type,
+ *                                 },
+ *                                 renameHeaders: {
+ *                                     items: [{
+ *                                         from: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_header_transformations_rename_headers_items_from,
+ *                                         to: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_header_transformations_rename_headers_items_to,
+ *                                     }],
+ *                                 },
+ *                                 setHeaders: {
+ *                                     items: [{
+ *                                         ifExists: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_header_transformations_set_headers_items_if_exists,
+ *                                         name: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_header_transformations_set_headers_items_name,
+ *                                         values: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_header_transformations_set_headers_items_values,
+ *                                     }],
+ *                                 },
+ *                             },
+ *                             responseMessage: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_message,
+ *                             responseType: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_response_type,
+ *                             scopes: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_scopes,
+ *                             sourceUriDetails: {
+ *                                 type: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_source_uri_details_type,
+ *                                 uri: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_source_uri_details_uri,
+ *                             },
+ *                             useCookiesForIntermediateSteps: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_use_cookies_for_intermediate_steps,
+ *                             useCookiesForSession: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_use_cookies_for_session,
+ *                             usePkce: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_failure_policy_use_pkce,
+ *                         },
+ *                         validationPolicy: {
+ *                             type: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_type,
+ *                             additionalValidationPolicy: {
+ *                                 audiences: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_additional_validation_policy_audiences,
+ *                                 issuers: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_additional_validation_policy_issuers,
+ *                                 verifyClaims: [{
+ *                                     isRequired: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_additional_validation_policy_verify_claims_is_required,
+ *                                     key: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_additional_validation_policy_verify_claims_key,
+ *                                     values: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_additional_validation_policy_verify_claims_values,
+ *                                 }],
+ *                             },
+ *                             clientDetails: {
+ *                                 type: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_client_details_type,
+ *                                 clientId: oci_apigateway_client.test_client.id,
+ *                                 clientSecretId: oci_vault_secret.test_secret.id,
+ *                                 clientSecretVersionNumber: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_client_details_client_secret_version_number,
+ *                             },
+ *                             isSslVerifyDisabled: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_is_ssl_verify_disabled,
+ *                             keys: [{
+ *                                 format: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_format,
+ *                                 alg: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_alg,
+ *                                 e: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_e,
+ *                                 key: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_key,
+ *                                 keyOps: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_key_ops,
+ *                                 kid: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_kid,
+ *                                 kty: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_kty,
+ *                                 n: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_n,
+ *                                 use: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_keys_use,
+ *                             }],
+ *                             maxCacheDurationInHours: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_max_cache_duration_in_hours,
+ *                             sourceUriDetails: {
+ *                                 type: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_source_uri_details_type,
+ *                                 uri: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_source_uri_details_uri,
+ *                             },
+ *                             uri: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_validation_policy_uri,
+ *                         },
+ *                         verifyClaims: [{
+ *                             isRequired: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_verify_claims_is_required,
+ *                             key: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_verify_claims_key,
+ *                             values: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_authentication_server_detail_verify_claims_values,
+ *                         }],
+ *                     },
+ *                     key: {
+ *                         name: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_name,
+ *                         expression: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_expression,
+ *                         isDefault: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_is_default,
+ *                         type: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_type,
+ *                         values: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_values,
+ *                     },
+ *                 }],
+ *                 selectionSource: {
+ *                     selector: _var.deployment_specification_request_policies_dynamic_authentication_selection_source_selector,
+ *                     type: _var.deployment_specification_request_policies_dynamic_authentication_selection_source_type,
+ *                 },
  *             },
  *             mutualTls: {
  *                 allowedSans: _var.deployment_specification_request_policies_mutual_tls_allowed_sans,
@@ -87,6 +298,7 @@ import * as utilities from "../utilities";
  *         routes: [{
  *             backend: {
  *                 type: _var.deployment_specification_routes_backend_type,
+ *                 allowedPostLogoutUris: _var.deployment_specification_routes_backend_allowed_post_logout_uris,
  *                 body: _var.deployment_specification_routes_backend_body,
  *                 connectTimeoutInSeconds: _var.deployment_specification_routes_backend_connect_timeout_in_seconds,
  *                 functionId: oci_functions_function.test_function.id,
@@ -95,7 +307,36 @@ import * as utilities from "../utilities";
  *                     value: _var.deployment_specification_routes_backend_headers_value,
  *                 }],
  *                 isSslVerifyDisabled: _var.deployment_specification_routes_backend_is_ssl_verify_disabled,
+ *                 postLogoutState: _var.deployment_specification_routes_backend_post_logout_state,
  *                 readTimeoutInSeconds: _var.deployment_specification_routes_backend_read_timeout_in_seconds,
+ *                 routingBackends: [{
+ *                     backend: {
+ *                         type: _var.deployment_specification_routes_backend_routing_backends_backend_type,
+ *                         body: _var.deployment_specification_routes_backend_routing_backends_backend_body,
+ *                         connectTimeoutInSeconds: _var.deployment_specification_routes_backend_routing_backends_backend_connect_timeout_in_seconds,
+ *                         functionId: oci_functions_function.test_function.id,
+ *                         headers: [{
+ *                             name: _var.deployment_specification_routes_backend_routing_backends_backend_headers_name,
+ *                             value: _var.deployment_specification_routes_backend_routing_backends_backend_headers_value,
+ *                         }],
+ *                         isSslVerifyDisabled: _var.deployment_specification_routes_backend_routing_backends_backend_is_ssl_verify_disabled,
+ *                         readTimeoutInSeconds: _var.deployment_specification_routes_backend_routing_backends_backend_read_timeout_in_seconds,
+ *                         sendTimeoutInSeconds: _var.deployment_specification_routes_backend_routing_backends_backend_send_timeout_in_seconds,
+ *                         status: _var.deployment_specification_routes_backend_routing_backends_backend_status,
+ *                         url: _var.deployment_specification_routes_backend_routing_backends_backend_url,
+ *                     },
+ *                     key: {
+ *                         name: _var.deployment_specification_routes_backend_routing_backends_key_name,
+ *                         type: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_type,
+ *                         expression: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_expression,
+ *                         isDefault: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_is_default,
+ *                         values: _var.deployment_specification_request_policies_dynamic_authentication_authentication_servers_key_values,
+ *                     },
+ *                 }],
+ *                 selectionSource: {
+ *                     selector: _var.deployment_specification_routes_backend_selection_source_selector,
+ *                     type: _var.deployment_specification_routes_backend_selection_source_type,
+ *                 },
  *                 sendTimeoutInSeconds: _var.deployment_specification_routes_backend_send_timeout_in_seconds,
  *                 status: _var.deployment_specification_routes_backend_status,
  *                 url: _var.deployment_specification_routes_backend_url,

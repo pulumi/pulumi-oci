@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -30,11 +31,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getHistories(args: GetHistoriesArgs, opts?: pulumi.InvokeOptions): Promise<GetHistoriesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Optimizer/getHistories:getHistories", {
         "compartmentId": args.compartmentId,
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
@@ -130,9 +128,32 @@ export interface GetHistoriesResult {
      */
     readonly status?: string;
 }
-
+/**
+ * This data source provides the list of Histories in Oracle Cloud Infrastructure Optimizer service.
+ *
+ * Lists changes to the recommendations based on user activity.
+ * For example, lists when recommendations have been implemented, dismissed, postponed, or reactivated.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testHistories = oci.Optimizer.getHistories({
+ *     compartmentId: _var.compartment_id,
+ *     compartmentIdInSubtree: _var.history_compartment_id_in_subtree,
+ *     name: _var.history_name,
+ *     recommendationId: oci_optimizer_recommendation.test_recommendation.id,
+ *     recommendationName: oci_optimizer_recommendation.test_recommendation.name,
+ *     resourceType: _var.history_resource_type,
+ *     state: _var.history_state,
+ *     status: _var.history_status,
+ * });
+ * ```
+ */
 export function getHistoriesOutput(args: GetHistoriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetHistoriesResult> {
-    return pulumi.output(args).apply(a => getHistories(a, opts))
+    return pulumi.output(args).apply((a: any) => getHistories(a, opts))
 }
 
 /**

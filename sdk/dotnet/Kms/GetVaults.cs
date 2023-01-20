@@ -44,7 +44,7 @@ namespace Pulumi.Oci.Kms
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetVaultsResult> InvokeAsync(GetVaultsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetVaultsResult>("oci:Kms/getVaults:getVaults", args ?? new GetVaultsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetVaultsResult>("oci:Kms/getVaults:getVaults", args ?? new GetVaultsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Vaults in Oracle Cloud Infrastructure Kms service.
@@ -79,7 +79,7 @@ namespace Pulumi.Oci.Kms
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetVaultsResult> Invoke(GetVaultsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetVaultsResult>("oci:Kms/getVaults:getVaults", args ?? new GetVaultsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetVaultsResult>("oci:Kms/getVaults:getVaults", args ?? new GetVaultsInvokeArgs(), options.WithDefaults());
     }
 
 

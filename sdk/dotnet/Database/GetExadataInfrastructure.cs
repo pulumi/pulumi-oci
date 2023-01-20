@@ -16,62 +16,18 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets information about the specified Exadata infrastructure. Applies to Exadata Cloud@Customer instances only.
         /// To get information on an Exadata Cloud Service infrastructure resource, use the  [GetCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/GetCloudExadataInfrastructure) operation.
-        /// 
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Oci = Pulumi.Oci;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var testExadataInfrastructure = Oci.Database.GetExadataInfrastructure.Invoke(new()
-        ///     {
-        ///         ExadataInfrastructureId = oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
-        ///     });
-        /// 
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Task<GetExadataInfrastructureResult> InvokeAsync(GetExadataInfrastructureArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetExadataInfrastructureResult>("oci:Database/getExadataInfrastructure:getExadataInfrastructure", args ?? new GetExadataInfrastructureArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetExadataInfrastructureResult>("oci:Database/getExadataInfrastructure:getExadataInfrastructure", args ?? new GetExadataInfrastructureArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.
         /// 
         /// Gets information about the specified Exadata infrastructure. Applies to Exadata Cloud@Customer instances only.
         /// To get information on an Exadata Cloud Service infrastructure resource, use the  [GetCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/GetCloudExadataInfrastructure) operation.
-        /// 
-        /// 
-        /// {{% examples %}}
-        /// ## Example Usage
-        /// {{% example %}}
-        /// 
-        /// ```csharp
-        /// using System.Collections.Generic;
-        /// using Pulumi;
-        /// using Oci = Pulumi.Oci;
-        /// 
-        /// return await Deployment.RunAsync(() =&gt; 
-        /// {
-        ///     var testExadataInfrastructure = Oci.Database.GetExadataInfrastructure.Invoke(new()
-        ///     {
-        ///         ExadataInfrastructureId = oci_database_exadata_infrastructure.Test_exadata_infrastructure.Id,
-        ///     });
-        /// 
-        /// });
-        /// ```
-        /// {{% /example %}}
-        /// {{% /examples %}}
         /// </summary>
         public static Output<GetExadataInfrastructureResult> Invoke(GetExadataInfrastructureInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetExadataInfrastructureResult>("oci:Database/getExadataInfrastructure:getExadataInfrastructure", args ?? new GetExadataInfrastructureInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetExadataInfrastructureResult>("oci:Database/getExadataInfrastructure:getExadataInfrastructure", args ?? new GetExadataInfrastructureInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -112,6 +68,14 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly int ActivatedStorageCount;
         public readonly string ActivationFile;
+        /// <summary>
+        /// The requested number of additional compute servers for the Exadata infrastructure.
+        /// </summary>
+        public readonly int AdditionalComputeCount;
+        /// <summary>
+        /// Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+        /// </summary>
+        public readonly string AdditionalComputeSystemModel;
         /// <summary>
         /// The requested number of additional storage servers for the Exadata infrastructure.
         /// </summary>
@@ -199,6 +163,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly bool IsCpsOfflineReportEnabled;
         /// <summary>
+        /// Indicates if deployment is Multi-Rack or not.
+        /// </summary>
+        public readonly bool IsMultiRackDeployment;
+        /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
         public readonly string LifecycleDetails;
@@ -234,6 +202,10 @@ namespace Pulumi.Oci.Database
         /// The monthly software version of the database servers (dom0) in the Exadata infrastructure.
         /// </summary>
         public readonly string MonthlyDbServerVersion;
+        /// <summary>
+        /// The base64 encoded Multi-Rack configuration json file.
+        /// </summary>
+        public readonly string MultiRackConfigurationFile;
         /// <summary>
         /// The netmask for the control plane network.
         /// </summary>
@@ -272,6 +244,10 @@ namespace Pulumi.Oci.Database
             int activatedStorageCount,
 
             string activationFile,
+
+            int additionalComputeCount,
+
+            string additionalComputeSystemModel,
 
             int additionalStorageCount,
 
@@ -319,6 +295,8 @@ namespace Pulumi.Oci.Database
 
             bool isCpsOfflineReportEnabled,
 
+            bool isMultiRackDeployment,
+
             string lifecycleDetails,
 
             string maintenanceSloStatus,
@@ -336,6 +314,8 @@ namespace Pulumi.Oci.Database
             int memorySizeInGbs,
 
             string monthlyDbServerVersion,
+
+            string multiRackConfigurationFile,
 
             string netmask,
 
@@ -355,6 +335,8 @@ namespace Pulumi.Oci.Database
         {
             ActivatedStorageCount = activatedStorageCount;
             ActivationFile = activationFile;
+            AdditionalComputeCount = additionalComputeCount;
+            AdditionalComputeSystemModel = additionalComputeSystemModel;
             AdditionalStorageCount = additionalStorageCount;
             AdminNetworkCidr = adminNetworkCidr;
             CloudControlPlaneServer1 = cloudControlPlaneServer1;
@@ -378,6 +360,7 @@ namespace Pulumi.Oci.Database
             Id = id;
             InfiniBandNetworkCidr = infiniBandNetworkCidr;
             IsCpsOfflineReportEnabled = isCpsOfflineReportEnabled;
+            IsMultiRackDeployment = isMultiRackDeployment;
             LifecycleDetails = lifecycleDetails;
             MaintenanceSloStatus = maintenanceSloStatus;
             MaintenanceWindows = maintenanceWindows;
@@ -387,6 +370,7 @@ namespace Pulumi.Oci.Database
             MaxMemoryInGbs = maxMemoryInGbs;
             MemorySizeInGbs = memorySizeInGbs;
             MonthlyDbServerVersion = monthlyDbServerVersion;
+            MultiRackConfigurationFile = multiRackConfigurationFile;
             Netmask = netmask;
             NtpServers = ntpServers;
             Shape = shape;

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedPreferredCredentials(args: GetManagedPreferredCredentialsArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedPreferredCredentialsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getManagedPreferredCredentials:getManagedPreferredCredentials", {
         "filters": args.filters,
         "managedDatabaseId": args.managedDatabaseId,
@@ -59,9 +57,24 @@ export interface GetManagedPreferredCredentialsResult {
      */
     readonly preferredCredentialCollections: outputs.Database.GetManagedPreferredCredentialsPreferredCredentialCollection[];
 }
-
+/**
+ * This data source provides the list of Managed Database Preferred Credentials in Oracle Cloud Infrastructure Database Management service.
+ *
+ * Gets the list of preferred credentials for a given Managed Database.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testManagedDatabasePreferredCredentials = oci.Database.getManagedPreferredCredentials({
+ *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
+ * });
+ * ```
+ */
 export function getManagedPreferredCredentialsOutput(args: GetManagedPreferredCredentialsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedPreferredCredentialsResult> {
-    return pulumi.output(args).apply(a => getManagedPreferredCredentials(a, opts))
+    return pulumi.output(args).apply((a: any) => getManagedPreferredCredentials(a, opts))
 }
 
 /**

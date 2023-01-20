@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Blockchain
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetOsnsResult> InvokeAsync(GetOsnsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetOsnsResult>("oci:Blockchain/getOsns:getOsns", args ?? new GetOsnsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetOsnsResult>("oci:Blockchain/getOsns:getOsns", args ?? new GetOsnsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Osns in Oracle Cloud Infrastructure Blockchain service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Blockchain
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetOsnsResult> Invoke(GetOsnsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetOsnsResult>("oci:Blockchain/getOsns:getOsns", args ?? new GetOsnsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetOsnsResult>("oci:Blockchain/getOsns:getOsns", args ?? new GetOsnsInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCloudVmCluster(args: GetCloudVmClusterArgs, opts?: pulumi.InvokeOptions): Promise<GetCloudVmClusterResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getCloudVmCluster:getCloudVmCluster", {
         "cloudVmClusterId": args.cloudVmClusterId,
     }, opts);
@@ -84,6 +82,18 @@ export interface GetCloudVmClusterResult {
      * The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 35, 40, 60 and 80. The default is 80 percent assigned to DATA storage. See [Storage Configuration](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaoverview.htm#Exadata) in the Exadata documentation for details on the impact of the configuration settings on storage.
      */
     readonly dataStoragePercentage: number;
+    /**
+     * The data disk group size to be allocated in TBs.
+     */
+    readonly dataStorageSizeInTbs: number;
+    /**
+     * The local node storage to be allocated in GBs.
+     */
+    readonly dbNodeStorageSizeInGbs: number;
+    /**
+     * The list of DB servers.
+     */
+    readonly dbServers: string[];
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
@@ -145,6 +155,10 @@ export interface GetCloudVmClusterResult {
      */
     readonly listenerPort: string;
     /**
+     * The memory to be allocated in GBs.
+     */
+    readonly memorySizeInGbs: number;
+    /**
      * The number of nodes in the cloud VM cluster.
      */
     readonly nodeCount: number;
@@ -157,6 +171,7 @@ export interface GetCloudVmClusterResult {
      * The number of OCPU cores to enable on the cloud VM cluster. Only 1 decimal place is allowed for the fractional part.
      */
     readonly ocpuCount: number;
+    readonly privateZoneId: string;
     /**
      * The FQDN of the DNS record for the SCAN IP addresses that are associated with the cloud VM cluster.
      */
@@ -218,9 +233,24 @@ export interface GetCloudVmClusterResult {
      */
     readonly zoneId: string;
 }
-
+/**
+ * This data source provides details about a specific Cloud Vm Cluster resource in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets information about the specified cloud VM cluster. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCloudVmCluster = oci.Database.getCloudVmCluster({
+ *     cloudVmClusterId: oci_database_cloud_vm_cluster.test_cloud_vm_cluster.id,
+ * });
+ * ```
+ */
 export function getCloudVmClusterOutput(args: GetCloudVmClusterOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCloudVmClusterResult> {
-    return pulumi.output(args).apply(a => getCloudVmCluster(a, opts))
+    return pulumi.output(args).apply((a: any) => getCloudVmCluster(a, opts))
 }
 
 /**

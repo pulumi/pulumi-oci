@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -21,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getPrivateEndpoint(args: GetPrivateEndpointArgs, opts?: pulumi.InvokeOptions): Promise<GetPrivateEndpointResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataFlow/getPrivateEndpoint:getPrivateEndpoint", {
         "privateEndpointId": args.privateEndpointId,
     }, opts);
@@ -95,6 +94,10 @@ export interface GetPrivateEndpointResult {
     readonly ownerUserName: string;
     readonly privateEndpointId: string;
     /**
+     * An array of fqdn/port pairs used to create private endpoint. Each object is a simple key-value pair with FQDN as key and port number as value. [ { fqdn: "scan1.oracle.com", port: "1521"}, { fqdn: "scan2.oracle.com", port: "1521" } ]
+     */
+    readonly scanDetails: outputs.DataFlow.GetPrivateEndpointScanDetail[];
+    /**
      * The current state of this private endpoint.
      */
     readonly state: string;
@@ -111,9 +114,24 @@ export interface GetPrivateEndpointResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Private Endpoint resource in Oracle Cloud Infrastructure Data Flow service.
+ *
+ * Retrieves an private endpoint using a `privateEndpointId`.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testPrivateEndpoint = oci.DataFlow.getPrivateEndpoint({
+ *     privateEndpointId: oci_dataflow_private_endpoint.test_private_endpoint.id,
+ * });
+ * ```
+ */
 export function getPrivateEndpointOutput(args: GetPrivateEndpointOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPrivateEndpointResult> {
-    return pulumi.output(args).apply(a => getPrivateEndpoint(a, opts))
+    return pulumi.output(args).apply((a: any) => getPrivateEndpoint(a, opts))
 }
 
 /**

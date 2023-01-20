@@ -17,7 +17,7 @@ public final class ScheduleQueryPropertiesGroupByTag {
      */
     private @Nullable String key;
     /**
-     * @return The namespace needed to determine object storage bucket.
+     * @return (Updatable) The namespace needed to determine the object storage bucket.
      * 
      */
     private @Nullable String namespace;
@@ -36,7 +36,7 @@ public final class ScheduleQueryPropertiesGroupByTag {
         return Optional.ofNullable(this.key);
     }
     /**
-     * @return The namespace needed to determine object storage bucket.
+     * @return (Updatable) The namespace needed to determine the object storage bucket.
      * 
      */
     public Optional<String> namespace() {

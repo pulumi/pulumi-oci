@@ -69,7 +69,7 @@ public final class OptimizerFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
-     * import com.pulumi.oci.Marketplace.inputs.GetCategoriesArgs;
+     * import com.pulumi.oci.Optimizer.inputs.GetCategoriesArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -113,7 +113,7 @@ public final class OptimizerFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
-     * import com.pulumi.oci.Marketplace.inputs.GetCategoriesArgs;
+     * import com.pulumi.oci.Optimizer.inputs.GetCategoriesArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -157,7 +157,7 @@ public final class OptimizerFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
-     * import com.pulumi.oci.Marketplace.inputs.GetCategoriesArgs;
+     * import com.pulumi.oci.Optimizer.inputs.GetCategoriesArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;
@@ -201,7 +201,7 @@ public final class OptimizerFunctions {
      * import com.pulumi.Pulumi;
      * import com.pulumi.core.Output;
      * import com.pulumi.oci.Optimizer.OptimizerFunctions;
-     * import com.pulumi.oci.Marketplace.inputs.GetCategoriesArgs;
+     * import com.pulumi.oci.Optimizer.inputs.GetCategoriesArgs;
      * import java.util.List;
      * import java.util.ArrayList;
      * import java.util.Map;

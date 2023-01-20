@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRepositoryRefs(args: GetRepositoryRefsArgs, opts?: pulumi.InvokeOptions): Promise<GetRepositoryRefsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getRepositoryRefs:getRepositoryRefs", {
         "commitId": args.commitId,
         "filters": args.filters,
@@ -92,9 +90,27 @@ export interface GetRepositoryRefsResult {
      */
     readonly repositoryRefCollections: outputs.DevOps.GetRepositoryRefsRepositoryRefCollection[];
 }
-
+/**
+ * This data source provides the list of Repository Refs in Oracle Cloud Infrastructure Devops service.
+ *
+ * Returns a list of references.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testRepositoryRefs = oci.DevOps.getRepositoryRefs({
+ *     repositoryId: oci_devops_repository.test_repository.id,
+ *     commitId: oci_devops_commit.test_commit.id,
+ *     refName: _var.repository_ref_ref_name,
+ *     refType: _var.repository_ref_ref_type,
+ * });
+ * ```
+ */
 export function getRepositoryRefsOutput(args: GetRepositoryRefsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRepositoryRefsResult> {
-    return pulumi.output(args).apply(a => getRepositoryRefs(a, opts))
+    return pulumi.output(args).apply((a: any) => getRepositoryRefs(a, opts))
 }
 
 /**

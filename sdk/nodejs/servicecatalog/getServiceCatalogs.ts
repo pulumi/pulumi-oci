@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getServiceCatalogs(args: GetServiceCatalogsArgs, opts?: pulumi.InvokeOptions): Promise<GetServiceCatalogsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ServiceCatalog/getServiceCatalogs:getServiceCatalogs", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -79,9 +77,26 @@ export interface GetServiceCatalogsResult {
     readonly serviceCatalogCollections: outputs.ServiceCatalog.GetServiceCatalogsServiceCatalogCollection[];
     readonly serviceCatalogId?: string;
 }
-
+/**
+ * This data source provides the list of Service Catalogs in Oracle Cloud Infrastructure Service Catalog service.
+ *
+ * Lists all the service catalogs in the given compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testServiceCatalogs = oci.ServiceCatalog.getServiceCatalogs({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.service_catalog_display_name,
+ *     serviceCatalogId: oci_service_catalog_service_catalog.test_service_catalog.id,
+ * });
+ * ```
+ */
 export function getServiceCatalogsOutput(args: GetServiceCatalogsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetServiceCatalogsResult> {
-    return pulumi.output(args).apply(a => getServiceCatalogs(a, opts))
+    return pulumi.output(args).apply((a: any) => getServiceCatalogs(a, opts))
 }
 
 /**

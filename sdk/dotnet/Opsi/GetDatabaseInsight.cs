@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Opsi
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDatabaseInsightResult> InvokeAsync(GetDatabaseInsightArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDatabaseInsightResult>("oci:Opsi/getDatabaseInsight:getDatabaseInsight", args ?? new GetDatabaseInsightArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDatabaseInsightResult>("oci:Opsi/getDatabaseInsight:getDatabaseInsight", args ?? new GetDatabaseInsightArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Database Insight resource in Oracle Cloud Infrastructure Opsi service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Opsi
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDatabaseInsightResult> Invoke(GetDatabaseInsightInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDatabaseInsightResult>("oci:Opsi/getDatabaseInsight:getDatabaseInsight", args ?? new GetDatabaseInsightInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDatabaseInsightResult>("oci:Opsi/getDatabaseInsight:getDatabaseInsight", args ?? new GetDatabaseInsightInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -203,9 +203,17 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         public readonly string OpsiPrivateEndpointId;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
+        /// </summary>
+        public readonly string ParentId;
+        /// <summary>
         /// Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
         /// </summary>
         public readonly int ProcessorCount;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+        /// </summary>
+        public readonly string RootId;
         /// <summary>
         /// Database service name used for connection requests.
         /// </summary>
@@ -287,7 +295,11 @@ namespace Pulumi.Oci.Opsi
 
             string opsiPrivateEndpointId,
 
+            string parentId,
+
             int processorCount,
+
+            string rootId,
 
             string serviceName,
 
@@ -328,7 +340,9 @@ namespace Pulumi.Oci.Opsi
             Id = id;
             LifecycleDetails = lifecycleDetails;
             OpsiPrivateEndpointId = opsiPrivateEndpointId;
+            ParentId = parentId;
             ProcessorCount = processorCount;
+            RootId = rootId;
             ServiceName = serviceName;
             State = state;
             Status = status;

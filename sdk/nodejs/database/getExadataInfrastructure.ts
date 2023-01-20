@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -10,24 +11,10 @@ import * as utilities from "../utilities";
  *
  * Gets information about the specified Exadata infrastructure. Applies to Exadata Cloud@Customer instances only.
  * To get information on an Exadata Cloud Service infrastructure resource, use the  [GetCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/GetCloudExadataInfrastructure) operation.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testExadataInfrastructure = oci.Database.getExadataInfrastructure({
- *     exadataInfrastructureId: oci_database_exadata_infrastructure.test_exadata_infrastructure.id,
- * });
- * ```
  */
 export function getExadataInfrastructure(args: GetExadataInfrastructureArgs, opts?: pulumi.InvokeOptions): Promise<GetExadataInfrastructureResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getExadataInfrastructure:getExadataInfrastructure", {
         "exadataInfrastructureId": args.exadataInfrastructureId,
     }, opts);
@@ -52,6 +39,14 @@ export interface GetExadataInfrastructureResult {
      */
     readonly activatedStorageCount: number;
     readonly activationFile: string;
+    /**
+     * The requested number of additional compute servers for the Exadata infrastructure.
+     */
+    readonly additionalComputeCount: number;
+    /**
+     * Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+     */
+    readonly additionalComputeSystemModel: string;
     /**
      * The requested number of additional storage servers for the Exadata infrastructure.
      */
@@ -139,6 +134,10 @@ export interface GetExadataInfrastructureResult {
      */
     readonly isCpsOfflineReportEnabled: boolean;
     /**
+     * Indicates if deployment is Multi-Rack or not.
+     */
+    readonly isMultiRackDeployment: boolean;
+    /**
      * Additional information about the current lifecycle state.
      */
     readonly lifecycleDetails: string;
@@ -175,6 +174,10 @@ export interface GetExadataInfrastructureResult {
      */
     readonly monthlyDbServerVersion: string;
     /**
+     * The base64 encoded Multi-Rack configuration json file.
+     */
+    readonly multiRackConfigurationFile: string;
+    /**
      * The netmask for the control plane network.
      */
     readonly netmask: string;
@@ -207,9 +210,14 @@ export interface GetExadataInfrastructureResult {
      */
     readonly timeZone: string;
 }
-
+/**
+ * This data source provides details about a specific Exadata Infrastructure resource in Oracle Cloud Infrastructure Database service.
+ *
+ * Gets information about the specified Exadata infrastructure. Applies to Exadata Cloud@Customer instances only.
+ * To get information on an Exadata Cloud Service infrastructure resource, use the  [GetCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/GetCloudExadataInfrastructure) operation.
+ */
 export function getExadataInfrastructureOutput(args: GetExadataInfrastructureOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetExadataInfrastructureResult> {
-    return pulumi.output(args).apply(a => getExadataInfrastructure(a, opts))
+    return pulumi.output(args).apply((a: any) => getExadataInfrastructure(a, opts))
 }
 
 /**

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagementAgentAvailableHistories(args: GetManagementAgentAvailableHistoriesArgs, opts?: pulumi.InvokeOptions): Promise<GetManagementAgentAvailableHistoriesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ManagementAgent/getManagementAgentAvailableHistories:getManagementAgentAvailableHistories", {
         "filters": args.filters,
         "managementAgentId": args.managementAgentId,
@@ -76,9 +74,26 @@ export interface GetManagementAgentAvailableHistoriesResult {
     readonly timeAvailabilityStatusEndedGreaterThan?: string;
     readonly timeAvailabilityStatusStartedLessThan?: string;
 }
-
+/**
+ * This data source provides the list of Management Agent Available Histories in Oracle Cloud Infrastructure Management Agent service.
+ *
+ * Lists the availability history records of Management Agent
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testManagementAgentAvailableHistories = oci.ManagementAgent.getManagementAgentAvailableHistories({
+ *     managementAgentId: oci_management_agent_management_agent.test_management_agent.id,
+ *     timeAvailabilityStatusEndedGreaterThan: _var.management_agent_available_history_time_availability_status_ended_greater_than,
+ *     timeAvailabilityStatusStartedLessThan: _var.management_agent_available_history_time_availability_status_started_less_than,
+ * });
+ * ```
+ */
 export function getManagementAgentAvailableHistoriesOutput(args: GetManagementAgentAvailableHistoriesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementAgentAvailableHistoriesResult> {
-    return pulumi.output(args).apply(a => getManagementAgentAvailableHistories(a, opts))
+    return pulumi.output(args).apply((a: any) => getManagementAgentAvailableHistories(a, opts))
 }
 
 /**

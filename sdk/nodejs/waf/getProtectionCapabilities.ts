@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -27,11 +28,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getProtectionCapabilities(args: GetProtectionCapabilitiesArgs, opts?: pulumi.InvokeOptions): Promise<GetProtectionCapabilitiesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Waf/getProtectionCapabilities:getProtectionCapabilities", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -108,9 +106,29 @@ export interface GetProtectionCapabilitiesResult {
      */
     readonly type?: string;
 }
-
+/**
+ * This data source provides the list of Protection Capabilities in Oracle Cloud Infrastructure Waf service.
+ *
+ * Lists of protection capabilities filtered by query parameters.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testProtectionCapabilities = oci.Waf.getProtectionCapabilities({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.protection_capability_display_name,
+ *     groupTags: _var.protection_capability_group_tag,
+ *     isLatestVersions: _var.protection_capability_is_latest_version,
+ *     key: _var.protection_capability_key,
+ *     type: _var.protection_capability_type,
+ * });
+ * ```
+ */
 export function getProtectionCapabilitiesOutput(args: GetProtectionCapabilitiesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetProtectionCapabilitiesResult> {
-    return pulumi.output(args).apply(a => getProtectionCapabilities(a, opts))
+    return pulumi.output(args).apply((a: any) => getProtectionCapabilities(a, opts))
 }
 
 /**

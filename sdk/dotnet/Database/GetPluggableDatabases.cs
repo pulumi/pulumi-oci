@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetPluggableDatabasesResult> InvokeAsync(GetPluggableDatabasesArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetPluggableDatabasesResult>("oci:Database/getPluggableDatabases:getPluggableDatabases", args ?? new GetPluggableDatabasesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetPluggableDatabasesResult>("oci:Database/getPluggableDatabases:getPluggableDatabases", args ?? new GetPluggableDatabasesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Pluggable Databases in Oracle Cloud Infrastructure Database service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetPluggableDatabasesResult> Invoke(GetPluggableDatabasesInvokeArgs? args = null, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetPluggableDatabasesResult>("oci:Database/getPluggableDatabases:getPluggableDatabases", args ?? new GetPluggableDatabasesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetPluggableDatabasesResult>("oci:Database/getPluggableDatabases:getPluggableDatabases", args ?? new GetPluggableDatabasesInvokeArgs(), options.WithDefaults());
     }
 
 

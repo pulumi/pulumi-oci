@@ -39,7 +39,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetLogAnalyticsObjectCollectionRuleResult> InvokeAsync(GetLogAnalyticsObjectCollectionRuleArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetLogAnalyticsObjectCollectionRuleResult>("oci:LogAnalytics/getLogAnalyticsObjectCollectionRule:getLogAnalyticsObjectCollectionRule", args ?? new GetLogAnalyticsObjectCollectionRuleArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetLogAnalyticsObjectCollectionRuleResult>("oci:LogAnalytics/getLogAnalyticsObjectCollectionRule:getLogAnalyticsObjectCollectionRule", args ?? new GetLogAnalyticsObjectCollectionRuleArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Log Analytics Object Collection Rule resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetLogAnalyticsObjectCollectionRuleResult> Invoke(GetLogAnalyticsObjectCollectionRuleInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsObjectCollectionRuleResult>("oci:LogAnalytics/getLogAnalyticsObjectCollectionRule:getLogAnalyticsObjectCollectionRule", args ?? new GetLogAnalyticsObjectCollectionRuleInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsObjectCollectionRuleResult>("oci:LogAnalytics/getLogAnalyticsObjectCollectionRule:getLogAnalyticsObjectCollectionRule", args ?? new GetLogAnalyticsObjectCollectionRuleInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -159,6 +159,18 @@ namespace Pulumi.Oci.LogAnalytics
         /// </summary>
         public readonly string LogGroupId;
         /// <summary>
+        /// The logSet to be associated with the processed logs. The logSet feature can be used by customers with high volume of data  and this feature has to be enabled for a given tenancy prior to its usage. When logSetExtRegex value is provided, it will take precedence over this logSet value and logSet will be computed dynamically  using logSetKey and logSetExtRegex.
+        /// </summary>
+        public readonly string LogSet;
+        /// <summary>
+        /// The regex to be applied against given logSetKey. Regex has to be in string escaped format.
+        /// </summary>
+        public readonly string LogSetExtRegex;
+        /// <summary>
+        /// An optional parameter to indicate from where the logSet to be extracted using logSetExtRegex. Default value is OBJECT_PATH (e.g. /n/&lt;namespace&gt;/b/&lt;bucketname&gt;/o/&lt;objectname&gt;).
+        /// </summary>
+        public readonly string LogSetKey;
+        /// <summary>
         /// Name of the Logging Analytics Source to use for the processing.
         /// </summary>
         public readonly string LogSourceName;
@@ -203,6 +215,10 @@ namespace Pulumi.Oci.LogAnalytics
         /// The time when this rule was last updated. An RFC3339 formatted datetime string.
         /// </summary>
         public readonly string TimeUpdated;
+        /// <summary>
+        /// Timezone to be used when processing log entries whose timestamps do not include an explicit timezone.  When this property is not specified, the timezone of the entity specified is used.  If the entity is also not specified or do not have a valid timezone then UTC is used.
+        /// </summary>
+        public readonly string Timezone;
 
         [OutputConstructor]
         private GetLogAnalyticsObjectCollectionRuleResult(
@@ -228,6 +244,12 @@ namespace Pulumi.Oci.LogAnalytics
 
             string logGroupId,
 
+            string logSet,
+
+            string logSetExtRegex,
+
+            string logSetKey,
+
             string logSourceName,
 
             string name,
@@ -250,7 +272,9 @@ namespace Pulumi.Oci.LogAnalytics
 
             string timeCreated,
 
-            string timeUpdated)
+            string timeUpdated,
+
+            string timezone)
         {
             CharEncoding = charEncoding;
             CollectionType = collectionType;
@@ -263,6 +287,9 @@ namespace Pulumi.Oci.LogAnalytics
             LifecycleDetails = lifecycleDetails;
             LogAnalyticsObjectCollectionRuleId = logAnalyticsObjectCollectionRuleId;
             LogGroupId = logGroupId;
+            LogSet = logSet;
+            LogSetExtRegex = logSetExtRegex;
+            LogSetKey = logSetKey;
             LogSourceName = logSourceName;
             Name = name;
             Namespace = @namespace;
@@ -275,6 +302,7 @@ namespace Pulumi.Oci.LogAnalytics
             State = state;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
+            Timezone = timezone;
         }
     }
 }

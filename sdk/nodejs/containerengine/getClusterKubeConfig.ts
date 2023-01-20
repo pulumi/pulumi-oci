@@ -24,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getClusterKubeConfig(args: GetClusterKubeConfigArgs, opts?: pulumi.InvokeOptions): Promise<GetClusterKubeConfigResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ContainerEngine/getClusterKubeConfig:getClusterKubeConfig", {
         "clusterId": args.clusterId,
         "endpoint": args.endpoint,
@@ -76,9 +73,27 @@ export interface GetClusterKubeConfigResult {
     readonly id: string;
     readonly tokenVersion?: string;
 }
-
+/**
+ * This data source provides details about a specific Cluster Kube Config resource in Oracle Cloud Infrastructure Container Engine service.
+ *
+ * Create the Kubeconfig YAML for a cluster.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testClusterKubeConfig = oci.ContainerEngine.getClusterKubeConfig({
+ *     clusterId: oci_containerengine_cluster.test_cluster.id,
+ *     endpoint: _var.cluster_kube_config_endpoint,
+ *     expiration: _var.cluster_kube_config_expiration,
+ *     tokenVersion: _var.cluster_kube_config_token_version,
+ * });
+ * ```
+ */
 export function getClusterKubeConfigOutput(args: GetClusterKubeConfigOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetClusterKubeConfigResult> {
-    return pulumi.output(args).apply(a => getClusterKubeConfig(a, opts))
+    return pulumi.output(args).apply((a: any) => getClusterKubeConfig(a, opts))
 }
 
 /**

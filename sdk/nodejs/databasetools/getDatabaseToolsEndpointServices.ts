@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDatabaseToolsEndpointServices(args: GetDatabaseToolsEndpointServicesArgs, opts?: pulumi.InvokeOptions): Promise<GetDatabaseToolsEndpointServicesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseTools/getDatabaseToolsEndpointServices:getDatabaseToolsEndpointServices", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -92,9 +90,27 @@ export interface GetDatabaseToolsEndpointServicesResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Database Tools Endpoint Services in Oracle Cloud Infrastructure Database Tools service.
+ *
+ * Returns a list of Database Tools endpoint services.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDatabaseToolsEndpointServices = oci.DatabaseTools.getDatabaseToolsEndpointServices({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.database_tools_endpoint_service_display_name,
+ *     name: _var.database_tools_endpoint_service_name,
+ *     state: _var.database_tools_endpoint_service_state,
+ * });
+ * ```
+ */
 export function getDatabaseToolsEndpointServicesOutput(args: GetDatabaseToolsEndpointServicesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatabaseToolsEndpointServicesResult> {
-    return pulumi.output(args).apply(a => getDatabaseToolsEndpointServices(a, opts))
+    return pulumi.output(args).apply((a: any) => getDatabaseToolsEndpointServices(a, opts))
 }
 
 /**

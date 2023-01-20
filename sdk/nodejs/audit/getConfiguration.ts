@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getConfiguration(args: GetConfigurationArgs, opts?: pulumi.InvokeOptions): Promise<GetConfigurationResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Audit/getConfiguration:getConfiguration", {
         "compartmentId": args.compartmentId,
     }, opts);
@@ -52,9 +49,24 @@ export interface GetConfigurationResult {
      */
     readonly retentionPeriodDays: number;
 }
-
+/**
+ * This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure Audit service.
+ *
+ * Get the configuration
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testConfiguration = oci.Audit.getConfiguration({
+ *     compartmentId: _var.tenancy_ocid,
+ * });
+ * ```
+ */
 export function getConfigurationOutput(args: GetConfigurationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetConfigurationResult> {
-    return pulumi.output(args).apply(a => getConfiguration(a, opts))
+    return pulumi.output(args).apply((a: any) => getConfiguration(a, opts))
 }
 
 /**

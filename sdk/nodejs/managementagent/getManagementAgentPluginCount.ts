@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagementAgentPluginCount(args: GetManagementAgentPluginCountArgs, opts?: pulumi.InvokeOptions): Promise<GetManagementAgentPluginCountResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ManagementAgent/getManagementAgentPluginCount:getManagementAgentPluginCount", {
         "compartmentId": args.compartmentId,
         "groupBy": args.groupBy,
@@ -64,9 +62,26 @@ export interface GetManagementAgentPluginCountResult {
      */
     readonly items: outputs.ManagementAgent.GetManagementAgentPluginCountItem[];
 }
-
+/**
+ * This data source provides details about a specific Management Agent Plugin Count resource in Oracle Cloud Infrastructure Management Agent service.
+ *
+ * Gets count of the inventory of management agent plugins for a given compartment id and group by parameter.
+ * Supported groupBy parameter: pluginName
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testManagementAgentPluginCount = oci.ManagementAgent.getManagementAgentPluginCount({
+ *     compartmentId: _var.compartment_id,
+ *     groupBy: _var.management_agent_plugin_count_group_by,
+ * });
+ * ```
+ */
 export function getManagementAgentPluginCountOutput(args: GetManagementAgentPluginCountOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementAgentPluginCountResult> {
-    return pulumi.output(args).apply(a => getManagementAgentPluginCount(a, opts))
+    return pulumi.output(args).apply((a: any) => getManagementAgentPluginCount(a, opts))
 }
 
 /**

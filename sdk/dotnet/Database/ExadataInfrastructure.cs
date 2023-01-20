@@ -58,9 +58,9 @@ namespace Pulumi.Oci.Database
     ///             { "Department", "Finance" },
     ///         },
     ///         IsCpsOfflineReportEnabled = @var.Exadata_infrastructure_is_cps_offline_report_enabled,
+    ///         IsMultiRackDeployment = @var.Exadata_infrastructure_is_multi_rack_deployment,
     ///         MaintenanceWindow = new Oci.Database.Inputs.ExadataInfrastructureMaintenanceWindowArgs
     ///         {
-    ///             Preference = @var.Exadata_infrastructure_maintenance_window_preference,
     ///             CustomActionTimeoutInMins = @var.Exadata_infrastructure_maintenance_window_custom_action_timeout_in_mins,
     ///             DaysOfWeeks = new[]
     ///             {
@@ -81,8 +81,10 @@ namespace Pulumi.Oci.Database
     ///                 },
     ///             },
     ///             PatchingMode = @var.Exadata_infrastructure_maintenance_window_patching_mode,
+    ///             Preference = @var.Exadata_infrastructure_maintenance_window_preference,
     ///             WeeksOfMonths = @var.Exadata_infrastructure_maintenance_window_weeks_of_month,
     ///         },
+    ///         MultiRackConfigurationFile = @var.Exadata_infrastructure_multi_rack_configuration_file,
     ///         StorageCount = @var.Exadata_infrastructure_storage_count,
     ///     });
     /// 
@@ -111,6 +113,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("activationFile")]
         public Output<string?> ActivationFile { get; private set; } = null!;
+
+        /// <summary>
+        /// The requested number of additional compute servers for the Exadata infrastructure.
+        /// </summary>
+        [Output("additionalComputeCount")]
+        public Output<int> AdditionalComputeCount { get; private set; } = null!;
+
+        /// <summary>
+        /// Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+        /// </summary>
+        [Output("additionalComputeSystemModel")]
+        public Output<string> AdditionalComputeSystemModel { get; private set; } = null!;
 
         /// <summary>
         /// The requested number of additional storage servers for the Exadata infrastructure.
@@ -236,6 +250,12 @@ namespace Pulumi.Oci.Database
         public Output<bool> IsCpsOfflineReportEnabled { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Indicates if deployment is Multi-Rack or not.
+        /// </summary>
+        [Output("isMultiRackDeployment")]
+        public Output<bool> IsMultiRackDeployment { get; private set; } = null!;
+
+        /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
         [Output("lifecycleDetails")]
@@ -288,6 +308,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("monthlyDbServerVersion")]
         public Output<string> MonthlyDbServerVersion { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The base64 encoded Multi-Rack configuration json file.
+        /// </summary>
+        [Output("multiRackConfigurationFile")]
+        public Output<string?> MultiRackConfigurationFile { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The netmask for the control plane network.
@@ -507,10 +533,22 @@ namespace Pulumi.Oci.Database
         public Input<bool>? IsCpsOfflineReportEnabled { get; set; }
 
         /// <summary>
+        /// (Updatable) Indicates if deployment is Multi-Rack or not.
+        /// </summary>
+        [Input("isMultiRackDeployment")]
+        public Input<bool>? IsMultiRackDeployment { get; set; }
+
+        /// <summary>
         /// (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
         /// </summary>
         [Input("maintenanceWindow")]
         public Input<Inputs.ExadataInfrastructureMaintenanceWindowArgs>? MaintenanceWindow { get; set; }
+
+        /// <summary>
+        /// (Updatable) The base64 encoded Multi-Rack configuration json file.
+        /// </summary>
+        [Input("multiRackConfigurationFile")]
+        public Input<string>? MultiRackConfigurationFile { get; set; }
 
         /// <summary>
         /// (Updatable) The netmask for the control plane network.
@@ -567,6 +605,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("activationFile")]
         public Input<string>? ActivationFile { get; set; }
+
+        /// <summary>
+        /// The requested number of additional compute servers for the Exadata infrastructure.
+        /// </summary>
+        [Input("additionalComputeCount")]
+        public Input<int>? AdditionalComputeCount { get; set; }
+
+        /// <summary>
+        /// Oracle Exadata System Model specification. The system model determines the amount of compute or storage server resources available for use. For more information, please see [System and Shape Configuration Options] (https://docs.oracle.com/en/engineered-systems/exadata-cloud-at-customer/ecccm/ecc-system-config-options.html#GUID-9E090174-5C57-4EB1-9243-B470F9F10D6B)
+        /// </summary>
+        [Input("additionalComputeSystemModel")]
+        public Input<string>? AdditionalComputeSystemModel { get; set; }
 
         /// <summary>
         /// The requested number of additional storage servers for the Exadata infrastructure.
@@ -716,6 +766,12 @@ namespace Pulumi.Oci.Database
         public Input<bool>? IsCpsOfflineReportEnabled { get; set; }
 
         /// <summary>
+        /// (Updatable) Indicates if deployment is Multi-Rack or not.
+        /// </summary>
+        [Input("isMultiRackDeployment")]
+        public Input<bool>? IsMultiRackDeployment { get; set; }
+
+        /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
         [Input("lifecycleDetails")]
@@ -768,6 +824,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("monthlyDbServerVersion")]
         public Input<string>? MonthlyDbServerVersion { get; set; }
+
+        /// <summary>
+        /// (Updatable) The base64 encoded Multi-Rack configuration json file.
+        /// </summary>
+        [Input("multiRackConfigurationFile")]
+        public Input<string>? MultiRackConfigurationFile { get; set; }
 
         /// <summary>
         /// (Updatable) The netmask for the control plane network.

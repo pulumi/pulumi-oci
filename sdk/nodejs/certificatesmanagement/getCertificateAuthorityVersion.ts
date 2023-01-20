@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -12,11 +13,8 @@ import * as utilities from "../utilities";
  * Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
  */
 export function getCertificateAuthorityVersion(args: GetCertificateAuthorityVersionArgs, opts?: pulumi.InvokeOptions): Promise<GetCertificateAuthorityVersionResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CertificatesManagement/getCertificateAuthorityVersion:getCertificateAuthorityVersion", {
         "certificateAuthorityId": args.certificateAuthorityId,
         "certificateAuthorityVersionNumber": args.certificateAuthorityVersionNumber,
@@ -85,9 +83,14 @@ export interface GetCertificateAuthorityVersionResult {
      */
     readonly versionNumber: string;
 }
-
+/**
+ * This data source provides details about a specific Certificate Authority Version resource in Oracle Cloud Infrastructure Certificates Management service.
+ *
+ * Lists all versions for the specified certificate authority (CA).
+ * Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
+ */
 export function getCertificateAuthorityVersionOutput(args: GetCertificateAuthorityVersionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCertificateAuthorityVersionResult> {
-    return pulumi.output(args).apply(a => getCertificateAuthorityVersion(a, opts))
+    return pulumi.output(args).apply((a: any) => getCertificateAuthorityVersion(a, opts))
 }
 
 /**

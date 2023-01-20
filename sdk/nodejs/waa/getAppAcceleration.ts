@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAppAcceleration(args: GetAppAccelerationArgs, opts?: pulumi.InvokeOptions): Promise<GetAppAccelerationResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Waa/getAppAcceleration:getAppAcceleration", {
         "webAppAccelerationId": args.webAppAccelerationId,
     }, opts);
@@ -99,9 +96,24 @@ export interface GetAppAccelerationResult {
      */
     readonly webAppAccelerationPolicyId: string;
 }
-
+/**
+ * This data source provides details about a specific Web App Acceleration resource in Oracle Cloud Infrastructure Waa service.
+ *
+ * Gets a WebAppAcceleration by OCID.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testWebAppAcceleration = oci.Waa.getAppAcceleration({
+ *     webAppAccelerationId: oci_waa_web_app_acceleration.test_web_app_acceleration.id,
+ * });
+ * ```
+ */
 export function getAppAccelerationOutput(args: GetAppAccelerationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAppAccelerationResult> {
-    return pulumi.output(args).apply(a => getAppAcceleration(a, opts))
+    return pulumi.output(args).apply((a: any) => getAppAcceleration(a, opts))
 }
 
 /**

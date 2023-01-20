@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Opsi
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAwrHubsResult> InvokeAsync(GetAwrHubsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAwrHubsResult>("oci:Opsi/getAwrHubs:getAwrHubs", args ?? new GetAwrHubsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAwrHubsResult>("oci:Opsi/getAwrHubs:getAwrHubs", args ?? new GetAwrHubsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Awr Hubs in Oracle Cloud Infrastructure Opsi service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.Opsi
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAwrHubsResult> Invoke(GetAwrHubsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAwrHubsResult>("oci:Opsi/getAwrHubs:getAwrHubs", args ?? new GetAwrHubsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAwrHubsResult>("oci:Opsi/getAwrHubs:getAwrHubs", args ?? new GetAwrHubsInvokeArgs(), options.WithDefaults());
     }
 
 

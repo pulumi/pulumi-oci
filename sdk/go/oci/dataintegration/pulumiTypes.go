@@ -10,6 +10,5697 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
+type WorkspaceFolderMetadata struct {
+	// (Updatable) The owning object's key for this object.
+	AggregatorKey *string `pulumi:"aggregatorKey"`
+	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	Aggregators []WorkspaceFolderMetadataAggregator `pulumi:"aggregators"`
+	// A count statistics.
+	CountStatistics []WorkspaceFolderMetadataCountStatistic `pulumi:"countStatistics"`
+	// The user that created the object.
+	CreatedBy *string `pulumi:"createdBy"`
+	// The user that created the object.
+	CreatedByName *string `pulumi:"createdByName"`
+	// The full path to identify this object.
+	IdentifierPath *string `pulumi:"identifierPath"`
+	// Information property fields.
+	InfoFields map[string]interface{} `pulumi:"infoFields"`
+	// (Updatable) Specifies whether this object is a favorite or not.
+	IsFavorite *bool `pulumi:"isFavorite"`
+	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	Labels []string `pulumi:"labels"`
+	// (Updatable) The registry version.
+	RegistryVersion *int `pulumi:"registryVersion"`
+	// The date and time that the object was created.
+	TimeCreated *string `pulumi:"timeCreated"`
+	// The date and time that the object was updated.
+	TimeUpdated *string `pulumi:"timeUpdated"`
+	// The user that updated the object.
+	UpdatedBy *string `pulumi:"updatedBy"`
+	// The user that updated the object.
+	UpdatedByName *string `pulumi:"updatedByName"`
+}
+
+// WorkspaceFolderMetadataInput is an input type that accepts WorkspaceFolderMetadataArgs and WorkspaceFolderMetadataOutput values.
+// You can construct a concrete instance of `WorkspaceFolderMetadataInput` via:
+//
+//	WorkspaceFolderMetadataArgs{...}
+type WorkspaceFolderMetadataInput interface {
+	pulumi.Input
+
+	ToWorkspaceFolderMetadataOutput() WorkspaceFolderMetadataOutput
+	ToWorkspaceFolderMetadataOutputWithContext(context.Context) WorkspaceFolderMetadataOutput
+}
+
+type WorkspaceFolderMetadataArgs struct {
+	// (Updatable) The owning object's key for this object.
+	AggregatorKey pulumi.StringPtrInput `pulumi:"aggregatorKey"`
+	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	Aggregators WorkspaceFolderMetadataAggregatorArrayInput `pulumi:"aggregators"`
+	// A count statistics.
+	CountStatistics WorkspaceFolderMetadataCountStatisticArrayInput `pulumi:"countStatistics"`
+	// The user that created the object.
+	CreatedBy pulumi.StringPtrInput `pulumi:"createdBy"`
+	// The user that created the object.
+	CreatedByName pulumi.StringPtrInput `pulumi:"createdByName"`
+	// The full path to identify this object.
+	IdentifierPath pulumi.StringPtrInput `pulumi:"identifierPath"`
+	// Information property fields.
+	InfoFields pulumi.MapInput `pulumi:"infoFields"`
+	// (Updatable) Specifies whether this object is a favorite or not.
+	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
+	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	Labels pulumi.StringArrayInput `pulumi:"labels"`
+	// (Updatable) The registry version.
+	RegistryVersion pulumi.IntPtrInput `pulumi:"registryVersion"`
+	// The date and time that the object was created.
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// The date and time that the object was updated.
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
+	// The user that updated the object.
+	UpdatedBy pulumi.StringPtrInput `pulumi:"updatedBy"`
+	// The user that updated the object.
+	UpdatedByName pulumi.StringPtrInput `pulumi:"updatedByName"`
+}
+
+func (WorkspaceFolderMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceFolderMetadata)(nil)).Elem()
+}
+
+func (i WorkspaceFolderMetadataArgs) ToWorkspaceFolderMetadataOutput() WorkspaceFolderMetadataOutput {
+	return i.ToWorkspaceFolderMetadataOutputWithContext(context.Background())
+}
+
+func (i WorkspaceFolderMetadataArgs) ToWorkspaceFolderMetadataOutputWithContext(ctx context.Context) WorkspaceFolderMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceFolderMetadataOutput)
+}
+
+// WorkspaceFolderMetadataArrayInput is an input type that accepts WorkspaceFolderMetadataArray and WorkspaceFolderMetadataArrayOutput values.
+// You can construct a concrete instance of `WorkspaceFolderMetadataArrayInput` via:
+//
+//	WorkspaceFolderMetadataArray{ WorkspaceFolderMetadataArgs{...} }
+type WorkspaceFolderMetadataArrayInput interface {
+	pulumi.Input
+
+	ToWorkspaceFolderMetadataArrayOutput() WorkspaceFolderMetadataArrayOutput
+	ToWorkspaceFolderMetadataArrayOutputWithContext(context.Context) WorkspaceFolderMetadataArrayOutput
+}
+
+type WorkspaceFolderMetadataArray []WorkspaceFolderMetadataInput
+
+func (WorkspaceFolderMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceFolderMetadata)(nil)).Elem()
+}
+
+func (i WorkspaceFolderMetadataArray) ToWorkspaceFolderMetadataArrayOutput() WorkspaceFolderMetadataArrayOutput {
+	return i.ToWorkspaceFolderMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i WorkspaceFolderMetadataArray) ToWorkspaceFolderMetadataArrayOutputWithContext(ctx context.Context) WorkspaceFolderMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceFolderMetadataArrayOutput)
+}
+
+type WorkspaceFolderMetadataOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceFolderMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceFolderMetadata)(nil)).Elem()
+}
+
+func (o WorkspaceFolderMetadataOutput) ToWorkspaceFolderMetadataOutput() WorkspaceFolderMetadataOutput {
+	return o
+}
+
+func (o WorkspaceFolderMetadataOutput) ToWorkspaceFolderMetadataOutputWithContext(ctx context.Context) WorkspaceFolderMetadataOutput {
+	return o
+}
+
+// (Updatable) The owning object's key for this object.
+func (o WorkspaceFolderMetadataOutput) AggregatorKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceFolderMetadata) *string { return v.AggregatorKey }).(pulumi.StringPtrOutput)
+}
+
+// A summary type containing information about the object's aggregator including its type, key, name and description.
+func (o WorkspaceFolderMetadataOutput) Aggregators() WorkspaceFolderMetadataAggregatorArrayOutput {
+	return o.ApplyT(func(v WorkspaceFolderMetadata) []WorkspaceFolderMetadataAggregator { return v.Aggregators }).(WorkspaceFolderMetadataAggregatorArrayOutput)
+}
+
+// A count statistics.
+func (o WorkspaceFolderMetadataOutput) CountStatistics() WorkspaceFolderMetadataCountStatisticArrayOutput {
+	return o.ApplyT(func(v WorkspaceFolderMetadata) []WorkspaceFolderMetadataCountStatistic { return v.CountStatistics }).(WorkspaceFolderMetadataCountStatisticArrayOutput)
+}
+
+// The user that created the object.
+func (o WorkspaceFolderMetadataOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceFolderMetadata) *string { return v.CreatedBy }).(pulumi.StringPtrOutput)
+}
+
+// The user that created the object.
+func (o WorkspaceFolderMetadataOutput) CreatedByName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceFolderMetadata) *string { return v.CreatedByName }).(pulumi.StringPtrOutput)
+}
+
+// The full path to identify this object.
+func (o WorkspaceFolderMetadataOutput) IdentifierPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceFolderMetadata) *string { return v.IdentifierPath }).(pulumi.StringPtrOutput)
+}
+
+// Information property fields.
+func (o WorkspaceFolderMetadataOutput) InfoFields() pulumi.MapOutput {
+	return o.ApplyT(func(v WorkspaceFolderMetadata) map[string]interface{} { return v.InfoFields }).(pulumi.MapOutput)
+}
+
+// (Updatable) Specifies whether this object is a favorite or not.
+func (o WorkspaceFolderMetadataOutput) IsFavorite() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WorkspaceFolderMetadata) *bool { return v.IsFavorite }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+func (o WorkspaceFolderMetadataOutput) Labels() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v WorkspaceFolderMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The registry version.
+func (o WorkspaceFolderMetadataOutput) RegistryVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v WorkspaceFolderMetadata) *int { return v.RegistryVersion }).(pulumi.IntPtrOutput)
+}
+
+// The date and time that the object was created.
+func (o WorkspaceFolderMetadataOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceFolderMetadata) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// The date and time that the object was updated.
+func (o WorkspaceFolderMetadataOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceFolderMetadata) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
+}
+
+// The user that updated the object.
+func (o WorkspaceFolderMetadataOutput) UpdatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceFolderMetadata) *string { return v.UpdatedBy }).(pulumi.StringPtrOutput)
+}
+
+// The user that updated the object.
+func (o WorkspaceFolderMetadataOutput) UpdatedByName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceFolderMetadata) *string { return v.UpdatedByName }).(pulumi.StringPtrOutput)
+}
+
+type WorkspaceFolderMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceFolderMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceFolderMetadata)(nil)).Elem()
+}
+
+func (o WorkspaceFolderMetadataArrayOutput) ToWorkspaceFolderMetadataArrayOutput() WorkspaceFolderMetadataArrayOutput {
+	return o
+}
+
+func (o WorkspaceFolderMetadataArrayOutput) ToWorkspaceFolderMetadataArrayOutputWithContext(ctx context.Context) WorkspaceFolderMetadataArrayOutput {
+	return o
+}
+
+func (o WorkspaceFolderMetadataArrayOutput) Index(i pulumi.IntInput) WorkspaceFolderMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WorkspaceFolderMetadata {
+		return vs[0].([]WorkspaceFolderMetadata)[vs[1].(int)]
+	}).(WorkspaceFolderMetadataOutput)
+}
+
+type WorkspaceFolderMetadataAggregator struct {
+	// (Updatable) A user defined description for the folder.
+	Description *string `pulumi:"description"`
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	Identifier *string `pulumi:"identifier"`
+	// (Updatable) The identifying key for the object.
+	Key *string `pulumi:"key"`
+	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	Name *string `pulumi:"name"`
+	// The type of the aggregator.
+	Type *string `pulumi:"type"`
+}
+
+// WorkspaceFolderMetadataAggregatorInput is an input type that accepts WorkspaceFolderMetadataAggregatorArgs and WorkspaceFolderMetadataAggregatorOutput values.
+// You can construct a concrete instance of `WorkspaceFolderMetadataAggregatorInput` via:
+//
+//	WorkspaceFolderMetadataAggregatorArgs{...}
+type WorkspaceFolderMetadataAggregatorInput interface {
+	pulumi.Input
+
+	ToWorkspaceFolderMetadataAggregatorOutput() WorkspaceFolderMetadataAggregatorOutput
+	ToWorkspaceFolderMetadataAggregatorOutputWithContext(context.Context) WorkspaceFolderMetadataAggregatorOutput
+}
+
+type WorkspaceFolderMetadataAggregatorArgs struct {
+	// (Updatable) A user defined description for the folder.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
+	// (Updatable) The identifying key for the object.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// The type of the aggregator.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (WorkspaceFolderMetadataAggregatorArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceFolderMetadataAggregator)(nil)).Elem()
+}
+
+func (i WorkspaceFolderMetadataAggregatorArgs) ToWorkspaceFolderMetadataAggregatorOutput() WorkspaceFolderMetadataAggregatorOutput {
+	return i.ToWorkspaceFolderMetadataAggregatorOutputWithContext(context.Background())
+}
+
+func (i WorkspaceFolderMetadataAggregatorArgs) ToWorkspaceFolderMetadataAggregatorOutputWithContext(ctx context.Context) WorkspaceFolderMetadataAggregatorOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceFolderMetadataAggregatorOutput)
+}
+
+// WorkspaceFolderMetadataAggregatorArrayInput is an input type that accepts WorkspaceFolderMetadataAggregatorArray and WorkspaceFolderMetadataAggregatorArrayOutput values.
+// You can construct a concrete instance of `WorkspaceFolderMetadataAggregatorArrayInput` via:
+//
+//	WorkspaceFolderMetadataAggregatorArray{ WorkspaceFolderMetadataAggregatorArgs{...} }
+type WorkspaceFolderMetadataAggregatorArrayInput interface {
+	pulumi.Input
+
+	ToWorkspaceFolderMetadataAggregatorArrayOutput() WorkspaceFolderMetadataAggregatorArrayOutput
+	ToWorkspaceFolderMetadataAggregatorArrayOutputWithContext(context.Context) WorkspaceFolderMetadataAggregatorArrayOutput
+}
+
+type WorkspaceFolderMetadataAggregatorArray []WorkspaceFolderMetadataAggregatorInput
+
+func (WorkspaceFolderMetadataAggregatorArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceFolderMetadataAggregator)(nil)).Elem()
+}
+
+func (i WorkspaceFolderMetadataAggregatorArray) ToWorkspaceFolderMetadataAggregatorArrayOutput() WorkspaceFolderMetadataAggregatorArrayOutput {
+	return i.ToWorkspaceFolderMetadataAggregatorArrayOutputWithContext(context.Background())
+}
+
+func (i WorkspaceFolderMetadataAggregatorArray) ToWorkspaceFolderMetadataAggregatorArrayOutputWithContext(ctx context.Context) WorkspaceFolderMetadataAggregatorArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceFolderMetadataAggregatorArrayOutput)
+}
+
+type WorkspaceFolderMetadataAggregatorOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceFolderMetadataAggregatorOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceFolderMetadataAggregator)(nil)).Elem()
+}
+
+func (o WorkspaceFolderMetadataAggregatorOutput) ToWorkspaceFolderMetadataAggregatorOutput() WorkspaceFolderMetadataAggregatorOutput {
+	return o
+}
+
+func (o WorkspaceFolderMetadataAggregatorOutput) ToWorkspaceFolderMetadataAggregatorOutputWithContext(ctx context.Context) WorkspaceFolderMetadataAggregatorOutput {
+	return o
+}
+
+// (Updatable) A user defined description for the folder.
+func (o WorkspaceFolderMetadataAggregatorOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceFolderMetadataAggregator) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+func (o WorkspaceFolderMetadataAggregatorOutput) Identifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceFolderMetadataAggregator) *string { return v.Identifier }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The identifying key for the object.
+func (o WorkspaceFolderMetadataAggregatorOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceFolderMetadataAggregator) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+func (o WorkspaceFolderMetadataAggregatorOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceFolderMetadataAggregator) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// The type of the aggregator.
+func (o WorkspaceFolderMetadataAggregatorOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceFolderMetadataAggregator) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type WorkspaceFolderMetadataAggregatorArrayOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceFolderMetadataAggregatorArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceFolderMetadataAggregator)(nil)).Elem()
+}
+
+func (o WorkspaceFolderMetadataAggregatorArrayOutput) ToWorkspaceFolderMetadataAggregatorArrayOutput() WorkspaceFolderMetadataAggregatorArrayOutput {
+	return o
+}
+
+func (o WorkspaceFolderMetadataAggregatorArrayOutput) ToWorkspaceFolderMetadataAggregatorArrayOutputWithContext(ctx context.Context) WorkspaceFolderMetadataAggregatorArrayOutput {
+	return o
+}
+
+func (o WorkspaceFolderMetadataAggregatorArrayOutput) Index(i pulumi.IntInput) WorkspaceFolderMetadataAggregatorOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WorkspaceFolderMetadataAggregator {
+		return vs[0].([]WorkspaceFolderMetadataAggregator)[vs[1].(int)]
+	}).(WorkspaceFolderMetadataAggregatorOutput)
+}
+
+type WorkspaceFolderMetadataCountStatistic struct {
+	// The array of statistics.
+	ObjectTypeCountLists []WorkspaceFolderMetadataCountStatisticObjectTypeCountList `pulumi:"objectTypeCountLists"`
+}
+
+// WorkspaceFolderMetadataCountStatisticInput is an input type that accepts WorkspaceFolderMetadataCountStatisticArgs and WorkspaceFolderMetadataCountStatisticOutput values.
+// You can construct a concrete instance of `WorkspaceFolderMetadataCountStatisticInput` via:
+//
+//	WorkspaceFolderMetadataCountStatisticArgs{...}
+type WorkspaceFolderMetadataCountStatisticInput interface {
+	pulumi.Input
+
+	ToWorkspaceFolderMetadataCountStatisticOutput() WorkspaceFolderMetadataCountStatisticOutput
+	ToWorkspaceFolderMetadataCountStatisticOutputWithContext(context.Context) WorkspaceFolderMetadataCountStatisticOutput
+}
+
+type WorkspaceFolderMetadataCountStatisticArgs struct {
+	// The array of statistics.
+	ObjectTypeCountLists WorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayInput `pulumi:"objectTypeCountLists"`
+}
+
+func (WorkspaceFolderMetadataCountStatisticArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceFolderMetadataCountStatistic)(nil)).Elem()
+}
+
+func (i WorkspaceFolderMetadataCountStatisticArgs) ToWorkspaceFolderMetadataCountStatisticOutput() WorkspaceFolderMetadataCountStatisticOutput {
+	return i.ToWorkspaceFolderMetadataCountStatisticOutputWithContext(context.Background())
+}
+
+func (i WorkspaceFolderMetadataCountStatisticArgs) ToWorkspaceFolderMetadataCountStatisticOutputWithContext(ctx context.Context) WorkspaceFolderMetadataCountStatisticOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceFolderMetadataCountStatisticOutput)
+}
+
+// WorkspaceFolderMetadataCountStatisticArrayInput is an input type that accepts WorkspaceFolderMetadataCountStatisticArray and WorkspaceFolderMetadataCountStatisticArrayOutput values.
+// You can construct a concrete instance of `WorkspaceFolderMetadataCountStatisticArrayInput` via:
+//
+//	WorkspaceFolderMetadataCountStatisticArray{ WorkspaceFolderMetadataCountStatisticArgs{...} }
+type WorkspaceFolderMetadataCountStatisticArrayInput interface {
+	pulumi.Input
+
+	ToWorkspaceFolderMetadataCountStatisticArrayOutput() WorkspaceFolderMetadataCountStatisticArrayOutput
+	ToWorkspaceFolderMetadataCountStatisticArrayOutputWithContext(context.Context) WorkspaceFolderMetadataCountStatisticArrayOutput
+}
+
+type WorkspaceFolderMetadataCountStatisticArray []WorkspaceFolderMetadataCountStatisticInput
+
+func (WorkspaceFolderMetadataCountStatisticArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceFolderMetadataCountStatistic)(nil)).Elem()
+}
+
+func (i WorkspaceFolderMetadataCountStatisticArray) ToWorkspaceFolderMetadataCountStatisticArrayOutput() WorkspaceFolderMetadataCountStatisticArrayOutput {
+	return i.ToWorkspaceFolderMetadataCountStatisticArrayOutputWithContext(context.Background())
+}
+
+func (i WorkspaceFolderMetadataCountStatisticArray) ToWorkspaceFolderMetadataCountStatisticArrayOutputWithContext(ctx context.Context) WorkspaceFolderMetadataCountStatisticArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceFolderMetadataCountStatisticArrayOutput)
+}
+
+type WorkspaceFolderMetadataCountStatisticOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceFolderMetadataCountStatisticOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceFolderMetadataCountStatistic)(nil)).Elem()
+}
+
+func (o WorkspaceFolderMetadataCountStatisticOutput) ToWorkspaceFolderMetadataCountStatisticOutput() WorkspaceFolderMetadataCountStatisticOutput {
+	return o
+}
+
+func (o WorkspaceFolderMetadataCountStatisticOutput) ToWorkspaceFolderMetadataCountStatisticOutputWithContext(ctx context.Context) WorkspaceFolderMetadataCountStatisticOutput {
+	return o
+}
+
+// The array of statistics.
+func (o WorkspaceFolderMetadataCountStatisticOutput) ObjectTypeCountLists() WorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return o.ApplyT(func(v WorkspaceFolderMetadataCountStatistic) []WorkspaceFolderMetadataCountStatisticObjectTypeCountList {
+		return v.ObjectTypeCountLists
+	}).(WorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput)
+}
+
+type WorkspaceFolderMetadataCountStatisticArrayOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceFolderMetadataCountStatisticArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceFolderMetadataCountStatistic)(nil)).Elem()
+}
+
+func (o WorkspaceFolderMetadataCountStatisticArrayOutput) ToWorkspaceFolderMetadataCountStatisticArrayOutput() WorkspaceFolderMetadataCountStatisticArrayOutput {
+	return o
+}
+
+func (o WorkspaceFolderMetadataCountStatisticArrayOutput) ToWorkspaceFolderMetadataCountStatisticArrayOutputWithContext(ctx context.Context) WorkspaceFolderMetadataCountStatisticArrayOutput {
+	return o
+}
+
+func (o WorkspaceFolderMetadataCountStatisticArrayOutput) Index(i pulumi.IntInput) WorkspaceFolderMetadataCountStatisticOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WorkspaceFolderMetadataCountStatistic {
+		return vs[0].([]WorkspaceFolderMetadataCountStatistic)[vs[1].(int)]
+	}).(WorkspaceFolderMetadataCountStatisticOutput)
+}
+
+type WorkspaceFolderMetadataCountStatisticObjectTypeCountList struct {
+	// The value for the count statistic object.
+	ObjectCount *string `pulumi:"objectCount"`
+	// The type of object for the count statistic object.
+	ObjectType *string `pulumi:"objectType"`
+}
+
+// WorkspaceFolderMetadataCountStatisticObjectTypeCountListInput is an input type that accepts WorkspaceFolderMetadataCountStatisticObjectTypeCountListArgs and WorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput values.
+// You can construct a concrete instance of `WorkspaceFolderMetadataCountStatisticObjectTypeCountListInput` via:
+//
+//	WorkspaceFolderMetadataCountStatisticObjectTypeCountListArgs{...}
+type WorkspaceFolderMetadataCountStatisticObjectTypeCountListInput interface {
+	pulumi.Input
+
+	ToWorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput() WorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput
+	ToWorkspaceFolderMetadataCountStatisticObjectTypeCountListOutputWithContext(context.Context) WorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput
+}
+
+type WorkspaceFolderMetadataCountStatisticObjectTypeCountListArgs struct {
+	// The value for the count statistic object.
+	ObjectCount pulumi.StringPtrInput `pulumi:"objectCount"`
+	// The type of object for the count statistic object.
+	ObjectType pulumi.StringPtrInput `pulumi:"objectType"`
+}
+
+func (WorkspaceFolderMetadataCountStatisticObjectTypeCountListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceFolderMetadataCountStatisticObjectTypeCountList)(nil)).Elem()
+}
+
+func (i WorkspaceFolderMetadataCountStatisticObjectTypeCountListArgs) ToWorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput() WorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput {
+	return i.ToWorkspaceFolderMetadataCountStatisticObjectTypeCountListOutputWithContext(context.Background())
+}
+
+func (i WorkspaceFolderMetadataCountStatisticObjectTypeCountListArgs) ToWorkspaceFolderMetadataCountStatisticObjectTypeCountListOutputWithContext(ctx context.Context) WorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput)
+}
+
+// WorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayInput is an input type that accepts WorkspaceFolderMetadataCountStatisticObjectTypeCountListArray and WorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput values.
+// You can construct a concrete instance of `WorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayInput` via:
+//
+//	WorkspaceFolderMetadataCountStatisticObjectTypeCountListArray{ WorkspaceFolderMetadataCountStatisticObjectTypeCountListArgs{...} }
+type WorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayInput interface {
+	pulumi.Input
+
+	ToWorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput() WorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput
+	ToWorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(context.Context) WorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput
+}
+
+type WorkspaceFolderMetadataCountStatisticObjectTypeCountListArray []WorkspaceFolderMetadataCountStatisticObjectTypeCountListInput
+
+func (WorkspaceFolderMetadataCountStatisticObjectTypeCountListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceFolderMetadataCountStatisticObjectTypeCountList)(nil)).Elem()
+}
+
+func (i WorkspaceFolderMetadataCountStatisticObjectTypeCountListArray) ToWorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput() WorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return i.ToWorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(context.Background())
+}
+
+func (i WorkspaceFolderMetadataCountStatisticObjectTypeCountListArray) ToWorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(ctx context.Context) WorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput)
+}
+
+type WorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceFolderMetadataCountStatisticObjectTypeCountList)(nil)).Elem()
+}
+
+func (o WorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput) ToWorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput() WorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput {
+	return o
+}
+
+func (o WorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput) ToWorkspaceFolderMetadataCountStatisticObjectTypeCountListOutputWithContext(ctx context.Context) WorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput {
+	return o
+}
+
+// The value for the count statistic object.
+func (o WorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput) ObjectCount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceFolderMetadataCountStatisticObjectTypeCountList) *string { return v.ObjectCount }).(pulumi.StringPtrOutput)
+}
+
+// The type of object for the count statistic object.
+func (o WorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput) ObjectType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceFolderMetadataCountStatisticObjectTypeCountList) *string { return v.ObjectType }).(pulumi.StringPtrOutput)
+}
+
+type WorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceFolderMetadataCountStatisticObjectTypeCountList)(nil)).Elem()
+}
+
+func (o WorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput) ToWorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput() WorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return o
+}
+
+func (o WorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput) ToWorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(ctx context.Context) WorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return o
+}
+
+func (o WorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput) Index(i pulumi.IntInput) WorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WorkspaceFolderMetadataCountStatisticObjectTypeCountList {
+		return vs[0].([]WorkspaceFolderMetadataCountStatisticObjectTypeCountList)[vs[1].(int)]
+	}).(WorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput)
+}
+
+type WorkspaceFolderParentRef struct {
+	// Key of the parent object.
+	Parent *string `pulumi:"parent"`
+	// Key of the root document object.
+	RootDocId *string `pulumi:"rootDocId"`
+}
+
+// WorkspaceFolderParentRefInput is an input type that accepts WorkspaceFolderParentRefArgs and WorkspaceFolderParentRefOutput values.
+// You can construct a concrete instance of `WorkspaceFolderParentRefInput` via:
+//
+//	WorkspaceFolderParentRefArgs{...}
+type WorkspaceFolderParentRefInput interface {
+	pulumi.Input
+
+	ToWorkspaceFolderParentRefOutput() WorkspaceFolderParentRefOutput
+	ToWorkspaceFolderParentRefOutputWithContext(context.Context) WorkspaceFolderParentRefOutput
+}
+
+type WorkspaceFolderParentRefArgs struct {
+	// Key of the parent object.
+	Parent pulumi.StringPtrInput `pulumi:"parent"`
+	// Key of the root document object.
+	RootDocId pulumi.StringPtrInput `pulumi:"rootDocId"`
+}
+
+func (WorkspaceFolderParentRefArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceFolderParentRef)(nil)).Elem()
+}
+
+func (i WorkspaceFolderParentRefArgs) ToWorkspaceFolderParentRefOutput() WorkspaceFolderParentRefOutput {
+	return i.ToWorkspaceFolderParentRefOutputWithContext(context.Background())
+}
+
+func (i WorkspaceFolderParentRefArgs) ToWorkspaceFolderParentRefOutputWithContext(ctx context.Context) WorkspaceFolderParentRefOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceFolderParentRefOutput)
+}
+
+// WorkspaceFolderParentRefArrayInput is an input type that accepts WorkspaceFolderParentRefArray and WorkspaceFolderParentRefArrayOutput values.
+// You can construct a concrete instance of `WorkspaceFolderParentRefArrayInput` via:
+//
+//	WorkspaceFolderParentRefArray{ WorkspaceFolderParentRefArgs{...} }
+type WorkspaceFolderParentRefArrayInput interface {
+	pulumi.Input
+
+	ToWorkspaceFolderParentRefArrayOutput() WorkspaceFolderParentRefArrayOutput
+	ToWorkspaceFolderParentRefArrayOutputWithContext(context.Context) WorkspaceFolderParentRefArrayOutput
+}
+
+type WorkspaceFolderParentRefArray []WorkspaceFolderParentRefInput
+
+func (WorkspaceFolderParentRefArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceFolderParentRef)(nil)).Elem()
+}
+
+func (i WorkspaceFolderParentRefArray) ToWorkspaceFolderParentRefArrayOutput() WorkspaceFolderParentRefArrayOutput {
+	return i.ToWorkspaceFolderParentRefArrayOutputWithContext(context.Background())
+}
+
+func (i WorkspaceFolderParentRefArray) ToWorkspaceFolderParentRefArrayOutputWithContext(ctx context.Context) WorkspaceFolderParentRefArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceFolderParentRefArrayOutput)
+}
+
+type WorkspaceFolderParentRefOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceFolderParentRefOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceFolderParentRef)(nil)).Elem()
+}
+
+func (o WorkspaceFolderParentRefOutput) ToWorkspaceFolderParentRefOutput() WorkspaceFolderParentRefOutput {
+	return o
+}
+
+func (o WorkspaceFolderParentRefOutput) ToWorkspaceFolderParentRefOutputWithContext(ctx context.Context) WorkspaceFolderParentRefOutput {
+	return o
+}
+
+// Key of the parent object.
+func (o WorkspaceFolderParentRefOutput) Parent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceFolderParentRef) *string { return v.Parent }).(pulumi.StringPtrOutput)
+}
+
+// Key of the root document object.
+func (o WorkspaceFolderParentRefOutput) RootDocId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceFolderParentRef) *string { return v.RootDocId }).(pulumi.StringPtrOutput)
+}
+
+type WorkspaceFolderParentRefArrayOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceFolderParentRefArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceFolderParentRef)(nil)).Elem()
+}
+
+func (o WorkspaceFolderParentRefArrayOutput) ToWorkspaceFolderParentRefArrayOutput() WorkspaceFolderParentRefArrayOutput {
+	return o
+}
+
+func (o WorkspaceFolderParentRefArrayOutput) ToWorkspaceFolderParentRefArrayOutputWithContext(ctx context.Context) WorkspaceFolderParentRefArrayOutput {
+	return o
+}
+
+func (o WorkspaceFolderParentRefArrayOutput) Index(i pulumi.IntInput) WorkspaceFolderParentRefOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WorkspaceFolderParentRef {
+		return vs[0].([]WorkspaceFolderParentRef)[vs[1].(int)]
+	}).(WorkspaceFolderParentRefOutput)
+}
+
+type WorkspaceFolderRegistryMetadata struct {
+	// (Updatable) The owning object's key for this object.
+	AggregatorKey *string `pulumi:"aggregatorKey"`
+	// (Updatable) Specifies whether this object is a favorite or not.
+	IsFavorite *bool `pulumi:"isFavorite"`
+	// (Updatable) The identifying key for the object.
+	Key *string `pulumi:"key"`
+	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	Labels []string `pulumi:"labels"`
+	// (Updatable) The registry version.
+	RegistryVersion *int `pulumi:"registryVersion"`
+}
+
+// WorkspaceFolderRegistryMetadataInput is an input type that accepts WorkspaceFolderRegistryMetadataArgs and WorkspaceFolderRegistryMetadataOutput values.
+// You can construct a concrete instance of `WorkspaceFolderRegistryMetadataInput` via:
+//
+//	WorkspaceFolderRegistryMetadataArgs{...}
+type WorkspaceFolderRegistryMetadataInput interface {
+	pulumi.Input
+
+	ToWorkspaceFolderRegistryMetadataOutput() WorkspaceFolderRegistryMetadataOutput
+	ToWorkspaceFolderRegistryMetadataOutputWithContext(context.Context) WorkspaceFolderRegistryMetadataOutput
+}
+
+type WorkspaceFolderRegistryMetadataArgs struct {
+	// (Updatable) The owning object's key for this object.
+	AggregatorKey pulumi.StringPtrInput `pulumi:"aggregatorKey"`
+	// (Updatable) Specifies whether this object is a favorite or not.
+	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
+	// (Updatable) The identifying key for the object.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	Labels pulumi.StringArrayInput `pulumi:"labels"`
+	// (Updatable) The registry version.
+	RegistryVersion pulumi.IntPtrInput `pulumi:"registryVersion"`
+}
+
+func (WorkspaceFolderRegistryMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceFolderRegistryMetadata)(nil)).Elem()
+}
+
+func (i WorkspaceFolderRegistryMetadataArgs) ToWorkspaceFolderRegistryMetadataOutput() WorkspaceFolderRegistryMetadataOutput {
+	return i.ToWorkspaceFolderRegistryMetadataOutputWithContext(context.Background())
+}
+
+func (i WorkspaceFolderRegistryMetadataArgs) ToWorkspaceFolderRegistryMetadataOutputWithContext(ctx context.Context) WorkspaceFolderRegistryMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceFolderRegistryMetadataOutput)
+}
+
+func (i WorkspaceFolderRegistryMetadataArgs) ToWorkspaceFolderRegistryMetadataPtrOutput() WorkspaceFolderRegistryMetadataPtrOutput {
+	return i.ToWorkspaceFolderRegistryMetadataPtrOutputWithContext(context.Background())
+}
+
+func (i WorkspaceFolderRegistryMetadataArgs) ToWorkspaceFolderRegistryMetadataPtrOutputWithContext(ctx context.Context) WorkspaceFolderRegistryMetadataPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceFolderRegistryMetadataOutput).ToWorkspaceFolderRegistryMetadataPtrOutputWithContext(ctx)
+}
+
+// WorkspaceFolderRegistryMetadataPtrInput is an input type that accepts WorkspaceFolderRegistryMetadataArgs, WorkspaceFolderRegistryMetadataPtr and WorkspaceFolderRegistryMetadataPtrOutput values.
+// You can construct a concrete instance of `WorkspaceFolderRegistryMetadataPtrInput` via:
+//
+//	        WorkspaceFolderRegistryMetadataArgs{...}
+//
+//	or:
+//
+//	        nil
+type WorkspaceFolderRegistryMetadataPtrInput interface {
+	pulumi.Input
+
+	ToWorkspaceFolderRegistryMetadataPtrOutput() WorkspaceFolderRegistryMetadataPtrOutput
+	ToWorkspaceFolderRegistryMetadataPtrOutputWithContext(context.Context) WorkspaceFolderRegistryMetadataPtrOutput
+}
+
+type workspaceFolderRegistryMetadataPtrType WorkspaceFolderRegistryMetadataArgs
+
+func WorkspaceFolderRegistryMetadataPtr(v *WorkspaceFolderRegistryMetadataArgs) WorkspaceFolderRegistryMetadataPtrInput {
+	return (*workspaceFolderRegistryMetadataPtrType)(v)
+}
+
+func (*workspaceFolderRegistryMetadataPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WorkspaceFolderRegistryMetadata)(nil)).Elem()
+}
+
+func (i *workspaceFolderRegistryMetadataPtrType) ToWorkspaceFolderRegistryMetadataPtrOutput() WorkspaceFolderRegistryMetadataPtrOutput {
+	return i.ToWorkspaceFolderRegistryMetadataPtrOutputWithContext(context.Background())
+}
+
+func (i *workspaceFolderRegistryMetadataPtrType) ToWorkspaceFolderRegistryMetadataPtrOutputWithContext(ctx context.Context) WorkspaceFolderRegistryMetadataPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceFolderRegistryMetadataPtrOutput)
+}
+
+type WorkspaceFolderRegistryMetadataOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceFolderRegistryMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceFolderRegistryMetadata)(nil)).Elem()
+}
+
+func (o WorkspaceFolderRegistryMetadataOutput) ToWorkspaceFolderRegistryMetadataOutput() WorkspaceFolderRegistryMetadataOutput {
+	return o
+}
+
+func (o WorkspaceFolderRegistryMetadataOutput) ToWorkspaceFolderRegistryMetadataOutputWithContext(ctx context.Context) WorkspaceFolderRegistryMetadataOutput {
+	return o
+}
+
+func (o WorkspaceFolderRegistryMetadataOutput) ToWorkspaceFolderRegistryMetadataPtrOutput() WorkspaceFolderRegistryMetadataPtrOutput {
+	return o.ToWorkspaceFolderRegistryMetadataPtrOutputWithContext(context.Background())
+}
+
+func (o WorkspaceFolderRegistryMetadataOutput) ToWorkspaceFolderRegistryMetadataPtrOutputWithContext(ctx context.Context) WorkspaceFolderRegistryMetadataPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WorkspaceFolderRegistryMetadata) *WorkspaceFolderRegistryMetadata {
+		return &v
+	}).(WorkspaceFolderRegistryMetadataPtrOutput)
+}
+
+// (Updatable) The owning object's key for this object.
+func (o WorkspaceFolderRegistryMetadataOutput) AggregatorKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceFolderRegistryMetadata) *string { return v.AggregatorKey }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Specifies whether this object is a favorite or not.
+func (o WorkspaceFolderRegistryMetadataOutput) IsFavorite() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WorkspaceFolderRegistryMetadata) *bool { return v.IsFavorite }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The identifying key for the object.
+func (o WorkspaceFolderRegistryMetadataOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceFolderRegistryMetadata) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+func (o WorkspaceFolderRegistryMetadataOutput) Labels() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v WorkspaceFolderRegistryMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The registry version.
+func (o WorkspaceFolderRegistryMetadataOutput) RegistryVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v WorkspaceFolderRegistryMetadata) *int { return v.RegistryVersion }).(pulumi.IntPtrOutput)
+}
+
+type WorkspaceFolderRegistryMetadataPtrOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceFolderRegistryMetadataPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WorkspaceFolderRegistryMetadata)(nil)).Elem()
+}
+
+func (o WorkspaceFolderRegistryMetadataPtrOutput) ToWorkspaceFolderRegistryMetadataPtrOutput() WorkspaceFolderRegistryMetadataPtrOutput {
+	return o
+}
+
+func (o WorkspaceFolderRegistryMetadataPtrOutput) ToWorkspaceFolderRegistryMetadataPtrOutputWithContext(ctx context.Context) WorkspaceFolderRegistryMetadataPtrOutput {
+	return o
+}
+
+func (o WorkspaceFolderRegistryMetadataPtrOutput) Elem() WorkspaceFolderRegistryMetadataOutput {
+	return o.ApplyT(func(v *WorkspaceFolderRegistryMetadata) WorkspaceFolderRegistryMetadata {
+		if v != nil {
+			return *v
+		}
+		var ret WorkspaceFolderRegistryMetadata
+		return ret
+	}).(WorkspaceFolderRegistryMetadataOutput)
+}
+
+// (Updatable) The owning object's key for this object.
+func (o WorkspaceFolderRegistryMetadataPtrOutput) AggregatorKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WorkspaceFolderRegistryMetadata) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AggregatorKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Specifies whether this object is a favorite or not.
+func (o WorkspaceFolderRegistryMetadataPtrOutput) IsFavorite() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WorkspaceFolderRegistryMetadata) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsFavorite
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The identifying key for the object.
+func (o WorkspaceFolderRegistryMetadataPtrOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WorkspaceFolderRegistryMetadata) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Key
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+func (o WorkspaceFolderRegistryMetadataPtrOutput) Labels() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *WorkspaceFolderRegistryMetadata) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Labels
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The registry version.
+func (o WorkspaceFolderRegistryMetadataPtrOutput) RegistryVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *WorkspaceFolderRegistryMetadata) *int {
+		if v == nil {
+			return nil
+		}
+		return v.RegistryVersion
+	}).(pulumi.IntPtrOutput)
+}
+
+type WorkspaceProjectMetadata struct {
+	// (Updatable) The owning object's key for this object.
+	AggregatorKey *string `pulumi:"aggregatorKey"`
+	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	Aggregators []WorkspaceProjectMetadataAggregator `pulumi:"aggregators"`
+	// A count statistics.
+	CountStatistics []WorkspaceProjectMetadataCountStatistic `pulumi:"countStatistics"`
+	// The user that created the object.
+	CreatedBy *string `pulumi:"createdBy"`
+	// The user that created the object.
+	CreatedByName *string `pulumi:"createdByName"`
+	// The full path to identify this object.
+	IdentifierPath *string `pulumi:"identifierPath"`
+	// Information property fields.
+	InfoFields map[string]interface{} `pulumi:"infoFields"`
+	// (Updatable) Specifies whether this object is a favorite or not.
+	IsFavorite *bool `pulumi:"isFavorite"`
+	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	Labels []string `pulumi:"labels"`
+	// (Updatable) The registry version.
+	RegistryVersion *int `pulumi:"registryVersion"`
+	// The date and time that the object was created.
+	TimeCreated *string `pulumi:"timeCreated"`
+	// The date and time that the object was updated.
+	TimeUpdated *string `pulumi:"timeUpdated"`
+	// The user that updated the object.
+	UpdatedBy *string `pulumi:"updatedBy"`
+	// The user that updated the object.
+	UpdatedByName *string `pulumi:"updatedByName"`
+}
+
+// WorkspaceProjectMetadataInput is an input type that accepts WorkspaceProjectMetadataArgs and WorkspaceProjectMetadataOutput values.
+// You can construct a concrete instance of `WorkspaceProjectMetadataInput` via:
+//
+//	WorkspaceProjectMetadataArgs{...}
+type WorkspaceProjectMetadataInput interface {
+	pulumi.Input
+
+	ToWorkspaceProjectMetadataOutput() WorkspaceProjectMetadataOutput
+	ToWorkspaceProjectMetadataOutputWithContext(context.Context) WorkspaceProjectMetadataOutput
+}
+
+type WorkspaceProjectMetadataArgs struct {
+	// (Updatable) The owning object's key for this object.
+	AggregatorKey pulumi.StringPtrInput `pulumi:"aggregatorKey"`
+	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	Aggregators WorkspaceProjectMetadataAggregatorArrayInput `pulumi:"aggregators"`
+	// A count statistics.
+	CountStatistics WorkspaceProjectMetadataCountStatisticArrayInput `pulumi:"countStatistics"`
+	// The user that created the object.
+	CreatedBy pulumi.StringPtrInput `pulumi:"createdBy"`
+	// The user that created the object.
+	CreatedByName pulumi.StringPtrInput `pulumi:"createdByName"`
+	// The full path to identify this object.
+	IdentifierPath pulumi.StringPtrInput `pulumi:"identifierPath"`
+	// Information property fields.
+	InfoFields pulumi.MapInput `pulumi:"infoFields"`
+	// (Updatable) Specifies whether this object is a favorite or not.
+	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
+	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	Labels pulumi.StringArrayInput `pulumi:"labels"`
+	// (Updatable) The registry version.
+	RegistryVersion pulumi.IntPtrInput `pulumi:"registryVersion"`
+	// The date and time that the object was created.
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// The date and time that the object was updated.
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
+	// The user that updated the object.
+	UpdatedBy pulumi.StringPtrInput `pulumi:"updatedBy"`
+	// The user that updated the object.
+	UpdatedByName pulumi.StringPtrInput `pulumi:"updatedByName"`
+}
+
+func (WorkspaceProjectMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceProjectMetadata)(nil)).Elem()
+}
+
+func (i WorkspaceProjectMetadataArgs) ToWorkspaceProjectMetadataOutput() WorkspaceProjectMetadataOutput {
+	return i.ToWorkspaceProjectMetadataOutputWithContext(context.Background())
+}
+
+func (i WorkspaceProjectMetadataArgs) ToWorkspaceProjectMetadataOutputWithContext(ctx context.Context) WorkspaceProjectMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceProjectMetadataOutput)
+}
+
+// WorkspaceProjectMetadataArrayInput is an input type that accepts WorkspaceProjectMetadataArray and WorkspaceProjectMetadataArrayOutput values.
+// You can construct a concrete instance of `WorkspaceProjectMetadataArrayInput` via:
+//
+//	WorkspaceProjectMetadataArray{ WorkspaceProjectMetadataArgs{...} }
+type WorkspaceProjectMetadataArrayInput interface {
+	pulumi.Input
+
+	ToWorkspaceProjectMetadataArrayOutput() WorkspaceProjectMetadataArrayOutput
+	ToWorkspaceProjectMetadataArrayOutputWithContext(context.Context) WorkspaceProjectMetadataArrayOutput
+}
+
+type WorkspaceProjectMetadataArray []WorkspaceProjectMetadataInput
+
+func (WorkspaceProjectMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceProjectMetadata)(nil)).Elem()
+}
+
+func (i WorkspaceProjectMetadataArray) ToWorkspaceProjectMetadataArrayOutput() WorkspaceProjectMetadataArrayOutput {
+	return i.ToWorkspaceProjectMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i WorkspaceProjectMetadataArray) ToWorkspaceProjectMetadataArrayOutputWithContext(ctx context.Context) WorkspaceProjectMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceProjectMetadataArrayOutput)
+}
+
+type WorkspaceProjectMetadataOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceProjectMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceProjectMetadata)(nil)).Elem()
+}
+
+func (o WorkspaceProjectMetadataOutput) ToWorkspaceProjectMetadataOutput() WorkspaceProjectMetadataOutput {
+	return o
+}
+
+func (o WorkspaceProjectMetadataOutput) ToWorkspaceProjectMetadataOutputWithContext(ctx context.Context) WorkspaceProjectMetadataOutput {
+	return o
+}
+
+// (Updatable) The owning object's key for this object.
+func (o WorkspaceProjectMetadataOutput) AggregatorKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceProjectMetadata) *string { return v.AggregatorKey }).(pulumi.StringPtrOutput)
+}
+
+// A summary type containing information about the object's aggregator including its type, key, name and description.
+func (o WorkspaceProjectMetadataOutput) Aggregators() WorkspaceProjectMetadataAggregatorArrayOutput {
+	return o.ApplyT(func(v WorkspaceProjectMetadata) []WorkspaceProjectMetadataAggregator { return v.Aggregators }).(WorkspaceProjectMetadataAggregatorArrayOutput)
+}
+
+// A count statistics.
+func (o WorkspaceProjectMetadataOutput) CountStatistics() WorkspaceProjectMetadataCountStatisticArrayOutput {
+	return o.ApplyT(func(v WorkspaceProjectMetadata) []WorkspaceProjectMetadataCountStatistic { return v.CountStatistics }).(WorkspaceProjectMetadataCountStatisticArrayOutput)
+}
+
+// The user that created the object.
+func (o WorkspaceProjectMetadataOutput) CreatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceProjectMetadata) *string { return v.CreatedBy }).(pulumi.StringPtrOutput)
+}
+
+// The user that created the object.
+func (o WorkspaceProjectMetadataOutput) CreatedByName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceProjectMetadata) *string { return v.CreatedByName }).(pulumi.StringPtrOutput)
+}
+
+// The full path to identify this object.
+func (o WorkspaceProjectMetadataOutput) IdentifierPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceProjectMetadata) *string { return v.IdentifierPath }).(pulumi.StringPtrOutput)
+}
+
+// Information property fields.
+func (o WorkspaceProjectMetadataOutput) InfoFields() pulumi.MapOutput {
+	return o.ApplyT(func(v WorkspaceProjectMetadata) map[string]interface{} { return v.InfoFields }).(pulumi.MapOutput)
+}
+
+// (Updatable) Specifies whether this object is a favorite or not.
+func (o WorkspaceProjectMetadataOutput) IsFavorite() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WorkspaceProjectMetadata) *bool { return v.IsFavorite }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+func (o WorkspaceProjectMetadataOutput) Labels() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v WorkspaceProjectMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The registry version.
+func (o WorkspaceProjectMetadataOutput) RegistryVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v WorkspaceProjectMetadata) *int { return v.RegistryVersion }).(pulumi.IntPtrOutput)
+}
+
+// The date and time that the object was created.
+func (o WorkspaceProjectMetadataOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceProjectMetadata) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// The date and time that the object was updated.
+func (o WorkspaceProjectMetadataOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceProjectMetadata) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
+}
+
+// The user that updated the object.
+func (o WorkspaceProjectMetadataOutput) UpdatedBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceProjectMetadata) *string { return v.UpdatedBy }).(pulumi.StringPtrOutput)
+}
+
+// The user that updated the object.
+func (o WorkspaceProjectMetadataOutput) UpdatedByName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceProjectMetadata) *string { return v.UpdatedByName }).(pulumi.StringPtrOutput)
+}
+
+type WorkspaceProjectMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceProjectMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceProjectMetadata)(nil)).Elem()
+}
+
+func (o WorkspaceProjectMetadataArrayOutput) ToWorkspaceProjectMetadataArrayOutput() WorkspaceProjectMetadataArrayOutput {
+	return o
+}
+
+func (o WorkspaceProjectMetadataArrayOutput) ToWorkspaceProjectMetadataArrayOutputWithContext(ctx context.Context) WorkspaceProjectMetadataArrayOutput {
+	return o
+}
+
+func (o WorkspaceProjectMetadataArrayOutput) Index(i pulumi.IntInput) WorkspaceProjectMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WorkspaceProjectMetadata {
+		return vs[0].([]WorkspaceProjectMetadata)[vs[1].(int)]
+	}).(WorkspaceProjectMetadataOutput)
+}
+
+type WorkspaceProjectMetadataAggregator struct {
+	// (Updatable) A user defined description for the project.
+	Description *string `pulumi:"description"`
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	Identifier *string `pulumi:"identifier"`
+	// (Updatable) The identifying key for the object.
+	Key *string `pulumi:"key"`
+	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	Name *string `pulumi:"name"`
+	// The type of the aggregator.
+	Type *string `pulumi:"type"`
+}
+
+// WorkspaceProjectMetadataAggregatorInput is an input type that accepts WorkspaceProjectMetadataAggregatorArgs and WorkspaceProjectMetadataAggregatorOutput values.
+// You can construct a concrete instance of `WorkspaceProjectMetadataAggregatorInput` via:
+//
+//	WorkspaceProjectMetadataAggregatorArgs{...}
+type WorkspaceProjectMetadataAggregatorInput interface {
+	pulumi.Input
+
+	ToWorkspaceProjectMetadataAggregatorOutput() WorkspaceProjectMetadataAggregatorOutput
+	ToWorkspaceProjectMetadataAggregatorOutputWithContext(context.Context) WorkspaceProjectMetadataAggregatorOutput
+}
+
+type WorkspaceProjectMetadataAggregatorArgs struct {
+	// (Updatable) A user defined description for the project.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+	Identifier pulumi.StringPtrInput `pulumi:"identifier"`
+	// (Updatable) The identifying key for the object.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// The type of the aggregator.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (WorkspaceProjectMetadataAggregatorArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceProjectMetadataAggregator)(nil)).Elem()
+}
+
+func (i WorkspaceProjectMetadataAggregatorArgs) ToWorkspaceProjectMetadataAggregatorOutput() WorkspaceProjectMetadataAggregatorOutput {
+	return i.ToWorkspaceProjectMetadataAggregatorOutputWithContext(context.Background())
+}
+
+func (i WorkspaceProjectMetadataAggregatorArgs) ToWorkspaceProjectMetadataAggregatorOutputWithContext(ctx context.Context) WorkspaceProjectMetadataAggregatorOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceProjectMetadataAggregatorOutput)
+}
+
+// WorkspaceProjectMetadataAggregatorArrayInput is an input type that accepts WorkspaceProjectMetadataAggregatorArray and WorkspaceProjectMetadataAggregatorArrayOutput values.
+// You can construct a concrete instance of `WorkspaceProjectMetadataAggregatorArrayInput` via:
+//
+//	WorkspaceProjectMetadataAggregatorArray{ WorkspaceProjectMetadataAggregatorArgs{...} }
+type WorkspaceProjectMetadataAggregatorArrayInput interface {
+	pulumi.Input
+
+	ToWorkspaceProjectMetadataAggregatorArrayOutput() WorkspaceProjectMetadataAggregatorArrayOutput
+	ToWorkspaceProjectMetadataAggregatorArrayOutputWithContext(context.Context) WorkspaceProjectMetadataAggregatorArrayOutput
+}
+
+type WorkspaceProjectMetadataAggregatorArray []WorkspaceProjectMetadataAggregatorInput
+
+func (WorkspaceProjectMetadataAggregatorArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceProjectMetadataAggregator)(nil)).Elem()
+}
+
+func (i WorkspaceProjectMetadataAggregatorArray) ToWorkspaceProjectMetadataAggregatorArrayOutput() WorkspaceProjectMetadataAggregatorArrayOutput {
+	return i.ToWorkspaceProjectMetadataAggregatorArrayOutputWithContext(context.Background())
+}
+
+func (i WorkspaceProjectMetadataAggregatorArray) ToWorkspaceProjectMetadataAggregatorArrayOutputWithContext(ctx context.Context) WorkspaceProjectMetadataAggregatorArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceProjectMetadataAggregatorArrayOutput)
+}
+
+type WorkspaceProjectMetadataAggregatorOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceProjectMetadataAggregatorOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceProjectMetadataAggregator)(nil)).Elem()
+}
+
+func (o WorkspaceProjectMetadataAggregatorOutput) ToWorkspaceProjectMetadataAggregatorOutput() WorkspaceProjectMetadataAggregatorOutput {
+	return o
+}
+
+func (o WorkspaceProjectMetadataAggregatorOutput) ToWorkspaceProjectMetadataAggregatorOutputWithContext(ctx context.Context) WorkspaceProjectMetadataAggregatorOutput {
+	return o
+}
+
+// (Updatable) A user defined description for the project.
+func (o WorkspaceProjectMetadataAggregatorOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceProjectMetadataAggregator) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+func (o WorkspaceProjectMetadataAggregatorOutput) Identifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceProjectMetadataAggregator) *string { return v.Identifier }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The identifying key for the object.
+func (o WorkspaceProjectMetadataAggregatorOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceProjectMetadataAggregator) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+func (o WorkspaceProjectMetadataAggregatorOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceProjectMetadataAggregator) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// The type of the aggregator.
+func (o WorkspaceProjectMetadataAggregatorOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceProjectMetadataAggregator) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type WorkspaceProjectMetadataAggregatorArrayOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceProjectMetadataAggregatorArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceProjectMetadataAggregator)(nil)).Elem()
+}
+
+func (o WorkspaceProjectMetadataAggregatorArrayOutput) ToWorkspaceProjectMetadataAggregatorArrayOutput() WorkspaceProjectMetadataAggregatorArrayOutput {
+	return o
+}
+
+func (o WorkspaceProjectMetadataAggregatorArrayOutput) ToWorkspaceProjectMetadataAggregatorArrayOutputWithContext(ctx context.Context) WorkspaceProjectMetadataAggregatorArrayOutput {
+	return o
+}
+
+func (o WorkspaceProjectMetadataAggregatorArrayOutput) Index(i pulumi.IntInput) WorkspaceProjectMetadataAggregatorOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WorkspaceProjectMetadataAggregator {
+		return vs[0].([]WorkspaceProjectMetadataAggregator)[vs[1].(int)]
+	}).(WorkspaceProjectMetadataAggregatorOutput)
+}
+
+type WorkspaceProjectMetadataCountStatistic struct {
+	// The array of statistics.
+	ObjectTypeCountLists []WorkspaceProjectMetadataCountStatisticObjectTypeCountList `pulumi:"objectTypeCountLists"`
+}
+
+// WorkspaceProjectMetadataCountStatisticInput is an input type that accepts WorkspaceProjectMetadataCountStatisticArgs and WorkspaceProjectMetadataCountStatisticOutput values.
+// You can construct a concrete instance of `WorkspaceProjectMetadataCountStatisticInput` via:
+//
+//	WorkspaceProjectMetadataCountStatisticArgs{...}
+type WorkspaceProjectMetadataCountStatisticInput interface {
+	pulumi.Input
+
+	ToWorkspaceProjectMetadataCountStatisticOutput() WorkspaceProjectMetadataCountStatisticOutput
+	ToWorkspaceProjectMetadataCountStatisticOutputWithContext(context.Context) WorkspaceProjectMetadataCountStatisticOutput
+}
+
+type WorkspaceProjectMetadataCountStatisticArgs struct {
+	// The array of statistics.
+	ObjectTypeCountLists WorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayInput `pulumi:"objectTypeCountLists"`
+}
+
+func (WorkspaceProjectMetadataCountStatisticArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceProjectMetadataCountStatistic)(nil)).Elem()
+}
+
+func (i WorkspaceProjectMetadataCountStatisticArgs) ToWorkspaceProjectMetadataCountStatisticOutput() WorkspaceProjectMetadataCountStatisticOutput {
+	return i.ToWorkspaceProjectMetadataCountStatisticOutputWithContext(context.Background())
+}
+
+func (i WorkspaceProjectMetadataCountStatisticArgs) ToWorkspaceProjectMetadataCountStatisticOutputWithContext(ctx context.Context) WorkspaceProjectMetadataCountStatisticOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceProjectMetadataCountStatisticOutput)
+}
+
+// WorkspaceProjectMetadataCountStatisticArrayInput is an input type that accepts WorkspaceProjectMetadataCountStatisticArray and WorkspaceProjectMetadataCountStatisticArrayOutput values.
+// You can construct a concrete instance of `WorkspaceProjectMetadataCountStatisticArrayInput` via:
+//
+//	WorkspaceProjectMetadataCountStatisticArray{ WorkspaceProjectMetadataCountStatisticArgs{...} }
+type WorkspaceProjectMetadataCountStatisticArrayInput interface {
+	pulumi.Input
+
+	ToWorkspaceProjectMetadataCountStatisticArrayOutput() WorkspaceProjectMetadataCountStatisticArrayOutput
+	ToWorkspaceProjectMetadataCountStatisticArrayOutputWithContext(context.Context) WorkspaceProjectMetadataCountStatisticArrayOutput
+}
+
+type WorkspaceProjectMetadataCountStatisticArray []WorkspaceProjectMetadataCountStatisticInput
+
+func (WorkspaceProjectMetadataCountStatisticArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceProjectMetadataCountStatistic)(nil)).Elem()
+}
+
+func (i WorkspaceProjectMetadataCountStatisticArray) ToWorkspaceProjectMetadataCountStatisticArrayOutput() WorkspaceProjectMetadataCountStatisticArrayOutput {
+	return i.ToWorkspaceProjectMetadataCountStatisticArrayOutputWithContext(context.Background())
+}
+
+func (i WorkspaceProjectMetadataCountStatisticArray) ToWorkspaceProjectMetadataCountStatisticArrayOutputWithContext(ctx context.Context) WorkspaceProjectMetadataCountStatisticArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceProjectMetadataCountStatisticArrayOutput)
+}
+
+type WorkspaceProjectMetadataCountStatisticOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceProjectMetadataCountStatisticOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceProjectMetadataCountStatistic)(nil)).Elem()
+}
+
+func (o WorkspaceProjectMetadataCountStatisticOutput) ToWorkspaceProjectMetadataCountStatisticOutput() WorkspaceProjectMetadataCountStatisticOutput {
+	return o
+}
+
+func (o WorkspaceProjectMetadataCountStatisticOutput) ToWorkspaceProjectMetadataCountStatisticOutputWithContext(ctx context.Context) WorkspaceProjectMetadataCountStatisticOutput {
+	return o
+}
+
+// The array of statistics.
+func (o WorkspaceProjectMetadataCountStatisticOutput) ObjectTypeCountLists() WorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return o.ApplyT(func(v WorkspaceProjectMetadataCountStatistic) []WorkspaceProjectMetadataCountStatisticObjectTypeCountList {
+		return v.ObjectTypeCountLists
+	}).(WorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput)
+}
+
+type WorkspaceProjectMetadataCountStatisticArrayOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceProjectMetadataCountStatisticArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceProjectMetadataCountStatistic)(nil)).Elem()
+}
+
+func (o WorkspaceProjectMetadataCountStatisticArrayOutput) ToWorkspaceProjectMetadataCountStatisticArrayOutput() WorkspaceProjectMetadataCountStatisticArrayOutput {
+	return o
+}
+
+func (o WorkspaceProjectMetadataCountStatisticArrayOutput) ToWorkspaceProjectMetadataCountStatisticArrayOutputWithContext(ctx context.Context) WorkspaceProjectMetadataCountStatisticArrayOutput {
+	return o
+}
+
+func (o WorkspaceProjectMetadataCountStatisticArrayOutput) Index(i pulumi.IntInput) WorkspaceProjectMetadataCountStatisticOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WorkspaceProjectMetadataCountStatistic {
+		return vs[0].([]WorkspaceProjectMetadataCountStatistic)[vs[1].(int)]
+	}).(WorkspaceProjectMetadataCountStatisticOutput)
+}
+
+type WorkspaceProjectMetadataCountStatisticObjectTypeCountList struct {
+	// The value for the count statistic object.
+	ObjectCount *string `pulumi:"objectCount"`
+	// The type of object for the count statistic object.
+	ObjectType *string `pulumi:"objectType"`
+}
+
+// WorkspaceProjectMetadataCountStatisticObjectTypeCountListInput is an input type that accepts WorkspaceProjectMetadataCountStatisticObjectTypeCountListArgs and WorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput values.
+// You can construct a concrete instance of `WorkspaceProjectMetadataCountStatisticObjectTypeCountListInput` via:
+//
+//	WorkspaceProjectMetadataCountStatisticObjectTypeCountListArgs{...}
+type WorkspaceProjectMetadataCountStatisticObjectTypeCountListInput interface {
+	pulumi.Input
+
+	ToWorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput() WorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput
+	ToWorkspaceProjectMetadataCountStatisticObjectTypeCountListOutputWithContext(context.Context) WorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput
+}
+
+type WorkspaceProjectMetadataCountStatisticObjectTypeCountListArgs struct {
+	// The value for the count statistic object.
+	ObjectCount pulumi.StringPtrInput `pulumi:"objectCount"`
+	// The type of object for the count statistic object.
+	ObjectType pulumi.StringPtrInput `pulumi:"objectType"`
+}
+
+func (WorkspaceProjectMetadataCountStatisticObjectTypeCountListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceProjectMetadataCountStatisticObjectTypeCountList)(nil)).Elem()
+}
+
+func (i WorkspaceProjectMetadataCountStatisticObjectTypeCountListArgs) ToWorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput() WorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput {
+	return i.ToWorkspaceProjectMetadataCountStatisticObjectTypeCountListOutputWithContext(context.Background())
+}
+
+func (i WorkspaceProjectMetadataCountStatisticObjectTypeCountListArgs) ToWorkspaceProjectMetadataCountStatisticObjectTypeCountListOutputWithContext(ctx context.Context) WorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput)
+}
+
+// WorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayInput is an input type that accepts WorkspaceProjectMetadataCountStatisticObjectTypeCountListArray and WorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput values.
+// You can construct a concrete instance of `WorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayInput` via:
+//
+//	WorkspaceProjectMetadataCountStatisticObjectTypeCountListArray{ WorkspaceProjectMetadataCountStatisticObjectTypeCountListArgs{...} }
+type WorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayInput interface {
+	pulumi.Input
+
+	ToWorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput() WorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput
+	ToWorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(context.Context) WorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput
+}
+
+type WorkspaceProjectMetadataCountStatisticObjectTypeCountListArray []WorkspaceProjectMetadataCountStatisticObjectTypeCountListInput
+
+func (WorkspaceProjectMetadataCountStatisticObjectTypeCountListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceProjectMetadataCountStatisticObjectTypeCountList)(nil)).Elem()
+}
+
+func (i WorkspaceProjectMetadataCountStatisticObjectTypeCountListArray) ToWorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput() WorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return i.ToWorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(context.Background())
+}
+
+func (i WorkspaceProjectMetadataCountStatisticObjectTypeCountListArray) ToWorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(ctx context.Context) WorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput)
+}
+
+type WorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceProjectMetadataCountStatisticObjectTypeCountList)(nil)).Elem()
+}
+
+func (o WorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput) ToWorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput() WorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput {
+	return o
+}
+
+func (o WorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput) ToWorkspaceProjectMetadataCountStatisticObjectTypeCountListOutputWithContext(ctx context.Context) WorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput {
+	return o
+}
+
+// The value for the count statistic object.
+func (o WorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput) ObjectCount() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceProjectMetadataCountStatisticObjectTypeCountList) *string { return v.ObjectCount }).(pulumi.StringPtrOutput)
+}
+
+// The type of object for the count statistic object.
+func (o WorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput) ObjectType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceProjectMetadataCountStatisticObjectTypeCountList) *string { return v.ObjectType }).(pulumi.StringPtrOutput)
+}
+
+type WorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceProjectMetadataCountStatisticObjectTypeCountList)(nil)).Elem()
+}
+
+func (o WorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput) ToWorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput() WorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return o
+}
+
+func (o WorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput) ToWorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(ctx context.Context) WorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return o
+}
+
+func (o WorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput) Index(i pulumi.IntInput) WorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WorkspaceProjectMetadataCountStatisticObjectTypeCountList {
+		return vs[0].([]WorkspaceProjectMetadataCountStatisticObjectTypeCountList)[vs[1].(int)]
+	}).(WorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput)
+}
+
+type WorkspaceProjectParentRef struct {
+	// Key of the parent object.
+	Parent *string `pulumi:"parent"`
+	// Key of the root document object.
+	RootDocId *string `pulumi:"rootDocId"`
+}
+
+// WorkspaceProjectParentRefInput is an input type that accepts WorkspaceProjectParentRefArgs and WorkspaceProjectParentRefOutput values.
+// You can construct a concrete instance of `WorkspaceProjectParentRefInput` via:
+//
+//	WorkspaceProjectParentRefArgs{...}
+type WorkspaceProjectParentRefInput interface {
+	pulumi.Input
+
+	ToWorkspaceProjectParentRefOutput() WorkspaceProjectParentRefOutput
+	ToWorkspaceProjectParentRefOutputWithContext(context.Context) WorkspaceProjectParentRefOutput
+}
+
+type WorkspaceProjectParentRefArgs struct {
+	// Key of the parent object.
+	Parent pulumi.StringPtrInput `pulumi:"parent"`
+	// Key of the root document object.
+	RootDocId pulumi.StringPtrInput `pulumi:"rootDocId"`
+}
+
+func (WorkspaceProjectParentRefArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceProjectParentRef)(nil)).Elem()
+}
+
+func (i WorkspaceProjectParentRefArgs) ToWorkspaceProjectParentRefOutput() WorkspaceProjectParentRefOutput {
+	return i.ToWorkspaceProjectParentRefOutputWithContext(context.Background())
+}
+
+func (i WorkspaceProjectParentRefArgs) ToWorkspaceProjectParentRefOutputWithContext(ctx context.Context) WorkspaceProjectParentRefOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceProjectParentRefOutput)
+}
+
+// WorkspaceProjectParentRefArrayInput is an input type that accepts WorkspaceProjectParentRefArray and WorkspaceProjectParentRefArrayOutput values.
+// You can construct a concrete instance of `WorkspaceProjectParentRefArrayInput` via:
+//
+//	WorkspaceProjectParentRefArray{ WorkspaceProjectParentRefArgs{...} }
+type WorkspaceProjectParentRefArrayInput interface {
+	pulumi.Input
+
+	ToWorkspaceProjectParentRefArrayOutput() WorkspaceProjectParentRefArrayOutput
+	ToWorkspaceProjectParentRefArrayOutputWithContext(context.Context) WorkspaceProjectParentRefArrayOutput
+}
+
+type WorkspaceProjectParentRefArray []WorkspaceProjectParentRefInput
+
+func (WorkspaceProjectParentRefArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceProjectParentRef)(nil)).Elem()
+}
+
+func (i WorkspaceProjectParentRefArray) ToWorkspaceProjectParentRefArrayOutput() WorkspaceProjectParentRefArrayOutput {
+	return i.ToWorkspaceProjectParentRefArrayOutputWithContext(context.Background())
+}
+
+func (i WorkspaceProjectParentRefArray) ToWorkspaceProjectParentRefArrayOutputWithContext(ctx context.Context) WorkspaceProjectParentRefArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceProjectParentRefArrayOutput)
+}
+
+type WorkspaceProjectParentRefOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceProjectParentRefOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceProjectParentRef)(nil)).Elem()
+}
+
+func (o WorkspaceProjectParentRefOutput) ToWorkspaceProjectParentRefOutput() WorkspaceProjectParentRefOutput {
+	return o
+}
+
+func (o WorkspaceProjectParentRefOutput) ToWorkspaceProjectParentRefOutputWithContext(ctx context.Context) WorkspaceProjectParentRefOutput {
+	return o
+}
+
+// Key of the parent object.
+func (o WorkspaceProjectParentRefOutput) Parent() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceProjectParentRef) *string { return v.Parent }).(pulumi.StringPtrOutput)
+}
+
+// Key of the root document object.
+func (o WorkspaceProjectParentRefOutput) RootDocId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceProjectParentRef) *string { return v.RootDocId }).(pulumi.StringPtrOutput)
+}
+
+type WorkspaceProjectParentRefArrayOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceProjectParentRefArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]WorkspaceProjectParentRef)(nil)).Elem()
+}
+
+func (o WorkspaceProjectParentRefArrayOutput) ToWorkspaceProjectParentRefArrayOutput() WorkspaceProjectParentRefArrayOutput {
+	return o
+}
+
+func (o WorkspaceProjectParentRefArrayOutput) ToWorkspaceProjectParentRefArrayOutputWithContext(ctx context.Context) WorkspaceProjectParentRefArrayOutput {
+	return o
+}
+
+func (o WorkspaceProjectParentRefArrayOutput) Index(i pulumi.IntInput) WorkspaceProjectParentRefOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) WorkspaceProjectParentRef {
+		return vs[0].([]WorkspaceProjectParentRef)[vs[1].(int)]
+	}).(WorkspaceProjectParentRefOutput)
+}
+
+type WorkspaceProjectRegistryMetadata struct {
+	// (Updatable) The owning object's key for this object.
+	AggregatorKey *string `pulumi:"aggregatorKey"`
+	// (Updatable) Specifies whether this object is a favorite or not.
+	IsFavorite *bool `pulumi:"isFavorite"`
+	// (Updatable) The identifying key for the object.
+	Key *string `pulumi:"key"`
+	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	Labels []string `pulumi:"labels"`
+	// (Updatable) The registry version.
+	RegistryVersion *int `pulumi:"registryVersion"`
+}
+
+// WorkspaceProjectRegistryMetadataInput is an input type that accepts WorkspaceProjectRegistryMetadataArgs and WorkspaceProjectRegistryMetadataOutput values.
+// You can construct a concrete instance of `WorkspaceProjectRegistryMetadataInput` via:
+//
+//	WorkspaceProjectRegistryMetadataArgs{...}
+type WorkspaceProjectRegistryMetadataInput interface {
+	pulumi.Input
+
+	ToWorkspaceProjectRegistryMetadataOutput() WorkspaceProjectRegistryMetadataOutput
+	ToWorkspaceProjectRegistryMetadataOutputWithContext(context.Context) WorkspaceProjectRegistryMetadataOutput
+}
+
+type WorkspaceProjectRegistryMetadataArgs struct {
+	// (Updatable) The owning object's key for this object.
+	AggregatorKey pulumi.StringPtrInput `pulumi:"aggregatorKey"`
+	// (Updatable) Specifies whether this object is a favorite or not.
+	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
+	// (Updatable) The identifying key for the object.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+	Labels pulumi.StringArrayInput `pulumi:"labels"`
+	// (Updatable) The registry version.
+	RegistryVersion pulumi.IntPtrInput `pulumi:"registryVersion"`
+}
+
+func (WorkspaceProjectRegistryMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceProjectRegistryMetadata)(nil)).Elem()
+}
+
+func (i WorkspaceProjectRegistryMetadataArgs) ToWorkspaceProjectRegistryMetadataOutput() WorkspaceProjectRegistryMetadataOutput {
+	return i.ToWorkspaceProjectRegistryMetadataOutputWithContext(context.Background())
+}
+
+func (i WorkspaceProjectRegistryMetadataArgs) ToWorkspaceProjectRegistryMetadataOutputWithContext(ctx context.Context) WorkspaceProjectRegistryMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceProjectRegistryMetadataOutput)
+}
+
+func (i WorkspaceProjectRegistryMetadataArgs) ToWorkspaceProjectRegistryMetadataPtrOutput() WorkspaceProjectRegistryMetadataPtrOutput {
+	return i.ToWorkspaceProjectRegistryMetadataPtrOutputWithContext(context.Background())
+}
+
+func (i WorkspaceProjectRegistryMetadataArgs) ToWorkspaceProjectRegistryMetadataPtrOutputWithContext(ctx context.Context) WorkspaceProjectRegistryMetadataPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceProjectRegistryMetadataOutput).ToWorkspaceProjectRegistryMetadataPtrOutputWithContext(ctx)
+}
+
+// WorkspaceProjectRegistryMetadataPtrInput is an input type that accepts WorkspaceProjectRegistryMetadataArgs, WorkspaceProjectRegistryMetadataPtr and WorkspaceProjectRegistryMetadataPtrOutput values.
+// You can construct a concrete instance of `WorkspaceProjectRegistryMetadataPtrInput` via:
+//
+//	        WorkspaceProjectRegistryMetadataArgs{...}
+//
+//	or:
+//
+//	        nil
+type WorkspaceProjectRegistryMetadataPtrInput interface {
+	pulumi.Input
+
+	ToWorkspaceProjectRegistryMetadataPtrOutput() WorkspaceProjectRegistryMetadataPtrOutput
+	ToWorkspaceProjectRegistryMetadataPtrOutputWithContext(context.Context) WorkspaceProjectRegistryMetadataPtrOutput
+}
+
+type workspaceProjectRegistryMetadataPtrType WorkspaceProjectRegistryMetadataArgs
+
+func WorkspaceProjectRegistryMetadataPtr(v *WorkspaceProjectRegistryMetadataArgs) WorkspaceProjectRegistryMetadataPtrInput {
+	return (*workspaceProjectRegistryMetadataPtrType)(v)
+}
+
+func (*workspaceProjectRegistryMetadataPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**WorkspaceProjectRegistryMetadata)(nil)).Elem()
+}
+
+func (i *workspaceProjectRegistryMetadataPtrType) ToWorkspaceProjectRegistryMetadataPtrOutput() WorkspaceProjectRegistryMetadataPtrOutput {
+	return i.ToWorkspaceProjectRegistryMetadataPtrOutputWithContext(context.Background())
+}
+
+func (i *workspaceProjectRegistryMetadataPtrType) ToWorkspaceProjectRegistryMetadataPtrOutputWithContext(ctx context.Context) WorkspaceProjectRegistryMetadataPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(WorkspaceProjectRegistryMetadataPtrOutput)
+}
+
+type WorkspaceProjectRegistryMetadataOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceProjectRegistryMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*WorkspaceProjectRegistryMetadata)(nil)).Elem()
+}
+
+func (o WorkspaceProjectRegistryMetadataOutput) ToWorkspaceProjectRegistryMetadataOutput() WorkspaceProjectRegistryMetadataOutput {
+	return o
+}
+
+func (o WorkspaceProjectRegistryMetadataOutput) ToWorkspaceProjectRegistryMetadataOutputWithContext(ctx context.Context) WorkspaceProjectRegistryMetadataOutput {
+	return o
+}
+
+func (o WorkspaceProjectRegistryMetadataOutput) ToWorkspaceProjectRegistryMetadataPtrOutput() WorkspaceProjectRegistryMetadataPtrOutput {
+	return o.ToWorkspaceProjectRegistryMetadataPtrOutputWithContext(context.Background())
+}
+
+func (o WorkspaceProjectRegistryMetadataOutput) ToWorkspaceProjectRegistryMetadataPtrOutputWithContext(ctx context.Context) WorkspaceProjectRegistryMetadataPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v WorkspaceProjectRegistryMetadata) *WorkspaceProjectRegistryMetadata {
+		return &v
+	}).(WorkspaceProjectRegistryMetadataPtrOutput)
+}
+
+// (Updatable) The owning object's key for this object.
+func (o WorkspaceProjectRegistryMetadataOutput) AggregatorKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceProjectRegistryMetadata) *string { return v.AggregatorKey }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Specifies whether this object is a favorite or not.
+func (o WorkspaceProjectRegistryMetadataOutput) IsFavorite() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v WorkspaceProjectRegistryMetadata) *bool { return v.IsFavorite }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The identifying key for the object.
+func (o WorkspaceProjectRegistryMetadataOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v WorkspaceProjectRegistryMetadata) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+func (o WorkspaceProjectRegistryMetadataOutput) Labels() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v WorkspaceProjectRegistryMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The registry version.
+func (o WorkspaceProjectRegistryMetadataOutput) RegistryVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v WorkspaceProjectRegistryMetadata) *int { return v.RegistryVersion }).(pulumi.IntPtrOutput)
+}
+
+type WorkspaceProjectRegistryMetadataPtrOutput struct{ *pulumi.OutputState }
+
+func (WorkspaceProjectRegistryMetadataPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**WorkspaceProjectRegistryMetadata)(nil)).Elem()
+}
+
+func (o WorkspaceProjectRegistryMetadataPtrOutput) ToWorkspaceProjectRegistryMetadataPtrOutput() WorkspaceProjectRegistryMetadataPtrOutput {
+	return o
+}
+
+func (o WorkspaceProjectRegistryMetadataPtrOutput) ToWorkspaceProjectRegistryMetadataPtrOutputWithContext(ctx context.Context) WorkspaceProjectRegistryMetadataPtrOutput {
+	return o
+}
+
+func (o WorkspaceProjectRegistryMetadataPtrOutput) Elem() WorkspaceProjectRegistryMetadataOutput {
+	return o.ApplyT(func(v *WorkspaceProjectRegistryMetadata) WorkspaceProjectRegistryMetadata {
+		if v != nil {
+			return *v
+		}
+		var ret WorkspaceProjectRegistryMetadata
+		return ret
+	}).(WorkspaceProjectRegistryMetadataOutput)
+}
+
+// (Updatable) The owning object's key for this object.
+func (o WorkspaceProjectRegistryMetadataPtrOutput) AggregatorKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WorkspaceProjectRegistryMetadata) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AggregatorKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Specifies whether this object is a favorite or not.
+func (o WorkspaceProjectRegistryMetadataPtrOutput) IsFavorite() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *WorkspaceProjectRegistryMetadata) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsFavorite
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The identifying key for the object.
+func (o WorkspaceProjectRegistryMetadataPtrOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *WorkspaceProjectRegistryMetadata) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Key
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+func (o WorkspaceProjectRegistryMetadataPtrOutput) Labels() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *WorkspaceProjectRegistryMetadata) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Labels
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The registry version.
+func (o WorkspaceProjectRegistryMetadataPtrOutput) RegistryVersion() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *WorkspaceProjectRegistryMetadata) *int {
+		if v == nil {
+			return nil
+		}
+		return v.RegistryVersion
+	}).(pulumi.IntPtrOutput)
+}
+
+type GetWorkspaceFolderMetadata struct {
+	// The owning object key for this object.
+	AggregatorKey string `pulumi:"aggregatorKey"`
+	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	Aggregators []GetWorkspaceFolderMetadataAggregator `pulumi:"aggregators"`
+	// A count statistics.
+	CountStatistics []GetWorkspaceFolderMetadataCountStatistic `pulumi:"countStatistics"`
+	// The user that created the object.
+	CreatedBy string `pulumi:"createdBy"`
+	// The user that created the object.
+	CreatedByName string `pulumi:"createdByName"`
+	// The full path to identify this object.
+	IdentifierPath string `pulumi:"identifierPath"`
+	// Information property fields.
+	InfoFields map[string]interface{} `pulumi:"infoFields"`
+	// Specifies whether this object is a favorite or not.
+	IsFavorite bool `pulumi:"isFavorite"`
+	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+	Labels []string `pulumi:"labels"`
+	// The registry version of the object.
+	RegistryVersion int `pulumi:"registryVersion"`
+	// The date and time that the object was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time that the object was updated.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The user that updated the object.
+	UpdatedBy string `pulumi:"updatedBy"`
+	// The user that updated the object.
+	UpdatedByName string `pulumi:"updatedByName"`
+}
+
+// GetWorkspaceFolderMetadataInput is an input type that accepts GetWorkspaceFolderMetadataArgs and GetWorkspaceFolderMetadataOutput values.
+// You can construct a concrete instance of `GetWorkspaceFolderMetadataInput` via:
+//
+//	GetWorkspaceFolderMetadataArgs{...}
+type GetWorkspaceFolderMetadataInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceFolderMetadataOutput() GetWorkspaceFolderMetadataOutput
+	ToGetWorkspaceFolderMetadataOutputWithContext(context.Context) GetWorkspaceFolderMetadataOutput
+}
+
+type GetWorkspaceFolderMetadataArgs struct {
+	// The owning object key for this object.
+	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
+	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	Aggregators GetWorkspaceFolderMetadataAggregatorArrayInput `pulumi:"aggregators"`
+	// A count statistics.
+	CountStatistics GetWorkspaceFolderMetadataCountStatisticArrayInput `pulumi:"countStatistics"`
+	// The user that created the object.
+	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	// The user that created the object.
+	CreatedByName pulumi.StringInput `pulumi:"createdByName"`
+	// The full path to identify this object.
+	IdentifierPath pulumi.StringInput `pulumi:"identifierPath"`
+	// Information property fields.
+	InfoFields pulumi.MapInput `pulumi:"infoFields"`
+	// Specifies whether this object is a favorite or not.
+	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
+	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+	Labels pulumi.StringArrayInput `pulumi:"labels"`
+	// The registry version of the object.
+	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
+	// The date and time that the object was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time that the object was updated.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The user that updated the object.
+	UpdatedBy pulumi.StringInput `pulumi:"updatedBy"`
+	// The user that updated the object.
+	UpdatedByName pulumi.StringInput `pulumi:"updatedByName"`
+}
+
+func (GetWorkspaceFolderMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceFolderMetadata)(nil)).Elem()
+}
+
+func (i GetWorkspaceFolderMetadataArgs) ToGetWorkspaceFolderMetadataOutput() GetWorkspaceFolderMetadataOutput {
+	return i.ToGetWorkspaceFolderMetadataOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceFolderMetadataArgs) ToGetWorkspaceFolderMetadataOutputWithContext(ctx context.Context) GetWorkspaceFolderMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFolderMetadataOutput)
+}
+
+// GetWorkspaceFolderMetadataArrayInput is an input type that accepts GetWorkspaceFolderMetadataArray and GetWorkspaceFolderMetadataArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceFolderMetadataArrayInput` via:
+//
+//	GetWorkspaceFolderMetadataArray{ GetWorkspaceFolderMetadataArgs{...} }
+type GetWorkspaceFolderMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceFolderMetadataArrayOutput() GetWorkspaceFolderMetadataArrayOutput
+	ToGetWorkspaceFolderMetadataArrayOutputWithContext(context.Context) GetWorkspaceFolderMetadataArrayOutput
+}
+
+type GetWorkspaceFolderMetadataArray []GetWorkspaceFolderMetadataInput
+
+func (GetWorkspaceFolderMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceFolderMetadata)(nil)).Elem()
+}
+
+func (i GetWorkspaceFolderMetadataArray) ToGetWorkspaceFolderMetadataArrayOutput() GetWorkspaceFolderMetadataArrayOutput {
+	return i.ToGetWorkspaceFolderMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceFolderMetadataArray) ToGetWorkspaceFolderMetadataArrayOutputWithContext(ctx context.Context) GetWorkspaceFolderMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFolderMetadataArrayOutput)
+}
+
+type GetWorkspaceFolderMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceFolderMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceFolderMetadata)(nil)).Elem()
+}
+
+func (o GetWorkspaceFolderMetadataOutput) ToGetWorkspaceFolderMetadataOutput() GetWorkspaceFolderMetadataOutput {
+	return o
+}
+
+func (o GetWorkspaceFolderMetadataOutput) ToGetWorkspaceFolderMetadataOutputWithContext(ctx context.Context) GetWorkspaceFolderMetadataOutput {
+	return o
+}
+
+// The owning object key for this object.
+func (o GetWorkspaceFolderMetadataOutput) AggregatorKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderMetadata) string { return v.AggregatorKey }).(pulumi.StringOutput)
+}
+
+// A summary type containing information about the object's aggregator including its type, key, name and description.
+func (o GetWorkspaceFolderMetadataOutput) Aggregators() GetWorkspaceFolderMetadataAggregatorArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderMetadata) []GetWorkspaceFolderMetadataAggregator { return v.Aggregators }).(GetWorkspaceFolderMetadataAggregatorArrayOutput)
+}
+
+// A count statistics.
+func (o GetWorkspaceFolderMetadataOutput) CountStatistics() GetWorkspaceFolderMetadataCountStatisticArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderMetadata) []GetWorkspaceFolderMetadataCountStatistic {
+		return v.CountStatistics
+	}).(GetWorkspaceFolderMetadataCountStatisticArrayOutput)
+}
+
+// The user that created the object.
+func (o GetWorkspaceFolderMetadataOutput) CreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderMetadata) string { return v.CreatedBy }).(pulumi.StringOutput)
+}
+
+// The user that created the object.
+func (o GetWorkspaceFolderMetadataOutput) CreatedByName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderMetadata) string { return v.CreatedByName }).(pulumi.StringOutput)
+}
+
+// The full path to identify this object.
+func (o GetWorkspaceFolderMetadataOutput) IdentifierPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderMetadata) string { return v.IdentifierPath }).(pulumi.StringOutput)
+}
+
+// Information property fields.
+func (o GetWorkspaceFolderMetadataOutput) InfoFields() pulumi.MapOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderMetadata) map[string]interface{} { return v.InfoFields }).(pulumi.MapOutput)
+}
+
+// Specifies whether this object is a favorite or not.
+func (o GetWorkspaceFolderMetadataOutput) IsFavorite() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderMetadata) bool { return v.IsFavorite }).(pulumi.BoolOutput)
+}
+
+// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+func (o GetWorkspaceFolderMetadataOutput) Labels() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
+}
+
+// The registry version of the object.
+func (o GetWorkspaceFolderMetadataOutput) RegistryVersion() pulumi.IntOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderMetadata) int { return v.RegistryVersion }).(pulumi.IntOutput)
+}
+
+// The date and time that the object was created.
+func (o GetWorkspaceFolderMetadataOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderMetadata) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time that the object was updated.
+func (o GetWorkspaceFolderMetadataOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderMetadata) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The user that updated the object.
+func (o GetWorkspaceFolderMetadataOutput) UpdatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderMetadata) string { return v.UpdatedBy }).(pulumi.StringOutput)
+}
+
+// The user that updated the object.
+func (o GetWorkspaceFolderMetadataOutput) UpdatedByName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderMetadata) string { return v.UpdatedByName }).(pulumi.StringOutput)
+}
+
+type GetWorkspaceFolderMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceFolderMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceFolderMetadata)(nil)).Elem()
+}
+
+func (o GetWorkspaceFolderMetadataArrayOutput) ToGetWorkspaceFolderMetadataArrayOutput() GetWorkspaceFolderMetadataArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceFolderMetadataArrayOutput) ToGetWorkspaceFolderMetadataArrayOutputWithContext(ctx context.Context) GetWorkspaceFolderMetadataArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceFolderMetadataArrayOutput) Index(i pulumi.IntInput) GetWorkspaceFolderMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceFolderMetadata {
+		return vs[0].([]GetWorkspaceFolderMetadata)[vs[1].(int)]
+	}).(GetWorkspaceFolderMetadataOutput)
+}
+
+type GetWorkspaceFolderMetadataAggregator struct {
+	// The description of the aggregator.
+	Description string `pulumi:"description"`
+	// The identifier of the aggregator.
+	Identifier string `pulumi:"identifier"`
+	// The key of the aggregator object.
+	Key string `pulumi:"key"`
+	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	Name string `pulumi:"name"`
+	// The type of the aggregator.
+	Type string `pulumi:"type"`
+}
+
+// GetWorkspaceFolderMetadataAggregatorInput is an input type that accepts GetWorkspaceFolderMetadataAggregatorArgs and GetWorkspaceFolderMetadataAggregatorOutput values.
+// You can construct a concrete instance of `GetWorkspaceFolderMetadataAggregatorInput` via:
+//
+//	GetWorkspaceFolderMetadataAggregatorArgs{...}
+type GetWorkspaceFolderMetadataAggregatorInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceFolderMetadataAggregatorOutput() GetWorkspaceFolderMetadataAggregatorOutput
+	ToGetWorkspaceFolderMetadataAggregatorOutputWithContext(context.Context) GetWorkspaceFolderMetadataAggregatorOutput
+}
+
+type GetWorkspaceFolderMetadataAggregatorArgs struct {
+	// The description of the aggregator.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The identifier of the aggregator.
+	Identifier pulumi.StringInput `pulumi:"identifier"`
+	// The key of the aggregator object.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The type of the aggregator.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetWorkspaceFolderMetadataAggregatorArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceFolderMetadataAggregator)(nil)).Elem()
+}
+
+func (i GetWorkspaceFolderMetadataAggregatorArgs) ToGetWorkspaceFolderMetadataAggregatorOutput() GetWorkspaceFolderMetadataAggregatorOutput {
+	return i.ToGetWorkspaceFolderMetadataAggregatorOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceFolderMetadataAggregatorArgs) ToGetWorkspaceFolderMetadataAggregatorOutputWithContext(ctx context.Context) GetWorkspaceFolderMetadataAggregatorOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFolderMetadataAggregatorOutput)
+}
+
+// GetWorkspaceFolderMetadataAggregatorArrayInput is an input type that accepts GetWorkspaceFolderMetadataAggregatorArray and GetWorkspaceFolderMetadataAggregatorArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceFolderMetadataAggregatorArrayInput` via:
+//
+//	GetWorkspaceFolderMetadataAggregatorArray{ GetWorkspaceFolderMetadataAggregatorArgs{...} }
+type GetWorkspaceFolderMetadataAggregatorArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceFolderMetadataAggregatorArrayOutput() GetWorkspaceFolderMetadataAggregatorArrayOutput
+	ToGetWorkspaceFolderMetadataAggregatorArrayOutputWithContext(context.Context) GetWorkspaceFolderMetadataAggregatorArrayOutput
+}
+
+type GetWorkspaceFolderMetadataAggregatorArray []GetWorkspaceFolderMetadataAggregatorInput
+
+func (GetWorkspaceFolderMetadataAggregatorArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceFolderMetadataAggregator)(nil)).Elem()
+}
+
+func (i GetWorkspaceFolderMetadataAggregatorArray) ToGetWorkspaceFolderMetadataAggregatorArrayOutput() GetWorkspaceFolderMetadataAggregatorArrayOutput {
+	return i.ToGetWorkspaceFolderMetadataAggregatorArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceFolderMetadataAggregatorArray) ToGetWorkspaceFolderMetadataAggregatorArrayOutputWithContext(ctx context.Context) GetWorkspaceFolderMetadataAggregatorArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFolderMetadataAggregatorArrayOutput)
+}
+
+type GetWorkspaceFolderMetadataAggregatorOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceFolderMetadataAggregatorOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceFolderMetadataAggregator)(nil)).Elem()
+}
+
+func (o GetWorkspaceFolderMetadataAggregatorOutput) ToGetWorkspaceFolderMetadataAggregatorOutput() GetWorkspaceFolderMetadataAggregatorOutput {
+	return o
+}
+
+func (o GetWorkspaceFolderMetadataAggregatorOutput) ToGetWorkspaceFolderMetadataAggregatorOutputWithContext(ctx context.Context) GetWorkspaceFolderMetadataAggregatorOutput {
+	return o
+}
+
+// The description of the aggregator.
+func (o GetWorkspaceFolderMetadataAggregatorOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderMetadataAggregator) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The identifier of the aggregator.
+func (o GetWorkspaceFolderMetadataAggregatorOutput) Identifier() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderMetadataAggregator) string { return v.Identifier }).(pulumi.StringOutput)
+}
+
+// The key of the aggregator object.
+func (o GetWorkspaceFolderMetadataAggregatorOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderMetadataAggregator) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+func (o GetWorkspaceFolderMetadataAggregatorOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderMetadataAggregator) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The type of the aggregator.
+func (o GetWorkspaceFolderMetadataAggregatorOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderMetadataAggregator) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetWorkspaceFolderMetadataAggregatorArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceFolderMetadataAggregatorArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceFolderMetadataAggregator)(nil)).Elem()
+}
+
+func (o GetWorkspaceFolderMetadataAggregatorArrayOutput) ToGetWorkspaceFolderMetadataAggregatorArrayOutput() GetWorkspaceFolderMetadataAggregatorArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceFolderMetadataAggregatorArrayOutput) ToGetWorkspaceFolderMetadataAggregatorArrayOutputWithContext(ctx context.Context) GetWorkspaceFolderMetadataAggregatorArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceFolderMetadataAggregatorArrayOutput) Index(i pulumi.IntInput) GetWorkspaceFolderMetadataAggregatorOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceFolderMetadataAggregator {
+		return vs[0].([]GetWorkspaceFolderMetadataAggregator)[vs[1].(int)]
+	}).(GetWorkspaceFolderMetadataAggregatorOutput)
+}
+
+type GetWorkspaceFolderMetadataCountStatistic struct {
+	// The array of statistics.
+	ObjectTypeCountLists []GetWorkspaceFolderMetadataCountStatisticObjectTypeCountList `pulumi:"objectTypeCountLists"`
+}
+
+// GetWorkspaceFolderMetadataCountStatisticInput is an input type that accepts GetWorkspaceFolderMetadataCountStatisticArgs and GetWorkspaceFolderMetadataCountStatisticOutput values.
+// You can construct a concrete instance of `GetWorkspaceFolderMetadataCountStatisticInput` via:
+//
+//	GetWorkspaceFolderMetadataCountStatisticArgs{...}
+type GetWorkspaceFolderMetadataCountStatisticInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceFolderMetadataCountStatisticOutput() GetWorkspaceFolderMetadataCountStatisticOutput
+	ToGetWorkspaceFolderMetadataCountStatisticOutputWithContext(context.Context) GetWorkspaceFolderMetadataCountStatisticOutput
+}
+
+type GetWorkspaceFolderMetadataCountStatisticArgs struct {
+	// The array of statistics.
+	ObjectTypeCountLists GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayInput `pulumi:"objectTypeCountLists"`
+}
+
+func (GetWorkspaceFolderMetadataCountStatisticArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceFolderMetadataCountStatistic)(nil)).Elem()
+}
+
+func (i GetWorkspaceFolderMetadataCountStatisticArgs) ToGetWorkspaceFolderMetadataCountStatisticOutput() GetWorkspaceFolderMetadataCountStatisticOutput {
+	return i.ToGetWorkspaceFolderMetadataCountStatisticOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceFolderMetadataCountStatisticArgs) ToGetWorkspaceFolderMetadataCountStatisticOutputWithContext(ctx context.Context) GetWorkspaceFolderMetadataCountStatisticOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFolderMetadataCountStatisticOutput)
+}
+
+// GetWorkspaceFolderMetadataCountStatisticArrayInput is an input type that accepts GetWorkspaceFolderMetadataCountStatisticArray and GetWorkspaceFolderMetadataCountStatisticArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceFolderMetadataCountStatisticArrayInput` via:
+//
+//	GetWorkspaceFolderMetadataCountStatisticArray{ GetWorkspaceFolderMetadataCountStatisticArgs{...} }
+type GetWorkspaceFolderMetadataCountStatisticArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceFolderMetadataCountStatisticArrayOutput() GetWorkspaceFolderMetadataCountStatisticArrayOutput
+	ToGetWorkspaceFolderMetadataCountStatisticArrayOutputWithContext(context.Context) GetWorkspaceFolderMetadataCountStatisticArrayOutput
+}
+
+type GetWorkspaceFolderMetadataCountStatisticArray []GetWorkspaceFolderMetadataCountStatisticInput
+
+func (GetWorkspaceFolderMetadataCountStatisticArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceFolderMetadataCountStatistic)(nil)).Elem()
+}
+
+func (i GetWorkspaceFolderMetadataCountStatisticArray) ToGetWorkspaceFolderMetadataCountStatisticArrayOutput() GetWorkspaceFolderMetadataCountStatisticArrayOutput {
+	return i.ToGetWorkspaceFolderMetadataCountStatisticArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceFolderMetadataCountStatisticArray) ToGetWorkspaceFolderMetadataCountStatisticArrayOutputWithContext(ctx context.Context) GetWorkspaceFolderMetadataCountStatisticArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFolderMetadataCountStatisticArrayOutput)
+}
+
+type GetWorkspaceFolderMetadataCountStatisticOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceFolderMetadataCountStatisticOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceFolderMetadataCountStatistic)(nil)).Elem()
+}
+
+func (o GetWorkspaceFolderMetadataCountStatisticOutput) ToGetWorkspaceFolderMetadataCountStatisticOutput() GetWorkspaceFolderMetadataCountStatisticOutput {
+	return o
+}
+
+func (o GetWorkspaceFolderMetadataCountStatisticOutput) ToGetWorkspaceFolderMetadataCountStatisticOutputWithContext(ctx context.Context) GetWorkspaceFolderMetadataCountStatisticOutput {
+	return o
+}
+
+// The array of statistics.
+func (o GetWorkspaceFolderMetadataCountStatisticOutput) ObjectTypeCountLists() GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderMetadataCountStatistic) []GetWorkspaceFolderMetadataCountStatisticObjectTypeCountList {
+		return v.ObjectTypeCountLists
+	}).(GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput)
+}
+
+type GetWorkspaceFolderMetadataCountStatisticArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceFolderMetadataCountStatisticArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceFolderMetadataCountStatistic)(nil)).Elem()
+}
+
+func (o GetWorkspaceFolderMetadataCountStatisticArrayOutput) ToGetWorkspaceFolderMetadataCountStatisticArrayOutput() GetWorkspaceFolderMetadataCountStatisticArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceFolderMetadataCountStatisticArrayOutput) ToGetWorkspaceFolderMetadataCountStatisticArrayOutputWithContext(ctx context.Context) GetWorkspaceFolderMetadataCountStatisticArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceFolderMetadataCountStatisticArrayOutput) Index(i pulumi.IntInput) GetWorkspaceFolderMetadataCountStatisticOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceFolderMetadataCountStatistic {
+		return vs[0].([]GetWorkspaceFolderMetadataCountStatistic)[vs[1].(int)]
+	}).(GetWorkspaceFolderMetadataCountStatisticOutput)
+}
+
+type GetWorkspaceFolderMetadataCountStatisticObjectTypeCountList struct {
+	// The value for the count statistic object.
+	ObjectCount string `pulumi:"objectCount"`
+	// The type of object for the count statistic object.
+	ObjectType string `pulumi:"objectType"`
+}
+
+// GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListInput is an input type that accepts GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArgs and GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput values.
+// You can construct a concrete instance of `GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListInput` via:
+//
+//	GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArgs{...}
+type GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput() GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput
+	ToGetWorkspaceFolderMetadataCountStatisticObjectTypeCountListOutputWithContext(context.Context) GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput
+}
+
+type GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArgs struct {
+	// The value for the count statistic object.
+	ObjectCount pulumi.StringInput `pulumi:"objectCount"`
+	// The type of object for the count statistic object.
+	ObjectType pulumi.StringInput `pulumi:"objectType"`
+}
+
+func (GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceFolderMetadataCountStatisticObjectTypeCountList)(nil)).Elem()
+}
+
+func (i GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArgs) ToGetWorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput() GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput {
+	return i.ToGetWorkspaceFolderMetadataCountStatisticObjectTypeCountListOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArgs) ToGetWorkspaceFolderMetadataCountStatisticObjectTypeCountListOutputWithContext(ctx context.Context) GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput)
+}
+
+// GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayInput is an input type that accepts GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArray and GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayInput` via:
+//
+//	GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArray{ GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArgs{...} }
+type GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput() GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput
+	ToGetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(context.Context) GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput
+}
+
+type GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArray []GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListInput
+
+func (GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceFolderMetadataCountStatisticObjectTypeCountList)(nil)).Elem()
+}
+
+func (i GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArray) ToGetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput() GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return i.ToGetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArray) ToGetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(ctx context.Context) GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput)
+}
+
+type GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceFolderMetadataCountStatisticObjectTypeCountList)(nil)).Elem()
+}
+
+func (o GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput) ToGetWorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput() GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput {
+	return o
+}
+
+func (o GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput) ToGetWorkspaceFolderMetadataCountStatisticObjectTypeCountListOutputWithContext(ctx context.Context) GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput {
+	return o
+}
+
+// The value for the count statistic object.
+func (o GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput) ObjectCount() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderMetadataCountStatisticObjectTypeCountList) string { return v.ObjectCount }).(pulumi.StringOutput)
+}
+
+// The type of object for the count statistic object.
+func (o GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput) ObjectType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderMetadataCountStatisticObjectTypeCountList) string { return v.ObjectType }).(pulumi.StringOutput)
+}
+
+type GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceFolderMetadataCountStatisticObjectTypeCountList)(nil)).Elem()
+}
+
+func (o GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput) ToGetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput() GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput) ToGetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(ctx context.Context) GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput) Index(i pulumi.IntInput) GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceFolderMetadataCountStatisticObjectTypeCountList {
+		return vs[0].([]GetWorkspaceFolderMetadataCountStatisticObjectTypeCountList)[vs[1].(int)]
+	}).(GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput)
+}
+
+type GetWorkspaceFolderParentRef struct {
+	// Key of the parent object.
+	Parent string `pulumi:"parent"`
+	// Key of the root document object.
+	RootDocId string `pulumi:"rootDocId"`
+}
+
+// GetWorkspaceFolderParentRefInput is an input type that accepts GetWorkspaceFolderParentRefArgs and GetWorkspaceFolderParentRefOutput values.
+// You can construct a concrete instance of `GetWorkspaceFolderParentRefInput` via:
+//
+//	GetWorkspaceFolderParentRefArgs{...}
+type GetWorkspaceFolderParentRefInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceFolderParentRefOutput() GetWorkspaceFolderParentRefOutput
+	ToGetWorkspaceFolderParentRefOutputWithContext(context.Context) GetWorkspaceFolderParentRefOutput
+}
+
+type GetWorkspaceFolderParentRefArgs struct {
+	// Key of the parent object.
+	Parent pulumi.StringInput `pulumi:"parent"`
+	// Key of the root document object.
+	RootDocId pulumi.StringInput `pulumi:"rootDocId"`
+}
+
+func (GetWorkspaceFolderParentRefArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceFolderParentRef)(nil)).Elem()
+}
+
+func (i GetWorkspaceFolderParentRefArgs) ToGetWorkspaceFolderParentRefOutput() GetWorkspaceFolderParentRefOutput {
+	return i.ToGetWorkspaceFolderParentRefOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceFolderParentRefArgs) ToGetWorkspaceFolderParentRefOutputWithContext(ctx context.Context) GetWorkspaceFolderParentRefOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFolderParentRefOutput)
+}
+
+// GetWorkspaceFolderParentRefArrayInput is an input type that accepts GetWorkspaceFolderParentRefArray and GetWorkspaceFolderParentRefArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceFolderParentRefArrayInput` via:
+//
+//	GetWorkspaceFolderParentRefArray{ GetWorkspaceFolderParentRefArgs{...} }
+type GetWorkspaceFolderParentRefArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceFolderParentRefArrayOutput() GetWorkspaceFolderParentRefArrayOutput
+	ToGetWorkspaceFolderParentRefArrayOutputWithContext(context.Context) GetWorkspaceFolderParentRefArrayOutput
+}
+
+type GetWorkspaceFolderParentRefArray []GetWorkspaceFolderParentRefInput
+
+func (GetWorkspaceFolderParentRefArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceFolderParentRef)(nil)).Elem()
+}
+
+func (i GetWorkspaceFolderParentRefArray) ToGetWorkspaceFolderParentRefArrayOutput() GetWorkspaceFolderParentRefArrayOutput {
+	return i.ToGetWorkspaceFolderParentRefArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceFolderParentRefArray) ToGetWorkspaceFolderParentRefArrayOutputWithContext(ctx context.Context) GetWorkspaceFolderParentRefArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFolderParentRefArrayOutput)
+}
+
+type GetWorkspaceFolderParentRefOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceFolderParentRefOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceFolderParentRef)(nil)).Elem()
+}
+
+func (o GetWorkspaceFolderParentRefOutput) ToGetWorkspaceFolderParentRefOutput() GetWorkspaceFolderParentRefOutput {
+	return o
+}
+
+func (o GetWorkspaceFolderParentRefOutput) ToGetWorkspaceFolderParentRefOutputWithContext(ctx context.Context) GetWorkspaceFolderParentRefOutput {
+	return o
+}
+
+// Key of the parent object.
+func (o GetWorkspaceFolderParentRefOutput) Parent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderParentRef) string { return v.Parent }).(pulumi.StringOutput)
+}
+
+// Key of the root document object.
+func (o GetWorkspaceFolderParentRefOutput) RootDocId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderParentRef) string { return v.RootDocId }).(pulumi.StringOutput)
+}
+
+type GetWorkspaceFolderParentRefArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceFolderParentRefArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceFolderParentRef)(nil)).Elem()
+}
+
+func (o GetWorkspaceFolderParentRefArrayOutput) ToGetWorkspaceFolderParentRefArrayOutput() GetWorkspaceFolderParentRefArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceFolderParentRefArrayOutput) ToGetWorkspaceFolderParentRefArrayOutputWithContext(ctx context.Context) GetWorkspaceFolderParentRefArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceFolderParentRefArrayOutput) Index(i pulumi.IntInput) GetWorkspaceFolderParentRefOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceFolderParentRef {
+		return vs[0].([]GetWorkspaceFolderParentRef)[vs[1].(int)]
+	}).(GetWorkspaceFolderParentRefOutput)
+}
+
+type GetWorkspaceFolderRegistryMetadata struct {
+	// The owning object key for this object.
+	AggregatorKey string `pulumi:"aggregatorKey"`
+	// Specifies whether this object is a favorite or not.
+	IsFavorite bool `pulumi:"isFavorite"`
+	// The key of the aggregator object.
+	Key string `pulumi:"key"`
+	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+	Labels []string `pulumi:"labels"`
+	// The registry version of the object.
+	RegistryVersion int `pulumi:"registryVersion"`
+}
+
+// GetWorkspaceFolderRegistryMetadataInput is an input type that accepts GetWorkspaceFolderRegistryMetadataArgs and GetWorkspaceFolderRegistryMetadataOutput values.
+// You can construct a concrete instance of `GetWorkspaceFolderRegistryMetadataInput` via:
+//
+//	GetWorkspaceFolderRegistryMetadataArgs{...}
+type GetWorkspaceFolderRegistryMetadataInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceFolderRegistryMetadataOutput() GetWorkspaceFolderRegistryMetadataOutput
+	ToGetWorkspaceFolderRegistryMetadataOutputWithContext(context.Context) GetWorkspaceFolderRegistryMetadataOutput
+}
+
+type GetWorkspaceFolderRegistryMetadataArgs struct {
+	// The owning object key for this object.
+	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
+	// Specifies whether this object is a favorite or not.
+	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
+	// The key of the aggregator object.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+	Labels pulumi.StringArrayInput `pulumi:"labels"`
+	// The registry version of the object.
+	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
+}
+
+func (GetWorkspaceFolderRegistryMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceFolderRegistryMetadata)(nil)).Elem()
+}
+
+func (i GetWorkspaceFolderRegistryMetadataArgs) ToGetWorkspaceFolderRegistryMetadataOutput() GetWorkspaceFolderRegistryMetadataOutput {
+	return i.ToGetWorkspaceFolderRegistryMetadataOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceFolderRegistryMetadataArgs) ToGetWorkspaceFolderRegistryMetadataOutputWithContext(ctx context.Context) GetWorkspaceFolderRegistryMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFolderRegistryMetadataOutput)
+}
+
+// GetWorkspaceFolderRegistryMetadataArrayInput is an input type that accepts GetWorkspaceFolderRegistryMetadataArray and GetWorkspaceFolderRegistryMetadataArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceFolderRegistryMetadataArrayInput` via:
+//
+//	GetWorkspaceFolderRegistryMetadataArray{ GetWorkspaceFolderRegistryMetadataArgs{...} }
+type GetWorkspaceFolderRegistryMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceFolderRegistryMetadataArrayOutput() GetWorkspaceFolderRegistryMetadataArrayOutput
+	ToGetWorkspaceFolderRegistryMetadataArrayOutputWithContext(context.Context) GetWorkspaceFolderRegistryMetadataArrayOutput
+}
+
+type GetWorkspaceFolderRegistryMetadataArray []GetWorkspaceFolderRegistryMetadataInput
+
+func (GetWorkspaceFolderRegistryMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceFolderRegistryMetadata)(nil)).Elem()
+}
+
+func (i GetWorkspaceFolderRegistryMetadataArray) ToGetWorkspaceFolderRegistryMetadataArrayOutput() GetWorkspaceFolderRegistryMetadataArrayOutput {
+	return i.ToGetWorkspaceFolderRegistryMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceFolderRegistryMetadataArray) ToGetWorkspaceFolderRegistryMetadataArrayOutputWithContext(ctx context.Context) GetWorkspaceFolderRegistryMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFolderRegistryMetadataArrayOutput)
+}
+
+type GetWorkspaceFolderRegistryMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceFolderRegistryMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceFolderRegistryMetadata)(nil)).Elem()
+}
+
+func (o GetWorkspaceFolderRegistryMetadataOutput) ToGetWorkspaceFolderRegistryMetadataOutput() GetWorkspaceFolderRegistryMetadataOutput {
+	return o
+}
+
+func (o GetWorkspaceFolderRegistryMetadataOutput) ToGetWorkspaceFolderRegistryMetadataOutputWithContext(ctx context.Context) GetWorkspaceFolderRegistryMetadataOutput {
+	return o
+}
+
+// The owning object key for this object.
+func (o GetWorkspaceFolderRegistryMetadataOutput) AggregatorKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderRegistryMetadata) string { return v.AggregatorKey }).(pulumi.StringOutput)
+}
+
+// Specifies whether this object is a favorite or not.
+func (o GetWorkspaceFolderRegistryMetadataOutput) IsFavorite() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderRegistryMetadata) bool { return v.IsFavorite }).(pulumi.BoolOutput)
+}
+
+// The key of the aggregator object.
+func (o GetWorkspaceFolderRegistryMetadataOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderRegistryMetadata) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+func (o GetWorkspaceFolderRegistryMetadataOutput) Labels() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderRegistryMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
+}
+
+// The registry version of the object.
+func (o GetWorkspaceFolderRegistryMetadataOutput) RegistryVersion() pulumi.IntOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderRegistryMetadata) int { return v.RegistryVersion }).(pulumi.IntOutput)
+}
+
+type GetWorkspaceFolderRegistryMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceFolderRegistryMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceFolderRegistryMetadata)(nil)).Elem()
+}
+
+func (o GetWorkspaceFolderRegistryMetadataArrayOutput) ToGetWorkspaceFolderRegistryMetadataArrayOutput() GetWorkspaceFolderRegistryMetadataArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceFolderRegistryMetadataArrayOutput) ToGetWorkspaceFolderRegistryMetadataArrayOutputWithContext(ctx context.Context) GetWorkspaceFolderRegistryMetadataArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceFolderRegistryMetadataArrayOutput) Index(i pulumi.IntInput) GetWorkspaceFolderRegistryMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceFolderRegistryMetadata {
+		return vs[0].([]GetWorkspaceFolderRegistryMetadata)[vs[1].(int)]
+	}).(GetWorkspaceFolderRegistryMetadataOutput)
+}
+
+type GetWorkspaceFoldersFilter struct {
+	// Used to filter by the name of the object.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetWorkspaceFoldersFilterInput is an input type that accepts GetWorkspaceFoldersFilterArgs and GetWorkspaceFoldersFilterOutput values.
+// You can construct a concrete instance of `GetWorkspaceFoldersFilterInput` via:
+//
+//	GetWorkspaceFoldersFilterArgs{...}
+type GetWorkspaceFoldersFilterInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceFoldersFilterOutput() GetWorkspaceFoldersFilterOutput
+	ToGetWorkspaceFoldersFilterOutputWithContext(context.Context) GetWorkspaceFoldersFilterOutput
+}
+
+type GetWorkspaceFoldersFilterArgs struct {
+	// Used to filter by the name of the object.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetWorkspaceFoldersFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceFoldersFilter)(nil)).Elem()
+}
+
+func (i GetWorkspaceFoldersFilterArgs) ToGetWorkspaceFoldersFilterOutput() GetWorkspaceFoldersFilterOutput {
+	return i.ToGetWorkspaceFoldersFilterOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceFoldersFilterArgs) ToGetWorkspaceFoldersFilterOutputWithContext(ctx context.Context) GetWorkspaceFoldersFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFoldersFilterOutput)
+}
+
+// GetWorkspaceFoldersFilterArrayInput is an input type that accepts GetWorkspaceFoldersFilterArray and GetWorkspaceFoldersFilterArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceFoldersFilterArrayInput` via:
+//
+//	GetWorkspaceFoldersFilterArray{ GetWorkspaceFoldersFilterArgs{...} }
+type GetWorkspaceFoldersFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceFoldersFilterArrayOutput() GetWorkspaceFoldersFilterArrayOutput
+	ToGetWorkspaceFoldersFilterArrayOutputWithContext(context.Context) GetWorkspaceFoldersFilterArrayOutput
+}
+
+type GetWorkspaceFoldersFilterArray []GetWorkspaceFoldersFilterInput
+
+func (GetWorkspaceFoldersFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceFoldersFilter)(nil)).Elem()
+}
+
+func (i GetWorkspaceFoldersFilterArray) ToGetWorkspaceFoldersFilterArrayOutput() GetWorkspaceFoldersFilterArrayOutput {
+	return i.ToGetWorkspaceFoldersFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceFoldersFilterArray) ToGetWorkspaceFoldersFilterArrayOutputWithContext(ctx context.Context) GetWorkspaceFoldersFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFoldersFilterArrayOutput)
+}
+
+type GetWorkspaceFoldersFilterOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceFoldersFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceFoldersFilter)(nil)).Elem()
+}
+
+func (o GetWorkspaceFoldersFilterOutput) ToGetWorkspaceFoldersFilterOutput() GetWorkspaceFoldersFilterOutput {
+	return o
+}
+
+func (o GetWorkspaceFoldersFilterOutput) ToGetWorkspaceFoldersFilterOutputWithContext(ctx context.Context) GetWorkspaceFoldersFilterOutput {
+	return o
+}
+
+// Used to filter by the name of the object.
+func (o GetWorkspaceFoldersFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetWorkspaceFoldersFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetWorkspaceFoldersFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetWorkspaceFoldersFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceFoldersFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceFoldersFilter)(nil)).Elem()
+}
+
+func (o GetWorkspaceFoldersFilterArrayOutput) ToGetWorkspaceFoldersFilterArrayOutput() GetWorkspaceFoldersFilterArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceFoldersFilterArrayOutput) ToGetWorkspaceFoldersFilterArrayOutputWithContext(ctx context.Context) GetWorkspaceFoldersFilterArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceFoldersFilterArrayOutput) Index(i pulumi.IntInput) GetWorkspaceFoldersFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceFoldersFilter {
+		return vs[0].([]GetWorkspaceFoldersFilter)[vs[1].(int)]
+	}).(GetWorkspaceFoldersFilterOutput)
+}
+
+type GetWorkspaceFoldersFolderSummaryCollection struct {
+	Items []GetWorkspaceFoldersFolderSummaryCollectionItem `pulumi:"items"`
+}
+
+// GetWorkspaceFoldersFolderSummaryCollectionInput is an input type that accepts GetWorkspaceFoldersFolderSummaryCollectionArgs and GetWorkspaceFoldersFolderSummaryCollectionOutput values.
+// You can construct a concrete instance of `GetWorkspaceFoldersFolderSummaryCollectionInput` via:
+//
+//	GetWorkspaceFoldersFolderSummaryCollectionArgs{...}
+type GetWorkspaceFoldersFolderSummaryCollectionInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceFoldersFolderSummaryCollectionOutput() GetWorkspaceFoldersFolderSummaryCollectionOutput
+	ToGetWorkspaceFoldersFolderSummaryCollectionOutputWithContext(context.Context) GetWorkspaceFoldersFolderSummaryCollectionOutput
+}
+
+type GetWorkspaceFoldersFolderSummaryCollectionArgs struct {
+	Items GetWorkspaceFoldersFolderSummaryCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetWorkspaceFoldersFolderSummaryCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceFoldersFolderSummaryCollection)(nil)).Elem()
+}
+
+func (i GetWorkspaceFoldersFolderSummaryCollectionArgs) ToGetWorkspaceFoldersFolderSummaryCollectionOutput() GetWorkspaceFoldersFolderSummaryCollectionOutput {
+	return i.ToGetWorkspaceFoldersFolderSummaryCollectionOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceFoldersFolderSummaryCollectionArgs) ToGetWorkspaceFoldersFolderSummaryCollectionOutputWithContext(ctx context.Context) GetWorkspaceFoldersFolderSummaryCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFoldersFolderSummaryCollectionOutput)
+}
+
+// GetWorkspaceFoldersFolderSummaryCollectionArrayInput is an input type that accepts GetWorkspaceFoldersFolderSummaryCollectionArray and GetWorkspaceFoldersFolderSummaryCollectionArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceFoldersFolderSummaryCollectionArrayInput` via:
+//
+//	GetWorkspaceFoldersFolderSummaryCollectionArray{ GetWorkspaceFoldersFolderSummaryCollectionArgs{...} }
+type GetWorkspaceFoldersFolderSummaryCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceFoldersFolderSummaryCollectionArrayOutput() GetWorkspaceFoldersFolderSummaryCollectionArrayOutput
+	ToGetWorkspaceFoldersFolderSummaryCollectionArrayOutputWithContext(context.Context) GetWorkspaceFoldersFolderSummaryCollectionArrayOutput
+}
+
+type GetWorkspaceFoldersFolderSummaryCollectionArray []GetWorkspaceFoldersFolderSummaryCollectionInput
+
+func (GetWorkspaceFoldersFolderSummaryCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceFoldersFolderSummaryCollection)(nil)).Elem()
+}
+
+func (i GetWorkspaceFoldersFolderSummaryCollectionArray) ToGetWorkspaceFoldersFolderSummaryCollectionArrayOutput() GetWorkspaceFoldersFolderSummaryCollectionArrayOutput {
+	return i.ToGetWorkspaceFoldersFolderSummaryCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceFoldersFolderSummaryCollectionArray) ToGetWorkspaceFoldersFolderSummaryCollectionArrayOutputWithContext(ctx context.Context) GetWorkspaceFoldersFolderSummaryCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFoldersFolderSummaryCollectionArrayOutput)
+}
+
+type GetWorkspaceFoldersFolderSummaryCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceFoldersFolderSummaryCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceFoldersFolderSummaryCollection)(nil)).Elem()
+}
+
+func (o GetWorkspaceFoldersFolderSummaryCollectionOutput) ToGetWorkspaceFoldersFolderSummaryCollectionOutput() GetWorkspaceFoldersFolderSummaryCollectionOutput {
+	return o
+}
+
+func (o GetWorkspaceFoldersFolderSummaryCollectionOutput) ToGetWorkspaceFoldersFolderSummaryCollectionOutputWithContext(ctx context.Context) GetWorkspaceFoldersFolderSummaryCollectionOutput {
+	return o
+}
+
+func (o GetWorkspaceFoldersFolderSummaryCollectionOutput) Items() GetWorkspaceFoldersFolderSummaryCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollection) []GetWorkspaceFoldersFolderSummaryCollectionItem {
+		return v.Items
+	}).(GetWorkspaceFoldersFolderSummaryCollectionItemArrayOutput)
+}
+
+type GetWorkspaceFoldersFolderSummaryCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceFoldersFolderSummaryCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceFoldersFolderSummaryCollection)(nil)).Elem()
+}
+
+func (o GetWorkspaceFoldersFolderSummaryCollectionArrayOutput) ToGetWorkspaceFoldersFolderSummaryCollectionArrayOutput() GetWorkspaceFoldersFolderSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceFoldersFolderSummaryCollectionArrayOutput) ToGetWorkspaceFoldersFolderSummaryCollectionArrayOutputWithContext(ctx context.Context) GetWorkspaceFoldersFolderSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceFoldersFolderSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetWorkspaceFoldersFolderSummaryCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceFoldersFolderSummaryCollection {
+		return vs[0].([]GetWorkspaceFoldersFolderSummaryCollection)[vs[1].(int)]
+	}).(GetWorkspaceFoldersFolderSummaryCollectionOutput)
+}
+
+type GetWorkspaceFoldersFolderSummaryCollectionItem struct {
+	// The category name.
+	CategoryName string `pulumi:"categoryName"`
+	// The description of the aggregator.
+	Description string `pulumi:"description"`
+	FolderKey   string `pulumi:"folderKey"`
+	// Used to filter by the identifier of the object.
+	Identifier string `pulumi:"identifier"`
+	// The key of the aggregator object.
+	Key string `pulumi:"key"`
+	// A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
+	KeyMap map[string]interface{} `pulumi:"keyMap"`
+	// A summary type containing information about the object including its key, name and when/who created/updated it.
+	Metadatas []GetWorkspaceFoldersFolderSummaryCollectionItemMetadata `pulumi:"metadatas"`
+	// The type of the object.
+	ModelType string `pulumi:"modelType"`
+	// The model version of an object.
+	ModelVersion string `pulumi:"modelVersion"`
+	// Used to filter by the name of the object.
+	Name string `pulumi:"name"`
+	// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+	ObjectStatus int `pulumi:"objectStatus"`
+	// The version of the object that is used to track changes in the object instance.
+	ObjectVersion int `pulumi:"objectVersion"`
+	// A reference to the object's parent.
+	ParentReves      []GetWorkspaceFoldersFolderSummaryCollectionItemParentRef      `pulumi:"parentReves"`
+	RegistryMetadata GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadata `pulumi:"registryMetadata"`
+	// The workspace ID.
+	WorkspaceId string `pulumi:"workspaceId"`
+}
+
+// GetWorkspaceFoldersFolderSummaryCollectionItemInput is an input type that accepts GetWorkspaceFoldersFolderSummaryCollectionItemArgs and GetWorkspaceFoldersFolderSummaryCollectionItemOutput values.
+// You can construct a concrete instance of `GetWorkspaceFoldersFolderSummaryCollectionItemInput` via:
+//
+//	GetWorkspaceFoldersFolderSummaryCollectionItemArgs{...}
+type GetWorkspaceFoldersFolderSummaryCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceFoldersFolderSummaryCollectionItemOutput() GetWorkspaceFoldersFolderSummaryCollectionItemOutput
+	ToGetWorkspaceFoldersFolderSummaryCollectionItemOutputWithContext(context.Context) GetWorkspaceFoldersFolderSummaryCollectionItemOutput
+}
+
+type GetWorkspaceFoldersFolderSummaryCollectionItemArgs struct {
+	// The category name.
+	CategoryName pulumi.StringInput `pulumi:"categoryName"`
+	// The description of the aggregator.
+	Description pulumi.StringInput `pulumi:"description"`
+	FolderKey   pulumi.StringInput `pulumi:"folderKey"`
+	// Used to filter by the identifier of the object.
+	Identifier pulumi.StringInput `pulumi:"identifier"`
+	// The key of the aggregator object.
+	Key pulumi.StringInput `pulumi:"key"`
+	// A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
+	KeyMap pulumi.MapInput `pulumi:"keyMap"`
+	// A summary type containing information about the object including its key, name and when/who created/updated it.
+	Metadatas GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArrayInput `pulumi:"metadatas"`
+	// The type of the object.
+	ModelType pulumi.StringInput `pulumi:"modelType"`
+	// The model version of an object.
+	ModelVersion pulumi.StringInput `pulumi:"modelVersion"`
+	// Used to filter by the name of the object.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+	ObjectStatus pulumi.IntInput `pulumi:"objectStatus"`
+	// The version of the object that is used to track changes in the object instance.
+	ObjectVersion pulumi.IntInput `pulumi:"objectVersion"`
+	// A reference to the object's parent.
+	ParentReves      GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArrayInput   `pulumi:"parentReves"`
+	RegistryMetadata GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataInput `pulumi:"registryMetadata"`
+	// The workspace ID.
+	WorkspaceId pulumi.StringInput `pulumi:"workspaceId"`
+}
+
+func (GetWorkspaceFoldersFolderSummaryCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceFoldersFolderSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetWorkspaceFoldersFolderSummaryCollectionItemArgs) ToGetWorkspaceFoldersFolderSummaryCollectionItemOutput() GetWorkspaceFoldersFolderSummaryCollectionItemOutput {
+	return i.ToGetWorkspaceFoldersFolderSummaryCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceFoldersFolderSummaryCollectionItemArgs) ToGetWorkspaceFoldersFolderSummaryCollectionItemOutputWithContext(ctx context.Context) GetWorkspaceFoldersFolderSummaryCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFoldersFolderSummaryCollectionItemOutput)
+}
+
+// GetWorkspaceFoldersFolderSummaryCollectionItemArrayInput is an input type that accepts GetWorkspaceFoldersFolderSummaryCollectionItemArray and GetWorkspaceFoldersFolderSummaryCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceFoldersFolderSummaryCollectionItemArrayInput` via:
+//
+//	GetWorkspaceFoldersFolderSummaryCollectionItemArray{ GetWorkspaceFoldersFolderSummaryCollectionItemArgs{...} }
+type GetWorkspaceFoldersFolderSummaryCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceFoldersFolderSummaryCollectionItemArrayOutput() GetWorkspaceFoldersFolderSummaryCollectionItemArrayOutput
+	ToGetWorkspaceFoldersFolderSummaryCollectionItemArrayOutputWithContext(context.Context) GetWorkspaceFoldersFolderSummaryCollectionItemArrayOutput
+}
+
+type GetWorkspaceFoldersFolderSummaryCollectionItemArray []GetWorkspaceFoldersFolderSummaryCollectionItemInput
+
+func (GetWorkspaceFoldersFolderSummaryCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceFoldersFolderSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetWorkspaceFoldersFolderSummaryCollectionItemArray) ToGetWorkspaceFoldersFolderSummaryCollectionItemArrayOutput() GetWorkspaceFoldersFolderSummaryCollectionItemArrayOutput {
+	return i.ToGetWorkspaceFoldersFolderSummaryCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceFoldersFolderSummaryCollectionItemArray) ToGetWorkspaceFoldersFolderSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetWorkspaceFoldersFolderSummaryCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFoldersFolderSummaryCollectionItemArrayOutput)
+}
+
+type GetWorkspaceFoldersFolderSummaryCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceFoldersFolderSummaryCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceFoldersFolderSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemOutput) ToGetWorkspaceFoldersFolderSummaryCollectionItemOutput() GetWorkspaceFoldersFolderSummaryCollectionItemOutput {
+	return o
+}
+
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemOutput) ToGetWorkspaceFoldersFolderSummaryCollectionItemOutputWithContext(ctx context.Context) GetWorkspaceFoldersFolderSummaryCollectionItemOutput {
+	return o
+}
+
+// The category name.
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemOutput) CategoryName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItem) string { return v.CategoryName }).(pulumi.StringOutput)
+}
+
+// The description of the aggregator.
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemOutput) FolderKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItem) string { return v.FolderKey }).(pulumi.StringOutput)
+}
+
+// Used to filter by the identifier of the object.
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemOutput) Identifier() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItem) string { return v.Identifier }).(pulumi.StringOutput)
+}
+
+// The key of the aggregator object.
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItem) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemOutput) KeyMap() pulumi.MapOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItem) map[string]interface{} { return v.KeyMap }).(pulumi.MapOutput)
+}
+
+// A summary type containing information about the object including its key, name and when/who created/updated it.
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemOutput) Metadatas() GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItem) []GetWorkspaceFoldersFolderSummaryCollectionItemMetadata {
+		return v.Metadatas
+	}).(GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArrayOutput)
+}
+
+// The type of the object.
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemOutput) ModelType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItem) string { return v.ModelType }).(pulumi.StringOutput)
+}
+
+// The model version of an object.
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemOutput) ModelVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItem) string { return v.ModelVersion }).(pulumi.StringOutput)
+}
+
+// Used to filter by the name of the object.
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemOutput) ObjectStatus() pulumi.IntOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItem) int { return v.ObjectStatus }).(pulumi.IntOutput)
+}
+
+// The version of the object that is used to track changes in the object instance.
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemOutput) ObjectVersion() pulumi.IntOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItem) int { return v.ObjectVersion }).(pulumi.IntOutput)
+}
+
+// A reference to the object's parent.
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemOutput) ParentReves() GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItem) []GetWorkspaceFoldersFolderSummaryCollectionItemParentRef {
+		return v.ParentReves
+	}).(GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArrayOutput)
+}
+
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemOutput) RegistryMetadata() GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItem) GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadata {
+		return v.RegistryMetadata
+	}).(GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataOutput)
+}
+
+// The workspace ID.
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemOutput) WorkspaceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItem) string { return v.WorkspaceId }).(pulumi.StringOutput)
+}
+
+type GetWorkspaceFoldersFolderSummaryCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceFoldersFolderSummaryCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceFoldersFolderSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemArrayOutput) ToGetWorkspaceFoldersFolderSummaryCollectionItemArrayOutput() GetWorkspaceFoldersFolderSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemArrayOutput) ToGetWorkspaceFoldersFolderSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetWorkspaceFoldersFolderSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetWorkspaceFoldersFolderSummaryCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceFoldersFolderSummaryCollectionItem {
+		return vs[0].([]GetWorkspaceFoldersFolderSummaryCollectionItem)[vs[1].(int)]
+	}).(GetWorkspaceFoldersFolderSummaryCollectionItemOutput)
+}
+
+type GetWorkspaceFoldersFolderSummaryCollectionItemMetadata struct {
+	// Used to filter by the project or the folder object.
+	AggregatorKey string `pulumi:"aggregatorKey"`
+	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	Aggregators []GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregator `pulumi:"aggregators"`
+	// A count statistics.
+	CountStatistics []GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatistic `pulumi:"countStatistics"`
+	// The user that created the object.
+	CreatedBy string `pulumi:"createdBy"`
+	// The user that created the object.
+	CreatedByName string `pulumi:"createdByName"`
+	// The full path to identify this object.
+	IdentifierPath string `pulumi:"identifierPath"`
+	// Information property fields.
+	InfoFields map[string]interface{} `pulumi:"infoFields"`
+	// Specifies whether this object is a favorite or not.
+	IsFavorite bool `pulumi:"isFavorite"`
+	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+	Labels []string `pulumi:"labels"`
+	// The registry version of the object.
+	RegistryVersion int `pulumi:"registryVersion"`
+	// The date and time that the object was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time that the object was updated.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The user that updated the object.
+	UpdatedBy string `pulumi:"updatedBy"`
+	// The user that updated the object.
+	UpdatedByName string `pulumi:"updatedByName"`
+}
+
+// GetWorkspaceFoldersFolderSummaryCollectionItemMetadataInput is an input type that accepts GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArgs and GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput values.
+// You can construct a concrete instance of `GetWorkspaceFoldersFolderSummaryCollectionItemMetadataInput` via:
+//
+//	GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArgs{...}
+type GetWorkspaceFoldersFolderSummaryCollectionItemMetadataInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput() GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput
+	ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutputWithContext(context.Context) GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput
+}
+
+type GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArgs struct {
+	// Used to filter by the project or the folder object.
+	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
+	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	Aggregators GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArrayInput `pulumi:"aggregators"`
+	// A count statistics.
+	CountStatistics GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArrayInput `pulumi:"countStatistics"`
+	// The user that created the object.
+	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	// The user that created the object.
+	CreatedByName pulumi.StringInput `pulumi:"createdByName"`
+	// The full path to identify this object.
+	IdentifierPath pulumi.StringInput `pulumi:"identifierPath"`
+	// Information property fields.
+	InfoFields pulumi.MapInput `pulumi:"infoFields"`
+	// Specifies whether this object is a favorite or not.
+	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
+	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+	Labels pulumi.StringArrayInput `pulumi:"labels"`
+	// The registry version of the object.
+	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
+	// The date and time that the object was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time that the object was updated.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The user that updated the object.
+	UpdatedBy pulumi.StringInput `pulumi:"updatedBy"`
+	// The user that updated the object.
+	UpdatedByName pulumi.StringInput `pulumi:"updatedByName"`
+}
+
+func (GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceFoldersFolderSummaryCollectionItemMetadata)(nil)).Elem()
+}
+
+func (i GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArgs) ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput() GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput {
+	return i.ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArgs) ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutputWithContext(ctx context.Context) GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput)
+}
+
+// GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArrayInput is an input type that accepts GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArray and GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArrayInput` via:
+//
+//	GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArray{ GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArgs{...} }
+type GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataArrayOutput() GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArrayOutput
+	ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataArrayOutputWithContext(context.Context) GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArrayOutput
+}
+
+type GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArray []GetWorkspaceFoldersFolderSummaryCollectionItemMetadataInput
+
+func (GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceFoldersFolderSummaryCollectionItemMetadata)(nil)).Elem()
+}
+
+func (i GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArray) ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataArrayOutput() GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArrayOutput {
+	return i.ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArray) ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataArrayOutputWithContext(ctx context.Context) GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArrayOutput)
+}
+
+type GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceFoldersFolderSummaryCollectionItemMetadata)(nil)).Elem()
+}
+
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput) ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput() GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput {
+	return o
+}
+
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput) ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutputWithContext(ctx context.Context) GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput {
+	return o
+}
+
+// Used to filter by the project or the folder object.
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput) AggregatorKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadata) string { return v.AggregatorKey }).(pulumi.StringOutput)
+}
+
+// A summary type containing information about the object's aggregator including its type, key, name and description.
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput) Aggregators() GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadata) []GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregator {
+		return v.Aggregators
+	}).(GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArrayOutput)
+}
+
+// A count statistics.
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput) CountStatistics() GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadata) []GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatistic {
+		return v.CountStatistics
+	}).(GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArrayOutput)
+}
+
+// The user that created the object.
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput) CreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadata) string { return v.CreatedBy }).(pulumi.StringOutput)
+}
+
+// The user that created the object.
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput) CreatedByName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadata) string { return v.CreatedByName }).(pulumi.StringOutput)
+}
+
+// The full path to identify this object.
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput) IdentifierPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadata) string { return v.IdentifierPath }).(pulumi.StringOutput)
+}
+
+// Information property fields.
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput) InfoFields() pulumi.MapOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadata) map[string]interface{} {
+		return v.InfoFields
+	}).(pulumi.MapOutput)
+}
+
+// Specifies whether this object is a favorite or not.
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput) IsFavorite() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadata) bool { return v.IsFavorite }).(pulumi.BoolOutput)
+}
+
+// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput) Labels() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
+}
+
+// The registry version of the object.
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput) RegistryVersion() pulumi.IntOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadata) int { return v.RegistryVersion }).(pulumi.IntOutput)
+}
+
+// The date and time that the object was created.
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadata) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time that the object was updated.
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadata) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The user that updated the object.
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput) UpdatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadata) string { return v.UpdatedBy }).(pulumi.StringOutput)
+}
+
+// The user that updated the object.
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput) UpdatedByName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadata) string { return v.UpdatedByName }).(pulumi.StringOutput)
+}
+
+type GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceFoldersFolderSummaryCollectionItemMetadata)(nil)).Elem()
+}
+
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArrayOutput) ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataArrayOutput() GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArrayOutput) ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataArrayOutputWithContext(ctx context.Context) GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArrayOutput) Index(i pulumi.IntInput) GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceFoldersFolderSummaryCollectionItemMetadata {
+		return vs[0].([]GetWorkspaceFoldersFolderSummaryCollectionItemMetadata)[vs[1].(int)]
+	}).(GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput)
+}
+
+type GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregator struct {
+	// The description of the aggregator.
+	Description string `pulumi:"description"`
+	// Used to filter by the identifier of the object.
+	Identifier string `pulumi:"identifier"`
+	// The key of the aggregator object.
+	Key string `pulumi:"key"`
+	// Used to filter by the name of the object.
+	Name string `pulumi:"name"`
+	// The type of the aggregator.
+	Type string `pulumi:"type"`
+}
+
+// GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorInput is an input type that accepts GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArgs and GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorOutput values.
+// You can construct a concrete instance of `GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorInput` via:
+//
+//	GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArgs{...}
+type GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorOutput() GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorOutput
+	ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorOutputWithContext(context.Context) GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorOutput
+}
+
+type GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArgs struct {
+	// The description of the aggregator.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Used to filter by the identifier of the object.
+	Identifier pulumi.StringInput `pulumi:"identifier"`
+	// The key of the aggregator object.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Used to filter by the name of the object.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The type of the aggregator.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregator)(nil)).Elem()
+}
+
+func (i GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArgs) ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorOutput() GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorOutput {
+	return i.ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArgs) ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorOutputWithContext(ctx context.Context) GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorOutput)
+}
+
+// GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArrayInput is an input type that accepts GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArray and GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArrayInput` via:
+//
+//	GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArray{ GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArgs{...} }
+type GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArrayOutput() GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArrayOutput
+	ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArrayOutputWithContext(context.Context) GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArrayOutput
+}
+
+type GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArray []GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorInput
+
+func (GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregator)(nil)).Elem()
+}
+
+func (i GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArray) ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArrayOutput() GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArrayOutput {
+	return i.ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArray) ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArrayOutputWithContext(ctx context.Context) GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArrayOutput)
+}
+
+type GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregator)(nil)).Elem()
+}
+
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorOutput) ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorOutput() GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorOutput {
+	return o
+}
+
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorOutput) ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorOutputWithContext(ctx context.Context) GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorOutput {
+	return o
+}
+
+// The description of the aggregator.
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregator) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Used to filter by the identifier of the object.
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorOutput) Identifier() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregator) string { return v.Identifier }).(pulumi.StringOutput)
+}
+
+// The key of the aggregator object.
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregator) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Used to filter by the name of the object.
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregator) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The type of the aggregator.
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregator) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregator)(nil)).Elem()
+}
+
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArrayOutput) ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArrayOutput() GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArrayOutput) ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArrayOutputWithContext(ctx context.Context) GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArrayOutput) Index(i pulumi.IntInput) GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregator {
+		return vs[0].([]GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregator)[vs[1].(int)]
+	}).(GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorOutput)
+}
+
+type GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatistic struct {
+	// The array of statistics.
+	ObjectTypeCountLists []GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountList `pulumi:"objectTypeCountLists"`
+}
+
+// GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticInput is an input type that accepts GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArgs and GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticOutput values.
+// You can construct a concrete instance of `GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticInput` via:
+//
+//	GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArgs{...}
+type GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticOutput() GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticOutput
+	ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticOutputWithContext(context.Context) GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticOutput
+}
+
+type GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArgs struct {
+	// The array of statistics.
+	ObjectTypeCountLists GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayInput `pulumi:"objectTypeCountLists"`
+}
+
+func (GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatistic)(nil)).Elem()
+}
+
+func (i GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArgs) ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticOutput() GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticOutput {
+	return i.ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArgs) ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticOutputWithContext(ctx context.Context) GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticOutput)
+}
+
+// GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArrayInput is an input type that accepts GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArray and GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArrayInput` via:
+//
+//	GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArray{ GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArgs{...} }
+type GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArrayOutput() GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArrayOutput
+	ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArrayOutputWithContext(context.Context) GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArrayOutput
+}
+
+type GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArray []GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticInput
+
+func (GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatistic)(nil)).Elem()
+}
+
+func (i GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArray) ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArrayOutput() GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArrayOutput {
+	return i.ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArray) ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArrayOutputWithContext(ctx context.Context) GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArrayOutput)
+}
+
+type GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatistic)(nil)).Elem()
+}
+
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticOutput) ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticOutput() GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticOutput {
+	return o
+}
+
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticOutput) ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticOutputWithContext(ctx context.Context) GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticOutput {
+	return o
+}
+
+// The array of statistics.
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticOutput) ObjectTypeCountLists() GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatistic) []GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountList {
+		return v.ObjectTypeCountLists
+	}).(GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput)
+}
+
+type GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatistic)(nil)).Elem()
+}
+
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArrayOutput) ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArrayOutput() GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArrayOutput) ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArrayOutputWithContext(ctx context.Context) GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArrayOutput) Index(i pulumi.IntInput) GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatistic {
+		return vs[0].([]GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatistic)[vs[1].(int)]
+	}).(GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticOutput)
+}
+
+type GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountList struct {
+	// The value for the count statistic object.
+	ObjectCount string `pulumi:"objectCount"`
+	// The type of object for the count statistic object.
+	ObjectType string `pulumi:"objectType"`
+}
+
+// GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListInput is an input type that accepts GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs and GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput values.
+// You can construct a concrete instance of `GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListInput` via:
+//
+//	GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs{...}
+type GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput() GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput
+	ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutputWithContext(context.Context) GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput
+}
+
+type GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs struct {
+	// The value for the count statistic object.
+	ObjectCount pulumi.StringInput `pulumi:"objectCount"`
+	// The type of object for the count statistic object.
+	ObjectType pulumi.StringInput `pulumi:"objectType"`
+}
+
+func (GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountList)(nil)).Elem()
+}
+
+func (i GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs) ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput() GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput {
+	return i.ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs) ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutputWithContext(ctx context.Context) GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput)
+}
+
+// GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayInput is an input type that accepts GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArray and GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayInput` via:
+//
+//	GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArray{ GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs{...} }
+type GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput() GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput
+	ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(context.Context) GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput
+}
+
+type GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArray []GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListInput
+
+func (GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountList)(nil)).Elem()
+}
+
+func (i GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArray) ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput() GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return i.ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArray) ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(ctx context.Context) GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput)
+}
+
+type GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountList)(nil)).Elem()
+}
+
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput) ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput() GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput {
+	return o
+}
+
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput) ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutputWithContext(ctx context.Context) GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput {
+	return o
+}
+
+// The value for the count statistic object.
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput) ObjectCount() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountList) string {
+		return v.ObjectCount
+	}).(pulumi.StringOutput)
+}
+
+// The type of object for the count statistic object.
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput) ObjectType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountList) string {
+		return v.ObjectType
+	}).(pulumi.StringOutput)
+}
+
+type GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountList)(nil)).Elem()
+}
+
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput) ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput() GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput) ToGetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(ctx context.Context) GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput) Index(i pulumi.IntInput) GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountList {
+		return vs[0].([]GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountList)[vs[1].(int)]
+	}).(GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput)
+}
+
+type GetWorkspaceFoldersFolderSummaryCollectionItemParentRef struct {
+	// Key of the parent object.
+	Parent string `pulumi:"parent"`
+	// Key of the root document object.
+	RootDocId string `pulumi:"rootDocId"`
+}
+
+// GetWorkspaceFoldersFolderSummaryCollectionItemParentRefInput is an input type that accepts GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArgs and GetWorkspaceFoldersFolderSummaryCollectionItemParentRefOutput values.
+// You can construct a concrete instance of `GetWorkspaceFoldersFolderSummaryCollectionItemParentRefInput` via:
+//
+//	GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArgs{...}
+type GetWorkspaceFoldersFolderSummaryCollectionItemParentRefInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceFoldersFolderSummaryCollectionItemParentRefOutput() GetWorkspaceFoldersFolderSummaryCollectionItemParentRefOutput
+	ToGetWorkspaceFoldersFolderSummaryCollectionItemParentRefOutputWithContext(context.Context) GetWorkspaceFoldersFolderSummaryCollectionItemParentRefOutput
+}
+
+type GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArgs struct {
+	// Key of the parent object.
+	Parent pulumi.StringInput `pulumi:"parent"`
+	// Key of the root document object.
+	RootDocId pulumi.StringInput `pulumi:"rootDocId"`
+}
+
+func (GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceFoldersFolderSummaryCollectionItemParentRef)(nil)).Elem()
+}
+
+func (i GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArgs) ToGetWorkspaceFoldersFolderSummaryCollectionItemParentRefOutput() GetWorkspaceFoldersFolderSummaryCollectionItemParentRefOutput {
+	return i.ToGetWorkspaceFoldersFolderSummaryCollectionItemParentRefOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArgs) ToGetWorkspaceFoldersFolderSummaryCollectionItemParentRefOutputWithContext(ctx context.Context) GetWorkspaceFoldersFolderSummaryCollectionItemParentRefOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFoldersFolderSummaryCollectionItemParentRefOutput)
+}
+
+// GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArrayInput is an input type that accepts GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArray and GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArrayInput` via:
+//
+//	GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArray{ GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArgs{...} }
+type GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceFoldersFolderSummaryCollectionItemParentRefArrayOutput() GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArrayOutput
+	ToGetWorkspaceFoldersFolderSummaryCollectionItemParentRefArrayOutputWithContext(context.Context) GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArrayOutput
+}
+
+type GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArray []GetWorkspaceFoldersFolderSummaryCollectionItemParentRefInput
+
+func (GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceFoldersFolderSummaryCollectionItemParentRef)(nil)).Elem()
+}
+
+func (i GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArray) ToGetWorkspaceFoldersFolderSummaryCollectionItemParentRefArrayOutput() GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArrayOutput {
+	return i.ToGetWorkspaceFoldersFolderSummaryCollectionItemParentRefArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArray) ToGetWorkspaceFoldersFolderSummaryCollectionItemParentRefArrayOutputWithContext(ctx context.Context) GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArrayOutput)
+}
+
+type GetWorkspaceFoldersFolderSummaryCollectionItemParentRefOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceFoldersFolderSummaryCollectionItemParentRefOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceFoldersFolderSummaryCollectionItemParentRef)(nil)).Elem()
+}
+
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemParentRefOutput) ToGetWorkspaceFoldersFolderSummaryCollectionItemParentRefOutput() GetWorkspaceFoldersFolderSummaryCollectionItemParentRefOutput {
+	return o
+}
+
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemParentRefOutput) ToGetWorkspaceFoldersFolderSummaryCollectionItemParentRefOutputWithContext(ctx context.Context) GetWorkspaceFoldersFolderSummaryCollectionItemParentRefOutput {
+	return o
+}
+
+// Key of the parent object.
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemParentRefOutput) Parent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemParentRef) string { return v.Parent }).(pulumi.StringOutput)
+}
+
+// Key of the root document object.
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemParentRefOutput) RootDocId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemParentRef) string { return v.RootDocId }).(pulumi.StringOutput)
+}
+
+type GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceFoldersFolderSummaryCollectionItemParentRef)(nil)).Elem()
+}
+
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArrayOutput) ToGetWorkspaceFoldersFolderSummaryCollectionItemParentRefArrayOutput() GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArrayOutput) ToGetWorkspaceFoldersFolderSummaryCollectionItemParentRefArrayOutputWithContext(ctx context.Context) GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArrayOutput) Index(i pulumi.IntInput) GetWorkspaceFoldersFolderSummaryCollectionItemParentRefOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceFoldersFolderSummaryCollectionItemParentRef {
+		return vs[0].([]GetWorkspaceFoldersFolderSummaryCollectionItemParentRef)[vs[1].(int)]
+	}).(GetWorkspaceFoldersFolderSummaryCollectionItemParentRefOutput)
+}
+
+type GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadata struct {
+	// Used to filter by the project or the folder object.
+	AggregatorKey string `pulumi:"aggregatorKey"`
+	// Specifies whether this object is a favorite or not.
+	IsFavorite bool `pulumi:"isFavorite"`
+	// The key of the aggregator object.
+	Key string `pulumi:"key"`
+	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+	Labels []string `pulumi:"labels"`
+	// The registry version of the object.
+	RegistryVersion int `pulumi:"registryVersion"`
+}
+
+// GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataInput is an input type that accepts GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataArgs and GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataOutput values.
+// You can construct a concrete instance of `GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataInput` via:
+//
+//	GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataArgs{...}
+type GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataOutput() GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataOutput
+	ToGetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataOutputWithContext(context.Context) GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataOutput
+}
+
+type GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataArgs struct {
+	// Used to filter by the project or the folder object.
+	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
+	// Specifies whether this object is a favorite or not.
+	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
+	// The key of the aggregator object.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+	Labels pulumi.StringArrayInput `pulumi:"labels"`
+	// The registry version of the object.
+	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
+}
+
+func (GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadata)(nil)).Elem()
+}
+
+func (i GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataArgs) ToGetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataOutput() GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataOutput {
+	return i.ToGetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataArgs) ToGetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataOutputWithContext(ctx context.Context) GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataOutput)
+}
+
+type GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadata)(nil)).Elem()
+}
+
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataOutput) ToGetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataOutput() GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataOutput {
+	return o
+}
+
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataOutput) ToGetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataOutputWithContext(ctx context.Context) GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataOutput {
+	return o
+}
+
+// Used to filter by the project or the folder object.
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataOutput) AggregatorKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadata) string { return v.AggregatorKey }).(pulumi.StringOutput)
+}
+
+// Specifies whether this object is a favorite or not.
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataOutput) IsFavorite() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadata) bool { return v.IsFavorite }).(pulumi.BoolOutput)
+}
+
+// The key of the aggregator object.
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadata) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataOutput) Labels() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
+}
+
+// The registry version of the object.
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataOutput) RegistryVersion() pulumi.IntOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadata) int { return v.RegistryVersion }).(pulumi.IntOutput)
+}
+
+type GetWorkspaceProjectMetadata struct {
+	// The owning object key for this object.
+	AggregatorKey string `pulumi:"aggregatorKey"`
+	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	Aggregators []GetWorkspaceProjectMetadataAggregator `pulumi:"aggregators"`
+	// A count statistics.
+	CountStatistics []GetWorkspaceProjectMetadataCountStatistic `pulumi:"countStatistics"`
+	// The user that created the object.
+	CreatedBy string `pulumi:"createdBy"`
+	// The user that created the object.
+	CreatedByName string `pulumi:"createdByName"`
+	// The full path to identify this object.
+	IdentifierPath string `pulumi:"identifierPath"`
+	// Information property fields.
+	InfoFields map[string]interface{} `pulumi:"infoFields"`
+	// Specifies whether this object is a favorite or not.
+	IsFavorite bool `pulumi:"isFavorite"`
+	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+	Labels []string `pulumi:"labels"`
+	// The registry version of the object.
+	RegistryVersion int `pulumi:"registryVersion"`
+	// The date and time that the object was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time that the object was updated.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The user that updated the object.
+	UpdatedBy string `pulumi:"updatedBy"`
+	// The user that updated the object.
+	UpdatedByName string `pulumi:"updatedByName"`
+}
+
+// GetWorkspaceProjectMetadataInput is an input type that accepts GetWorkspaceProjectMetadataArgs and GetWorkspaceProjectMetadataOutput values.
+// You can construct a concrete instance of `GetWorkspaceProjectMetadataInput` via:
+//
+//	GetWorkspaceProjectMetadataArgs{...}
+type GetWorkspaceProjectMetadataInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceProjectMetadataOutput() GetWorkspaceProjectMetadataOutput
+	ToGetWorkspaceProjectMetadataOutputWithContext(context.Context) GetWorkspaceProjectMetadataOutput
+}
+
+type GetWorkspaceProjectMetadataArgs struct {
+	// The owning object key for this object.
+	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
+	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	Aggregators GetWorkspaceProjectMetadataAggregatorArrayInput `pulumi:"aggregators"`
+	// A count statistics.
+	CountStatistics GetWorkspaceProjectMetadataCountStatisticArrayInput `pulumi:"countStatistics"`
+	// The user that created the object.
+	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	// The user that created the object.
+	CreatedByName pulumi.StringInput `pulumi:"createdByName"`
+	// The full path to identify this object.
+	IdentifierPath pulumi.StringInput `pulumi:"identifierPath"`
+	// Information property fields.
+	InfoFields pulumi.MapInput `pulumi:"infoFields"`
+	// Specifies whether this object is a favorite or not.
+	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
+	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+	Labels pulumi.StringArrayInput `pulumi:"labels"`
+	// The registry version of the object.
+	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
+	// The date and time that the object was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time that the object was updated.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The user that updated the object.
+	UpdatedBy pulumi.StringInput `pulumi:"updatedBy"`
+	// The user that updated the object.
+	UpdatedByName pulumi.StringInput `pulumi:"updatedByName"`
+}
+
+func (GetWorkspaceProjectMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceProjectMetadata)(nil)).Elem()
+}
+
+func (i GetWorkspaceProjectMetadataArgs) ToGetWorkspaceProjectMetadataOutput() GetWorkspaceProjectMetadataOutput {
+	return i.ToGetWorkspaceProjectMetadataOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceProjectMetadataArgs) ToGetWorkspaceProjectMetadataOutputWithContext(ctx context.Context) GetWorkspaceProjectMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectMetadataOutput)
+}
+
+// GetWorkspaceProjectMetadataArrayInput is an input type that accepts GetWorkspaceProjectMetadataArray and GetWorkspaceProjectMetadataArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceProjectMetadataArrayInput` via:
+//
+//	GetWorkspaceProjectMetadataArray{ GetWorkspaceProjectMetadataArgs{...} }
+type GetWorkspaceProjectMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceProjectMetadataArrayOutput() GetWorkspaceProjectMetadataArrayOutput
+	ToGetWorkspaceProjectMetadataArrayOutputWithContext(context.Context) GetWorkspaceProjectMetadataArrayOutput
+}
+
+type GetWorkspaceProjectMetadataArray []GetWorkspaceProjectMetadataInput
+
+func (GetWorkspaceProjectMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceProjectMetadata)(nil)).Elem()
+}
+
+func (i GetWorkspaceProjectMetadataArray) ToGetWorkspaceProjectMetadataArrayOutput() GetWorkspaceProjectMetadataArrayOutput {
+	return i.ToGetWorkspaceProjectMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceProjectMetadataArray) ToGetWorkspaceProjectMetadataArrayOutputWithContext(ctx context.Context) GetWorkspaceProjectMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectMetadataArrayOutput)
+}
+
+type GetWorkspaceProjectMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceProjectMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceProjectMetadata)(nil)).Elem()
+}
+
+func (o GetWorkspaceProjectMetadataOutput) ToGetWorkspaceProjectMetadataOutput() GetWorkspaceProjectMetadataOutput {
+	return o
+}
+
+func (o GetWorkspaceProjectMetadataOutput) ToGetWorkspaceProjectMetadataOutputWithContext(ctx context.Context) GetWorkspaceProjectMetadataOutput {
+	return o
+}
+
+// The owning object key for this object.
+func (o GetWorkspaceProjectMetadataOutput) AggregatorKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectMetadata) string { return v.AggregatorKey }).(pulumi.StringOutput)
+}
+
+// A summary type containing information about the object's aggregator including its type, key, name and description.
+func (o GetWorkspaceProjectMetadataOutput) Aggregators() GetWorkspaceProjectMetadataAggregatorArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectMetadata) []GetWorkspaceProjectMetadataAggregator { return v.Aggregators }).(GetWorkspaceProjectMetadataAggregatorArrayOutput)
+}
+
+// A count statistics.
+func (o GetWorkspaceProjectMetadataOutput) CountStatistics() GetWorkspaceProjectMetadataCountStatisticArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectMetadata) []GetWorkspaceProjectMetadataCountStatistic {
+		return v.CountStatistics
+	}).(GetWorkspaceProjectMetadataCountStatisticArrayOutput)
+}
+
+// The user that created the object.
+func (o GetWorkspaceProjectMetadataOutput) CreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectMetadata) string { return v.CreatedBy }).(pulumi.StringOutput)
+}
+
+// The user that created the object.
+func (o GetWorkspaceProjectMetadataOutput) CreatedByName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectMetadata) string { return v.CreatedByName }).(pulumi.StringOutput)
+}
+
+// The full path to identify this object.
+func (o GetWorkspaceProjectMetadataOutput) IdentifierPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectMetadata) string { return v.IdentifierPath }).(pulumi.StringOutput)
+}
+
+// Information property fields.
+func (o GetWorkspaceProjectMetadataOutput) InfoFields() pulumi.MapOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectMetadata) map[string]interface{} { return v.InfoFields }).(pulumi.MapOutput)
+}
+
+// Specifies whether this object is a favorite or not.
+func (o GetWorkspaceProjectMetadataOutput) IsFavorite() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectMetadata) bool { return v.IsFavorite }).(pulumi.BoolOutput)
+}
+
+// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+func (o GetWorkspaceProjectMetadataOutput) Labels() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
+}
+
+// The registry version of the object.
+func (o GetWorkspaceProjectMetadataOutput) RegistryVersion() pulumi.IntOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectMetadata) int { return v.RegistryVersion }).(pulumi.IntOutput)
+}
+
+// The date and time that the object was created.
+func (o GetWorkspaceProjectMetadataOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectMetadata) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time that the object was updated.
+func (o GetWorkspaceProjectMetadataOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectMetadata) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The user that updated the object.
+func (o GetWorkspaceProjectMetadataOutput) UpdatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectMetadata) string { return v.UpdatedBy }).(pulumi.StringOutput)
+}
+
+// The user that updated the object.
+func (o GetWorkspaceProjectMetadataOutput) UpdatedByName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectMetadata) string { return v.UpdatedByName }).(pulumi.StringOutput)
+}
+
+type GetWorkspaceProjectMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceProjectMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceProjectMetadata)(nil)).Elem()
+}
+
+func (o GetWorkspaceProjectMetadataArrayOutput) ToGetWorkspaceProjectMetadataArrayOutput() GetWorkspaceProjectMetadataArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceProjectMetadataArrayOutput) ToGetWorkspaceProjectMetadataArrayOutputWithContext(ctx context.Context) GetWorkspaceProjectMetadataArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceProjectMetadataArrayOutput) Index(i pulumi.IntInput) GetWorkspaceProjectMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceProjectMetadata {
+		return vs[0].([]GetWorkspaceProjectMetadata)[vs[1].(int)]
+	}).(GetWorkspaceProjectMetadataOutput)
+}
+
+type GetWorkspaceProjectMetadataAggregator struct {
+	// The description of the aggregator.
+	Description string `pulumi:"description"`
+	// The identifier of the aggregator.
+	Identifier string `pulumi:"identifier"`
+	// The key of the aggregator object.
+	Key string `pulumi:"key"`
+	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	Name string `pulumi:"name"`
+	// The type of the aggregator.
+	Type string `pulumi:"type"`
+}
+
+// GetWorkspaceProjectMetadataAggregatorInput is an input type that accepts GetWorkspaceProjectMetadataAggregatorArgs and GetWorkspaceProjectMetadataAggregatorOutput values.
+// You can construct a concrete instance of `GetWorkspaceProjectMetadataAggregatorInput` via:
+//
+//	GetWorkspaceProjectMetadataAggregatorArgs{...}
+type GetWorkspaceProjectMetadataAggregatorInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceProjectMetadataAggregatorOutput() GetWorkspaceProjectMetadataAggregatorOutput
+	ToGetWorkspaceProjectMetadataAggregatorOutputWithContext(context.Context) GetWorkspaceProjectMetadataAggregatorOutput
+}
+
+type GetWorkspaceProjectMetadataAggregatorArgs struct {
+	// The description of the aggregator.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The identifier of the aggregator.
+	Identifier pulumi.StringInput `pulumi:"identifier"`
+	// The key of the aggregator object.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The type of the aggregator.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetWorkspaceProjectMetadataAggregatorArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceProjectMetadataAggregator)(nil)).Elem()
+}
+
+func (i GetWorkspaceProjectMetadataAggregatorArgs) ToGetWorkspaceProjectMetadataAggregatorOutput() GetWorkspaceProjectMetadataAggregatorOutput {
+	return i.ToGetWorkspaceProjectMetadataAggregatorOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceProjectMetadataAggregatorArgs) ToGetWorkspaceProjectMetadataAggregatorOutputWithContext(ctx context.Context) GetWorkspaceProjectMetadataAggregatorOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectMetadataAggregatorOutput)
+}
+
+// GetWorkspaceProjectMetadataAggregatorArrayInput is an input type that accepts GetWorkspaceProjectMetadataAggregatorArray and GetWorkspaceProjectMetadataAggregatorArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceProjectMetadataAggregatorArrayInput` via:
+//
+//	GetWorkspaceProjectMetadataAggregatorArray{ GetWorkspaceProjectMetadataAggregatorArgs{...} }
+type GetWorkspaceProjectMetadataAggregatorArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceProjectMetadataAggregatorArrayOutput() GetWorkspaceProjectMetadataAggregatorArrayOutput
+	ToGetWorkspaceProjectMetadataAggregatorArrayOutputWithContext(context.Context) GetWorkspaceProjectMetadataAggregatorArrayOutput
+}
+
+type GetWorkspaceProjectMetadataAggregatorArray []GetWorkspaceProjectMetadataAggregatorInput
+
+func (GetWorkspaceProjectMetadataAggregatorArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceProjectMetadataAggregator)(nil)).Elem()
+}
+
+func (i GetWorkspaceProjectMetadataAggregatorArray) ToGetWorkspaceProjectMetadataAggregatorArrayOutput() GetWorkspaceProjectMetadataAggregatorArrayOutput {
+	return i.ToGetWorkspaceProjectMetadataAggregatorArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceProjectMetadataAggregatorArray) ToGetWorkspaceProjectMetadataAggregatorArrayOutputWithContext(ctx context.Context) GetWorkspaceProjectMetadataAggregatorArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectMetadataAggregatorArrayOutput)
+}
+
+type GetWorkspaceProjectMetadataAggregatorOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceProjectMetadataAggregatorOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceProjectMetadataAggregator)(nil)).Elem()
+}
+
+func (o GetWorkspaceProjectMetadataAggregatorOutput) ToGetWorkspaceProjectMetadataAggregatorOutput() GetWorkspaceProjectMetadataAggregatorOutput {
+	return o
+}
+
+func (o GetWorkspaceProjectMetadataAggregatorOutput) ToGetWorkspaceProjectMetadataAggregatorOutputWithContext(ctx context.Context) GetWorkspaceProjectMetadataAggregatorOutput {
+	return o
+}
+
+// The description of the aggregator.
+func (o GetWorkspaceProjectMetadataAggregatorOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectMetadataAggregator) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// The identifier of the aggregator.
+func (o GetWorkspaceProjectMetadataAggregatorOutput) Identifier() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectMetadataAggregator) string { return v.Identifier }).(pulumi.StringOutput)
+}
+
+// The key of the aggregator object.
+func (o GetWorkspaceProjectMetadataAggregatorOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectMetadataAggregator) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+func (o GetWorkspaceProjectMetadataAggregatorOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectMetadataAggregator) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The type of the aggregator.
+func (o GetWorkspaceProjectMetadataAggregatorOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectMetadataAggregator) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetWorkspaceProjectMetadataAggregatorArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceProjectMetadataAggregatorArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceProjectMetadataAggregator)(nil)).Elem()
+}
+
+func (o GetWorkspaceProjectMetadataAggregatorArrayOutput) ToGetWorkspaceProjectMetadataAggregatorArrayOutput() GetWorkspaceProjectMetadataAggregatorArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceProjectMetadataAggregatorArrayOutput) ToGetWorkspaceProjectMetadataAggregatorArrayOutputWithContext(ctx context.Context) GetWorkspaceProjectMetadataAggregatorArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceProjectMetadataAggregatorArrayOutput) Index(i pulumi.IntInput) GetWorkspaceProjectMetadataAggregatorOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceProjectMetadataAggregator {
+		return vs[0].([]GetWorkspaceProjectMetadataAggregator)[vs[1].(int)]
+	}).(GetWorkspaceProjectMetadataAggregatorOutput)
+}
+
+type GetWorkspaceProjectMetadataCountStatistic struct {
+	// The array of statistics.
+	ObjectTypeCountLists []GetWorkspaceProjectMetadataCountStatisticObjectTypeCountList `pulumi:"objectTypeCountLists"`
+}
+
+// GetWorkspaceProjectMetadataCountStatisticInput is an input type that accepts GetWorkspaceProjectMetadataCountStatisticArgs and GetWorkspaceProjectMetadataCountStatisticOutput values.
+// You can construct a concrete instance of `GetWorkspaceProjectMetadataCountStatisticInput` via:
+//
+//	GetWorkspaceProjectMetadataCountStatisticArgs{...}
+type GetWorkspaceProjectMetadataCountStatisticInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceProjectMetadataCountStatisticOutput() GetWorkspaceProjectMetadataCountStatisticOutput
+	ToGetWorkspaceProjectMetadataCountStatisticOutputWithContext(context.Context) GetWorkspaceProjectMetadataCountStatisticOutput
+}
+
+type GetWorkspaceProjectMetadataCountStatisticArgs struct {
+	// The array of statistics.
+	ObjectTypeCountLists GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayInput `pulumi:"objectTypeCountLists"`
+}
+
+func (GetWorkspaceProjectMetadataCountStatisticArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceProjectMetadataCountStatistic)(nil)).Elem()
+}
+
+func (i GetWorkspaceProjectMetadataCountStatisticArgs) ToGetWorkspaceProjectMetadataCountStatisticOutput() GetWorkspaceProjectMetadataCountStatisticOutput {
+	return i.ToGetWorkspaceProjectMetadataCountStatisticOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceProjectMetadataCountStatisticArgs) ToGetWorkspaceProjectMetadataCountStatisticOutputWithContext(ctx context.Context) GetWorkspaceProjectMetadataCountStatisticOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectMetadataCountStatisticOutput)
+}
+
+// GetWorkspaceProjectMetadataCountStatisticArrayInput is an input type that accepts GetWorkspaceProjectMetadataCountStatisticArray and GetWorkspaceProjectMetadataCountStatisticArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceProjectMetadataCountStatisticArrayInput` via:
+//
+//	GetWorkspaceProjectMetadataCountStatisticArray{ GetWorkspaceProjectMetadataCountStatisticArgs{...} }
+type GetWorkspaceProjectMetadataCountStatisticArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceProjectMetadataCountStatisticArrayOutput() GetWorkspaceProjectMetadataCountStatisticArrayOutput
+	ToGetWorkspaceProjectMetadataCountStatisticArrayOutputWithContext(context.Context) GetWorkspaceProjectMetadataCountStatisticArrayOutput
+}
+
+type GetWorkspaceProjectMetadataCountStatisticArray []GetWorkspaceProjectMetadataCountStatisticInput
+
+func (GetWorkspaceProjectMetadataCountStatisticArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceProjectMetadataCountStatistic)(nil)).Elem()
+}
+
+func (i GetWorkspaceProjectMetadataCountStatisticArray) ToGetWorkspaceProjectMetadataCountStatisticArrayOutput() GetWorkspaceProjectMetadataCountStatisticArrayOutput {
+	return i.ToGetWorkspaceProjectMetadataCountStatisticArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceProjectMetadataCountStatisticArray) ToGetWorkspaceProjectMetadataCountStatisticArrayOutputWithContext(ctx context.Context) GetWorkspaceProjectMetadataCountStatisticArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectMetadataCountStatisticArrayOutput)
+}
+
+type GetWorkspaceProjectMetadataCountStatisticOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceProjectMetadataCountStatisticOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceProjectMetadataCountStatistic)(nil)).Elem()
+}
+
+func (o GetWorkspaceProjectMetadataCountStatisticOutput) ToGetWorkspaceProjectMetadataCountStatisticOutput() GetWorkspaceProjectMetadataCountStatisticOutput {
+	return o
+}
+
+func (o GetWorkspaceProjectMetadataCountStatisticOutput) ToGetWorkspaceProjectMetadataCountStatisticOutputWithContext(ctx context.Context) GetWorkspaceProjectMetadataCountStatisticOutput {
+	return o
+}
+
+// The array of statistics.
+func (o GetWorkspaceProjectMetadataCountStatisticOutput) ObjectTypeCountLists() GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectMetadataCountStatistic) []GetWorkspaceProjectMetadataCountStatisticObjectTypeCountList {
+		return v.ObjectTypeCountLists
+	}).(GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput)
+}
+
+type GetWorkspaceProjectMetadataCountStatisticArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceProjectMetadataCountStatisticArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceProjectMetadataCountStatistic)(nil)).Elem()
+}
+
+func (o GetWorkspaceProjectMetadataCountStatisticArrayOutput) ToGetWorkspaceProjectMetadataCountStatisticArrayOutput() GetWorkspaceProjectMetadataCountStatisticArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceProjectMetadataCountStatisticArrayOutput) ToGetWorkspaceProjectMetadataCountStatisticArrayOutputWithContext(ctx context.Context) GetWorkspaceProjectMetadataCountStatisticArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceProjectMetadataCountStatisticArrayOutput) Index(i pulumi.IntInput) GetWorkspaceProjectMetadataCountStatisticOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceProjectMetadataCountStatistic {
+		return vs[0].([]GetWorkspaceProjectMetadataCountStatistic)[vs[1].(int)]
+	}).(GetWorkspaceProjectMetadataCountStatisticOutput)
+}
+
+type GetWorkspaceProjectMetadataCountStatisticObjectTypeCountList struct {
+	// The value for the count statistic object.
+	ObjectCount string `pulumi:"objectCount"`
+	// The type of object for the count statistic object.
+	ObjectType string `pulumi:"objectType"`
+}
+
+// GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListInput is an input type that accepts GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArgs and GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput values.
+// You can construct a concrete instance of `GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListInput` via:
+//
+//	GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArgs{...}
+type GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput() GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput
+	ToGetWorkspaceProjectMetadataCountStatisticObjectTypeCountListOutputWithContext(context.Context) GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput
+}
+
+type GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArgs struct {
+	// The value for the count statistic object.
+	ObjectCount pulumi.StringInput `pulumi:"objectCount"`
+	// The type of object for the count statistic object.
+	ObjectType pulumi.StringInput `pulumi:"objectType"`
+}
+
+func (GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceProjectMetadataCountStatisticObjectTypeCountList)(nil)).Elem()
+}
+
+func (i GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArgs) ToGetWorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput() GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput {
+	return i.ToGetWorkspaceProjectMetadataCountStatisticObjectTypeCountListOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArgs) ToGetWorkspaceProjectMetadataCountStatisticObjectTypeCountListOutputWithContext(ctx context.Context) GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput)
+}
+
+// GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayInput is an input type that accepts GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArray and GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayInput` via:
+//
+//	GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArray{ GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArgs{...} }
+type GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput() GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput
+	ToGetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(context.Context) GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput
+}
+
+type GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArray []GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListInput
+
+func (GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceProjectMetadataCountStatisticObjectTypeCountList)(nil)).Elem()
+}
+
+func (i GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArray) ToGetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput() GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return i.ToGetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArray) ToGetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(ctx context.Context) GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput)
+}
+
+type GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceProjectMetadataCountStatisticObjectTypeCountList)(nil)).Elem()
+}
+
+func (o GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput) ToGetWorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput() GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput {
+	return o
+}
+
+func (o GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput) ToGetWorkspaceProjectMetadataCountStatisticObjectTypeCountListOutputWithContext(ctx context.Context) GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput {
+	return o
+}
+
+// The value for the count statistic object.
+func (o GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput) ObjectCount() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectMetadataCountStatisticObjectTypeCountList) string { return v.ObjectCount }).(pulumi.StringOutput)
+}
+
+// The type of object for the count statistic object.
+func (o GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput) ObjectType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectMetadataCountStatisticObjectTypeCountList) string { return v.ObjectType }).(pulumi.StringOutput)
+}
+
+type GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceProjectMetadataCountStatisticObjectTypeCountList)(nil)).Elem()
+}
+
+func (o GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput) ToGetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput() GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput) ToGetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(ctx context.Context) GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput) Index(i pulumi.IntInput) GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceProjectMetadataCountStatisticObjectTypeCountList {
+		return vs[0].([]GetWorkspaceProjectMetadataCountStatisticObjectTypeCountList)[vs[1].(int)]
+	}).(GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput)
+}
+
+type GetWorkspaceProjectParentRef struct {
+	// Key of the parent object.
+	Parent string `pulumi:"parent"`
+	// Key of the root document object.
+	RootDocId string `pulumi:"rootDocId"`
+}
+
+// GetWorkspaceProjectParentRefInput is an input type that accepts GetWorkspaceProjectParentRefArgs and GetWorkspaceProjectParentRefOutput values.
+// You can construct a concrete instance of `GetWorkspaceProjectParentRefInput` via:
+//
+//	GetWorkspaceProjectParentRefArgs{...}
+type GetWorkspaceProjectParentRefInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceProjectParentRefOutput() GetWorkspaceProjectParentRefOutput
+	ToGetWorkspaceProjectParentRefOutputWithContext(context.Context) GetWorkspaceProjectParentRefOutput
+}
+
+type GetWorkspaceProjectParentRefArgs struct {
+	// Key of the parent object.
+	Parent pulumi.StringInput `pulumi:"parent"`
+	// Key of the root document object.
+	RootDocId pulumi.StringInput `pulumi:"rootDocId"`
+}
+
+func (GetWorkspaceProjectParentRefArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceProjectParentRef)(nil)).Elem()
+}
+
+func (i GetWorkspaceProjectParentRefArgs) ToGetWorkspaceProjectParentRefOutput() GetWorkspaceProjectParentRefOutput {
+	return i.ToGetWorkspaceProjectParentRefOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceProjectParentRefArgs) ToGetWorkspaceProjectParentRefOutputWithContext(ctx context.Context) GetWorkspaceProjectParentRefOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectParentRefOutput)
+}
+
+// GetWorkspaceProjectParentRefArrayInput is an input type that accepts GetWorkspaceProjectParentRefArray and GetWorkspaceProjectParentRefArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceProjectParentRefArrayInput` via:
+//
+//	GetWorkspaceProjectParentRefArray{ GetWorkspaceProjectParentRefArgs{...} }
+type GetWorkspaceProjectParentRefArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceProjectParentRefArrayOutput() GetWorkspaceProjectParentRefArrayOutput
+	ToGetWorkspaceProjectParentRefArrayOutputWithContext(context.Context) GetWorkspaceProjectParentRefArrayOutput
+}
+
+type GetWorkspaceProjectParentRefArray []GetWorkspaceProjectParentRefInput
+
+func (GetWorkspaceProjectParentRefArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceProjectParentRef)(nil)).Elem()
+}
+
+func (i GetWorkspaceProjectParentRefArray) ToGetWorkspaceProjectParentRefArrayOutput() GetWorkspaceProjectParentRefArrayOutput {
+	return i.ToGetWorkspaceProjectParentRefArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceProjectParentRefArray) ToGetWorkspaceProjectParentRefArrayOutputWithContext(ctx context.Context) GetWorkspaceProjectParentRefArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectParentRefArrayOutput)
+}
+
+type GetWorkspaceProjectParentRefOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceProjectParentRefOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceProjectParentRef)(nil)).Elem()
+}
+
+func (o GetWorkspaceProjectParentRefOutput) ToGetWorkspaceProjectParentRefOutput() GetWorkspaceProjectParentRefOutput {
+	return o
+}
+
+func (o GetWorkspaceProjectParentRefOutput) ToGetWorkspaceProjectParentRefOutputWithContext(ctx context.Context) GetWorkspaceProjectParentRefOutput {
+	return o
+}
+
+// Key of the parent object.
+func (o GetWorkspaceProjectParentRefOutput) Parent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectParentRef) string { return v.Parent }).(pulumi.StringOutput)
+}
+
+// Key of the root document object.
+func (o GetWorkspaceProjectParentRefOutput) RootDocId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectParentRef) string { return v.RootDocId }).(pulumi.StringOutput)
+}
+
+type GetWorkspaceProjectParentRefArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceProjectParentRefArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceProjectParentRef)(nil)).Elem()
+}
+
+func (o GetWorkspaceProjectParentRefArrayOutput) ToGetWorkspaceProjectParentRefArrayOutput() GetWorkspaceProjectParentRefArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceProjectParentRefArrayOutput) ToGetWorkspaceProjectParentRefArrayOutputWithContext(ctx context.Context) GetWorkspaceProjectParentRefArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceProjectParentRefArrayOutput) Index(i pulumi.IntInput) GetWorkspaceProjectParentRefOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceProjectParentRef {
+		return vs[0].([]GetWorkspaceProjectParentRef)[vs[1].(int)]
+	}).(GetWorkspaceProjectParentRefOutput)
+}
+
+type GetWorkspaceProjectRegistryMetadata struct {
+	// The owning object key for this object.
+	AggregatorKey string `pulumi:"aggregatorKey"`
+	// Specifies whether this object is a favorite or not.
+	IsFavorite bool `pulumi:"isFavorite"`
+	// The key of the aggregator object.
+	Key string `pulumi:"key"`
+	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+	Labels []string `pulumi:"labels"`
+	// The registry version of the object.
+	RegistryVersion int `pulumi:"registryVersion"`
+}
+
+// GetWorkspaceProjectRegistryMetadataInput is an input type that accepts GetWorkspaceProjectRegistryMetadataArgs and GetWorkspaceProjectRegistryMetadataOutput values.
+// You can construct a concrete instance of `GetWorkspaceProjectRegistryMetadataInput` via:
+//
+//	GetWorkspaceProjectRegistryMetadataArgs{...}
+type GetWorkspaceProjectRegistryMetadataInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceProjectRegistryMetadataOutput() GetWorkspaceProjectRegistryMetadataOutput
+	ToGetWorkspaceProjectRegistryMetadataOutputWithContext(context.Context) GetWorkspaceProjectRegistryMetadataOutput
+}
+
+type GetWorkspaceProjectRegistryMetadataArgs struct {
+	// The owning object key for this object.
+	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
+	// Specifies whether this object is a favorite or not.
+	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
+	// The key of the aggregator object.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+	Labels pulumi.StringArrayInput `pulumi:"labels"`
+	// The registry version of the object.
+	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
+}
+
+func (GetWorkspaceProjectRegistryMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceProjectRegistryMetadata)(nil)).Elem()
+}
+
+func (i GetWorkspaceProjectRegistryMetadataArgs) ToGetWorkspaceProjectRegistryMetadataOutput() GetWorkspaceProjectRegistryMetadataOutput {
+	return i.ToGetWorkspaceProjectRegistryMetadataOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceProjectRegistryMetadataArgs) ToGetWorkspaceProjectRegistryMetadataOutputWithContext(ctx context.Context) GetWorkspaceProjectRegistryMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectRegistryMetadataOutput)
+}
+
+// GetWorkspaceProjectRegistryMetadataArrayInput is an input type that accepts GetWorkspaceProjectRegistryMetadataArray and GetWorkspaceProjectRegistryMetadataArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceProjectRegistryMetadataArrayInput` via:
+//
+//	GetWorkspaceProjectRegistryMetadataArray{ GetWorkspaceProjectRegistryMetadataArgs{...} }
+type GetWorkspaceProjectRegistryMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceProjectRegistryMetadataArrayOutput() GetWorkspaceProjectRegistryMetadataArrayOutput
+	ToGetWorkspaceProjectRegistryMetadataArrayOutputWithContext(context.Context) GetWorkspaceProjectRegistryMetadataArrayOutput
+}
+
+type GetWorkspaceProjectRegistryMetadataArray []GetWorkspaceProjectRegistryMetadataInput
+
+func (GetWorkspaceProjectRegistryMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceProjectRegistryMetadata)(nil)).Elem()
+}
+
+func (i GetWorkspaceProjectRegistryMetadataArray) ToGetWorkspaceProjectRegistryMetadataArrayOutput() GetWorkspaceProjectRegistryMetadataArrayOutput {
+	return i.ToGetWorkspaceProjectRegistryMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceProjectRegistryMetadataArray) ToGetWorkspaceProjectRegistryMetadataArrayOutputWithContext(ctx context.Context) GetWorkspaceProjectRegistryMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectRegistryMetadataArrayOutput)
+}
+
+type GetWorkspaceProjectRegistryMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceProjectRegistryMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceProjectRegistryMetadata)(nil)).Elem()
+}
+
+func (o GetWorkspaceProjectRegistryMetadataOutput) ToGetWorkspaceProjectRegistryMetadataOutput() GetWorkspaceProjectRegistryMetadataOutput {
+	return o
+}
+
+func (o GetWorkspaceProjectRegistryMetadataOutput) ToGetWorkspaceProjectRegistryMetadataOutputWithContext(ctx context.Context) GetWorkspaceProjectRegistryMetadataOutput {
+	return o
+}
+
+// The owning object key for this object.
+func (o GetWorkspaceProjectRegistryMetadataOutput) AggregatorKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectRegistryMetadata) string { return v.AggregatorKey }).(pulumi.StringOutput)
+}
+
+// Specifies whether this object is a favorite or not.
+func (o GetWorkspaceProjectRegistryMetadataOutput) IsFavorite() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectRegistryMetadata) bool { return v.IsFavorite }).(pulumi.BoolOutput)
+}
+
+// The key of the aggregator object.
+func (o GetWorkspaceProjectRegistryMetadataOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectRegistryMetadata) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+func (o GetWorkspaceProjectRegistryMetadataOutput) Labels() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectRegistryMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
+}
+
+// The registry version of the object.
+func (o GetWorkspaceProjectRegistryMetadataOutput) RegistryVersion() pulumi.IntOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectRegistryMetadata) int { return v.RegistryVersion }).(pulumi.IntOutput)
+}
+
+type GetWorkspaceProjectRegistryMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceProjectRegistryMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceProjectRegistryMetadata)(nil)).Elem()
+}
+
+func (o GetWorkspaceProjectRegistryMetadataArrayOutput) ToGetWorkspaceProjectRegistryMetadataArrayOutput() GetWorkspaceProjectRegistryMetadataArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceProjectRegistryMetadataArrayOutput) ToGetWorkspaceProjectRegistryMetadataArrayOutputWithContext(ctx context.Context) GetWorkspaceProjectRegistryMetadataArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceProjectRegistryMetadataArrayOutput) Index(i pulumi.IntInput) GetWorkspaceProjectRegistryMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceProjectRegistryMetadata {
+		return vs[0].([]GetWorkspaceProjectRegistryMetadata)[vs[1].(int)]
+	}).(GetWorkspaceProjectRegistryMetadataOutput)
+}
+
+type GetWorkspaceProjectsFilter struct {
+	// Used to filter by the name of the object.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetWorkspaceProjectsFilterInput is an input type that accepts GetWorkspaceProjectsFilterArgs and GetWorkspaceProjectsFilterOutput values.
+// You can construct a concrete instance of `GetWorkspaceProjectsFilterInput` via:
+//
+//	GetWorkspaceProjectsFilterArgs{...}
+type GetWorkspaceProjectsFilterInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceProjectsFilterOutput() GetWorkspaceProjectsFilterOutput
+	ToGetWorkspaceProjectsFilterOutputWithContext(context.Context) GetWorkspaceProjectsFilterOutput
+}
+
+type GetWorkspaceProjectsFilterArgs struct {
+	// Used to filter by the name of the object.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetWorkspaceProjectsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceProjectsFilter)(nil)).Elem()
+}
+
+func (i GetWorkspaceProjectsFilterArgs) ToGetWorkspaceProjectsFilterOutput() GetWorkspaceProjectsFilterOutput {
+	return i.ToGetWorkspaceProjectsFilterOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceProjectsFilterArgs) ToGetWorkspaceProjectsFilterOutputWithContext(ctx context.Context) GetWorkspaceProjectsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectsFilterOutput)
+}
+
+// GetWorkspaceProjectsFilterArrayInput is an input type that accepts GetWorkspaceProjectsFilterArray and GetWorkspaceProjectsFilterArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceProjectsFilterArrayInput` via:
+//
+//	GetWorkspaceProjectsFilterArray{ GetWorkspaceProjectsFilterArgs{...} }
+type GetWorkspaceProjectsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceProjectsFilterArrayOutput() GetWorkspaceProjectsFilterArrayOutput
+	ToGetWorkspaceProjectsFilterArrayOutputWithContext(context.Context) GetWorkspaceProjectsFilterArrayOutput
+}
+
+type GetWorkspaceProjectsFilterArray []GetWorkspaceProjectsFilterInput
+
+func (GetWorkspaceProjectsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceProjectsFilter)(nil)).Elem()
+}
+
+func (i GetWorkspaceProjectsFilterArray) ToGetWorkspaceProjectsFilterArrayOutput() GetWorkspaceProjectsFilterArrayOutput {
+	return i.ToGetWorkspaceProjectsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceProjectsFilterArray) ToGetWorkspaceProjectsFilterArrayOutputWithContext(ctx context.Context) GetWorkspaceProjectsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectsFilterArrayOutput)
+}
+
+type GetWorkspaceProjectsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceProjectsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceProjectsFilter)(nil)).Elem()
+}
+
+func (o GetWorkspaceProjectsFilterOutput) ToGetWorkspaceProjectsFilterOutput() GetWorkspaceProjectsFilterOutput {
+	return o
+}
+
+func (o GetWorkspaceProjectsFilterOutput) ToGetWorkspaceProjectsFilterOutputWithContext(ctx context.Context) GetWorkspaceProjectsFilterOutput {
+	return o
+}
+
+// Used to filter by the name of the object.
+func (o GetWorkspaceProjectsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetWorkspaceProjectsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetWorkspaceProjectsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetWorkspaceProjectsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceProjectsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceProjectsFilter)(nil)).Elem()
+}
+
+func (o GetWorkspaceProjectsFilterArrayOutput) ToGetWorkspaceProjectsFilterArrayOutput() GetWorkspaceProjectsFilterArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceProjectsFilterArrayOutput) ToGetWorkspaceProjectsFilterArrayOutputWithContext(ctx context.Context) GetWorkspaceProjectsFilterArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceProjectsFilterArrayOutput) Index(i pulumi.IntInput) GetWorkspaceProjectsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceProjectsFilter {
+		return vs[0].([]GetWorkspaceProjectsFilter)[vs[1].(int)]
+	}).(GetWorkspaceProjectsFilterOutput)
+}
+
+type GetWorkspaceProjectsProjectSummaryCollection struct {
+	Items []GetWorkspaceProjectsProjectSummaryCollectionItem `pulumi:"items"`
+}
+
+// GetWorkspaceProjectsProjectSummaryCollectionInput is an input type that accepts GetWorkspaceProjectsProjectSummaryCollectionArgs and GetWorkspaceProjectsProjectSummaryCollectionOutput values.
+// You can construct a concrete instance of `GetWorkspaceProjectsProjectSummaryCollectionInput` via:
+//
+//	GetWorkspaceProjectsProjectSummaryCollectionArgs{...}
+type GetWorkspaceProjectsProjectSummaryCollectionInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceProjectsProjectSummaryCollectionOutput() GetWorkspaceProjectsProjectSummaryCollectionOutput
+	ToGetWorkspaceProjectsProjectSummaryCollectionOutputWithContext(context.Context) GetWorkspaceProjectsProjectSummaryCollectionOutput
+}
+
+type GetWorkspaceProjectsProjectSummaryCollectionArgs struct {
+	Items GetWorkspaceProjectsProjectSummaryCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetWorkspaceProjectsProjectSummaryCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceProjectsProjectSummaryCollection)(nil)).Elem()
+}
+
+func (i GetWorkspaceProjectsProjectSummaryCollectionArgs) ToGetWorkspaceProjectsProjectSummaryCollectionOutput() GetWorkspaceProjectsProjectSummaryCollectionOutput {
+	return i.ToGetWorkspaceProjectsProjectSummaryCollectionOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceProjectsProjectSummaryCollectionArgs) ToGetWorkspaceProjectsProjectSummaryCollectionOutputWithContext(ctx context.Context) GetWorkspaceProjectsProjectSummaryCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectsProjectSummaryCollectionOutput)
+}
+
+// GetWorkspaceProjectsProjectSummaryCollectionArrayInput is an input type that accepts GetWorkspaceProjectsProjectSummaryCollectionArray and GetWorkspaceProjectsProjectSummaryCollectionArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceProjectsProjectSummaryCollectionArrayInput` via:
+//
+//	GetWorkspaceProjectsProjectSummaryCollectionArray{ GetWorkspaceProjectsProjectSummaryCollectionArgs{...} }
+type GetWorkspaceProjectsProjectSummaryCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceProjectsProjectSummaryCollectionArrayOutput() GetWorkspaceProjectsProjectSummaryCollectionArrayOutput
+	ToGetWorkspaceProjectsProjectSummaryCollectionArrayOutputWithContext(context.Context) GetWorkspaceProjectsProjectSummaryCollectionArrayOutput
+}
+
+type GetWorkspaceProjectsProjectSummaryCollectionArray []GetWorkspaceProjectsProjectSummaryCollectionInput
+
+func (GetWorkspaceProjectsProjectSummaryCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceProjectsProjectSummaryCollection)(nil)).Elem()
+}
+
+func (i GetWorkspaceProjectsProjectSummaryCollectionArray) ToGetWorkspaceProjectsProjectSummaryCollectionArrayOutput() GetWorkspaceProjectsProjectSummaryCollectionArrayOutput {
+	return i.ToGetWorkspaceProjectsProjectSummaryCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceProjectsProjectSummaryCollectionArray) ToGetWorkspaceProjectsProjectSummaryCollectionArrayOutputWithContext(ctx context.Context) GetWorkspaceProjectsProjectSummaryCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectsProjectSummaryCollectionArrayOutput)
+}
+
+type GetWorkspaceProjectsProjectSummaryCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceProjectsProjectSummaryCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceProjectsProjectSummaryCollection)(nil)).Elem()
+}
+
+func (o GetWorkspaceProjectsProjectSummaryCollectionOutput) ToGetWorkspaceProjectsProjectSummaryCollectionOutput() GetWorkspaceProjectsProjectSummaryCollectionOutput {
+	return o
+}
+
+func (o GetWorkspaceProjectsProjectSummaryCollectionOutput) ToGetWorkspaceProjectsProjectSummaryCollectionOutputWithContext(ctx context.Context) GetWorkspaceProjectsProjectSummaryCollectionOutput {
+	return o
+}
+
+func (o GetWorkspaceProjectsProjectSummaryCollectionOutput) Items() GetWorkspaceProjectsProjectSummaryCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollection) []GetWorkspaceProjectsProjectSummaryCollectionItem {
+		return v.Items
+	}).(GetWorkspaceProjectsProjectSummaryCollectionItemArrayOutput)
+}
+
+type GetWorkspaceProjectsProjectSummaryCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceProjectsProjectSummaryCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceProjectsProjectSummaryCollection)(nil)).Elem()
+}
+
+func (o GetWorkspaceProjectsProjectSummaryCollectionArrayOutput) ToGetWorkspaceProjectsProjectSummaryCollectionArrayOutput() GetWorkspaceProjectsProjectSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceProjectsProjectSummaryCollectionArrayOutput) ToGetWorkspaceProjectsProjectSummaryCollectionArrayOutputWithContext(ctx context.Context) GetWorkspaceProjectsProjectSummaryCollectionArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceProjectsProjectSummaryCollectionArrayOutput) Index(i pulumi.IntInput) GetWorkspaceProjectsProjectSummaryCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceProjectsProjectSummaryCollection {
+		return vs[0].([]GetWorkspaceProjectsProjectSummaryCollection)[vs[1].(int)]
+	}).(GetWorkspaceProjectsProjectSummaryCollectionOutput)
+}
+
+type GetWorkspaceProjectsProjectSummaryCollectionItem struct {
+	// The description of the aggregator.
+	Description string `pulumi:"description"`
+	// Used to filter by the identifier of the object.
+	Identifier string `pulumi:"identifier"`
+	// The key of the aggregator object.
+	Key string `pulumi:"key"`
+	// A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
+	KeyMap map[string]interface{} `pulumi:"keyMap"`
+	// A summary type containing information about the object including its key, name and when/who created/updated it.
+	Metadatas []GetWorkspaceProjectsProjectSummaryCollectionItemMetadata `pulumi:"metadatas"`
+	// The type of the object.
+	ModelType string `pulumi:"modelType"`
+	// The model version of an object.
+	ModelVersion string `pulumi:"modelVersion"`
+	// Used to filter by the name of the object.
+	Name string `pulumi:"name"`
+	// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+	ObjectStatus int `pulumi:"objectStatus"`
+	// The version of the object that is used to track changes in the object instance.
+	ObjectVersion int `pulumi:"objectVersion"`
+	// A reference to the object's parent.
+	ParentReves      []GetWorkspaceProjectsProjectSummaryCollectionItemParentRef      `pulumi:"parentReves"`
+	ProjectKey       string                                                           `pulumi:"projectKey"`
+	RegistryMetadata GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadata `pulumi:"registryMetadata"`
+	// The workspace ID.
+	WorkspaceId string `pulumi:"workspaceId"`
+}
+
+// GetWorkspaceProjectsProjectSummaryCollectionItemInput is an input type that accepts GetWorkspaceProjectsProjectSummaryCollectionItemArgs and GetWorkspaceProjectsProjectSummaryCollectionItemOutput values.
+// You can construct a concrete instance of `GetWorkspaceProjectsProjectSummaryCollectionItemInput` via:
+//
+//	GetWorkspaceProjectsProjectSummaryCollectionItemArgs{...}
+type GetWorkspaceProjectsProjectSummaryCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceProjectsProjectSummaryCollectionItemOutput() GetWorkspaceProjectsProjectSummaryCollectionItemOutput
+	ToGetWorkspaceProjectsProjectSummaryCollectionItemOutputWithContext(context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemOutput
+}
+
+type GetWorkspaceProjectsProjectSummaryCollectionItemArgs struct {
+	// The description of the aggregator.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Used to filter by the identifier of the object.
+	Identifier pulumi.StringInput `pulumi:"identifier"`
+	// The key of the aggregator object.
+	Key pulumi.StringInput `pulumi:"key"`
+	// A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
+	KeyMap pulumi.MapInput `pulumi:"keyMap"`
+	// A summary type containing information about the object including its key, name and when/who created/updated it.
+	Metadatas GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArrayInput `pulumi:"metadatas"`
+	// The type of the object.
+	ModelType pulumi.StringInput `pulumi:"modelType"`
+	// The model version of an object.
+	ModelVersion pulumi.StringInput `pulumi:"modelVersion"`
+	// Used to filter by the name of the object.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+	ObjectStatus pulumi.IntInput `pulumi:"objectStatus"`
+	// The version of the object that is used to track changes in the object instance.
+	ObjectVersion pulumi.IntInput `pulumi:"objectVersion"`
+	// A reference to the object's parent.
+	ParentReves      GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArrayInput   `pulumi:"parentReves"`
+	ProjectKey       pulumi.StringInput                                                    `pulumi:"projectKey"`
+	RegistryMetadata GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataInput `pulumi:"registryMetadata"`
+	// The workspace ID.
+	WorkspaceId pulumi.StringInput `pulumi:"workspaceId"`
+}
+
+func (GetWorkspaceProjectsProjectSummaryCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceProjectsProjectSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetWorkspaceProjectsProjectSummaryCollectionItemArgs) ToGetWorkspaceProjectsProjectSummaryCollectionItemOutput() GetWorkspaceProjectsProjectSummaryCollectionItemOutput {
+	return i.ToGetWorkspaceProjectsProjectSummaryCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceProjectsProjectSummaryCollectionItemArgs) ToGetWorkspaceProjectsProjectSummaryCollectionItemOutputWithContext(ctx context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectsProjectSummaryCollectionItemOutput)
+}
+
+// GetWorkspaceProjectsProjectSummaryCollectionItemArrayInput is an input type that accepts GetWorkspaceProjectsProjectSummaryCollectionItemArray and GetWorkspaceProjectsProjectSummaryCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceProjectsProjectSummaryCollectionItemArrayInput` via:
+//
+//	GetWorkspaceProjectsProjectSummaryCollectionItemArray{ GetWorkspaceProjectsProjectSummaryCollectionItemArgs{...} }
+type GetWorkspaceProjectsProjectSummaryCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceProjectsProjectSummaryCollectionItemArrayOutput() GetWorkspaceProjectsProjectSummaryCollectionItemArrayOutput
+	ToGetWorkspaceProjectsProjectSummaryCollectionItemArrayOutputWithContext(context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemArrayOutput
+}
+
+type GetWorkspaceProjectsProjectSummaryCollectionItemArray []GetWorkspaceProjectsProjectSummaryCollectionItemInput
+
+func (GetWorkspaceProjectsProjectSummaryCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceProjectsProjectSummaryCollectionItem)(nil)).Elem()
+}
+
+func (i GetWorkspaceProjectsProjectSummaryCollectionItemArray) ToGetWorkspaceProjectsProjectSummaryCollectionItemArrayOutput() GetWorkspaceProjectsProjectSummaryCollectionItemArrayOutput {
+	return i.ToGetWorkspaceProjectsProjectSummaryCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceProjectsProjectSummaryCollectionItemArray) ToGetWorkspaceProjectsProjectSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectsProjectSummaryCollectionItemArrayOutput)
+}
+
+type GetWorkspaceProjectsProjectSummaryCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceProjectsProjectSummaryCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceProjectsProjectSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemOutput) ToGetWorkspaceProjectsProjectSummaryCollectionItemOutput() GetWorkspaceProjectsProjectSummaryCollectionItemOutput {
+	return o
+}
+
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemOutput) ToGetWorkspaceProjectsProjectSummaryCollectionItemOutputWithContext(ctx context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemOutput {
+	return o
+}
+
+// The description of the aggregator.
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Used to filter by the identifier of the object.
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemOutput) Identifier() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItem) string { return v.Identifier }).(pulumi.StringOutput)
+}
+
+// The key of the aggregator object.
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItem) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemOutput) KeyMap() pulumi.MapOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItem) map[string]interface{} { return v.KeyMap }).(pulumi.MapOutput)
+}
+
+// A summary type containing information about the object including its key, name and when/who created/updated it.
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemOutput) Metadatas() GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItem) []GetWorkspaceProjectsProjectSummaryCollectionItemMetadata {
+		return v.Metadatas
+	}).(GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArrayOutput)
+}
+
+// The type of the object.
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemOutput) ModelType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItem) string { return v.ModelType }).(pulumi.StringOutput)
+}
+
+// The model version of an object.
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemOutput) ModelVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItem) string { return v.ModelVersion }).(pulumi.StringOutput)
+}
+
+// Used to filter by the name of the object.
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemOutput) ObjectStatus() pulumi.IntOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItem) int { return v.ObjectStatus }).(pulumi.IntOutput)
+}
+
+// The version of the object that is used to track changes in the object instance.
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemOutput) ObjectVersion() pulumi.IntOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItem) int { return v.ObjectVersion }).(pulumi.IntOutput)
+}
+
+// A reference to the object's parent.
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemOutput) ParentReves() GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItem) []GetWorkspaceProjectsProjectSummaryCollectionItemParentRef {
+		return v.ParentReves
+	}).(GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArrayOutput)
+}
+
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemOutput) ProjectKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItem) string { return v.ProjectKey }).(pulumi.StringOutput)
+}
+
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemOutput) RegistryMetadata() GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItem) GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadata {
+		return v.RegistryMetadata
+	}).(GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutput)
+}
+
+// The workspace ID.
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemOutput) WorkspaceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItem) string { return v.WorkspaceId }).(pulumi.StringOutput)
+}
+
+type GetWorkspaceProjectsProjectSummaryCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceProjectsProjectSummaryCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceProjectsProjectSummaryCollectionItem)(nil)).Elem()
+}
+
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemArrayOutput) ToGetWorkspaceProjectsProjectSummaryCollectionItemArrayOutput() GetWorkspaceProjectsProjectSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemArrayOutput) ToGetWorkspaceProjectsProjectSummaryCollectionItemArrayOutputWithContext(ctx context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemArrayOutput) Index(i pulumi.IntInput) GetWorkspaceProjectsProjectSummaryCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceProjectsProjectSummaryCollectionItem {
+		return vs[0].([]GetWorkspaceProjectsProjectSummaryCollectionItem)[vs[1].(int)]
+	}).(GetWorkspaceProjectsProjectSummaryCollectionItemOutput)
+}
+
+type GetWorkspaceProjectsProjectSummaryCollectionItemMetadata struct {
+	// The owning object key for this object.
+	AggregatorKey string `pulumi:"aggregatorKey"`
+	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	Aggregators []GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregator `pulumi:"aggregators"`
+	// A count statistics.
+	CountStatistics []GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatistic `pulumi:"countStatistics"`
+	// The user that created the object.
+	CreatedBy string `pulumi:"createdBy"`
+	// The user that created the object.
+	CreatedByName string `pulumi:"createdByName"`
+	// The full path to identify this object.
+	IdentifierPath string `pulumi:"identifierPath"`
+	// Information property fields.
+	InfoFields map[string]interface{} `pulumi:"infoFields"`
+	// Specifies whether this object is a favorite or not.
+	IsFavorite bool `pulumi:"isFavorite"`
+	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+	Labels []string `pulumi:"labels"`
+	// The registry version of the object.
+	RegistryVersion int `pulumi:"registryVersion"`
+	// The date and time that the object was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time that the object was updated.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The user that updated the object.
+	UpdatedBy string `pulumi:"updatedBy"`
+	// The user that updated the object.
+	UpdatedByName string `pulumi:"updatedByName"`
+}
+
+// GetWorkspaceProjectsProjectSummaryCollectionItemMetadataInput is an input type that accepts GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArgs and GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput values.
+// You can construct a concrete instance of `GetWorkspaceProjectsProjectSummaryCollectionItemMetadataInput` via:
+//
+//	GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArgs{...}
+type GetWorkspaceProjectsProjectSummaryCollectionItemMetadataInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput() GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput
+	ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutputWithContext(context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput
+}
+
+type GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArgs struct {
+	// The owning object key for this object.
+	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
+	// A summary type containing information about the object's aggregator including its type, key, name and description.
+	Aggregators GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArrayInput `pulumi:"aggregators"`
+	// A count statistics.
+	CountStatistics GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArrayInput `pulumi:"countStatistics"`
+	// The user that created the object.
+	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	// The user that created the object.
+	CreatedByName pulumi.StringInput `pulumi:"createdByName"`
+	// The full path to identify this object.
+	IdentifierPath pulumi.StringInput `pulumi:"identifierPath"`
+	// Information property fields.
+	InfoFields pulumi.MapInput `pulumi:"infoFields"`
+	// Specifies whether this object is a favorite or not.
+	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
+	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+	Labels pulumi.StringArrayInput `pulumi:"labels"`
+	// The registry version of the object.
+	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
+	// The date and time that the object was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time that the object was updated.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The user that updated the object.
+	UpdatedBy pulumi.StringInput `pulumi:"updatedBy"`
+	// The user that updated the object.
+	UpdatedByName pulumi.StringInput `pulumi:"updatedByName"`
+}
+
+func (GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceProjectsProjectSummaryCollectionItemMetadata)(nil)).Elem()
+}
+
+func (i GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArgs) ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput() GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput {
+	return i.ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArgs) ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutputWithContext(ctx context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput)
+}
+
+// GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArrayInput is an input type that accepts GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArray and GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArrayInput` via:
+//
+//	GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArray{ GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArgs{...} }
+type GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataArrayOutput() GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArrayOutput
+	ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataArrayOutputWithContext(context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArrayOutput
+}
+
+type GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArray []GetWorkspaceProjectsProjectSummaryCollectionItemMetadataInput
+
+func (GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceProjectsProjectSummaryCollectionItemMetadata)(nil)).Elem()
+}
+
+func (i GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArray) ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataArrayOutput() GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArrayOutput {
+	return i.ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArray) ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataArrayOutputWithContext(ctx context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArrayOutput)
+}
+
+type GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceProjectsProjectSummaryCollectionItemMetadata)(nil)).Elem()
+}
+
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput) ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput() GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput {
+	return o
+}
+
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput) ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutputWithContext(ctx context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput {
+	return o
+}
+
+// The owning object key for this object.
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput) AggregatorKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadata) string { return v.AggregatorKey }).(pulumi.StringOutput)
+}
+
+// A summary type containing information about the object's aggregator including its type, key, name and description.
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput) Aggregators() GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadata) []GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregator {
+		return v.Aggregators
+	}).(GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArrayOutput)
+}
+
+// A count statistics.
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput) CountStatistics() GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadata) []GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatistic {
+		return v.CountStatistics
+	}).(GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArrayOutput)
+}
+
+// The user that created the object.
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput) CreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadata) string { return v.CreatedBy }).(pulumi.StringOutput)
+}
+
+// The user that created the object.
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput) CreatedByName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadata) string { return v.CreatedByName }).(pulumi.StringOutput)
+}
+
+// The full path to identify this object.
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput) IdentifierPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadata) string { return v.IdentifierPath }).(pulumi.StringOutput)
+}
+
+// Information property fields.
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput) InfoFields() pulumi.MapOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadata) map[string]interface{} {
+		return v.InfoFields
+	}).(pulumi.MapOutput)
+}
+
+// Specifies whether this object is a favorite or not.
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput) IsFavorite() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadata) bool { return v.IsFavorite }).(pulumi.BoolOutput)
+}
+
+// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput) Labels() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
+}
+
+// The registry version of the object.
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput) RegistryVersion() pulumi.IntOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadata) int { return v.RegistryVersion }).(pulumi.IntOutput)
+}
+
+// The date and time that the object was created.
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadata) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time that the object was updated.
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadata) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The user that updated the object.
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput) UpdatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadata) string { return v.UpdatedBy }).(pulumi.StringOutput)
+}
+
+// The user that updated the object.
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput) UpdatedByName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadata) string { return v.UpdatedByName }).(pulumi.StringOutput)
+}
+
+type GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceProjectsProjectSummaryCollectionItemMetadata)(nil)).Elem()
+}
+
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArrayOutput) ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataArrayOutput() GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArrayOutput) ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataArrayOutputWithContext(ctx context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArrayOutput) Index(i pulumi.IntInput) GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceProjectsProjectSummaryCollectionItemMetadata {
+		return vs[0].([]GetWorkspaceProjectsProjectSummaryCollectionItemMetadata)[vs[1].(int)]
+	}).(GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput)
+}
+
+type GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregator struct {
+	// The description of the aggregator.
+	Description string `pulumi:"description"`
+	// Used to filter by the identifier of the object.
+	Identifier string `pulumi:"identifier"`
+	// The key of the aggregator object.
+	Key string `pulumi:"key"`
+	// Used to filter by the name of the object.
+	Name string `pulumi:"name"`
+	// The type of the aggregator.
+	Type string `pulumi:"type"`
+}
+
+// GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorInput is an input type that accepts GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArgs and GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorOutput values.
+// You can construct a concrete instance of `GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorInput` via:
+//
+//	GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArgs{...}
+type GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorOutput() GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorOutput
+	ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorOutputWithContext(context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorOutput
+}
+
+type GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArgs struct {
+	// The description of the aggregator.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Used to filter by the identifier of the object.
+	Identifier pulumi.StringInput `pulumi:"identifier"`
+	// The key of the aggregator object.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Used to filter by the name of the object.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The type of the aggregator.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregator)(nil)).Elem()
+}
+
+func (i GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArgs) ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorOutput() GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorOutput {
+	return i.ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArgs) ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorOutputWithContext(ctx context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorOutput)
+}
+
+// GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArrayInput is an input type that accepts GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArray and GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArrayInput` via:
+//
+//	GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArray{ GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArgs{...} }
+type GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArrayOutput() GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArrayOutput
+	ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArrayOutputWithContext(context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArrayOutput
+}
+
+type GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArray []GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorInput
+
+func (GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregator)(nil)).Elem()
+}
+
+func (i GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArray) ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArrayOutput() GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArrayOutput {
+	return i.ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArray) ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArrayOutputWithContext(ctx context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArrayOutput)
+}
+
+type GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregator)(nil)).Elem()
+}
+
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorOutput) ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorOutput() GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorOutput {
+	return o
+}
+
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorOutput) ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorOutputWithContext(ctx context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorOutput {
+	return o
+}
+
+// The description of the aggregator.
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregator) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// Used to filter by the identifier of the object.
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorOutput) Identifier() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregator) string { return v.Identifier }).(pulumi.StringOutput)
+}
+
+// The key of the aggregator object.
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregator) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Used to filter by the name of the object.
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregator) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The type of the aggregator.
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregator) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregator)(nil)).Elem()
+}
+
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArrayOutput) ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArrayOutput() GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArrayOutput) ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArrayOutputWithContext(ctx context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArrayOutput) Index(i pulumi.IntInput) GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregator {
+		return vs[0].([]GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregator)[vs[1].(int)]
+	}).(GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorOutput)
+}
+
+type GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatistic struct {
+	// The array of statistics.
+	ObjectTypeCountLists []GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountList `pulumi:"objectTypeCountLists"`
+}
+
+// GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticInput is an input type that accepts GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArgs and GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticOutput values.
+// You can construct a concrete instance of `GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticInput` via:
+//
+//	GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArgs{...}
+type GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticOutput() GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticOutput
+	ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticOutputWithContext(context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticOutput
+}
+
+type GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArgs struct {
+	// The array of statistics.
+	ObjectTypeCountLists GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayInput `pulumi:"objectTypeCountLists"`
+}
+
+func (GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatistic)(nil)).Elem()
+}
+
+func (i GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArgs) ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticOutput() GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticOutput {
+	return i.ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArgs) ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticOutputWithContext(ctx context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticOutput)
+}
+
+// GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArrayInput is an input type that accepts GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArray and GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArrayInput` via:
+//
+//	GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArray{ GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArgs{...} }
+type GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArrayOutput() GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArrayOutput
+	ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArrayOutputWithContext(context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArrayOutput
+}
+
+type GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArray []GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticInput
+
+func (GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatistic)(nil)).Elem()
+}
+
+func (i GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArray) ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArrayOutput() GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArrayOutput {
+	return i.ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArray) ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArrayOutputWithContext(ctx context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArrayOutput)
+}
+
+type GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatistic)(nil)).Elem()
+}
+
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticOutput) ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticOutput() GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticOutput {
+	return o
+}
+
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticOutput) ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticOutputWithContext(ctx context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticOutput {
+	return o
+}
+
+// The array of statistics.
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticOutput) ObjectTypeCountLists() GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatistic) []GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountList {
+		return v.ObjectTypeCountLists
+	}).(GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput)
+}
+
+type GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatistic)(nil)).Elem()
+}
+
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArrayOutput) ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArrayOutput() GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArrayOutput) ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArrayOutputWithContext(ctx context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArrayOutput) Index(i pulumi.IntInput) GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatistic {
+		return vs[0].([]GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatistic)[vs[1].(int)]
+	}).(GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticOutput)
+}
+
+type GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountList struct {
+	// The value for the count statistic object.
+	ObjectCount string `pulumi:"objectCount"`
+	// The type of object for the count statistic object.
+	ObjectType string `pulumi:"objectType"`
+}
+
+// GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListInput is an input type that accepts GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs and GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput values.
+// You can construct a concrete instance of `GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListInput` via:
+//
+//	GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs{...}
+type GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput() GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput
+	ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutputWithContext(context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput
+}
+
+type GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs struct {
+	// The value for the count statistic object.
+	ObjectCount pulumi.StringInput `pulumi:"objectCount"`
+	// The type of object for the count statistic object.
+	ObjectType pulumi.StringInput `pulumi:"objectType"`
+}
+
+func (GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountList)(nil)).Elem()
+}
+
+func (i GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs) ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput() GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput {
+	return i.ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs) ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutputWithContext(ctx context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput)
+}
+
+// GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayInput is an input type that accepts GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArray and GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayInput` via:
+//
+//	GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArray{ GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs{...} }
+type GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput() GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput
+	ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput
+}
+
+type GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArray []GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListInput
+
+func (GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountList)(nil)).Elem()
+}
+
+func (i GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArray) ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput() GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return i.ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArray) ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(ctx context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput)
+}
+
+type GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountList)(nil)).Elem()
+}
+
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput) ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput() GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput {
+	return o
+}
+
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput) ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutputWithContext(ctx context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput {
+	return o
+}
+
+// The value for the count statistic object.
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput) ObjectCount() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountList) string {
+		return v.ObjectCount
+	}).(pulumi.StringOutput)
+}
+
+// The type of object for the count statistic object.
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput) ObjectType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountList) string {
+		return v.ObjectType
+	}).(pulumi.StringOutput)
+}
+
+type GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountList)(nil)).Elem()
+}
+
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput) ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput() GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput) ToGetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutputWithContext(ctx context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput) Index(i pulumi.IntInput) GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountList {
+		return vs[0].([]GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountList)[vs[1].(int)]
+	}).(GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput)
+}
+
+type GetWorkspaceProjectsProjectSummaryCollectionItemParentRef struct {
+	// Key of the parent object.
+	Parent string `pulumi:"parent"`
+	// Key of the root document object.
+	RootDocId string `pulumi:"rootDocId"`
+}
+
+// GetWorkspaceProjectsProjectSummaryCollectionItemParentRefInput is an input type that accepts GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArgs and GetWorkspaceProjectsProjectSummaryCollectionItemParentRefOutput values.
+// You can construct a concrete instance of `GetWorkspaceProjectsProjectSummaryCollectionItemParentRefInput` via:
+//
+//	GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArgs{...}
+type GetWorkspaceProjectsProjectSummaryCollectionItemParentRefInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceProjectsProjectSummaryCollectionItemParentRefOutput() GetWorkspaceProjectsProjectSummaryCollectionItemParentRefOutput
+	ToGetWorkspaceProjectsProjectSummaryCollectionItemParentRefOutputWithContext(context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemParentRefOutput
+}
+
+type GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArgs struct {
+	// Key of the parent object.
+	Parent pulumi.StringInput `pulumi:"parent"`
+	// Key of the root document object.
+	RootDocId pulumi.StringInput `pulumi:"rootDocId"`
+}
+
+func (GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceProjectsProjectSummaryCollectionItemParentRef)(nil)).Elem()
+}
+
+func (i GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArgs) ToGetWorkspaceProjectsProjectSummaryCollectionItemParentRefOutput() GetWorkspaceProjectsProjectSummaryCollectionItemParentRefOutput {
+	return i.ToGetWorkspaceProjectsProjectSummaryCollectionItemParentRefOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArgs) ToGetWorkspaceProjectsProjectSummaryCollectionItemParentRefOutputWithContext(ctx context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemParentRefOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectsProjectSummaryCollectionItemParentRefOutput)
+}
+
+// GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArrayInput is an input type that accepts GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArray and GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArrayOutput values.
+// You can construct a concrete instance of `GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArrayInput` via:
+//
+//	GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArray{ GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArgs{...} }
+type GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArrayInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceProjectsProjectSummaryCollectionItemParentRefArrayOutput() GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArrayOutput
+	ToGetWorkspaceProjectsProjectSummaryCollectionItemParentRefArrayOutputWithContext(context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArrayOutput
+}
+
+type GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArray []GetWorkspaceProjectsProjectSummaryCollectionItemParentRefInput
+
+func (GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceProjectsProjectSummaryCollectionItemParentRef)(nil)).Elem()
+}
+
+func (i GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArray) ToGetWorkspaceProjectsProjectSummaryCollectionItemParentRefArrayOutput() GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArrayOutput {
+	return i.ToGetWorkspaceProjectsProjectSummaryCollectionItemParentRefArrayOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArray) ToGetWorkspaceProjectsProjectSummaryCollectionItemParentRefArrayOutputWithContext(ctx context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArrayOutput)
+}
+
+type GetWorkspaceProjectsProjectSummaryCollectionItemParentRefOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceProjectsProjectSummaryCollectionItemParentRefOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceProjectsProjectSummaryCollectionItemParentRef)(nil)).Elem()
+}
+
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemParentRefOutput) ToGetWorkspaceProjectsProjectSummaryCollectionItemParentRefOutput() GetWorkspaceProjectsProjectSummaryCollectionItemParentRefOutput {
+	return o
+}
+
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemParentRefOutput) ToGetWorkspaceProjectsProjectSummaryCollectionItemParentRefOutputWithContext(ctx context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemParentRefOutput {
+	return o
+}
+
+// Key of the parent object.
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemParentRefOutput) Parent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemParentRef) string { return v.Parent }).(pulumi.StringOutput)
+}
+
+// Key of the root document object.
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemParentRefOutput) RootDocId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemParentRef) string { return v.RootDocId }).(pulumi.StringOutput)
+}
+
+type GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArrayOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetWorkspaceProjectsProjectSummaryCollectionItemParentRef)(nil)).Elem()
+}
+
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArrayOutput) ToGetWorkspaceProjectsProjectSummaryCollectionItemParentRefArrayOutput() GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArrayOutput) ToGetWorkspaceProjectsProjectSummaryCollectionItemParentRefArrayOutputWithContext(ctx context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArrayOutput {
+	return o
+}
+
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArrayOutput) Index(i pulumi.IntInput) GetWorkspaceProjectsProjectSummaryCollectionItemParentRefOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetWorkspaceProjectsProjectSummaryCollectionItemParentRef {
+		return vs[0].([]GetWorkspaceProjectsProjectSummaryCollectionItemParentRef)[vs[1].(int)]
+	}).(GetWorkspaceProjectsProjectSummaryCollectionItemParentRefOutput)
+}
+
+type GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadata struct {
+	// The owning object key for this object.
+	AggregatorKey string `pulumi:"aggregatorKey"`
+	// Specifies whether this object is a favorite or not.
+	IsFavorite bool `pulumi:"isFavorite"`
+	// The key of the aggregator object.
+	Key string `pulumi:"key"`
+	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+	Labels []string `pulumi:"labels"`
+	// The registry version of the object.
+	RegistryVersion int `pulumi:"registryVersion"`
+}
+
+// GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataInput is an input type that accepts GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataArgs and GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutput values.
+// You can construct a concrete instance of `GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataInput` via:
+//
+//	GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataArgs{...}
+type GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataInput interface {
+	pulumi.Input
+
+	ToGetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutput() GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutput
+	ToGetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutputWithContext(context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutput
+}
+
+type GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataArgs struct {
+	// The owning object key for this object.
+	AggregatorKey pulumi.StringInput `pulumi:"aggregatorKey"`
+	// Specifies whether this object is a favorite or not.
+	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
+	// The key of the aggregator object.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+	Labels pulumi.StringArrayInput `pulumi:"labels"`
+	// The registry version of the object.
+	RegistryVersion pulumi.IntInput `pulumi:"registryVersion"`
+}
+
+func (GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadata)(nil)).Elem()
+}
+
+func (i GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataArgs) ToGetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutput() GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutput {
+	return i.ToGetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutputWithContext(context.Background())
+}
+
+func (i GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataArgs) ToGetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutputWithContext(ctx context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutput)
+}
+
+type GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadata)(nil)).Elem()
+}
+
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutput) ToGetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutput() GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutput {
+	return o
+}
+
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutput) ToGetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutputWithContext(ctx context.Context) GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutput {
+	return o
+}
+
+// The owning object key for this object.
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutput) AggregatorKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadata) string {
+		return v.AggregatorKey
+	}).(pulumi.StringOutput)
+}
+
+// Specifies whether this object is a favorite or not.
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutput) IsFavorite() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadata) bool { return v.IsFavorite }).(pulumi.BoolOutput)
+}
+
+// The key of the aggregator object.
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadata) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutput) Labels() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadata) []string { return v.Labels }).(pulumi.StringArrayOutput)
+}
+
+// The registry version of the object.
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutput) RegistryVersion() pulumi.IntOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadata) int { return v.RegistryVersion }).(pulumi.IntOutput)
+}
+
 type GetWorkspacesFilter struct {
 	// Used to filter by the name of the object.
 	Name   string   `pulumi:"name"`
@@ -131,15 +5822,24 @@ type GetWorkspacesWorkspace struct {
 	// The IP of the custom DNS.
 	DnsServerIp string `pulumi:"dnsServerIp"`
 	// The DNS zone of the custom DNS to use to resolve names.
-	DnsServerZone string `pulumi:"dnsServerZone"`
+	DnsServerZone         string `pulumi:"dnsServerZone"`
+	EndpointCompartmentId string `pulumi:"endpointCompartmentId"`
+	// DCMS endpoint associated with the container/workspace. Returns null if there is none.
+	EndpointId string `pulumi:"endpointId"`
+	// Name of the private endpoint associated with the container/workspace. Returns null if there is none.
+	EndpointName string `pulumi:"endpointName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A system-generated and immutable identifier assigned to the workspace upon creation.
 	Id               string `pulumi:"id"`
 	IsForceOperation bool   `pulumi:"isForceOperation"`
 	// Specifies whether the private network connection is enabled or disabled.
-	IsPrivateNetworkEnabled bool `pulumi:"isPrivateNetworkEnabled"`
-	QuiesceTimeout          int  `pulumi:"quiesceTimeout"`
+	IsPrivateNetworkEnabled bool   `pulumi:"isPrivateNetworkEnabled"`
+	QuiesceTimeout          int    `pulumi:"quiesceTimeout"`
+	RegistryCompartmentId   string `pulumi:"registryCompartmentId"`
+	// DCMS registry associated with the container/workspace. Returns null if there is none.
+	RegistryId   string `pulumi:"registryId"`
+	RegistryName string `pulumi:"registryName"`
 	// The lifecycle state of a resource. When specified, the operation only returns resources that match the given lifecycle state. When not specified, all lifecycle states are processed as a match.
 	State string `pulumi:"state"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
@@ -177,15 +5877,24 @@ type GetWorkspacesWorkspaceArgs struct {
 	// The IP of the custom DNS.
 	DnsServerIp pulumi.StringInput `pulumi:"dnsServerIp"`
 	// The DNS zone of the custom DNS to use to resolve names.
-	DnsServerZone pulumi.StringInput `pulumi:"dnsServerZone"`
+	DnsServerZone         pulumi.StringInput `pulumi:"dnsServerZone"`
+	EndpointCompartmentId pulumi.StringInput `pulumi:"endpointCompartmentId"`
+	// DCMS endpoint associated with the container/workspace. Returns null if there is none.
+	EndpointId pulumi.StringInput `pulumi:"endpointId"`
+	// Name of the private endpoint associated with the container/workspace. Returns null if there is none.
+	EndpointName pulumi.StringInput `pulumi:"endpointName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// A system-generated and immutable identifier assigned to the workspace upon creation.
 	Id               pulumi.StringInput `pulumi:"id"`
 	IsForceOperation pulumi.BoolInput   `pulumi:"isForceOperation"`
 	// Specifies whether the private network connection is enabled or disabled.
-	IsPrivateNetworkEnabled pulumi.BoolInput `pulumi:"isPrivateNetworkEnabled"`
-	QuiesceTimeout          pulumi.IntInput  `pulumi:"quiesceTimeout"`
+	IsPrivateNetworkEnabled pulumi.BoolInput   `pulumi:"isPrivateNetworkEnabled"`
+	QuiesceTimeout          pulumi.IntInput    `pulumi:"quiesceTimeout"`
+	RegistryCompartmentId   pulumi.StringInput `pulumi:"registryCompartmentId"`
+	// DCMS registry associated with the container/workspace. Returns null if there is none.
+	RegistryId   pulumi.StringInput `pulumi:"registryId"`
+	RegistryName pulumi.StringInput `pulumi:"registryName"`
 	// The lifecycle state of a resource. When specified, the operation only returns resources that match the given lifecycle state. When not specified, all lifecycle states are processed as a match.
 	State pulumi.StringInput `pulumi:"state"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
@@ -281,6 +5990,20 @@ func (o GetWorkspacesWorkspaceOutput) DnsServerZone() pulumi.StringOutput {
 	return o.ApplyT(func(v GetWorkspacesWorkspace) string { return v.DnsServerZone }).(pulumi.StringOutput)
 }
 
+func (o GetWorkspacesWorkspaceOutput) EndpointCompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspacesWorkspace) string { return v.EndpointCompartmentId }).(pulumi.StringOutput)
+}
+
+// DCMS endpoint associated with the container/workspace. Returns null if there is none.
+func (o GetWorkspacesWorkspaceOutput) EndpointId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspacesWorkspace) string { return v.EndpointId }).(pulumi.StringOutput)
+}
+
+// Name of the private endpoint associated with the container/workspace. Returns null if there is none.
+func (o GetWorkspacesWorkspaceOutput) EndpointName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspacesWorkspace) string { return v.EndpointName }).(pulumi.StringOutput)
+}
+
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 func (o GetWorkspacesWorkspaceOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetWorkspacesWorkspace) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
@@ -302,6 +6025,19 @@ func (o GetWorkspacesWorkspaceOutput) IsPrivateNetworkEnabled() pulumi.BoolOutpu
 
 func (o GetWorkspacesWorkspaceOutput) QuiesceTimeout() pulumi.IntOutput {
 	return o.ApplyT(func(v GetWorkspacesWorkspace) int { return v.QuiesceTimeout }).(pulumi.IntOutput)
+}
+
+func (o GetWorkspacesWorkspaceOutput) RegistryCompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspacesWorkspace) string { return v.RegistryCompartmentId }).(pulumi.StringOutput)
+}
+
+// DCMS registry associated with the container/workspace. Returns null if there is none.
+func (o GetWorkspacesWorkspaceOutput) RegistryId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspacesWorkspace) string { return v.RegistryId }).(pulumi.StringOutput)
+}
+
+func (o GetWorkspacesWorkspaceOutput) RegistryName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetWorkspacesWorkspace) string { return v.RegistryName }).(pulumi.StringOutput)
 }
 
 // The lifecycle state of a resource. When specified, the operation only returns resources that match the given lifecycle state. When not specified, all lifecycle states are processed as a match.
@@ -355,10 +6091,174 @@ func (o GetWorkspacesWorkspaceArrayOutput) Index(i pulumi.IntInput) GetWorkspace
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceFolderMetadataInput)(nil)).Elem(), WorkspaceFolderMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceFolderMetadataArrayInput)(nil)).Elem(), WorkspaceFolderMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceFolderMetadataAggregatorInput)(nil)).Elem(), WorkspaceFolderMetadataAggregatorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceFolderMetadataAggregatorArrayInput)(nil)).Elem(), WorkspaceFolderMetadataAggregatorArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceFolderMetadataCountStatisticInput)(nil)).Elem(), WorkspaceFolderMetadataCountStatisticArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceFolderMetadataCountStatisticArrayInput)(nil)).Elem(), WorkspaceFolderMetadataCountStatisticArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceFolderMetadataCountStatisticObjectTypeCountListInput)(nil)).Elem(), WorkspaceFolderMetadataCountStatisticObjectTypeCountListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayInput)(nil)).Elem(), WorkspaceFolderMetadataCountStatisticObjectTypeCountListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceFolderParentRefInput)(nil)).Elem(), WorkspaceFolderParentRefArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceFolderParentRefArrayInput)(nil)).Elem(), WorkspaceFolderParentRefArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceFolderRegistryMetadataInput)(nil)).Elem(), WorkspaceFolderRegistryMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceFolderRegistryMetadataPtrInput)(nil)).Elem(), WorkspaceFolderRegistryMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceProjectMetadataInput)(nil)).Elem(), WorkspaceProjectMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceProjectMetadataArrayInput)(nil)).Elem(), WorkspaceProjectMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceProjectMetadataAggregatorInput)(nil)).Elem(), WorkspaceProjectMetadataAggregatorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceProjectMetadataAggregatorArrayInput)(nil)).Elem(), WorkspaceProjectMetadataAggregatorArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceProjectMetadataCountStatisticInput)(nil)).Elem(), WorkspaceProjectMetadataCountStatisticArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceProjectMetadataCountStatisticArrayInput)(nil)).Elem(), WorkspaceProjectMetadataCountStatisticArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceProjectMetadataCountStatisticObjectTypeCountListInput)(nil)).Elem(), WorkspaceProjectMetadataCountStatisticObjectTypeCountListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayInput)(nil)).Elem(), WorkspaceProjectMetadataCountStatisticObjectTypeCountListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceProjectParentRefInput)(nil)).Elem(), WorkspaceProjectParentRefArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceProjectParentRefArrayInput)(nil)).Elem(), WorkspaceProjectParentRefArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceProjectRegistryMetadataInput)(nil)).Elem(), WorkspaceProjectRegistryMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceProjectRegistryMetadataPtrInput)(nil)).Elem(), WorkspaceProjectRegistryMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceFolderMetadataInput)(nil)).Elem(), GetWorkspaceFolderMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceFolderMetadataArrayInput)(nil)).Elem(), GetWorkspaceFolderMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceFolderMetadataAggregatorInput)(nil)).Elem(), GetWorkspaceFolderMetadataAggregatorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceFolderMetadataAggregatorArrayInput)(nil)).Elem(), GetWorkspaceFolderMetadataAggregatorArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceFolderMetadataCountStatisticInput)(nil)).Elem(), GetWorkspaceFolderMetadataCountStatisticArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceFolderMetadataCountStatisticArrayInput)(nil)).Elem(), GetWorkspaceFolderMetadataCountStatisticArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListInput)(nil)).Elem(), GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayInput)(nil)).Elem(), GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceFolderParentRefInput)(nil)).Elem(), GetWorkspaceFolderParentRefArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceFolderParentRefArrayInput)(nil)).Elem(), GetWorkspaceFolderParentRefArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceFolderRegistryMetadataInput)(nil)).Elem(), GetWorkspaceFolderRegistryMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceFolderRegistryMetadataArrayInput)(nil)).Elem(), GetWorkspaceFolderRegistryMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceFoldersFilterInput)(nil)).Elem(), GetWorkspaceFoldersFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceFoldersFilterArrayInput)(nil)).Elem(), GetWorkspaceFoldersFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceFoldersFolderSummaryCollectionInput)(nil)).Elem(), GetWorkspaceFoldersFolderSummaryCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceFoldersFolderSummaryCollectionArrayInput)(nil)).Elem(), GetWorkspaceFoldersFolderSummaryCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceFoldersFolderSummaryCollectionItemInput)(nil)).Elem(), GetWorkspaceFoldersFolderSummaryCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceFoldersFolderSummaryCollectionItemArrayInput)(nil)).Elem(), GetWorkspaceFoldersFolderSummaryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceFoldersFolderSummaryCollectionItemMetadataInput)(nil)).Elem(), GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArrayInput)(nil)).Elem(), GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorInput)(nil)).Elem(), GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArrayInput)(nil)).Elem(), GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticInput)(nil)).Elem(), GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArrayInput)(nil)).Elem(), GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListInput)(nil)).Elem(), GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayInput)(nil)).Elem(), GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceFoldersFolderSummaryCollectionItemParentRefInput)(nil)).Elem(), GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArrayInput)(nil)).Elem(), GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataInput)(nil)).Elem(), GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceProjectMetadataInput)(nil)).Elem(), GetWorkspaceProjectMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceProjectMetadataArrayInput)(nil)).Elem(), GetWorkspaceProjectMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceProjectMetadataAggregatorInput)(nil)).Elem(), GetWorkspaceProjectMetadataAggregatorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceProjectMetadataAggregatorArrayInput)(nil)).Elem(), GetWorkspaceProjectMetadataAggregatorArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceProjectMetadataCountStatisticInput)(nil)).Elem(), GetWorkspaceProjectMetadataCountStatisticArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceProjectMetadataCountStatisticArrayInput)(nil)).Elem(), GetWorkspaceProjectMetadataCountStatisticArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListInput)(nil)).Elem(), GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayInput)(nil)).Elem(), GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceProjectParentRefInput)(nil)).Elem(), GetWorkspaceProjectParentRefArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceProjectParentRefArrayInput)(nil)).Elem(), GetWorkspaceProjectParentRefArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceProjectRegistryMetadataInput)(nil)).Elem(), GetWorkspaceProjectRegistryMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceProjectRegistryMetadataArrayInput)(nil)).Elem(), GetWorkspaceProjectRegistryMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceProjectsFilterInput)(nil)).Elem(), GetWorkspaceProjectsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceProjectsFilterArrayInput)(nil)).Elem(), GetWorkspaceProjectsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceProjectsProjectSummaryCollectionInput)(nil)).Elem(), GetWorkspaceProjectsProjectSummaryCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceProjectsProjectSummaryCollectionArrayInput)(nil)).Elem(), GetWorkspaceProjectsProjectSummaryCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceProjectsProjectSummaryCollectionItemInput)(nil)).Elem(), GetWorkspaceProjectsProjectSummaryCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceProjectsProjectSummaryCollectionItemArrayInput)(nil)).Elem(), GetWorkspaceProjectsProjectSummaryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceProjectsProjectSummaryCollectionItemMetadataInput)(nil)).Elem(), GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArrayInput)(nil)).Elem(), GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorInput)(nil)).Elem(), GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArrayInput)(nil)).Elem(), GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticInput)(nil)).Elem(), GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArrayInput)(nil)).Elem(), GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListInput)(nil)).Elem(), GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayInput)(nil)).Elem(), GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceProjectsProjectSummaryCollectionItemParentRefInput)(nil)).Elem(), GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArrayInput)(nil)).Elem(), GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataInput)(nil)).Elem(), GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspacesFilterInput)(nil)).Elem(), GetWorkspacesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspacesFilterArrayInput)(nil)).Elem(), GetWorkspacesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspacesWorkspaceInput)(nil)).Elem(), GetWorkspacesWorkspaceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspacesWorkspaceArrayInput)(nil)).Elem(), GetWorkspacesWorkspaceArray{})
+	pulumi.RegisterOutputType(WorkspaceFolderMetadataOutput{})
+	pulumi.RegisterOutputType(WorkspaceFolderMetadataArrayOutput{})
+	pulumi.RegisterOutputType(WorkspaceFolderMetadataAggregatorOutput{})
+	pulumi.RegisterOutputType(WorkspaceFolderMetadataAggregatorArrayOutput{})
+	pulumi.RegisterOutputType(WorkspaceFolderMetadataCountStatisticOutput{})
+	pulumi.RegisterOutputType(WorkspaceFolderMetadataCountStatisticArrayOutput{})
+	pulumi.RegisterOutputType(WorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput{})
+	pulumi.RegisterOutputType(WorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput{})
+	pulumi.RegisterOutputType(WorkspaceFolderParentRefOutput{})
+	pulumi.RegisterOutputType(WorkspaceFolderParentRefArrayOutput{})
+	pulumi.RegisterOutputType(WorkspaceFolderRegistryMetadataOutput{})
+	pulumi.RegisterOutputType(WorkspaceFolderRegistryMetadataPtrOutput{})
+	pulumi.RegisterOutputType(WorkspaceProjectMetadataOutput{})
+	pulumi.RegisterOutputType(WorkspaceProjectMetadataArrayOutput{})
+	pulumi.RegisterOutputType(WorkspaceProjectMetadataAggregatorOutput{})
+	pulumi.RegisterOutputType(WorkspaceProjectMetadataAggregatorArrayOutput{})
+	pulumi.RegisterOutputType(WorkspaceProjectMetadataCountStatisticOutput{})
+	pulumi.RegisterOutputType(WorkspaceProjectMetadataCountStatisticArrayOutput{})
+	pulumi.RegisterOutputType(WorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput{})
+	pulumi.RegisterOutputType(WorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput{})
+	pulumi.RegisterOutputType(WorkspaceProjectParentRefOutput{})
+	pulumi.RegisterOutputType(WorkspaceProjectParentRefArrayOutput{})
+	pulumi.RegisterOutputType(WorkspaceProjectRegistryMetadataOutput{})
+	pulumi.RegisterOutputType(WorkspaceProjectRegistryMetadataPtrOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceFolderMetadataOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceFolderMetadataArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceFolderMetadataAggregatorOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceFolderMetadataAggregatorArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceFolderMetadataCountStatisticOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceFolderMetadataCountStatisticArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceFolderMetadataCountStatisticObjectTypeCountListArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceFolderParentRefOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceFolderParentRefArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceFolderRegistryMetadataOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceFolderRegistryMetadataArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceFoldersFilterOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceFoldersFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceFoldersFolderSummaryCollectionOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceFoldersFolderSummaryCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceFoldersFolderSummaryCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceFoldersFolderSummaryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceFoldersFolderSummaryCollectionItemMetadataAggregatorArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceFoldersFolderSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceFoldersFolderSummaryCollectionItemParentRefOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceFoldersFolderSummaryCollectionItemParentRefArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceFoldersFolderSummaryCollectionItemRegistryMetadataOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceProjectMetadataOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceProjectMetadataArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceProjectMetadataAggregatorOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceProjectMetadataAggregatorArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceProjectMetadataCountStatisticOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceProjectMetadataCountStatisticArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceProjectMetadataCountStatisticObjectTypeCountListArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceProjectParentRefOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceProjectParentRefArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceProjectRegistryMetadataOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceProjectRegistryMetadataArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceProjectsFilterOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceProjectsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceProjectsProjectSummaryCollectionOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceProjectsProjectSummaryCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceProjectsProjectSummaryCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceProjectsProjectSummaryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceProjectsProjectSummaryCollectionItemMetadataAggregatorArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceProjectsProjectSummaryCollectionItemMetadataCountStatisticObjectTypeCountListArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceProjectsProjectSummaryCollectionItemParentRefOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceProjectsProjectSummaryCollectionItemParentRefArrayOutput{})
+	pulumi.RegisterOutputType(GetWorkspaceProjectsProjectSummaryCollectionItemRegistryMetadataOutput{})
 	pulumi.RegisterOutputType(GetWorkspacesFilterOutput{})
 	pulumi.RegisterOutputType(GetWorkspacesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetWorkspacesWorkspaceOutput{})

@@ -40,7 +40,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetManagedDatabaseTableStatisticsResult> InvokeAsync(GetManagedDatabaseTableStatisticsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseTableStatisticsResult>("oci:DatabaseManagement/getManagedDatabaseTableStatistics:getManagedDatabaseTableStatistics", args ?? new GetManagedDatabaseTableStatisticsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseTableStatisticsResult>("oci:DatabaseManagement/getManagedDatabaseTableStatistics:getManagedDatabaseTableStatistics", args ?? new GetManagedDatabaseTableStatisticsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Managed Database Table Statistics in Oracle Cloud Infrastructure Database Management service.
@@ -71,7 +71,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetManagedDatabaseTableStatisticsResult> Invoke(GetManagedDatabaseTableStatisticsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseTableStatisticsResult>("oci:DatabaseManagement/getManagedDatabaseTableStatistics:getManagedDatabaseTableStatistics", args ?? new GetManagedDatabaseTableStatisticsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseTableStatisticsResult>("oci:DatabaseManagement/getManagedDatabaseTableStatistics:getManagedDatabaseTableStatistics", args ?? new GetManagedDatabaseTableStatisticsInvokeArgs(), options.WithDefaults());
     }
 
 

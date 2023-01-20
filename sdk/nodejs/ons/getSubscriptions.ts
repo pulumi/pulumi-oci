@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -25,11 +26,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSubscriptions(args: GetSubscriptionsArgs, opts?: pulumi.InvokeOptions): Promise<GetSubscriptionsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Ons/getSubscriptions:getSubscriptions", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -74,9 +72,27 @@ export interface GetSubscriptionsResult {
      */
     readonly topicId?: string;
 }
-
+/**
+ * This data source provides the list of Subscriptions in Oracle Cloud Infrastructure Notifications service.
+ *
+ * Lists the subscriptions in the specified compartment or topic.
+ *
+ * Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSubscriptions = oci.Ons.getSubscriptions({
+ *     compartmentId: _var.compartment_id,
+ *     topicId: oci_ons_notification_topic.test_notification_topic.id,
+ * });
+ * ```
+ */
 export function getSubscriptionsOutput(args: GetSubscriptionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSubscriptionsResult> {
-    return pulumi.output(args).apply(a => getSubscriptions(a, opts))
+    return pulumi.output(args).apply((a: any) => getSubscriptions(a, opts))
 }
 
 /**

@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Waa
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAppAccelerationPoliciesResult> InvokeAsync(GetAppAccelerationPoliciesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAppAccelerationPoliciesResult>("oci:Waa/getAppAccelerationPolicies:getAppAccelerationPolicies", args ?? new GetAppAccelerationPoliciesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAppAccelerationPoliciesResult>("oci:Waa/getAppAccelerationPolicies:getAppAccelerationPolicies", args ?? new GetAppAccelerationPoliciesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Web App Acceleration Policies in Oracle Cloud Infrastructure Waa service.
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.Waa
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAppAccelerationPoliciesResult> Invoke(GetAppAccelerationPoliciesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAppAccelerationPoliciesResult>("oci:Waa/getAppAccelerationPolicies:getAppAccelerationPolicies", args ?? new GetAppAccelerationPoliciesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAppAccelerationPoliciesResult>("oci:Waa/getAppAccelerationPolicies:getAppAccelerationPolicies", args ?? new GetAppAccelerationPoliciesInvokeArgs(), options.WithDefaults());
     }
 
 

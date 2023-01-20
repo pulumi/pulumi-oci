@@ -12,6 +12,7 @@ import (
 
 // This data source provides the list of Database Registrations in Oracle Cloud Infrastructure Golden Gate service.
 //
+// Note: Deprecated. Use the new resource model APIs instead.
 // Lists the DatabaseRegistrations in the compartment.
 //
 // ## Example Usage
@@ -52,7 +53,7 @@ func GetDatabaseRegistrations(ctx *pulumi.Context, args *GetDatabaseRegistration
 
 // A collection of arguments for invoking getDatabaseRegistrations.
 type GetDatabaseRegistrationsArgs struct {
-	// The ID of the compartment in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// A filter to return only the resources that match the entire 'displayName' given.
 	DisplayName *string                          `pulumi:"displayName"`
@@ -91,7 +92,7 @@ func GetDatabaseRegistrationsOutput(ctx *pulumi.Context, args GetDatabaseRegistr
 
 // A collection of arguments for invoking getDatabaseRegistrations.
 type GetDatabaseRegistrationsOutputArgs struct {
-	// The ID of the compartment in which to list resources.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// A filter to return only the resources that match the entire 'displayName' given.
 	DisplayName pulumi.StringPtrInput                    `pulumi:"displayName"`

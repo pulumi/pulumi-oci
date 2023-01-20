@@ -43,7 +43,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetDbManagementPrivateEndpointsResult> InvokeAsync(GetDbManagementPrivateEndpointsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetDbManagementPrivateEndpointsResult>("oci:DatabaseManagement/getDbManagementPrivateEndpoints:getDbManagementPrivateEndpoints", args ?? new GetDbManagementPrivateEndpointsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetDbManagementPrivateEndpointsResult>("oci:DatabaseManagement/getDbManagementPrivateEndpoints:getDbManagementPrivateEndpoints", args ?? new GetDbManagementPrivateEndpointsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Db Management Private Endpoints in Oracle Cloud Infrastructure Database Management service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetDbManagementPrivateEndpointsResult> Invoke(GetDbManagementPrivateEndpointsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetDbManagementPrivateEndpointsResult>("oci:DatabaseManagement/getDbManagementPrivateEndpoints:getDbManagementPrivateEndpoints", args ?? new GetDbManagementPrivateEndpointsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetDbManagementPrivateEndpointsResult>("oci:DatabaseManagement/getDbManagementPrivateEndpoints:getDbManagementPrivateEndpoints", args ?? new GetDbManagementPrivateEndpointsInvokeArgs(), options.WithDefaults());
     }
 
 

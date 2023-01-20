@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDbManagementPrivateEndpoint(args: GetDbManagementPrivateEndpointArgs, opts?: pulumi.InvokeOptions): Promise<GetDbManagementPrivateEndpointResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getDbManagementPrivateEndpoint:getDbManagementPrivateEndpoint", {
         "dbManagementPrivateEndpointId": args.dbManagementPrivateEndpointId,
     }, opts);
@@ -91,9 +88,24 @@ export interface GetDbManagementPrivateEndpointResult {
      */
     readonly vcnId: string;
 }
-
+/**
+ * This data source provides details about a specific Db Management Private Endpoint resource in Oracle Cloud Infrastructure Database Management service.
+ *
+ * Gets the details of a specific Database Management private endpoint.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDbManagementPrivateEndpoint = oci.DatabaseManagement.getDbManagementPrivateEndpoint({
+ *     dbManagementPrivateEndpointId: oci_database_management_db_management_private_endpoint.test_db_management_private_endpoint.id,
+ * });
+ * ```
+ */
 export function getDbManagementPrivateEndpointOutput(args: GetDbManagementPrivateEndpointOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDbManagementPrivateEndpointResult> {
-    return pulumi.output(args).apply(a => getDbManagementPrivateEndpoint(a, opts))
+    return pulumi.output(args).apply((a: any) => getDbManagementPrivateEndpoint(a, opts))
 }
 
 /**

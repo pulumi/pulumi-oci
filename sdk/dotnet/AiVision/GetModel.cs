@@ -38,7 +38,7 @@ namespace Pulumi.Oci.AiVision
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetModelResult> InvokeAsync(GetModelArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetModelResult>("oci:AiVision/getModel:getModel", args ?? new GetModelArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetModelResult>("oci:AiVision/getModel:getModel", args ?? new GetModelArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Ai Vision service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.AiVision
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetModelResult> Invoke(GetModelInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetModelResult>("oci:AiVision/getModel:getModel", args ?? new GetModelInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetModelResult>("oci:AiVision/getModel:getModel", args ?? new GetModelInvokeArgs(), options.WithDefaults());
     }
 
 

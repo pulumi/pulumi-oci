@@ -43,7 +43,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetManagedDatabaseSqlTuningAdvisorTasksResult> InvokeAsync(GetManagedDatabaseSqlTuningAdvisorTasksArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseSqlTuningAdvisorTasksResult>("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasks:getManagedDatabaseSqlTuningAdvisorTasks", args ?? new GetManagedDatabaseSqlTuningAdvisorTasksArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseSqlTuningAdvisorTasksResult>("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasks:getManagedDatabaseSqlTuningAdvisorTasks", args ?? new GetManagedDatabaseSqlTuningAdvisorTasksArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Managed Database Sql Tuning Advisor Tasks in Oracle Cloud Infrastructure Database Management service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetManagedDatabaseSqlTuningAdvisorTasksResult> Invoke(GetManagedDatabaseSqlTuningAdvisorTasksInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseSqlTuningAdvisorTasksResult>("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasks:getManagedDatabaseSqlTuningAdvisorTasks", args ?? new GetManagedDatabaseSqlTuningAdvisorTasksInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseSqlTuningAdvisorTasksResult>("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasks:getManagedDatabaseSqlTuningAdvisorTasks", args ?? new GetManagedDatabaseSqlTuningAdvisorTasksInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getRegistryTypes(args: GetRegistryTypesArgs, opts?: pulumi.InvokeOptions): Promise<GetRegistryTypesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataConnectivity/getRegistryTypes:getRegistryTypes", {
         "filters": args.filters,
         "name": args.name,
@@ -76,9 +74,26 @@ export interface GetRegistryTypesResult {
      */
     readonly typesSummaryCollections: outputs.DataConnectivity.GetRegistryTypesTypesSummaryCollection[];
 }
-
+/**
+ * This data source provides the list of Registry Types in Oracle Cloud Infrastructure Data Connectivity service.
+ *
+ * This endpoint retrieves a list of all the supported connector types.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testRegistryTypes = oci.DataConnectivity.getRegistryTypes({
+ *     registryId: oci_data_connectivity_registry.test_registry.id,
+ *     name: _var.registry_type_name,
+ *     type: _var.registry_type_type,
+ * });
+ * ```
+ */
 export function getRegistryTypesOutput(args: GetRegistryTypesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetRegistryTypesResult> {
-    return pulumi.output(args).apply(a => getRegistryTypes(a, opts))
+    return pulumi.output(args).apply((a: any) => getRegistryTypes(a, opts))
 }
 
 /**

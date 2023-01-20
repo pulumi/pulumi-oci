@@ -200,14 +200,14 @@ public class DatabaseSoftwareImage extends com.pulumi.resources.CustomResource {
         return this.imageType;
     }
     /**
-     * The patches included in the image and the version of the image
+     * The patches included in the image and the version of the image.
      * 
      */
     @Export(name="includedPatchesSummary", type=String.class, parameters={})
     private Output<String> includedPatchesSummary;
 
     /**
-     * @return The patches included in the image and the version of the image
+     * @return The patches included in the image and the version of the image.
      * 
      */
     public Output<String> includedPatchesSummary() {

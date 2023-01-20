@@ -2,15 +2,13 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 export function getBootVolumeAttachments(args: GetBootVolumeAttachmentsArgs, opts?: pulumi.InvokeOptions): Promise<GetBootVolumeAttachmentsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getBootVolumeAttachments:getBootVolumeAttachments", {
         "availabilityDomain": args.availabilityDomain,
         "bootVolumeId": args.bootVolumeId,
@@ -73,9 +71,8 @@ export interface GetBootVolumeAttachmentsResult {
      */
     readonly instanceId?: string;
 }
-
 export function getBootVolumeAttachmentsOutput(args: GetBootVolumeAttachmentsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBootVolumeAttachmentsResult> {
-    return pulumi.output(args).apply(a => getBootVolumeAttachments(a, opts))
+    return pulumi.output(args).apply((a: any) => getBootVolumeAttachments(a, opts))
 }
 
 /**

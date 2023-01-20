@@ -135,6 +135,8 @@ func (o AnalyticsClusterClusterNodeArrayOutput) Index(i pulumi.IntInput) Analyti
 }
 
 type ChannelSource struct {
+	// (Updatable) Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
+	AnonymousTransactionsHandling *ChannelSourceAnonymousTransactionsHandling `pulumi:"anonymousTransactionsHandling"`
 	// (Updatable) The network address of the MySQL instance.
 	Hostname string `pulumi:"hostname"`
 	// (Updatable) The password for the replication user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
@@ -163,6 +165,8 @@ type ChannelSourceInput interface {
 }
 
 type ChannelSourceArgs struct {
+	// (Updatable) Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
+	AnonymousTransactionsHandling ChannelSourceAnonymousTransactionsHandlingPtrInput `pulumi:"anonymousTransactionsHandling"`
 	// (Updatable) The network address of the MySQL instance.
 	Hostname pulumi.StringInput `pulumi:"hostname"`
 	// (Updatable) The password for the replication user. The password must be between 8 and 32 characters long, and must contain at least 1 numeric character, 1 lowercase character, 1 uppercase character, and 1 special (nonalphanumeric) character.
@@ -256,6 +260,13 @@ func (o ChannelSourceOutput) ToChannelSourcePtrOutputWithContext(ctx context.Con
 	}).(ChannelSourcePtrOutput)
 }
 
+// (Updatable) Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
+func (o ChannelSourceOutput) AnonymousTransactionsHandling() ChannelSourceAnonymousTransactionsHandlingPtrOutput {
+	return o.ApplyT(func(v ChannelSource) *ChannelSourceAnonymousTransactionsHandling {
+		return v.AnonymousTransactionsHandling
+	}).(ChannelSourceAnonymousTransactionsHandlingPtrOutput)
+}
+
 // (Updatable) The network address of the MySQL instance.
 func (o ChannelSourceOutput) Hostname() pulumi.StringOutput {
 	return o.ApplyT(func(v ChannelSource) string { return v.Hostname }).(pulumi.StringOutput)
@@ -313,6 +324,16 @@ func (o ChannelSourcePtrOutput) Elem() ChannelSourceOutput {
 		var ret ChannelSource
 		return ret
 	}).(ChannelSourceOutput)
+}
+
+// (Updatable) Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
+func (o ChannelSourcePtrOutput) AnonymousTransactionsHandling() ChannelSourceAnonymousTransactionsHandlingPtrOutput {
+	return o.ApplyT(func(v *ChannelSource) *ChannelSourceAnonymousTransactionsHandling {
+		if v == nil {
+			return nil
+		}
+		return v.AnonymousTransactionsHandling
+	}).(ChannelSourceAnonymousTransactionsHandlingPtrOutput)
 }
 
 // (Updatable) The network address of the MySQL instance.
@@ -382,6 +403,200 @@ func (o ChannelSourcePtrOutput) Username() pulumi.StringPtrOutput {
 			return nil
 		}
 		return &v.Username
+	}).(pulumi.StringPtrOutput)
+}
+
+type ChannelSourceAnonymousTransactionsHandling struct {
+	// (Updatable) Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+	LastConfiguredLogFilename *string `pulumi:"lastConfiguredLogFilename"`
+	// (Updatable) Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+	LastConfiguredLogOffset *string `pulumi:"lastConfiguredLogOffset"`
+	// (Updatable) Specifies how the replication channel handles anonymous transactions.
+	Policy string `pulumi:"policy"`
+	// (Updatable) The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
+	Uuid *string `pulumi:"uuid"`
+}
+
+// ChannelSourceAnonymousTransactionsHandlingInput is an input type that accepts ChannelSourceAnonymousTransactionsHandlingArgs and ChannelSourceAnonymousTransactionsHandlingOutput values.
+// You can construct a concrete instance of `ChannelSourceAnonymousTransactionsHandlingInput` via:
+//
+//	ChannelSourceAnonymousTransactionsHandlingArgs{...}
+type ChannelSourceAnonymousTransactionsHandlingInput interface {
+	pulumi.Input
+
+	ToChannelSourceAnonymousTransactionsHandlingOutput() ChannelSourceAnonymousTransactionsHandlingOutput
+	ToChannelSourceAnonymousTransactionsHandlingOutputWithContext(context.Context) ChannelSourceAnonymousTransactionsHandlingOutput
+}
+
+type ChannelSourceAnonymousTransactionsHandlingArgs struct {
+	// (Updatable) Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+	LastConfiguredLogFilename pulumi.StringPtrInput `pulumi:"lastConfiguredLogFilename"`
+	// (Updatable) Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+	LastConfiguredLogOffset pulumi.StringPtrInput `pulumi:"lastConfiguredLogOffset"`
+	// (Updatable) Specifies how the replication channel handles anonymous transactions.
+	Policy pulumi.StringInput `pulumi:"policy"`
+	// (Updatable) The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
+	Uuid pulumi.StringPtrInput `pulumi:"uuid"`
+}
+
+func (ChannelSourceAnonymousTransactionsHandlingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ChannelSourceAnonymousTransactionsHandling)(nil)).Elem()
+}
+
+func (i ChannelSourceAnonymousTransactionsHandlingArgs) ToChannelSourceAnonymousTransactionsHandlingOutput() ChannelSourceAnonymousTransactionsHandlingOutput {
+	return i.ToChannelSourceAnonymousTransactionsHandlingOutputWithContext(context.Background())
+}
+
+func (i ChannelSourceAnonymousTransactionsHandlingArgs) ToChannelSourceAnonymousTransactionsHandlingOutputWithContext(ctx context.Context) ChannelSourceAnonymousTransactionsHandlingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ChannelSourceAnonymousTransactionsHandlingOutput)
+}
+
+func (i ChannelSourceAnonymousTransactionsHandlingArgs) ToChannelSourceAnonymousTransactionsHandlingPtrOutput() ChannelSourceAnonymousTransactionsHandlingPtrOutput {
+	return i.ToChannelSourceAnonymousTransactionsHandlingPtrOutputWithContext(context.Background())
+}
+
+func (i ChannelSourceAnonymousTransactionsHandlingArgs) ToChannelSourceAnonymousTransactionsHandlingPtrOutputWithContext(ctx context.Context) ChannelSourceAnonymousTransactionsHandlingPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ChannelSourceAnonymousTransactionsHandlingOutput).ToChannelSourceAnonymousTransactionsHandlingPtrOutputWithContext(ctx)
+}
+
+// ChannelSourceAnonymousTransactionsHandlingPtrInput is an input type that accepts ChannelSourceAnonymousTransactionsHandlingArgs, ChannelSourceAnonymousTransactionsHandlingPtr and ChannelSourceAnonymousTransactionsHandlingPtrOutput values.
+// You can construct a concrete instance of `ChannelSourceAnonymousTransactionsHandlingPtrInput` via:
+//
+//	        ChannelSourceAnonymousTransactionsHandlingArgs{...}
+//
+//	or:
+//
+//	        nil
+type ChannelSourceAnonymousTransactionsHandlingPtrInput interface {
+	pulumi.Input
+
+	ToChannelSourceAnonymousTransactionsHandlingPtrOutput() ChannelSourceAnonymousTransactionsHandlingPtrOutput
+	ToChannelSourceAnonymousTransactionsHandlingPtrOutputWithContext(context.Context) ChannelSourceAnonymousTransactionsHandlingPtrOutput
+}
+
+type channelSourceAnonymousTransactionsHandlingPtrType ChannelSourceAnonymousTransactionsHandlingArgs
+
+func ChannelSourceAnonymousTransactionsHandlingPtr(v *ChannelSourceAnonymousTransactionsHandlingArgs) ChannelSourceAnonymousTransactionsHandlingPtrInput {
+	return (*channelSourceAnonymousTransactionsHandlingPtrType)(v)
+}
+
+func (*channelSourceAnonymousTransactionsHandlingPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ChannelSourceAnonymousTransactionsHandling)(nil)).Elem()
+}
+
+func (i *channelSourceAnonymousTransactionsHandlingPtrType) ToChannelSourceAnonymousTransactionsHandlingPtrOutput() ChannelSourceAnonymousTransactionsHandlingPtrOutput {
+	return i.ToChannelSourceAnonymousTransactionsHandlingPtrOutputWithContext(context.Background())
+}
+
+func (i *channelSourceAnonymousTransactionsHandlingPtrType) ToChannelSourceAnonymousTransactionsHandlingPtrOutputWithContext(ctx context.Context) ChannelSourceAnonymousTransactionsHandlingPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ChannelSourceAnonymousTransactionsHandlingPtrOutput)
+}
+
+type ChannelSourceAnonymousTransactionsHandlingOutput struct{ *pulumi.OutputState }
+
+func (ChannelSourceAnonymousTransactionsHandlingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ChannelSourceAnonymousTransactionsHandling)(nil)).Elem()
+}
+
+func (o ChannelSourceAnonymousTransactionsHandlingOutput) ToChannelSourceAnonymousTransactionsHandlingOutput() ChannelSourceAnonymousTransactionsHandlingOutput {
+	return o
+}
+
+func (o ChannelSourceAnonymousTransactionsHandlingOutput) ToChannelSourceAnonymousTransactionsHandlingOutputWithContext(ctx context.Context) ChannelSourceAnonymousTransactionsHandlingOutput {
+	return o
+}
+
+func (o ChannelSourceAnonymousTransactionsHandlingOutput) ToChannelSourceAnonymousTransactionsHandlingPtrOutput() ChannelSourceAnonymousTransactionsHandlingPtrOutput {
+	return o.ToChannelSourceAnonymousTransactionsHandlingPtrOutputWithContext(context.Background())
+}
+
+func (o ChannelSourceAnonymousTransactionsHandlingOutput) ToChannelSourceAnonymousTransactionsHandlingPtrOutputWithContext(ctx context.Context) ChannelSourceAnonymousTransactionsHandlingPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ChannelSourceAnonymousTransactionsHandling) *ChannelSourceAnonymousTransactionsHandling {
+		return &v
+	}).(ChannelSourceAnonymousTransactionsHandlingPtrOutput)
+}
+
+// (Updatable) Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+func (o ChannelSourceAnonymousTransactionsHandlingOutput) LastConfiguredLogFilename() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ChannelSourceAnonymousTransactionsHandling) *string { return v.LastConfiguredLogFilename }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+func (o ChannelSourceAnonymousTransactionsHandlingOutput) LastConfiguredLogOffset() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ChannelSourceAnonymousTransactionsHandling) *string { return v.LastConfiguredLogOffset }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Specifies how the replication channel handles anonymous transactions.
+func (o ChannelSourceAnonymousTransactionsHandlingOutput) Policy() pulumi.StringOutput {
+	return o.ApplyT(func(v ChannelSourceAnonymousTransactionsHandling) string { return v.Policy }).(pulumi.StringOutput)
+}
+
+// (Updatable) The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
+func (o ChannelSourceAnonymousTransactionsHandlingOutput) Uuid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ChannelSourceAnonymousTransactionsHandling) *string { return v.Uuid }).(pulumi.StringPtrOutput)
+}
+
+type ChannelSourceAnonymousTransactionsHandlingPtrOutput struct{ *pulumi.OutputState }
+
+func (ChannelSourceAnonymousTransactionsHandlingPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ChannelSourceAnonymousTransactionsHandling)(nil)).Elem()
+}
+
+func (o ChannelSourceAnonymousTransactionsHandlingPtrOutput) ToChannelSourceAnonymousTransactionsHandlingPtrOutput() ChannelSourceAnonymousTransactionsHandlingPtrOutput {
+	return o
+}
+
+func (o ChannelSourceAnonymousTransactionsHandlingPtrOutput) ToChannelSourceAnonymousTransactionsHandlingPtrOutputWithContext(ctx context.Context) ChannelSourceAnonymousTransactionsHandlingPtrOutput {
+	return o
+}
+
+func (o ChannelSourceAnonymousTransactionsHandlingPtrOutput) Elem() ChannelSourceAnonymousTransactionsHandlingOutput {
+	return o.ApplyT(func(v *ChannelSourceAnonymousTransactionsHandling) ChannelSourceAnonymousTransactionsHandling {
+		if v != nil {
+			return *v
+		}
+		var ret ChannelSourceAnonymousTransactionsHandling
+		return ret
+	}).(ChannelSourceAnonymousTransactionsHandlingOutput)
+}
+
+// (Updatable) Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+func (o ChannelSourceAnonymousTransactionsHandlingPtrOutput) LastConfiguredLogFilename() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ChannelSourceAnonymousTransactionsHandling) *string {
+		if v == nil {
+			return nil
+		}
+		return v.LastConfiguredLogFilename
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+func (o ChannelSourceAnonymousTransactionsHandlingPtrOutput) LastConfiguredLogOffset() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ChannelSourceAnonymousTransactionsHandling) *string {
+		if v == nil {
+			return nil
+		}
+		return v.LastConfiguredLogOffset
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Specifies how the replication channel handles anonymous transactions.
+func (o ChannelSourceAnonymousTransactionsHandlingPtrOutput) Policy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ChannelSourceAnonymousTransactionsHandling) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Policy
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
+func (o ChannelSourceAnonymousTransactionsHandlingPtrOutput) Uuid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ChannelSourceAnonymousTransactionsHandling) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Uuid
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -548,6 +763,8 @@ type ChannelTarget struct {
 	ChannelName *string `pulumi:"channelName"`
 	// The OCID of the target DB System.
 	DbSystemId string `pulumi:"dbSystemId"`
+	// (Updatable) Replication filter rules to be applied at the DB System Channel target.
+	Filters []ChannelTargetFilter `pulumi:"filters"`
 	// (Updatable) The specific target identifier.
 	TargetType string `pulumi:"targetType"`
 }
@@ -570,6 +787,8 @@ type ChannelTargetArgs struct {
 	ChannelName pulumi.StringPtrInput `pulumi:"channelName"`
 	// The OCID of the target DB System.
 	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
+	// (Updatable) Replication filter rules to be applied at the DB System Channel target.
+	Filters ChannelTargetFilterArrayInput `pulumi:"filters"`
 	// (Updatable) The specific target identifier.
 	TargetType pulumi.StringInput `pulumi:"targetType"`
 }
@@ -666,6 +885,11 @@ func (o ChannelTargetOutput) DbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v ChannelTarget) string { return v.DbSystemId }).(pulumi.StringOutput)
 }
 
+// (Updatable) Replication filter rules to be applied at the DB System Channel target.
+func (o ChannelTargetOutput) Filters() ChannelTargetFilterArrayOutput {
+	return o.ApplyT(func(v ChannelTarget) []ChannelTargetFilter { return v.Filters }).(ChannelTargetFilterArrayOutput)
+}
+
 // (Updatable) The specific target identifier.
 func (o ChannelTargetOutput) TargetType() pulumi.StringOutput {
 	return o.ApplyT(func(v ChannelTarget) string { return v.TargetType }).(pulumi.StringOutput)
@@ -725,6 +949,16 @@ func (o ChannelTargetPtrOutput) DbSystemId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) Replication filter rules to be applied at the DB System Channel target.
+func (o ChannelTargetPtrOutput) Filters() ChannelTargetFilterArrayOutput {
+	return o.ApplyT(func(v *ChannelTarget) []ChannelTargetFilter {
+		if v == nil {
+			return nil
+		}
+		return v.Filters
+	}).(ChannelTargetFilterArrayOutput)
+}
+
 // (Updatable) The specific target identifier.
 func (o ChannelTargetPtrOutput) TargetType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ChannelTarget) *string {
@@ -733,6 +967,112 @@ func (o ChannelTargetPtrOutput) TargetType() pulumi.StringPtrOutput {
 		}
 		return &v.TargetType
 	}).(pulumi.StringPtrOutput)
+}
+
+type ChannelTargetFilter struct {
+	// (Updatable) The type of the filter rule.
+	Type string `pulumi:"type"`
+	// (Updatable) The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+	Value string `pulumi:"value"`
+}
+
+// ChannelTargetFilterInput is an input type that accepts ChannelTargetFilterArgs and ChannelTargetFilterOutput values.
+// You can construct a concrete instance of `ChannelTargetFilterInput` via:
+//
+//	ChannelTargetFilterArgs{...}
+type ChannelTargetFilterInput interface {
+	pulumi.Input
+
+	ToChannelTargetFilterOutput() ChannelTargetFilterOutput
+	ToChannelTargetFilterOutputWithContext(context.Context) ChannelTargetFilterOutput
+}
+
+type ChannelTargetFilterArgs struct {
+	// (Updatable) The type of the filter rule.
+	Type pulumi.StringInput `pulumi:"type"`
+	// (Updatable) The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (ChannelTargetFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ChannelTargetFilter)(nil)).Elem()
+}
+
+func (i ChannelTargetFilterArgs) ToChannelTargetFilterOutput() ChannelTargetFilterOutput {
+	return i.ToChannelTargetFilterOutputWithContext(context.Background())
+}
+
+func (i ChannelTargetFilterArgs) ToChannelTargetFilterOutputWithContext(ctx context.Context) ChannelTargetFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ChannelTargetFilterOutput)
+}
+
+// ChannelTargetFilterArrayInput is an input type that accepts ChannelTargetFilterArray and ChannelTargetFilterArrayOutput values.
+// You can construct a concrete instance of `ChannelTargetFilterArrayInput` via:
+//
+//	ChannelTargetFilterArray{ ChannelTargetFilterArgs{...} }
+type ChannelTargetFilterArrayInput interface {
+	pulumi.Input
+
+	ToChannelTargetFilterArrayOutput() ChannelTargetFilterArrayOutput
+	ToChannelTargetFilterArrayOutputWithContext(context.Context) ChannelTargetFilterArrayOutput
+}
+
+type ChannelTargetFilterArray []ChannelTargetFilterInput
+
+func (ChannelTargetFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ChannelTargetFilter)(nil)).Elem()
+}
+
+func (i ChannelTargetFilterArray) ToChannelTargetFilterArrayOutput() ChannelTargetFilterArrayOutput {
+	return i.ToChannelTargetFilterArrayOutputWithContext(context.Background())
+}
+
+func (i ChannelTargetFilterArray) ToChannelTargetFilterArrayOutputWithContext(ctx context.Context) ChannelTargetFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ChannelTargetFilterArrayOutput)
+}
+
+type ChannelTargetFilterOutput struct{ *pulumi.OutputState }
+
+func (ChannelTargetFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ChannelTargetFilter)(nil)).Elem()
+}
+
+func (o ChannelTargetFilterOutput) ToChannelTargetFilterOutput() ChannelTargetFilterOutput {
+	return o
+}
+
+func (o ChannelTargetFilterOutput) ToChannelTargetFilterOutputWithContext(ctx context.Context) ChannelTargetFilterOutput {
+	return o
+}
+
+// (Updatable) The type of the filter rule.
+func (o ChannelTargetFilterOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v ChannelTargetFilter) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// (Updatable) The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+func (o ChannelTargetFilterOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v ChannelTargetFilter) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type ChannelTargetFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (ChannelTargetFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ChannelTargetFilter)(nil)).Elem()
+}
+
+func (o ChannelTargetFilterArrayOutput) ToChannelTargetFilterArrayOutput() ChannelTargetFilterArrayOutput {
+	return o
+}
+
+func (o ChannelTargetFilterArrayOutput) ToChannelTargetFilterArrayOutputWithContext(ctx context.Context) ChannelTargetFilterArrayOutput {
+	return o
+}
+
+func (o ChannelTargetFilterArrayOutput) Index(i pulumi.IntInput) ChannelTargetFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ChannelTargetFilter {
+		return vs[0].([]ChannelTargetFilter)[vs[1].(int)]
+	}).(ChannelTargetFilterOutput)
 }
 
 type HeatWaveClusterClusterNode struct {
@@ -866,7 +1206,7 @@ type MysqlBackupDbSystemSnapshot struct {
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The Backup policy for the DB System.
 	BackupPolicies []MysqlBackupDbSystemSnapshotBackupPolicy `pulumi:"backupPolicies"`
-	// (Updatable) The OCID of the compartment.
+	// (Updatable) The OCID of the compartment the backup exists in.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The OCID of the Configuration to be used for Instances in this DB System.
 	ConfigurationId *string `pulumi:"configurationId"`
@@ -896,7 +1236,7 @@ type MysqlBackupDbSystemSnapshot struct {
 	IpAddress *string `pulumi:"ipAddress"`
 	// Specifies if the DB System is highly available.
 	IsHighlyAvailable *bool `pulumi:"isHighlyAvailable"`
-	// The Maintenance Policy for the DB System.
+	// The Maintenance Policy for the DB System or Read Replica that this model is included in.
 	Maintenances []MysqlBackupDbSystemSnapshotMaintenance `pulumi:"maintenances"`
 	// The MySQL server version of the DB System used for backup.
 	MysqlVersion *string `pulumi:"mysqlVersion"`
@@ -928,7 +1268,7 @@ type MysqlBackupDbSystemSnapshotArgs struct {
 	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
 	// The Backup policy for the DB System.
 	BackupPolicies MysqlBackupDbSystemSnapshotBackupPolicyArrayInput `pulumi:"backupPolicies"`
-	// (Updatable) The OCID of the compartment.
+	// (Updatable) The OCID of the compartment the backup exists in.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The OCID of the Configuration to be used for Instances in this DB System.
 	ConfigurationId pulumi.StringPtrInput `pulumi:"configurationId"`
@@ -958,7 +1298,7 @@ type MysqlBackupDbSystemSnapshotArgs struct {
 	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
 	// Specifies if the DB System is highly available.
 	IsHighlyAvailable pulumi.BoolPtrInput `pulumi:"isHighlyAvailable"`
-	// The Maintenance Policy for the DB System.
+	// The Maintenance Policy for the DB System or Read Replica that this model is included in.
 	Maintenances MysqlBackupDbSystemSnapshotMaintenanceArrayInput `pulumi:"maintenances"`
 	// The MySQL server version of the DB System used for backup.
 	MysqlVersion pulumi.StringPtrInput `pulumi:"mysqlVersion"`
@@ -1038,7 +1378,7 @@ func (o MysqlBackupDbSystemSnapshotOutput) BackupPolicies() MysqlBackupDbSystemS
 	return o.ApplyT(func(v MysqlBackupDbSystemSnapshot) []MysqlBackupDbSystemSnapshotBackupPolicy { return v.BackupPolicies }).(MysqlBackupDbSystemSnapshotBackupPolicyArrayOutput)
 }
 
-// (Updatable) The OCID of the compartment.
+// (Updatable) The OCID of the compartment the backup exists in.
 func (o MysqlBackupDbSystemSnapshotOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MysqlBackupDbSystemSnapshot) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
@@ -1115,7 +1455,7 @@ func (o MysqlBackupDbSystemSnapshotOutput) IsHighlyAvailable() pulumi.BoolPtrOut
 	return o.ApplyT(func(v MysqlBackupDbSystemSnapshot) *bool { return v.IsHighlyAvailable }).(pulumi.BoolPtrOutput)
 }
 
-// The Maintenance Policy for the DB System.
+// The Maintenance Policy for the DB System or Read Replica that this model is included in.
 func (o MysqlBackupDbSystemSnapshotOutput) Maintenances() MysqlBackupDbSystemSnapshotMaintenanceArrayOutput {
 	return o.ApplyT(func(v MysqlBackupDbSystemSnapshot) []MysqlBackupDbSystemSnapshotMaintenance { return v.Maintenances }).(MysqlBackupDbSystemSnapshotMaintenanceArrayOutput)
 }
@@ -1532,6 +1872,10 @@ type MysqlBackupDbSystemSnapshotEndpoint struct {
 	Port *int `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 	PortX *int `pulumi:"portX"`
+	// The OCID of the resource that this endpoint is attached to.
+	ResourceId *string `pulumi:"resourceId"`
+	// The type of endpoint that clients and connectors can connect to.
+	ResourceType *string `pulumi:"resourceType"`
 	// The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
 	Status *string `pulumi:"status"`
 	// Additional information about the current endpoint status.
@@ -1560,6 +1904,10 @@ type MysqlBackupDbSystemSnapshotEndpointArgs struct {
 	Port pulumi.IntPtrInput `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 	PortX pulumi.IntPtrInput `pulumi:"portX"`
+	// The OCID of the resource that this endpoint is attached to.
+	ResourceId pulumi.StringPtrInput `pulumi:"resourceId"`
+	// The type of endpoint that clients and connectors can connect to.
+	ResourceType pulumi.StringPtrInput `pulumi:"resourceType"`
 	// The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
 	Status pulumi.StringPtrInput `pulumi:"status"`
 	// Additional information about the current endpoint status.
@@ -1640,6 +1988,16 @@ func (o MysqlBackupDbSystemSnapshotEndpointOutput) Port() pulumi.IntPtrOutput {
 // The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 func (o MysqlBackupDbSystemSnapshotEndpointOutput) PortX() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotEndpoint) *int { return v.PortX }).(pulumi.IntPtrOutput)
+}
+
+// The OCID of the resource that this endpoint is attached to.
+func (o MysqlBackupDbSystemSnapshotEndpointOutput) ResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotEndpoint) *string { return v.ResourceId }).(pulumi.StringPtrOutput)
+}
+
+// The type of endpoint that clients and connectors can connect to.
+func (o MysqlBackupDbSystemSnapshotEndpointOutput) ResourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotEndpoint) *string { return v.ResourceType }).(pulumi.StringPtrOutput)
 }
 
 // The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
@@ -3600,7 +3958,7 @@ func (o MysqlConfigurationVariablesPtrOutput) WaitTimeout() pulumi.IntPtrOutput 
 type MysqlDbSystemAnalyticsCluster struct {
 	// The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
 	ClusterSize *int `pulumi:"clusterSize"`
-	// The name of the shape. The shape determines the resources allocated
+	// (Updatable) The name of the shape. The shape determines the resources allocated
 	// * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName *string `pulumi:"shapeName"`
 	// (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
@@ -3625,7 +3983,7 @@ type MysqlDbSystemAnalyticsClusterInput interface {
 type MysqlDbSystemAnalyticsClusterArgs struct {
 	// The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
 	ClusterSize pulumi.IntPtrInput `pulumi:"clusterSize"`
-	// The name of the shape. The shape determines the resources allocated
+	// (Updatable) The name of the shape. The shape determines the resources allocated
 	// * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName pulumi.StringPtrInput `pulumi:"shapeName"`
 	// (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
@@ -3692,7 +4050,7 @@ func (o MysqlDbSystemAnalyticsClusterOutput) ClusterSize() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v MysqlDbSystemAnalyticsCluster) *int { return v.ClusterSize }).(pulumi.IntPtrOutput)
 }
 
-// The name of the shape. The shape determines the resources allocated
+// (Updatable) The name of the shape. The shape determines the resources allocated
 // * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 func (o MysqlDbSystemAnalyticsClusterOutput) ShapeName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MysqlDbSystemAnalyticsCluster) *string { return v.ShapeName }).(pulumi.StringPtrOutput)
@@ -4299,11 +4657,13 @@ func (o MysqlDbSystemChannelArrayOutput) Index(i pulumi.IntInput) MysqlDbSystemC
 }
 
 type MysqlDbSystemChannelSource struct {
+	// Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
+	AnonymousTransactionsHandlings []MysqlDbSystemChannelSourceAnonymousTransactionsHandling `pulumi:"anonymousTransactionsHandlings"`
 	// The network address of the DB System.
 	Hostname *string `pulumi:"hostname"`
 	// The port for primary endpoint of the DB System to listen on.
 	Port *int `pulumi:"port"`
-	// The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup.
+	// The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup. Use `IMPORTURL` for creating a new database from a URL Object Storage PAR.
 	SourceType *string `pulumi:"sourceType"`
 	// The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
 	SslCaCertificates []MysqlDbSystemChannelSourceSslCaCertificate `pulumi:"sslCaCertificates"`
@@ -4325,11 +4685,13 @@ type MysqlDbSystemChannelSourceInput interface {
 }
 
 type MysqlDbSystemChannelSourceArgs struct {
+	// Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
+	AnonymousTransactionsHandlings MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayInput `pulumi:"anonymousTransactionsHandlings"`
 	// The network address of the DB System.
 	Hostname pulumi.StringPtrInput `pulumi:"hostname"`
 	// The port for primary endpoint of the DB System to listen on.
 	Port pulumi.IntPtrInput `pulumi:"port"`
-	// The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup.
+	// The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup. Use `IMPORTURL` for creating a new database from a URL Object Storage PAR.
 	SourceType pulumi.StringPtrInput `pulumi:"sourceType"`
 	// The CA certificate of the server used for VERIFY_IDENTITY and VERIFY_CA ssl modes.
 	SslCaCertificates MysqlDbSystemChannelSourceSslCaCertificateArrayInput `pulumi:"sslCaCertificates"`
@@ -4390,6 +4752,13 @@ func (o MysqlDbSystemChannelSourceOutput) ToMysqlDbSystemChannelSourceOutputWith
 	return o
 }
 
+// Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
+func (o MysqlDbSystemChannelSourceOutput) AnonymousTransactionsHandlings() MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput {
+	return o.ApplyT(func(v MysqlDbSystemChannelSource) []MysqlDbSystemChannelSourceAnonymousTransactionsHandling {
+		return v.AnonymousTransactionsHandlings
+	}).(MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput)
+}
+
 // The network address of the DB System.
 func (o MysqlDbSystemChannelSourceOutput) Hostname() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MysqlDbSystemChannelSource) *string { return v.Hostname }).(pulumi.StringPtrOutput)
@@ -4400,7 +4769,7 @@ func (o MysqlDbSystemChannelSourceOutput) Port() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v MysqlDbSystemChannelSource) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
-// The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup.
+// The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup. Use `IMPORTURL` for creating a new database from a URL Object Storage PAR.
 func (o MysqlDbSystemChannelSourceOutput) SourceType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MysqlDbSystemChannelSource) *string { return v.SourceType }).(pulumi.StringPtrOutput)
 }
@@ -4440,6 +4809,134 @@ func (o MysqlDbSystemChannelSourceArrayOutput) Index(i pulumi.IntInput) MysqlDbS
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlDbSystemChannelSource {
 		return vs[0].([]MysqlDbSystemChannelSource)[vs[1].(int)]
 	}).(MysqlDbSystemChannelSourceOutput)
+}
+
+type MysqlDbSystemChannelSourceAnonymousTransactionsHandling struct {
+	// Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+	LastConfiguredLogFilename *string `pulumi:"lastConfiguredLogFilename"`
+	// Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+	LastConfiguredLogOffset *string `pulumi:"lastConfiguredLogOffset"`
+	// Specifies how the replication channel handles anonymous transactions.
+	Policy *string `pulumi:"policy"`
+	// The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
+	Uuid *string `pulumi:"uuid"`
+}
+
+// MysqlDbSystemChannelSourceAnonymousTransactionsHandlingInput is an input type that accepts MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs and MysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput values.
+// You can construct a concrete instance of `MysqlDbSystemChannelSourceAnonymousTransactionsHandlingInput` via:
+//
+//	MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs{...}
+type MysqlDbSystemChannelSourceAnonymousTransactionsHandlingInput interface {
+	pulumi.Input
+
+	ToMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput() MysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput
+	ToMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutputWithContext(context.Context) MysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput
+}
+
+type MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs struct {
+	// Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+	LastConfiguredLogFilename pulumi.StringPtrInput `pulumi:"lastConfiguredLogFilename"`
+	// Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+	LastConfiguredLogOffset pulumi.StringPtrInput `pulumi:"lastConfiguredLogOffset"`
+	// Specifies how the replication channel handles anonymous transactions.
+	Policy pulumi.StringPtrInput `pulumi:"policy"`
+	// The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
+	Uuid pulumi.StringPtrInput `pulumi:"uuid"`
+}
+
+func (MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlDbSystemChannelSourceAnonymousTransactionsHandling)(nil)).Elem()
+}
+
+func (i MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs) ToMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput() MysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput {
+	return i.ToMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutputWithContext(context.Background())
+}
+
+func (i MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs) ToMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutputWithContext(ctx context.Context) MysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput)
+}
+
+// MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayInput is an input type that accepts MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArray and MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput values.
+// You can construct a concrete instance of `MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayInput` via:
+//
+//	MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArray{ MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs{...} }
+type MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayInput interface {
+	pulumi.Input
+
+	ToMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput() MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput
+	ToMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutputWithContext(context.Context) MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput
+}
+
+type MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArray []MysqlDbSystemChannelSourceAnonymousTransactionsHandlingInput
+
+func (MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MysqlDbSystemChannelSourceAnonymousTransactionsHandling)(nil)).Elem()
+}
+
+func (i MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArray) ToMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput() MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput {
+	return i.ToMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutputWithContext(context.Background())
+}
+
+func (i MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArray) ToMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutputWithContext(ctx context.Context) MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput)
+}
+
+type MysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput struct{ *pulumi.OutputState }
+
+func (MysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlDbSystemChannelSourceAnonymousTransactionsHandling)(nil)).Elem()
+}
+
+func (o MysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput) ToMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput() MysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput {
+	return o
+}
+
+func (o MysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput) ToMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutputWithContext(ctx context.Context) MysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput {
+	return o
+}
+
+// Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+func (o MysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput) LastConfiguredLogFilename() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemChannelSourceAnonymousTransactionsHandling) *string {
+		return v.LastConfiguredLogFilename
+	}).(pulumi.StringPtrOutput)
+}
+
+// Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+func (o MysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput) LastConfiguredLogOffset() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemChannelSourceAnonymousTransactionsHandling) *string {
+		return v.LastConfiguredLogOffset
+	}).(pulumi.StringPtrOutput)
+}
+
+// Specifies how the replication channel handles anonymous transactions.
+func (o MysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput) Policy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemChannelSourceAnonymousTransactionsHandling) *string { return v.Policy }).(pulumi.StringPtrOutput)
+}
+
+// The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
+func (o MysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput) Uuid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemChannelSourceAnonymousTransactionsHandling) *string { return v.Uuid }).(pulumi.StringPtrOutput)
+}
+
+type MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput struct{ *pulumi.OutputState }
+
+func (MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MysqlDbSystemChannelSourceAnonymousTransactionsHandling)(nil)).Elem()
+}
+
+func (o MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput) ToMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput() MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput {
+	return o
+}
+
+func (o MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput) ToMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutputWithContext(ctx context.Context) MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput {
+	return o
+}
+
+func (o MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput) Index(i pulumi.IntInput) MysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlDbSystemChannelSourceAnonymousTransactionsHandling {
+		return vs[0].([]MysqlDbSystemChannelSourceAnonymousTransactionsHandling)[vs[1].(int)]
+	}).(MysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput)
 }
 
 type MysqlDbSystemChannelSourceSslCaCertificate struct {
@@ -4555,6 +5052,8 @@ type MysqlDbSystemChannelTarget struct {
 	ChannelName *string `pulumi:"channelName"`
 	// The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
 	DbSystemId *string `pulumi:"dbSystemId"`
+	// Replication filter rules to be applied at the DB System Channel target.
+	Filters []MysqlDbSystemChannelTargetFilter `pulumi:"filters"`
 	// The specific target identifier.
 	TargetType *string `pulumi:"targetType"`
 }
@@ -4577,6 +5076,8 @@ type MysqlDbSystemChannelTargetArgs struct {
 	ChannelName pulumi.StringPtrInput `pulumi:"channelName"`
 	// The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
 	DbSystemId pulumi.StringPtrInput `pulumi:"dbSystemId"`
+	// Replication filter rules to be applied at the DB System Channel target.
+	Filters MysqlDbSystemChannelTargetFilterArrayInput `pulumi:"filters"`
 	// The specific target identifier.
 	TargetType pulumi.StringPtrInput `pulumi:"targetType"`
 }
@@ -4647,6 +5148,11 @@ func (o MysqlDbSystemChannelTargetOutput) DbSystemId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MysqlDbSystemChannelTarget) *string { return v.DbSystemId }).(pulumi.StringPtrOutput)
 }
 
+// Replication filter rules to be applied at the DB System Channel target.
+func (o MysqlDbSystemChannelTargetOutput) Filters() MysqlDbSystemChannelTargetFilterArrayOutput {
+	return o.ApplyT(func(v MysqlDbSystemChannelTarget) []MysqlDbSystemChannelTargetFilter { return v.Filters }).(MysqlDbSystemChannelTargetFilterArrayOutput)
+}
+
 // The specific target identifier.
 func (o MysqlDbSystemChannelTargetOutput) TargetType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MysqlDbSystemChannelTarget) *string { return v.TargetType }).(pulumi.StringPtrOutput)
@@ -4670,6 +5176,112 @@ func (o MysqlDbSystemChannelTargetArrayOutput) Index(i pulumi.IntInput) MysqlDbS
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlDbSystemChannelTarget {
 		return vs[0].([]MysqlDbSystemChannelTarget)[vs[1].(int)]
 	}).(MysqlDbSystemChannelTargetOutput)
+}
+
+type MysqlDbSystemChannelTargetFilter struct {
+	// The type of the filter rule.
+	Type *string `pulumi:"type"`
+	// The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+	Value *string `pulumi:"value"`
+}
+
+// MysqlDbSystemChannelTargetFilterInput is an input type that accepts MysqlDbSystemChannelTargetFilterArgs and MysqlDbSystemChannelTargetFilterOutput values.
+// You can construct a concrete instance of `MysqlDbSystemChannelTargetFilterInput` via:
+//
+//	MysqlDbSystemChannelTargetFilterArgs{...}
+type MysqlDbSystemChannelTargetFilterInput interface {
+	pulumi.Input
+
+	ToMysqlDbSystemChannelTargetFilterOutput() MysqlDbSystemChannelTargetFilterOutput
+	ToMysqlDbSystemChannelTargetFilterOutputWithContext(context.Context) MysqlDbSystemChannelTargetFilterOutput
+}
+
+type MysqlDbSystemChannelTargetFilterArgs struct {
+	// The type of the filter rule.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+	// The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (MysqlDbSystemChannelTargetFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlDbSystemChannelTargetFilter)(nil)).Elem()
+}
+
+func (i MysqlDbSystemChannelTargetFilterArgs) ToMysqlDbSystemChannelTargetFilterOutput() MysqlDbSystemChannelTargetFilterOutput {
+	return i.ToMysqlDbSystemChannelTargetFilterOutputWithContext(context.Background())
+}
+
+func (i MysqlDbSystemChannelTargetFilterArgs) ToMysqlDbSystemChannelTargetFilterOutputWithContext(ctx context.Context) MysqlDbSystemChannelTargetFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemChannelTargetFilterOutput)
+}
+
+// MysqlDbSystemChannelTargetFilterArrayInput is an input type that accepts MysqlDbSystemChannelTargetFilterArray and MysqlDbSystemChannelTargetFilterArrayOutput values.
+// You can construct a concrete instance of `MysqlDbSystemChannelTargetFilterArrayInput` via:
+//
+//	MysqlDbSystemChannelTargetFilterArray{ MysqlDbSystemChannelTargetFilterArgs{...} }
+type MysqlDbSystemChannelTargetFilterArrayInput interface {
+	pulumi.Input
+
+	ToMysqlDbSystemChannelTargetFilterArrayOutput() MysqlDbSystemChannelTargetFilterArrayOutput
+	ToMysqlDbSystemChannelTargetFilterArrayOutputWithContext(context.Context) MysqlDbSystemChannelTargetFilterArrayOutput
+}
+
+type MysqlDbSystemChannelTargetFilterArray []MysqlDbSystemChannelTargetFilterInput
+
+func (MysqlDbSystemChannelTargetFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MysqlDbSystemChannelTargetFilter)(nil)).Elem()
+}
+
+func (i MysqlDbSystemChannelTargetFilterArray) ToMysqlDbSystemChannelTargetFilterArrayOutput() MysqlDbSystemChannelTargetFilterArrayOutput {
+	return i.ToMysqlDbSystemChannelTargetFilterArrayOutputWithContext(context.Background())
+}
+
+func (i MysqlDbSystemChannelTargetFilterArray) ToMysqlDbSystemChannelTargetFilterArrayOutputWithContext(ctx context.Context) MysqlDbSystemChannelTargetFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlDbSystemChannelTargetFilterArrayOutput)
+}
+
+type MysqlDbSystemChannelTargetFilterOutput struct{ *pulumi.OutputState }
+
+func (MysqlDbSystemChannelTargetFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlDbSystemChannelTargetFilter)(nil)).Elem()
+}
+
+func (o MysqlDbSystemChannelTargetFilterOutput) ToMysqlDbSystemChannelTargetFilterOutput() MysqlDbSystemChannelTargetFilterOutput {
+	return o
+}
+
+func (o MysqlDbSystemChannelTargetFilterOutput) ToMysqlDbSystemChannelTargetFilterOutputWithContext(ctx context.Context) MysqlDbSystemChannelTargetFilterOutput {
+	return o
+}
+
+// The type of the filter rule.
+func (o MysqlDbSystemChannelTargetFilterOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemChannelTargetFilter) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+// The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+func (o MysqlDbSystemChannelTargetFilterOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemChannelTargetFilter) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type MysqlDbSystemChannelTargetFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (MysqlDbSystemChannelTargetFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MysqlDbSystemChannelTargetFilter)(nil)).Elem()
+}
+
+func (o MysqlDbSystemChannelTargetFilterArrayOutput) ToMysqlDbSystemChannelTargetFilterArrayOutput() MysqlDbSystemChannelTargetFilterArrayOutput {
+	return o
+}
+
+func (o MysqlDbSystemChannelTargetFilterArrayOutput) ToMysqlDbSystemChannelTargetFilterArrayOutputWithContext(ctx context.Context) MysqlDbSystemChannelTargetFilterArrayOutput {
+	return o
+}
+
+func (o MysqlDbSystemChannelTargetFilterArrayOutput) Index(i pulumi.IntInput) MysqlDbSystemChannelTargetFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlDbSystemChannelTargetFilter {
+		return vs[0].([]MysqlDbSystemChannelTargetFilter)[vs[1].(int)]
+	}).(MysqlDbSystemChannelTargetFilterOutput)
 }
 
 type MysqlDbSystemCurrentPlacement struct {
@@ -4904,6 +5516,10 @@ type MysqlDbSystemEndpoint struct {
 	Port *int `pulumi:"port"`
 	// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
 	PortX *int `pulumi:"portX"`
+	// The OCID of the resource that this endpoint is attached to.
+	ResourceId *string `pulumi:"resourceId"`
+	// The type of endpoint that clients and connectors can connect to.
+	ResourceType *string `pulumi:"resourceType"`
 	// The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
 	Status *string `pulumi:"status"`
 	// Additional information about the current endpoint status.
@@ -4932,6 +5548,10 @@ type MysqlDbSystemEndpointArgs struct {
 	Port pulumi.IntPtrInput `pulumi:"port"`
 	// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
 	PortX pulumi.IntPtrInput `pulumi:"portX"`
+	// The OCID of the resource that this endpoint is attached to.
+	ResourceId pulumi.StringPtrInput `pulumi:"resourceId"`
+	// The type of endpoint that clients and connectors can connect to.
+	ResourceType pulumi.StringPtrInput `pulumi:"resourceType"`
 	// The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
 	Status pulumi.StringPtrInput `pulumi:"status"`
 	// Additional information about the current endpoint status.
@@ -5014,6 +5634,16 @@ func (o MysqlDbSystemEndpointOutput) PortX() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v MysqlDbSystemEndpoint) *int { return v.PortX }).(pulumi.IntPtrOutput)
 }
 
+// The OCID of the resource that this endpoint is attached to.
+func (o MysqlDbSystemEndpointOutput) ResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemEndpoint) *string { return v.ResourceId }).(pulumi.StringPtrOutput)
+}
+
+// The type of endpoint that clients and connectors can connect to.
+func (o MysqlDbSystemEndpointOutput) ResourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemEndpoint) *string { return v.ResourceType }).(pulumi.StringPtrOutput)
+}
+
 // The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
 func (o MysqlDbSystemEndpointOutput) Status() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MysqlDbSystemEndpoint) *string { return v.Status }).(pulumi.StringPtrOutput)
@@ -5047,7 +5677,7 @@ func (o MysqlDbSystemEndpointArrayOutput) Index(i pulumi.IntInput) MysqlDbSystem
 type MysqlDbSystemHeatWaveCluster struct {
 	// The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
 	ClusterSize *int `pulumi:"clusterSize"`
-	// The name of the shape. The shape determines the resources allocated
+	// (Updatable) The name of the shape. The shape determines the resources allocated
 	// * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName *string `pulumi:"shapeName"`
 	// (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
@@ -5072,7 +5702,7 @@ type MysqlDbSystemHeatWaveClusterInput interface {
 type MysqlDbSystemHeatWaveClusterArgs struct {
 	// The number of analytics-processing compute instances, of the specified shape, in the HeatWave cluster.
 	ClusterSize pulumi.IntPtrInput `pulumi:"clusterSize"`
-	// The name of the shape. The shape determines the resources allocated
+	// (Updatable) The name of the shape. The shape determines the resources allocated
 	// * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName pulumi.StringPtrInput `pulumi:"shapeName"`
 	// (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
@@ -5139,7 +5769,7 @@ func (o MysqlDbSystemHeatWaveClusterOutput) ClusterSize() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v MysqlDbSystemHeatWaveCluster) *int { return v.ClusterSize }).(pulumi.IntPtrOutput)
 }
 
-// The name of the shape. The shape determines the resources allocated
+// (Updatable) The name of the shape. The shape determines the resources allocated
 // * CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM (or bare metal) shapes. To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 func (o MysqlDbSystemHeatWaveClusterOutput) ShapeName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MysqlDbSystemHeatWaveCluster) *string { return v.ShapeName }).(pulumi.StringPtrOutput)
@@ -5430,8 +6060,10 @@ type MysqlDbSystemSource struct {
 	DbSystemId *string `pulumi:"dbSystemId"`
 	// The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
 	RecoveryPoint *string `pulumi:"recoveryPoint"`
-	// The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup.
+	// The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup. Use `IMPORTURL` for creating a new database from a URL Object Storage PAR.
 	SourceType string `pulumi:"sourceType"`
+	// The Pre-Authenticated Request (PAR) of a bucket/prefix or PAR of a @.manifest.json object from the Object Storage. Check [Using Pre-Authenticated Requests](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm) for information related to PAR creation. Please create PAR with "Permit object reads" access type and "Enable Object Listing" permission when using a bucket/prefix PAR. Please create PAR with "Permit object reads" access type when using a @.manifest.json object PAR.
+	SourceUrl *string `pulumi:"sourceUrl"`
 }
 
 // MysqlDbSystemSourceInput is an input type that accepts MysqlDbSystemSourceArgs and MysqlDbSystemSourceOutput values.
@@ -5452,8 +6084,10 @@ type MysqlDbSystemSourceArgs struct {
 	DbSystemId pulumi.StringPtrInput `pulumi:"dbSystemId"`
 	// The date and time, as per RFC 3339, of the change up to which the new DB System shall be restored to, using a backup and logs from the original DB System. In case no point in time is specified, then this new DB System shall be restored up to the latest change recorded for the original DB System.
 	RecoveryPoint pulumi.StringPtrInput `pulumi:"recoveryPoint"`
-	// The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup.
+	// The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup. Use `IMPORTURL` for creating a new database from a URL Object Storage PAR.
 	SourceType pulumi.StringInput `pulumi:"sourceType"`
+	// The Pre-Authenticated Request (PAR) of a bucket/prefix or PAR of a @.manifest.json object from the Object Storage. Check [Using Pre-Authenticated Requests](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm) for information related to PAR creation. Please create PAR with "Permit object reads" access type and "Enable Object Listing" permission when using a bucket/prefix PAR. Please create PAR with "Permit object reads" access type when using a @.manifest.json object PAR.
+	SourceUrl pulumi.StringPtrInput `pulumi:"sourceUrl"`
 }
 
 func (MysqlDbSystemSourceArgs) ElementType() reflect.Type {
@@ -5548,9 +6182,14 @@ func (o MysqlDbSystemSourceOutput) RecoveryPoint() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MysqlDbSystemSource) *string { return v.RecoveryPoint }).(pulumi.StringPtrOutput)
 }
 
-// The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup.
+// The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup. Use `IMPORTURL` for creating a new database from a URL Object Storage PAR.
 func (o MysqlDbSystemSourceOutput) SourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v MysqlDbSystemSource) string { return v.SourceType }).(pulumi.StringOutput)
+}
+
+// The Pre-Authenticated Request (PAR) of a bucket/prefix or PAR of a @.manifest.json object from the Object Storage. Check [Using Pre-Authenticated Requests](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm) for information related to PAR creation. Please create PAR with "Permit object reads" access type and "Enable Object Listing" permission when using a bucket/prefix PAR. Please create PAR with "Permit object reads" access type when using a @.manifest.json object PAR.
+func (o MysqlDbSystemSourceOutput) SourceUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlDbSystemSource) *string { return v.SourceUrl }).(pulumi.StringPtrOutput)
 }
 
 type MysqlDbSystemSourcePtrOutput struct{ *pulumi.OutputState }
@@ -5607,13 +6246,23 @@ func (o MysqlDbSystemSourcePtrOutput) RecoveryPoint() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup.
+// The specific source identifier. Use `BACKUP` for creating a new database by restoring from a backup. Use `IMPORTURL` for creating a new database from a URL Object Storage PAR.
 func (o MysqlDbSystemSourcePtrOutput) SourceType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MysqlDbSystemSource) *string {
 		if v == nil {
 			return nil
 		}
 		return &v.SourceType
+	}).(pulumi.StringPtrOutput)
+}
+
+// The Pre-Authenticated Request (PAR) of a bucket/prefix or PAR of a @.manifest.json object from the Object Storage. Check [Using Pre-Authenticated Requests](https://docs.oracle.com/en-us/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm) for information related to PAR creation. Please create PAR with "Permit object reads" access type and "Enable Object Listing" permission when using a bucket/prefix PAR. Please create PAR with "Permit object reads" access type when using a @.manifest.json object PAR.
+func (o MysqlDbSystemSourcePtrOutput) SourceUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MysqlDbSystemSource) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SourceUrl
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -5742,6 +6391,8 @@ func (o GetAnalyticsClusterClusterNodeArrayOutput) Index(i pulumi.IntInput) GetA
 }
 
 type GetChannelSource struct {
+	// Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
+	AnonymousTransactionsHandlings []GetChannelSourceAnonymousTransactionsHandling `pulumi:"anonymousTransactionsHandlings"`
 	// The network address of the MySQL instance.
 	Hostname string `pulumi:"hostname"`
 	Password string `pulumi:"password"`
@@ -5769,6 +6420,8 @@ type GetChannelSourceInput interface {
 }
 
 type GetChannelSourceArgs struct {
+	// Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
+	AnonymousTransactionsHandlings GetChannelSourceAnonymousTransactionsHandlingArrayInput `pulumi:"anonymousTransactionsHandlings"`
 	// The network address of the MySQL instance.
 	Hostname pulumi.StringInput `pulumi:"hostname"`
 	Password pulumi.StringInput `pulumi:"password"`
@@ -5835,6 +6488,13 @@ func (o GetChannelSourceOutput) ToGetChannelSourceOutputWithContext(ctx context.
 	return o
 }
 
+// Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
+func (o GetChannelSourceOutput) AnonymousTransactionsHandlings() GetChannelSourceAnonymousTransactionsHandlingArrayOutput {
+	return o.ApplyT(func(v GetChannelSource) []GetChannelSourceAnonymousTransactionsHandling {
+		return v.AnonymousTransactionsHandlings
+	}).(GetChannelSourceAnonymousTransactionsHandlingArrayOutput)
+}
+
 // The network address of the MySQL instance.
 func (o GetChannelSourceOutput) Hostname() pulumi.StringOutput {
 	return o.ApplyT(func(v GetChannelSource) string { return v.Hostname }).(pulumi.StringOutput)
@@ -5887,6 +6547,130 @@ func (o GetChannelSourceArrayOutput) Index(i pulumi.IntInput) GetChannelSourceOu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetChannelSource {
 		return vs[0].([]GetChannelSource)[vs[1].(int)]
 	}).(GetChannelSourceOutput)
+}
+
+type GetChannelSourceAnonymousTransactionsHandling struct {
+	// Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+	LastConfiguredLogFilename string `pulumi:"lastConfiguredLogFilename"`
+	// Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+	LastConfiguredLogOffset string `pulumi:"lastConfiguredLogOffset"`
+	// Specifies how the replication channel handles anonymous transactions.
+	Policy string `pulumi:"policy"`
+	// The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
+	Uuid string `pulumi:"uuid"`
+}
+
+// GetChannelSourceAnonymousTransactionsHandlingInput is an input type that accepts GetChannelSourceAnonymousTransactionsHandlingArgs and GetChannelSourceAnonymousTransactionsHandlingOutput values.
+// You can construct a concrete instance of `GetChannelSourceAnonymousTransactionsHandlingInput` via:
+//
+//	GetChannelSourceAnonymousTransactionsHandlingArgs{...}
+type GetChannelSourceAnonymousTransactionsHandlingInput interface {
+	pulumi.Input
+
+	ToGetChannelSourceAnonymousTransactionsHandlingOutput() GetChannelSourceAnonymousTransactionsHandlingOutput
+	ToGetChannelSourceAnonymousTransactionsHandlingOutputWithContext(context.Context) GetChannelSourceAnonymousTransactionsHandlingOutput
+}
+
+type GetChannelSourceAnonymousTransactionsHandlingArgs struct {
+	// Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+	LastConfiguredLogFilename pulumi.StringInput `pulumi:"lastConfiguredLogFilename"`
+	// Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+	LastConfiguredLogOffset pulumi.StringInput `pulumi:"lastConfiguredLogOffset"`
+	// Specifies how the replication channel handles anonymous transactions.
+	Policy pulumi.StringInput `pulumi:"policy"`
+	// The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
+	Uuid pulumi.StringInput `pulumi:"uuid"`
+}
+
+func (GetChannelSourceAnonymousTransactionsHandlingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetChannelSourceAnonymousTransactionsHandling)(nil)).Elem()
+}
+
+func (i GetChannelSourceAnonymousTransactionsHandlingArgs) ToGetChannelSourceAnonymousTransactionsHandlingOutput() GetChannelSourceAnonymousTransactionsHandlingOutput {
+	return i.ToGetChannelSourceAnonymousTransactionsHandlingOutputWithContext(context.Background())
+}
+
+func (i GetChannelSourceAnonymousTransactionsHandlingArgs) ToGetChannelSourceAnonymousTransactionsHandlingOutputWithContext(ctx context.Context) GetChannelSourceAnonymousTransactionsHandlingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetChannelSourceAnonymousTransactionsHandlingOutput)
+}
+
+// GetChannelSourceAnonymousTransactionsHandlingArrayInput is an input type that accepts GetChannelSourceAnonymousTransactionsHandlingArray and GetChannelSourceAnonymousTransactionsHandlingArrayOutput values.
+// You can construct a concrete instance of `GetChannelSourceAnonymousTransactionsHandlingArrayInput` via:
+//
+//	GetChannelSourceAnonymousTransactionsHandlingArray{ GetChannelSourceAnonymousTransactionsHandlingArgs{...} }
+type GetChannelSourceAnonymousTransactionsHandlingArrayInput interface {
+	pulumi.Input
+
+	ToGetChannelSourceAnonymousTransactionsHandlingArrayOutput() GetChannelSourceAnonymousTransactionsHandlingArrayOutput
+	ToGetChannelSourceAnonymousTransactionsHandlingArrayOutputWithContext(context.Context) GetChannelSourceAnonymousTransactionsHandlingArrayOutput
+}
+
+type GetChannelSourceAnonymousTransactionsHandlingArray []GetChannelSourceAnonymousTransactionsHandlingInput
+
+func (GetChannelSourceAnonymousTransactionsHandlingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetChannelSourceAnonymousTransactionsHandling)(nil)).Elem()
+}
+
+func (i GetChannelSourceAnonymousTransactionsHandlingArray) ToGetChannelSourceAnonymousTransactionsHandlingArrayOutput() GetChannelSourceAnonymousTransactionsHandlingArrayOutput {
+	return i.ToGetChannelSourceAnonymousTransactionsHandlingArrayOutputWithContext(context.Background())
+}
+
+func (i GetChannelSourceAnonymousTransactionsHandlingArray) ToGetChannelSourceAnonymousTransactionsHandlingArrayOutputWithContext(ctx context.Context) GetChannelSourceAnonymousTransactionsHandlingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetChannelSourceAnonymousTransactionsHandlingArrayOutput)
+}
+
+type GetChannelSourceAnonymousTransactionsHandlingOutput struct{ *pulumi.OutputState }
+
+func (GetChannelSourceAnonymousTransactionsHandlingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetChannelSourceAnonymousTransactionsHandling)(nil)).Elem()
+}
+
+func (o GetChannelSourceAnonymousTransactionsHandlingOutput) ToGetChannelSourceAnonymousTransactionsHandlingOutput() GetChannelSourceAnonymousTransactionsHandlingOutput {
+	return o
+}
+
+func (o GetChannelSourceAnonymousTransactionsHandlingOutput) ToGetChannelSourceAnonymousTransactionsHandlingOutputWithContext(ctx context.Context) GetChannelSourceAnonymousTransactionsHandlingOutput {
+	return o
+}
+
+// Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+func (o GetChannelSourceAnonymousTransactionsHandlingOutput) LastConfiguredLogFilename() pulumi.StringOutput {
+	return o.ApplyT(func(v GetChannelSourceAnonymousTransactionsHandling) string { return v.LastConfiguredLogFilename }).(pulumi.StringOutput)
+}
+
+// Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+func (o GetChannelSourceAnonymousTransactionsHandlingOutput) LastConfiguredLogOffset() pulumi.StringOutput {
+	return o.ApplyT(func(v GetChannelSourceAnonymousTransactionsHandling) string { return v.LastConfiguredLogOffset }).(pulumi.StringOutput)
+}
+
+// Specifies how the replication channel handles anonymous transactions.
+func (o GetChannelSourceAnonymousTransactionsHandlingOutput) Policy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetChannelSourceAnonymousTransactionsHandling) string { return v.Policy }).(pulumi.StringOutput)
+}
+
+// The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
+func (o GetChannelSourceAnonymousTransactionsHandlingOutput) Uuid() pulumi.StringOutput {
+	return o.ApplyT(func(v GetChannelSourceAnonymousTransactionsHandling) string { return v.Uuid }).(pulumi.StringOutput)
+}
+
+type GetChannelSourceAnonymousTransactionsHandlingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetChannelSourceAnonymousTransactionsHandlingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetChannelSourceAnonymousTransactionsHandling)(nil)).Elem()
+}
+
+func (o GetChannelSourceAnonymousTransactionsHandlingArrayOutput) ToGetChannelSourceAnonymousTransactionsHandlingArrayOutput() GetChannelSourceAnonymousTransactionsHandlingArrayOutput {
+	return o
+}
+
+func (o GetChannelSourceAnonymousTransactionsHandlingArrayOutput) ToGetChannelSourceAnonymousTransactionsHandlingArrayOutputWithContext(ctx context.Context) GetChannelSourceAnonymousTransactionsHandlingArrayOutput {
+	return o
+}
+
+func (o GetChannelSourceAnonymousTransactionsHandlingArrayOutput) Index(i pulumi.IntInput) GetChannelSourceAnonymousTransactionsHandlingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetChannelSourceAnonymousTransactionsHandling {
+		return vs[0].([]GetChannelSourceAnonymousTransactionsHandling)[vs[1].(int)]
+	}).(GetChannelSourceAnonymousTransactionsHandlingOutput)
 }
 
 type GetChannelSourceSslCaCertificate struct {
@@ -6002,6 +6786,8 @@ type GetChannelTarget struct {
 	ChannelName string `pulumi:"channelName"`
 	// The OCID of the source DB System.
 	DbSystemId string `pulumi:"dbSystemId"`
+	// Replication filter rules to be applied at the DB System Channel target.
+	Filters []GetChannelTargetFilter `pulumi:"filters"`
 	// The specific target identifier.
 	TargetType string `pulumi:"targetType"`
 }
@@ -6024,6 +6810,8 @@ type GetChannelTargetArgs struct {
 	ChannelName pulumi.StringInput `pulumi:"channelName"`
 	// The OCID of the source DB System.
 	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
+	// Replication filter rules to be applied at the DB System Channel target.
+	Filters GetChannelTargetFilterArrayInput `pulumi:"filters"`
 	// The specific target identifier.
 	TargetType pulumi.StringInput `pulumi:"targetType"`
 }
@@ -6094,6 +6882,11 @@ func (o GetChannelTargetOutput) DbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetChannelTarget) string { return v.DbSystemId }).(pulumi.StringOutput)
 }
 
+// Replication filter rules to be applied at the DB System Channel target.
+func (o GetChannelTargetOutput) Filters() GetChannelTargetFilterArrayOutput {
+	return o.ApplyT(func(v GetChannelTarget) []GetChannelTargetFilter { return v.Filters }).(GetChannelTargetFilterArrayOutput)
+}
+
 // The specific target identifier.
 func (o GetChannelTargetOutput) TargetType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetChannelTarget) string { return v.TargetType }).(pulumi.StringOutput)
@@ -6117,6 +6910,112 @@ func (o GetChannelTargetArrayOutput) Index(i pulumi.IntInput) GetChannelTargetOu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetChannelTarget {
 		return vs[0].([]GetChannelTarget)[vs[1].(int)]
 	}).(GetChannelTargetOutput)
+}
+
+type GetChannelTargetFilter struct {
+	// The type of the filter rule.
+	Type string `pulumi:"type"`
+	// The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+	Value string `pulumi:"value"`
+}
+
+// GetChannelTargetFilterInput is an input type that accepts GetChannelTargetFilterArgs and GetChannelTargetFilterOutput values.
+// You can construct a concrete instance of `GetChannelTargetFilterInput` via:
+//
+//	GetChannelTargetFilterArgs{...}
+type GetChannelTargetFilterInput interface {
+	pulumi.Input
+
+	ToGetChannelTargetFilterOutput() GetChannelTargetFilterOutput
+	ToGetChannelTargetFilterOutputWithContext(context.Context) GetChannelTargetFilterOutput
+}
+
+type GetChannelTargetFilterArgs struct {
+	// The type of the filter rule.
+	Type pulumi.StringInput `pulumi:"type"`
+	// The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetChannelTargetFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetChannelTargetFilter)(nil)).Elem()
+}
+
+func (i GetChannelTargetFilterArgs) ToGetChannelTargetFilterOutput() GetChannelTargetFilterOutput {
+	return i.ToGetChannelTargetFilterOutputWithContext(context.Background())
+}
+
+func (i GetChannelTargetFilterArgs) ToGetChannelTargetFilterOutputWithContext(ctx context.Context) GetChannelTargetFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetChannelTargetFilterOutput)
+}
+
+// GetChannelTargetFilterArrayInput is an input type that accepts GetChannelTargetFilterArray and GetChannelTargetFilterArrayOutput values.
+// You can construct a concrete instance of `GetChannelTargetFilterArrayInput` via:
+//
+//	GetChannelTargetFilterArray{ GetChannelTargetFilterArgs{...} }
+type GetChannelTargetFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetChannelTargetFilterArrayOutput() GetChannelTargetFilterArrayOutput
+	ToGetChannelTargetFilterArrayOutputWithContext(context.Context) GetChannelTargetFilterArrayOutput
+}
+
+type GetChannelTargetFilterArray []GetChannelTargetFilterInput
+
+func (GetChannelTargetFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetChannelTargetFilter)(nil)).Elem()
+}
+
+func (i GetChannelTargetFilterArray) ToGetChannelTargetFilterArrayOutput() GetChannelTargetFilterArrayOutput {
+	return i.ToGetChannelTargetFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetChannelTargetFilterArray) ToGetChannelTargetFilterArrayOutputWithContext(ctx context.Context) GetChannelTargetFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetChannelTargetFilterArrayOutput)
+}
+
+type GetChannelTargetFilterOutput struct{ *pulumi.OutputState }
+
+func (GetChannelTargetFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetChannelTargetFilter)(nil)).Elem()
+}
+
+func (o GetChannelTargetFilterOutput) ToGetChannelTargetFilterOutput() GetChannelTargetFilterOutput {
+	return o
+}
+
+func (o GetChannelTargetFilterOutput) ToGetChannelTargetFilterOutputWithContext(ctx context.Context) GetChannelTargetFilterOutput {
+	return o
+}
+
+// The type of the filter rule.
+func (o GetChannelTargetFilterOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetChannelTargetFilter) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+func (o GetChannelTargetFilterOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetChannelTargetFilter) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetChannelTargetFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetChannelTargetFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetChannelTargetFilter)(nil)).Elem()
+}
+
+func (o GetChannelTargetFilterArrayOutput) ToGetChannelTargetFilterArrayOutput() GetChannelTargetFilterArrayOutput {
+	return o
+}
+
+func (o GetChannelTargetFilterArrayOutput) ToGetChannelTargetFilterArrayOutputWithContext(ctx context.Context) GetChannelTargetFilterArrayOutput {
+	return o
+}
+
+func (o GetChannelTargetFilterArrayOutput) Index(i pulumi.IntInput) GetChannelTargetFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetChannelTargetFilter {
+		return vs[0].([]GetChannelTargetFilter)[vs[1].(int)]
+	}).(GetChannelTargetFilterOutput)
 }
 
 type GetChannelsChannel struct {
@@ -6325,6 +7224,8 @@ func (o GetChannelsChannelArrayOutput) Index(i pulumi.IntInput) GetChannelsChann
 }
 
 type GetChannelsChannelSource struct {
+	// Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
+	AnonymousTransactionsHandlings []GetChannelsChannelSourceAnonymousTransactionsHandling `pulumi:"anonymousTransactionsHandlings"`
 	// The network address of the MySQL instance.
 	Hostname string `pulumi:"hostname"`
 	Password string `pulumi:"password"`
@@ -6352,6 +7253,8 @@ type GetChannelsChannelSourceInput interface {
 }
 
 type GetChannelsChannelSourceArgs struct {
+	// Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
+	AnonymousTransactionsHandlings GetChannelsChannelSourceAnonymousTransactionsHandlingArrayInput `pulumi:"anonymousTransactionsHandlings"`
 	// The network address of the MySQL instance.
 	Hostname pulumi.StringInput `pulumi:"hostname"`
 	Password pulumi.StringInput `pulumi:"password"`
@@ -6418,6 +7321,13 @@ func (o GetChannelsChannelSourceOutput) ToGetChannelsChannelSourceOutputWithCont
 	return o
 }
 
+// Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
+func (o GetChannelsChannelSourceOutput) AnonymousTransactionsHandlings() GetChannelsChannelSourceAnonymousTransactionsHandlingArrayOutput {
+	return o.ApplyT(func(v GetChannelsChannelSource) []GetChannelsChannelSourceAnonymousTransactionsHandling {
+		return v.AnonymousTransactionsHandlings
+	}).(GetChannelsChannelSourceAnonymousTransactionsHandlingArrayOutput)
+}
+
 // The network address of the MySQL instance.
 func (o GetChannelsChannelSourceOutput) Hostname() pulumi.StringOutput {
 	return o.ApplyT(func(v GetChannelsChannelSource) string { return v.Hostname }).(pulumi.StringOutput)
@@ -6472,6 +7382,132 @@ func (o GetChannelsChannelSourceArrayOutput) Index(i pulumi.IntInput) GetChannel
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetChannelsChannelSource {
 		return vs[0].([]GetChannelsChannelSource)[vs[1].(int)]
 	}).(GetChannelsChannelSourceOutput)
+}
+
+type GetChannelsChannelSourceAnonymousTransactionsHandling struct {
+	// Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+	LastConfiguredLogFilename string `pulumi:"lastConfiguredLogFilename"`
+	// Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+	LastConfiguredLogOffset string `pulumi:"lastConfiguredLogOffset"`
+	// Specifies how the replication channel handles anonymous transactions.
+	Policy string `pulumi:"policy"`
+	// The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
+	Uuid string `pulumi:"uuid"`
+}
+
+// GetChannelsChannelSourceAnonymousTransactionsHandlingInput is an input type that accepts GetChannelsChannelSourceAnonymousTransactionsHandlingArgs and GetChannelsChannelSourceAnonymousTransactionsHandlingOutput values.
+// You can construct a concrete instance of `GetChannelsChannelSourceAnonymousTransactionsHandlingInput` via:
+//
+//	GetChannelsChannelSourceAnonymousTransactionsHandlingArgs{...}
+type GetChannelsChannelSourceAnonymousTransactionsHandlingInput interface {
+	pulumi.Input
+
+	ToGetChannelsChannelSourceAnonymousTransactionsHandlingOutput() GetChannelsChannelSourceAnonymousTransactionsHandlingOutput
+	ToGetChannelsChannelSourceAnonymousTransactionsHandlingOutputWithContext(context.Context) GetChannelsChannelSourceAnonymousTransactionsHandlingOutput
+}
+
+type GetChannelsChannelSourceAnonymousTransactionsHandlingArgs struct {
+	// Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+	LastConfiguredLogFilename pulumi.StringInput `pulumi:"lastConfiguredLogFilename"`
+	// Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+	LastConfiguredLogOffset pulumi.StringInput `pulumi:"lastConfiguredLogOffset"`
+	// Specifies how the replication channel handles anonymous transactions.
+	Policy pulumi.StringInput `pulumi:"policy"`
+	// The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
+	Uuid pulumi.StringInput `pulumi:"uuid"`
+}
+
+func (GetChannelsChannelSourceAnonymousTransactionsHandlingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetChannelsChannelSourceAnonymousTransactionsHandling)(nil)).Elem()
+}
+
+func (i GetChannelsChannelSourceAnonymousTransactionsHandlingArgs) ToGetChannelsChannelSourceAnonymousTransactionsHandlingOutput() GetChannelsChannelSourceAnonymousTransactionsHandlingOutput {
+	return i.ToGetChannelsChannelSourceAnonymousTransactionsHandlingOutputWithContext(context.Background())
+}
+
+func (i GetChannelsChannelSourceAnonymousTransactionsHandlingArgs) ToGetChannelsChannelSourceAnonymousTransactionsHandlingOutputWithContext(ctx context.Context) GetChannelsChannelSourceAnonymousTransactionsHandlingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetChannelsChannelSourceAnonymousTransactionsHandlingOutput)
+}
+
+// GetChannelsChannelSourceAnonymousTransactionsHandlingArrayInput is an input type that accepts GetChannelsChannelSourceAnonymousTransactionsHandlingArray and GetChannelsChannelSourceAnonymousTransactionsHandlingArrayOutput values.
+// You can construct a concrete instance of `GetChannelsChannelSourceAnonymousTransactionsHandlingArrayInput` via:
+//
+//	GetChannelsChannelSourceAnonymousTransactionsHandlingArray{ GetChannelsChannelSourceAnonymousTransactionsHandlingArgs{...} }
+type GetChannelsChannelSourceAnonymousTransactionsHandlingArrayInput interface {
+	pulumi.Input
+
+	ToGetChannelsChannelSourceAnonymousTransactionsHandlingArrayOutput() GetChannelsChannelSourceAnonymousTransactionsHandlingArrayOutput
+	ToGetChannelsChannelSourceAnonymousTransactionsHandlingArrayOutputWithContext(context.Context) GetChannelsChannelSourceAnonymousTransactionsHandlingArrayOutput
+}
+
+type GetChannelsChannelSourceAnonymousTransactionsHandlingArray []GetChannelsChannelSourceAnonymousTransactionsHandlingInput
+
+func (GetChannelsChannelSourceAnonymousTransactionsHandlingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetChannelsChannelSourceAnonymousTransactionsHandling)(nil)).Elem()
+}
+
+func (i GetChannelsChannelSourceAnonymousTransactionsHandlingArray) ToGetChannelsChannelSourceAnonymousTransactionsHandlingArrayOutput() GetChannelsChannelSourceAnonymousTransactionsHandlingArrayOutput {
+	return i.ToGetChannelsChannelSourceAnonymousTransactionsHandlingArrayOutputWithContext(context.Background())
+}
+
+func (i GetChannelsChannelSourceAnonymousTransactionsHandlingArray) ToGetChannelsChannelSourceAnonymousTransactionsHandlingArrayOutputWithContext(ctx context.Context) GetChannelsChannelSourceAnonymousTransactionsHandlingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetChannelsChannelSourceAnonymousTransactionsHandlingArrayOutput)
+}
+
+type GetChannelsChannelSourceAnonymousTransactionsHandlingOutput struct{ *pulumi.OutputState }
+
+func (GetChannelsChannelSourceAnonymousTransactionsHandlingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetChannelsChannelSourceAnonymousTransactionsHandling)(nil)).Elem()
+}
+
+func (o GetChannelsChannelSourceAnonymousTransactionsHandlingOutput) ToGetChannelsChannelSourceAnonymousTransactionsHandlingOutput() GetChannelsChannelSourceAnonymousTransactionsHandlingOutput {
+	return o
+}
+
+func (o GetChannelsChannelSourceAnonymousTransactionsHandlingOutput) ToGetChannelsChannelSourceAnonymousTransactionsHandlingOutputWithContext(ctx context.Context) GetChannelsChannelSourceAnonymousTransactionsHandlingOutput {
+	return o
+}
+
+// Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+func (o GetChannelsChannelSourceAnonymousTransactionsHandlingOutput) LastConfiguredLogFilename() pulumi.StringOutput {
+	return o.ApplyT(func(v GetChannelsChannelSourceAnonymousTransactionsHandling) string {
+		return v.LastConfiguredLogFilename
+	}).(pulumi.StringOutput)
+}
+
+// Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+func (o GetChannelsChannelSourceAnonymousTransactionsHandlingOutput) LastConfiguredLogOffset() pulumi.StringOutput {
+	return o.ApplyT(func(v GetChannelsChannelSourceAnonymousTransactionsHandling) string { return v.LastConfiguredLogOffset }).(pulumi.StringOutput)
+}
+
+// Specifies how the replication channel handles anonymous transactions.
+func (o GetChannelsChannelSourceAnonymousTransactionsHandlingOutput) Policy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetChannelsChannelSourceAnonymousTransactionsHandling) string { return v.Policy }).(pulumi.StringOutput)
+}
+
+// The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
+func (o GetChannelsChannelSourceAnonymousTransactionsHandlingOutput) Uuid() pulumi.StringOutput {
+	return o.ApplyT(func(v GetChannelsChannelSourceAnonymousTransactionsHandling) string { return v.Uuid }).(pulumi.StringOutput)
+}
+
+type GetChannelsChannelSourceAnonymousTransactionsHandlingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetChannelsChannelSourceAnonymousTransactionsHandlingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetChannelsChannelSourceAnonymousTransactionsHandling)(nil)).Elem()
+}
+
+func (o GetChannelsChannelSourceAnonymousTransactionsHandlingArrayOutput) ToGetChannelsChannelSourceAnonymousTransactionsHandlingArrayOutput() GetChannelsChannelSourceAnonymousTransactionsHandlingArrayOutput {
+	return o
+}
+
+func (o GetChannelsChannelSourceAnonymousTransactionsHandlingArrayOutput) ToGetChannelsChannelSourceAnonymousTransactionsHandlingArrayOutputWithContext(ctx context.Context) GetChannelsChannelSourceAnonymousTransactionsHandlingArrayOutput {
+	return o
+}
+
+func (o GetChannelsChannelSourceAnonymousTransactionsHandlingArrayOutput) Index(i pulumi.IntInput) GetChannelsChannelSourceAnonymousTransactionsHandlingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetChannelsChannelSourceAnonymousTransactionsHandling {
+		return vs[0].([]GetChannelsChannelSourceAnonymousTransactionsHandling)[vs[1].(int)]
+	}).(GetChannelsChannelSourceAnonymousTransactionsHandlingOutput)
 }
 
 type GetChannelsChannelSourceSslCaCertificate struct {
@@ -6587,6 +7623,8 @@ type GetChannelsChannelTarget struct {
 	ChannelName string `pulumi:"channelName"`
 	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DbSystemId string `pulumi:"dbSystemId"`
+	// Replication filter rules to be applied at the DB System Channel target.
+	Filters []GetChannelsChannelTargetFilter `pulumi:"filters"`
 	// The specific target identifier.
 	TargetType string `pulumi:"targetType"`
 }
@@ -6609,6 +7647,8 @@ type GetChannelsChannelTargetArgs struct {
 	ChannelName pulumi.StringInput `pulumi:"channelName"`
 	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
+	// Replication filter rules to be applied at the DB System Channel target.
+	Filters GetChannelsChannelTargetFilterArrayInput `pulumi:"filters"`
 	// The specific target identifier.
 	TargetType pulumi.StringInput `pulumi:"targetType"`
 }
@@ -6679,6 +7719,11 @@ func (o GetChannelsChannelTargetOutput) DbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetChannelsChannelTarget) string { return v.DbSystemId }).(pulumi.StringOutput)
 }
 
+// Replication filter rules to be applied at the DB System Channel target.
+func (o GetChannelsChannelTargetOutput) Filters() GetChannelsChannelTargetFilterArrayOutput {
+	return o.ApplyT(func(v GetChannelsChannelTarget) []GetChannelsChannelTargetFilter { return v.Filters }).(GetChannelsChannelTargetFilterArrayOutput)
+}
+
 // The specific target identifier.
 func (o GetChannelsChannelTargetOutput) TargetType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetChannelsChannelTarget) string { return v.TargetType }).(pulumi.StringOutput)
@@ -6702,6 +7747,112 @@ func (o GetChannelsChannelTargetArrayOutput) Index(i pulumi.IntInput) GetChannel
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetChannelsChannelTarget {
 		return vs[0].([]GetChannelsChannelTarget)[vs[1].(int)]
 	}).(GetChannelsChannelTargetOutput)
+}
+
+type GetChannelsChannelTargetFilter struct {
+	// The type of the filter rule.
+	Type string `pulumi:"type"`
+	// The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+	Value string `pulumi:"value"`
+}
+
+// GetChannelsChannelTargetFilterInput is an input type that accepts GetChannelsChannelTargetFilterArgs and GetChannelsChannelTargetFilterOutput values.
+// You can construct a concrete instance of `GetChannelsChannelTargetFilterInput` via:
+//
+//	GetChannelsChannelTargetFilterArgs{...}
+type GetChannelsChannelTargetFilterInput interface {
+	pulumi.Input
+
+	ToGetChannelsChannelTargetFilterOutput() GetChannelsChannelTargetFilterOutput
+	ToGetChannelsChannelTargetFilterOutputWithContext(context.Context) GetChannelsChannelTargetFilterOutput
+}
+
+type GetChannelsChannelTargetFilterArgs struct {
+	// The type of the filter rule.
+	Type pulumi.StringInput `pulumi:"type"`
+	// The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetChannelsChannelTargetFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetChannelsChannelTargetFilter)(nil)).Elem()
+}
+
+func (i GetChannelsChannelTargetFilterArgs) ToGetChannelsChannelTargetFilterOutput() GetChannelsChannelTargetFilterOutput {
+	return i.ToGetChannelsChannelTargetFilterOutputWithContext(context.Background())
+}
+
+func (i GetChannelsChannelTargetFilterArgs) ToGetChannelsChannelTargetFilterOutputWithContext(ctx context.Context) GetChannelsChannelTargetFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetChannelsChannelTargetFilterOutput)
+}
+
+// GetChannelsChannelTargetFilterArrayInput is an input type that accepts GetChannelsChannelTargetFilterArray and GetChannelsChannelTargetFilterArrayOutput values.
+// You can construct a concrete instance of `GetChannelsChannelTargetFilterArrayInput` via:
+//
+//	GetChannelsChannelTargetFilterArray{ GetChannelsChannelTargetFilterArgs{...} }
+type GetChannelsChannelTargetFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetChannelsChannelTargetFilterArrayOutput() GetChannelsChannelTargetFilterArrayOutput
+	ToGetChannelsChannelTargetFilterArrayOutputWithContext(context.Context) GetChannelsChannelTargetFilterArrayOutput
+}
+
+type GetChannelsChannelTargetFilterArray []GetChannelsChannelTargetFilterInput
+
+func (GetChannelsChannelTargetFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetChannelsChannelTargetFilter)(nil)).Elem()
+}
+
+func (i GetChannelsChannelTargetFilterArray) ToGetChannelsChannelTargetFilterArrayOutput() GetChannelsChannelTargetFilterArrayOutput {
+	return i.ToGetChannelsChannelTargetFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetChannelsChannelTargetFilterArray) ToGetChannelsChannelTargetFilterArrayOutputWithContext(ctx context.Context) GetChannelsChannelTargetFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetChannelsChannelTargetFilterArrayOutput)
+}
+
+type GetChannelsChannelTargetFilterOutput struct{ *pulumi.OutputState }
+
+func (GetChannelsChannelTargetFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetChannelsChannelTargetFilter)(nil)).Elem()
+}
+
+func (o GetChannelsChannelTargetFilterOutput) ToGetChannelsChannelTargetFilterOutput() GetChannelsChannelTargetFilterOutput {
+	return o
+}
+
+func (o GetChannelsChannelTargetFilterOutput) ToGetChannelsChannelTargetFilterOutputWithContext(ctx context.Context) GetChannelsChannelTargetFilterOutput {
+	return o
+}
+
+// The type of the filter rule.
+func (o GetChannelsChannelTargetFilterOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetChannelsChannelTargetFilter) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+func (o GetChannelsChannelTargetFilterOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetChannelsChannelTargetFilter) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetChannelsChannelTargetFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetChannelsChannelTargetFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetChannelsChannelTargetFilter)(nil)).Elem()
+}
+
+func (o GetChannelsChannelTargetFilterArrayOutput) ToGetChannelsChannelTargetFilterArrayOutput() GetChannelsChannelTargetFilterArrayOutput {
+	return o
+}
+
+func (o GetChannelsChannelTargetFilterArrayOutput) ToGetChannelsChannelTargetFilterArrayOutputWithContext(ctx context.Context) GetChannelsChannelTargetFilterArrayOutput {
+	return o
+}
+
+func (o GetChannelsChannelTargetFilterArrayOutput) Index(i pulumi.IntInput) GetChannelsChannelTargetFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetChannelsChannelTargetFilter {
+		return vs[0].([]GetChannelsChannelTargetFilter)[vs[1].(int)]
+	}).(GetChannelsChannelTargetFilterOutput)
 }
 
 type GetChannelsFilter struct {
@@ -6971,7 +8122,7 @@ type GetMysqlBackupDbSystemSnapshot struct {
 	IpAddress string `pulumi:"ipAddress"`
 	// Specifies if the DB System is highly available.
 	IsHighlyAvailable bool `pulumi:"isHighlyAvailable"`
-	// The Maintenance Policy for the DB System.
+	// The Maintenance Policy for the DB System or Read Replica that this model is included in.
 	Maintenances []GetMysqlBackupDbSystemSnapshotMaintenance `pulumi:"maintenances"`
 	// The MySQL server version of the DB System used for backup.
 	MysqlVersion string `pulumi:"mysqlVersion"`
@@ -7033,7 +8184,7 @@ type GetMysqlBackupDbSystemSnapshotArgs struct {
 	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
 	// Specifies if the DB System is highly available.
 	IsHighlyAvailable pulumi.BoolInput `pulumi:"isHighlyAvailable"`
-	// The Maintenance Policy for the DB System.
+	// The Maintenance Policy for the DB System or Read Replica that this model is included in.
 	Maintenances GetMysqlBackupDbSystemSnapshotMaintenanceArrayInput `pulumi:"maintenances"`
 	// The MySQL server version of the DB System used for backup.
 	MysqlVersion pulumi.StringInput `pulumi:"mysqlVersion"`
@@ -7192,7 +8343,7 @@ func (o GetMysqlBackupDbSystemSnapshotOutput) IsHighlyAvailable() pulumi.BoolOut
 	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) bool { return v.IsHighlyAvailable }).(pulumi.BoolOutput)
 }
 
-// The Maintenance Policy for the DB System.
+// The Maintenance Policy for the DB System or Read Replica that this model is included in.
 func (o GetMysqlBackupDbSystemSnapshotOutput) Maintenances() GetMysqlBackupDbSystemSnapshotMaintenanceArrayOutput {
 	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) []GetMysqlBackupDbSystemSnapshotMaintenance {
 		return v.Maintenances
@@ -7611,6 +8762,10 @@ type GetMysqlBackupDbSystemSnapshotEndpoint struct {
 	Port int `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 	PortX int `pulumi:"portX"`
+	// The OCID of the resource that this endpoint is attached to.
+	ResourceId string `pulumi:"resourceId"`
+	// The type of endpoint that clients and connectors can connect to.
+	ResourceType string `pulumi:"resourceType"`
 	// The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
 	Status string `pulumi:"status"`
 	// Additional information about the current endpoint status.
@@ -7639,6 +8794,10 @@ type GetMysqlBackupDbSystemSnapshotEndpointArgs struct {
 	Port pulumi.IntInput `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 	PortX pulumi.IntInput `pulumi:"portX"`
+	// The OCID of the resource that this endpoint is attached to.
+	ResourceId pulumi.StringInput `pulumi:"resourceId"`
+	// The type of endpoint that clients and connectors can connect to.
+	ResourceType pulumi.StringInput `pulumi:"resourceType"`
 	// The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
 	Status pulumi.StringInput `pulumi:"status"`
 	// Additional information about the current endpoint status.
@@ -7719,6 +8878,16 @@ func (o GetMysqlBackupDbSystemSnapshotEndpointOutput) Port() pulumi.IntOutput {
 // The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 func (o GetMysqlBackupDbSystemSnapshotEndpointOutput) PortX() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotEndpoint) int { return v.PortX }).(pulumi.IntOutput)
+}
+
+// The OCID of the resource that this endpoint is attached to.
+func (o GetMysqlBackupDbSystemSnapshotEndpointOutput) ResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotEndpoint) string { return v.ResourceId }).(pulumi.StringOutput)
+}
+
+// The type of endpoint that clients and connectors can connect to.
+func (o GetMysqlBackupDbSystemSnapshotEndpointOutput) ResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotEndpoint) string { return v.ResourceType }).(pulumi.StringOutput)
 }
 
 // The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
@@ -8144,7 +9313,7 @@ type GetMysqlBackupsBackupDbSystemSnapshot struct {
 	IpAddress string `pulumi:"ipAddress"`
 	// Specifies if the DB System is highly available.
 	IsHighlyAvailable bool `pulumi:"isHighlyAvailable"`
-	// The Maintenance Policy for the DB System.
+	// The Maintenance Policy for the DB System or Read Replica that this model is included in.
 	Maintenances []GetMysqlBackupsBackupDbSystemSnapshotMaintenance `pulumi:"maintenances"`
 	// The MySQL server version of the DB System used for backup.
 	MysqlVersion string `pulumi:"mysqlVersion"`
@@ -8206,7 +9375,7 @@ type GetMysqlBackupsBackupDbSystemSnapshotArgs struct {
 	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
 	// Specifies if the DB System is highly available.
 	IsHighlyAvailable pulumi.BoolInput `pulumi:"isHighlyAvailable"`
-	// The Maintenance Policy for the DB System.
+	// The Maintenance Policy for the DB System or Read Replica that this model is included in.
 	Maintenances GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayInput `pulumi:"maintenances"`
 	// The MySQL server version of the DB System used for backup.
 	MysqlVersion pulumi.StringInput `pulumi:"mysqlVersion"`
@@ -8367,7 +9536,7 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) IsHighlyAvailable() pulumi.
 	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) bool { return v.IsHighlyAvailable }).(pulumi.BoolOutput)
 }
 
-// The Maintenance Policy for the DB System.
+// The Maintenance Policy for the DB System or Read Replica that this model is included in.
 func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) Maintenances() GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayOutput {
 	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) []GetMysqlBackupsBackupDbSystemSnapshotMaintenance {
 		return v.Maintenances
@@ -8788,6 +9957,10 @@ type GetMysqlBackupsBackupDbSystemSnapshotEndpoint struct {
 	Port int `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 	PortX int `pulumi:"portX"`
+	// The OCID of the resource that this endpoint is attached to.
+	ResourceId string `pulumi:"resourceId"`
+	// The type of endpoint that clients and connectors can connect to.
+	ResourceType string `pulumi:"resourceType"`
 	// The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
 	Status string `pulumi:"status"`
 	// Additional information about the current endpoint status.
@@ -8816,6 +9989,10 @@ type GetMysqlBackupsBackupDbSystemSnapshotEndpointArgs struct {
 	Port pulumi.IntInput `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 	PortX pulumi.IntInput `pulumi:"portX"`
+	// The OCID of the resource that this endpoint is attached to.
+	ResourceId pulumi.StringInput `pulumi:"resourceId"`
+	// The type of endpoint that clients and connectors can connect to.
+	ResourceType pulumi.StringInput `pulumi:"resourceType"`
 	// The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
 	Status pulumi.StringInput `pulumi:"status"`
 	// Additional information about the current endpoint status.
@@ -8896,6 +10073,16 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput) Port() pulumi.IntOu
 // The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 func (o GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput) PortX() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotEndpoint) int { return v.PortX }).(pulumi.IntOutput)
+}
+
+// The OCID of the resource that this endpoint is attached to.
+func (o GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput) ResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotEndpoint) string { return v.ResourceId }).(pulumi.StringOutput)
+}
+
+// The type of endpoint that clients and connectors can connect to.
+func (o GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput) ResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotEndpoint) string { return v.ResourceType }).(pulumi.StringOutput)
 }
 
 // The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
@@ -11926,6 +13113,8 @@ func (o GetMysqlDbSystemChannelArrayOutput) Index(i pulumi.IntInput) GetMysqlDbS
 }
 
 type GetMysqlDbSystemChannelSource struct {
+	// Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
+	AnonymousTransactionsHandlings []GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling `pulumi:"anonymousTransactionsHandlings"`
 	// The network address of the DB System.
 	Hostname string `pulumi:"hostname"`
 	// The port for primary endpoint of the DB System to listen on.
@@ -11952,6 +13141,8 @@ type GetMysqlDbSystemChannelSourceInput interface {
 }
 
 type GetMysqlDbSystemChannelSourceArgs struct {
+	// Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
+	AnonymousTransactionsHandlings GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayInput `pulumi:"anonymousTransactionsHandlings"`
 	// The network address of the DB System.
 	Hostname pulumi.StringInput `pulumi:"hostname"`
 	// The port for primary endpoint of the DB System to listen on.
@@ -12017,6 +13208,13 @@ func (o GetMysqlDbSystemChannelSourceOutput) ToGetMysqlDbSystemChannelSourceOutp
 	return o
 }
 
+// Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
+func (o GetMysqlDbSystemChannelSourceOutput) AnonymousTransactionsHandlings() GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemChannelSource) []GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling {
+		return v.AnonymousTransactionsHandlings
+	}).(GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput)
+}
+
 // The network address of the DB System.
 func (o GetMysqlDbSystemChannelSourceOutput) Hostname() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemChannelSource) string { return v.Hostname }).(pulumi.StringOutput)
@@ -12067,6 +13265,134 @@ func (o GetMysqlDbSystemChannelSourceArrayOutput) Index(i pulumi.IntInput) GetMy
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemChannelSource {
 		return vs[0].([]GetMysqlDbSystemChannelSource)[vs[1].(int)]
 	}).(GetMysqlDbSystemChannelSourceOutput)
+}
+
+type GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling struct {
+	// Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+	LastConfiguredLogFilename string `pulumi:"lastConfiguredLogFilename"`
+	// Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+	LastConfiguredLogOffset string `pulumi:"lastConfiguredLogOffset"`
+	// Specifies how the replication channel handles anonymous transactions.
+	Policy string `pulumi:"policy"`
+	// The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
+	Uuid string `pulumi:"uuid"`
+}
+
+// GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingInput is an input type that accepts GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs and GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingInput` via:
+//
+//	GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs{...}
+type GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput() GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput
+	ToGetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutputWithContext(context.Context) GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput
+}
+
+type GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs struct {
+	// Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+	LastConfiguredLogFilename pulumi.StringInput `pulumi:"lastConfiguredLogFilename"`
+	// Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+	LastConfiguredLogOffset pulumi.StringInput `pulumi:"lastConfiguredLogOffset"`
+	// Specifies how the replication channel handles anonymous transactions.
+	Policy pulumi.StringInput `pulumi:"policy"`
+	// The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
+	Uuid pulumi.StringInput `pulumi:"uuid"`
+}
+
+func (GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs) ToGetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput() GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput {
+	return i.ToGetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs) ToGetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutputWithContext(ctx context.Context) GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput)
+}
+
+// GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayInput is an input type that accepts GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArray and GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayInput` via:
+//
+//	GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArray{ GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs{...} }
+type GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput() GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput
+	ToGetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutputWithContext(context.Context) GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput
+}
+
+type GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArray []GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingInput
+
+func (GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArray) ToGetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput() GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput {
+	return i.ToGetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArray) ToGetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput)
+}
+
+type GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput) ToGetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput() GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput) ToGetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutputWithContext(ctx context.Context) GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput {
+	return o
+}
+
+// Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+func (o GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput) LastConfiguredLogFilename() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling) string {
+		return v.LastConfiguredLogFilename
+	}).(pulumi.StringOutput)
+}
+
+// Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+func (o GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput) LastConfiguredLogOffset() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling) string {
+		return v.LastConfiguredLogOffset
+	}).(pulumi.StringOutput)
+}
+
+// Specifies how the replication channel handles anonymous transactions.
+func (o GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput) Policy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling) string { return v.Policy }).(pulumi.StringOutput)
+}
+
+// The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
+func (o GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput) Uuid() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling) string { return v.Uuid }).(pulumi.StringOutput)
+}
+
+type GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput) ToGetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput() GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput) ToGetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling {
+		return vs[0].([]GetMysqlDbSystemChannelSourceAnonymousTransactionsHandling)[vs[1].(int)]
+	}).(GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput)
 }
 
 type GetMysqlDbSystemChannelSourceSslCaCertificate struct {
@@ -12182,6 +13508,8 @@ type GetMysqlDbSystemChannelTarget struct {
 	ChannelName string `pulumi:"channelName"`
 	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DbSystemId string `pulumi:"dbSystemId"`
+	// Replication filter rules to be applied at the DB System Channel target.
+	Filters []GetMysqlDbSystemChannelTargetFilter `pulumi:"filters"`
 	// The specific target identifier.
 	TargetType string `pulumi:"targetType"`
 }
@@ -12204,6 +13532,8 @@ type GetMysqlDbSystemChannelTargetArgs struct {
 	ChannelName pulumi.StringInput `pulumi:"channelName"`
 	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
+	// Replication filter rules to be applied at the DB System Channel target.
+	Filters GetMysqlDbSystemChannelTargetFilterArrayInput `pulumi:"filters"`
 	// The specific target identifier.
 	TargetType pulumi.StringInput `pulumi:"targetType"`
 }
@@ -12274,6 +13604,11 @@ func (o GetMysqlDbSystemChannelTargetOutput) DbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemChannelTarget) string { return v.DbSystemId }).(pulumi.StringOutput)
 }
 
+// Replication filter rules to be applied at the DB System Channel target.
+func (o GetMysqlDbSystemChannelTargetOutput) Filters() GetMysqlDbSystemChannelTargetFilterArrayOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemChannelTarget) []GetMysqlDbSystemChannelTargetFilter { return v.Filters }).(GetMysqlDbSystemChannelTargetFilterArrayOutput)
+}
+
 // The specific target identifier.
 func (o GetMysqlDbSystemChannelTargetOutput) TargetType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemChannelTarget) string { return v.TargetType }).(pulumi.StringOutput)
@@ -12297,6 +13632,112 @@ func (o GetMysqlDbSystemChannelTargetArrayOutput) Index(i pulumi.IntInput) GetMy
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemChannelTarget {
 		return vs[0].([]GetMysqlDbSystemChannelTarget)[vs[1].(int)]
 	}).(GetMysqlDbSystemChannelTargetOutput)
+}
+
+type GetMysqlDbSystemChannelTargetFilter struct {
+	// The type of the filter rule.
+	Type string `pulumi:"type"`
+	// The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+	Value string `pulumi:"value"`
+}
+
+// GetMysqlDbSystemChannelTargetFilterInput is an input type that accepts GetMysqlDbSystemChannelTargetFilterArgs and GetMysqlDbSystemChannelTargetFilterOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemChannelTargetFilterInput` via:
+//
+//	GetMysqlDbSystemChannelTargetFilterArgs{...}
+type GetMysqlDbSystemChannelTargetFilterInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemChannelTargetFilterOutput() GetMysqlDbSystemChannelTargetFilterOutput
+	ToGetMysqlDbSystemChannelTargetFilterOutputWithContext(context.Context) GetMysqlDbSystemChannelTargetFilterOutput
+}
+
+type GetMysqlDbSystemChannelTargetFilterArgs struct {
+	// The type of the filter rule.
+	Type pulumi.StringInput `pulumi:"type"`
+	// The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetMysqlDbSystemChannelTargetFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemChannelTargetFilter)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemChannelTargetFilterArgs) ToGetMysqlDbSystemChannelTargetFilterOutput() GetMysqlDbSystemChannelTargetFilterOutput {
+	return i.ToGetMysqlDbSystemChannelTargetFilterOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemChannelTargetFilterArgs) ToGetMysqlDbSystemChannelTargetFilterOutputWithContext(ctx context.Context) GetMysqlDbSystemChannelTargetFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemChannelTargetFilterOutput)
+}
+
+// GetMysqlDbSystemChannelTargetFilterArrayInput is an input type that accepts GetMysqlDbSystemChannelTargetFilterArray and GetMysqlDbSystemChannelTargetFilterArrayOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemChannelTargetFilterArrayInput` via:
+//
+//	GetMysqlDbSystemChannelTargetFilterArray{ GetMysqlDbSystemChannelTargetFilterArgs{...} }
+type GetMysqlDbSystemChannelTargetFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemChannelTargetFilterArrayOutput() GetMysqlDbSystemChannelTargetFilterArrayOutput
+	ToGetMysqlDbSystemChannelTargetFilterArrayOutputWithContext(context.Context) GetMysqlDbSystemChannelTargetFilterArrayOutput
+}
+
+type GetMysqlDbSystemChannelTargetFilterArray []GetMysqlDbSystemChannelTargetFilterInput
+
+func (GetMysqlDbSystemChannelTargetFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemChannelTargetFilter)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemChannelTargetFilterArray) ToGetMysqlDbSystemChannelTargetFilterArrayOutput() GetMysqlDbSystemChannelTargetFilterArrayOutput {
+	return i.ToGetMysqlDbSystemChannelTargetFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemChannelTargetFilterArray) ToGetMysqlDbSystemChannelTargetFilterArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemChannelTargetFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemChannelTargetFilterArrayOutput)
+}
+
+type GetMysqlDbSystemChannelTargetFilterOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemChannelTargetFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemChannelTargetFilter)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemChannelTargetFilterOutput) ToGetMysqlDbSystemChannelTargetFilterOutput() GetMysqlDbSystemChannelTargetFilterOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemChannelTargetFilterOutput) ToGetMysqlDbSystemChannelTargetFilterOutputWithContext(ctx context.Context) GetMysqlDbSystemChannelTargetFilterOutput {
+	return o
+}
+
+// The type of the filter rule.
+func (o GetMysqlDbSystemChannelTargetFilterOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemChannelTargetFilter) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+func (o GetMysqlDbSystemChannelTargetFilterOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemChannelTargetFilter) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetMysqlDbSystemChannelTargetFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemChannelTargetFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemChannelTargetFilter)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemChannelTargetFilterArrayOutput) ToGetMysqlDbSystemChannelTargetFilterArrayOutput() GetMysqlDbSystemChannelTargetFilterArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemChannelTargetFilterArrayOutput) ToGetMysqlDbSystemChannelTargetFilterArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemChannelTargetFilterArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemChannelTargetFilterArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemChannelTargetFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemChannelTargetFilter {
+		return vs[0].([]GetMysqlDbSystemChannelTargetFilter)[vs[1].(int)]
+	}).(GetMysqlDbSystemChannelTargetFilterOutput)
 }
 
 type GetMysqlDbSystemCurrentPlacement struct {
@@ -12531,6 +13972,10 @@ type GetMysqlDbSystemEndpoint struct {
 	Port int `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 	PortX int `pulumi:"portX"`
+	// The OCID of the resource that this endpoint is attached to.
+	ResourceId string `pulumi:"resourceId"`
+	// The type of endpoint that clients and connectors can connect to.
+	ResourceType string `pulumi:"resourceType"`
 	// The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
 	Status string `pulumi:"status"`
 	// Additional information about the current endpoint status.
@@ -12559,6 +14004,10 @@ type GetMysqlDbSystemEndpointArgs struct {
 	Port pulumi.IntInput `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 	PortX pulumi.IntInput `pulumi:"portX"`
+	// The OCID of the resource that this endpoint is attached to.
+	ResourceId pulumi.StringInput `pulumi:"resourceId"`
+	// The type of endpoint that clients and connectors can connect to.
+	ResourceType pulumi.StringInput `pulumi:"resourceType"`
 	// The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
 	Status pulumi.StringInput `pulumi:"status"`
 	// Additional information about the current endpoint status.
@@ -12639,6 +14088,16 @@ func (o GetMysqlDbSystemEndpointOutput) Port() pulumi.IntOutput {
 // The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 func (o GetMysqlDbSystemEndpointOutput) PortX() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemEndpoint) int { return v.PortX }).(pulumi.IntOutput)
+}
+
+// The OCID of the resource that this endpoint is attached to.
+func (o GetMysqlDbSystemEndpointOutput) ResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemEndpoint) string { return v.ResourceId }).(pulumi.StringOutput)
+}
+
+// The type of endpoint that clients and connectors can connect to.
+func (o GetMysqlDbSystemEndpointOutput) ResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemEndpoint) string { return v.ResourceType }).(pulumi.StringOutput)
 }
 
 // The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
@@ -13016,6 +14475,7 @@ type GetMysqlDbSystemSource struct {
 	RecoveryPoint string `pulumi:"recoveryPoint"`
 	// The specific source identifier.
 	SourceType string `pulumi:"sourceType"`
+	SourceUrl  string `pulumi:"sourceUrl"`
 }
 
 // GetMysqlDbSystemSourceInput is an input type that accepts GetMysqlDbSystemSourceArgs and GetMysqlDbSystemSourceOutput values.
@@ -13038,6 +14498,7 @@ type GetMysqlDbSystemSourceArgs struct {
 	RecoveryPoint pulumi.StringInput `pulumi:"recoveryPoint"`
 	// The specific source identifier.
 	SourceType pulumi.StringInput `pulumi:"sourceType"`
+	SourceUrl  pulumi.StringInput `pulumi:"sourceUrl"`
 }
 
 func (GetMysqlDbSystemSourceArgs) ElementType() reflect.Type {
@@ -13111,6 +14572,10 @@ func (o GetMysqlDbSystemSourceOutput) SourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemSource) string { return v.SourceType }).(pulumi.StringOutput)
 }
 
+func (o GetMysqlDbSystemSourceOutput) SourceUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemSource) string { return v.SourceUrl }).(pulumi.StringOutput)
+}
+
 type GetMysqlDbSystemSourceArrayOutput struct{ *pulumi.OutputState }
 
 func (GetMysqlDbSystemSourceArrayOutput) ElementType() reflect.Type {
@@ -13182,7 +14647,7 @@ type GetMysqlDbSystemsDbSystem struct {
 	IsHighlyAvailable bool `pulumi:"isHighlyAvailable"`
 	// Additional information about the current lifecycleState.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// The Maintenance Policy for the DB System.
+	// The Maintenance Policy for the DB System or Read Replica that this model is included in.
 	Maintenances []GetMysqlDbSystemsDbSystemMaintenance `pulumi:"maintenances"`
 	// Name of the MySQL Version in use for the DB System.
 	MysqlVersion string `pulumi:"mysqlVersion"`
@@ -13269,7 +14734,7 @@ type GetMysqlDbSystemsDbSystemArgs struct {
 	IsHighlyAvailable pulumi.BoolInput `pulumi:"isHighlyAvailable"`
 	// Additional information about the current lifecycleState.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
-	// The Maintenance Policy for the DB System.
+	// The Maintenance Policy for the DB System or Read Replica that this model is included in.
 	Maintenances GetMysqlDbSystemsDbSystemMaintenanceArrayInput `pulumi:"maintenances"`
 	// Name of the MySQL Version in use for the DB System.
 	MysqlVersion pulumi.StringInput `pulumi:"mysqlVersion"`
@@ -13479,7 +14944,7 @@ func (o GetMysqlDbSystemsDbSystemOutput) LifecycleDetails() pulumi.StringOutput 
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// The Maintenance Policy for the DB System.
+// The Maintenance Policy for the DB System or Read Replica that this model is included in.
 func (o GetMysqlDbSystemsDbSystemOutput) Maintenances() GetMysqlDbSystemsDbSystemMaintenanceArrayOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) []GetMysqlDbSystemsDbSystemMaintenance { return v.Maintenances }).(GetMysqlDbSystemsDbSystemMaintenanceArrayOutput)
 }
@@ -14131,6 +15596,8 @@ func (o GetMysqlDbSystemsDbSystemChannelArrayOutput) Index(i pulumi.IntInput) Ge
 }
 
 type GetMysqlDbSystemsDbSystemChannelSource struct {
+	// Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
+	AnonymousTransactionsHandlings []GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling `pulumi:"anonymousTransactionsHandlings"`
 	// The network address of the DB System.
 	Hostname string `pulumi:"hostname"`
 	// The port for primary endpoint of the DB System to listen on.
@@ -14157,6 +15624,8 @@ type GetMysqlDbSystemsDbSystemChannelSourceInput interface {
 }
 
 type GetMysqlDbSystemsDbSystemChannelSourceArgs struct {
+	// Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
+	AnonymousTransactionsHandlings GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArrayInput `pulumi:"anonymousTransactionsHandlings"`
 	// The network address of the DB System.
 	Hostname pulumi.StringInput `pulumi:"hostname"`
 	// The port for primary endpoint of the DB System to listen on.
@@ -14222,6 +15691,13 @@ func (o GetMysqlDbSystemsDbSystemChannelSourceOutput) ToGetMysqlDbSystemsDbSyste
 	return o
 }
 
+// Specifies how the replication channel handles replicated transactions without an identifier, enabling replication from a source that does not use transaction-id-based replication to a replica that does.
+func (o GetMysqlDbSystemsDbSystemChannelSourceOutput) AnonymousTransactionsHandlings() GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelSource) []GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling {
+		return v.AnonymousTransactionsHandlings
+	}).(GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput)
+}
+
 // The network address of the DB System.
 func (o GetMysqlDbSystemsDbSystemChannelSourceOutput) Hostname() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelSource) string { return v.Hostname }).(pulumi.StringOutput)
@@ -14272,6 +15748,134 @@ func (o GetMysqlDbSystemsDbSystemChannelSourceArrayOutput) Index(i pulumi.IntInp
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemChannelSource {
 		return vs[0].([]GetMysqlDbSystemsDbSystemChannelSource)[vs[1].(int)]
 	}).(GetMysqlDbSystemsDbSystemChannelSourceOutput)
+}
+
+type GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling struct {
+	// Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+	LastConfiguredLogFilename string `pulumi:"lastConfiguredLogFilename"`
+	// Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+	LastConfiguredLogOffset string `pulumi:"lastConfiguredLogOffset"`
+	// Specifies how the replication channel handles anonymous transactions.
+	Policy string `pulumi:"policy"`
+	// The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
+	Uuid string `pulumi:"uuid"`
+}
+
+// GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingInput is an input type that accepts GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArgs and GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingInput` via:
+//
+//	GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArgs{...}
+type GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutput() GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutput
+	ToGetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutputWithContext(context.Context) GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutput
+}
+
+type GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArgs struct {
+	// Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+	LastConfiguredLogFilename pulumi.StringInput `pulumi:"lastConfiguredLogFilename"`
+	// Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+	LastConfiguredLogOffset pulumi.StringInput `pulumi:"lastConfiguredLogOffset"`
+	// Specifies how the replication channel handles anonymous transactions.
+	Policy pulumi.StringInput `pulumi:"policy"`
+	// The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
+	Uuid pulumi.StringInput `pulumi:"uuid"`
+}
+
+func (GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArgs) ToGetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutput() GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutput {
+	return i.ToGetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArgs) ToGetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutput)
+}
+
+// GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArray and GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArrayInput` via:
+//
+//	GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArray{ GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArgs{...} }
+type GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput() GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput
+	ToGetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutputWithContext(context.Context) GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput
+}
+
+type GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArray []GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingInput
+
+func (GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArray) ToGetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput() GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput {
+	return i.ToGetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArray) ToGetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput)
+}
+
+type GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutput) ToGetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutput() GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutput) ToGetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutput {
+	return o
+}
+
+// Specifies one of the coordinates (file) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+func (o GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutput) LastConfiguredLogFilename() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling) string {
+		return v.LastConfiguredLogFilename
+	}).(pulumi.StringOutput)
+}
+
+// Specifies one of the coordinates (offset) at which the replica should begin reading the source's log. As this value specifies the point where replication starts from, it is only used once, when it starts. It is never used again, unless a new UpdateChannel operation modifies it.
+func (o GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutput) LastConfiguredLogOffset() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling) string {
+		return v.LastConfiguredLogOffset
+	}).(pulumi.StringOutput)
+}
+
+// Specifies how the replication channel handles anonymous transactions.
+func (o GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutput) Policy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling) string { return v.Policy }).(pulumi.StringOutput)
+}
+
+// The UUID that is used as a prefix when generating transaction identifiers for anonymous transactions coming from the source. You can change the UUID later.
+func (o GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutput) Uuid() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling) string { return v.Uuid }).(pulumi.StringOutput)
+}
+
+type GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput) ToGetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput() GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput) ToGetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling {
+		return vs[0].([]GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandling)[vs[1].(int)]
+	}).(GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutput)
 }
 
 type GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificate struct {
@@ -14387,6 +15991,8 @@ type GetMysqlDbSystemsDbSystemChannelTarget struct {
 	ChannelName string `pulumi:"channelName"`
 	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DbSystemId string `pulumi:"dbSystemId"`
+	// Replication filter rules to be applied at the DB System Channel target.
+	Filters []GetMysqlDbSystemsDbSystemChannelTargetFilter `pulumi:"filters"`
 	// The specific target identifier.
 	TargetType string `pulumi:"targetType"`
 }
@@ -14409,6 +16015,8 @@ type GetMysqlDbSystemsDbSystemChannelTargetArgs struct {
 	ChannelName pulumi.StringInput `pulumi:"channelName"`
 	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
+	// Replication filter rules to be applied at the DB System Channel target.
+	Filters GetMysqlDbSystemsDbSystemChannelTargetFilterArrayInput `pulumi:"filters"`
 	// The specific target identifier.
 	TargetType pulumi.StringInput `pulumi:"targetType"`
 }
@@ -14479,6 +16087,13 @@ func (o GetMysqlDbSystemsDbSystemChannelTargetOutput) DbSystemId() pulumi.String
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelTarget) string { return v.DbSystemId }).(pulumi.StringOutput)
 }
 
+// Replication filter rules to be applied at the DB System Channel target.
+func (o GetMysqlDbSystemsDbSystemChannelTargetOutput) Filters() GetMysqlDbSystemsDbSystemChannelTargetFilterArrayOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelTarget) []GetMysqlDbSystemsDbSystemChannelTargetFilter {
+		return v.Filters
+	}).(GetMysqlDbSystemsDbSystemChannelTargetFilterArrayOutput)
+}
+
 // The specific target identifier.
 func (o GetMysqlDbSystemsDbSystemChannelTargetOutput) TargetType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelTarget) string { return v.TargetType }).(pulumi.StringOutput)
@@ -14502,6 +16117,112 @@ func (o GetMysqlDbSystemsDbSystemChannelTargetArrayOutput) Index(i pulumi.IntInp
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemChannelTarget {
 		return vs[0].([]GetMysqlDbSystemsDbSystemChannelTarget)[vs[1].(int)]
 	}).(GetMysqlDbSystemsDbSystemChannelTargetOutput)
+}
+
+type GetMysqlDbSystemsDbSystemChannelTargetFilter struct {
+	// The type of the filter rule.
+	Type string `pulumi:"type"`
+	// The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+	Value string `pulumi:"value"`
+}
+
+// GetMysqlDbSystemsDbSystemChannelTargetFilterInput is an input type that accepts GetMysqlDbSystemsDbSystemChannelTargetFilterArgs and GetMysqlDbSystemsDbSystemChannelTargetFilterOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemsDbSystemChannelTargetFilterInput` via:
+//
+//	GetMysqlDbSystemsDbSystemChannelTargetFilterArgs{...}
+type GetMysqlDbSystemsDbSystemChannelTargetFilterInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemsDbSystemChannelTargetFilterOutput() GetMysqlDbSystemsDbSystemChannelTargetFilterOutput
+	ToGetMysqlDbSystemsDbSystemChannelTargetFilterOutputWithContext(context.Context) GetMysqlDbSystemsDbSystemChannelTargetFilterOutput
+}
+
+type GetMysqlDbSystemsDbSystemChannelTargetFilterArgs struct {
+	// The type of the filter rule.
+	Type pulumi.StringInput `pulumi:"type"`
+	// The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetMysqlDbSystemsDbSystemChannelTargetFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemsDbSystemChannelTargetFilter)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemsDbSystemChannelTargetFilterArgs) ToGetMysqlDbSystemsDbSystemChannelTargetFilterOutput() GetMysqlDbSystemsDbSystemChannelTargetFilterOutput {
+	return i.ToGetMysqlDbSystemsDbSystemChannelTargetFilterOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemsDbSystemChannelTargetFilterArgs) ToGetMysqlDbSystemsDbSystemChannelTargetFilterOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemChannelTargetFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemChannelTargetFilterOutput)
+}
+
+// GetMysqlDbSystemsDbSystemChannelTargetFilterArrayInput is an input type that accepts GetMysqlDbSystemsDbSystemChannelTargetFilterArray and GetMysqlDbSystemsDbSystemChannelTargetFilterArrayOutput values.
+// You can construct a concrete instance of `GetMysqlDbSystemsDbSystemChannelTargetFilterArrayInput` via:
+//
+//	GetMysqlDbSystemsDbSystemChannelTargetFilterArray{ GetMysqlDbSystemsDbSystemChannelTargetFilterArgs{...} }
+type GetMysqlDbSystemsDbSystemChannelTargetFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlDbSystemsDbSystemChannelTargetFilterArrayOutput() GetMysqlDbSystemsDbSystemChannelTargetFilterArrayOutput
+	ToGetMysqlDbSystemsDbSystemChannelTargetFilterArrayOutputWithContext(context.Context) GetMysqlDbSystemsDbSystemChannelTargetFilterArrayOutput
+}
+
+type GetMysqlDbSystemsDbSystemChannelTargetFilterArray []GetMysqlDbSystemsDbSystemChannelTargetFilterInput
+
+func (GetMysqlDbSystemsDbSystemChannelTargetFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemsDbSystemChannelTargetFilter)(nil)).Elem()
+}
+
+func (i GetMysqlDbSystemsDbSystemChannelTargetFilterArray) ToGetMysqlDbSystemsDbSystemChannelTargetFilterArrayOutput() GetMysqlDbSystemsDbSystemChannelTargetFilterArrayOutput {
+	return i.ToGetMysqlDbSystemsDbSystemChannelTargetFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlDbSystemsDbSystemChannelTargetFilterArray) ToGetMysqlDbSystemsDbSystemChannelTargetFilterArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemChannelTargetFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlDbSystemsDbSystemChannelTargetFilterArrayOutput)
+}
+
+type GetMysqlDbSystemsDbSystemChannelTargetFilterOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemsDbSystemChannelTargetFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlDbSystemsDbSystemChannelTargetFilter)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemsDbSystemChannelTargetFilterOutput) ToGetMysqlDbSystemsDbSystemChannelTargetFilterOutput() GetMysqlDbSystemsDbSystemChannelTargetFilterOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemChannelTargetFilterOutput) ToGetMysqlDbSystemsDbSystemChannelTargetFilterOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemChannelTargetFilterOutput {
+	return o
+}
+
+// The type of the filter rule.
+func (o GetMysqlDbSystemsDbSystemChannelTargetFilterOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelTargetFilter) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// The body of the filter rule. This can represent a database, a table, or a database pair (represented as "db1->db2"). For more information, see [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+func (o GetMysqlDbSystemsDbSystemChannelTargetFilterOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannelTargetFilter) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetMysqlDbSystemsDbSystemChannelTargetFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlDbSystemsDbSystemChannelTargetFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlDbSystemsDbSystemChannelTargetFilter)(nil)).Elem()
+}
+
+func (o GetMysqlDbSystemsDbSystemChannelTargetFilterArrayOutput) ToGetMysqlDbSystemsDbSystemChannelTargetFilterArrayOutput() GetMysqlDbSystemsDbSystemChannelTargetFilterArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemChannelTargetFilterArrayOutput) ToGetMysqlDbSystemsDbSystemChannelTargetFilterArrayOutputWithContext(ctx context.Context) GetMysqlDbSystemsDbSystemChannelTargetFilterArrayOutput {
+	return o
+}
+
+func (o GetMysqlDbSystemsDbSystemChannelTargetFilterArrayOutput) Index(i pulumi.IntInput) GetMysqlDbSystemsDbSystemChannelTargetFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlDbSystemsDbSystemChannelTargetFilter {
+		return vs[0].([]GetMysqlDbSystemsDbSystemChannelTargetFilter)[vs[1].(int)]
+	}).(GetMysqlDbSystemsDbSystemChannelTargetFilterOutput)
 }
 
 type GetMysqlDbSystemsDbSystemCurrentPlacement struct {
@@ -14736,6 +16457,10 @@ type GetMysqlDbSystemsDbSystemEndpoint struct {
 	Port int `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 	PortX int `pulumi:"portX"`
+	// The OCID of the resource that this endpoint is attached to.
+	ResourceId string `pulumi:"resourceId"`
+	// The type of endpoint that clients and connectors can connect to.
+	ResourceType string `pulumi:"resourceType"`
 	// The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
 	Status string `pulumi:"status"`
 	// Additional information about the current endpoint status.
@@ -14764,6 +16489,10 @@ type GetMysqlDbSystemsDbSystemEndpointArgs struct {
 	Port pulumi.IntInput `pulumi:"port"`
 	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 	PortX pulumi.IntInput `pulumi:"portX"`
+	// The OCID of the resource that this endpoint is attached to.
+	ResourceId pulumi.StringInput `pulumi:"resourceId"`
+	// The type of endpoint that clients and connectors can connect to.
+	ResourceType pulumi.StringInput `pulumi:"resourceType"`
 	// The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
 	Status pulumi.StringInput `pulumi:"status"`
 	// Additional information about the current endpoint status.
@@ -14844,6 +16573,16 @@ func (o GetMysqlDbSystemsDbSystemEndpointOutput) Port() pulumi.IntOutput {
 // The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
 func (o GetMysqlDbSystemsDbSystemEndpointOutput) PortX() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemEndpoint) int { return v.PortX }).(pulumi.IntOutput)
+}
+
+// The OCID of the resource that this endpoint is attached to.
+func (o GetMysqlDbSystemsDbSystemEndpointOutput) ResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemEndpoint) string { return v.ResourceId }).(pulumi.StringOutput)
+}
+
+// The type of endpoint that clients and connectors can connect to.
+func (o GetMysqlDbSystemsDbSystemEndpointOutput) ResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemEndpoint) string { return v.ResourceType }).(pulumi.StringOutput)
 }
 
 // The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
@@ -15221,6 +16960,7 @@ type GetMysqlDbSystemsDbSystemSource struct {
 	RecoveryPoint string `pulumi:"recoveryPoint"`
 	// The specific source identifier.
 	SourceType string `pulumi:"sourceType"`
+	SourceUrl  string `pulumi:"sourceUrl"`
 }
 
 // GetMysqlDbSystemsDbSystemSourceInput is an input type that accepts GetMysqlDbSystemsDbSystemSourceArgs and GetMysqlDbSystemsDbSystemSourceOutput values.
@@ -15243,6 +16983,7 @@ type GetMysqlDbSystemsDbSystemSourceArgs struct {
 	RecoveryPoint pulumi.StringInput `pulumi:"recoveryPoint"`
 	// The specific source identifier.
 	SourceType pulumi.StringInput `pulumi:"sourceType"`
+	SourceUrl  pulumi.StringInput `pulumi:"sourceUrl"`
 }
 
 func (GetMysqlDbSystemsDbSystemSourceArgs) ElementType() reflect.Type {
@@ -15314,6 +17055,10 @@ func (o GetMysqlDbSystemsDbSystemSourceOutput) RecoveryPoint() pulumi.StringOutp
 // The specific source identifier.
 func (o GetMysqlDbSystemsDbSystemSourceOutput) SourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemSource) string { return v.SourceType }).(pulumi.StringOutput)
+}
+
+func (o GetMysqlDbSystemsDbSystemSourceOutput) SourceUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemSource) string { return v.SourceUrl }).(pulumi.StringOutput)
 }
 
 type GetMysqlDbSystemsDbSystemSourceArrayOutput struct{ *pulumi.OutputState }
@@ -15993,15 +17738,375 @@ func (o GetShapesShapeArrayOutput) Index(i pulumi.IntInput) GetShapesShapeOutput
 	}).(GetShapesShapeOutput)
 }
 
+type GetrRplicasFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetrRplicasFilterInput is an input type that accepts GetrRplicasFilterArgs and GetrRplicasFilterOutput values.
+// You can construct a concrete instance of `GetrRplicasFilterInput` via:
+//
+//	GetrRplicasFilterArgs{...}
+type GetrRplicasFilterInput interface {
+	pulumi.Input
+
+	ToGetrRplicasFilterOutput() GetrRplicasFilterOutput
+	ToGetrRplicasFilterOutputWithContext(context.Context) GetrRplicasFilterOutput
+}
+
+type GetrRplicasFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetrRplicasFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetrRplicasFilter)(nil)).Elem()
+}
+
+func (i GetrRplicasFilterArgs) ToGetrRplicasFilterOutput() GetrRplicasFilterOutput {
+	return i.ToGetrRplicasFilterOutputWithContext(context.Background())
+}
+
+func (i GetrRplicasFilterArgs) ToGetrRplicasFilterOutputWithContext(ctx context.Context) GetrRplicasFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetrRplicasFilterOutput)
+}
+
+// GetrRplicasFilterArrayInput is an input type that accepts GetrRplicasFilterArray and GetrRplicasFilterArrayOutput values.
+// You can construct a concrete instance of `GetrRplicasFilterArrayInput` via:
+//
+//	GetrRplicasFilterArray{ GetrRplicasFilterArgs{...} }
+type GetrRplicasFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetrRplicasFilterArrayOutput() GetrRplicasFilterArrayOutput
+	ToGetrRplicasFilterArrayOutputWithContext(context.Context) GetrRplicasFilterArrayOutput
+}
+
+type GetrRplicasFilterArray []GetrRplicasFilterInput
+
+func (GetrRplicasFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetrRplicasFilter)(nil)).Elem()
+}
+
+func (i GetrRplicasFilterArray) ToGetrRplicasFilterArrayOutput() GetrRplicasFilterArrayOutput {
+	return i.ToGetrRplicasFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetrRplicasFilterArray) ToGetrRplicasFilterArrayOutputWithContext(ctx context.Context) GetrRplicasFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetrRplicasFilterArrayOutput)
+}
+
+type GetrRplicasFilterOutput struct{ *pulumi.OutputState }
+
+func (GetrRplicasFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetrRplicasFilter)(nil)).Elem()
+}
+
+func (o GetrRplicasFilterOutput) ToGetrRplicasFilterOutput() GetrRplicasFilterOutput {
+	return o
+}
+
+func (o GetrRplicasFilterOutput) ToGetrRplicasFilterOutputWithContext(ctx context.Context) GetrRplicasFilterOutput {
+	return o
+}
+
+func (o GetrRplicasFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetrRplicasFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetrRplicasFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetrRplicasFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetrRplicasFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetrRplicasFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetrRplicasFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetrRplicasFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetrRplicasFilter)(nil)).Elem()
+}
+
+func (o GetrRplicasFilterArrayOutput) ToGetrRplicasFilterArrayOutput() GetrRplicasFilterArrayOutput {
+	return o
+}
+
+func (o GetrRplicasFilterArrayOutput) ToGetrRplicasFilterArrayOutputWithContext(ctx context.Context) GetrRplicasFilterArrayOutput {
+	return o
+}
+
+func (o GetrRplicasFilterArrayOutput) Index(i pulumi.IntInput) GetrRplicasFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetrRplicasFilter {
+		return vs[0].([]GetrRplicasFilter)[vs[1].(int)]
+	}).(GetrRplicasFilterOutput)
+}
+
+type GetrRplicasReplica struct {
+	// The name of the Availability Domain the read replica is located in.
+	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId string `pulumi:"compartmentId"`
+	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	DbSystemId string `pulumi:"dbSystemId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// User provided description of the read replica.
+	Description string `pulumi:"description"`
+	// A filter to return only the resource matching the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// The name of the Fault Domain the read replica is located in.
+	FaultDomain string `pulumi:"faultDomain"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The OCID of the read replica.
+	Id string `pulumi:"id"`
+	// The IP address the read replica is configured to listen on.
+	IpAddress string `pulumi:"ipAddress"`
+	// Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
+	IsDeleteProtected bool `pulumi:"isDeleteProtected"`
+	// A message describing the state of the read replica.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The MySQL version used by the read replica.
+	MysqlVersion string `pulumi:"mysqlVersion"`
+	// The port the read replica is configured to listen on.
+	Port int `pulumi:"port"`
+	// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
+	PortX int `pulumi:"portX"`
+	// The LifecycleState of the read replica.
+	State string `pulumi:"state"`
+	// The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time the read replica was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetrRplicasReplicaInput is an input type that accepts GetrRplicasReplicaArgs and GetrRplicasReplicaOutput values.
+// You can construct a concrete instance of `GetrRplicasReplicaInput` via:
+//
+//	GetrRplicasReplicaArgs{...}
+type GetrRplicasReplicaInput interface {
+	pulumi.Input
+
+	ToGetrRplicasReplicaOutput() GetrRplicasReplicaOutput
+	ToGetrRplicasReplicaOutputWithContext(context.Context) GetrRplicasReplicaOutput
+}
+
+type GetrRplicasReplicaArgs struct {
+	// The name of the Availability Domain the read replica is located in.
+	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// User provided description of the read replica.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only the resource matching the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The name of the Fault Domain the read replica is located in.
+	FaultDomain pulumi.StringInput `pulumi:"faultDomain"`
+	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The OCID of the read replica.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The IP address the read replica is configured to listen on.
+	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	// Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
+	IsDeleteProtected pulumi.BoolInput `pulumi:"isDeleteProtected"`
+	// A message describing the state of the read replica.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The MySQL version used by the read replica.
+	MysqlVersion pulumi.StringInput `pulumi:"mysqlVersion"`
+	// The port the read replica is configured to listen on.
+	Port pulumi.IntInput `pulumi:"port"`
+	// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
+	PortX pulumi.IntInput `pulumi:"portX"`
+	// The LifecycleState of the read replica.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time the read replica was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetrRplicasReplicaArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetrRplicasReplica)(nil)).Elem()
+}
+
+func (i GetrRplicasReplicaArgs) ToGetrRplicasReplicaOutput() GetrRplicasReplicaOutput {
+	return i.ToGetrRplicasReplicaOutputWithContext(context.Background())
+}
+
+func (i GetrRplicasReplicaArgs) ToGetrRplicasReplicaOutputWithContext(ctx context.Context) GetrRplicasReplicaOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetrRplicasReplicaOutput)
+}
+
+// GetrRplicasReplicaArrayInput is an input type that accepts GetrRplicasReplicaArray and GetrRplicasReplicaArrayOutput values.
+// You can construct a concrete instance of `GetrRplicasReplicaArrayInput` via:
+//
+//	GetrRplicasReplicaArray{ GetrRplicasReplicaArgs{...} }
+type GetrRplicasReplicaArrayInput interface {
+	pulumi.Input
+
+	ToGetrRplicasReplicaArrayOutput() GetrRplicasReplicaArrayOutput
+	ToGetrRplicasReplicaArrayOutputWithContext(context.Context) GetrRplicasReplicaArrayOutput
+}
+
+type GetrRplicasReplicaArray []GetrRplicasReplicaInput
+
+func (GetrRplicasReplicaArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetrRplicasReplica)(nil)).Elem()
+}
+
+func (i GetrRplicasReplicaArray) ToGetrRplicasReplicaArrayOutput() GetrRplicasReplicaArrayOutput {
+	return i.ToGetrRplicasReplicaArrayOutputWithContext(context.Background())
+}
+
+func (i GetrRplicasReplicaArray) ToGetrRplicasReplicaArrayOutputWithContext(ctx context.Context) GetrRplicasReplicaArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetrRplicasReplicaArrayOutput)
+}
+
+type GetrRplicasReplicaOutput struct{ *pulumi.OutputState }
+
+func (GetrRplicasReplicaOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetrRplicasReplica)(nil)).Elem()
+}
+
+func (o GetrRplicasReplicaOutput) ToGetrRplicasReplicaOutput() GetrRplicasReplicaOutput {
+	return o
+}
+
+func (o GetrRplicasReplicaOutput) ToGetrRplicasReplicaOutputWithContext(ctx context.Context) GetrRplicasReplicaOutput {
+	return o
+}
+
+// The name of the Availability Domain the read replica is located in.
+func (o GetrRplicasReplicaOutput) AvailabilityDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetrRplicasReplica) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
+}
+
+// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetrRplicasReplicaOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetrRplicasReplica) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetrRplicasReplicaOutput) DbSystemId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetrRplicasReplica) string { return v.DbSystemId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetrRplicasReplicaOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetrRplicasReplica) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// User provided description of the read replica.
+func (o GetrRplicasReplicaOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetrRplicasReplica) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only the resource matching the given display name exactly.
+func (o GetrRplicasReplicaOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetrRplicasReplica) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The name of the Fault Domain the read replica is located in.
+func (o GetrRplicasReplicaOutput) FaultDomain() pulumi.StringOutput {
+	return o.ApplyT(func(v GetrRplicasReplica) string { return v.FaultDomain }).(pulumi.StringOutput)
+}
+
+// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+func (o GetrRplicasReplicaOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetrRplicasReplica) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The OCID of the read replica.
+func (o GetrRplicasReplicaOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetrRplicasReplica) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The IP address the read replica is configured to listen on.
+func (o GetrRplicasReplicaOutput) IpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetrRplicasReplica) string { return v.IpAddress }).(pulumi.StringOutput)
+}
+
+// Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
+func (o GetrRplicasReplicaOutput) IsDeleteProtected() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetrRplicasReplica) bool { return v.IsDeleteProtected }).(pulumi.BoolOutput)
+}
+
+// A message describing the state of the read replica.
+func (o GetrRplicasReplicaOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetrRplicasReplica) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The MySQL version used by the read replica.
+func (o GetrRplicasReplicaOutput) MysqlVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetrRplicasReplica) string { return v.MysqlVersion }).(pulumi.StringOutput)
+}
+
+// The port the read replica is configured to listen on.
+func (o GetrRplicasReplicaOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v GetrRplicasReplica) int { return v.Port }).(pulumi.IntOutput)
+}
+
+// The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
+func (o GetrRplicasReplicaOutput) PortX() pulumi.IntOutput {
+	return o.ApplyT(func(v GetrRplicasReplica) int { return v.PortX }).(pulumi.IntOutput)
+}
+
+// The LifecycleState of the read replica.
+func (o GetrRplicasReplicaOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetrRplicasReplica) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+func (o GetrRplicasReplicaOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetrRplicasReplica) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time the read replica was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+func (o GetrRplicasReplicaOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetrRplicasReplica) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetrRplicasReplicaArrayOutput struct{ *pulumi.OutputState }
+
+func (GetrRplicasReplicaArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetrRplicasReplica)(nil)).Elem()
+}
+
+func (o GetrRplicasReplicaArrayOutput) ToGetrRplicasReplicaArrayOutput() GetrRplicasReplicaArrayOutput {
+	return o
+}
+
+func (o GetrRplicasReplicaArrayOutput) ToGetrRplicasReplicaArrayOutputWithContext(ctx context.Context) GetrRplicasReplicaArrayOutput {
+	return o
+}
+
+func (o GetrRplicasReplicaArrayOutput) Index(i pulumi.IntInput) GetrRplicasReplicaOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetrRplicasReplica {
+		return vs[0].([]GetrRplicasReplica)[vs[1].(int)]
+	}).(GetrRplicasReplicaOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AnalyticsClusterClusterNodeInput)(nil)).Elem(), AnalyticsClusterClusterNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AnalyticsClusterClusterNodeArrayInput)(nil)).Elem(), AnalyticsClusterClusterNodeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ChannelSourceInput)(nil)).Elem(), ChannelSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ChannelSourcePtrInput)(nil)).Elem(), ChannelSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ChannelSourceAnonymousTransactionsHandlingInput)(nil)).Elem(), ChannelSourceAnonymousTransactionsHandlingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ChannelSourceAnonymousTransactionsHandlingPtrInput)(nil)).Elem(), ChannelSourceAnonymousTransactionsHandlingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ChannelSourceSslCaCertificateInput)(nil)).Elem(), ChannelSourceSslCaCertificateArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ChannelSourceSslCaCertificatePtrInput)(nil)).Elem(), ChannelSourceSslCaCertificateArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ChannelTargetInput)(nil)).Elem(), ChannelTargetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ChannelTargetPtrInput)(nil)).Elem(), ChannelTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ChannelTargetFilterInput)(nil)).Elem(), ChannelTargetFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ChannelTargetFilterArrayInput)(nil)).Elem(), ChannelTargetFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*HeatWaveClusterClusterNodeInput)(nil)).Elem(), HeatWaveClusterClusterNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*HeatWaveClusterClusterNodeArrayInput)(nil)).Elem(), HeatWaveClusterClusterNodeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotArgs{})
@@ -16030,10 +18135,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemChannelArrayInput)(nil)).Elem(), MysqlDbSystemChannelArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemChannelSourceInput)(nil)).Elem(), MysqlDbSystemChannelSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemChannelSourceArrayInput)(nil)).Elem(), MysqlDbSystemChannelSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemChannelSourceAnonymousTransactionsHandlingInput)(nil)).Elem(), MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayInput)(nil)).Elem(), MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemChannelSourceSslCaCertificateInput)(nil)).Elem(), MysqlDbSystemChannelSourceSslCaCertificateArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemChannelSourceSslCaCertificateArrayInput)(nil)).Elem(), MysqlDbSystemChannelSourceSslCaCertificateArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemChannelTargetInput)(nil)).Elem(), MysqlDbSystemChannelTargetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemChannelTargetArrayInput)(nil)).Elem(), MysqlDbSystemChannelTargetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemChannelTargetFilterInput)(nil)).Elem(), MysqlDbSystemChannelTargetFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemChannelTargetFilterArrayInput)(nil)).Elem(), MysqlDbSystemChannelTargetFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemCurrentPlacementInput)(nil)).Elem(), MysqlDbSystemCurrentPlacementArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemCurrentPlacementArrayInput)(nil)).Elem(), MysqlDbSystemCurrentPlacementArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlDbSystemDeletionPolicyInput)(nil)).Elem(), MysqlDbSystemDeletionPolicyArgs{})
@@ -16052,18 +18161,26 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAnalyticsClusterClusterNodeArrayInput)(nil)).Elem(), GetAnalyticsClusterClusterNodeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetChannelSourceInput)(nil)).Elem(), GetChannelSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetChannelSourceArrayInput)(nil)).Elem(), GetChannelSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetChannelSourceAnonymousTransactionsHandlingInput)(nil)).Elem(), GetChannelSourceAnonymousTransactionsHandlingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetChannelSourceAnonymousTransactionsHandlingArrayInput)(nil)).Elem(), GetChannelSourceAnonymousTransactionsHandlingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetChannelSourceSslCaCertificateInput)(nil)).Elem(), GetChannelSourceSslCaCertificateArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetChannelSourceSslCaCertificateArrayInput)(nil)).Elem(), GetChannelSourceSslCaCertificateArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetChannelTargetInput)(nil)).Elem(), GetChannelTargetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetChannelTargetArrayInput)(nil)).Elem(), GetChannelTargetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetChannelTargetFilterInput)(nil)).Elem(), GetChannelTargetFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetChannelTargetFilterArrayInput)(nil)).Elem(), GetChannelTargetFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetChannelsChannelInput)(nil)).Elem(), GetChannelsChannelArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetChannelsChannelArrayInput)(nil)).Elem(), GetChannelsChannelArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetChannelsChannelSourceInput)(nil)).Elem(), GetChannelsChannelSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetChannelsChannelSourceArrayInput)(nil)).Elem(), GetChannelsChannelSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetChannelsChannelSourceAnonymousTransactionsHandlingInput)(nil)).Elem(), GetChannelsChannelSourceAnonymousTransactionsHandlingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetChannelsChannelSourceAnonymousTransactionsHandlingArrayInput)(nil)).Elem(), GetChannelsChannelSourceAnonymousTransactionsHandlingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetChannelsChannelSourceSslCaCertificateInput)(nil)).Elem(), GetChannelsChannelSourceSslCaCertificateArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetChannelsChannelSourceSslCaCertificateArrayInput)(nil)).Elem(), GetChannelsChannelSourceSslCaCertificateArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetChannelsChannelTargetInput)(nil)).Elem(), GetChannelsChannelTargetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetChannelsChannelTargetArrayInput)(nil)).Elem(), GetChannelsChannelTargetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetChannelsChannelTargetFilterInput)(nil)).Elem(), GetChannelsChannelTargetFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetChannelsChannelTargetFilterArrayInput)(nil)).Elem(), GetChannelsChannelTargetFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetChannelsFilterInput)(nil)).Elem(), GetChannelsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetChannelsFilterArrayInput)(nil)).Elem(), GetChannelsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetHeatWaveClusterClusterNodeInput)(nil)).Elem(), GetHeatWaveClusterClusterNodeArgs{})
@@ -16118,10 +18235,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemChannelArrayInput)(nil)).Elem(), GetMysqlDbSystemChannelArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemChannelSourceInput)(nil)).Elem(), GetMysqlDbSystemChannelSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemChannelSourceArrayInput)(nil)).Elem(), GetMysqlDbSystemChannelSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingInput)(nil)).Elem(), GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayInput)(nil)).Elem(), GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemChannelSourceSslCaCertificateInput)(nil)).Elem(), GetMysqlDbSystemChannelSourceSslCaCertificateArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemChannelSourceSslCaCertificateArrayInput)(nil)).Elem(), GetMysqlDbSystemChannelSourceSslCaCertificateArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemChannelTargetInput)(nil)).Elem(), GetMysqlDbSystemChannelTargetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemChannelTargetArrayInput)(nil)).Elem(), GetMysqlDbSystemChannelTargetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemChannelTargetFilterInput)(nil)).Elem(), GetMysqlDbSystemChannelTargetFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemChannelTargetFilterArrayInput)(nil)).Elem(), GetMysqlDbSystemChannelTargetFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemCurrentPlacementInput)(nil)).Elem(), GetMysqlDbSystemCurrentPlacementArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemCurrentPlacementArrayInput)(nil)).Elem(), GetMysqlDbSystemCurrentPlacementArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemDeletionPolicyInput)(nil)).Elem(), GetMysqlDbSystemDeletionPolicyArgs{})
@@ -16148,10 +18269,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemChannelArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemChannelArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemChannelSourceInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemChannelSourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemChannelSourceArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemChannelSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemChannelTargetInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemChannelTargetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemChannelTargetArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemChannelTargetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemChannelTargetFilterInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemChannelTargetFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemChannelTargetFilterArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemChannelTargetFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemCurrentPlacementInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemCurrentPlacementArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemCurrentPlacementArrayInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemCurrentPlacementArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlDbSystemsDbSystemDeletionPolicyInput)(nil)).Elem(), GetMysqlDbSystemsDbSystemDeletionPolicyArgs{})
@@ -16178,14 +18303,22 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesFilterArrayInput)(nil)).Elem(), GetShapesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapeInput)(nil)).Elem(), GetShapesShapeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShapesShapeArrayInput)(nil)).Elem(), GetShapesShapeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetrRplicasFilterInput)(nil)).Elem(), GetrRplicasFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetrRplicasFilterArrayInput)(nil)).Elem(), GetrRplicasFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetrRplicasReplicaInput)(nil)).Elem(), GetrRplicasReplicaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetrRplicasReplicaArrayInput)(nil)).Elem(), GetrRplicasReplicaArray{})
 	pulumi.RegisterOutputType(AnalyticsClusterClusterNodeOutput{})
 	pulumi.RegisterOutputType(AnalyticsClusterClusterNodeArrayOutput{})
 	pulumi.RegisterOutputType(ChannelSourceOutput{})
 	pulumi.RegisterOutputType(ChannelSourcePtrOutput{})
+	pulumi.RegisterOutputType(ChannelSourceAnonymousTransactionsHandlingOutput{})
+	pulumi.RegisterOutputType(ChannelSourceAnonymousTransactionsHandlingPtrOutput{})
 	pulumi.RegisterOutputType(ChannelSourceSslCaCertificateOutput{})
 	pulumi.RegisterOutputType(ChannelSourceSslCaCertificatePtrOutput{})
 	pulumi.RegisterOutputType(ChannelTargetOutput{})
 	pulumi.RegisterOutputType(ChannelTargetPtrOutput{})
+	pulumi.RegisterOutputType(ChannelTargetFilterOutput{})
+	pulumi.RegisterOutputType(ChannelTargetFilterArrayOutput{})
 	pulumi.RegisterOutputType(HeatWaveClusterClusterNodeOutput{})
 	pulumi.RegisterOutputType(HeatWaveClusterClusterNodeArrayOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotOutput{})
@@ -16214,10 +18347,14 @@ func init() {
 	pulumi.RegisterOutputType(MysqlDbSystemChannelArrayOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemChannelSourceOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemChannelSourceArrayOutput{})
+	pulumi.RegisterOutputType(MysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput{})
+	pulumi.RegisterOutputType(MysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemChannelSourceSslCaCertificateOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemChannelSourceSslCaCertificateArrayOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemChannelTargetOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemChannelTargetArrayOutput{})
+	pulumi.RegisterOutputType(MysqlDbSystemChannelTargetFilterOutput{})
+	pulumi.RegisterOutputType(MysqlDbSystemChannelTargetFilterArrayOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemCurrentPlacementOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemCurrentPlacementArrayOutput{})
 	pulumi.RegisterOutputType(MysqlDbSystemDeletionPolicyOutput{})
@@ -16236,18 +18373,26 @@ func init() {
 	pulumi.RegisterOutputType(GetAnalyticsClusterClusterNodeArrayOutput{})
 	pulumi.RegisterOutputType(GetChannelSourceOutput{})
 	pulumi.RegisterOutputType(GetChannelSourceArrayOutput{})
+	pulumi.RegisterOutputType(GetChannelSourceAnonymousTransactionsHandlingOutput{})
+	pulumi.RegisterOutputType(GetChannelSourceAnonymousTransactionsHandlingArrayOutput{})
 	pulumi.RegisterOutputType(GetChannelSourceSslCaCertificateOutput{})
 	pulumi.RegisterOutputType(GetChannelSourceSslCaCertificateArrayOutput{})
 	pulumi.RegisterOutputType(GetChannelTargetOutput{})
 	pulumi.RegisterOutputType(GetChannelTargetArrayOutput{})
+	pulumi.RegisterOutputType(GetChannelTargetFilterOutput{})
+	pulumi.RegisterOutputType(GetChannelTargetFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetChannelsChannelOutput{})
 	pulumi.RegisterOutputType(GetChannelsChannelArrayOutput{})
 	pulumi.RegisterOutputType(GetChannelsChannelSourceOutput{})
 	pulumi.RegisterOutputType(GetChannelsChannelSourceArrayOutput{})
+	pulumi.RegisterOutputType(GetChannelsChannelSourceAnonymousTransactionsHandlingOutput{})
+	pulumi.RegisterOutputType(GetChannelsChannelSourceAnonymousTransactionsHandlingArrayOutput{})
 	pulumi.RegisterOutputType(GetChannelsChannelSourceSslCaCertificateOutput{})
 	pulumi.RegisterOutputType(GetChannelsChannelSourceSslCaCertificateArrayOutput{})
 	pulumi.RegisterOutputType(GetChannelsChannelTargetOutput{})
 	pulumi.RegisterOutputType(GetChannelsChannelTargetArrayOutput{})
+	pulumi.RegisterOutputType(GetChannelsChannelTargetFilterOutput{})
+	pulumi.RegisterOutputType(GetChannelsChannelTargetFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetChannelsFilterOutput{})
 	pulumi.RegisterOutputType(GetChannelsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetHeatWaveClusterClusterNodeOutput{})
@@ -16302,10 +18447,14 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlDbSystemChannelArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemChannelSourceOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemChannelSourceArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemChannelSourceSslCaCertificateOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemChannelSourceSslCaCertificateArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemChannelTargetOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemChannelTargetArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemChannelTargetFilterOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemChannelTargetFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemCurrentPlacementOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemCurrentPlacementArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemDeletionPolicyOutput{})
@@ -16332,10 +18481,14 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemChannelArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemChannelSourceOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemChannelSourceArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemChannelSourceAnonymousTransactionsHandlingArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemChannelSourceSslCaCertificateArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemChannelTargetOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemChannelTargetArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemChannelTargetFilterOutput{})
+	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemChannelTargetFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemCurrentPlacementOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemCurrentPlacementArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlDbSystemsDbSystemDeletionPolicyOutput{})
@@ -16362,4 +18515,8 @@ func init() {
 	pulumi.RegisterOutputType(GetShapesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetShapesShapeOutput{})
 	pulumi.RegisterOutputType(GetShapesShapeArrayOutput{})
+	pulumi.RegisterOutputType(GetrRplicasFilterOutput{})
+	pulumi.RegisterOutputType(GetrRplicasFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetrRplicasReplicaOutput{})
+	pulumi.RegisterOutputType(GetrRplicasReplicaArrayOutput{})
 }

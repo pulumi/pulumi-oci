@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSteeringPolicy(args: GetSteeringPolicyArgs, opts?: pulumi.InvokeOptions): Promise<GetSteeringPolicyResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Dns/getSteeringPolicy:getSteeringPolicy", {
         "steeringPolicyId": args.steeringPolicyId,
     }, opts);
@@ -100,9 +98,24 @@ export interface GetSteeringPolicyResult {
      */
     readonly ttl: number;
 }
-
+/**
+ * This data source provides details about a specific Steering Policy resource in Oracle Cloud Infrastructure DNS service.
+ *
+ * Gets information about the specified steering policy.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSteeringPolicy = oci.Dns.getSteeringPolicy({
+ *     steeringPolicyId: oci_dns_steering_policy.test_steering_policy.id,
+ * });
+ * ```
+ */
 export function getSteeringPolicyOutput(args: GetSteeringPolicyOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSteeringPolicyResult> {
-    return pulumi.output(args).apply(a => getSteeringPolicy(a, opts))
+    return pulumi.output(args).apply((a: any) => getSteeringPolicy(a, opts))
 }
 
 /**

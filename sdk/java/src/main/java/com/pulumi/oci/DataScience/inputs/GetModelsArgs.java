@@ -84,6 +84,13 @@ public final class GetModelsArgs extends com.pulumi.resources.InvokeArgs {
         return Optional.ofNullable(this.id);
     }
 
+    @Import(name="modelVersionSetName", required=true)
+    private Output<String> modelVersionSetName;
+
+    public Output<String> modelVersionSetName() {
+        return this.modelVersionSetName;
+    }
+
     /**
      * &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
      * 
@@ -114,6 +121,13 @@ public final class GetModelsArgs extends com.pulumi.resources.InvokeArgs {
         return Optional.ofNullable(this.state);
     }
 
+    @Import(name="versionLabel", required=true)
+    private Output<String> versionLabel;
+
+    public Output<String> versionLabel() {
+        return this.versionLabel;
+    }
+
     private GetModelsArgs() {}
 
     private GetModelsArgs(GetModelsArgs $) {
@@ -122,8 +136,10 @@ public final class GetModelsArgs extends com.pulumi.resources.InvokeArgs {
         this.displayName = $.displayName;
         this.filters = $.filters;
         this.id = $.id;
+        this.modelVersionSetName = $.modelVersionSetName;
         this.projectId = $.projectId;
         this.state = $.state;
+        this.versionLabel = $.versionLabel;
     }
 
     public static Builder builder() {
@@ -241,6 +257,15 @@ public final class GetModelsArgs extends com.pulumi.resources.InvokeArgs {
             return id(Output.of(id));
         }
 
+        public Builder modelVersionSetName(Output<String> modelVersionSetName) {
+            $.modelVersionSetName = modelVersionSetName;
+            return this;
+        }
+
+        public Builder modelVersionSetName(String modelVersionSetName) {
+            return modelVersionSetName(Output.of(modelVersionSetName));
+        }
+
         /**
          * @param projectId &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
          * 
@@ -283,8 +308,19 @@ public final class GetModelsArgs extends com.pulumi.resources.InvokeArgs {
             return state(Output.of(state));
         }
 
+        public Builder versionLabel(Output<String> versionLabel) {
+            $.versionLabel = versionLabel;
+            return this;
+        }
+
+        public Builder versionLabel(String versionLabel) {
+            return versionLabel(Output.of(versionLabel));
+        }
+
         public GetModelsArgs build() {
             $.compartmentId = Objects.requireNonNull($.compartmentId, "expected parameter 'compartmentId' to be non-null");
+            $.modelVersionSetName = Objects.requireNonNull($.modelVersionSetName, "expected parameter 'modelVersionSetName' to be non-null");
+            $.versionLabel = Objects.requireNonNull($.versionLabel, "expected parameter 'versionLabel' to be non-null");
             return $;
         }
     }

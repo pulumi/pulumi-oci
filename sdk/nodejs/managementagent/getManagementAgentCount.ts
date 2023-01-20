@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagementAgentCount(args: GetManagementAgentCountArgs, opts?: pulumi.InvokeOptions): Promise<GetManagementAgentCountResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ManagementAgent/getManagementAgentCount:getManagementAgentCount", {
         "compartmentId": args.compartmentId,
         "groupBies": args.groupBies,
@@ -84,9 +82,28 @@ export interface GetManagementAgentCountResult {
      */
     readonly items: outputs.ManagementAgent.GetManagementAgentCountItem[];
 }
-
+/**
+ * This data source provides details about a specific Management Agent Count resource in Oracle Cloud Infrastructure Management Agent service.
+ *
+ * Gets count of the inventory of agents for a given compartment id, group by, and isPluginDeployed parameters.
+ * Supported groupBy parameters: availabilityStatus, platformType, version
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testManagementAgentCount = oci.ManagementAgent.getManagementAgentCount({
+ *     compartmentId: _var.compartment_id,
+ *     groupBies: _var.management_agent_count_group_by,
+ *     hasPlugins: _var.management_agent_count_has_plugins,
+ *     installType: _var.management_agent_count_install_type,
+ * });
+ * ```
+ */
 export function getManagementAgentCountOutput(args: GetManagementAgentCountOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagementAgentCountResult> {
-    return pulumi.output(args).apply(a => getManagementAgentCount(a, opts))
+    return pulumi.output(args).apply((a: any) => getManagementAgentCount(a, opts))
 }
 
 /**

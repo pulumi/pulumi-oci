@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFusionEnvironmentTimeAvailableForRefreshs(args: GetFusionEnvironmentTimeAvailableForRefreshsArgs, opts?: pulumi.InvokeOptions): Promise<GetFusionEnvironmentTimeAvailableForRefreshsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Functions/getFusionEnvironmentTimeAvailableForRefreshs:getFusionEnvironmentTimeAvailableForRefreshs", {
         "filters": args.filters,
         "fusionEnvironmentId": args.fusionEnvironmentId,
@@ -59,9 +57,24 @@ export interface GetFusionEnvironmentTimeAvailableForRefreshsResult {
      */
     readonly timeAvailableForRefreshCollections: outputs.Functions.GetFusionEnvironmentTimeAvailableForRefreshsTimeAvailableForRefreshCollection[];
 }
-
+/**
+ * This data source provides the list of Fusion Environment Time Available For Refreshs in Oracle Cloud Infrastructure Fusion Apps service.
+ *
+ * Gets available refresh time for this fusion environment
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testFusionEnvironmentTimeAvailableForRefreshs = oci.Functions.getFusionEnvironmentTimeAvailableForRefreshs({
+ *     fusionEnvironmentId: oci_fusion_apps_fusion_environment.test_fusion_environment.id,
+ * });
+ * ```
+ */
 export function getFusionEnvironmentTimeAvailableForRefreshsOutput(args: GetFusionEnvironmentTimeAvailableForRefreshsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFusionEnvironmentTimeAvailableForRefreshsResult> {
-    return pulumi.output(args).apply(a => getFusionEnvironmentTimeAvailableForRefreshs(a, opts))
+    return pulumi.output(args).apply((a: any) => getFusionEnvironmentTimeAvailableForRefreshs(a, opts))
 }
 
 /**

@@ -66,6 +66,11 @@ public final class GetReportsReportCollectionItem {
      * 
      */
     private String timeGenerated;
+    /**
+     * @return An optional filter to return only resources that match the specified type.
+     * 
+     */
+    private String type;
 
     private GetReportsReportCollectionItem() {}
     /**
@@ -145,6 +150,13 @@ public final class GetReportsReportCollectionItem {
     public String timeGenerated() {
         return this.timeGenerated;
     }
+    /**
+     * @return An optional filter to return only resources that match the specified type.
+     * 
+     */
+    public String type() {
+        return this.type;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -166,6 +178,7 @@ public final class GetReportsReportCollectionItem {
         private String state;
         private Map<String,Object> systemTags;
         private String timeGenerated;
+        private String type;
         public Builder() {}
         public Builder(GetReportsReportCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -180,6 +193,7 @@ public final class GetReportsReportCollectionItem {
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.timeGenerated = defaults.timeGenerated;
+    	      this.type = defaults.type;
         }
 
         @CustomType.Setter
@@ -237,6 +251,11 @@ public final class GetReportsReportCollectionItem {
             this.timeGenerated = Objects.requireNonNull(timeGenerated);
             return this;
         }
+        @CustomType.Setter
+        public Builder type(String type) {
+            this.type = Objects.requireNonNull(type);
+            return this;
+        }
         public GetReportsReportCollectionItem build() {
             final var o = new GetReportsReportCollectionItem();
             o.compartmentId = compartmentId;
@@ -250,6 +269,7 @@ public final class GetReportsReportCollectionItem {
             o.state = state;
             o.systemTags = systemTags;
             o.timeGenerated = timeGenerated;
+            o.type = type;
             return o;
         }
     }

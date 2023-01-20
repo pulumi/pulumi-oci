@@ -43,7 +43,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetTargetDatabasesTablesResult> InvokeAsync(GetTargetDatabasesTablesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetTargetDatabasesTablesResult>("oci:DataSafe/getTargetDatabasesTables:getTargetDatabasesTables", args ?? new GetTargetDatabasesTablesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetTargetDatabasesTablesResult>("oci:DataSafe/getTargetDatabasesTables:getTargetDatabasesTables", args ?? new GetTargetDatabasesTablesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Target Databases Tables in Oracle Cloud Infrastructure Data Safe service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetTargetDatabasesTablesResult> Invoke(GetTargetDatabasesTablesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetTargetDatabasesTablesResult>("oci:DataSafe/getTargetDatabasesTables:getTargetDatabasesTables", args ?? new GetTargetDatabasesTablesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetTargetDatabasesTablesResult>("oci:DataSafe/getTargetDatabasesTables:getTargetDatabasesTables", args ?? new GetTargetDatabasesTablesInvokeArgs(), options.WithDefaults());
     }
 
 

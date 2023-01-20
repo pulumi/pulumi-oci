@@ -39,7 +39,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetScheduledRunResult> InvokeAsync(GetScheduledRunArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetScheduledRunResult>("oci:MeteringComputation/getScheduledRun:getScheduledRun", args ?? new GetScheduledRunArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetScheduledRunResult>("oci:MeteringComputation/getScheduledRun:getScheduledRun", args ?? new GetScheduledRunArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Scheduled Run resource in Oracle Cloud Infrastructure Metering Computation service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.MeteringComputation
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetScheduledRunResult> Invoke(GetScheduledRunInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetScheduledRunResult>("oci:MeteringComputation/getScheduledRun:getScheduledRun", args ?? new GetScheduledRunInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetScheduledRunResult>("oci:MeteringComputation/getScheduledRun:getScheduledRun", args ?? new GetScheduledRunInvokeArgs(), options.WithDefaults());
     }
 
 

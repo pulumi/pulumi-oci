@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getListeners(args: GetListenersArgs, opts?: pulumi.InvokeOptions): Promise<GetListenersResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:NetworkLoadBalancer/getListeners:getListeners", {
         "filters": args.filters,
         "networkLoadBalancerId": args.networkLoadBalancerId,
@@ -59,9 +57,24 @@ export interface GetListenersResult {
     readonly listenerCollections: outputs.NetworkLoadBalancer.GetListenersListenerCollection[];
     readonly networkLoadBalancerId: string;
 }
-
+/**
+ * This data source provides the list of Listeners in Oracle Cloud Infrastructure Network Load Balancer service.
+ *
+ * Lists all listeners associated with a given network load balancer.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testListeners = oci.NetworkLoadBalancer.getListeners({
+ *     networkLoadBalancerId: oci_network_load_balancer_network_load_balancer.test_network_load_balancer.id,
+ * });
+ * ```
+ */
 export function getListenersOutput(args: GetListenersOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetListenersResult> {
-    return pulumi.output(args).apply(a => getListeners(a, opts))
+    return pulumi.output(args).apply((a: any) => getListeners(a, opts))
 }
 
 /**

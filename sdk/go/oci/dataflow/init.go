@@ -27,6 +27,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &InvokeRun{}
 	case "oci:DataFlow/privateEndpoint:PrivateEndpoint":
 		r = &PrivateEndpoint{}
+	case "oci:DataFlow/runStatement:RunStatement":
+		r = &RunStatement{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -53,6 +55,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"DataFlow/privateEndpoint",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataFlow/runStatement",
 		&module{version},
 	)
 }

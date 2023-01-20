@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCaptureFilter(args: GetCaptureFilterArgs, opts?: pulumi.InvokeOptions): Promise<GetCaptureFilterResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getCaptureFilter:getCaptureFilter", {
         "captureFilterId": args.captureFilterId,
     }, opts);
@@ -84,9 +82,24 @@ export interface GetCaptureFilterResult {
      */
     readonly vtapCaptureFilterRules: outputs.Core.GetCaptureFilterVtapCaptureFilterRule[];
 }
-
+/**
+ * This data source provides details about a specific Capture Filter resource in Oracle Cloud Infrastructure Core service.
+ *
+ * Gets information about the specified VTAP capture filter.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCaptureFilter = oci.Core.getCaptureFilter({
+ *     captureFilterId: oci_core_capture_filter.test_capture_filter.id,
+ * });
+ * ```
+ */
 export function getCaptureFilterOutput(args: GetCaptureFilterOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCaptureFilterResult> {
-    return pulumi.output(args).apply(a => getCaptureFilter(a, opts))
+    return pulumi.output(args).apply((a: any) => getCaptureFilter(a, opts))
 }
 
 /**

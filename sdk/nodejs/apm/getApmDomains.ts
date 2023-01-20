@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getApmDomains(args: GetApmDomainsArgs, opts?: pulumi.InvokeOptions): Promise<GetApmDomainsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Apm/getApmDomains:getApmDomains", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -82,9 +80,26 @@ export interface GetApmDomainsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Apm Domains in Oracle Cloud Infrastructure Apm service.
+ *
+ * Lists all APM domains for the specified tenant compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testApmDomains = oci.Apm.getApmDomains({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.apm_domain_display_name,
+ *     state: _var.apm_domain_state,
+ * });
+ * ```
+ */
 export function getApmDomainsOutput(args: GetApmDomainsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetApmDomainsResult> {
-    return pulumi.output(args).apply(a => getApmDomains(a, opts))
+    return pulumi.output(args).apply((a: any) => getApmDomains(a, opts))
 }
 
 /**

@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Nosql
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetTableResult> InvokeAsync(GetTableArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetTableResult>("oci:Nosql/getTable:getTable", args ?? new GetTableArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetTableResult>("oci:Nosql/getTable:getTable", args ?? new GetTableArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Table resource in Oracle Cloud Infrastructure NoSQL Database service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Nosql
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetTableResult> Invoke(GetTableInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetTableResult>("oci:Nosql/getTable:getTable", args ?? new GetTableInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetTableResult>("oci:Nosql/getTable:getTable", args ?? new GetTableInvokeArgs(), options.WithDefaults());
     }
 
 

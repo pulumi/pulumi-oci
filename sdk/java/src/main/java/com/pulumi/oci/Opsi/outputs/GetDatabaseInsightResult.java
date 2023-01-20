@@ -140,10 +140,20 @@ public final class GetDatabaseInsightResult {
      */
     private String opsiPrivateEndpointId;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
+     * 
+     */
+    private String parentId;
+    /**
      * @return Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
      * 
      */
     private Integer processorCount;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+     * 
+     */
+    private String rootId;
     /**
      * @return Database service name used for connection requests.
      * 
@@ -354,11 +364,25 @@ public final class GetDatabaseInsightResult {
         return this.opsiPrivateEndpointId;
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
+     * 
+     */
+    public String parentId() {
+        return this.parentId;
+    }
+    /**
      * @return Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
      * 
      */
     public Integer processorCount() {
         return this.processorCount;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Infrastructure.
+     * 
+     */
+    public String rootId() {
+        return this.rootId;
     }
     /**
      * @return Database service name used for connection requests.
@@ -439,7 +463,9 @@ public final class GetDatabaseInsightResult {
         private String id;
         private String lifecycleDetails;
         private String opsiPrivateEndpointId;
+        private String parentId;
         private Integer processorCount;
+        private String rootId;
         private String serviceName;
         private String state;
         private String status;
@@ -476,7 +502,9 @@ public final class GetDatabaseInsightResult {
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.opsiPrivateEndpointId = defaults.opsiPrivateEndpointId;
+    	      this.parentId = defaults.parentId;
     	      this.processorCount = defaults.processorCount;
+    	      this.rootId = defaults.rootId;
     	      this.serviceName = defaults.serviceName;
     	      this.state = defaults.state;
     	      this.status = defaults.status;
@@ -630,8 +658,18 @@ public final class GetDatabaseInsightResult {
             return this;
         }
         @CustomType.Setter
+        public Builder parentId(String parentId) {
+            this.parentId = Objects.requireNonNull(parentId);
+            return this;
+        }
+        @CustomType.Setter
         public Builder processorCount(Integer processorCount) {
             this.processorCount = Objects.requireNonNull(processorCount);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder rootId(String rootId) {
+            this.rootId = Objects.requireNonNull(rootId);
             return this;
         }
         @CustomType.Setter
@@ -693,7 +731,9 @@ public final class GetDatabaseInsightResult {
             o.id = id;
             o.lifecycleDetails = lifecycleDetails;
             o.opsiPrivateEndpointId = opsiPrivateEndpointId;
+            o.parentId = parentId;
             o.processorCount = processorCount;
+            o.rootId = rootId;
             o.serviceName = serviceName;
             o.state = state;
             o.status = status;

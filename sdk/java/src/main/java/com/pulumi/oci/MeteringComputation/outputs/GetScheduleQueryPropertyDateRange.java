@@ -10,7 +10,7 @@ import java.util.Objects;
 @CustomType
 public final class GetScheduleQueryPropertyDateRange {
     /**
-     * @return Defines whether the schedule date range is STATIC or DYNAMIC
+     * @return Defines whether the schedule date range is STATIC or DYNAMIC.
      * 
      */
     private String dateRangeType;
@@ -28,7 +28,7 @@ public final class GetScheduleQueryPropertyDateRange {
 
     private GetScheduleQueryPropertyDateRange() {}
     /**
-     * @return Defines whether the schedule date range is STATIC or DYNAMIC
+     * @return Defines whether the schedule date range is STATIC or DYNAMIC.
      * 
      */
     public String dateRangeType() {

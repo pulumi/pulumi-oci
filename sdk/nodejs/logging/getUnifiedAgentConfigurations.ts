@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -27,11 +28,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getUnifiedAgentConfigurations(args: GetUnifiedAgentConfigurationsArgs, opts?: pulumi.InvokeOptions): Promise<GetUnifiedAgentConfigurationsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Logging/getUnifiedAgentConfigurations:getUnifiedAgentConfigurations", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -103,9 +101,29 @@ export interface GetUnifiedAgentConfigurationsResult {
      */
     readonly unifiedAgentConfigurationCollections: outputs.Logging.GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollection[];
 }
-
+/**
+ * This data source provides the list of Unified Agent Configurations in Oracle Cloud Infrastructure Logging service.
+ *
+ * Lists all unified agent configurations in the specified compartment.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testUnifiedAgentConfigurations = oci.Logging.getUnifiedAgentConfigurations({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.unified_agent_configuration_display_name,
+ *     groupId: oci_identity_group.test_group.id,
+ *     isCompartmentIdInSubtree: _var.unified_agent_configuration_is_compartment_id_in_subtree,
+ *     logId: oci_logging_log.test_log.id,
+ *     state: _var.unified_agent_configuration_state,
+ * });
+ * ```
+ */
 export function getUnifiedAgentConfigurationsOutput(args: GetUnifiedAgentConfigurationsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetUnifiedAgentConfigurationsResult> {
-    return pulumi.output(args).apply(a => getUnifiedAgentConfigurations(a, opts))
+    return pulumi.output(args).apply((a: any) => getUnifiedAgentConfigurations(a, opts))
 }
 
 /**

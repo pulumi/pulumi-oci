@@ -22,6 +22,10 @@ namespace Pulumi.Oci.Jms.Outputs
         /// </summary>
         public readonly int ApproximateInstallationCount;
         /// <summary>
+        /// The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
+        /// </summary>
+        public readonly int ApproximateJavaServerCount;
+        /// <summary>
         /// The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and is not taken into account when computing the resource ETag.
         /// </summary>
         public readonly int ApproximateJreCount;
@@ -58,7 +62,7 @@ namespace Pulumi.Oci.Jms.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFleetsFleetCollectionItemInventoryLogResult> InventoryLogs;
         /// <summary>
-        /// Whether or not advanced features are enabled in this fleet.  By default, this is set to false.
+        /// Whether or not advanced features are enabled in this fleet. Deprecated, use `/fleets/{fleetId}/advanceFeatureConfiguration` api instead.
         /// </summary>
         public readonly bool IsAdvancedFeaturesEnabled;
         /// <summary>
@@ -83,6 +87,8 @@ namespace Pulumi.Oci.Jms.Outputs
             int approximateApplicationCount,
 
             int approximateInstallationCount,
+
+            int approximateJavaServerCount,
 
             int approximateJreCount,
 
@@ -114,6 +120,7 @@ namespace Pulumi.Oci.Jms.Outputs
         {
             ApproximateApplicationCount = approximateApplicationCount;
             ApproximateInstallationCount = approximateInstallationCount;
+            ApproximateJavaServerCount = approximateJavaServerCount;
             ApproximateJreCount = approximateJreCount;
             ApproximateManagedInstanceCount = approximateManagedInstanceCount;
             CompartmentId = compartmentId;

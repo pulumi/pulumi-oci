@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDatabaseToolsConnection(args: GetDatabaseToolsConnectionArgs, opts?: pulumi.InvokeOptions): Promise<GetDatabaseToolsConnectionResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseTools/getDatabaseToolsConnection:getDatabaseToolsConnection", {
         "databaseToolsConnectionId": args.databaseToolsConnectionId,
     }, opts);
@@ -120,9 +118,24 @@ export interface GetDatabaseToolsConnectionResult {
      */
     readonly userPasswords: outputs.DatabaseTools.GetDatabaseToolsConnectionUserPassword[];
 }
-
+/**
+ * This data source provides details about a specific Database Tools Connection resource in Oracle Cloud Infrastructure Database Tools service.
+ *
+ * Gets details of the specified Database Tools connection.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDatabaseToolsConnection = oci.DatabaseTools.getDatabaseToolsConnection({
+ *     databaseToolsConnectionId: oci_database_tools_database_tools_connection.test_database_tools_connection.id,
+ * });
+ * ```
+ */
 export function getDatabaseToolsConnectionOutput(args: GetDatabaseToolsConnectionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDatabaseToolsConnectionResult> {
-    return pulumi.output(args).apply(a => getDatabaseToolsConnection(a, opts))
+    return pulumi.output(args).apply((a: any) => getDatabaseToolsConnection(a, opts))
 }
 
 /**

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -39,11 +40,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getImages(args: GetImagesArgs, opts?: pulumi.InvokeOptions): Promise<GetImagesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getImages:getImages", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -133,9 +131,41 @@ export interface GetImagesResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Images in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists a subset of images available in the specified compartment, including
+ * [platform images](https://docs.cloud.oracle.com/iaas/Content/Compute/References/images.htm) and
+ * [custom images](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingcustomimages.htm).
+ * The list of platform images includes the three most recently published versions
+ * of each major distribution.
+ *
+ * The list of images returned is ordered to first show the recent platform images,
+ * then all of the custom images.
+ *
+ * **Caution:** Platform images are refreshed regularly. When new images are released, older versions are replaced.
+ * The image OCIDs remain available, but when the platform image is replaced, the image OCIDs are no longer returned as part of the platform image list.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testImages = oci.Core.getImages({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.image_display_name,
+ *     operatingSystem: _var.image_operating_system,
+ *     operatingSystemVersion: _var.image_operating_system_version,
+ *     shape: _var.image_shape,
+ *     state: _var.image_state,
+ *     sortBy: _var.image_sort_by,
+ *     sortOrder: _var.image_sort_order,
+ * });
+ * ```
+ */
 export function getImagesOutput(args: GetImagesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetImagesResult> {
-    return pulumi.output(args).apply(a => getImages(a, opts))
+    return pulumi.output(args).apply((a: any) => getImages(a, opts))
 }
 
 /**

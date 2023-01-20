@@ -50,6 +50,14 @@ namespace Pulumi.Oci.AnnouncementsService.Outputs
         /// </summary>
         public readonly string OnsTopicId;
         /// <summary>
+        /// (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
+        /// </summary>
+        public readonly string PreferredLanguage;
+        /// <summary>
+        /// The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
+        /// </summary>
+        public readonly string PreferredTimeZone;
+        /// <summary>
         /// A filter to return only announcement subscriptions that match the given lifecycle state.
         /// </summary>
         public readonly string State;
@@ -86,6 +94,10 @@ namespace Pulumi.Oci.AnnouncementsService.Outputs
 
             string onsTopicId,
 
+            string preferredLanguage,
+
+            string preferredTimeZone,
+
             string state,
 
             ImmutableDictionary<string, object> systemTags,
@@ -103,6 +115,8 @@ namespace Pulumi.Oci.AnnouncementsService.Outputs
             Id = id;
             LifecycleDetails = lifecycleDetails;
             OnsTopicId = onsTopicId;
+            PreferredLanguage = preferredLanguage;
+            PreferredTimeZone = preferredTimeZone;
             State = state;
             SystemTags = systemTags;
             TimeCreated = timeCreated;

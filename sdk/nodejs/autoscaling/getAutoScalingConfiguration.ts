@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAutoScalingConfiguration(args: GetAutoScalingConfigurationArgs, opts?: pulumi.InvokeOptions): Promise<GetAutoScalingConfigurationResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Autoscaling/getAutoScalingConfiguration:getAutoScalingConfiguration", {
         "autoScalingConfigurationId": args.autoScalingConfigurationId,
     }, opts);
@@ -96,9 +94,24 @@ export interface GetAutoScalingConfigurationResult {
      */
     readonly timeCreated: string;
 }
-
+/**
+ * This data source provides details about a specific Auto Scaling Configuration resource in Oracle Cloud Infrastructure Auto Scaling service.
+ *
+ * Gets information about the specified autoscaling configuration.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAutoScalingConfiguration = oci.Autoscaling.getAutoScalingConfiguration({
+ *     autoScalingConfigurationId: oci_autoscaling_auto_scaling_configuration.test_auto_scaling_configuration.id,
+ * });
+ * ```
+ */
 export function getAutoScalingConfigurationOutput(args: GetAutoScalingConfigurationOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAutoScalingConfigurationResult> {
-    return pulumi.output(args).apply(a => getAutoScalingConfiguration(a, opts))
+    return pulumi.output(args).apply((a: any) => getAutoScalingConfiguration(a, opts))
 }
 
 /**

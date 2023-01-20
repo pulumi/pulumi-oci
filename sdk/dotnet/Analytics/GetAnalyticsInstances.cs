@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Analytics
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAnalyticsInstancesResult> InvokeAsync(GetAnalyticsInstancesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAnalyticsInstancesResult>("oci:Analytics/getAnalyticsInstances:getAnalyticsInstances", args ?? new GetAnalyticsInstancesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAnalyticsInstancesResult>("oci:Analytics/getAnalyticsInstances:getAnalyticsInstances", args ?? new GetAnalyticsInstancesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Analytics Instances in Oracle Cloud Infrastructure Analytics service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.Analytics
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAnalyticsInstancesResult> Invoke(GetAnalyticsInstancesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAnalyticsInstancesResult>("oci:Analytics/getAnalyticsInstances:getAnalyticsInstances", args ?? new GetAnalyticsInstancesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAnalyticsInstancesResult>("oci:Analytics/getAnalyticsInstances:getAnalyticsInstances", args ?? new GetAnalyticsInstancesInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -43,7 +43,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetTargetDatabaseRolesResult> InvokeAsync(GetTargetDatabaseRolesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetTargetDatabaseRolesResult>("oci:DataSafe/getTargetDatabaseRoles:getTargetDatabaseRoles", args ?? new GetTargetDatabaseRolesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetTargetDatabaseRolesResult>("oci:DataSafe/getTargetDatabaseRoles:getTargetDatabaseRoles", args ?? new GetTargetDatabaseRolesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Target Database Roles in Oracle Cloud Infrastructure Data Safe service.
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetTargetDatabaseRolesResult> Invoke(GetTargetDatabaseRolesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetTargetDatabaseRolesResult>("oci:DataSafe/getTargetDatabaseRoles:getTargetDatabaseRoles", args ?? new GetTargetDatabaseRolesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetTargetDatabaseRolesResult>("oci:DataSafe/getTargetDatabaseRoles:getTargetDatabaseRoles", args ?? new GetTargetDatabaseRolesInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getSchedules(args: GetSchedulesArgs, opts?: pulumi.InvokeOptions): Promise<GetSchedulesResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:MeteringComputation/getSchedules:getSchedules", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -58,7 +56,7 @@ export interface GetSchedulesArgs {
  */
 export interface GetSchedulesResult {
     /**
-     * The tenancy of the customer
+     * The customer tenancy.
      */
     readonly compartmentId: string;
     /**
@@ -70,7 +68,7 @@ export interface GetSchedulesResult {
      */
     readonly id: string;
     /**
-     * The unique name of the schedule created by the user
+     * The unique name of the schedule created by the user.
      */
     readonly name?: string;
     /**
@@ -78,9 +76,25 @@ export interface GetSchedulesResult {
      */
     readonly scheduleCollections: outputs.MeteringComputation.GetSchedulesScheduleCollection[];
 }
-
+/**
+ * This data source provides the list of Schedules in Oracle Cloud Infrastructure Metering Computation service.
+ *
+ * Returns the saved schedule list.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSchedules = oci.MeteringComputation.getSchedules({
+ *     compartmentId: _var.compartment_id,
+ *     name: _var.schedule_name,
+ * });
+ * ```
+ */
 export function getSchedulesOutput(args: GetSchedulesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSchedulesResult> {
-    return pulumi.output(args).apply(a => getSchedules(a, opts))
+    return pulumi.output(args).apply((a: any) => getSchedules(a, opts))
 }
 
 /**

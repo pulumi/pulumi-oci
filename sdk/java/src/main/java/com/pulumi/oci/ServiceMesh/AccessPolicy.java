@@ -50,9 +50,6 @@ import javax.annotation.Nullable;
  *         var testAccessPolicy = new AccessPolicy(&#34;testAccessPolicy&#34;, AccessPolicyArgs.builder()        
  *             .compartmentId(var_.compartment_id())
  *             .meshId(oci_service_mesh_mesh.test_mesh().id())
- *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
- *             .description(var_.access_policy_description())
- *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .rules(AccessPolicyRuleArgs.builder()
  *                 .action(var_.access_policy_rules_action())
  *                 .destination(AccessPolicyRuleDestinationArgs.builder()
@@ -74,6 +71,9 @@ import javax.annotation.Nullable;
  *                     .virtualServiceId(oci_service_mesh_virtual_service.test_virtual_service().id())
  *                     .build())
  *                 .build())
+ *             .definedTags(Map.of(&#34;foo-namespace.bar-key&#34;, &#34;value&#34;))
+ *             .description(var_.access_policy_description())
+ *             .freeformTags(Map.of(&#34;bar-key&#34;, &#34;value&#34;))
  *             .build());
  * 
  *     }

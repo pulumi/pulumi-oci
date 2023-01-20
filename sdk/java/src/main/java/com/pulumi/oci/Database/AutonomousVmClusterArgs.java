@@ -53,14 +53,14 @@ public final class AutonomousVmClusterArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * The number of OCPU cores to enable per VM cluster node.
+     * The number of CPU cores to enable per VM cluster node.
      * 
      */
     @Import(name="cpuCoreCountPerNode")
     private @Nullable Output<Integer> cpuCoreCountPerNode;
 
     /**
-     * @return The number of OCPU cores to enable per VM cluster node.
+     * @return The number of CPU cores to enable per VM cluster node.
      * 
      */
     public Optional<Output<Integer>> cpuCoreCountPerNode() {
@@ -143,6 +143,21 @@ public final class AutonomousVmClusterArgs extends com.pulumi.resources.Resource
     }
 
     /**
+     * Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
+     * 
+     */
+    @Import(name="isMtlsEnabled")
+    private @Nullable Output<Boolean> isMtlsEnabled;
+
+    /**
+     * @return Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
+     * 
+     */
+    public Optional<Output<Boolean>> isMtlsEnabled() {
+        return Optional.ofNullable(this.isMtlsEnabled);
+    }
+
+    /**
      * (Updatable) The Oracle license model that applies to the Autonomous VM cluster. The default is BRING_YOUR_OWN_LICENSE.
      * 
      */
@@ -185,6 +200,36 @@ public final class AutonomousVmClusterArgs extends com.pulumi.resources.Resource
      */
     public Optional<Output<Integer>> memoryPerOracleComputeUnitInGbs() {
         return Optional.ofNullable(this.memoryPerOracleComputeUnitInGbs);
+    }
+
+    /**
+     * The SCAN Listener Non TLS port number. Default value is 1521.
+     * 
+     */
+    @Import(name="scanListenerPortNonTls")
+    private @Nullable Output<Integer> scanListenerPortNonTls;
+
+    /**
+     * @return The SCAN Listener Non TLS port number. Default value is 1521.
+     * 
+     */
+    public Optional<Output<Integer>> scanListenerPortNonTls() {
+        return Optional.ofNullable(this.scanListenerPortNonTls);
+    }
+
+    /**
+     * The SCAN Listener TLS port number. Default value is 2484.
+     * 
+     */
+    @Import(name="scanListenerPortTls")
+    private @Nullable Output<Integer> scanListenerPortTls;
+
+    /**
+     * @return The SCAN Listener TLS port number. Default value is 2484.
+     * 
+     */
+    public Optional<Output<Integer>> scanListenerPortTls() {
+        return Optional.ofNullable(this.scanListenerPortTls);
     }
 
     /**
@@ -243,9 +288,12 @@ public final class AutonomousVmClusterArgs extends com.pulumi.resources.Resource
         this.exadataInfrastructureId = $.exadataInfrastructureId;
         this.freeformTags = $.freeformTags;
         this.isLocalBackupEnabled = $.isLocalBackupEnabled;
+        this.isMtlsEnabled = $.isMtlsEnabled;
         this.licenseModel = $.licenseModel;
         this.maintenanceWindowDetails = $.maintenanceWindowDetails;
         this.memoryPerOracleComputeUnitInGbs = $.memoryPerOracleComputeUnitInGbs;
+        this.scanListenerPortNonTls = $.scanListenerPortNonTls;
+        this.scanListenerPortTls = $.scanListenerPortTls;
         this.timeZone = $.timeZone;
         this.totalContainerDatabases = $.totalContainerDatabases;
         this.vmClusterNetworkId = $.vmClusterNetworkId;
@@ -312,7 +360,7 @@ public final class AutonomousVmClusterArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param cpuCoreCountPerNode The number of OCPU cores to enable per VM cluster node.
+         * @param cpuCoreCountPerNode The number of CPU cores to enable per VM cluster node.
          * 
          * @return builder
          * 
@@ -323,7 +371,7 @@ public final class AutonomousVmClusterArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param cpuCoreCountPerNode The number of OCPU cores to enable per VM cluster node.
+         * @param cpuCoreCountPerNode The number of CPU cores to enable per VM cluster node.
          * 
          * @return builder
          * 
@@ -438,6 +486,27 @@ public final class AutonomousVmClusterArgs extends com.pulumi.resources.Resource
         }
 
         /**
+         * @param isMtlsEnabled Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isMtlsEnabled(@Nullable Output<Boolean> isMtlsEnabled) {
+            $.isMtlsEnabled = isMtlsEnabled;
+            return this;
+        }
+
+        /**
+         * @param isMtlsEnabled Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isMtlsEnabled(Boolean isMtlsEnabled) {
+            return isMtlsEnabled(Output.of(isMtlsEnabled));
+        }
+
+        /**
          * @param licenseModel (Updatable) The Oracle license model that applies to the Autonomous VM cluster. The default is BRING_YOUR_OWN_LICENSE.
          * 
          * @return builder
@@ -508,6 +577,48 @@ public final class AutonomousVmClusterArgs extends com.pulumi.resources.Resource
          */
         public Builder memoryPerOracleComputeUnitInGbs(Integer memoryPerOracleComputeUnitInGbs) {
             return memoryPerOracleComputeUnitInGbs(Output.of(memoryPerOracleComputeUnitInGbs));
+        }
+
+        /**
+         * @param scanListenerPortNonTls The SCAN Listener Non TLS port number. Default value is 1521.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder scanListenerPortNonTls(@Nullable Output<Integer> scanListenerPortNonTls) {
+            $.scanListenerPortNonTls = scanListenerPortNonTls;
+            return this;
+        }
+
+        /**
+         * @param scanListenerPortNonTls The SCAN Listener Non TLS port number. Default value is 1521.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder scanListenerPortNonTls(Integer scanListenerPortNonTls) {
+            return scanListenerPortNonTls(Output.of(scanListenerPortNonTls));
+        }
+
+        /**
+         * @param scanListenerPortTls The SCAN Listener TLS port number. Default value is 2484.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder scanListenerPortTls(@Nullable Output<Integer> scanListenerPortTls) {
+            $.scanListenerPortTls = scanListenerPortTls;
+            return this;
+        }
+
+        /**
+         * @param scanListenerPortTls The SCAN Listener TLS port number. Default value is 2484.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder scanListenerPortTls(Integer scanListenerPortTls) {
+            return scanListenerPortTls(Output.of(scanListenerPortTls));
         }
 
         /**

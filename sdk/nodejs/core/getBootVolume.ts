@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getBootVolume(args: GetBootVolumeArgs, opts?: pulumi.InvokeOptions): Promise<GetBootVolumeResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getBootVolume:getBootVolume", {
         "bootVolumeId": args.bootVolumeId,
     }, opts);
@@ -134,9 +132,24 @@ export interface GetBootVolumeResult {
      */
     readonly vpusPerGb: string;
 }
-
+/**
+ * This data source provides details about a specific Boot Volume resource in Oracle Cloud Infrastructure Core service.
+ *
+ * Gets information for the specified boot volume.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testBootVolume = oci.Core.getBootVolume({
+ *     bootVolumeId: oci_core_boot_volume.test_boot_volume.id,
+ * });
+ * ```
+ */
 export function getBootVolumeOutput(args: GetBootVolumeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetBootVolumeResult> {
-    return pulumi.output(args).apply(a => getBootVolume(a, opts))
+    return pulumi.output(args).apply((a: any) => getBootVolume(a, opts))
 }
 
 /**

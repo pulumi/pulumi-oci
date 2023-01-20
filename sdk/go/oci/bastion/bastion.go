@@ -37,6 +37,7 @@ import (
 //				DefinedTags: pulumi.AnyMap{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
+//				DnsProxyStatus: pulumi.Any(_var.Bastion_dns_proxy_status),
 //				FreeformTags: pulumi.AnyMap{
 //					"bar-key": pulumi.Any("value"),
 //				},
@@ -73,6 +74,8 @@ type Bastion struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	// Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
+	DnsProxyStatus pulumi.StringOutput `pulumi:"dnsProxyStatus"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail.
@@ -149,6 +152,8 @@ type bastionState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
+	DnsProxyStatus *string `pulumi:"dnsProxyStatus"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A message describing the current state in more detail.
@@ -188,6 +193,8 @@ type BastionState struct {
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
+	// Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
+	DnsProxyStatus pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	// A message describing the current state in more detail.
@@ -231,6 +238,8 @@ type bastionArgs struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
+	DnsProxyStatus *string `pulumi:"dnsProxyStatus"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) The maximum amount of time that any session on the bastion can remain active.
@@ -255,6 +264,8 @@ type BastionArgs struct {
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
+	// Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
+	DnsProxyStatus pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	// (Updatable) The maximum amount of time that any session on the bastion can remain active.
@@ -374,6 +385,11 @@ func (o BastionOutput) CompartmentId() pulumi.StringOutput {
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 func (o BastionOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *Bastion) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
+func (o BastionOutput) DnsProxyStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v *Bastion) pulumi.StringOutput { return v.DnsProxyStatus }).(pulumi.StringOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`

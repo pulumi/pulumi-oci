@@ -37,7 +37,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetAutonomousDatabaseWalletResult> InvokeAsync(GetAutonomousDatabaseWalletArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetAutonomousDatabaseWalletResult>("oci:Database/getAutonomousDatabaseWallet:getAutonomousDatabaseWallet", args ?? new GetAutonomousDatabaseWalletArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetAutonomousDatabaseWalletResult>("oci:Database/getAutonomousDatabaseWallet:getAutonomousDatabaseWallet", args ?? new GetAutonomousDatabaseWalletArgs(), options.WithDefaults());
 
         /// <summary>
         /// {{% examples %}}
@@ -65,7 +65,7 @@ namespace Pulumi.Oci.Database
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetAutonomousDatabaseWalletResult> Invoke(GetAutonomousDatabaseWalletInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetAutonomousDatabaseWalletResult>("oci:Database/getAutonomousDatabaseWallet:getAutonomousDatabaseWallet", args ?? new GetAutonomousDatabaseWalletInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousDatabaseWalletResult>("oci:Database/getAutonomousDatabaseWallet:getAutonomousDatabaseWallet", args ?? new GetAutonomousDatabaseWalletInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -86,11 +86,17 @@ namespace Pulumi.Oci.Database
         [Input("generateType")]
         public string? GenerateType { get; set; }
 
+        [Input("password", required: true)]
+        private string? _password;
+
         /// <summary>
         /// The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
         /// </summary>
-        [Input("password", required: true)]
-        public string Password { get; set; } = null!;
+        public string? Password
+        {
+            get => _password;
+            set => _password = value;
+        }
 
         public GetAutonomousDatabaseWalletArgs()
         {
@@ -115,11 +121,21 @@ namespace Pulumi.Oci.Database
         [Input("generateType")]
         public Input<string>? GenerateType { get; set; }
 
+        [Input("password", required: true)]
+        private Input<string>? _password;
+
         /// <summary>
         /// The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
         /// </summary>
-        [Input("password", required: true)]
-        public Input<string> Password { get; set; } = null!;
+        public Input<string>? Password
+        {
+            get => _password;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _password = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         public GetAutonomousDatabaseWalletInvokeArgs()
         {

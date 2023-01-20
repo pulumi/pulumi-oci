@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -27,11 +28,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getStacks(args: GetStacksArgs, opts?: pulumi.InvokeOptions): Promise<GetStacksResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:ResourceManager/getStacks:getStacks", {
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
@@ -90,9 +88,29 @@ export interface GetStacksResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Stacks in Oracle Cloud Infrastructure Resource Manager service.
+ *
+ * Returns a list of stacks.
+ * - If called using the compartment ID, returns all stacks in the specified compartment.
+ * - If called using the stack ID, returns the specified stack.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testStacks = oci.ResourceManager.getStacks({
+ *     compartmentId: _var.compartment_id,
+ *     displayName: _var.stack_display_name,
+ *     id: _var.stack_id,
+ *     state: _var.stack_state,
+ * });
+ * ```
+ */
 export function getStacksOutput(args: GetStacksOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetStacksResult> {
-    return pulumi.output(args).apply(a => getStacks(a, opts))
+    return pulumi.output(args).apply((a: any) => getStacks(a, opts))
 }
 
 /**

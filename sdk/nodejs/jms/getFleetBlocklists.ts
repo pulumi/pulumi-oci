@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getFleetBlocklists(args: GetFleetBlocklistsArgs, opts?: pulumi.InvokeOptions): Promise<GetFleetBlocklistsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Jms/getFleetBlocklists:getFleetBlocklists", {
         "filters": args.filters,
         "fleetId": args.fleetId,
@@ -82,9 +80,26 @@ export interface GetFleetBlocklistsResult {
      */
     readonly operation?: string;
 }
-
+/**
+ * This data source provides the list of Fleet Blocklists in Oracle Cloud Infrastructure Jms service.
+ *
+ * Returns a list of blocklist entities contained by a fleet.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testFleetBlocklists = oci.Jms.getFleetBlocklists({
+ *     fleetId: oci_jms_fleet.test_fleet.id,
+ *     managedInstanceId: oci_osmanagement_managed_instance.test_managed_instance.id,
+ *     operation: _var.fleet_blocklist_operation,
+ * });
+ * ```
+ */
 export function getFleetBlocklistsOutput(args: GetFleetBlocklistsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetFleetBlocklistsResult> {
-    return pulumi.output(args).apply(a => getFleetBlocklists(a, opts))
+    return pulumi.output(args).apply((a: any) => getFleetBlocklists(a, opts))
 }
 
 /**

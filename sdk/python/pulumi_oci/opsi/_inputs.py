@@ -14,6 +14,9 @@ __all__ = [
     'DatabaseInsightConnectionDetailsArgs',
     'DatabaseInsightConnectionDetailsHostArgs',
     'DatabaseInsightCredentialDetailsArgs',
+    'ExadataInsightMemberVmClusterDetailArgs',
+    'ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs',
+    'ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs',
     'GetAwrHubAwrSnapshotsFilterArgs',
     'GetAwrHubsFilterArgs',
     'GetDatabaseInsightsFilterArgs',
@@ -317,6 +320,300 @@ class DatabaseInsightCredentialDetailsArgs:
         """
         database user name.
         """
+        return pulumi.get(self, "user_name")
+
+    @user_name.setter
+    def user_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "user_name", value)
+
+
+@pulumi.input_type
+class ExadataInsightMemberVmClusterDetailArgs:
+    def __init__(__self__, *,
+                 compartment_id: Optional[pulumi.Input[str]] = None,
+                 member_database_details: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs']]]] = None,
+                 opsi_private_endpoint_id: Optional[pulumi.Input[str]] = None,
+                 vmcluster_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier of Exadata insight
+        """
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if member_database_details is not None:
+            pulumi.set(__self__, "member_database_details", member_database_details)
+        if opsi_private_endpoint_id is not None:
+            pulumi.set(__self__, "opsi_private_endpoint_id", opsi_private_endpoint_id)
+        if vmcluster_id is not None:
+            pulumi.set(__self__, "vmcluster_id", vmcluster_id)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Compartment Identifier of Exadata insight
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @compartment_id.setter
+    def compartment_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter(name="memberDatabaseDetails")
+    def member_database_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs']]]]:
+        return pulumi.get(self, "member_database_details")
+
+    @member_database_details.setter
+    def member_database_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs']]]]):
+        pulumi.set(self, "member_database_details", value)
+
+    @property
+    @pulumi.getter(name="opsiPrivateEndpointId")
+    def opsi_private_endpoint_id(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "opsi_private_endpoint_id")
+
+    @opsi_private_endpoint_id.setter
+    def opsi_private_endpoint_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "opsi_private_endpoint_id", value)
+
+    @property
+    @pulumi.getter(name="vmclusterId")
+    def vmcluster_id(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "vmcluster_id")
+
+    @vmcluster_id.setter
+    def vmcluster_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "vmcluster_id", value)
+
+
+@pulumi.input_type
+class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs:
+    def __init__(__self__, *,
+                 compartment_id: Optional[pulumi.Input[str]] = None,
+                 credential_details: Optional[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs']] = None,
+                 database_id: Optional[pulumi.Input[str]] = None,
+                 database_resource_type: Optional[pulumi.Input[str]] = None,
+                 dbm_private_endpoint_id: Optional[pulumi.Input[str]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 deployment_type: Optional[pulumi.Input[str]] = None,
+                 entity_source: Optional[pulumi.Input[str]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 opsi_private_endpoint_id: Optional[pulumi.Input[str]] = None,
+                 service_name: Optional[pulumi.Input[str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
+        """
+        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier of Exadata insight
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[str] entity_source: (Updatable) Source of the Exadata system.
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if credential_details is not None:
+            pulumi.set(__self__, "credential_details", credential_details)
+        if database_id is not None:
+            pulumi.set(__self__, "database_id", database_id)
+        if database_resource_type is not None:
+            pulumi.set(__self__, "database_resource_type", database_resource_type)
+        if dbm_private_endpoint_id is not None:
+            pulumi.set(__self__, "dbm_private_endpoint_id", dbm_private_endpoint_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if deployment_type is not None:
+            pulumi.set(__self__, "deployment_type", deployment_type)
+        if entity_source is not None:
+            pulumi.set(__self__, "entity_source", entity_source)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if opsi_private_endpoint_id is not None:
+            pulumi.set(__self__, "opsi_private_endpoint_id", opsi_private_endpoint_id)
+        if service_name is not None:
+            pulumi.set(__self__, "service_name", service_name)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Compartment Identifier of Exadata insight
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @compartment_id.setter
+    def compartment_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter(name="credentialDetails")
+    def credential_details(self) -> Optional[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs']]:
+        return pulumi.get(self, "credential_details")
+
+    @credential_details.setter
+    def credential_details(self, value: Optional[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs']]):
+        pulumi.set(self, "credential_details", value)
+
+    @property
+    @pulumi.getter(name="databaseId")
+    def database_id(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "database_id")
+
+    @database_id.setter
+    def database_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "database_id", value)
+
+    @property
+    @pulumi.getter(name="databaseResourceType")
+    def database_resource_type(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "database_resource_type")
+
+    @database_resource_type.setter
+    def database_resource_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "database_resource_type", value)
+
+    @property
+    @pulumi.getter(name="dbmPrivateEndpointId")
+    def dbm_private_endpoint_id(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "dbm_private_endpoint_id")
+
+    @dbm_private_endpoint_id.setter
+    def dbm_private_endpoint_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "dbm_private_endpoint_id", value)
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @defined_tags.setter
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "defined_tags", value)
+
+    @property
+    @pulumi.getter(name="deploymentType")
+    def deployment_type(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "deployment_type")
+
+    @deployment_type.setter
+    def deployment_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "deployment_type", value)
+
+    @property
+    @pulumi.getter(name="entitySource")
+    def entity_source(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Source of the Exadata system.
+        """
+        return pulumi.get(self, "entity_source")
+
+    @entity_source.setter
+    def entity_source(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "entity_source", value)
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @freeform_tags.setter
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "freeform_tags", value)
+
+    @property
+    @pulumi.getter(name="opsiPrivateEndpointId")
+    def opsi_private_endpoint_id(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "opsi_private_endpoint_id")
+
+    @opsi_private_endpoint_id.setter
+    def opsi_private_endpoint_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "opsi_private_endpoint_id", value)
+
+    @property
+    @pulumi.getter(name="serviceName")
+    def service_name(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "service_name")
+
+    @service_name.setter
+    def service_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "service_name", value)
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "system_tags", value)
+
+
+@pulumi.input_type
+class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs:
+    def __init__(__self__, *,
+                 credential_type: pulumi.Input[str],
+                 credential_source_name: Optional[pulumi.Input[str]] = None,
+                 password_secret_id: Optional[pulumi.Input[str]] = None,
+                 role: Optional[pulumi.Input[str]] = None,
+                 user_name: Optional[pulumi.Input[str]] = None):
+        pulumi.set(__self__, "credential_type", credential_type)
+        if credential_source_name is not None:
+            pulumi.set(__self__, "credential_source_name", credential_source_name)
+        if password_secret_id is not None:
+            pulumi.set(__self__, "password_secret_id", password_secret_id)
+        if role is not None:
+            pulumi.set(__self__, "role", role)
+        if user_name is not None:
+            pulumi.set(__self__, "user_name", user_name)
+
+    @property
+    @pulumi.getter(name="credentialType")
+    def credential_type(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "credential_type")
+
+    @credential_type.setter
+    def credential_type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "credential_type", value)
+
+    @property
+    @pulumi.getter(name="credentialSourceName")
+    def credential_source_name(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "credential_source_name")
+
+    @credential_source_name.setter
+    def credential_source_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "credential_source_name", value)
+
+    @property
+    @pulumi.getter(name="passwordSecretId")
+    def password_secret_id(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "password_secret_id")
+
+    @password_secret_id.setter
+    def password_secret_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "password_secret_id", value)
+
+    @property
+    @pulumi.getter
+    def role(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "role")
+
+    @role.setter
+    def role(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "role", value)
+
+    @property
+    @pulumi.getter(name="userName")
+    def user_name(self) -> Optional[pulumi.Input[str]]:
         return pulumi.get(self, "user_name")
 
     @user_name.setter

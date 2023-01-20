@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -31,11 +32,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getResourceActions(args: GetResourceActionsArgs, opts?: pulumi.InvokeOptions): Promise<GetResourceActionsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Optimizer/getResourceActions:getResourceActions", {
         "childTenancyIds": args.childTenancyIds,
         "compartmentId": args.compartmentId,
@@ -140,9 +138,33 @@ export interface GetResourceActionsResult {
      */
     readonly status?: string;
 }
-
+/**
+ * This data source provides the list of Resource Actions in Oracle Cloud Infrastructure Optimizer service.
+ *
+ * Lists the Cloud Advisor resource actions that are supported.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testResourceActions = oci.Optimizer.getResourceActions({
+ *     compartmentId: _var.compartment_id,
+ *     compartmentIdInSubtree: _var.resource_action_compartment_id_in_subtree,
+ *     childTenancyIds: _var.resource_action_child_tenancy_ids,
+ *     includeOrganization: _var.resource_action_include_organization,
+ *     name: _var.resource_action_name,
+ *     recommendationId: oci_optimizer_recommendation.test_recommendation.id,
+ *     recommendationName: oci_optimizer_recommendation.test_recommendation.name,
+ *     resourceType: _var.resource_action_resource_type,
+ *     state: _var.resource_action_state,
+ *     status: _var.resource_action_status,
+ * });
+ * ```
+ */
 export function getResourceActionsOutput(args: GetResourceActionsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetResourceActionsResult> {
-    return pulumi.output(args).apply(a => getResourceActions(a, opts))
+    return pulumi.output(args).apply((a: any) => getResourceActions(a, opts))
 }
 
 /**

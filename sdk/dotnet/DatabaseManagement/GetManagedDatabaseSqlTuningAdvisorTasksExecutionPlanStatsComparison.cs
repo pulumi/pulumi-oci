@@ -44,7 +44,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult> InvokeAsync(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult>("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison:getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison", args ?? new GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult>("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison:getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison", args ?? new GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Managed Database Sql Tuning Advisor Tasks Execution Plan Stats Comparision resource in Oracle Cloud Infrastructure Database Management service.
@@ -79,7 +79,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult> Invoke(GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult>("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison:getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison", args ?? new GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonResult>("oci:DatabaseManagement/getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison:getManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparison", args ?? new GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonInvokeArgs(), options.WithDefaults());
     }
 
 

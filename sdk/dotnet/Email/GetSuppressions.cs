@@ -44,7 +44,7 @@ namespace Pulumi.Oci.Email
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetSuppressionsResult> InvokeAsync(GetSuppressionsArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetSuppressionsResult>("oci:Email/getSuppressions:getSuppressions", args ?? new GetSuppressionsArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetSuppressionsResult>("oci:Email/getSuppressions:getSuppressions", args ?? new GetSuppressionsArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Suppressions in Oracle Cloud Infrastructure Email service.
@@ -79,7 +79,7 @@ namespace Pulumi.Oci.Email
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetSuppressionsResult> Invoke(GetSuppressionsInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetSuppressionsResult>("oci:Email/getSuppressions:getSuppressions", args ?? new GetSuppressionsInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetSuppressionsResult>("oci:Email/getSuppressions:getSuppressions", args ?? new GetSuppressionsInvokeArgs(), options.WithDefaults());
     }
 
 

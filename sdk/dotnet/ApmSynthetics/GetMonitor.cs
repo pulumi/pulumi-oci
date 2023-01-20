@@ -39,7 +39,7 @@ namespace Pulumi.Oci.ApmSynthetics
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetMonitorResult> InvokeAsync(GetMonitorArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetMonitorResult>("oci:ApmSynthetics/getMonitor:getMonitor", args ?? new GetMonitorArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetMonitorResult>("oci:ApmSynthetics/getMonitor:getMonitor", args ?? new GetMonitorArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Monitor resource in Oracle Cloud Infrastructure Apm Synthetics service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.ApmSynthetics
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetMonitorResult> Invoke(GetMonitorInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetMonitorResult>("oci:ApmSynthetics/getMonitor:getMonitor", args ?? new GetMonitorInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetMonitorResult>("oci:ApmSynthetics/getMonitor:getMonitor", args ?? new GetMonitorInvokeArgs(), options.WithDefaults());
     }
 
 
@@ -119,6 +119,10 @@ namespace Pulumi.Oci.ApmSynthetics
     {
         public readonly string ApmDomainId;
         /// <summary>
+        /// Monitor availability configuration details.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMonitorAvailabilityConfigurationResult> AvailabilityConfigurations;
+        /// <summary>
         /// Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
         /// </summary>
         public readonly int BatchIntervalInSeconds;
@@ -150,6 +154,10 @@ namespace Pulumi.Oci.ApmSynthetics
         /// If runOnce is enabled, then the monitor will run once.
         /// </summary>
         public readonly bool IsRunOnce;
+        /// <summary>
+        /// Details used to schedule maintenance window.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMonitorMaintenanceWindowScheduleResult> MaintenanceWindowSchedules;
         public readonly string MonitorId;
         /// <summary>
         /// Type of the monitor.
@@ -192,7 +200,7 @@ namespace Pulumi.Oci.ApmSynthetics
         /// </summary>
         public readonly string TimeUpdated;
         /// <summary>
-        /// Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+        /// Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
         /// </summary>
         public readonly int TimeoutInSeconds;
         /// <summary>
@@ -207,6 +215,8 @@ namespace Pulumi.Oci.ApmSynthetics
         [OutputConstructor]
         private GetMonitorResult(
             string apmDomainId,
+
+            ImmutableArray<Outputs.GetMonitorAvailabilityConfigurationResult> availabilityConfigurations,
 
             int batchIntervalInSeconds,
 
@@ -223,6 +233,8 @@ namespace Pulumi.Oci.ApmSynthetics
             bool isRunNow,
 
             bool isRunOnce,
+
+            ImmutableArray<Outputs.GetMonitorMaintenanceWindowScheduleResult> maintenanceWindowSchedules,
 
             string monitorId,
 
@@ -253,6 +265,7 @@ namespace Pulumi.Oci.ApmSynthetics
             ImmutableArray<string> vantagePoints)
         {
             ApmDomainId = apmDomainId;
+            AvailabilityConfigurations = availabilityConfigurations;
             BatchIntervalInSeconds = batchIntervalInSeconds;
             Configurations = configurations;
             DefinedTags = definedTags;
@@ -261,6 +274,7 @@ namespace Pulumi.Oci.ApmSynthetics
             Id = id;
             IsRunNow = isRunNow;
             IsRunOnce = isRunOnce;
+            MaintenanceWindowSchedules = maintenanceWindowSchedules;
             MonitorId = monitorId;
             MonitorType = monitorType;
             RepeatIntervalInSeconds = repeatIntervalInSeconds;

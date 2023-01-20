@@ -39,7 +39,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetLogAnalyticsUnprocessedDataBucketResult> InvokeAsync(GetLogAnalyticsUnprocessedDataBucketArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetLogAnalyticsUnprocessedDataBucketResult>("oci:LogAnalytics/getLogAnalyticsUnprocessedDataBucket:getLogAnalyticsUnprocessedDataBucket", args ?? new GetLogAnalyticsUnprocessedDataBucketArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetLogAnalyticsUnprocessedDataBucketResult>("oci:LogAnalytics/getLogAnalyticsUnprocessedDataBucket:getLogAnalyticsUnprocessedDataBucket", args ?? new GetLogAnalyticsUnprocessedDataBucketArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Log Analytics Unprocessed Data Bucket resource in Oracle Cloud Infrastructure Log Analytics service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetLogAnalyticsUnprocessedDataBucketResult> Invoke(GetLogAnalyticsUnprocessedDataBucketInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsUnprocessedDataBucketResult>("oci:LogAnalytics/getLogAnalyticsUnprocessedDataBucket:getLogAnalyticsUnprocessedDataBucket", args ?? new GetLogAnalyticsUnprocessedDataBucketInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetLogAnalyticsUnprocessedDataBucketResult>("oci:LogAnalytics/getLogAnalyticsUnprocessedDataBucket:getLogAnalyticsUnprocessedDataBucket", args ?? new GetLogAnalyticsUnprocessedDataBucketInvokeArgs(), options.WithDefaults());
     }
 
 

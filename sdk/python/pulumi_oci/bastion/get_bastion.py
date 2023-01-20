@@ -21,7 +21,7 @@ class GetBastionResult:
     """
     A collection of values returned by getBastion.
     """
-    def __init__(__self__, bastion_id=None, bastion_type=None, client_cidr_block_allow_lists=None, compartment_id=None, defined_tags=None, freeform_tags=None, id=None, lifecycle_details=None, max_session_ttl_in_seconds=None, max_sessions_allowed=None, name=None, phone_book_entry=None, private_endpoint_ip_address=None, state=None, static_jump_host_ip_addresses=None, system_tags=None, target_subnet_id=None, target_vcn_id=None, time_created=None, time_updated=None):
+    def __init__(__self__, bastion_id=None, bastion_type=None, client_cidr_block_allow_lists=None, compartment_id=None, defined_tags=None, dns_proxy_status=None, freeform_tags=None, id=None, lifecycle_details=None, max_session_ttl_in_seconds=None, max_sessions_allowed=None, name=None, phone_book_entry=None, private_endpoint_ip_address=None, state=None, static_jump_host_ip_addresses=None, system_tags=None, target_subnet_id=None, target_vcn_id=None, time_created=None, time_updated=None):
         if bastion_id and not isinstance(bastion_id, str):
             raise TypeError("Expected argument 'bastion_id' to be a str")
         pulumi.set(__self__, "bastion_id", bastion_id)
@@ -37,6 +37,9 @@ class GetBastionResult:
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
+        if dns_proxy_status and not isinstance(dns_proxy_status, str):
+            raise TypeError("Expected argument 'dns_proxy_status' to be a str")
+        pulumi.set(__self__, "dns_proxy_status", dns_proxy_status)
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -119,6 +122,14 @@ class GetBastionResult:
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="dnsProxyStatus")
+    def dns_proxy_status(self) -> str:
+        """
+        Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
+        """
+        return pulumi.get(self, "dns_proxy_status")
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -252,6 +263,7 @@ class AwaitableGetBastionResult(GetBastionResult):
             client_cidr_block_allow_lists=self.client_cidr_block_allow_lists,
             compartment_id=self.compartment_id,
             defined_tags=self.defined_tags,
+            dns_proxy_status=self.dns_proxy_status,
             freeform_tags=self.freeform_tags,
             id=self.id,
             lifecycle_details=self.lifecycle_details,
@@ -299,6 +311,7 @@ def get_bastion(bastion_id: Optional[str] = None,
         client_cidr_block_allow_lists=__ret__.client_cidr_block_allow_lists,
         compartment_id=__ret__.compartment_id,
         defined_tags=__ret__.defined_tags,
+        dns_proxy_status=__ret__.dns_proxy_status,
         freeform_tags=__ret__.freeform_tags,
         id=__ret__.id,
         lifecycle_details=__ret__.lifecycle_details,

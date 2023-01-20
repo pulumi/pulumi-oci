@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Optimizer
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetProfileResult> InvokeAsync(GetProfileArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetProfileResult>("oci:Optimizer/getProfile:getProfile", args ?? new GetProfileArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetProfileResult>("oci:Optimizer/getProfile:getProfile", args ?? new GetProfileArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Profile resource in Oracle Cloud Infrastructure Optimizer service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Optimizer
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetProfileResult> Invoke(GetProfileInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetProfileResult>("oci:Optimizer/getProfile:getProfile", args ?? new GetProfileInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetProfileResult>("oci:Optimizer/getProfile:getProfile", args ?? new GetProfileInvokeArgs(), options.WithDefaults());
     }
 
 

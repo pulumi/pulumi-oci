@@ -26,19 +26,6 @@ namespace Pulumi.Oci.ServiceMesh
     ///     var testVirtualDeployment = new Oci.ServiceMesh.VirtualDeployment("testVirtualDeployment", new()
     ///     {
     ///         CompartmentId = @var.Compartment_id,
-    ///         Listeners = new[]
-    ///         {
-    ///             new Oci.ServiceMesh.Inputs.VirtualDeploymentListenerArgs
-    ///             {
-    ///                 Port = @var.Virtual_deployment_listeners_port,
-    ///                 Protocol = @var.Virtual_deployment_listeners_protocol,
-    ///             },
-    ///         },
-    ///         ServiceDiscovery = new Oci.ServiceMesh.Inputs.VirtualDeploymentServiceDiscoveryArgs
-    ///         {
-    ///             Hostname = @var.Virtual_deployment_service_discovery_hostname,
-    ///             Type = @var.Virtual_deployment_service_discovery_type,
-    ///         },
     ///         VirtualServiceId = oci_service_mesh_virtual_service.Test_virtual_service.Id,
     ///         AccessLogging = new Oci.ServiceMesh.Inputs.VirtualDeploymentAccessLoggingArgs
     ///         {
@@ -52,6 +39,21 @@ namespace Pulumi.Oci.ServiceMesh
     ///         FreeformTags = 
     ///         {
     ///             { "bar-key", "value" },
+    ///         },
+    ///         Listeners = new[]
+    ///         {
+    ///             new Oci.ServiceMesh.Inputs.VirtualDeploymentListenerArgs
+    ///             {
+    ///                 Port = @var.Virtual_deployment_listeners_port,
+    ///                 Protocol = @var.Virtual_deployment_listeners_protocol,
+    ///                 IdleTimeoutInMs = @var.Virtual_deployment_listeners_idle_timeout_in_ms,
+    ///                 RequestTimeoutInMs = @var.Virtual_deployment_listeners_request_timeout_in_ms,
+    ///             },
+    ///         },
+    ///         ServiceDiscovery = new Oci.ServiceMesh.Inputs.VirtualDeploymentServiceDiscoveryArgs
+    ///         {
+    ///             Type = @var.Virtual_deployment_service_discovery_type,
+    ///             Hostname = @var.Virtual_deployment_service_discovery_hostname,
     ///         },
     ///     });
     /// 
@@ -241,7 +243,7 @@ namespace Pulumi.Oci.ServiceMesh
             set => _freeformTags = value;
         }
 
-        [Input("listeners", required: true)]
+        [Input("listeners")]
         private InputList<Inputs.VirtualDeploymentListenerArgs>? _listeners;
 
         /// <summary>
@@ -262,8 +264,8 @@ namespace Pulumi.Oci.ServiceMesh
         /// <summary>
         /// (Updatable) Service Discovery configuration for virtual deployments.
         /// </summary>
-        [Input("serviceDiscovery", required: true)]
-        public Input<Inputs.VirtualDeploymentServiceDiscoveryArgs> ServiceDiscovery { get; set; } = null!;
+        [Input("serviceDiscovery")]
+        public Input<Inputs.VirtualDeploymentServiceDiscoveryArgs>? ServiceDiscovery { get; set; }
 
         /// <summary>
         /// The OCID of the service mesh in which this access policy is created.

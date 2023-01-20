@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getManagedDatabaseUserObjectPrivilege(args: GetManagedDatabaseUserObjectPrivilegeArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseUserObjectPrivilegeResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseManagement/getManagedDatabaseUserObjectPrivilege:getManagedDatabaseUserObjectPrivilege", {
         "managedDatabaseId": args.managedDatabaseId,
         "name": args.name,
@@ -73,9 +71,26 @@ export interface GetManagedDatabaseUserObjectPrivilegeResult {
     readonly name?: string;
     readonly userName: string;
 }
-
+/**
+ * This data source provides details about a specific Managed Database User Object Privilege resource in Oracle Cloud Infrastructure Database Management service.
+ *
+ * Gets the list of object privileges granted to a specific user.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testManagedDatabaseUserObjectPrivilege = oci.DatabaseManagement.getManagedDatabaseUserObjectPrivilege({
+ *     managedDatabaseId: oci_database_management_managed_database.test_managed_database.id,
+ *     userName: oci_identity_user.test_user.name,
+ *     name: _var.managed_database_user_object_privilege_name,
+ * });
+ * ```
+ */
 export function getManagedDatabaseUserObjectPrivilegeOutput(args: GetManagedDatabaseUserObjectPrivilegeOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetManagedDatabaseUserObjectPrivilegeResult> {
-    return pulumi.output(args).apply(a => getManagedDatabaseUserObjectPrivilege(a, opts))
+    return pulumi.output(args).apply((a: any) => getManagedDatabaseUserObjectPrivilege(a, opts))
 }
 
 /**

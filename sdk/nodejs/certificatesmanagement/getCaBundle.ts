@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCaBundle(args: GetCaBundleArgs, opts?: pulumi.InvokeOptions): Promise<GetCaBundleResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CertificatesManagement/getCaBundle:getCaBundle", {
         "caBundleId": args.caBundleId,
     }, opts);
@@ -84,9 +81,24 @@ export interface GetCaBundleResult {
      */
     readonly timeCreated: string;
 }
-
+/**
+ * This data source provides details about a specific Ca Bundle resource in Oracle Cloud Infrastructure Certificates Management service.
+ *
+ * Gets details about the specified CA bundle.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCaBundle = oci.CertificatesManagement.getCaBundle({
+ *     caBundleId: oci_certificates_management_ca_bundle.test_ca_bundle.id,
+ * });
+ * ```
+ */
 export function getCaBundleOutput(args: GetCaBundleOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCaBundleResult> {
-    return pulumi.output(args).apply(a => getCaBundle(a, opts))
+    return pulumi.output(args).apply((a: any) => getCaBundle(a, opts))
 }
 
 /**

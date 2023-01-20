@@ -7,7 +7,10 @@ import typing
 # Export this package's modules as members:
 from .fleet import *
 from .get_fleet import *
+from .get_fleet_advanced_feature_configuration import *
 from .get_fleet_blocklists import *
+from .get_fleet_crypto_analysis_result import *
+from .get_fleet_crypto_analysis_results import *
 from .get_fleets import *
 from .get_installation_site import *
 from .get_installation_sites import *

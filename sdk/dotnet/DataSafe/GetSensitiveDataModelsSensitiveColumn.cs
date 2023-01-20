@@ -39,7 +39,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetSensitiveDataModelsSensitiveColumnResult> InvokeAsync(GetSensitiveDataModelsSensitiveColumnArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetSensitiveDataModelsSensitiveColumnResult>("oci:DataSafe/getSensitiveDataModelsSensitiveColumn:getSensitiveDataModelsSensitiveColumn", args ?? new GetSensitiveDataModelsSensitiveColumnArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetSensitiveDataModelsSensitiveColumnResult>("oci:DataSafe/getSensitiveDataModelsSensitiveColumn:getSensitiveDataModelsSensitiveColumn", args ?? new GetSensitiveDataModelsSensitiveColumnArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Sensitive Data Models Sensitive Column resource in Oracle Cloud Infrastructure Data Safe service.
@@ -69,7 +69,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetSensitiveDataModelsSensitiveColumnResult> Invoke(GetSensitiveDataModelsSensitiveColumnInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetSensitiveDataModelsSensitiveColumnResult>("oci:DataSafe/getSensitiveDataModelsSensitiveColumn:getSensitiveDataModelsSensitiveColumn", args ?? new GetSensitiveDataModelsSensitiveColumnInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetSensitiveDataModelsSensitiveColumnResult>("oci:DataSafe/getSensitiveDataModelsSensitiveColumn:getSensitiveDataModelsSensitiveColumn", args ?? new GetSensitiveDataModelsSensitiveColumnInvokeArgs(), options.WithDefaults());
     }
 
 

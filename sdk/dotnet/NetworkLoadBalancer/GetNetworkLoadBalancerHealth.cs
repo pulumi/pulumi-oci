@@ -38,7 +38,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetNetworkLoadBalancerHealthResult> InvokeAsync(GetNetworkLoadBalancerHealthArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetNetworkLoadBalancerHealthResult>("oci:NetworkLoadBalancer/getNetworkLoadBalancerHealth:getNetworkLoadBalancerHealth", args ?? new GetNetworkLoadBalancerHealthArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetNetworkLoadBalancerHealthResult>("oci:NetworkLoadBalancer/getNetworkLoadBalancerHealth:getNetworkLoadBalancerHealth", args ?? new GetNetworkLoadBalancerHealthArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Network Load Balancer Health resource in Oracle Cloud Infrastructure Network Load Balancer service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetNetworkLoadBalancerHealthResult> Invoke(GetNetworkLoadBalancerHealthInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetNetworkLoadBalancerHealthResult>("oci:NetworkLoadBalancer/getNetworkLoadBalancerHealth:getNetworkLoadBalancerHealth", args ?? new GetNetworkLoadBalancerHealthInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetNetworkLoadBalancerHealthResult>("oci:NetworkLoadBalancer/getNetworkLoadBalancerHealth:getNetworkLoadBalancerHealth", args ?? new GetNetworkLoadBalancerHealthInvokeArgs(), options.WithDefaults());
     }
 
 

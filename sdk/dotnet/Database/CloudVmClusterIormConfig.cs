@@ -41,6 +41,14 @@ namespace Pulumi.Oci.Database
     /// 
     /// });
     /// ```
+    /// 
+    /// ## Import
+    /// 
+    /// CloudVmClusterIormConfigs can be imported using the `id`, e.g.
+    /// 
+    /// ```sh
+    ///  $ pulumi import oci:Database/cloudVmClusterIormConfig:CloudVmClusterIormConfig test_cloud_vm_cluster_iorm_config "cloudVmClusters/{cloudVmClusterId}/CloudVmClusterIormConfig"
+    /// ```
     /// </summary>
     [OciResourceType("oci:Database/cloudVmClusterIormConfig:CloudVmClusterIormConfig")]
     public partial class CloudVmClusterIormConfig : global::Pulumi.CustomResource
@@ -70,7 +78,7 @@ namespace Pulumi.Oci.Database
         public Output<string> Objective { get; private set; } = null!;
 
         /// <summary>
-        /// The current state of IORM configuration for the Cloud Vm Cluster.
+        /// The current state of IORM configuration for the Exadata DB system.
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
@@ -184,7 +192,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? Objective { get; set; }
 
         /// <summary>
-        /// The current state of IORM configuration for the Cloud Vm Cluster.
+        /// The current state of IORM configuration for the Exadata DB system.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }

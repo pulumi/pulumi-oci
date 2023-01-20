@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -31,11 +32,8 @@ import * as utilities from "../utilities";
  */
 export function getHostInsights(args?: GetHostInsightsArgs, opts?: pulumi.InvokeOptions): Promise<GetHostInsightsResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Opsi/getHostInsights:getHostInsights", {
         "compartmentId": args.compartmentId,
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
@@ -66,14 +64,12 @@ export interface GetHostInsightsArgs {
      */
     enterpriseManagerBridgeId?: string;
     /**
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource. 
-     * <<<<<<< ours
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
      */
     exadataInsightId?: string;
     filters?: inputs.Opsi.GetHostInsightsFilter[];
     /**
-     * Filter by one or more host types. Possible value is EXTERNAL-HOST.
-     * >>>>>>> theirs
+     * Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST
      */
     hostTypes?: string[];
     /**
@@ -129,9 +125,32 @@ export interface GetHostInsightsResult {
      */
     readonly statuses?: string[];
 }
-
+/**
+ * This data source provides the list of Host Insights in Oracle Cloud Infrastructure Opsi service.
+ *
+ * Gets a list of host insights based on the query parameters specified. Either compartmentId or id query parameter must be specified.
+ * When both compartmentId and compartmentIdInSubtree are specified, a list of host insights in that compartment and in all sub-compartments will be returned.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testHostInsights = oci.Opsi.getHostInsights({
+ *     compartmentId: _var.compartment_id,
+ *     compartmentIdInSubtree: _var.host_insight_compartment_id_in_subtree,
+ *     enterpriseManagerBridgeId: oci_opsi_enterprise_manager_bridge.test_enterprise_manager_bridge.id,
+ *     exadataInsightId: oci_opsi_exadata_insight.test_exadata_insight.id,
+ *     hostTypes: _var.host_insight_host_type,
+ *     id: _var.host_insight_id,
+ *     states: _var.host_insight_state,
+ *     statuses: _var.host_insight_status,
+ * });
+ * ```
+ */
 export function getHostInsightsOutput(args?: GetHostInsightsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetHostInsightsResult> {
-    return pulumi.output(args).apply(a => getHostInsights(a, opts))
+    return pulumi.output(args).apply((a: any) => getHostInsights(a, opts))
 }
 
 /**
@@ -151,14 +170,12 @@ export interface GetHostInsightsOutputArgs {
      */
     enterpriseManagerBridgeId?: pulumi.Input<string>;
     /**
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource. 
-     * <<<<<<< ours
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
      */
     exadataInsightId?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Opsi.GetHostInsightsFilterArgs>[]>;
     /**
-     * Filter by one or more host types. Possible value is EXTERNAL-HOST.
-     * >>>>>>> theirs
+     * Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST
      */
     hostTypes?: pulumi.Input<pulumi.Input<string>[]>;
     /**

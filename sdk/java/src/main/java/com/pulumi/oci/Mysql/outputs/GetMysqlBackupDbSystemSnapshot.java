@@ -109,7 +109,7 @@ public final class GetMysqlBackupDbSystemSnapshot {
      */
     private Boolean isHighlyAvailable;
     /**
-     * @return The Maintenance Policy for the DB System.
+     * @return The Maintenance Policy for the DB System or Read Replica that this model is included in.
      * 
      */
     private List<GetMysqlBackupDbSystemSnapshotMaintenance> maintenances;
@@ -267,7 +267,7 @@ public final class GetMysqlBackupDbSystemSnapshot {
         return this.isHighlyAvailable;
     }
     /**
-     * @return The Maintenance Policy for the DB System.
+     * @return The Maintenance Policy for the DB System or Read Replica that this model is included in.
      * 
      */
     public List<GetMysqlBackupDbSystemSnapshotMaintenance> maintenances() {

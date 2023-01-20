@@ -112,8 +112,6 @@ public class CloudDatabaseManagement extends com.pulumi.resources.CustomResource
     /**
      * (Updatable) Specifies database management type
      * enum:
-     * - `BASIC`
-     * - `ADVANCED`
      * 
      */
     @Export(name="managementType", type=String.class, parameters={})
@@ -122,8 +120,6 @@ public class CloudDatabaseManagement extends com.pulumi.resources.CustomResource
     /**
      * @return (Updatable) Specifies database management type
      * enum:
-     * - `BASIC`
-     * - `ADVANCED`
      * 
      */
     public Output<String> managementType() {

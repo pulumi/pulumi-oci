@@ -41,7 +41,7 @@ namespace Pulumi.Oci.BigDataService
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetBdsInstancePatchHistoriesResult> InvokeAsync(GetBdsInstancePatchHistoriesArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetBdsInstancePatchHistoriesResult>("oci:BigDataService/getBdsInstancePatchHistories:getBdsInstancePatchHistories", args ?? new GetBdsInstancePatchHistoriesArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetBdsInstancePatchHistoriesResult>("oci:BigDataService/getBdsInstancePatchHistories:getBdsInstancePatchHistories", args ?? new GetBdsInstancePatchHistoriesArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides the list of Bds Instance Patch Histories in Oracle Cloud Infrastructure Big Data Service service.
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.BigDataService
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetBdsInstancePatchHistoriesResult> Invoke(GetBdsInstancePatchHistoriesInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetBdsInstancePatchHistoriesResult>("oci:BigDataService/getBdsInstancePatchHistories:getBdsInstancePatchHistories", args ?? new GetBdsInstancePatchHistoriesInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetBdsInstancePatchHistoriesResult>("oci:BigDataService/getBdsInstancePatchHistories:getBdsInstancePatchHistories", args ?? new GetBdsInstancePatchHistoriesInvokeArgs(), options.WithDefaults());
     }
 
 

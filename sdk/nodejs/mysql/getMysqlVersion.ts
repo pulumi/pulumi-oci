@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -24,11 +25,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getMysqlVersion(args: GetMysqlVersionArgs, opts?: pulumi.InvokeOptions): Promise<GetMysqlVersionResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Mysql/getMysqlVersion:getMysqlVersion", {
         "compartmentId": args.compartmentId,
         "filters": args.filters,
@@ -61,9 +59,26 @@ export interface GetMysqlVersionResult {
      */
     readonly versions: outputs.Mysql.GetMysqlVersionVersion[];
 }
-
+/**
+ * This data source provides the list of Mysql Versions in Oracle Cloud Infrastructure MySQL Database service.
+ *
+ * Get a list of supported and available MySQL database major versions.
+ *
+ * The list is sorted by version family.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testMysqlVersions = oci.Mysql.getMysqlVersion({
+ *     compartmentId: _var.compartment_id,
+ * });
+ * ```
+ */
 export function getMysqlVersionOutput(args: GetMysqlVersionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMysqlVersionResult> {
-    return pulumi.output(args).apply(a => getMysqlVersion(a, opts))
+    return pulumi.output(args).apply((a: any) => getMysqlVersion(a, opts))
 }
 
 /**

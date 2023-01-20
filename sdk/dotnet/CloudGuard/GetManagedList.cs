@@ -38,7 +38,7 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetManagedListResult> InvokeAsync(GetManagedListArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetManagedListResult>("oci:CloudGuard/getManagedList:getManagedList", args ?? new GetManagedListArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedListResult>("oci:CloudGuard/getManagedList:getManagedList", args ?? new GetManagedListArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Managed List resource in Oracle Cloud Infrastructure Cloud Guard service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.CloudGuard
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetManagedListResult> Invoke(GetManagedListInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetManagedListResult>("oci:CloudGuard/getManagedList:getManagedList", args ?? new GetManagedListInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetManagedListResult>("oci:CloudGuard/getManagedList:getManagedList", args ?? new GetManagedListInvokeArgs(), options.WithDefaults());
     }
 
 

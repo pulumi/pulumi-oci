@@ -38,7 +38,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetMaskingPolicyResult> InvokeAsync(GetMaskingPolicyArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetMaskingPolicyResult>("oci:DataSafe/getMaskingPolicy:getMaskingPolicy", args ?? new GetMaskingPolicyArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetMaskingPolicyResult>("oci:DataSafe/getMaskingPolicy:getMaskingPolicy", args ?? new GetMaskingPolicyArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Masking Policy resource in Oracle Cloud Infrastructure Data Safe service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.DataSafe
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetMaskingPolicyResult> Invoke(GetMaskingPolicyInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetMaskingPolicyResult>("oci:DataSafe/getMaskingPolicy:getMaskingPolicy", args ?? new GetMaskingPolicyInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetMaskingPolicyResult>("oci:DataSafe/getMaskingPolicy:getMaskingPolicy", args ?? new GetMaskingPolicyInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getReport(args: GetReportArgs, opts?: pulumi.InvokeOptions): Promise<GetReportResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getReport:getReport", {
         "reportId": args.reportId,
     }, opts);
@@ -90,10 +87,29 @@ export interface GetReportResult {
      * Specifies the time at which the report was generated.
      */
     readonly timeGenerated: string;
+    /**
+     * The type of the report.
+     */
+    readonly type: string;
 }
-
+/**
+ * This data source provides details about a specific Report resource in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Gets a report by identifier
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testReport = oci.DataSafe.getReport({
+ *     reportId: oci_data_safe_report.test_report.id,
+ * });
+ * ```
+ */
 export function getReportOutput(args: GetReportOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetReportResult> {
-    return pulumi.output(args).apply(a => getReport(a, opts))
+    return pulumi.output(args).apply((a: any) => getReport(a, opts))
 }
 
 /**

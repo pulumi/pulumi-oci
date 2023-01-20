@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getTargetDatabase(args: GetTargetDatabaseArgs, opts?: pulumi.InvokeOptions): Promise<GetTargetDatabaseResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getTargetDatabase:getTargetDatabase", {
         "targetDatabaseId": args.targetDatabaseId,
     }, opts);
@@ -112,9 +110,24 @@ export interface GetTargetDatabaseResult {
      */
     readonly tlsConfigs: outputs.DataSafe.GetTargetDatabaseTlsConfig[];
 }
-
+/**
+ * This data source provides details about a specific Target Database resource in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Returns the details of the specified Data Safe target database.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testTargetDatabase = oci.DataSafe.getTargetDatabase({
+ *     targetDatabaseId: oci_data_safe_target_database.test_target_database.id,
+ * });
+ * ```
+ */
 export function getTargetDatabaseOutput(args: GetTargetDatabaseOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetTargetDatabaseResult> {
-    return pulumi.output(args).apply(a => getTargetDatabase(a, opts))
+    return pulumi.output(args).apply((a: any) => getTargetDatabase(a, opts))
 }
 
 /**

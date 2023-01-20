@@ -23,6 +23,7 @@ public final class GetVmClusterRecommendedNetworkResult {
      * 
      */
     private String compartmentId;
+    private @Nullable List<String> dbServers;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
@@ -83,6 +84,9 @@ public final class GetVmClusterRecommendedNetworkResult {
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    public List<String> dbServers() {
+        return this.dbServers == null ? List.of() : this.dbServers;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -171,6 +175,7 @@ public final class GetVmClusterRecommendedNetworkResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
+        private @Nullable List<String> dbServers;
         private Map<String,Object> definedTags;
         private String displayName;
         private List<String> dns;
@@ -187,6 +192,7 @@ public final class GetVmClusterRecommendedNetworkResult {
         public Builder(GetVmClusterRecommendedNetworkResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
+    	      this.dbServers = defaults.dbServers;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.dns = defaults.dns;
@@ -205,6 +211,14 @@ public final class GetVmClusterRecommendedNetworkResult {
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = Objects.requireNonNull(compartmentId);
             return this;
+        }
+        @CustomType.Setter
+        public Builder dbServers(@Nullable List<String> dbServers) {
+            this.dbServers = dbServers;
+            return this;
+        }
+        public Builder dbServers(String... dbServers) {
+            return dbServers(List.of(dbServers));
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
@@ -284,6 +298,7 @@ public final class GetVmClusterRecommendedNetworkResult {
         public GetVmClusterRecommendedNetworkResult build() {
             final var o = new GetVmClusterRecommendedNetworkResult();
             o.compartmentId = compartmentId;
+            o.dbServers = dbServers;
             o.definedTags = definedTags;
             o.displayName = displayName;
             o.dns = dns;

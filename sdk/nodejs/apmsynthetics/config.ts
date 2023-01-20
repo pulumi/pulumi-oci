@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,6 +23,10 @@ import * as utilities from "../utilities";
  *     monitorType: _var.monitor_monitor_type,
  *     repeatIntervalInSeconds: _var.monitor_repeat_interval_in_seconds,
  *     vantagePoints: [],
+ *     availabilityConfiguration: {
+ *         maxAllowedFailuresPerInterval: _var.monitor_availability_configuration_max_allowed_failures_per_interval,
+ *         minAllowedRunsPerInterval: _var.monitor_availability_configuration_min_allowed_runs_per_interval,
+ *     },
  *     batchIntervalInSeconds: _var.monitor_batch_interval_in_seconds,
  *     configuration: {
  *         configType: _var.monitor_configuration_config_type,
@@ -77,6 +82,10 @@ import * as utilities from "../utilities";
  *     },
  *     isRunNow: _var.monitor_is_run_now,
  *     isRunOnce: _var.monitor_is_run_once,
+ *     maintenanceWindowSchedule: {
+ *         timeEnded: _var.monitor_maintenance_window_schedule_time_ended,
+ *         timeStarted: _var.monitor_maintenance_window_schedule_time_started,
+ *     },
  *     schedulingPolicy: _var.monitor_scheduling_policy,
  *     scriptId: oci_apm_synthetics_script.test_script.id,
  *     scriptParameters: [{
@@ -126,13 +135,15 @@ export class Config extends pulumi.CustomResource {
     }
 
     /**
-     * (Updatable) The APM domain ID the request is intended for. 
-     * <<<<<<< ours
+     * (Updatable) The APM domain ID the request is intended for.
      */
     public readonly apmDomainId!: pulumi.Output<string>;
     /**
+     * (Updatable) Monitor availability configuration details.
+     */
+    public readonly availabilityConfiguration!: pulumi.Output<outputs.ApmSynthetics.ConfigAvailabilityConfiguration>;
+    /**
      * (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
-     * =======
      */
     public readonly batchIntervalInSeconds!: pulumi.Output<number>;
     /**
@@ -159,6 +170,10 @@ export class Config extends pulumi.CustomResource {
      * (Updatable) If runOnce is enabled, then the monitor will run once.
      */
     public readonly isRunOnce!: pulumi.Output<boolean>;
+    /**
+     * (Updatable) Details used to schedule maintenance window.
+     */
+    public readonly maintenanceWindowSchedule!: pulumi.Output<outputs.ApmSynthetics.ConfigMaintenanceWindowSchedule>;
     /**
      * Type of monitor.
      */
@@ -200,7 +215,7 @@ export class Config extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
     /**
-     * (Updatable) Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+     * (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
      */
     public readonly timeoutInSeconds!: pulumi.Output<number>;
     /**
@@ -226,6 +241,7 @@ export class Config extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as ConfigState | undefined;
             resourceInputs["apmDomainId"] = state ? state.apmDomainId : undefined;
+            resourceInputs["availabilityConfiguration"] = state ? state.availabilityConfiguration : undefined;
             resourceInputs["batchIntervalInSeconds"] = state ? state.batchIntervalInSeconds : undefined;
             resourceInputs["configuration"] = state ? state.configuration : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
@@ -233,6 +249,7 @@ export class Config extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["isRunNow"] = state ? state.isRunNow : undefined;
             resourceInputs["isRunOnce"] = state ? state.isRunOnce : undefined;
+            resourceInputs["maintenanceWindowSchedule"] = state ? state.maintenanceWindowSchedule : undefined;
             resourceInputs["monitorType"] = state ? state.monitorType : undefined;
             resourceInputs["repeatIntervalInSeconds"] = state ? state.repeatIntervalInSeconds : undefined;
             resourceInputs["schedulingPolicy"] = state ? state.schedulingPolicy : undefined;
@@ -264,6 +281,7 @@ export class Config extends pulumi.CustomResource {
                 throw new Error("Missing required property 'vantagePoints'");
             }
             resourceInputs["apmDomainId"] = args ? args.apmDomainId : undefined;
+            resourceInputs["availabilityConfiguration"] = args ? args.availabilityConfiguration : undefined;
             resourceInputs["batchIntervalInSeconds"] = args ? args.batchIntervalInSeconds : undefined;
             resourceInputs["configuration"] = args ? args.configuration : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
@@ -271,6 +289,7 @@ export class Config extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["isRunNow"] = args ? args.isRunNow : undefined;
             resourceInputs["isRunOnce"] = args ? args.isRunOnce : undefined;
+            resourceInputs["maintenanceWindowSchedule"] = args ? args.maintenanceWindowSchedule : undefined;
             resourceInputs["monitorType"] = args ? args.monitorType : undefined;
             resourceInputs["repeatIntervalInSeconds"] = args ? args.repeatIntervalInSeconds : undefined;
             resourceInputs["schedulingPolicy"] = args ? args.schedulingPolicy : undefined;
@@ -295,13 +314,15 @@ export class Config extends pulumi.CustomResource {
  */
 export interface ConfigState {
     /**
-     * (Updatable) The APM domain ID the request is intended for. 
-     * <<<<<<< ours
+     * (Updatable) The APM domain ID the request is intended for.
      */
     apmDomainId?: pulumi.Input<string>;
     /**
+     * (Updatable) Monitor availability configuration details.
+     */
+    availabilityConfiguration?: pulumi.Input<inputs.ApmSynthetics.ConfigAvailabilityConfiguration>;
+    /**
      * (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
-     * =======
      */
     batchIntervalInSeconds?: pulumi.Input<number>;
     /**
@@ -328,6 +349,10 @@ export interface ConfigState {
      * (Updatable) If runOnce is enabled, then the monitor will run once.
      */
     isRunOnce?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) Details used to schedule maintenance window.
+     */
+    maintenanceWindowSchedule?: pulumi.Input<inputs.ApmSynthetics.ConfigMaintenanceWindowSchedule>;
     /**
      * Type of monitor.
      */
@@ -369,7 +394,7 @@ export interface ConfigState {
      */
     timeUpdated?: pulumi.Input<string>;
     /**
-     * (Updatable) Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+     * (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
      */
     timeoutInSeconds?: pulumi.Input<number>;
     /**
@@ -387,13 +412,15 @@ export interface ConfigState {
  */
 export interface ConfigArgs {
     /**
-     * (Updatable) The APM domain ID the request is intended for. 
-     * <<<<<<< ours
+     * (Updatable) The APM domain ID the request is intended for.
      */
     apmDomainId: pulumi.Input<string>;
     /**
+     * (Updatable) Monitor availability configuration details.
+     */
+    availabilityConfiguration?: pulumi.Input<inputs.ApmSynthetics.ConfigAvailabilityConfiguration>;
+    /**
      * (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
-     * =======
      */
     batchIntervalInSeconds?: pulumi.Input<number>;
     /**
@@ -420,6 +447,10 @@ export interface ConfigArgs {
      * (Updatable) If runOnce is enabled, then the monitor will run once.
      */
     isRunOnce?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) Details used to schedule maintenance window.
+     */
+    maintenanceWindowSchedule?: pulumi.Input<inputs.ApmSynthetics.ConfigMaintenanceWindowSchedule>;
     /**
      * Type of monitor.
      */
@@ -453,7 +484,7 @@ export interface ConfigArgs {
      */
     target?: pulumi.Input<string>;
     /**
-     * (Updatable) Timeout in seconds. Timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
+     * (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
      */
     timeoutInSeconds?: pulumi.Input<number>;
     /**

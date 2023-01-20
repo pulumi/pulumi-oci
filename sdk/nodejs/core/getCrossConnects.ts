@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -26,11 +27,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCrossConnects(args: GetCrossConnectsArgs, opts?: pulumi.InvokeOptions): Promise<GetCrossConnectsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getCrossConnects:getCrossConnects", {
         "compartmentId": args.compartmentId,
         "crossConnectGroupId": args.crossConnectGroupId,
@@ -93,9 +91,28 @@ export interface GetCrossConnectsResult {
      */
     readonly state?: string;
 }
-
+/**
+ * This data source provides the list of Cross Connects in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the cross-connects in the specified compartment. You can filter the list
+ * by specifying the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a cross-connect group.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCrossConnects = oci.Core.getCrossConnects({
+ *     compartmentId: _var.compartment_id,
+ *     crossConnectGroupId: oci_core_cross_connect_group.test_cross_connect_group.id,
+ *     displayName: _var.cross_connect_display_name,
+ *     state: _var.cross_connect_state,
+ * });
+ * ```
+ */
 export function getCrossConnectsOutput(args: GetCrossConnectsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCrossConnectsResult> {
-    return pulumi.output(args).apply(a => getCrossConnects(a, opts))
+    return pulumi.output(args).apply((a: any) => getCrossConnects(a, opts))
 }
 
 /**

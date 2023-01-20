@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class GetSessionTargetResourceDetail {
     /**
-     * @return The Bastion service recognizes two types of sessions, managed SSH sessions and SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
+     * @return The Bastion service recognizes three types of sessions, managed SSH sessions, SSH port forwarding sessions, and Dynamic SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
      * 
      */
     private String sessionType;
@@ -20,6 +20,11 @@ public final class GetSessionTargetResourceDetail {
      * 
      */
     private String targetResourceDisplayName;
+    /**
+     * @return The Fully Qualified Domain Name of the target resource that the session connects to.
+     * 
+     */
+    private String targetResourceFqdn;
     /**
      * @return The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
      * 
@@ -43,7 +48,7 @@ public final class GetSessionTargetResourceDetail {
 
     private GetSessionTargetResourceDetail() {}
     /**
-     * @return The Bastion service recognizes two types of sessions, managed SSH sessions and SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
+     * @return The Bastion service recognizes three types of sessions, managed SSH sessions, SSH port forwarding sessions, and Dynamic SSH port forwarding sessions. Managed SSH sessions require that the target resource has an OpenSSH server and the Oracle Cloud Agent both running.
      * 
      */
     public String sessionType() {
@@ -55,6 +60,13 @@ public final class GetSessionTargetResourceDetail {
      */
     public String targetResourceDisplayName() {
         return this.targetResourceDisplayName;
+    }
+    /**
+     * @return The Fully Qualified Domain Name of the target resource that the session connects to.
+     * 
+     */
+    public String targetResourceFqdn() {
+        return this.targetResourceFqdn;
     }
     /**
      * @return The unique identifier (OCID) of the target resource (a Compute instance, for example) that the session connects to.
@@ -96,6 +108,7 @@ public final class GetSessionTargetResourceDetail {
     public static final class Builder {
         private String sessionType;
         private String targetResourceDisplayName;
+        private String targetResourceFqdn;
         private String targetResourceId;
         private String targetResourceOperatingSystemUserName;
         private Integer targetResourcePort;
@@ -105,6 +118,7 @@ public final class GetSessionTargetResourceDetail {
     	      Objects.requireNonNull(defaults);
     	      this.sessionType = defaults.sessionType;
     	      this.targetResourceDisplayName = defaults.targetResourceDisplayName;
+    	      this.targetResourceFqdn = defaults.targetResourceFqdn;
     	      this.targetResourceId = defaults.targetResourceId;
     	      this.targetResourceOperatingSystemUserName = defaults.targetResourceOperatingSystemUserName;
     	      this.targetResourcePort = defaults.targetResourcePort;
@@ -119,6 +133,11 @@ public final class GetSessionTargetResourceDetail {
         @CustomType.Setter
         public Builder targetResourceDisplayName(String targetResourceDisplayName) {
             this.targetResourceDisplayName = Objects.requireNonNull(targetResourceDisplayName);
+            return this;
+        }
+        @CustomType.Setter
+        public Builder targetResourceFqdn(String targetResourceFqdn) {
+            this.targetResourceFqdn = Objects.requireNonNull(targetResourceFqdn);
             return this;
         }
         @CustomType.Setter
@@ -145,6 +164,7 @@ public final class GetSessionTargetResourceDetail {
             final var o = new GetSessionTargetResourceDetail();
             o.sessionType = sessionType;
             o.targetResourceDisplayName = targetResourceDisplayName;
+            o.targetResourceFqdn = targetResourceFqdn;
             o.targetResourceId = targetResourceId;
             o.targetResourceOperatingSystemUserName = targetResourceOperatingSystemUserName;
             o.targetResourcePort = targetResourcePort;

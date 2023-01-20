@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Email
         /// {{% /examples %}}
         /// </summary>
         public static Task<GetSenderResult> InvokeAsync(GetSenderArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.InvokeAsync<GetSenderResult>("oci:Email/getSender:getSender", args ?? new GetSenderArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.InvokeAsync<GetSenderResult>("oci:Email/getSender:getSender", args ?? new GetSenderArgs(), options.WithDefaults());
 
         /// <summary>
         /// This data source provides details about a specific Sender resource in Oracle Cloud Infrastructure Email service.
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Email
         /// {{% /examples %}}
         /// </summary>
         public static Output<GetSenderResult> Invoke(GetSenderInvokeArgs args, InvokeOptions? options = null)
-            => Pulumi.Deployment.Instance.Invoke<GetSenderResult>("oci:Email/getSender:getSender", args ?? new GetSenderInvokeArgs(), options.WithDefaults());
+            => global::Pulumi.Deployment.Instance.Invoke<GetSenderResult>("oci:Email/getSender:getSender", args ?? new GetSenderInvokeArgs(), options.WithDefaults());
     }
 
 

@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -23,11 +24,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getCertificateVersion(args: GetCertificateVersionArgs, opts?: pulumi.InvokeOptions): Promise<GetCertificateVersionResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:CertificatesManagement/getCertificateVersion:getCertificateVersion", {
         "certificateId": args.certificateId,
         "certificateVersionNumber": args.certificateVersionNumber,
@@ -102,9 +100,25 @@ export interface GetCertificateVersionResult {
      */
     readonly versionNumber: string;
 }
-
+/**
+ * This data source provides details about a specific Certificate Version resource in Oracle Cloud Infrastructure Certificates Management service.
+ *
+ * Gets details about the specified version of a certificate.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCertificateVersion = oci.CertificatesManagement.getCertificateVersion({
+ *     certificateId: oci_certificates_management_certificate.test_certificate.id,
+ *     certificateVersionNumber: _var.certificate_version_certificate_version_number,
+ * });
+ * ```
+ */
 export function getCertificateVersionOutput(args: GetCertificateVersionOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetCertificateVersionResult> {
-    return pulumi.output(args).apply(a => getCertificateVersion(a, opts))
+    return pulumi.output(args).apply((a: any) => getCertificateVersion(a, opts))
 }
 
 /**

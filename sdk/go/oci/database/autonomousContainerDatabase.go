@@ -56,7 +56,6 @@ import (
 //				KeyStoreId:                 pulumi.Any(oci_database_key_store.Test_key_store.Id),
 //				KmsKeyId:                   pulumi.Any(oci_kms_key.Test_key.Id),
 //				MaintenanceWindowDetails: &database.AutonomousContainerDatabaseMaintenanceWindowDetailsArgs{
-//					Preference:                pulumi.Any(_var.Autonomous_container_database_maintenance_window_details_preference),
 //					CustomActionTimeoutInMins: pulumi.Any(_var.Autonomous_container_database_maintenance_window_details_custom_action_timeout_in_mins),
 //					DaysOfWeeks: database.AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArray{
 //						&database.AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArgs{
@@ -73,6 +72,7 @@ import (
 //						},
 //					},
 //					PatchingMode:  pulumi.Any(_var.Autonomous_container_database_maintenance_window_details_patching_mode),
+//					Preference:    pulumi.Any(_var.Autonomous_container_database_maintenance_window_details_preference),
 //					WeeksOfMonths: pulumi.Any(_var.Autonomous_container_database_maintenance_window_details_weeks_of_month),
 //				},
 //				PeerAutonomousContainerDatabaseDisplayName: pulumi.Any(_var.Autonomous_container_database_peer_autonomous_container_database_display_name),
@@ -124,7 +124,7 @@ type AutonomousContainerDatabase struct {
 	AutonomousVmClusterId pulumi.StringOutput `pulumi:"autonomousVmClusterId"`
 	// The availability domain of the Autonomous Container Database.
 	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
-	// Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+	// Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
 	AvailableCpus pulumi.Float64Output `pulumi:"availableCpus"`
 	// (Updatable) Backup options for the Autonomous Container Database.
 	BackupConfig AutonomousContainerDatabaseBackupConfigOutput `pulumi:"backupConfig"`
@@ -187,7 +187,7 @@ type AutonomousContainerDatabase struct {
 	ProvisionableCpuses pulumi.Float64ArrayOutput `pulumi:"provisionableCpuses"`
 	// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
 	ReclaimableCpus pulumi.Float64Output `pulumi:"reclaimableCpus"`
-	// The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+	// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
 	Role pulumi.StringOutput `pulumi:"role"`
 	// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloudAutonomousVmClusterId` is set.
 	RotateKeyTrigger pulumi.BoolPtrOutput `pulumi:"rotateKeyTrigger"`
@@ -246,7 +246,7 @@ type autonomousContainerDatabaseState struct {
 	AutonomousVmClusterId *string `pulumi:"autonomousVmClusterId"`
 	// The availability domain of the Autonomous Container Database.
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
-	// Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+	// Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
 	AvailableCpus *float64 `pulumi:"availableCpus"`
 	// (Updatable) Backup options for the Autonomous Container Database.
 	BackupConfig *AutonomousContainerDatabaseBackupConfig `pulumi:"backupConfig"`
@@ -309,7 +309,7 @@ type autonomousContainerDatabaseState struct {
 	ProvisionableCpuses []float64 `pulumi:"provisionableCpuses"`
 	// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
 	ReclaimableCpus *float64 `pulumi:"reclaimableCpus"`
-	// The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+	// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
 	Role *string `pulumi:"role"`
 	// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloudAutonomousVmClusterId` is set.
 	RotateKeyTrigger *bool `pulumi:"rotateKeyTrigger"`
@@ -334,7 +334,7 @@ type AutonomousContainerDatabaseState struct {
 	AutonomousVmClusterId pulumi.StringPtrInput
 	// The availability domain of the Autonomous Container Database.
 	AvailabilityDomain pulumi.StringPtrInput
-	// Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+	// Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
 	AvailableCpus pulumi.Float64PtrInput
 	// (Updatable) Backup options for the Autonomous Container Database.
 	BackupConfig AutonomousContainerDatabaseBackupConfigPtrInput
@@ -397,7 +397,7 @@ type AutonomousContainerDatabaseState struct {
 	ProvisionableCpuses pulumi.Float64ArrayInput
 	// CPU cores that continue to be included in the count of OCPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available OCPUs at its parent AVMC level by restarting the Autonomous Container Database.
 	ReclaimableCpus pulumi.Float64PtrInput
-	// The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+	// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
 	Role pulumi.StringPtrInput
 	// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloudAutonomousVmClusterId` is set.
 	RotateKeyTrigger pulumi.BoolPtrInput
@@ -626,7 +626,7 @@ func (o AutonomousContainerDatabaseOutput) AvailabilityDomain() pulumi.StringOut
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
 
-// Sum of OCPUs available on the Autonomous VM Cluster + Sum of fractional OCPUs available in the Autonomous Container Database.
+// Sum of OCPUs available on the Autonomous VM Cluster + Sum of reclaimable OCPUs available in the Autonomous Container Database.
 func (o AutonomousContainerDatabaseOutput) AvailableCpus() pulumi.Float64Output {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.Float64Output { return v.AvailableCpus }).(pulumi.Float64Output)
 }
@@ -804,7 +804,7 @@ func (o AutonomousContainerDatabaseOutput) ReclaimableCpus() pulumi.Float64Outpu
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.Float64Output { return v.ReclaimableCpus }).(pulumi.Float64Output)
 }
 
-// The role of the Autonomous Data Guard-enabled Autonomous Container Database.
+// The Data Guard role of the Autonomous Container Database or Autonomous Database, if Autonomous Data Guard is enabled.
 func (o AutonomousContainerDatabaseOutput) Role() pulumi.StringOutput {
 	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringOutput { return v.Role }).(pulumi.StringOutput)
 }

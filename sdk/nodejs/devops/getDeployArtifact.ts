@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -22,11 +23,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getDeployArtifact(args: GetDeployArtifactArgs, opts?: pulumi.InvokeOptions): Promise<GetDeployArtifactResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DevOps/getDeployArtifact:getDeployArtifact", {
         "deployArtifactId": args.deployArtifactId,
     }, opts);
@@ -108,9 +106,24 @@ export interface GetDeployArtifactResult {
      */
     readonly timeUpdated: string;
 }
-
+/**
+ * This data source provides details about a specific Deploy Artifact resource in Oracle Cloud Infrastructure Devops service.
+ *
+ * Retrieves a deployment artifact by identifier.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDeployArtifact = oci.DevOps.getDeployArtifact({
+ *     deployArtifactId: oci_devops_deploy_artifact.test_deploy_artifact.id,
+ * });
+ * ```
+ */
 export function getDeployArtifactOutput(args: GetDeployArtifactOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetDeployArtifactResult> {
-    return pulumi.output(args).apply(a => getDeployArtifact(a, opts))
+    return pulumi.output(args).apply((a: any) => getDeployArtifact(a, opts))
 }
 
 /**

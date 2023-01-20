@@ -5,7 +5,8 @@ package com.pulumi.oci.Database.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import java.lang.Boolean;
+import com.pulumi.oci.Database.inputs.CloudAutonomousVmClusterMaintenanceWindowArgs;
+import com.pulumi.oci.Database.inputs.CloudAutonomousVmClusterMaintenanceWindowDetailsArgs;
 import java.lang.Double;
 import java.lang.Integer;
 import java.lang.Object;
@@ -22,14 +23,14 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
     public static final CloudAutonomousVmClusterState Empty = new CloudAutonomousVmClusterState();
 
     /**
-     * The data disk group size allocated for Autonomous Databases, in TBs.
+     * The data disk group size to be allocated for Autonomous Databases, in TBs.
      * 
      */
     @Import(name="autonomousDataStorageSizeInTbs")
     private @Nullable Output<Double> autonomousDataStorageSizeInTbs;
 
     /**
-     * @return The data disk group size allocated for Autonomous Databases, in TBs.
+     * @return The data disk group size to be allocated for Autonomous Databases, in TBs.
      * 
      */
     public Optional<Output<Double>> autonomousDataStorageSizeInTbs() {
@@ -142,18 +143,33 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
     }
 
     /**
-     * The number of CPU cores enabled on the cloud Autonomous VM cluster.
+     * The number of CPU cores on the cloud Autonomous VM cluster.
      * 
      */
     @Import(name="cpuCoreCount")
     private @Nullable Output<Integer> cpuCoreCount;
 
     /**
-     * @return The number of CPU cores enabled on the cloud Autonomous VM cluster.
+     * @return The number of CPU cores on the cloud Autonomous VM cluster.
      * 
      */
     public Optional<Output<Integer>> cpuCoreCount() {
         return Optional.ofNullable(this.cpuCoreCount);
+    }
+
+    /**
+     * The number of OCPU cores to be enabled per VM cluster node.
+     * 
+     */
+    @Import(name="cpuCoreCountPerNode")
+    private @Nullable Output<Integer> cpuCoreCountPerNode;
+
+    /**
+     * @return The number of OCPU cores to be enabled per VM cluster node.
+     * 
+     */
+    public Optional<Output<Integer>> cpuCoreCountPerNode() {
+        return Optional.ofNullable(this.cpuCoreCountPerNode);
     }
 
     /**
@@ -199,6 +215,21 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
      */
     public Optional<Output<Integer>> dbNodeStorageSizeInGbs() {
         return Optional.ofNullable(this.dbNodeStorageSizeInGbs);
+    }
+
+    /**
+     * The list of database servers.
+     * 
+     */
+    @Import(name="dbServers")
+    private @Nullable Output<List<String>> dbServers;
+
+    /**
+     * @return The list of database servers.
+     * 
+     */
+    public Optional<Output<List<String>>> dbServers() {
+        return Optional.ofNullable(this.dbServers);
     }
 
     /**
@@ -352,14 +383,44 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
     }
 
     /**
-     * The amount of memory (in GBs) enabled per each OCPU core.
+     * (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+     * 
+     */
+    @Import(name="maintenanceWindowDetails")
+    private @Nullable Output<CloudAutonomousVmClusterMaintenanceWindowDetailsArgs> maintenanceWindowDetails;
+
+    /**
+     * @return (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+     * 
+     */
+    public Optional<Output<CloudAutonomousVmClusterMaintenanceWindowDetailsArgs>> maintenanceWindowDetails() {
+        return Optional.ofNullable(this.maintenanceWindowDetails);
+    }
+
+    /**
+     * The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+     * 
+     */
+    @Import(name="maintenanceWindows")
+    private @Nullable Output<List<CloudAutonomousVmClusterMaintenanceWindowArgs>> maintenanceWindows;
+
+    /**
+     * @return The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+     * 
+     */
+    public Optional<Output<List<CloudAutonomousVmClusterMaintenanceWindowArgs>>> maintenanceWindows() {
+        return Optional.ofNullable(this.maintenanceWindows);
+    }
+
+    /**
+     * The amount of memory (in GBs) to be enabled per each OCPU core.
      * 
      */
     @Import(name="memoryPerOracleComputeUnitInGbs")
     private @Nullable Output<Integer> memoryPerOracleComputeUnitInGbs;
 
     /**
-     * @return The amount of memory (in GBs) enabled per each OCPU core.
+     * @return The amount of memory (in GBs) to be enabled per each OCPU core.
      * 
      */
     public Optional<Output<Integer>> memoryPerOracleComputeUnitInGbs() {
@@ -429,14 +490,14 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
     }
 
     /**
-     * The number of CPU cores enabled on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
+     * The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
      * 
      */
     @Import(name="ocpuCount")
     private @Nullable Output<Double> ocpuCount;
 
     /**
-     * @return The number of CPU cores enabled on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
+     * @return The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
      * 
      */
     public Optional<Output<Double>> ocpuCount() {
@@ -456,20 +517,6 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
      */
     public Optional<Output<Double>> reclaimableCpus() {
         return Optional.ofNullable(this.reclaimableCpus);
-    }
-
-    @Import(name="rotateOrdsCertsTrigger")
-    private @Nullable Output<Boolean> rotateOrdsCertsTrigger;
-
-    public Optional<Output<Boolean>> rotateOrdsCertsTrigger() {
-        return Optional.ofNullable(this.rotateOrdsCertsTrigger);
-    }
-
-    @Import(name="rotateSslCertsTrigger")
-    private @Nullable Output<Boolean> rotateSslCertsTrigger;
-
-    public Optional<Output<Boolean>> rotateSslCertsTrigger() {
-        return Optional.ofNullable(this.rotateSslCertsTrigger);
     }
 
     /**
@@ -548,14 +595,14 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
     }
 
     /**
-     * The total number of Autonomous Container Databases that can be created with the allocated local storage.
+     * The total number of Autonomous Container Databases that can be created.
      * 
      */
     @Import(name="totalContainerDatabases")
     private @Nullable Output<Integer> totalContainerDatabases;
 
     /**
-     * @return The total number of Autonomous Container Databases that can be created with the allocated local storage.
+     * @return The total number of Autonomous Container Databases that can be created.
      * 
      */
     public Optional<Output<Integer>> totalContainerDatabases() {
@@ -574,9 +621,11 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         this.clusterTimeZone = $.clusterTimeZone;
         this.compartmentId = $.compartmentId;
         this.cpuCoreCount = $.cpuCoreCount;
+        this.cpuCoreCountPerNode = $.cpuCoreCountPerNode;
         this.dataStorageSizeInGb = $.dataStorageSizeInGb;
         this.dataStorageSizeInTbs = $.dataStorageSizeInTbs;
         this.dbNodeStorageSizeInGbs = $.dbNodeStorageSizeInGbs;
+        this.dbServers = $.dbServers;
         this.definedTags = $.definedTags;
         this.description = $.description;
         this.displayName = $.displayName;
@@ -587,6 +636,8 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         this.lastUpdateHistoryEntryId = $.lastUpdateHistoryEntryId;
         this.licenseModel = $.licenseModel;
         this.lifecycleDetails = $.lifecycleDetails;
+        this.maintenanceWindowDetails = $.maintenanceWindowDetails;
+        this.maintenanceWindows = $.maintenanceWindows;
         this.memoryPerOracleComputeUnitInGbs = $.memoryPerOracleComputeUnitInGbs;
         this.memorySizeInGbs = $.memorySizeInGbs;
         this.nextMaintenanceRunId = $.nextMaintenanceRunId;
@@ -594,8 +645,6 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         this.nsgIds = $.nsgIds;
         this.ocpuCount = $.ocpuCount;
         this.reclaimableCpus = $.reclaimableCpus;
-        this.rotateOrdsCertsTrigger = $.rotateOrdsCertsTrigger;
-        this.rotateSslCertsTrigger = $.rotateSslCertsTrigger;
         this.shape = $.shape;
         this.state = $.state;
         this.subnetId = $.subnetId;
@@ -623,7 +672,7 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param autonomousDataStorageSizeInTbs The data disk group size allocated for Autonomous Databases, in TBs.
+         * @param autonomousDataStorageSizeInTbs The data disk group size to be allocated for Autonomous Databases, in TBs.
          * 
          * @return builder
          * 
@@ -634,7 +683,7 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param autonomousDataStorageSizeInTbs The data disk group size allocated for Autonomous Databases, in TBs.
+         * @param autonomousDataStorageSizeInTbs The data disk group size to be allocated for Autonomous Databases, in TBs.
          * 
          * @return builder
          * 
@@ -791,7 +840,7 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param cpuCoreCount The number of CPU cores enabled on the cloud Autonomous VM cluster.
+         * @param cpuCoreCount The number of CPU cores on the cloud Autonomous VM cluster.
          * 
          * @return builder
          * 
@@ -802,13 +851,34 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param cpuCoreCount The number of CPU cores enabled on the cloud Autonomous VM cluster.
+         * @param cpuCoreCount The number of CPU cores on the cloud Autonomous VM cluster.
          * 
          * @return builder
          * 
          */
         public Builder cpuCoreCount(Integer cpuCoreCount) {
             return cpuCoreCount(Output.of(cpuCoreCount));
+        }
+
+        /**
+         * @param cpuCoreCountPerNode The number of OCPU cores to be enabled per VM cluster node.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder cpuCoreCountPerNode(@Nullable Output<Integer> cpuCoreCountPerNode) {
+            $.cpuCoreCountPerNode = cpuCoreCountPerNode;
+            return this;
+        }
+
+        /**
+         * @param cpuCoreCountPerNode The number of OCPU cores to be enabled per VM cluster node.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder cpuCoreCountPerNode(Integer cpuCoreCountPerNode) {
+            return cpuCoreCountPerNode(Output.of(cpuCoreCountPerNode));
         }
 
         /**
@@ -872,6 +942,37 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
          */
         public Builder dbNodeStorageSizeInGbs(Integer dbNodeStorageSizeInGbs) {
             return dbNodeStorageSizeInGbs(Output.of(dbNodeStorageSizeInGbs));
+        }
+
+        /**
+         * @param dbServers The list of database servers.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbServers(@Nullable Output<List<String>> dbServers) {
+            $.dbServers = dbServers;
+            return this;
+        }
+
+        /**
+         * @param dbServers The list of database servers.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbServers(List<String> dbServers) {
+            return dbServers(Output.of(dbServers));
+        }
+
+        /**
+         * @param dbServers The list of database servers.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbServers(String... dbServers) {
+            return dbServers(List.of(dbServers));
         }
 
         /**
@@ -1085,7 +1186,59 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param memoryPerOracleComputeUnitInGbs The amount of memory (in GBs) enabled per each OCPU core.
+         * @param maintenanceWindowDetails (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maintenanceWindowDetails(@Nullable Output<CloudAutonomousVmClusterMaintenanceWindowDetailsArgs> maintenanceWindowDetails) {
+            $.maintenanceWindowDetails = maintenanceWindowDetails;
+            return this;
+        }
+
+        /**
+         * @param maintenanceWindowDetails (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maintenanceWindowDetails(CloudAutonomousVmClusterMaintenanceWindowDetailsArgs maintenanceWindowDetails) {
+            return maintenanceWindowDetails(Output.of(maintenanceWindowDetails));
+        }
+
+        /**
+         * @param maintenanceWindows The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maintenanceWindows(@Nullable Output<List<CloudAutonomousVmClusterMaintenanceWindowArgs>> maintenanceWindows) {
+            $.maintenanceWindows = maintenanceWindows;
+            return this;
+        }
+
+        /**
+         * @param maintenanceWindows The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maintenanceWindows(List<CloudAutonomousVmClusterMaintenanceWindowArgs> maintenanceWindows) {
+            return maintenanceWindows(Output.of(maintenanceWindows));
+        }
+
+        /**
+         * @param maintenanceWindows The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder maintenanceWindows(CloudAutonomousVmClusterMaintenanceWindowArgs... maintenanceWindows) {
+            return maintenanceWindows(List.of(maintenanceWindows));
+        }
+
+        /**
+         * @param memoryPerOracleComputeUnitInGbs The amount of memory (in GBs) to be enabled per each OCPU core.
          * 
          * @return builder
          * 
@@ -1096,7 +1249,7 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param memoryPerOracleComputeUnitInGbs The amount of memory (in GBs) enabled per each OCPU core.
+         * @param memoryPerOracleComputeUnitInGbs The amount of memory (in GBs) to be enabled per each OCPU core.
          * 
          * @return builder
          * 
@@ -1203,7 +1356,7 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param ocpuCount The number of CPU cores enabled on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
+         * @param ocpuCount The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
          * 
          * @return builder
          * 
@@ -1214,7 +1367,7 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param ocpuCount The number of CPU cores enabled on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
+         * @param ocpuCount The number of CPU cores on the cloud Autonomous VM cluster. Only 1 decimal place is allowed for the fractional part.
          * 
          * @return builder
          * 
@@ -1242,24 +1395,6 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
          */
         public Builder reclaimableCpus(Double reclaimableCpus) {
             return reclaimableCpus(Output.of(reclaimableCpus));
-        }
-
-        public Builder rotateOrdsCertsTrigger(@Nullable Output<Boolean> rotateOrdsCertsTrigger) {
-            $.rotateOrdsCertsTrigger = rotateOrdsCertsTrigger;
-            return this;
-        }
-
-        public Builder rotateOrdsCertsTrigger(Boolean rotateOrdsCertsTrigger) {
-            return rotateOrdsCertsTrigger(Output.of(rotateOrdsCertsTrigger));
-        }
-
-        public Builder rotateSslCertsTrigger(@Nullable Output<Boolean> rotateSslCertsTrigger) {
-            $.rotateSslCertsTrigger = rotateSslCertsTrigger;
-            return this;
-        }
-
-        public Builder rotateSslCertsTrigger(Boolean rotateSslCertsTrigger) {
-            return rotateSslCertsTrigger(Output.of(rotateSslCertsTrigger));
         }
 
         /**
@@ -1368,7 +1503,7 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param totalContainerDatabases The total number of Autonomous Container Databases that can be created with the allocated local storage.
+         * @param totalContainerDatabases The total number of Autonomous Container Databases that can be created.
          * 
          * @return builder
          * 
@@ -1379,7 +1514,7 @@ public final class CloudAutonomousVmClusterState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param totalContainerDatabases The total number of Autonomous Container Databases that can be created with the allocated local storage.
+         * @param totalContainerDatabases The total number of Autonomous Container Databases that can be created.
          * 
          * @return builder
          * 

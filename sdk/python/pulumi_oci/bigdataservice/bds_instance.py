@@ -28,16 +28,20 @@ class BdsInstanceArgs:
                  worker_node: pulumi.Input['BdsInstanceWorkerNodeArgs'],
                  bootstrap_script_url: Optional[pulumi.Input[str]] = None,
                  cloud_sql_details: Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceCloudSqlDetailArgs']]]] = None,
+                 cluster_profile: Optional[pulumi.Input[str]] = None,
                  compute_only_worker_node: Optional[pulumi.Input['BdsInstanceComputeOnlyWorkerNodeArgs']] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 edge_node: Optional[pulumi.Input['BdsInstanceEdgeNodeArgs']] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_cloud_sql_configured: Optional[pulumi.Input[bool]] = None,
+                 is_force_stop_jobs: Optional[pulumi.Input[bool]] = None,
                  kerberos_realm_name: Optional[pulumi.Input[str]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
-                 network_config: Optional[pulumi.Input['BdsInstanceNetworkConfigArgs']] = None):
+                 network_config: Optional[pulumi.Input['BdsInstanceNetworkConfigArgs']] = None,
+                 state: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a BdsInstance resource.
-        :param pulumi.Input[str] cluster_admin_password: Base-64 encoded password for Cloudera Manager admin user
+        :param pulumi.Input[str] cluster_admin_password: Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
         :param pulumi.Input[str] cluster_public_key: The SSH public key used to authenticate the cluster connection.
         :param pulumi.Input[str] cluster_version: Version of the Hadoop distribution
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment
@@ -47,13 +51,16 @@ class BdsInstanceArgs:
         :param pulumi.Input['BdsInstanceMasterNodeArgs'] master_node: The master node in the BDS instance
         :param pulumi.Input['BdsInstanceUtilNodeArgs'] util_node: The utility node in the BDS instance
         :param pulumi.Input[str] bootstrap_script_url: (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
-        :param pulumi.Input[Sequence[pulumi.Input['BdsInstanceCloudSqlDetailArgs']]] cloud_sql_details: -(Optional) The information about added Cloud SQL capability
+        :param pulumi.Input[Sequence[pulumi.Input['BdsInstanceCloudSqlDetailArgs']]] cloud_sql_details: The information about added Cloud SQL capability
+        :param pulumi.Input[str] cluster_profile: Profile of the Big Data Service cluster.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_cloud_sql_configured: -(Optional) (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
+        :param pulumi.Input[bool] is_cloud_sql_configured: (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
+        :param pulumi.Input[bool] is_force_stop_jobs: (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
         :param pulumi.Input[str] kerberos_realm_name: The user-defined kerberos realm name.
         :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the Key Management master encryption key.
         :param pulumi.Input['BdsInstanceNetworkConfigArgs'] network_config: Additional configuration of customer's network.
+        :param pulumi.Input[str] state: (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
         """
         pulumi.set(__self__, "cluster_admin_password", cluster_admin_password)
         pulumi.set(__self__, "cluster_public_key", cluster_public_key)
@@ -69,26 +76,34 @@ class BdsInstanceArgs:
             pulumi.set(__self__, "bootstrap_script_url", bootstrap_script_url)
         if cloud_sql_details is not None:
             pulumi.set(__self__, "cloud_sql_details", cloud_sql_details)
+        if cluster_profile is not None:
+            pulumi.set(__self__, "cluster_profile", cluster_profile)
         if compute_only_worker_node is not None:
             pulumi.set(__self__, "compute_only_worker_node", compute_only_worker_node)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
+        if edge_node is not None:
+            pulumi.set(__self__, "edge_node", edge_node)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_cloud_sql_configured is not None:
             pulumi.set(__self__, "is_cloud_sql_configured", is_cloud_sql_configured)
+        if is_force_stop_jobs is not None:
+            pulumi.set(__self__, "is_force_stop_jobs", is_force_stop_jobs)
         if kerberos_realm_name is not None:
             pulumi.set(__self__, "kerberos_realm_name", kerberos_realm_name)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
         if network_config is not None:
             pulumi.set(__self__, "network_config", network_config)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
 
     @property
     @pulumi.getter(name="clusterAdminPassword")
     def cluster_admin_password(self) -> pulumi.Input[str]:
         """
-        Base-64 encoded password for Cloudera Manager admin user
+        Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
         """
         return pulumi.get(self, "cluster_admin_password")
 
@@ -217,13 +232,25 @@ class BdsInstanceArgs:
     @pulumi.getter(name="cloudSqlDetails")
     def cloud_sql_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceCloudSqlDetailArgs']]]]:
         """
-        -(Optional) The information about added Cloud SQL capability
+        The information about added Cloud SQL capability
         """
         return pulumi.get(self, "cloud_sql_details")
 
     @cloud_sql_details.setter
     def cloud_sql_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceCloudSqlDetailArgs']]]]):
         pulumi.set(self, "cloud_sql_details", value)
+
+    @property
+    @pulumi.getter(name="clusterProfile")
+    def cluster_profile(self) -> Optional[pulumi.Input[str]]:
+        """
+        Profile of the Big Data Service cluster.
+        """
+        return pulumi.get(self, "cluster_profile")
+
+    @cluster_profile.setter
+    def cluster_profile(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "cluster_profile", value)
 
     @property
     @pulumi.getter(name="computeOnlyWorkerNode")
@@ -247,6 +274,15 @@ class BdsInstanceArgs:
         pulumi.set(self, "defined_tags", value)
 
     @property
+    @pulumi.getter(name="edgeNode")
+    def edge_node(self) -> Optional[pulumi.Input['BdsInstanceEdgeNodeArgs']]:
+        return pulumi.get(self, "edge_node")
+
+    @edge_node.setter
+    def edge_node(self, value: Optional[pulumi.Input['BdsInstanceEdgeNodeArgs']]):
+        pulumi.set(self, "edge_node", value)
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
@@ -262,13 +298,25 @@ class BdsInstanceArgs:
     @pulumi.getter(name="isCloudSqlConfigured")
     def is_cloud_sql_configured(self) -> Optional[pulumi.Input[bool]]:
         """
-        -(Optional) (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
+        (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
         """
         return pulumi.get(self, "is_cloud_sql_configured")
 
     @is_cloud_sql_configured.setter
     def is_cloud_sql_configured(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_cloud_sql_configured", value)
+
+    @property
+    @pulumi.getter(name="isForceStopJobs")
+    def is_force_stop_jobs(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
+        """
+        return pulumi.get(self, "is_force_stop_jobs")
+
+    @is_force_stop_jobs.setter
+    def is_force_stop_jobs(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_force_stop_jobs", value)
 
     @property
     @pulumi.getter(name="kerberosRealmName")
@@ -306,6 +354,18 @@ class BdsInstanceArgs:
     def network_config(self, value: Optional[pulumi.Input['BdsInstanceNetworkConfigArgs']]):
         pulumi.set(self, "network_config", value)
 
+    @property
+    @pulumi.getter
+    def state(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "state", value)
+
 
 @pulumi.input_type
 class _BdsInstanceState:
@@ -314,6 +374,7 @@ class _BdsInstanceState:
                  cloud_sql_details: Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceCloudSqlDetailArgs']]]] = None,
                  cluster_admin_password: Optional[pulumi.Input[str]] = None,
                  cluster_details: Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceClusterDetailArgs']]]] = None,
+                 cluster_profile: Optional[pulumi.Input[str]] = None,
                  cluster_public_key: Optional[pulumi.Input[str]] = None,
                  cluster_version: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
@@ -321,8 +382,10 @@ class _BdsInstanceState:
                  created_by: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 edge_node: Optional[pulumi.Input['BdsInstanceEdgeNodeArgs']] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_cloud_sql_configured: Optional[pulumi.Input[bool]] = None,
+                 is_force_stop_jobs: Optional[pulumi.Input[bool]] = None,
                  is_high_availability: Optional[pulumi.Input[bool]] = None,
                  is_secure: Optional[pulumi.Input[bool]] = None,
                  kerberos_realm_name: Optional[pulumi.Input[str]] = None,
@@ -339,17 +402,19 @@ class _BdsInstanceState:
         """
         Input properties used for looking up and filtering BdsInstance resources.
         :param pulumi.Input[str] bootstrap_script_url: (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
-        :param pulumi.Input[Sequence[pulumi.Input['BdsInstanceCloudSqlDetailArgs']]] cloud_sql_details: -(Optional) The information about added Cloud SQL capability
-        :param pulumi.Input[str] cluster_admin_password: Base-64 encoded password for Cloudera Manager admin user
+        :param pulumi.Input[Sequence[pulumi.Input['BdsInstanceCloudSqlDetailArgs']]] cloud_sql_details: The information about added Cloud SQL capability
+        :param pulumi.Input[str] cluster_admin_password: Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
         :param pulumi.Input[Sequence[pulumi.Input['BdsInstanceClusterDetailArgs']]] cluster_details: Specific info about a Hadoop cluster
+        :param pulumi.Input[str] cluster_profile: Profile of the Big Data Service cluster.
         :param pulumi.Input[str] cluster_public_key: The SSH public key used to authenticate the cluster connection.
         :param pulumi.Input[str] cluster_version: Version of the Hadoop distribution
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment
-        :param pulumi.Input[str] created_by: The user who created the BDS instance.
+        :param pulumi.Input[str] created_by: The user who created the cluster.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Name of the BDS instance
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_cloud_sql_configured: -(Optional) (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
+        :param pulumi.Input[bool] is_cloud_sql_configured: (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
+        :param pulumi.Input[bool] is_force_stop_jobs: (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
         :param pulumi.Input[bool] is_high_availability: Boolean flag specifying whether or not the cluster is HA
         :param pulumi.Input[bool] is_secure: Boolean flag specifying whether or not the cluster should be setup as secure.
         :param pulumi.Input[str] kerberos_realm_name: The user-defined kerberos realm name.
@@ -358,7 +423,7 @@ class _BdsInstanceState:
         :param pulumi.Input['BdsInstanceNetworkConfigArgs'] network_config: Additional configuration of customer's network.
         :param pulumi.Input[Sequence[pulumi.Input['BdsInstanceNodeArgs']]] nodes: The list of nodes in the BDS instance
         :param pulumi.Input[int] number_of_nodes: The amount of worker nodes should be created
-        :param pulumi.Input[str] state: The state of the BDS instance
+        :param pulumi.Input[str] state: (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
         :param pulumi.Input[str] time_created: The time the BDS instance was created. An RFC3339 formatted datetime string
         :param pulumi.Input[str] time_updated: The time the BDS instance was updated. An RFC3339 formatted datetime string
         :param pulumi.Input['BdsInstanceUtilNodeArgs'] util_node: The utility node in the BDS instance
@@ -371,6 +436,8 @@ class _BdsInstanceState:
             pulumi.set(__self__, "cluster_admin_password", cluster_admin_password)
         if cluster_details is not None:
             pulumi.set(__self__, "cluster_details", cluster_details)
+        if cluster_profile is not None:
+            pulumi.set(__self__, "cluster_profile", cluster_profile)
         if cluster_public_key is not None:
             pulumi.set(__self__, "cluster_public_key", cluster_public_key)
         if cluster_version is not None:
@@ -385,10 +452,14 @@ class _BdsInstanceState:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if edge_node is not None:
+            pulumi.set(__self__, "edge_node", edge_node)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_cloud_sql_configured is not None:
             pulumi.set(__self__, "is_cloud_sql_configured", is_cloud_sql_configured)
+        if is_force_stop_jobs is not None:
+            pulumi.set(__self__, "is_force_stop_jobs", is_force_stop_jobs)
         if is_high_availability is not None:
             pulumi.set(__self__, "is_high_availability", is_high_availability)
         if is_secure is not None:
@@ -432,7 +503,7 @@ class _BdsInstanceState:
     @pulumi.getter(name="cloudSqlDetails")
     def cloud_sql_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceCloudSqlDetailArgs']]]]:
         """
-        -(Optional) The information about added Cloud SQL capability
+        The information about added Cloud SQL capability
         """
         return pulumi.get(self, "cloud_sql_details")
 
@@ -444,7 +515,7 @@ class _BdsInstanceState:
     @pulumi.getter(name="clusterAdminPassword")
     def cluster_admin_password(self) -> Optional[pulumi.Input[str]]:
         """
-        Base-64 encoded password for Cloudera Manager admin user
+        Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
         """
         return pulumi.get(self, "cluster_admin_password")
 
@@ -463,6 +534,18 @@ class _BdsInstanceState:
     @cluster_details.setter
     def cluster_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceClusterDetailArgs']]]]):
         pulumi.set(self, "cluster_details", value)
+
+    @property
+    @pulumi.getter(name="clusterProfile")
+    def cluster_profile(self) -> Optional[pulumi.Input[str]]:
+        """
+        Profile of the Big Data Service cluster.
+        """
+        return pulumi.get(self, "cluster_profile")
+
+    @cluster_profile.setter
+    def cluster_profile(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "cluster_profile", value)
 
     @property
     @pulumi.getter(name="clusterPublicKey")
@@ -513,7 +596,7 @@ class _BdsInstanceState:
     @pulumi.getter(name="createdBy")
     def created_by(self) -> Optional[pulumi.Input[str]]:
         """
-        The user who created the BDS instance.
+        The user who created the cluster.
         """
         return pulumi.get(self, "created_by")
 
@@ -546,6 +629,15 @@ class _BdsInstanceState:
         pulumi.set(self, "display_name", value)
 
     @property
+    @pulumi.getter(name="edgeNode")
+    def edge_node(self) -> Optional[pulumi.Input['BdsInstanceEdgeNodeArgs']]:
+        return pulumi.get(self, "edge_node")
+
+    @edge_node.setter
+    def edge_node(self, value: Optional[pulumi.Input['BdsInstanceEdgeNodeArgs']]):
+        pulumi.set(self, "edge_node", value)
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
@@ -561,13 +653,25 @@ class _BdsInstanceState:
     @pulumi.getter(name="isCloudSqlConfigured")
     def is_cloud_sql_configured(self) -> Optional[pulumi.Input[bool]]:
         """
-        -(Optional) (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
+        (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
         """
         return pulumi.get(self, "is_cloud_sql_configured")
 
     @is_cloud_sql_configured.setter
     def is_cloud_sql_configured(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_cloud_sql_configured", value)
+
+    @property
+    @pulumi.getter(name="isForceStopJobs")
+    def is_force_stop_jobs(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
+        """
+        return pulumi.get(self, "is_force_stop_jobs")
+
+    @is_force_stop_jobs.setter
+    def is_force_stop_jobs(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_force_stop_jobs", value)
 
     @property
     @pulumi.getter(name="isHighAvailability")
@@ -669,7 +773,7 @@ class _BdsInstanceState:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        The state of the BDS instance
+        (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
         """
         return pulumi.get(self, "state")
 
@@ -731,20 +835,24 @@ class BdsInstance(pulumi.CustomResource):
                  bootstrap_script_url: Optional[pulumi.Input[str]] = None,
                  cloud_sql_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BdsInstanceCloudSqlDetailArgs']]]]] = None,
                  cluster_admin_password: Optional[pulumi.Input[str]] = None,
+                 cluster_profile: Optional[pulumi.Input[str]] = None,
                  cluster_public_key: Optional[pulumi.Input[str]] = None,
                  cluster_version: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  compute_only_worker_node: Optional[pulumi.Input[pulumi.InputType['BdsInstanceComputeOnlyWorkerNodeArgs']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 edge_node: Optional[pulumi.Input[pulumi.InputType['BdsInstanceEdgeNodeArgs']]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_cloud_sql_configured: Optional[pulumi.Input[bool]] = None,
+                 is_force_stop_jobs: Optional[pulumi.Input[bool]] = None,
                  is_high_availability: Optional[pulumi.Input[bool]] = None,
                  is_secure: Optional[pulumi.Input[bool]] = None,
                  kerberos_realm_name: Optional[pulumi.Input[str]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  master_node: Optional[pulumi.Input[pulumi.InputType['BdsInstanceMasterNodeArgs']]] = None,
                  network_config: Optional[pulumi.Input[pulumi.InputType['BdsInstanceNetworkConfigArgs']]] = None,
+                 state: Optional[pulumi.Input[str]] = None,
                  util_node: Optional[pulumi.Input[pulumi.InputType['BdsInstanceUtilNodeArgs']]] = None,
                  worker_node: Optional[pulumi.Input[pulumi.InputType['BdsInstanceWorkerNodeArgs']]] = None,
                  __props__=None):
@@ -770,44 +878,60 @@ class BdsInstance(pulumi.CustomResource):
             master_node=oci.big_data_service.BdsInstanceMasterNodeArgs(
                 shape=var["bds_instance_nodes_shape"],
                 subnet_id=oci_core_subnet["test_subnet"]["id"],
-                block_volume_size_in_gbs=var["bds_instance_nodes_block_volume_size_in_gbs"],
                 number_of_nodes=var["bds_instance_number_of_nodes"],
+                block_volume_size_in_gbs=var["bds_instance_nodes_block_volume_size_in_gbs"],
                 shape_config=oci.big_data_service.BdsInstanceMasterNodeShapeConfigArgs(
                     memory_in_gbs=var["bds_instance_nodes_shape_config_memory_in_gbs"],
+                    nvmes=var["bds_instance_nodes_shape_config_nvmes"],
                     ocpus=var["bds_instance_nodes_shape_config_ocpus"],
                 ),
             ),
             util_node=oci.big_data_service.BdsInstanceUtilNodeArgs(
                 shape=var["bds_instance_nodes_shape"],
                 subnet_id=oci_core_subnet["test_subnet"]["id"],
-                block_volume_size_in_gbs=var["bds_instance_nodes_block_volume_size_in_gbs"],
                 number_of_nodes=var["bds_instance_number_of_nodes"],
+                block_volume_size_in_gbs=var["bds_instance_nodes_block_volume_size_in_gbs"],
                 shape_config=oci.big_data_service.BdsInstanceUtilNodeShapeConfigArgs(
                     memory_in_gbs=var["bds_instance_nodes_shape_config_memory_in_gbs"],
+                    nvmes=var["bds_instance_nodes_shape_config_nvmes"],
                     ocpus=var["bds_instance_nodes_shape_config_ocpus"],
                 ),
             ),
             worker_node=oci.big_data_service.BdsInstanceWorkerNodeArgs(
                 shape=var["bds_instance_nodes_shape"],
                 subnet_id=oci_core_subnet["test_subnet"]["id"],
-                block_volume_size_in_gbs=var["bds_instance_nodes_block_volume_size_in_gbs"],
                 number_of_nodes=var["bds_instance_number_of_nodes"],
+                block_volume_size_in_gbs=var["bds_instance_nodes_block_volume_size_in_gbs"],
                 shape_config=oci.big_data_service.BdsInstanceWorkerNodeShapeConfigArgs(
                     memory_in_gbs=var["bds_instance_nodes_shape_config_memory_in_gbs"],
+                    nvmes=var["bds_instance_nodes_shape_config_nvmes"],
                     ocpus=var["bds_instance_nodes_shape_config_ocpus"],
                 ),
             ),
             compute_only_worker_node=oci.big_data_service.BdsInstanceComputeOnlyWorkerNodeArgs(
                 shape=var["bds_instance_nodes_shape"],
                 subnet_id=oci_core_subnet["test_subnet"]["id"],
-                block_volume_size_in_gbs=var["bds_instance_nodes_block_volume_size_in_gbs"],
                 number_of_nodes=var["bds_instance_number_of_nodes"],
+                block_volume_size_in_gbs=var["bds_instance_nodes_block_volume_size_in_gbs"],
                 shape_config=oci.big_data_service.BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs(
                     memory_in_gbs=var["bds_instance_nodes_shape_config_memory_in_gbs"],
+                    nvmes=var["bds_instance_nodes_shape_config_nvmes"],
+                    ocpus=var["bds_instance_nodes_shape_config_ocpus"],
+                ),
+            ),
+            edge_node=oci.big_data_service.BdsInstanceEdgeNodeArgs(
+                shape=var["bds_instance_nodes_shape"],
+                subnet_id=oci_core_subnet["test_subnet"]["id"],
+                number_of_nodes=var["bds_instance_number_of_nodes"],
+                block_volume_size_in_gbs=var["bds_instance_nodes_block_volume_size_in_gbs"],
+                shape_config=oci.big_data_service.BdsInstanceEdgeNodeShapeConfigArgs(
+                    memory_in_gbs=var["bds_instance_nodes_shape_config_memory_in_gbs"],
+                    nvmes=var["bds_instance_nodes_shape_config_nvmes"],
                     ocpus=var["bds_instance_nodes_shape_config_ocpus"],
                 ),
             ),
             bootstrap_script_url=var["bds_instance_bootstrap_script_url"],
+            cluster_profile=var["bds_instance_cluster_profile"],
             defined_tags=var["bds_instance_defined_tags"],
             freeform_tags=var["bds_instance_freeform_tags"],
             kerberos_realm_name=var["bds_instance_kerberos_realm_name"],
@@ -829,21 +953,24 @@ class BdsInstance(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] bootstrap_script_url: (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BdsInstanceCloudSqlDetailArgs']]]] cloud_sql_details: -(Optional) The information about added Cloud SQL capability
-        :param pulumi.Input[str] cluster_admin_password: Base-64 encoded password for Cloudera Manager admin user
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BdsInstanceCloudSqlDetailArgs']]]] cloud_sql_details: The information about added Cloud SQL capability
+        :param pulumi.Input[str] cluster_admin_password: Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
+        :param pulumi.Input[str] cluster_profile: Profile of the Big Data Service cluster.
         :param pulumi.Input[str] cluster_public_key: The SSH public key used to authenticate the cluster connection.
         :param pulumi.Input[str] cluster_version: Version of the Hadoop distribution
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Name of the BDS instance
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_cloud_sql_configured: -(Optional) (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
+        :param pulumi.Input[bool] is_cloud_sql_configured: (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
+        :param pulumi.Input[bool] is_force_stop_jobs: (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
         :param pulumi.Input[bool] is_high_availability: Boolean flag specifying whether or not the cluster is HA
         :param pulumi.Input[bool] is_secure: Boolean flag specifying whether or not the cluster should be setup as secure.
         :param pulumi.Input[str] kerberos_realm_name: The user-defined kerberos realm name.
         :param pulumi.Input[str] kms_key_id: (Updatable) The OCID of the Key Management master encryption key.
         :param pulumi.Input[pulumi.InputType['BdsInstanceMasterNodeArgs']] master_node: The master node in the BDS instance
         :param pulumi.Input[pulumi.InputType['BdsInstanceNetworkConfigArgs']] network_config: Additional configuration of customer's network.
+        :param pulumi.Input[str] state: (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
         :param pulumi.Input[pulumi.InputType['BdsInstanceUtilNodeArgs']] util_node: The utility node in the BDS instance
         """
         ...
@@ -874,44 +1001,60 @@ class BdsInstance(pulumi.CustomResource):
             master_node=oci.big_data_service.BdsInstanceMasterNodeArgs(
                 shape=var["bds_instance_nodes_shape"],
                 subnet_id=oci_core_subnet["test_subnet"]["id"],
-                block_volume_size_in_gbs=var["bds_instance_nodes_block_volume_size_in_gbs"],
                 number_of_nodes=var["bds_instance_number_of_nodes"],
+                block_volume_size_in_gbs=var["bds_instance_nodes_block_volume_size_in_gbs"],
                 shape_config=oci.big_data_service.BdsInstanceMasterNodeShapeConfigArgs(
                     memory_in_gbs=var["bds_instance_nodes_shape_config_memory_in_gbs"],
+                    nvmes=var["bds_instance_nodes_shape_config_nvmes"],
                     ocpus=var["bds_instance_nodes_shape_config_ocpus"],
                 ),
             ),
             util_node=oci.big_data_service.BdsInstanceUtilNodeArgs(
                 shape=var["bds_instance_nodes_shape"],
                 subnet_id=oci_core_subnet["test_subnet"]["id"],
-                block_volume_size_in_gbs=var["bds_instance_nodes_block_volume_size_in_gbs"],
                 number_of_nodes=var["bds_instance_number_of_nodes"],
+                block_volume_size_in_gbs=var["bds_instance_nodes_block_volume_size_in_gbs"],
                 shape_config=oci.big_data_service.BdsInstanceUtilNodeShapeConfigArgs(
                     memory_in_gbs=var["bds_instance_nodes_shape_config_memory_in_gbs"],
+                    nvmes=var["bds_instance_nodes_shape_config_nvmes"],
                     ocpus=var["bds_instance_nodes_shape_config_ocpus"],
                 ),
             ),
             worker_node=oci.big_data_service.BdsInstanceWorkerNodeArgs(
                 shape=var["bds_instance_nodes_shape"],
                 subnet_id=oci_core_subnet["test_subnet"]["id"],
-                block_volume_size_in_gbs=var["bds_instance_nodes_block_volume_size_in_gbs"],
                 number_of_nodes=var["bds_instance_number_of_nodes"],
+                block_volume_size_in_gbs=var["bds_instance_nodes_block_volume_size_in_gbs"],
                 shape_config=oci.big_data_service.BdsInstanceWorkerNodeShapeConfigArgs(
                     memory_in_gbs=var["bds_instance_nodes_shape_config_memory_in_gbs"],
+                    nvmes=var["bds_instance_nodes_shape_config_nvmes"],
                     ocpus=var["bds_instance_nodes_shape_config_ocpus"],
                 ),
             ),
             compute_only_worker_node=oci.big_data_service.BdsInstanceComputeOnlyWorkerNodeArgs(
                 shape=var["bds_instance_nodes_shape"],
                 subnet_id=oci_core_subnet["test_subnet"]["id"],
-                block_volume_size_in_gbs=var["bds_instance_nodes_block_volume_size_in_gbs"],
                 number_of_nodes=var["bds_instance_number_of_nodes"],
+                block_volume_size_in_gbs=var["bds_instance_nodes_block_volume_size_in_gbs"],
                 shape_config=oci.big_data_service.BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs(
                     memory_in_gbs=var["bds_instance_nodes_shape_config_memory_in_gbs"],
+                    nvmes=var["bds_instance_nodes_shape_config_nvmes"],
+                    ocpus=var["bds_instance_nodes_shape_config_ocpus"],
+                ),
+            ),
+            edge_node=oci.big_data_service.BdsInstanceEdgeNodeArgs(
+                shape=var["bds_instance_nodes_shape"],
+                subnet_id=oci_core_subnet["test_subnet"]["id"],
+                number_of_nodes=var["bds_instance_number_of_nodes"],
+                block_volume_size_in_gbs=var["bds_instance_nodes_block_volume_size_in_gbs"],
+                shape_config=oci.big_data_service.BdsInstanceEdgeNodeShapeConfigArgs(
+                    memory_in_gbs=var["bds_instance_nodes_shape_config_memory_in_gbs"],
+                    nvmes=var["bds_instance_nodes_shape_config_nvmes"],
                     ocpus=var["bds_instance_nodes_shape_config_ocpus"],
                 ),
             ),
             bootstrap_script_url=var["bds_instance_bootstrap_script_url"],
+            cluster_profile=var["bds_instance_cluster_profile"],
             defined_tags=var["bds_instance_defined_tags"],
             freeform_tags=var["bds_instance_freeform_tags"],
             kerberos_realm_name=var["bds_instance_kerberos_realm_name"],
@@ -948,20 +1091,24 @@ class BdsInstance(pulumi.CustomResource):
                  bootstrap_script_url: Optional[pulumi.Input[str]] = None,
                  cloud_sql_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BdsInstanceCloudSqlDetailArgs']]]]] = None,
                  cluster_admin_password: Optional[pulumi.Input[str]] = None,
+                 cluster_profile: Optional[pulumi.Input[str]] = None,
                  cluster_public_key: Optional[pulumi.Input[str]] = None,
                  cluster_version: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  compute_only_worker_node: Optional[pulumi.Input[pulumi.InputType['BdsInstanceComputeOnlyWorkerNodeArgs']]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 edge_node: Optional[pulumi.Input[pulumi.InputType['BdsInstanceEdgeNodeArgs']]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_cloud_sql_configured: Optional[pulumi.Input[bool]] = None,
+                 is_force_stop_jobs: Optional[pulumi.Input[bool]] = None,
                  is_high_availability: Optional[pulumi.Input[bool]] = None,
                  is_secure: Optional[pulumi.Input[bool]] = None,
                  kerberos_realm_name: Optional[pulumi.Input[str]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  master_node: Optional[pulumi.Input[pulumi.InputType['BdsInstanceMasterNodeArgs']]] = None,
                  network_config: Optional[pulumi.Input[pulumi.InputType['BdsInstanceNetworkConfigArgs']]] = None,
+                 state: Optional[pulumi.Input[str]] = None,
                  util_node: Optional[pulumi.Input[pulumi.InputType['BdsInstanceUtilNodeArgs']]] = None,
                  worker_node: Optional[pulumi.Input[pulumi.InputType['BdsInstanceWorkerNodeArgs']]] = None,
                  __props__=None):
@@ -977,7 +1124,8 @@ class BdsInstance(pulumi.CustomResource):
             __props__.__dict__["cloud_sql_details"] = cloud_sql_details
             if cluster_admin_password is None and not opts.urn:
                 raise TypeError("Missing required property 'cluster_admin_password'")
-            __props__.__dict__["cluster_admin_password"] = cluster_admin_password
+            __props__.__dict__["cluster_admin_password"] = None if cluster_admin_password is None else pulumi.Output.secret(cluster_admin_password)
+            __props__.__dict__["cluster_profile"] = cluster_profile
             if cluster_public_key is None and not opts.urn:
                 raise TypeError("Missing required property 'cluster_public_key'")
             __props__.__dict__["cluster_public_key"] = cluster_public_key
@@ -992,8 +1140,10 @@ class BdsInstance(pulumi.CustomResource):
             if display_name is None and not opts.urn:
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
+            __props__.__dict__["edge_node"] = edge_node
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["is_cloud_sql_configured"] = is_cloud_sql_configured
+            __props__.__dict__["is_force_stop_jobs"] = is_force_stop_jobs
             if is_high_availability is None and not opts.urn:
                 raise TypeError("Missing required property 'is_high_availability'")
             __props__.__dict__["is_high_availability"] = is_high_availability
@@ -1006,6 +1156,7 @@ class BdsInstance(pulumi.CustomResource):
                 raise TypeError("Missing required property 'master_node'")
             __props__.__dict__["master_node"] = master_node
             __props__.__dict__["network_config"] = network_config
+            __props__.__dict__["state"] = state
             if util_node is None and not opts.urn:
                 raise TypeError("Missing required property 'util_node'")
             __props__.__dict__["util_node"] = util_node
@@ -1016,9 +1167,10 @@ class BdsInstance(pulumi.CustomResource):
             __props__.__dict__["created_by"] = None
             __props__.__dict__["nodes"] = None
             __props__.__dict__["number_of_nodes"] = None
-            __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["clusterAdminPassword"])
+        opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(BdsInstance, __self__).__init__(
             'oci:BigDataService/bdsInstance:BdsInstance',
             resource_name,
@@ -1033,6 +1185,7 @@ class BdsInstance(pulumi.CustomResource):
             cloud_sql_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BdsInstanceCloudSqlDetailArgs']]]]] = None,
             cluster_admin_password: Optional[pulumi.Input[str]] = None,
             cluster_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BdsInstanceClusterDetailArgs']]]]] = None,
+            cluster_profile: Optional[pulumi.Input[str]] = None,
             cluster_public_key: Optional[pulumi.Input[str]] = None,
             cluster_version: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
@@ -1040,8 +1193,10 @@ class BdsInstance(pulumi.CustomResource):
             created_by: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
+            edge_node: Optional[pulumi.Input[pulumi.InputType['BdsInstanceEdgeNodeArgs']]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             is_cloud_sql_configured: Optional[pulumi.Input[bool]] = None,
+            is_force_stop_jobs: Optional[pulumi.Input[bool]] = None,
             is_high_availability: Optional[pulumi.Input[bool]] = None,
             is_secure: Optional[pulumi.Input[bool]] = None,
             kerberos_realm_name: Optional[pulumi.Input[str]] = None,
@@ -1063,17 +1218,19 @@ class BdsInstance(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] bootstrap_script_url: (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BdsInstanceCloudSqlDetailArgs']]]] cloud_sql_details: -(Optional) The information about added Cloud SQL capability
-        :param pulumi.Input[str] cluster_admin_password: Base-64 encoded password for Cloudera Manager admin user
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BdsInstanceCloudSqlDetailArgs']]]] cloud_sql_details: The information about added Cloud SQL capability
+        :param pulumi.Input[str] cluster_admin_password: Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BdsInstanceClusterDetailArgs']]]] cluster_details: Specific info about a Hadoop cluster
+        :param pulumi.Input[str] cluster_profile: Profile of the Big Data Service cluster.
         :param pulumi.Input[str] cluster_public_key: The SSH public key used to authenticate the cluster connection.
         :param pulumi.Input[str] cluster_version: Version of the Hadoop distribution
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment
-        :param pulumi.Input[str] created_by: The user who created the BDS instance.
+        :param pulumi.Input[str] created_by: The user who created the cluster.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Name of the BDS instance
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_cloud_sql_configured: -(Optional) (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
+        :param pulumi.Input[bool] is_cloud_sql_configured: (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
+        :param pulumi.Input[bool] is_force_stop_jobs: (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
         :param pulumi.Input[bool] is_high_availability: Boolean flag specifying whether or not the cluster is HA
         :param pulumi.Input[bool] is_secure: Boolean flag specifying whether or not the cluster should be setup as secure.
         :param pulumi.Input[str] kerberos_realm_name: The user-defined kerberos realm name.
@@ -1082,7 +1239,7 @@ class BdsInstance(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['BdsInstanceNetworkConfigArgs']] network_config: Additional configuration of customer's network.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BdsInstanceNodeArgs']]]] nodes: The list of nodes in the BDS instance
         :param pulumi.Input[int] number_of_nodes: The amount of worker nodes should be created
-        :param pulumi.Input[str] state: The state of the BDS instance
+        :param pulumi.Input[str] state: (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
         :param pulumi.Input[str] time_created: The time the BDS instance was created. An RFC3339 formatted datetime string
         :param pulumi.Input[str] time_updated: The time the BDS instance was updated. An RFC3339 formatted datetime string
         :param pulumi.Input[pulumi.InputType['BdsInstanceUtilNodeArgs']] util_node: The utility node in the BDS instance
@@ -1095,6 +1252,7 @@ class BdsInstance(pulumi.CustomResource):
         __props__.__dict__["cloud_sql_details"] = cloud_sql_details
         __props__.__dict__["cluster_admin_password"] = cluster_admin_password
         __props__.__dict__["cluster_details"] = cluster_details
+        __props__.__dict__["cluster_profile"] = cluster_profile
         __props__.__dict__["cluster_public_key"] = cluster_public_key
         __props__.__dict__["cluster_version"] = cluster_version
         __props__.__dict__["compartment_id"] = compartment_id
@@ -1102,8 +1260,10 @@ class BdsInstance(pulumi.CustomResource):
         __props__.__dict__["created_by"] = created_by
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
+        __props__.__dict__["edge_node"] = edge_node
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["is_cloud_sql_configured"] = is_cloud_sql_configured
+        __props__.__dict__["is_force_stop_jobs"] = is_force_stop_jobs
         __props__.__dict__["is_high_availability"] = is_high_availability
         __props__.__dict__["is_secure"] = is_secure
         __props__.__dict__["kerberos_realm_name"] = kerberos_realm_name
@@ -1131,7 +1291,7 @@ class BdsInstance(pulumi.CustomResource):
     @pulumi.getter(name="cloudSqlDetails")
     def cloud_sql_details(self) -> pulumi.Output[Sequence['outputs.BdsInstanceCloudSqlDetail']]:
         """
-        -(Optional) The information about added Cloud SQL capability
+        The information about added Cloud SQL capability
         """
         return pulumi.get(self, "cloud_sql_details")
 
@@ -1139,7 +1299,7 @@ class BdsInstance(pulumi.CustomResource):
     @pulumi.getter(name="clusterAdminPassword")
     def cluster_admin_password(self) -> pulumi.Output[str]:
         """
-        Base-64 encoded password for Cloudera Manager admin user
+        Base-64 encoded password for the cluster (and Cloudera Manager) admin user.
         """
         return pulumi.get(self, "cluster_admin_password")
 
@@ -1150,6 +1310,14 @@ class BdsInstance(pulumi.CustomResource):
         Specific info about a Hadoop cluster
         """
         return pulumi.get(self, "cluster_details")
+
+    @property
+    @pulumi.getter(name="clusterProfile")
+    def cluster_profile(self) -> pulumi.Output[str]:
+        """
+        Profile of the Big Data Service cluster.
+        """
+        return pulumi.get(self, "cluster_profile")
 
     @property
     @pulumi.getter(name="clusterPublicKey")
@@ -1184,7 +1352,7 @@ class BdsInstance(pulumi.CustomResource):
     @pulumi.getter(name="createdBy")
     def created_by(self) -> pulumi.Output[str]:
         """
-        The user who created the BDS instance.
+        The user who created the cluster.
         """
         return pulumi.get(self, "created_by")
 
@@ -1205,6 +1373,11 @@ class BdsInstance(pulumi.CustomResource):
         return pulumi.get(self, "display_name")
 
     @property
+    @pulumi.getter(name="edgeNode")
+    def edge_node(self) -> pulumi.Output[Optional['outputs.BdsInstanceEdgeNode']]:
+        return pulumi.get(self, "edge_node")
+
+    @property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
         """
@@ -1216,9 +1389,17 @@ class BdsInstance(pulumi.CustomResource):
     @pulumi.getter(name="isCloudSqlConfigured")
     def is_cloud_sql_configured(self) -> pulumi.Output[bool]:
         """
-        -(Optional) (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
+        (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
         """
         return pulumi.get(self, "is_cloud_sql_configured")
+
+    @property
+    @pulumi.getter(name="isForceStopJobs")
+    def is_force_stop_jobs(self) -> pulumi.Output[Optional[bool]]:
+        """
+        (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
+        """
+        return pulumi.get(self, "is_force_stop_jobs")
 
     @property
     @pulumi.getter(name="isHighAvailability")
@@ -1288,7 +1469,7 @@ class BdsInstance(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[str]:
         """
-        The state of the BDS instance
+        (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
         """
         return pulumi.get(self, "state")
 

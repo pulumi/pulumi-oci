@@ -22,6 +22,7 @@ class MonitoredResourceArgs:
                  credentials: Optional[pulumi.Input['MonitoredResourceCredentialsArgs']] = None,
                  database_connection_details: Optional[pulumi.Input['MonitoredResourceDatabaseConnectionDetailsArgs']] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 external_id: Optional[pulumi.Input[str]] = None,
                  external_resource_id: Optional[pulumi.Input[str]] = None,
                  host_name: Optional[pulumi.Input[str]] = None,
                  management_agent_id: Optional[pulumi.Input[str]] = None,
@@ -36,6 +37,7 @@ class MonitoredResourceArgs:
         :param pulumi.Input['MonitoredResourceCredentialsArgs'] credentials: (Updatable) Monitored Resource Credential Details
         :param pulumi.Input['MonitoredResourceDatabaseConnectionDetailsArgs'] database_connection_details: (Updatable) Connection details to connect to the database. HostName, protocol, and port should be specified.
         :param pulumi.Input[str] display_name: (Updatable) Monitored resource display name.
+        :param pulumi.Input[str] external_id: External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only Oracle Cloud Infrastructure compute instance.
         :param pulumi.Input[str] external_resource_id: Generally used by DBaaS to send the Database OCID stored on the DBaaS. The same will be passed to resource service to enable Stack Monitoring Service on DBM. This will be stored in Stack Monitoring Resource Service data store as identifier for monitored resource. If this header is not set as part of the request, then an id will be generated and stored for the resource.
         :param pulumi.Input[str] host_name: (Updatable) Host name of the monitored resource
         :param pulumi.Input[str] management_agent_id: Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -53,6 +55,8 @@ class MonitoredResourceArgs:
             pulumi.set(__self__, "database_connection_details", database_connection_details)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if external_id is not None:
+            pulumi.set(__self__, "external_id", external_id)
         if external_resource_id is not None:
             pulumi.set(__self__, "external_resource_id", external_resource_id)
         if host_name is not None:
@@ -139,6 +143,18 @@ class MonitoredResourceArgs:
         pulumi.set(self, "display_name", value)
 
     @property
+    @pulumi.getter(name="externalId")
+    def external_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only Oracle Cloud Infrastructure compute instance.
+        """
+        return pulumi.get(self, "external_id")
+
+    @external_id.setter
+    def external_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "external_id", value)
+
+    @property
     @pulumi.getter(name="externalResourceId")
     def external_resource_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -220,6 +236,7 @@ class _MonitoredResourceState:
                  database_connection_details: Optional[pulumi.Input['MonitoredResourceDatabaseConnectionDetailsArgs']] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 external_id: Optional[pulumi.Input[str]] = None,
                  external_resource_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  host_name: Optional[pulumi.Input[str]] = None,
@@ -241,6 +258,7 @@ class _MonitoredResourceState:
         :param pulumi.Input['MonitoredResourceDatabaseConnectionDetailsArgs'] database_connection_details: (Updatable) Connection details to connect to the database. HostName, protocol, and port should be specified.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Monitored resource display name.
+        :param pulumi.Input[str] external_id: External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only Oracle Cloud Infrastructure compute instance.
         :param pulumi.Input[str] external_resource_id: Generally used by DBaaS to send the Database OCID stored on the DBaaS. The same will be passed to resource service to enable Stack Monitoring Service on DBM. This will be stored in Stack Monitoring Resource Service data store as identifier for monitored resource. If this header is not set as part of the request, then an id will be generated and stored for the resource.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] host_name: (Updatable) Host name of the monitored resource
@@ -267,6 +285,8 @@ class _MonitoredResourceState:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if external_id is not None:
+            pulumi.set(__self__, "external_id", external_id)
         if external_resource_id is not None:
             pulumi.set(__self__, "external_resource_id", external_resource_id)
         if freeform_tags is not None:
@@ -365,6 +385,18 @@ class _MonitoredResourceState:
     @display_name.setter
     def display_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="externalId")
+    def external_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only Oracle Cloud Infrastructure compute instance.
+        """
+        return pulumi.get(self, "external_id")
+
+    @external_id.setter
+    def external_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "external_id", value)
 
     @property
     @pulumi.getter(name="externalResourceId")
@@ -533,6 +565,7 @@ class MonitoredResource(pulumi.CustomResource):
                  credentials: Optional[pulumi.Input[pulumi.InputType['MonitoredResourceCredentialsArgs']]] = None,
                  database_connection_details: Optional[pulumi.Input[pulumi.InputType['MonitoredResourceDatabaseConnectionDetailsArgs']]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 external_id: Optional[pulumi.Input[str]] = None,
                  external_resource_id: Optional[pulumi.Input[str]] = None,
                  host_name: Optional[pulumi.Input[str]] = None,
                  management_agent_id: Optional[pulumi.Input[str]] = None,
@@ -583,9 +616,11 @@ class MonitoredResource(pulumi.CustomResource):
                 connector_id=var["monitored_resource_database_connector_id"],
                 db_id=var["monitored_resource_database_id"],
                 db_unique_name=var["monitored_resource_database_connection_details_db_unique_name"],
+                ssl_secret_id=oci_vault_secret["test_secret"]["id"],
             ),
             display_name=var["monitored_resource_display_name"],
             external_resource_id=var["monitored_resource_external_resource_id"],
+            external_id=oci_stack_monitoring_external["test_external"]["id"],
             host_name=var["monitored_resource_host_name"],
             management_agent_id=oci_management_agent_management_agent["test_management_agent"]["id"],
             properties=[oci.stack_monitoring.MonitoredResourcePropertyArgs(
@@ -610,6 +645,7 @@ class MonitoredResource(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['MonitoredResourceCredentialsArgs']] credentials: (Updatable) Monitored Resource Credential Details
         :param pulumi.Input[pulumi.InputType['MonitoredResourceDatabaseConnectionDetailsArgs']] database_connection_details: (Updatable) Connection details to connect to the database. HostName, protocol, and port should be specified.
         :param pulumi.Input[str] display_name: (Updatable) Monitored resource display name.
+        :param pulumi.Input[str] external_id: External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only Oracle Cloud Infrastructure compute instance.
         :param pulumi.Input[str] external_resource_id: Generally used by DBaaS to send the Database OCID stored on the DBaaS. The same will be passed to resource service to enable Stack Monitoring Service on DBM. This will be stored in Stack Monitoring Resource Service data store as identifier for monitored resource. If this header is not set as part of the request, then an id will be generated and stored for the resource.
         :param pulumi.Input[str] host_name: (Updatable) Host name of the monitored resource
         :param pulumi.Input[str] management_agent_id: Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -666,9 +702,11 @@ class MonitoredResource(pulumi.CustomResource):
                 connector_id=var["monitored_resource_database_connector_id"],
                 db_id=var["monitored_resource_database_id"],
                 db_unique_name=var["monitored_resource_database_connection_details_db_unique_name"],
+                ssl_secret_id=oci_vault_secret["test_secret"]["id"],
             ),
             display_name=var["monitored_resource_display_name"],
             external_resource_id=var["monitored_resource_external_resource_id"],
+            external_id=oci_stack_monitoring_external["test_external"]["id"],
             host_name=var["monitored_resource_host_name"],
             management_agent_id=oci_management_agent_management_agent["test_management_agent"]["id"],
             properties=[oci.stack_monitoring.MonitoredResourcePropertyArgs(
@@ -706,6 +744,7 @@ class MonitoredResource(pulumi.CustomResource):
                  credentials: Optional[pulumi.Input[pulumi.InputType['MonitoredResourceCredentialsArgs']]] = None,
                  database_connection_details: Optional[pulumi.Input[pulumi.InputType['MonitoredResourceDatabaseConnectionDetailsArgs']]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
+                 external_id: Optional[pulumi.Input[str]] = None,
                  external_resource_id: Optional[pulumi.Input[str]] = None,
                  host_name: Optional[pulumi.Input[str]] = None,
                  management_agent_id: Optional[pulumi.Input[str]] = None,
@@ -729,6 +768,7 @@ class MonitoredResource(pulumi.CustomResource):
             __props__.__dict__["credentials"] = credentials
             __props__.__dict__["database_connection_details"] = database_connection_details
             __props__.__dict__["display_name"] = display_name
+            __props__.__dict__["external_id"] = external_id
             __props__.__dict__["external_resource_id"] = external_resource_id
             __props__.__dict__["host_name"] = host_name
             __props__.__dict__["management_agent_id"] = management_agent_id
@@ -761,6 +801,7 @@ class MonitoredResource(pulumi.CustomResource):
             database_connection_details: Optional[pulumi.Input[pulumi.InputType['MonitoredResourceDatabaseConnectionDetailsArgs']]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
+            external_id: Optional[pulumi.Input[str]] = None,
             external_resource_id: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             host_name: Optional[pulumi.Input[str]] = None,
@@ -787,6 +828,7 @@ class MonitoredResource(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['MonitoredResourceDatabaseConnectionDetailsArgs']] database_connection_details: (Updatable) Connection details to connect to the database. HostName, protocol, and port should be specified.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Monitored resource display name.
+        :param pulumi.Input[str] external_id: External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only Oracle Cloud Infrastructure compute instance.
         :param pulumi.Input[str] external_resource_id: Generally used by DBaaS to send the Database OCID stored on the DBaaS. The same will be passed to resource service to enable Stack Monitoring Service on DBM. This will be stored in Stack Monitoring Resource Service data store as identifier for monitored resource. If this header is not set as part of the request, then an id will be generated and stored for the resource.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] host_name: (Updatable) Host name of the monitored resource
@@ -811,6 +853,7 @@ class MonitoredResource(pulumi.CustomResource):
         __props__.__dict__["database_connection_details"] = database_connection_details
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
+        __props__.__dict__["external_id"] = external_id
         __props__.__dict__["external_resource_id"] = external_resource_id
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["host_name"] = host_name
@@ -873,6 +916,14 @@ class MonitoredResource(pulumi.CustomResource):
         (Updatable) Monitored resource display name.
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="externalId")
+    def external_id(self) -> pulumi.Output[Optional[str]]:
+        """
+        External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only Oracle Cloud Infrastructure compute instance.
+        """
+        return pulumi.get(self, "external_id")
 
     @property
     @pulumi.getter(name="externalResourceId")

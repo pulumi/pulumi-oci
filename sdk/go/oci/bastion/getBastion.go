@@ -65,6 +65,8 @@ type LookupBastionResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
+	DnsProxyStatus string `pulumi:"dnsProxyStatus"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The unique identifier (OCID) of the bastion, which can't be changed after creation.
@@ -157,6 +159,11 @@ func (o LookupBastionResultOutput) CompartmentId() pulumi.StringOutput {
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 func (o LookupBastionResultOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupBastionResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
+func (o LookupBastionResultOutput) DnsProxyStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupBastionResult) string { return v.DnsProxyStatus }).(pulumi.StringOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`

@@ -17,9 +17,6 @@ namespace Pulumi.Oci.Nosql.Outputs
         /// The ID of a table's compartment.
         /// </summary>
         public readonly string CompartmentId;
-        /// <summary>
-        /// A DDL statement representing the schema.
-        /// </summary>
         public readonly string DdlStatement;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace": {"bar-key": "value"}}`
@@ -45,9 +42,6 @@ namespace Pulumi.Oci.Nosql.Outputs
         /// A shell-globbing-style (*?[]) filter for names.
         /// </summary>
         public readonly string Name;
-        /// <summary>
-        /// The table schema information as a JSON object.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetTablesTableCollectionSchemaResult> Schemas;
         /// <summary>
         /// Filter list by the lifecycle state of the item.

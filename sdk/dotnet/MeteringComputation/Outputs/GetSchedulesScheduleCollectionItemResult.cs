@@ -22,11 +22,15 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         /// <summary>
-        /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        /// The description of the schedule.
+        /// </summary>
+        public readonly string Description;
+        /// <summary>
+        /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// The OCID representing unique shedule
+        /// The OCID representing a unique shedule.
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -34,19 +38,27 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
         /// </summary>
         public readonly string Name;
         /// <summary>
+        /// Specifies supported output file format.
+        /// </summary>
+        public readonly string OutputFileFormat;
+        /// <summary>
         /// The query properties.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetSchedulesScheduleCollectionItemQueryPropertyResult> QueryProperties;
         /// <summary>
-        /// The location where usage/cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
+        /// The location where usage or cost CSVs will be uploaded defined by `locationType`, which corresponds with type-specific characteristics.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetSchedulesScheduleCollectionItemResultLocationResult> ResultLocations;
         /// <summary>
-        /// In x-obmcs-recurring-time format shown here: https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10 Describes the frequency of when the schedule will be run
+        /// The saved report id which can also be used to generate query.
+        /// </summary>
+        public readonly string SavedReportId;
+        /// <summary>
+        /// Specifies the frequency according to when the schedule will be run,  in the x-obmcs-recurring-time format described in [RFC 5545 section 3.3.10](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported values are : ONE_TIME, DAILY, WEEKLY and MONTHLY.
         /// </summary>
         public readonly string ScheduleRecurrences;
         /// <summary>
-        /// The lifecycle state of the schedule
+        /// The schedule lifecycle state.
         /// </summary>
         public readonly string State;
         /// <summary>
@@ -54,11 +66,15 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
-        /// The date and time of when the schedule was created
+        /// The date and time the schedule was created.
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The date and time of the first time job execution
+        /// The date and time of the next job execution.
+        /// </summary>
+        public readonly string TimeNextRun;
+        /// <summary>
+        /// The date and time of the first time job execution.
         /// </summary>
         public readonly string TimeScheduled;
 
@@ -68,15 +84,21 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
 
             ImmutableDictionary<string, object> definedTags,
 
+            string description,
+
             ImmutableDictionary<string, object> freeformTags,
 
             string id,
 
             string name,
 
+            string outputFileFormat,
+
             ImmutableArray<Outputs.GetSchedulesScheduleCollectionItemQueryPropertyResult> queryProperties,
 
             ImmutableArray<Outputs.GetSchedulesScheduleCollectionItemResultLocationResult> resultLocations,
+
+            string savedReportId,
 
             string scheduleRecurrences,
 
@@ -86,19 +108,25 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
 
             string timeCreated,
 
+            string timeNextRun,
+
             string timeScheduled)
         {
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
+            Description = description;
             FreeformTags = freeformTags;
             Id = id;
             Name = name;
+            OutputFileFormat = outputFileFormat;
             QueryProperties = queryProperties;
             ResultLocations = resultLocations;
+            SavedReportId = savedReportId;
             ScheduleRecurrences = scheduleRecurrences;
             State = state;
             SystemTags = systemTags;
             TimeCreated = timeCreated;
+            TimeNextRun = timeNextRun;
             TimeScheduled = timeScheduled;
         }
     }

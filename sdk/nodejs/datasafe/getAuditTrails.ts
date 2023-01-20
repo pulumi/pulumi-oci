@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -42,11 +43,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getAuditTrails(args: GetAuditTrailsArgs, opts?: pulumi.InvokeOptions): Promise<GetAuditTrailsResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getAuditTrails:getAuditTrails", {
         "accessLevel": args.accessLevel,
         "auditTrailId": args.auditTrailId,
@@ -136,9 +134,44 @@ export interface GetAuditTrailsResult {
      */
     readonly targetId?: string;
 }
-
+/**
+ * This data source provides the list of Audit Trails in Oracle Cloud Infrastructure Data Safe service.
+ *
+ * Gets a list of all audit trails.
+ * The ListAuditTrails operation returns only the audit trails in the specified `compartmentId`.
+ * The list does not include any subcompartments of the compartmentId passed.
+ *
+ * The parameter `accessLevel` specifies whether to return only those compartments for which the
+ * requestor has INSPECT permissions on at least one resource directly
+ * or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
+ * Principal doesn't have access to even one of the child compartments. This is valid only when
+ * `compartmentIdInSubtree` is set to `true`.
+ *
+ * The parameter `compartmentIdInSubtree` applies when you perform ListAuditTrails on the
+ * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
+ * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+ * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAuditTrails = oci.DataSafe.getAuditTrails({
+ *     compartmentId: _var.compartment_id,
+ *     accessLevel: _var.audit_trail_access_level,
+ *     auditTrailId: oci_data_safe_audit_trail.test_audit_trail.id,
+ *     compartmentIdInSubtree: _var.audit_trail_compartment_id_in_subtree,
+ *     displayName: _var.audit_trail_display_name,
+ *     state: _var.audit_trail_state,
+ *     status: _var.audit_trail_status,
+ *     targetId: oci_cloud_guard_target.test_target.id,
+ * });
+ * ```
+ */
 export function getAuditTrailsOutput(args: GetAuditTrailsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetAuditTrailsResult> {
-    return pulumi.output(args).apply(a => getAuditTrails(a, opts))
+    return pulumi.output(args).apply((a: any) => getAuditTrails(a, opts))
 }
 
 /**

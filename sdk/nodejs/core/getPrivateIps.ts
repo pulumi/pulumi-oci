@@ -2,7 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
-import { input as inputs, output as outputs } from "../types";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -57,11 +58,8 @@ import * as utilities from "../utilities";
  */
 export function getPrivateIps(args?: GetPrivateIpsArgs, opts?: pulumi.InvokeOptions): Promise<GetPrivateIpsResult> {
     args = args || {};
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Core/getPrivateIps:getPrivateIps", {
         "filters": args.filters,
         "ipAddress": args.ipAddress,
@@ -124,9 +122,58 @@ export interface GetPrivateIpsResult {
      */
     readonly vnicId?: string;
 }
-
+/**
+ * This data source provides the list of Private Ips in Oracle Cloud Infrastructure Core service.
+ *
+ * Lists the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) objects based
+ * on one of these filters:
+ *
+ *   - Subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+ *   - VNIC [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+ *   - Both private IP address and subnet OCID: This lets
+ *       you get a `privateIP` object based on its private IP
+ *       address (for example, 10.0.3.3) and not its [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). For comparison,
+ *       [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)
+ *       requires the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+ *
+ * If you're listing all the private IPs associated with a given subnet
+ * or VNIC, the response includes both primary and secondary private IPs.
+ *
+ * If you are an Oracle Cloud VMware Solution customer and have VLANs
+ * in your VCN, you can filter the list by VLAN [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testPrivateIpsBySubnet = oci.Core.getPrivateIps({
+ *     subnetId: _var.private_ip_subnet_id,
+ * });
+ * ```
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testPrivateIpsByVnic = oci.Core.getPrivateIps({
+ *     vnicId: oci_core_vnic.test_vnic.id,
+ * });
+ * ```
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testPrivateIpsByIpAddress = oci.Core.getPrivateIps({
+ *     ipAddress: _var.private_ip_ip_address,
+ *     subnetId: oci_core_subnet.test_subnet.id,
+ *     vlanId: oci_core_vlan.test_vlan.id,
+ *     vnicId: oci_core_vnic_attachment.test_vnic_attachment.id,
+ * });
+ * ```
+ */
 export function getPrivateIpsOutput(args?: GetPrivateIpsOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetPrivateIpsResult> {
-    return pulumi.output(args).apply(a => getPrivateIps(a, opts))
+    return pulumi.output(args).apply((a: any) => getPrivateIps(a, opts))
 }
 
 /**

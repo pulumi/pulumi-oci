@@ -30,13 +30,13 @@ class NetworkFirewallPolicyArgs:
         """
         The set of arguments for constructing a NetworkFirewallPolicy resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the NetworkFirewall Policy.
-        :param pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyApplicationListArgs']]] application_lists: (Updatable) Map defining application lists of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
+        :param pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyApplicationListArgs']]] application_lists: (Updatable) Lists of the application of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
         :param pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyDecryptionProfileArgs']]] decryption_profiles: (Updatable) Map defining decryption profiles of the policy. The value of an entry is a decryption profile. The associated key is the identifier by which the decryption profile is referenced.
         :param pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyDecryptionRuleArgs']]] decryption_rules: (Updatable) List of Decryption Rules defining the behavior of the policy. The first rule with a matching condition determines the action taken upon network traffic.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly optional name for the firewall policy. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyIpAddressListArgs']]] ip_address_lists: (Updatable) Map defining IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
+        :param pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyIpAddressListArgs']]] ip_address_lists: (Updatable) List of IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
         :param pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyMappedSecretArgs']]] mapped_secrets: (Updatable) Map defining secrets of the policy. The value of an entry is a "mapped secret" consisting of a purpose and source. The associated key is the identifier by which the mapped secret is referenced.
         :param pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicySecurityRuleArgs']]] security_rules: (Updatable) List of Security Rules defining the behavior of the policy. The first rule with a matching condition determines the action taken upon network traffic.
         :param pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyUrlListArgs']]] url_lists: (Updatable) Map defining URL pattern lists of the policy. The value of an entry is a list of URL patterns. The associated key is the identifier by which the URL pattern list is referenced.
@@ -79,7 +79,7 @@ class NetworkFirewallPolicyArgs:
     @pulumi.getter(name="applicationLists")
     def application_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyApplicationListArgs']]]]:
         """
-        (Updatable) Map defining application lists of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
+        (Updatable) Lists of the application of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
         """
         return pulumi.get(self, "application_lists")
 
@@ -151,7 +151,7 @@ class NetworkFirewallPolicyArgs:
     @pulumi.getter(name="ipAddressLists")
     def ip_address_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyIpAddressListArgs']]]]:
         """
-        (Updatable) Map defining IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
+        (Updatable) List of IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
         """
         return pulumi.get(self, "ip_address_lists")
 
@@ -218,14 +218,14 @@ class _NetworkFirewallPolicyState:
                  url_lists: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyUrlListArgs']]]] = None):
         """
         Input properties used for looking up and filtering NetworkFirewallPolicy resources.
-        :param pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyApplicationListArgs']]] application_lists: (Updatable) Map defining application lists of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
+        :param pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyApplicationListArgs']]] application_lists: (Updatable) Lists of the application of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the NetworkFirewall Policy.
         :param pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyDecryptionProfileArgs']]] decryption_profiles: (Updatable) Map defining decryption profiles of the policy. The value of an entry is a decryption profile. The associated key is the identifier by which the decryption profile is referenced.
         :param pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyDecryptionRuleArgs']]] decryption_rules: (Updatable) List of Decryption Rules defining the behavior of the policy. The first rule with a matching condition determines the action taken upon network traffic.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly optional name for the firewall policy. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyIpAddressListArgs']]] ip_address_lists: (Updatable) Map defining IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
+        :param pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyIpAddressListArgs']]] ip_address_lists: (Updatable) List of IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
         :param pulumi.Input[bool] is_firewall_attached: To determine if any Network Firewall is associated with this Network Firewall Policy.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyMappedSecretArgs']]] mapped_secrets: (Updatable) Map defining secrets of the policy. The value of an entry is a "mapped secret" consisting of a purpose and source. The associated key is the identifier by which the mapped secret is referenced.
@@ -275,7 +275,7 @@ class _NetworkFirewallPolicyState:
     @pulumi.getter(name="applicationLists")
     def application_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyApplicationListArgs']]]]:
         """
-        (Updatable) Map defining application lists of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
+        (Updatable) Lists of the application of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
         """
         return pulumi.get(self, "application_lists")
 
@@ -359,7 +359,7 @@ class _NetworkFirewallPolicyState:
     @pulumi.getter(name="ipAddressLists")
     def ip_address_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['NetworkFirewallPolicyIpAddressListArgs']]]]:
         """
-        (Updatable) Map defining IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
+        (Updatable) List of IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
         """
         return pulumi.get(self, "ip_address_lists")
 
@@ -508,14 +508,14 @@ class NetworkFirewallPolicy(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyApplicationListArgs']]]] application_lists: (Updatable) Map defining application lists of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyApplicationListArgs']]]] application_lists: (Updatable) Lists of the application of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the NetworkFirewall Policy.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyDecryptionProfileArgs']]]] decryption_profiles: (Updatable) Map defining decryption profiles of the policy. The value of an entry is a decryption profile. The associated key is the identifier by which the decryption profile is referenced.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyDecryptionRuleArgs']]]] decryption_rules: (Updatable) List of Decryption Rules defining the behavior of the policy. The first rule with a matching condition determines the action taken upon network traffic.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly optional name for the firewall policy. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyIpAddressListArgs']]]] ip_address_lists: (Updatable) Map defining IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyIpAddressListArgs']]]] ip_address_lists: (Updatable) List of IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyMappedSecretArgs']]]] mapped_secrets: (Updatable) Map defining secrets of the policy. The value of an entry is a "mapped secret" consisting of a purpose and source. The associated key is the identifier by which the mapped secret is referenced.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicySecurityRuleArgs']]]] security_rules: (Updatable) List of Security Rules defining the behavior of the policy. The first rule with a matching condition determines the action taken upon network traffic.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyUrlListArgs']]]] url_lists: (Updatable) Map defining URL pattern lists of the policy. The value of an entry is a list of URL patterns. The associated key is the identifier by which the URL pattern list is referenced.
@@ -627,14 +627,14 @@ class NetworkFirewallPolicy(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyApplicationListArgs']]]] application_lists: (Updatable) Map defining application lists of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyApplicationListArgs']]]] application_lists: (Updatable) Lists of the application of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the NetworkFirewall Policy.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyDecryptionProfileArgs']]]] decryption_profiles: (Updatable) Map defining decryption profiles of the policy. The value of an entry is a decryption profile. The associated key is the identifier by which the decryption profile is referenced.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyDecryptionRuleArgs']]]] decryption_rules: (Updatable) List of Decryption Rules defining the behavior of the policy. The first rule with a matching condition determines the action taken upon network traffic.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly optional name for the firewall policy. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyIpAddressListArgs']]]] ip_address_lists: (Updatable) Map defining IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyIpAddressListArgs']]]] ip_address_lists: (Updatable) List of IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
         :param pulumi.Input[bool] is_firewall_attached: To determine if any Network Firewall is associated with this Network Firewall Policy.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['NetworkFirewallPolicyMappedSecretArgs']]]] mapped_secrets: (Updatable) Map defining secrets of the policy. The value of an entry is a "mapped secret" consisting of a purpose and source. The associated key is the identifier by which the mapped secret is referenced.
@@ -672,7 +672,7 @@ class NetworkFirewallPolicy(pulumi.CustomResource):
     @pulumi.getter(name="applicationLists")
     def application_lists(self) -> pulumi.Output[Sequence['outputs.NetworkFirewallPolicyApplicationList']]:
         """
-        (Updatable) Map defining application lists of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
+        (Updatable) Lists of the application of the policy. The value of an entry is a list of "applications", each consisting of a protocol identifier (such as TCP, UDP, or ICMP) and protocol-specific parameters (such as a port range). The associated key is the identifier by which the application list is referenced.
         """
         return pulumi.get(self, "application_lists")
 
@@ -728,7 +728,7 @@ class NetworkFirewallPolicy(pulumi.CustomResource):
     @pulumi.getter(name="ipAddressLists")
     def ip_address_lists(self) -> pulumi.Output[Sequence['outputs.NetworkFirewallPolicyIpAddressList']]:
         """
-        (Updatable) Map defining IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
+        (Updatable) List of IP address lists of the policy. The value of an entry is a list of IP addresses or prefixes in CIDR notation. The associated key is the identifier by which the IP address list is referenced.
         """
         return pulumi.get(self, "ip_address_lists")
 

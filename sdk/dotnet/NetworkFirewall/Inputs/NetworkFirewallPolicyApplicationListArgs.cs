@@ -12,28 +12,23 @@ namespace Pulumi.Oci.NetworkFirewall.Inputs
 
     public sealed class NetworkFirewallPolicyApplicationListArgs : global::Pulumi.ResourceArgs
     {
-        [Input("icmpCode")]
-        public Input<int>? IcmpCode { get; set; }
+        /// <summary>
+        /// (Updatable) The key is the identifier by which the application list is referenced.
+        /// </summary>
+        [Input("applicationListName", required: true)]
+        public Input<string> ApplicationListName { get; set; } = null!;
 
-        [Input("icmpType")]
-        public Input<int>? IcmpType { get; set; }
-
-        [Input("key", required: true)]
-        public Input<string> Key { get; set; } = null!;
-
-        [Input("maximumPort")]
-        public Input<int>? MaximumPort { get; set; }
-
-        [Input("minimumPort")]
-        public Input<int>? MinimumPort { get; set; }
+        [Input("applicationValues")]
+        private InputList<Inputs.NetworkFirewallPolicyApplicationListApplicationValueArgs>? _applicationValues;
 
         /// <summary>
-        /// (Updatable) Type of the secrets mapped based on the policy.
-        /// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
-        /// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
+        /// (Updatable) Details about the application
         /// </summary>
-        [Input("type", required: true)]
-        public Input<string> Type { get; set; } = null!;
+        public InputList<Inputs.NetworkFirewallPolicyApplicationListApplicationValueArgs> ApplicationValues
+        {
+            get => _applicationValues ?? (_applicationValues = new InputList<Inputs.NetworkFirewallPolicyApplicationListApplicationValueArgs>());
+            set => _applicationValues = value;
+        }
 
         public NetworkFirewallPolicyApplicationListArgs()
         {

@@ -21,11 +21,8 @@ import * as utilities from "../utilities";
  * ```
  */
 export function getGenericArtifactsContent(args: GetGenericArtifactsContentArgs, opts?: pulumi.InvokeOptions): Promise<GetGenericArtifactsContentResult> {
-    if (!opts) {
-        opts = {}
-    }
 
-    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+    opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:GenericArtifactsContent/getGenericArtifactsContent:getGenericArtifactsContent", {
         "artifactId": args.artifactId,
     }, opts);
@@ -51,9 +48,24 @@ export interface GetGenericArtifactsContentResult {
      */
     readonly id: string;
 }
-
+/**
+ * This data source provides details about a specific Generic Artifacts Content resource in Oracle Cloud Infrastructure Generic Artifacts Content service.
+ *
+ * Gets the specified artifact's content.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testGenericArtifactsContent = oci.GenericArtifactsContent.getGenericArtifactsContent({
+ *     artifactId: oci_generic_artifacts_content_artifact.test_artifact.id,
+ * });
+ * ```
+ */
 export function getGenericArtifactsContentOutput(args: GetGenericArtifactsContentOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetGenericArtifactsContentResult> {
-    return pulumi.output(args).apply(a => getGenericArtifactsContent(a, opts))
+    return pulumi.output(args).apply((a: any) => getGenericArtifactsContent(a, opts))
 }
 
 /**
